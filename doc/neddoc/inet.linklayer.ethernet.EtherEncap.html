@@ -7,21 +7,37 @@
 <h2 class="comptitle">Simple Module <i>EtherEncap</i></h2>
 <b>Package:</b> inet.linklayer.ethernet<br/><b>File: <a href="src-linklayer-ethernet-EtherEncap.ned.html">src/linklayer/ethernet/EtherEncap.ned</a></b><br/><p><a href="../doxy/class_ether_encap.html" target="mainframe"><b>C++ definition</b></a></p>
 
-<p>Performs Ethernet II encapsulation/decapsulation.</p>
+<p>Performs Ethernet II or Ethernet with SNAP encapsulation/decapsulation.</p>
 <p>Expected environment:</p>
-  <ul><li>lowerLayerIn, lowerLayerOut gates should be connected to Ethernet <a href="inet.linklayer.ethernet.EtherMAC.html">EtherMAC</a></li>
+  <ul><li>lowerLayerIn, lowerLayerOut gates should be connected to an <a href="inet.linklayer.ethernet.EtherMAC.html">EtherMAC</a></li>
   <li>upperLayerIn, upperLayerOut gates should be connected to higher layer
   protocol or application</li></ul>
 <p>Functionality:</p>
   <ul><li>packets coming from upper layers will be encapsulated in <a href="EthernetIIFrame.html">EthernetIIFrame</a>
-  and sent to MAC. <a href="EtherType.html">EtherType</a> is taken from the <a href="Ieee802Ctrl.html">Ieee802Ctrl</a> structure attached
-  to the message as control info (see setControlInfo(), controlInfo()
-  methods). Src address will be filled in by <a href="inet.linklayer.ethernet.EtherMAC.html">EtherMAC</a>.</li>
+  or <a href="EtherFrameWithSNAP.html">EtherFrameWithSNAP</a> (depending on the useSNAP module parameter),
+  and sent to MAC. <a href="EtherType.html">EtherType</a> is taken from the <a href="Ieee802Ctrl.html">Ieee802Ctrl</a> structure
+  attached to the message as control info (see setControlInfo(),
+  controlInfo() methods). The source address will be filled in by <a href="inet.linklayer.ethernet.EtherMAC.html">EtherMAC</a>.</li>
   <li>also accepts SENDPAUSE command (message kind=IEEE802CTRL_SENDPAUSE) from
-  higher layer: send PAUSE frame, as described in
+  higher layer: it will send a PAUSE frame, as described in
   <a href="ether-pause.html">PAUSE frames</a>.</li>
   <li>Ethernet frames arriving from MAC will be decapsulated, and sent up to the
   higher layers. Accepts <a href="EtherFrameWithLLC.html">EtherFrameWithLLC</a> and <a href="EtherFrameWithSNAP.html">EtherFrameWithSNAP</a> too.</li></ul>
+<img src="inet.linklayer.ethernet.EtherEncap-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.linklayer.ethernet.EtherEncap.html" title="EtherEncap" alt="EtherEncap" coords="0,30,110,70">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.linklayer.ethernet.EtherEncap-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.linklayer.ethernet.EtherEncap.html" title="Simple Module EtherEncap" alt="" coords="68,83,159,111">
+<area shape="rect" id="node2" href="inet.nodes.ethernet.EtherHost2.html" title="Compound Module EtherHost2" alt="" coords="5,6,93,34">
+<area shape="rect" id="node4" href="inet.linklayer.ethernet.EthernetInterface.html" title="Compound Module EthernetInterface" alt="" coords="117,6,240,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.linklayer.ethernet.EtherEncap-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.linklayer.ethernet.EtherEncap.html" title="Simple Module EtherEncap" alt="" coords="5,6,96,34">
+</map>
 <h3 class="subtitle">Used in compound modules:</h3>
 <table class="typestable">
    <tr>
@@ -31,29 +47,17 @@
    </tr>
 <tr>
    <td>
-<a href="inet.ansa.ethernet.AnsaEthernetInterface.html">AnsaEthernetInterface</a>
+<a href="inet.nodes.ethernet.EtherHost2.html">EtherHost2</a>
    </td>
    <td>
 <i>compound&nbsp;module</i>
    </td>
    <td>
 
-<p>Ethernet network interface. Complements <a href="inet.linklayer.ethernet.EtherMAC.html">EtherMAC</a> and <a href="inet.linklayer.ethernet.EtherEncap.html">EtherEncap</a>
-with an output queue for QoS and RED support.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.ansa.ethernet.EthernetInterface.html">EthernetInterface</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>Ethernet network interface. Complements <a href="inet.linklayer.ethernet.EtherMAC.html">EtherMAC</a> and <a href="inet.linklayer.ethernet.EtherEncap.html">EtherEncap</a>
-with an output queue for QoS and RED support.</p>
+<p>An example host with one Ethernet interface and an Ethernet traffic
+generator directly connected to it. This host model does not contain
+higher layer protocols (IP, TCP). By default is configured to use
+half-duplex MAC (CSMA/CD).</p>
 
    </td>
 </tr>
@@ -71,32 +75,23 @@ with an output queue for QoS and RED support.</p>
 
    </td>
 </tr>
-<tr>
+</table>
+<h3 class="subtitle">Parameters:</h3>
+<table class="paramstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="defaultvalue">Default value</th>
+      <th class="description">Description</th>
+   </tr>
+<tr class="local">
+   <td>useSNAP</td>
    <td>
-<a href="inet.linklayer.ethernet.EthernetInterface2.html">EthernetInterface2</a>
+      <i>bool</i>
    </td>
+   <td>false</td>
    <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>Ethernet network interface which supports full-duplex operation only.
-Complements <a href="inet.linklayer.ethernet.EtherMAC2.html">EtherMAC2</a> and <a href="inet.linklayer.ethernet.EtherEncap.html">EtherEncap</a> with an output queue for QoS and
-RED support.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.linklayer.ethernet.EthernetInterfaceNoQueue.html">EthernetInterfaceNoQueue</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>Ethernet network interface. Assumes inifinite queue.</p>
-
+<p>create EtherFrameWithSNAP frames instead of EthernetIIFrame</p>
    </td>
 </tr>
 </table>
@@ -150,38 +145,106 @@ RED support.</p>
 </td>
 </tr>
 </table>
+<h3 class="subtitle">Signals:</h3>
+<table class="signalstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="unit">Unit</th>
+   </tr>
+<tr class="local">
+   <td>decapPk</td>
+   <td><i>
+cPacket   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>encapPk</td>
+   <td><i>
+cPacket   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>pauseSent</td>
+   <td><i>
+long   </i></td>
+   <td></td>
+</tr>
+</table>
+<h3 class="subtitle">Statistics:</h3>
+<table class="statisticstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="title">Title</th>
+      <th class="source">Source</th>
+      <th class="record">Record</th>
+      <th class="unit">Unit</th>
+      <th class="interpolationmode">Interpolation Mode</th>
+   </tr>
+<tr class="local">
+   <td>decapPk</td>
+   <td>packets decapsulated</td>
+   <td>decapPk</td>
+   <td>count, sum(packetBytes), vector(packetBytes)</td>
+   <td></td>
+   <td>none</td>
+</tr>
+<tr class="local">
+   <td>encapPk</td>
+   <td>packets encapsulated</td>
+   <td>encapPk</td>
+   <td>count, sum(packetBytes), vector(packetBytes)</td>
+   <td></td>
+   <td>none</td>
+</tr>
+<tr class="local">
+   <td>pauseSent</td>
+   <td>pause sent</td>
+   <td></td>
+   <td>count, sum, vector</td>
+   <td></td>
+   <td></td>
+</tr>
+</table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
-// Performs Ethernet II encapsulation/decapsulation.
+// Performs Ethernet II or Ethernet with SNAP encapsulation/decapsulation.
 //
 // Expected environment:
-// - lowerLayerIn, lowerLayerOut gates should be connected to Ethernet EtherMAC
+// - lowerLayerIn, lowerLayerOut gates should be connected to an ~EtherMAC
 // - upperLayerIn, upperLayerOut gates should be connected to higher layer
 //   protocol or application
 //
 // Functionality:
-// - packets coming from upper layers will be encapsulated in EthernetIIFrame
-//   and sent to MAC. EtherType is taken from the Ieee802Ctrl structure attached
-//   to the message as control info (see setControlInfo(), controlInfo()
-//   methods). Src address will be filled in by EtherMAC.
+// - packets coming from upper layers will be encapsulated in ~EthernetIIFrame
+//   or ~EtherFrameWithSNAP (depending on the useSNAP module parameter),
+//   and sent to MAC. ~EtherType is taken from the ~Ieee802Ctrl structure
+//   attached to the message as control info (see setControlInfo(),
+//   controlInfo() methods). The source address will be filled in by ~EtherMAC.
 // - also accepts SENDPAUSE command (message kind=IEEE802CTRL_SENDPAUSE) from
-//   higher layer: send PAUSE frame, as described in
+//   higher layer: it will send a PAUSE frame, as described in
 //   </span><span style="color: #800000; ">&lt;a href=&quot;ether-pause.html&quot;&gt;</span><span style="color: #808080; font-style: italic; ">PAUSE frames</span><span style="color: #800000; ">&lt;/a&gt;</span><span style="color: #808080; font-style: italic; ">.
 // - Ethernet frames arriving from MAC will be decapsulated, and sent up to the
-//   higher layers. Accepts EtherFrameWithLLC and EtherFrameWithSNAP too.
+//   higher layers. Accepts ~EtherFrameWithLLC and ~EtherFrameWithSNAP too.
 //
 </span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">EtherEncap</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/square&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">useSNAP</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">false</span><span style="color: #000000; ">);  </span><span style="color: #808080; font-style: italic; ">// create EtherFrameWithSNAP frames instead of EthernetIIFrame
+</span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/square&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">encapPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">cPacket</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">decapPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">cPacket</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">pauseSent</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">long</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// pause units
+</span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">encapPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;packets encapsulated&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">source</span><span style="color: #000000; ">=</span><span style="color: #000000; ">encapPk</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;sum(packetBytes)&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;vector(packetBytes)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">decapPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;packets decapsulated&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">source</span><span style="color: #000000; ">=</span><span style="color: #000000; ">decapPk</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;sum(packetBytes)&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;vector(packetBytes)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">pauseSent</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;pause sent&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #000000; ">sum</span><span style="color: #000000; ">,</span><span style="color: #000000; ">vector</span><span style="color: #000000; ">);
     </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
-        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">upperLayerIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">Ieee802Ctrl</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);   </span><span style="color: #808080; font-style: italic; ">// higher layer
+        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">upperLayerIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">Ieee802Ctrl</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// higher layer
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">upperLayerOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">Ieee802Ctrl</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// higher layer
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">lowerLayerIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">EtherFrame</span><span style="color: #000000; ">);   </span><span style="color: #808080; font-style: italic; ">// to Ethernet MAC
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">lowerLayerOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">EtherFrame</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// to Ethernet MAC
 </span><span style="color: #000000; ">}
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

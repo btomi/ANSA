@@ -8,6 +8,19 @@
 <b>File: <a href="src-linklayer-ieee80211-mac-Ieee80211Frame.msg.html">src/linklayer/ieee80211/mac/Ieee80211Frame.msg</a></b><br/><p><a href="../doxy/class_ieee80211_data_or_mgmt_frame.html" target="mainframe"><b>C++ definition</b></a></p>
 
 <p>Common base class for 802.11 data and management frames</p>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="Ieee80211DataOrMgmtFrame-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="Ieee80211DataOrMgmtFrame.html" title="Packet Ieee80211DataOrMgmtFrame" alt="" coords="5,6,200,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="Ieee80211DataOrMgmtFrame-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="Ieee80211DataOrMgmtFrame.html" title="Packet Ieee80211DataOrMgmtFrame" alt="" coords="79,83,273,111">
+<area shape="rect" id="node4" href="Ieee80211DataFrame.html" title="Packet Ieee80211DataFrame" alt="" coords="5,161,152,189">
+<area shape="rect" id="node6" href="Ieee80211ManagementFrame.html" title="Packet Ieee80211ManagementFrame" alt="" coords="176,161,371,189">
+<area shape="rect" id="node2" href="Ieee80211TwoAddressFrame.html" title="Packet Ieee80211TwoAddressFrame" alt="" coords="80,6,272,34">
+</map>
 <h3 class="subtitle">Extends:</h3>
 <table class="typestable">
    <tr>
@@ -98,7 +111,7 @@ short</i>
    <td>sequenceNumber</td>
    <td>
       <i>
-short</i>
+uint16</i>
    </td>
    <td></td>
 </tr>
@@ -184,6 +197,14 @@ MACAddress</i>
 <p>aka address1</p>
 </td>
 </tr>
+<tr class="inherited">
+   <td>MACArrive</td>
+   <td>
+      <i>
+simtime_t</i>
+   </td>
+   <td></td>
+</tr>
 </table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
@@ -191,13 +212,12 @@ MACAddress</i>
 //
 </span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211DataOrMgmtFrame</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211TwoAddressFrame</span><span style="color: #000000; ">
 {
-    </span><span style="color: #000000; ">byteLength</span><span style="color: #000000; "> = </span><span style="color: #008000; ">28</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">byteLength</span><span style="color: #000000; "> = </span><span style="color: #000000; ">LENGTH_MGMT</span><span style="color: #000000; "> / </span><span style="color: #008000; ">8</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">address3</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">fragmentNumber</span><span style="color: #000000; ">;
-    </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">sequenceNumber</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">uint16</span><span style="color: #000000; "> </span><span style="color: #000000; ">sequenceNumber</span><span style="color: #000000; ">;
 }
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

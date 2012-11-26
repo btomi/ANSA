@@ -6,18 +6,18 @@
    <body onload="if (top.frames['componentsframe'] == undefined) { s = window.location.toString(); window.location = 'index.html?p=' + s.substring(s.lastIndexOf('/')+1); }">
 <h2>LDP Message Processing</h2>
 <p>The simulation follows message processing rules specified in RFC3036
-(<a href="inet.networklayer.ldp.LDP.html">LDP</a> Specification). A summary of the algorithm used in the RFC is
+(LDP Specification). A summary of the algorithm used in the RFC is
 presented below.</p>
 <p><b>Label Request Message processing</b></p>
 <p>An LSR may transmit a Request message under any of the conditions below:</p>
   <ul><li>The LSR recognizes a new FEC via the forwarding tale, and the next hop
-  is its <a href="inet.networklayer.ldp.LDP.html">LDP</a> peer. The LIB of this LSR does not have a mapping from the
+  is its LDP peer. The LIB of this LSR does not have a mapping from the
   next hop for the given FEC.</li>
   <li>Network topology changes, the next hop to the FEC is no longer valid
   and new mapping is not available.</li>
-  <li>The LSR receives a Label Request for a FEC from an upstream <a href="inet.networklayer.ldp.LDP.html">LDP</a> and it
+  <li>The LSR receives a Label Request for a FEC from an upstream LDP and it
   does not have label binding information for this FEC. The FEC next hop
-  is an <a href="inet.networklayer.ldp.LDP.html">LDP</a> peer.</li></ul>
+  is an LDP peer.</li></ul>
 <p>Upon receiving a Label Request message, the following procedures will be
 performed:</p>
 <p><pre>
@@ -57,6 +57,5 @@ Step 2: Check whether this is an outstanding FEC
 Step 3: Install the new label to the local LIB using the extracted label,
         FEC and the message incoming interface.
 </pre></p>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

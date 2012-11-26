@@ -44,34 +44,30 @@
 </span><span style="color: #000000; ">
 </span><span style="color: #800000; font-weight: bold; ">package</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">examples</span><span style="color: #000000; ">.</span><span style="color: #000000; ">adhoc</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ieee80211</span><span style="color: #000000; ">;
 
-</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">networklayer</span><span style="color: #000000; ">.</span><span style="color: #000000; ">autorouting</span><span style="color: #000000; ">.</span><span style="color: #000000; ">FlatNetworkConfigurator</span><span style="color: #000000; ">;
-</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">nodes</span><span style="color: #000000; ">.</span><span style="color: #000000; ">adhoc</span><span style="color: #000000; ">.</span><span style="color: #000000; ">MobileHost</span><span style="color: #000000; ">;
-</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">world</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ChannelControl</span><span style="color: #000000; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">networklayer</span><span style="color: #000000; ">.</span><span style="color: #000000; ">autorouting</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ipv4</span><span style="color: #000000; ">.</span><span style="color: #000000; ">IPv4NetworkConfigurator</span><span style="color: #000000; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">nodes</span><span style="color: #000000; ">.</span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">AdhocHost</span><span style="color: #000000; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">world</span><span style="color: #000000; ">.</span><span style="color: #000000; ">radio</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ChannelControl</span><span style="color: #000000; ">;
 
 
 </span><span style="color: #800000; font-weight: bold; ">network</span><span style="color: #000000; "> </span><span style="color: #000000; ">Net80211</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">numHosts</span><span style="color: #000000; ">;
-        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">playgroundSizeX</span><span style="color: #000000; ">;
-        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">playgroundSizeY</span><span style="color: #000000; ">;
     </span><span style="color: #800000; font-weight: bold; ">submodules</span><span style="color: #000000; ">:
-        </span><span style="color: #000000; ">host</span><span style="color: #000000; ">[</span><span style="color: #000000; ">numHosts</span><span style="color: #000000; ">]: </span><span style="color: #000000; ">MobileHost</span><span style="color: #000000; "> {
+        </span><span style="color: #000000; ">host</span><span style="color: #000000; ">[</span><span style="color: #000000; ">numHosts</span><span style="color: #000000; ">]: </span><span style="color: #000000; ">AdhocHost</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;r=,,#707070&quot;</span><span style="color: #000000; ">);
+                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;r=,,#707070;p=250,58&quot;</span><span style="color: #000000; ">);
         }
-        </span><span style="color: #000000; ">channelcontrol</span><span style="color: #000000; ">: </span><span style="color: #000000; ">ChannelControl</span><span style="color: #000000; "> {
+        </span><span style="color: #000000; ">channelControl</span><span style="color: #000000; ">: </span><span style="color: #000000; ">ChannelControl</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; ">playgroundSizeX</span><span style="color: #000000; "> = </span><span style="color: #000000; ">playgroundSizeX</span><span style="color: #000000; ">;
-                </span><span style="color: #000000; ">playgroundSizeY</span><span style="color: #000000; "> = </span><span style="color: #000000; ">playgroundSizeY</span><span style="color: #000000; ">;
                 </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=60,50&quot;</span><span style="color: #000000; ">);
         }
-        </span><span style="color: #000000; ">configurator</span><span style="color: #000000; ">: </span><span style="color: #000000; ">FlatNetworkConfigurator</span><span style="color: #000000; "> {
+        </span><span style="color: #000000; ">configurator</span><span style="color: #000000; ">: </span><span style="color: #000000; ">IPv4NetworkConfigurator</span><span style="color: #000000; "> {
+            </span><span style="color: #000000; ">config</span><span style="color: #000000; ">=</span><span style="color: #000080; font-weight: bold; ">xml</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&lt;config&gt;&lt;interface hosts='*' address='192.168.x.x' netmask='255.255.0.0'/&gt;&lt;/config&gt;&quot;</span><span style="color: #000000; ">);
             </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=140,50&quot;</span><span style="color: #000000; ">);
         }
 }
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

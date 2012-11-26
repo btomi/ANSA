@@ -76,42 +76,73 @@
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a>  </div>
+<a href="#pro-types">Protected Types</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">ICMPv6 Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="ICMPv6" -->
-<p><code>#include &lt;<a class="el" href="_i_c_m_pv6_8h_source.html">ICMPv6.h</a>&gt;</code></p>
+<p><a class="el" href="class_i_c_m_pv6.html" title="ICMPv6 implementation.">ICMPv6</a> implementation.  
+ <a href="class_i_c_m_pv6.html#details">More...</a></p>
+
+<p><code>#include &lt;ICMPv6.h&gt;</code></p>
 
 <p><a href="class_i_c_m_pv6-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5">sendErrorMessage</a> (<a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *datagram, <a class="el" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8">ICMPv6Type</a> type, int code)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#ac5c4d78f63c567376be9cb67c0773d18">sendErrorMessage</a> (cPacket *transportPacket, <a class="el" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *ctrl, <a class="el" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8">ICMPv6Type</a> type, int code)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5">sendErrorMessage</a> (<a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *datagram, <a class="el" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8">ICMPv6Type</a> <a class="el" href="dsr_8h.html#a8113b111c9adcbe8245570953727d60a">type</a>, int code)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This method can be called from other modules to send an <a class="el" href="class_i_c_m_pv6.html" title="ICMPv6 implementation.">ICMPv6</a> error packet.  <a href="#a3968b2c9964bb40a3d14b3fda9fdbba5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#ac5c4d78f63c567376be9cb67c0773d18">sendErrorMessage</a> (cPacket *transportPacket, <a class="el" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *ctrl, <a class="el" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8">ICMPv6Type</a> <a class="el" href="dsr_8h.html#a8113b111c9adcbe8245570953727d60a">type</a>, int code)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This method can be called from other modules to send an <a class="el" href="class_i_c_m_p.html" title="ICMP module.">ICMP</a> error packet in response to a received bogus packet from the transport layer (like <a class="el" href="class_u_d_p.html" title="Implements the UDP protocol: encapsulates/decapsulates user data into/from UDP.">UDP</a>).  <a href="#ac5c4d78f63c567376be9cb67c0773d18"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; long, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#af5f3317f77c473640c90e29c9e52f24a">PingMap</a></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#a4d11555b42c4b2fc028b6482dd93b6bc">sendToIP</a> (<a class="el" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *msg, const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;dest)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#a9edd348ffc175a3f212bbb38e8333b8c">sendToIP</a> (<a class="el" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#a4d11555b42c4b2fc028b6482dd93b6bc">sendToIP</a> (<a class="el" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *msg, const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;dest)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#a9edd348ffc175a3f212bbb38e8333b8c">sendToIP</a> (<a class="el" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *msg)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#a9755b5748d4d41b2727724ca21fab5bd">createDestUnreachableMsg</a> (int code)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#ade2a86dec093e6d95fb0a27336137daa">createPacketTooBigMsg</a> (int mtu)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#a70790d6086a1887b9b9cf8e765e668ff">createTimeExceededMsg</a> (int code)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#a1e04d68ace9f2a8a4a9f598ed9628b62">createParamProblemMsg</a> (int code)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#a0579529d7a1566e71057a34244a0c3df">initialize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#a8b602fc0e5ab4e5f831dd61278b54ec8">handleMessage</a> (cMessage *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#a88b45124390f09cc6848c432a80c1d68">processICMPv6Message</a> (<a class="el" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#af42e4f033f33ef7dcf95f694e0941297">processEchoRequest</a> (<a class="el" href="class_i_c_m_pv6_echo_request_msg.html">ICMPv6EchoRequestMsg</a> *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#a1501d708133de74f3ac748877b0c3cf6">processEchoReply</a> (<a class="el" href="class_i_c_m_pv6_echo_reply_msg.html">ICMPv6EchoReplyMsg</a> *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#adcb65923a2eef477479d4c1d5b576d04">sendEchoRequest</a> (cPacket *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#a0579529d7a1566e71057a34244a0c3df">initialize</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization.  <a href="#a0579529d7a1566e71057a34244a0c3df"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#a8b602fc0e5ab4e5f831dd61278b54ec8">handleMessage</a> (cMessage *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Processing of messages that arrive in this module.  <a href="#a8b602fc0e5ab4e5f831dd61278b54ec8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#a88b45124390f09cc6848c432a80c1d68">processICMPv6Message</a> (<a class="el" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#af42e4f033f33ef7dcf95f694e0941297">processEchoRequest</a> (<a class="el" href="class_i_c_m_pv6_echo_request_msg.html">ICMPv6EchoRequestMsg</a> *)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Respond to the machine that tried to ping us.  <a href="#af42e4f033f33ef7dcf95f694e0941297"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#a1501d708133de74f3ac748877b0c3cf6">processEchoReply</a> (<a class="el" href="class_i_c_m_pv6_echo_reply_msg.html">ICMPv6EchoReplyMsg</a> *)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Forward the ping reply to the "pingOut" of this module.  <a href="#a1501d708133de74f3ac748877b0c3cf6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#a391b37ab8e348a199b48196cbdfcad87">sendEchoRequest</a> (<a class="el" href="class_ping_payload.html">PingPayload</a> *)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ping a machine.  <a href="#a391b37ab8e348a199b48196cbdfcad87"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#ac9119ae006608365bdb41a050c130f72">validateDatagramPromptingError</a> (<a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *datagram)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#a60e3588d7c19bd70c59662668222df1e">errorOut</a> (<a class="el" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate the received <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> datagram before responding with error message.  <a href="#ac9119ae006608365bdb41a050c130f72"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#a60e3588d7c19bd70c59662668222df1e">errorOut</a> (<a class="el" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *)</td></tr>
+<tr><td colspan="2"><h2><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_c_m_pv6.html#af5f3317f77c473640c90e29c9e52f24a">PingMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_pv6.html#a766cc6a2e201b83acfb33073291f06c5">pingMap</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_i_c_m_pv6.html">ICMPv6</a> implementation. </p>
+<div class="textblock"><p><a class="el" href="class_i_c_m_pv6.html" title="ICMPv6 implementation.">ICMPv6</a> implementation. </p>
+</div><hr/><h2>Member Typedef Documentation</h2>
+<a class="anchor" id="af5f3317f77c473640c90e29c9e52f24a"></a><!-- doxytag: member="ICMPv6::PingMap" ref="af5f3317f77c473640c90e29c9e52f24a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;long,int&gt; <a class="el" href="class_i_c_m_pv6.html#af5f3317f77c473640c90e29c9e52f24a">ICMPv6::PingMap</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_c_m_pv6_8h_source.html#l00033">33</a> of file <a class="el" href="_i_c_m_pv6_8h_source.html">ICMPv6.h</a>.</p>
-</div><hr/><h2>Member Function Documentation</h2>
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a9755b5748d4d41b2727724ca21fab5bd"></a><!-- doxytag: member="ICMPv6::createDestUnreachableMsg" ref="a9755b5748d4d41b2727724ca21fab5bd" args="(int code)" -->
 <div class="memitem">
 <div class="memproto">
@@ -127,11 +158,9 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_c_m_pv6_8cc_source.html#l00204">204</a> of file <a class="el" href="_i_c_m_pv6_8cc_source.html">ICMPv6.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_c_m_pv6_8cc_source.html#l00130">sendErrorMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5">sendErrorMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_i_c_m_pv6_dest_unreachable_msg.html">ICMPv6DestUnreachableMsg</a> *errorMsg = <span class="keyword">new</span> <a class="code" href="class_i_c_m_pv6_dest_unreachable_msg.html">ICMPv6DestUnreachableMsg</a>(<span class="stringliteral">&quot;Dest Unreachable&quot;</span>);
+    <a class="code" href="class_i_c_m_pv6_dest_unreachable_msg.html" title="Class generated from networklayer/icmpv6/ICMPv6Message.msg by opp_msgc.">ICMPv6DestUnreachableMsg</a> *errorMsg = <span class="keyword">new</span> <a class="code" href="class_i_c_m_pv6_dest_unreachable_msg.html" title="Class generated from networklayer/icmpv6/ICMPv6Message.msg by opp_msgc.">ICMPv6DestUnreachableMsg</a>(<span class="stringliteral">&quot;Dest Unreachable&quot;</span>);
     errorMsg-&gt;<a class="code" href="class_i_c_m_pv6_message.html#a567e6b86fb028d4f6c0cf97118b36a08">setType</a>(<a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8a41a9a5f4838bc4483b77b0fdcd13f72b">ICMPv6_DESTINATION_UNREACHABLE</a>);
     errorMsg-&gt;<a class="code" href="class_i_c_m_pv6_dest_unreachable_msg.html#aafe353e5a4cf7df56519c85a00ab2bbd">setCode</a>(code);
     <span class="keywordflow">return</span> errorMsg;
@@ -154,13 +183,11 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_c_m_pv6_8cc_source.html#l00212">212</a> of file <a class="el" href="_i_c_m_pv6_8cc_source.html">ICMPv6.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_c_m_pv6_8cc_source.html#l00130">sendErrorMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5">sendErrorMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_i_c_m_pv6_packet_too_big_msg.html">ICMPv6PacketTooBigMsg</a> *errorMsg = <span class="keyword">new</span> <a class="code" href="class_i_c_m_pv6_packet_too_big_msg.html">ICMPv6PacketTooBigMsg</a>(<span class="stringliteral">&quot;Packet Too Big&quot;</span>);
+    <a class="code" href="class_i_c_m_pv6_packet_too_big_msg.html" title="Class generated from networklayer/icmpv6/ICMPv6Message.msg by opp_msgc.">ICMPv6PacketTooBigMsg</a> *errorMsg = <span class="keyword">new</span> <a class="code" href="class_i_c_m_pv6_packet_too_big_msg.html" title="Class generated from networklayer/icmpv6/ICMPv6Message.msg by opp_msgc.">ICMPv6PacketTooBigMsg</a>(<span class="stringliteral">&quot;Packet Too Big&quot;</span>);
     errorMsg-&gt;<a class="code" href="class_i_c_m_pv6_message.html#a567e6b86fb028d4f6c0cf97118b36a08">setType</a>(<a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8a9fd6c04d078837b701add65951544230">ICMPv6_PACKET_TOO_BIG</a>);
-    errorMsg-&gt;<a class="code" href="class_i_c_m_pv6_packet_too_big_msg.html#a336832ce682ab2188b28714acfecf0ee">setCode</a>(0);<span class="comment">//Set to 0 by sender and ignored by receiver.</span>
+    errorMsg-&gt;<a class="code" href="class_i_c_m_pv6_packet_too_big_msg.html#a336832ce682ab2188b28714acfecf0ee">setCode</a>(0); <span class="comment">//Set to 0 by sender and ignored by receiver.</span>
     errorMsg-&gt;<a class="code" href="class_i_c_m_pv6_packet_too_big_msg.html#a7b4cc28f26bbd88b7b42e5cf5a31d858">setMTU</a>(mtu);
     <span class="keywordflow">return</span> errorMsg;
 }
@@ -182,11 +209,9 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_c_m_pv6_8cc_source.html#l00229">229</a> of file <a class="el" href="_i_c_m_pv6_8cc_source.html">ICMPv6.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_c_m_pv6_8cc_source.html#l00130">sendErrorMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5">sendErrorMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_i_c_m_pv6_param_problem_msg.html">ICMPv6ParamProblemMsg</a> *errorMsg = <span class="keyword">new</span> <a class="code" href="class_i_c_m_pv6_param_problem_msg.html">ICMPv6ParamProblemMsg</a>(<span class="stringliteral">&quot;Parameter Problem&quot;</span>);
+    <a class="code" href="class_i_c_m_pv6_param_problem_msg.html" title="Class generated from networklayer/icmpv6/ICMPv6Message.msg by opp_msgc.">ICMPv6ParamProblemMsg</a> *errorMsg = <span class="keyword">new</span> <a class="code" href="class_i_c_m_pv6_param_problem_msg.html" title="Class generated from networklayer/icmpv6/ICMPv6Message.msg by opp_msgc.">ICMPv6ParamProblemMsg</a>(<span class="stringliteral">&quot;Parameter Problem&quot;</span>);
     errorMsg-&gt;<a class="code" href="class_i_c_m_pv6_message.html#a567e6b86fb028d4f6c0cf97118b36a08">setType</a>(<a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8a4f3281972041ca8e0c57bc4378b174a0">ICMPv6_PARAMETER_PROBLEM</a>);
     errorMsg-&gt;<a class="code" href="class_i_c_m_pv6_param_problem_msg.html#a85cb143946b109a140b7f7a731872885">setCode</a>(code);
     <span class="comment">//TODO: What Pointer? section 3.4</span>
@@ -210,11 +235,9 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_c_m_pv6_8cc_source.html#l00221">221</a> of file <a class="el" href="_i_c_m_pv6_8cc_source.html">ICMPv6.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_c_m_pv6_8cc_source.html#l00130">sendErrorMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5">sendErrorMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_i_c_m_pv6_time_exceeded_msg.html">ICMPv6TimeExceededMsg</a> *errorMsg = <span class="keyword">new</span> <a class="code" href="class_i_c_m_pv6_time_exceeded_msg.html">ICMPv6TimeExceededMsg</a>(<span class="stringliteral">&quot;Time Exceeded&quot;</span>);
+    <a class="code" href="class_i_c_m_pv6_time_exceeded_msg.html" title="Class generated from networklayer/icmpv6/ICMPv6Message.msg by opp_msgc.">ICMPv6TimeExceededMsg</a> *errorMsg = <span class="keyword">new</span> <a class="code" href="class_i_c_m_pv6_time_exceeded_msg.html" title="Class generated from networklayer/icmpv6/ICMPv6Message.msg by opp_msgc.">ICMPv6TimeExceededMsg</a>(<span class="stringliteral">&quot;Time Exceeded&quot;</span>);
     errorMsg-&gt;<a class="code" href="class_i_c_m_pv6_message.html#a567e6b86fb028d4f6c0cf97118b36a08">setType</a>(<a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8aad2a907b4913018dba811497389c011d">ICMPv6_TIME_EXCEEDED</a>);
     errorMsg-&gt;<a class="code" href="class_i_c_m_pv6_time_exceeded_msg.html#a25c737092e803b7a705cd90a35997c0b">setCode</a>(code);
     <span class="keywordflow">return</span> errorMsg;
@@ -227,7 +250,7 @@ Protected Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_c_m_pv6.html#a60e3588d7c19bd70c59662668222df1e">ICMPv6::errorOut</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_c_m_pv6.html#a60e3588d7c19bd70c59662668222df1e">ICMPv6::errorOut</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *&#160;</td>
           <td class="paramname"><em>icmpv6msg</em></td><td>)</td>
@@ -237,9 +260,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_c_m_pv6_8cc_source.html#l00262">262</a> of file <a class="el" href="_i_c_m_pv6_8cc_source.html">ICMPv6.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_c_m_pv6_8cc_source.html#l00050">processICMPv6Message()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_c_m_pv6.html#a88b45124390f09cc6848c432a80c1d68">processICMPv6Message()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     send(icmpv6msg, <span class="stringliteral">&quot;errorOut&quot;</span>);
 }
@@ -251,7 +272,7 @@ Protected Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_c_m_pv6.html#a8b602fc0e5ab4e5f831dd61278b54ec8">ICMPv6::handleMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_c_m_pv6.html#a8b602fc0e5ab4e5f831dd61278b54ec8">ICMPv6::handleMessage</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -260,9 +281,9 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Processing of messages that arrive in this module. Messages arrived here could be for <a class="el" href="class_i_c_m_p.html">ICMP</a> ping requests or <a class="el" href="class_i_c_m_pv6.html">ICMPv6</a> messages that require processing. </p>
 
-<p>Definition at line <a class="el" href="_i_c_m_pv6_8cc_source.html#l00030">30</a> of file <a class="el" href="_i_c_m_pv6_8cc_source.html">ICMPv6.cc</a>.</p>
+<p>Processing of messages that arrive in this module. </p>
+<p>Messages arrived here could be for <a class="el" href="class_i_c_m_p.html" title="ICMP module.">ICMP</a> ping requests or <a class="el" href="class_i_c_m_pv6.html" title="ICMPv6 implementation.">ICMPv6</a> messages that require processing. </p>
 <div class="fragment"><pre class="fragment">{
     ASSERT(!msg-&gt;isSelfMessage()); <span class="comment">// no timers in ICMPv6</span>
 
@@ -277,7 +298,7 @@ Protected Member Functions</h2></td></tr>
     <span class="comment">// request from application</span>
     <span class="keywordflow">if</span> (msg-&gt;getArrivalGate()-&gt;isName(<span class="stringliteral">&quot;pingIn&quot;</span>))
     {
-        <a class="code" href="class_i_c_m_pv6.html#adcb65923a2eef477479d4c1d5b576d04">sendEchoRequest</a>(<a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(msg));
+        <a class="code" href="class_i_c_m_pv6.html#a391b37ab8e348a199b48196cbdfcad87" title="Ping a machine.">sendEchoRequest</a>(check_and_cast&lt;PingPayload *&gt;(msg));
         <span class="keywordflow">return</span>;
     }
 }
@@ -289,7 +310,7 @@ Protected Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_c_m_pv6.html#a0579529d7a1566e71057a34244a0c3df">ICMPv6::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_c_m_pv6.html#a0579529d7a1566e71057a34244a0c3df">ICMPv6::initialize</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -297,9 +318,8 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialization </p>
 
-<p>Definition at line <a class="el" href="_i_c_m_pv6_8cc_source.html#l00026">26</a> of file <a class="el" href="_i_c_m_pv6_8cc_source.html">ICMPv6.cc</a>.</p>
+<p>Initialization. </p>
 <div class="fragment"><pre class="fragment">{
 }
 </pre></div>
@@ -310,7 +330,7 @@ Protected Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_c_m_pv6.html#a1501d708133de74f3ac748877b0c3cf6">ICMPv6::processEchoReply</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_c_m_pv6.html#a1501d708133de74f3ac748877b0c3cf6">ICMPv6::processEchoReply</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_c_m_pv6_echo_reply_msg.html">ICMPv6EchoReplyMsg</a> *&#160;</td>
           <td class="paramname"><em>reply</em></td><td>)</td>
@@ -319,17 +339,24 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Forward the ping reply to the "pingOut" of this module. </p>
 
-<p>Definition at line <a class="el" href="_i_c_m_pv6_8cc_source.html#l00110">110</a> of file <a class="el" href="_i_c_m_pv6_8cc_source.html">ICMPv6.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_c_m_pv6_8cc_source.html#l00050">processICMPv6Message()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_c_m_pv6.html#a88b45124390f09cc6848c432a80c1d68">processICMPv6Message()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *ctrl = check_and_cast&lt;<a class="code" href="class_i_pv6_control_info.html">IPv6ControlInfo</a>*&gt;(reply-&gt;removeControlInfo());
-    cPacket *payload = reply-&gt;decapsulate();
+    <a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a> *ctrl = check_and_cast&lt;<a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a>*&gt;(reply-&gt;removeControlInfo());
+    <a class="code" href="class_ping_payload.html" title="Class generated from applications/pingapp/PingPayload.msg by opp_msgc.">PingPayload</a> *payload = check_and_cast&lt;<a class="code" href="class_ping_payload.html" title="Class generated from applications/pingapp/PingPayload.msg by opp_msgc.">PingPayload</a> *&gt;(reply-&gt;decapsulate());
     payload-&gt;setControlInfo(ctrl);
     <span class="keyword">delete</span> reply;
-    send(payload, <span class="stringliteral">&quot;pingOut&quot;</span>);
+    <span class="keywordtype">long</span> originatorId = payload-&gt;getOriginatorId();
+    PingMap::iterator i = <a class="code" href="class_i_c_m_pv6.html#a766cc6a2e201b83acfb33073291f06c5">pingMap</a>.find(originatorId);
+    <span class="keywordflow">if</span> (i != <a class="code" href="class_i_c_m_pv6.html#a766cc6a2e201b83acfb33073291f06c5">pingMap</a>.end())
+        send(payload, <span class="stringliteral">&quot;pingOut&quot;</span>, i-&gt;second);
+    <span class="keywordflow">else</span>
+    {
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Received ECHO REPLY has an unknown originator ID: &quot;</span> &lt;&lt; originatorId &lt;&lt; <span class="stringliteral">&quot;, packet dropped.&quot;</span> &lt;&lt; endl;
+        <span class="keyword">delete</span> payload;
+    }
 }
 </pre></div>
 </div>
@@ -339,7 +366,7 @@ Protected Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_c_m_pv6.html#af42e4f033f33ef7dcf95f694e0941297">ICMPv6::processEchoRequest</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_c_m_pv6.html#af42e4f033f33ef7dcf95f694e0941297">ICMPv6::processEchoRequest</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_c_m_pv6_echo_request_msg.html">ICMPv6EchoRequestMsg</a> *&#160;</td>
           <td class="paramname"><em>request</em></td><td>)</td>
@@ -348,27 +375,35 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Respond to the machine that tried to ping us. </p>
 
-<p>Definition at line <a class="el" href="_i_c_m_pv6_8cc_source.html#l00087">87</a> of file <a class="el" href="_i_c_m_pv6_8cc_source.html">ICMPv6.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_c_m_pv6_8cc_source.html#l00050">processICMPv6Message()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_c_m_pv6.html#a88b45124390f09cc6848c432a80c1d68">processICMPv6Message()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">//Create an ICMPv6 Reply Message</span>
-    <a class="code" href="class_i_c_m_pv6_echo_reply_msg.html">ICMPv6EchoReplyMsg</a> *reply = <span class="keyword">new</span> <a class="code" href="class_i_c_m_pv6_echo_reply_msg.html">ICMPv6EchoReplyMsg</a>(<span class="stringliteral">&quot;Echo Reply&quot;</span>);
+    <a class="code" href="class_i_c_m_pv6_echo_reply_msg.html" title="Class generated from networklayer/icmpv6/ICMPv6Message.msg by opp_msgc.">ICMPv6EchoReplyMsg</a> *reply = <span class="keyword">new</span> <a class="code" href="class_i_c_m_pv6_echo_reply_msg.html" title="Class generated from networklayer/icmpv6/ICMPv6Message.msg by opp_msgc.">ICMPv6EchoReplyMsg</a>(<span class="stringliteral">&quot;Echo Reply&quot;</span>);
     reply-&gt;setName((std::string(request-&gt;getName())+<span class="stringliteral">&quot;-reply&quot;</span>).c_str());
     reply-&gt;<a class="code" href="class_i_c_m_pv6_message.html#a567e6b86fb028d4f6c0cf97118b36a08">setType</a>(<a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8a501210ae1007b9de971da8ef2b9c0712">ICMPv6_ECHO_REPLY</a>);
     reply-&gt;encapsulate(request-&gt;decapsulate());
 
-    <span class="comment">// TBD check what to do if dest was multicast etc?</span>
-    <a class="code" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *ctrl
-        = check_and_cast&lt;<a class="code" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *&gt;(request-&gt;getControlInfo());
-    <a class="code" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *replyCtrl = <span class="keyword">new</span> <a class="code" href="class_i_pv6_control_info.html">IPv6ControlInfo</a>();
+    <a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a> *ctrl
+ = check_and_cast&lt;<a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a> *&gt;(request-&gt;getControlInfo());
+    <a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a> *replyCtrl = <span class="keyword">new</span> <a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a>();
     replyCtrl-&gt;setProtocol(<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70a3f40fb193e9edf4e297fcd7952acb024">IP_PROT_IPv6_ICMP</a>);
-    <span class="comment">//set Msg&#39;s source addr as the dest addr of request msg.</span>
-    replyCtrl-&gt;setSrcAddr(ctrl-&gt;<a class="code" href="class_i_pv6_control_info___base.html#abd1d2c1cca62a40e351304d8584b4fd7">getDestAddr</a>());
-    <span class="comment">//set Msg&#39;s dest addr as the source addr of request msg.</span>
     replyCtrl-&gt;setDestAddr(ctrl-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a8980bdcd6051ae3fe071bf2c18a0215e">getSrcAddr</a>());
+
+    <span class="keywordflow">if</span> (ctrl-&gt;<a class="code" href="class_i_pv6_control_info___base.html#abd1d2c1cca62a40e351304d8584b4fd7">getDestAddr</a>().<a class="code" href="class_i_pv6_address.html#a3c3bb6898821e044b12cf31911c90201" title="Utility function based on getScope()">isMulticast</a>() <span class="comment">/*TODO check for anycast too*/</span>)
+    {
+        <a class="code" href="class_i_interface_table.html" title="A C++ interface to abstract the functionality of InterfaceTable.">IInterfaceTable</a> *it = <a class="code" href="class_interface_table_access.html" title="Gives access to IInterfaceTable.">InterfaceTableAccess</a>().<a class="code" href="class_module_access.html#a46a82b1fa0e957eb42d29c8637df1f4f">get</a>();
+        <a class="code" href="class_i_pv6_interface_data.html" title="IPv6-specific data for InterfaceEntry.">IPv6InterfaceData</a> *ipv6Data = it-&gt;<a class="code" href="class_i_interface_table.html#a92764d620c345b7261de20e9ee5247d7" title="Returns an interface by its Id.">getInterfaceById</a>(ctrl-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a74046fa005d98f0c304eb39eb28a1ec3">getInterfaceId</a>())-&gt;ipv6Data();
+        replyCtrl-&gt;setSrcAddr(ipv6Data-&gt;<a class="code" href="class_i_pv6_interface_data.html#a56f3fe4007e3df66dc88edd008f059b9" title="Chooses a preferred address for the interface and returns it.">getPreferredAddress</a>());
+        <span class="comment">// TODO implement default address selection properly.</span>
+        <span class="comment">//      According to RFC 3484, the source address to be used</span>
+        <span class="comment">//      depends on the destination address</span>
+    }
+    <span class="keywordflow">else</span>
+        replyCtrl-&gt;setSrcAddr(ctrl-&gt;<a class="code" href="class_i_pv6_control_info___base.html#abd1d2c1cca62a40e351304d8584b4fd7">getDestAddr</a>());
+
     reply-&gt;setControlInfo(replyCtrl);
 
     <span class="keyword">delete</span> request;
@@ -382,7 +417,7 @@ Protected Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_c_m_pv6.html#a88b45124390f09cc6848c432a80c1d68">ICMPv6::processICMPv6Message</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_c_m_pv6.html#a88b45124390f09cc6848c432a80c1d68">ICMPv6::processICMPv6Message</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *&#160;</td>
           <td class="paramname"><em>icmpv6msg</em></td><td>)</td>
@@ -392,9 +427,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_c_m_pv6_8cc_source.html#l00050">50</a> of file <a class="el" href="_i_c_m_pv6_8cc_source.html">ICMPv6.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_c_m_pv6_8cc_source.html#l00030">handleMessage()</a>, and <a class="el" href="_i_c_m_pv6_8cc_source.html#l00130">sendErrorMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_c_m_pv6.html#a8b602fc0e5ab4e5f831dd61278b54ec8">handleMessage()</a>, and <a class="el" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5">sendErrorMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     ASSERT(dynamic_cast&lt;ICMPv6Message *&gt;(icmpv6msg));
     <span class="keywordflow">if</span> (dynamic_cast&lt;ICMPv6DestUnreachableMsg *&gt;(icmpv6msg))
@@ -420,12 +453,12 @@ Protected Member Functions</h2></td></tr>
     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dynamic_cast&lt;ICMPv6EchoRequestMsg *&gt;(icmpv6msg))
     {
         <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;ICMPv6 Echo Request Message Received.&quot;</span> &lt;&lt; endl;
-        <a class="code" href="class_i_c_m_pv6.html#af42e4f033f33ef7dcf95f694e0941297">processEchoRequest</a>((<a class="code" href="class_i_c_m_pv6_echo_request_msg.html">ICMPv6EchoRequestMsg</a> *)icmpv6msg);
+        <a class="code" href="class_i_c_m_pv6.html#af42e4f033f33ef7dcf95f694e0941297" title="Respond to the machine that tried to ping us.">processEchoRequest</a>((<a class="code" href="class_i_c_m_pv6_echo_request_msg.html" title="Class generated from networklayer/icmpv6/ICMPv6Message.msg by opp_msgc.">ICMPv6EchoRequestMsg</a> *)icmpv6msg);
     }
     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dynamic_cast&lt;ICMPv6EchoReplyMsg *&gt;(icmpv6msg))
     {
         <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;ICMPv6 Echo Reply Message Received.&quot;</span> &lt;&lt; endl;
-        <a class="code" href="class_i_c_m_pv6.html#a1501d708133de74f3ac748877b0c3cf6">processEchoReply</a>((<a class="code" href="class_i_c_m_pv6_echo_reply_msg.html">ICMPv6EchoReplyMsg</a> *)icmpv6msg);
+        <a class="code" href="class_i_c_m_pv6.html#a1501d708133de74f3ac748877b0c3cf6" title="Forward the ping reply to the &quot;pingOut&quot; of this module.">processEchoReply</a>((<a class="code" href="class_i_c_m_pv6_echo_reply_msg.html" title="Class generated from networklayer/icmpv6/ICMPv6Message.msg by opp_msgc.">ICMPv6EchoReplyMsg</a> *)icmpv6msg);
     }
     <span class="keywordflow">else</span>
         error(<span class="stringliteral">&quot;Unknown message type received.\n&quot;</span>);
@@ -433,29 +466,33 @@ Protected Member Functions</h2></td></tr>
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="adcb65923a2eef477479d4c1d5b576d04"></a><!-- doxytag: member="ICMPv6::sendEchoRequest" ref="adcb65923a2eef477479d4c1d5b576d04" args="(cPacket *)" -->
+<a class="anchor" id="a391b37ab8e348a199b48196cbdfcad87"></a><!-- doxytag: member="ICMPv6::sendEchoRequest" ref="a391b37ab8e348a199b48196cbdfcad87" args="(PingPayload *)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_c_m_pv6.html#adcb65923a2eef477479d4c1d5b576d04">ICMPv6::sendEchoRequest</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_c_m_pv6.html#a391b37ab8e348a199b48196cbdfcad87">ICMPv6::sendEchoRequest</a> </td>
           <td>(</td>
-          <td class="paramtype">cPacket *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_ping_payload.html">PingPayload</a> *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Ping a machine. The information needed to do this is in the cMessage parameter. TODO where in cMessage? document!!! </p>
 
-<p>Definition at line <a class="el" href="_i_c_m_pv6_8cc_source.html#l00119">119</a> of file <a class="el" href="_i_c_m_pv6_8cc_source.html">ICMPv6.cc</a>.</p>
+<p>Ping a machine. </p>
+<p>The information needed to do this is in the cMessage parameter. TODO where in cMessage? document!!! </p>
 
-<p>Referenced by <a class="el" href="_i_c_m_pv6_8cc_source.html#l00030">handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_c_m_pv6.html#a8b602fc0e5ab4e5f831dd61278b54ec8">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *ctrl = check_and_cast&lt;<a class="code" href="class_i_pv6_control_info.html">IPv6ControlInfo</a>*&gt;(msg-&gt;removeControlInfo());
+    cGate *arrivalGate = msg-&gt;getArrivalGate();
+    <span class="keywordtype">int</span> i = arrivalGate-&gt;getIndex();
+    <a class="code" href="class_i_c_m_pv6.html#a766cc6a2e201b83acfb33073291f06c5">pingMap</a>[msg-&gt;<a class="code" href="class_ping_payload.html#abe1bc827f2853b31074b3f2e572eb47a">getOriginatorId</a>()] = i;
+
+    <a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a> *ctrl = check_and_cast&lt;<a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a>*&gt;(msg-&gt;removeControlInfo());
     ctrl-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a95b27ccb8d018e7387cdbcd512791e30">setProtocol</a>(<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70a3f40fb193e9edf4e297fcd7952acb024">IP_PROT_IPv6_ICMP</a>);
-    <a class="code" href="class_i_c_m_pv6_echo_request_msg.html">ICMPv6EchoRequestMsg</a> *request = <span class="keyword">new</span> <a class="code" href="class_i_c_m_pv6_echo_request_msg.html">ICMPv6EchoRequestMsg</a>(msg-&gt;getName());
+    <a class="code" href="class_i_c_m_pv6_echo_request_msg.html" title="Class generated from networklayer/icmpv6/ICMPv6Message.msg by opp_msgc.">ICMPv6EchoRequestMsg</a> *request = <span class="keyword">new</span> <a class="code" href="class_i_c_m_pv6_echo_request_msg.html" title="Class generated from networklayer/icmpv6/ICMPv6Message.msg by opp_msgc.">ICMPv6EchoRequestMsg</a>(msg-&gt;getName());
     request-&gt;<a class="code" href="class_i_c_m_pv6_message.html#a567e6b86fb028d4f6c0cf97118b36a08">setType</a>(<a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8a741607e7d95c4075a063b6c94da961b2">ICMPv6_ECHO_REQUEST</a>);
     request-&gt;encapsulate(msg);
     request-&gt;setControlInfo(ctrl);
@@ -469,7 +506,7 @@ Protected Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5">ICMPv6::sendErrorMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5">ICMPv6::sendErrorMessage</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *&#160;</td>
           <td class="paramname"><em>datagram</em>, </td>
@@ -494,7 +531,9 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This method can be called from other modules to send an <a class="el" href="class_i_c_m_pv6.html">ICMPv6</a> error packet. RFC 2463, Section 3: <a class="el" href="class_i_c_m_pv6.html">ICMPv6</a> Error Messages There are a total of 4 <a class="el" href="class_i_c_m_pv6.html">ICMPv6</a> error messages as described in the RFC. This method will construct and send error messages corresponding to the given type. Error Types:</p>
+
+<p>This method can be called from other modules to send an <a class="el" href="class_i_c_m_pv6.html" title="ICMPv6 implementation.">ICMPv6</a> error packet. </p>
+<p>RFC 2463, Section 3: <a class="el" href="class_i_c_m_pv6.html" title="ICMPv6 implementation.">ICMPv6</a> Error Messages There are a total of 4 <a class="el" href="class_i_c_m_pv6.html" title="ICMPv6 implementation.">ICMPv6</a> error messages as described in the RFC. This method will construct and send error messages corresponding to the given type. Error Types:</p>
 <ul>
 <li>Destination Unreachable Message - 1</li>
 <li>Packet Too Big Message - 2</li>
@@ -502,44 +541,47 @@ Protected Member Functions</h2></td></tr>
 <li>Parameter Problem Message - 4 Code Types have different semantics for each error type. See RFC 2463. </li>
 </ul>
 
-<p>Definition at line <a class="el" href="_i_c_m_pv6_8cc_source.html#l00130">130</a> of file <a class="el" href="_i_c_m_pv6_8cc_source.html">ICMPv6.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00670">IPv6NeighbourDiscovery::dropQueuedPacketsAwaitingAR()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00185">IPv6NeighbourDiscovery::processIPv6Datagram()</a>, <a class="el" href="_u_d_p_8cc_source.html#l00299">UDP::processUndeliverablePacket()</a>, <a class="el" href="_ansa_u_d_p_8cc_source.html#l00300">AnsaUDP::processUndeliverablePacket()</a>, <a class="el" href="_i_pv6_frag_buf_8cc_source.html#l00104">IPv6FragBuf::purgeStaleFragments()</a>, and <a class="el" href="_i_c_m_pv6_8cc_source.html#l00178">sendErrorMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_frag_buf.html#a41bf08bb1a8c81ea15a456b484a0cce5">IPv6FragBuf::addFragment()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#a888724269369dc1aa87aa73586216b8c">IPv6NeighbourDiscovery::dropQueuedPacketsAwaitingAR()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#ade69131623bc5b13205ced3ff54a16d3">IPv6NeighbourDiscovery::processIPv6Datagram()</a>, <a class="el" href="class_u_d_p.html#ac47e00e6d7d0daddef466c4574134eb8">UDP::processUndeliverablePacket()</a>, <a class="el" href="class_i_pv6_frag_buf.html#a49592f256181720463304a701cc6010f">IPv6FragBuf::purgeStaleFragments()</a>, and <a class="el" href="class_i_c_m_pv6.html#ac5c4d78f63c567376be9cb67c0773d18">sendErrorMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    Enter_Method(<span class="stringliteral">&quot;sendErrorMessage(datagram, type=%d, code=%d)&quot;</span>, type, code);
+    Enter_Method(<span class="stringliteral">&quot;sendErrorMessage(datagram, type=%d, code=%d)&quot;</span>, <a class="code" href="dsr_8h.html#a8113b111c9adcbe8245570953727d60a">type</a>, code);
 
     <span class="comment">// get ownership</span>
     take(origDatagram);
 
-    <span class="keywordflow">if</span> (!<a class="code" href="class_i_c_m_pv6.html#ac9119ae006608365bdb41a050c130f72">validateDatagramPromptingError</a>(origDatagram))
+    <span class="keywordflow">if</span> (!<a class="code" href="class_i_c_m_pv6.html#ac9119ae006608365bdb41a050c130f72" title="Validate the received IPv6 datagram before responding with error message.">validateDatagramPromptingError</a>(origDatagram))
         <span class="keywordflow">return</span>;
 
-    <a class="code" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *errorMsg;
+    <a class="code" href="class_i_c_m_pv6_message.html" title="Class generated from networklayer/icmpv6/ICMPv6Message.msg by opp_msgc.">ICMPv6Message</a> *errorMsg;
 
-    <span class="keywordflow">if</span> (type == <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8a41a9a5f4838bc4483b77b0fdcd13f72b">ICMPv6_DESTINATION_UNREACHABLE</a>) errorMsg = <a class="code" href="class_i_c_m_pv6.html#a9755b5748d4d41b2727724ca21fab5bd">createDestUnreachableMsg</a>(code);
+    <span class="keywordflow">if</span> (<a class="code" href="dsr_8h.html#a8113b111c9adcbe8245570953727d60a">type</a> == <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8a41a9a5f4838bc4483b77b0fdcd13f72b">ICMPv6_DESTINATION_UNREACHABLE</a>) errorMsg = <a class="code" href="class_i_c_m_pv6.html#a9755b5748d4d41b2727724ca21fab5bd">createDestUnreachableMsg</a>(code);
     <span class="comment">//TODO: implement MTU support.</span>
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8a9fd6c04d078837b701add65951544230">ICMPv6_PACKET_TOO_BIG</a>) errorMsg = <a class="code" href="class_i_c_m_pv6.html#ade2a86dec093e6d95fb0a27336137daa">createPacketTooBigMsg</a>(0);
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8aad2a907b4913018dba811497389c011d">ICMPv6_TIME_EXCEEDED</a>) errorMsg = <a class="code" href="class_i_c_m_pv6.html#a70790d6086a1887b9b9cf8e765e668ff">createTimeExceededMsg</a>(code);
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (type == <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8a4f3281972041ca8e0c57bc4378b174a0">ICMPv6_PARAMETER_PROBLEM</a>) errorMsg = <a class="code" href="class_i_c_m_pv6.html#a1e04d68ace9f2a8a4a9f598ed9628b62">createParamProblemMsg</a>(code);
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="dsr_8h.html#a8113b111c9adcbe8245570953727d60a">type</a> == <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8a9fd6c04d078837b701add65951544230">ICMPv6_PACKET_TOO_BIG</a>) errorMsg = <a class="code" href="class_i_c_m_pv6.html#ade2a86dec093e6d95fb0a27336137daa">createPacketTooBigMsg</a>(0);
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="dsr_8h.html#a8113b111c9adcbe8245570953727d60a">type</a> == <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8aad2a907b4913018dba811497389c011d">ICMPv6_TIME_EXCEEDED</a>) errorMsg = <a class="code" href="class_i_c_m_pv6.html#a70790d6086a1887b9b9cf8e765e668ff">createTimeExceededMsg</a>(code);
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="dsr_8h.html#a8113b111c9adcbe8245570953727d60a">type</a> == <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8a4f3281972041ca8e0c57bc4378b174a0">ICMPv6_PARAMETER_PROBLEM</a>) errorMsg = <a class="code" href="class_i_c_m_pv6.html#a1e04d68ace9f2a8a4a9f598ed9628b62">createParamProblemMsg</a>(code);
     <span class="keywordflow">else</span> error(<span class="stringliteral">&quot;Unknown ICMPv6 error type\n&quot;</span>);
 
+    <span class="comment">// Encapsulate the original datagram, but the whole ICMPv6 error</span>
+    <span class="comment">// packet cannot be larger than the minimum IPv6 MTU (RFC 4443 2.4. (c)).</span>
+    <span class="comment">// NOTE: since we just overwrite the errorMsg length without actually</span>
+    <span class="comment">// truncating origDatagram, one can get &quot;packet length became negative&quot;</span>
+    <span class="comment">// error when decapsulating the origDatagram on the receiver side.</span>
+    <span class="comment">// A workaround is to avoid decapsulation, or to manually set the</span>
+    <span class="comment">// errorMessage length to be larger than the encapsulated message.</span>
     errorMsg-&gt;encapsulate(origDatagram);
+    <span class="keywordflow">if</span> (errorMsg-&gt;getByteLength() + <a class="code" href="_i_pv6_datagram__m_8h.html#a8a09101d202f638c784b6d4eec10b0fc">IPv6_HEADER_BYTES</a> &gt; <a class="code" href="_i_pv6_interface_data_8h.html#a14ff38894757dc97b9c64ca9c089c006">IPv6_MIN_MTU</a>)
+        errorMsg-&gt;setByteLength(<a class="code" href="_i_pv6_interface_data_8h.html#a14ff38894757dc97b9c64ca9c089c006">IPv6_MIN_MTU</a> - <a class="code" href="_i_pv6_datagram__m_8h.html#a8a09101d202f638c784b6d4eec10b0fc">IPv6_HEADER_BYTES</a>);
 
     <span class="comment">// debugging information</span>
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;sending ICMP error: (&quot;</span> &lt;&lt; errorMsg-&gt;getClassName() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; errorMsg-&gt;getName()
-       &lt;&lt; <span class="stringliteral">&quot; type=&quot;</span> &lt;&lt; type &lt;&lt; <span class="stringliteral">&quot; code=&quot;</span> &lt;&lt; code &lt;&lt; endl;
-
-    <span class="comment">// ICMP message length: the internet header plus the first 8 bytes of</span>
-    <span class="comment">// the original datagram&#39;s data is returned to the sender</span>
-    <span class="comment">//errorMessage-&gt;setByteLength(4 + origDatagram-&gt;getHeaderLength() + 8); FIXME What is this for?</span>
+       &lt;&lt; <span class="stringliteral">&quot; type=&quot;</span> &lt;&lt; <a class="code" href="dsr_8h.html#a8113b111c9adcbe8245570953727d60a">type</a> &lt;&lt; <span class="stringliteral">&quot; code=&quot;</span> &lt;&lt; code &lt;&lt; endl;
 
     <span class="comment">// if srcAddr is not filled in, we&#39;re still in the src node, so we just</span>
     <span class="comment">// process the ICMP message locally, right away</span>
     <span class="keywordflow">if</span> (origDatagram-&gt;getSrcAddress().isUnspecified())
     {
         <span class="comment">// pretend it came from the IP layer</span>
-        <a class="code" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *ctrlInfo = <span class="keyword">new</span> <a class="code" href="class_i_pv6_control_info.html">IPv6ControlInfo</a>();
-        ctrlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a319cf2aaec7229cc010ae83ab6e18604">setSrcAddr</a>(<a class="code" href="class_i_pv6_address.html#a0ca201480138fbe7578ff598baade998">IPv6Address::LOOPBACK_ADDRESS</a>); <span class="comment">// FIXME maybe use configured loopback address</span>
+        <a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a> *ctrlInfo = <span class="keyword">new</span> <a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a>();
+        ctrlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a319cf2aaec7229cc010ae83ab6e18604">setSrcAddr</a>(<a class="code" href="class_i_pv6_address.html#a0ca201480138fbe7578ff598baade998" title="The loopback address.">IPv6Address::LOOPBACK_ADDRESS</a>); <span class="comment">// FIXME maybe use configured loopback address</span>
         ctrlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a95b27ccb8d018e7387cdbcd512791e30">setProtocol</a>(<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70ae193d750e5a16d9ab14225311325dd59">IP_PROT_ICMP</a>);
         errorMsg-&gt;setControlInfo(ctrlInfo);
 
@@ -559,7 +601,7 @@ Protected Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5">ICMPv6::sendErrorMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5">ICMPv6::sendErrorMessage</a> </td>
           <td>(</td>
           <td class="paramtype">cPacket *&#160;</td>
           <td class="paramname"><em>transportPacket</em>, </td>
@@ -590,15 +632,17 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This method can be called from other modules to send an <a class="el" href="class_i_c_m_p.html">ICMP</a> error packet in response to a received bogus packet from the transport layer (like <a class="el" href="class_u_d_p.html">UDP</a>). The <a class="el" href="class_i_c_m_p.html">ICMP</a> error packet needs to include (part of) the original <a class="el" href="class_i_p.html">IP</a> datagram, so this function will wrap back the transport packet into the <a class="el" href="class_i_p.html">IP</a> datagram based on its <a class="el" href="class_i_p_control_info.html">IPControlInfo</a>. </p>
 
-<p>Definition at line <a class="el" href="_i_c_m_pv6_8cc_source.html#l00178">178</a> of file <a class="el" href="_i_c_m_pv6_8cc_source.html">ICMPv6.cc</a>.</p>
+<p>This method can be called from other modules to send an <a class="el" href="class_i_c_m_p.html" title="ICMP module.">ICMP</a> error packet in response to a received bogus packet from the transport layer (like <a class="el" href="class_u_d_p.html" title="Implements the UDP protocol: encapsulates/decapsulates user data into/from UDP.">UDP</a>). </p>
+<p>The <a class="el" href="class_i_c_m_p.html" title="ICMP module.">ICMP</a> error packet needs to include (part of) the original IP datagram, so this function will wrap back the transport packet into the IP datagram based on its <a class="el" href="class_i_pv4_control_info.html" title="Control information for sending/receiving packets over IPv4.">IPv4ControlInfo</a>. </p>
 <div class="fragment"><pre class="fragment">{
-    Enter_Method(<span class="stringliteral">&quot;sendErrorMessage(transportPacket, ctrl, type=%d, code=%d)&quot;</span>, type, code);
+    Enter_Method(<span class="stringliteral">&quot;sendErrorMessage(transportPacket, ctrl, type=%d, code=%d)&quot;</span>, <a class="code" href="dsr_8h.html#a8113b111c9adcbe8245570953727d60a">type</a>, code);
 
-    <a class="code" href="class_i_pv6_datagram.html">IPv6Datagram</a> *datagram = ctrl-&gt;<a class="code" href="class_i_pv6_control_info.html#acd5e1deff05d96a52a3f7369270eb019">removeOrigDatagram</a>();
+    <a class="code" href="class_i_pv6_datagram.html" title="Represents an IPv6 datagram.">IPv6Datagram</a> *datagram = ctrl-&gt;<a class="code" href="class_i_pv6_control_info.html#acd5e1deff05d96a52a3f7369270eb019">removeOrigDatagram</a>();
+    take(transportPacket);
+    take(datagram);
     datagram-&gt;encapsulate(transportPacket);
-    <a class="code" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5">sendErrorMessage</a>(datagram, type, code);
+    <a class="code" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5" title="This method can be called from other modules to send an ICMPv6 error packet.">sendErrorMessage</a>(datagram, <a class="code" href="dsr_8h.html#a8113b111c9adcbe8245570953727d60a">type</a>, code);
 }
 </pre></div>
 </div>
@@ -608,7 +652,7 @@ Protected Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_c_m_pv6.html#a4d11555b42c4b2fc028b6482dd93b6bc">ICMPv6::sendToIP</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_c_m_pv6.html#a4d11555b42c4b2fc028b6482dd93b6bc">ICMPv6::sendToIP</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *&#160;</td>
           <td class="paramname"><em>msg</em>, </td>
@@ -628,17 +672,15 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_c_m_pv6_8cc_source.html#l00187">187</a> of file <a class="el" href="_i_c_m_pv6_8cc_source.html">ICMPv6.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_c_m_pv6_8cc_source.html#l00087">processEchoRequest()</a>, <a class="el" href="_i_c_m_pv6_8cc_source.html#l00119">sendEchoRequest()</a>, and <a class="el" href="_i_c_m_pv6_8cc_source.html#l00130">sendErrorMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_c_m_pv6.html#af42e4f033f33ef7dcf95f694e0941297">processEchoRequest()</a>, <a class="el" href="class_i_c_m_pv6.html#a391b37ab8e348a199b48196cbdfcad87">sendEchoRequest()</a>, and <a class="el" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5">sendErrorMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
 
-    <a class="code" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *ctrlInfo = <span class="keyword">new</span> <a class="code" href="class_i_pv6_control_info.html">IPv6ControlInfo</a>();
+    <a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a> *ctrlInfo = <span class="keyword">new</span> <a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a>();
     ctrlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a061a09229c1cb5c450e90fda062d278f">setDestAddr</a>(dest);
     ctrlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a95b27ccb8d018e7387cdbcd512791e30">setProtocol</a>(<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70a3f40fb193e9edf4e297fcd7952acb024">IP_PROT_IPv6_ICMP</a>);
     msg-&gt;setControlInfo(ctrlInfo);
 
-    send(msg,<span class="stringliteral">&quot;ipv6Out&quot;</span>);
+    send(msg, <span class="stringliteral">&quot;ipv6Out&quot;</span>);
 }
 </pre></div>
 </div>
@@ -648,7 +690,7 @@ Protected Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_c_m_pv6.html#a4d11555b42c4b2fc028b6482dd93b6bc">ICMPv6::sendToIP</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_c_m_pv6.html#a4d11555b42c4b2fc028b6482dd93b6bc">ICMPv6::sendToIP</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -657,11 +699,9 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_c_m_pv6_8cc_source.html#l00198">198</a> of file <a class="el" href="_i_c_m_pv6_8cc_source.html">ICMPv6.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="comment">// assumes IPControlInfo is already attached</span>
-    send(msg,<span class="stringliteral">&quot;ipv6Out&quot;</span>);
+    <span class="comment">// assumes IPv4ControlInfo is already attached</span>
+    send(msg, <span class="stringliteral">&quot;ipv6Out&quot;</span>);
 }
 </pre></div>
 </div>
@@ -680,11 +720,10 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Validate the received <a class="el" href="class_i_pv6.html">IPv6</a> datagram before responding with error message. </p>
 
-<p>Definition at line <a class="el" href="_i_c_m_pv6_8cc_source.html#l00238">238</a> of file <a class="el" href="_i_c_m_pv6_8cc_source.html">ICMPv6.cc</a>.</p>
+<p>Validate the received <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> datagram before responding with error message. </p>
 
-<p>Referenced by <a class="el" href="_i_c_m_pv6_8cc_source.html#l00130">sendErrorMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5">sendErrorMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// don&#39;t send ICMP error messages for multicast messages</span>
     <span class="keywordflow">if</span> (origDatagram-&gt;getDestAddress().isMulticast())
@@ -697,7 +736,7 @@ Protected Member Functions</h2></td></tr>
     <span class="comment">// do not reply with error message to error message</span>
     <span class="keywordflow">if</span> (origDatagram-&gt;getTransportProtocol() == <a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70a3f40fb193e9edf4e297fcd7952acb024">IP_PROT_IPv6_ICMP</a>)
     {
-        <a class="code" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *recICMPMsg = check_and_cast&lt;<a class="code" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *&gt;(origDatagram-&gt;getEncapsulatedPacket());
+        <a class="code" href="class_i_c_m_pv6_message.html" title="Class generated from networklayer/icmpv6/ICMPv6Message.msg by opp_msgc.">ICMPv6Message</a> *recICMPMsg = check_and_cast&lt;<a class="code" href="class_i_c_m_pv6_message.html" title="Class generated from networklayer/icmpv6/ICMPv6Message.msg by opp_msgc.">ICMPv6Message</a> *&gt;(origDatagram-&gt;getEncapsulatedPacket());
         <span class="keywordflow">if</span> (recICMPMsg-&gt;<a class="code" href="class_i_c_m_pv6_message.html#a92fc7e6a2fd2f99b271a9029f1ec490a">getType</a>()&lt;128)
         {
             <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;ICMP error received -- do not reply to it&quot;</span> &lt;&lt; endl;
@@ -710,9 +749,25 @@ Protected Member Functions</h2></td></tr>
 </pre></div>
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a766cc6a2e201b83acfb33073291f06c5"></a><!-- doxytag: member="ICMPv6::pingMap" ref="a766cc6a2e201b83acfb33073291f06c5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_c_m_pv6.html#af5f3317f77c473640c90e29c9e52f24a">PingMap</a> <a class="el" href="class_i_c_m_pv6.html#a766cc6a2e201b83acfb33073291f06c5">ICMPv6::pingMap</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_i_c_m_pv6.html#a1501d708133de74f3ac748877b0c3cf6">processEchoReply()</a>, and <a class="el" href="class_i_c_m_pv6.html#a391b37ab8e348a199b48196cbdfcad87">sendEchoRequest()</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_i_c_m_pv6_8h_source.html">ICMPv6.h</a></li>
-<li><a class="el" href="_i_c_m_pv6_8cc_source.html">ICMPv6.cc</a></li>
+<li><a class="el" href="_i_c_m_pv6_8h.html">ICMPv6.h</a></li>
+<li><a class="el" href="_i_c_m_pv6_8cc.html">ICMPv6.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -720,7 +775,7 @@ Protected Member Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_i_c_m_pv6.html">ICMPv6</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:47 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:24 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

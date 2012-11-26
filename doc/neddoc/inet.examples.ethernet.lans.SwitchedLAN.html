@@ -7,6 +7,26 @@
 <h2 class="comptitle">Network <i>SwitchedLAN</i></h2>
 <b>Package:</b> inet.examples.ethernet.lans<br/><b>File: <a href="examples-ethernet-lans-Networks.ned.html">examples/ethernet/lans/Networks.ned</a></b><br/>
 <p>Sample Ethernet LAN: four hosts connected to a switch.</p>
+<img src="inet.examples.ethernet.lans.SwitchedLAN-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.nodes.ethernet.EtherHost.html" title="EtherHost" alt="EtherHost" coords="143,93,187,152">
+<area shape="rect" href="inet.nodes.ethernet.EtherHost.html" title="EtherHost" alt="EtherHost" coords="235,163,279,222">
+<area shape="rect" href="inet.nodes.ethernet.EtherHost.html" title="EtherHost" alt="EtherHost" coords="140,237,184,296">
+<area shape="rect" href="inet.nodes.ethernet.EtherHost.html" title="EtherHost" alt="EtherHost" coords="41,165,85,224">
+<area shape="rect" href="inet.nodes.ethernet.EtherSwitch.html" title="EtherSwitch" alt="EtherSwitch" coords="144,169,188,215">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.examples.ethernet.lans.SwitchedLAN-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.examples.ethernet.lans.SwitchedLAN.html" title="Network SwitchedLAN" alt="" coords="105,6,207,34">
+<area shape="rect" id="node2" href="inet.nodes.ethernet.EtherHost.html" title="Compound Module EtherHost" alt="" coords="5,83,85,111">
+<area shape="rect" id="node4" href="inet.nodes.ethernet.EtherSwitch.html" title="Compound Module EtherSwitch" alt="" coords="109,83,203,111">
+<area shape="rect" id="node6" href="inet.examples.ethernet.lans.SwitchedLAN.C.html" title="Channel C" alt="" coords="227,83,299,111">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.examples.ethernet.lans.SwitchedLAN-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.examples.ethernet.lans.SwitchedLAN.html" title="Network SwitchedLAN" alt="" coords="5,6,107,34">
+</map>
 <h3 class="subtitle">Properties:</h3>
 <table class="propertiestable">
    <tr>
@@ -43,13 +63,23 @@
    <td>
       <i>double</i>
    </td>
-   <td>this.waitTime</td>
+   <td>this.sendInterval</td>
    <td>
 <p>time of sending the first request</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostA</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.waitTime</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostA</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.stopTime</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0</td>
+   <td>
+<p>time of finish sending, 0 means forever</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostA</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.sendInterval</td>
    <td>
       <i>double</i>
    </td>
@@ -79,22 +109,30 @@
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostA</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostA</a>.<a href="inet.linklayer.ethernet.EtherQoSQueue.html">queue</a>.<a href="inet.linklayer.queue.DropTailQueue.html">pauseQueue</a>.frameCapacity</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>100</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostA</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.promiscuous</td>
    <td>
       <i>bool</i>
    </td>
-   <td>false</td>
+   <td></td>
    <td>
 <p>if true, all packets are received, otherwise only the
 ones with matching destination MAC address</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostA</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostA</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.address</td>
    <td>
       <i>string</i>
    </td>
-   <td>"auto"</td>
+   <td></td>
    <td>
 <p>MAC address as hex string (12 hex digits), or
 "auto". "auto" values will be replaced by
@@ -102,47 +140,32 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostA</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>100Mbps</td>
-   <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostA</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostA</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.duplexMode</td>
    <td>
       <i>bool</i>
    </td>
-   <td>true</td>
+   <td></td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>selects full-duplex (true) or half-duplex (false) operation</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostA</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txQueueLimit</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostA</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.txQueueLimit</td>
    <td>
       <i>int</i>
    </td>
-   <td>1000</td>
+   <td></td>
    <td>
 <p>maximum number of frames queued up for transmission;
 additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostA</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostA</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.mtu</td>
    <td>
       <i>int</i>
    </td>
-   <td>1500</td>
+   <td></td>
    <td>   </td>
 </tr>
 <tr>
@@ -160,13 +183,23 @@ additional frames are dropped. Only used if queueModule==""</p>
    <td>
       <i>double</i>
    </td>
-   <td>this.waitTime</td>
+   <td>this.sendInterval</td>
    <td>
 <p>time of sending the first request</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostB</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.waitTime</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostB</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.stopTime</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0</td>
+   <td>
+<p>time of finish sending, 0 means forever</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostB</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.sendInterval</td>
    <td>
       <i>double</i>
    </td>
@@ -196,22 +229,30 @@ additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostB</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostB</a>.<a href="inet.linklayer.ethernet.EtherQoSQueue.html">queue</a>.<a href="inet.linklayer.queue.DropTailQueue.html">pauseQueue</a>.frameCapacity</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>100</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostB</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.promiscuous</td>
    <td>
       <i>bool</i>
    </td>
-   <td>false</td>
+   <td></td>
    <td>
 <p>if true, all packets are received, otherwise only the
 ones with matching destination MAC address</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostB</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostB</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.address</td>
    <td>
       <i>string</i>
    </td>
-   <td>"auto"</td>
+   <td></td>
    <td>
 <p>MAC address as hex string (12 hex digits), or
 "auto". "auto" values will be replaced by
@@ -219,47 +260,32 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostB</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>100Mbps</td>
-   <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostB</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostB</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.duplexMode</td>
    <td>
       <i>bool</i>
    </td>
-   <td>true</td>
+   <td></td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>selects full-duplex (true) or half-duplex (false) operation</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostB</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txQueueLimit</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostB</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.txQueueLimit</td>
    <td>
       <i>int</i>
    </td>
-   <td>1000</td>
+   <td></td>
    <td>
 <p>maximum number of frames queued up for transmission;
 additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostB</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostB</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.mtu</td>
    <td>
       <i>int</i>
    </td>
-   <td>1500</td>
+   <td></td>
    <td>   </td>
 </tr>
 <tr>
@@ -277,13 +303,23 @@ additional frames are dropped. Only used if queueModule==""</p>
    <td>
       <i>double</i>
    </td>
-   <td>this.waitTime</td>
+   <td>this.sendInterval</td>
    <td>
 <p>time of sending the first request</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostC</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.waitTime</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostC</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.stopTime</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0</td>
+   <td>
+<p>time of finish sending, 0 means forever</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostC</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.sendInterval</td>
    <td>
       <i>double</i>
    </td>
@@ -313,22 +349,30 @@ additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostC</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostC</a>.<a href="inet.linklayer.ethernet.EtherQoSQueue.html">queue</a>.<a href="inet.linklayer.queue.DropTailQueue.html">pauseQueue</a>.frameCapacity</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>100</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostC</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.promiscuous</td>
    <td>
       <i>bool</i>
    </td>
-   <td>false</td>
+   <td></td>
    <td>
 <p>if true, all packets are received, otherwise only the
 ones with matching destination MAC address</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostC</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostC</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.address</td>
    <td>
       <i>string</i>
    </td>
-   <td>"auto"</td>
+   <td></td>
    <td>
 <p>MAC address as hex string (12 hex digits), or
 "auto". "auto" values will be replaced by
@@ -336,47 +380,32 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostC</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>100Mbps</td>
-   <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostC</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostC</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.duplexMode</td>
    <td>
       <i>bool</i>
    </td>
-   <td>true</td>
+   <td></td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>selects full-duplex (true) or half-duplex (false) operation</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostC</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txQueueLimit</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostC</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.txQueueLimit</td>
    <td>
       <i>int</i>
    </td>
-   <td>1000</td>
+   <td></td>
    <td>
 <p>maximum number of frames queued up for transmission;
 additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostC</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostC</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.mtu</td>
    <td>
       <i>int</i>
    </td>
-   <td>1500</td>
+   <td></td>
    <td>   </td>
 </tr>
 <tr>
@@ -394,13 +423,23 @@ additional frames are dropped. Only used if queueModule==""</p>
    <td>
       <i>double</i>
    </td>
-   <td>this.waitTime</td>
+   <td>this.sendInterval</td>
    <td>
 <p>time of sending the first request</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostD</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.waitTime</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostD</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.stopTime</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0</td>
+   <td>
+<p>time of finish sending, 0 means forever</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostD</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.sendInterval</td>
    <td>
       <i>double</i>
    </td>
@@ -430,22 +469,30 @@ additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostD</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostD</a>.<a href="inet.linklayer.ethernet.EtherQoSQueue.html">queue</a>.<a href="inet.linklayer.queue.DropTailQueue.html">pauseQueue</a>.frameCapacity</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>100</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostD</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.promiscuous</td>
    <td>
       <i>bool</i>
    </td>
-   <td>false</td>
+   <td></td>
    <td>
 <p>if true, all packets are received, otherwise only the
 ones with matching destination MAC address</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostD</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostD</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.address</td>
    <td>
       <i>string</i>
    </td>
-   <td>"auto"</td>
+   <td></td>
    <td>
 <p>MAC address as hex string (12 hex digits), or
 "auto". "auto" values will be replaced by
@@ -453,51 +500,36 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostD</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>100Mbps</td>
-   <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostD</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostD</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.duplexMode</td>
    <td>
       <i>bool</i>
    </td>
-   <td>true</td>
+   <td></td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>selects full-duplex (true) or half-duplex (false) operation</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostD</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txQueueLimit</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostD</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.txQueueLimit</td>
    <td>
       <i>int</i>
    </td>
-   <td>1000</td>
+   <td></td>
    <td>
 <p>maximum number of frames queued up for transmission;
 additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost.html">hostD</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
+   <td><a href="inet.nodes.ethernet.EtherHost.html">hostD</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.mtu</td>
    <td>
       <i>int</i>
    </td>
-   <td>1500</td>
+   <td></td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherSwitch.html">switch</a>.<a href="inet.linklayer.etherswitch.MACRelayUnit.html">relayUnit</a>.addressTableFile</td>
+   <td><a href="inet.nodes.ethernet.EtherSwitch.html">switch</a>.<a href="inet.linklayer.IMACRelayUnit.html">relayUnit</a>.addressTableFile</td>
    <td>
       <i>string</i>
    </td>
@@ -507,7 +539,7 @@ additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherSwitch.html">switch</a>.<a href="inet.linklayer.etherswitch.MACRelayUnit.html">relayUnit</a>.addressTableSize</td>
+   <td><a href="inet.nodes.ethernet.EtherSwitch.html">switch</a>.<a href="inet.linklayer.IMACRelayUnit.html">relayUnit</a>.addressTableSize</td>
    <td>
       <i>int</i>
    </td>
@@ -517,7 +549,7 @@ additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherSwitch.html">switch</a>.<a href="inet.linklayer.etherswitch.MACRelayUnit.html">relayUnit</a>.agingTime</td>
+   <td><a href="inet.nodes.ethernet.EtherSwitch.html">switch</a>.<a href="inet.linklayer.IMACRelayUnit.html">relayUnit</a>.agingTime</td>
    <td>
       <i>double</i>
    </td>
@@ -528,11 +560,11 @@ additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherSwitch.html">switch</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
+   <td><a href="inet.nodes.ethernet.EtherSwitch.html">switch</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.address</td>
    <td>
       <i>string</i>
    </td>
-   <td>"auto"</td>
+   <td></td>
    <td>
 <p>MAC address as hex string (12 hex digits), or
 "auto". "auto" values will be replaced by
@@ -540,47 +572,32 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherSwitch.html">switch</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>100Mbps</td>
-   <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ethernet.EtherSwitch.html">switch</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.nodes.ethernet.EtherSwitch.html">switch</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.duplexMode</td>
    <td>
       <i>bool</i>
    </td>
-   <td>true</td>
+   <td></td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>selects full-duplex (true) or half-duplex (false) operation</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherSwitch.html">switch</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txQueueLimit</td>
+   <td><a href="inet.nodes.ethernet.EtherSwitch.html">switch</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.txQueueLimit</td>
    <td>
       <i>int</i>
    </td>
-   <td>1000</td>
+   <td></td>
    <td>
 <p>maximum number of frames queued up for transmission;
 additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherSwitch.html">switch</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
+   <td><a href="inet.nodes.ethernet.EtherSwitch.html">switch</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.mtu</td>
    <td>
       <i>int</i>
    </td>
-   <td>1500</td>
+   <td></td>
    <td>   </td>
 </tr>
 </table>
@@ -594,6 +611,7 @@ additional frames are dropped. Only used if queueModule==""</p>
         </span><span style="color: #800000; font-weight: bold; ">channel</span><span style="color: #000000; "> </span><span style="color: #000000; ">C</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">DatarateChannel</span><span style="color: #000000; ">
         {
             </span><span style="color: #000000; ">delay</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">.</span><span style="color: #008000; ">1</span><span style="color: #000000; ">us</span><span style="color: #000000; ">;
+            </span><span style="color: #000000; ">datarate</span><span style="color: #000000; "> = </span><span style="color: #008000; ">100</span><span style="color: #000000; ">Mbps</span><span style="color: #000000; ">;
         }
     </span><span style="color: #800000; font-weight: bold; ">submodules</span><span style="color: #000000; ">:
         </span><span style="color: #000000; ">hostA</span><span style="color: #000000; ">: </span><span style="color: #000000; ">EtherHost</span><span style="color: #000000; "> {
@@ -627,6 +645,5 @@ additional frames are dropped. Only used if queueModule==""</p>
 
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

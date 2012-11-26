@@ -77,13 +77,17 @@
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">SDESItem Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="SDESItem" -->
-<p><code>#include &lt;<a class="el" href="sdes_8h_source.html">sdes.h</a>&gt;</code></p>
+<p>The class <a class="el" href="class_s_d_e_s_item.html" title="The class SDESItem is used for storing a source description item (type of description, description string) for an RTP end system.">SDESItem</a> is used for storing a source description item (type of description, description string) for an <a class="el" href="class_r_t_p.html" title="An RTP is the center of the RTP layer of an endsystem.">RTP</a> end system.  
+ <a href="class_s_d_e_s_item.html#details">More...</a></p>
+
+<p><code>#include &lt;sdes.h&gt;</code></p>
 
 <p><a href="class_s_d_e_s_item-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -103,29 +107,46 @@ Public Types</h2></td></tr>
 &#160;&#160;<a class="el" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71a6860fb859084b85b9aed1606a33d053b">SDES_PRIV</a> =  8
 <br/>
  }</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This enumeration holds the types of source description items as defined in the RFC.  <a href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_e_s_item.html#aa9945cf0dd5254474b1ff339facedc69">SDESItem</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_e_s_item.html#a796ffc4ea702a443b142b47d4618e9c3">SDESItem</a> (<a class="el" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71">SDES_ITEM_TYPE</a> type, const char *content)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#aa9945cf0dd5254474b1ff339facedc69"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_e_s_item.html#a796ffc4ea702a443b142b47d4618e9c3">SDESItem</a> (<a class="el" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71">SDES_ITEM_TYPE</a> <a class="el" href="dsr_8h.html#a8113b111c9adcbe8245570953727d60a">type</a>, const char *content)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor which sets the entry.  <a href="#a796ffc4ea702a443b142b47d4618e9c3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_e_s_item.html#af866f8503a05acbe5501e161b8abdc67">SDESItem</a> (const <a class="el" href="class_s_d_e_s_item.html">SDESItem</a> &amp;sdesItem)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="#af866f8503a05acbe5501e161b8abdc67"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_e_s_item.html#af402fa17b046a087683473f692b238e8">~SDESItem</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#af402fa17b046a087683473f692b238e8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_s_d_e_s_item.html">SDESItem</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_e_s_item.html#af0c71cf362e35e0a30791a51990a2091">operator=</a> (const <a class="el" href="class_s_d_e_s_item.html">SDESItem</a> &amp;sdesItem)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Assignment operator.  <a href="#af0c71cf362e35e0a30791a51990a2091"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_s_d_e_s_item.html">SDESItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_e_s_item.html#ae11b84b09070b094a170a4d26e18f93f">dup</a> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_e_s_item.html#a3cc62831175598220786c09a24e2a849">info</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_e_s_item.html#aa48b281e6846ad0471fe7492a306faff">dump</a> (std::ostream &amp;os)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71">SDES_ITEM_TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_e_s_item.html#a23e041f8b6284125d0af6d2068573ff3">getType</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_e_s_item.html#aa2583d04945e51c1073f9d785e4b9293">getContent</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_e_s_item.html#a67dedb0815b473d355ad32c2f24aeeb3">getLength</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Duplicates theis <a class="el" href="class_s_d_e_s_item.html" title="The class SDESItem is used for storing a source description item (type of description, description string) for an RTP end system.">SDESItem</a> by calling the copy constructor.  <a href="#ae11b84b09070b094a170a4d26e18f93f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_e_s_item.html#ad4a0fef21fac7e5a1a008f8efc3a61ac">info</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a short info about this <a class="el" href="class_s_d_e_s_item.html" title="The class SDESItem is used for storing a source description item (type of description, description string) for an RTP end system.">SDESItem</a> into the given string.  <a href="#ad4a0fef21fac7e5a1a008f8efc3a61ac"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_e_s_item.html#a87c97946890ca78f5bdd5f453ba57976">dump</a> (std::ostream &amp;os) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes an info about this <a class="el" href="class_s_d_e_s_item.html" title="The class SDESItem is used for storing a source description item (type of description, description string) for an RTP end system.">SDESItem</a> into the give output stream.  <a href="#a87c97946890ca78f5bdd5f453ba57976"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71">SDES_ITEM_TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_e_s_item.html#a60e0ce1bbec0b56bd995e4d23585c632">getType</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of this sdes item.  <a href="#a60e0ce1bbec0b56bd995e4d23585c632"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_e_s_item.html#aba1f428e63b9131423d94bc718cb8e80">getContent</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the stored sdes string.  <a href="#aba1f428e63b9131423d94bc718cb8e80"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_e_s_item.html#a12106217fa3bb181e889c48229123a2e">getLength</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This method returns the size of this <a class="el" href="class_s_d_e_s_item.html" title="The class SDESItem is used for storing a source description item (type of description, description string) for an RTP end system.">SDESItem</a> in bytes as it would be in the real world.  <a href="#a12106217fa3bb181e889c48229123a2e"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71">SDES_ITEM_TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_e_s_item.html#a69ec84593b2526538d1526ea9c2f6d87">_type</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of this <a class="el" href="class_s_d_e_s_item.html" title="The class SDESItem is used for storing a source description item (type of description, description string) for an RTP end system.">SDESItem</a>.  <a href="#a69ec84593b2526538d1526ea9c2f6d87"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_e_s_item.html#a250dc8fd186c690ffab268c20f42c85c">_length</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The length of this <a class="el" href="class_s_d_e_s_item.html" title="The class SDESItem is used for storing a source description item (type of description, description string) for an RTP end system.">SDESItem</a>.  <a href="#a250dc8fd186c690ffab268c20f42c85c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_e_s_item.html#a8e50f3d650f04d4094fbb43843de17bc">_content</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The sdes string.  <a href="#a8e50f3d650f04d4094fbb43843de17bc"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_e_s_item.html#a31e28cbea66732e130eae7cc9ee788f1">copy</a> (const <a class="el" href="class_s_d_e_s_item.html">SDESItem</a> &amp;other)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_d_e_s_item.html#a84451fe6546777be13dee5af3a207951">clean</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>The class <a class="el" href="class_s_d_e_s_item.html">SDESItem</a> is used for storing a source description item (type of description, description string) for an rtp end system. </p>
-
-<p>Definition at line <a class="el" href="sdes_8h_source.html#l00031">31</a> of file <a class="el" href="sdes_8h_source.html">sdes.h</a>.</p>
+<div class="textblock"><p>The class <a class="el" href="class_s_d_e_s_item.html" title="The class SDESItem is used for storing a source description item (type of description, description string) for an RTP end system.">SDESItem</a> is used for storing a source description item (type of description, description string) for an <a class="el" href="class_r_t_p.html" title="An RTP is the center of the RTP layer of an endsystem.">RTP</a> end system. </p>
 </div><hr/><h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="a226500b98dc486edd2fc5c87c121de71"></a><!-- doxytag: member="SDESItem::SDES_ITEM_TYPE" ref="a226500b98dc486edd2fc5c87c121de71" args="" -->
 <div class="memitem">
@@ -137,7 +158,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This enumeration holds the types of source description items as defined in the rfc. In this implementation only SDES_UNDEF and SDES_CNAME are usable. </p>
+
+<p>This enumeration holds the types of source description items as defined in the RFC. </p>
+<p>In this implementation only SDES_UNDEF and SDES_CNAME are usable. </p>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="a226500b98dc486edd2fc5c87c121de71a24ee856155842f0459727e3064804c26"></a><!-- doxytag: member="SDES_UNDEF" ref="a226500b98dc486edd2fc5c87c121de71a24ee856155842f0459727e3064804c26" args="" -->SDES_UNDEF</em>&nbsp;</td><td>
 </td></tr>
@@ -160,19 +183,17 @@ Protected Attributes</h2></td></tr>
 </table>
 </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="sdes_8h_source.html#l00040">40</a> of file <a class="el" href="sdes_8h_source.html">sdes.h</a>.</p>
-<div class="fragment"><pre class="fragment">                            {
-            <a class="code" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71a24ee856155842f0459727e3064804c26">SDES_UNDEF</a> = 0,
-            <a class="code" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71a9fde35435f9f4afa26adc733f785173c">SDES_CNAME</a> = 1,
-            <a class="code" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71aadad09193af12a46718feff54c522fc4">SDES_NAME</a> = 2,
-            <a class="code" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71ab4ab3f02d8987d3a9c30ca25c7150da5">SDES_EMAIL</a> = 3,
-            <a class="code" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71ae3d642dc727faa017caf098330caf86a">SDES_PHONE</a> = 4,
-            <a class="code" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71a5fdf82bf5cdd95d2c44ab0b4401e0301">SDES_LOC</a> = 5,
-            <a class="code" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71a30e019c9385560580c95e03d824de799">SDES_TOOL</a> = 6,
-            <a class="code" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71aaf33787c48f63b91bbc73c27b2ba99a3">SDES_NOTE</a> = 7,
-            <a class="code" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71a6860fb859084b85b9aed1606a33d053b">SDES_PRIV</a> = 8
-        };
+<div class="fragment"><pre class="fragment">    {
+        <a class="code" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71a24ee856155842f0459727e3064804c26">SDES_UNDEF</a> = 0,
+        <a class="code" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71a9fde35435f9f4afa26adc733f785173c">SDES_CNAME</a> = 1,
+        <a class="code" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71aadad09193af12a46718feff54c522fc4">SDES_NAME</a> = 2,
+        <a class="code" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71ab4ab3f02d8987d3a9c30ca25c7150da5">SDES_EMAIL</a> = 3,
+        <a class="code" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71ae3d642dc727faa017caf098330caf86a">SDES_PHONE</a> = 4,
+        <a class="code" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71a5fdf82bf5cdd95d2c44ab0b4401e0301">SDES_LOC</a> = 5,
+        <a class="code" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71a30e019c9385560580c95e03d824de799">SDES_TOOL</a> = 6,
+        <a class="code" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71aaf33787c48f63b91bbc73c27b2ba99a3">SDES_NOTE</a> = 7,
+        <a class="code" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71a6860fb859084b85b9aed1606a33d053b">SDES_PRIV</a> = 8
+    };
 </pre></div>
 </div>
 </div>
@@ -190,16 +211,16 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Default constructor. </p>
 
-<p>Definition at line <a class="el" href="sdes_8cc_source.html#l00029">29</a> of file <a class="el" href="sdes_8cc_source.html">sdes.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="sdes_8cc_source.html#l00064">dup()</a>.</p>
-<div class="fragment"><pre class="fragment">                   : cObject() {
-    <a class="code" href="class_s_d_e_s_item.html#a69ec84593b2526538d1526ea9c2f6d87">_type</a> = <a class="code" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71a24ee856155842f0459727e3064804c26">SDES_UNDEF</a>;
-    <a class="code" href="class_s_d_e_s_item.html#a250dc8fd186c690ffab268c20f42c85c">_length</a> = 2;
-    <a class="code" href="class_s_d_e_s_item.html#a8e50f3d650f04d4094fbb43843de17bc">_content</a> = <span class="stringliteral">&quot;&quot;</span>;
-};
+<p>Referenced by <a class="el" href="class_s_d_e_s_item.html#ae11b84b09070b094a170a4d26e18f93f">dup()</a>.</p>
+<div class="fragment"><pre class="fragment">                   : cObject()
+{
+    <a class="code" href="class_s_d_e_s_item.html#a69ec84593b2526538d1526ea9c2f6d87" title="The type of this SDESItem.">_type</a> = <a class="code" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71a24ee856155842f0459727e3064804c26">SDES_UNDEF</a>;
+    <a class="code" href="class_s_d_e_s_item.html#a250dc8fd186c690ffab268c20f42c85c" title="The length of this SDESItem.">_length</a> = 2;
+    <a class="code" href="class_s_d_e_s_item.html#a8e50f3d650f04d4094fbb43843de17bc" title="The sdes string.">_content</a> = <span class="stringliteral">&quot;&quot;</span>;
+}
 </pre></div>
 </div>
 </div>
@@ -227,17 +248,19 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Constructor which sets the entry. </p>
 
-<p>Definition at line <a class="el" href="sdes_8cc_source.html#l00036">36</a> of file <a class="el" href="sdes_8cc_source.html">sdes.cc</a>.</p>
-<div class="fragment"><pre class="fragment">                                                           : cObject() {
-    <a class="code" href="class_s_d_e_s_item.html#a69ec84593b2526538d1526ea9c2f6d87">_type</a> = <a class="code" href="structerror__chunk.html#aa2b1ccac4dffd263fe8006786798d931">type</a>;
-    <a class="code" href="class_s_d_e_s_item.html#a8e50f3d650f04d4094fbb43843de17bc">_content</a> = content;
+<p>Constructor which sets the entry. </p>
+<div class="fragment"><pre class="fragment">                                                           : cObject()
+{
+    <span class="keywordflow">if</span> (<a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> == content)
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;The content parameter must be a valid pointer.&quot;</span>);
+    <a class="code" href="class_s_d_e_s_item.html#a69ec84593b2526538d1526ea9c2f6d87" title="The type of this SDESItem.">_type</a> = <a class="code" href="dsr_8h.html#a8113b111c9adcbe8245570953727d60a">type</a>;
+    <a class="code" href="class_s_d_e_s_item.html#a8e50f3d650f04d4094fbb43843de17bc" title="The sdes string.">_content</a> = content;
     <span class="comment">// an sdes item requires one byte for the type field,</span>
     <span class="comment">// one byte for the length field and bytes for</span>
     <span class="comment">// the content string</span>
-    <a class="code" href="class_s_d_e_s_item.html#a250dc8fd186c690ffab268c20f42c85c">_length</a> = 2 + strlen(<a class="code" href="class_s_d_e_s_item.html#a8e50f3d650f04d4094fbb43843de17bc">_content</a>);
-};
+    <a class="code" href="class_s_d_e_s_item.html#a250dc8fd186c690ffab268c20f42c85c" title="The length of this SDESItem.">_length</a> = 2 + strlen(<a class="code" href="class_s_d_e_s_item.html#a8e50f3d650f04d4094fbb43843de17bc" title="The sdes string.">_content</a>);
+}
 </pre></div>
 </div>
 </div>
@@ -255,12 +278,12 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Copy constructor. </p>
 
-<p>Definition at line <a class="el" href="sdes_8cc_source.html#l00046">46</a> of file <a class="el" href="sdes_8cc_source.html">sdes.cc</a>.</p>
-<div class="fragment"><pre class="fragment">                                           : cObject() {
-    <a class="code" href="class_s_d_e_s_item.html#af0c71cf362e35e0a30791a51990a2091">operator=</a>(sdesItem);
-};
+<p>Copy constructor. </p>
+<div class="fragment"><pre class="fragment">                                           : cObject(sdesItem)
+{
+    <a class="code" href="class_s_d_e_s_item.html#a31e28cbea66732e130eae7cc9ee788f1">copy</a>(sdesItem);
+}
 </pre></div>
 </div>
 </div>
@@ -277,37 +300,79 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Destructor. </p>
 
-<p>Definition at line <a class="el" href="sdes_8cc_source.html#l00051">51</a> of file <a class="el" href="sdes_8cc_source.html">sdes.cc</a>.</p>
-<div class="fragment"><pre class="fragment">                    {
-};
+<p>Destructor. </p>
+<div class="fragment"><pre class="fragment">{
+    <a class="code" href="class_s_d_e_s_item.html#a84451fe6546777be13dee5af3a207951">clean</a>();
+}
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="aa48b281e6846ad0471fe7492a306faff"></a><!-- doxytag: member="SDESItem::dump" ref="aa48b281e6846ad0471fe7492a306faff" args="(std::ostream &amp;os)" -->
+<a class="anchor" id="a84451fe6546777be13dee5af3a207951"></a><!-- doxytag: member="SDESItem::clean" ref="a84451fe6546777be13dee5af3a207951" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_s_d_e_s_item.html#aa48b281e6846ad0471fe7492a306faff">SDESItem::dump</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_s_d_e_s_item.html#a84451fe6546777be13dee5af3a207951">SDESItem::clean</a> </td>
           <td>(</td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>os</em></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, private]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Writes an info about this <a class="el" href="class_s_d_e_s_item.html">SDESItem</a> into the give output stream. </p>
 
-<p>Definition at line <a class="el" href="sdes_8cc_source.html#l00076">76</a> of file <a class="el" href="sdes_8cc_source.html">sdes.cc</a>.</p>
-<div class="fragment"><pre class="fragment">                                  {
+<p>Referenced by <a class="el" href="class_s_d_e_s_item.html#af0c71cf362e35e0a30791a51990a2091">operator=()</a>, and <a class="el" href="class_s_d_e_s_item.html#af402fa17b046a087683473f692b238e8">~SDESItem()</a>.</p>
+<div class="fragment"><pre class="fragment">{}     <span class="comment">//FIXME The `_content&#39; sometimes allocated, sometimes not allocated pointer.</span>
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a31e28cbea66732e130eae7cc9ee788f1"></a><!-- doxytag: member="SDESItem::copy" ref="a31e28cbea66732e130eae7cc9ee788f1" args="(const SDESItem &amp;other)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_s_d_e_s_item.html#a31e28cbea66732e130eae7cc9ee788f1">SDESItem::copy</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_s_d_e_s_item.html">SDESItem</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_s_d_e_s_item.html#af0c71cf362e35e0a30791a51990a2091">operator=()</a>, and <a class="el" href="class_s_d_e_s_item.html#af866f8503a05acbe5501e161b8abdc67">SDESItem()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <a class="code" href="class_s_d_e_s_item.html#a69ec84593b2526538d1526ea9c2f6d87" title="The type of this SDESItem.">_type</a> = sdesItem._type;
+    <a class="code" href="class_s_d_e_s_item.html#a250dc8fd186c690ffab268c20f42c85c" title="The length of this SDESItem.">_length</a> = sdesItem._length;
+    <a class="code" href="class_s_d_e_s_item.html#a8e50f3d650f04d4094fbb43843de17bc" title="The sdes string.">_content</a> = opp_strdup(sdesItem._content);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a87c97946890ca78f5bdd5f453ba57976"></a><!-- doxytag: member="SDESItem::dump" ref="a87c97946890ca78f5bdd5f453ba57976" args="(std::ostream &amp;os) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_s_d_e_s_item.html#a87c97946890ca78f5bdd5f453ba57976">SDESItem::dump</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em></td><td>)</td>
+          <td> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Writes an info about this <a class="el" href="class_s_d_e_s_item.html" title="The class SDESItem is used for storing a source description item (type of description, description string) for an RTP end system.">SDESItem</a> into the give output stream. </p>
+<div class="fragment"><pre class="fragment">{
     os &lt;&lt; <span class="stringliteral">&quot;SDESItem:&quot;</span> &lt;&lt; endl;
-    os &lt;&lt; <span class="stringliteral">&quot;  type = &quot;</span> &lt;&lt; <a class="code" href="class_s_d_e_s_item.html#a69ec84593b2526538d1526ea9c2f6d87">_type</a> &lt;&lt; endl;
-    os &lt;&lt; <span class="stringliteral">&quot;  content = &quot;</span> &lt;&lt; <a class="code" href="class_s_d_e_s_item.html#a8e50f3d650f04d4094fbb43843de17bc">_content</a> &lt;&lt; endl;
-};
+    os &lt;&lt; <span class="stringliteral">&quot;  type = &quot;</span> &lt;&lt; <a class="code" href="class_s_d_e_s_item.html#a69ec84593b2526538d1526ea9c2f6d87" title="The type of this SDESItem.">_type</a> &lt;&lt; endl;
+    os &lt;&lt; <span class="stringliteral">&quot;  content = &quot;</span> &lt;&lt; <a class="code" href="class_s_d_e_s_item.html#a8e50f3d650f04d4094fbb43843de17bc" title="The sdes string.">_content</a> &lt;&lt; endl;
+}
 </pre></div>
 </div>
 </div>
@@ -324,109 +389,104 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Duplicates theis <a class="el" href="class_s_d_e_s_item.html">SDESItem</a> by calling the copy constructor. </p>
 
-<p>Definition at line <a class="el" href="sdes_8cc_source.html#l00064">64</a> of file <a class="el" href="sdes_8cc_source.html">sdes.cc</a>.</p>
-<div class="fragment"><pre class="fragment">                              {
-    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_s_d_e_s_item.html#aa9945cf0dd5254474b1ff339facedc69">SDESItem</a>(*<span class="keyword">this</span>);
-};
+<p>Duplicates theis <a class="el" href="class_s_d_e_s_item.html" title="The class SDESItem is used for storing a source description item (type of description, description string) for an RTP end system.">SDESItem</a> by calling the copy constructor. </p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_s_d_e_s_item.html#aa9945cf0dd5254474b1ff339facedc69" title="Default constructor.">SDESItem</a>(*<span class="keyword">this</span>);
+}
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="aa2583d04945e51c1073f9d785e4b9293"></a><!-- doxytag: member="SDESItem::getContent" ref="aa2583d04945e51c1073f9d785e4b9293" args="()" -->
+<a class="anchor" id="aba1f428e63b9131423d94bc718cb8e80"></a><!-- doxytag: member="SDESItem::getContent" ref="aba1f428e63b9131423d94bc718cb8e80" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char * <a class="el" href="class_s_d_e_s_item.html#aa2583d04945e51c1073f9d785e4b9293">SDESItem::getContent</a> </td>
+          <td class="memname">const char * <a class="el" href="class_s_d_e_s_item.html#aba1f428e63b9131423d94bc718cb8e80">SDESItem::getContent</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Returns the stored sdes string. </p>
-
-<p>Definition at line <a class="el" href="sdes_8cc_source.html#l00088">88</a> of file <a class="el" href="sdes_8cc_source.html">sdes.cc</a>.</p>
-<div class="fragment"><pre class="fragment">                                 {
-    <span class="keywordflow">return</span> opp_strdup(<a class="code" href="class_s_d_e_s_item.html#a8e50f3d650f04d4094fbb43843de17bc">_content</a>);
-};
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">return</span> opp_strdup(<a class="code" href="class_s_d_e_s_item.html#a8e50f3d650f04d4094fbb43843de17bc" title="The sdes string.">_content</a>);
+}
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a67dedb0815b473d355ad32c2f24aeeb3"></a><!-- doxytag: member="SDESItem::getLength" ref="a67dedb0815b473d355ad32c2f24aeeb3" args="()" -->
+<a class="anchor" id="a12106217fa3bb181e889c48229123a2e"></a><!-- doxytag: member="SDESItem::getLength" ref="a12106217fa3bb181e889c48229123a2e" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="class_s_d_e_s_item.html#a67dedb0815b473d355ad32c2f24aeeb3">SDESItem::getLength</a> </td>
+          <td class="memname">int <a class="el" href="class_s_d_e_s_item.html#a12106217fa3bb181e889c48229123a2e">SDESItem::getLength</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This method returns the size of this <a class="el" href="class_s_d_e_s_item.html">SDESItem</a> in bytes as it would be in the real world. </p>
 
-<p>Definition at line <a class="el" href="sdes_8cc_source.html#l00093">93</a> of file <a class="el" href="sdes_8cc_source.html">sdes.cc</a>.</p>
+<p>This method returns the size of this <a class="el" href="class_s_d_e_s_item.html" title="The class SDESItem is used for storing a source description item (type of description, description string) for an RTP end system.">SDESItem</a> in bytes as it would be in the real world. </p>
 
-<p>Referenced by <a class="el" href="sdes_8cc_source.html#l00155">SDESChunk::addSDESItem()</a>.</p>
-<div class="fragment"><pre class="fragment">                        {
+<p>Referenced by <a class="el" href="class_s_d_e_s_chunk.html#a59b1720b803b1ac7f44bfc90d46177b5">SDESChunk::addSDESItem()</a>.</p>
+<div class="fragment"><pre class="fragment">{
     <span class="comment">// bytes needed for this sdes item are</span>
     <span class="comment">// one byte for type, one for length</span>
     <span class="comment">// and the string</span>
-    <span class="keywordflow">return</span> <a class="code" href="class_s_d_e_s_item.html#a250dc8fd186c690ffab268c20f42c85c">_length</a> + 2;
-};
+    <span class="keywordflow">return</span> <a class="code" href="class_s_d_e_s_item.html#a250dc8fd186c690ffab268c20f42c85c" title="The length of this SDESItem.">_length</a> + 2;
+}
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a23e041f8b6284125d0af6d2068573ff3"></a><!-- doxytag: member="SDESItem::getType" ref="a23e041f8b6284125d0af6d2068573ff3" args="()" -->
+<a class="anchor" id="a60e0ce1bbec0b56bd995e4d23585c632"></a><!-- doxytag: member="SDESItem::getType" ref="a60e0ce1bbec0b56bd995e4d23585c632" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71">SDESItem::SDES_ITEM_TYPE</a> <a class="el" href="class_s_d_e_s_item.html#a23e041f8b6284125d0af6d2068573ff3">SDESItem::getType</a> </td>
+          <td class="memname"><a class="el" href="class_s_d_e_s_item.html#a226500b98dc486edd2fc5c87c121de71">SDESItem::SDES_ITEM_TYPE</a> <a class="el" href="class_s_d_e_s_item.html#a60e0ce1bbec0b56bd995e4d23585c632">SDESItem::getType</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Returns the type of this sdes item. </p>
 
-<p>Definition at line <a class="el" href="sdes_8cc_source.html#l00083">83</a> of file <a class="el" href="sdes_8cc_source.html">sdes.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="sdes_8cc_source.html#l00155">SDESChunk::addSDESItem()</a>.</p>
-<div class="fragment"><pre class="fragment">                                         {
-    <span class="keywordflow">return</span> <a class="code" href="class_s_d_e_s_item.html#a69ec84593b2526538d1526ea9c2f6d87">_type</a>;
-};
+<p>Referenced by <a class="el" href="class_s_d_e_s_chunk.html#a59b1720b803b1ac7f44bfc90d46177b5">SDESChunk::addSDESItem()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">return</span> <a class="code" href="class_s_d_e_s_item.html#a69ec84593b2526538d1526ea9c2f6d87" title="The type of this SDESItem.">_type</a>;
+}
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a3cc62831175598220786c09a24e2a849"></a><!-- doxytag: member="SDESItem::info" ref="a3cc62831175598220786c09a24e2a849" args="()" -->
+<a class="anchor" id="ad4a0fef21fac7e5a1a008f8efc3a61ac"></a><!-- doxytag: member="SDESItem::info" ref="ad4a0fef21fac7e5a1a008f8efc3a61ac" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string <a class="el" href="class_s_d_e_s_item.html#a3cc62831175598220786c09a24e2a849">SDESItem::info</a> </td>
+          <td class="memname">std::string <a class="el" href="class_s_d_e_s_item.html#ad4a0fef21fac7e5a1a008f8efc3a61ac">SDESItem::info</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Writes a short info about this <a class="el" href="class_s_d_e_s_item.html">SDESItem</a> into the given string. </p>
 
-<p>Definition at line <a class="el" href="sdes_8cc_source.html#l00069">69</a> of file <a class="el" href="sdes_8cc_source.html">sdes.cc</a>.</p>
-<div class="fragment"><pre class="fragment">                         {
+<p>Writes a short info about this <a class="el" href="class_s_d_e_s_item.html" title="The class SDESItem is used for storing a source description item (type of description, description string) for an RTP end system.">SDESItem</a> into the given string. </p>
+<div class="fragment"><pre class="fragment">{
     std::stringstream out;
-    out &lt;&lt; <span class="stringliteral">&quot;SDESItem=&quot;</span> &lt;&lt; <a class="code" href="class_s_d_e_s_item.html#a8e50f3d650f04d4094fbb43843de17bc">_content</a>;
+    out &lt;&lt; <span class="stringliteral">&quot;SDESItem=&quot;</span> &lt;&lt; <a class="code" href="class_s_d_e_s_item.html#a8e50f3d650f04d4094fbb43843de17bc" title="The sdes string.">_content</a>;
     <span class="keywordflow">return</span> out.str();
-};
+}
 </pre></div>
 </div>
 </div>
@@ -444,18 +504,15 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Assignment operator. </p>
-
-<p>Definition at line <a class="el" href="sdes_8cc_source.html#l00055">55</a> of file <a class="el" href="sdes_8cc_source.html">sdes.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="sdes_8cc_source.html#l00046">SDESItem()</a>.</p>
-<div class="fragment"><pre class="fragment">                                                      {
-    <a class="code" href="class_s_d_e_s_item.html#af0c71cf362e35e0a30791a51990a2091">cObject::operator=</a>(sdesItem);
-    <a class="code" href="class_s_d_e_s_item.html#a69ec84593b2526538d1526ea9c2f6d87">_type</a> = sdesItem.<a class="code" href="class_s_d_e_s_item.html#a69ec84593b2526538d1526ea9c2f6d87">_type</a>;
-    <a class="code" href="class_s_d_e_s_item.html#a250dc8fd186c690ffab268c20f42c85c">_length</a> = sdesItem.<a class="code" href="class_s_d_e_s_item.html#a250dc8fd186c690ffab268c20f42c85c">_length</a>;
-    <a class="code" href="class_s_d_e_s_item.html#a8e50f3d650f04d4094fbb43843de17bc">_content</a> = opp_strdup(sdesItem.<a class="code" href="class_s_d_e_s_item.html#a8e50f3d650f04d4094fbb43843de17bc">_content</a>);
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> (<span class="keyword">this</span> == &amp;sdesItem) <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+    <a class="code" href="class_s_d_e_s_item.html#a84451fe6546777be13dee5af3a207951">clean</a>();
+    <a class="code" href="class_s_d_e_s_item.html#af0c71cf362e35e0a30791a51990a2091" title="Assignment operator.">cObject::operator=</a>(sdesItem);
+    <a class="code" href="class_s_d_e_s_item.html#a31e28cbea66732e130eae7cc9ee788f1">copy</a>(sdesItem);
     <span class="keywordflow">return</span> *<span class="keyword">this</span>;
-};
+}
 </pre></div>
 </div>
 </div>
@@ -470,11 +527,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The sdes string. </p>
 
-<p>Definition at line <a class="el" href="sdes_8h_source.html#l00123">123</a> of file <a class="el" href="sdes_8h_source.html">sdes.h</a>.</p>
-
-<p>Referenced by <a class="el" href="sdes_8cc_source.html#l00076">dump()</a>, <a class="el" href="sdes_8cc_source.html#l00088">getContent()</a>, <a class="el" href="sdes_8cc_source.html#l00069">info()</a>, <a class="el" href="sdes_8cc_source.html#l00055">operator=()</a>, and <a class="el" href="sdes_8cc_source.html#l00029">SDESItem()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_d_e_s_item.html#a31e28cbea66732e130eae7cc9ee788f1">copy()</a>, <a class="el" href="class_s_d_e_s_item.html#a87c97946890ca78f5bdd5f453ba57976">dump()</a>, <a class="el" href="class_s_d_e_s_item.html#aba1f428e63b9131423d94bc718cb8e80">getContent()</a>, <a class="el" href="class_s_d_e_s_item.html#ad4a0fef21fac7e5a1a008f8efc3a61ac">info()</a>, and <a class="el" href="class_s_d_e_s_item.html#aa9945cf0dd5254474b1ff339facedc69">SDESItem()</a>.</p>
 
 </div>
 </div>
@@ -488,11 +544,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The length of this <a class="el" href="class_s_d_e_s_item.html">SDESItem</a>. </p>
 
-<p>Definition at line <a class="el" href="sdes_8h_source.html#l00118">118</a> of file <a class="el" href="sdes_8h_source.html">sdes.h</a>.</p>
+<p>The length of this <a class="el" href="class_s_d_e_s_item.html" title="The class SDESItem is used for storing a source description item (type of description, description string) for an RTP end system.">SDESItem</a>. </p>
 
-<p>Referenced by <a class="el" href="sdes_8cc_source.html#l00093">getLength()</a>, <a class="el" href="sdes_8cc_source.html#l00055">operator=()</a>, and <a class="el" href="sdes_8cc_source.html#l00029">SDESItem()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_d_e_s_item.html#a31e28cbea66732e130eae7cc9ee788f1">copy()</a>, <a class="el" href="class_s_d_e_s_item.html#a12106217fa3bb181e889c48229123a2e">getLength()</a>, and <a class="el" href="class_s_d_e_s_item.html#aa9945cf0dd5254474b1ff339facedc69">SDESItem()</a>.</p>
 
 </div>
 </div>
@@ -506,17 +561,16 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The type of this <a class="el" href="class_s_d_e_s_item.html">SDESItem</a>. </p>
 
-<p>Definition at line <a class="el" href="sdes_8h_source.html#l00113">113</a> of file <a class="el" href="sdes_8h_source.html">sdes.h</a>.</p>
+<p>The type of this <a class="el" href="class_s_d_e_s_item.html" title="The class SDESItem is used for storing a source description item (type of description, description string) for an RTP end system.">SDESItem</a>. </p>
 
-<p>Referenced by <a class="el" href="sdes_8cc_source.html#l00076">dump()</a>, <a class="el" href="sdes_8cc_source.html#l00083">getType()</a>, <a class="el" href="sdes_8cc_source.html#l00055">operator=()</a>, and <a class="el" href="sdes_8cc_source.html#l00029">SDESItem()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_d_e_s_item.html#a31e28cbea66732e130eae7cc9ee788f1">copy()</a>, <a class="el" href="class_s_d_e_s_item.html#a87c97946890ca78f5bdd5f453ba57976">dump()</a>, <a class="el" href="class_s_d_e_s_item.html#a60e0ce1bbec0b56bd995e4d23585c632">getType()</a>, and <a class="el" href="class_s_d_e_s_item.html#aa9945cf0dd5254474b1ff339facedc69">SDESItem()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="sdes_8h_source.html">sdes.h</a></li>
-<li><a class="el" href="sdes_8cc_source.html">sdes.cc</a></li>
+<li><a class="el" href="sdes_8h.html">sdes.h</a></li>
+<li><a class="el" href="sdes_8cc.html">sdes.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -524,7 +578,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_s_d_e_s_item.html">SDESItem</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:53 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:30 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

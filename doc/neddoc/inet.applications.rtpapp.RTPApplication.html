@@ -6,7 +6,25 @@
    <body onload="if (top.frames['componentsframe'] == undefined) { s = window.location.toString(); window.location = 'index.html?p=' + s.substring(s.lastIndexOf('/')+1); }">
 <h2 class="comptitle">Simple Module <i>RTPApplication</i></h2>
 <b>Package:</b> inet.applications.rtpapp<br/><b>File: <a href="src-applications-rtpapp-RTPApplication.ned.html">src/applications/rtpapp/RTPApplication.ned</a></b><br/><p><a href="../doxy/class_r_t_p_application.html" target="mainframe"><b>C++ definition</b></a></p>
-<p>(no description)</p><h3 class="subtitle">Used in compound modules:</h3>
+
+<p>The RTPApplication is just a very simple sample for an application
+which uses RTP. It acts as a sender if the parameter fileName is
+set, and as a receiver if the parameter is empty.</p>
+<img src="inet.applications.rtpapp.RTPApplication-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.applications.rtpapp.RTPApplication.html" title="RTPApplication" alt="RTPApplication" coords="0,30,128,70">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.applications.rtpapp.RTPApplication-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.applications.rtpapp.RTPApplication.html" title="Simple Module RTPApplication" alt="" coords="5,83,117,111">
+<area shape="rect" id="node2" href="inet.transport.rtp.RTPHost.html" title="Compound Module RTPHost" alt="" coords="23,6,100,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.applications.rtpapp.RTPApplication-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.applications.rtpapp.RTPApplication.html" title="Simple Module RTPApplication" alt="" coords="5,6,117,34">
+</map>
+<h3 class="subtitle">Used in compound modules:</h3>
 <table class="typestable">
    <tr>
       <th class="name">Name</th>
@@ -39,7 +57,9 @@
       <i>string</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>the common name (CNAME) of this host</p>
+   </td>
 </tr>
 <tr class="local">
    <td>profileName</td>
@@ -47,7 +67,9 @@
       <i>string</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>which rtp profile is to be used (usually RTPAVProfile)</p>
+   </td>
 </tr>
 <tr class="local">
    <td>bandwidth</td>
@@ -56,7 +78,7 @@
    </td>
    <td></td>
    <td>
-<p>XXX in bytes(!) per sec</p>
+<p>bandwidth in bytes per second for this session</p>
    </td>
 </tr>
 <tr class="local">
@@ -65,7 +87,9 @@
       <i>string</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>destination address (the IPvXAddressResolver class is used to resolve the address)</p>
+   </td>
 </tr>
 <tr class="local">
    <td>portNumber</td>
@@ -73,7 +97,9 @@
       <i>int</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>used port</p>
+   </td>
 </tr>
 <tr class="local">
    <td>fileName</td>
@@ -81,7 +107,9 @@
       <i>string</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>fileName of file to be transmitted, "" means this system acts only as a receiver</p>
+   </td>
 </tr>
 <tr class="local">
    <td>payloadType</td>
@@ -89,7 +117,9 @@
       <i>int</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>payload type of file to transmit</p>
+   </td>
 </tr>
 <tr class="local">
    <td>sessionEnterDelay</td>
@@ -97,7 +127,9 @@
       <i>double</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>delay before starts a new session</p>
+   </td>
 </tr>
 <tr class="local">
    <td>transmissionStartDelay</td>
@@ -105,7 +137,9 @@
       <i>double</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>delay before start transmission (related to "sender module created")</p>
+   </td>
 </tr>
 <tr class="local">
    <td>transmissionStopDelay</td>
@@ -113,7 +147,9 @@
       <i>double</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>delay before stops transmission (related to "start transmission")</p>
+   </td>
 </tr>
 <tr class="local">
    <td>sessionLeaveDelay</td>
@@ -122,6 +158,7 @@
    </td>
    <td></td>
    <td>
+<p>delay before leave session (related to "file transmission finished/stopped" or "session entered" when fileName is "")</p>
    </td>
 </tr>
 </table>
@@ -158,27 +195,31 @@
 </tr>
 </table>
 <h3 class="subtitle">Source code:</h3>
-<pre class="src"><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">RTPApplication</span><span style="color: #000000; ">
+<pre class="src"><span style="color: #808080; font-style: italic; ">//
+// The RTPApplication is just a very simple sample for an application
+// which uses RTP. It acts as a sender if the parameter fileName is
+// set, and as a receiver if the parameter is empty.
+//
+</span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">RTPApplication</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
         </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/app&quot;</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">commonName</span><span style="color: #000000; ">;
-        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">profileName</span><span style="color: #000000; ">;
-        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">bandwidth</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">//XXX in bytes(!) per sec
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">destinationAddress</span><span style="color: #000000; ">;
-        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">portNumber</span><span style="color: #000000; ">;
-        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">fileName</span><span style="color: #000000; ">;
-        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">payloadType</span><span style="color: #000000; ">;
-        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">sessionEnterDelay</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">transmissionStartDelay</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">transmissionStopDelay</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">sessionLeaveDelay</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">);
-
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">commonName</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// the common name (CNAME) of this host
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">profileName</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// which rtp profile is to be used (usually RTPAVProfile)
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">bandwidth</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// bandwidth in bytes per second for this session 
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">destinationAddress</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// destination address (the IPvXAddressResolver class is used to resolve the address)
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">portNumber</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// used port
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">fileName</span><span style="color: #000000; ">;    </span><span style="color: #808080; font-style: italic; ">// fileName of file to be transmitted, &quot;&quot; means this system acts only as a receiver
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">payloadType</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// payload type of file to transmit
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">sessionEnterDelay</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">);  </span><span style="color: #808080; font-style: italic; ">// delay before starts a new session
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">transmissionStartDelay</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// delay before start transmission (related to &quot;sender module created&quot;)
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">transmissionStopDelay</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">);  </span><span style="color: #808080; font-style: italic; ">// delay before stops transmission (related to &quot;start transmission&quot;)
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">sessionLeaveDelay</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// delay before leave session (related to &quot;file transmission finished/stopped&quot; or &quot;session entered&quot; when fileName is &quot;&quot;)
+</span><span style="color: #000000; ">
     </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">rtpOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">RTPInterfacePacket</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);
         </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">rtpIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">RTPInterfacePacket</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">);
 }
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

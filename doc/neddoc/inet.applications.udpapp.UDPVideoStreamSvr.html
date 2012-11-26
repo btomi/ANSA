@@ -12,12 +12,29 @@
 When a request arrives, it draws a random video stream size
 using the videoSize parameter, and starts streaming to the client.
 During streaming, it will send UDP packets of size packetLen at every
-waitInterval, until videoSize is reached. The parameters packetLen
-and waitInterval can be set to constant values to create CBR traffic,
-or to random values (e.g. waitInterval=uniform(1e-6, 1.01e-6)) to
+sendInterval, until videoSize is reached. The parameters packetLen
+and sendInterval can be set to constant values to create CBR traffic,
+or to random values (e.g. sendInterval=uniform(1e-6, 1.01e-6)) to
 accomodate jitter.</p>
 <p>The server can serve several clients, and several streams per client.</p>
+<p>Statistics:</p>
+<p>reqStreamBytes: statistic of bytelength of requested video streams.
+sentPkBytes: statistic of sent packets and sent bytes.</p>
 <p><b>See also:</b> <a href="inet.applications.udpapp.UDPVideoStreamCli.html">UDPVideoStreamCli</a></p>
+<img src="inet.applications.udpapp.UDPVideoStreamSvr-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.applications.udpapp.UDPVideoStreamSvr.html" title="UDPVideoStreamSvr" alt="UDPVideoStreamSvr" coords="0,30,156,70">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.applications.udpapp.UDPVideoStreamSvr-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.applications.udpapp.UDPVideoStreamSvr.html" title="Simple Module UDPVideoStreamSvr" alt="" coords="5,6,152,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.applications.udpapp.UDPVideoStreamSvr-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.applications.udpapp.UDPVideoStreamSvr.html" title="Simple Module UDPVideoStreamSvr" alt="" coords="5,83,152,111">
+<area shape="rect" id="node2" href="inet.applications.IUDPApp.html" title="Module Interface IUDPApp" alt="" coords="40,6,117,34">
+</map>
 <h3 class="subtitle">Parameters:</h3>
 <table class="paramstable">
    <tr>
@@ -27,7 +44,7 @@ accomodate jitter.</p>
       <th class="description">Description</th>
    </tr>
 <tr class="local">
-   <td>serverPort</td>
+   <td>localPort</td>
    <td>
       <i>int</i>
    </td>
@@ -37,7 +54,7 @@ accomodate jitter.</p>
    </td>
 </tr>
 <tr class="local">
-   <td>waitInterval</td>
+   <td>sendInterval</td>
    <td>
       <i>double</i>
    </td>
@@ -52,7 +69,9 @@ accomodate jitter.</p>
       <i>int</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>length of a video packet in bytes</p>
+   </td>
 </tr>
 <tr class="local">
    <td>videoSize</td>
@@ -60,7 +79,9 @@ accomodate jitter.</p>
       <i>int</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>length of full a video stream in bytes</p>
+   </td>
 </tr>
 </table>
 <h3 class="subtitle">Properties:</h3>
@@ -95,37 +116,92 @@ accomodate jitter.</p>
    <td></td>   <td></td>
 </tr>
 </table>
+<h3 class="subtitle">Signals:</h3>
+<table class="signalstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="unit">Unit</th>
+   </tr>
+<tr class="local">
+   <td>sentPk</td>
+   <td><i>
+cPacket   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>reqStreamBytes</td>
+   <td><i>
+long   </i></td>
+   <td></td>
+</tr>
+</table>
+<h3 class="subtitle">Statistics:</h3>
+<table class="statisticstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="title">Title</th>
+      <th class="source">Source</th>
+      <th class="record">Record</th>
+      <th class="unit">Unit</th>
+      <th class="interpolationmode">Interpolation Mode</th>
+   </tr>
+<tr class="local">
+   <td>sentPk</td>
+   <td>packets sent</td>
+   <td>sentPk</td>
+   <td>count, sum(packetBytes), vector(packetBytes)</td>
+   <td></td>
+   <td>none</td>
+</tr>
+<tr class="local">
+   <td>reqStreamBytes</td>
+   <td>requested stream bytes</td>
+   <td></td>
+   <td>count, sum, vector</td>
+   <td></td>
+   <td>none</td>
+</tr>
+</table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
-// Video stream server. To be used with UDPVideoStreamCli.
+// Video stream server. To be used with ~UDPVideoStreamCli.
 //
 // The server will wait for incoming &quot;video streaming requests&quot;.
 // When a request arrives, it draws a random video stream size
 // using the videoSize parameter, and starts streaming to the client.
-// During streaming, it will send \UDP packets of size packetLen at every
-// waitInterval, until videoSize is reached. The parameters packetLen
-// and waitInterval can be set to constant values to create CBR traffic,
-// or to random values (e.g. waitInterval=uniform(1e-6, 1.01e-6)) to
+// During streaming, it will send UDP packets of size packetLen at every
+// sendInterval, until videoSize is reached. The parameters packetLen
+// and sendInterval can be set to constant values to create CBR traffic,
+// or to random values (e.g. sendInterval=uniform(1e-6, 1.01e-6)) to
 // accomodate jitter.
 //
 // The server can serve several clients, and several streams per client.
 //
-// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> UDPVideoStreamCli
+// Statistics:
 //
-</span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPVideoStreamSvr</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPApp</span><span style="color: #000000; ">
+// reqStreamBytes: statistic of bytelength of requested video streams.
+// sentPkBytes: statistic of sent packets and sent bytes.
+//
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~UDPVideoStreamCli
+//
+</span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPVideoStreamSvr</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #000000; "> </span><span style="color: #000000; ">IUDPApp</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">serverPort</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// port to listen on
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">volatile</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">waitInterval</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;s&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// interval between sending video stream packets
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">volatile</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">packetLen</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;B&quot;</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">volatile</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">videoSize</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;B&quot;</span><span style="color: #000000; ">);
-        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/app&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">localPort</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// port to listen on
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">volatile</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">sendInterval</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// interval between sending video stream packets
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">volatile</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">packetLen</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">B</span><span style="color: #000000; ">);  </span><span style="color: #808080; font-style: italic; ">// length of a video packet in bytes
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">volatile</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">videoSize</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">B</span><span style="color: #000000; ">);  </span><span style="color: #808080; font-style: italic; ">// length of full a video stream in bytes
+</span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/app&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">sentPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">cPacket</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">reqStreamBytes</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">long</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">reqStreamBytes</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;requested stream bytes&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #000000; ">sum</span><span style="color: #000000; ">,</span><span style="color: #000000; ">vector</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">sentPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;packets sent&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">source</span><span style="color: #000000; ">=</span><span style="color: #000000; ">sentPk</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;sum(packetBytes)&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;vector(packetBytes)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
     </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">udpIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">UDPControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">);
         </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">udpOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">UDPControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);
 }
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

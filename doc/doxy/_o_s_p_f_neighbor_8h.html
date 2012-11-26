@@ -81,14 +81,12 @@
 <div class="title">OSPFNeighbor.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_o_s_p_f_packet__m_8h_source.html">OSPFPacket_m.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_o_s_p_f_timer__m_8h_source.html">OSPFTimer_m.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_l_s_a_8h_source.html">LSA.h</a>&quot;</code><br/>
-<code>#include &lt;list&gt;</code><br/>
-</div>
-<p><a href="_o_s_p_f_neighbor_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<div class="textblock"><code>#include &lt;list&gt;</code><br/>
+<code>#include &quot;<a class="el" href="_l_s_a_8h.html">LSA.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_o_s_p_fcommon_8h.html">OSPFcommon.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_o_s_p_f_packet__m_8h.html">OSPFPacket_m.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_o_s_p_f_timer__m_8h.html">OSPFTimer_m.h</a>&quot;</code><br/>
+</div><table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_1_1_neighbor.html">OSPF::Neighbor</a></td></tr>
@@ -97,6 +95,8 @@ Classes</h2></td></tr>
 <tr><td colspan="2"><h2><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html">OSPF</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><p>All <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> classes are in this namespace. </p>
+<br/></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_f_neighbor_8h.html#ae341898583a4a565db8c60bf3f7109c1">operator==</a> (<a class="el" href="struct_o_s_p_f_1_1_neighbor_1_1_d_d_packet_i_d.html">OSPF::Neighbor::DDPacketID</a> leftID, <a class="el" href="struct_o_s_p_f_1_1_neighbor_1_1_d_d_packet_i_d.html">OSPF::Neighbor::DDPacketID</a> rightID)</td></tr>
@@ -127,8 +127,6 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_o_s_p_f_neighbor_8h_source.html#l00208">208</a> of file <a class="el" href="_o_s_p_f_neighbor_8h_source.html">OSPFNeighbor.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">return</span> (!(leftID == rightID));
 }
@@ -159,14 +157,12 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_o_s_p_f_neighbor_8h_source.html#l00199">199</a> of file <a class="el" href="_o_s_p_f_neighbor_8h_source.html">OSPFNeighbor.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> ((leftID.<a class="code" href="struct_o_s_p_f_1_1_neighbor_1_1_d_d_packet_i_d.html#a31049124001ced8917df9779d253890c">ddOptions</a>.<a class="code" href="struct_o_s_p_f_d_d_options.html#a5b89a1ecd60217e80cd957ab8b912ad0">I_Init</a>         == rightID.<a class="code" href="struct_o_s_p_f_1_1_neighbor_1_1_d_d_packet_i_d.html#a31049124001ced8917df9779d253890c">ddOptions</a>.<a class="code" href="struct_o_s_p_f_d_d_options.html#a5b89a1ecd60217e80cd957ab8b912ad0">I_Init</a>) &amp;&amp;
-            (leftID.<a class="code" href="struct_o_s_p_f_1_1_neighbor_1_1_d_d_packet_i_d.html#a31049124001ced8917df9779d253890c">ddOptions</a>.<a class="code" href="struct_o_s_p_f_d_d_options.html#a378b4775cffedf62f289e57ab0f756c0">M_More</a>         == rightID.<a class="code" href="struct_o_s_p_f_1_1_neighbor_1_1_d_d_packet_i_d.html#a31049124001ced8917df9779d253890c">ddOptions</a>.<a class="code" href="struct_o_s_p_f_d_d_options.html#a378b4775cffedf62f289e57ab0f756c0">M_More</a>) &amp;&amp;
+    <span class="keywordflow">return</span> ((leftID.<a class="code" href="struct_o_s_p_f_1_1_neighbor_1_1_d_d_packet_i_d.html#a31049124001ced8917df9779d253890c">ddOptions</a>.<a class="code" href="struct_o_s_p_f_d_d_options.html#a5b89a1ecd60217e80cd957ab8b912ad0">I_Init</a> == rightID.<a class="code" href="struct_o_s_p_f_1_1_neighbor_1_1_d_d_packet_i_d.html#a31049124001ced8917df9779d253890c">ddOptions</a>.<a class="code" href="struct_o_s_p_f_d_d_options.html#a5b89a1ecd60217e80cd957ab8b912ad0">I_Init</a>) &amp;&amp;
+            (leftID.<a class="code" href="struct_o_s_p_f_1_1_neighbor_1_1_d_d_packet_i_d.html#a31049124001ced8917df9779d253890c">ddOptions</a>.<a class="code" href="struct_o_s_p_f_d_d_options.html#a378b4775cffedf62f289e57ab0f756c0">M_More</a> == rightID.<a class="code" href="struct_o_s_p_f_1_1_neighbor_1_1_d_d_packet_i_d.html#a31049124001ced8917df9779d253890c">ddOptions</a>.<a class="code" href="struct_o_s_p_f_d_d_options.html#a378b4775cffedf62f289e57ab0f756c0">M_More</a>) &amp;&amp;
             (leftID.<a class="code" href="struct_o_s_p_f_1_1_neighbor_1_1_d_d_packet_i_d.html#a31049124001ced8917df9779d253890c">ddOptions</a>.<a class="code" href="struct_o_s_p_f_d_d_options.html#a2c0601f852a00c2ee1313977a23b0fd2">MS_MasterSlave</a> == rightID.<a class="code" href="struct_o_s_p_f_1_1_neighbor_1_1_d_d_packet_i_d.html#a31049124001ced8917df9779d253890c">ddOptions</a>.<a class="code" href="struct_o_s_p_f_d_d_options.html#a2c0601f852a00c2ee1313977a23b0fd2">MS_MasterSlave</a>) &amp;&amp;
-            (leftID.<a class="code" href="struct_o_s_p_f_1_1_neighbor_1_1_d_d_packet_i_d.html#ae64f7b512e17277d7751104072d74718">options</a>                  == rightID.<a class="code" href="struct_o_s_p_f_1_1_neighbor_1_1_d_d_packet_i_d.html#ae64f7b512e17277d7751104072d74718">options</a>) &amp;&amp;
-            (leftID.<a class="code" href="struct_o_s_p_f_1_1_neighbor_1_1_d_d_packet_i_d.html#a52ff6c768aa7bde52d267b4f5b12d494">sequenceNumber</a>           == rightID.<a class="code" href="struct_o_s_p_f_1_1_neighbor_1_1_d_d_packet_i_d.html#a52ff6c768aa7bde52d267b4f5b12d494">sequenceNumber</a>));
+            (leftID.<a class="code" href="struct_o_s_p_f_1_1_neighbor_1_1_d_d_packet_i_d.html#ae64f7b512e17277d7751104072d74718">options</a> == rightID.<a class="code" href="struct_o_s_p_f_1_1_neighbor_1_1_d_d_packet_i_d.html#ae64f7b512e17277d7751104072d74718">options</a>) &amp;&amp;
+            (leftID.<a class="code" href="struct_o_s_p_f_1_1_neighbor_1_1_d_d_packet_i_d.html#a52ff6c768aa7bde52d267b4f5b12d494">sequenceNumber</a> == rightID.<a class="code" href="struct_o_s_p_f_1_1_neighbor_1_1_d_d_packet_i_d.html#a52ff6c768aa7bde52d267b4f5b12d494">sequenceNumber</a>));
 }
 </pre></div>
 </div>
@@ -177,7 +173,7 @@ Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="_o_s_p_f_neighbor_8h.html">OSPFNeighbor.h</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:46 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:22 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

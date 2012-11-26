@@ -80,14 +80,14 @@
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;list&gt;</code><br/>
-<code>#include &quot;<a class="el" href="_i_n_e_t_defs_8h_source.html">INETDefs.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_t_c_p_segment__m_8h_source.html">TCPSegment_m.h</a>&quot;</code><br/>
-</div>
-<p><a href="_t_c_p_segment_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<code>#include &quot;<a class="el" href="_i_n_e_t_defs_8h.html">INETDefs.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_t_c_p_segment__m_8h.html">TCPSegment_m.h</a>&quot;</code><br/>
+</div><table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sack.html">Sack</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html">TCPSegment</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> segment.  <a href="class_t_c_p_segment.html#details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td colspan="2"><div class="groupHeader">Comparing sequence numbers</div></td></tr>
@@ -95,6 +95,8 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a> (uint32 a, uint32 b)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p_segment_8h.html#a459ac205bbda777389c12b7353227fbe">seqGreater</a> (uint32 a, uint32 b)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p_segment_8h.html#af4745b9cf95eb5b78d8ae6c3c8429cfc">seqGE</a> (uint32 a, uint32 b)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p_segment_8h.html#afa8f232282cc7eb1383555a38be4cc6c">seqMin</a> (uint32 a, uint32 b)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p_segment_8h.html#a79a420e41d5e428018d1bfdd8c4fdbc5">seqMax</a> (uint32 a, uint32 b)</td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="af4745b9cf95eb5b78d8ae6c3c8429cfc"></a><!-- doxytag: member="TCPSegment.h::seqGE" ref="af4745b9cf95eb5b78d8ae6c3c8429cfc" args="(uint32 a, uint32 b)" -->
@@ -122,10 +124,8 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_segment_8h_source.html#l00032">32</a> of file <a class="el" href="_t_c_p_segment_8h_source.html">TCPSegment.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00299">TCPSACKRexmitQueue::getAmountOfSackedBytes()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00330">TCPSACKRexmitQueue::getNumOfDiscontiguousSacks()</a>, <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00054">TCPVirtualDataRcvQueue::insertBytesFromSegment()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01685">TCPConnection::isLost()</a>, <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00062">TCPVirtualDataRcvQueue::merge()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01776">TCPConnection::nextSeg()</a>, <a class="el" href="_t_c_p_connection_rcv_segment_8cc_source.html#l01104">TCPConnection::processAckInEstabEtc()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01017">TCPConnection::processSACKOption()</a>, <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00093">TCPNewReno::receivedDataAck()</a>, <a class="el" href="flavours_2_t_c_p_reno_8cc_source.html#l00083">TCPReno::receivedDataAck()</a>, <a class="el" href="flavours_2_t_c_p_reno_8cc_source.html#l00195">TCPReno::receivedDuplicateAck()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l00547">TCPConnection::sendSegment()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01922">TCPConnection::sendSegmentDuringLossRecoveryPhase()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00143">TCPSACKRexmitQueue::setSackedBit()</a>, <a class="el" href="_t_c_p_segment_8cc_source.html#l00044">TCPSegment::truncateSegment()</a>, and <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01607">TCPConnection::updateRcvWnd()</a>.</p>
-<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> a-b&lt;(1UL&lt;&lt;31);}
+<p>Referenced by <a class="el" href="class_t_c_p_connection.html#afada098bf955db81aa1786f33c813363">TCPConnection::addSacks()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a21cc96268b7bd9245557224f1a256feb">TCPVirtualDataRcvQueue::extractTo()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a83b598c81e2dfc8d72f7584408b99802">TCPVirtualDataRcvQueue::insertBytesFromSegment()</a>, <a class="el" href="class_t_c_p_connection.html#a261dc1ebd41e03d655b112f2b82b3f08">TCPConnection::isLost()</a>, <a class="el" href="class_tcp_lwip_msg_based_receive_queue.html#a4a240df919174becd002aeb419732b55">TcpLwipMsgBasedReceiveQueue::notifyAboutIncomingSegmentProcessing()</a>, <a class="el" href="class_t_c_p_connection.html#ac1144f5ca6e960176d6e623998cb7456">TCPConnection::processAckInEstabEtc()</a>, <a class="el" href="class_t_c_p_reno.html#a346296d9fcd3056d1add56d2f03dd391">TCPReno::receivedDataAck()</a>, <a class="el" href="class_t_c_p_new_reno.html#a634da20c5ad064882d2c87f6f5ff1301">TCPNewReno::receivedDataAck()</a>, <a class="el" href="class_t_c_p_reno.html#adcf0d263e1c1551648ff9b52dff8326f">TCPReno::receivedDuplicateAck()</a>, <a class="el" href="class_t_c_p_connection.html#af71155c4fad49ea52907d840463a06d5">TCPConnection::sendSegment()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#abd0309b9f592a452399c73174bbd94cf">TCPSACKRexmitQueue::setSackedBit()</a>, and <a class="el" href="class_t_c_p_connection.html#ac8e75cb648c459b120d0ab2a8ae1cf74">TCPConnection::updateRcvWnd()</a>.</p>
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> (a - b) &lt; (1UL &lt;&lt; 31);}
 </pre></div>
 </div>
 </div>
@@ -154,10 +154,8 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_segment_8h_source.html#l00031">31</a> of file <a class="el" href="_t_c_p_segment_8h_source.html">TCPSegment.h</a>.</p>
-
-<p>Referenced by <a class="el" href="queues_2_t_c_p_msg_based_rcv_queue_8cc_source.html#l00070">TCPMsgBasedRcvQueue::extractBytesUpTo()</a>, <a class="el" href="_t_c_p_connection_rcv_segment_8cc_source.html#l01104">TCPConnection::processAckInEstabEtc()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01017">TCPConnection::processSACKOption()</a>, <a class="el" href="_t_c_p_connection_rcv_segment_8cc_source.html#l00114">TCPConnection::processSegment1stThru8th()</a>, <a class="el" href="_t_c_p_connection_rcv_segment_8cc_source.html#l00869">TCPConnection::processSegmentInSynSent()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l00747">TCPConnection::retransmitOneSegment()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l00610">TCPConnection::sendData()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01986">TCPConnection::sendOneNewSegment()</a>, and <a class="el" href="_t_c_p_segment_8cc_source.html#l00044">TCPSegment::truncateSegment()</a>.</p>
-<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> a!=b &amp;&amp; a-b&lt;(1UL&lt;&lt;31);}
+<p>Referenced by <a class="el" href="class_t_c_p_connection.html#ac1144f5ca6e960176d6e623998cb7456">TCPConnection::processAckInEstabEtc()</a>, <a class="el" href="class_t_c_p_connection.html#a33b50078727564bd2c4e7e906e2f1648">TCPConnection::processSACKOption()</a>, <a class="el" href="class_t_c_p_connection.html#aa0758284e5bd6bd162b6ff267add2e2d">TCPConnection::processSegment1stThru8th()</a>, <a class="el" href="class_t_c_p_connection.html#a12b903f9e148f5c26f926dcdc8107c86">TCPConnection::processSegmentInSynSent()</a>, <a class="el" href="class_t_c_p_connection.html#a8ae68910942bd1ea6558ae7849ae22ea">TCPConnection::retransmitOneSegment()</a>, <a class="el" href="class_t_c_p_connection.html#a0238c323366884c6598d7d92d21f69ab">TCPConnection::sendData()</a>, <a class="el" href="class_t_c_p_connection.html#a35768c6517e5f25424a13d1e80892b32">TCPConnection::sendOneNewSegment()</a>, <a class="el" href="class_t_c_p_connection.html#ac922b39992f510ef7803067e675d80f1">TCPConnection::sendSegmentDuringLossRecoveryPhase()</a>, <a class="el" href="class_t_c_p_byte_stream_rcv_queue_1_1_region.html#ad745abc2ad3219d023bd215afd1fdd05">TCPByteStreamRcvQueue::Region::split()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue_1_1_region.html#a1c4d9c8ca12414b99d4ec72053919e1f">TCPVirtualDataRcvQueue::Region::split()</a>, and <a class="el" href="class_t_c_p_segment.html#a41b595a9daaa8132ef11aa10f24dbabd">TCPSegment::truncateSegment()</a>.</p>
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> a != b &amp;&amp; (a - b) &lt; (1UL &lt;&lt; 31);}
 </pre></div>
 </div>
 </div>
@@ -186,10 +184,8 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_segment_8h_source.html#l00030">30</a> of file <a class="el" href="_t_c_p_segment_8h_source.html">TCPSegment.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01325">TCPConnection::addSacks()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00225">TCPSACKRexmitQueue::checkRexmitQueueForSackedOrRexmittedSegments()</a>, <a class="el" href="queues_2_t_c_p_virtual_data_send_queue_8cc_source.html#l00062">TCPVirtualDataSendQueue::createSegmentWithBytes()</a>, <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00068">TCPMsgBasedSendQueue::createSegmentWithBytes()</a>, <a class="el" href="queues_2_t_c_p_virtual_data_send_queue_8cc_source.html#l00076">TCPVirtualDataSendQueue::discardUpTo()</a>, <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00101">TCPMsgBasedSendQueue::discardUpTo()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00070">TCPSACKRexmitQueue::discardUpTo()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00099">TCPSACKRexmitQueue::enqueueSentData()</a>, <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00140">TCPVirtualDataRcvQueue::extractTo()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00299">TCPSACKRexmitQueue::getAmountOfSackedBytes()</a>, <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00204">TCPVirtualDataRcvQueue::getLE()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00330">TCPSACKRexmitQueue::getNumOfDiscontiguousSacks()</a>, <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00221">TCPVirtualDataRcvQueue::getRE()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00172">TCPSACKRexmitQueue::getSackedBit()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l00393">TCPConnection::isSegmentAcceptable()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01776">TCPConnection::nextSeg()</a>, <a class="el" href="_t_c_p_connection_rcv_segment_8cc_source.html#l01104">TCPConnection::processAckInEstabEtc()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01017">TCPConnection::processSACKOption()</a>, <a class="el" href="_t_c_p_connection_rcv_segment_8cc_source.html#l00114">TCPConnection::processSegment1stThru8th()</a>, <a class="el" href="_t_c_p_connection_rcv_segment_8cc_source.html#l00869">TCPConnection::processSegmentInSynSent()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l00937">TCPConnection::processTSOption()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01922">TCPConnection::sendSegmentDuringLossRecoveryPhase()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01707">TCPConnection::setPipe()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00143">TCPSACKRexmitQueue::setSackedBit()</a>, <a class="el" href="_t_c_p_segment_8cc_source.html#l00044">TCPSegment::truncateSegment()</a>, and <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01658">TCPConnection::updateWndInfo()</a>.</p>
-<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> b-a&lt;(1UL&lt;&lt;31);}
+<p>Referenced by <a class="el" href="class_t_c_p_connection.html#afada098bf955db81aa1786f33c813363">TCPConnection::addSacks()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac333baf3a22543d7b735e6cfb062064b">TCPSACKRexmitQueue::checkRexmitQueueForSackedOrRexmittedSegments()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5a7dac957ccc34be496a2d46bd47b2cc">TCPSACKRexmitQueue::checkSackBlock()</a>, <a class="el" href="class_sack.html#a0576942f0638027841dcbaa098585c52">Sack::contains()</a>, <a class="el" href="class_t_c_p_byte_stream_send_queue.html#acfba958fbb1d9b15052d2d2b0a5bf31b">TCPByteStreamSendQueue::createSegmentWithBytes()</a>, <a class="el" href="class_t_c_p_virtual_data_send_queue.html#aedff3a104851f83cd9d64fcd0d93d146">TCPVirtualDataSendQueue::createSegmentWithBytes()</a>, <a class="el" href="class_t_c_p_msg_based_send_queue.html#a7a567c8b65da65321342021a83246aa1">TCPMsgBasedSendQueue::createSegmentWithBytes()</a>, <a class="el" href="class_tcp_lwip_msg_based_send_queue.html#a37753c4cf2acf450d520aad9c0c40559">TcpLwipMsgBasedSendQueue::createSegmentWithBytes()</a>, <a class="el" href="class_tcp_lwip_msg_based_send_queue.html#a7f182be1b200a4b06c5b2a38d8bfaf23">TcpLwipMsgBasedSendQueue::discardAckedBytes()</a>, <a class="el" href="class_t_c_p_byte_stream_send_queue.html#acd3a3a63625a8e2f539c1ccbd35b53b6">TCPByteStreamSendQueue::discardUpTo()</a>, <a class="el" href="class_t_c_p_virtual_data_send_queue.html#a087c3dd3d4c24e9d19b1514b5fddfcfe">TCPVirtualDataSendQueue::discardUpTo()</a>, <a class="el" href="class_t_c_p_msg_based_send_queue.html#a8adba4316eb73e75f956062a60774ce5">TCPMsgBasedSendQueue::discardUpTo()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a07b77209c59eb50fce9751418039ed64">TCPSACKRexmitQueue::discardUpTo()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a6eb4b2c4417dfff97a1734c9a43fca76">TCPSACKRexmitQueue::enqueueSentData()</a>, <a class="el" href="class_tcp_lwip_msg_based_receive_queue.html#a2559011fd18ab8096047f2739d960619">TcpLwipMsgBasedReceiveQueue::extractBytesUpTo()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a21cc96268b7bd9245557224f1a256feb">TCPVirtualDataRcvQueue::extractTo()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#aa92dd63421bbe8138b0f3b0142869b77">TCPSACKRexmitQueue::getAmountOfSackedBytes()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a8797005ee3238eaa1b5ee432eaeb00df">TCPVirtualDataRcvQueue::getLE()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue_1_1_region.html#a430239d1e0332d20c7aaa0cfc9369ac6">TCPVirtualDataRcvQueue::Region::getLengthTo()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a3dec5371cb3b7f6cf6b5774721345247">TCPSACKRexmitQueue::getNumOfDiscontiguousSacks()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a7fcbb2266911c8cf166b90170c6d7a03">TCPVirtualDataRcvQueue::getRE()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ae3ba28b3cdeb478d907aa51c45df8d1b">TCPSACKRexmitQueue::getSackedBit()</a>, <a class="el" href="class_t_c_p_msg_based_rcv_queue.html#a1ef3021020a378ff3b1e7ec037600307">TCPMsgBasedRcvQueue::insertBytesFromSegment()</a>, <a class="el" href="class_t_c_p_connection.html#af874301a7ed71e199ba29dd22003c704">TCPConnection::isSegmentAcceptable()</a>, <a class="el" href="class_tcp_lwip_msg_based_receive_queue.html#a4a240df919174becd002aeb419732b55">TcpLwipMsgBasedReceiveQueue::notifyAboutIncomingSegmentProcessing()</a>, <a class="el" href="class_t_c_p_connection.html#ac1144f5ca6e960176d6e623998cb7456">TCPConnection::processAckInEstabEtc()</a>, <a class="el" href="class_t_c_p_connection.html#a33b50078727564bd2c4e7e906e2f1648">TCPConnection::processSACKOption()</a>, <a class="el" href="class_t_c_p_connection.html#aa0758284e5bd6bd162b6ff267add2e2d">TCPConnection::processSegment1stThru8th()</a>, <a class="el" href="class_t_c_p_connection.html#a12b903f9e148f5c26f926dcdc8107c86">TCPConnection::processSegmentInSynSent()</a>, <a class="el" href="class_t_c_p_connection.html#adc95d91946a80a2ad98b0d0b1e40909e">TCPConnection::processTSOption()</a>, <a class="el" href="class_t_c_p_connection.html#ac922b39992f510ef7803067e675d80f1">TCPConnection::sendSegmentDuringLossRecoveryPhase()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#abd0309b9f592a452399c73174bbd94cf">TCPSACKRexmitQueue::setSackedBit()</a>, and <a class="el" href="class_t_c_p_connection.html#af1daa72bce81fcdc2cb7ccb03c134b7b">TCPConnection::updateWndInfo()</a>.</p>
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> (b - a) &lt; (1UL &lt;&lt; 31);}
 </pre></div>
 </div>
 </div>
@@ -218,10 +214,68 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_segment_8h_source.html#l00029">29</a> of file <a class="el" href="_t_c_p_segment_8h_source.html">TCPSegment.h</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_connection.html#afada098bf955db81aa1786f33c813363">TCPConnection::addSacks()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#aa100fadcb88c39d36cc9c45dc7f51f27">TCPSACKRexmitQueue::checkQueue()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac333baf3a22543d7b735e6cfb062064b">TCPSACKRexmitQueue::checkRexmitQueueForSackedOrRexmittedSegments()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5a7dac957ccc34be496a2d46bd47b2cc">TCPSACKRexmitQueue::checkSackBlock()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue_1_1_region.html#a058b3044ab1bdeb58451c9f136735027">TCPVirtualDataRcvQueue::Region::compare()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a07b77209c59eb50fce9751418039ed64">TCPSACKRexmitQueue::discardUpTo()</a>, <a class="el" href="class_t_c_p_virtual_data_send_queue.html#adac98ffafc58eca16437a21f7808eaba">TCPVirtualDataSendQueue::enqueueAppData()</a>, <a class="el" href="class_t_c_p_msg_based_send_queue.html#ac926a3c84df79870d64b8e41f662b2cb">TCPMsgBasedSendQueue::enqueueAppData()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a6eb4b2c4417dfff97a1734c9a43fca76">TCPSACKRexmitQueue::enqueueSentData()</a>, <a class="el" href="class_t_c_p_msg_based_rcv_queue.html#ad7704a4fa5bb2a9faf728da118dc1ac9">TCPMsgBasedRcvQueue::extractBytesUpTo()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#aa92dd63421bbe8138b0f3b0142869b77">TCPSACKRexmitQueue::getAmountOfSackedBytes()</a>, <a class="el" href="class_t_c_p_send_queue.html#a4ebfb56b4bf92aaa69c7092d46e01013">TCPSendQueue::getBytesAvailable()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a8797005ee3238eaa1b5ee432eaeb00df">TCPVirtualDataRcvQueue::getLE()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue_1_1_region.html#a430239d1e0332d20c7aaa0cfc9369ac6">TCPVirtualDataRcvQueue::Region::getLengthTo()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a7fcbb2266911c8cf166b90170c6d7a03">TCPVirtualDataRcvQueue::getRE()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ae3ba28b3cdeb478d907aa51c45df8d1b">TCPSACKRexmitQueue::getSackedBit()</a>, <a class="el" href="class_t_c_p_msg_based_rcv_queue.html#a1ef3021020a378ff3b1e7ec037600307">TCPMsgBasedRcvQueue::insertBytesFromSegment()</a>, <a class="el" href="class_t_c_p_connection.html#af874301a7ed71e199ba29dd22003c704">TCPConnection::isSegmentAcceptable()</a>, <a class="el" href="class_t_c_p_byte_stream_rcv_queue_1_1_region.html#aaf7b408199aca2c7ef8f55b35425228e">TCPByteStreamRcvQueue::Region::merge()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue_1_1_region.html#ad81ff9336bcd265d1da96bd8fe8527f0">TCPVirtualDataRcvQueue::Region::merge()</a>, <a class="el" href="class_t_c_p_connection.html#afc5b102866d3f7a5f84e2df46c43dcd3">TCPConnection::nextSeg()</a>, <a class="el" href="class_tcp_lwip_msg_based_receive_queue.html#a4a240df919174becd002aeb419732b55">TcpLwipMsgBasedReceiveQueue::notifyAboutIncomingSegmentProcessing()</a>, <a class="el" href="class_t_c_p_connection.html#ac1144f5ca6e960176d6e623998cb7456">TCPConnection::processAckInEstabEtc()</a>, <a class="el" href="class_t_c_p_connection.html#aa0758284e5bd6bd162b6ff267add2e2d">TCPConnection::processSegment1stThru8th()</a>, <a class="el" href="class_t_c_p_connection.html#adc95d91946a80a2ad98b0d0b1e40909e">TCPConnection::processTSOption()</a>, <a class="el" href="class_t_c_p_base_alg.html#a55a32a0e93c6417adb091ee162f225e2">TCPBaseAlg::receivedDataAck()</a>, <a class="el" href="class_t_c_p_connection.html#ac922b39992f510ef7803067e675d80f1">TCPConnection::sendSegmentDuringLossRecoveryPhase()</a>, <a class="el" href="class_t_c_p_connection.html#a728bea28fa24566bb22935f0de7c4655">TCPConnection::setPipe()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#abd0309b9f592a452399c73174bbd94cf">TCPSACKRexmitQueue::setSackedBit()</a>, <a class="el" href="class_t_c_p_byte_stream_rcv_queue_1_1_region.html#ad745abc2ad3219d023bd215afd1fdd05">TCPByteStreamRcvQueue::Region::split()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue_1_1_region.html#a1c4d9c8ca12414b99d4ec72053919e1f">TCPVirtualDataRcvQueue::Region::split()</a>, <a class="el" href="class_t_c_p_segment.html#a41b595a9daaa8132ef11aa10f24dbabd">TCPSegment::truncateSegment()</a>, and <a class="el" href="class_t_c_p_connection.html#af1daa72bce81fcdc2cb7ccb03c134b7b">TCPConnection::updateWndInfo()</a>.</p>
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> a != b &amp;&amp; (b - a) &lt; (1UL &lt;&lt; 31);}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a79a420e41d5e428018d1bfdd8c4fdbc5"></a><!-- doxytag: member="TCPSegment.h::seqMax" ref="a79a420e41d5e428018d1bfdd8c4fdbc5" args="(uint32 a, uint32 b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32 <a class="el" href="_t_c_p_segment_8h.html#a79a420e41d5e428018d1bfdd8c4fdbc5">seqMax</a> </td>
+          <td>(</td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
-<p>Referenced by <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01325">TCPConnection::addSacks()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00070">TCPSACKRexmitQueue::discardUpTo()</a>, <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00140">TCPVirtualDataRcvQueue::extractTo()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00299">TCPSACKRexmitQueue::getAmountOfSackedBytes()</a>, <a class="el" href="_t_c_p_send_queue_8h_source.html#l00134">TCPSendQueue::getBytesAvailable()</a>, <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00204">TCPVirtualDataRcvQueue::getLE()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00330">TCPSACKRexmitQueue::getNumOfDiscontiguousSacks()</a>, <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00221">TCPVirtualDataRcvQueue::getRE()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l00393">TCPConnection::isSegmentAcceptable()</a>, <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00062">TCPVirtualDataRcvQueue::merge()</a>, <a class="el" href="_t_c_p_connection_rcv_segment_8cc_source.html#l01104">TCPConnection::processAckInEstabEtc()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01017">TCPConnection::processSACKOption()</a>, <a class="el" href="_t_c_p_connection_rcv_segment_8cc_source.html#l00114">TCPConnection::processSegment1stThru8th()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l00937">TCPConnection::processTSOption()</a>, <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00520">TCPBaseAlg::receivedDataAck()</a>, <a class="el" href="_t_c_p_segment_8cc_source.html#l00044">TCPSegment::truncateSegment()</a>, and <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01658">TCPConnection::updateWndInfo()</a>.</p>
-<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> a!=b &amp;&amp; b-a&lt;(1UL&lt;&lt;31);}
+<p>Referenced by <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a83b598c81e2dfc8d72f7584408b99802">TCPVirtualDataRcvQueue::insertBytesFromSegment()</a>, and <a class="el" href="class_t_c_p_byte_stream_rcv_queue_1_1_region.html#aaf7b408199aca2c7ef8f55b35425228e">TCPByteStreamRcvQueue::Region::merge()</a>.</p>
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> ((a - b) &lt; (1UL &lt;&lt; 31)) ? a : b;}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="afa8f232282cc7eb1383555a38be4cc6c"></a><!-- doxytag: member="TCPSegment.h::seqMin" ref="afa8f232282cc7eb1383555a38be4cc6c" args="(uint32 a, uint32 b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32 <a class="el" href="_t_c_p_segment_8h.html#afa8f232282cc7eb1383555a38be4cc6c">seqMin</a> </td>
+          <td>(</td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a83b598c81e2dfc8d72f7584408b99802">TCPVirtualDataRcvQueue::insertBytesFromSegment()</a>, and <a class="el" href="class_t_c_p_byte_stream_rcv_queue_1_1_region.html#aaf7b408199aca2c7ef8f55b35425228e">TCPByteStreamRcvQueue::Region::merge()</a>.</p>
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> ((b - a) &lt; (1UL &lt;&lt; 31)) ? a : b;}
 </pre></div>
 </div>
 </div>
@@ -231,7 +285,7 @@ Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="_t_c_p_segment_8h.html">TCPSegment.h</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:46 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:22 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

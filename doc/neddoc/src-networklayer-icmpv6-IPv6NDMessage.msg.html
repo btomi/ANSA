@@ -21,7 +21,36 @@
    <td>
 
 <p>IPv6ND Prefix Information
-RFC 2461 Section 4.6.2</p>
+RFC 2461 / RFC 4861 Section 4.6.2
+RFC 3775 Section 7.2 (routerAddressFlag)</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="MIPv6NDAdvertisementInterval.html">MIPv6NDAdvertisementInterval</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>MIPv6 New Advertisement Interval Option
+RFC 3775 Section 7.3</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="MIPv6HAInformation.html">MIPv6HAInformation</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>MIPv6 Home Agent Information Option
+RFC 3775 Section 7.4</p>
 
    </td>
 </tr>
@@ -34,7 +63,7 @@ RFC 2461 Section 4.6.2</p>
    </td>
    <td>
 
-<p>Neighbour Discovery for <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a>.
+<p>Neighbour Discovery for IPv6.
 RFC 2461</p>
 
    </td>
@@ -48,7 +77,7 @@ RFC 2461</p>
    </td>
    <td>
 
-<p><a href="inet.nodes.inet.Router.html">Router</a> Solicitation Message Format
+<p>Router Solicitation Message Format
 RFC 2461 Section 4.1</p>
 
    </td>
@@ -62,8 +91,9 @@ RFC 2461 Section 4.1</p>
    </td>
    <td>
 
-<p><a href="inet.nodes.inet.Router.html">Router</a> Advertisement Message Format
-RFC 2461 Section 4.2</p>
+<p>Router Advertisement Message Format
+RFC 2461 Section 4.2
+RFC 3775 Section 7.1, RFC 5175 Section 3. (homeAgentFlag)</p>
 
    </td>
 </tr>
@@ -144,23 +174,41 @@ RFC 2461 Section 4.5</p>
 
 </span><span style="color: #808080; font-style: italic; ">//
 // IPv6ND Prefix Information
-// RFC 2461 Section 4.6.2
+// RFC 2461 / RFC 4861 Section 4.6.2
+// RFC 3775 Section 7.2 (routerAddressFlag)
 //
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv6NDPrefixInformation</span><span style="color: #000000; ">
 {
-    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">prefixLength</span><span style="color: #000000; ">;
-    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">onlinkFlag</span><span style="color: #000000; ">;
-    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">autoAddressConfFlag</span><span style="color: #000000; ">;
-    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">validLifetime</span><span style="color: #000000; ">;
-    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">preferredLifetime</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">IPv6Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">prefix</span><span style="color: #000000; ">;
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">prefixLength</span><span style="color: #000000; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">onlinkFlag</span><span style="color: #000000; ">;        </span><span style="color: #808080; font-style: italic; ">//L-bit
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">autoAddressConfFlag</span><span style="color: #000000; ">;    </span><span style="color: #808080; font-style: italic; ">//A-bit
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">routerAddressFlag</span><span style="color: #000000; ">;        </span><span style="color: #808080; font-style: italic; ">//R-bit: used in case of MIPv6 when the H-bit is set
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">validLifetime</span><span style="color: #000000; ">;    </span><span style="color: #808080; font-style: italic; ">// seconds
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">preferredLifetime</span><span style="color: #000000; ">;    </span><span style="color: #808080; font-style: italic; ">// seconds
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">IPv6Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">prefix</span><span style="color: #000000; ">;
 }
+
+</span><span style="color: #808080; font-style: italic; ">// MIPv6 New Advertisement Interval Option
+// RFC 3775 Section 7.3
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">MIPv6NDAdvertisementInterval</span><span style="color: #000000; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">advertisementInterval</span><span style="color: #000000; ">;    </span><span style="color: #808080; font-style: italic; ">// milliseconds
+</span><span style="color: #000000; ">}
+
+</span><span style="color: #808080; font-style: italic; ">//MIPv6 Home Agent Information Option
+//RFC 3775 Section 7.4
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">MIPv6HAInformation</span><span style="color: #000000; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">homeAgentPreference</span><span style="color: #000000; ">;
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">homeAgentLifetime</span><span style="color: #000000; ">;    </span><span style="color: #808080; font-style: italic; ">// seconds
+</span><span style="color: #000000; ">}
 
 </span><span style="color: #808080; font-style: italic; ">//
 // Neighbour Discovery for IPv6.
 // RFC 2461
 //
-// ICMP fields inherited from ICMPv6Message:
+// ICMP fields inherited from ~ICMPv6Message:
 //    - Type
 //
 // ICMP fields not implemented:
@@ -186,22 +234,26 @@ RFC 2461 Section 4.5</p>
 </span><span style="color: #808080; font-style: italic; ">//
 // Router Advertisement Message Format
 // RFC 2461 Section 4.2
+// RFC 3775 Section 7.1, RFC 5175 Section 3. (homeAgentFlag)
 //
 </span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv6RouterAdvertisement</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv6NDMessage</span><span style="color: #000000; ">
 {
     </span><span style="color: #808080; font-style: italic; ">//Additional ICMP fields
-</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">curHopLimit</span><span style="color: #000000; ">;
-    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">managedAddrConfFlag</span><span style="color: #000000; ">;
-    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">otherStatefulConfFlag</span><span style="color: #000000; ">;
-    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">routerLifetime</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// 0 indicates router is not a default router
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">curHopLimit</span><span style="color: #000000; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">managedAddrConfFlag</span><span style="color: #000000; ">;    </span><span style="color: #808080; font-style: italic; ">//M-bit
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">otherStatefulConfFlag</span><span style="color: #000000; ">;    </span><span style="color: #808080; font-style: italic; ">//O-bit
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">homeAgentFlag</span><span style="color: #000000; "> = </span><span style="color: #008000; ">false</span><span style="color: #000000; ">;        </span><span style="color: #808080; font-style: italic; ">//H-bit
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">routerLifetime</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// 0 indicates router is not a default router
 </span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">reachableTime</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">retransTimer</span><span style="color: #000000; ">;
 
     </span><span style="color: #808080; font-style: italic; ">//Possible Options
-</span><span style="color: #000000; ">    </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">sourceLinkLayerAddress</span><span style="color: #000000; ">;
-    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">MTU</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">IPv6NDPrefixInformation</span><span style="color: #000000; "> </span><span style="color: #000000; ">prefixInformation</span><span style="color: #000000; ">[];
-}
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">sourceLinkLayerAddress</span><span style="color: #000000; ">;        </span><span style="color: #808080; font-style: italic; ">//source link layer option
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">MTU</span><span style="color: #000000; ">;                </span><span style="color: #808080; font-style: italic; ">//MTU option
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">IPv6NDPrefixInformation</span><span style="color: #000000; "> </span><span style="color: #000000; ">prefixInformation</span><span style="color: #000000; ">[];    </span><span style="color: #808080; font-style: italic; ">//Prefix Information Option
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">MIPv6NDAdvertisementInterval</span><span style="color: #000000; "> </span><span style="color: #000000; ">advInterval</span><span style="color: #000000; ">;    </span><span style="color: #808080; font-style: italic; ">//New Advertisement Interval Option (MIPv6)
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">MIPv6HAInformation</span><span style="color: #000000; "> </span><span style="color: #000000; ">haInformation</span><span style="color: #000000; ">;    </span><span style="color: #808080; font-style: italic; ">//New Home Agent Information Option (MIPv6)
+</span><span style="color: #000000; ">}
 
 </span><span style="color: #808080; font-style: italic; ">//
 // Neighbour Solicitation Message Format
@@ -223,14 +275,14 @@ RFC 2461 Section 4.5</p>
 </span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv6NeighbourAdvertisement</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv6NDMessage</span><span style="color: #000000; ">
 {
     </span><span style="color: #808080; font-style: italic; ">//Additional ICMP fields
-</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">routerFlag</span><span style="color: #000000; ">;
-    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">solicitedFlag</span><span style="color: #000000; ">;
-    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">overrideFlag</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">IPv6Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">targetAddress</span><span style="color: #000000; ">;</span><span style="color: #808080; font-style: italic; ">// MUST NOT be a multicast address.
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">routerFlag</span><span style="color: #000000; ">;    </span><span style="color: #808080; font-style: italic; ">//R-flag
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">solicitedFlag</span><span style="color: #000000; ">;    </span><span style="color: #808080; font-style: italic; ">//S-flag
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">overrideFlag</span><span style="color: #000000; ">;    </span><span style="color: #808080; font-style: italic; ">//O-flag
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">IPv6Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">targetAddress</span><span style="color: #000000; ">;</span><span style="color: #808080; font-style: italic; ">// MUST NOT be a multicast address.
 </span><span style="color: #000000; ">
     </span><span style="color: #808080; font-style: italic; ">//Possible Options
-</span><span style="color: #000000; ">    </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">targetLinkLayerAddress</span><span style="color: #000000; ">;
-}
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">targetLinkLayerAddress</span><span style="color: #000000; ">;    </span><span style="color: #808080; font-style: italic; ">//Target Link Layer Address option
+</span><span style="color: #000000; ">}
 
 </span><span style="color: #808080; font-style: italic; ">//
 // Redirect Message Format
@@ -247,6 +299,5 @@ RFC 2461 Section 4.5</p>
         </span><span style="color: #808080; font-style: italic; ">//Redirected Header Encapsulated Msg
 </span><span style="color: #000000; ">}
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

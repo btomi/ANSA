@@ -75,110 +75,88 @@
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">MassMobility Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="MassMobility" --><!-- doxytag: inherits="BasicMobility" -->
-<p>Models the mobility of with mass, making random motions. See NED file for more info.  
+<!-- doxytag: class="MassMobility" --><!-- doxytag: inherits="LineSegmentsMobilityBase" -->
+<p>Models the mobility of with mass, making random motions.  
  <a href="class_mass_mobility.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_mass_mobility_8h_source.html">MassMobility.h</a>&gt;</code></p>
+<p><code>#include &lt;MassMobility.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for MassMobility:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_mass_mobility.png" usemap="#MassMobility_map" alt=""/>
   <map id="MassMobility_map" name="MassMobility_map">
-<area href="class_basic_mobility.html" title="Abstract base class for all mobility modules." alt="BasicMobility" shape="rect" coords="0,112,87,136"/>
-<area href="class_basic_module.html" title="Base class for all simple modules of a host that want to have access to the NotificationBoard module..." alt="BasicModule" shape="rect" coords="0,56,87,80"/>
-<area href="class_i_notifiable.html" alt="INotifiable" shape="rect" coords="0,0,87,24"/>
+<area href="class_line_segments_mobility_base.html" title="Base class for mobility models where movement consists of a sequence of linear movements of constant ..." alt="LineSegmentsMobilityBase" shape="rect" coords="86,224,248,248"/>
+<area href="class_moving_mobility_base.html" title="Base class for moving mobility modules." alt="MovingMobilityBase" shape="rect" coords="86,168,248,192"/>
+<area href="class_mobility_base.html" title="Abstract base class for mobility modules." alt="MobilityBase" shape="rect" coords="86,112,248,136"/>
+<area href="class_basic_module.html" title="Base class for all simple modules of a host that want to have access to the NotificationBoard module..." alt="BasicModule" shape="rect" coords="0,56,162,80"/>
+<area href="class_i_mobility.html" title="Abstract base class defining the public interface that must be provided by all mobility modules..." alt="IMobility" shape="rect" coords="172,56,334,80"/>
+<area href="class_i_notifiable.html" title="Clients can receive change notifications from the NotificationBoard via this interface." alt="INotifiable" shape="rect" coords="0,0,162,24"/>
 </map>
  </div></div>
 
 <p><a href="class_mass_mobility-members.html">List of all members.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mass_mobility.html#aab8a4978b5d79c093c3e9acd562e0db6">MassMobility</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mass_mobility.html#a2656fd190a68dddb34b37c0d0de3f9de">initialize</a> (int)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes mobility model parameters.  <a href="#a2656fd190a68dddb34b37c0d0de3f9de"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mass_mobility.html#a2d22bab49f0a1fe6485e4021cceaea94">handleSelfMsg</a> (cMessage *msg)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called upon arrival of a self messages.  <a href="#a2d22bab49f0a1fe6485e4021cceaea94"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mass_mobility.html#ac3c5feac17ea67c81db48f49c5c67505">move</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the host.  <a href="#ac3c5feac17ea67c81db48f49c5c67505"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mass_mobility.html#a54edb0941c1fe0e902ef0b3723d73687">initialize</a> (int stage)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes mobility model parameters.  <a href="#a54edb0941c1fe0e902ef0b3723d73687"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mass_mobility.html#ac3c5feac17ea67c81db48f49c5c67505">move</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the host according to the current simulation time.  <a href="#ac3c5feac17ea67c81db48f49c5c67505"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mass_mobility.html#a8992eab0d8f53b6261b0edd5b4d79655">setTargetPosition</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate a new target position to move to.  <a href="#a8992eab0d8f53b6261b0edd5b4d79655"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">cPar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mass_mobility.html#afd45f986e54b3b0b6207d60b1aac1657">changeInterval</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">cPar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mass_mobility.html#ac69f80cb3b8f09cd67f4f7004b29a614">changeAngleBy</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">cPar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mass_mobility.html#a32f91808215ca6e9e87fc1778f7598dd">speed</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mass_mobility.html#ad2fdb5dfe5b821f68c5e36fd1af747b2">currentSpeed</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">speed of the host  <a href="#ad2fdb5dfe5b821f68c5e36fd1af747b2"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mass_mobility.html#a69bf82f29a741021d3da5aa0d8755d0b">currentAngle</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">angle of linear motion  <a href="#a69bf82f29a741021d3da5aa0d8755d0b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mass_mobility.html#a1fb135b5eeb826cf0437322857a5e182">updateInterval</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">time interval to update the hosts position  <a href="#a1fb135b5eeb826cf0437322857a5e182"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_coord.html">Coord</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mass_mobility.html#aa10b8cb430ec411e7d0621681eafb5a7">step</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">calculated from speed, angle and updateInterval  <a href="#aa10b8cb430ec411e7d0621681eafb5a7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cPar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mass_mobility.html#a8b25e9f336d6a2cd4e446e03626f8a97">changeIntervalParameter</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cPar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mass_mobility.html#ae6e8fffc42a44f4c148dfb7eb68c0c04">changeAngleByParameter</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cPar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mass_mobility.html#aa2e9a4091c2f3a3ef3135992ba813b00">speedParameter</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_mass_mobility.html#af2e185fae6e25647a581cd29adb3b273">angle</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">angle of linear motion  <a href="#af2e185fae6e25647a581cd29adb3b273"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Models the mobility of with mass, making random motions. See NED file for more info. </p>
+<div class="textblock"><p>Models the mobility of with mass, making random motions. </p>
+<p>See NED file for more info.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>Emin Ilker Cetinbas, Andras Varga </dd></dl>
-
-<p>Definition at line <a class="el" href="_mass_mobility_8h_source.html#l00036">36</a> of file <a class="el" href="_mass_mobility_8h_source.html">MassMobility.h</a>.</p>
-</div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a2d22bab49f0a1fe6485e4021cceaea94"></a><!-- doxytag: member="MassMobility::handleSelfMsg" ref="a2d22bab49f0a1fe6485e4021cceaea94" args="(cMessage *msg)" -->
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aab8a4978b5d79c093c3e9acd562e0db6"></a><!-- doxytag: member="MassMobility::MassMobility" ref="aab8a4978b5d79c093c3e9acd562e0db6" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_mass_mobility.html#a2d22bab49f0a1fe6485e4021cceaea94">MassMobility::handleSelfMsg</a> </td>
+          <td class="memname"><a class="el" href="class_mass_mobility.html#aab8a4978b5d79c093c3e9acd562e0db6">MassMobility::MassMobility</a> </td>
           <td>(</td>
-          <td class="paramtype">cMessage *&#160;</td>
-          <td class="paramname"><em>msg</em></td><td>)</td>
-          <td><code> [protected, virtual]</code></td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Called upon arrival of a self messages. </p>
-<p>The only self message possible is to indicate a new movement. </p>
-
-<p>Implements <a class="el" href="class_basic_mobility.html#a4441e2aad4569312460b6e2c195e0c49">BasicMobility</a>.</p>
-
-<p>Definition at line <a class="el" href="_mass_mobility_8cc_source.html#l00066">66</a> of file <a class="el" href="_mass_mobility_8cc_source.html">MassMobility.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">switch</span> (msg-&gt;getKind())
-    {
-    <span class="keywordflow">case</span> <a class="code" href="_mass_mobility_8cc.html#ae3818a83e4f797be649d52cc556f871d">MK_UPDATE_POS</a>:
-        <a class="code" href="class_mass_mobility.html#ac3c5feac17ea67c81db48f49c5c67505" title="Move the host.">move</a>();
-        <a class="code" href="class_basic_mobility.html#aeca7c4a0105ebf716bcfb1bb285b5cf3" title="Update the position information for this node.">updatePosition</a>();
-        scheduleAt(simTime() + <a class="code" href="class_mass_mobility.html#a1fb135b5eeb826cf0437322857a5e182" title="time interval to update the hosts position">updateInterval</a>, msg);
-        <span class="keywordflow">break</span>;
-    <span class="keywordflow">case</span> <a class="code" href="_mass_mobility_8cc.html#a25bd75495b2452ac2fe53af753f090fc">MK_CHANGE_DIR</a>:
-        <a class="code" href="class_mass_mobility.html#a69bf82f29a741021d3da5aa0d8755d0b" title="angle of linear motion">currentAngle</a> += <a class="code" href="class_mass_mobility.html#ac69f80cb3b8f09cd67f4f7004b29a614">changeAngleBy</a>-&gt;doubleValue();
-        <a class="code" href="class_mass_mobility.html#ad2fdb5dfe5b821f68c5e36fd1af747b2" title="speed of the host">currentSpeed</a> = <a class="code" href="class_mass_mobility.html#a32f91808215ca6e9e87fc1778f7598dd">speed</a>-&gt;doubleValue();
-        <a class="code" href="class_mass_mobility.html#aa10b8cb430ec411e7d0621681eafb5a7" title="calculated from speed, angle and updateInterval">step</a>.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a> = <a class="code" href="class_mass_mobility.html#ad2fdb5dfe5b821f68c5e36fd1af747b2" title="speed of the host">currentSpeed</a> * cos(PI * <a class="code" href="class_mass_mobility.html#a69bf82f29a741021d3da5aa0d8755d0b" title="angle of linear motion">currentAngle</a> / 180) * <a class="code" href="class_mass_mobility.html#a1fb135b5eeb826cf0437322857a5e182" title="time interval to update the hosts position">updateInterval</a>;
-        <a class="code" href="class_mass_mobility.html#aa10b8cb430ec411e7d0621681eafb5a7" title="calculated from speed, angle and updateInterval">step</a>.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> = <a class="code" href="class_mass_mobility.html#ad2fdb5dfe5b821f68c5e36fd1af747b2" title="speed of the host">currentSpeed</a> * sin(PI * <a class="code" href="class_mass_mobility.html#a69bf82f29a741021d3da5aa0d8755d0b" title="angle of linear motion">currentAngle</a> / 180) * <a class="code" href="class_mass_mobility.html#a1fb135b5eeb826cf0437322857a5e182" title="time interval to update the hosts position">updateInterval</a>;
-        scheduleAt(simTime() + <a class="code" href="class_mass_mobility.html#afd45f986e54b3b0b6207d60b1aac1657">changeInterval</a>-&gt;doubleValue(), msg);
-        <span class="keywordflow">break</span>;
-    <span class="keywordflow">default</span>:
-        opp_error(<span class="stringliteral">&quot;Unknown self message kind in MassMobility class&quot;</span>);
-        <span class="keywordflow">break</span>;
-    }
-
+    <a class="code" href="class_mass_mobility.html#a8b25e9f336d6a2cd4e446e03626f8a97">changeIntervalParameter</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+    <a class="code" href="class_mass_mobility.html#ae6e8fffc42a44f4c148dfb7eb68c0c04">changeAngleByParameter</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+    <a class="code" href="class_mass_mobility.html#aa2e9a4091c2f3a3ef3135992ba813b00">speedParameter</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+    <a class="code" href="class_mass_mobility.html#af2e185fae6e25647a581cd29adb3b273" title="angle of linear motion">angle</a> = 0;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a2656fd190a68dddb34b37c0d0de3f9de"></a><!-- doxytag: member="MassMobility::initialize" ref="a2656fd190a68dddb34b37c0d0de3f9de" args="(int)" -->
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a54edb0941c1fe0e902ef0b3723d73687"></a><!-- doxytag: member="MassMobility::initialize" ref="a54edb0941c1fe0e902ef0b3723d73687" args="(int stage)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_mass_mobility.html#a2656fd190a68dddb34b37c0d0de3f9de">MassMobility::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_mass_mobility.html#a54edb0941c1fe0e902ef0b3723d73687">MassMobility::initialize</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>stage</em></td><td>)</td>
@@ -189,33 +167,17 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Initializes mobility model parameters. </p>
-<p>Reads the updateInterval and the velocity</p>
-<p>If the host is not stationary it calculates a random position and schedules a timer to trigger the first movement </p>
 
-<p>Reimplemented from <a class="el" href="class_basic_mobility.html#a6e424be0175ada88871a3b0ff0adeb0e">BasicMobility</a>.</p>
-
-<p>Definition at line <a class="el" href="_mass_mobility_8cc_source.html#l00037">37</a> of file <a class="el" href="_mass_mobility_8cc_source.html">MassMobility.cc</a>.</p>
+<p>Reimplemented from <a class="el" href="class_line_segments_mobility_base.html#a93df492d182199a12256c150f61da90b">LineSegmentsMobilityBase</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_mass_mobility.html#a2656fd190a68dddb34b37c0d0de3f9de" title="Initializes mobility model parameters.">BasicMobility::initialize</a>(stage);
-
+    <a class="code" href="class_mass_mobility.html#a54edb0941c1fe0e902ef0b3723d73687" title="Initializes mobility model parameters.">LineSegmentsMobilityBase::initialize</a>(stage);
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;initializing MassMobility stage &quot;</span> &lt;&lt; stage &lt;&lt; endl;
-
     <span class="keywordflow">if</span> (stage == 0)
     {
-        <a class="code" href="class_mass_mobility.html#a1fb135b5eeb826cf0437322857a5e182" title="time interval to update the hosts position">updateInterval</a> = par(<span class="stringliteral">&quot;updateInterval&quot;</span>);
-
-        <a class="code" href="class_mass_mobility.html#afd45f986e54b3b0b6207d60b1aac1657">changeInterval</a> = &amp;par(<span class="stringliteral">&quot;changeInterval&quot;</span>);
-        <a class="code" href="class_mass_mobility.html#ac69f80cb3b8f09cd67f4f7004b29a614">changeAngleBy</a> = &amp;par(<span class="stringliteral">&quot;changeAngleBy&quot;</span>);
-        <a class="code" href="class_mass_mobility.html#a32f91808215ca6e9e87fc1778f7598dd">speed</a> = &amp;par(<span class="stringliteral">&quot;speed&quot;</span>);
-
-        <span class="comment">// initial speed and angle</span>
-        <a class="code" href="class_mass_mobility.html#ad2fdb5dfe5b821f68c5e36fd1af747b2" title="speed of the host">currentSpeed</a> = <a class="code" href="class_mass_mobility.html#a32f91808215ca6e9e87fc1778f7598dd">speed</a>-&gt;doubleValue();
-        <a class="code" href="class_mass_mobility.html#a69bf82f29a741021d3da5aa0d8755d0b" title="angle of linear motion">currentAngle</a> = uniform(0, 360);
-        <a class="code" href="class_mass_mobility.html#aa10b8cb430ec411e7d0621681eafb5a7" title="calculated from speed, angle and updateInterval">step</a>.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a> = <a class="code" href="class_mass_mobility.html#ad2fdb5dfe5b821f68c5e36fd1af747b2" title="speed of the host">currentSpeed</a> * cos(PI * <a class="code" href="class_mass_mobility.html#a69bf82f29a741021d3da5aa0d8755d0b" title="angle of linear motion">currentAngle</a> / 180) * <a class="code" href="class_mass_mobility.html#a1fb135b5eeb826cf0437322857a5e182" title="time interval to update the hosts position">updateInterval</a>;
-        <a class="code" href="class_mass_mobility.html#aa10b8cb430ec411e7d0621681eafb5a7" title="calculated from speed, angle and updateInterval">step</a>.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> = <a class="code" href="class_mass_mobility.html#ad2fdb5dfe5b821f68c5e36fd1af747b2" title="speed of the host">currentSpeed</a> * sin(PI * <a class="code" href="class_mass_mobility.html#a69bf82f29a741021d3da5aa0d8755d0b" title="angle of linear motion">currentAngle</a> / 180) * <a class="code" href="class_mass_mobility.html#a1fb135b5eeb826cf0437322857a5e182" title="time interval to update the hosts position">updateInterval</a>;
-
-        scheduleAt(simTime() + uniform(0, updateInterval), <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;move&quot;</span>, <a class="code" href="_mass_mobility_8cc.html#ae3818a83e4f797be649d52cc556f871d">MK_UPDATE_POS</a>));
-        scheduleAt(simTime() + uniform(0, <a class="code" href="class_mass_mobility.html#afd45f986e54b3b0b6207d60b1aac1657">changeInterval</a>-&gt;doubleValue()), <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;turn&quot;</span>, <a class="code" href="_mass_mobility_8cc.html#a25bd75495b2452ac2fe53af753f090fc">MK_CHANGE_DIR</a>));
+        <a class="code" href="class_mass_mobility.html#af2e185fae6e25647a581cd29adb3b273" title="angle of linear motion">angle</a> = par(<span class="stringliteral">&quot;startAngle&quot;</span>).doubleValue();
+        <a class="code" href="class_mass_mobility.html#a8b25e9f336d6a2cd4e446e03626f8a97">changeIntervalParameter</a> = &amp;par(<span class="stringliteral">&quot;changeInterval&quot;</span>);
+        <a class="code" href="class_mass_mobility.html#ae6e8fffc42a44f4c148dfb7eb68c0c04">changeAngleByParameter</a> = &amp;par(<span class="stringliteral">&quot;changeAngleBy&quot;</span>);
+        <a class="code" href="class_mass_mobility.html#aa2e9a4091c2f3a3ef3135992ba813b00">speedParameter</a> = &amp;par(<span class="stringliteral">&quot;speed&quot;</span>);
     }
 }
 </pre></div>
@@ -226,7 +188,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_mass_mobility.html#ac3c5feac17ea67c81db48f49c5c67505">MassMobility::move</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_mass_mobility.html#ac3c5feac17ea67c81db48f49c5c67505">MassMobility::move</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -235,65 +197,54 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Move the host. </p>
-<p>Move the host if the destination is not reached yet. Otherwise calculate a new random position </p>
+<p>Move the host according to the current simulation time. </p>
 
-<p>Definition at line <a class="el" href="_mass_mobility_8cc_source.html#l00093">93</a> of file <a class="el" href="_mass_mobility_8cc_source.html">MassMobility.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_mass_mobility_8cc_source.html#l00066">handleSelfMsg()</a>.</p>
+<p>Reimplemented from <a class="el" href="class_line_segments_mobility_base.html#af16aa2d19ba0c40366542d48a0605dcc">LineSegmentsMobilityBase</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_basic_mobility.html#aaaa0e7080d07fb40a1e077c86b99f4ec" title="Stores the actual position of the host.">pos</a> += <a class="code" href="class_mass_mobility.html#aa10b8cb430ec411e7d0621681eafb5a7" title="calculated from speed, angle and updateInterval">step</a>;
+    <a class="code" href="class_mass_mobility.html#ac3c5feac17ea67c81db48f49c5c67505" title="Move the host according to the current simulation time.">LineSegmentsMobilityBase::move</a>();
+    <a class="code" href="class_coord.html" title="Class for storing 3D coordinates.">Coord</a> dummy;
+    <a class="code" href="class_mobility_base.html#a2583560e5b7b4dcc26b93eadfe17056e" title="Invokes one of reflectIfOutside(), wrapIfOutside() and placeRandomlyIfOutside(), depending on the giv...">handleIfOutside</a>(<a class="code" href="class_mobility_base.html#aa67dcad3ed1e7fe0164b84131aea2b18add05fd1c0ea65bba1c8e25fe7742acca" title="reflect off the wall">REFLECT</a>, dummy, <a class="code" href="class_moving_mobility_base.html#ab1188feab18688c3d31483ac667bbd5f" title="The last speed that was reported at lastUpdate.">lastSpeed</a>, <a class="code" href="class_mass_mobility.html#af2e185fae6e25647a581cd29adb3b273" title="angle of linear motion">angle</a>);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a8992eab0d8f53b6261b0edd5b4d79655"></a><!-- doxytag: member="MassMobility::setTargetPosition" ref="a8992eab0d8f53b6261b0edd5b4d79655" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_mass_mobility.html#a8992eab0d8f53b6261b0edd5b4d79655">MassMobility::setTargetPosition</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
-    <span class="comment">// do something if we reach the wall</span>
-    <a class="code" href="class_coord.html" title="Class for storing host positions.">Coord</a> dummy;
-    <a class="code" href="class_basic_mobility.html#abe55a2413e6d335fb5baeeadcadd975c" title="Invokes one of reflectIfOutside(), wrapIfOutside() and placeRandomlyIfOutside(), depending on the giv...">handleIfOutside</a>(<a class="code" href="class_basic_mobility.html#a3df467f3202a9895f325fe7b7618f2afa1bb147021ed59276e0cc29b720b994f0" title="reflect off the wall">REFLECT</a>, dummy, <a class="code" href="class_mass_mobility.html#aa10b8cb430ec411e7d0621681eafb5a7" title="calculated from speed, angle and updateInterval">step</a>, <a class="code" href="class_mass_mobility.html#a69bf82f29a741021d3da5aa0d8755d0b" title="angle of linear motion">currentAngle</a>);
+<p>Calculate a new target position to move to. </p>
 
-    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot; xpos= &quot;</span> &lt;&lt; <a class="code" href="class_basic_mobility.html#aaaa0e7080d07fb40a1e077c86b99f4ec" title="Stores the actual position of the host.">pos</a>.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a> &lt;&lt; <span class="stringliteral">&quot; ypos=&quot;</span> &lt;&lt; <a class="code" href="class_basic_mobility.html#aaaa0e7080d07fb40a1e077c86b99f4ec" title="Stores the actual position of the host.">pos</a>.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> &lt;&lt; <span class="stringliteral">&quot; speed=&quot;</span> &lt;&lt; <a class="code" href="class_mass_mobility.html#ad2fdb5dfe5b821f68c5e36fd1af747b2" title="speed of the host">currentSpeed</a> &lt;&lt; endl;
+<p>Implements <a class="el" href="class_line_segments_mobility_base.html#ae9b65139861752e826e50eb23cd5a470">LineSegmentsMobilityBase</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <a class="code" href="class_mass_mobility.html#af2e185fae6e25647a581cd29adb3b273" title="angle of linear motion">angle</a> += <a class="code" href="class_mass_mobility.html#ae6e8fffc42a44f4c148dfb7eb68c0c04">changeAngleByParameter</a>-&gt;doubleValue();
+    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;angle: &quot;</span> &lt;&lt; <a class="code" href="class_mass_mobility.html#af2e185fae6e25647a581cd29adb3b273" title="angle of linear motion">angle</a> &lt;&lt; endl;
+    <span class="keywordtype">double</span> rad = PI * <a class="code" href="class_mass_mobility.html#af2e185fae6e25647a581cd29adb3b273" title="angle of linear motion">angle</a> / 180.0;
+    <a class="code" href="class_coord.html" title="Class for storing 3D coordinates.">Coord</a> direction(cos(rad), sin(rad));
+    simtime_t nextChangeInterval = <a class="code" href="class_mass_mobility.html#a8b25e9f336d6a2cd4e446e03626f8a97">changeIntervalParameter</a>-&gt;doubleValue();
+    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;interval: &quot;</span> &lt;&lt; nextChangeInterval &lt;&lt; endl;
+    <a class="code" href="class_line_segments_mobility_base.html#acf4b064a5f64a5bc493e497c1cf134ac" title="End position of current linear movement.">targetPosition</a> = <a class="code" href="class_mobility_base.html#a82ae637969433a492154b26039b84038" title="The last position that was reported.">lastPosition</a> + direction * <a class="code" href="class_mass_mobility.html#aa2e9a4091c2f3a3ef3135992ba813b00">speedParameter</a>-&gt;doubleValue() * nextChangeInterval.dbl();
+    <a class="code" href="class_moving_mobility_base.html#a5c6e51e3ac03c935482057ce7726eb3d" title="The next simulation time when the mobility module needs to update its internal state.">nextChange</a> = simTime() + nextChangeInterval;
 }
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="ac69f80cb3b8f09cd67f4f7004b29a614"></a><!-- doxytag: member="MassMobility::changeAngleBy" ref="ac69f80cb3b8f09cd67f4f7004b29a614" args="" -->
+<a class="anchor" id="af2e185fae6e25647a581cd29adb3b273"></a><!-- doxytag: member="MassMobility::angle" ref="af2e185fae6e25647a581cd29adb3b273" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">cPar* <a class="el" href="class_mass_mobility.html#ac69f80cb3b8f09cd67f4f7004b29a614">MassMobility::changeAngleBy</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_mass_mobility_8h_source.html#l00041">41</a> of file <a class="el" href="_mass_mobility_8h_source.html">MassMobility.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_mass_mobility_8cc_source.html#l00066">handleSelfMsg()</a>, and <a class="el" href="_mass_mobility_8cc_source.html#l00037">initialize()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="afd45f986e54b3b0b6207d60b1aac1657"></a><!-- doxytag: member="MassMobility::changeInterval" ref="afd45f986e54b3b0b6207d60b1aac1657" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">cPar* <a class="el" href="class_mass_mobility.html#afd45f986e54b3b0b6207d60b1aac1657">MassMobility::changeInterval</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_mass_mobility_8h_source.html#l00040">40</a> of file <a class="el" href="_mass_mobility_8h_source.html">MassMobility.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_mass_mobility_8cc_source.html#l00066">handleSelfMsg()</a>, and <a class="el" href="_mass_mobility_8cc_source.html#l00037">initialize()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a69bf82f29a741021d3da5aa0d8755d0b"></a><!-- doxytag: member="MassMobility::currentAngle" ref="a69bf82f29a741021d3da5aa0d8755d0b" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double <a class="el" href="class_mass_mobility.html#a69bf82f29a741021d3da5aa0d8755d0b">MassMobility::currentAngle</a><code> [protected]</code></td>
+          <td class="memname">double <a class="el" href="class_mass_mobility.html#af2e185fae6e25647a581cd29adb3b273">MassMobility::angle</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
@@ -301,89 +252,58 @@ Protected Attributes</h2></td></tr>
 
 <p>angle of linear motion </p>
 
-<p>Definition at line <a class="el" href="_mass_mobility_8h_source.html#l00046">46</a> of file <a class="el" href="_mass_mobility_8h_source.html">MassMobility.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_mass_mobility_8cc_source.html#l00066">handleSelfMsg()</a>, <a class="el" href="_mass_mobility_8cc_source.html#l00037">initialize()</a>, and <a class="el" href="_mass_mobility_8cc_source.html#l00093">move()</a>.</p>
+<p>Referenced by <a class="el" href="class_mass_mobility.html#a54edb0941c1fe0e902ef0b3723d73687">initialize()</a>, <a class="el" href="class_mass_mobility.html#aab8a4978b5d79c093c3e9acd562e0db6">MassMobility()</a>, <a class="el" href="class_mass_mobility.html#ac3c5feac17ea67c81db48f49c5c67505">move()</a>, and <a class="el" href="class_mass_mobility.html#a8992eab0d8f53b6261b0edd5b4d79655">setTargetPosition()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ad2fdb5dfe5b821f68c5e36fd1af747b2"></a><!-- doxytag: member="MassMobility::currentSpeed" ref="ad2fdb5dfe5b821f68c5e36fd1af747b2" args="" -->
+<a class="anchor" id="ae6e8fffc42a44f4c148dfb7eb68c0c04"></a><!-- doxytag: member="MassMobility::changeAngleByParameter" ref="ae6e8fffc42a44f4c148dfb7eb68c0c04" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double <a class="el" href="class_mass_mobility.html#ad2fdb5dfe5b821f68c5e36fd1af747b2">MassMobility::currentSpeed</a><code> [protected]</code></td>
+          <td class="memname">cPar* <a class="el" href="class_mass_mobility.html#ae6e8fffc42a44f4c148dfb7eb68c0c04">MassMobility::changeAngleByParameter</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>speed of the host </p>
-
-<p>Definition at line <a class="el" href="_mass_mobility_8h_source.html#l00045">45</a> of file <a class="el" href="_mass_mobility_8h_source.html">MassMobility.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_mass_mobility_8cc_source.html#l00066">handleSelfMsg()</a>, <a class="el" href="_mass_mobility_8cc_source.html#l00037">initialize()</a>, and <a class="el" href="_mass_mobility_8cc_source.html#l00093">move()</a>.</p>
+<p>Referenced by <a class="el" href="class_mass_mobility.html#a54edb0941c1fe0e902ef0b3723d73687">initialize()</a>, <a class="el" href="class_mass_mobility.html#aab8a4978b5d79c093c3e9acd562e0db6">MassMobility()</a>, and <a class="el" href="class_mass_mobility.html#a8992eab0d8f53b6261b0edd5b4d79655">setTargetPosition()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a32f91808215ca6e9e87fc1778f7598dd"></a><!-- doxytag: member="MassMobility::speed" ref="a32f91808215ca6e9e87fc1778f7598dd" args="" -->
+<a class="anchor" id="a8b25e9f336d6a2cd4e446e03626f8a97"></a><!-- doxytag: member="MassMobility::changeIntervalParameter" ref="a8b25e9f336d6a2cd4e446e03626f8a97" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">cPar* <a class="el" href="class_mass_mobility.html#a32f91808215ca6e9e87fc1778f7598dd">MassMobility::speed</a><code> [protected]</code></td>
+          <td class="memname">cPar* <a class="el" href="class_mass_mobility.html#a8b25e9f336d6a2cd4e446e03626f8a97">MassMobility::changeIntervalParameter</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_mass_mobility_8h_source.html#l00042">42</a> of file <a class="el" href="_mass_mobility_8h_source.html">MassMobility.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_mass_mobility_8cc_source.html#l00066">handleSelfMsg()</a>, and <a class="el" href="_mass_mobility_8cc_source.html#l00037">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_mass_mobility.html#a54edb0941c1fe0e902ef0b3723d73687">initialize()</a>, <a class="el" href="class_mass_mobility.html#aab8a4978b5d79c093c3e9acd562e0db6">MassMobility()</a>, and <a class="el" href="class_mass_mobility.html#a8992eab0d8f53b6261b0edd5b4d79655">setTargetPosition()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aa10b8cb430ec411e7d0621681eafb5a7"></a><!-- doxytag: member="MassMobility::step" ref="aa10b8cb430ec411e7d0621681eafb5a7" args="" -->
+<a class="anchor" id="aa2e9a4091c2f3a3ef3135992ba813b00"></a><!-- doxytag: member="MassMobility::speedParameter" ref="aa2e9a4091c2f3a3ef3135992ba813b00" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_coord.html">Coord</a> <a class="el" href="class_mass_mobility.html#aa10b8cb430ec411e7d0621681eafb5a7">MassMobility::step</a><code> [protected]</code></td>
+          <td class="memname">cPar* <a class="el" href="class_mass_mobility.html#aa2e9a4091c2f3a3ef3135992ba813b00">MassMobility::speedParameter</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>calculated from speed, angle and updateInterval </p>
-
-<p>Definition at line <a class="el" href="_mass_mobility_8h_source.html#l00048">48</a> of file <a class="el" href="_mass_mobility_8h_source.html">MassMobility.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_mass_mobility_8cc_source.html#l00066">handleSelfMsg()</a>, <a class="el" href="_mass_mobility_8cc_source.html#l00037">initialize()</a>, and <a class="el" href="_mass_mobility_8cc_source.html#l00093">move()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a1fb135b5eeb826cf0437322857a5e182"></a><!-- doxytag: member="MassMobility::updateInterval" ref="a1fb135b5eeb826cf0437322857a5e182" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double <a class="el" href="class_mass_mobility.html#a1fb135b5eeb826cf0437322857a5e182">MassMobility::updateInterval</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>time interval to update the hosts position </p>
-
-<p>Definition at line <a class="el" href="_mass_mobility_8h_source.html#l00047">47</a> of file <a class="el" href="_mass_mobility_8h_source.html">MassMobility.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_mass_mobility_8cc_source.html#l00066">handleSelfMsg()</a>, and <a class="el" href="_mass_mobility_8cc_source.html#l00037">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_mass_mobility.html#a54edb0941c1fe0e902ef0b3723d73687">initialize()</a>, <a class="el" href="class_mass_mobility.html#aab8a4978b5d79c093c3e9acd562e0db6">MassMobility()</a>, and <a class="el" href="class_mass_mobility.html#a8992eab0d8f53b6261b0edd5b4d79655">setTargetPosition()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_mass_mobility_8h_source.html">MassMobility.h</a></li>
-<li><a class="el" href="_mass_mobility_8cc_source.html">MassMobility.cc</a></li>
+<li><a class="el" href="_mass_mobility_8h.html">MassMobility.h</a></li>
+<li><a class="el" href="_mass_mobility_8cc.html">MassMobility.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -391,7 +311,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_mass_mobility.html">MassMobility</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:50 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:27 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

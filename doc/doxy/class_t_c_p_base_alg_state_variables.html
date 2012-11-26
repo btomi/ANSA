@@ -81,15 +81,18 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="TCPBaseAlgStateVariables" --><!-- doxytag: inherits="TCPStateVariables" -->
-<p><code>#include &lt;<a class="el" href="_t_c_p_base_alg_8h_source.html">TCPBaseAlg.h</a>&gt;</code></p>
+<p>State variables for <a class="el" href="class_t_c_p_base_alg.html" title="Includes basic TCP algorithms: adaptive retransmission, PERSIST timer, keep-alive, delayed acks -- EXCLUDING congestion control.">TCPBaseAlg</a>.  
+ <a href="class_t_c_p_base_alg_state_variables.html#details">More...</a></p>
+
+<p><code>#include &lt;TCPBaseAlg.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TCPBaseAlgStateVariables:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_t_c_p_base_alg_state_variables.png" usemap="#TCPBaseAlgStateVariables_map" alt=""/>
   <map id="TCPBaseAlgStateVariables_map" name="TCPBaseAlgStateVariables_map">
-<area href="class_t_c_p_state_variables.html" alt="TCPStateVariables" shape="rect" coords="0,0,219,24"/>
-<area href="class_t_c_p_tahoe_reno_family_state_variables.html" alt="TCPTahoeRenoFamilyStateVariables" shape="rect" coords="0,112,219,136"/>
+<area href="class_t_c_p_state_variables.html" title="Contains state variables (&quot;TCB&quot;) for TCP." alt="TCPStateVariables" shape="rect" coords="0,0,219,24"/>
+<area href="class_t_c_p_tahoe_reno_family_state_variables.html" title="State variables for TCPTahoeRenoFamily." alt="TCPTahoeRenoFamilyStateVariables" shape="rect" coords="0,112,219,136"/>
 </map>
  </div></div>
 
@@ -134,9 +137,7 @@ Public Attributes</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">first partial acknowledgement (RFC 3782)  <a href="#ad3611be625a0816f866ff25e67095bae"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>State variables for <a class="el" href="class_t_c_p_base_alg.html">TCPBaseAlg</a>. </p>
-
-<p>Definition at line <a class="el" href="_t_c_p_base_alg_8h_source.html#l00029">29</a> of file <a class="el" href="_t_c_p_base_alg_8h_source.html">TCPBaseAlg.h</a>.</p>
+<div class="textblock"><p>State variables for <a class="el" href="class_t_c_p_base_alg.html" title="Includes basic TCP algorithms: adaptive retransmission, PERSIST timer, keep-alive, delayed acks -- EXCLUDING congestion control.">TCPBaseAlg</a>. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a43fd2149e9ec289775544fc45d564bf5"></a><!-- doxytag: member="TCPBaseAlgStateVariables::TCPBaseAlgStateVariables" ref="a43fd2149e9ec289775544fc45d564bf5" args="()" -->
 <div class="memitem">
@@ -151,8 +152,6 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00048">48</a> of file <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html">flavours/TCPBaseAlg.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="class_t_c_p_base_alg_state_variables.html#a6957d344e4656f8f815052fda321638b" title="retransmit count">rexmit_count</a> = 0;
     <a class="code" href="class_t_c_p_base_alg_state_variables.html#ab7f8905d9eceedd3bdb9afc7da73ccec" title="current retransmission timeout (aka RTO)">rexmit_timeout</a> = 3.0;
@@ -168,7 +167,7 @@ Public Attributes</h2></td></tr>
     <span class="comment">// Jacobson&#39;s alg: srtt must be initialized to 0, rttvar to a value which</span>
     <span class="comment">// will yield rto = 3s initially.</span>
     <a class="code" href="class_t_c_p_base_alg_state_variables.html#a3fbc98ec258009121b47acc9a5d74a26" title="round-trip time estimation (Jacobson&#39;s algorithm)">srtt</a> = 0;
-    <a class="code" href="class_t_c_p_base_alg_state_variables.html#abc6803555218c740e069bc3d6a7ed3e0" title="variance of round-trip time">rttvar</a> = 3.0/4.0;
+    <a class="code" href="class_t_c_p_base_alg_state_variables.html#abc6803555218c740e069bc3d6a7ed3e0" title="variance of round-trip time">rttvar</a> = 3.0 / 4.0;
 
     <a class="code" href="class_t_c_p_base_alg_state_variables.html#a2ef2adf2cb914469916fd62a99962cf5" title="number of RTOs">numRtos</a> = 0;
 
@@ -189,7 +188,6 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">std::string <a class="el" href="class_t_c_p_base_alg_state_variables.html#a685f7ef8f9a5a8674c50525dd4ca7d88">TCPBaseAlgStateVariables::detailedInfo</a> </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td> const<code> [virtual]</code></td>
         </tr>
@@ -200,14 +198,12 @@ Public Attributes</h2></td></tr>
 <p>Reimplemented from <a class="el" href="class_t_c_p_state_variables.html#a28c2c961663d8cf69e19b64cb129b40e">TCPStateVariables</a>.</p>
 
 <p>Reimplemented in <a class="el" href="class_t_c_p_tahoe_reno_family_state_variables.html#aa431d0a0ce49d33e7a968675261fc491">TCPTahoeRenoFamilyStateVariables</a>.</p>
-
-<p>Definition at line <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00084">84</a> of file <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html">flavours/TCPBaseAlg.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     std::stringstream out;
     out &lt;&lt; <a class="code" href="class_t_c_p_base_alg_state_variables.html#a685f7ef8f9a5a8674c50525dd4ca7d88">TCPStateVariables::detailedInfo</a>();
-    out &lt;&lt; <span class="stringliteral">&quot;snd_cwnd = &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
-    out &lt;&lt; <span class="stringliteral">&quot;rto = &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_base_alg_state_variables.html#ab7f8905d9eceedd3bdb9afc7da73ccec" title="current retransmission timeout (aka RTO)">rexmit_timeout</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
-    out &lt;&lt; <span class="stringliteral">&quot;persist_timeout = &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_base_alg_state_variables.html#ac544a14e6f1287c41195fa8054c272c0" title="current persist timeout">persist_timeout</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+    out &lt;&lt; <span class="stringliteral">&quot;snd_cwnd=&quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+    out &lt;&lt; <span class="stringliteral">&quot;rto=&quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_base_alg_state_variables.html#ab7f8905d9eceedd3bdb9afc7da73ccec" title="current retransmission timeout (aka RTO)">rexmit_timeout</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+    out &lt;&lt; <span class="stringliteral">&quot;persist_timeout=&quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_base_alg_state_variables.html#ac544a14e6f1287c41195fa8054c272c0" title="current persist timeout">persist_timeout</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
     <span class="comment">// TBD add others too</span>
     <span class="keywordflow">return</span> out.str();
 }
@@ -232,9 +228,7 @@ Public Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_t_c_p_tahoe_reno_family_state_variables.html#ad886fd2ce18e4e40dda4edc3131db02f">TCPTahoeRenoFamilyStateVariables</a>.</p>
 
-<p>Definition at line <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00075">75</a> of file <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html">flavours/TCPBaseAlg.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00227">TCPBaseAlg::processRexmitTimer()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_base_alg.html#ac8a305a437d4eafd1689204e50af8870">TCPBaseAlg::processRexmitTimer()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     std::stringstream out;
     out &lt;&lt; <a class="code" href="class_t_c_p_base_alg_state_variables.html#a24c5be81ae8c22877d69716f534c3556">TCPStateVariables::info</a>();
@@ -259,9 +253,7 @@ Public Attributes</h2></td></tr>
 
 <p>first partial acknowledgement (RFC 3782) </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_base_alg_8h_source.html#l00073">73</a> of file <a class="el" href="_t_c_p_base_alg_8h_source.html">TCPBaseAlg.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00051">TCPNewReno::processRexmitTimer()</a>, <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00093">TCPNewReno::receivedDataAck()</a>, <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00257">TCPNewReno::receivedDuplicateAck()</a>, and <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00048">TCPBaseAlgStateVariables()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_new_reno.html#a0ccc1ba18d31b873fab51b8e429aaae1">TCPNewReno::processRexmitTimer()</a>, <a class="el" href="class_t_c_p_new_reno.html#a634da20c5ad064882d2c87f6f5ff1301">TCPNewReno::receivedDataAck()</a>, <a class="el" href="class_t_c_p_new_reno.html#a6ce5b0435826f11b9a459b66d7e8aee8">TCPNewReno::receivedDuplicateAck()</a>, and <a class="el" href="class_t_c_p_base_alg_state_variables.html#a43fd2149e9ec289775544fc45d564bf5">TCPBaseAlgStateVariables()</a>.</p>
 
 </div>
 </div>
@@ -279,9 +271,7 @@ Public Attributes</h2></td></tr>
 <p>number of RTOs </p>
 <p>total number of RTOs </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_base_alg_8h_source.html#l00067">67</a> of file <a class="el" href="_t_c_p_base_alg_8h_source.html">TCPBaseAlg.h</a>.</p>
-
-<p>Referenced by <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00227">TCPBaseAlg::processRexmitTimer()</a>, and <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00048">TCPBaseAlgStateVariables()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_base_alg.html#ac8a305a437d4eafd1689204e50af8870">TCPBaseAlg::processRexmitTimer()</a>, and <a class="el" href="class_t_c_p_base_alg_state_variables.html#a43fd2149e9ec289775544fc45d564bf5">TCPBaseAlgStateVariables()</a>.</p>
 
 </div>
 </div>
@@ -299,9 +289,7 @@ Public Attributes</h2></td></tr>
 <p>persist factor </p>
 <p>factor needed for simplified PERSIST timer calculation </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_base_alg_8h_source.html#l00044">44</a> of file <a class="el" href="_t_c_p_base_alg_8h_source.html">TCPBaseAlg.h</a>.</p>
-
-<p>Referenced by <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00306">TCPBaseAlg::processPersistTimer()</a>, <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00520">TCPBaseAlg::receivedDataAck()</a>, and <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00048">TCPBaseAlgStateVariables()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_base_alg.html#a69a0d60fa083b9a3b03e8f80d3c53e6f">TCPBaseAlg::processPersistTimer()</a>, <a class="el" href="class_t_c_p_base_alg.html#a55a32a0e93c6417adb091ee162f225e2">TCPBaseAlg::receivedDataAck()</a>, and <a class="el" href="class_t_c_p_base_alg_state_variables.html#a43fd2149e9ec289775544fc45d564bf5">TCPBaseAlgStateVariables()</a>.</p>
 
 </div>
 </div>
@@ -318,9 +306,7 @@ Public Attributes</h2></td></tr>
 
 <p>current persist timeout </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_base_alg_8h_source.html#l00045">45</a> of file <a class="el" href="_t_c_p_base_alg_8h_source.html">TCPBaseAlg.h</a>.</p>
-
-<p>Referenced by <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00084">detailedInfo()</a>, <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00306">TCPBaseAlg::processPersistTimer()</a>, <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00520">TCPBaseAlg::receivedDataAck()</a>, and <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00048">TCPBaseAlgStateVariables()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_base_alg_state_variables.html#a685f7ef8f9a5a8674c50525dd4ca7d88">detailedInfo()</a>, <a class="el" href="class_t_c_p_base_alg.html#a69a0d60fa083b9a3b03e8f80d3c53e6f">TCPBaseAlg::processPersistTimer()</a>, <a class="el" href="class_t_c_p_base_alg.html#a55a32a0e93c6417adb091ee162f225e2">TCPBaseAlg::receivedDataAck()</a>, and <a class="el" href="class_t_c_p_base_alg_state_variables.html#a43fd2149e9ec289775544fc45d564bf5">TCPBaseAlgStateVariables()</a>.</p>
 
 </div>
 </div>
@@ -338,9 +324,7 @@ Public Attributes</h2></td></tr>
 <p>RFC 3782 variables. </p>
 <p>recover (RFC 3782) </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_base_alg_8h_source.html#l00072">72</a> of file <a class="el" href="_t_c_p_base_alg_8h_source.html">TCPBaseAlg.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00051">TCPNewReno::processRexmitTimer()</a>, <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00093">TCPNewReno::receivedDataAck()</a>, <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00257">TCPNewReno::receivedDuplicateAck()</a>, and <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00048">TCPBaseAlgStateVariables()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_new_reno.html#a0ccc1ba18d31b873fab51b8e429aaae1">TCPNewReno::processRexmitTimer()</a>, <a class="el" href="class_t_c_p_new_reno.html#a634da20c5ad064882d2c87f6f5ff1301">TCPNewReno::receivedDataAck()</a>, <a class="el" href="class_t_c_p_new_reno.html#a6ce5b0435826f11b9a459b66d7e8aee8">TCPNewReno::receivedDuplicateAck()</a>, and <a class="el" href="class_t_c_p_base_alg_state_variables.html#a43fd2149e9ec289775544fc45d564bf5">TCPBaseAlgStateVariables()</a>.</p>
 
 </div>
 </div>
@@ -358,9 +342,7 @@ Public Attributes</h2></td></tr>
 <p>retransmit count </p>
 <p>number of retransmissions (=1 after first rexmit) </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_base_alg_8h_source.html#l00038">38</a> of file <a class="el" href="_t_c_p_base_alg_8h_source.html">TCPBaseAlg.h</a>.</p>
-
-<p>Referenced by <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00227">TCPBaseAlg::processRexmitTimer()</a>, <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00353">TCPBaseAlg::startRexmitTimer()</a>, and <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00048">TCPBaseAlgStateVariables()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_base_alg.html#ac8a305a437d4eafd1689204e50af8870">TCPBaseAlg::processRexmitTimer()</a>, <a class="el" href="class_t_c_p_base_alg.html#a5fc842a3f9c5297e9ba795843bf0cabb">TCPBaseAlg::startRexmitTimer()</a>, and <a class="el" href="class_t_c_p_base_alg_state_variables.html#a43fd2149e9ec289775544fc45d564bf5">TCPBaseAlgStateVariables()</a>.</p>
 
 </div>
 </div>
@@ -377,9 +359,7 @@ Public Attributes</h2></td></tr>
 
 <p>current retransmission timeout (aka RTO) </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_base_alg_8h_source.html#l00039">39</a> of file <a class="el" href="_t_c_p_base_alg_8h_source.html">TCPBaseAlg.h</a>.</p>
-
-<p>Referenced by <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00084">detailedInfo()</a>, <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00075">info()</a>, <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00306">TCPBaseAlg::processPersistTimer()</a>, <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00227">TCPBaseAlg::processRexmitTimer()</a>, <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00363">TCPBaseAlg::rttMeasurementComplete()</a>, <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00413">TCPBaseAlg::sendData()</a>, <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00353">TCPBaseAlg::startRexmitTimer()</a>, and <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00048">TCPBaseAlgStateVariables()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_base_alg_state_variables.html#a685f7ef8f9a5a8674c50525dd4ca7d88">detailedInfo()</a>, <a class="el" href="class_t_c_p_base_alg_state_variables.html#a24c5be81ae8c22877d69716f534c3556">info()</a>, <a class="el" href="class_t_c_p_base_alg.html#a69a0d60fa083b9a3b03e8f80d3c53e6f">TCPBaseAlg::processPersistTimer()</a>, <a class="el" href="class_t_c_p_base_alg.html#ac8a305a437d4eafd1689204e50af8870">TCPBaseAlg::processRexmitTimer()</a>, <a class="el" href="class_t_c_p_base_alg.html#a31986bf6db565ab455f818eafb01320e">TCPBaseAlg::rttMeasurementComplete()</a>, <a class="el" href="class_t_c_p_base_alg.html#a28c072f575629d0c5ec6478edd3bb7e5">TCPBaseAlg::sendData()</a>, <a class="el" href="class_t_c_p_base_alg.html#a5fc842a3f9c5297e9ba795843bf0cabb">TCPBaseAlg::startRexmitTimer()</a>, and <a class="el" href="class_t_c_p_base_alg_state_variables.html#a43fd2149e9ec289775544fc45d564bf5">TCPBaseAlgStateVariables()</a>.</p>
 
 </div>
 </div>
@@ -397,9 +377,7 @@ Public Attributes</h2></td></tr>
 <p>round-trip time measurements </p>
 <p>starting sequence number of timed data </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_base_alg_8h_source.html#l00055">55</a> of file <a class="el" href="_t_c_p_base_alg_8h_source.html">TCPBaseAlg.h</a>.</p>
-
-<p>Referenced by <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00652">TCPBaseAlg::dataSent()</a>, <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00520">TCPBaseAlg::receivedDataAck()</a>, and <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00048">TCPBaseAlgStateVariables()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_base_alg.html#a8bbd5e8c6d8b139da0cbc44a3274c9fa">TCPBaseAlg::dataSent()</a>, <a class="el" href="class_t_c_p_base_alg.html#a55a32a0e93c6417adb091ee162f225e2">TCPBaseAlg::receivedDataAck()</a>, and <a class="el" href="class_t_c_p_base_alg_state_variables.html#a43fd2149e9ec289775544fc45d564bf5">TCPBaseAlgStateVariables()</a>.</p>
 
 </div>
 </div>
@@ -416,9 +394,7 @@ Public Attributes</h2></td></tr>
 
 <p>time when rtseq was sent (0 if RTT measurement is not running) </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_base_alg_8h_source.html#l00056">56</a> of file <a class="el" href="_t_c_p_base_alg_8h_source.html">TCPBaseAlg.h</a>.</p>
-
-<p>Referenced by <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00652">TCPBaseAlg::dataSent()</a>, <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00227">TCPBaseAlg::processRexmitTimer()</a>, <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00520">TCPBaseAlg::receivedDataAck()</a>, and <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00048">TCPBaseAlgStateVariables()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_base_alg.html#a8bbd5e8c6d8b139da0cbc44a3274c9fa">TCPBaseAlg::dataSent()</a>, <a class="el" href="class_t_c_p_base_alg.html#ac8a305a437d4eafd1689204e50af8870">TCPBaseAlg::processRexmitTimer()</a>, <a class="el" href="class_t_c_p_base_alg.html#a55a32a0e93c6417adb091ee162f225e2">TCPBaseAlg::receivedDataAck()</a>, and <a class="el" href="class_t_c_p_base_alg_state_variables.html#a43fd2149e9ec289775544fc45d564bf5">TCPBaseAlgStateVariables()</a>.</p>
 
 </div>
 </div>
@@ -435,9 +411,7 @@ Public Attributes</h2></td></tr>
 
 <p>variance of round-trip time </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_base_alg_8h_source.html#l00062">62</a> of file <a class="el" href="_t_c_p_base_alg_8h_source.html">TCPBaseAlg.h</a>.</p>
-
-<p>Referenced by <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00363">TCPBaseAlg::rttMeasurementComplete()</a>, and <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00048">TCPBaseAlgStateVariables()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_base_alg.html#a31986bf6db565ab455f818eafb01320e">TCPBaseAlg::rttMeasurementComplete()</a>, and <a class="el" href="class_t_c_p_base_alg_state_variables.html#a43fd2149e9ec289775544fc45d564bf5">TCPBaseAlgStateVariables()</a>.</p>
 
 </div>
 </div>
@@ -453,9 +427,7 @@ Public Attributes</h2></td></tr>
 <div class="memdoc">
 <p>congestion window </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_base_alg_8h_source.html#l00050">50</a> of file <a class="el" href="_t_c_p_base_alg_8h_source.html">TCPBaseAlg.h</a>.</p>
-
-<p>Referenced by <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00084">detailedInfo()</a>, <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00148">TCPBaseAlg::established()</a>, <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00075">info()</a>, <a class="el" href="flavours_2_t_c_p_no_congestion_control_8cc_source.html#l00028">TCPNoCongestionControl::initialize()</a>, <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00051">TCPNewReno::processRexmitTimer()</a>, <a class="el" href="flavours_2_t_c_p_reno_8cc_source.html#l00052">TCPReno::processRexmitTimer()</a>, <a class="el" href="flavours_2_t_c_p_tahoe_8cc_source.html#l00041">TCPTahoe::processRexmitTimer()</a>, <a class="el" href="flavours_2_t_c_p_reno_8cc_source.html#l00032">TCPReno::recalculateSlowStartThreshold()</a>, <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00031">TCPNewReno::recalculateSlowStartThreshold()</a>, <a class="el" href="flavours_2_t_c_p_tahoe_8cc_source.html#l00031">TCPTahoe::recalculateSlowStartThreshold()</a>, <a class="el" href="flavours_2_t_c_p_reno_8cc_source.html#l00083">TCPReno::receivedDataAck()</a>, <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00093">TCPNewReno::receivedDataAck()</a>, <a class="el" href="flavours_2_t_c_p_tahoe_8cc_source.html#l00060">TCPTahoe::receivedDataAck()</a>, <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00257">TCPNewReno::receivedDuplicateAck()</a>, <a class="el" href="flavours_2_t_c_p_reno_8cc_source.html#l00195">TCPReno::receivedDuplicateAck()</a>, <a class="el" href="flavours_2_t_c_p_tahoe_8cc_source.html#l00111">TCPTahoe::receivedDuplicateAck()</a>, <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00614">TCPBaseAlg::receivedDuplicateAck()</a>, <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00413">TCPBaseAlg::sendData()</a>, and <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00048">TCPBaseAlgStateVariables()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_base_alg_state_variables.html#a685f7ef8f9a5a8674c50525dd4ca7d88">detailedInfo()</a>, <a class="el" href="class_t_c_p_base_alg.html#a2cbb83fb79f28eaea3d33acb13526e11">TCPBaseAlg::established()</a>, <a class="el" href="class_t_c_p_base_alg_state_variables.html#a24c5be81ae8c22877d69716f534c3556">info()</a>, <a class="el" href="class_t_c_p_no_congestion_control.html#a3d875b56a5442cb63a6b37da45efdc9d">TCPNoCongestionControl::initialize()</a>, <a class="el" href="class_t_c_p_new_reno.html#a0ccc1ba18d31b873fab51b8e429aaae1">TCPNewReno::processRexmitTimer()</a>, <a class="el" href="class_t_c_p_reno.html#a8200e1aeef42d932ef24f447beaf25f5">TCPReno::processRexmitTimer()</a>, <a class="el" href="class_t_c_p_tahoe.html#a7e4ea81dbdbfd0eb8321ccf653a6eb00">TCPTahoe::processRexmitTimer()</a>, <a class="el" href="class_t_c_p_reno.html#a400250f807397650fa3c83c0c46dfd0f">TCPReno::recalculateSlowStartThreshold()</a>, <a class="el" href="class_t_c_p_new_reno.html#aeb6719d2c5df3c9ed30361f0a7b9e5f7">TCPNewReno::recalculateSlowStartThreshold()</a>, <a class="el" href="class_t_c_p_tahoe.html#a2bcfd7100334e5ee3df7a4df4eefae28">TCPTahoe::recalculateSlowStartThreshold()</a>, <a class="el" href="class_t_c_p_reno.html#a346296d9fcd3056d1add56d2f03dd391">TCPReno::receivedDataAck()</a>, <a class="el" href="class_t_c_p_new_reno.html#a634da20c5ad064882d2c87f6f5ff1301">TCPNewReno::receivedDataAck()</a>, <a class="el" href="class_t_c_p_tahoe.html#ab0f1ac1b45b76e45ad5b0ff24faaac80">TCPTahoe::receivedDataAck()</a>, <a class="el" href="class_t_c_p_new_reno.html#a6ce5b0435826f11b9a459b66d7e8aee8">TCPNewReno::receivedDuplicateAck()</a>, <a class="el" href="class_t_c_p_reno.html#adcf0d263e1c1551648ff9b52dff8326f">TCPReno::receivedDuplicateAck()</a>, <a class="el" href="class_t_c_p_tahoe.html#a5c9cd2ff02da7ddc8c1578b0e6a81236">TCPTahoe::receivedDuplicateAck()</a>, <a class="el" href="class_t_c_p_base_alg.html#ad198abc5a259c9b1660ec149aae3b11d">TCPBaseAlg::receivedDuplicateAck()</a>, <a class="el" href="class_t_c_p_base_alg.html#a28c072f575629d0c5ec6478edd3bb7e5">TCPBaseAlg::sendData()</a>, and <a class="el" href="class_t_c_p_base_alg_state_variables.html#a43fd2149e9ec289775544fc45d564bf5">TCPBaseAlgStateVariables()</a>.</p>
 
 </div>
 </div>
@@ -473,15 +445,13 @@ Public Attributes</h2></td></tr>
 <p>round-trip time estimation (Jacobson's algorithm) </p>
 <p>smoothed round-trip time </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_base_alg_8h_source.html#l00061">61</a> of file <a class="el" href="_t_c_p_base_alg_8h_source.html">TCPBaseAlg.h</a>.</p>
-
-<p>Referenced by <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00363">TCPBaseAlg::rttMeasurementComplete()</a>, and <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00048">TCPBaseAlgStateVariables()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_base_alg.html#a31986bf6db565ab455f818eafb01320e">TCPBaseAlg::rttMeasurementComplete()</a>, and <a class="el" href="class_t_c_p_base_alg_state_variables.html#a43fd2149e9ec289775544fc45d564bf5">TCPBaseAlgStateVariables()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_t_c_p_base_alg_8h_source.html">TCPBaseAlg.h</a></li>
-<li><a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html">flavours/TCPBaseAlg.cc</a></li>
+<li><a class="el" href="_t_c_p_base_alg_8h.html">TCPBaseAlg.h</a></li>
+<li><a class="el" href="_t_c_p_base_alg_8cc.html">TCPBaseAlg.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -489,7 +459,7 @@ Public Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_t_c_p_base_alg_state_variables.html">TCPBaseAlgStateVariables</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:53 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:31 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

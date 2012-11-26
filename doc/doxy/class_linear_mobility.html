@@ -75,38 +75,42 @@
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">LinearMobility Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="LinearMobility" --><!-- doxytag: inherits="BasicMobility" -->
-<p>Linear movement model. See NED file for more info.  
+<!-- doxytag: class="LinearMobility" --><!-- doxytag: inherits="MovingMobilityBase" -->
+<p>Linear movement model.  
  <a href="class_linear_mobility.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_linear_mobility_8h_source.html">LinearMobility.h</a>&gt;</code></p>
+<p><code>#include &lt;LinearMobility.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for LinearMobility:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_linear_mobility.png" usemap="#LinearMobility_map" alt=""/>
   <map id="LinearMobility_map" name="LinearMobility_map">
-<area href="class_basic_mobility.html" title="Abstract base class for all mobility modules." alt="BasicMobility" shape="rect" coords="0,112,92,136"/>
-<area href="class_basic_module.html" title="Base class for all simple modules of a host that want to have access to the NotificationBoard module..." alt="BasicModule" shape="rect" coords="0,56,92,80"/>
-<area href="class_i_notifiable.html" alt="INotifiable" shape="rect" coords="0,0,92,24"/>
+<area href="class_moving_mobility_base.html" title="Base class for moving mobility modules." alt="MovingMobilityBase" shape="rect" coords="68,168,194,192"/>
+<area href="class_mobility_base.html" title="Abstract base class for mobility modules." alt="MobilityBase" shape="rect" coords="68,112,194,136"/>
+<area href="class_basic_module.html" title="Base class for all simple modules of a host that want to have access to the NotificationBoard module..." alt="BasicModule" shape="rect" coords="0,56,126,80"/>
+<area href="class_i_mobility.html" title="Abstract base class defining the public interface that must be provided by all mobility modules..." alt="IMobility" shape="rect" coords="136,56,262,80"/>
+<area href="class_i_notifiable.html" title="Clients can receive change notifications from the NotificationBoard via this interface." alt="INotifiable" shape="rect" coords="0,0,126,24"/>
 </map>
  </div></div>
 
 <p><a href="class_linear_mobility-members.html">List of all members.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_linear_mobility.html#a329935eb92a4a87fb0e7ba0014be1419">LinearMobility</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_linear_mobility.html#a62140715094683043b6991fa3de8db4f">initialize</a> (int)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes mobility model parameters.  <a href="#a62140715094683043b6991fa3de8db4f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_linear_mobility.html#abbb8ec23b5505323f1d6ac0773235b59">handleSelfMsg</a> (cMessage *msg)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called upon arrival of a self messages.  <a href="#abbb8ec23b5505323f1d6ac0773235b59"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_linear_mobility.html#a144bed62ee46f5204c47fd84658e45d7">move</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_linear_mobility.html#a90721c1e167c816383c1f9a13ceb81cc">initialize</a> (int stage)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes mobility model parameters.  <a href="#a90721c1e167c816383c1f9a13ceb81cc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_linear_mobility.html#a144bed62ee46f5204c47fd84658e45d7">move</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the host.  <a href="#a144bed62ee46f5204c47fd84658e45d7"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -116,53 +120,40 @@ Protected Attributes</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">angle of linear motion  <a href="#aecacb8d29b3fd3f4cf85722abc9a3491"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_linear_mobility.html#aadef59efc17d450a0fa214321b84f90e">acceleration</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">acceleration of linear motion  <a href="#aadef59efc17d450a0fa214321b84f90e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_linear_mobility.html#a200d127229168a2e562ff7ea55d7d80c">updateInterval</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">time interval to update the hosts position  <a href="#a200d127229168a2e562ff7ea55d7d80c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_linear_mobility.html#aff66ce903f574561a72f6c985cc316d8">stationary</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">if true, the host doesn't move  <a href="#aff66ce903f574561a72f6c985cc316d8"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Linear movement model. See NED file for more info. </p>
+<div class="textblock"><p>Linear movement model. </p>
+<p>See NED file for more info.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>Emin Ilker Cetinbas </dd></dl>
-
-<p>Definition at line <a class="el" href="_linear_mobility_8h_source.html#l00032">32</a> of file <a class="el" href="_linear_mobility_8h_source.html">LinearMobility.h</a>.</p>
-</div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="abbb8ec23b5505323f1d6ac0773235b59"></a><!-- doxytag: member="LinearMobility::handleSelfMsg" ref="abbb8ec23b5505323f1d6ac0773235b59" args="(cMessage *msg)" -->
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a329935eb92a4a87fb0e7ba0014be1419"></a><!-- doxytag: member="LinearMobility::LinearMobility" ref="a329935eb92a4a87fb0e7ba0014be1419" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_linear_mobility.html#abbb8ec23b5505323f1d6ac0773235b59">LinearMobility::handleSelfMsg</a> </td>
+          <td class="memname"><a class="el" href="class_linear_mobility.html#a329935eb92a4a87fb0e7ba0014be1419">LinearMobility::LinearMobility</a> </td>
           <td>(</td>
-          <td class="paramtype">cMessage *&#160;</td>
-          <td class="paramname"><em>msg</em></td><td>)</td>
-          <td><code> [protected, virtual]</code></td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Called upon arrival of a self messages. </p>
-<p>The only self message possible is to indicate a new movement. If host is stationary this function is never called. </p>
-
-<p>Implements <a class="el" href="class_basic_mobility.html#a4441e2aad4569312460b6e2c195e0c49">BasicMobility</a>.</p>
-
-<p>Definition at line <a class="el" href="_linear_mobility_8cc_source.html#l00054">54</a> of file <a class="el" href="_linear_mobility_8cc_source.html">LinearMobility.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_linear_mobility.html#a144bed62ee46f5204c47fd84658e45d7" title="Move the host.">move</a>();
-    <a class="code" href="class_basic_mobility.html#aeca7c4a0105ebf716bcfb1bb285b5cf3" title="Update the position information for this node.">updatePosition</a>();
-    <span class="keywordflow">if</span> (!<a class="code" href="class_linear_mobility.html#aff66ce903f574561a72f6c985cc316d8" title="if true, the host doesn&#39;t move">stationary</a>)
-        scheduleAt(simTime() + <a class="code" href="class_linear_mobility.html#a200d127229168a2e562ff7ea55d7d80c" title="time interval to update the hosts position">updateInterval</a>, msg);
+    <a class="code" href="class_linear_mobility.html#a3125832e7a9d193f3795097d1a0f3ed7" title="speed of the host">speed</a> = 0;
+    <a class="code" href="class_linear_mobility.html#aecacb8d29b3fd3f4cf85722abc9a3491" title="angle of linear motion">angle</a> = 0;
+    <a class="code" href="class_linear_mobility.html#aadef59efc17d450a0fa214321b84f90e" title="acceleration of linear motion">acceleration</a> = 0;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a62140715094683043b6991fa3de8db4f"></a><!-- doxytag: member="LinearMobility::initialize" ref="a62140715094683043b6991fa3de8db4f" args="(int)" -->
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a90721c1e167c816383c1f9a13ceb81cc"></a><!-- doxytag: member="LinearMobility::initialize" ref="a90721c1e167c816383c1f9a13ceb81cc" args="(int stage)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_linear_mobility.html#a62140715094683043b6991fa3de8db4f">LinearMobility::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_linear_mobility.html#a90721c1e167c816383c1f9a13ceb81cc">LinearMobility::initialize</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>stage</em></td><td>)</td>
@@ -174,28 +165,16 @@ Protected Attributes</h2></td></tr>
 
 <p>Initializes mobility model parameters. </p>
 
-<p>Reimplemented from <a class="el" href="class_basic_mobility.html#a6e424be0175ada88871a3b0ff0adeb0e">BasicMobility</a>.</p>
-
-<p>Definition at line <a class="el" href="_linear_mobility_8cc_source.html#l00026">26</a> of file <a class="el" href="_linear_mobility_8cc_source.html">LinearMobility.cc</a>.</p>
+<p>Reimplemented from <a class="el" href="class_moving_mobility_base.html#a42b5578a418c86489c79cb765f1ffd4f">MovingMobilityBase</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_linear_mobility.html#a62140715094683043b6991fa3de8db4f" title="Initializes mobility model parameters.">BasicMobility::initialize</a>(stage);
-
+    <a class="code" href="class_linear_mobility.html#a90721c1e167c816383c1f9a13ceb81cc" title="Initializes mobility model parameters.">MovingMobilityBase::initialize</a>(stage);
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;initializing LinearMobility stage &quot;</span> &lt;&lt; stage &lt;&lt; endl;
-
     <span class="keywordflow">if</span> (stage == 0)
     {
-        <a class="code" href="class_linear_mobility.html#a200d127229168a2e562ff7ea55d7d80c" title="time interval to update the hosts position">updateInterval</a> = par(<span class="stringliteral">&quot;updateInterval&quot;</span>);
         <a class="code" href="class_linear_mobility.html#a3125832e7a9d193f3795097d1a0f3ed7" title="speed of the host">speed</a> = par(<span class="stringliteral">&quot;speed&quot;</span>);
-        <a class="code" href="class_linear_mobility.html#aecacb8d29b3fd3f4cf85722abc9a3491" title="angle of linear motion">angle</a> = par(<span class="stringliteral">&quot;angle&quot;</span>);
+        <a class="code" href="class_linear_mobility.html#aecacb8d29b3fd3f4cf85722abc9a3491" title="angle of linear motion">angle</a> = fmod((<span class="keywordtype">double</span>)par(<span class="stringliteral">&quot;angle&quot;</span>), 360);
         <a class="code" href="class_linear_mobility.html#aadef59efc17d450a0fa214321b84f90e" title="acceleration of linear motion">acceleration</a> = par(<span class="stringliteral">&quot;acceleration&quot;</span>);
-        <a class="code" href="class_linear_mobility.html#aecacb8d29b3fd3f4cf85722abc9a3491" title="angle of linear motion">angle</a> = fmod(<a class="code" href="class_linear_mobility.html#aecacb8d29b3fd3f4cf85722abc9a3491" title="angle of linear motion">angle</a>,360);
-
-        <span class="comment">// if the initial speed is lower than 0, the node is stationary</span>
-        <a class="code" href="class_linear_mobility.html#aff66ce903f574561a72f6c985cc316d8" title="if true, the host doesn&#39;t move">stationary</a> = (<a class="code" href="class_linear_mobility.html#a3125832e7a9d193f3795097d1a0f3ed7" title="speed of the host">speed</a> == 0);
-
-        <span class="comment">// host moves the first time after some random delay to avoid synchronized movements</span>
-        <span class="keywordflow">if</span> (!<a class="code" href="class_linear_mobility.html#aff66ce903f574561a72f6c985cc316d8" title="if true, the host doesn&#39;t move">stationary</a>)
-            scheduleAt(simTime() + uniform(0, <a class="code" href="class_linear_mobility.html#a200d127229168a2e562ff7ea55d7d80c" title="time interval to update the hosts position">updateInterval</a>), <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;move&quot;</span>));
+        <a class="code" href="class_moving_mobility_base.html#a6c780988c5edd64fc81a7a4d342b8118" title="A mobility model may decide to become stationary at any time.">stationary</a> = (<a class="code" href="class_linear_mobility.html#a3125832e7a9d193f3795097d1a0f3ed7" title="speed of the host">speed</a> == 0) &amp;&amp; (<a class="code" href="class_linear_mobility.html#aadef59efc17d450a0fa214321b84f90e" title="acceleration of linear motion">acceleration</a> == 0.0);
     }
 }
 </pre></div>
@@ -206,7 +185,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_linear_mobility.html#a144bed62ee46f5204c47fd84658e45d7">LinearMobility::move</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_linear_mobility.html#a144bed62ee46f5204c47fd84658e45d7">LinearMobility::move</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -216,28 +195,27 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Move the host. </p>
-<p>Move the host if the destination is not reached yet. Otherwise calculate a new random position </p>
 
-<p>Definition at line <a class="el" href="_linear_mobility_8cc_source.html#l00066">66</a> of file <a class="el" href="_linear_mobility_8cc_source.html">LinearMobility.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_linear_mobility_8cc_source.html#l00054">handleSelfMsg()</a>.</p>
+<p>Implements <a class="el" href="class_moving_mobility_base.html#a9d3b4a926b2dd8fa59de6600522ae19d">MovingMobilityBase</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_basic_mobility.html#aaaa0e7080d07fb40a1e077c86b99f4ec" title="Stores the actual position of the host.">pos</a>.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a> += <a class="code" href="class_linear_mobility.html#a3125832e7a9d193f3795097d1a0f3ed7" title="speed of the host">speed</a> * cos(PI * <a class="code" href="class_linear_mobility.html#aecacb8d29b3fd3f4cf85722abc9a3491" title="angle of linear motion">angle</a> / 180) * <a class="code" href="class_linear_mobility.html#a200d127229168a2e562ff7ea55d7d80c" title="time interval to update the hosts position">updateInterval</a>;
-    <a class="code" href="class_basic_mobility.html#aaaa0e7080d07fb40a1e077c86b99f4ec" title="Stores the actual position of the host.">pos</a>.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> += <a class="code" href="class_linear_mobility.html#a3125832e7a9d193f3795097d1a0f3ed7" title="speed of the host">speed</a> * sin(PI * <a class="code" href="class_linear_mobility.html#aecacb8d29b3fd3f4cf85722abc9a3491" title="angle of linear motion">angle</a> / 180) * <a class="code" href="class_linear_mobility.html#a200d127229168a2e562ff7ea55d7d80c" title="time interval to update the hosts position">updateInterval</a>;
+    <span class="keywordtype">double</span> rad = PI * <a class="code" href="class_linear_mobility.html#aecacb8d29b3fd3f4cf85722abc9a3491" title="angle of linear motion">angle</a> / 180;
+    <a class="code" href="class_coord.html" title="Class for storing 3D coordinates.">Coord</a> direction(cos(rad), sin(rad));
+    <a class="code" href="class_moving_mobility_base.html#ab1188feab18688c3d31483ac667bbd5f" title="The last speed that was reported at lastUpdate.">lastSpeed</a> = direction * <a class="code" href="class_linear_mobility.html#a3125832e7a9d193f3795097d1a0f3ed7" title="speed of the host">speed</a>;
+    <span class="keywordtype">double</span> elapsedTime = (simTime() - <a class="code" href="class_moving_mobility_base.html#a60d88e6d9264df81f40eabb644e5c402" title="The simulation time when the mobility state was last updated.">lastUpdate</a>).dbl();
+    <a class="code" href="class_mobility_base.html#a82ae637969433a492154b26039b84038" title="The last position that was reported.">lastPosition</a> += <a class="code" href="class_moving_mobility_base.html#ab1188feab18688c3d31483ac667bbd5f" title="The last speed that was reported at lastUpdate.">lastSpeed</a> * elapsedTime;
 
     <span class="comment">// do something if we reach the wall</span>
-    <a class="code" href="class_coord.html" title="Class for storing host positions.">Coord</a> dummy;
-    <a class="code" href="class_basic_mobility.html#abe55a2413e6d335fb5baeeadcadd975c" title="Invokes one of reflectIfOutside(), wrapIfOutside() and placeRandomlyIfOutside(), depending on the giv...">handleIfOutside</a>(<a class="code" href="class_basic_mobility.html#a3df467f3202a9895f325fe7b7618f2afa1bb147021ed59276e0cc29b720b994f0" title="reflect off the wall">REFLECT</a>, dummy, dummy, <a class="code" href="class_linear_mobility.html#aecacb8d29b3fd3f4cf85722abc9a3491" title="angle of linear motion">angle</a>);
+    <a class="code" href="class_coord.html" title="Class for storing 3D coordinates.">Coord</a> dummy;
+    <a class="code" href="class_mobility_base.html#a2583560e5b7b4dcc26b93eadfe17056e" title="Invokes one of reflectIfOutside(), wrapIfOutside() and placeRandomlyIfOutside(), depending on the giv...">handleIfOutside</a>(<a class="code" href="class_mobility_base.html#aa67dcad3ed1e7fe0164b84131aea2b18add05fd1c0ea65bba1c8e25fe7742acca" title="reflect off the wall">REFLECT</a>, dummy, dummy, <a class="code" href="class_linear_mobility.html#aecacb8d29b3fd3f4cf85722abc9a3491" title="angle of linear motion">angle</a>);
 
     <span class="comment">// accelerate</span>
-    <a class="code" href="class_linear_mobility.html#a3125832e7a9d193f3795097d1a0f3ed7" title="speed of the host">speed</a> += <a class="code" href="class_linear_mobility.html#aadef59efc17d450a0fa214321b84f90e" title="acceleration of linear motion">acceleration</a> * <a class="code" href="class_linear_mobility.html#a200d127229168a2e562ff7ea55d7d80c" title="time interval to update the hosts position">updateInterval</a>;
-    <span class="keywordflow">if</span> (<a class="code" href="class_linear_mobility.html#a3125832e7a9d193f3795097d1a0f3ed7" title="speed of the host">speed</a> &lt;= 0)
+    speed += <a class="code" href="class_linear_mobility.html#aadef59efc17d450a0fa214321b84f90e" title="acceleration of linear motion">acceleration</a> * elapsedTime;
+    <span class="keywordflow">if</span> (speed &lt;= 0)
     {
-        <a class="code" href="class_linear_mobility.html#a3125832e7a9d193f3795097d1a0f3ed7" title="speed of the host">speed</a> = 0;
-        <a class="code" href="class_linear_mobility.html#aff66ce903f574561a72f6c985cc316d8" title="if true, the host doesn&#39;t move">stationary</a> = <span class="keyword">true</span>;
+        speed = 0;
+        <a class="code" href="class_moving_mobility_base.html#a6c780988c5edd64fc81a7a4d342b8118" title="A mobility model may decide to become stationary at any time.">stationary</a> = <span class="keyword">true</span>;
     }
-
-    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot; xpos= &quot;</span> &lt;&lt; <a class="code" href="class_basic_mobility.html#aaaa0e7080d07fb40a1e077c86b99f4ec" title="Stores the actual position of the host.">pos</a>.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a> &lt;&lt; <span class="stringliteral">&quot; ypos=&quot;</span> &lt;&lt; <a class="code" href="class_basic_mobility.html#aaaa0e7080d07fb40a1e077c86b99f4ec" title="Stores the actual position of the host.">pos</a>.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> &lt;&lt; <span class="stringliteral">&quot; speed=&quot;</span> &lt;&lt; <a class="code" href="class_linear_mobility.html#a3125832e7a9d193f3795097d1a0f3ed7" title="speed of the host">speed</a> &lt;&lt; endl;
+    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot; t= &quot;</span> &lt;&lt; SIMTIME_STR(simTime()) &lt;&lt; <span class="stringliteral">&quot; xpos= &quot;</span> &lt;&lt; <a class="code" href="class_mobility_base.html#a82ae637969433a492154b26039b84038" title="The last position that was reported.">lastPosition</a>.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a> &lt;&lt; <span class="stringliteral">&quot; ypos=&quot;</span> &lt;&lt; <a class="code" href="class_mobility_base.html#a82ae637969433a492154b26039b84038" title="The last position that was reported.">lastPosition</a>.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> &lt;&lt; <span class="stringliteral">&quot; speed=&quot;</span> &lt;&lt; speed &lt;&lt; endl;
 }
 </pre></div>
 </div>
@@ -256,9 +234,7 @@ Protected Attributes</h2></td></tr>
 
 <p>acceleration of linear motion </p>
 
-<p>Definition at line <a class="el" href="_linear_mobility_8h_source.html#l00037">37</a> of file <a class="el" href="_linear_mobility_8h_source.html">LinearMobility.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_linear_mobility_8cc_source.html#l00026">initialize()</a>, and <a class="el" href="_linear_mobility_8cc_source.html#l00066">move()</a>.</p>
+<p>Referenced by <a class="el" href="class_linear_mobility.html#a90721c1e167c816383c1f9a13ceb81cc">initialize()</a>, <a class="el" href="class_linear_mobility.html#a329935eb92a4a87fb0e7ba0014be1419">LinearMobility()</a>, and <a class="el" href="class_linear_mobility.html#a144bed62ee46f5204c47fd84658e45d7">move()</a>.</p>
 
 </div>
 </div>
@@ -275,9 +251,7 @@ Protected Attributes</h2></td></tr>
 
 <p>angle of linear motion </p>
 
-<p>Definition at line <a class="el" href="_linear_mobility_8h_source.html#l00036">36</a> of file <a class="el" href="_linear_mobility_8h_source.html">LinearMobility.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_linear_mobility_8cc_source.html#l00026">initialize()</a>, and <a class="el" href="_linear_mobility_8cc_source.html#l00066">move()</a>.</p>
+<p>Referenced by <a class="el" href="class_linear_mobility.html#a90721c1e167c816383c1f9a13ceb81cc">initialize()</a>, <a class="el" href="class_linear_mobility.html#a329935eb92a4a87fb0e7ba0014be1419">LinearMobility()</a>, and <a class="el" href="class_linear_mobility.html#a144bed62ee46f5204c47fd84658e45d7">move()</a>.</p>
 
 </div>
 </div>
@@ -294,53 +268,13 @@ Protected Attributes</h2></td></tr>
 
 <p>speed of the host </p>
 
-<p>Definition at line <a class="el" href="_linear_mobility_8h_source.html#l00035">35</a> of file <a class="el" href="_linear_mobility_8h_source.html">LinearMobility.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_linear_mobility_8cc_source.html#l00026">initialize()</a>, and <a class="el" href="_linear_mobility_8cc_source.html#l00066">move()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aff66ce903f574561a72f6c985cc316d8"></a><!-- doxytag: member="LinearMobility::stationary" ref="aff66ce903f574561a72f6c985cc316d8" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="class_linear_mobility.html#aff66ce903f574561a72f6c985cc316d8">LinearMobility::stationary</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>if true, the host doesn't move </p>
-
-<p>Definition at line <a class="el" href="_linear_mobility_8h_source.html#l00039">39</a> of file <a class="el" href="_linear_mobility_8h_source.html">LinearMobility.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_linear_mobility_8cc_source.html#l00054">handleSelfMsg()</a>, <a class="el" href="_linear_mobility_8cc_source.html#l00026">initialize()</a>, and <a class="el" href="_linear_mobility_8cc_source.html#l00066">move()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a200d127229168a2e562ff7ea55d7d80c"></a><!-- doxytag: member="LinearMobility::updateInterval" ref="a200d127229168a2e562ff7ea55d7d80c" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double <a class="el" href="class_linear_mobility.html#a200d127229168a2e562ff7ea55d7d80c">LinearMobility::updateInterval</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>time interval to update the hosts position </p>
-
-<p>Definition at line <a class="el" href="_linear_mobility_8h_source.html#l00038">38</a> of file <a class="el" href="_linear_mobility_8h_source.html">LinearMobility.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_linear_mobility_8cc_source.html#l00054">handleSelfMsg()</a>, <a class="el" href="_linear_mobility_8cc_source.html#l00026">initialize()</a>, and <a class="el" href="_linear_mobility_8cc_source.html#l00066">move()</a>.</p>
+<p>Referenced by <a class="el" href="class_linear_mobility.html#a90721c1e167c816383c1f9a13ceb81cc">initialize()</a>, <a class="el" href="class_linear_mobility.html#a329935eb92a4a87fb0e7ba0014be1419">LinearMobility()</a>, and <a class="el" href="class_linear_mobility.html#a144bed62ee46f5204c47fd84658e45d7">move()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_linear_mobility_8h_source.html">LinearMobility.h</a></li>
-<li><a class="el" href="_linear_mobility_8cc_source.html">LinearMobility.cc</a></li>
+<li><a class="el" href="_linear_mobility_8h.html">LinearMobility.h</a></li>
+<li><a class="el" href="_linear_mobility_8cc.html">LinearMobility.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -348,7 +282,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_linear_mobility.html">LinearMobility</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:50 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:27 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -8,89 +8,62 @@
 <b>Package:</b> inet.transport.tcp<br/><b>File: <a href="src-transport-tcp-TCP.ned.html">src/transport/tcp/TCP.ned</a></b><br/><p><a href="../doxy/class_t_c_p.html" target="mainframe"><b>C++ definition</b></a></p>
 
 <p>TCP protocol implementation.
-This implementation supports:</p>
+See the <a href="inet.transport.ITCP.html">ITCP</a> for the TCP layer general informations.</p>
+<p>This implementation supports:</p>
   <ul><li>RFC  793 - Transmission Control Protocol</li>
-  <li>RFC  896 - Congestion Control in <a href="inet.networklayer.ipv4.IP.html">IP</a>/<a href="inet.transport.tcp.TCP.html">TCP</a> Internetworks</li>
+  <li>RFC  896 - Congestion Control in IP/TCP Internetworks</li>
   <li>RFC 1122 - Requirements for Internet Hosts -- Communication Layers</li>
-  <li>RFC 1323 - <a href="inet.transport.tcp.TCP.html">TCP</a> Extensions for High Performance</li>
-  <li>RFC 2018 - <a href="inet.transport.tcp.TCP.html">TCP</a> Selective Acknowledgment Options</li>
-  <li>RFC 2581 - <a href="inet.transport.tcp.TCP.html">TCP</a> Congestion Control</li>
-  <li>RFC 2883 - An Extension to the Selective Acknowledgement (SACK) Option for <a href="inet.transport.tcp.TCP.html">TCP</a></li>
-  <li>RFC 3042 - Enhancing <a href="inet.transport.tcp.TCP.html">TCP</a>'s Loss Recovery Using Limited Transmit</li>
-  <li>RFC 3390 - Increasing <a href="inet.transport.tcp.TCP.html">TCP</a>'s Initial Window</li>
+  <li>RFC 1323 - TCP Extensions for High Performance</li>
+  <li>RFC 2018 - TCP Selective Acknowledgment Options</li>
+  <li>RFC 2581 - TCP Congestion Control</li>
+  <li>RFC 2883 - An Extension to the Selective Acknowledgement (SACK) Option for TCP</li>
+  <li>RFC 3042 - Enhancing TCP's Loss Recovery Using Limited Transmit</li>
+  <li>RFC 3390 - Increasing TCP's Initial Window</li>
   <li>RFC 3517 - A Conservative Selective Acknowledgment (SACK)-based Loss Recovery
-               Algorithm for <a href="inet.transport.tcp.TCP.html">TCP</a></li>
-  <li>RFC 3782 - The NewReno Modification to <a href="inet.transport.tcp.TCP.html">TCP</a>'s Fast Recovery Algorithm
-Compatible with both IPv4 and <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a>.</li></ul>
+               Algorithm for TCP</li>
+  <li>RFC 3782 - The NewReno Modification to TCP's Fast Recovery Algorithm</li></ul>
+<p>This module is compatible with both <a href="inet.networklayer.ipv4.IPv4.html">IPv4</a> and <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a>.</p>
 <p>A TCP segment is represented by the class <a href="TCPSegment.html">TCPSegment</a>.</p>
 <p><b>Communication with clients</b></p>
-<p>For communication between client applications and <a href="inet.transport.tcp.TCP.html">TCP</a>, the <a href="TcpCommandCode.html">TcpCommandCode</a>
+<p>For communication between client applications and TCP, the <a href="TcpCommandCode.html">TcpCommandCode</a>
 and <a href="TcpStatusInd.html">TcpStatusInd</a> enums are used as message kinds, and <a href="TCPCommand.html">TCPCommand</a>
 and its subclasses are used as control info.</p>
-<p>To open a connection from a client app, send a cMessage to <a href="inet.transport.tcp.TCP.html">TCP</a> with
+<p>To open a connection from a client app, send a cMessage to TCP with
 TCP_C_OPEN_ACTIVE as message kind and a <a href="TCPOpenCommand.html">TCPOpenCommand</a> object filled in
-and attached to it as control info. (The peer <a href="inet.transport.tcp.TCP.html">TCP</a> will have to be LISTENing;
+and attached to it as control info. (The peer TCP will have to be LISTENing;
 the server app can achieve this with a similar cMessage but TCP_C_OPEN_PASSIVE
 message kind.) With passive open, there's a possibility to cause the connection
 "fork" on an incoming connection, leaving the original connection LISTENing
 on the port (see the fork field in <a href="TCPOpenCommand.html">TCPOpenCommand</a>).</p>
 <p>The client app can send data by assigning the TCP_C_SEND message kind
 and attaching a <a href="TCPSendCommand.html">TCPSendCommand</a> control info object to the data packet,
-and sending it to <a href="inet.transport.tcp.TCP.html">TCP</a>. The server app will receive data as messages
-with the TCP_I_DATA message kind and <a href="TCPSendCommand.html">TCPSendCommand</a> control info.
-(Whether you'll receive the same or identical messages, or even whether
-you'll receive data in the same sized chunks as sent depends on the
-sendQueueClass and receiveQueueClass used, see below. With
-TCPVirtualDataSendQueue and TCPVirtualDataRcvQueue set, message objects
-and even message boundaries are not preserved.)</p>
-<p>To close, the client sends a cMessage to <a href="inet.transport.tcp.TCP.html">TCP</a> with the TCP_C_CLOSE message kind
+and sending it to TCP. The server app will receive data as messages
+with the TCP_I_DATA message kind and <a href="TCPSendCommand.html">TCPSendCommand</a> control info.</p>
+<p>To close, the client sends a cMessage to TCP with the TCP_C_CLOSE message kind
 and <a href="TCPCommand.html">TCPCommand</a> control info.</p>
-<p><a href="inet.transport.tcp.TCP.html">TCP</a> sends notifications to the application whenever there's a significant
-change in the state of the connection: established, remote <a href="inet.transport.tcp.TCP.html">TCP</a> closed,
+<p>TCP sends notifications to the application whenever there's a significant
+change in the state of the connection: established, remote TCP closed,
 closed, timed out, connection refused, connection reset, etc. These
 notifications are also cMessages with message kind TCP_I_xxx
 (TCP_I_ESTABLISHED, etc.) and <a href="TCPCommand.html">TCPCommand</a> as control info.</p>
-<p><a href="inet.examples.ansaExamples.switchtest.One.html">One</a> <a href="inet.transport.tcp.TCP.html">TCP</a> module can serve several application modules, and several
-connections per application. The <i>k</i>th application connects to <a href="inet.transport.tcp.TCP.html">TCP</a>'s
+<p>One TCP module can serve several application modules, and several
+connections per application. The <i>k</i>th application connects to TCP's
 appIn[k] and appOut[k] ports. When talking to applications, a
 connection is identified by the (application port index, connId) pair,
 where connId is assigned by the application in the OPEN call.</p>
 <p><b>Sockets</b></p>
 <p>The TCPSocket C++ class is provided to simplify managing TCP connections
 from applications. TCPSocket handles the job of assembling and sending
-command messages (OPEN, CLOSE, etc) to <a href="inet.transport.tcp.TCP.html">TCP</a>, and it also simplifies
-the task of dealing with packets and notification messages coming from <a href="inet.transport.tcp.TCP.html">TCP</a>.</p>
+command messages (OPEN, CLOSE, etc) to TCP, and it also simplifies
+the task of dealing with packets and notification messages coming from TCP.</p>
 <p><b>Communication with the IP layer</b></p>
-<p>The <a href="inet.transport.tcp.TCP.html">TCP</a> model relies on sending and receiving <a href="IPControlInfo.html">IPControlInfo</a> objects
+<p>The TCP model relies on sending and receiving <a href="IPv4ControlInfo.html">IPv4ControlInfo</a> objects
 attached to TCP segment objects as control info
 (see cMessage::setControlInfo()).</p>
-<p><b>Configuring <a href="inet.transport.tcp.TCP.html">TCP</a></b></p>
-<p>The module parameters sendQueueClass and receiveQueueClass should be
-set the names of classes that manage the actual send and receive queues.
-Currently you have two choices:</p>
-  <ol><li>set them to "TCPVirtualDataSendQueue" and "TCPVirtualDataRcvQueue".
-     These classes manage "virtual bytes", that is, only byte counts are
-     transmitted over the TCP connection and no actual data. cMessage
-     contents, and even message boundaries are not preserved with these
-     classes: for example(<a href="inet.examples.ansaExamples.PDS_project.example.html">1</a>,<a href="inet.examples.ansaExamples.switchtest.example.html">2</a>), if the client sends a single cMessage with
-     length = 1 megabyte over <a href="inet.transport.tcp.TCP.html">TCP</a>, the receiver-side client will see a
-     sequence of MSS-sized messages.</li></ol>
-<p>It depends on the client (app) modules which sendQueue/rcvQueue they require.
-For example(<a href="inet.examples.ansaExamples.PDS_project.example.html">1</a>,<a href="inet.examples.ansaExamples.switchtest.example.html">2</a>), <a href="inet.applications.tcpapp.TCPGenericSrvApp.html">TCPGenericSrvApp</a> needs message-based sendQueue/rcvQueue,
-while <a href="inet.applications.tcpapp.TCPEchoApp.html">TCPEchoApp</a> or <a href="inet.applications.tcpapp.TCPSinkApp.html">TCPSinkApp</a> can work with any (but <a href="inet.applications.tcpapp.TCPEchoApp.html">TCPEchoApp</a> will
-display different behaviour with both!) In the future, other send queue
-and receive queue classes may be implemented, e.g. to allow transmission
-of "raw bytes" (actual byte arrays).</p>
-  <ol><li>use "TCPMsgBasedSendQueue" and "TCPMsgBasedRcvQueue", which transmit
-     cMessage objects (and subclasses) over a TCP connection. The same
-     message object sequence that was sent by the client to the
-     sender-side <a href="inet.transport.tcp.TCP.html">TCP</a> entity will be reproduced on the receiver side.
-     If a client sends a cMessage with length = 1 megabyte, the
-     receiver-side client will receive the same message object (or a clone)
-     after the <a href="inet.transport.tcp.TCP.html">TCP</a> entities have completed simulating the transmission
-     of 1 megabyte over the connection. This is a different behaviour
-     from TCPVirtualDataSendQueue/RcvQueue.</li>
-  <li>use the module parameter (limitedTransmitEnabled) to enabled/disabled
+<p><b>Configuring TCP</b></p>
+<p>The obsoleted sendQueueClass and receiveQueueClass parameters are removed!
+You must set the dataTransferMode in <a href="TCPOpenCommand.html">TCPOpenCommand</a> message.</p>
+  <ol><li>use the module parameter (limitedTransmitEnabled) to enabled/disabled
      Limited Transmit algorithm (RFC 3042) integrated to TCPBaseAlg
      (can be used for TCPNewReno, TCPReno, TCPTahoe and TCPNoCongestionControl but not
      for DumbTCP).</li>
@@ -100,11 +73,10 @@ of "raw bytes" (actual byte arrays).</p>
      TCPBaseAlg (can be used for TCPNewReno, TCPReno, TCPTahoe and TCPNoCongestionControl
      but not for DumbTCP).</li></ol>
 <p>The TCP flavour supported depends on the value of the tcpAlgorithmClass
-module parameters, e.g. "TCPTahoe" or "TCPReno". In the future, other
+module parameter, e.g. "TCPTahoe" or "TCPReno". In the future, other
 classes can be written which implement Vegas, LinuxTCP (which
 differs from others) or other variants.</p>
-<p>Note that <a href="TCPOpenCommand.html">TCPOpenCommand</a> allows sendQueueClass, receiveQueueClass and
-tcpAlgorithmClass to be chosen per-connection.</p>
+<p>Note that <a href="TCPOpenCommand.html">TCPOpenCommand</a> allows tcpAlgorithmClass to be chosen per-connection.</p>
 <p>Notes:</p>
   <ul><li>if you do active OPEN, then send data and close before the connection
    has reached ESTABLISHED, the connection will go from SYN_SENT to CLOSED
@@ -113,7 +85,7 @@ tcpAlgorithmClass to be chosen per-connection.</p>
   <li>handling segments with SYN+FIN bits set (esp. with data too) is
    inconsistent across TCPs, so check this one if it's of importance</li></ul>
 <p><b>Standards</b></p>
-<p>The <a href="inet.transport.tcp.TCP.html">TCP</a> module itself implements the following:</p>
+<p>The TCP module itself implements the following:</p>
   <ul><li>all RFC 793 TCP states and state transitions</li>
   <li>connection setup and teardown as in RFC 793</li>
   <li>generally, RFC 793 compliant segment processing</li>
@@ -122,16 +94,16 @@ tcpAlgorithmClass to be chosen per-connection.</p>
    to the user</li>
   <li>CONN-ESTAB timer, SYN-REXMIT timer, 2MSL timer, FIN-WAIT-2 timer</li>
   <li>The basic SACK implementation (RFC 2018 and RFC 2883) is located in
-   <a href="inet.transport.tcp.TCP.html">TCP</a> main (and not in flavours).
-   This means that all existing <a href="inet.transport.tcp.TCP.html">TCP</a> algorithm classes may be used with
+   TCP main (and not in flavours).
+   This means that all existing TCP algorithm classes may be used with
    SACK, although currently only TCPReno makes sense.</li>
   <li>RFC 3517 - (SACK)-based Loss Recovery algorithm which is a conservative
    replacement of the fast recovery algorithm (RFC2581) integrated to
    TCPReno but not to TCPNewReno, TCPTahoe, TCPNoCongestionControl and DumbTCP.</li>
   <li>changes from RFC 2001 to RFC 2581:</li>
-  <ul><li>ACK generation (ack_now = true) RFC 2581, page 6: "(...) a <a href="inet.transport.tcp.TCP.html">TCP</a> receiver SHOULD send an immediate ACK
+  <ul><li>ACK generation (ack_now = true) RFC 2581, page 6: "(...) a TCP receiver SHOULD send an immediate ACK
        when the incoming segment fills in all or part of a gap in the sequence space."</li></ul>
-  <li><a href="inet.transport.tcp.TCP.html">TCP</a> header options:</li>
+  <li>TCP header options:</li>
   <ul><li>EOL: End of option list.</li>
   <li>NOP: Padding bytes, currently needed for SACK_PERMITTED and SACK.</li>
   <li>MSS: The value of snd_mss (SMSS) is set to the minimum of snd_mss
@@ -165,7 +137,7 @@ tcpAlgorithmClass to be chosen per-connection.</p>
   <li>no RECEIVE command. Received data are always forwarded to the app as
    soon as possible, as if the app issued a very large RECEIVE request
    at the beginning. This means there's currently no flow control
-   between <a href="inet.transport.tcp.TCP.html">TCP</a> and the app.</li>
+   between TCP and the app.</li>
   <li>all timeouts are precisely calculated: timer granularity (which is caused
    by "slow" and "fast" i.e. 500ms and 200ms timers found in many *nix TCP
    implementations) is not simulated</li>
@@ -176,132 +148,23 @@ tcpAlgorithmClass to be chosen per-connection.</p>
 <p>The above problems are relatively easy to fix, and will be resolved in the
 next iteration. Also, other TCPAlgorithms will be added.</p>
 <p><b>Tests</b></p>
-<p>There are automated test cases (*.test files) for <a href="inet.transport.tcp.TCP.html">TCP</a> -- see the Test
+<p>There are automated test cases (*.test files) for TCP -- see the <i>tests</i>
 directory in the source distribution.</p>
 <p>Please also see ChangeLog.</p>
-<h3 class="subtitle">Used in compound modules:</h3>
-<table class="typestable">
-   <tr>
-      <th class="name">Name</th>
-      <th class="type">Type</th>
-      <th class="description">Description</th>
-   </tr>
-<tr>
-   <td>
-<a href="inet.ansa.AnsaDualStackHost.html">AnsaDualStackHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.ansa.ANSATrafGenHost.html">ANSATrafGenHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP Traffic generator</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.ansa.nodes.AStandardHost.html">AStandardHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.mpls.LDP_LSR.html">LDP_LSR</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>An <a href="inet.networklayer.ldp.LDP.html">LDP</a>-capable router.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.adhoc.MFMobileHost.html">MFMobileHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>Models a mobile host with a wireless (802.11b) card in ad-hoc mode.
-This model contains the Mobility Framework's 802.11 implementation, <a href="inet.linklayer.mf80211.Nic80211.html">Nic80211</a>,
-and <a href="inet.networklayer.ipv4.IP.html">IP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a> and <a href="inet.transport.udp.UDP.html">UDP</a> protocols. The mobility model can be dynamically
-specified with the mobilityType parameter.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.adhoc.MobileHost.html">MobileHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>Models a mobile host with a wireless (802.11b) card in ad-hoc mode.
-This model contains the new IEEE 802.11 implementation, <a href="inet.linklayer.ieee80211.Ieee80211Nic.html">Ieee80211Nic</a>,
-and <a href="inet.networklayer.ipv4.IP.html">IP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a> and <a href="inet.transport.udp.UDP.html">UDP</a> protocols. The mobility model can be
-dynamically specified with the mobilityType parameter.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.wireless.WirelessHost.html">WirelessHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>Models a host with one wireless (802.11b) card in infrastructure mode.
-This module is basically a <a href="inet.nodes.inet.StandardHost.html">StandardHost</a> with an <a href="inet.linklayer.ieee80211.Ieee80211NicSTA.html">Ieee80211NicSTA</a> added.
-It should be used in conjunction with <a href="inet.nodes.wireless.WirelessAP.html">WirelessAP</a>, or any other AP model
-which contains <a href="inet.linklayer.ieee80211.Ieee80211NicAP.html">Ieee80211NicAP</a>.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.wireless.WirelessHostSimplified.html">WirelessHostSimplified</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>Models a host with one wireless (802.11b) card in infrastructure mode,
-but using a simplified NIC that does not support handovers.
-This module is basically a <a href="inet.nodes.inet.StandardHost.html">StandardHost</a> with an <a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">Ieee80211NicSTASimplified</a>
-added. It should be used in conjunction with <a href="inet.nodes.wireless.WirelessAPSimplified.html">WirelessAPSimplified</a>,
-or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">Ieee80211NicAPSimplified</a>.</p>
-
-   </td>
-</tr>
-</table>
+<img src="inet.transport.tcp.TCP-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.transport.tcp.TCP.html" title="TCP" alt="TCP" coords="0,30,66,70">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.transport.tcp.TCP-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.transport.tcp.TCP.html" title="Simple Module TCP" alt="" coords="5,6,77,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.transport.tcp.TCP-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.transport.tcp.TCP.html" title="Simple Module TCP" alt="" coords="5,83,77,111">
+<area shape="rect" id="node2" href="inet.transport.ITCP.html" title="Module Interface ITCP" alt="" coords="5,6,77,34">
+</map>
 <h3 class="subtitle">Parameters:</h3>
 <table class="paramstable">
    <tr>
@@ -411,26 +274,6 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
    </td>
 </tr>
 <tr class="local">
-   <td>sendQueueClass</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"TCPVirtualDataSendQueue"</td>
-   <td>
-<p>TCPVirtualDataSendQueue/TCPMsgBasedSendQueue</p>
-   </td>
-</tr>
-<tr class="local">
-   <td>receiveQueueClass</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"TCPVirtualDataRcvQueue"</td>
-   <td>
-<p>TCPVirtualDataRcvQueue/TCPMsgBasedRcvQueue</p>
-   </td>
-</tr>
-<tr class="local">
    <td>recordStats</td>
    <td>
       <i>bool</i>
@@ -438,6 +281,26 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
    <td>true</td>
    <td>
 <p>recording of seqNum etc. into output vectors enabled/disabled</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>sendQueueClass</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>Obsolete!!!</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>receiveQueueClass</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>Obsolete!!!</p>
    </td>
 </tr>
 </table>
@@ -495,7 +358,9 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
 </table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
-// \TCP protocol implementation.
+// TCP protocol implementation.
+// See the ~ITCP for the TCP layer general informations.
+//
 // This implementation supports:
 //   - RFC  793 - Transmission Control Protocol
 //   - RFC  896 - Congestion Control in IP/TCP Internetworks
@@ -509,42 +374,38 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
 //   - RFC 3517 - A Conservative Selective Acknowledgment (SACK)-based Loss Recovery
 //                Algorithm for TCP
 //   - RFC 3782 - The NewReno Modification to TCP's Fast Recovery Algorithm
-// Compatible with both IPv4 and IPv6.
 //
-// A \TCP segment is represented by the class TCPSegment.
+// This module is compatible with both ~IPv4 and ~IPv6.
+//
+// A TCP segment is represented by the class ~TCPSegment.
 //
 // </span><span style="color: #800000; ">&lt;b&gt;</span><span style="color: #808080; font-style: italic; ">Communication with clients</span><span style="color: #800000; ">&lt;/b&gt;</span><span style="color: #808080; font-style: italic; ">
 //
-// For communication between client applications and TCP, the TcpCommandCode
-// and TcpStatusInd enums are used as message kinds, and TCPCommand
+// For communication between client applications and TCP, the ~TcpCommandCode
+// and ~TcpStatusInd enums are used as message kinds, and ~TCPCommand
 // and its subclasses are used as control info.
 //
 // To open a connection from a client app, send a cMessage to TCP with
-// TCP_C_OPEN_ACTIVE as message kind and a TCPOpenCommand object filled in
+// TCP_C_OPEN_ACTIVE as message kind and a ~TCPOpenCommand object filled in
 // and attached to it as control info. (The peer TCP will have to be LISTENing;
 // the server app can achieve this with a similar cMessage but TCP_C_OPEN_PASSIVE
 // message kind.) With passive open, there's a possibility to cause the connection
 // &quot;fork&quot; on an incoming connection, leaving the original connection LISTENing
-// on the port (see the fork field in TCPOpenCommand).
+// on the port (see the fork field in ~TCPOpenCommand).
 //
 // The client app can send data by assigning the TCP_C_SEND message kind
-// and attaching a TCPSendCommand control info object to the data packet,
+// and attaching a ~TCPSendCommand control info object to the data packet,
 // and sending it to TCP. The server app will receive data as messages
-// with the TCP_I_DATA message kind and TCPSendCommand control info.
-// (Whether you'll receive the same or identical messages, or even whether
-// you'll receive data in the same sized chunks as sent depends on the
-// sendQueueClass and receiveQueueClass used, see below. With
-// TCPVirtualDataSendQueue and TCPVirtualDataRcvQueue set, message objects
-// and even message boundaries are not preserved.)
+// with the TCP_I_DATA message kind and ~TCPSendCommand control info.
 //
 // To close, the client sends a cMessage to TCP with the TCP_C_CLOSE message kind
-// and TCPCommand control info.
+// and ~TCPCommand control info.
 //
 // TCP sends notifications to the application whenever there's a significant
 // change in the state of the connection: established, remote TCP closed,
 // closed, timed out, connection refused, connection reset, etc. These
 // notifications are also cMessages with message kind TCP_I_xxx
-// (TCP_I_ESTABLISHED, etc.) and TCPCommand as control info.
+// (TCP_I_ESTABLISHED, etc.) and ~TCPCommand as control info.
 //
 // One TCP module can serve several application modules, and several
 // connections per application. The </span><span style="color: #800000; ">&lt;i&gt;</span><span style="color: #808080; font-style: italic; ">k</span><span style="color: #800000; ">&lt;/i&gt;</span><span style="color: #808080; font-style: italic; ">th application connects to TCP's
@@ -554,47 +415,21 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
 //
 // </span><span style="color: #800000; ">&lt;b&gt;</span><span style="color: #808080; font-style: italic; ">Sockets</span><span style="color: #800000; ">&lt;/b&gt;</span><span style="color: #808080; font-style: italic; ">
 //
-// The TCPSocket C++ class is provided to simplify managing \TCP connections
+// The TCPSocket C++ class is provided to simplify managing TCP connections
 // from applications. TCPSocket handles the job of assembling and sending
 // command messages (OPEN, CLOSE, etc) to TCP, and it also simplifies
 // the task of dealing with packets and notification messages coming from TCP.
 //
-// </span><span style="color: #800000; ">&lt;b&gt;</span><span style="color: #808080; font-style: italic; ">Communication with the \IP layer</span><span style="color: #800000; ">&lt;/b&gt;</span><span style="color: #808080; font-style: italic; ">
+// </span><span style="color: #800000; ">&lt;b&gt;</span><span style="color: #808080; font-style: italic; ">Communication with the IP layer</span><span style="color: #800000; ">&lt;/b&gt;</span><span style="color: #808080; font-style: italic; ">
 //
-// The TCP model relies on sending and receiving IPControlInfo objects
-// attached to \TCP segment objects as control info
+// The TCP model relies on sending and receiving ~IPv4ControlInfo objects
+// attached to TCP segment objects as control info
 // (see cMessage::setControlInfo()).
 //
 // </span><span style="color: #800000; ">&lt;b&gt;</span><span style="color: #808080; font-style: italic; ">Configuring TCP</span><span style="color: #800000; ">&lt;/b&gt;</span><span style="color: #808080; font-style: italic; ">
 //
-// The module parameters sendQueueClass and receiveQueueClass should be
-// set the names of classes that manage the actual send and receive queues.
-// Currently you have two choices:
-//
-//   -# set them to &quot;TCPVirtualDataSendQueue&quot; and &quot;TCPVirtualDataRcvQueue&quot;.
-//      These classes manage &quot;virtual bytes&quot;, that is, only byte counts are
-//      transmitted over the \TCP connection and no actual data. cMessage
-//      contents, and even message boundaries are not preserved with these
-//      classes: for example, if the client sends a single cMessage with
-//      length = 1 megabyte over TCP, the receiver-side client will see a
-//      sequence of MSS-sized messages.
-//
-// It depends on the client (app) modules which sendQueue/rcvQueue they require.
-// For example, TCPGenericSrvApp needs message-based sendQueue/rcvQueue,
-// while TCPEchoApp or TCPSinkApp can work with any (but TCPEchoApp will
-// display different behaviour with both!) In the future, other send queue
-// and receive queue classes may be implemented, e.g. to allow transmission
-// of &quot;raw bytes&quot; (actual byte arrays).
-//
-//   -# use &quot;TCPMsgBasedSendQueue&quot; and &quot;TCPMsgBasedRcvQueue&quot;, which transmit
-//      cMessage objects (and subclasses) over a \TCP connection. The same
-//      message object sequence that was sent by the client to the
-//      sender-side TCP entity will be reproduced on the receiver side.
-//      If a client sends a cMessage with length = 1 megabyte, the
-//      receiver-side client will receive the same message object (or a clone)
-//      after the TCP entities have completed simulating the transmission
-//      of 1 megabyte over the connection. This is a different behaviour
-//      from TCPVirtualDataSendQueue/RcvQueue.
+// The obsoleted sendQueueClass and receiveQueueClass parameters are removed!
+// You must set the dataTransferMode in ~TCPOpenCommand message.
 //
 //   -# use the module parameter (limitedTransmitEnabled) to enabled/disabled
 //      Limited Transmit algorithm (RFC 3042) integrated to TCPBaseAlg
@@ -607,13 +442,12 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
 //      TCPBaseAlg (can be used for TCPNewReno, TCPReno, TCPTahoe and TCPNoCongestionControl
 //      but not for DumbTCP).
 //
-// The \TCP flavour supported depends on the value of the tcpAlgorithmClass
-// module parameters, e.g. &quot;TCPTahoe&quot; or &quot;TCPReno&quot;. In the future, other
+// The TCP flavour supported depends on the value of the tcpAlgorithmClass
+// module parameter, e.g. &quot;TCPTahoe&quot; or &quot;TCPReno&quot;. In the future, other
 // classes can be written which implement Vegas, LinuxTCP (which
 // differs from others) or other variants.
 //
-// Note that TCPOpenCommand allows sendQueueClass, receiveQueueClass and
-// tcpAlgorithmClass to be chosen per-connection.
+// Note that ~TCPOpenCommand allows tcpAlgorithmClass to be chosen per-connection.
 //
 // Notes:
 //  - if you do active OPEN, then send data and close before the connection
@@ -626,7 +460,7 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
 // </span><span style="color: #800000; ">&lt;b&gt;</span><span style="color: #808080; font-style: italic; ">Standards</span><span style="color: #800000; ">&lt;/b&gt;</span><span style="color: #808080; font-style: italic; ">
 //
 // The TCP module itself implements the following:
-//  - all RFC 793 \TCP states and state transitions
+//  - all RFC 793 TCP states and state transitions
 //  - connection setup and teardown as in RFC 793
 //  - generally, RFC 793 compliant segment processing
 //  - all socked commands (except RECEIVE) and indications
@@ -665,7 +499,7 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
 //  - RFC 896 - Nagle's algorithm (optional)
 //  - Jacobson's and Karn's algorithms for round-trip time measurement and
 //    adaptive retransmission
-//  - \TCPTahoe (Fast Retransmit), \TCPReno (Fast Retransmit and Fast Recovery), \TCPNewReno (Fast Retransmit and Fast Recovery)
+//  - TCPTahoe (Fast Retransmit), TCPReno (Fast Retransmit and Fast Recovery), TCPNewReno (Fast Retransmit and Fast Recovery)
 //  - RFC 3390 - Increased Initial Window (optional) integrated to TCPBaseAlg
 //    (can be used for TCPNewReno, TCPReno, TCPTahoe and TCPNoCongestionControl but not
 //    for DumbTCP).
@@ -681,7 +515,7 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
 //    at the beginning. This means there's currently no flow control
 //    between TCP and the app.
 //  - all timeouts are precisely calculated: timer granularity (which is caused
-//    by &quot;slow&quot; and &quot;fast&quot; i.e. 500ms and 200ms timers found in many *nix \TCP
+//    by &quot;slow&quot; and &quot;fast&quot; i.e. 500ms and 200ms timers found in many *nix TCP
 //    implementations) is not simulated
 //  - new ECN flags (CWR and ECE). Need to be added to header by [RFC 3168].
 //
@@ -694,7 +528,7 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
 //
 // </span><span style="color: #800000; ">&lt;b&gt;</span><span style="color: #808080; font-style: italic; ">Tests</span><span style="color: #800000; ">&lt;/b&gt;</span><span style="color: #808080; font-style: italic; ">
 //
-// There are automated test cases (*.test files) for TCP -- see the Test
+// There are automated test cases (*.test files) for TCP -- see the </span><span style="color: #800000; ">&lt;i&gt;</span><span style="color: #808080; font-style: italic; ">tests</span><span style="color: #800000; ">&lt;/i&gt;</span><span style="color: #808080; font-style: italic; ">
 // directory in the source distribution.
 //
 // Please also see ChangeLog.
@@ -712,19 +546,18 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">timestampSupport</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">false</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// Timestamps (RFC 1323) support (header option) (TS will be enabled for a connection if both endpoints support it)
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">mss</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">536</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// Maximum Segment Size (RFC 793) (header option)
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">tcpAlgorithmClass</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;TCPReno&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// TCPReno/TCPTahoe/TCPNewReno/TCPNoCongestionControl/DumbTCP
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">sendQueueClass</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;TCPVirtualDataSendQueue&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// TCPVirtualDataSendQueue/TCPMsgBasedSendQueue
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">receiveQueueClass</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;TCPVirtualDataRcvQueue&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// TCPVirtualDataRcvQueue/TCPMsgBasedRcvQueue
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">recordStats</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">true</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// recording of seqNum etc. into output vectors enabled/disabled
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">sendQueueClass</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">);    </span><span style="color: #808080; font-style: italic; ">// Obsolete!!!
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">receiveQueueClass</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// Obsolete!!!
 </span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/wheelbarrow&quot;</span><span style="color: #000000; ">);
     </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">appIn</span><span style="color: #000000; ">[] </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">TCPCommand</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">TCPSegment</span><span style="color: #000000; ">,</span><span style="color: #000000; ">IPControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">TCPSegment</span><span style="color: #000000; ">,</span><span style="color: #000000; ">IPv4ControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">);
         </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipv6In</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">TCPSegment</span><span style="color: #000000; ">,</span><span style="color: #000000; ">IPv6ControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">);
         </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">appOut</span><span style="color: #000000; ">[] </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">TCPCommand</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">TCPSegment</span><span style="color: #000000; ">,</span><span style="color: #000000; ">IPControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">TCPSegment</span><span style="color: #000000; ">,</span><span style="color: #000000; ">IPv4ControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);
         </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipv6Out</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">TCPSegment</span><span style="color: #000000; ">,</span><span style="color: #000000; ">IPv6ControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);
 }
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

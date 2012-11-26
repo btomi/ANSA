@@ -12,7 +12,7 @@
 <p>PPP is a complex protocol with strong support for link configuration
 and maintenance. This model ignores those details, and only performs
 simple encapsulation/decapsulation and queuing.</p>
-<p>In routers, PPP relies on an external queue module (see <a href="inet.networklayer.queue.OutputQueue.html">OutputQueue</a>)
+<p>In routers, PPP relies on an external queue module (see <a href="inet.linklayer.IOutputQueue.html">IOutputQueue</a>)
 to model finite buffer, implement QoS and/or RED, and requests packets
 from this external queue one-by-one.</p>
 <p>In hosts, no such queue is used, so PPP contains an internal
@@ -22,7 +22,21 @@ one can specify a hard limit in the txQueueLimit parameter -- if this is
 exceeded, the simulation stops with an error.</p>
 <p>There is no buffering done on received packets -- they are just decapsulated
 and sent up immediately.</p>
-<p><b>See also:</b> PPPInterface(<a href="inet.ansa.ppp.PPPInterface.html">1</a>,<a href="inet.linklayer.ppp.PPPInterface.html">2</a>), <a href="inet.networklayer.queue.OutputQueue.html">OutputQueue</a>, <a href="PPPFrame.html">PPPFrame</a></p>
+<p><b>See also:</b> <a href="inet.linklayer.ppp.PPPInterface.html">PPPInterface</a>, <a href="inet.linklayer.IOutputQueue.html">IOutputQueue</a>, <a href="PPPFrame.html">PPPFrame</a></p>
+<img src="inet.linklayer.ppp.PPP-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.linklayer.ppp.PPP.html" title="PPP" alt="PPP" coords="0,30,65,70">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.linklayer.ppp.PPP-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.linklayer.ppp.PPP.html" title="Simple Module PPP" alt="" coords="19,83,91,111">
+<area shape="rect" id="node2" href="inet.linklayer.ppp.PPPInterface.html" title="Compound Module PPPInterface" alt="" coords="5,6,104,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.linklayer.ppp.PPP-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.linklayer.ppp.PPP.html" title="Simple Module PPP" alt="" coords="5,6,77,34">
+</map>
 <h3 class="subtitle">Used in compound modules:</h3>
 <table class="typestable">
    <tr>
@@ -33,75 +47,6 @@ and sent up immediately.</p>
 <tr>
    <td>
 <a href="inet.linklayer.ppp.PPPInterface.html">PPPInterface</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>PPP interface. Complements the <a href="inet.linklayer.ppp.PPP.html">PPP</a> module with an output queue
-for QoS and RED support.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.linklayer.ppp.PPPInterfaceNoQueue.html">PPPInterfaceNoQueue</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>PPP interface. Assumes inifinite queue.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.linklayer.ppp.PPPInterfaceWithDLDuplicatesGenerator.html">PPPInterfaceWithDLDuplicatesGenerator</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>PPP interface. Complements the <a href="inet.linklayer.ppp.PPP.html">PPP</a> module with an output queue
-for QoS and RED support.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.linklayer.ppp.PPPInterfaceWithDLThruputMeter.html">PPPInterfaceWithDLThruputMeter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>PPP interface. Complements the <a href="inet.linklayer.ppp.PPP.html">PPP</a> module with an output queue
-for QoS and RED support.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.linklayer.ppp.PPPInterfaceWithULDropsGenerator.html">PPPInterfaceWithULDropsGenerator</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>PPP interface. Complements the <a href="inet.linklayer.ppp.PPP.html">PPP</a> module with an output queue
-for QoS and RED support.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.linklayer.ppp.PPPInterfaceWithULThruputMeter.html">PPPInterfaceWithULThruputMeter</a>
    </td>
    <td>
 <i>compound&nbsp;module</i>
@@ -147,7 +92,7 @@ for QoS and RED support.</p>
    <td>
       <i>int</i>
    </td>
-   <td>4470</td>
+   <td>4470B</td>
    <td>   </td>
 </tr>
 </table>
@@ -161,7 +106,8 @@ for QoS and RED support.</p>
 <tr>
    <td>display</td>
    <td><i>i=block/rxtx</i></td>
-   <td></td>
+   <td>
+</td>
 </tr>
 </table>
 <h3 class="subtitle">Gates:</h3>
@@ -188,21 +134,144 @@ for QoS and RED support.</p>
    <td></td>   <td></td>
 </tr>
 </table>
+<h3 class="subtitle">Signals:</h3>
+<table class="signalstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="unit">Unit</th>
+   </tr>
+<tr class="local">
+   <td>packetSentToLower</td>
+   <td><i>
+<a href="../doxy/class_p_p_p_frame.html" target="mainframe">PPPFrame</a>   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>packetSentToUpper</td>
+   <td><i>
+cPacket   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>packetReceivedFromUpper</td>
+   <td><i>
+cPacket   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>packetReceivedFromLower</td>
+   <td><i>
+<a href="../doxy/class_p_p_p_frame.html" target="mainframe">PPPFrame</a>   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>txState</td>
+   <td><i>
+long   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>dropPkIfaceDown</td>
+   <td><i>
+<a href="../doxy/class_p_p_p_frame.html" target="mainframe">PPPFrame</a>   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>rxPkOk</td>
+   <td><i>
+<a href="../doxy/class_p_p_p_frame.html" target="mainframe">PPPFrame</a>   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>dropPkBitError</td>
+   <td><i>
+<a href="../doxy/class_p_p_p_frame.html" target="mainframe">PPPFrame</a>   </i></td>
+   <td></td>
+</tr>
+</table>
+<h3 class="subtitle">Statistics:</h3>
+<table class="statisticstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="title">Title</th>
+      <th class="source">Source</th>
+      <th class="record">Record</th>
+      <th class="unit">Unit</th>
+      <th class="interpolationmode">Interpolation Mode</th>
+   </tr>
+<tr class="local">
+   <td>txPk</td>
+   <td>packets transmitted</td>
+   <td>packetSentToLower</td>
+   <td>count, sum(packetBytes), vector(packetBytes)</td>
+   <td></td>
+   <td>none</td>
+</tr>
+<tr class="local">
+   <td>droppedPkIfaceDown</td>
+   <td>packets dropped/interface down</td>
+   <td>dropPkIfaceDown</td>
+   <td>count, sum(packetBytes), vector(packetBytes)</td>
+   <td></td>
+   <td>none</td>
+</tr>
+<tr class="local">
+   <td>droppedPkBitError</td>
+   <td>packets dropped/bit error</td>
+   <td>dropPkBitError</td>
+   <td>count, sum(packetBytes), vector(packetBytes)</td>
+   <td></td>
+   <td>none</td>
+</tr>
+<tr class="local">
+   <td>rcvdPkFromHL</td>
+   <td>packets received from higher layer</td>
+   <td>packetReceivedFromUpper</td>
+   <td>count, sum(packetBytes), vector(packetBytes)</td>
+   <td></td>
+   <td>none</td>
+</tr>
+<tr class="local">
+   <td>txState</td>
+   <td>tx state</td>
+   <td></td>
+   <td>timeavg, vector</td>
+   <td></td>
+   <td>sample-hold</td>
+</tr>
+<tr class="local">
+   <td>rxPkOk</td>
+   <td>packets received OK</td>
+   <td>rxPkOk</td>
+   <td>count, sum(packetBytes), vector(packetBytes)</td>
+   <td></td>
+   <td>none</td>
+</tr>
+<tr class="local">
+   <td>passedUpPk</td>
+   <td>packets passed to higher layer</td>
+   <td>packetSentToUpper</td>
+   <td>count, sum(packetBytes), vector(packetBytes)</td>
+   <td></td>
+   <td>none</td>
+</tr>
+</table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
-// \PPP implementation.
+// PPP implementation.
 //
-// Packets are encapsulated in PPPFrame.
+// Packets are encapsulated in ~PPPFrame.
 //
-// \PPP is a complex protocol with strong support for link configuration
+// PPP is a complex protocol with strong support for link configuration
 // and maintenance. This model ignores those details, and only performs
 // simple encapsulation/decapsulation and queuing.
 //
-// In routers, \PPP relies on an external queue module (see OutputQueue)
+// In routers, PPP relies on an external queue module (see ~IOutputQueue)
 // to model finite buffer, implement QoS and/or RED, and requests packets
 // from this external queue one-by-one.
 //
-// In hosts, no such queue is used, so \PPP contains an internal
+// In hosts, no such queue is used, so PPP contains an internal
 // queue named txQueue to queue up packets waiting for transmission.
 // Conceptually, txQueue is of infinite size, but for better diagnostics
 // one can specify a hard limit in the txQueueLimit parameter -- if this is
@@ -211,23 +280,38 @@ for QoS and RED support.</p>
 // There is no buffering done on received packets -- they are just decapsulated
 // and sent up immediately.
 //
-// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> PPPInterface, OutputQueue, PPPFrame
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~PPPInterface, ~IOutputQueue, ~PPPFrame
 //
 </span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">PPP</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">txQueueLimit</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">1000</span><span style="color: #000000; ">);  </span><span style="color: #808080; font-style: italic; ">// only used if queueModule==&quot;&quot;; zero means infinite
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">queueModule</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">);  </span><span style="color: #808080; font-style: italic; ">// name of external (QoS,RED,etc) queue module
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">mtu</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">4470</span><span style="color: #000000; ">);
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">mtu</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;B&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">4470</span><span style="color: #000000; ">B</span><span style="color: #000000; ">);
         </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/rxtx&quot;</span><span style="color: #000000; ">);
+
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">txState</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">long</span><span style="color: #000000; ">);    </span><span style="color: #808080; font-style: italic; ">// 1:transmit, 0:idle
+</span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">rxPkOk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">PPPFrame</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">dropPkIfaceDown</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">PPPFrame</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">dropPkBitError</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">PPPFrame</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">packetSentToLower</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">PPPFrame</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">packetReceivedFromLower</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">PPPFrame</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">packetSentToUpper</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">cPacket</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">packetReceivedFromUpper</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">cPacket</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">txState</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;tx state&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">timeavg</span><span style="color: #000000; ">,</span><span style="color: #000000; ">vector</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">sample</span><span style="color: #000000; ">-</span><span style="color: #000000; ">hold</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">txPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;packets transmitted&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">source</span><span style="color: #000000; ">=</span><span style="color: #000000; ">packetSentToLower</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;sum(packetBytes)&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;vector(packetBytes)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">rxPkOk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;packets received OK&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">source</span><span style="color: #000000; ">=</span><span style="color: #000000; ">rxPkOk</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;sum(packetBytes)&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;vector(packetBytes)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">droppedPkBitError</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;packets dropped/bit error&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">source</span><span style="color: #000000; ">=</span><span style="color: #000000; ">dropPkBitError</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;sum(packetBytes)&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;vector(packetBytes)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">droppedPkIfaceDown</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;packets dropped/interface down&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">source</span><span style="color: #000000; ">=</span><span style="color: #000000; ">dropPkIfaceDown</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;sum(packetBytes)&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;vector(packetBytes)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">rcvdPkFromHL</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;packets received from higher layer&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">source</span><span style="color: #000000; ">=</span><span style="color: #000000; ">packetReceivedFromUpper</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;sum(packetBytes)&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;vector(packetBytes)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">passedUpPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;packets passed to higher layer&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">source</span><span style="color: #000000; ">=</span><span style="color: #000000; ">packetSentToUpper</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;sum(packetBytes)&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;vector(packetBytes)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
+
     </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">netwIn</span><span style="color: #000000; ">;
         </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">netwOut</span><span style="color: #000000; ">;
         </span><span style="color: #000080; font-weight: bold; ">inout</span><span style="color: #000000; "> </span><span style="color: #000000; ">phys</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">PPPFrame</span><span style="color: #000000; ">);
 }
 
-
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

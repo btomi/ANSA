@@ -83,15 +83,18 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="TCPServerThreadBase" --><!-- doxytag: inherits="TCPSocket::CallbackInterface" -->
-<p><code>#include &lt;<a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>&gt;</code></p>
+<p>Abstract base class for server processes to be used with <a class="el" href="class_t_c_p_srv_host_app.html" title="Hosts a server application, to be subclassed from TCPServerProcess (which is a sSimpleModule).">TCPSrvHostApp</a>.  
+ <a href="class_t_c_p_server_thread_base.html#details">More...</a></p>
+
+<p><code>#include &lt;TCPSrvHostApp.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TCPServerThreadBase:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_t_c_p_server_thread_base.png" usemap="#TCPServerThreadBase_map" alt=""/>
   <map id="TCPServerThreadBase_map" name="TCPServerThreadBase_map">
-<area href="class_t_c_p_socket_1_1_callback_interface.html" alt="TCPSocket::CallbackInterface" shape="rect" coords="0,0,179,24"/>
-<area href="class_t_c_p_generic_srv_thread.html" alt="TCPGenericSrvThread" shape="rect" coords="0,112,179,136"/>
+<area href="class_t_c_p_socket_1_1_callback_interface.html" title="Abstract base class for your callback objects." alt="TCPSocket::CallbackInterface" shape="rect" coords="0,0,179,24"/>
+<area href="class_t_c_p_generic_srv_thread.html" title="Example server thread, to be used with TCPSrvHostApp." alt="TCPGenericSrvThread" shape="rect" coords="0,112,179,136"/>
 </map>
  </div></div>
 
@@ -99,39 +102,49 @@ Inheritance diagram for TCPServerThreadBase:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a45612ccfb1de85082414a6b9dd91dd4e">init</a> (<a class="el" href="class_t_c_p_srv_host_app.html">TCPSrvHostApp</a> *hostmodule, <a class="el" href="class_t_c_p_socket.html">TCPSocket</a> *socket)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a45612ccfb1de85082414a6b9dd91dd4e">init</a> (<a class="el" href="class_t_c_p_srv_host_app.html">TCPSrvHostApp</a> *hostmodule, <a class="el" href="class_t_c_p_socket.html">TCPSocket</a> *socket)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a7ce6ff424414ff2b147d13002108704e">TCPServerThreadBase</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a65886b8225b2dd622be7b68e103e57bb">~TCPServerThreadBase</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_t_c_p_socket.html">TCPSocket</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a4cf95e871fc5d3a9c085594dc46b16fa">getSocket</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the socket object.  <a href="#a4cf95e871fc5d3a9c085594dc46b16fa"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_t_c_p_srv_host_app.html">TCPSrvHostApp</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a503768018b12606bdde8347970a4f7f5">getHostModule</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a5b05613a2c7f3f56b20c380e2ef1afe0">scheduleAt</a> (simtime_t t, cMessage *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a0cda386694f23cf08fca9f6c509e4856">cancelEvent</a> (cMessage *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to the host module.  <a href="#a503768018b12606bdde8347970a4f7f5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a5b05613a2c7f3f56b20c380e2ef1afe0">scheduleAt</a> (simtime_t t, cMessage *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Schedule an event.  <a href="#a5b05613a2c7f3f56b20c380e2ef1afe0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a0cda386694f23cf08fca9f6c509e4856">cancelEvent</a> (cMessage *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancel an event.  <a href="#a0cda386694f23cf08fca9f6c509e4856"></a><br/></td></tr>
 <tr><td colspan="2"><div class="groupHeader">Callback methods, called on different socket events.</div></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a74fc9562012ce7939718855672791e32">established</a> ()=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a80c310e780ed740cae9c4e2bc035549b">dataArrived</a> (cMessage *msg, bool urgent)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a050633116c40e7a5750f365e7e0760c0">timerExpired</a> (cMessage *timer)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a9c12c90cb78db9c47de6aed0a324c370">peerClosed</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#af1b358bcab595476d4a9c0d2ec3c46c1">closed</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#aba2f098aac069c09f2e2ed1e59a91d95">failure</a> (int code)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a058fd3a1784d4877b5dd498e537221d5">statusArrived</a> (<a class="el" href="class_t_c_p_status_info.html">TCPStatusInfo</a> *status)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a74fc9562012ce7939718855672791e32">established</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when connection is established.  <a href="#a74fc9562012ce7939718855672791e32"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a80c310e780ed740cae9c4e2bc035549b">dataArrived</a> (cMessage *msg, bool urgent)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when a data packet arrives.  <a href="#a80c310e780ed740cae9c4e2bc035549b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a050633116c40e7a5750f365e7e0760c0">timerExpired</a> (cMessage *<a class="el" href="structtimer.html">timer</a>)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when a timer (scheduled via <a class="el" href="class_t_c_p_server_thread_base.html#a5b05613a2c7f3f56b20c380e2ef1afe0" title="Schedule an event.">scheduleAt()</a>) expires.  <a href="#a050633116c40e7a5750f365e7e0760c0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a9c12c90cb78db9c47de6aed0a324c370">peerClosed</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the client closes the connection.  <a href="#a9c12c90cb78db9c47de6aed0a324c370"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#af1b358bcab595476d4a9c0d2ec3c46c1">closed</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the connection closes (successful <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> teardown).  <a href="#af1b358bcab595476d4a9c0d2ec3c46c1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#aba2f098aac069c09f2e2ed1e59a91d95">failure</a> (int code)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the connection breaks (<a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> error).  <a href="#aba2f098aac069c09f2e2ed1e59a91d95"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a058fd3a1784d4877b5dd498e537221d5">statusArrived</a> (<a class="el" href="class_t_c_p_status_info.html">TCPStatusInfo</a> *status)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when a status arrives in response to <a class="el" href="class_t_c_p_server_thread_base.html#a4cf95e871fc5d3a9c085594dc46b16fa" title="Returns the socket object.">getSocket()</a>-&gt;getStatus().  <a href="#a058fd3a1784d4877b5dd498e537221d5"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a68bff0c6da664d286433bf6ab78feae9">socketDataArrived</a> (int, void *, cPacket *msg, bool urgent)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#af52975483ab29fbc7b2b81843f19ccd5">socketEstablished</a> (int, void *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a026281fd182e3caec7c8d65b2ba0a573">socketPeerClosed</a> (int, void *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a21cf7cb430b6a1dc42be9f16acf98198">socketClosed</a> (int, void *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a182641b5bb6c749453ee73bb909abd1d">socketFailure</a> (int, void *, int code)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a03fe224e5fec85d7fec636016ec4d7f5">socketStatusArrived</a> (int, void *, <a class="el" href="class_t_c_p_status_info.html">TCPStatusInfo</a> *status)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a68bff0c6da664d286433bf6ab78feae9">socketDataArrived</a> (int, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *, cPacket *msg, bool urgent)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#af52975483ab29fbc7b2b81843f19ccd5">socketEstablished</a> (int, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a026281fd182e3caec7c8d65b2ba0a573">socketPeerClosed</a> (int, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a21cf7cb430b6a1dc42be9f16acf98198">socketClosed</a> (int, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a182641b5bb6c749453ee73bb909abd1d">socketFailure</a> (int, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *, int code)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a03fe224e5fec85d7fec636016ec4d7f5">socketStatusArrived</a> (int, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *, <a class="el" href="class_t_c_p_status_info.html">TCPStatusInfo</a> *status)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_c_p_srv_host_app.html">TCPSrvHostApp</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a698b9f8a195fb9f20585f6e567a9d757">hostmod</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_c_p_socket.html">TCPSocket</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_server_thread_base.html#a3d0a6b60b9d37b302bd23369f7669562">sock</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Abstract base class for server processes to be used with <a class="el" href="class_t_c_p_srv_host_app.html">TCPSrvHostApp</a>. Subclasses need to be registered using the <a class="el" href="_app__custum_8cc.html#a7f81611e2e80f0d6075bd5e4dd389b37">Register_Class()</a> macro.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_t_c_p_srv_host_app.html">TCPSrvHostApp</a> </dd></dl>
-
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00053">53</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
+<div class="textblock"><p>Abstract base class for server processes to be used with <a class="el" href="class_t_c_p_srv_host_app.html" title="Hosts a server application, to be subclassed from TCPServerProcess (which is a sSimpleModule).">TCPSrvHostApp</a>. </p>
+<p>Subclasses need to be registered using the <a class="el" href="_t_c_p_generic_srv_thread_8cc.html#acc42dff4e443c9f87c83b615d14c4fa1">Register_Class()</a> macro.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_t_c_p_srv_host_app.html" title="Hosts a server application, to be subclassed from TCPServerProcess (which is a sSimpleModule).">TCPSrvHostApp</a> </dd></dl>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a7ce6ff424414ff2b147d13002108704e"></a><!-- doxytag: member="TCPServerThreadBase::TCPServerThreadBase" ref="a7ce6ff424414ff2b147d13002108704e" args="()" -->
 <div class="memitem">
@@ -146,9 +159,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00072">72</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
-<div class="fragment"><pre class="fragment">{<a class="code" href="class_t_c_p_server_thread_base.html#a3d0a6b60b9d37b302bd23369f7669562">sock</a>=NULL;}
+<div class="fragment"><pre class="fragment">{<a class="code" href="class_t_c_p_server_thread_base.html#a3d0a6b60b9d37b302bd23369f7669562">sock</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;}
 </pre></div>
 </div>
 </div>
@@ -165,8 +176,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00073">73</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
@@ -177,7 +186,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_server_thread_base.html#a0cda386694f23cf08fca9f6c509e4856">TCPServerThreadBase::cancelEvent</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_server_thread_base.html#a0cda386694f23cf08fca9f6c509e4856">TCPServerThreadBase::cancelEvent</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -186,9 +195,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Cancel an event </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00088">88</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
+<p>Cancel an event. </p>
 <div class="fragment"><pre class="fragment">{<a class="code" href="class_t_c_p_server_thread_base.html#a698b9f8a195fb9f20585f6e567a9d757">hostmod</a>-&gt;cancelEvent(msg);}
 </pre></div>
 </div>
@@ -198,7 +206,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_server_thread_base.html#af1b358bcab595476d4a9c0d2ec3c46c1">TCPServerThreadBase::closed</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_server_thread_base.html#af1b358bcab595476d4a9c0d2ec3c46c1">TCPServerThreadBase::closed</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [inline, virtual]</code></td>
@@ -206,9 +214,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called when the connection closes (successful <a class="el" href="class_t_c_p.html">TCP</a> teardown). By default it deletes this thread, but it can be redefined to do something different. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00117">117</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
+<p>Called when the connection closes (successful <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> teardown). </p>
+<p>By default it deletes this thread, but it can be redefined to do something different. </p>
 <div class="fragment"><pre class="fragment">{<a class="code" href="class_t_c_p_server_thread_base.html#a698b9f8a195fb9f20585f6e567a9d757">hostmod</a>-&gt;<a class="code" href="class_t_c_p_srv_host_app.html#a41fcfed2e806e0cba1660fe6792e64a9">removeThread</a>(<span class="keyword">this</span>);}
 </pre></div>
 </div>
@@ -218,7 +226,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_server_thread_base.html#a80c310e780ed740cae9c4e2bc035549b">TCPServerThreadBase::dataArrived</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_server_thread_base.html#a80c310e780ed740cae9c4e2bc035549b">TCPServerThreadBase::dataArrived</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em>, </td>
@@ -237,7 +245,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called when a data packet arrives. To be redefined. </p>
+
+<p>Called when a data packet arrives. </p>
+<p>To be redefined. </p>
 
 <p>Implemented in <a class="el" href="class_t_c_p_generic_srv_thread.html#ae26b047477e593206af8f5e95a3f71c8">TCPGenericSrvThread</a>.</p>
 
@@ -248,7 +258,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_server_thread_base.html#a74fc9562012ce7939718855672791e32">TCPServerThreadBase::established</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_server_thread_base.html#a74fc9562012ce7939718855672791e32">TCPServerThreadBase::established</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [pure virtual]</code></td>
@@ -256,7 +266,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called when connection is established. To be redefined. </p>
+
+<p>Called when connection is established. </p>
+<p>To be redefined. </p>
 
 <p>Implemented in <a class="el" href="class_t_c_p_generic_srv_thread.html#ad6c8c21fb7e3ddeae667dbd119942b4a">TCPGenericSrvThread</a>.</p>
 
@@ -267,7 +279,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_server_thread_base.html#aba2f098aac069c09f2e2ed1e59a91d95">TCPServerThreadBase::failure</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_server_thread_base.html#aba2f098aac069c09f2e2ed1e59a91d95">TCPServerThreadBase::failure</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>code</em></td><td>)</td>
@@ -276,9 +288,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called when the connection breaks (<a class="el" href="class_t_c_p.html">TCP</a> error). By default it deletes this thread, but it can be redefined to do something different. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00123">123</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
+<p>Called when the connection breaks (<a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> error). </p>
+<p>By default it deletes this thread, but it can be redefined to do something different. </p>
 <div class="fragment"><pre class="fragment">{<a class="code" href="class_t_c_p_server_thread_base.html#a698b9f8a195fb9f20585f6e567a9d757">hostmod</a>-&gt;<a class="code" href="class_t_c_p_srv_host_app.html#a41fcfed2e806e0cba1660fe6792e64a9">removeThread</a>(<span class="keyword">this</span>);}
 </pre></div>
 </div>
@@ -296,9 +308,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns pointer to the host module </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00079">79</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
+<p>Returns pointer to the host module. </p>
 <div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_t_c_p_server_thread_base.html#a698b9f8a195fb9f20585f6e567a9d757">hostmod</a>;}
 </pre></div>
 </div>
@@ -316,11 +327,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns the socket object </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00076">76</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
+<p>Returns the socket object. </p>
 
-<p>Referenced by <a class="el" href="_t_c_p_generic_srv_thread_8cc_source.html#l00028">TCPGenericSrvThread::dataArrived()</a>, and <a class="el" href="_t_c_p_srv_host_app_8cc_source.html#l00074">TCPSrvHostApp::removeThread()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_generic_srv_thread.html#ae26b047477e593206af8f5e95a3f71c8">TCPGenericSrvThread::dataArrived()</a>, and <a class="el" href="class_t_c_p_srv_host_app.html#a41fcfed2e806e0cba1660fe6792e64a9">TCPSrvHostApp::removeThread()</a>.</p>
 <div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_t_c_p_server_thread_base.html#a3d0a6b60b9d37b302bd23369f7669562">sock</a>;}
 </pre></div>
 </div>
@@ -330,7 +340,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_server_thread_base.html#a45612ccfb1de85082414a6b9dd91dd4e">TCPServerThreadBase::init</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_server_thread_base.html#a45612ccfb1de85082414a6b9dd91dd4e">TCPServerThreadBase::init</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_t_c_p_srv_host_app.html">TCPSrvHostApp</a> *&#160;</td>
           <td class="paramname"><em>hostmodule</em>, </td>
@@ -350,10 +360,8 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00069">69</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_srv_host_app_8cc_source.html#l00040">TCPSrvHostApp::handleMessage()</a>.</p>
-<div class="fragment"><pre class="fragment">{<a class="code" href="class_t_c_p_server_thread_base.html#a698b9f8a195fb9f20585f6e567a9d757">hostmod</a>=hostmodule; <a class="code" href="class_t_c_p_server_thread_base.html#a3d0a6b60b9d37b302bd23369f7669562">sock</a>=socket;}
+<p>Referenced by <a class="el" href="class_t_c_p_srv_host_app.html#a63785a7d60da44c89b2a97d36069b51e">TCPSrvHostApp::handleMessage()</a>.</p>
+<div class="fragment"><pre class="fragment">{<a class="code" href="class_t_c_p_server_thread_base.html#a698b9f8a195fb9f20585f6e567a9d757">hostmod</a> = hostmodule; <a class="code" href="class_t_c_p_server_thread_base.html#a3d0a6b60b9d37b302bd23369f7669562">sock</a> = socket;}
 </pre></div>
 </div>
 </div>
@@ -362,7 +370,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_server_thread_base.html#a9c12c90cb78db9c47de6aed0a324c370">TCPServerThreadBase::peerClosed</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_server_thread_base.html#a9c12c90cb78db9c47de6aed0a324c370">TCPServerThreadBase::peerClosed</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [inline, virtual]</code></td>
@@ -370,10 +378,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called when the client closes the connection. By default it closes our side too, but it can be redefined to do something different. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00111">111</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
-<div class="fragment"><pre class="fragment">{<a class="code" href="class_t_c_p_server_thread_base.html#a4cf95e871fc5d3a9c085594dc46b16fa">getSocket</a>()-&gt;<a class="code" href="class_t_c_p_socket.html#ae64f7db5484a7f057446ac3c906629c0">close</a>();}
+<p>Called when the client closes the connection. </p>
+<p>By default it closes our side too, but it can be redefined to do something different. </p>
+<div class="fragment"><pre class="fragment">{<a class="code" href="class_t_c_p_server_thread_base.html#a4cf95e871fc5d3a9c085594dc46b16fa" title="Returns the socket object.">getSocket</a>()-&gt;<a class="code" href="class_t_c_p_socket.html#ae64f7db5484a7f057446ac3c906629c0" title="Closes the local end of the connection.">close</a>();}
 </pre></div>
 </div>
 </div>
@@ -382,7 +390,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_server_thread_base.html#a5b05613a2c7f3f56b20c380e2ef1afe0">TCPServerThreadBase::scheduleAt</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_server_thread_base.html#a5b05613a2c7f3f56b20c380e2ef1afe0">TCPServerThreadBase::scheduleAt</a> </td>
           <td>(</td>
           <td class="paramtype">simtime_t&#160;</td>
           <td class="paramname"><em>t</em>, </td>
@@ -401,10 +409,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Schedule an event. Do not use getContextPointer() of cMessage, because <a class="el" href="class_t_c_p_server_thread_base.html">TCPServerThreadBase</a> uses it for its own purposes. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00085">85</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
-<div class="fragment"><pre class="fragment">{msg-&gt;setContextPointer(<span class="keyword">this</span>); <a class="code" href="class_t_c_p_server_thread_base.html#a698b9f8a195fb9f20585f6e567a9d757">hostmod</a>-&gt;scheduleAt(t,msg);}
+<p>Schedule an event. </p>
+<p>Do not use getContextPointer() of cMessage, because <a class="el" href="class_t_c_p_server_thread_base.html" title="Abstract base class for server processes to be used with TCPSrvHostApp.">TCPServerThreadBase</a> uses it for its own purposes. </p>
+<div class="fragment"><pre class="fragment">{msg-&gt;setContextPointer(<span class="keyword">this</span>); <a class="code" href="class_t_c_p_server_thread_base.html#a698b9f8a195fb9f20585f6e567a9d757">hostmod</a>-&gt;scheduleAt(t, msg);}
 </pre></div>
 </div>
 </div>
@@ -413,7 +421,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_server_thread_base.html#a21cf7cb430b6a1dc42be9f16acf98198">TCPServerThreadBase::socketClosed</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_server_thread_base.html#a21cf7cb430b6a1dc42be9f16acf98198">TCPServerThreadBase::socketClosed</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname">, </td>
@@ -421,7 +429,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -434,9 +442,7 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a9a4049a13ace6e455d62c744ec7bf35e">TCPSocket::CallbackInterface</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00064">64</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
-<div class="fragment"><pre class="fragment">{<a class="code" href="class_t_c_p_server_thread_base.html#af1b358bcab595476d4a9c0d2ec3c46c1">closed</a>();}
+<div class="fragment"><pre class="fragment">{<a class="code" href="class_t_c_p_server_thread_base.html#af1b358bcab595476d4a9c0d2ec3c46c1" title="Called when the connection closes (successful TCP teardown).">closed</a>();}
 </pre></div>
 </div>
 </div>
@@ -445,7 +451,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_server_thread_base.html#a68bff0c6da664d286433bf6ab78feae9">TCPServerThreadBase::socketDataArrived</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_server_thread_base.html#a68bff0c6da664d286433bf6ab78feae9">TCPServerThreadBase::socketDataArrived</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname">, </td>
@@ -453,7 +459,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -478,9 +484,7 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Implements <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#ae4fe36908e06127f0fe32454e63287f9">TCPSocket::CallbackInterface</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00061">61</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
-<div class="fragment"><pre class="fragment">{<a class="code" href="class_t_c_p_server_thread_base.html#a80c310e780ed740cae9c4e2bc035549b">dataArrived</a>(msg,urgent);}
+<div class="fragment"><pre class="fragment">{<a class="code" href="class_t_c_p_server_thread_base.html#a80c310e780ed740cae9c4e2bc035549b" title="Called when a data packet arrives.">dataArrived</a>(msg, urgent);}
 </pre></div>
 </div>
 </div>
@@ -489,7 +493,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_server_thread_base.html#af52975483ab29fbc7b2b81843f19ccd5">TCPServerThreadBase::socketEstablished</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_server_thread_base.html#af52975483ab29fbc7b2b81843f19ccd5">TCPServerThreadBase::socketEstablished</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname">, </td>
@@ -497,7 +501,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -510,9 +514,7 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a9465870ddf580bea5b18c069d609fec2">TCPSocket::CallbackInterface</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00062">62</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
-<div class="fragment"><pre class="fragment">{<a class="code" href="class_t_c_p_server_thread_base.html#a74fc9562012ce7939718855672791e32">established</a>();}
+<div class="fragment"><pre class="fragment">{<a class="code" href="class_t_c_p_server_thread_base.html#a74fc9562012ce7939718855672791e32" title="Called when connection is established.">established</a>();}
 </pre></div>
 </div>
 </div>
@@ -521,7 +523,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_server_thread_base.html#a182641b5bb6c749453ee73bb909abd1d">TCPServerThreadBase::socketFailure</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_server_thread_base.html#a182641b5bb6c749453ee73bb909abd1d">TCPServerThreadBase::socketFailure</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname">, </td>
@@ -529,7 +531,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -548,9 +550,7 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#af4fc128f905d181c511114849d0b8da1">TCPSocket::CallbackInterface</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00065">65</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
-<div class="fragment"><pre class="fragment">{<a class="code" href="class_t_c_p_server_thread_base.html#aba2f098aac069c09f2e2ed1e59a91d95">failure</a>(code);}
+<div class="fragment"><pre class="fragment">{<a class="code" href="class_t_c_p_server_thread_base.html#aba2f098aac069c09f2e2ed1e59a91d95" title="Called when the connection breaks (TCP error).">failure</a>(code);}
 </pre></div>
 </div>
 </div>
@@ -559,7 +559,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_server_thread_base.html#a026281fd182e3caec7c8d65b2ba0a573">TCPServerThreadBase::socketPeerClosed</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_server_thread_base.html#a026281fd182e3caec7c8d65b2ba0a573">TCPServerThreadBase::socketPeerClosed</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname">, </td>
@@ -567,7 +567,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -580,9 +580,7 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a77899a66e256304949deb2bfd7d820c7">TCPSocket::CallbackInterface</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00063">63</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
-<div class="fragment"><pre class="fragment">{<a class="code" href="class_t_c_p_server_thread_base.html#a9c12c90cb78db9c47de6aed0a324c370">peerClosed</a>();}
+<div class="fragment"><pre class="fragment">{<a class="code" href="class_t_c_p_server_thread_base.html#a9c12c90cb78db9c47de6aed0a324c370" title="Called when the client closes the connection.">peerClosed</a>();}
 </pre></div>
 </div>
 </div>
@@ -591,7 +589,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_server_thread_base.html#a03fe224e5fec85d7fec636016ec4d7f5">TCPServerThreadBase::socketStatusArrived</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_server_thread_base.html#a03fe224e5fec85d7fec636016ec4d7f5">TCPServerThreadBase::socketStatusArrived</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname">, </td>
@@ -599,7 +597,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -618,9 +616,7 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a8299015159dbe4f70075d1a2e4ed2407">TCPSocket::CallbackInterface</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00066">66</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
-<div class="fragment"><pre class="fragment">{<a class="code" href="class_t_c_p_server_thread_base.html#a058fd3a1784d4877b5dd498e537221d5">statusArrived</a>(status);}
+<div class="fragment"><pre class="fragment">{<a class="code" href="class_t_c_p_server_thread_base.html#a058fd3a1784d4877b5dd498e537221d5" title="Called when a status arrives in response to getSocket()-&gt;getStatus().">statusArrived</a>(status);}
 </pre></div>
 </div>
 </div>
@@ -629,7 +625,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_server_thread_base.html#a058fd3a1784d4877b5dd498e537221d5">TCPServerThreadBase::statusArrived</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_server_thread_base.html#a058fd3a1784d4877b5dd498e537221d5">TCPServerThreadBase::statusArrived</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_t_c_p_status_info.html">TCPStatusInfo</a> *&#160;</td>
           <td class="paramname"><em>status</em></td><td>)</td>
@@ -638,9 +634,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called when a status arrives in response to <a class="el" href="class_t_c_p_server_thread_base.html#a4cf95e871fc5d3a9c085594dc46b16fa">getSocket()</a>-&gt;getStatus(). By default it deletes the status object, redefine it to add code to examine the status. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00130">130</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
+<p>Called when a status arrives in response to <a class="el" href="class_t_c_p_server_thread_base.html#a4cf95e871fc5d3a9c085594dc46b16fa" title="Returns the socket object.">getSocket()</a>-&gt;getStatus(). </p>
+<p>By default it deletes the status object, redefine it to add code to examine the status. </p>
 <div class="fragment"><pre class="fragment">{<span class="keyword">delete</span> status;}
 </pre></div>
 </div>
@@ -650,7 +646,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_server_thread_base.html#a050633116c40e7a5750f365e7e0760c0">TCPServerThreadBase::timerExpired</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_server_thread_base.html#a050633116c40e7a5750f365e7e0760c0">TCPServerThreadBase::timerExpired</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>timer</em></td><td>)</td>
@@ -659,11 +655,13 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called when a timer (scheduled via <a class="el" href="class_t_c_p_server_thread_base.html#a5b05613a2c7f3f56b20c380e2ef1afe0">scheduleAt()</a>) expires. To be redefined. </p>
+
+<p>Called when a timer (scheduled via <a class="el" href="class_t_c_p_server_thread_base.html#a5b05613a2c7f3f56b20c380e2ef1afe0" title="Schedule an event.">scheduleAt()</a>) expires. </p>
+<p>To be redefined. </p>
 
 <p>Implemented in <a class="el" href="class_t_c_p_generic_srv_thread.html#ae0eccf7204723930637b4b4eb9edc58c">TCPGenericSrvThread</a>.</p>
 
-<p>Referenced by <a class="el" href="_t_c_p_srv_host_app_8cc_source.html#l00040">TCPSrvHostApp::handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_srv_host_app.html#a63785a7d60da44c89b2a97d36069b51e">TCPSrvHostApp::handleMessage()</a>.</p>
 
 </div>
 </div>
@@ -679,8 +677,6 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00056">56</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a3d0a6b60b9d37b302bd23369f7669562"></a><!-- doxytag: member="TCPServerThreadBase::sock" ref="a3d0a6b60b9d37b302bd23369f7669562" args="" -->
@@ -694,12 +690,10 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00057">57</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
-
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a></li>
+<li><a class="el" href="_t_c_p_srv_host_app_8h.html">TCPSrvHostApp.h</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -707,7 +701,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_t_c_p_server_thread_base.html">TCPServerThreadBase</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:54 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:31 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

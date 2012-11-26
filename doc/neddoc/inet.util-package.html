@@ -13,18 +13,27 @@
    </tr>
 <tr>
    <td>
-<a href="inet.util.NAMTraceWriter.html">NAMTraceWriter</a>
+<a href="inet.util.Delayer.html">Delayer</a>
    </td>
    <td>
 <i>simple&nbsp;module</i>
    </td>
    <td>
 
-<p>When placed inside a host or router, it writes a NAM trace, based on
-notifications it receives via the <a href="inet.base.NotificationBoard.html">NotificationBoard</a>. It expects to find
-a <a href="inet.world.NAMTrace.html">NAMTrace</a> module named "nam" at network level. If the "nam" module
-is missing, this module does not do anything and has no runtime
-overhead.</p>
+<p>Delayer module.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.util.MessageChecker.html">MessageChecker</a>
+   </td>
+   <td>
+<i>simple&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Module that allows checking fields of messages</p>
 
    </td>
 </tr>
@@ -44,6 +53,50 @@ See http://www.nsnam.org/wiki/index.php/NetAnim</p>
 </tr>
 <tr>
    <td>
+<a href="inet.util.OrdinalBasedDropper.html">OrdinalBasedDropper</a>
+   </td>
+   <td>
+<i>simple&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Ordinal Based Dropper module.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.util.OrdinalBasedDuplicator.html">OrdinalBasedDuplicator</a>
+   </td>
+   <td>
+<i>simple&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Ordinal Based Duplicator module.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.util.PcapRecorder.html">PcapRecorder</a>
+   </td>
+   <td>
+<i>simple&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Records PCAP traces of frames sent/received by other modules within
+the same host. By default, it records frames sent/received by L2 modules
+of <a href="inet.nodes.inet.StandardHost.html">StandardHost</a> and <a href="inet.nodes.inet.Router.html">Router</a>. The output filename is expected in the
+pcapFile parameter. The PcapRecorder module can also print tcpdump-like
+textual information to on the log (EV); this functionality can be
+controlled by the verbose parameter.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
 <a href="inet.util.TCPDump.html">TCPDump</a>
    </td>
    <td>
@@ -51,11 +104,42 @@ See http://www.nsnam.org/wiki/index.php/NetAnim</p>
    </td>
    <td>
 
-<p>Provides tcpdump-like functionality</p>
+<p>Provides tcpdump-like functionality: dumps packet contents on the
+module output, and optionally records them into a PCAP file.
+This module has to be placed into the packet's path, and connected
+both sides.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.util.ThruputMeter.html">ThruputMeter</a>
+   </td>
+   <td>
+<i>simple&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Thruput measurement utility module.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.util.ThruputMeteringChannel.html">ThruputMeteringChannel</a>
+   </td>
+   <td>
+<i>channel</i>
+   </td>
+   <td>
+
+<p>This channels adds suport for thruput meternig to the datarate channel
+A cDatarateChannel extended with throughput calculation. Values
+get displayed on the link, using the connection's "t=" display
+string tag.</p>
 
    </td>
 </tr>
 </table>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

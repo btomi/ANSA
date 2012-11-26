@@ -51,21 +51,21 @@ of the wireless channel, mobile node position changes, etc.</p>
 </span><span style="color: #800000; font-weight: bold; ">package</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">base</span><span style="color: #000000; ">;
 
 </span><span style="color: #808080; font-style: italic; ">//
-// Using NotificationBoard, modules can now notify each other about
+// Using ~NotificationBoard, modules can now notify each other about
 // &quot;events&quot; such as routing table changes, interface status changes (up/down),
 // interface configuration changes, wireless handovers, changes in the state
 // of the wireless channel, mobile node position changes, etc.
 //
-// The NotificationBoard has exactly one instance within a host or router
+// The ~NotificationBoard has exactly one instance within a host or router
 // model, and acts as a intermediary between module where state changes
 // can occur and modules which are interested in learning about those
-// changes.
+// changes. It *must* be named as &quot;notificationBoard&quot; to work correctly.
 //
-// NotificationBoard is accessed via direct C++ method calls (not
+// ~NotificationBoard is accessed via direct C++ method calls (not
 // message exchange). Modules can &quot;subscribe&quot; to categories of changes
 // (e.g. &quot;routing table changed&quot; or &quot;radio channel became empty&quot;).
-// When such a change occurs, the corresponding module (e.g. the RoutingTable
-// or the physical layer module) will let NotificationBoard know, and
+// When such a change occurs, the corresponding module (e.g. the ~RoutingTable
+// or the physical layer module) will let ~NotificationBoard know, and
 // it will disseminate this information to all interested modules.
 //
 </span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">NotificationBoard</span><span style="color: #000000; ">
@@ -75,6 +75,5 @@ of the wireless channel, mobile node position changes, etc.</p>
 }
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

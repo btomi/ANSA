@@ -84,14 +84,17 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="TCPMsgBasedSendQueue" --><!-- doxytag: inherits="TCPSendQueue" -->
-<p><code>#include &lt;<a class="el" href="_t_c_p_msg_based_send_queue_8h_source.html">TCPMsgBasedSendQueue.h</a>&gt;</code></p>
+<p>Send queue that manages messages.  
+ <a href="class_t_c_p_msg_based_send_queue.html#details">More...</a></p>
+
+<p><code>#include &lt;TCPMsgBasedSendQueue.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TCPMsgBasedSendQueue:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_t_c_p_msg_based_send_queue.png" usemap="#TCPMsgBasedSendQueue_map" alt=""/>
   <map id="TCPMsgBasedSendQueue_map" name="TCPMsgBasedSendQueue_map">
-<area href="class_t_c_p_send_queue.html" alt="TCPSendQueue" shape="rect" coords="0,0,162,24"/>
+<area href="class_t_c_p_send_queue.html" title="Abstract base class for TCP send queues." alt="TCPSendQueue" shape="rect" coords="0,0,162,24"/>
 </map>
  </div></div>
 
@@ -103,14 +106,23 @@ Classes</h2></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_msg_based_send_queue.html#a825708443c5793af0f03091d3b9de5b7">TCPMsgBasedSendQueue</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ctor.  <a href="#a825708443c5793af0f03091d3b9de5b7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_msg_based_send_queue.html#a0f90f019fd72a38d899571fde3df69ad">~TCPMsgBasedSendQueue</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_msg_based_send_queue.html#a52bd8710e88e7237f55e25b0279c0875">init</a> (uint32 startSeq)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual dtor.  <a href="#a0f90f019fd72a38d899571fde3df69ad"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_msg_based_send_queue.html#a52bd8710e88e7237f55e25b0279c0875">init</a> (uint32 startSeq)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the object.  <a href="#a52bd8710e88e7237f55e25b0279c0875"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_msg_based_send_queue.html#ace39e614dd94548a8325cfc72341cae2">info</a> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_msg_based_send_queue.html#ac926a3c84df79870d64b8e41f662b2cb">enqueueAppData</a> (cPacket *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string with the region stored.  <a href="#ace39e614dd94548a8325cfc72341cae2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_msg_based_send_queue.html#ac926a3c84df79870d64b8e41f662b2cb">enqueueAppData</a> (cPacket *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called on SEND app command, it inserts in the queue the data the user wants to send.  <a href="#ac926a3c84df79870d64b8e41f662b2cb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_msg_based_send_queue.html#ac95f15857d67a2d4fc60d2a961afcb83">getBufferStartSeq</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sequence number of the first byte stored in the buffer.  <a href="#ac95f15857d67a2d4fc60d2a961afcb83"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_msg_based_send_queue.html#a9eb3ff42a452940baa9eff18ce1b45fc">getBufferEndSeq</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sequence number of the last byte stored in the buffer plus one.  <a href="#a9eb3ff42a452940baa9eff18ce1b45fc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_t_c_p_segment.html">TCPSegment</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_msg_based_send_queue.html#a7a567c8b65da65321342021a83246aa1">createSegmentWithBytes</a> (uint32 fromSeq, <a class="el" href="_i_n_e_t_defs_8h.html#a718b4eb2652c286f4d42dc18a8e71a1a">ulong</a> numBytes)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_msg_based_send_queue.html#a8adba4316eb73e75f956062a60774ce5">discardUpTo</a> (uint32 seqNum)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> wants to send or retransmit data, it constructs a <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> segment which contains the data from the requested sequence number range.  <a href="#a7a567c8b65da65321342021a83246aa1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_msg_based_send_queue.html#a8adba4316eb73e75f956062a60774ce5">discardUpTo</a> (uint32 seqNum)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells the queue that bytes up to (but NOT including) seqNum have been transmitted and ACKed, so they can be removed from the queue.  <a href="#a8adba4316eb73e75f956062a60774ce5"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-types"></a>
 Protected Types</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::list&lt; <a class="el" href="struct_t_c_p_msg_based_send_queue_1_1_payload.html">Payload</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_msg_based_send_queue.html#ab7dd8692a15ab1bed23c2a19653ecb9e">PayloadQueue</a></td></tr>
@@ -121,10 +133,8 @@ Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_msg_based_send_queue.html#a53af24ecd6af64a4a270725dccfb04c3">end</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Send queue that manages messages.</p>
+<div class="textblock"><p>Send queue that manages messages. </p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_t_c_p_msg_based_rcv_queue.html">TCPMsgBasedRcvQueue</a> </dd></dl>
-
-<p>Definition at line <a class="el" href="_t_c_p_msg_based_send_queue_8h_source.html#l00029">29</a> of file <a class="el" href="_t_c_p_msg_based_send_queue_8h_source.html">TCPMsgBasedSendQueue.h</a>.</p>
 </div><hr/><h2>Member Typedef Documentation</h2>
 <a class="anchor" id="ab7dd8692a15ab1bed23c2a19653ecb9e"></a><!-- doxytag: member="TCPMsgBasedSendQueue::PayloadQueue" ref="ab7dd8692a15ab1bed23c2a19653ecb9e" args="" -->
 <div class="memitem">
@@ -136,8 +146,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_msg_based_send_queue_8h_source.html#l00037">37</a> of file <a class="el" href="_t_c_p_msg_based_send_queue_8h_source.html">TCPMsgBasedSendQueue.h</a>.</p>
 
 </div>
 </div>
@@ -155,10 +163,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Ctor </p>
 
-<p>Definition at line <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00023">23</a> of file <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html">queues/TCPMsgBasedSendQueue.cc</a>.</p>
-<div class="fragment"><pre class="fragment">                                           : <a class="code" href="class_t_c_p_send_queue.html#abbd105628f6d8c8f98651802f9ec5e2d">TCPSendQueue</a>()
+<p>Ctor. </p>
+<div class="fragment"><pre class="fragment">                                           : <a class="code" href="class_t_c_p_send_queue.html#abbd105628f6d8c8f98651802f9ec5e2d" title="Ctor.">TCPSendQueue</a>()
 {
     <a class="code" href="class_t_c_p_msg_based_send_queue.html#acb2edfef1e606c653a1f3795f5e1ffbc">begin</a> = <a class="code" href="class_t_c_p_msg_based_send_queue.html#a53af24ecd6af64a4a270725dccfb04c3">end</a> = 0;
 }
@@ -178,11 +185,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Virtual dtor. </p>
 
-<p>Definition at line <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00028">28</a> of file <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html">queues/TCPMsgBasedSendQueue.cc</a>.</p>
+<p>Virtual dtor. </p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">for</span> (PayloadQueue::iterator it=<a class="code" href="class_t_c_p_msg_based_send_queue.html#a9a3cbc6da08f252ee5ebb1704a3e5b69">payloadQueue</a>.begin(); it!=<a class="code" href="class_t_c_p_msg_based_send_queue.html#a9a3cbc6da08f252ee5ebb1704a3e5b69">payloadQueue</a>.end(); ++it)
+    <span class="keywordflow">for</span> (PayloadQueue::iterator it = <a class="code" href="class_t_c_p_msg_based_send_queue.html#a9a3cbc6da08f252ee5ebb1704a3e5b69">payloadQueue</a>.begin(); it != <a class="code" href="class_t_c_p_msg_based_send_queue.html#a9a3cbc6da08f252ee5ebb1704a3e5b69">payloadQueue</a>.end(); ++it)
         <span class="keyword">delete</span> it-&gt;msg;
 }
 </pre></div>
@@ -213,38 +219,44 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called when the <a class="el" href="class_t_c_p.html">TCP</a> wants to send or retransmit data, it constructs a <a class="el" href="class_t_c_p.html">TCP</a> segment which contains the data from the requested sequence number range. The actually returned segment may contain less than maxNumBytes bytes if the subclass wants to reproduce the original segment boundaries when retransmitting. </p>
+
+<p>Called when the <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> wants to send or retransmit data, it constructs a <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> segment which contains the data from the requested sequence number range. </p>
+<p>The actually returned segment may contain less than maxNumBytes bytes if the subclass wants to reproduce the original segment boundaries when retransmitting. </p>
 
 <p>Implements <a class="el" href="class_t_c_p_send_queue.html#a46bb6f0e35b67b91e2d3da32ccf07b00">TCPSendQueue</a>.</p>
-
-<p>Definition at line <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00068">68</a> of file <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html">queues/TCPMsgBasedSendQueue.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">//tcpEV &lt;&lt; &quot;sendQ: &quot; &lt;&lt; info() &lt;&lt; &quot; createSeg(seq=&quot; &lt;&lt; fromSeq &lt;&lt; &quot; len=&quot; &lt;&lt; numBytes &lt;&lt; &quot;)\n&quot;;</span>
-    ASSERT(<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(<a class="code" href="class_t_c_p_msg_based_send_queue.html#acb2edfef1e606c653a1f3795f5e1ffbc">begin</a>,fromSeq) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(fromSeq+numBytes,<a class="code" href="class_t_c_p_msg_based_send_queue.html#a53af24ecd6af64a4a270725dccfb04c3">end</a>));
+    ASSERT(<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(<a class="code" href="class_t_c_p_msg_based_send_queue.html#acb2edfef1e606c653a1f3795f5e1ffbc">begin</a>, fromSeq) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(fromSeq + numBytes, <a class="code" href="class_t_c_p_msg_based_send_queue.html#a53af24ecd6af64a4a270725dccfb04c3">end</a>));
 
-    <a class="code" href="class_t_c_p_segment.html">TCPSegment</a> *tcpseg = <a class="code" href="class_t_c_p_send_queue.html#abe170aac31f94b09e8780b1bf63aacb2">conn</a>-&gt;<a class="code" href="class_t_c_p_connection.html#a462206e0bc50ae521a47a797552a0057">createTCPSegment</a>(NULL);
+    <a class="code" href="class_t_c_p_segment.html" title="Represents a TCP segment.">TCPSegment</a> *tcpseg = <span class="keyword">new</span> <a class="code" href="class_t_c_p_segment.html" title="Represents a TCP segment.">TCPSegment</a>(<a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);
+
     tcpseg-&gt;<a class="code" href="class_t_c_p_segment___base.html#ad1d2bb885011423e134672910576d91c">setSequenceNo</a>(fromSeq);
     tcpseg-&gt;<a class="code" href="class_t_c_p_segment___base.html#a2c28346c19ea41288d157860e700d421">setPayloadLength</a>(numBytes);
 
-    <span class="comment">// add payload messages whose endSequenceNo is between fromSeq and fromSeq+numBytes</span>
-    PayloadQueue::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_t_c_p_msg_based_send_queue.html#a9a3cbc6da08f252ee5ebb1704a3e5b69">payloadQueue</a>.begin();
-    <span class="keywordflow">while</span> (i!=<a class="code" href="class_t_c_p_msg_based_send_queue.html#a9a3cbc6da08f252ee5ebb1704a3e5b69">payloadQueue</a>.end() &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(i-&gt;endSequenceNo, fromSeq))
+    <span class="comment">// add payload messages whose endSequenceNo is between fromSeq and fromSeq + numBytes</span>
+    PayloadQueue::iterator i = <a class="code" href="class_t_c_p_msg_based_send_queue.html#a9a3cbc6da08f252ee5ebb1704a3e5b69">payloadQueue</a>.begin();
+
+    <span class="keywordflow">while</span> (i != <a class="code" href="class_t_c_p_msg_based_send_queue.html#a9a3cbc6da08f252ee5ebb1704a3e5b69">payloadQueue</a>.end() &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(i-&gt;endSequenceNo, fromSeq))
         ++i;
-    uint32 toSeq = fromSeq+numBytes;
-    <span class="keyword">const</span> <span class="keywordtype">char</span> *payloadName = NULL;
-    <span class="keywordflow">while</span> (i!=<a class="code" href="class_t_c_p_msg_based_send_queue.html#a9a3cbc6da08f252ee5ebb1704a3e5b69">payloadQueue</a>.end() &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(i-&gt;endSequenceNo, toSeq))
+
+    uint32 toSeq = fromSeq + numBytes;
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *payloadName = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+
+    <span class="keywordflow">while</span> (i != <a class="code" href="class_t_c_p_msg_based_send_queue.html#a9a3cbc6da08f252ee5ebb1704a3e5b69">payloadQueue</a>.end() &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(i-&gt;endSequenceNo, toSeq))
     {
-        <span class="keywordflow">if</span> (!payloadName) payloadName = i-&gt;msg-&gt;getName();
-        tcpseg-&gt;<a class="code" href="class_t_c_p_segment.html#a7a0e84405cd795856fbb14b6c6264253">addPayloadMessage</a>(i-&gt;msg-&gt;dup(), i-&gt;endSequenceNo);
-        ++<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>;
+        <span class="keywordflow">if</span> (!payloadName)
+            payloadName = i-&gt;msg-&gt;getName();
+
+        tcpseg-&gt;<a class="code" href="class_t_c_p_segment.html#a7a0e84405cd795856fbb14b6c6264253" title="Adds a message object to the TCP segment.">addPayloadMessage</a>(i-&gt;msg-&gt;dup(), i-&gt;endSequenceNo);
+        ++i;
     }
 
     <span class="comment">// give segment a name</span>
     <span class="keywordtype">char</span> msgname[80];
     <span class="keywordflow">if</span> (!payloadName)
-        sprintf(msgname, <span class="stringliteral">&quot;tcpseg(l=%lu,%dmsg)&quot;</span>, numBytes, tcpseg-&gt;<a class="code" href="class_t_c_p_segment.html#a6b6bdc4bf4819b125921f35269193100">getPayloadArraySize</a>());
+        sprintf(msgname, <span class="stringliteral">&quot;tcpseg(l=%lu,%dmsg)&quot;</span>, numBytes, tcpseg-&gt;<a class="code" href="class_t_c_p_segment.html#a6b6bdc4bf4819b125921f35269193100" title="Returns the number of payload messages in this TCP segment.">getPayloadArraySize</a>());
     <span class="keywordflow">else</span>
-        sprintf(msgname, <span class="stringliteral">&quot;%.10s(l=%lu,%dmsg)&quot;</span>, payloadName, numBytes, tcpseg-&gt;<a class="code" href="class_t_c_p_segment.html#a6b6bdc4bf4819b125921f35269193100">getPayloadArraySize</a>());
+        sprintf(msgname, <span class="stringliteral">&quot;%.10s(l=%lu,%dmsg)&quot;</span>, payloadName, numBytes, tcpseg-&gt;<a class="code" href="class_t_c_p_segment.html#a6b6bdc4bf4819b125921f35269193100" title="Returns the number of payload messages in this TCP segment.">getPayloadArraySize</a>());
     tcpseg-&gt;setName(msgname);
 
     <span class="keywordflow">return</span> tcpseg;
@@ -257,7 +269,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_msg_based_send_queue.html#a8adba4316eb73e75f956062a60774ce5">TCPMsgBasedSendQueue::discardUpTo</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_msg_based_send_queue.html#a8adba4316eb73e75f956062a60774ce5">TCPMsgBasedSendQueue::discardUpTo</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>seqNum</em></td><td>)</td>
@@ -266,14 +278,15 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Tells the queue that bytes up to (but NOT including) seqNum have been transmitted and ACKed, so they can be removed from the queue. </p>
 
 <p>Implements <a class="el" href="class_t_c_p_send_queue.html#ae04471092e8ddf943c8c938ef1aa9c9f">TCPSendQueue</a>.</p>
-
-<p>Definition at line <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00101">101</a> of file <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html">queues/TCPMsgBasedSendQueue.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">//tcpEV &lt;&lt; &quot;sendQ: &quot; &lt;&lt; info() &lt;&lt; &quot; discardUpTo(seq=&quot; &lt;&lt; seqNum &lt;&lt; &quot;)\n&quot;;</span>
-    ASSERT(<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(<a class="code" href="class_t_c_p_msg_based_send_queue.html#acb2edfef1e606c653a1f3795f5e1ffbc">begin</a>,seqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(seqNum,<a class="code" href="class_t_c_p_msg_based_send_queue.html#a53af24ecd6af64a4a270725dccfb04c3">end</a>));
+
+    ASSERT(<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(<a class="code" href="class_t_c_p_msg_based_send_queue.html#acb2edfef1e606c653a1f3795f5e1ffbc">begin</a>, seqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(seqNum, <a class="code" href="class_t_c_p_msg_based_send_queue.html#a53af24ecd6af64a4a270725dccfb04c3">end</a>));
+
     <a class="code" href="class_t_c_p_msg_based_send_queue.html#acb2edfef1e606c653a1f3795f5e1ffbc">begin</a> = seqNum;
 
     <span class="comment">// remove payload messages whose endSequenceNo is below seqNum</span>
@@ -291,7 +304,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_msg_based_send_queue.html#ac926a3c84df79870d64b8e41f662b2cb">TCPMsgBasedSendQueue::enqueueAppData</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_msg_based_send_queue.html#ac926a3c84df79870d64b8e41f662b2cb">TCPMsgBasedSendQueue::enqueueAppData</a> </td>
           <td>(</td>
           <td class="paramtype">cPacket *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -300,14 +313,16 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called on SEND app command, it inserts in the queue the data the user wants to send. Implementations of this abstract class will decide what this means: copying actual bytes, just increasing the "last byte queued" variable, or storing cMessage object(s). The msg object should not be referenced after this point (sendQueue may delete it.) </p>
+
+<p>Called on SEND app command, it inserts in the queue the data the user wants to send. </p>
+<p>Implementations of this abstract class will decide what this means: copying actual bytes, just increasing the "last byte queued" variable, or storing cMessage object(s). The msg object should not be referenced after this point (sendQueue may delete it.) </p>
 
 <p>Implements <a class="el" href="class_t_c_p_send_queue.html#a3387c33e121dceb0f14d951559634ad1">TCPSendQueue</a>.</p>
-
-<p>Definition at line <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00047">47</a> of file <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html">queues/TCPMsgBasedSendQueue.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">//tcpEV &lt;&lt; &quot;sendQ: &quot; &lt;&lt; info() &lt;&lt; &quot; enqueueAppData(bytes=&quot; &lt;&lt; msg-&gt;getByteLength() &lt;&lt; &quot;)\n&quot;;</span>
     <a class="code" href="class_t_c_p_msg_based_send_queue.html#a53af24ecd6af64a4a270725dccfb04c3">end</a> += msg-&gt;getByteLength();
+    <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(<a class="code" href="class_t_c_p_msg_based_send_queue.html#a53af24ecd6af64a4a270725dccfb04c3">end</a>, <a class="code" href="class_t_c_p_msg_based_send_queue.html#acb2edfef1e606c653a1f3795f5e1ffbc">begin</a>))
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Send queue is full&quot;</span>);
 
     Payload payload;
     payload.endSequenceNo = <a class="code" href="class_t_c_p_msg_based_send_queue.html#a53af24ecd6af64a4a270725dccfb04c3">end</a>;
@@ -330,11 +345,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns the sequence number of the last byte stored in the buffer plus one. (The first byte of the next send operation would get this sequence number.) </p>
+
+<p>Returns the sequence number of the last byte stored in the buffer plus one. </p>
+<p>(The first byte of the next send operation would get this sequence number.) </p>
 
 <p>Implements <a class="el" href="class_t_c_p_send_queue.html#a1bb1013e8a3df8d76598b1cf3a92246c">TCPSendQueue</a>.</p>
-
-<p>Definition at line <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00063">63</a> of file <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html">queues/TCPMsgBasedSendQueue.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">return</span> <a class="code" href="class_t_c_p_msg_based_send_queue.html#a53af24ecd6af64a4a270725dccfb04c3">end</a>;
 }
@@ -354,11 +369,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Returns the sequence number of the first byte stored in the buffer. </p>
 
 <p>Implements <a class="el" href="class_t_c_p_send_queue.html#af54e19d5f4c6160553cffbe3b6a56efd">TCPSendQueue</a>.</p>
-
-<p>Definition at line <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00058">58</a> of file <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html">queues/TCPMsgBasedSendQueue.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">return</span> <a class="code" href="class_t_c_p_msg_based_send_queue.html#acb2edfef1e606c653a1f3795f5e1ffbc">begin</a>;
 }
@@ -378,9 +392,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns a string with the region stored. </p>
 
-<p>Definition at line <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00040">40</a> of file <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html">queues/TCPMsgBasedSendQueue.cc</a>.</p>
+<p>Returns a string with the region stored. </p>
 <div class="fragment"><pre class="fragment">{
     std::stringstream out;
     out &lt;&lt; <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_msg_based_send_queue.html#acb2edfef1e606c653a1f3795f5e1ffbc">begin</a> &lt;&lt; <span class="stringliteral">&quot;..&quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_msg_based_send_queue.html#a53af24ecd6af64a4a270725dccfb04c3">end</a> &lt;&lt; <span class="stringliteral">&quot;), &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_msg_based_send_queue.html#a9a3cbc6da08f252ee5ebb1704a3e5b69">payloadQueue</a>.size() &lt;&lt; <span class="stringliteral">&quot; packets&quot;</span>;
@@ -394,7 +407,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_msg_based_send_queue.html#a52bd8710e88e7237f55e25b0279c0875">TCPMsgBasedSendQueue::init</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_msg_based_send_queue.html#a52bd8710e88e7237f55e25b0279c0875">TCPMsgBasedSendQueue::init</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>startSeq</em></td><td>)</td>
@@ -403,12 +416,12 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize the object. The startSeq parameter tells what sequence number the first byte of app data should get. This is usually ISS+1 because SYN consumes one byte in the sequence number space.</p>
-<p><a class="el" href="class_t_c_p_msg_based_send_queue.html#a52bd8710e88e7237f55e25b0279c0875">init()</a> may be called more than once; every call flushes the existing contents of the queue. </p>
+
+<p>Initialize the object. </p>
+<p>The startSeq parameter tells what sequence number the first byte of app data should get. This is usually ISS + 1 because SYN consumes one byte in the sequence number space.</p>
+<p><a class="el" href="class_t_c_p_msg_based_send_queue.html#a52bd8710e88e7237f55e25b0279c0875" title="Initialize the object.">init()</a> may be called more than once; every call flushes the existing contents of the queue. </p>
 
 <p>Implements <a class="el" href="class_t_c_p_send_queue.html#a3a426364a7ced17955eb6cc3b3cfac2d">TCPSendQueue</a>.</p>
-
-<p>Definition at line <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00034">34</a> of file <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html">queues/TCPMsgBasedSendQueue.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="class_t_c_p_msg_based_send_queue.html#acb2edfef1e606c653a1f3795f5e1ffbc">begin</a> = startSeq;
     <a class="code" href="class_t_c_p_msg_based_send_queue.html#a53af24ecd6af64a4a270725dccfb04c3">end</a> = startSeq;
@@ -428,9 +441,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_msg_based_send_queue_8h_source.html#l00040">40</a> of file <a class="el" href="_t_c_p_msg_based_send_queue_8h_source.html">TCPMsgBasedSendQueue.h</a>.</p>
-
-<p>Referenced by <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00068">createSegmentWithBytes()</a>, <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00101">discardUpTo()</a>, <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00058">getBufferStartSeq()</a>, <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00040">info()</a>, <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00034">init()</a>, and <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00023">TCPMsgBasedSendQueue()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_msg_based_send_queue.html#a7a567c8b65da65321342021a83246aa1">createSegmentWithBytes()</a>, <a class="el" href="class_t_c_p_msg_based_send_queue.html#a8adba4316eb73e75f956062a60774ce5">discardUpTo()</a>, <a class="el" href="class_t_c_p_msg_based_send_queue.html#ac926a3c84df79870d64b8e41f662b2cb">enqueueAppData()</a>, <a class="el" href="class_t_c_p_msg_based_send_queue.html#ac95f15857d67a2d4fc60d2a961afcb83">getBufferStartSeq()</a>, <a class="el" href="class_t_c_p_msg_based_send_queue.html#ace39e614dd94548a8325cfc72341cae2">info()</a>, <a class="el" href="class_t_c_p_msg_based_send_queue.html#a52bd8710e88e7237f55e25b0279c0875">init()</a>, and <a class="el" href="class_t_c_p_msg_based_send_queue.html#a825708443c5793af0f03091d3b9de5b7">TCPMsgBasedSendQueue()</a>.</p>
 
 </div>
 </div>
@@ -445,9 +456,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_msg_based_send_queue_8h_source.html#l00041">41</a> of file <a class="el" href="_t_c_p_msg_based_send_queue_8h_source.html">TCPMsgBasedSendQueue.h</a>.</p>
-
-<p>Referenced by <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00068">createSegmentWithBytes()</a>, <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00101">discardUpTo()</a>, <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00047">enqueueAppData()</a>, <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00063">getBufferEndSeq()</a>, <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00040">info()</a>, <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00034">init()</a>, and <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00023">TCPMsgBasedSendQueue()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_msg_based_send_queue.html#a7a567c8b65da65321342021a83246aa1">createSegmentWithBytes()</a>, <a class="el" href="class_t_c_p_msg_based_send_queue.html#a8adba4316eb73e75f956062a60774ce5">discardUpTo()</a>, <a class="el" href="class_t_c_p_msg_based_send_queue.html#ac926a3c84df79870d64b8e41f662b2cb">enqueueAppData()</a>, <a class="el" href="class_t_c_p_msg_based_send_queue.html#a9eb3ff42a452940baa9eff18ce1b45fc">getBufferEndSeq()</a>, <a class="el" href="class_t_c_p_msg_based_send_queue.html#ace39e614dd94548a8325cfc72341cae2">info()</a>, <a class="el" href="class_t_c_p_msg_based_send_queue.html#a52bd8710e88e7237f55e25b0279c0875">init()</a>, and <a class="el" href="class_t_c_p_msg_based_send_queue.html#a825708443c5793af0f03091d3b9de5b7">TCPMsgBasedSendQueue()</a>.</p>
 
 </div>
 </div>
@@ -462,15 +471,13 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_msg_based_send_queue_8h_source.html#l00038">38</a> of file <a class="el" href="_t_c_p_msg_based_send_queue_8h_source.html">TCPMsgBasedSendQueue.h</a>.</p>
-
-<p>Referenced by <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00068">createSegmentWithBytes()</a>, <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00101">discardUpTo()</a>, <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00047">enqueueAppData()</a>, <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00040">info()</a>, and <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00028">~TCPMsgBasedSendQueue()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_msg_based_send_queue.html#a7a567c8b65da65321342021a83246aa1">createSegmentWithBytes()</a>, <a class="el" href="class_t_c_p_msg_based_send_queue.html#a8adba4316eb73e75f956062a60774ce5">discardUpTo()</a>, <a class="el" href="class_t_c_p_msg_based_send_queue.html#ac926a3c84df79870d64b8e41f662b2cb">enqueueAppData()</a>, <a class="el" href="class_t_c_p_msg_based_send_queue.html#ace39e614dd94548a8325cfc72341cae2">info()</a>, and <a class="el" href="class_t_c_p_msg_based_send_queue.html#a0f90f019fd72a38d899571fde3df69ad">~TCPMsgBasedSendQueue()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_t_c_p_msg_based_send_queue_8h_source.html">TCPMsgBasedSendQueue.h</a></li>
-<li><a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html">queues/TCPMsgBasedSendQueue.cc</a></li>
+<li><a class="el" href="_t_c_p_msg_based_send_queue_8h.html">TCPMsgBasedSendQueue.h</a></li>
+<li><a class="el" href="_t_c_p_msg_based_send_queue_8cc.html">TCPMsgBasedSendQueue.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -478,7 +485,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_t_c_p_msg_based_send_queue.html">TCPMsgBasedSendQueue</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:53 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:31 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

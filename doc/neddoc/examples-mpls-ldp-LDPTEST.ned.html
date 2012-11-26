@@ -40,12 +40,11 @@
 
 </span><span style="color: #800000; font-weight: bold; ">package</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">examples</span><span style="color: #000000; ">.</span><span style="color: #000000; ">mpls</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ldp</span><span style="color: #000000; ">;
 
-</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">networklayer</span><span style="color: #000000; ">.</span><span style="color: #000000; ">extras</span><span style="color: #000000; ">.</span><span style="color: #000000; ">FailureManager</span><span style="color: #000000; ">;
-</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">nodes</span><span style="color: #000000; ">.</span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">StandardHost</span><span style="color: #000000; ">;
-</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">nodes</span><span style="color: #000000; ">.</span><span style="color: #000000; ">mpls</span><span style="color: #000000; ">.</span><span style="color: #000000; ">LDP_LSR</span><span style="color: #000000; ">;
-</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">world</span><span style="color: #000000; ">.</span><span style="color: #000000; ">NAMTrace</span><span style="color: #000000; ">;
-</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">world</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ScenarioManager</span><span style="color: #000000; ">;
 </span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">ned</span><span style="color: #000000; ">.</span><span style="color: #000000; ">DatarateChannel</span><span style="color: #000000; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">world</span><span style="color: #000000; ">.</span><span style="color: #000000; ">scenario</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ScenarioManager</span><span style="color: #000000; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">nodes</span><span style="color: #000000; ">.</span><span style="color: #000000; ">mpls</span><span style="color: #000000; ">.</span><span style="color: #000000; ">LDP_LSR</span><span style="color: #000000; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">nodes</span><span style="color: #000000; ">.</span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">StandardHost</span><span style="color: #000000; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">networklayer</span><span style="color: #000000; ">.</span><span style="color: #000000; ">extras</span><span style="color: #000000; ">.</span><span style="color: #000000; ">FailureManager</span><span style="color: #000000; ">;
 
 
 </span><span style="color: #800000; font-weight: bold; ">network</span><span style="color: #000000; "> </span><span style="color: #000000; ">LDPTEST</span><span style="color: #000000; ">
@@ -67,10 +66,6 @@
             </span><span style="color: #000000; ">delay</span><span style="color: #000000; "> = </span><span style="color: #008000; ">15</span><span style="color: #000000; ">us</span><span style="color: #000000; ">;
         }
     </span><span style="color: #800000; font-weight: bold; ">submodules</span><span style="color: #000000; ">:
-        </span><span style="color: #000000; ">nam</span><span style="color: #000000; ">: </span><span style="color: #000000; ">NAMTrace</span><span style="color: #000000; "> {
-            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=152,280&quot;</span><span style="color: #000000; ">);
-        }
         </span><span style="color: #000000; ">LSR1</span><span style="color: #000000; ">: </span><span style="color: #000000; ">LDP_LSR</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
                 </span><span style="color: #000000; ">peers</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;ppp0 ppp1 ppp2&quot;</span><span style="color: #000000; ">;
@@ -146,6 +141,5 @@
 }
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

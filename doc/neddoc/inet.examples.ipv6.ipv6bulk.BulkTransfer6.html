@@ -5,7 +5,29 @@
    </head>
    <body onload="if (top.frames['componentsframe'] == undefined) { s = window.location.toString(); window.location = 'index.html?p=' + s.substring(s.lastIndexOf('/')+1); }">
 <h2 class="comptitle">Network <i>BulkTransfer6</i></h2>
-<b>Package:</b> inet.examples.ipv6.ipv6bulk<br/><b>File: <a href="examples-ipv6-ipv6bulk-BulkTransfer6.ned.html">examples/ipv6/ipv6bulk/BulkTransfer6.ned</a></b><br/><p>(no description)</p><h3 class="subtitle">Properties:</h3>
+<b>Package:</b> inet.examples.ipv6.ipv6bulk<br/><b>File: <a href="examples-ipv6-ipv6bulk-BulkTransfer6.ned.html">examples/ipv6/ipv6bulk/BulkTransfer6.ned</a></b><br/><p>(no description)</p><img src="inet.examples.ipv6.ipv6bulk.BulkTransfer6-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.nodes.ipv6.StandardHost6.html" title="StandardHost6" alt="StandardHost6" coords="113,105,153,164">
+<area shape="rect" href="inet.nodes.ipv6.StandardHost6.html" title="StandardHost6" alt="StandardHost6" coords="319,105,359,164">
+<area shape="rect" href="inet.nodes.ipv6.StandardHost6.html" title="StandardHost6" alt="StandardHost6" coords="319,285,359,344">
+<area shape="rect" href="inet.nodes.ipv6.StandardHost6.html" title="StandardHost6" alt="StandardHost6" coords="113,285,157,344">
+<area shape="rect" href="inet.nodes.ipv6.Router6.html" title="Router6" alt="Router6" coords="221,198,265,249">
+<area shape="rect" href="inet.networklayer.autorouting.ipv6.FlatNetworkConfigurator6.html" title="FlatNetworkConfigurator6" alt="FlatNetworkConfigurator6" coords="28,157,100,216">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.examples.ipv6.ipv6bulk.BulkTransfer6-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.examples.ipv6.ipv6bulk.BulkTransfer6.html" title="Network BulkTransfer6" alt="" coords="261,6,363,34">
+<area shape="rect" id="node2" href="inet.networklayer.autorouting.ipv6.FlatNetworkConfigurator6.html" title="Simple Module FlatNetworkConfigurator6" alt="" coords="5,83,176,111">
+<area shape="rect" id="node4" href="inet.nodes.ipv6.StandardHost6.html" title="Compound Module StandardHost6" alt="" coords="200,83,309,111">
+<area shape="rect" id="node6" href="inet.examples.ipv6.ipv6bulk.BulkTransfer6.C.html" title="Channel C" alt="" coords="333,83,405,111">
+<area shape="rect" id="node8" href="inet.nodes.ipv6.Router6.html" title="Compound Module Router6" alt="" coords="429,83,501,111">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.examples.ipv6.ipv6bulk.BulkTransfer6-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.examples.ipv6.ipv6bulk.BulkTransfer6.html" title="Network BulkTransfer6" alt="" coords="5,6,107,34">
+</map>
+<h3 class="subtitle">Properties:</h3>
 <table class="propertiestable">
    <tr>
       <th class="name">Name</th>
@@ -27,104 +49,6 @@
       <th class="description">Description</th>
    </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client1</a>.<a href="inet.networklayer.ipv6.RoutingTable6.html">routingTable6</a>.routingTableFile</td>
-   <td>
-      <i>xml</i>
-   </td>
-   <td></td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.destAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>destination <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.srcAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>source <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address (useful with <a href="inet.examples.sctp.multihomed.multi.html">multi</a>-homing)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.packetSize</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>56B</td>
-   <td>
-<p>of ping payload, in bytes</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.interval</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>1s</td>
-   <td>
-<p>time to wait between pings (can be random)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.hopLimit</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>32</td>
-   <td>
-<p>TTL or hopLimit for <a href="inet.networklayer.ipv4.IP.html">IP</a> packets</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.count</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>stop after count ping requests, 0 means continuously</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.startTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>uniform(0s,this.interval)</td>
-   <td>
-<p>send first ping at startTime</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.stopTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
-   <td>
-<p>send no pings after stopTime, 0 means forever</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.printPing</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>dump on stdout</p>
-   </td>
-</tr>
-<tr>
    <td><a href="inet.nodes.ipv6.StandardHost6.html">client1</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.ipv6.IPv6.html">ipv6</a>.procDelay</td>
    <td>
       <i>double</i>
@@ -133,165 +57,49 @@
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client1</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"auto"</td>
-   <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">client1</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">neighbourDiscovery</a>.minIntervalBetweenRAs</td>
    <td>
       <i>double</i>
    </td>
-   <td>100Mbps</td>
+   <td>30ms</td>
    <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
+<p>minRtrAdvInterval:  0.03 sec for MIPv6 , declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">client1</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">neighbourDiscovery</a>.maxIntervalBetweenRAs</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>70ms</td>
+   <td>
+<p>MaxrtrAdvInterval: 0.07 sec for MIPv6, declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">client1</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.IxMIPv6Support.html">mipv6support</a>.isHomeAgent</td>
    <td>
       <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client2</a>.<a href="inet.networklayer.ipv6.RoutingTable6.html">routingTable6</a>.routingTableFile</td>
-   <td>
-      <i>xml</i>
    </td>
    <td></td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.destAddr</td>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">client1</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.IxMIPv6Support.html">mipv6support</a>.isMobileNode</td>
    <td>
-      <i>string</i>
+      <i>bool</i>
    </td>
-   <td>""</td>
-   <td>
-<p>destination <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address</p>
-   </td>
+   <td></td>
+   <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.srcAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>source <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address (useful with <a href="inet.examples.sctp.multihomed.multi.html">multi</a>-homing)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.packetSize</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>56B</td>
-   <td>
-<p>of ping payload, in bytes</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.interval</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>1s</td>
-   <td>
-<p>time to wait between pings (can be random)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.hopLimit</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>32</td>
-   <td>
-<p>TTL or hopLimit for <a href="inet.networklayer.ipv4.IP.html">IP</a> packets</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.count</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>stop after count ping requests, 0 means continuously</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.startTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>uniform(0s,this.interval)</td>
-   <td>
-<p>send first ping at startTime</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.stopTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
-   <td>
-<p>send no pings after stopTime, 0 means forever</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.printPing</td>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">client1</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>dump on stdout</p>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
@@ -303,165 +111,49 @@ possible with DTE-to-DTE connection).</p>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client2</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"auto"</td>
-   <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">client2</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">neighbourDiscovery</a>.minIntervalBetweenRAs</td>
    <td>
       <i>double</i>
    </td>
-   <td>100Mbps</td>
+   <td>30ms</td>
    <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
+<p>minRtrAdvInterval:  0.03 sec for MIPv6 , declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">client2</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">neighbourDiscovery</a>.maxIntervalBetweenRAs</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>70ms</td>
+   <td>
+<p>MaxrtrAdvInterval: 0.07 sec for MIPv6, declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">client2</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.IxMIPv6Support.html">mipv6support</a>.isHomeAgent</td>
    <td>
       <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client3</a>.<a href="inet.networklayer.ipv6.RoutingTable6.html">routingTable6</a>.routingTableFile</td>
-   <td>
-      <i>xml</i>
    </td>
    <td></td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.destAddr</td>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">client2</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.IxMIPv6Support.html">mipv6support</a>.isMobileNode</td>
    <td>
-      <i>string</i>
+      <i>bool</i>
    </td>
-   <td>""</td>
-   <td>
-<p>destination <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address</p>
-   </td>
+   <td></td>
+   <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.srcAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>source <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address (useful with <a href="inet.examples.sctp.multihomed.multi.html">multi</a>-homing)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.packetSize</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>56B</td>
-   <td>
-<p>of ping payload, in bytes</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.interval</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>1s</td>
-   <td>
-<p>time to wait between pings (can be random)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.hopLimit</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>32</td>
-   <td>
-<p>TTL or hopLimit for <a href="inet.networklayer.ipv4.IP.html">IP</a> packets</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.count</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>stop after count ping requests, 0 means continuously</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.startTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>uniform(0s,this.interval)</td>
-   <td>
-<p>send first ping at startTime</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.stopTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
-   <td>
-<p>send no pings after stopTime, 0 means forever</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.printPing</td>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">client2</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>dump on stdout</p>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
@@ -473,165 +165,49 @@ possible with DTE-to-DTE connection).</p>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client3</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"auto"</td>
-   <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">client3</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">neighbourDiscovery</a>.minIntervalBetweenRAs</td>
    <td>
       <i>double</i>
    </td>
-   <td>100Mbps</td>
+   <td>30ms</td>
    <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
+<p>minRtrAdvInterval:  0.03 sec for MIPv6 , declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">client3</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">neighbourDiscovery</a>.maxIntervalBetweenRAs</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>70ms</td>
+   <td>
+<p>MaxrtrAdvInterval: 0.07 sec for MIPv6, declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">client3</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.IxMIPv6Support.html">mipv6support</a>.isHomeAgent</td>
    <td>
       <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">client3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">server</a>.<a href="inet.networklayer.ipv6.RoutingTable6.html">routingTable6</a>.routingTableFile</td>
-   <td>
-      <i>xml</i>
    </td>
    <td></td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">server</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.destAddr</td>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">client3</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.IxMIPv6Support.html">mipv6support</a>.isMobileNode</td>
    <td>
-      <i>string</i>
+      <i>bool</i>
    </td>
-   <td>""</td>
-   <td>
-<p>destination <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address</p>
-   </td>
+   <td></td>
+   <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">server</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.srcAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>source <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address (useful with <a href="inet.examples.sctp.multihomed.multi.html">multi</a>-homing)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">server</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.packetSize</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>56B</td>
-   <td>
-<p>of ping payload, in bytes</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">server</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.interval</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>1s</td>
-   <td>
-<p>time to wait between pings (can be random)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">server</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.hopLimit</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>32</td>
-   <td>
-<p>TTL or hopLimit for <a href="inet.networklayer.ipv4.IP.html">IP</a> packets</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">server</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.count</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>stop after count ping requests, 0 means continuously</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">server</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.startTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>uniform(0s,this.interval)</td>
-   <td>
-<p>send first ping at startTime</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">server</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.stopTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
-   <td>
-<p>send no pings after stopTime, 0 means forever</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">server</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.printPing</td>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">client3</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>dump on stdout</p>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
@@ -643,76 +219,50 @@ possible with DTE-to-DTE connection).</p>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">server</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">server</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">server</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"auto"</td>
-   <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">server</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">server</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">neighbourDiscovery</a>.minIntervalBetweenRAs</td>
    <td>
       <i>double</i>
    </td>
-   <td>100Mbps</td>
+   <td>30ms</td>
    <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
+<p>minRtrAdvInterval:  0.03 sec for MIPv6 , declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">server</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">server</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">neighbourDiscovery</a>.maxIntervalBetweenRAs</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>70ms</td>
+   <td>
+<p>MaxrtrAdvInterval: 0.07 sec for MIPv6, declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">server</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.IxMIPv6Support.html">mipv6support</a>.isHomeAgent</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td></td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">server</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.IxMIPv6Support.html">mipv6support</a>.isMobileNode</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td></td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">server</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>whether to display IP addresses on links</p>
    </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">server</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">router</a>.<a href="inet.networklayer.ipv6.RoutingTable6.html">routingTable6</a>.routingTableFile</td>
-   <td>
-      <i>xml</i>
-   </td>
-   <td></td>
-   <td>   </td>
 </tr>
 <tr>
    <td><a href="inet.nodes.ipv6.Router6.html">router</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.ipv6.IPv6.html">ipv6</a>.procDelay</td>
@@ -723,68 +273,50 @@ possible with DTE-to-DTE connection).</p>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">router</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">router</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">router</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"auto"</td>
-   <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">router</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
+   <td><a href="inet.nodes.ipv6.Router6.html">router</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">neighbourDiscovery</a>.minIntervalBetweenRAs</td>
    <td>
       <i>double</i>
    </td>
-   <td>100Mbps</td>
+   <td>30ms</td>
    <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
+<p>minRtrAdvInterval:  0.03 sec for MIPv6 , declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">router</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.nodes.ipv6.Router6.html">router</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">neighbourDiscovery</a>.maxIntervalBetweenRAs</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>70ms</td>
+   <td>
+<p>MaxrtrAdvInterval: 0.07 sec for MIPv6, declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ipv6.Router6.html">router</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.IxMIPv6Support.html">mipv6support</a>.isHomeAgent</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td></td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ipv6.Router6.html">router</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.IxMIPv6Support.html">mipv6support</a>.isMobileNode</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td></td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ipv6.Router6.html">router</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>whether to display IP addresses on links</p>
    </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">router</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
 </tr>
 </table>
 <h3 class="subtitle">Source code:</h3>
@@ -793,8 +325,8 @@ possible with DTE-to-DTE connection).</p>
     </span><span style="color: #800000; font-weight: bold; ">types</span><span style="color: #000000; ">:
         </span><span style="color: #800000; font-weight: bold; ">channel</span><span style="color: #000000; "> </span><span style="color: #000000; ">C</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">DatarateChannel</span><span style="color: #000000; ">
         {
-            </span><span style="color: #808080; font-style: italic; ">//            datarate = 1Mbps;
-</span><span style="color: #000000; ">            </span><span style="color: #000000; ">delay</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">.</span><span style="color: #008000; ">1</span><span style="color: #000000; ">us</span><span style="color: #000000; ">;
+            </span><span style="color: #000000; ">datarate</span><span style="color: #000000; "> = </span><span style="color: #008000; ">10</span><span style="color: #000000; ">Mbps</span><span style="color: #000000; ">;
+            </span><span style="color: #000000; ">delay</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">.</span><span style="color: #008000; ">1</span><span style="color: #000000; ">us</span><span style="color: #000000; ">;
         }
     </span><span style="color: #800000; font-weight: bold; ">submodules</span><span style="color: #000000; ">:
         </span><span style="color: #000000; ">client1</span><span style="color: #000000; ">: </span><span style="color: #000000; ">StandardHost6</span><span style="color: #000000; "> {
@@ -830,6 +362,5 @@ possible with DTE-to-DTE connection).</p>
 }
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

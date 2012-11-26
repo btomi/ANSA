@@ -79,8 +79,6 @@
 <div class="title">SCTPCommand.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><a href="_s_c_t_p_command_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -124,6 +122,9 @@ Enumerations</h2></td></tr>
 <a class="el" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3a75904bee9e03f629a2657337857f4e52">SCTP_I_SENDQUEUE_FULL</a> =  14, 
 <a class="el" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3a4ed59ad366001ebd94844599c3ed76ec">SCTP_I_SENDQUEUE_ABATED</a> =  15
 <br/>
+ }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_c_t_p_command_8h.html#a6f5cc3c80258127f32f9afd435791f1f">SCTPFlags</a> { <a class="el" href="_s_c_t_p_command_8h.html#a6f5cc3c80258127f32f9afd435791f1fa624a2bc1f97816d9d48c796f8ddab573">COMPLETE_MESG_UNORDERED</a> =  1, 
+<a class="el" href="_s_c_t_p_command_8h.html#a6f5cc3c80258127f32f9afd435791f1fa58b47731ff085e85a7462873e1284441">COMPLETE_MESG_ORDERED</a> =  0
  }</td></tr>
 </table>
 <hr/><h2>Enumeration Type Documentation</h2>
@@ -169,23 +170,46 @@ Enumerations</h2></td></tr>
 </table>
 </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="_s_c_t_p_command_8h_source.html#l00029">29</a> of file <a class="el" href="_s_c_t_p_command_8h_source.html">SCTPCommand.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="_s_c_t_p_command_8h.html#a5ec9c6f1ed5e1ef36d79227bcb81463ea408002f9592dcab6ceb60f683bee7e83">SCTP_C_ASSOCIATE</a>            = 1,        <span class="comment">// active open (must carry SCTPOpenCommand)</span>
-    <a class="code" href="_s_c_t_p_command_8h.html#a5ec9c6f1ed5e1ef36d79227bcb81463ea4660ef9a2685b60b3aa2388461c43deb">SCTP_C_OPEN_PASSIVE</a>         = 2,        <span class="comment">// passive open (must carry SCTPOpenCommand)</span>
-    <a class="code" href="_s_c_t_p_command_8h.html#a5ec9c6f1ed5e1ef36d79227bcb81463eacb34da0d2a8bc9071c353d5e92ab0d94">SCTP_C_SEND</a>                 = 3,        <span class="comment">// send data (set on data packet)</span>
-    <a class="code" href="_s_c_t_p_command_8h.html#a5ec9c6f1ed5e1ef36d79227bcb81463ea36c1bad836563c7468a9877491b1db5d">SCTP_C_CLOSE</a>                = 5,        <span class="comment">// shutdown the association</span>
-    <a class="code" href="_s_c_t_p_command_8h.html#a5ec9c6f1ed5e1ef36d79227bcb81463ea7d45ef3a5ccaa811a5edd77a342bc3b0">SCTP_C_ABORT</a>                = 6,        <span class="comment">// abort connection</span>
-    <a class="code" href="_s_c_t_p_command_8h.html#a5ec9c6f1ed5e1ef36d79227bcb81463eae6535b42c094a1812adfc19d4b59d69b">SCTP_C_STATUS</a>               = 7,        <span class="comment">// request status info (SCTP_I_STATUS) from SCTP</span>
-    <a class="code" href="_s_c_t_p_command_8h.html#a5ec9c6f1ed5e1ef36d79227bcb81463ea2ba582af18939c296a16e1b083e74397">SCTP_C_RECEIVE</a>              = 8,        <span class="comment">// data receive request</span>
-    <a class="code" href="_s_c_t_p_command_8h.html#a5ec9c6f1ed5e1ef36d79227bcb81463ea6b3b36984ab51a0714609ca913bbb54f">SCTP_C_SEND_ORDERED</a>         = 9,        <span class="comment">// send data ordered</span>
+    <a class="code" href="_s_c_t_p_command_8h.html#a5ec9c6f1ed5e1ef36d79227bcb81463ea408002f9592dcab6ceb60f683bee7e83">SCTP_C_ASSOCIATE</a>            = 1,    <span class="comment">// active open (must carry SCTPOpenCommand)</span>
+    <a class="code" href="_s_c_t_p_command_8h.html#a5ec9c6f1ed5e1ef36d79227bcb81463ea4660ef9a2685b60b3aa2388461c43deb">SCTP_C_OPEN_PASSIVE</a>         = 2,    <span class="comment">// passive open (must carry SCTPOpenCommand)</span>
+    <a class="code" href="_s_c_t_p_command_8h.html#a5ec9c6f1ed5e1ef36d79227bcb81463eacb34da0d2a8bc9071c353d5e92ab0d94">SCTP_C_SEND</a>                 = 3,    <span class="comment">// send data (set on data packet)</span>
+    <a class="code" href="_s_c_t_p_command_8h.html#a5ec9c6f1ed5e1ef36d79227bcb81463ea36c1bad836563c7468a9877491b1db5d">SCTP_C_CLOSE</a>                = 5,    <span class="comment">// shutdown the association</span>
+    <a class="code" href="_s_c_t_p_command_8h.html#a5ec9c6f1ed5e1ef36d79227bcb81463ea7d45ef3a5ccaa811a5edd77a342bc3b0">SCTP_C_ABORT</a>                = 6,    <span class="comment">// abort connection</span>
+    <a class="code" href="_s_c_t_p_command_8h.html#a5ec9c6f1ed5e1ef36d79227bcb81463eae6535b42c094a1812adfc19d4b59d69b">SCTP_C_STATUS</a>               = 7,    <span class="comment">// request status info (SCTP_I_STATUS) from SCTP</span>
+    <a class="code" href="_s_c_t_p_command_8h.html#a5ec9c6f1ed5e1ef36d79227bcb81463ea2ba582af18939c296a16e1b083e74397">SCTP_C_RECEIVE</a>              = 8,    <span class="comment">// data receive request</span>
+    <a class="code" href="_s_c_t_p_command_8h.html#a5ec9c6f1ed5e1ef36d79227bcb81463ea6b3b36984ab51a0714609ca913bbb54f">SCTP_C_SEND_ORDERED</a>         = 9,    <span class="comment">// send data ordered</span>
     <a class="code" href="_s_c_t_p_command_8h.html#a5ec9c6f1ed5e1ef36d79227bcb81463ea7c99f40fe26cf98c3275ca9c38bd98a3">SCTP_C_SEND_UNORDERED</a>       = 10,   <span class="comment">// send data unordered</span>
     <a class="code" href="_s_c_t_p_command_8h.html#a5ec9c6f1ed5e1ef36d79227bcb81463ea642be41f281aef49b9cb8402278be2f7">SCTP_C_PRIMARY</a>              = 11,   <span class="comment">// set primary path</span>
     <a class="code" href="_s_c_t_p_command_8h.html#a5ec9c6f1ed5e1ef36d79227bcb81463eac6ae02fe564dd3a68214528a0b25eeb7">SCTP_C_QUEUE_BYTES_LIMIT</a>    = 12,   <span class="comment">// set send queue limit (in bytes)</span>
     <a class="code" href="_s_c_t_p_command_8h.html#a5ec9c6f1ed5e1ef36d79227bcb81463ea4fe02c6f134855267e6f95cf92fadee1">SCTP_C_QUEUE_MSGS_LIMIT</a>     = 13,   <span class="comment">// set send queue limit (in messages)</span>
     <a class="code" href="_s_c_t_p_command_8h.html#a5ec9c6f1ed5e1ef36d79227bcb81463ea349e117c148f5b223ecef4d8334b7077">SCTP_C_SHUTDOWN</a>             = 14,
     <a class="code" href="_s_c_t_p_command_8h.html#a5ec9c6f1ed5e1ef36d79227bcb81463eaaf691bde7e4b92ce33b4579760761a62">SCTP_C_NO_OUTSTANDING</a>       = 15
+};
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a6f5cc3c80258127f32f9afd435791f1f"></a><!-- doxytag: member="SCTPCommand.h::SCTPFlags" ref="a6f5cc3c80258127f32f9afd435791f1f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_s_c_t_p_command_8h.html#a6f5cc3c80258127f32f9afd435791f1f">SCTPFlags</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a6f5cc3c80258127f32f9afd435791f1fa624a2bc1f97816d9d48c796f8ddab573"></a><!-- doxytag: member="COMPLETE_MESG_UNORDERED" ref="a6f5cc3c80258127f32f9afd435791f1fa624a2bc1f97816d9d48c796f8ddab573" args="" -->COMPLETE_MESG_UNORDERED</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a6f5cc3c80258127f32f9afd435791f1fa58b47731ff085e85a7462873e1284441"></a><!-- doxytag: member="COMPLETE_MESG_ORDERED" ref="a6f5cc3c80258127f32f9afd435791f1fa58b47731ff085e85a7462873e1284441" args="" -->COMPLETE_MESG_ORDERED</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+<div class="fragment"><pre class="fragment">{
+    <a class="code" href="_s_c_t_p_command_8h.html#a6f5cc3c80258127f32f9afd435791f1fa624a2bc1f97816d9d48c796f8ddab573">COMPLETE_MESG_UNORDERED</a> = 1,
+    <a class="code" href="_s_c_t_p_command_8h.html#a6f5cc3c80258127f32f9afd435791f1fa58b47731ff085e85a7462873e1284441">COMPLETE_MESG_ORDERED</a>   = 0
 };
 </pre></div>
 </div>
@@ -234,20 +258,18 @@ Enumerations</h2></td></tr>
 </table>
 </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="_s_c_t_p_command_8h_source.html#l00053">53</a> of file <a class="el" href="_s_c_t_p_command_8h_source.html">SCTPCommand.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3a1eb9f18f68a700c545427ba5231a9dc4">SCTP_I_DATA</a>                 = 1,                     <span class="comment">// data packet (set on data packet)</span>
-    <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3a723241390fabc3b46cb79e9f5541b01b">SCTP_I_DATA_NOTIFICATION</a>    = 2,     <span class="comment">// data arrived notification</span>
-    <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3a6b85de91f4bd3609fc7bcd7994101a3d">SCTP_I_ESTABLISHED</a>          = 3,             <span class="comment">// connection established</span>
-    <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3adcb0d50416fbeb73876eba7d7b8ee930">SCTP_I_PEER_CLOSED</a>          = 4,             <span class="comment">// FIN received from remote SCTP</span>
-    <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3ace58e516838fe8c15ac9ce67f4f4409c">SCTP_I_CLOSED</a>               = 5,                 <span class="comment">// connection closed normally (via FIN exchange)</span>
-    <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3a16f2119f34b440b981e5f1e6386ac018">SCTP_I_CONNECTION_REFUSED</a>   = 6, <span class="comment">// connection refused</span>
-    <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3aee8733c691e3dbeea6dc2f701bcf027b">SCTP_I_CONNECTION_RESET</a>     = 7,     <span class="comment">// connection reset</span>
-    <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3ab114530461e728f84d5db50dd5670620">SCTP_I_TIMED_OUT</a>            = 8,             <span class="comment">// conn-estab timer went off, or max retransm. count reached</span>
-    <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3abbf25758d570841736d12727b53ff2be">SCTP_I_STATUS</a>               = 9,                 <span class="comment">// status info (will carry SCTPStatusInfo)</span>
-    <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3a72ee49d265f6c75166038f085a52a1bf">SCTP_I_ABORT</a>                = 10,                <span class="comment">// association was aborted by the peer</span>
-    <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3afc5424e52a8919715c5f0433afcdd3b5">SCTP_I_CONN_LOST</a>            = 11,            <span class="comment">// association had too many retransmissions FIXME</span>
+    <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3a1eb9f18f68a700c545427ba5231a9dc4">SCTP_I_DATA</a>                 = 1,    <span class="comment">// data packet (set on data packet)</span>
+    <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3a723241390fabc3b46cb79e9f5541b01b">SCTP_I_DATA_NOTIFICATION</a>    = 2,    <span class="comment">// data arrived notification</span>
+    <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3a6b85de91f4bd3609fc7bcd7994101a3d">SCTP_I_ESTABLISHED</a>          = 3,    <span class="comment">// connection established</span>
+    <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3adcb0d50416fbeb73876eba7d7b8ee930">SCTP_I_PEER_CLOSED</a>          = 4,    <span class="comment">// FIN received from remote SCTP</span>
+    <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3ace58e516838fe8c15ac9ce67f4f4409c">SCTP_I_CLOSED</a>               = 5,    <span class="comment">// connection closed normally (via FIN exchange)</span>
+    <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3a16f2119f34b440b981e5f1e6386ac018">SCTP_I_CONNECTION_REFUSED</a>   = 6,    <span class="comment">// connection refused</span>
+    <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3aee8733c691e3dbeea6dc2f701bcf027b">SCTP_I_CONNECTION_RESET</a>     = 7,    <span class="comment">// connection reset</span>
+    <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3ab114530461e728f84d5db50dd5670620">SCTP_I_TIMED_OUT</a>            = 8,    <span class="comment">// conn-estab timer went off, or max retransm. count reached</span>
+    <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3abbf25758d570841736d12727b53ff2be">SCTP_I_STATUS</a>               = 9,    <span class="comment">// status info (will carry SCTPStatusInfo)</span>
+    <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3a72ee49d265f6c75166038f085a52a1bf">SCTP_I_ABORT</a>                = 10,   <span class="comment">// association was aborted by the peer</span>
+    <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3afc5424e52a8919715c5f0433afcdd3b5">SCTP_I_CONN_LOST</a>            = 11,   <span class="comment">// association had too many retransmissions FIXME</span>
     <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3a781cc2063dc1656c84a04fde2991e2d2">SCTP_I_SEND_MSG</a>             = 12,
     <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3a21bb0580e0fb02c3a89d63062a14b88b">SCTP_I_SHUTDOWN_RECEIVED</a>    = 13,
     <a class="code" href="_s_c_t_p_command_8h.html#a066d6fbbc858ac42638c402e8ab1a5f3a75904bee9e03f629a2657337857f4e52">SCTP_I_SENDQUEUE_FULL</a>       = 14,
@@ -262,7 +284,7 @@ Enumerations</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="_s_c_t_p_command_8h.html">SCTPCommand.h</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:46 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:22 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

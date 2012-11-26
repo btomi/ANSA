@@ -13,10 +13,10 @@
    </tr>
 <tr>
    <td>
-<a href="RTPSenderControlMessage.html">RTPSenderControlMessage</a>
+<a href="RTPSenderControlMessageCommands.html">RTPSenderControlMessageCommands</a>
    </td>
    <td>
-<i>packet</i>
+<i>enum</i>
    </td>
    <td>
 
@@ -25,6 +25,17 @@ the behavior of an rtp sender module. With this class the application can send a
 string to the sender module like "PLAY" or "STOP". A message can have up to two float
 parameters.</p>
 
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="RTPSenderControlMessage.html">RTPSenderControlMessage</a>
+   </td>
+   <td>
+<i>packet</i>
+   </td>
+   <td>
+<i>(no description)</i>
    </td>
 </tr>
 </table>
@@ -52,12 +63,12 @@ parameters.</p>
 }}
 
 </span><span style="color: #808080; font-style: italic; ">//
-// A message of the type RTPSenderControlMessage is created by an application to control
+// A message of the type ~RTPSenderControlMessage is created by an application to control
 // the behavior of an rtp sender module. With this class the application can send a command
 // string to the sender module like &quot;PLAY&quot; or &quot;STOP&quot;. A message can have up to two float
 // parameters.
 //
-// Following commands are evaluated in RTPPayloadSender (although correct behavior must
+// Following commands are evaluated in ~RTPPayloadSender (although correct behavior must
 // be implemented in modules for certain payload types):
 //    - PLAY : start playing from current position
 //    - PAUSE : pause playing, stay at current position
@@ -68,14 +79,24 @@ parameters.</p>
 //    - SEEK_TIME : go to temporal position within the file (not allowed while playing)
 //    - SEEK_BYTE : go to data byte (not allowed while playing)
 //
+</span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; "> </span><span style="color: #000000; ">RTPSenderControlMessageCommands</span><span style="color: #000000; ">
+{
+    </span><span style="color: #000000; ">RTP_CONTROL_PLAY</span><span style="color: #000000; "> = </span><span style="color: #008000; ">1</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">RTP_CONTROL_PLAY_UNTIL_TIME</span><span style="color: #000000; "> = </span><span style="color: #008000; ">2</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">RTP_CONTROL_PLAY_UNTIL_BYTE</span><span style="color: #000000; "> = </span><span style="color: #008000; ">3</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">RTP_CONTROL_PAUSE</span><span style="color: #000000; "> = </span><span style="color: #008000; ">4</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">RTP_CONTROL_STOP</span><span style="color: #000000; "> = </span><span style="color: #008000; ">5</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">RTP_CONTROL_SEEK_TIME</span><span style="color: #000000; "> = </span><span style="color: #008000; ">6</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">RTP_CONTROL_SEEK_BYTE</span><span style="color: #000000; "> = </span><span style="color: #008000; ">7</span><span style="color: #000000; ">;
+};
+
 </span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">RTPSenderControlMessage</span><span style="color: #000000; ">
 {
-    </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">command</span><span style="color: #000000; ">;
+    </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">command</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@enum</span><span style="color: #000000; ">(</span><span style="color: #000000; ">RTPSenderControlMessageCommands</span><span style="color: #000000; ">);
     </span><span style="color: #000000; ">float</span><span style="color: #000000; "> </span><span style="color: #000000; ">commandParameter1</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">float</span><span style="color: #000000; "> </span><span style="color: #000000; ">commandParameter2</span><span style="color: #000000; ">;
 };
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

@@ -79,28 +79,24 @@
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-types">Protected Types</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">UDPVideoStreamSvr Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="UDPVideoStreamSvr" --><!-- doxytag: inherits="UDPAppBase" -->
-<p><code>#include &lt;<a class="el" href="_u_d_p_video_stream_svr_8h_source.html">UDPVideoStreamSvr.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for UDPVideoStreamSvr:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="class_u_d_p_video_stream_svr.png" usemap="#UDPVideoStreamSvr_map" alt=""/>
-  <map id="UDPVideoStreamSvr_map" name="UDPVideoStreamSvr_map">
-<area href="class_u_d_p_app_base.html" alt="UDPAppBase" shape="rect" coords="0,0,129,24"/>
-</map>
- </div></div>
+<!-- doxytag: class="UDPVideoStreamSvr" -->
+<p>Stream VBR video streams to clients.  
+ <a href="class_u_d_p_video_stream_svr.html#details">More...</a></p>
+
+<p><code>#include &lt;UDPVideoStreamSvr.h&gt;</code></p>
 
 <p><a href="class_u_d_p_video_stream_svr-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_u_d_p_video_stream_svr_1_1_video_stream_data.html">VideoStreamData</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores information on a video stream.  <a href="struct_u_d_p_video_stream_svr_1_1_video_stream_data.html#details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#aa4818770918097ce01da8928111e5cc6">UDPVideoStreamSvr</a> ()</td></tr>
@@ -111,27 +107,30 @@ Protected Types</h2></td></tr>
 &lt; <a class="el" href="struct_u_d_p_video_stream_svr_1_1_video_stream_data.html">VideoStreamData</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#a2b5fa87477ed83d07cf532d5ea876abe">VideoStreamVector</a></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#ae5a0df7652fe7507da3fd9868324b6f8">processStreamRequest</a> (cMessage *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#ad485162bd9103839dfcd3e20056cc5d0">sendStreamData</a> (cMessage *timer)</td></tr>
-<tr><td colspan="2"><div class="groupHeader">Overidden cSimpleModule functions</div></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#a9d8e84e32e1d2d9ec05dea83831a804b">initialize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#a25110b96ca30800684d495bfef2579c0">finish</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#a92d09c41dd345a84303f8be392ffb201">handleMessage</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#ae5a0df7652fe7507da3fd9868324b6f8">processStreamRequest</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#ad485162bd9103839dfcd3e20056cc5d0">sendStreamData</a> (cMessage *<a class="el" href="structtimer.html">timer</a>)</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Overridden cSimpleModule functions</div></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#a9d8e84e32e1d2d9ec05dea83831a804b">initialize</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#a25110b96ca30800684d495bfef2579c0">finish</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#a92d09c41dd345a84303f8be392ffb201">handleMessage</a> (cMessage *msg)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_u_d_p_video_stream_svr.html#a2b5fa87477ed83d07cf532d5ea876abe">VideoStreamVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#a9a4496248410d5013064480b67cc7ad6">streamVector</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#ac80d7110e23e899e1c13a02aee4d8615">serverPort</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">cPar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#a9884379ddf693cb0776db24a26eaff36">waitInterval</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_u_d_p_socket.html">UDPSocket</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#a08835299966769eb1c37fddf68646c42">socket</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#a8fb43f51a237c0f7b7566da5f405e7fb">localPort</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cPar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#a520fd73890c0bc72849122bbc4a481b8">sendInterval</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">cPar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#a2701ce408bc7d6f06be13a9af3356a69">packetLen</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">cPar *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#af166ff8f3b53e25b1e0e49a7f8361a25">videoSize</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#a75bb2d846ce8b49c2f0515774f59146d">numStreams</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#a295a8c9bf560c7ff3dba50faf7aaebb7">numPkSent</a></td></tr>
+<tr><td colspan="2"><h2><a name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#ab2dccd1f2ae5d37374f6e751eee92ddc">reqStreamBytesSignal</a> = SIMSIGNAL_NULL</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_video_stream_svr.html#a66c0f7fe8f506dc46d86ccda1cce7a63">sentPkSignal</a> = SIMSIGNAL_NULL</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Stream VBR video streams to clients.</p>
-<p>Cooperates with <a class="el" href="class_u_d_p_video_stream_cli.html">UDPVideoStreamCli</a>. <a class="el" href="class_u_d_p_video_stream_cli.html">UDPVideoStreamCli</a> requests a stream and <a class="el" href="class_u_d_p_video_stream_svr.html">UDPVideoStreamSvr</a> starts streaming to them. Capable of handling streaming to multiple clients. </p>
-
-<p>Definition at line <a class="el" href="_u_d_p_video_stream_svr_8h_source.html#l00038">38</a> of file <a class="el" href="_u_d_p_video_stream_svr_8h_source.html">UDPVideoStreamSvr.h</a>.</p>
+<div class="textblock"><p>Stream VBR video streams to clients. </p>
+<p>Cooperates with <a class="el" href="class_u_d_p_video_stream_cli.html" title="A &quot;Realtime&quot; VideoStream client application.">UDPVideoStreamCli</a>. <a class="el" href="class_u_d_p_video_stream_cli.html" title="A &quot;Realtime&quot; VideoStream client application.">UDPVideoStreamCli</a> requests a stream and <a class="el" href="class_u_d_p_video_stream_svr.html" title="Stream VBR video streams to clients.">UDPVideoStreamSvr</a> starts streaming to them. Capable of handling streaming to multiple clients. </p>
 </div><hr/><h2>Member Typedef Documentation</h2>
 <a class="anchor" id="a2b5fa87477ed83d07cf532d5ea876abe"></a><!-- doxytag: member="UDPVideoStreamSvr::VideoStreamVector" ref="a2b5fa87477ed83d07cf532d5ea876abe" args="" -->
 <div class="memitem">
@@ -143,8 +142,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_u_d_p_video_stream_svr_8h_source.html#l00054">54</a> of file <a class="el" href="_u_d_p_video_stream_svr_8h_source.html">UDPVideoStreamSvr.h</a>.</p>
 
 </div>
 </div>
@@ -162,8 +159,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00036">36</a> of file <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html">UDPVideoStreamSvr.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
 }
 </pre></div>
@@ -182,11 +177,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00040">40</a> of file <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html">UDPVideoStreamSvr.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>=0; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>&lt;<a class="code" href="class_u_d_p_video_stream_svr.html#a9a4496248410d5013064480b67cc7ad6">streamVector</a>.size(); <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++)
-        <span class="keyword">delete</span> <a class="code" href="class_u_d_p_video_stream_svr.html#a9a4496248410d5013064480b67cc7ad6">streamVector</a>[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>];
+    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i &lt; <a class="code" href="class_u_d_p_video_stream_svr.html#a9a4496248410d5013064480b67cc7ad6">streamVector</a>.size(); i++)
+        <span class="keyword">delete</span> <a class="code" href="class_u_d_p_video_stream_svr.html#a9a4496248410d5013064480b67cc7ad6">streamVector</a>[i];
 }
 </pre></div>
 </div>
@@ -197,7 +190,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p_video_stream_svr.html#a25110b96ca30800684d495bfef2579c0">UDPVideoStreamSvr::finish</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p_video_stream_svr.html#a25110b96ca30800684d495bfef2579c0">UDPVideoStreamSvr::finish</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -205,11 +198,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00061">61</a> of file <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html">UDPVideoStreamSvr.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    recordScalar(<span class="stringliteral">&quot;streams served&quot;</span>, <a class="code" href="class_u_d_p_video_stream_svr.html#a75bb2d846ce8b49c2f0515774f59146d">numStreams</a>);
-    recordScalar(<span class="stringliteral">&quot;packets sent&quot;</span>, <a class="code" href="class_u_d_p_video_stream_svr.html#a295a8c9bf560c7ff3dba50faf7aaebb7">numPkSent</a>);
 }
 </pre></div>
 </div>
@@ -219,7 +208,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p_video_stream_svr.html#a92d09c41dd345a84303f8be392ffb201">UDPVideoStreamSvr::handleMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p_video_stream_svr.html#a92d09c41dd345a84303f8be392ffb201">UDPVideoStreamSvr::handleMessage</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -228,18 +217,25 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00067">67</a> of file <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html">UDPVideoStreamSvr.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span> (msg-&gt;isSelfMessage())
     {
         <span class="comment">// timer for a particular video stream expired, send packet</span>
         <a class="code" href="class_u_d_p_video_stream_svr.html#ad485162bd9103839dfcd3e20056cc5d0">sendStreamData</a>(msg);
     }
-    <span class="keywordflow">else</span>
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg-&gt;getKind() == <a class="code" href="_u_d_p_control_info__m_8h.html#a0cb49935325d643afaee9208fcb27733a53bfdb70d4246591854611edf4815f89">UDP_I_DATA</a>)
     {
         <span class="comment">// start streaming</span>
         <a class="code" href="class_u_d_p_video_stream_svr.html#ae5a0df7652fe7507da3fd9868324b6f8">processStreamRequest</a>(msg);
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg-&gt;getKind() == <a class="code" href="_u_d_p_control_info__m_8h.html#a0cb49935325d643afaee9208fcb27733a484b0da8b16fcb50610630a68c1bf8d7">UDP_I_ERROR</a>)
+    {
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Ignoring UDP error report\n&quot;</span>;
+        <span class="keyword">delete</span> msg;
+    }
+    <span class="keywordflow">else</span>
+    {
+        error(<span class="stringliteral">&quot;Unrecognized message (%s)%s&quot;</span>, msg-&gt;getClassName(), msg-&gt;getName());
     }
 }
 </pre></div>
@@ -250,7 +246,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p_video_stream_svr.html#a9d8e84e32e1d2d9ec05dea83831a804b">UDPVideoStreamSvr::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p_video_stream_svr.html#a9d8e84e32e1d2d9ec05dea83831a804b">UDPVideoStreamSvr::initialize</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -258,20 +254,22 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00046">46</a> of file <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html">UDPVideoStreamSvr.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_u_d_p_video_stream_svr.html#a9884379ddf693cb0776db24a26eaff36">waitInterval</a> = &amp;par(<span class="stringliteral">&quot;waitInterval&quot;</span>);
+    <a class="code" href="class_u_d_p_video_stream_svr.html#a520fd73890c0bc72849122bbc4a481b8">sendInterval</a> = &amp;par(<span class="stringliteral">&quot;sendInterval&quot;</span>);
     <a class="code" href="class_u_d_p_video_stream_svr.html#a2701ce408bc7d6f06be13a9af3356a69">packetLen</a> = &amp;par(<span class="stringliteral">&quot;packetLen&quot;</span>);
     <a class="code" href="class_u_d_p_video_stream_svr.html#af166ff8f3b53e25b1e0e49a7f8361a25">videoSize</a> = &amp;par(<span class="stringliteral">&quot;videoSize&quot;</span>);
-    <a class="code" href="class_u_d_p_video_stream_svr.html#ac80d7110e23e899e1c13a02aee4d8615">serverPort</a> = par(<span class="stringliteral">&quot;serverPort&quot;</span>);
+    <a class="code" href="class_u_d_p_video_stream_svr.html#a8fb43f51a237c0f7b7566da5f405e7fb">localPort</a> = par(<span class="stringliteral">&quot;localPort&quot;</span>);
 
+    <span class="comment">// statistics</span>
     <a class="code" href="class_u_d_p_video_stream_svr.html#a75bb2d846ce8b49c2f0515774f59146d">numStreams</a> = 0;
     <a class="code" href="class_u_d_p_video_stream_svr.html#a295a8c9bf560c7ff3dba50faf7aaebb7">numPkSent</a> = 0;
+    <a class="code" href="class_u_d_p_video_stream_svr.html#ab2dccd1f2ae5d37374f6e751eee92ddc">reqStreamBytesSignal</a> = registerSignal(<span class="stringliteral">&quot;reqStreamBytes&quot;</span>);
+    <a class="code" href="class_u_d_p_video_stream_svr.html#a66c0f7fe8f506dc46d86ccda1cce7a63">sentPkSignal</a> = registerSignal(<span class="stringliteral">&quot;sentPk&quot;</span>);
 
     WATCH_PTRVECTOR(<a class="code" href="class_u_d_p_video_stream_svr.html#a9a4496248410d5013064480b67cc7ad6">streamVector</a>);
 
-    <a class="code" href="class_u_d_p_app_base.html#a3f670cbeb07cba7840c4434ac9720208">bindToPort</a>(<a class="code" href="class_u_d_p_video_stream_svr.html#ac80d7110e23e899e1c13a02aee4d8615">serverPort</a>);
+    <a class="code" href="class_u_d_p_video_stream_svr.html#a08835299966769eb1c37fddf68646c42">socket</a>.<a class="code" href="class_u_d_p_socket.html#a606e9a6e14bcd2e68bb2906b0dc5a6b7" title="Sets the gate on which to send to UDP.">setOutputGate</a>(gate(<span class="stringliteral">&quot;udpOut&quot;</span>));
+    <a class="code" href="class_u_d_p_video_stream_svr.html#a08835299966769eb1c37fddf68646c42">socket</a>.<a class="code" href="class_u_d_p_socket.html#a4f85cea0efe5b7963fbc4103bad665c3" title="Bind the socket to a local port number.">bind</a>(<a class="code" href="class_u_d_p_video_stream_svr.html#a8fb43f51a237c0f7b7566da5f405e7fb">localPort</a>);
 }
 </pre></div>
 </div>
@@ -281,7 +279,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p_video_stream_svr.html#ae5a0df7652fe7507da3fd9868324b6f8">UDPVideoStreamSvr::processStreamRequest</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p_video_stream_svr.html#ae5a0df7652fe7507da3fd9868324b6f8">UDPVideoStreamSvr::processStreamRequest</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -291,28 +289,28 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00082">82</a> of file <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html">UDPVideoStreamSvr.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00067">handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p_video_stream_svr.html#a92d09c41dd345a84303f8be392ffb201">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// register video stream...</span>
-    <a class="code" href="class_u_d_p_control_info.html">UDPControlInfo</a> *ctrl = check_and_cast&lt;<a class="code" href="class_u_d_p_control_info.html">UDPControlInfo</a> *&gt;(msg-&gt;getControlInfo());
+    <a class="code" href="class_u_d_p_data_indication.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPDataIndication</a> *ctrl = check_and_cast&lt;<a class="code" href="class_u_d_p_data_indication.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPDataIndication</a> *&gt;(msg-&gt;getControlInfo());
 
     VideoStreamData *d = <span class="keyword">new</span> VideoStreamData;
-    d-&gt;clientAddr = ctrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a0dbca3fa110977e974dba0c3f7e28604">getSrcAddr</a>();
-    d-&gt;clientPort = ctrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a174a1520000a47394c851bcc9990b1b5">getSrcPort</a>();
+    d-&gt;clientAddr = ctrl-&gt;<a class="code" href="class_u_d_p_data_indication.html#a4a4374b3590ff7fa1a01be7ad54e5433">getSrcAddr</a>();
+    d-&gt;clientPort = ctrl-&gt;<a class="code" href="class_u_d_p_data_indication.html#afa69704c6f4fd43dfffdc3f89be2181f">getSrcPort</a>();
     d-&gt;videoSize = (*videoSize);
     d-&gt;bytesLeft = d-&gt;videoSize;
     d-&gt;numPkSent = 0;
     <a class="code" href="class_u_d_p_video_stream_svr.html#a9a4496248410d5013064480b67cc7ad6">streamVector</a>.push_back(d);
+    <span class="keyword">delete</span> msg;
 
-    cMessage *timer = <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;VideoStreamTmr&quot;</span>);
+    cMessage *<a class="code" href="structtimer.html">timer</a> = <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;VideoStreamTmr&quot;</span>);
     timer-&gt;setContextPointer(d);
 
     <span class="comment">// ... then transmit first packet right away</span>
     <a class="code" href="class_u_d_p_video_stream_svr.html#ad485162bd9103839dfcd3e20056cc5d0">sendStreamData</a>(timer);
 
     <a class="code" href="class_u_d_p_video_stream_svr.html#a75bb2d846ce8b49c2f0515774f59146d">numStreams</a>++;
+    emit(<a class="code" href="class_u_d_p_video_stream_svr.html#ab2dccd1f2ae5d37374f6e751eee92ddc">reqStreamBytesSignal</a>, d-&gt;videoSize);
 }
 </pre></div>
 </div>
@@ -322,7 +320,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p_video_stream_svr.html#ad485162bd9103839dfcd3e20056cc5d0">UDPVideoStreamSvr::sendStreamData</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p_video_stream_svr.html#ad485162bd9103839dfcd3e20056cc5d0">UDPVideoStreamSvr::sendStreamData</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>timer</em></td><td>)</td>
@@ -332,33 +330,34 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00105">105</a> of file <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html">UDPVideoStreamSvr.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00067">handleMessage()</a>, and <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00082">processStreamRequest()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p_video_stream_svr.html#a92d09c41dd345a84303f8be392ffb201">handleMessage()</a>, and <a class="el" href="class_u_d_p_video_stream_svr.html#ae5a0df7652fe7507da3fd9868324b6f8">processStreamRequest()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    VideoStreamData *d = (VideoStreamData *) timer-&gt;getContextPointer();
+    VideoStreamData *d = (VideoStreamData *) <a class="code" href="structtimer.html">timer</a>-&gt;getContextPointer();
 
     <span class="comment">// generate and send a packet</span>
     cPacket *pkt = <span class="keyword">new</span> cPacket(<span class="stringliteral">&quot;VideoStrmPk&quot;</span>);
     <span class="keywordtype">long</span> pktLen = <a class="code" href="class_u_d_p_video_stream_svr.html#a2701ce408bc7d6f06be13a9af3356a69">packetLen</a>-&gt;longValue();
+
     <span class="keywordflow">if</span> (pktLen &gt; d-&gt;bytesLeft)
         pktLen = d-&gt;bytesLeft;
+
     pkt-&gt;setByteLength(pktLen);
-    <a class="code" href="class_u_d_p_app_base.html#a1cc7e672ca71ba6c150ce40ddcdb7641">sendToUDP</a>(pkt, <a class="code" href="class_u_d_p_video_stream_svr.html#ac80d7110e23e899e1c13a02aee4d8615">serverPort</a>, d-&gt;clientAddr, d-&gt;clientPort);
+    emit(<a class="code" href="class_u_d_p_video_stream_svr.html#a66c0f7fe8f506dc46d86ccda1cce7a63">sentPkSignal</a>, pkt);
+    <a class="code" href="class_u_d_p_video_stream_svr.html#a08835299966769eb1c37fddf68646c42">socket</a>.<a class="code" href="class_u_d_p_socket.html#a0a5c9846b6419c8174eec3225456f661" title="Sends a data packet to the given address and port.">sendTo</a>(pkt, d-&gt;clientAddr, d-&gt;clientPort);
 
     d-&gt;bytesLeft -= pktLen;
     d-&gt;numPkSent++;
     <a class="code" href="class_u_d_p_video_stream_svr.html#a295a8c9bf560c7ff3dba50faf7aaebb7">numPkSent</a>++;
 
     <span class="comment">// reschedule timer if there&#39;s bytes left to send</span>
-    <span class="keywordflow">if</span> (d-&gt;bytesLeft!=0)
+    <span class="keywordflow">if</span> (d-&gt;bytesLeft != 0)
     {
-        simtime_t interval = (*waitInterval);
-        scheduleAt(simTime()+interval, timer);
+        simtime_t interval = (*sendInterval);
+        scheduleAt(simTime()+interval, <a class="code" href="structtimer.html">timer</a>);
     }
     <span class="keywordflow">else</span>
     {
-        <span class="keyword">delete</span> timer;
+        <span class="keyword">delete</span> <a class="code" href="structtimer.html">timer</a>;
         <span class="comment">// TBD find VideoStreamData in streamVector and delete it</span>
     }
 }
@@ -366,6 +365,21 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a8fb43f51a237c0f7b7566da5f405e7fb"></a><!-- doxytag: member="UDPVideoStreamSvr::localPort" ref="a8fb43f51a237c0f7b7566da5f405e7fb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="class_u_d_p_video_stream_svr.html#a8fb43f51a237c0f7b7566da5f405e7fb">UDPVideoStreamSvr::localPort</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_u_d_p_video_stream_svr.html#a9d8e84e32e1d2d9ec05dea83831a804b">initialize()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a295a8c9bf560c7ff3dba50faf7aaebb7"></a><!-- doxytag: member="UDPVideoStreamSvr::numPkSent" ref="a295a8c9bf560c7ff3dba50faf7aaebb7" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -377,9 +391,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_video_stream_svr_8h_source.html#l00065">65</a> of file <a class="el" href="_u_d_p_video_stream_svr_8h_source.html">UDPVideoStreamSvr.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00061">finish()</a>, <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00046">initialize()</a>, and <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00105">sendStreamData()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p_video_stream_svr.html#a9d8e84e32e1d2d9ec05dea83831a804b">initialize()</a>, and <a class="el" href="class_u_d_p_video_stream_svr.html#ad485162bd9103839dfcd3e20056cc5d0">sendStreamData()</a>.</p>
 
 </div>
 </div>
@@ -394,9 +406,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_video_stream_svr_8h_source.html#l00064">64</a> of file <a class="el" href="_u_d_p_video_stream_svr_8h_source.html">UDPVideoStreamSvr.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00061">finish()</a>, <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00046">initialize()</a>, and <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00082">processStreamRequest()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p_video_stream_svr.html#a9d8e84e32e1d2d9ec05dea83831a804b">initialize()</a>, and <a class="el" href="class_u_d_p_video_stream_svr.html#ae5a0df7652fe7507da3fd9868324b6f8">processStreamRequest()</a>.</p>
 
 </div>
 </div>
@@ -411,26 +421,67 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_video_stream_svr_8h_source.html#l00060">60</a> of file <a class="el" href="_u_d_p_video_stream_svr_8h_source.html">UDPVideoStreamSvr.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00046">initialize()</a>, and <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00105">sendStreamData()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p_video_stream_svr.html#a9d8e84e32e1d2d9ec05dea83831a804b">initialize()</a>, and <a class="el" href="class_u_d_p_video_stream_svr.html#ad485162bd9103839dfcd3e20056cc5d0">sendStreamData()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ac80d7110e23e899e1c13a02aee4d8615"></a><!-- doxytag: member="UDPVideoStreamSvr::serverPort" ref="ac80d7110e23e899e1c13a02aee4d8615" args="" -->
+<a class="anchor" id="ab2dccd1f2ae5d37374f6e751eee92ddc"></a><!-- doxytag: member="UDPVideoStreamSvr::reqStreamBytesSignal" ref="ab2dccd1f2ae5d37374f6e751eee92ddc" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="class_u_d_p_video_stream_svr.html#ac80d7110e23e899e1c13a02aee4d8615">UDPVideoStreamSvr::serverPort</a><code> [protected]</code></td>
+          <td class="memname">simsignal_t <a class="el" href="class_u_d_p_video_stream_svr.html#ab2dccd1f2ae5d37374f6e751eee92ddc">UDPVideoStreamSvr::reqStreamBytesSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_video_stream_svr_8h_source.html#l00058">58</a> of file <a class="el" href="_u_d_p_video_stream_svr_8h_source.html">UDPVideoStreamSvr.h</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p_video_stream_svr.html#a9d8e84e32e1d2d9ec05dea83831a804b">initialize()</a>, and <a class="el" href="class_u_d_p_video_stream_svr.html#ae5a0df7652fe7507da3fd9868324b6f8">processStreamRequest()</a>.</p>
 
-<p>Referenced by <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00046">initialize()</a>, and <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00105">sendStreamData()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a520fd73890c0bc72849122bbc4a481b8"></a><!-- doxytag: member="UDPVideoStreamSvr::sendInterval" ref="a520fd73890c0bc72849122bbc4a481b8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cPar* <a class="el" href="class_u_d_p_video_stream_svr.html#a520fd73890c0bc72849122bbc4a481b8">UDPVideoStreamSvr::sendInterval</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_u_d_p_video_stream_svr.html#a9d8e84e32e1d2d9ec05dea83831a804b">initialize()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a66c0f7fe8f506dc46d86ccda1cce7a63"></a><!-- doxytag: member="UDPVideoStreamSvr::sentPkSignal" ref="a66c0f7fe8f506dc46d86ccda1cce7a63" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_u_d_p_video_stream_svr.html#a66c0f7fe8f506dc46d86ccda1cce7a63">UDPVideoStreamSvr::sentPkSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_u_d_p_video_stream_svr.html#a9d8e84e32e1d2d9ec05dea83831a804b">initialize()</a>, and <a class="el" href="class_u_d_p_video_stream_svr.html#ad485162bd9103839dfcd3e20056cc5d0">sendStreamData()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a08835299966769eb1c37fddf68646c42"></a><!-- doxytag: member="UDPVideoStreamSvr::socket" ref="a08835299966769eb1c37fddf68646c42" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_u_d_p_socket.html">UDPSocket</a> <a class="el" href="class_u_d_p_video_stream_svr.html#a08835299966769eb1c37fddf68646c42">UDPVideoStreamSvr::socket</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_u_d_p_video_stream_svr.html#a9d8e84e32e1d2d9ec05dea83831a804b">initialize()</a>, and <a class="el" href="class_u_d_p_video_stream_svr.html#ad485162bd9103839dfcd3e20056cc5d0">sendStreamData()</a>.</p>
 
 </div>
 </div>
@@ -445,9 +496,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_video_stream_svr_8h_source.html#l00055">55</a> of file <a class="el" href="_u_d_p_video_stream_svr_8h_source.html">UDPVideoStreamSvr.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00046">initialize()</a>, <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00082">processStreamRequest()</a>, and <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00040">~UDPVideoStreamSvr()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p_video_stream_svr.html#a9d8e84e32e1d2d9ec05dea83831a804b">initialize()</a>, <a class="el" href="class_u_d_p_video_stream_svr.html#ae5a0df7652fe7507da3fd9868324b6f8">processStreamRequest()</a>, and <a class="el" href="class_u_d_p_video_stream_svr.html#a38d6c4cc50ce19e12b1653c8b400047d">~UDPVideoStreamSvr()</a>.</p>
 
 </div>
 </div>
@@ -462,32 +511,13 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_video_stream_svr_8h_source.html#l00061">61</a> of file <a class="el" href="_u_d_p_video_stream_svr_8h_source.html">UDPVideoStreamSvr.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00046">initialize()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9884379ddf693cb0776db24a26eaff36"></a><!-- doxytag: member="UDPVideoStreamSvr::waitInterval" ref="a9884379ddf693cb0776db24a26eaff36" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">cPar* <a class="el" href="class_u_d_p_video_stream_svr.html#a9884379ddf693cb0776db24a26eaff36">UDPVideoStreamSvr::waitInterval</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_u_d_p_video_stream_svr_8h_source.html#l00059">59</a> of file <a class="el" href="_u_d_p_video_stream_svr_8h_source.html">UDPVideoStreamSvr.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_video_stream_svr_8cc_source.html#l00046">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p_video_stream_svr.html#a9d8e84e32e1d2d9ec05dea83831a804b">initialize()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_u_d_p_video_stream_svr_8h_source.html">UDPVideoStreamSvr.h</a></li>
-<li><a class="el" href="_u_d_p_video_stream_svr_8cc_source.html">UDPVideoStreamSvr.cc</a></li>
+<li><a class="el" href="_u_d_p_video_stream_svr_8h.html">UDPVideoStreamSvr.h</a></li>
+<li><a class="el" href="_u_d_p_video_stream_svr_8cc.html">UDPVideoStreamSvr.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -495,7 +525,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_u_d_p_video_stream_svr.html">UDPVideoStreamSvr</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:54 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:32 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

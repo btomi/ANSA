@@ -75,40 +75,56 @@
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">Ieee80211Mac::Ieee80211ASFTuple Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="Ieee80211Mac::Ieee80211ASFTuple" -->
+<p>This is used to populate fragments and identify duplicated messages.  
+ <a href="struct_ieee80211_mac_1_1_ieee80211_a_s_f_tuple.html#details">More...</a></p>
+
 <p><a href="struct_ieee80211_mac_1_1_ieee80211_a_s_f_tuple-members.html">List of all members.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_ieee80211_mac_1_1_ieee80211_a_s_f_tuple.html">Ieee80211ASFTuple</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_ieee80211_mac_1_1_ieee80211_a_s_f_tuple.html#a92f57ae698835cec79834adbdb613bd5">operator=</a> (const <a class="el" href="struct_ieee80211_mac_1_1_ieee80211_a_s_f_tuple.html">Ieee80211ASFTuple</a> &amp;other)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_m_a_c_address.html">MACAddress</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_ieee80211_mac_1_1_ieee80211_a_s_f_tuple.html#a16403e1539d61501ae28ddde4930b552">address</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_ieee80211_mac_1_1_ieee80211_a_s_f_tuple.html#a7dbd209f044cba1dd4415d7ce18308bf">sequenceNumber</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_ieee80211_mac_1_1_ieee80211_a_s_f_tuple.html#ad48f75fee839b3e7cb5e26be7276e9c3">fragmentNumber</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">simtime_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_ieee80211_mac_1_1_ieee80211_a_s_f_tuple.html#a89972ec8517157a876e7f84392d3a750">receivedTime</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>This is used to populate fragments and identify duplicated messages. See spec 9.2.9. </p>
-
-<p>Definition at line <a class="el" href="_ieee80211_mac_8h_source.html#l00061">61</a> of file <a class="el" href="_ieee80211_mac_8h_source.html">Ieee80211Mac.h</a>.</p>
-</div><hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="a16403e1539d61501ae28ddde4930b552"></a><!-- doxytag: member="Ieee80211Mac::Ieee80211ASFTuple::address" ref="a16403e1539d61501ae28ddde4930b552" args="" -->
+<div class="textblock"><p>This is used to populate fragments and identify duplicated messages. </p>
+<p>See spec 9.2.9. </p>
+</div><hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a92f57ae698835cec79834adbdb613bd5"></a><!-- doxytag: member="Ieee80211Mac::Ieee80211ASFTuple::operator=" ref="a92f57ae698835cec79834adbdb613bd5" args="(const Ieee80211ASFTuple &amp;other)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_m_a_c_address.html">MACAddress</a> <a class="el" href="struct_ieee80211_mac_1_1_ieee80211_a_s_f_tuple.html#a16403e1539d61501ae28ddde4930b552">Ieee80211Mac::Ieee80211ASFTuple::address</a></td>
+          <td class="memname"><a class="el" href="struct_ieee80211_mac_1_1_ieee80211_a_s_f_tuple.html">Ieee80211ASFTuple</a>&amp; Ieee80211Mac::Ieee80211ASFTuple::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_ieee80211_mac_1_1_ieee80211_a_s_f_tuple.html">Ieee80211ASFTuple</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_ieee80211_mac_8h_source.html#l00063">63</a> of file <a class="el" href="_ieee80211_mac_8h_source.html">Ieee80211Mac.h</a>.</p>
-
+<div class="fragment"><pre class="fragment">        {
+            <span class="keywordflow">if</span> (<span class="keyword">this</span>==&amp;other) <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+            this-&gt;<a class="code" href="struct_ieee80211_mac_1_1_ieee80211_a_s_f_tuple.html#a7dbd209f044cba1dd4415d7ce18308bf">sequenceNumber</a> = other.sequenceNumber;
+            this-&gt;<a class="code" href="struct_ieee80211_mac_1_1_ieee80211_a_s_f_tuple.html#ad48f75fee839b3e7cb5e26be7276e9c3">fragmentNumber</a> = other.fragmentNumber;
+            this-&gt;<a class="code" href="struct_ieee80211_mac_1_1_ieee80211_a_s_f_tuple.html#a89972ec8517157a876e7f84392d3a750">receivedTime</a> = other.receivedTime;
+            <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+        }
+</pre></div>
 </div>
 </div>
+<hr/><h2>Member Data Documentation</h2>
 <a class="anchor" id="ad48f75fee839b3e7cb5e26be7276e9c3"></a><!-- doxytag: member="Ieee80211Mac::Ieee80211ASFTuple::fragmentNumber" ref="ad48f75fee839b3e7cb5e26be7276e9c3" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -120,7 +136,22 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_ieee80211_mac_8h_source.html#l00065">65</a> of file <a class="el" href="_ieee80211_mac_8h_source.html">Ieee80211Mac.h</a>.</p>
+<p>Referenced by <a class="el" href="class_ieee80211_mac.html#ae6912255bec9031597492000db0a5dd8">Ieee80211Mac::isDuplicated()</a>, and <a class="el" href="struct_ieee80211_mac_1_1_ieee80211_a_s_f_tuple.html#a92f57ae698835cec79834adbdb613bd5">operator=()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a89972ec8517157a876e7f84392d3a750"></a><!-- doxytag: member="Ieee80211Mac::Ieee80211ASFTuple::receivedTime" ref="a89972ec8517157a876e7f84392d3a750" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simtime_t <a class="el" href="struct_ieee80211_mac_1_1_ieee80211_a_s_f_tuple.html#a89972ec8517157a876e7f84392d3a750">Ieee80211Mac::Ieee80211ASFTuple::receivedTime</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_ieee80211_mac.html#ae6912255bec9031597492000db0a5dd8">Ieee80211Mac::isDuplicated()</a>, and <a class="el" href="struct_ieee80211_mac_1_1_ieee80211_a_s_f_tuple.html#a92f57ae698835cec79834adbdb613bd5">operator=()</a>.</p>
 
 </div>
 </div>
@@ -135,12 +166,12 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_ieee80211_mac_8h_source.html#l00064">64</a> of file <a class="el" href="_ieee80211_mac_8h_source.html">Ieee80211Mac.h</a>.</p>
+<p>Referenced by <a class="el" href="class_ieee80211_mac.html#ae6912255bec9031597492000db0a5dd8">Ieee80211Mac::isDuplicated()</a>, and <a class="el" href="struct_ieee80211_mac_1_1_ieee80211_a_s_f_tuple.html#a92f57ae698835cec79834adbdb613bd5">operator=()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li><a class="el" href="_ieee80211_mac_8h_source.html">Ieee80211Mac.h</a></li>
+<li><a class="el" href="_ieee80211_mac_8h.html">Ieee80211Mac.h</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -149,7 +180,7 @@ Public Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="class_ieee80211_mac.html">Ieee80211Mac</a>      </li>
       <li class="navelem"><a class="el" href="struct_ieee80211_mac_1_1_ieee80211_a_s_f_tuple.html">Ieee80211ASFTuple</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:48 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:25 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

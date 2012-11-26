@@ -20,7 +20,7 @@
    </td>
    <td>
 
-<p>Implements RSVP-TE, a signalling protocol for <a href="inet.networklayer.mpls.MPLS.html">MPLS</a>. The module
+<p>Implements RSVP-TE, a signalling protocol for MPLS. The module
 processes RSVP-TE messages, installs labels and does the reservation
 along LSP paths.</p>
 
@@ -46,12 +46,12 @@ along LSP paths.</p>
 </span><span style="color: #800000; font-weight: bold; ">package</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">networklayer</span><span style="color: #000000; ">.</span><span style="color: #000000; ">rsvp_te</span><span style="color: #000000; ">;
 
 </span><span style="color: #808080; font-style: italic; ">//
-// Implements \RSVP-TE, a signalling protocol for MPLS. The module
-// processes \RSVP-TE messages, installs labels and does the reservation
+// Implements RSVP-TE, a signalling protocol for MPLS. The module
+// processes RSVP-TE messages, installs labels and does the reservation
 // along LSP paths.
 //
 // Paths can be specified statically in an XML config file (&quot;traffic&quot;
-// parameter), or can be set up and torn down dynamically with ScenarioManager
+// parameter), or can be set up and torn down dynamically with ~ScenarioManager
 // commands.
 //
 // An example traffic.xml file:
@@ -86,7 +86,7 @@ along LSP paths.</p>
 //
 // In the route, &lt;node&gt; stands for strict hop, and &lt;lnode&gt; for loose hop.
 //
-// RSVP understands the &quot;add-session&quot; and &quot;del-session&quot; ScenarioManager
+// ~RSVP understands the &quot;add-session&quot; and &quot;del-session&quot; ~ScenarioManager
 // commands. The contents of the &lt;add-session&gt; element can be the same
 // as the &lt;session&gt; element for the traffic.xml above.
 // The &lt;del-command&gt; element syntax is also similar, but only
@@ -120,11 +120,11 @@ along LSP paths.</p>
 // &lt;/scenario&gt;
 // </span><span style="color: #800000; ">&lt;/pre&gt;</span><span style="color: #808080; font-style: italic; ">
 //
-// \RSVP messages are subclassed from RSVPMessage, and include RSVPPathMsg,
-// RSVPPathTear, RSVPPathError, RSVPResvMsg and RSVPHelloMsg.
+// RSVP messages are subclassed from ~RSVPMessage, and include ~RSVPPathMsg,
+// ~RSVPPathTear, ~RSVPPathError, ~RSVPResvMsg and ~RSVPHelloMsg.
 //
-// \RSVP-TE communicates with the following components in the system:
-// TED, MPLS, and may receive commands from ScenarioManager.
+// RSVP-TE communicates with the following components in the system:
+// ~TED, ~MPLS, and may receive commands from ~ScenarioManager.
 //
 </span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">RSVP</span><span style="color: #000000; ">
 {
@@ -135,13 +135,12 @@ along LSP paths.</p>
         </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">helloTimeout</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">);
         </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/control&quot;</span><span style="color: #000000; ">);
     </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
-        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">IPControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">IPControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">IPv4ControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">IPv4ControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);
         </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">mplsSwitchIn</span><span style="color: #000000; ">;
         </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">appIn</span><span style="color: #000000; ">;
 }
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

@@ -84,15 +84,18 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="InterfaceTable" --><!-- doxytag: inherits="IInterfaceTable,INotifiable" -->
-<p><code>#include &lt;<a class="el" href="_interface_table_8h_source.html">InterfaceTable.h</a>&gt;</code></p>
+<p>Represents the interface table.  
+ <a href="class_interface_table.html#details">More...</a></p>
+
+<p><code>#include &lt;InterfaceTable.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for InterfaceTable:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_interface_table.png" usemap="#InterfaceTable_map" alt=""/>
   <map id="InterfaceTable_map" name="InterfaceTable_map">
-<area href="class_i_interface_table.html" alt="IInterfaceTable" shape="rect" coords="0,0,96,24"/>
-<area href="class_i_notifiable.html" alt="INotifiable" shape="rect" coords="106,0,202,24"/>
+<area href="class_i_interface_table.html" title="A C++ interface to abstract the functionality of InterfaceTable." alt="IInterfaceTable" shape="rect" coords="0,0,96,24"/>
+<area href="class_i_notifiable.html" title="Clients can receive change notifications from the NotificationBoard via this interface." alt="INotifiable" shape="rect" coords="106,0,202,24"/>
 </map>
  </div></div>
 
@@ -103,30 +106,50 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#acdc576cd5a79ac52810ef94fb5b02f8a">InterfaceTable</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#ad3ff50794df60447ba15026ae82464e0">~InterfaceTable</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#abde330e4adcc5a7495f89b8cd6154275">getFullPath</a> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a6bd59099de1b3cf19df5038b83ec75b9">receiveChangeNotification</a> (int category, const cPolymorphic *details)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#ae67777f04021431cc1d15ae200920836">addInterface</a> (<a class="el" href="class_interface_entry.html">InterfaceEntry</a> *entry, cModule *ifmod)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a59bf4ac426a9fd86c5ce4cb2c9fcc16e">deleteInterface</a> (<a class="el" href="class_interface_entry.html">InterfaceEntry</a> *entry)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Module path name.  <a href="#abde330e4adcc5a7495f89b8cd6154275"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a70303b94020a300c74222695a2cfa261">receiveChangeNotification</a> (int category, const cObject *details)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by the <a class="el" href="class_notification_board.html" title="Acts as a intermediary between module where state changes can occur and modules which are interested ...">NotificationBoard</a> whenever a change of a category occurs to which this client has subscribed.  <a href="#a70303b94020a300c74222695a2cfa261"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual cModule *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a999f85862dc558747ce9d8e2393188bb">getHostModule</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the host or router this interface table lives in.  <a href="#a999f85862dc558747ce9d8e2393188bb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#af43ca2b4f54392ce974effc35dcf72d1">addInterface</a> (<a class="el" href="class_interface_entry.html">InterfaceEntry</a> *entry)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an interface.  <a href="#af43ca2b4f54392ce974effc35dcf72d1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a59bf4ac426a9fd86c5ce4cb2c9fcc16e">deleteInterface</a> (<a class="el" href="class_interface_entry.html">InterfaceEntry</a> *entry)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the given interface from the table.  <a href="#a59bf4ac426a9fd86c5ce4cb2c9fcc16e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#aa7bbc08564b199d7820f9fb5dafedead">getNumInterfaces</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of interfaces.  <a href="#aa7bbc08564b199d7820f9fb5dafedead"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a20068628e72377ed78735e6b008a0a9f">getInterface</a> (int pos)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a3acb58a75de2e7d443c6abd0e7bd2548">getInterfaceById</a> (int id)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a281b09bc65fc43109563bff6d9e55995">getInterfaceByNodeOutputGateId</a> (int id)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#ad6eb1529b3d8ed007feea079e1f5d9cd">getInterfaceByNodeInputGateId</a> (int id)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> specified by an index 0..numInterfaces-1.  <a href="#a20068628e72377ed78735e6b008a0a9f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a3acb58a75de2e7d443c6abd0e7bd2548">getInterfaceById</a> (int <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a4fc3a0c58dfbd1e68224521185cb9384">id</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an interface by its Id.  <a href="#a3acb58a75de2e7d443c6abd0e7bd2548"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a281b09bc65fc43109563bff6d9e55995">getInterfaceByNodeOutputGateId</a> (int <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a4fc3a0c58dfbd1e68224521185cb9384">id</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an interface given by its getNodeOutputGateId().  <a href="#a281b09bc65fc43109563bff6d9e55995"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#ad6eb1529b3d8ed007feea079e1f5d9cd">getInterfaceByNodeInputGateId</a> (int <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a4fc3a0c58dfbd1e68224521185cb9384">id</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an interface given by its getNodeInputGateId().  <a href="#ad6eb1529b3d8ed007feea079e1f5d9cd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#abc0aa1cd6740d6808c09c3969969bd6f">getInterfaceByNetworkLayerGateIndex</a> (int index)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a3f953c2e608d84f14cfcaaf32ff6cbe1">getInterfaceByName</a> (const char *name)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an interface given by its getNetworkLayerGateIndex().  <a href="#abc0aa1cd6740d6808c09c3969969bd6f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a109c3bcfee676b91628bef4582839f50">getInterfaceByInterfaceModule</a> (cModule *ifmod)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an interface by one of its component module (e.g.  <a href="#a109c3bcfee676b91628bef4582839f50"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a3f953c2e608d84f14cfcaaf32ff6cbe1">getInterfaceByName</a> (const char *<a class="el" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an interface given by its name.  <a href="#a3f953c2e608d84f14cfcaaf32ff6cbe1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a60849d96d27149120445ee5429462d91">getFirstLoopbackInterface</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first interface with the isLoopback flag set.  <a href="#a60849d96d27149120445ee5429462d91"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a14c696f299054ee4617612e3c7e721b9">getFirstMulticastInterface</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first multicast capable interface.  <a href="#a14c696f299054ee4617612e3c7e721b9"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-types"></a>
 Protected Types</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::vector<br class="typebreak"/>
 &lt; <a class="el" href="class_interface_entry.html">InterfaceEntry</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a3ffd914a1c868644a125750bf7bea75c">InterfaceVector</a></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a84ad7ffc48e1d42ca93284fe033823b0">updateDisplayString</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#ae2f1d4bb08e61dfa31c908b2c9337d11">discoverConnectingGates</a> (<a class="el" href="class_interface_entry.html">InterfaceEntry</a> *entry, cModule *ifmod)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a56f4588cd3260e1ba58b9af6b812d6ae">interfaceChanged</a> (<a class="el" href="class_interface_entry.html">InterfaceEntry</a> *entry, int category)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#ad5da237cf1d0ab4de1ead24a6fa930f9">invalidateTmpInterfaceList</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a84ad7ffc48e1d42ca93284fe033823b0">updateDisplayString</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a541865f79aa57c4214cf1e1bd98b54bf">updateLinkDisplayString</a> (<a class="el" href="class_interface_entry.html">InterfaceEntry</a> *entry)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a86d43c8e68646df65f9a53478139bd3d">discoverConnectingGates</a> (<a class="el" href="class_interface_entry.html">InterfaceEntry</a> *entry)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a56f4588cd3260e1ba58b9af6b812d6ae">interfaceChanged</a> (<a class="el" href="class_interface_entry.html">InterfaceEntry</a> *entry, int category)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#ad5da237cf1d0ab4de1ead24a6fa930f9">invalidateTmpInterfaceList</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a9f964712f929db684d0c6e5febc658f2">numInitStages</a> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#ab92373cbd67155557293fbccc2ac1466">initialize</a> (int stage)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a101a52971a1de7df6479a3412ec5940c">handleMessage</a> (cMessage *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#ab92373cbd67155557293fbccc2ac1466">initialize</a> (int stage)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a101a52971a1de7df6479a3412ec5940c">handleMessage</a> (cMessage *)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Raises an error.  <a href="#a101a52971a1de7df6479a3412ec5940c"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_notification_board.html">NotificationBoard</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a4a813da979ea8934dd9d1bf7f82831b0">nb</a></td></tr>
@@ -135,16 +158,15 @@ Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_interface_entry.html">InterfaceEntry</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_table.html#a386b4b375178b5cbb5de18cdcb74042b">tmpInterfaceList</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Represents the interface table. This object has one instance per host or router. It has methods to manage the interface table, so one can access functionality similar to the "ifconfig" command.</p>
+<div class="textblock"><p>Represents the interface table. </p>
+<p>This object has one instance per host or router. It has methods to manage the interface table, so one can access functionality similar to the "ifconfig" command.</p>
 <p>See the NED documentation for general overview.</p>
 <p>This is a simple module without gates, it requires function calls to it (message handling does nothing). Methods are provided for reading and updating the interface table.</p>
-<p>Interfaces are dynamically registered: at the start of the simulation, every L2 module adds its own <a class="el" href="class_interface_entry.html">InterfaceEntry</a> to the table; after that, IPv4's <a class="el" href="class_i_routing_table.html">IRoutingTable</a> and <a class="el" href="class_i_pv6.html">IPv6</a>'s <a class="el" href="class_routing_table6.html">RoutingTable6</a> (an possibly, further L3 protocols) add protocol-specific data on each <a class="el" href="class_interface_entry.html">InterfaceEntry</a> (see <a class="el" href="class_i_pv4_interface_data.html">IPv4InterfaceData</a>, <a class="el" href="class_i_pv6_interface_data.html">IPv6InterfaceData</a>, and <a class="el" href="class_interface_entry.html#a7b2e8a8e6ee3bab717b90a2068f550f1">InterfaceEntry::setIPv4Data()</a>, <a class="el" href="class_interface_entry.html#a1a2550df394a766847d0ad89aa1a9349">InterfaceEntry::setIPv6Data()</a>)</p>
-<p>Interfaces are represented by <a class="el" href="class_interface_entry.html">InterfaceEntry</a> objects.</p>
-<p>When interfaces need to be reliably and efficiently identified from other modules, interfaceIds should be used. They are better suited than pointers because when an interface gets removed (see <a class="el" href="class_interface_table.html#a59bf4ac426a9fd86c5ce4cb2c9fcc16e">deleteInterface()</a>), it is often impossible/impractical to invalidate all pointers to it, and also because pointers are not necessarily unique (a new <a class="el" href="class_interface_entry.html">InterfaceEntry</a> may get allocated exactly at the address of a previously deleted one). Interface Ids are unique (Ids of removed interfaces are not issued again), stale Ids can be detected, and they are also invariant to insertion/deletion.</p>
-<p>Clients can get notified about interface changes by subscribing to the following notifications in <a class="el" href="class_notification_board.html">NotificationBoard</a>: NF_INTERFACE_CREATED, NF_INTERFACE_DELETED, NF_INTERFACE_STATE_CHANGED, NF_INTERFACE_CONFIG_CHANGED. State change gets fired for up/down events; all other changes fire as config change.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_interface_entry.html">InterfaceEntry</a> </dd></dl>
-
-<p>Definition at line <a class="el" href="_interface_table_8h_source.html#l00066">66</a> of file <a class="el" href="_interface_table_8h_source.html">InterfaceTable.h</a>.</p>
+<p>Interfaces are dynamically registered: at the start of the simulation, every L2 module adds its own <a class="el" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> to the table; after that, <a class="el" href="class_i_pv4.html" title="Implements the IPv4 protocol.">IPv4</a>'s <a class="el" href="class_i_routing_table.html" title="A C++ interface to abstract the functionality of IRoutingTable.">IRoutingTable</a> and <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a>'s <a class="el" href="class_routing_table6.html" title="Represents the IPv6 routing table and neighbour discovery data structures.">RoutingTable6</a> (an possibly, further L3 protocols) add protocol-specific data on each <a class="el" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> (see <a class="el" href="class_i_pv4_interface_data.html" title="IPv4-specific data in an InterfaceEntry.">IPv4InterfaceData</a>, <a class="el" href="class_i_pv6_interface_data.html" title="IPv6-specific data for InterfaceEntry.">IPv6InterfaceData</a>, and <a class="el" href="class_interface_entry.html#a7b2e8a8e6ee3bab717b90a2068f550f1">InterfaceEntry::setIPv4Data()</a>, <a class="el" href="class_interface_entry.html#a1a2550df394a766847d0ad89aa1a9349">InterfaceEntry::setIPv6Data()</a>)</p>
+<p>Interfaces are represented by <a class="el" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> objects.</p>
+<p>When interfaces need to be reliably and efficiently identified from other modules, interfaceIds should be used. They are better suited than pointers because when an interface gets removed (see <a class="el" href="class_interface_table.html#a59bf4ac426a9fd86c5ce4cb2c9fcc16e" title="Deletes the given interface from the table.">deleteInterface()</a>), it is often impossible/impractical to invalidate all pointers to it, and also because pointers are not necessarily unique (a new <a class="el" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> may get allocated exactly at the address of a previously deleted one). Interface Ids are unique (Ids of removed interfaces are not issued again), stale Ids can be detected, and they are also invariant to insertion/deletion.</p>
+<p>Clients can get notified about interface changes by subscribing to the following notifications in <a class="el" href="class_notification_board.html" title="Acts as a intermediary between module where state changes can occur and modules which are interested ...">NotificationBoard</a>: NF_INTERFACE_CREATED, NF_INTERFACE_DELETED, NF_INTERFACE_STATE_CHANGED, NF_INTERFACE_CONFIG_CHANGED. State change gets fired for up/down events; all other changes fire as config change.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> </dd></dl>
 </div><hr/><h2>Member Typedef Documentation</h2>
 <a class="anchor" id="a3ffd914a1c868644a125750bf7bea75c"></a><!-- doxytag: member="InterfaceTable::InterfaceVector" ref="a3ffd914a1c868644a125750bf7bea75c" args="" -->
 <div class="memitem">
@@ -156,8 +178,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_interface_table_8h_source.html#l00073">73</a> of file <a class="el" href="_interface_table_8h_source.html">InterfaceTable.h</a>.</p>
 
 </div>
 </div>
@@ -175,11 +195,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_interface_table_8cc_source.html#l00041">41</a> of file <a class="el" href="_interface_table_8cc_source.html">InterfaceTable.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
+    <a class="code" href="structnb.html">nb</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
     <a class="code" href="class_interface_table.html#a735aed31ccdb2616a012c3a36ae812a3">tmpNumInterfaces</a> = -1;
-    <a class="code" href="class_interface_table.html#a386b4b375178b5cbb5de18cdcb74042b">tmpInterfaceList</a> = NULL;
+    <a class="code" href="class_interface_table.html#a386b4b375178b5cbb5de18cdcb74042b">tmpInterfaceList</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
 }
 </pre></div>
 </div>
@@ -197,52 +216,42 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_interface_table_8cc_source.html#l00047">47</a> of file <a class="el" href="_interface_table_8cc_source.html">InterfaceTable.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>=0; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> &lt; (int)<a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>.size(); <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++)
-        <span class="keyword">delete</span> <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>];
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i &lt; (int)<a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>.size(); i++)
+        <span class="keyword">delete</span> <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i];
     <span class="keyword">delete</span> [] <a class="code" href="class_interface_table.html#a386b4b375178b5cbb5de18cdcb74042b">tmpInterfaceList</a>;
 }
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="ae67777f04021431cc1d15ae200920836"></a><!-- doxytag: member="InterfaceTable::addInterface" ref="ae67777f04021431cc1d15ae200920836" args="(InterfaceEntry *entry, cModule *ifmod)" -->
+<a class="anchor" id="af43ca2b4f54392ce974effc35dcf72d1"></a><!-- doxytag: member="InterfaceTable::addInterface" ref="af43ca2b4f54392ce974effc35dcf72d1" args="(InterfaceEntry *entry)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_interface_table.html#ae67777f04021431cc1d15ae200920836">InterfaceTable::addInterface</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_interface_table.html#af43ca2b4f54392ce974effc35dcf72d1">InterfaceTable::addInterface</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td>
-          <td class="paramname"><em>entry</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cModule *&#160;</td>
-          <td class="paramname"><em>ifmod</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [virtual]</code></td>
+          <td class="paramname"><em>entry</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Adds an interface. The second argument should be a module which belongs to the physical interface (e.g. <a class="el" href="class_p_p_p.html">PPP</a> or EtherMac) -- it will be used to discover and fill in getNetworkLayerGateIndex(), getNodeOutputGateId(), and getNodeInputGateId() in <a class="el" href="class_interface_entry.html">InterfaceEntry</a>. It should be NULL if this is a virtual interface (e.g. loopback). </p>
 
-<p>Implements <a class="el" href="class_i_interface_table.html#a2159ab6dc917bd6f1b2061980bbdf107">IInterfaceTable</a>.</p>
+<p>Adds an interface. </p>
+<p>The entry-&gt;getInterfaceModule() will be used to discover and fill in getNetworkLayerGateIndex(), getNodeOutputGateId(), and getNodeInputGateId() in <a class="el" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a>. It should be NULL if this is a virtual interface (e.g. loopback). </p>
 
-<p>Definition at line <a class="el" href="_interface_table_8cc_source.html#l00141">141</a> of file <a class="el" href="_interface_table_8cc_source.html">InterfaceTable.cc</a>.</p>
+<p>Implements <a class="el" href="class_i_interface_table.html#a7b54fe5e63bb7d4c76483b7fa27e506f">IInterfaceTable</a>.</p>
 
-<p>Referenced by <a class="el" href="_interface_table_8cc_source.html#l00054">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_interface_table.html#ab92373cbd67155557293fbccc2ac1466">initialize()</a>.</p>
 <div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> (!<a class="code" href="structnb.html">nb</a>)
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;InterfaceTable must precede all network interface modules in the node&#39;s NED definition&quot;</span>);
     <span class="comment">// check name is unique</span>
-    <span class="keywordflow">if</span> (<a class="code" href="class_interface_table.html#a3f953c2e608d84f14cfcaaf32ff6cbe1">getInterfaceByName</a>(entry-&gt;getName())!=NULL)
-        opp_error(<span class="stringliteral">&quot;addInterface(): interface &#39;%s&#39; already registered&quot;</span>, entry-&gt;getName());
+    <span class="keywordflow">if</span> (<a class="code" href="class_interface_table.html#a3f953c2e608d84f14cfcaaf32ff6cbe1" title="Returns an interface given by its name.">getInterfaceByName</a>(entry-&gt;getName())!=<a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;addInterface(): interface &#39;%s&#39; already registered&quot;</span>, entry-&gt;getName());
 
     <span class="comment">// insert</span>
     entry-&gt;<a class="code" href="class_interface_entry.html#a7dd74863d391501ca83301e1f82111a6">setInterfaceId</a>(<a class="code" href="_interface_table_8cc.html#a9bf80e6c16c5a791c8e7057e3030a290">INTERFACEIDS_START</a> + <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>.size());
@@ -251,10 +260,9 @@ Protected Attributes</h2></td></tr>
     <a class="code" href="class_interface_table.html#ad5da237cf1d0ab4de1ead24a6fa930f9">invalidateTmpInterfaceList</a>();
 
     <span class="comment">// fill in networkLayerGateIndex, nodeOutputGateId, nodeInputGateId</span>
-    <span class="keywordflow">if</span> (ifmod)
-        <a class="code" href="class_interface_table.html#ae2f1d4bb08e61dfa31c908b2c9337d11">discoverConnectingGates</a>(entry, ifmod);
+    <a class="code" href="class_interface_table.html#a86d43c8e68646df65f9a53478139bd3d">discoverConnectingGates</a>(entry);
 
-    <a class="code" href="class_interface_table.html#a4a813da979ea8934dd9d1bf7f82831b0">nb</a>-&gt;<a class="code" href="class_notification_board.html#a2bb0a5aa0cb272a9b15cb5a58a253fcc">fireChangeNotification</a>(<a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55baea2d4297f1e519520524d4bd8ff865b4">NF_INTERFACE_CREATED</a>, entry);
+    <a class="code" href="structnb.html">nb</a>-&gt;fireChangeNotification(<a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7aea2d4297f1e519520524d4bd8ff865b4">NF_INTERFACE_CREATED</a>, entry);
 }
 </pre></div>
 </div>
@@ -264,7 +272,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_interface_table.html#a59bf4ac426a9fd86c5ce4cb2c9fcc16e">InterfaceTable::deleteInterface</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_interface_table.html#a59bf4ac426a9fd86c5ce4cb2c9fcc16e">InterfaceTable::deleteInterface</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td>
           <td class="paramname"><em>entry</em></td><td>)</td>
@@ -273,66 +281,58 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Deletes the given interface from the table. Indices of existing interfaces (see <a class="el" href="class_interface_table.html#a20068628e72377ed78735e6b008a0a9f">getInterface(int)</a>) may change. It is an error if the given interface is not in the table. </p>
+
+<p>Deletes the given interface from the table. </p>
+<p>Indices of existing interfaces (see <a class="el" href="class_interface_table.html#a20068628e72377ed78735e6b008a0a9f" title="Returns the InterfaceEntry specified by an index 0..numInterfaces-1.">getInterface(int)</a>) may change. It is an error if the given interface is not in the table. </p>
 
 <p>Implements <a class="el" href="class_i_interface_table.html#a229a92e5d530127efb262e8fe7acfdf9">IInterfaceTable</a>.</p>
-
-<p>Definition at line <a class="el" href="_interface_table_8cc_source.html#l00197">197</a> of file <a class="el" href="_interface_table_8cc_source.html">InterfaceTable.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordtype">int</span> <span class="keywordtype">id</span> = entry-&gt;<a class="code" href="class_interface_entry.html#adc901fa42c37ce16b5c0785da81106ce">getInterfaceId</a>();
-    <span class="keywordflow">if</span> (entry != <a class="code" href="class_interface_table.html#a3acb58a75de2e7d443c6abd0e7bd2548">getInterfaceById</a>(<span class="keywordtype">id</span>))
-        opp_error(<span class="stringliteral">&quot;deleteInterface(): interface &#39;%s&#39; not found in interface table&quot;</span>, entry-&gt;getName());
+    <span class="keywordflow">if</span> (entry != <a class="code" href="class_interface_table.html#a3acb58a75de2e7d443c6abd0e7bd2548" title="Returns an interface by its Id.">getInterfaceById</a>(<span class="keywordtype">id</span>))
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;deleteInterface(): interface &#39;%s&#39; not found in interface table&quot;</span>, entry-&gt;getName());
 
-    <a class="code" href="class_interface_table.html#a4a813da979ea8934dd9d1bf7f82831b0">nb</a>-&gt;<a class="code" href="class_notification_board.html#a2bb0a5aa0cb272a9b15cb5a58a253fcc">fireChangeNotification</a>(<a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba4f8e57f4754cbf2e6ba92a7079b483e4">NF_INTERFACE_DELETED</a>, entry);  <span class="comment">// actually, only going to be deleted</span>
+    <a class="code" href="structnb.html">nb</a>-&gt;fireChangeNotification(<a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a4f8e57f4754cbf2e6ba92a7079b483e4">NF_INTERFACE_DELETED</a>, entry);  <span class="comment">// actually, only going to be deleted</span>
 
-    <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<span class="keywordtype">id</span> - <a class="code" href="_interface_table_8cc.html#a9bf80e6c16c5a791c8e7057e3030a290">INTERFACEIDS_START</a>] = NULL;
+    <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<span class="keywordtype">id</span> - <a class="code" href="_interface_table_8cc.html#a9bf80e6c16c5a791c8e7057e3030a290">INTERFACEIDS_START</a>] = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
     <span class="keyword">delete</span> entry;
     <a class="code" href="class_interface_table.html#ad5da237cf1d0ab4de1ead24a6fa930f9">invalidateTmpInterfaceList</a>();
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="ae2f1d4bb08e61dfa31c908b2c9337d11"></a><!-- doxytag: member="InterfaceTable::discoverConnectingGates" ref="ae2f1d4bb08e61dfa31c908b2c9337d11" args="(InterfaceEntry *entry, cModule *ifmod)" -->
+<a class="anchor" id="a86d43c8e68646df65f9a53478139bd3d"></a><!-- doxytag: member="InterfaceTable::discoverConnectingGates" ref="a86d43c8e68646df65f9a53478139bd3d" args="(InterfaceEntry *entry)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_interface_table.html#ae2f1d4bb08e61dfa31c908b2c9337d11">InterfaceTable::discoverConnectingGates</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_interface_table.html#a86d43c8e68646df65f9a53478139bd3d">InterfaceTable::discoverConnectingGates</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td>
-          <td class="paramname"><em>entry</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cModule *&#160;</td>
-          <td class="paramname"><em>ifmod</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [protected, virtual]</code></td>
+          <td class="paramname"><em>entry</em></td><td>)</td>
+          <td><code> [protected, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_interface_table_8cc_source.html#l00160">160</a> of file <a class="el" href="_interface_table_8cc_source.html">InterfaceTable.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_interface_table_8cc_source.html#l00141">addInterface()</a>.</p>
+<p>Referenced by <a class="el" href="class_interface_table.html#af43ca2b4f54392ce974effc35dcf72d1">addInterface()</a>.</p>
 <div class="fragment"><pre class="fragment">{
+    cModule *ifmod = entry-&gt;<a class="code" href="class_interface_entry.html#a11678b3031e69594c85940d8f0f86019">getInterfaceModule</a>();
+    <span class="keywordflow">if</span> (!ifmod)
+        <span class="keywordflow">return</span>;  <span class="comment">// virtual interface</span>
+
     <span class="comment">// ifmod is something like &quot;host.eth[1].mac&quot;; climb up to find &quot;host.eth[1]&quot; from it</span>
     cModule *host = getParentModule();
     <span class="keywordflow">while</span> (ifmod &amp;&amp; ifmod-&gt;getParentModule()!=host)
         ifmod = ifmod-&gt;getParentModule();
     <span class="keywordflow">if</span> (!ifmod)
-        opp_error(<span class="stringliteral">&quot;addInterface(): specified module is not in this host/router&quot;</span>);
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;addInterface(): specified module is not in this host/router&quot;</span>);
 
     <span class="comment">// find gates connected to host / network layer</span>
-    cGate *nwlayerInGate=NULL, *nwlayerOutGate=NULL;
-    <span class="keywordflow">for</span> (GateIterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>(ifmod); !<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>.end(); <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++)
+    cGate *nwlayerInGate = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, *nwlayerOutGate = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+    <span class="keywordflow">for</span> (GateIterator i(ifmod); !i.end(); i++)
     {
-        cGate *g = <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>();
+        cGate *g = i();
         <span class="keywordflow">if</span> (!g) <span class="keywordflow">continue</span>;
 
         <span class="comment">// find the host/router&#39;s gates that internally connect to this interface</span>
@@ -342,17 +342,20 @@ Protected Attributes</h2></td></tr>
             entry-&gt;<a class="code" href="class_interface_entry.html#a9da2bee4914c0e598ed96075ab625851">setNodeInputGateId</a>(g-&gt;getPreviousGate()-&gt;getId());
 
         <span class="comment">// find the gate index of networkLayer/networkLayer6/mpls that connects to this interface</span>
-        <span class="keywordflow">if</span> (g-&gt;getType()==cGate::OUTPUT &amp;&amp; g-&gt;getNextGate() &amp;&amp; g-&gt;getNextGate()-&gt;isName(<span class="stringliteral">&quot;ifIn&quot;</span>))
+        <span class="keywordflow">if</span> (g-&gt;getType()==cGate::OUTPUT &amp;&amp; g-&gt;getNextGate() &amp;&amp; g-&gt;isName(<span class="stringliteral">&quot;upperLayerOut&quot;</span>))
             nwlayerInGate = g-&gt;getNextGate();
-        <span class="keywordflow">if</span> (g-&gt;getType()==cGate::INPUT &amp;&amp; g-&gt;getPreviousGate() &amp;&amp; g-&gt;getPreviousGate()-&gt;isName(<span class="stringliteral">&quot;ifOut&quot;</span>))
+        <span class="keywordflow">if</span> (g-&gt;getType()==cGate::INPUT &amp;&amp; g-&gt;getPreviousGate() &amp;&amp; g-&gt;isName(<span class="stringliteral">&quot;upperLayerIn&quot;</span>))
             nwlayerOutGate = g-&gt;getPreviousGate();
     }
 
     <span class="comment">// consistency checks</span>
     <span class="comment">// note: we don&#39;t check nodeOutputGateId/nodeInputGateId, because wireless interfaces</span>
     <span class="comment">// are not connected to the host</span>
-    <span class="keywordflow">if</span> (!nwlayerInGate || !nwlayerOutGate || nwlayerInGate-&gt;getIndex()!=nwlayerOutGate-&gt;getIndex())
-        opp_error(<span class="stringliteral">&quot;addInterface(): interface must be connected to network layer&#39;s ifIn[]/ifOut[] gates of the same index&quot;</span>);
+    <span class="keywordflow">if</span> (!nwlayerInGate &amp;&amp; !nwlayerOutGate)      <span class="comment">// Accesspoint does not have a network layer so the NIC is not connected</span>
+        <span class="keywordflow">return</span>;
+    <span class="keywordflow">if</span> (!nwlayerInGate || !nwlayerOutGate || nwlayerInGate-&gt;getOwnerModule()!=nwlayerOutGate-&gt;getOwnerModule() || nwlayerInGate-&gt;getIndex()!=nwlayerOutGate-&gt;getIndex())
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;addInterface(): interface must be connected to network layer&#39;s in/out gates using the same gate index&quot;</span>);
+
     entry-&gt;<a class="code" href="class_interface_entry.html#a345db5dd6e926e5abe485b6e751cdf70">setNetworkLayerGateIndex</a>(nwlayerInGate-&gt;getIndex());
 }
 </pre></div>
@@ -371,18 +374,47 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns the first interface with the isLoopback flag set. (If there's no loopback, it returns NULL -- but this should never happen because <a class="el" href="class_interface_table.html">InterfaceTable</a> itself registers a loopback interface on startup.) </p>
+
+<p>Returns the first interface with the isLoopback flag set. </p>
+<p>(If there's no loopback, it returns NULL -- but this should never happen because <a class="el" href="class_interface_table.html" title="Represents the interface table.">InterfaceTable</a> itself registers a loopback interface on startup.) </p>
 
 <p>Implements <a class="el" href="class_i_interface_table.html#ad9b040947200941201b8c82d35c7abee">IInterfaceTable</a>.</p>
-
-<p>Definition at line <a class="el" href="_interface_table_8cc_source.html#l00267">267</a> of file <a class="el" href="_interface_table_8cc_source.html">InterfaceTable.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     Enter_Method_Silent();
     <span class="keywordtype">int</span> n = <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>.size();
-    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>=0; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>&lt;n; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++)
-        <span class="keywordflow">if</span> (<a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>] &amp;&amp; <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>]-&gt;isLoopback())
-            <span class="keywordflow">return</span> <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>];
-    <span class="keywordflow">return</span> NULL;
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;n; i++)
+        <span class="keywordflow">if</span> (<a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i] &amp;&amp; <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i]-&gt;isLoopback())
+            <span class="keywordflow">return</span> <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i];
+    <span class="keywordflow">return</span> <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a14c696f299054ee4617612e3c7e721b9"></a><!-- doxytag: member="InterfaceTable::getFirstMulticastInterface" ref="a14c696f299054ee4617612e3c7e721b9" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_interface_entry.html">InterfaceEntry</a> * <a class="el" href="class_interface_table.html#a14c696f299054ee4617612e3c7e721b9">InterfaceTable::getFirstMulticastInterface</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the first multicast capable interface. </p>
+<p>If there is no such interface, then returns NULL. </p>
+
+<p>Implements <a class="el" href="class_i_interface_table.html#a5d953f7e65da1885c6c85d0dfa890874">IInterfaceTable</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    Enter_Method_Silent();
+    <span class="keywordtype">int</span> n = <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>.size();
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;n; i++)
+        <span class="keywordflow">if</span> (<a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i] &amp;&amp; <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i]-&gt;isMulticast() &amp;&amp; !<a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i]-&gt;isLoopback())
+            <span class="keywordflow">return</span> <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i];
+    <span class="keywordflow">return</span> <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
 }
 </pre></div>
 </div>
@@ -400,12 +432,34 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Module path name </p>
+
+<p>Module path name. </p>
 
 <p>Implements <a class="el" href="class_i_interface_table.html#a1047517c24c981f2069367ca576a9c81">IInterfaceTable</a>.</p>
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_interface_table.html#abde330e4adcc5a7495f89b8cd6154275" title="Module path name.">cSimpleModule::getFullPath</a>();}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a999f85862dc558747ce9d8e2393188bb"></a><!-- doxytag: member="InterfaceTable::getHostModule" ref="a999f85862dc558747ce9d8e2393188bb" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cModule * <a class="el" href="class_interface_table.html#a999f85862dc558747ce9d8e2393188bb">InterfaceTable::getHostModule</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
-<p>Definition at line <a class="el" href="_interface_table_8h_source.html#l00096">96</a> of file <a class="el" href="_interface_table_8h_source.html">InterfaceTable.h</a>.</p>
-<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_interface_table.html#abde330e4adcc5a7495f89b8cd6154275">cSimpleModule::getFullPath</a>();}
+<p>Returns the host or router this interface table lives in. </p>
+
+<p>Implements <a class="el" href="class_i_interface_table.html#a2f0c6da3baff7416b8914d8a393bff7f">IInterfaceTable</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">return</span> <a class="code" href="_module_access_8cc.html#a05eb8740c0b600bfb259b3bc7806ac9c" title="Find the node containing the given module.">findContainingNode</a>(<span class="keyword">this</span>);
+}
 </pre></div>
 </div>
 </div>
@@ -423,26 +477,26 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns the <a class="el" href="class_interface_entry.html">InterfaceEntry</a> specified by an index 0..numInterfaces-1. Throws an error if index is out of range.</p>
+
+<p>Returns the <a class="el" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> specified by an index 0..numInterfaces-1. </p>
+<p>Throws an error if index is out of range.</p>
 <p>Note that this index is NOT the same as interfaceId! Indices are not guaranteed to stay the same after interface addition/deletion, so cannot be used to reliably identify the interface. Use interfaceId to refer to interfaces from other modules or from messages/packets. </p>
 
 <p>Implements <a class="el" href="class_i_interface_table.html#a19ce4ca3b47b52b8e2b67c25806c4b49">IInterfaceTable</a>.</p>
-
-<p>Definition at line <a class="el" href="_interface_table_8cc_source.html#l00115">115</a> of file <a class="el" href="_interface_table_8cc_source.html">InterfaceTable.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordtype">int</span> n = <a class="code" href="class_interface_table.html#aa7bbc08564b199d7820f9fb5dafedead">getNumInterfaces</a>(); <span class="comment">// also fills tmpInterfaceList</span>
+    <span class="keywordtype">int</span> n = <a class="code" href="class_interface_table.html#aa7bbc08564b199d7820f9fb5dafedead" title="Returns the number of interfaces.">getNumInterfaces</a>(); <span class="comment">// also fills tmpInterfaceList</span>
     <span class="keywordflow">if</span> (pos&lt;0 || pos&gt;=n)
-        opp_error(<span class="stringliteral">&quot;getInterface(): interface index %d out of range 0..%d&quot;</span>, pos, n-1);
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;getInterface(): interface index %d out of range 0..%d&quot;</span>, pos, n-1);
 
     <span class="keywordflow">if</span> (!<a class="code" href="class_interface_table.html#a386b4b375178b5cbb5de18cdcb74042b">tmpInterfaceList</a>)
     {
         <span class="comment">// collect non-NULL elements into tmpInterfaceList[]</span>
-        <a class="code" href="class_interface_table.html#a386b4b375178b5cbb5de18cdcb74042b">tmpInterfaceList</a> = <span class="keyword">new</span> <a class="code" href="class_interface_entry.html">InterfaceEntry</a> *[n];
+        <a class="code" href="class_interface_table.html#a386b4b375178b5cbb5de18cdcb74042b">tmpInterfaceList</a> = <span class="keyword">new</span> <a class="code" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> *[n];
         <span class="keywordtype">int</span> k = 0;
         <span class="keywordtype">int</span> maxId = <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>.size();
-        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>=0; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>&lt;maxId; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++)
-            <span class="keywordflow">if</span> (<a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>])
-                <a class="code" href="class_interface_table.html#a386b4b375178b5cbb5de18cdcb74042b">tmpInterfaceList</a>[k++] = <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>];
+        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;maxId; i++)
+            <span class="keywordflow">if</span> (<a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i])
+                <a class="code" href="class_interface_table.html#a386b4b375178b5cbb5de18cdcb74042b">tmpInterfaceList</a>[k++] = <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i];
     }
 
     <span class="keywordflow">return</span> <a class="code" href="class_interface_table.html#a386b4b375178b5cbb5de18cdcb74042b">tmpInterfaceList</a>[pos];
@@ -464,16 +518,68 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns an interface by its Id. Ids are guaranteed to be invariant to interface deletions/additions. Returns NULL if there is no such interface (This allows detecting stale IDs without raising an error.) </p>
+
+<p>Returns an interface by its Id. </p>
+<p>Ids are guaranteed to be invariant to interface deletions/additions. Returns NULL if there is no such interface (This allows detecting stale IDs without raising an error.) </p>
 
 <p>Implements <a class="el" href="class_i_interface_table.html#a92764d620c345b7261de20e9ee5247d7">IInterfaceTable</a>.</p>
 
-<p>Definition at line <a class="el" href="_interface_table_8cc_source.html#l00135">135</a> of file <a class="el" href="_interface_table_8cc_source.html">InterfaceTable.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_interface_table_8cc_source.html#l00197">deleteInterface()</a>.</p>
+<p>Referenced by <a class="el" href="class_interface_table.html#a59bf4ac426a9fd86c5ce4cb2c9fcc16e">deleteInterface()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordtype">id</span> -= <a class="code" href="_interface_table_8cc.html#a9bf80e6c16c5a791c8e7057e3030a290">INTERFACEIDS_START</a>;
-    <span class="keywordflow">return</span> (id&lt;0 || id&gt;=(<span class="keywordtype">int</span>)<a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>.size()) ? NULL : <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<span class="keywordtype">id</span>];
+    <span class="keywordflow">return</span> (id&lt;0 || id&gt;=(<span class="keywordtype">int</span>)<a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>.size()) ? <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> : <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<span class="keywordtype">id</span>];
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a109c3bcfee676b91628bef4582839f50"></a><!-- doxytag: member="InterfaceTable::getInterfaceByInterfaceModule" ref="a109c3bcfee676b91628bef4582839f50" args="(cModule *ifmod)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_interface_entry.html">InterfaceEntry</a> * <a class="el" href="class_interface_table.html#a109c3bcfee676b91628bef4582839f50">InterfaceTable::getInterfaceByInterfaceModule</a> </td>
+          <td>(</td>
+          <td class="paramtype">cModule *&#160;</td>
+          <td class="paramname"><em>ifmod</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns an interface by one of its component module (e.g. </p>
+<p><a class="el" href="class_p_p_p.html" title="PPP implementation.">PPP</a>). Returns NULL if not found. </p>
+
+<p>Implements <a class="el" href="class_i_interface_table.html#a54ae8859390945b1d565e6732f27f848">IInterfaceTable</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="comment">// ifmod is something like &quot;host.eth[1].mac&quot;; climb up to find &quot;host.eth[1]&quot; from it</span>
+    cModule *host = getParentModule();
+    <span class="keywordflow">while</span> (ifmod &amp;&amp; ifmod-&gt;getParentModule()!=host)
+        ifmod = ifmod-&gt;getParentModule();
+    <span class="keywordflow">if</span> (!ifmod)
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;addInterface(): specified module is not in this host/router&quot;</span>);
+
+    <span class="keywordtype">int</span> nodeInputGateId = -1, nodeOutputGateId = -1;
+    <span class="keywordflow">for</span> (GateIterator i(ifmod); !i.end(); i++)
+    {
+        cGate *g = i();
+        <span class="keywordflow">if</span> (!g) <span class="keywordflow">continue</span>;
+
+        <span class="comment">// find the host/router&#39;s gates that internally connect to this interface</span>
+        <span class="keywordflow">if</span> (g-&gt;getType()==cGate::OUTPUT &amp;&amp; g-&gt;getNextGate() &amp;&amp; g-&gt;getNextGate()-&gt;getOwnerModule()==host)
+            nodeOutputGateId = g-&gt;getNextGate()-&gt;getId();
+        <span class="keywordflow">if</span> (g-&gt;getType()==cGate::INPUT &amp;&amp; g-&gt;getPreviousGate() &amp;&amp; g-&gt;getPreviousGate()-&gt;getOwnerModule()==host)
+            nodeInputGateId = g-&gt;getPreviousGate()-&gt;getId();
+    }
+
+    <a class="code" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> *ie = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+    <span class="keywordflow">if</span> (nodeInputGateId &gt;= 0)
+        ie = <a class="code" href="class_interface_table.html#ad6eb1529b3d8ed007feea079e1f5d9cd" title="Returns an interface given by its getNodeInputGateId().">getInterfaceByNodeInputGateId</a>(nodeInputGateId);
+    <span class="keywordflow">if</span> (!ie &amp;&amp; nodeOutputGateId &gt;= 0)
+        ie = <a class="code" href="class_interface_table.html#a281b09bc65fc43109563bff6d9e55995" title="Returns an interface given by its getNodeOutputGateId().">getInterfaceByNodeOutputGateId</a>(nodeOutputGateId);
+
+    ASSERT(!ie || (ie-&gt;<a class="code" href="class_interface_entry.html#aec952d16865a101d35452733206ada9a">getNodeInputGateId</a>() == nodeInputGateId &amp;&amp; ie-&gt;<a class="code" href="class_interface_entry.html#a28c151905c57d6d19ecb026367f93278">getNodeOutputGateId</a>() == nodeOutputGateId));
+    <span class="keywordflow">return</span> ie;
 }
 </pre></div>
 </div>
@@ -492,22 +598,22 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns an interface given by its name. Returns NULL if not found. </p>
+
+<p>Returns an interface given by its name. </p>
+<p>Returns NULL if not found. </p>
 
 <p>Implements <a class="el" href="class_i_interface_table.html#a8ad86ee823d6200b4f558383b39af658">IInterfaceTable</a>.</p>
 
-<p>Definition at line <a class="el" href="_interface_table_8cc_source.html#l00255">255</a> of file <a class="el" href="_interface_table_8cc_source.html">InterfaceTable.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_interface_table_8cc_source.html#l00141">addInterface()</a>.</p>
+<p>Referenced by <a class="el" href="class_interface_table.html#af43ca2b4f54392ce974effc35dcf72d1">addInterface()</a>, and <a class="el" href="class_ieee80211_agent_s_t_a.html#a2f5e6bb11cd0a84b98957b154c36f6f5">Ieee80211AgentSTA::initialize()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     Enter_Method_Silent();
-    <span class="keywordflow">if</span> (!name)
-        <span class="keywordflow">return</span> NULL;
+    <span class="keywordflow">if</span> (!<a class="code" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)
+        <span class="keywordflow">return</span> <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
     <span class="keywordtype">int</span> n = <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>.size();
-    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>=0; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>&lt;n; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++)
-        <span class="keywordflow">if</span> (<a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>] &amp;&amp; !strcmp(name, <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>]-&gt;getName()))
-            <span class="keywordflow">return</span> <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>];
-    <span class="keywordflow">return</span> NULL;
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;n; i++)
+        <span class="keywordflow">if</span> (<a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i] &amp;&amp; !strcmp(<a class="code" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i]-&gt;getName()))
+            <span class="keywordflow">return</span> <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i];
+    <span class="keywordflow">return</span> <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
 }
 </pre></div>
 </div>
@@ -526,19 +632,19 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns an interface given by its getNetworkLayerGateIndex(). Returns NULL if not found. </p>
+
+<p>Returns an interface given by its getNetworkLayerGateIndex(). </p>
+<p>Returns NULL if not found. </p>
 
 <p>Implements <a class="el" href="class_i_interface_table.html#a8d10b748bc5429c706fab120c719e335">IInterfaceTable</a>.</p>
-
-<p>Definition at line <a class="el" href="_interface_table_8cc_source.html#l00244">244</a> of file <a class="el" href="_interface_table_8cc_source.html">InterfaceTable.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// linear search is OK because normally we have don&#39;t have many interfaces and this func is rarely called</span>
     Enter_Method_Silent();
     <span class="keywordtype">int</span> n = <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>.size();
-    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>=0; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>&lt;n; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++)
-        <span class="keywordflow">if</span> (<a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>] &amp;&amp; <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>]-&gt;getNetworkLayerGateIndex()==<a class="code" href="namespacecesnet.html#a7af5ca969f2a4fc726050202336e75e5">index</a>)
-            <span class="keywordflow">return</span> <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>];
-    <span class="keywordflow">return</span> NULL;
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;n; i++)
+        <span class="keywordflow">if</span> (<a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i] &amp;&amp; <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i]-&gt;getNetworkLayerGateIndex()==index)
+            <span class="keywordflow">return</span> <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i];
+    <span class="keywordflow">return</span> <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
 }
 </pre></div>
 </div>
@@ -557,19 +663,21 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns an interface given by its getNodeInputGateId(). Returns NULL if not found. </p>
+
+<p>Returns an interface given by its getNodeInputGateId(). </p>
+<p>Returns NULL if not found. </p>
 
 <p>Implements <a class="el" href="class_i_interface_table.html#a60257f3b30cedc18a80835d5be8305d9">IInterfaceTable</a>.</p>
 
-<p>Definition at line <a class="el" href="_interface_table_8cc_source.html#l00233">233</a> of file <a class="el" href="_interface_table_8cc_source.html">InterfaceTable.cc</a>.</p>
+<p>Referenced by <a class="el" href="class_interface_table.html#a109c3bcfee676b91628bef4582839f50">getInterfaceByInterfaceModule()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// linear search is OK because normally we have don&#39;t have many interfaces and this func is rarely called</span>
     Enter_Method_Silent();
     <span class="keywordtype">int</span> n = <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>.size();
-    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>=0; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>&lt;n; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++)
-        <span class="keywordflow">if</span> (<a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>] &amp;&amp; <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>]-&gt;getNodeInputGateId()==<span class="keywordtype">id</span>)
-            <span class="keywordflow">return</span> <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>];
-    <span class="keywordflow">return</span> NULL;
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;n; i++)
+        <span class="keywordflow">if</span> (<a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i] &amp;&amp; <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i]-&gt;getNodeInputGateId()==<span class="keywordtype">id</span>)
+            <span class="keywordflow">return</span> <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i];
+    <span class="keywordflow">return</span> <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
 }
 </pre></div>
 </div>
@@ -588,19 +696,21 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns an interface given by its getNodeOutputGateId(). Returns NULL if not found. </p>
+
+<p>Returns an interface given by its getNodeOutputGateId(). </p>
+<p>Returns NULL if not found. </p>
 
 <p>Implements <a class="el" href="class_i_interface_table.html#a31ab0c95a4bf741f1f8aa03e1cf76986">IInterfaceTable</a>.</p>
 
-<p>Definition at line <a class="el" href="_interface_table_8cc_source.html#l00222">222</a> of file <a class="el" href="_interface_table_8cc_source.html">InterfaceTable.cc</a>.</p>
+<p>Referenced by <a class="el" href="class_interface_table.html#a109c3bcfee676b91628bef4582839f50">getInterfaceByInterfaceModule()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// linear search is OK because normally we have don&#39;t have many interfaces and this func is rarely called</span>
     Enter_Method_Silent();
     <span class="keywordtype">int</span> n = <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>.size();
-    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>=0; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>&lt;n; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++)
-        <span class="keywordflow">if</span> (<a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>] &amp;&amp; <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>]-&gt;getNodeOutputGateId()==<span class="keywordtype">id</span>)
-            <span class="keywordflow">return</span> <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>];
-    <span class="keywordflow">return</span> NULL;
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;n; i++)
+        <span class="keywordflow">if</span> (<a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i] &amp;&amp; <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i]-&gt;getNodeOutputGateId()==<span class="keywordtype">id</span>)
+            <span class="keywordflow">return</span> <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i];
+    <span class="keywordflow">return</span> <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
 }
 </pre></div>
 </div>
@@ -618,21 +728,20 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Returns the number of interfaces. </p>
 
 <p>Implements <a class="el" href="class_i_interface_table.html#a2b0ce46cd92da6f64fc363410dc71904">IInterfaceTable</a>.</p>
 
-<p>Definition at line <a class="el" href="_interface_table_8cc_source.html#l00099">99</a> of file <a class="el" href="_interface_table_8cc_source.html">InterfaceTable.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_interface_table_8cc_source.html#l00115">getInterface()</a>, and <a class="el" href="_interface_table_8cc_source.html#l00075">updateDisplayString()</a>.</p>
+<p>Referenced by <a class="el" href="class_interface_table.html#a20068628e72377ed78735e6b008a0a9f">getInterface()</a>, and <a class="el" href="class_interface_table.html#a84ad7ffc48e1d42ca93284fe033823b0">updateDisplayString()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span> (<a class="code" href="class_interface_table.html#a735aed31ccdb2616a012c3a36ae812a3">tmpNumInterfaces</a> == -1)
     {
         <span class="comment">// count non-NULL elements</span>
         <span class="keywordtype">int</span> n = 0;
         <span class="keywordtype">int</span> maxId = <a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>.size();
-        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>=0; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>&lt;maxId; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++)
-            <span class="keywordflow">if</span> (<a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>])
+        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;maxId; i++)
+            <span class="keywordflow">if</span> (<a class="code" href="class_interface_table.html#a770ff6852b4d38adf4796786d9d46c6a">idToInterface</a>[i])
                 n++;
         <a class="code" href="class_interface_table.html#a735aed31ccdb2616a012c3a36ae812a3">tmpNumInterfaces</a> = n;
     }
@@ -647,7 +756,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_interface_table.html#a101a52971a1de7df6479a3412ec5940c">InterfaceTable::handleMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_interface_table.html#a101a52971a1de7df6479a3412ec5940c">InterfaceTable::handleMessage</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -656,11 +765,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Raises an error. </p>
 
-<p>Definition at line <a class="el" href="_interface_table_8cc_source.html#l00085">85</a> of file <a class="el" href="_interface_table_8cc_source.html">InterfaceTable.cc</a>.</p>
+<p>Raises an error. </p>
 <div class="fragment"><pre class="fragment">{
-    opp_error(<span class="stringliteral">&quot;This module doesn&#39;t process messages&quot;</span>);
+    <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;This module doesn&#39;t process messages&quot;</span>);
 }
 </pre></div>
 </div>
@@ -670,7 +778,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_interface_table.html#ab92373cbd67155557293fbccc2ac1466">InterfaceTable::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_interface_table.html#ab92373cbd67155557293fbccc2ac1466">InterfaceTable::initialize</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>stage</em></td><td>)</td>
@@ -679,20 +787,18 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_interface_table_8cc_source.html#l00054">54</a> of file <a class="el" href="_interface_table_8cc_source.html">InterfaceTable.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span> (stage==0)
     {
         <span class="comment">// get a pointer to the NotificationBoard module</span>
-        <a class="code" href="class_interface_table.html#a4a813da979ea8934dd9d1bf7f82831b0">nb</a> = <a class="code" href="class_notification_board_access.html">NotificationBoardAccess</a>().<a class="code" href="class_module_access.html#a44956ddb52973612afbba0eeecf8bb66">get</a>();
+        <a class="code" href="structnb.html">nb</a> = <a class="code" href="class_notification_board_access.html" title="Gives access to the NotificationBoard instance within the host/router.">NotificationBoardAccess</a>().<a class="code" href="class_module_access.html#a46a82b1fa0e957eb42d29c8637df1f4f">get</a>();
 
         <span class="comment">// register a loopback interface</span>
-        <a class="code" href="class_interface_entry.html">InterfaceEntry</a> *ie = <span class="keyword">new</span> <a class="code" href="class_i_interface_table.html#a927bba568218c52cc2ec3574098d91c2">InterfaceEntry</a>();
+        <a class="code" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> *ie = <span class="keyword">new</span> <a class="code" href="class_i_interface_table.html#a927bba568218c52cc2ec3574098d91c2">InterfaceEntry</a>(<a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);
         ie-&gt;<a class="code" href="class_interface_entry.html#af9ca0c7af3a0f45e7d7102e6cc2b089e">setName</a>(<span class="stringliteral">&quot;lo0&quot;</span>);
         ie-&gt;<a class="code" href="class_interface_entry.html#aaebcf5970e29877b0a4b68ddaaaf540f">setMtu</a>(3924);
         ie-&gt;<a class="code" href="class_interface_entry.html#a305e66c0b05a5fa813db3b4f24e2b009">setLoopback</a>(<span class="keyword">true</span>);
-        <a class="code" href="class_interface_table.html#ae67777f04021431cc1d15ae200920836">addInterface</a>(ie, NULL);
+        <a class="code" href="class_interface_table.html#af43ca2b4f54392ce974effc35dcf72d1" title="Adds an interface.">addInterface</a>(ie);
     }
     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stage==1)
     {
@@ -708,7 +814,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_interface_table.html#a56f4588cd3260e1ba58b9af6b812d6ae">InterfaceTable::interfaceChanged</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_interface_table.html#a56f4588cd3260e1ba58b9af6b812d6ae">InterfaceTable::interfaceChanged</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td>
           <td class="paramname"><em>entry</em>, </td>
@@ -729,10 +835,11 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Implements <a class="el" href="class_i_interface_table.html#ad8ce8de50598e7ac988f4dc3a2ed976f">IInterfaceTable</a>.</p>
-
-<p>Definition at line <a class="el" href="_interface_table_8cc_source.html#l00217">217</a> of file <a class="el" href="_interface_table_8cc_source.html">InterfaceTable.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_interface_table.html#a4a813da979ea8934dd9d1bf7f82831b0">nb</a>-&gt;<a class="code" href="class_notification_board.html#a2bb0a5aa0cb272a9b15cb5a58a253fcc">fireChangeNotification</a>(category, entry);
+    <a class="code" href="structnb.html">nb</a>-&gt;fireChangeNotification(category, entry);
+
+    <span class="keywordflow">if</span> (ev.isGUI() &amp;&amp; par(<span class="stringliteral">&quot;displayAddresses&quot;</span>).boolValue())
+        <a class="code" href="class_interface_table.html#a541865f79aa57c4214cf1e1bd98b54bf">updateLinkDisplayString</a>(entry);
 }
 </pre></div>
 </div>
@@ -742,7 +849,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_interface_table.html#ad5da237cf1d0ab4de1ead24a6fa930f9">InterfaceTable::invalidateTmpInterfaceList</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_interface_table.html#ad5da237cf1d0ab4de1ead24a6fa930f9">InterfaceTable::invalidateTmpInterfaceList</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -751,13 +858,11 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_interface_table_8cc_source.html#l00210">210</a> of file <a class="el" href="_interface_table_8cc_source.html">InterfaceTable.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_interface_table_8cc_source.html#l00141">addInterface()</a>, and <a class="el" href="_interface_table_8cc_source.html#l00197">deleteInterface()</a>.</p>
+<p>Referenced by <a class="el" href="class_interface_table.html#af43ca2b4f54392ce974effc35dcf72d1">addInterface()</a>, and <a class="el" href="class_interface_table.html#a59bf4ac426a9fd86c5ce4cb2c9fcc16e">deleteInterface()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="class_interface_table.html#a735aed31ccdb2616a012c3a36ae812a3">tmpNumInterfaces</a> = -1;
-    <span class="keyword">delete</span>[] <a class="code" href="class_interface_table.html#a386b4b375178b5cbb5de18cdcb74042b">tmpInterfaceList</a>;
-    <a class="code" href="class_interface_table.html#a386b4b375178b5cbb5de18cdcb74042b">tmpInterfaceList</a> = NULL;
+    <span class="keyword">delete</span> [] <a class="code" href="class_interface_table.html#a386b4b375178b5cbb5de18cdcb74042b">tmpInterfaceList</a>;
+    <a class="code" href="class_interface_table.html#a386b4b375178b5cbb5de18cdcb74042b">tmpInterfaceList</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
 }
 </pre></div>
 </div>
@@ -775,18 +880,16 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_interface_table_8h_source.html#l00099">99</a> of file <a class="el" href="_interface_table_8h_source.html">InterfaceTable.h</a>.</p>
 <div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> 2;}
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a6bd59099de1b3cf19df5038b83ec75b9"></a><!-- doxytag: member="InterfaceTable::receiveChangeNotification" ref="a6bd59099de1b3cf19df5038b83ec75b9" args="(int category, const cPolymorphic *details)" -->
+<a class="anchor" id="a70303b94020a300c74222695a2cfa261"></a><!-- doxytag: member="InterfaceTable::receiveChangeNotification" ref="a70303b94020a300c74222695a2cfa261" args="(int category, const cObject *details)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_interface_table.html#a6bd59099de1b3cf19df5038b83ec75b9">InterfaceTable::receiveChangeNotification</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_interface_table.html#a70303b94020a300c74222695a2cfa261">InterfaceTable::receiveChangeNotification</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>category</em>, </td>
@@ -794,7 +897,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const cPolymorphic *&#160;</td>
+          <td class="paramtype">const cObject *&#160;</td>
           <td class="paramname"><em>details</em>&#160;</td>
         </tr>
         <tr>
@@ -805,15 +908,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called by the <a class="el" href="class_notification_board.html">NotificationBoard</a> whenever a change of a category occurs to which this client has subscribed. </p>
 
-<p>Implements <a class="el" href="class_i_notifiable.html#a67d757190e1128eaec8f0a8e51ed38f6">INotifiable</a>.</p>
+<p>Called by the <a class="el" href="class_notification_board.html" title="Acts as a intermediary between module where state changes can occur and modules which are interested ...">NotificationBoard</a> whenever a change of a category occurs to which this client has subscribed. </p>
 
-<p>Definition at line <a class="el" href="_interface_table_8cc_source.html#l00090">90</a> of file <a class="el" href="_interface_table_8cc_source.html">InterfaceTable.cc</a>.</p>
+<p>Implements <a class="el" href="class_i_notifiable.html#a26809ed59b2ff3e9379b1b4440227a8d">INotifiable</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// nothing needed here at the moment</span>
     Enter_Method_Silent();
-    <a class="code" href="_notifier_consts_8cc.html#a68fd4b933fae636048bb9ee52fd922e5">printNotificationBanner</a>(category, details);
+    <a class="code" href="_notifier_consts_8cc.html#a97f9fe597921659345dbf486bc49069c" title="Utility function.">printNotificationBanner</a>(category, details);
 }
 </pre></div>
 </div>
@@ -823,7 +925,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_interface_table.html#a84ad7ffc48e1d42ca93284fe033823b0">InterfaceTable::updateDisplayString</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_interface_table.html#a84ad7ffc48e1d42ca93284fe033823b0">InterfaceTable::updateDisplayString</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -832,16 +934,59 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_interface_table_8cc_source.html#l00075">75</a> of file <a class="el" href="_interface_table_8cc_source.html">InterfaceTable.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_interface_table_8cc_source.html#l00054">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_interface_table.html#ab92373cbd67155557293fbccc2ac1466">initialize()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span> (!ev.isGUI())
         <span class="keywordflow">return</span>;
 
     <span class="keywordtype">char</span> buf[80];
-    sprintf(buf, <span class="stringliteral">&quot;%d interfaces&quot;</span>, <a class="code" href="class_interface_table.html#aa7bbc08564b199d7820f9fb5dafedead">getNumInterfaces</a>());
-    getDisplayString().setTagArg(<span class="stringliteral">&quot;t&quot;</span>,0,buf);
+    sprintf(buf, <span class="stringliteral">&quot;%d interfaces&quot;</span>, <a class="code" href="class_interface_table.html#aa7bbc08564b199d7820f9fb5dafedead" title="Returns the number of interfaces.">getNumInterfaces</a>());
+    getDisplayString().setTagArg(<span class="stringliteral">&quot;t&quot;</span>, 0, buf);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a541865f79aa57c4214cf1e1bd98b54bf"></a><!-- doxytag: member="InterfaceTable::updateLinkDisplayString" ref="a541865f79aa57c4214cf1e1bd98b54bf" args="(InterfaceEntry *entry)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_interface_table.html#a541865f79aa57c4214cf1e1bd98b54bf">InterfaceTable::updateLinkDisplayString</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td>
+          <td class="paramname"><em>entry</em></td><td>)</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_interface_table.html#a56f4588cd3260e1ba58b9af6b812d6ae">interfaceChanged()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordtype">int</span> outputGateId = entry-&gt;<a class="code" href="class_interface_entry.html#a28c151905c57d6d19ecb026367f93278">getNodeOutputGateId</a>();
+    <span class="keywordflow">if</span> (outputGateId != -1)
+    {
+        cModule *host = getParentModule();
+        cGate *outputGate = host-&gt;gate(outputGateId);
+        <span class="keywordflow">if</span> (!outputGate-&gt;getChannel())
+            <span class="keywordflow">return</span>;
+        cDisplayString&amp; displayString = outputGate-&gt;getDisplayString();
+        <span class="keywordtype">char</span> buf[128];
+<span class="preprocessor">#ifdef WITH_IPv4</span>
+<span class="preprocessor"></span>        <span class="keywordflow">if</span> (entry-&gt;<a class="code" href="class_interface_entry.html#a4f52f31546a140edf6979882492e1a0b">ipv4Data</a>()) {
+            sprintf(buf, <span class="stringliteral">&quot;%s\n%s/%d&quot;</span>, entry-&gt;getFullName(), entry-&gt;<a class="code" href="class_interface_entry.html#a4f52f31546a140edf6979882492e1a0b">ipv4Data</a>()-&gt;<a class="code" href="class_i_pv4_interface_data.html#afab661980ddb8db4adc9ba5e9fc1f346">getIPAddress</a>().<a class="code" href="class_i_pv4_address.html#ac6c9eedd7d88e27a22d620c023a2c309" title="Returns the string representation of the address (e.g.">str</a>().c_str(), entry-&gt;<a class="code" href="class_interface_entry.html#a4f52f31546a140edf6979882492e1a0b">ipv4Data</a>()-&gt;<a class="code" href="class_i_pv4_interface_data.html#a7bd9bc7a6caff7bc7ff9e6448db0e394">getNetmask</a>().<a class="code" href="class_i_pv4_address.html#a3e032389cb6b5c1afe9e066659f70a05" title="Counts 1 bits in a netmask.">getNetmaskLength</a>());
+            displayString.setTagArg(<span class="stringliteral">&quot;t&quot;</span>, 0, buf);
+            displayString.setTagArg(<span class="stringliteral">&quot;t&quot;</span>, 1, <span class="stringliteral">&quot;l&quot;</span>);
+        }
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span><span class="preprocessor">#ifdef WITH_IPv6</span>
+<span class="preprocessor"></span>        <span class="keywordflow">if</span> (entry-&gt;<a class="code" href="class_interface_entry.html#a19083391271368e371346eb41ccc6c93">ipv6Data</a>() &amp;&amp; entry-&gt;<a class="code" href="class_interface_entry.html#a19083391271368e371346eb41ccc6c93">ipv6Data</a>()-&gt;<a class="code" href="class_i_pv6_interface_data.html#ae4fe7ab839b3c7f08226eed79f224103" title="Returns the number of addresses the interface has.">getNumAddresses</a>() &gt; 0) {
+            sprintf(buf, <span class="stringliteral">&quot;%s\n%s&quot;</span>, entry-&gt;getFullName(), entry-&gt;<a class="code" href="class_interface_entry.html#a19083391271368e371346eb41ccc6c93">ipv6Data</a>()-&gt;<a class="code" href="class_i_pv6_interface_data.html#a56f3fe4007e3df66dc88edd008f059b9" title="Chooses a preferred address for the interface and returns it.">getPreferredAddress</a>().<a class="code" href="class_i_pv6_address.html#a7c42fb066db81588a439aed1de5e4b3a" title="Returns the textual representation of the address in the standard notation.">str</a>().c_str());
+            displayString.setTagArg(<span class="stringliteral">&quot;t&quot;</span>, 0, buf);
+            displayString.setTagArg(<span class="stringliteral">&quot;t&quot;</span>, 1, <span class="stringliteral">&quot;l&quot;</span>);
+        }
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>    }
 }
 </pre></div>
 </div>
@@ -858,9 +1003,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_interface_table_8h_source.html#l00074">74</a> of file <a class="el" href="_interface_table_8h_source.html">InterfaceTable.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_interface_table_8cc_source.html#l00141">addInterface()</a>, <a class="el" href="_interface_table_8cc_source.html#l00197">deleteInterface()</a>, <a class="el" href="_interface_table_8cc_source.html#l00267">getFirstLoopbackInterface()</a>, <a class="el" href="_interface_table_8cc_source.html#l00115">getInterface()</a>, <a class="el" href="_interface_table_8cc_source.html#l00135">getInterfaceById()</a>, <a class="el" href="_interface_table_8cc_source.html#l00255">getInterfaceByName()</a>, <a class="el" href="_interface_table_8cc_source.html#l00244">getInterfaceByNetworkLayerGateIndex()</a>, <a class="el" href="_interface_table_8cc_source.html#l00233">getInterfaceByNodeInputGateId()</a>, <a class="el" href="_interface_table_8cc_source.html#l00222">getInterfaceByNodeOutputGateId()</a>, <a class="el" href="_interface_table_8cc_source.html#l00099">getNumInterfaces()</a>, <a class="el" href="_interface_table_8cc_source.html#l00054">initialize()</a>, and <a class="el" href="_interface_table_8cc_source.html#l00047">~InterfaceTable()</a>.</p>
+<p>Referenced by <a class="el" href="class_interface_table.html#af43ca2b4f54392ce974effc35dcf72d1">addInterface()</a>, <a class="el" href="class_interface_table.html#a59bf4ac426a9fd86c5ce4cb2c9fcc16e">deleteInterface()</a>, <a class="el" href="class_interface_table.html#a60849d96d27149120445ee5429462d91">getFirstLoopbackInterface()</a>, <a class="el" href="class_interface_table.html#a14c696f299054ee4617612e3c7e721b9">getFirstMulticastInterface()</a>, <a class="el" href="class_interface_table.html#a20068628e72377ed78735e6b008a0a9f">getInterface()</a>, <a class="el" href="class_interface_table.html#a3acb58a75de2e7d443c6abd0e7bd2548">getInterfaceById()</a>, <a class="el" href="class_interface_table.html#a3f953c2e608d84f14cfcaaf32ff6cbe1">getInterfaceByName()</a>, <a class="el" href="class_interface_table.html#abc0aa1cd6740d6808c09c3969969bd6f">getInterfaceByNetworkLayerGateIndex()</a>, <a class="el" href="class_interface_table.html#ad6eb1529b3d8ed007feea079e1f5d9cd">getInterfaceByNodeInputGateId()</a>, <a class="el" href="class_interface_table.html#a281b09bc65fc43109563bff6d9e55995">getInterfaceByNodeOutputGateId()</a>, <a class="el" href="class_interface_table.html#aa7bbc08564b199d7820f9fb5dafedead">getNumInterfaces()</a>, <a class="el" href="class_interface_table.html#ab92373cbd67155557293fbccc2ac1466">initialize()</a>, and <a class="el" href="class_interface_table.html#ad3ff50794df60447ba15026ae82464e0">~InterfaceTable()</a>.</p>
 
 </div>
 </div>
@@ -875,10 +1018,6 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_interface_table_8h_source.html#l00069">69</a> of file <a class="el" href="_interface_table_8h_source.html">InterfaceTable.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_interface_table_8cc_source.html#l00141">addInterface()</a>, <a class="el" href="_interface_table_8cc_source.html#l00197">deleteInterface()</a>, <a class="el" href="_interface_table_8cc_source.html#l00054">initialize()</a>, and <a class="el" href="_interface_table_8cc_source.html#l00217">interfaceChanged()</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a386b4b375178b5cbb5de18cdcb74042b"></a><!-- doxytag: member="InterfaceTable::tmpInterfaceList" ref="a386b4b375178b5cbb5de18cdcb74042b" args="" -->
@@ -892,9 +1031,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_interface_table_8h_source.html#l00078">78</a> of file <a class="el" href="_interface_table_8h_source.html">InterfaceTable.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_interface_table_8cc_source.html#l00115">getInterface()</a>, <a class="el" href="_interface_table_8cc_source.html#l00041">InterfaceTable()</a>, <a class="el" href="_interface_table_8cc_source.html#l00210">invalidateTmpInterfaceList()</a>, and <a class="el" href="_interface_table_8cc_source.html#l00047">~InterfaceTable()</a>.</p>
+<p>Referenced by <a class="el" href="class_interface_table.html#a20068628e72377ed78735e6b008a0a9f">getInterface()</a>, <a class="el" href="class_interface_table.html#acdc576cd5a79ac52810ef94fb5b02f8a">InterfaceTable()</a>, <a class="el" href="class_interface_table.html#ad5da237cf1d0ab4de1ead24a6fa930f9">invalidateTmpInterfaceList()</a>, and <a class="el" href="class_interface_table.html#ad3ff50794df60447ba15026ae82464e0">~InterfaceTable()</a>.</p>
 
 </div>
 </div>
@@ -909,15 +1046,13 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_interface_table_8h_source.html#l00077">77</a> of file <a class="el" href="_interface_table_8h_source.html">InterfaceTable.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_interface_table_8cc_source.html#l00099">getNumInterfaces()</a>, <a class="el" href="_interface_table_8cc_source.html#l00041">InterfaceTable()</a>, and <a class="el" href="_interface_table_8cc_source.html#l00210">invalidateTmpInterfaceList()</a>.</p>
+<p>Referenced by <a class="el" href="class_interface_table.html#aa7bbc08564b199d7820f9fb5dafedead">getNumInterfaces()</a>, <a class="el" href="class_interface_table.html#acdc576cd5a79ac52810ef94fb5b02f8a">InterfaceTable()</a>, and <a class="el" href="class_interface_table.html#ad5da237cf1d0ab4de1ead24a6fa930f9">invalidateTmpInterfaceList()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_interface_table_8h_source.html">InterfaceTable.h</a></li>
-<li><a class="el" href="_interface_table_8cc_source.html">InterfaceTable.cc</a></li>
+<li><a class="el" href="_interface_table_8h.html">InterfaceTable.h</a></li>
+<li><a class="el" href="_interface_table_8cc.html">InterfaceTable.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -925,7 +1060,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_interface_table.html">InterfaceTable</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:49 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:26 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

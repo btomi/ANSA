@@ -83,15 +83,18 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="TCPNoCongestionControl" --><!-- doxytag: inherits="TCPBaseAlg" -->
-<p><code>#include &lt;<a class="el" href="_t_c_p_no_congestion_control_8h_source.html">TCPNoCongestionControl.h</a>&gt;</code></p>
+<p><a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> with no congestion control (i.e.  
+ <a href="class_t_c_p_no_congestion_control.html#details">More...</a></p>
+
+<p><code>#include &lt;TCPNoCongestionControl.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TCPNoCongestionControl:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_t_c_p_no_congestion_control.png" usemap="#TCPNoCongestionControl_map" alt=""/>
   <map id="TCPNoCongestionControl_map" name="TCPNoCongestionControl_map">
-<area href="class_t_c_p_base_alg.html" alt="TCPBaseAlg" shape="rect" coords="0,56,156,80"/>
-<area href="class_t_c_p_algorithm.html" alt="TCPAlgorithm" shape="rect" coords="0,0,156,24"/>
+<area href="class_t_c_p_base_alg.html" title="Includes basic TCP algorithms: adaptive retransmission, PERSIST timer, keep-alive, delayed acks -- EXCLUDING congestion control." alt="TCPBaseAlg" shape="rect" coords="0,56,156,80"/>
+<area href="class_t_c_p_algorithm.html" title="Abstract base class for TCP algorithms which encapsulate all behaviour during data transfer state: fl..." alt="TCPAlgorithm" shape="rect" coords="0,0,156,24"/>
 </map>
  </div></div>
 
@@ -100,20 +103,24 @@ Inheritance diagram for TCPNoCongestionControl:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_no_congestion_control.html#ae1edd6501c4fe6165c30914e020392ab">TCPNoCongestionControl</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_no_congestion_control.html#a3d875b56a5442cb63a6b37da45efdc9d">initialize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_no_congestion_control.html#a9e68b13f66146c853c5032476138a123">receivedDataAck</a> (uint32 firstSeqAcked)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ctor.  <a href="#ae1edd6501c4fe6165c30914e020392ab"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_no_congestion_control.html#a3d875b56a5442cb63a6b37da45efdc9d">initialize</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize state vars.  <a href="#a3d875b56a5442cb63a6b37da45efdc9d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_no_congestion_control.html#a9e68b13f66146c853c5032476138a123">receivedDataAck</a> (uint32 firstSeqAcked)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefine what should happen when data got acked, to add congestion window management.  <a href="#a9e68b13f66146c853c5032476138a123"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_t_c_p_state_variables.html">TCPStateVariables</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_no_congestion_control.html#ac8fc5b592dcf9c3b76c3808796d7d0d4">createStateVariables</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_no_congestion_control.html#acce4963470b581797181af3f924a6433">processRexmitTimer</a> (<a class="el" href="_t_c_p_connection_8h.html#a9187fb8d597fec5e53124ffe46c7e85e">TCPEventCode</a> &amp;event)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and return a TCPNoCongestionControlStateVariables object.  <a href="#ac8fc5b592dcf9c3b76c3808796d7d0d4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_no_congestion_control.html#acce4963470b581797181af3f924a6433">processRexmitTimer</a> (<a class="el" href="_t_c_p_connection_8h.html#a9187fb8d597fec5e53124ffe46c7e85e">TCPEventCode</a> &amp;event)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefine what should happen on retransmission.  <a href="#acce4963470b581797181af3f924a6433"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_t_c_p_no_congestion_control_8h.html#ae03319f8cc5ad114a18acb5eba6b3c74">TCPNoCongestionControlStateVariables</a> *&amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_no_congestion_control.html#ac627ac65b1fa76b81bd313f66b0ad26e">state</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_t_c_p.html">TCP</a> with no congestion control (i.e. congestion window kept very large). Can be used to demonstrate effect of lack of congestion control. </p>
-
-<p>Definition at line <a class="el" href="_t_c_p_no_congestion_control_8h_source.html#l00035">35</a> of file <a class="el" href="_t_c_p_no_congestion_control_8h_source.html">TCPNoCongestionControl.h</a>.</p>
+<div class="textblock"><p><a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> with no congestion control (i.e. </p>
+<p>congestion window kept very large). Can be used to demonstrate effect of lack of congestion control. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ae1edd6501c4fe6165c30914e020392ab"></a><!-- doxytag: member="TCPNoCongestionControl::TCPNoCongestionControl" ref="ae1edd6501c4fe6165c30914e020392ab" args="()" -->
 <div class="memitem">
@@ -128,11 +135,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Ctor </p>
 
-<p>Definition at line <a class="el" href="flavours_2_t_c_p_no_congestion_control_8cc_source.html#l00023">23</a> of file <a class="el" href="flavours_2_t_c_p_no_congestion_control_8cc_source.html">flavours/TCPNoCongestionControl.cc</a>.</p>
-<div class="fragment"><pre class="fragment">                                               : <a class="code" href="class_t_c_p_base_alg.html#a2f8265b680a8cee124f685b19919ab03">TCPBaseAlg</a>(),
-  <a class="code" href="class_t_c_p_no_congestion_control.html#ac627ac65b1fa76b81bd313f66b0ad26e">state</a>((<a class="code" href="class_t_c_p_base_alg_state_variables.html">TCPNoCongestionControlStateVariables</a> *&amp;)<a class="code" href="class_t_c_p_algorithm.html#add50c340ebfd641323eb3cdee685885c">TCPAlgorithm::state</a>)
+<p>Ctor. </p>
+<div class="fragment"><pre class="fragment">                                               : <a class="code" href="class_t_c_p_base_alg.html#a2f8265b680a8cee124f685b19919ab03" title="Ctor.">TCPBaseAlg</a>(),
+  <a class="code" href="class_t_c_p_no_congestion_control.html#ac627ac65b1fa76b81bd313f66b0ad26e">state</a>((<a class="code" href="class_t_c_p_base_alg_state_variables.html" title="State variables for TCPBaseAlg.">TCPNoCongestionControlStateVariables</a> *&amp;)<a class="code" href="class_t_c_p_algorithm.html#add50c340ebfd641323eb3cdee685885c">TCPAlgorithm::state</a>)
 {
 }
 </pre></div>
@@ -152,13 +158,12 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Create and return a TCPNoCongestionControlStateVariables object. </p>
 
 <p>Implements <a class="el" href="class_t_c_p_algorithm.html#a07ec2c74836af2485af586023ca9c915">TCPAlgorithm</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_no_congestion_control_8h_source.html#l00041">41</a> of file <a class="el" href="_t_c_p_no_congestion_control_8h_source.html">TCPNoCongestionControl.h</a>.</p>
 <div class="fragment"><pre class="fragment">                                                      {
-        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="_t_c_p_no_congestion_control_8h.html#ae03319f8cc5ad114a18acb5eba6b3c74">TCPNoCongestionControlStateVariables</a>();
+        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="_t_c_p_no_congestion_control_8h.html#ae03319f8cc5ad114a18acb5eba6b3c74" title="State variables for TCPNoCongestionControl.">TCPNoCongestionControlStateVariables</a>();
     }
 </pre></div>
 </div>
@@ -168,7 +173,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_no_congestion_control.html#a3d875b56a5442cb63a6b37da45efdc9d">TCPNoCongestionControl::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_no_congestion_control.html#a3d875b56a5442cb63a6b37da45efdc9d">TCPNoCongestionControl::initialize</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [virtual]</code></td>
@@ -176,13 +181,12 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize state vars </p>
+
+<p>Initialize state vars. </p>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_base_alg.html#ae6147731689fcc4c5c79f4cc539c6b7f">TCPBaseAlg</a>.</p>
-
-<p>Definition at line <a class="el" href="flavours_2_t_c_p_no_congestion_control_8cc_source.html#l00028">28</a> of file <a class="el" href="flavours_2_t_c_p_no_congestion_control_8cc_source.html">flavours/TCPNoCongestionControl.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_t_c_p_no_congestion_control.html#a3d875b56a5442cb63a6b37da45efdc9d">TCPBaseAlg::initialize</a>();
+    <a class="code" href="class_t_c_p_no_congestion_control.html#a3d875b56a5442cb63a6b37da45efdc9d" title="Initialize state vars.">TCPBaseAlg::initialize</a>();
 
     <span class="comment">// set congestion window to a practically infinite value</span>
     <a class="code" href="class_t_c_p_no_congestion_control.html#ac627ac65b1fa76b81bd313f66b0ad26e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a> = 0x7fffffff;
@@ -195,7 +199,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_no_congestion_control.html#acce4963470b581797181af3f924a6433">TCPNoCongestionControl::processRexmitTimer</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_no_congestion_control.html#acce4963470b581797181af3f924a6433">TCPNoCongestionControl::processRexmitTimer</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="_t_c_p_connection_8h.html#a9187fb8d597fec5e53124ffe46c7e85e">TCPEventCode</a> &amp;&#160;</td>
           <td class="paramname"><em>event</em></td><td>)</td>
@@ -204,18 +208,18 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Redefine what should happen on retransmission </p>
+
+<p>Redefine what should happen on retransmission. </p>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_base_alg.html#ac8a305a437d4eafd1689204e50af8870">TCPBaseAlg</a>.</p>
-
-<p>Definition at line <a class="el" href="flavours_2_t_c_p_no_congestion_control_8cc_source.html#l00036">36</a> of file <a class="el" href="flavours_2_t_c_p_no_congestion_control_8cc_source.html">flavours/TCPNoCongestionControl.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_t_c_p_no_congestion_control.html#acce4963470b581797181af3f924a6433">TCPBaseAlg::processRexmitTimer</a>(<a class="code" href="namespacecesnet.html#a56e29c69128db750fc49a508a16cf7ba">event</a>);
-    <span class="keywordflow">if</span> (<a class="code" href="namespacecesnet.html#a56e29c69128db750fc49a508a16cf7ba">event</a>==<a class="code" href="_t_c_p_connection_8h.html#a9187fb8d597fec5e53124ffe46c7e85ea2cc18190ce98d4997975fa624a8e147d">TCP_E_ABORT</a>)
+    <a class="code" href="class_t_c_p_no_congestion_control.html#acce4963470b581797181af3f924a6433" title="Redefine what should happen on retransmission.">TCPBaseAlg::processRexmitTimer</a>(event);
+
+    <span class="keywordflow">if</span> (event == <a class="code" href="_t_c_p_connection_8h.html#a9187fb8d597fec5e53124ffe46c7e85ea2cc18190ce98d4997975fa624a8e147d">TCP_E_ABORT</a>)
         <span class="keywordflow">return</span>;
 
     <span class="comment">// Tahoe-style retransmission: only one segment</span>
-    <a class="code" href="class_t_c_p_algorithm.html#a20273a398c4165b45243d9c125c2637b">conn</a>-&gt;<a class="code" href="class_t_c_p_connection.html#a8ae68910942bd1ea6558ae7849ae22ea">retransmitOneSegment</a>(<span class="keyword">true</span>);
+    <a class="code" href="class_t_c_p_algorithm.html#a20273a398c4165b45243d9c125c2637b">conn</a>-&gt;<a class="code" href="class_t_c_p_connection.html#a8ae68910942bd1ea6558ae7849ae22ea" title="Utility: retransmit one segment from snd_una.">retransmitOneSegment</a>(<span class="keyword">true</span>);
 }
 </pre></div>
 </div>
@@ -225,7 +229,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_no_congestion_control.html#a9e68b13f66146c853c5032476138a123">TCPNoCongestionControl::receivedDataAck</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_no_congestion_control.html#a9e68b13f66146c853c5032476138a123">TCPNoCongestionControl::receivedDataAck</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>firstSeqAcked</em></td><td>)</td>
@@ -234,16 +238,15 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Redefine what should happen when data got acked, to add congestion window management </p>
+
+<p>Redefine what should happen when data got acked, to add congestion window management. </p>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_base_alg.html#a55a32a0e93c6417adb091ee162f225e2">TCPBaseAlg</a>.</p>
-
-<p>Definition at line <a class="el" href="flavours_2_t_c_p_no_congestion_control_8cc_source.html#l00046">46</a> of file <a class="el" href="flavours_2_t_c_p_no_congestion_control_8cc_source.html">flavours/TCPNoCongestionControl.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_t_c_p_no_congestion_control.html#a9e68b13f66146c853c5032476138a123">TCPBaseAlg::receivedDataAck</a>(firstSeqAcked);
+    <a class="code" href="class_t_c_p_no_congestion_control.html#a9e68b13f66146c853c5032476138a123" title="Redefine what should happen when data got acked, to add congestion window management.">TCPBaseAlg::receivedDataAck</a>(firstSeqAcked);
 
     <span class="comment">// ack may have freed up some room in the window, try sending</span>
-    <a class="code" href="class_t_c_p_base_alg.html#a28c072f575629d0c5ec6478edd3bb7e5">sendData</a>();
+    <a class="code" href="class_t_c_p_base_alg.html#a28c072f575629d0c5ec6478edd3bb7e5" title="Send data, observing Nagle&#39;s algorithm and congestion window.">sendData</a>();
 }
 </pre></div>
 </div>
@@ -262,15 +265,13 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_base_alg.html#ad1bab317e58578b0976c63d3765867e9">TCPBaseAlg</a>.</p>
 
-<p>Definition at line <a class="el" href="_t_c_p_no_congestion_control_8h_source.html#l00038">38</a> of file <a class="el" href="_t_c_p_no_congestion_control_8h_source.html">TCPNoCongestionControl.h</a>.</p>
-
-<p>Referenced by <a class="el" href="flavours_2_t_c_p_no_congestion_control_8cc_source.html#l00028">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_no_congestion_control.html#a3d875b56a5442cb63a6b37da45efdc9d">initialize()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_t_c_p_no_congestion_control_8h_source.html">TCPNoCongestionControl.h</a></li>
-<li><a class="el" href="flavours_2_t_c_p_no_congestion_control_8cc_source.html">flavours/TCPNoCongestionControl.cc</a></li>
+<li><a class="el" href="_t_c_p_no_congestion_control_8h.html">TCPNoCongestionControl.h</a></li>
+<li><a class="el" href="_t_c_p_no_congestion_control_8cc.html">TCPNoCongestionControl.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -278,7 +279,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_t_c_p_no_congestion_control.html">TCPNoCongestionControl</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:53 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:31 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

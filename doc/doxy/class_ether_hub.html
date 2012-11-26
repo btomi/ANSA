@@ -76,37 +76,117 @@
 <div class="header">
   <div class="summary">
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">EtherHub Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="EtherHub" -->
-<p><code>#include &lt;<a class="el" href="_ether_hub_8h_source.html">EtherHub.h</a>&gt;</code></p>
+<p>Models a wiring hub.  
+ <a href="class_ether_hub.html#details">More...</a></p>
+
+<p><code>#include &lt;EtherHub.h&gt;</code></p>
 
 <p><a href="class_ether_hub-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ether_hub.html#aaedd6382be2f1814b173decb274e2fc1">initialize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ether_hub.html#a38dfb3820e446125d4f3f991f60b0e2a">handleMessage</a> (cMessage *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ether_hub.html#a600219305008dab227faaf9dbb854ee1">finish</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ether_hub.html#aaedd6382be2f1814b173decb274e2fc1">initialize</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ether_hub.html#a26601599c19223d8f7d68f2444defa7c">handleMessage</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ether_hub.html#a600219305008dab227faaf9dbb854ee1">finish</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ether_hub.html#a47590a2572d87602fe7524725cc7b6d0">receiveSignal</a> (cComponent *source, simsignal_t signalID, cObject *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ether_hub.html#a69ea97b99f8bc353de4d7ad579af4111">checkConnections</a> (bool errorWhenAsymmetric)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ether_hub.html#a01778631f057d4e3e28958e7fe097b79">ports</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ether_hub.html#a04a3f893be942cb408bf8fcaebfca840">numPorts</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ether_hub.html#a2bda52d1282610a06d12cc6310f11c11">inputGateBaseId</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ether_hub.html#a57afe9edcbd1a6c5a0b328ccce15ed6d">outputGateBaseId</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ether_hub.html#ae0f2b566b9991e52f6bc2e6d7eed4714">dataratesDiffer</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ether_hub.html#a60302e1d2242b53bac547186b8fe7fa9">numMessages</a></td></tr>
+<tr><td colspan="2"><h2><a name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ether_hub.html#aed28b383565ec396419fb2c6395fa87f">pkSignal</a> = SIMSIGNAL_NULL</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Models a wiring hub. It simply broadcasts the received message on all other ports. </p>
-
-<p>Definition at line <a class="el" href="_ether_hub_8h_source.html#l00027">27</a> of file <a class="el" href="_ether_hub_8h_source.html">EtherHub.h</a>.</p>
+<div class="textblock"><p>Models a wiring hub. </p>
+<p>It simply broadcasts the received message on all other ports. </p>
 </div><hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a69ea97b99f8bc353de4d7ad579af4111"></a><!-- doxytag: member="EtherHub::checkConnections" ref="a69ea97b99f8bc353de4d7ad579af4111" args="(bool errorWhenAsymmetric)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_ether_hub.html#a69ea97b99f8bc353de4d7ad579af4111">EtherHub::checkConnections</a> </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>errorWhenAsymmetric</em></td><td>)</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_ether_hub.html#a26601599c19223d8f7d68f2444defa7c">handleMessage()</a>, <a class="el" href="class_ether_hub.html#aaedd6382be2f1814b173decb274e2fc1">initialize()</a>, and <a class="el" href="class_ether_hub.html#a47590a2572d87602fe7524725cc7b6d0">receiveSignal()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordtype">int</span> numActivePorts = 0;
+    <span class="keywordtype">double</span> datarate = 0.0;
+    <a class="code" href="class_ether_hub.html#ae0f2b566b9991e52f6bc2e6d7eed4714">dataratesDiffer</a> = <span class="keyword">false</span>;
+
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_ether_hub.html#a04a3f893be942cb408bf8fcaebfca840">numPorts</a>; i++)
+    {
+        cGate *igate = gate(<a class="code" href="class_ether_hub.html#a2bda52d1282610a06d12cc6310f11c11">inputGateBaseId</a> + i);
+        cGate *ogate = gate(<a class="code" href="class_ether_hub.html#a57afe9edcbd1a6c5a0b328ccce15ed6d">outputGateBaseId</a> + i);
+        <span class="keywordflow">if</span> (!igate-&gt;isConnected() &amp;&amp; !ogate-&gt;isConnected())
+            <span class="keywordflow">continue</span>;
+
+        <span class="keywordflow">if</span> (!igate-&gt;isConnected() || !ogate-&gt;isConnected())
+        {
+            <span class="comment">// half connected gate</span>
+            <span class="keywordflow">if</span> (errorWhenAsymmetric)
+                <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;The input or output gate not connected at port %i&quot;</span>, i);
+            <a class="code" href="class_ether_hub.html#ae0f2b566b9991e52f6bc2e6d7eed4714">dataratesDiffer</a> = <span class="keyword">true</span>;
+            <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;The input or output gate not connected at port &quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;.\n&quot;</span>;
+            <span class="keywordflow">continue</span>;
+        }
+
+        numActivePorts++;
+        <span class="keywordtype">double</span> drate = igate-&gt;getIncomingTransmissionChannel()-&gt;getNominalDatarate();
+
+        <span class="keywordflow">if</span> (numActivePorts == 1)
+            datarate = drate;
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (datarate != drate)
+        {
+            <span class="keywordflow">if</span> (errorWhenAsymmetric)
+                <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;The input datarate at port %i differs from datarates of previous ports&quot;</span>, i);
+            <a class="code" href="class_ether_hub.html#ae0f2b566b9991e52f6bc2e6d7eed4714">dataratesDiffer</a> = <span class="keyword">true</span>;
+            <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;The input datarate at port &quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot; differs from datarates of previous ports.\n&quot;</span>;
+        }
+
+        cChannel *outTrChannel = ogate-&gt;getTransmissionChannel();
+        drate = outTrChannel-&gt;getNominalDatarate();
+
+        <span class="keywordflow">if</span> (datarate != drate)
+        {
+            <span class="keywordflow">if</span> (errorWhenAsymmetric)
+                <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;The output datarate at port %i differs from datarates of previous ports&quot;</span>, i);
+            <a class="code" href="class_ether_hub.html#ae0f2b566b9991e52f6bc2e6d7eed4714">dataratesDiffer</a> = <span class="keyword">true</span>;
+            <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;The output datarate at port &quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot; differs from datarates of previous ports.\n&quot;</span>;
+        }
+
+        <span class="keywordflow">if</span> (!outTrChannel-&gt;isSubscribed(POST_MODEL_CHANGE, <span class="keyword">this</span>))
+            outTrChannel-&gt;subscribe(POST_MODEL_CHANGE, <span class="keyword">this</span>);
+    }
+}
+</pre></div>
+</div>
+</div>
 <a class="anchor" id="a600219305008dab227faaf9dbb854ee1"></a><!-- doxytag: member="EtherHub::finish" ref="a600219305008dab227faaf9dbb854ee1" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_ether_hub.html#a600219305008dab227faaf9dbb854ee1">EtherHub::finish</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_ether_hub.html#a600219305008dab227faaf9dbb854ee1">EtherHub::finish</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -114,24 +194,22 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_ether_hub_8cc_source.html#l00072">72</a> of file <a class="el" href="_ether_hub_8cc_source.html">EtherHub.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     simtime_t t = simTime();
     recordScalar(<span class="stringliteral">&quot;simulated time&quot;</span>, t);
-    recordScalar(<span class="stringliteral">&quot;messages handled&quot;</span>, <a class="code" href="class_ether_hub.html#a60302e1d2242b53bac547186b8fe7fa9">numMessages</a>);
-    <span class="keywordflow">if</span> (t&gt;0)
-        recordScalar(<span class="stringliteral">&quot;messages/sec&quot;</span>, <a class="code" href="class_ether_hub.html#a60302e1d2242b53bac547186b8fe7fa9">numMessages</a>/t);
+
+    <span class="keywordflow">if</span> (t &gt; 0)
+        recordScalar(<span class="stringliteral">&quot;messages/sec&quot;</span>, <a class="code" href="class_ether_hub.html#a60302e1d2242b53bac547186b8fe7fa9">numMessages</a> / t);
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a38dfb3820e446125d4f3f991f60b0e2a"></a><!-- doxytag: member="EtherHub::handleMessage" ref="a38dfb3820e446125d4f3f991f60b0e2a" args="(cMessage *)" -->
+<a class="anchor" id="a26601599c19223d8f7d68f2444defa7c"></a><!-- doxytag: member="EtherHub::handleMessage" ref="a26601599c19223d8f7d68f2444defa7c" args="(cMessage *msg)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_ether_hub.html#a38dfb3820e446125d4f3f991f60b0e2a">EtherHub::handleMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_ether_hub.html#a26601599c19223d8f7d68f2444defa7c">EtherHub::handleMessage</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -140,29 +218,45 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_ether_hub_8cc_source.html#l00048">48</a> of file <a class="el" href="_ether_hub_8cc_source.html">EtherHub.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> (<a class="code" href="class_ether_hub.html#ae0f2b566b9991e52f6bc2e6d7eed4714">dataratesDiffer</a>)
+        <a class="code" href="class_ether_hub.html#a69ea97b99f8bc353de4d7ad579af4111">checkConnections</a>(<span class="keyword">true</span>);
+
     <span class="comment">// Handle frame sent down from the network entity: send out on every other port</span>
     <span class="keywordtype">int</span> arrivalPort = msg-&gt;getArrivalGate()-&gt;getIndex();
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Frame &quot;</span> &lt;&lt; msg &lt;&lt; <span class="stringliteral">&quot; arrived on port &quot;</span> &lt;&lt; arrivalPort &lt;&lt; <span class="stringliteral">&quot;, broadcasting on all other ports\n&quot;</span>;
 
     <a class="code" href="class_ether_hub.html#a60302e1d2242b53bac547186b8fe7fa9">numMessages</a>++;
+    emit(<a class="code" href="class_ether_hub.html#aed28b383565ec396419fb2c6395fa87f">pkSignal</a>, msg);
 
-    <span class="keywordflow">if</span> (<a class="code" href="class_ether_hub.html#a01778631f057d4e3e28958e7fe097b79">ports</a>&lt;=1)
+    <span class="keywordflow">if</span> (<a class="code" href="class_ether_hub.html#a04a3f893be942cb408bf8fcaebfca840">numPorts</a> &lt;= 1)
     {
         <span class="keyword">delete</span> msg;
         <span class="keywordflow">return</span>;
     }
-    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>=0; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>&lt;<a class="code" href="class_ether_hub.html#a01778631f057d4e3e28958e7fe097b79">ports</a>; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++)
+
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_ether_hub.html#a04a3f893be942cb408bf8fcaebfca840">numPorts</a>; i++)
     {
-        <span class="keywordflow">if</span> (<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>!=arrivalPort)
+        <span class="keywordflow">if</span> (i != arrivalPort)
         {
-            <span class="keywordtype">bool</span> isLast = (arrivalPort==ports-1) ? (<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>==ports-2) : (<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>==ports-1);
-            cMessage *msg2 = isLast ? msg : (cMessage*) msg-&gt;dup();
-            send(msg2,<span class="stringliteral">&quot;ethg$o&quot;</span>,<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>);
+            cGate *ogate = gate(<a class="code" href="class_ether_hub.html#a57afe9edcbd1a6c5a0b328ccce15ed6d">outputGateBaseId</a> + i);
+            <span class="keywordflow">if</span> (!ogate-&gt;isConnected())
+                <span class="keywordflow">continue</span>;
+
+            <span class="keywordtype">bool</span> isLast = (arrivalPort == numPorts-1) ? (i == numPorts-2) : (i == numPorts-1);
+            cMessage *msg2 = isLast ? msg : msg-&gt;dup();
+
+            <span class="comment">// stop current transmission</span>
+            ogate-&gt;getTransmissionChannel()-&gt;forceTransmissionFinishTime(SIMTIME_ZERO);
+
+            <span class="comment">// send</span>
+            send(msg2, ogate);
+
+            <span class="keywordflow">if</span> (isLast)
+                msg = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;  <span class="comment">// msg sent, do not delete it.</span>
         }
     }
+    <span class="keyword">delete</span> msg;
 }
 </pre></div>
 </div>
@@ -172,7 +266,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_ether_hub.html#aaedd6382be2f1814b173decb274e2fc1">EtherHub::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_ether_hub.html#aaedd6382be2f1814b173decb274e2fc1">EtherHub::initialize</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -180,27 +274,137 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_ether_hub_8cc_source.html#l00031">31</a> of file <a class="el" href="_ether_hub_8cc_source.html">EtherHub.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
+    <a class="code" href="class_ether_hub.html#a04a3f893be942cb408bf8fcaebfca840">numPorts</a> = gateSize(<span class="stringliteral">&quot;ethg&quot;</span>);
+    <a class="code" href="class_ether_hub.html#a2bda52d1282610a06d12cc6310f11c11">inputGateBaseId</a> = gateBaseId(<span class="stringliteral">&quot;ethg$i&quot;</span>);
+    <a class="code" href="class_ether_hub.html#a57afe9edcbd1a6c5a0b328ccce15ed6d">outputGateBaseId</a> = gateBaseId(<span class="stringliteral">&quot;ethg$o&quot;</span>);
+    <a class="code" href="class_ether_hub.html#aed28b383565ec396419fb2c6395fa87f">pkSignal</a> = registerSignal(<span class="stringliteral">&quot;pk&quot;</span>);
+
     <a class="code" href="class_ether_hub.html#a60302e1d2242b53bac547186b8fe7fa9">numMessages</a> = 0;
     WATCH(<a class="code" href="class_ether_hub.html#a60302e1d2242b53bac547186b8fe7fa9">numMessages</a>);
 
-    <a class="code" href="class_ether_hub.html#a01778631f057d4e3e28958e7fe097b79">ports</a> = gateSize(<span class="stringliteral">&quot;ethg&quot;</span>);
+    <span class="comment">// ensure we receive frames when their first bits arrive</span>
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="class_ether_hub.html#a04a3f893be942cb408bf8fcaebfca840">numPorts</a>; i++)
+        gate(<a class="code" href="class_ether_hub.html#a2bda52d1282610a06d12cc6310f11c11">inputGateBaseId</a> + i)-&gt;setDeliverOnReceptionStart(<span class="keyword">true</span>);
+    subscribe(POST_MODEL_CHANGE, <span class="keyword">this</span>);  <span class="comment">// we&#39;ll need to do the same for dynamically added gates as well</span>
 
-    <span class="comment">// autoconfig: tell everyone that full duplex is not possible over shared media</span>
-    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Autoconfig: advertising that we only support half-duplex operation\n&quot;</span>;
-    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>=0; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>&lt;<a class="code" href="class_ether_hub.html#a01778631f057d4e3e28958e7fe097b79">ports</a>; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++)
+    <a class="code" href="class_ether_hub.html#a69ea97b99f8bc353de4d7ad579af4111">checkConnections</a>(<span class="keyword">true</span>);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a47590a2572d87602fe7524725cc7b6d0"></a><!-- doxytag: member="EtherHub::receiveSignal" ref="a47590a2572d87602fe7524725cc7b6d0" args="(cComponent *source, simsignal_t signalID, cObject *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_ether_hub.html#a47590a2572d87602fe7524725cc7b6d0">EtherHub::receiveSignal</a> </td>
+          <td>(</td>
+          <td class="paramtype">cComponent *&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">simsignal_t&#160;</td>
+          <td class="paramname"><em>signalID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cObject *&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+    Enter_Method_Silent();
+
+    ASSERT(signalID == POST_MODEL_CHANGE);
+
+    <span class="comment">// if new gates have been added, we need to call setDeliverOnReceptionStart(true) on them</span>
+    cPostGateVectorResizeNotification *notif = <span class="keyword">dynamic_cast&lt;</span>cPostGateVectorResizeNotification*<span class="keyword">&gt;</span>(obj);
+    <span class="keywordflow">if</span> (notif)
     {
-        <a class="code" href="class_ether_autoconfig.html">EtherAutoconfig</a> *autoconf = <span class="keyword">new</span> <a class="code" href="class_ether_autoconfig.html">EtherAutoconfig</a>(<span class="stringliteral">&quot;autoconf-halfduplex&quot;</span>);
-        autoconf-&gt;<a class="code" href="class_ether_autoconfig.html#a5d1d09e7a43b4854f80b7a7e66035453">setHalfDuplex</a>(<span class="keyword">true</span>);
-        send(autoconf,<span class="stringliteral">&quot;ethg$o&quot;</span>,<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>);
+        <span class="keywordflow">if</span> (strcmp(notif-&gt;gateName, <span class="stringliteral">&quot;ethg&quot;</span>) == 0)
+        {
+            <span class="keywordtype">int</span> newSize = gateSize(<span class="stringliteral">&quot;ethg&quot;</span>);
+            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = notif-&gt;oldSize; i &lt; newSize; i++)
+                gate(<a class="code" href="class_ether_hub.html#a2bda52d1282610a06d12cc6310f11c11">inputGateBaseId</a> + i)-&gt;setDeliverOnReceptionStart(<span class="keyword">true</span>);
+        }
+        <span class="keywordflow">return</span>;
+    }
+
+    cPostPathCreateNotification *connNotif = <span class="keyword">dynamic_cast&lt;</span>cPostPathCreateNotification *<span class="keyword">&gt;</span>(obj);
+    <span class="keywordflow">if</span> (connNotif)
+    {
+        <span class="keywordflow">if</span> ((<span class="keyword">this</span> == connNotif-&gt;pathStartGate-&gt;getOwnerModule()) || (<span class="keyword">this</span> == connNotif-&gt;pathEndGate-&gt;getOwnerModule()))
+            <a class="code" href="class_ether_hub.html#a69ea97b99f8bc353de4d7ad579af4111">checkConnections</a>(<span class="keyword">false</span>);
+        <span class="keywordflow">return</span>;
+    }
+
+    cPostPathCutNotification *cutNotif = <span class="keyword">dynamic_cast&lt;</span>cPostPathCutNotification *<span class="keyword">&gt;</span>(obj);
+    <span class="keywordflow">if</span> (cutNotif)
+    {
+        <span class="keywordflow">if</span> ((<span class="keyword">this</span> == cutNotif-&gt;pathStartGate-&gt;getOwnerModule()) || (<span class="keyword">this</span> == cutNotif-&gt;pathEndGate-&gt;getOwnerModule()))
+            <a class="code" href="class_ether_hub.html#a69ea97b99f8bc353de4d7ad579af4111">checkConnections</a>(<span class="keyword">false</span>);
+        <span class="keywordflow">return</span>;
+    }
+
+    <span class="comment">// note: we are subscribed to the channel object too</span>
+    cPostParameterChangeNotification *parNotif = <span class="keyword">dynamic_cast&lt;</span>cPostParameterChangeNotification *<span class="keyword">&gt;</span>(obj);
+    <span class="keywordflow">if</span> (parNotif)
+    {
+        cChannel *channel = <span class="keyword">dynamic_cast&lt;</span>cDatarateChannel *<span class="keyword">&gt;</span>(parNotif-&gt;par-&gt;getOwner());
+        <span class="keywordflow">if</span> (channel)
+        {
+            cGate *gate = channel-&gt;getSourceGate();
+            <span class="keywordflow">if</span> (gate-&gt;pathContains(<span class="keyword">this</span>))
+                <a class="code" href="class_ether_hub.html#a69ea97b99f8bc353de4d7ad579af4111">checkConnections</a>(<span class="keyword">false</span>);
+        }
+        <span class="keywordflow">return</span>;
     }
 }
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="ae0f2b566b9991e52f6bc2e6d7eed4714"></a><!-- doxytag: member="EtherHub::dataratesDiffer" ref="ae0f2b566b9991e52f6bc2e6d7eed4714" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_ether_hub.html#ae0f2b566b9991e52f6bc2e6d7eed4714">EtherHub::dataratesDiffer</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_ether_hub.html#a69ea97b99f8bc353de4d7ad579af4111">checkConnections()</a>, and <a class="el" href="class_ether_hub.html#a26601599c19223d8f7d68f2444defa7c">handleMessage()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2bda52d1282610a06d12cc6310f11c11"></a><!-- doxytag: member="EtherHub::inputGateBaseId" ref="a2bda52d1282610a06d12cc6310f11c11" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="class_ether_hub.html#a2bda52d1282610a06d12cc6310f11c11">EtherHub::inputGateBaseId</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_ether_hub.html#a69ea97b99f8bc353de4d7ad579af4111">checkConnections()</a>, <a class="el" href="class_ether_hub.html#aaedd6382be2f1814b173decb274e2fc1">initialize()</a>, and <a class="el" href="class_ether_hub.html#a47590a2572d87602fe7524725cc7b6d0">receiveSignal()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a60302e1d2242b53bac547186b8fe7fa9"></a><!-- doxytag: member="EtherHub::numMessages" ref="a60302e1d2242b53bac547186b8fe7fa9" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -212,32 +416,58 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_ether_hub_8h_source.html#l00031">31</a> of file <a class="el" href="_ether_hub_8h_source.html">EtherHub.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_ether_hub_8cc_source.html#l00072">finish()</a>, <a class="el" href="_ether_hub_8cc_source.html#l00048">handleMessage()</a>, and <a class="el" href="_ether_hub_8cc_source.html#l00031">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_ether_hub.html#a600219305008dab227faaf9dbb854ee1">finish()</a>, <a class="el" href="class_ether_hub.html#a26601599c19223d8f7d68f2444defa7c">handleMessage()</a>, and <a class="el" href="class_ether_hub.html#aaedd6382be2f1814b173decb274e2fc1">initialize()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a01778631f057d4e3e28958e7fe097b79"></a><!-- doxytag: member="EtherHub::ports" ref="a01778631f057d4e3e28958e7fe097b79" args="" -->
+<a class="anchor" id="a04a3f893be942cb408bf8fcaebfca840"></a><!-- doxytag: member="EtherHub::numPorts" ref="a04a3f893be942cb408bf8fcaebfca840" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="class_ether_hub.html#a01778631f057d4e3e28958e7fe097b79">EtherHub::ports</a><code> [protected]</code></td>
+          <td class="memname">int <a class="el" href="class_ether_hub.html#a04a3f893be942cb408bf8fcaebfca840">EtherHub::numPorts</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_ether_hub_8h_source.html#l00030">30</a> of file <a class="el" href="_ether_hub_8h_source.html">EtherHub.h</a>.</p>
+<p>Referenced by <a class="el" href="class_ether_hub.html#a69ea97b99f8bc353de4d7ad579af4111">checkConnections()</a>, <a class="el" href="class_ether_hub.html#a26601599c19223d8f7d68f2444defa7c">handleMessage()</a>, and <a class="el" href="class_ether_hub.html#aaedd6382be2f1814b173decb274e2fc1">initialize()</a>.</p>
 
-<p>Referenced by <a class="el" href="_ether_hub_8cc_source.html#l00048">handleMessage()</a>, and <a class="el" href="_ether_hub_8cc_source.html#l00031">initialize()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a57afe9edcbd1a6c5a0b328ccce15ed6d"></a><!-- doxytag: member="EtherHub::outputGateBaseId" ref="a57afe9edcbd1a6c5a0b328ccce15ed6d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="class_ether_hub.html#a57afe9edcbd1a6c5a0b328ccce15ed6d">EtherHub::outputGateBaseId</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_ether_hub.html#a69ea97b99f8bc353de4d7ad579af4111">checkConnections()</a>, <a class="el" href="class_ether_hub.html#a26601599c19223d8f7d68f2444defa7c">handleMessage()</a>, and <a class="el" href="class_ether_hub.html#aaedd6382be2f1814b173decb274e2fc1">initialize()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aed28b383565ec396419fb2c6395fa87f"></a><!-- doxytag: member="EtherHub::pkSignal" ref="aed28b383565ec396419fb2c6395fa87f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_ether_hub.html#aed28b383565ec396419fb2c6395fa87f">EtherHub::pkSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_ether_hub.html#a26601599c19223d8f7d68f2444defa7c">handleMessage()</a>, and <a class="el" href="class_ether_hub.html#aaedd6382be2f1814b173decb274e2fc1">initialize()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_ether_hub_8h_source.html">EtherHub.h</a></li>
-<li><a class="el" href="_ether_hub_8cc_source.html">EtherHub.cc</a></li>
+<li><a class="el" href="_ether_hub_8h.html">EtherHub.h</a></li>
+<li><a class="el" href="_ether_hub_8cc.html">EtherHub.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -245,7 +475,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_ether_hub.html">EtherHub</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:47 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:23 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

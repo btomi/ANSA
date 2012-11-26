@@ -7,7 +7,23 @@
 <h2 class="comptitle">Simple Module <i>UDPEchoApp</i></h2>
 <b>Package:</b> inet.applications.udpapp<br/><b>File: <a href="src-applications-udpapp-UDPEchoApp.ned.html">src/applications/udpapp/UDPEchoApp.ned</a></b><br/><p><a href="../doxy/class_u_d_p_echo_app.html" target="mainframe"><b>C++ definition</b></a></p>
 
-<p>Similar to <a href="inet.applications.udpapp.UDPBasicApp.html">UDPBasicApp</a>, but it sends back the packet after reception.</p>
+<p>Listens on an UDP port, and sends back each received packet to its sender.
+Note: when used together with <a href="inet.applications.udpapp.UDPBasicApp.html">UDPBasicApp</a>, <a href="inet.applications.udpapp.UDPBasicApp.html">UDPBasicApp</a>'s "received packet
+lifetime" statistic will record round-trip times.</p>
+<img src="inet.applications.udpapp.UDPEchoApp-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.applications.udpapp.UDPEchoApp.html" title="UDPEchoApp" alt="UDPEchoApp" coords="0,30,117,70">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.applications.udpapp.UDPEchoApp-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.applications.udpapp.UDPEchoApp.html" title="Simple Module UDPEchoApp" alt="" coords="5,6,109,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.applications.udpapp.UDPEchoApp-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.applications.udpapp.UDPEchoApp.html" title="Simple Module UDPEchoApp" alt="" coords="5,83,109,111">
+<area shape="rect" id="node2" href="inet.applications.IUDPApp.html" title="Module Interface IUDPApp" alt="" coords="19,6,96,34">
+</map>
 <h3 class="subtitle">Parameters:</h3>
 <table class="paramstable">
    <tr>
@@ -22,44 +38,8 @@
       <i>int</i>
    </td>
    <td></td>
-   <td>   </td>
-</tr>
-<tr class="local">
-   <td>destPort</td>
    <td>
-      <i>int</i>
-   </td>
-   <td></td>
-   <td>   </td>
-</tr>
-<tr class="local">
-   <td>messageLength</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td></td>
-   <td>
-<p>length of messages to generate, int bytes</p>
-   </td>
-</tr>
-<tr class="local">
-   <td>messageFreq</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td></td>
-   <td>
-<p>should usually be a random value, e.g. exponential(1)</p>
-   </td>
-</tr>
-<tr class="local">
-   <td>destAddresses</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>list of IP addresses, separated by spaces</p>
+<p>local port to listen on</p>
    </td>
 </tr>
 </table>
@@ -95,27 +75,56 @@
    <td></td>   <td></td>
 </tr>
 </table>
+<h3 class="subtitle">Signals:</h3>
+<table class="signalstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="unit">Unit</th>
+   </tr>
+<tr class="local">
+   <td>pk</td>
+   <td><i>
+cPacket   </i></td>
+   <td></td>
+</tr>
+</table>
+<h3 class="subtitle">Statistics:</h3>
+<table class="statisticstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="title">Title</th>
+      <th class="source">Source</th>
+      <th class="record">Record</th>
+      <th class="unit">Unit</th>
+      <th class="interpolationmode">Interpolation Mode</th>
+   </tr>
+<tr class="local">
+   <td>echoedPk</td>
+   <td>packets echoed</td>
+   <td>pk</td>
+   <td>count, sum(packetBytes), vector(packetBytes)</td>
+   <td></td>
+   <td>none</td>
+</tr>
+</table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
-// Similar to UDPBasicApp, but it sends back the packet after reception.
+// Listens on an UDP port, and sends back each received packet to its sender.
+// Note: when used together with ~UDPBasicApp, ~UDPBasicApp's &quot;received packet
+// lifetime&quot; statistic will record round-trip times.
 //
-</span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPEchoApp</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPApp</span><span style="color: #000000; ">
+</span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPEchoApp</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #000000; "> </span><span style="color: #000000; ">IUDPApp</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">localPort</span><span style="color: #000000; ">;
-        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">destPort</span><span style="color: #000000; ">;
-        </span><span style="color: #000080; font-weight: bold; ">volatile</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">messageLength</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;B&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// length of messages to generate, int bytes
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">volatile</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">messageFreq</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;s&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// should usually be a random value, e.g. exponential(1)
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">destAddresses</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// list of \IP addresses, separated by spaces
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">localPort</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// local port to listen on
 </span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/app&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">pk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">cPacket</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">echoedPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;packets echoed&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">source</span><span style="color: #000000; ">=</span><span style="color: #000000; ">pk</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;sum(packetBytes)&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;vector(packetBytes)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
     </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">udpIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">UDPControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">);
         </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">udpOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">UDPControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);
 }
-
-
-
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

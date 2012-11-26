@@ -82,7 +82,7 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="OSPF::IMessageHandler" -->
-<p><code>#include &lt;<a class="el" href="_i_message_handler_8h_source.html">IMessageHandler.h</a>&gt;</code></p>
+<p><code>#include &lt;IMessageHandler.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for OSPF::IMessageHandler:</div>
 <div class="dyncontent">
@@ -104,15 +104,12 @@ Inheritance diagram for OSPF::IMessageHandler:</div>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_1_1_i_message_handler.html#afa003e6c747b4a1961dede68915231ee">IMessageHandler</a> (<a class="el" href="class_o_s_p_f_1_1_router.html">Router</a> *containingRouter)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_1_1_i_message_handler.html#ae472fec3c06bd036b8adc2c5ac774248">~IMessageHandler</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_1_1_i_message_handler.html#a43972c1d4506fbc22085c992e70fdd5c">ProcessPacket</a> (<a class="el" href="class_o_s_p_f_packet.html">OSPFPacket</a> *, <a class="el" href="class_o_s_p_f_1_1_interface.html">Interface</a> *intf, <a class="el" href="class_o_s_p_f_1_1_neighbor.html">Neighbor</a> *neighbor)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_1_1_i_message_handler.html#a12324915dcb49ccc22e87a3e489d869c">processPacket</a> (<a class="el" href="class_o_s_p_f_packet.html">OSPFPacket</a> *, <a class="el" href="class_o_s_p_f_1_1_interface.html">Interface</a> *intf, <a class="el" href="class_o_s_p_f_1_1_neighbor.html">Neighbor</a> *<a class="el" href="structneighbor.html">neighbor</a>)=0</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_p_f_1_1_router.html">Router</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_1_1_i_message_handler.html#a24cb6c6f9b62a4e403d5171a0d36f22a">router</a></td></tr>
 </table>
-<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_i_message_handler_8h_source.html#l00029">29</a> of file <a class="el" href="_i_message_handler_8h_source.html">IMessageHandler.h</a>.</p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="afa003e6c747b4a1961dede68915231ee"></a><!-- doxytag: member="OSPF::IMessageHandler::IMessageHandler" ref="afa003e6c747b4a1961dede68915231ee" args="(Router *containingRouter)" -->
 <div class="memitem">
 <div class="memproto">
@@ -127,8 +124,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_message_handler_8h_source.html#l00035">35</a> of file <a class="el" href="_i_message_handler_8h_source.html">IMessageHandler.h</a>.</p>
 <div class="fragment"><pre class="fragment">{ <a class="code" href="class_o_s_p_f_1_1_i_message_handler.html#a24cb6c6f9b62a4e403d5171a0d36f22a">router</a> = containingRouter; }
 </pre></div>
 </div>
@@ -146,19 +141,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_message_handler_8h_source.html#l00036">36</a> of file <a class="el" href="_i_message_handler_8h_source.html">IMessageHandler.h</a>.</p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a43972c1d4506fbc22085c992e70fdd5c"></a><!-- doxytag: member="OSPF::IMessageHandler::ProcessPacket" ref="a43972c1d4506fbc22085c992e70fdd5c" args="(OSPFPacket *, Interface *intf, Neighbor *neighbor)=0" -->
+<a class="anchor" id="a12324915dcb49ccc22e87a3e489d869c"></a><!-- doxytag: member="OSPF::IMessageHandler::processPacket" ref="a12324915dcb49ccc22e87a3e489d869c" args="(OSPFPacket *, Interface *intf, Neighbor *neighbor)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_o_s_p_f_1_1_i_message_handler.html#a43972c1d4506fbc22085c992e70fdd5c">OSPF::IMessageHandler::ProcessPacket</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_o_s_p_f_1_1_i_message_handler.html#a12324915dcb49ccc22e87a3e489d869c">OSPF::IMessageHandler::processPacket</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_o_s_p_f_packet.html">OSPFPacket</a> *&#160;</td>
           <td class="paramname">, </td>
@@ -184,7 +177,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_o_s_p_f_1_1_message_handler.html#a529456d5970cfc56830f577f69d9ae65">OSPF::MessageHandler</a>, <a class="el" href="class_o_s_p_f_1_1_link_state_update_handler.html#ab02516786a23f1e61f1e8365da975acd">OSPF::LinkStateUpdateHandler</a>, <a class="el" href="class_o_s_p_f_1_1_database_description_handler.html#a16c34f7cbe35797f0cd9c45b35e62137">OSPF::DatabaseDescriptionHandler</a>, <a class="el" href="class_o_s_p_f_1_1_hello_handler.html#a61a40e4c5d465a0119db5f51e1929475">OSPF::HelloHandler</a>, <a class="el" href="class_o_s_p_f_1_1_link_state_acknowledgement_handler.html#a28a3d383f22f078cb0244eb1ee135576">OSPF::LinkStateAcknowledgementHandler</a>, and <a class="el" href="class_o_s_p_f_1_1_link_state_request_handler.html#ae830cfcbc5a9a0800795bcbffe86c5d2">OSPF::LinkStateRequestHandler</a>.</p>
+<p>Implemented in <a class="el" href="class_o_s_p_f_1_1_message_handler.html#a18139060a66a41d33378d1e15f02cc73">OSPF::MessageHandler</a>, <a class="el" href="class_o_s_p_f_1_1_link_state_update_handler.html#a6f286c4986b918d12fd620a422e471aa">OSPF::LinkStateUpdateHandler</a>, <a class="el" href="class_o_s_p_f_1_1_database_description_handler.html#a49c518937a7b86e40fc4ce913021496e">OSPF::DatabaseDescriptionHandler</a>, <a class="el" href="class_o_s_p_f_1_1_hello_handler.html#a71a21d430a2cc591824255b394675b1f">OSPF::HelloHandler</a>, <a class="el" href="class_o_s_p_f_1_1_link_state_acknowledgement_handler.html#ae20b3c96ccfc2816c04a64433f22927d">OSPF::LinkStateAcknowledgementHandler</a>, and <a class="el" href="class_o_s_p_f_1_1_link_state_request_handler.html#a523ca80639d942223ed598df83dd98cc">OSPF::LinkStateRequestHandler</a>.</p>
 
 </div>
 </div>
@@ -200,14 +193,12 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_message_handler_8h_source.html#l00032">32</a> of file <a class="el" href="_i_message_handler_8h_source.html">IMessageHandler.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_message_handler_8h_source.html#l00035">IMessageHandler()</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_1_1_i_message_handler.html#afa003e6c747b4a1961dede68915231ee">IMessageHandler()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="_i_message_handler_8h_source.html">IMessageHandler.h</a></li>
+<li><a class="el" href="_i_message_handler_8h.html">IMessageHandler.h</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -216,7 +207,7 @@ Protected Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_o_s_p_f.html">OSPF</a>      </li>
       <li class="navelem"><a class="el" href="class_o_s_p_f_1_1_i_message_handler.html">IMessageHandler</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:56 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:33 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

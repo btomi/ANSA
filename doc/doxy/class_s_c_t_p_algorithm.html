@@ -82,7 +82,10 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="SCTPAlgorithm" -->
-<p><code>#include &lt;<a class="el" href="_s_c_t_p_algorithm_8h_source.html">SCTPAlgorithm.h</a>&gt;</code></p>
+<p>Abstract base class for <a class="el" href="class_s_c_t_p.html" title="Implements the SCTP protocol.">SCTP</a> algorithms which encapsulate all behaviour during data transfer state: flavour of congestion control, fast retransmit/recovery, selective acknowledgement etc.  
+ <a href="class_s_c_t_p_algorithm.html#details">More...</a></p>
+
+<p><code>#include &lt;SCTPAlgorithm.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for SCTPAlgorithm:</div>
 <div class="dyncontent">
@@ -98,19 +101,21 @@ Inheritance diagram for SCTPAlgorithm:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#a9c35bbb05fa1fbb2ac127da51e30be4d">SCTPAlgorithm</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ctor.  <a href="#a9c35bbb05fa1fbb2ac127da51e30be4d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#aeb753bac6e648a1e3772709538844e18">~SCTPAlgorithm</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#aaef644b59f18aa40cea754616c8f9f61">setAssociation</a> (<a class="el" href="class_s_c_t_p_association.html">SCTPAssociation</a> *_assoc)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#a2061a42140d0acd50454a93799f58974">initialize</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual dtor.  <a href="#aeb753bac6e648a1e3772709538844e18"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#aaef644b59f18aa40cea754616c8f9f61">setAssociation</a> (<a class="el" href="class_s_c_t_p_association.html">SCTPAssociation</a> *_assoc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#a2061a42140d0acd50454a93799f58974">initialize</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_s_c_t_p_state_variables.html">SCTPStateVariables</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#aaca16656400d64a60d3f29e838c08ca1">createStateVariables</a> ()=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#a7a065477d0c95dad6383167b0f4fd1af">established</a> (bool active)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#adfd8803495bf69e8646abaef9086e550">connectionClosed</a> ()=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#a1829a98985752d015733b71fd058c10d">processTimer</a> (cMessage *timer, <a class="el" href="_s_c_t_p_association_8h.html#a78805c92dea64dcc0102898a18b6a7dd">SCTPEventCode</a> &amp;event)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#a533d56c5b058b605c61d813339987e39">sendCommandInvoked</a> (<a class="el" href="class_s_c_t_p_path_variables.html">SCTPPathVariables</a> *path)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#ac5723493a9780acde5aeb0b8ab260edc">receivedDataAck</a> (uint32 firstSeqAcked)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#a239f0b25ebefdb7190eebfdf1880727b">receivedDuplicateAck</a> ()=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#ae1d2fe1f4155ae8a2c0eda36712ab680">receivedAckForDataNotYetSent</a> (uint32 seq)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#a169f6485c0edf63e8b77f9feef157867">sackSent</a> ()=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#a66993fbd98807c11ad3637544e5856f1">dataSent</a> (uint32 fromseq)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#a7a065477d0c95dad6383167b0f4fd1af">established</a> (bool active)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#adfd8803495bf69e8646abaef9086e550">connectionClosed</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#a1829a98985752d015733b71fd058c10d">processTimer</a> (cMessage *<a class="el" href="structtimer.html">timer</a>, <a class="el" href="_s_c_t_p_association_8h.html#a78805c92dea64dcc0102898a18b6a7dd">SCTPEventCode</a> &amp;event)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#a533d56c5b058b605c61d813339987e39">sendCommandInvoked</a> (<a class="el" href="class_s_c_t_p_path_variables.html">SCTPPathVariables</a> *<a class="el" href="structpath.html">path</a>)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#ac5723493a9780acde5aeb0b8ab260edc">receivedDataAck</a> (uint32 firstSeqAcked)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#a239f0b25ebefdb7190eebfdf1880727b">receivedDuplicateAck</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#ae1d2fe1f4155ae8a2c0eda36712ab680">receivedAckForDataNotYetSent</a> (uint32 seq)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#a169f6485c0edf63e8b77f9feef157867">sackSent</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#a66993fbd98807c11ad3637544e5856f1">dataSent</a> (uint32 fromseq)=0</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_s_c_t_p_association.html">SCTPAssociation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#af33406a1190ce557ff8218dbc1e7cc5c">assoc</a></td></tr>
@@ -118,9 +123,8 @@ Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_s_c_t_p_queue.html">SCTPQueue</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_algorithm.html#a022498a8f75b32f2ff7a7ba6eb8d0f84">retransmissionQ</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Abstract base class for <a class="el" href="class_s_c_t_p.html">SCTP</a> algorithms which encapsulate all behaviour during data transfer state: flavour of congestion control, fast retransmit/recovery, selective acknowledgement etc. Subclasses may implement various sets and flavours of the above algorithms. </p>
-
-<p>Definition at line <a class="el" href="_s_c_t_p_algorithm_8h_source.html#l00033">33</a> of file <a class="el" href="_s_c_t_p_algorithm_8h_source.html">SCTPAlgorithm.h</a>.</p>
+<div class="textblock"><p>Abstract base class for <a class="el" href="class_s_c_t_p.html" title="Implements the SCTP protocol.">SCTP</a> algorithms which encapsulate all behaviour during data transfer state: flavour of congestion control, fast retransmit/recovery, selective acknowledgement etc. </p>
+<p>Subclasses may implement various sets and flavours of the above algorithms. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a9c35bbb05fa1fbb2ac127da51e30be4d"></a><!-- doxytag: member="SCTPAlgorithm::SCTPAlgorithm" ref="a9c35bbb05fa1fbb2ac127da51e30be4d" args="()" -->
 <div class="memitem">
@@ -135,10 +139,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Ctor. </p>
 
-<p>Definition at line <a class="el" href="_s_c_t_p_algorithm_8h_source.html#l00044">44</a> of file <a class="el" href="_s_c_t_p_algorithm_8h_source.html">SCTPAlgorithm.h</a>.</p>
-<div class="fragment"><pre class="fragment">{ <a class="code" href="class_s_c_t_p_algorithm.html#af33406a1190ce557ff8218dbc1e7cc5c">assoc</a> = NULL; <a class="code" href="class_s_c_t_p_algorithm.html#a693e7572b70bccdac4fa2fdb801fdfa8">transmissionQ</a> = NULL; <a class="code" href="class_s_c_t_p_algorithm.html#a022498a8f75b32f2ff7a7ba6eb8d0f84">retransmissionQ</a> = NULL; }
+<p>Ctor. </p>
+<div class="fragment"><pre class="fragment">{ <a class="code" href="class_s_c_t_p_algorithm.html#af33406a1190ce557ff8218dbc1e7cc5c">assoc</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>; <a class="code" href="class_s_c_t_p_algorithm.html#a693e7572b70bccdac4fa2fdb801fdfa8">transmissionQ</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>; <a class="code" href="class_s_c_t_p_algorithm.html#a022498a8f75b32f2ff7a7ba6eb8d0f84">retransmissionQ</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>; }
 </pre></div>
 </div>
 </div>
@@ -155,9 +158,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Virtual dtor. </p>
 
-<p>Definition at line <a class="el" href="_s_c_t_p_algorithm_8h_source.html#l00049">49</a> of file <a class="el" href="_s_c_t_p_algorithm_8h_source.html">SCTPAlgorithm.h</a>.</p>
+<p>Virtual dtor. </p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
@@ -168,7 +170,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_s_c_t_p_algorithm.html#adfd8803495bf69e8646abaef9086e550">SCTPAlgorithm::connectionClosed</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_s_c_t_p_algorithm.html#adfd8803495bf69e8646abaef9086e550">SCTPAlgorithm::connectionClosed</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [pure virtual]</code></td>
@@ -197,7 +199,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Implemented in <a class="el" href="class_s_c_t_p_alg.html#a3afe50a4865142c67de11231d15df753">SCTPAlg</a>.</p>
 
-<p>Referenced by <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00166">SCTPAssociation::cloneAssociation()</a>, and <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00318">SCTPAssociation::initAssociation()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_association.html#ae6315c7df4b1537e0b8374583492a0be">SCTPAssociation::cloneAssociation()</a>, and <a class="el" href="class_s_c_t_p_association.html#a460894500fa0ffbff9cd62ef59db7475">SCTPAssociation::initAssociation()</a>.</p>
 
 </div>
 </div>
@@ -206,7 +208,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_s_c_t_p_algorithm.html#a66993fbd98807c11ad3637544e5856f1">SCTPAlgorithm::dataSent</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_s_c_t_p_algorithm.html#a66993fbd98807c11ad3637544e5856f1">SCTPAlgorithm::dataSent</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>fromseq</em></td><td>)</td>
@@ -225,7 +227,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_s_c_t_p_algorithm.html#a7a065477d0c95dad6383167b0f4fd1af">SCTPAlgorithm::established</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_s_c_t_p_algorithm.html#a7a065477d0c95dad6383167b0f4fd1af">SCTPAlgorithm::established</a> </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>active</em></td><td>)</td>
@@ -244,7 +246,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_s_c_t_p_algorithm.html#a2061a42140d0acd50454a93799f58974">SCTPAlgorithm::initialize</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_s_c_t_p_algorithm.html#a2061a42140d0acd50454a93799f58974">SCTPAlgorithm::initialize</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [inline, virtual]</code></td>
@@ -253,9 +255,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_algorithm_8h_source.html#l00057">57</a> of file <a class="el" href="_s_c_t_p_algorithm_8h_source.html">SCTPAlgorithm.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00166">SCTPAssociation::cloneAssociation()</a>, and <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00318">SCTPAssociation::initAssociation()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_association.html#ae6315c7df4b1537e0b8374583492a0be">SCTPAssociation::cloneAssociation()</a>, and <a class="el" href="class_s_c_t_p_association.html#a460894500fa0ffbff9cd62ef59db7475">SCTPAssociation::initAssociation()</a>.</p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
@@ -265,7 +265,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_s_c_t_p_algorithm.html#a1829a98985752d015733b71fd058c10d">SCTPAlgorithm::processTimer</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_s_c_t_p_algorithm.html#a1829a98985752d015733b71fd058c10d">SCTPAlgorithm::processTimer</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>timer</em>, </td>
@@ -287,7 +287,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Implemented in <a class="el" href="class_s_c_t_p_alg.html#aa5898ca2f945854098ee3fc1dec6b67f">SCTPAlg</a>.</p>
 
-<p>Referenced by <a class="el" href="_s_c_t_p_association_base_8cc_source.html#l00390">SCTPAssociation::processTimer()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_association.html#a001fa353226a6d713050940b2aa8587d">SCTPAssociation::processTimer()</a>.</p>
 
 </div>
 </div>
@@ -296,7 +296,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_s_c_t_p_algorithm.html#ae1d2fe1f4155ae8a2c0eda36712ab680">SCTPAlgorithm::receivedAckForDataNotYetSent</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_s_c_t_p_algorithm.html#ae1d2fe1f4155ae8a2c0eda36712ab680">SCTPAlgorithm::receivedAckForDataNotYetSent</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>seq</em></td><td>)</td>
@@ -315,7 +315,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_s_c_t_p_algorithm.html#ac5723493a9780acde5aeb0b8ab260edc">SCTPAlgorithm::receivedDataAck</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_s_c_t_p_algorithm.html#ac5723493a9780acde5aeb0b8ab260edc">SCTPAlgorithm::receivedDataAck</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>firstSeqAcked</em></td><td>)</td>
@@ -334,7 +334,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_s_c_t_p_algorithm.html#a239f0b25ebefdb7190eebfdf1880727b">SCTPAlgorithm::receivedDuplicateAck</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_s_c_t_p_algorithm.html#a239f0b25ebefdb7190eebfdf1880727b">SCTPAlgorithm::receivedDuplicateAck</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [pure virtual]</code></td>
@@ -352,7 +352,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_s_c_t_p_algorithm.html#a169f6485c0edf63e8b77f9feef157867">SCTPAlgorithm::sackSent</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_s_c_t_p_algorithm.html#a169f6485c0edf63e8b77f9feef157867">SCTPAlgorithm::sackSent</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [pure virtual]</code></td>
@@ -363,7 +363,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Implemented in <a class="el" href="class_s_c_t_p_alg.html#a9c72d7887eb8f5efae0c2d47692f395b">SCTPAlg</a>.</p>
 
-<p>Referenced by <a class="el" href="_s_c_t_p_association_send_all_8cc_source.html#l00305">SCTPAssociation::sendOnPath()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_association.html#aa7cf5e2c2c169ce78e856025bb181116">SCTPAssociation::sendOnPath()</a>.</p>
 
 </div>
 </div>
@@ -372,7 +372,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_s_c_t_p_algorithm.html#a533d56c5b058b605c61d813339987e39">SCTPAlgorithm::sendCommandInvoked</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_s_c_t_p_algorithm.html#a533d56c5b058b605c61d813339987e39">SCTPAlgorithm::sendCommandInvoked</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_s_c_t_p_path_variables.html">SCTPPathVariables</a> *&#160;</td>
           <td class="paramname"><em>path</em></td><td>)</td>
@@ -384,7 +384,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Implemented in <a class="el" href="class_s_c_t_p_alg.html#a2d0ef0333dbadbb9ecd92f90aa204f29">SCTPAlg</a>.</p>
 
-<p>Referenced by <a class="el" href="_s_c_t_p_association_event_proc_8cc_source.html#l00112">SCTPAssociation::process_SEND()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_association.html#a7eb1c9af2610929a04cb744b97af93c8">SCTPAssociation::process_SEND()</a>.</p>
 
 </div>
 </div>
@@ -393,7 +393,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_s_c_t_p_algorithm.html#aaef644b59f18aa40cea754616c8f9f61">SCTPAlgorithm::setAssociation</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_s_c_t_p_algorithm.html#aaef644b59f18aa40cea754616c8f9f61">SCTPAlgorithm::setAssociation</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_s_c_t_p_association.html">SCTPAssociation</a> *&#160;</td>
           <td class="paramname"><em>_assoc</em></td><td>)</td>
@@ -403,12 +403,10 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_algorithm_8h_source.html#l00051">51</a> of file <a class="el" href="_s_c_t_p_algorithm_8h_source.html">SCTPAlgorithm.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00166">SCTPAssociation::cloneAssociation()</a>, and <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00318">SCTPAssociation::initAssociation()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_association.html#ae6315c7df4b1537e0b8374583492a0be">SCTPAssociation::cloneAssociation()</a>, and <a class="el" href="class_s_c_t_p_association.html#a460894500fa0ffbff9cd62ef59db7475">SCTPAssociation::initAssociation()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                         {
-        <a class="code" href="class_s_c_t_p_algorithm.html#af33406a1190ce557ff8218dbc1e7cc5c">assoc</a>           = _assoc;
-        <a class="code" href="class_s_c_t_p_algorithm.html#a693e7572b70bccdac4fa2fdb801fdfa8">transmissionQ</a>   = <a class="code" href="class_s_c_t_p_algorithm.html#af33406a1190ce557ff8218dbc1e7cc5c">assoc</a>-&gt;<a class="code" href="class_s_c_t_p_association.html#a12c000086b06013248658c78a502d90a">getTransmissionQueue</a>();
+        <a class="code" href="class_s_c_t_p_algorithm.html#af33406a1190ce557ff8218dbc1e7cc5c">assoc</a> = _assoc;
+        <a class="code" href="class_s_c_t_p_algorithm.html#a693e7572b70bccdac4fa2fdb801fdfa8">transmissionQ</a> = <a class="code" href="class_s_c_t_p_algorithm.html#af33406a1190ce557ff8218dbc1e7cc5c">assoc</a>-&gt;<a class="code" href="class_s_c_t_p_association.html#a12c000086b06013248658c78a502d90a">getTransmissionQueue</a>();
         <a class="code" href="class_s_c_t_p_algorithm.html#a022498a8f75b32f2ff7a7ba6eb8d0f84">retransmissionQ</a> = <a class="code" href="class_s_c_t_p_algorithm.html#af33406a1190ce557ff8218dbc1e7cc5c">assoc</a>-&gt;<a class="code" href="class_s_c_t_p_association.html#a381530dc6d6a89ddc864791026b1af59">getRetransmissionQueue</a>();
     }
 </pre></div>
@@ -426,9 +424,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_algorithm_8h_source.html#l00036">36</a> of file <a class="el" href="_s_c_t_p_algorithm_8h_source.html">SCTPAlgorithm.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_alg_8cc_source.html#l00059">SCTPAlg::sendCommandInvoked()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_alg.html#a2d0ef0333dbadbb9ecd92f90aa204f29">SCTPAlg::sendCommandInvoked()</a>.</p>
 
 </div>
 </div>
@@ -443,8 +439,6 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_algorithm_8h_source.html#l00038">38</a> of file <a class="el" href="_s_c_t_p_algorithm_8h_source.html">SCTPAlgorithm.h</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a693e7572b70bccdac4fa2fdb801fdfa8"></a><!-- doxytag: member="SCTPAlgorithm::transmissionQ" ref="a693e7572b70bccdac4fa2fdb801fdfa8" args="" -->
@@ -458,12 +452,10 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_algorithm_8h_source.html#l00037">37</a> of file <a class="el" href="_s_c_t_p_algorithm_8h_source.html">SCTPAlgorithm.h</a>.</p>
-
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="_s_c_t_p_algorithm_8h_source.html">SCTPAlgorithm.h</a></li>
+<li><a class="el" href="_s_c_t_p_algorithm_8h.html">SCTPAlgorithm.h</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -471,7 +463,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_s_c_t_p_algorithm.html">SCTPAlgorithm</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:52 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:30 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

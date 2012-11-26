@@ -82,29 +82,32 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="ErrorHandling" -->
-<p><code>#include &lt;<a class="el" href="_error_handling_8h_source.html">ErrorHandling.h</a>&gt;</code></p>
+<p>Error Handling: print out received error.  
+ <a href="class_error_handling.html#details">More...</a></p>
+
+<p><code>#include &lt;ErrorHandling.h&gt;</code></p>
 
 <p><a href="class_error_handling-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_handling.html#a65fc857fecd19c98be330886c8000cf3">initialize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_handling.html#a034cd1b8f016398d1ac730d2e1546433">handleMessage</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_handling.html#a65fc857fecd19c98be330886c8000cf3">initialize</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_handling.html#a034cd1b8f016398d1ac730d2e1546433">handleMessage</a> (cMessage *msg)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_handling.html#ada0e230dc74e0468795eb23ba03a6f8a">numReceived</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_handling.html#a233afa07a97ef478b4ebce50f2e2d089">numHostUnreachable</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_error_handling.html#aabe9371af2f4545ec16a2e90dc69c2e8">numTimeExceeded</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Error Handling: print out received error </p>
-
-<p>Definition at line <a class="el" href="_error_handling_8h_source.html#l00034">34</a> of file <a class="el" href="_error_handling_8h_source.html">ErrorHandling.h</a>.</p>
+<div class="textblock"><p>Error Handling: print out received error. </p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a034cd1b8f016398d1ac730d2e1546433"></a><!-- doxytag: member="ErrorHandling::handleMessage" ref="a034cd1b8f016398d1ac730d2e1546433" args="(cMessage *msg)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_error_handling.html#a034cd1b8f016398d1ac730d2e1546433">ErrorHandling::handleMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_error_handling.html#a034cd1b8f016398d1ac730d2e1546433">ErrorHandling::handleMessage</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -113,14 +116,12 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_error_handling_8cc_source.html#l00037">37</a> of file <a class="el" href="_error_handling_8cc_source.html">ErrorHandling.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="class_error_handling.html#ada0e230dc74e0468795eb23ba03a6f8a">numReceived</a>++;
 
-    <a class="code" href="class_i_c_m_p_message.html">ICMPMessage</a> *icmpMsg = check_and_cast&lt;<a class="code" href="class_i_c_m_p_message.html">ICMPMessage</a> *&gt;(msg);
+    <a class="code" href="class_i_c_m_p_message.html" title="Class generated from networklayer/ipv4/ICMPMessage.msg by opp_msgc.">ICMPMessage</a> *icmpMsg = check_and_cast&lt;<a class="code" href="class_i_c_m_p_message.html" title="Class generated from networklayer/ipv4/ICMPMessage.msg by opp_msgc.">ICMPMessage</a> *&gt;(msg);
     <span class="comment">// Note: we must NOT use decapsulate() because payload in ICMP is conceptually truncated</span>
-    <a class="code" href="class_i_p_datagram.html">IPDatagram</a> *d = check_and_cast&lt;<a class="code" href="class_i_p_datagram.html">IPDatagram</a> *&gt;(icmpMsg-&gt;getEncapsulatedPacket());
+    <a class="code" href="class_i_pv4_datagram.html" title="Represents an IPv4 datagram.">IPv4Datagram</a> *d = check_and_cast&lt;<a class="code" href="class_i_pv4_datagram.html" title="Represents an IPv4 datagram.">IPv4Datagram</a> *&gt;(icmpMsg-&gt;getEncapsulatedPacket());
 
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Error Handler: ICMP message received:\n&quot;</span>;
     EV &lt;&lt; <span class="stringliteral">&quot; Type: &quot;</span> &lt;&lt; (int)icmpMsg-&gt;<a class="code" href="class_i_c_m_p_message.html#a93a1643bfbdfe838cb8b26207b5d7673">getType</a>()
@@ -131,13 +132,24 @@ Protected Attributes</h2></td></tr>
        &lt;&lt; <span class="stringliteral">&quot; Time: &quot;</span> &lt;&lt; simTime()
        &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
 
+    <span class="keywordflow">switch</span> (icmpMsg-&gt;<a class="code" href="class_i_c_m_p_message.html#a93a1643bfbdfe838cb8b26207b5d7673">getType</a>())
+    {
+        <span class="keywordflow">case</span> <a class="code" href="_i_c_m_p_message__m_8h.html#a58484b3a48e17f8f130c3c0f890d21b6a3fdf41118f21173da27f0001f4c37535">ICMP_DESTINATION_UNREACHABLE</a>:
+            <a class="code" href="class_error_handling.html#a233afa07a97ef478b4ebce50f2e2d089">numHostUnreachable</a>++;
+            <span class="keywordflow">break</span>;
+
+        <span class="keywordflow">case</span> <a class="code" href="_i_c_m_p_message__m_8h.html#a58484b3a48e17f8f130c3c0f890d21b6a828813505e7f882556a4400c9edae078">ICMP_TIME_EXCEEDED</a>:
+            <a class="code" href="class_error_handling.html#aabe9371af2f4545ec16a2e90dc69c2e8">numTimeExceeded</a>++;
+            <span class="keywordflow">break</span>;
+    }
+
     <span class="keyword">delete</span> icmpMsg;
 
     <span class="keywordflow">if</span> (ev.isGUI())
     {
         <span class="keywordtype">char</span> buf[80];
         sprintf(buf, <span class="stringliteral">&quot;errors: %ld&quot;</span>, <a class="code" href="class_error_handling.html#ada0e230dc74e0468795eb23ba03a6f8a">numReceived</a>);
-        getDisplayString().setTagArg(<span class="stringliteral">&quot;t&quot;</span>,0,buf);
+        getDisplayString().setTagArg(<span class="stringliteral">&quot;t&quot;</span>, 0, buf);
     }
 }
 </pre></div>
@@ -148,7 +160,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_error_handling.html#a65fc857fecd19c98be330886c8000cf3">ErrorHandling::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_error_handling.html#a65fc857fecd19c98be330886c8000cf3">ErrorHandling::initialize</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -156,16 +168,34 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_error_handling_8cc_source.html#l00031">31</a> of file <a class="el" href="_error_handling_8cc_source.html">ErrorHandling.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="class_error_handling.html#ada0e230dc74e0468795eb23ba03a6f8a">numReceived</a> = 0;
+    <a class="code" href="class_error_handling.html#a233afa07a97ef478b4ebce50f2e2d089">numHostUnreachable</a> = 0;
+    <a class="code" href="class_error_handling.html#aabe9371af2f4545ec16a2e90dc69c2e8">numTimeExceeded</a> = 0;
+
     WATCH(<a class="code" href="class_error_handling.html#ada0e230dc74e0468795eb23ba03a6f8a">numReceived</a>);
+    WATCH(<a class="code" href="class_error_handling.html#a233afa07a97ef478b4ebce50f2e2d089">numHostUnreachable</a>);
+    WATCH(<a class="code" href="class_error_handling.html#aabe9371af2f4545ec16a2e90dc69c2e8">numTimeExceeded</a>);
 }
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a233afa07a97ef478b4ebce50f2e2d089"></a><!-- doxytag: member="ErrorHandling::numHostUnreachable" ref="a233afa07a97ef478b4ebce50f2e2d089" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long <a class="el" href="class_error_handling.html#a233afa07a97ef478b4ebce50f2e2d089">ErrorHandling::numHostUnreachable</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_error_handling.html#a034cd1b8f016398d1ac730d2e1546433">handleMessage()</a>, and <a class="el" href="class_error_handling.html#a65fc857fecd19c98be330886c8000cf3">initialize()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ada0e230dc74e0468795eb23ba03a6f8a"></a><!-- doxytag: member="ErrorHandling::numReceived" ref="ada0e230dc74e0468795eb23ba03a6f8a" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -177,15 +207,28 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_error_handling_8h_source.html#l00037">37</a> of file <a class="el" href="_error_handling_8h_source.html">ErrorHandling.h</a>.</p>
+<p>Referenced by <a class="el" href="class_error_handling.html#a034cd1b8f016398d1ac730d2e1546433">handleMessage()</a>, and <a class="el" href="class_error_handling.html#a65fc857fecd19c98be330886c8000cf3">initialize()</a>.</p>
 
-<p>Referenced by <a class="el" href="_error_handling_8cc_source.html#l00037">handleMessage()</a>, and <a class="el" href="_error_handling_8cc_source.html#l00031">initialize()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="aabe9371af2f4545ec16a2e90dc69c2e8"></a><!-- doxytag: member="ErrorHandling::numTimeExceeded" ref="aabe9371af2f4545ec16a2e90dc69c2e8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long <a class="el" href="class_error_handling.html#aabe9371af2f4545ec16a2e90dc69c2e8">ErrorHandling::numTimeExceeded</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_error_handling.html#a034cd1b8f016398d1ac730d2e1546433">handleMessage()</a>, and <a class="el" href="class_error_handling.html#a65fc857fecd19c98be330886c8000cf3">initialize()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_error_handling_8h_source.html">ErrorHandling.h</a></li>
-<li><a class="el" href="_error_handling_8cc_source.html">ErrorHandling.cc</a></li>
+<li><a class="el" href="_error_handling_8h.html">ErrorHandling.h</a></li>
+<li><a class="el" href="_error_handling_8cc.html">ErrorHandling.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -193,7 +236,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_error_handling.html">ErrorHandling</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:47 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:23 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

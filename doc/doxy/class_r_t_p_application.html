@@ -76,40 +76,102 @@
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-types">Protected Types</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">RTPApplication Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="RTPApplication" -->
-<p><code>#include &lt;<a class="el" href="_r_t_p_application_8h_source.html">RTPApplication.h</a>&gt;</code></p>
+<p>The class <a class="el" href="class_r_t_p_application.html" title="The class RTPApplication is just a very simple sample for an application which uses RTP...">RTPApplication</a> is just a very simple sample for an application which uses <a class="el" href="class_r_t_p.html" title="An RTP is the center of the RTP layer of an endsystem.">RTP</a>.  
+ <a href="class_r_t_p_application.html#details">More...</a></p>
+
+<p><code>#include &lt;RTPApplication.h&gt;</code></p>
 
 <p><a href="class_r_t_p_application-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_application.html#a40562627dd62fdefff1f05bf44cba760">RTPApplication</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_application.html#a81f0df86019b7352ad8e161d4797deb0">initialize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_application.html#aaa3235c9e85c266171a399dc8ee27e48">activity</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor, with activity() stack size.  <a href="#a40562627dd62fdefff1f05bf44cba760"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_application.html#aed0101a0fabd845c91e198834ce3de5d">SelfMsgKind</a> { <a class="el" href="class_r_t_p_application.html#aed0101a0fabd845c91e198834ce3de5da4efd7be33c4cc995e76b945cf0a0d587">ENTER_SESSION</a>, 
+<a class="el" href="class_r_t_p_application.html#aed0101a0fabd845c91e198834ce3de5daf5de95be7e480dbcbf6aba7035fb8e37">START_TRANSMISSION</a>, 
+<a class="el" href="class_r_t_p_application.html#aed0101a0fabd845c91e198834ce3de5da862950aeb81a929d22253d237d5e3a9c">STOP_TRANSMISSION</a>, 
+<a class="el" href="class_r_t_p_application.html#aed0101a0fabd845c91e198834ce3de5da8bfd751c16e9ca12a256c2e01395dd4d">LEAVE_SESSION</a>
+ }</td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_application.html#aa93059c02e11640ab2a6e0da67be1270">initialize</a> (int stage)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the OMNeT++ parameters.  <a href="#aa93059c02e11640ab2a6e0da67be1270"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_application.html#ac9dcca05381b9f72a47514c9982e44c6">numInitStages</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_application.html#afc9c7387b3873c221ca954f68af4cb7f">handleMessage</a> (cMessage *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_r_t_p_application.html" title="The class RTPApplication is just a very simple sample for an application which uses RTP...">RTPApplication</a> uses activity for message handling.  <a href="#afc9c7387b3873c221ca954f68af4cb7f"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_application.html#af97467f0380d8123891f744f6ecd4997">_commonName</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The CNAME of this participant.  <a href="#af97467f0380d8123891f744f6ecd4997"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_application.html#a733608d4f749a1b3f60b76ce3f60d707">_profileName</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the used profile.  <a href="#a733608d4f749a1b3f60b76ce3f60d707"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_application.html#a356f3a4db5301bbdf88c4ffddf5f8cd2">_bandwidth</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_p_address.html">IPAddress</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_application.html#ad488f240e37858e2fc4519fc6a3c4c4e">_destinationAddress</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The reserved bandwidth for rtp/rtcp in bytes/second.  <a href="#a356f3a4db5301bbdf88c4ffddf5f8cd2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_application.html#a2ee7644a5d2e823417b846c4f00618bf">_destinationAddress</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The address of the unicast peer or of the multicast group.  <a href="#a2ee7644a5d2e823417b846c4f00618bf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_application.html#ae035880ebf8b71a1254db9165e5ca053">_port</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">One of the udp port used.  <a href="#ae035880ebf8b71a1254db9165e5ca053"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_application.html#acda837556c82fd4a2e89dabde98f189d">_fileName</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the file to be transmitted.  <a href="#acda837556c82fd4a2e89dabde98f189d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_application.html#ae20b262efd41993eae1cb4b3b814c602">_payloadType</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The payload type of the data in the file.  <a href="#ae20b262efd41993eae1cb4b3b814c602"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">simtime_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_application.html#a81954e2436a1ad1c34854021f651052c">_sessionEnterDelay</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The delay after the application enters the session,.  <a href="#a81954e2436a1ad1c34854021f651052c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">simtime_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_application.html#a1ed3601f333a8ff5fc30bd8390f92da6">_transmissionStartDelay</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The delay after the application starts the transmission.  <a href="#a1ed3601f333a8ff5fc30bd8390f92da6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">simtime_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_application.html#a5b8322b2093257fa73f40d9b9b845d55">_transmissionStopDelay</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The delay after the application stops the transmission.  <a href="#a5b8322b2093257fa73f40d9b9b845d55"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">simtime_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_application.html#ad5d32d4eaf850798318d01ac5c826505">_sessionLeaveDelay</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The delay after the application leaves the session.  <a href="#ad5d32d4eaf850798318d01ac5c826505"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_application.html#ae0ab87e561649342d7d0381bc14d5446">ssrc</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_application.html#a53b9f9d70d7f76639f1da0d41f8a9854">isActiveSession</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>The class <a class="el" href="class_r_t_p_application.html">RTPApplication</a> is just a very simple sample for an application which uses <a class="el" href="class_r_t_p.html">RTP</a>. It acts as a sender if the omnet parameter fileName is set, and as a receiver if the parameter is empty. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_application_8h_source.html#l00027">27</a> of file <a class="el" href="_r_t_p_application_8h_source.html">RTPApplication.h</a>.</p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<div class="textblock"><p>The class <a class="el" href="class_r_t_p_application.html" title="The class RTPApplication is just a very simple sample for an application which uses RTP...">RTPApplication</a> is just a very simple sample for an application which uses <a class="el" href="class_r_t_p.html" title="An RTP is the center of the RTP layer of an endsystem.">RTP</a>. </p>
+<p>It acts as a sender if the omnet parameter fileName is set, and as a receiver if the parameter is empty. </p>
+</div><hr/><h2>Member Enumeration Documentation</h2>
+<a class="anchor" id="aed0101a0fabd845c91e198834ce3de5d"></a><!-- doxytag: member="RTPApplication::SelfMsgKind" ref="aed0101a0fabd845c91e198834ce3de5d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_r_t_p_application.html#aed0101a0fabd845c91e198834ce3de5d">RTPApplication::SelfMsgKind</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="aed0101a0fabd845c91e198834ce3de5da4efd7be33c4cc995e76b945cf0a0d587"></a><!-- doxytag: member="ENTER_SESSION" ref="aed0101a0fabd845c91e198834ce3de5da4efd7be33c4cc995e76b945cf0a0d587" args="" -->ENTER_SESSION</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="aed0101a0fabd845c91e198834ce3de5daf5de95be7e480dbcbf6aba7035fb8e37"></a><!-- doxytag: member="START_TRANSMISSION" ref="aed0101a0fabd845c91e198834ce3de5daf5de95be7e480dbcbf6aba7035fb8e37" args="" -->START_TRANSMISSION</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="aed0101a0fabd845c91e198834ce3de5da862950aeb81a929d22253d237d5e3a9c"></a><!-- doxytag: member="STOP_TRANSMISSION" ref="aed0101a0fabd845c91e198834ce3de5da862950aeb81a929d22253d237d5e3a9c" args="" -->STOP_TRANSMISSION</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="aed0101a0fabd845c91e198834ce3de5da8bfd751c16e9ca12a256c2e01395dd4d"></a><!-- doxytag: member="LEAVE_SESSION" ref="aed0101a0fabd845c91e198834ce3de5da8bfd751c16e9ca12a256c2e01395dd4d" args="" -->LEAVE_SESSION</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+<div class="fragment"><pre class="fragment">        {
+            <a class="code" href="class_r_t_p_application.html#aed0101a0fabd845c91e198834ce3de5da4efd7be33c4cc995e76b945cf0a0d587">ENTER_SESSION</a>,
+            <a class="code" href="class_r_t_p_application.html#aed0101a0fabd845c91e198834ce3de5daf5de95be7e480dbcbf6aba7035fb8e37">START_TRANSMISSION</a>,
+            <a class="code" href="class_r_t_p_application.html#aed0101a0fabd845c91e198834ce3de5da862950aeb81a929d22253d237d5e3a9c">STOP_TRANSMISSION</a>,
+            <a class="code" href="class_r_t_p_application.html#aed0101a0fabd845c91e198834ce3de5da8bfd751c16e9ca12a256c2e01395dd4d">LEAVE_SESSION</a>
+        };
+</pre></div>
+</div>
+</div>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a40562627dd62fdefff1f05bf44cba760"></a><!-- doxytag: member="RTPApplication::RTPApplication" ref="a40562627dd62fdefff1f05bf44cba760" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -123,154 +185,238 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Constructor, with <a class="el" href="class_r_t_p_application.html#aaa3235c9e85c266171a399dc8ee27e48">activity()</a> stack size. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_application_8h_source.html#l00033">33</a> of file <a class="el" href="_r_t_p_application_8h_source.html">RTPApplication.h</a>.</p>
-<div class="fragment"><pre class="fragment">: cSimpleModule(32768) {}
+<p>Constructor, with activity() stack size. </p>
+<div class="fragment"><pre class="fragment">: cSimpleModule() {}
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="aaa3235c9e85c266171a399dc8ee27e48"></a><!-- doxytag: member="RTPApplication::activity" ref="aaa3235c9e85c266171a399dc8ee27e48" args="()" -->
+<a class="anchor" id="afc9c7387b3873c221ca954f68af4cb7f"></a><!-- doxytag: member="RTPApplication::handleMessage" ref="afc9c7387b3873c221ca954f68af4cb7f" args="(cMessage *msg)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_application.html#aaa3235c9e85c266171a399dc8ee27e48">RTPApplication::activity</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_application.html#afc9c7387b3873c221ca954f68af4cb7f">RTPApplication::handleMessage</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td class="paramtype">cMessage *&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td><code> [protected, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p><a class="el" href="class_r_t_p_application.html">RTPApplication</a> uses activity for message handling. The behaviour is controlled by omnet parameters. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_application_8cc_source.html#l00068">68</a> of file <a class="el" href="_r_t_p_application_8cc_source.html">RTPApplication.cc</a>.</p>
+<p><a class="el" href="class_r_t_p_application.html" title="The class RTPApplication is just a very simple sample for an application which uses RTP...">RTPApplication</a> uses activity for message handling. </p>
+<p>The behaviour is controlled by omnet parameters. </p>
 <div class="fragment"><pre class="fragment">{
-
-
-    <span class="keywordtype">bool</span> sessionEntered = <span class="keyword">false</span>;
-    <span class="keywordtype">bool</span> transmissionStarted = <span class="keyword">false</span>;
-    <span class="keywordtype">bool</span> transmissionFinished = <span class="keyword">false</span>;
-    <span class="keywordtype">bool</span> sessionLeft = <span class="keyword">false</span>;
-
-    cMessage *msg1 = <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;enterSession&quot;</span>);
-    scheduleAt(simTime() + <a class="code" href="class_r_t_p_application.html#a81954e2436a1ad1c34854021f651052c">_sessionEnterDelay</a>, msg1);
-
-    uint32 ssrc = 0;
-
-    <span class="keywordflow">while</span> (!sessionLeft) {
-
-        cMessage *msgIn = receive();
-        <span class="keywordflow">if</span> (msgIn-&gt;isSelfMessage()) {
-            <span class="keywordflow">if</span> (!opp_strcmp(msgIn-&gt;getName(), <span class="stringliteral">&quot;enterSession&quot;</span>)) {
-                ev &lt;&lt; <span class="stringliteral">&quot;enterSession&quot;</span>&lt;&lt;endl;
-                <span class="comment">// create an RTPInterfacePacket to enter the session</span>
-                <a class="code" href="class_r_t_p_interface_packet.html">RTPInterfacePacket</a> *rifpOut1 = <span class="keyword">new</span> <a class="code" href="class_r_t_p_interface_packet.html">RTPInterfacePacket</a>(<span class="stringliteral">&quot;enterSession()&quot;</span>);
-                rifpOut1-&gt;<a class="code" href="class_r_t_p_interface_packet.html#a87d54446cac4fcd0fac3d4f4f74eecbf">enterSession</a>(opp_strdup(<a class="code" href="class_r_t_p_application.html#af97467f0380d8123891f744f6ecd4997">_commonName</a>), opp_strdup(<a class="code" href="class_r_t_p_application.html#a733608d4f749a1b3f60b76ce3f60d707">_profileName</a>), <a class="code" href="class_r_t_p_application.html#a356f3a4db5301bbdf88c4ffddf5f8cd2">_bandwidth</a>, <a class="code" href="class_r_t_p_application.html#ad488f240e37858e2fc4519fc6a3c4c4e">_destinationAddress</a>, <a class="code" href="class_r_t_p_application.html#ae035880ebf8b71a1254db9165e5ca053">_port</a>);
-                <span class="comment">// and send it to the rtp layer</span>
-                send(rifpOut1, <span class="stringliteral">&quot;rtpOut&quot;</span>);
+    <span class="keywordflow">if</span> (msgIn-&gt;isSelfMessage())
+    {
+        <span class="keywordflow">switch</span> (msgIn-&gt;getKind())
+        {
+        <span class="keywordflow">case</span> <a class="code" href="class_r_t_p_application.html#aed0101a0fabd845c91e198834ce3de5da4efd7be33c4cc995e76b945cf0a0d587">ENTER_SESSION</a>:
+            ev &lt;&lt; <span class="stringliteral">&quot;enterSession&quot;</span> &lt;&lt; endl;
+            <span class="keywordflow">if</span> (<a class="code" href="class_r_t_p_application.html#a53b9f9d70d7f76639f1da0d41f8a9854">isActiveSession</a>)
+            {
+                ev &lt;&lt; <span class="stringliteral">&quot;Session already entered\n&quot;</span>;
             }
-            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!opp_strcmp(msgIn-&gt;getName(), <span class="stringliteral">&quot;startTransmission&quot;</span>)) {
-                ev &lt;&lt; <span class="stringliteral">&quot;startTransmission&quot;</span>&lt;&lt;endl;
-                <a class="code" href="class_r_t_p_sender_control_message.html">RTPSenderControlMessage</a> *rscm = <span class="keyword">new</span> <a class="code" href="class_r_t_p_sender_control_message.html">RTPSenderControlMessage</a>();
-                rscm-&gt;<a class="code" href="class_r_t_p_sender_control_message.html#a46386b56d0adcf4234ed70c5ffbf8fd7">setCommand</a>(<span class="stringliteral">&quot;PLAY&quot;</span>);
-                <a class="code" href="class_r_t_p_interface_packet.html">RTPInterfacePacket</a> *rifpOut = <span class="keyword">new</span> <a class="code" href="class_r_t_p_interface_packet.html">RTPInterfacePacket</a>(<span class="stringliteral">&quot;senderModuleControl(PLAY)&quot;</span>);
-                rifpOut-&gt;<a class="code" href="class_r_t_p_interface_packet.html#aa2e23347c6ec2e13f48427b22b177605">senderModuleControl</a>(ssrc, rscm);
-                send(rifpOut, <span class="stringliteral">&quot;rtpOut&quot;</span>);
-                transmissionStarted = <span class="keyword">true</span>;
+            <span class="keywordflow">else</span>
+            {
+                <a class="code" href="class_r_t_p_application.html#a53b9f9d70d7f76639f1da0d41f8a9854">isActiveSession</a> = <span class="keyword">true</span>;
+                <a class="code" href="class_r_t_p_c_i_enter_session.html" title="Class generated from transport/rtp/RTPInterfacePacket.msg by opp_msgc.">RTPCIEnterSession</a>* ci = <span class="keyword">new</span> <a class="code" href="class_r_t_p_c_i_enter_session.html" title="Class generated from transport/rtp/RTPInterfacePacket.msg by opp_msgc.">RTPCIEnterSession</a>();
+                ci-&gt;<a class="code" href="class_r_t_p_c_i_enter_session.html#a5d844380e6f5c69e2ca6f4cc9704a7e6">setCommonName</a>(<a class="code" href="class_r_t_p_application.html#af97467f0380d8123891f744f6ecd4997" title="The CNAME of this participant.">_commonName</a>);
+                ci-&gt;<a class="code" href="class_r_t_p_c_i_enter_session.html#a6b71b685787d9eab11e73a7bd7ea3140">setProfileName</a>(<a class="code" href="class_r_t_p_application.html#a733608d4f749a1b3f60b76ce3f60d707" title="The name of the used profile.">_profileName</a>);
+                ci-&gt;<a class="code" href="class_r_t_p_c_i_enter_session.html#ad5d4f6e566f2463aa352d8a32a76c415">setBandwidth</a>(<a class="code" href="class_r_t_p_application.html#a356f3a4db5301bbdf88c4ffddf5f8cd2" title="The reserved bandwidth for rtp/rtcp in bytes/second.">_bandwidth</a>);
+                ci-&gt;<a class="code" href="class_r_t_p_c_i_enter_session.html#a8044e1ed8d0cef454531928ad92ccae6">setDestinationAddress</a>(<a class="code" href="class_r_t_p_application.html#a2ee7644a5d2e823417b846c4f00618bf" title="The address of the unicast peer or of the multicast group.">_destinationAddress</a>);
+                ci-&gt;<a class="code" href="class_r_t_p_c_i_enter_session.html#a3ee459a2e981e2e5f6a2daf213981193">setPort</a>(<a class="code" href="class_r_t_p_application.html#ae035880ebf8b71a1254db9165e5ca053" title="One of the udp port used.">_port</a>);
+                cMessage *msg = <span class="keyword">new</span> <a class="code" href="class_r_t_p_control_msg.html" title="Class generated from transport/rtp/RTPInterfacePacket.msg by opp_msgc.">RTPControlMsg</a>(<span class="stringliteral">&quot;Enter Session&quot;</span>);
+                msg-&gt;setControlInfo(ci);
+                send(msg, <span class="stringliteral">&quot;rtpOut&quot;</span>);
+            }
+            <span class="keywordflow">break</span>;
 
-                cMessage *msg4 = <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;stopTransmission&quot;</span>);
-                scheduleAt(simTime() + <a class="code" href="class_r_t_p_application.html#a5b8322b2093257fa73f40d9b9b845d55">_transmissionStopDelay</a>, msg4);
+        <span class="keywordflow">case</span> <a class="code" href="class_r_t_p_application.html#aed0101a0fabd845c91e198834ce3de5daf5de95be7e480dbcbf6aba7035fb8e37">START_TRANSMISSION</a>:
+            ev &lt;&lt; <span class="stringliteral">&quot;startTransmission&quot;</span> &lt;&lt; endl;
+            <span class="keywordflow">if</span> (!<a class="code" href="class_r_t_p_application.html#a53b9f9d70d7f76639f1da0d41f8a9854">isActiveSession</a>)
+            {
+                ev &lt;&lt; <span class="stringliteral">&quot;Session already left\n&quot;</span>;
             }
-            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!opp_strcmp(msgIn-&gt;getName(), <span class="stringliteral">&quot;stopTransmission&quot;</span>)) {
-                ev &lt;&lt; <span class="stringliteral">&quot;stopTransmission&quot;</span>&lt;&lt;endl;
-                <a class="code" href="class_r_t_p_sender_control_message.html">RTPSenderControlMessage</a> *rscm = <span class="keyword">new</span> <a class="code" href="class_r_t_p_sender_control_message.html">RTPSenderControlMessage</a>();
-                rscm-&gt;<a class="code" href="class_r_t_p_sender_control_message.html#a46386b56d0adcf4234ed70c5ffbf8fd7">setCommand</a>(<span class="stringliteral">&quot;STOP&quot;</span>);
-                <a class="code" href="class_r_t_p_interface_packet.html">RTPInterfacePacket</a> *rifpOut = <span class="keyword">new</span> <a class="code" href="class_r_t_p_interface_packet.html">RTPInterfacePacket</a>(<span class="stringliteral">&quot;senderModuleControl(STOP)&quot;</span>);
-                rifpOut-&gt;<a class="code" href="class_r_t_p_interface_packet.html#aa2e23347c6ec2e13f48427b22b177605">senderModuleControl</a>(ssrc, rscm);
-                send(rifpOut, <span class="stringliteral">&quot;rtpOut&quot;</span>);
+            <span class="keywordflow">else</span>
+            {
+                <a class="code" href="class_r_t_p_c_i_sender_control.html">RTPCISenderControl</a> *ci = <span class="keyword">new</span> <a class="code" href="class_r_t_p_c_i_sender_control.html">RTPCISenderControl</a>();
+                ci-&gt;<a class="code" href="class_r_t_p_c_i_sender_control.html#a52196fab5df648b4cbb272488b1d07b9">setCommand</a>(<a class="code" href="_r_t_p_sender_control_message__m_8h.html#a002ba32e435c353ad778267fc49a396aaef9be412ac1aa0c579e16ab339bf9ab9">RTP_CONTROL_PLAY</a>);
+                ci-&gt;<a class="code" href="class_r_t_p_session_control_info.html#a8a715b376470732d37b2e2a666241329">setSsrc</a>(<a class="code" href="class_r_t_p_application.html#ae0ab87e561649342d7d0381bc14d5446">ssrc</a>);
+                cMessage *msg = <span class="keyword">new</span> <a class="code" href="class_r_t_p_control_msg.html" title="Class generated from transport/rtp/RTPInterfacePacket.msg by opp_msgc.">RTPControlMsg</a>(<span class="stringliteral">&quot;senderModuleControl(PLAY)&quot;</span>);
+                msg-&gt;setControlInfo(ci);
+                send(msg, <span class="stringliteral">&quot;rtpOut&quot;</span>);
+
+                cMessage *selfMsg = <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;stopTransmission&quot;</span>, <a class="code" href="class_r_t_p_application.html#aed0101a0fabd845c91e198834ce3de5da862950aeb81a929d22253d237d5e3a9c">STOP_TRANSMISSION</a>);
+                scheduleAt(simTime() + <a class="code" href="class_r_t_p_application.html#a5b8322b2093257fa73f40d9b9b845d55" title="The delay after the application stops the transmission.">_transmissionStopDelay</a>, selfMsg);
             }
-            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!opp_strcmp(msgIn-&gt;getName(), <span class="stringliteral">&quot;leaveSession&quot;</span>)) {
-                ev&lt;&lt; <span class="stringliteral">&quot;leaveSession&quot;</span>&lt;&lt;endl;
-                <a class="code" href="class_r_t_p_interface_packet.html">RTPInterfacePacket</a> *rifpOut = <span class="keyword">new</span> <a class="code" href="class_r_t_p_interface_packet.html">RTPInterfacePacket</a>(<span class="stringliteral">&quot;leaveSession()&quot;</span>);
-                rifpOut-&gt;<a class="code" href="class_r_t_p_interface_packet.html#a2f97b4e2c15c69fa198a298af1d5c081">leaveSession</a>();
-                send(rifpOut, <span class="stringliteral">&quot;rtpOut&quot;</span>);
+            <span class="keywordflow">break</span>;
+
+        <span class="keywordflow">case</span> <a class="code" href="class_r_t_p_application.html#aed0101a0fabd845c91e198834ce3de5da862950aeb81a929d22253d237d5e3a9c">STOP_TRANSMISSION</a>:
+            ev &lt;&lt; <span class="stringliteral">&quot;stopTransmission&quot;</span> &lt;&lt; endl;
+            <span class="keywordflow">if</span> (!<a class="code" href="class_r_t_p_application.html#a53b9f9d70d7f76639f1da0d41f8a9854">isActiveSession</a>)
+            {
+                ev &lt;&lt; <span class="stringliteral">&quot;Session already left\n&quot;</span>;
             }
+            <span class="keywordflow">else</span>
+            {
+                <a class="code" href="class_r_t_p_c_i_sender_control.html">RTPCISenderControl</a> *ci = <span class="keyword">new</span> <a class="code" href="class_r_t_p_c_i_sender_control.html">RTPCISenderControl</a>();
+                ci-&gt;<a class="code" href="class_r_t_p_c_i_sender_control.html#a52196fab5df648b4cbb272488b1d07b9">setCommand</a>(<a class="code" href="_r_t_p_sender_control_message__m_8h.html#a002ba32e435c353ad778267fc49a396aa4480021109a420252e0cf22efe49ba4d">RTP_CONTROL_STOP</a>);
+                ci-&gt;<a class="code" href="class_r_t_p_session_control_info.html#a8a715b376470732d37b2e2a666241329">setSsrc</a>(<a class="code" href="class_r_t_p_application.html#ae0ab87e561649342d7d0381bc14d5446">ssrc</a>);
+                cMessage *msg = <span class="keyword">new</span> <a class="code" href="class_r_t_p_control_msg.html" title="Class generated from transport/rtp/RTPInterfacePacket.msg by opp_msgc.">RTPControlMsg</a>(<span class="stringliteral">&quot;senderModuleControl(STOP)&quot;</span>);
+                msg-&gt;setControlInfo(ci);
+                send(msg, <span class="stringliteral">&quot;rtpOut&quot;</span>);
+            }
+            <span class="keywordflow">break</span>;
+
+        <span class="keywordflow">case</span> <a class="code" href="class_r_t_p_application.html#aed0101a0fabd845c91e198834ce3de5da8bfd751c16e9ca12a256c2e01395dd4d">LEAVE_SESSION</a>:
+            ev &lt;&lt; <span class="stringliteral">&quot;leaveSession&quot;</span> &lt;&lt; endl;
+            <span class="keywordflow">if</span> (!<a class="code" href="class_r_t_p_application.html#a53b9f9d70d7f76639f1da0d41f8a9854">isActiveSession</a>)
+            {
+                ev &lt;&lt; <span class="stringliteral">&quot;Session already left\n&quot;</span>;
+            }
+            <span class="keywordflow">else</span>
+            {
+                <a class="code" href="class_r_t_p_c_i_leave_session.html" title="Class generated from transport/rtp/RTPInterfacePacket.msg by opp_msgc.">RTPCILeaveSession</a>* ci = <span class="keyword">new</span> <a class="code" href="class_r_t_p_c_i_leave_session.html" title="Class generated from transport/rtp/RTPInterfacePacket.msg by opp_msgc.">RTPCILeaveSession</a>();
+                cMessage *msg = <span class="keyword">new</span> <a class="code" href="class_r_t_p_control_msg.html" title="Class generated from transport/rtp/RTPInterfacePacket.msg by opp_msgc.">RTPControlMsg</a>(<span class="stringliteral">&quot;Leave Session&quot;</span>);
+                msg-&gt;setControlInfo(ci);
+                send(msg, <span class="stringliteral">&quot;rtpOut&quot;</span>);
+            }
+            <span class="keywordflow">break</span>;
+
+        <span class="keywordflow">default</span>:
+            <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Invalid msgKind value %d in message &#39;%s&#39;&quot;</span>,
+                    msgIn-&gt;getKind(), msgIn-&gt;getName());
+            <span class="keywordflow">break</span>;
         }
-        <span class="keywordflow">else</span> {
-            <a class="code" href="class_r_t_p_interface_packet.html">RTPInterfacePacket</a> *rifpIn = check_and_cast&lt;<a class="code" href="class_r_t_p_interface_packet.html">RTPInterfacePacket</a> *&gt;(msgIn);
-
-            <span class="keywordflow">if</span> (rifpIn-&gt;<a class="code" href="class_r_t_p_interface_packet.html#a8c0246a4817d40ee0097a952d722ac0c">getType</a>() == <a class="code" href="class_r_t_p_interface_packet.html#af9e9239ab05c1b2f856ddcb7f778919da235bec5a46ece679a9f0197503191d3e">RTPInterfacePacket::RTP_IFP_SESSION_ENTERED</a>) {
-                ev &lt;&lt; <span class="stringliteral">&quot;Session Entered&quot;</span>&lt;&lt;endl;
-                ssrc = rifpIn-&gt;<a class="code" href="class_r_t_p_interface_packet.html#a9aade4021df48f073c5ff6317c43d12a">getSSRC</a>();
-                sessionEntered = <span class="keyword">true</span>;
-                <span class="keywordflow">if</span> (opp_strcmp(<a class="code" href="class_r_t_p_application.html#acda837556c82fd4a2e89dabde98f189d">_fileName</a>, <span class="stringliteral">&quot;&quot;</span>)) {
-                    <a class="code" href="class_r_t_p_interface_packet.html">RTPInterfacePacket</a> *rifpOut = <span class="keyword">new</span> <a class="code" href="class_r_t_p_interface_packet.html">RTPInterfacePacket</a>(<span class="stringliteral">&quot;createSenderModule()&quot;</span>);
-                    rifpOut-&gt;<a class="code" href="class_r_t_p_interface_packet.html#a8d64447eae1d3a769848d40c540ea887">createSenderModule</a>(ssrc, <a class="code" href="class_r_t_p_application.html#ae20b262efd41993eae1cb4b3b814c602">_payloadType</a>, opp_strdup(<a class="code" href="class_r_t_p_application.html#acda837556c82fd4a2e89dabde98f189d">_fileName</a>));
-                    ev &lt;&lt; <span class="stringliteral">&quot;CreateSenderModule&quot;</span>&lt;&lt;endl;
-                    send(rifpOut, <span class="stringliteral">&quot;rtpOut&quot;</span>);
-                }
-                <span class="keywordflow">else</span> {
-                    cMessage *msg2 = <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;leaveSession&quot;</span>);
-                    ev &lt;&lt; <span class="stringliteral">&quot;Receiver Module : leaveSession&quot;</span>&lt;&lt;endl;
-                    scheduleAt(simTime() + <a class="code" href="class_r_t_p_application.html#ad5d32d4eaf850798318d01ac5c826505">_sessionLeaveDelay</a>, msg2);
-                }
-            }
-            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (rifpIn-&gt;<a class="code" href="class_r_t_p_interface_packet.html#a8c0246a4817d40ee0097a952d722ac0c">getType</a>() == <a class="code" href="class_r_t_p_interface_packet.html#af9e9239ab05c1b2f856ddcb7f778919da3c8312a94e5c7d037d0522f3f37af9af">RTPInterfacePacket::RTP_IFP_SENDER_MODULE_CREATED</a>) {
-                cMessage *msg3 = <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;startTransmission&quot;</span>);
-                ev &lt;&lt; <span class="stringliteral">&quot;Sender Module Created&quot;</span>&lt;&lt;endl;
-                scheduleAt(simTime() + <a class="code" href="class_r_t_p_application.html#a1ed3601f333a8ff5fc30bd8390f92da6">_transmissionStartDelay</a>, msg3);
-            }
-            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (rifpIn-&gt;<a class="code" href="class_r_t_p_interface_packet.html#a8c0246a4817d40ee0097a952d722ac0c">getType</a>() == <a class="code" href="class_r_t_p_interface_packet.html#af9e9239ab05c1b2f856ddcb7f778919da6581d333865ce8595241c547bbb27215">RTPInterfacePacket::RTP_IFP_SENDER_STATUS</a>) {
-                <a class="code" href="class_r_t_p_sender_status_message.html">RTPSenderStatusMessage</a> *rsim = (<a class="code" href="class_r_t_p_sender_status_message.html">RTPSenderStatusMessage</a> *)(rifpIn-&gt;decapsulate());
-                <span class="keywordflow">if</span> (!opp_strcmp(rsim-&gt;<a class="code" href="class_r_t_p_sender_status_message.html#a1f64151911f73da9e734fe02c0016aae">getStatus</a>(), <span class="stringliteral">&quot;PLAYING&quot;</span>)) {
-                    ev &lt;&lt; <span class="stringliteral">&quot;PLAYING&quot;</span>&lt;&lt;endl;
-                }
-                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!opp_strcmp(rsim-&gt;<a class="code" href="class_r_t_p_sender_status_message.html#a1f64151911f73da9e734fe02c0016aae">getStatus</a>(), <span class="stringliteral">&quot;FINISHED&quot;</span>)) {
-                    transmissionFinished = <span class="keyword">true</span>;
-                    ev &lt;&lt; <span class="stringliteral">&quot;FINISHED&quot;</span>&lt;&lt;endl;
-                    cMessage *msg5 = <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;leaveSession&quot;</span>);
-                    scheduleAt(simTime() + <a class="code" href="class_r_t_p_application.html#ad5d32d4eaf850798318d01ac5c826505">_sessionLeaveDelay</a>, msg5);
-                }
-                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!opp_strcmp(rsim-&gt;<a class="code" href="class_r_t_p_sender_status_message.html#a1f64151911f73da9e734fe02c0016aae">getStatus</a>(), <span class="stringliteral">&quot;STOPPED&quot;</span>)) {
-                    transmissionFinished = <span class="keyword">true</span>;
-                    ev &lt;&lt; <span class="stringliteral">&quot;FINISHED&quot;</span>&lt;&lt;endl;
-                    cMessage *msg6 = <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;leaveSession&quot;</span>);
-                    scheduleAt(simTime() + <a class="code" href="class_r_t_p_application.html#ad5d32d4eaf850798318d01ac5c826505">_sessionLeaveDelay</a>, msg6);
-                }
-                <span class="keywordflow">else</span> {
-                    <span class="keyword">delete</span> rifpIn;
-                }
-                cancelAndDelete(rsim);
-            }
-            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (rifpIn-&gt;<a class="code" href="class_r_t_p_interface_packet.html#a8c0246a4817d40ee0097a952d722ac0c">getType</a>() == <a class="code" href="class_r_t_p_interface_packet.html#af9e9239ab05c1b2f856ddcb7f778919da2178e34fdb4d8e290247730b8beb5f81">RTPInterfacePacket::RTP_IFP_SESSION_LEFT</a>) {
-                sessionLeft = <span class="keyword">true</span>;
-            }
-        }
-        <span class="keyword">delete</span> msgIn;
-
     }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_r_t_p_application.html#a53b9f9d70d7f76639f1da0d41f8a9854">isActiveSession</a>)
+    {
+        cObject *obj = msgIn-&gt;removeControlInfo();
+        <a class="code" href="class_r_t_p_control_info.html">RTPControlInfo</a> *ci = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_r_t_p_control_info.html">RTPControlInfo</a> *<span class="keyword">&gt;</span>(obj);
+        <span class="keywordflow">if</span> (ci)
+        {
+            <span class="keywordflow">switch</span> (ci-&gt;<a class="code" href="class_r_t_p_control_info.html#a4ec820dacc1913f753ffeab4cc148b28">getType</a>())
+            {
+            <span class="keywordflow">case</span> <a class="code" href="_r_t_p_interface_packet__m_8h.html#a86327149ae9fffad1ac95f7e64ec6f47aa8cf8dff5b1173476af060bafc363170">RTP_IFP_SESSION_ENTERED</a>:
+                {
+                    ev &lt;&lt; <span class="stringliteral">&quot;Session Entered&quot;</span> &lt;&lt; endl;
+                    <a class="code" href="class_r_t_p_application.html#ae0ab87e561649342d7d0381bc14d5446">ssrc</a> = (check_and_cast&lt;<a class="code" href="class_r_t_p_c_i_session_entered.html" title="Class generated from transport/rtp/RTPInterfacePacket.msg by opp_msgc.">RTPCISessionEntered</a> *&gt;(ci))-&gt;getSsrc();
+                    <span class="keywordflow">if</span> (opp_strcmp(<a class="code" href="class_r_t_p_application.html#acda837556c82fd4a2e89dabde98f189d" title="The name of the file to be transmitted.">_fileName</a>, <span class="stringliteral">&quot;&quot;</span>))
+                    {
+                        ev &lt;&lt; <span class="stringliteral">&quot;CreateSenderModule&quot;</span> &lt;&lt; endl;
+                        <a class="code" href="class_r_t_p_c_i_create_sender_module.html" title="Class generated from transport/rtp/RTPInterfacePacket.msg by opp_msgc.">RTPCICreateSenderModule</a>* ci = <span class="keyword">new</span> <a class="code" href="class_r_t_p_c_i_create_sender_module.html" title="Class generated from transport/rtp/RTPInterfacePacket.msg by opp_msgc.">RTPCICreateSenderModule</a>();
+                        ci-&gt;<a class="code" href="class_r_t_p_session_control_info.html#a8a715b376470732d37b2e2a666241329">setSsrc</a>(<a class="code" href="class_r_t_p_application.html#ae0ab87e561649342d7d0381bc14d5446">ssrc</a>);
+                        ci-&gt;<a class="code" href="class_r_t_p_c_i_create_sender_module.html#a816d51244436905c4ba7fba1822e980a">setPayloadType</a>(<a class="code" href="class_r_t_p_application.html#ae20b262efd41993eae1cb4b3b814c602" title="The payload type of the data in the file.">_payloadType</a>);
+                        ci-&gt;<a class="code" href="class_r_t_p_c_i_create_sender_module.html#a5b297e8c7a2cb0ceab20bce735923571">setFileName</a>(<a class="code" href="class_r_t_p_application.html#acda837556c82fd4a2e89dabde98f189d" title="The name of the file to be transmitted.">_fileName</a>);
+                        cMessage *msg = <span class="keyword">new</span> <a class="code" href="class_r_t_p_control_msg.html" title="Class generated from transport/rtp/RTPInterfacePacket.msg by opp_msgc.">RTPControlMsg</a>(<span class="stringliteral">&quot;createSenderModule()&quot;</span>);
+                        msg-&gt;setControlInfo(ci);
+                        send(msg, <span class="stringliteral">&quot;rtpOut&quot;</span>);
+                    }
+                    <span class="keywordflow">else</span>
+                    {
+                        cMessage *selfMsg = <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;leaveSession&quot;</span>, <a class="code" href="class_r_t_p_application.html#aed0101a0fabd845c91e198834ce3de5da8bfd751c16e9ca12a256c2e01395dd4d">LEAVE_SESSION</a>);
+                        ev &lt;&lt; <span class="stringliteral">&quot;Receiver Module : leaveSession&quot;</span> &lt;&lt; endl;
+                        scheduleAt(simTime() + <a class="code" href="class_r_t_p_application.html#ad5d32d4eaf850798318d01ac5c826505" title="The delay after the application leaves the session.">_sessionLeaveDelay</a>, selfMsg);
+                    }
+                }
+                <span class="keywordflow">break</span>;
+
+            <span class="keywordflow">case</span> <a class="code" href="_r_t_p_interface_packet__m_8h.html#a86327149ae9fffad1ac95f7e64ec6f47afaf6d669ae29aa3e5bbc6d81d4d83aee">RTP_IFP_SENDER_MODULE_CREATED</a>:
+                {
+                    ev &lt;&lt; <span class="stringliteral">&quot;Sender Module Created&quot;</span> &lt;&lt; endl;
+                    cMessage *selfMsg = <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;startTransmission&quot;</span>, <a class="code" href="class_r_t_p_application.html#aed0101a0fabd845c91e198834ce3de5daf5de95be7e480dbcbf6aba7035fb8e37">START_TRANSMISSION</a>);
+                    scheduleAt(simTime() + <a class="code" href="class_r_t_p_application.html#a1ed3601f333a8ff5fc30bd8390f92da6" title="The delay after the application starts the transmission.">_transmissionStartDelay</a>, selfMsg);
+                }
+                <span class="keywordflow">break</span>;
+
+            <span class="keywordflow">case</span> <a class="code" href="_r_t_p_interface_packet__m_8h.html#a86327149ae9fffad1ac95f7e64ec6f47a9fe4527dd950d303c8dbfe5d6d84462d">RTP_IFP_SENDER_STATUS</a>:
+                {
+                    cMessage *selfMsg;
+                    <a class="code" href="class_r_t_p_c_i_sender_status.html">RTPCISenderStatus</a> *rsim = check_and_cast&lt;<a class="code" href="class_r_t_p_c_i_sender_status.html">RTPCISenderStatus</a> *&gt;(ci);
+                    <span class="keywordflow">switch</span> (rsim-&gt;<a class="code" href="class_r_t_p_c_i_sender_status.html#aaad712e64fd85b2b5dd042ae7915311b">getStatus</a>())
+                    {
+                    <span class="keywordflow">case</span> <a class="code" href="_r_t_p_sender_status_message__m_8h.html#ae729df361c4afc9c258b941040bc4780af8859fa2fc5abbb926fe2e6b0f232201">RTP_SENDER_STATUS_PLAYING</a>:
+                        ev &lt;&lt; <span class="stringliteral">&quot;PLAYING&quot;</span> &lt;&lt; endl;
+                        <span class="keywordflow">break</span>;
+
+                    <span class="keywordflow">case</span> <a class="code" href="_r_t_p_sender_status_message__m_8h.html#ae729df361c4afc9c258b941040bc4780a01386e04070b57f05a73dc2b59cedbd8">RTP_SENDER_STATUS_FINISHED</a>:
+                        ev &lt;&lt; <span class="stringliteral">&quot;FINISHED&quot;</span> &lt;&lt; endl;
+                        selfMsg = <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;leaveSession&quot;</span>, <a class="code" href="class_r_t_p_application.html#aed0101a0fabd845c91e198834ce3de5da8bfd751c16e9ca12a256c2e01395dd4d">LEAVE_SESSION</a>);
+                        scheduleAt(simTime() + <a class="code" href="class_r_t_p_application.html#ad5d32d4eaf850798318d01ac5c826505" title="The delay after the application leaves the session.">_sessionLeaveDelay</a>, selfMsg);
+                        <span class="keywordflow">break</span>;
+
+                    <span class="keywordflow">case</span> <a class="code" href="_r_t_p_sender_status_message__m_8h.html#ae729df361c4afc9c258b941040bc4780a18854a0b38afd71de1cd9c75f063f7f2">RTP_SENDER_STATUS_STOPPED</a>:
+                        ev &lt;&lt; <span class="stringliteral">&quot;STOPPED&quot;</span> &lt;&lt; endl;
+                        selfMsg = <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;leaveSession&quot;</span>, <a class="code" href="class_r_t_p_application.html#aed0101a0fabd845c91e198834ce3de5da8bfd751c16e9ca12a256c2e01395dd4d">LEAVE_SESSION</a>);
+                        scheduleAt(simTime() + <a class="code" href="class_r_t_p_application.html#ad5d32d4eaf850798318d01ac5c826505" title="The delay after the application leaves the session.">_sessionLeaveDelay</a>, selfMsg);
+                        <span class="keywordflow">break</span>;
+
+                    <span class="keywordflow">default</span>:
+                        error(<span class="stringliteral">&quot;Invalid sender status: %d&quot;</span>, rsim-&gt;<a class="code" href="class_r_t_p_c_i_sender_status.html#aaad712e64fd85b2b5dd042ae7915311b">getStatus</a>());
+                    }
+                }
+                <span class="keywordflow">break</span>;
+
+            <span class="keywordflow">case</span> <a class="code" href="_r_t_p_interface_packet__m_8h.html#a86327149ae9fffad1ac95f7e64ec6f47a17b02a094ef89acdb650e3010fee3186">RTP_IFP_SESSION_LEFT</a>:
+                <span class="keywordflow">if</span> (!<a class="code" href="class_r_t_p_application.html#a53b9f9d70d7f76639f1da0d41f8a9854">isActiveSession</a>)
+                    ev &lt;&lt; <span class="stringliteral">&quot;Session already left\n&quot;</span>;
+                <span class="keywordflow">else</span>
+                    <a class="code" href="class_r_t_p_application.html#a53b9f9d70d7f76639f1da0d41f8a9854">isActiveSession</a> = <span class="keyword">false</span>;
+                <span class="keywordflow">break</span>;
+
+            <span class="keywordflow">case</span> <a class="code" href="_r_t_p_interface_packet__m_8h.html#a86327149ae9fffad1ac95f7e64ec6f47a1aac813c2d4356a54ce4678a9e049a16">RTP_IFP_SENDER_MODULE_DELETED</a>:
+                ev &lt;&lt; <span class="stringliteral">&quot;Sender Module Deleted&quot;</span> &lt;&lt; endl;
+                <span class="keywordflow">break</span>;
+
+            <span class="keywordflow">default</span>:
+                <span class="keywordflow">break</span>;
+            }
+        }
+        <span class="keyword">delete</span> obj;
+    }
+    <span class="keyword">delete</span> msgIn;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a81f0df86019b7352ad8e161d4797deb0"></a><!-- doxytag: member="RTPApplication::initialize" ref="a81f0df86019b7352ad8e161d4797deb0" args="()" -->
+<a class="anchor" id="aa93059c02e11640ab2a6e0da67be1270"></a><!-- doxytag: member="RTPApplication::initialize" ref="aa93059c02e11640ab2a6e0da67be1270" args="(int stage)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_r_t_p_application.html#a81f0df86019b7352ad8e161d4797deb0">RTPApplication::initialize</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_application.html#aa93059c02e11640ab2a6e0da67be1270">RTPApplication::initialize</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>stage</em></td><td>)</td>
+          <td><code> [protected, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Reads the OMNeT++ parameters. </p>
 
+</div>
+</div>
+<a class="anchor" id="ac9dcca05381b9f72a47514c9982e44c6"></a><!-- doxytag: member="RTPApplication::numInitStages" ref="ac9dcca05381b9f72a47514c9982e44c6" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_r_t_p_application.html#ac9dcca05381b9f72a47514c9982e44c6">RTPApplication::numInitStages</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline, protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> 4;}
+</pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
@@ -284,11 +430,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The reserved bandwidth for rtp/rtcp in bytes/second. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_application_8h_source.html#l00061">61</a> of file <a class="el" href="_r_t_p_application_8h_source.html">RTPApplication.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_application_8cc_source.html#l00068">activity()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_application.html#afc9c7387b3873c221ca954f68af4cb7f">handleMessage()</a>.</p>
 
 </div>
 </div>
@@ -302,29 +447,27 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The CNAME of this participant. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_application_8h_source.html#l00051">51</a> of file <a class="el" href="_r_t_p_application_8h_source.html">RTPApplication.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_application_8cc_source.html#l00068">activity()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_application.html#afc9c7387b3873c221ca954f68af4cb7f">handleMessage()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ad488f240e37858e2fc4519fc6a3c4c4e"></a><!-- doxytag: member="RTPApplication::_destinationAddress" ref="ad488f240e37858e2fc4519fc6a3c4c4e" args="" -->
+<a class="anchor" id="a2ee7644a5d2e823417b846c4f00618bf"></a><!-- doxytag: member="RTPApplication::_destinationAddress" ref="a2ee7644a5d2e823417b846c4f00618bf" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_i_p_address.html">IPAddress</a> <a class="el" href="class_r_t_p_application.html#ad488f240e37858e2fc4519fc6a3c4c4e">RTPApplication::_destinationAddress</a><code> [protected]</code></td>
+          <td class="memname"><a class="el" href="class_i_pv4_address.html">IPv4Address</a> <a class="el" href="class_r_t_p_application.html#a2ee7644a5d2e823417b846c4f00618bf">RTPApplication::_destinationAddress</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The address of the unicast peer or of the multicast group. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_application_8h_source.html#l00066">66</a> of file <a class="el" href="_r_t_p_application_8h_source.html">RTPApplication.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_application_8cc_source.html#l00068">activity()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_application.html#afc9c7387b3873c221ca954f68af4cb7f">handleMessage()</a>.</p>
 
 </div>
 </div>
@@ -338,11 +481,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The name of the file to be transmitted. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_application_8h_source.html#l00076">76</a> of file <a class="el" href="_r_t_p_application_8h_source.html">RTPApplication.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_application_8cc_source.html#l00068">activity()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_application.html#afc9c7387b3873c221ca954f68af4cb7f">handleMessage()</a>.</p>
 
 </div>
 </div>
@@ -356,11 +498,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The payload type of the data in the file. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_application_8h_source.html#l00081">81</a> of file <a class="el" href="_r_t_p_application_8h_source.html">RTPApplication.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_application_8cc_source.html#l00068">activity()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_application.html#afc9c7387b3873c221ca954f68af4cb7f">handleMessage()</a>.</p>
 
 </div>
 </div>
@@ -374,11 +515,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>One of the udp port used. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_application_8h_source.html#l00071">71</a> of file <a class="el" href="_r_t_p_application_8h_source.html">RTPApplication.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_application_8cc_source.html#l00068">activity()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_application.html#afc9c7387b3873c221ca954f68af4cb7f">handleMessage()</a>.</p>
 
 </div>
 </div>
@@ -392,11 +532,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The name of the used profile. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_application_8h_source.html#l00056">56</a> of file <a class="el" href="_r_t_p_application_8h_source.html">RTPApplication.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_application_8cc_source.html#l00068">activity()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_application.html#afc9c7387b3873c221ca954f68af4cb7f">handleMessage()</a>.</p>
 
 </div>
 </div>
@@ -410,11 +549,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The delay after the application enters the session, </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_application_8h_source.html#l00086">86</a> of file <a class="el" href="_r_t_p_application_8h_source.html">RTPApplication.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_application_8cc_source.html#l00068">activity()</a>.</p>
+<p>The delay after the application enters the session,. </p>
 
 </div>
 </div>
@@ -428,11 +564,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The delay after the application leaves the session. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_application_8h_source.html#l00101">101</a> of file <a class="el" href="_r_t_p_application_8h_source.html">RTPApplication.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_application_8cc_source.html#l00068">activity()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_application.html#afc9c7387b3873c221ca954f68af4cb7f">handleMessage()</a>.</p>
 
 </div>
 </div>
@@ -446,11 +581,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The delay after the application starts the transmission. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_application_8h_source.html#l00091">91</a> of file <a class="el" href="_r_t_p_application_8h_source.html">RTPApplication.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_application_8cc_source.html#l00068">activity()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_application.html#afc9c7387b3873c221ca954f68af4cb7f">handleMessage()</a>.</p>
 
 </div>
 </div>
@@ -464,17 +598,46 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The delay after the application stops the transmission. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_application_8h_source.html#l00096">96</a> of file <a class="el" href="_r_t_p_application_8h_source.html">RTPApplication.h</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_application.html#afc9c7387b3873c221ca954f68af4cb7f">handleMessage()</a>.</p>
 
-<p>Referenced by <a class="el" href="_r_t_p_application_8cc_source.html#l00068">activity()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a53b9f9d70d7f76639f1da0d41f8a9854"></a><!-- doxytag: member="RTPApplication::isActiveSession" ref="a53b9f9d70d7f76639f1da0d41f8a9854" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_r_t_p_application.html#a53b9f9d70d7f76639f1da0d41f8a9854">RTPApplication::isActiveSession</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_r_t_p_application.html#afc9c7387b3873c221ca954f68af4cb7f">handleMessage()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae0ab87e561649342d7d0381bc14d5446"></a><!-- doxytag: member="RTPApplication::ssrc" ref="ae0ab87e561649342d7d0381bc14d5446" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32 <a class="el" href="class_r_t_p_application.html#ae0ab87e561649342d7d0381bc14d5446">RTPApplication::ssrc</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_r_t_p_application.html#afc9c7387b3873c221ca954f68af4cb7f">handleMessage()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_r_t_p_application_8h_source.html">RTPApplication.h</a></li>
-<li><a class="el" href="_r_t_p_application_8cc_source.html">RTPApplication.cc</a></li>
+<li><a class="el" href="_r_t_p_application_8h.html">RTPApplication.h</a></li>
+<li><a class="el" href="_r_t_p_application_8cc.html">RTPApplication.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -482,7 +645,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_r_t_p_application.html">RTPApplication</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:52 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:29 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

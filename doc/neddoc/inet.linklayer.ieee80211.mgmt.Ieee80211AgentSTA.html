@@ -11,6 +11,20 @@
 controls channel scanning, association and handovers, by sending commands
 (e.g. <a href="Ieee80211Prim_ScanRequest.html">Ieee80211Prim_ScanRequest</a>) to the management module (<a href="inet.linklayer.ieee80211.mgmt.Ieee80211MgmtSTA.html">Ieee80211MgmtSTA</a>).</p>
 <p><b>Author:</b> Andras Varga</p>
+<img src="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA.html" title="Ieee80211AgentSTA" alt="Ieee80211AgentSTA" coords="0,30,156,70">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA.html" title="Simple Module Ieee80211AgentSTA" alt="" coords="5,83,147,111">
+<area shape="rect" id="node2" href="inet.linklayer.ieee80211.Ieee80211Nic.html" title="Compound Module Ieee80211Nic" alt="" coords="25,6,127,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA.html" title="Simple Module Ieee80211AgentSTA" alt="" coords="5,6,147,34">
+</map>
 <h3 class="subtitle">Used in compound modules:</h3>
 <table class="typestable">
    <tr>
@@ -20,15 +34,16 @@ controls channel scanning, association and handovers, by sending commands
    </tr>
 <tr>
    <td>
-<a href="inet.linklayer.ieee80211.Ieee80211NicSTA.html">Ieee80211NicSTA</a>
+<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">Ieee80211Nic</a>
    </td>
    <td>
 <i>compound&nbsp;module</i>
    </td>
    <td>
 
-<p>This NIC implements an 802.11 network interface card,
-in a STA, using infrastructure mode.</p>
+<p>This NIC implements an 802.11 network interface card.
+It can be configured via the mgmtType parameter to act
+as an AP or a STA, or for ad-hoc mode. </p>
 
    </td>
 </tr>
@@ -66,7 +81,7 @@ in a STA, using infrastructure mode.</p>
    <td>
       <i>double</i>
    </td>
-   <td></td>
+   <td>100ms</td>
    <td>
 <p>delay before sending a probe request during active scanning</p>
    </td>
@@ -76,7 +91,7 @@ in a STA, using infrastructure mode.</p>
    <td>
       <i>double</i>
    </td>
-   <td></td>
+   <td>150ms</td>
    <td>
 <p>min interval to spend on a channel during active scanning</p>
    </td>
@@ -86,7 +101,7 @@ in a STA, using infrastructure mode.</p>
    <td>
       <i>double</i>
    </td>
-   <td></td>
+   <td>300ms</td>
    <td>
 <p>channel time for passive scanning, and max channel time for active scanning</p>
    </td>
@@ -109,6 +124,26 @@ in a STA, using infrastructure mode.</p>
    <td>5s</td>
    <td>
 <p>timeout for the association procedure</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>startingTime</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1s</td>
+   <td>
+<p>agent starting time.</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>default_ssid</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>default ssid</p>
    </td>
 </tr>
 </table>
@@ -144,11 +179,46 @@ in a STA, using infrastructure mode.</p>
    <td></td>   <td></td>
 </tr>
 </table>
+<h3 class="subtitle">Statistics:</h3>
+<table class="statisticstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="title">Title</th>
+      <th class="source">Source</th>
+      <th class="record">Record</th>
+      <th class="unit">Unit</th>
+      <th class="interpolationmode">Interpolation Mode</th>
+   </tr>
+<tr class="local">
+   <td>acceptConfirm</td>
+   <td>accepted confirms</td>
+   <td></td>
+   <td>count, vector</td>
+   <td></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>dropConfirm</td>
+   <td>dropped confirms</td>
+   <td></td>
+   <td>count, vector</td>
+   <td></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>sentRequest</td>
+   <td>sent requests</td>
+   <td></td>
+   <td>count, vector</td>
+   <td></td>
+   <td></td>
+</tr>
+</table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
 // Used in 802.11 infrastructure mode: in a station (STA), this module
 // controls channel scanning, association and handovers, by sending commands
-// (e.g. Ieee80211Prim_ScanRequest) to the management module (Ieee80211MgmtSTA).
+// (e.g. ~Ieee80211Prim_ScanRequest) to the management module (~Ieee80211MgmtSTA).
 //
 // </span><span style="color: #000080; ">@author</span><span style="color: #808080; font-style: italic; "> Andras Varga
 //
@@ -157,17 +227,21 @@ in a STA, using infrastructure mode.</p>
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">activeScan</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">true</span><span style="color: #000000; ">);  </span><span style="color: #808080; font-style: italic; ">// selects between active and passive scanning
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">channelsToScan</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">);  </span><span style="color: #808080; font-style: italic; ">// list of channel numbers to scan (space delimited); empty means all channels
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">probeDelay</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;s&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// delay before sending a probe request during active scanning
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">minChannelTime</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;s&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// min interval to spend on a channel during active scanning
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">maxChannelTime</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;s&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// channel time for passive scanning, and max channel time for active scanning
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">authenticationTimeout</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;s&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">5</span><span style="color: #000000; ">s</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// timeout for the authentication procedure
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">associationTimeout</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;s&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">5</span><span style="color: #000000; ">s</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// timeout for the association procedure
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">probeDelay</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">100</span><span style="color: #000000; ">ms</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// delay before sending a probe request during active scanning
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">minChannelTime</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">150</span><span style="color: #000000; ">ms</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// min interval to spend on a channel during active scanning
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">maxChannelTime</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">300</span><span style="color: #000000; ">ms</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// channel time for passive scanning, and max channel time for active scanning
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">authenticationTimeout</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">5</span><span style="color: #000000; ">s</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// timeout for the authentication procedure
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">associationTimeout</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">5</span><span style="color: #000000; ">s</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// timeout for the association procedure
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">startingTime</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;s&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(-</span><span style="color: #008000; ">1</span><span style="color: #000000; ">s</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// agent starting time.
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">default_ssid</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// default ssid
 </span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/control&quot;</span><span style="color: #000000; ">);
-    </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">sentRequest</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;sent requests&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #000000; ">vector</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// ENUM! ~Ieee80211PrimRequestCode
+</span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">acceptConfirm</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;accepted confirms&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #000000; ">vector</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// ENUM! ~Ieee80211PrimConfirmCode
+</span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">dropConfirm</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;dropped confirms&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #000000; ">vector</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// ENUM! ~Ieee80211PrimConfirmCode
+</span><span style="color: #000000; ">    </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">mgmtIn</span><span style="color: #000000; ">;
         </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">mgmtOut</span><span style="color: #000000; ">;
 }
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

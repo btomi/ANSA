@@ -76,20 +76,25 @@
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pro-types">Protected Types</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">IPv6ControlInfo Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="IPv6ControlInfo" --><!-- doxytag: inherits="IPv6ControlInfo_Base" -->
-<p><code>#include &lt;<a class="el" href="_i_pv6_control_info_8h_source.html">IPv6ControlInfo.h</a>&gt;</code></p>
+<p>Control information for sending/receiving packets over <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a>.  
+ <a href="class_i_pv6_control_info.html#details">More...</a></p>
+
+<p><code>#include &lt;IPv6ControlInfo.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for IPv6ControlInfo:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_i_pv6_control_info.png" usemap="#IPv6ControlInfo_map" alt=""/>
   <map id="IPv6ControlInfo_map" name="IPv6ControlInfo_map">
-<area href="class_i_pv6_control_info___base.html" alt="IPv6ControlInfo_Base" shape="rect" coords="0,0,134,24"/>
+<area href="class_i_pv6_control_info___base.html" title="Class generated from networklayer/contract/IPv6ControlInfo.msg by opp_msgc." alt="IPv6ControlInfo_Base" shape="rect" coords="0,0,134,24"/>
 </map>
  </div></div>
 
@@ -100,20 +105,62 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#aa81240d82f83854783aca3534ef45682">IPv6ControlInfo</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#ac39f863caff01b2bb7b02cb74d8bdef5">~IPv6ControlInfo</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#af1ccfd7521552c72c314f08bf37695b9">IPv6ControlInfo</a> (const <a class="el" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> &amp;other)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#ad9a39bdf603b9b9ffb6d625f03b8d382">operator=</a> (const <a class="el" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> &amp;other)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#a00c040fcb7b5ff8b8a36cb8fbd405383">setOrigDatagram</a> (<a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *d)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#aca61539060acc57f3734c47c932124c6">operator=</a> (const <a class="el" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> &amp;other)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#ae5066d32bdcc77e78eafbf46a9efa330">dup</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#a00c040fcb7b5ff8b8a36cb8fbd405383">setOrigDatagram</a> (<a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *d)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#a8d8e46b9c684ec01e4fc4750a66509c3">getOrigDatagram</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#acd5e1deff05d96a52a3f7369270eb019">removeOrigDatagram</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#a88d1f26a530db7345008f9e5769edc06">getDiffServCodePoint</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns bits 0-5 of the Traffic Class field, a value in the 0..63 range.  <a href="#a88d1f26a530db7345008f9e5769edc06"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#a4c660ee03eb094f2ffc3f4e7498366d1">setDiffServCodePoint</a> (int dscp)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets bits 0-5 of the Traffic Class field; expects a value in the 0..63 range.  <a href="#a4c660ee03eb094f2ffc3f4e7498366d1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#a88a4cf8941d0e86b23997fa199f460fb">getExplicitCongestionNotification</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns bits 6-7 of the Traffic Class field, a value in the range 0..3.  <a href="#a88a4cf8941d0e86b23997fa199f460fb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#ac05e3ec6e655ca551873eabb68a6f041">setExplicitCongestionNotification</a> (int ecn)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets bits 6-7 of the Traffic Class field; expects a value in the 0..3 range.  <a href="#ac05e3ec6e655ca551873eabb68a6f041"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#a5342ababc8348bb5167a2d767b3eef80">getExtensionHeaderArraySize</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of extension headers in this datagram.  <a href="#a5342ababc8348bb5167a2d767b3eef80"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#af6ed0f601b6a2ed54033983f3626a418">setExtensionHeaderArraySize</a> (unsigned int size)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generated but unused method, should not be called.  <a href="#af6ed0f601b6a2ed54033983f3626a418"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_i_pv6_control_info__m_8h.html#afe4a3c2f7e35f5cd4a9a009e6513515d">IPv6ExtensionHeaderPtr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#a27de6e5fab91bb2b9592ad12ac56f0b4">getExtensionHeader</a> (unsigned int k)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the kth extension header in this datagram.  <a href="#a27de6e5fab91bb2b9592ad12ac56f0b4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#a92dcbaa7e679c8400704f1454f438370">setExtensionHeader</a> (unsigned int k, const <a class="el" href="_i_pv6_control_info__m_8h.html#afe4a3c2f7e35f5cd4a9a009e6513515d">IPv6ExtensionHeaderPtr</a> &amp;extensionHeader_var)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generated but unused method, should not be called.  <a href="#a92dcbaa7e679c8400704f1454f438370"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#a41f5abe7c8964988b102dfe65e592856">addExtensionHeader</a> (<a class="el" href="class_i_pv6_extension_header.html">IPv6ExtensionHeader</a> *eh, int atPos=-1)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an extension header to the datagram, at the given position.  <a href="#a41f5abe7c8964988b102dfe65e592856"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv6_extension_header.html">IPv6ExtensionHeader</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#a0b382ba609418f24a3819ad4c9cc999e">removeFirstExtensionHeader</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the first extension header and return it.  <a href="#a0b382ba609418f24a3819ad4c9cc999e"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::vector<br class="typebreak"/>
+&lt; <a class="el" href="class_i_pv6_extension_header.html">IPv6ExtensionHeader</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#a3cc975ccdffb5798f2a7154c2580fe54">ExtensionHeaders</a></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv6_control_info.html#a3cc975ccdffb5798f2a7154c2580fe54">ExtensionHeaders</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#a1f3904a188e64d29aed7a6f1493e978c">extensionHeaders</a></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#a14f57019f47aae74b2fd15d11f43aa60">copy</a> (const <a class="el" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> &amp;other)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_control_info.html#aba6c31c7eac1aa80515a8f32160aa254">clean</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Control information for sending/receiving packets over <a class="el" href="class_i_pv6.html">IPv6</a>.</p>
+<div class="textblock"><p>Control information for sending/receiving packets over <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a>. </p>
 <p>See the IPv6ControlInfo.msg file for more info. </p>
+</div><hr/><h2>Member Typedef Documentation</h2>
+<a class="anchor" id="a3cc975ccdffb5798f2a7154c2580fe54"></a><!-- doxytag: member="IPv6ControlInfo::ExtensionHeaders" ref="a3cc975ccdffb5798f2a7154c2580fe54" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt;<a class="el" href="class_i_pv6_extension_header.html">IPv6ExtensionHeader</a>*&gt; <a class="el" href="class_i_pv6_control_info.html#a3cc975ccdffb5798f2a7154c2580fe54">IPv6ControlInfo::ExtensionHeaders</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_control_info_8h_source.html#l00030">30</a> of file <a class="el" href="_i_pv6_control_info_8h_source.html">IPv6ControlInfo.h</a>.</p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+</div>
+</div>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa81240d82f83854783aca3534ef45682"></a><!-- doxytag: member="IPv6ControlInfo::IPv6ControlInfo" ref="aa81240d82f83854783aca3534ef45682" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -127,9 +174,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_pv6_control_info_8h_source.html#l00035">35</a> of file <a class="el" href="_i_pv6_control_info_8h_source.html">IPv6ControlInfo.h</a>.</p>
-<div class="fragment"><pre class="fragment">: <a class="code" href="class_i_pv6_control_info___base.html#ad45da85c75fcdccebd263c736ca7554e">IPv6ControlInfo_Base</a>() {<a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a>=NULL;}
+<div class="fragment"><pre class="fragment">: <a class="code" href="class_i_pv6_control_info___base.html#ad45da85c75fcdccebd263c736ca7554e">IPv6ControlInfo_Base</a>() {<a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;}
 </pre></div>
 </div>
 </div>
@@ -146,14 +191,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_pv6_control_info_8cc_source.html#l00021">21</a> of file <a class="el" href="_i_pv6_control_info_8cc_source.html">IPv6ControlInfo.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a>)
-    {
-        drop(<a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a>);
-        <span class="keyword">delete</span> <a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a>;
-    }
+    <a class="code" href="class_i_pv6_control_info.html#aba6c31c7eac1aa80515a8f32160aa254">clean</a>();
 }
 </pre></div>
 </div>
@@ -172,13 +211,231 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_pv6_control_info_8h_source.html#l00037">37</a> of file <a class="el" href="_i_pv6_control_info_8h_source.html">IPv6ControlInfo.h</a>.</p>
-<div class="fragment"><pre class="fragment">: <a class="code" href="class_i_pv6_control_info___base.html#ad45da85c75fcdccebd263c736ca7554e">IPv6ControlInfo_Base</a>() {<a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a>=NULL; <a class="code" href="class_i_pv6_control_info.html#ad9a39bdf603b9b9ffb6d625f03b8d382">operator=</a>(other);}
+<div class="fragment"><pre class="fragment">: <a class="code" href="class_i_pv6_control_info___base.html#ad45da85c75fcdccebd263c736ca7554e">IPv6ControlInfo_Base</a>(other) { <a class="code" href="class_i_pv6_control_info.html#a14f57019f47aae74b2fd15d11f43aa60">copy</a>(other); }
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a41f5abe7c8964988b102dfe65e592856"></a><!-- doxytag: member="IPv6ControlInfo::addExtensionHeader" ref="a41f5abe7c8964988b102dfe65e592856" args="(IPv6ExtensionHeader *eh, int atPos=&#45;1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6_control_info.html#a41f5abe7c8964988b102dfe65e592856">IPv6ControlInfo::addExtensionHeader</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_i_pv6_extension_header.html">IPv6ExtensionHeader</a> *&#160;</td>
+          <td class="paramname"><em>eh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>atPos</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Adds an extension header to the datagram, at the given position. </p>
+<p>The default (atPos==-1) is to add the header at the end. </p>
+
+<p>Referenced by <a class="el" href="class_i_pv6_tunneling.html#ab7f405c4359671ad1021598935fde70d">IPv6Tunneling::encapsulateDatagram()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+<span class="preprocessor">#ifdef WITH_IPv6</span>
+<span class="preprocessor"></span>    ASSERT(eh);
+    <span class="keywordflow">if</span> (atPos &lt; 0 || (ExtensionHeaders::size_type)atPos &gt;= <a class="code" href="class_i_pv6_control_info.html#a1f3904a188e64d29aed7a6f1493e978c">extensionHeaders</a>.size())
+    {
+        <a class="code" href="class_i_pv6_control_info.html#a1f3904a188e64d29aed7a6f1493e978c">extensionHeaders</a>.push_back(eh);
+        <span class="keywordflow">return</span>;
+    }
+
+    <span class="comment">// insert at position atPos, shift up the rest of the array</span>
+    <a class="code" href="class_i_pv6_control_info.html#a1f3904a188e64d29aed7a6f1493e978c">extensionHeaders</a>.insert(<a class="code" href="class_i_pv6_control_info.html#a1f3904a188e64d29aed7a6f1493e978c">extensionHeaders</a>.begin()+atPos, eh);
+<span class="preprocessor">#else</span>
+<span class="preprocessor"></span>    <span class="keywordflow">throw</span> cRuntimeError(<span class="keyword">this</span>, <span class="stringliteral">&quot;INET was compiled without IPv6 support&quot;</span>);
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="aba6c31c7eac1aa80515a8f32160aa254"></a><!-- doxytag: member="IPv6ControlInfo::clean" ref="aba6c31c7eac1aa80515a8f32160aa254" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6_control_info.html#aba6c31c7eac1aa80515a8f32160aa254">IPv6ControlInfo::clean</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_i_pv6_control_info.html#aca61539060acc57f3734c47c932124c6">operator=()</a>, and <a class="el" href="class_i_pv6_control_info.html#ac39f863caff01b2bb7b02cb74d8bdef5">~IPv6ControlInfo()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+<span class="preprocessor">#ifdef WITH_IPv6</span>
+<span class="preprocessor"></span>    dropAndDelete(<a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a>);
+
+    <span class="keywordflow">while</span> ( ! <a class="code" href="class_i_pv6_control_info.html#a1f3904a188e64d29aed7a6f1493e978c">extensionHeaders</a>.empty() )
+    {
+        <a class="code" href="class_i_pv6_extension_header.html" title="Class generated from networklayer/ipv6/IPv6Datagram.msg by opp_msgc.">IPv6ExtensionHeader</a>* eh = <a class="code" href="class_i_pv6_control_info.html#a1f3904a188e64d29aed7a6f1493e978c">extensionHeaders</a>.back();
+        <a class="code" href="class_i_pv6_control_info.html#a1f3904a188e64d29aed7a6f1493e978c">extensionHeaders</a>.pop_back();
+        <span class="keyword">delete</span> eh;
+    }
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a14f57019f47aae74b2fd15d11f43aa60"></a><!-- doxytag: member="IPv6ControlInfo::copy" ref="a14f57019f47aae74b2fd15d11f43aa60" args="(const IPv6ControlInfo &amp;other)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6_control_info.html#a14f57019f47aae74b2fd15d11f43aa60">IPv6ControlInfo::copy</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_i_pv6_control_info.html#aca61539060acc57f3734c47c932124c6">operator=()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+<span class="preprocessor">#ifdef WITH_IPv6</span>
+<span class="preprocessor"></span>    <a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a> = other.<a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a>;
+    <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a>)
+    {
+        <a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a> = <a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a>-&gt;<a class="code" href="class_i_pv6_datagram.html#a75ed977234f31b060443effdf0328d6f">dup</a>();
+        take(<a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a>);
+    }
+
+    <span class="keywordflow">for</span> (ExtensionHeaders::const_iterator i=other.<a class="code" href="class_i_pv6_control_info.html#a1f3904a188e64d29aed7a6f1493e978c">extensionHeaders</a>.begin(); i!=other.<a class="code" href="class_i_pv6_control_info.html#a1f3904a188e64d29aed7a6f1493e978c">extensionHeaders</a>.end(); i++)
+        <a class="code" href="class_i_pv6_control_info.html#a1f3904a188e64d29aed7a6f1493e978c">extensionHeaders</a>.push_back((*i)-&gt;dup());
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ae5066d32bdcc77e78eafbf46a9efa330"></a><!-- doxytag: member="IPv6ControlInfo::dup" ref="ae5066d32bdcc77e78eafbf46a9efa330" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_i_pv6_control_info.html">IPv6ControlInfo</a>* <a class="el" href="class_i_pv6_control_info.html#ae5066d32bdcc77e78eafbf46a9efa330">IPv6ControlInfo::dup</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_i_pv6_control_info___base.html#a663b4b6915a6bc639d601b816a66ec28">IPv6ControlInfo_Base</a>.</p>
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_i_pv6_control_info.html#aa81240d82f83854783aca3534ef45682">IPv6ControlInfo</a>(*<span class="keyword">this</span>);}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a88d1f26a530db7345008f9e5769edc06"></a><!-- doxytag: member="IPv6ControlInfo::getDiffServCodePoint" ref="a88d1f26a530db7345008f9e5769edc06" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_i_pv6_control_info.html#a88d1f26a530db7345008f9e5769edc06">IPv6ControlInfo::getDiffServCodePoint</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns bits 0-5 of the Traffic Class field, a value in the 0..63 range. </p>
+
+<p>Implements <a class="el" href="class_i_pv6_control_info___base.html#ae41d416947e7da9fe0262f85cfe020ff">IPv6ControlInfo_Base</a>.</p>
+<div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> <a class="code" href="class_i_pv6_control_info___base.html#a3bc996f035208dfe73c03a8e078608dc">getTrafficClass</a>() &amp; 0x3f; }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a88a4cf8941d0e86b23997fa199f460fb"></a><!-- doxytag: member="IPv6ControlInfo::getExplicitCongestionNotification" ref="a88a4cf8941d0e86b23997fa199f460fb" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_i_pv6_control_info.html#a88a4cf8941d0e86b23997fa199f460fb">IPv6ControlInfo::getExplicitCongestionNotification</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns bits 6-7 of the Traffic Class field, a value in the range 0..3. </p>
+
+<p>Implements <a class="el" href="class_i_pv6_control_info___base.html#a238e0e16b2a8d4233db4c86f322d7d31">IPv6ControlInfo_Base</a>.</p>
+<div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> (<a class="code" href="class_i_pv6_control_info___base.html#a3bc996f035208dfe73c03a8e078608dc">getTrafficClass</a>() &gt;&gt; 6) &amp; 0x03; }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a27de6e5fab91bb2b9592ad12ac56f0b4"></a><!-- doxytag: member="IPv6ControlInfo::getExtensionHeader" ref="a27de6e5fab91bb2b9592ad12ac56f0b4" args="(unsigned int k)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_i_pv6_control_info__m_8h.html#afe4a3c2f7e35f5cd4a9a009e6513515d">IPv6ExtensionHeaderPtr</a> &amp; <a class="el" href="class_i_pv6_control_info.html#a27de6e5fab91bb2b9592ad12ac56f0b4">IPv6ControlInfo::getExtensionHeader</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>k</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the kth extension header in this datagram. </p>
+
+<p>Implements <a class="el" href="class_i_pv6_control_info___base.html#a8aa6c12ec7b68a712f4a5385a55a5cfd">IPv6ControlInfo_Base</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    ASSERT(k&gt;=0 &amp;&amp; k&lt;<a class="code" href="class_i_pv6_control_info.html#a1f3904a188e64d29aed7a6f1493e978c">extensionHeaders</a>.size());
+    <span class="keywordflow">return</span> <a class="code" href="class_i_pv6_control_info.html#a1f3904a188e64d29aed7a6f1493e978c">extensionHeaders</a>[k];
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a5342ababc8348bb5167a2d767b3eef80"></a><!-- doxytag: member="IPv6ControlInfo::getExtensionHeaderArraySize" ref="a5342ababc8348bb5167a2d767b3eef80" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="class_i_pv6_control_info.html#a5342ababc8348bb5167a2d767b3eef80">IPv6ControlInfo::getExtensionHeaderArraySize</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the number of extension headers in this datagram. </p>
+
+<p>Implements <a class="el" href="class_i_pv6_control_info___base.html#a0c3f8aa07f89e0e32ed6c4a3facc75a7">IPv6ControlInfo_Base</a>.</p>
+
+<p>Referenced by <a class="el" href="class_i_pv6.html#a77a162c6ccb060cd4b690988725c381b">IPv6::encapsulate()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">return</span> <a class="code" href="class_i_pv6_control_info.html#a1f3904a188e64d29aed7a6f1493e978c">extensionHeaders</a>.size();
+}
+</pre></div>
+</div>
+</div>
 <a class="anchor" id="a8d8e46b9c684ec01e4fc4750a66509c3"></a><!-- doxytag: member="IPv6ControlInfo::getOrigDatagram" ref="a8d8e46b9c684ec01e4fc4750a66509c3" args="() const " -->
 <div class="memitem">
 <div class="memproto">
@@ -192,29 +449,64 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_pv6_control_info_8h_source.html#l00041">41</a> of file <a class="el" href="_i_pv6_control_info_8h_source.html">IPv6ControlInfo.h</a>.</p>
 <div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a>;}
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="ad9a39bdf603b9b9ffb6d625f03b8d382"></a><!-- doxytag: member="IPv6ControlInfo::operator=" ref="ad9a39bdf603b9b9ffb6d625f03b8d382" args="(const IPv6ControlInfo &amp;other)" -->
+<a class="anchor" id="aca61539060acc57f3734c47c932124c6"></a><!-- doxytag: member="IPv6ControlInfo::operator=" ref="aca61539060acc57f3734c47c932124c6" args="(const IPv6ControlInfo &amp;other)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_i_pv6_control_info.html">IPv6ControlInfo</a>&amp; IPv6ControlInfo::operator= </td>
+          <td class="memname"><a class="el" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> &amp; IPv6ControlInfo::operator= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> &amp;&#160;</td>
           <td class="paramname"><em>other</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> (<span class="keyword">this</span>==&amp;other) <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+    <a class="code" href="class_i_pv6_control_info.html#aba6c31c7eac1aa80515a8f32160aa254">clean</a>();
+    <a class="code" href="class_i_pv6_control_info.html#aca61539060acc57f3734c47c932124c6">IPv6ControlInfo_Base::operator=</a>(other);
+    <a class="code" href="class_i_pv6_control_info.html#a14f57019f47aae74b2fd15d11f43aa60">copy</a>(other);
+    <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a0b382ba609418f24a3819ad4c9cc999e"></a><!-- doxytag: member="IPv6ControlInfo::removeFirstExtensionHeader" ref="a0b382ba609418f24a3819ad4c9cc999e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_pv6_extension_header.html">IPv6ExtensionHeader</a> * <a class="el" href="class_i_pv6_control_info.html#a0b382ba609418f24a3819ad4c9cc999e">IPv6ControlInfo::removeFirstExtensionHeader</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_control_info_8h_source.html#l00038">38</a> of file <a class="el" href="_i_pv6_control_info_8h_source.html">IPv6ControlInfo.h</a>.</p>
-<div class="fragment"><pre class="fragment">{<a class="code" href="class_i_pv6_control_info.html#ad9a39bdf603b9b9ffb6d625f03b8d382">IPv6ControlInfo_Base::operator=</a>(other); <span class="keywordflow">return</span> *<span class="keyword">this</span>;}
+<p>Remove the first extension header and return it. </p>
+
+<p>Referenced by <a class="el" href="class_i_pv6.html#a77a162c6ccb060cd4b690988725c381b">IPv6::encapsulate()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6_control_info.html#a1f3904a188e64d29aed7a6f1493e978c">extensionHeaders</a>.empty())
+        <span class="keywordflow">return</span> <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+
+<span class="preprocessor">#ifdef WITH_IPv6</span>
+<span class="preprocessor"></span>    ExtensionHeaders::iterator first = <a class="code" href="class_i_pv6_control_info.html#a1f3904a188e64d29aed7a6f1493e978c">extensionHeaders</a>.begin();
+    <a class="code" href="class_i_pv6_extension_header.html" title="Class generated from networklayer/ipv6/IPv6Datagram.msg by opp_msgc.">IPv6ExtensionHeader</a>* ret = *first;
+    <a class="code" href="class_i_pv6_control_info.html#a1f3904a188e64d29aed7a6f1493e978c">extensionHeaders</a>.erase(first);
+    <span class="keywordflow">return</span> ret;
+<span class="preprocessor">#else</span>
+<span class="preprocessor"></span>    <span class="keywordflow">throw</span> cRuntimeError(<span class="keyword">this</span>, <span class="stringliteral">&quot;INET was compiled without IPv6 support&quot;</span>);
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>}
 </pre></div>
 </div>
 </div>
@@ -232,18 +524,123 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_control_info_8cc_source.html#l00038">38</a> of file <a class="el" href="_i_pv6_control_info_8cc_source.html">IPv6ControlInfo.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_c_m_pv6_8cc_source.html#l00178">ICMPv6::sendErrorMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_c_m_pv6.html#ac5c4d78f63c567376be9cb67c0773d18">ICMPv6::sendErrorMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (!<a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a>)
-        opp_error(<span class="stringliteral">&quot;IPv6ControlInfo::removeOrigDatagram(): no datagram attached &quot;</span>
+<span class="preprocessor">#ifdef WITH_IPv6</span>
+<span class="preprocessor"></span>    <span class="keywordflow">if</span> (!<a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a>)
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="keyword">this</span>, <span class="stringliteral">&quot;IPv6ControlInfo::removeOrigDatagram(): no datagram attached &quot;</span>
                   <span class="stringliteral">&quot;(already removed, or maybe this IPv6ControlInfo does not come &quot;</span>
                   <span class="stringliteral">&quot;from the IPv6 module?)&quot;</span>);
-    <a class="code" href="class_i_pv6_datagram.html">IPv6Datagram</a> *ret = <a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a>;
+
+    <a class="code" href="class_i_pv6_datagram.html" title="Represents an IPv6 datagram.">IPv6Datagram</a> *ret = <a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a>;
     drop(<a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a>);
-    <a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a> = NULL;
+    <a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
     <span class="keywordflow">return</span> ret;
+<span class="preprocessor">#else</span>
+<span class="preprocessor"></span>    <span class="keywordflow">throw</span> cRuntimeError(<span class="keyword">this</span>, <span class="stringliteral">&quot;INET was compiled without IPv6 support&quot;</span>);
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a4c660ee03eb094f2ffc3f4e7498366d1"></a><!-- doxytag: member="IPv6ControlInfo::setDiffServCodePoint" ref="a4c660ee03eb094f2ffc3f4e7498366d1" args="(int dscp)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6_control_info.html#a4c660ee03eb094f2ffc3f4e7498366d1">IPv6ControlInfo::setDiffServCodePoint</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dscp</em></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets bits 0-5 of the Traffic Class field; expects a value in the 0..63 range. </p>
+
+<p>Implements <a class="el" href="class_i_pv6_control_info___base.html#a730b34cf50c369fd3cbfd35d6bb7111e">IPv6ControlInfo_Base</a>.</p>
+<div class="fragment"><pre class="fragment">{ <a class="code" href="class_i_pv6_control_info___base.html#a3cb44648ffd902c65fb61dfe5b6353a3">setTrafficClass</a>( (<a class="code" href="class_i_pv6_control_info___base.html#a3bc996f035208dfe73c03a8e078608dc">getTrafficClass</a>() &amp; 0xc0) | (dscp &amp; 0x3f)); }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ac05e3ec6e655ca551873eabb68a6f041"></a><!-- doxytag: member="IPv6ControlInfo::setExplicitCongestionNotification" ref="ac05e3ec6e655ca551873eabb68a6f041" args="(int ecn)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6_control_info.html#ac05e3ec6e655ca551873eabb68a6f041">IPv6ControlInfo::setExplicitCongestionNotification</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ecn</em></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets bits 6-7 of the Traffic Class field; expects a value in the 0..3 range. </p>
+
+<p>Implements <a class="el" href="class_i_pv6_control_info___base.html#a5e06209ba362764162926bb14096967b">IPv6ControlInfo_Base</a>.</p>
+<div class="fragment"><pre class="fragment">{ <a class="code" href="class_i_pv6_control_info___base.html#a3cb44648ffd902c65fb61dfe5b6353a3">setTrafficClass</a>( (<a class="code" href="class_i_pv6_control_info___base.html#a3bc996f035208dfe73c03a8e078608dc">getTrafficClass</a>() &amp; 0x3f) | ((ecn &amp; 0x3) &lt;&lt; 6)); }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a92dcbaa7e679c8400704f1454f438370"></a><!-- doxytag: member="IPv6ControlInfo::setExtensionHeader" ref="a92dcbaa7e679c8400704f1454f438370" args="(unsigned int k, const IPv6ExtensionHeaderPtr &amp;extensionHeader_var)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6_control_info.html#a92dcbaa7e679c8400704f1454f438370">IPv6ControlInfo::setExtensionHeader</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="_i_pv6_control_info__m_8h.html#afe4a3c2f7e35f5cd4a9a009e6513515d">IPv6ExtensionHeaderPtr</a> &amp;&#160;</td>
+          <td class="paramname"><em>extensionHeader_var</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Generated but unused method, should not be called. </p>
+
+<p>Implements <a class="el" href="class_i_pv6_control_info___base.html#a7f3ef6c909d98d9d67748eaa4b810d04">IPv6ControlInfo_Base</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">throw</span> cRuntimeError(<span class="keyword">this</span>, <span class="stringliteral">&quot;setExtensionHeader() not supported, use addExtensionHeader()&quot;</span>);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="af6ed0f601b6a2ed54033983f3626a418"></a><!-- doxytag: member="IPv6ControlInfo::setExtensionHeaderArraySize" ref="af6ed0f601b6a2ed54033983f3626a418" args="(unsigned int size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6_control_info.html#af6ed0f601b6a2ed54033983f3626a418">IPv6ControlInfo::setExtensionHeaderArraySize</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Generated but unused method, should not be called. </p>
+
+<p>Implements <a class="el" href="class_i_pv6_control_info___base.html#a30dd10c886623fe84d67f6f3dc649104">IPv6ControlInfo_Base</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">throw</span> cRuntimeError(<span class="keyword">this</span>, <span class="stringliteral">&quot;setExtensionHeaderArraySize() not supported, use addExtensionHeader()&quot;</span>);
 }
 </pre></div>
 </div>
@@ -253,7 +650,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_pv6_control_info.html#a00c040fcb7b5ff8b8a36cb8fbd405383">IPv6ControlInfo::setOrigDatagram</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6_control_info.html#a00c040fcb7b5ff8b8a36cb8fbd405383">IPv6ControlInfo::setOrigDatagram</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *&#160;</td>
           <td class="paramname"><em>d</em></td><td>)</td>
@@ -263,15 +660,18 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_control_info_8cc_source.html#l00030">30</a> of file <a class="el" href="_i_pv6_control_info_8cc_source.html">IPv6ControlInfo.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00479">IPv6::decapsulate()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#af2e604305a9ff165129097c1cad62cb2">IPv6::decapsulate()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a>)
-        opp_error(<span class="stringliteral">&quot;IPv6ControlInfo::setOrigDatagram(): a datagram is already attached&quot;</span>);
+<span class="preprocessor">#ifdef WITH_IPv6</span>
+<span class="preprocessor"></span>    <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a>)
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="keyword">this</span>, <span class="stringliteral">&quot;IPv6ControlInfo::setOrigDatagram(): a datagram is already attached&quot;</span>);
+
     <a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a> = d;
     take(<a class="code" href="class_i_pv6_control_info.html#a651b1e1789c79ce6467104238eff50bd">dgram</a>);
-}
+<span class="preprocessor">#else</span>
+<span class="preprocessor"></span>    <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;INET was compiled without IPv6 support&quot;</span>);
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>}
 </pre></div>
 </div>
 </div>
@@ -287,15 +687,28 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_control_info_8h_source.html#l00033">33</a> of file <a class="el" href="_i_pv6_control_info_8h_source.html">IPv6ControlInfo.h</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_control_info.html#aba6c31c7eac1aa80515a8f32160aa254">clean()</a>, <a class="el" href="class_i_pv6_control_info.html#a14f57019f47aae74b2fd15d11f43aa60">copy()</a>, <a class="el" href="class_i_pv6_control_info.html#acd5e1deff05d96a52a3f7369270eb019">removeOrigDatagram()</a>, and <a class="el" href="class_i_pv6_control_info.html#a00c040fcb7b5ff8b8a36cb8fbd405383">setOrigDatagram()</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_pv6_control_info_8cc_source.html#l00038">removeOrigDatagram()</a>, <a class="el" href="_i_pv6_control_info_8cc_source.html#l00030">setOrigDatagram()</a>, and <a class="el" href="_i_pv6_control_info_8cc_source.html#l00021">~IPv6ControlInfo()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a1f3904a188e64d29aed7a6f1493e978c"></a><!-- doxytag: member="IPv6ControlInfo::extensionHeaders" ref="a1f3904a188e64d29aed7a6f1493e978c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_pv6_control_info.html#a3cc975ccdffb5798f2a7154c2580fe54">ExtensionHeaders</a> <a class="el" href="class_i_pv6_control_info.html#a1f3904a188e64d29aed7a6f1493e978c">IPv6ControlInfo::extensionHeaders</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_i_pv6_control_info.html#a41f5abe7c8964988b102dfe65e592856">addExtensionHeader()</a>, <a class="el" href="class_i_pv6_control_info.html#aba6c31c7eac1aa80515a8f32160aa254">clean()</a>, <a class="el" href="class_i_pv6_control_info.html#a14f57019f47aae74b2fd15d11f43aa60">copy()</a>, <a class="el" href="class_i_pv6_control_info.html#a27de6e5fab91bb2b9592ad12ac56f0b4">getExtensionHeader()</a>, <a class="el" href="class_i_pv6_control_info.html#a5342ababc8348bb5167a2d767b3eef80">getExtensionHeaderArraySize()</a>, and <a class="el" href="class_i_pv6_control_info.html#a0b382ba609418f24a3819ad4c9cc999e">removeFirstExtensionHeader()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_i_pv6_control_info_8h_source.html">IPv6ControlInfo.h</a></li>
-<li><a class="el" href="_i_pv6_control_info_8cc_source.html">IPv6ControlInfo.cc</a></li>
+<li><a class="el" href="_i_pv6_control_info_8h.html">IPv6ControlInfo.h</a></li>
+<li><a class="el" href="_i_pv6_control_info_8cc.html">IPv6ControlInfo.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -303,7 +716,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_i_pv6_control_info.html">IPv6ControlInfo</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:49 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:26 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

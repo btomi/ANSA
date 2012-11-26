@@ -75,272 +75,241 @@
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">RTPInnerPacket Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="RTPInnerPacket" -->
-<p><code>#include &lt;<a class="el" href="_r_t_p_inner_packet_8h_source.html">RTPInnerPacket.h</a>&gt;</code></p>
+<!-- doxytag: class="RTPInnerPacket" --><!-- doxytag: inherits="RTPInnerPacket_Base" -->
+<p>This class is used for communication between submodules of the <a class="el" href="class_r_t_p.html" title="An RTP is the center of the RTP layer of an endsystem.">RTP</a> layer module.  
+ <a href="class_r_t_p_inner_packet.html#details">More...</a></p>
+
+<p><code>#include &lt;RTPInnerPacket.h&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for RTPInnerPacket:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_r_t_p_inner_packet.png" usemap="#RTPInnerPacket_map" alt=""/>
+  <map id="RTPInnerPacket_map" name="RTPInnerPacket_map">
+<area href="class_r_t_p_inner_packet___base.html" title="Class generated from transport/rtp/RTPInnerPacket.msg by opp_msgc." alt="RTPInnerPacket_Base" shape="rect" coords="0,0,137,24"/>
+</map>
+ </div></div>
 
 <p><a href="class_r_t_p_inner_packet-members.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888">RTP_INP_TYPE</a> { <br/>
-&#160;&#160;<a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888ad0ced44087eda2609f5b8a0e70f76cc6">RTP_INP_UNDEF</a>, 
-<a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888aa7f58779082aabfcb98201975f253e23">RTP_INP_INITIALIZE_PROFILE</a>, 
-<a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888ae1f78d9bba590a57739a752123e7bf76">RTP_INP_PROFILE_INITIALIZED</a>, 
-<a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888a5288c999e7efcec542c5a78d3e5133de">RTP_INP_INITIALIZE_RTCP</a>, 
-<br/>
-&#160;&#160;<a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888aa15a0f828a19ab7dcddae100212f0bf9">RTP_INP_RTCP_INITIALIZED</a>, 
-<a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888a39dd32720d5af4d58276b3a596c676e8">RTP_INP_CREATE_SENDER_MODULE</a>, 
-<a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888ac5968cd92c06811f3a5b6f0ecc3ddfef">RTP_INP_SENDER_MODULE_CREATED</a>, 
-<a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888ac2a8241cd4562aaed682eb52d34fa90e">RTP_INP_DELETE_SENDER_MODULE</a>, 
-<br/>
-&#160;&#160;<a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888a5e52b4b7b5fb5a4f208bcc03a638efa5">RTP_INP_SENDER_MODULE_DELETED</a>, 
-<a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888a43cb0a1732c130c1a459c6693d40a479">RTP_INP_INITIALIZE_SENDER_MODULE</a>, 
-<a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888aa7cdbe45405af9b4532642c98bc45358">RTP_INP_SENDER_MODULE_INITIALIZED</a>, 
-<a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888afef73ca182e050207a0384b9684dbe3d">RTP_INP_SENDER_MODULE_CONTROL</a>, 
-<br/>
-&#160;&#160;<a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888acc1668bccb57b68572a99406553db514">RTP_INP_SENDER_MODULE_STATUS</a>, 
-<a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888a901b072177df54efe0296f2a3a40e207">RTP_INP_LEAVE_SESSION</a>, 
-<a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888a042ac5071dbdc50ce390bdd10ca01194">RTP_INP_SESSION_LEFT</a>, 
-<a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888ad9e60ccc5022412d2cbbcc82bf78ba67">RTP_INP_DATA_OUT</a>, 
-<br/>
-&#160;&#160;<a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888afd9da6decfe75fcbfcfacfc57143adcf">RTP_INP_DATA_IN</a>
-<br/>
- }</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a391466cd2c77ce6ab6dcc238037399a3">RTPInnerPacket</a> (const char *name=NULL)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a9c39be7bf538cb556b8f5194efa45681">RTPInnerPacket</a> (const <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> &amp;rinp)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a1b62fca84739b573c79e363af9d970e2">~RTPInnerPacket</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#aa6fd7dc6190ac8c138ea106ca44e3930">operator=</a> (const <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> &amp;rinp)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a071d7df7bf5b6a8dd2f2c9ab67cbab65">dup</a> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#ab6b9208d3c88a34412cb43fd073bdcd2">info</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a0689d488c47d646cda0b66ff7c9adb47">dump</a> (std::ostream &amp;os) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a039ffdd52b5e98e12841c9771134e436">initializeProfile</a> (int mtu)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a7b3b519afcc4207f39d354a009393938">profileInitialized</a> (int rtcpPercentage, int port)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#adb2bd2c06f8bbec3a7c446514cc370bd">initializeRTCP</a> (const char *commonName, int mtu, int bandwidth, int rtcpPercentage, <a class="el" href="class_i_p_address.html">IPAddress</a> address, int port)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a68dbbcee1910c17967f6b5565595860b">rtcpInitialized</a> (uint32 ssrc)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#ab136d4c72e19a7bb75febbf50cd40837">createSenderModule</a> (uint32 ssrc, int payloadType, const char *fileName)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a81a31575c8ee1363c0a01e4532d0ba13">senderModuleCreated</a> (uint32 ssrc)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a40fff5a13cca8eaa6419124a586328b3">deleteSenderModule</a> (uint32 ssrc)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a552ea3d0e5e2ae274eece44cd28ab12a">senderModuleDeleted</a> (uint32 ssrc)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#aba76bd359381ad3f68bc002ca208e1c1">initializeSenderModule</a> (uint32 ssrc, const char *fileName, int mtu)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a73c5f78d56cca62db49cc6ba54ad524f">senderModuleInitialized</a> (uint32 ssrc, int payloadType, int clockRate, int timeStampBase, int sequenceNumberBase)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a47657d5f6b0d697802b5687d5509c5b4">senderModuleControl</a> (uint32 ssrc, <a class="el" href="class_r_t_p_sender_control_message.html">RTPSenderControlMessage</a> *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#ad96315d76da3e4068c6107b886884506">senderModuleStatus</a> (uint32 ssrc, <a class="el" href="class_r_t_p_sender_status_message.html">RTPSenderStatusMessage</a> *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a15cbc79c5a9b381854ed9094d23e6143">leaveSession</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a99a575d15fc3f0e38103405b7bf5630a">sessionLeft</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#ab9905bd890c4a701cd37534645e67feb">dataOut</a> (<a class="el" href="class_r_t_p_packet.html">RTPPacket</a> *packet)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#af7e24e69628c578d2952bd6d92265939">dataIn</a> (<a class="el" href="class_r_t_p_packet.html">RTPPacket</a> *packet, <a class="el" href="class_i_p_address.html">IPAddress</a> address, int port)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888">RTP_INP_TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a8de46bdf80e04331223d83af5f507d80">getType</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a35bb9c6e60ced0c71eaf49ed8ae5715d">getCommonName</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#af622535a6cc9b941389bf20845b23290">getMTU</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a8a3a5527f5a42e6a1ccb1cf86c7d55d8">getBandwidth</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a13da1d6b34e56f32750bea7775160000">getRtcpPercentage</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_i_p_address.html">IPAddress</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a7c2935515610e3115a422cba8a9b0ae7">getAddress</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#aaea79a8df1d5041967adde45e2162c69">getPort</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a0b2377650bf813c8e0a0bf8bd8711505">getSSRC</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#ad4097a184e31330e823a97d346221754">getPayloadType</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a04a6281b1735bf22e9a5dff46681c124">getFileName</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#aeea95a47abc9d6f82aa402f55b64424c">getClockRate</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a713d7c6f5267b6190000dab770d32706">getTimeStampBase</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a43192598ab8517ff98c1cbab4a8785bf">getSequenceNumberBase</a> ()</td></tr>
-<tr><td colspan="2"><h2><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888">RTP_INP_TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a89c20e5afb600314674d6eada18a0dfc">_commonName</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a85ef5e5e2e0bddcf9a51314a6a2bd031">_mtu</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a541c7d6f462a13015dfe32a1cb857832">_bandwidth</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a4d40b062f6e851fd81dd48df4a691439">_rtcpPercentage</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_p_address.html">IPAddress</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#aeeb006c523869e1239f9bf5c8b9ab498">_address</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a1be10333d8e93eb1cee9b09ecb1cad46">_port</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a57d7da48996278bafc2b8c8b0f71ec35">_ssrc</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#adc5c5faae913ecce79a7b059ddceb0d3">_payloadType</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a6d6a46ef56fad53c58c0e6d6e982f27e">_fileName</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#aa26b2fbeb17140a431dc057b877e24ef">_clockRate</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a9a98009b6ecfd0407c5add8578fa8a47">_timeStampBase</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a6faf7881b6c382cbb62dfcc5086ce2f2">_sequenceNumberBase</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#aa8d87c2560514cc273a0aaf218953b27">RTPInnerPacket</a> (const char *<a class="el" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>=<a class="el" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, int kind=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#aa65aa1a1643d29c7fb1591585bab1504">RTPInnerPacket</a> (const <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> &amp;other)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a1f0efc42799bd0926ffdb16fe2e3dbcd">operator=</a> (const <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> &amp;other)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a3a4793ae761cdcc0babbd33ee7064b33">dup</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#afd6f0674bc237220773e90c7a8c72081">info</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a short info about this <a class="el" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> into the given string.  <a href="#afd6f0674bc237220773e90c7a8c72081"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a0689d488c47d646cda0b66ff7c9adb47">dump</a> (std::ostream &amp;os) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a longer info about this <a class="el" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> into the given output stream.  <a href="#a0689d488c47d646cda0b66ff7c9adb47"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a4b9b480c34546f1dc342ef4cc13ae3b9">setInitializeProfilePkt</a> (int mtu)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by the rtp module after creating the profile module.  <a href="#a4b9b480c34546f1dc342ef4cc13ae3b9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a9c95ab7be146d697a70ffff43a047923">setProfileInitializedPkt</a> (int rtcpPercentage, int port)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by the profile module after it has received the initializeProfile() message.  <a href="#a9c95ab7be146d697a70ffff43a047923"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a956e5392eb314c9513895e9178c73a25">setInitializeRTCPPkt</a> (const char *commonName, int mtu, int bandwidth, int rtcpPercentage, <a class="el" href="class_i_pv4_address.html">IPv4Address</a> address, int port)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by the rtp module to inform the rtcp module about mandatory information for starting the rtp session.  <a href="#a956e5392eb314c9513895e9178c73a25"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#af9df59692bcc73e29071836f5598e3ea">setRtcpInitializedPkt</a> (uint32 ssrc)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by the rtcp module after it has waited for half an rtcp interval for incoming messages from other session participants.  <a href="#af9df59692bcc73e29071836f5598e3ea"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#ad1bf7a964658caf3e836ae19e58c309c">setCreateSenderModulePkt</a> (uint32 ssrc, int payloadType, const char *fileName)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a69331b93d77d49a9131bfc9421045108">setSenderModuleCreatedPkt</a> (uint32 ssrc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a49e1f3875a5e6f4f8593f689df9a15c6">setDeleteSenderModulePkt</a> (uint32 ssrc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a5ac0bba1d5187c998e2cd513424a67f9">setSenderModuleDeletedPkt</a> (uint32 ssrc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a1e3b1697e7bd092be59648c7db418853">setInitializeSenderModulePkt</a> (uint32 ssrc, const char *fileName, int mtu)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a2580359153c64a03527a5247ca42317d">setSenderModuleInitializedPkt</a> (uint32 ssrc, int payloadType, int clockRate, int timeStampBase, int sequenceNumberBase)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a46102242c2c61f1bc703a3f8137797e7">setSenderModuleControlPkt</a> (uint32 ssrc, <a class="el" href="class_r_t_p_sender_control_message.html">RTPSenderControlMessage</a> *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a687773c746c5ba17e32300d878673006">setSenderModuleStatusPkt</a> (uint32 ssrc, <a class="el" href="class_r_t_p_sender_status_message.html">RTPSenderStatusMessage</a> *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a52ba464e11c0f1b9cbf64862766fd839">setLeaveSessionPkt</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by the rtp module to inform the rtcp module that the session should be left.  <a href="#a52ba464e11c0f1b9cbf64862766fd839"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a9a8c18e7aecd94e820dcc7f782fa2ba0">setSessionLeftPkt</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by the rtcp module when the rtcp bye packet has been sent to the network.  <a href="#a9a8c18e7aecd94e820dcc7f782fa2ba0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a13acb51482d7653808694d4403fbc962">setDataOutPkt</a> (<a class="el" href="class_r_t_p_packet.html">RTPPacket</a> *packet)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Capsulates the outgoing <a class="el" href="class_r_t_p_packet.html" title="This class represents an RTP data packet.">RTPPacket</a> into this <a class="el" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> to transport it within the rtp layer.  <a href="#a13acb51482d7653808694d4403fbc962"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a7e455d20150fd3a316bc680c770f24fc">setDataInPkt</a> (<a class="el" href="class_r_t_p_packet.html">RTPPacket</a> *packet, <a class="el" href="class_i_pv4_address.html">IPv4Address</a> address, int port)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Capsultes the incoming <a class="el" href="class_r_t_p_packet.html" title="This class represents an RTP data packet.">RTPPacket</a> into this <a class="el" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> to transport it within the rtp layer.  <a href="#a7e455d20150fd3a316bc680c770f24fc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_inner_packet.html#a28d94da5ec40d0498b8b25fde0d20067">getMTU</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum transmission unit stored in this <a class="el" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a>.  <a href="#a28d94da5ec40d0498b8b25fde0d20067"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>This class is used for communication between submodules of the rtp layer module. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8h_source.html#l00035">35</a> of file <a class="el" href="_r_t_p_inner_packet_8h_source.html">RTPInnerPacket.h</a>.</p>
-</div><hr/><h2>Member Enumeration Documentation</h2>
-<a class="anchor" id="abaed016d76395b99a11347dd05fd8888"></a><!-- doxytag: member="RTPInnerPacket::RTP_INP_TYPE" ref="abaed016d76395b99a11347dd05fd8888" args="" -->
+<div class="textblock"><p>This class is used for communication between submodules of the <a class="el" href="class_r_t_p.html" title="An RTP is the center of the RTP layer of an endsystem.">RTP</a> layer module. </p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aa8d87c2560514cc273a0aaf218953b27"></a><!-- doxytag: member="RTPInnerPacket::RTPInnerPacket" ref="aa8d87c2560514cc273a0aaf218953b27" args="(const char *name=NULL, int kind=0)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888">RTPInnerPacket::RTP_INP_TYPE</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>This enumeration is a list of all possibly types of an <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="abaed016d76395b99a11347dd05fd8888ad0ced44087eda2609f5b8a0e70f76cc6"></a><!-- doxytag: member="RTP_INP_UNDEF" ref="abaed016d76395b99a11347dd05fd8888ad0ced44087eda2609f5b8a0e70f76cc6" args="" -->RTP_INP_UNDEF</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="abaed016d76395b99a11347dd05fd8888aa7f58779082aabfcb98201975f253e23"></a><!-- doxytag: member="RTP_INP_INITIALIZE_PROFILE" ref="abaed016d76395b99a11347dd05fd8888aa7f58779082aabfcb98201975f253e23" args="" -->RTP_INP_INITIALIZE_PROFILE</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="abaed016d76395b99a11347dd05fd8888ae1f78d9bba590a57739a752123e7bf76"></a><!-- doxytag: member="RTP_INP_PROFILE_INITIALIZED" ref="abaed016d76395b99a11347dd05fd8888ae1f78d9bba590a57739a752123e7bf76" args="" -->RTP_INP_PROFILE_INITIALIZED</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="abaed016d76395b99a11347dd05fd8888a5288c999e7efcec542c5a78d3e5133de"></a><!-- doxytag: member="RTP_INP_INITIALIZE_RTCP" ref="abaed016d76395b99a11347dd05fd8888a5288c999e7efcec542c5a78d3e5133de" args="" -->RTP_INP_INITIALIZE_RTCP</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="abaed016d76395b99a11347dd05fd8888aa15a0f828a19ab7dcddae100212f0bf9"></a><!-- doxytag: member="RTP_INP_RTCP_INITIALIZED" ref="abaed016d76395b99a11347dd05fd8888aa15a0f828a19ab7dcddae100212f0bf9" args="" -->RTP_INP_RTCP_INITIALIZED</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="abaed016d76395b99a11347dd05fd8888a39dd32720d5af4d58276b3a596c676e8"></a><!-- doxytag: member="RTP_INP_CREATE_SENDER_MODULE" ref="abaed016d76395b99a11347dd05fd8888a39dd32720d5af4d58276b3a596c676e8" args="" -->RTP_INP_CREATE_SENDER_MODULE</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="abaed016d76395b99a11347dd05fd8888ac5968cd92c06811f3a5b6f0ecc3ddfef"></a><!-- doxytag: member="RTP_INP_SENDER_MODULE_CREATED" ref="abaed016d76395b99a11347dd05fd8888ac5968cd92c06811f3a5b6f0ecc3ddfef" args="" -->RTP_INP_SENDER_MODULE_CREATED</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="abaed016d76395b99a11347dd05fd8888ac2a8241cd4562aaed682eb52d34fa90e"></a><!-- doxytag: member="RTP_INP_DELETE_SENDER_MODULE" ref="abaed016d76395b99a11347dd05fd8888ac2a8241cd4562aaed682eb52d34fa90e" args="" -->RTP_INP_DELETE_SENDER_MODULE</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="abaed016d76395b99a11347dd05fd8888a5e52b4b7b5fb5a4f208bcc03a638efa5"></a><!-- doxytag: member="RTP_INP_SENDER_MODULE_DELETED" ref="abaed016d76395b99a11347dd05fd8888a5e52b4b7b5fb5a4f208bcc03a638efa5" args="" -->RTP_INP_SENDER_MODULE_DELETED</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="abaed016d76395b99a11347dd05fd8888a43cb0a1732c130c1a459c6693d40a479"></a><!-- doxytag: member="RTP_INP_INITIALIZE_SENDER_MODULE" ref="abaed016d76395b99a11347dd05fd8888a43cb0a1732c130c1a459c6693d40a479" args="" -->RTP_INP_INITIALIZE_SENDER_MODULE</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="abaed016d76395b99a11347dd05fd8888aa7cdbe45405af9b4532642c98bc45358"></a><!-- doxytag: member="RTP_INP_SENDER_MODULE_INITIALIZED" ref="abaed016d76395b99a11347dd05fd8888aa7cdbe45405af9b4532642c98bc45358" args="" -->RTP_INP_SENDER_MODULE_INITIALIZED</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="abaed016d76395b99a11347dd05fd8888afef73ca182e050207a0384b9684dbe3d"></a><!-- doxytag: member="RTP_INP_SENDER_MODULE_CONTROL" ref="abaed016d76395b99a11347dd05fd8888afef73ca182e050207a0384b9684dbe3d" args="" -->RTP_INP_SENDER_MODULE_CONTROL</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="abaed016d76395b99a11347dd05fd8888acc1668bccb57b68572a99406553db514"></a><!-- doxytag: member="RTP_INP_SENDER_MODULE_STATUS" ref="abaed016d76395b99a11347dd05fd8888acc1668bccb57b68572a99406553db514" args="" -->RTP_INP_SENDER_MODULE_STATUS</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="abaed016d76395b99a11347dd05fd8888a901b072177df54efe0296f2a3a40e207"></a><!-- doxytag: member="RTP_INP_LEAVE_SESSION" ref="abaed016d76395b99a11347dd05fd8888a901b072177df54efe0296f2a3a40e207" args="" -->RTP_INP_LEAVE_SESSION</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="abaed016d76395b99a11347dd05fd8888a042ac5071dbdc50ce390bdd10ca01194"></a><!-- doxytag: member="RTP_INP_SESSION_LEFT" ref="abaed016d76395b99a11347dd05fd8888a042ac5071dbdc50ce390bdd10ca01194" args="" -->RTP_INP_SESSION_LEFT</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="abaed016d76395b99a11347dd05fd8888ad9e60ccc5022412d2cbbcc82bf78ba67"></a><!-- doxytag: member="RTP_INP_DATA_OUT" ref="abaed016d76395b99a11347dd05fd8888ad9e60ccc5022412d2cbbcc82bf78ba67" args="" -->RTP_INP_DATA_OUT</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="abaed016d76395b99a11347dd05fd8888afd9da6decfe75fcbfcfacfc57143adcf"></a><!-- doxytag: member="RTP_INP_DATA_IN" ref="abaed016d76395b99a11347dd05fd8888afd9da6decfe75fcbfcfacfc57143adcf" args="" -->RTP_INP_DATA_IN</em>&nbsp;</td><td>
-</td></tr>
-</table>
-</dd>
-</dl>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8h_source.html#l00044">44</a> of file <a class="el" href="_r_t_p_inner_packet_8h_source.html">RTPInnerPacket.h</a>.</p>
-<div class="fragment"><pre class="fragment">                          {
-            <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888ad0ced44087eda2609f5b8a0e70f76cc6">RTP_INP_UNDEF</a>,
-            <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888aa7f58779082aabfcb98201975f253e23">RTP_INP_INITIALIZE_PROFILE</a>,
-            <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888ae1f78d9bba590a57739a752123e7bf76">RTP_INP_PROFILE_INITIALIZED</a>,
-            <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888a5288c999e7efcec542c5a78d3e5133de">RTP_INP_INITIALIZE_RTCP</a>,
-            <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888aa15a0f828a19ab7dcddae100212f0bf9">RTP_INP_RTCP_INITIALIZED</a>,
-            <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888a39dd32720d5af4d58276b3a596c676e8">RTP_INP_CREATE_SENDER_MODULE</a>,
-            <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888ac5968cd92c06811f3a5b6f0ecc3ddfef">RTP_INP_SENDER_MODULE_CREATED</a>,
-            <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888ac2a8241cd4562aaed682eb52d34fa90e">RTP_INP_DELETE_SENDER_MODULE</a>,
-            <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888a5e52b4b7b5fb5a4f208bcc03a638efa5">RTP_INP_SENDER_MODULE_DELETED</a>,
-            <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888a43cb0a1732c130c1a459c6693d40a479">RTP_INP_INITIALIZE_SENDER_MODULE</a>,
-            <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888aa7cdbe45405af9b4532642c98bc45358">RTP_INP_SENDER_MODULE_INITIALIZED</a>,
-            <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888afef73ca182e050207a0384b9684dbe3d">RTP_INP_SENDER_MODULE_CONTROL</a>,
-            <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888acc1668bccb57b68572a99406553db514">RTP_INP_SENDER_MODULE_STATUS</a>,
-            <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888a901b072177df54efe0296f2a3a40e207">RTP_INP_LEAVE_SESSION</a>,
-            <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888a042ac5071dbdc50ce390bdd10ca01194">RTP_INP_SESSION_LEFT</a>,
-            <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888ad9e60ccc5022412d2cbbcc82bf78ba67">RTP_INP_DATA_OUT</a>,
-            <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888afd9da6decfe75fcbfcfacfc57143adcf">RTP_INP_DATA_IN</a>
-        };
-</pre></div>
-</div>
-</div>
-<hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a391466cd2c77ce6ab6dcc238037399a3"></a><!-- doxytag: member="RTPInnerPacket::RTPInnerPacket" ref="a391466cd2c77ce6ab6dcc238037399a3" args="(const char *name=NULL)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_r_t_p_inner_packet.html#a391466cd2c77ce6ab6dcc238037399a3">RTPInnerPacket::RTPInnerPacket</a> </td>
+          <td class="memname"><a class="el" href="class_r_t_p_inner_packet.html#aa8d87c2560514cc273a0aaf218953b27">RTPInnerPacket::RTPInnerPacket</a> </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>name</em> = <code>NULL</code></td><td>)</td>
+          <td class="paramname"><em>name</em> = <code><a class="el" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>kind</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Default constructor </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00030">30</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00084">dup()</a>.</p>
-<div class="fragment"><pre class="fragment">                                               : cPacket(name)
-{
-    <a class="code" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a> = <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888ad0ced44087eda2609f5b8a0e70f76cc6">RTP_INP_UNDEF</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a89c20e5afb600314674d6eada18a0dfc">_commonName</a> = NULL;
-    <a class="code" href="class_r_t_p_inner_packet.html#a85ef5e5e2e0bddcf9a51314a6a2bd031">_mtu</a> = 0;
-    <a class="code" href="class_r_t_p_inner_packet.html#a541c7d6f462a13015dfe32a1cb857832">_bandwidth</a> = 0;
-    <a class="code" href="class_r_t_p_inner_packet.html#a4d40b062f6e851fd81dd48df4a691439">_rtcpPercentage</a> = 0;
-    <a class="code" href="class_r_t_p_inner_packet.html#aeeb006c523869e1239f9bf5c8b9ab498">_address</a> = <a class="code" href="class_i_p_address.html#adf0c14fe4820be16bec3929a9c019648" title="0.0.0.0">IPAddress::UNSPECIFIED_ADDRESS</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a1be10333d8e93eb1cee9b09ecb1cad46">_port</a> = <a class="code" href="_i_p_address_8h.html#af1fbd9b1c7fd9da1fdebcf3afd0d111c">PORT_UNDEF</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a57d7da48996278bafc2b8c8b0f71ec35">_ssrc</a> = 0;
-    <a class="code" href="class_r_t_p_inner_packet.html#adc5c5faae913ecce79a7b059ddceb0d3">_payloadType</a> = 0;
-    <a class="code" href="class_r_t_p_inner_packet.html#a6d6a46ef56fad53c58c0e6d6e982f27e">_fileName</a> = NULL;
-    <a class="code" href="class_r_t_p_inner_packet.html#aa26b2fbeb17140a431dc057b877e24ef">_clockRate</a> = 0;
-    <a class="code" href="class_r_t_p_inner_packet.html#a9a98009b6ecfd0407c5add8578fa8a47">_timeStampBase</a> = 0;
-    <a class="code" href="class_r_t_p_inner_packet.html#a6faf7881b6c382cbb62dfcc5086ce2f2">_sequenceNumberBase</a> = 0;
-}
+<p>Referenced by <a class="el" href="class_r_t_p_inner_packet.html#a3a4793ae761cdcc0babbd33ee7064b33">dup()</a>.</p>
+<div class="fragment"><pre class="fragment">: <a class="code" href="class_r_t_p_inner_packet___base.html#a96d226116e66491e820dae2bc3480ce8">RTPInnerPacket_Base</a>(<a class="code" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, kind) {}
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a9c39be7bf538cb556b8f5194efa45681"></a><!-- doxytag: member="RTPInnerPacket::RTPInnerPacket" ref="a9c39be7bf538cb556b8f5194efa45681" args="(const RTPInnerPacket &amp;rinp)" -->
+<a class="anchor" id="aa65aa1a1643d29c7fb1591585bab1504"></a><!-- doxytag: member="RTPInnerPacket::RTPInnerPacket" ref="aa65aa1a1643d29c7fb1591585bab1504" args="(const RTPInnerPacket &amp;other)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_r_t_p_inner_packet.html#a391466cd2c77ce6ab6dcc238037399a3">RTPInnerPacket::RTPInnerPacket</a> </td>
+          <td class="memname"><a class="el" href="class_r_t_p_inner_packet.html#aa8d87c2560514cc273a0aaf218953b27">RTPInnerPacket::RTPInnerPacket</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> &amp;&#160;</td>
-          <td class="paramname"><em>rinp</em></td><td>)</td>
-          <td></td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Copy constructor. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00048">48</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-<div class="fragment"><pre class="fragment">                                                         : cPacket()
-{
-    setName(rinp.getName());
-    <a class="code" href="class_r_t_p_inner_packet.html#aa6fd7dc6190ac8c138ea106ca44e3930">operator=</a>(rinp);
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a1b62fca84739b573c79e363af9d970e2"></a><!-- doxytag: member="RTPInnerPacket::~RTPInnerPacket" ref="a1b62fca84739b573c79e363af9d970e2" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_r_t_p_inner_packet.html#a1b62fca84739b573c79e363af9d970e2">RTPInnerPacket::~RTPInnerPacket</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Destructor. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00055">55</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (opp_strcmp(<a class="code" href="class_r_t_p_inner_packet.html#a89c20e5afb600314674d6eada18a0dfc">_commonName</a>, <span class="stringliteral">&quot;&quot;</span>))
-        <span class="keyword">delete</span> <a class="code" href="class_r_t_p_inner_packet.html#a89c20e5afb600314674d6eada18a0dfc">_commonName</a>;
-    <span class="keywordflow">if</span> (opp_strcmp(<a class="code" href="class_r_t_p_inner_packet.html#a6d6a46ef56fad53c58c0e6d6e982f27e">_fileName</a>, <span class="stringliteral">&quot;&quot;</span>))
-        <span class="keyword">delete</span> <a class="code" href="class_r_t_p_inner_packet.html#a6d6a46ef56fad53c58c0e6d6e982f27e">_fileName</a>;
-}
+<div class="fragment"><pre class="fragment">: <a class="code" href="class_r_t_p_inner_packet___base.html#a96d226116e66491e820dae2bc3480ce8">RTPInnerPacket_Base</a>(other) {}
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="ab136d4c72e19a7bb75febbf50cd40837"></a><!-- doxytag: member="RTPInnerPacket::createSenderModule" ref="ab136d4c72e19a7bb75febbf50cd40837" args="(uint32 ssrc, int payloadType, const char *fileName)" -->
+<a class="anchor" id="a0689d488c47d646cda0b66ff7c9adb47"></a><!-- doxytag: member="RTPInnerPacket::dump" ref="a0689d488c47d646cda0b66ff7c9adb47" args="(std::ostream &amp;os) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_inner_packet.html#ab136d4c72e19a7bb75febbf50cd40837">RTPInnerPacket::createSenderModule</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_inner_packet.html#a0689d488c47d646cda0b66ff7c9adb47">RTPInnerPacket::dump</a> </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em></td><td>)</td>
+          <td> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Writes a longer info about this <a class="el" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> into the given output stream. </p>
+<div class="fragment"><pre class="fragment">{
+    os &lt;&lt; <span class="stringliteral">&quot;RTPInnerPacket:&quot;</span> &lt;&lt; endl;
+    os &lt;&lt; <span class="stringliteral">&quot;  type = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet___base.html#a195fbb117f333e948761ff3311daea8c">type_var</a> &lt;&lt; endl;
+    os &lt;&lt; <span class="stringliteral">&quot;  commonName = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet___base.html#abecf8db929571a60c86dd5bbf0cecf0d">commonName_var</a> &lt;&lt; endl;
+    os &lt;&lt; <span class="stringliteral">&quot;  mtu = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet___base.html#ae7cc935da4a0fca5e824fa9ef2b3d5cc">mtu_var</a> &lt;&lt; endl;
+    os &lt;&lt; <span class="stringliteral">&quot;  bandwidth = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet___base.html#aa170b41fa1a0ba12aa58b1ff752e31f6">bandwidth_var</a> &lt;&lt; endl;
+    os &lt;&lt; <span class="stringliteral">&quot;  rtcpPercentage = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet___base.html#a569f6eaf0236858e8556cc5852da7b40">rtcpPercentage_var</a> &lt;&lt; endl;
+    os &lt;&lt; <span class="stringliteral">&quot;  address = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet___base.html#a152b1ac8e168ff463a93add90314bc9a">address_var</a> &lt;&lt; endl;
+    os &lt;&lt; <span class="stringliteral">&quot;  port = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet___base.html#a813111f397d52da25ea5b3b21ceca263">port_var</a> &lt;&lt; endl;
+    os &lt;&lt; <span class="stringliteral">&quot;  ssrc = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet___base.html#ae2b03d7c8654a4a1fd6b82ca2b4ec26f">ssrc_var</a> &lt;&lt; endl;
+    os &lt;&lt; <span class="stringliteral">&quot;  payloadType = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet___base.html#a41ae93d41259bf5da715440f8e7ef9db">payloadType_var</a> &lt;&lt; endl;
+    os &lt;&lt; <span class="stringliteral">&quot;  fileName = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet___base.html#a66e319fefe9f6fc43a9489b62531c0b3">fileName_var</a> &lt;&lt; endl;
+    os &lt;&lt; <span class="stringliteral">&quot;  clockRate = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet___base.html#aa151ea916e0b6e9adb875bbbc0bf61ff">clockRate_var</a> &lt;&lt; endl;
+    os &lt;&lt; <span class="stringliteral">&quot;  timeStampBase = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet___base.html#a19bc744b6eeaa506eb1293b1c74414e5">timeStampBase_var</a> &lt;&lt; endl;
+    os &lt;&lt; <span class="stringliteral">&quot;  sequenceNumberBase = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet___base.html#a59daadfbced66f7b54af0022308dac73">sequenceNumberBase_var</a> &lt;&lt; endl;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a3a4793ae761cdcc0babbd33ee7064b33"></a><!-- doxytag: member="RTPInnerPacket::dup" ref="a3a4793ae761cdcc0babbd33ee7064b33" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>* <a class="el" href="class_r_t_p_inner_packet.html#a3a4793ae761cdcc0babbd33ee7064b33">RTPInnerPacket::dup</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_r_t_p_inner_packet___base.html#a05ecaf4fcb82dfda06b2ffa90dd4991a">RTPInnerPacket_Base</a>.</p>
+
+<p>Referenced by <a class="el" href="class_r_t_p.html#af9e712ac4bfb20d205de599036f6257d">RTP::dataOut()</a>.</p>
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_r_t_p_inner_packet.html#aa8d87c2560514cc273a0aaf218953b27">RTPInnerPacket</a>(*<span class="keyword">this</span>);}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a28d94da5ec40d0498b8b25fde0d20067"></a><!-- doxytag: member="RTPInnerPacket::getMTU" ref="a28d94da5ec40d0498b8b25fde0d20067" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_r_t_p_inner_packet.html#a28d94da5ec40d0498b8b25fde0d20067">RTPInnerPacket::getMTU</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the maximum transmission unit stored in this <a class="el" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a>. </p>
+
+<p>Referenced by <a class="el" href="class_r_t_c_p.html#ad5e877e02b8ee6557cb9bb2dda8e8647">RTCP::handleInitializeRTCP()</a>, <a class="el" href="class_r_t_p_profile.html#a26fe2d5ac389602484360c4ae5a62fb8">RTPProfile::initializeProfile()</a>, and <a class="el" href="class_r_t_p_payload_sender.html#a1f8653338d14096e4296243ab0821ff1">RTPPayloadSender::initializeSenderModule()</a>.</p>
+<div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> <a class="code" href="class_r_t_p_inner_packet___base.html#a73ca65d5470d9848966acf0e26da2b57">getMtu</a>(); }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="afd6f0674bc237220773e90c7a8c72081"></a><!-- doxytag: member="RTPInnerPacket::info" ref="afd6f0674bc237220773e90c7a8c72081" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="class_r_t_p_inner_packet.html#afd6f0674bc237220773e90c7a8c72081">RTPInnerPacket::info</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Writes a short info about this <a class="el" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> into the given string. </p>
+<div class="fragment"><pre class="fragment">{
+    std::stringstream out;
+    out &lt;&lt; <span class="stringliteral">&quot;RTPInnerPacket: type=&quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet___base.html#a195fbb117f333e948761ff3311daea8c">type_var</a>;
+    <span class="keywordflow">return</span> out.str();
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a1f0efc42799bd0926ffdb16fe2e3dbcd"></a><!-- doxytag: member="RTPInnerPacket::operator=" ref="a1f0efc42799bd0926ffdb16fe2e3dbcd" args="(const RTPInnerPacket &amp;other)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>&amp; RTPInnerPacket::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{<a class="code" href="class_r_t_p_inner_packet.html#a1f0efc42799bd0926ffdb16fe2e3dbcd">RTPInnerPacket_Base::operator=</a>(other); <span class="keywordflow">return</span> *<span class="keyword">this</span>;}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ad1bf7a964658caf3e836ae19e58c309c"></a><!-- doxytag: member="RTPInnerPacket::setCreateSenderModulePkt" ref="ad1bf7a964658caf3e836ae19e58c309c" args="(uint32 ssrc, int payloadType, const char *fileName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_inner_packet.html#ad1bf7a964658caf3e836ae19e58c309c">RTPInnerPacket::setCreateSenderModulePkt</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>ssrc</em>, </td>
@@ -366,24 +335,22 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00151">151</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_8cc_source.html#l00182">RTP::createSenderModule()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p.html#a7bea703507a8e026ce96ea356b40bc26">RTP::createSenderModule()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a> = <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888a39dd32720d5af4d58276b3a596c676e8">RTP_INP_CREATE_SENDER_MODULE</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a57d7da48996278bafc2b8c8b0f71ec35">_ssrc</a> = ssrc;
-    <a class="code" href="class_r_t_p_inner_packet.html#adc5c5faae913ecce79a7b059ddceb0d3">_payloadType</a> = payloadType;
-    <a class="code" href="class_r_t_p_inner_packet.html#a6d6a46ef56fad53c58c0e6d6e982f27e">_fileName</a> = fileName;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a195fbb117f333e948761ff3311daea8c">type_var</a> = <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606a77ba1b83fe4ed29aafc4d5113dda16d0">RTP_INP_CREATE_SENDER_MODULE</a>;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#ae2b03d7c8654a4a1fd6b82ca2b4ec26f">ssrc_var</a> = ssrc;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a41ae93d41259bf5da715440f8e7ef9db">payloadType_var</a> = payloadType;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a66e319fefe9f6fc43a9489b62531c0b3">fileName_var</a> = fileName;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="af7e24e69628c578d2952bd6d92265939"></a><!-- doxytag: member="RTPInnerPacket::dataIn" ref="af7e24e69628c578d2952bd6d92265939" args="(RTPPacket *packet, IPAddress address, int port)" -->
+<a class="anchor" id="a7e455d20150fd3a316bc680c770f24fc"></a><!-- doxytag: member="RTPInnerPacket::setDataInPkt" ref="a7e455d20150fd3a316bc680c770f24fc" args="(RTPPacket *packet, IPv4Address address, int port)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_inner_packet.html#af7e24e69628c578d2952bd6d92265939">RTPInnerPacket::dataIn</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_inner_packet.html#a7e455d20150fd3a316bc680c770f24fc">RTPInnerPacket::setDataInPkt</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_r_t_p_packet.html">RTPPacket</a> *&#160;</td>
           <td class="paramname"><em>packet</em>, </td>
@@ -391,7 +358,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_i_p_address.html">IPAddress</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td>
           <td class="paramname"><em>address</em>, </td>
         </tr>
         <tr>
@@ -408,26 +375,25 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Capsultes the incoming <a class="el" href="class_r_t_p_packet.html">RTPPacket</a> into this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> to transport it within the rtp layer. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00235">235</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
+<p>Capsultes the incoming <a class="el" href="class_r_t_p_packet.html" title="This class represents an RTP data packet.">RTPPacket</a> into this <a class="el" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> to transport it within the rtp layer. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_8cc_source.html#l00322">RTP::readRet()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p.html#a8ac8d83c64b3efa4901031083a372d23">RTP::readRet()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a> = <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888afd9da6decfe75fcbfcfacfc57143adcf">RTP_INP_DATA_IN</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#aeeb006c523869e1239f9bf5c8b9ab498">_address</a> = address;
-    <a class="code" href="class_r_t_p_inner_packet.html#a1be10333d8e93eb1cee9b09ecb1cad46">_port</a> = port;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a195fbb117f333e948761ff3311daea8c">type_var</a> = <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606abe27912797e277aa831f59cf26840fbe">RTP_INP_DATA_IN</a>;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a152b1ac8e168ff463a93add90314bc9a">address_var</a> = address;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a813111f397d52da25ea5b3b21ceca263">port_var</a> = port;
     encapsulate(packet);
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="ab9905bd890c4a701cd37534645e67feb"></a><!-- doxytag: member="RTPInnerPacket::dataOut" ref="ab9905bd890c4a701cd37534645e67feb" args="(RTPPacket *packet)" -->
+<a class="anchor" id="a13acb51482d7653808694d4403fbc962"></a><!-- doxytag: member="RTPInnerPacket::setDataOutPkt" ref="a13acb51482d7653808694d4403fbc962" args="(RTPPacket *packet)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_inner_packet.html#ab9905bd890c4a701cd37534645e67feb">RTPInnerPacket::dataOut</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_inner_packet.html#a13acb51482d7653808694d4403fbc962">RTPInnerPacket::setDataOutPkt</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_r_t_p_packet.html">RTPPacket</a> *&#160;</td>
           <td class="paramname"><em>packet</em></td><td>)</td>
@@ -436,24 +402,23 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Capsulates the outgoing <a class="el" href="class_r_t_p_packet.html">RTPPacket</a> into this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> to transport it within the rtp layer. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00228">228</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
+<p>Capsulates the outgoing <a class="el" href="class_r_t_p_packet.html" title="This class represents an RTP data packet.">RTPPacket</a> into this <a class="el" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> to transport it within the rtp layer. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html#l00153">RTPAVProfilePayload32Sender::sendPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#abcffc8019d25b3a660220c0759747629">RTPAVProfilePayload32Sender::sendPacket()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a> = <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888ad9e60ccc5022412d2cbbcc82bf78ba67">RTP_INP_DATA_OUT</a>;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a195fbb117f333e948761ff3311daea8c">type_var</a> = <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606a0869f370426757c839ece5ce05a9ed4d">RTP_INP_DATA_OUT</a>;
     encapsulate(packet);
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a40fff5a13cca8eaa6419124a586328b3"></a><!-- doxytag: member="RTPInnerPacket::deleteSenderModule" ref="a40fff5a13cca8eaa6419124a586328b3" args="(uint32 ssrc)" -->
+<a class="anchor" id="a49e1f3875a5e6f4f8593f689df9a15c6"></a><!-- doxytag: member="RTPInnerPacket::setDeleteSenderModulePkt" ref="a49e1f3875a5e6f4f8593f689df9a15c6" args="(uint32 ssrc)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_inner_packet.html#a40fff5a13cca8eaa6419124a586328b3">RTPInnerPacket::deleteSenderModule</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_inner_packet.html#a49e1f3875a5e6f4f8593f689df9a15c6">RTPInnerPacket::setDeleteSenderModulePkt</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>ssrc</em></td><td>)</td>
@@ -463,416 +428,20 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00167">167</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_8cc_source.html#l00193">RTP::deleteSenderModule()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p.html#ac3e773e4fd24e7746b27c1f46be4c9cd">RTP::deleteSenderModule()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a> = <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888ac2a8241cd4562aaed682eb52d34fa90e">RTP_INP_DELETE_SENDER_MODULE</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a57d7da48996278bafc2b8c8b0f71ec35">_ssrc</a> = ssrc;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a195fbb117f333e948761ff3311daea8c">type_var</a> = <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606a196b8aaa940c24b8cb25d33ca2a9dd6f">RTP_INP_DELETE_SENDER_MODULE</a>;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#ae2b03d7c8654a4a1fd6b82ca2b4ec26f">ssrc_var</a> = ssrc;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a0689d488c47d646cda0b66ff7c9adb47"></a><!-- doxytag: member="RTPInnerPacket::dump" ref="a0689d488c47d646cda0b66ff7c9adb47" args="(std::ostream &amp;os) const " -->
+<a class="anchor" id="a4b9b480c34546f1dc342ef4cc13ae3b9"></a><!-- doxytag: member="RTPInnerPacket::setInitializeProfilePkt" ref="a4b9b480c34546f1dc342ef4cc13ae3b9" args="(int mtu)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_inner_packet.html#a0689d488c47d646cda0b66ff7c9adb47">RTPInnerPacket::dump</a> </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>os</em></td><td>)</td>
-          <td> const<code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Writes a longer info about this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> into the given output stream. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00098">98</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    os &lt;&lt; <span class="stringliteral">&quot;RTPInnerPacket:&quot;</span> &lt;&lt; endl;
-    os &lt;&lt; <span class="stringliteral">&quot;  type = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a> &lt;&lt; endl;
-    os &lt;&lt; <span class="stringliteral">&quot;  commonName = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet.html#a89c20e5afb600314674d6eada18a0dfc">_commonName</a> &lt;&lt; endl;
-    os &lt;&lt; <span class="stringliteral">&quot;  mtu = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet.html#a85ef5e5e2e0bddcf9a51314a6a2bd031">_mtu</a> &lt;&lt; endl;
-    os &lt;&lt; <span class="stringliteral">&quot;  bandwidth = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet.html#a541c7d6f462a13015dfe32a1cb857832">_bandwidth</a> &lt;&lt; endl;
-    os &lt;&lt; <span class="stringliteral">&quot;  rtcpPercentage = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet.html#a4d40b062f6e851fd81dd48df4a691439">_rtcpPercentage</a> &lt;&lt; endl;
-    os &lt;&lt; <span class="stringliteral">&quot;  address = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet.html#aeeb006c523869e1239f9bf5c8b9ab498">_address</a> &lt;&lt; endl;
-    os &lt;&lt; <span class="stringliteral">&quot;  port = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet.html#a1be10333d8e93eb1cee9b09ecb1cad46">_port</a> &lt;&lt; endl;
-    os &lt;&lt; <span class="stringliteral">&quot;  ssrc = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet.html#a57d7da48996278bafc2b8c8b0f71ec35">_ssrc</a> &lt;&lt; endl;
-    os &lt;&lt; <span class="stringliteral">&quot;  payloadType = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet.html#adc5c5faae913ecce79a7b059ddceb0d3">_payloadType</a> &lt;&lt; endl;
-    os &lt;&lt; <span class="stringliteral">&quot;  fileName = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet.html#a6d6a46ef56fad53c58c0e6d6e982f27e">_fileName</a> &lt;&lt; endl;
-    os &lt;&lt; <span class="stringliteral">&quot;  clockRate = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet.html#aa26b2fbeb17140a431dc057b877e24ef">_clockRate</a> &lt;&lt; endl;
-    os &lt;&lt; <span class="stringliteral">&quot;  timeStampBase = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet.html#a9a98009b6ecfd0407c5add8578fa8a47">_timeStampBase</a> &lt;&lt; endl;
-    os &lt;&lt; <span class="stringliteral">&quot;  sequenceNumberBase = &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet.html#a6faf7881b6c382cbb62dfcc5086ce2f2">_sequenceNumberBase</a> &lt;&lt; endl;
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a071d7df7bf5b6a8dd2f2c9ab67cbab65"></a><!-- doxytag: member="RTPInnerPacket::dup" ref="a071d7df7bf5b6a8dd2f2c9ab67cbab65" args="() const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> * <a class="el" href="class_r_t_p_inner_packet.html#a071d7df7bf5b6a8dd2f2c9ab67cbab65">RTPInnerPacket::dup</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const<code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Duplicates the <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> by calling the copy constructor. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00084">84</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_r_t_p_inner_packet.html#a391466cd2c77ce6ab6dcc238037399a3">RTPInnerPacket</a>(*<span class="keyword">this</span>);
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a7c2935515610e3115a422cba8a9b0ae7"></a><!-- doxytag: member="RTPInnerPacket::getAddress" ref="a7c2935515610e3115a422cba8a9b0ae7" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_i_p_address.html">IPAddress</a> <a class="el" href="class_r_t_p_inner_packet.html#a7c2935515610e3115a422cba8a9b0ae7">RTPInnerPacket::getAddress</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Returns the address stored in this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00274">274</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_c_p_8cc_source.html#l00172">RTCP::dataIn()</a>, and <a class="el" href="_r_t_c_p_8cc_source.html#l00137">RTCP::initializeRTCP()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="class_r_t_p_inner_packet.html#aeeb006c523869e1239f9bf5c8b9ab498">_address</a>;
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a8a3a5527f5a42e6a1ccb1cf86c7d55d8"></a><!-- doxytag: member="RTPInnerPacket::getBandwidth" ref="a8a3a5527f5a42e6a1ccb1cf86c7d55d8" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="class_r_t_p_inner_packet.html#a8a3a5527f5a42e6a1ccb1cf86c7d55d8">RTPInnerPacket::getBandwidth</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Returns the available bandwitdth as stored in this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00262">262</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_c_p_8cc_source.html#l00137">RTCP::initializeRTCP()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="class_r_t_p_inner_packet.html#a541c7d6f462a13015dfe32a1cb857832">_bandwidth</a>;
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="aeea95a47abc9d6f82aa402f55b64424c"></a><!-- doxytag: member="RTPInnerPacket::getClockRate" ref="aeea95a47abc9d6f82aa402f55b64424c" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="class_r_t_p_inner_packet.html#aeea95a47abc9d6f82aa402f55b64424c">RTPInnerPacket::getClockRate</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Returns the rtp clock rate stored in this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00304">304</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_c_p_8cc_source.html#l00156">RTCP::senderModuleInitialized()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="class_r_t_p_inner_packet.html#aa26b2fbeb17140a431dc057b877e24ef">_clockRate</a>;
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a35bb9c6e60ced0c71eaf49ed8ae5715d"></a><!-- doxytag: member="RTPInnerPacket::getCommonName" ref="a35bb9c6e60ced0c71eaf49ed8ae5715d" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char * <a class="el" href="class_r_t_p_inner_packet.html#a35bb9c6e60ced0c71eaf49ed8ae5715d">RTPInnerPacket::getCommonName</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Returns the CNAME stored in this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00250">250</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_c_p_8cc_source.html#l00137">RTCP::initializeRTCP()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> opp_strdup(<a class="code" href="class_r_t_p_inner_packet.html#a89c20e5afb600314674d6eada18a0dfc">_commonName</a>);
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a04a6281b1735bf22e9a5dff46681c124"></a><!-- doxytag: member="RTPInnerPacket::getFileName" ref="a04a6281b1735bf22e9a5dff46681c124" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char * <a class="el" href="class_r_t_p_inner_packet.html#a04a6281b1735bf22e9a5dff46681c124">RTPInnerPacket::getFileName</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Returns the file name stored in this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00292">292</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00147">RTPProfile::createSenderModule()</a>, and <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00100">RTPPayloadSender::initializeSenderModule()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> opp_strdup(<a class="code" href="class_r_t_p_inner_packet.html#a6d6a46ef56fad53c58c0e6d6e982f27e">_fileName</a>);
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="af622535a6cc9b941389bf20845b23290"></a><!-- doxytag: member="RTPInnerPacket::getMTU" ref="af622535a6cc9b941389bf20845b23290" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="class_r_t_p_inner_packet.html#af622535a6cc9b941389bf20845b23290">RTPInnerPacket::getMTU</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Returns the maximum transmission unit stored in this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00256">256</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00135">RTPProfile::initializeProfile()</a>, <a class="el" href="_r_t_c_p_8cc_source.html#l00137">RTCP::initializeRTCP()</a>, and <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00100">RTPPayloadSender::initializeSenderModule()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="class_r_t_p_inner_packet.html#a85ef5e5e2e0bddcf9a51314a6a2bd031">_mtu</a>;
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="ad4097a184e31330e823a97d346221754"></a><!-- doxytag: member="RTPInnerPacket::getPayloadType" ref="ad4097a184e31330e823a97d346221754" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="class_r_t_p_inner_packet.html#ad4097a184e31330e823a97d346221754">RTPInnerPacket::getPayloadType</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Returns the payload type stored in this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00298">298</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00147">RTPProfile::createSenderModule()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="class_r_t_p_inner_packet.html#adc5c5faae913ecce79a7b059ddceb0d3">_payloadType</a>;
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="aaea79a8df1d5041967adde45e2162c69"></a><!-- doxytag: member="RTPInnerPacket::getPort" ref="aaea79a8df1d5041967adde45e2162c69" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="class_r_t_p_inner_packet.html#aaea79a8df1d5041967adde45e2162c69">RTPInnerPacket::getPort</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Returns the port stored in this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00280">280</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_c_p_8cc_source.html#l00172">RTCP::dataIn()</a>, <a class="el" href="_r_t_c_p_8cc_source.html#l00137">RTCP::initializeRTCP()</a>, and <a class="el" href="_r_t_p_8cc_source.html#l00213">RTP::profileInitialized()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="class_r_t_p_inner_packet.html#a1be10333d8e93eb1cee9b09ecb1cad46">_port</a>;
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a13da1d6b34e56f32750bea7775160000"></a><!-- doxytag: member="RTPInnerPacket::getRtcpPercentage" ref="a13da1d6b34e56f32750bea7775160000" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="class_r_t_p_inner_packet.html#a13da1d6b34e56f32750bea7775160000">RTPInnerPacket::getRtcpPercentage</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Returns the percentage of bandwidth for rtcp as stored in this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00268">268</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_c_p_8cc_source.html#l00137">RTCP::initializeRTCP()</a>, and <a class="el" href="_r_t_p_8cc_source.html#l00213">RTP::profileInitialized()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="class_r_t_p_inner_packet.html#a4d40b062f6e851fd81dd48df4a691439">_rtcpPercentage</a>;
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a43192598ab8517ff98c1cbab4a8785bf"></a><!-- doxytag: member="RTPInnerPacket::getSequenceNumberBase" ref="a43192598ab8517ff98c1cbab4a8785bf" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="class_r_t_p_inner_packet.html#a43192598ab8517ff98c1cbab4a8785bf">RTPInnerPacket::getSequenceNumberBase</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Returns the rtp sequence number base stored in this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00316">316</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_c_p_8cc_source.html#l00156">RTCP::senderModuleInitialized()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="class_r_t_p_inner_packet.html#a6faf7881b6c382cbb62dfcc5086ce2f2">_sequenceNumberBase</a>;
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a0b2377650bf813c8e0a0bf8bd8711505"></a><!-- doxytag: member="RTPInnerPacket::getSSRC" ref="a0b2377650bf813c8e0a0bf8bd8711505" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32 <a class="el" href="class_r_t_p_inner_packet.html#a0b2377650bf813c8e0a0bf8bd8711505">RTPInnerPacket::getSSRC</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Returns the ssrc identifier stored in this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00286">286</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00147">RTPProfile::createSenderModule()</a>, <a class="el" href="_r_t_p_profile_8cc_source.html#l00184">RTPProfile::deleteSenderModule()</a>, <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00100">RTPPayloadSender::initializeSenderModule()</a>, <a class="el" href="_r_t_p_8cc_source.html#l00291">RTP::rtcpInitialized()</a>, <a class="el" href="_r_t_p_8cc_source.html#l00203">RTP::senderModuleControl()</a>, <a class="el" href="_r_t_p_8cc_source.html#l00229">RTP::senderModuleCreated()</a>, <a class="el" href="_r_t_p_8cc_source.html#l00239">RTP::senderModuleDeleted()</a>, and <a class="el" href="_r_t_p_8cc_source.html#l00256">RTP::senderModuleStatus()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="class_r_t_p_inner_packet.html#a57d7da48996278bafc2b8c8b0f71ec35">_ssrc</a>;
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a713d7c6f5267b6190000dab770d32706"></a><!-- doxytag: member="RTPInnerPacket::getTimeStampBase" ref="a713d7c6f5267b6190000dab770d32706" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="class_r_t_p_inner_packet.html#a713d7c6f5267b6190000dab770d32706">RTPInnerPacket::getTimeStampBase</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Returns the rtp time stamp base stored in this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00310">310</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_c_p_8cc_source.html#l00156">RTCP::senderModuleInitialized()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="class_r_t_p_inner_packet.html#a9a98009b6ecfd0407c5add8578fa8a47">_timeStampBase</a>;
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a8de46bdf80e04331223d83af5f507d80"></a><!-- doxytag: member="RTPInnerPacket::getType" ref="a8de46bdf80e04331223d83af5f507d80" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888">RTPInnerPacket::RTP_INP_TYPE</a> <a class="el" href="class_r_t_p_inner_packet.html#a8de46bdf80e04331223d83af5f507d80">RTPInnerPacket::getType</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Returns the type of this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00244">244</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00049">RTPPayloadSender::activity()</a>, <a class="el" href="_r_t_p_payload_receiver_8cc_source.html#l00050">RTPPayloadReceiver::handleMessage()</a>, <a class="el" href="_r_t_p_profile_8cc_source.html#l00107">RTPProfile::handleMessageFromPayloadSender()</a>, <a class="el" href="_r_t_p_8cc_source.html#l00097">RTP::handleMessageFromProfile()</a>, <a class="el" href="_r_t_p_8cc_source.html#l00125">RTP::handleMessageFromRTCP()</a>, <a class="el" href="_r_t_c_p_8cc_source.html#l00081">RTCP::handleMessageFromRTP()</a>, and <a class="el" href="_r_t_p_profile_8cc_source.html#l00078">RTPProfile::handleMessageFromRTP()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a>;
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="ab6b9208d3c88a34412cb43fd073bdcd2"></a><!-- doxytag: member="RTPInnerPacket::info" ref="ab6b9208d3c88a34412cb43fd073bdcd2" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string <a class="el" href="class_r_t_p_inner_packet.html#ab6b9208d3c88a34412cb43fd073bdcd2">RTPInnerPacket::info</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Writes a short info about this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> into the given string. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00090">90</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    std::stringstream out;
-    out &lt;&lt; <span class="stringliteral">&quot;RTPInnerPacket: type=&quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a>;
-    <span class="keywordflow">return</span> out.str();
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a039ffdd52b5e98e12841c9771134e436"></a><!-- doxytag: member="RTPInnerPacket::initializeProfile" ref="a039ffdd52b5e98e12841c9771134e436" args="(int mtu)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_inner_packet.html#a039ffdd52b5e98e12841c9771134e436">RTPInnerPacket::initializeProfile</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_inner_packet.html#a4b9b480c34546f1dc342ef4cc13ae3b9">RTPInnerPacket::setInitializeProfilePkt</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>mtu</em></td><td>)</td>
@@ -881,24 +450,24 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called by the rtp module after creating the profile module. It informes the profile about the maximum size an rtp packet can have. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00117">117</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
+<p>Called by the rtp module after creating the profile module. </p>
+<p>It informes the profile about the maximum size an rtp packet can have. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_8cc_source.html#l00402">RTP::initializeProfile()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p.html#ae089ed86755eb9904102a5a55f45c513">RTP::initializeProfile()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a> = <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888aa7f58779082aabfcb98201975f253e23">RTP_INP_INITIALIZE_PROFILE</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a85ef5e5e2e0bddcf9a51314a6a2bd031">_mtu</a> = mtu;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a195fbb117f333e948761ff3311daea8c">type_var</a> = <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606ad37197b83dc1139b38e10e7d78768e03">RTP_INP_INITIALIZE_PROFILE</a>;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#ae7cc935da4a0fca5e824fa9ef2b3d5cc">mtu_var</a> = mtu;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="adb2bd2c06f8bbec3a7c446514cc370bd"></a><!-- doxytag: member="RTPInnerPacket::initializeRTCP" ref="adb2bd2c06f8bbec3a7c446514cc370bd" args="(const char *commonName, int mtu, int bandwidth, int rtcpPercentage, IPAddress address, int port)" -->
+<a class="anchor" id="a956e5392eb314c9513895e9178c73a25"></a><!-- doxytag: member="RTPInnerPacket::setInitializeRTCPPkt" ref="a956e5392eb314c9513895e9178c73a25" args="(const char *commonName, int mtu, int bandwidth, int rtcpPercentage, IPv4Address address, int port)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_inner_packet.html#adb2bd2c06f8bbec3a7c446514cc370bd">RTPInnerPacket::initializeRTCP</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_inner_packet.html#a956e5392eb314c9513895e9178c73a25">RTPInnerPacket::setInitializeRTCPPkt</a> </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>commonName</em>, </td>
@@ -924,7 +493,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_i_p_address.html">IPAddress</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td>
           <td class="paramname"><em>address</em>, </td>
         </tr>
         <tr>
@@ -941,29 +510,28 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Called by the rtp module to inform the rtcp module about mandatory information for starting the rtp session. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00132">132</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_8cc_source.html#l00410">RTP::initializeRTCP()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p.html#aac85d584c5af877a7157b8910bc5c90d">RTP::initializeRTCP()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a> = <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888a5288c999e7efcec542c5a78d3e5133de">RTP_INP_INITIALIZE_RTCP</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a89c20e5afb600314674d6eada18a0dfc">_commonName</a> = commonName;
-    <a class="code" href="class_r_t_p_inner_packet.html#a85ef5e5e2e0bddcf9a51314a6a2bd031">_mtu</a> = mtu;
-    <a class="code" href="class_r_t_p_inner_packet.html#a541c7d6f462a13015dfe32a1cb857832">_bandwidth</a> = bandwidth;
-    <a class="code" href="class_r_t_p_inner_packet.html#a4d40b062f6e851fd81dd48df4a691439">_rtcpPercentage</a> = rtcpPercentage;
-    <a class="code" href="class_r_t_p_inner_packet.html#aeeb006c523869e1239f9bf5c8b9ab498">_address</a> = address;
-    <a class="code" href="class_r_t_p_inner_packet.html#a1be10333d8e93eb1cee9b09ecb1cad46">_port</a> = port;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a195fbb117f333e948761ff3311daea8c">type_var</a> = <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606a7b72efafd9d1936482d46ee806d5a16c">RTP_INP_INITIALIZE_RTCP</a>;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#abecf8db929571a60c86dd5bbf0cecf0d">commonName_var</a> = commonName;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#ae7cc935da4a0fca5e824fa9ef2b3d5cc">mtu_var</a> = mtu;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#aa170b41fa1a0ba12aa58b1ff752e31f6">bandwidth_var</a> = bandwidth;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a569f6eaf0236858e8556cc5852da7b40">rtcpPercentage_var</a> = rtcpPercentage;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a152b1ac8e168ff463a93add90314bc9a">address_var</a> = address;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a813111f397d52da25ea5b3b21ceca263">port_var</a> = port;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="aba76bd359381ad3f68bc002ca208e1c1"></a><!-- doxytag: member="RTPInnerPacket::initializeSenderModule" ref="aba76bd359381ad3f68bc002ca208e1c1" args="(uint32 ssrc, const char *fileName, int mtu)" -->
+<a class="anchor" id="a1e3b1697e7bd092be59648c7db418853"></a><!-- doxytag: member="RTPInnerPacket::setInitializeSenderModulePkt" ref="a1e3b1697e7bd092be59648c7db418853" args="(uint32 ssrc, const char *fileName, int mtu)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_inner_packet.html#aba76bd359381ad3f68bc002ca208e1c1">RTPInnerPacket::initializeSenderModule</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_inner_packet.html#a1e3b1697e7bd092be59648c7db418853">RTPInnerPacket::setInitializeSenderModulePkt</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>ssrc</em>, </td>
@@ -989,24 +557,22 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00181">181</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00147">RTPProfile::createSenderModule()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#ac55a295bec1621301238be1257e43069">RTPProfile::createSenderModule()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a> = <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888a43cb0a1732c130c1a459c6693d40a479">RTP_INP_INITIALIZE_SENDER_MODULE</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a57d7da48996278bafc2b8c8b0f71ec35">_ssrc</a> = ssrc;
-    <a class="code" href="class_r_t_p_inner_packet.html#a6d6a46ef56fad53c58c0e6d6e982f27e">_fileName</a> = fileName;
-    <a class="code" href="class_r_t_p_inner_packet.html#a85ef5e5e2e0bddcf9a51314a6a2bd031">_mtu</a> = mtu;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a195fbb117f333e948761ff3311daea8c">type_var</a> = <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606a068509c576812eda535c8ecdf476dc9f">RTP_INP_INITIALIZE_SENDER_MODULE</a>;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#ae2b03d7c8654a4a1fd6b82ca2b4ec26f">ssrc_var</a> = ssrc;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a66e319fefe9f6fc43a9489b62531c0b3">fileName_var</a> = fileName;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#ae7cc935da4a0fca5e824fa9ef2b3d5cc">mtu_var</a> = mtu;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a15cbc79c5a9b381854ed9094d23e6143"></a><!-- doxytag: member="RTPInnerPacket::leaveSession" ref="a15cbc79c5a9b381854ed9094d23e6143" args="()" -->
+<a class="anchor" id="a52ba464e11c0f1b9cbf64862766fd839"></a><!-- doxytag: member="RTPInnerPacket::setLeaveSessionPkt" ref="a52ba464e11c0f1b9cbf64862766fd839" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_inner_packet.html#a15cbc79c5a9b381854ed9094d23e6143">RTPInnerPacket::leaveSession</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_inner_packet.html#a52ba464e11c0f1b9cbf64862766fd839">RTPInnerPacket::setLeaveSessionPkt</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [virtual]</code></td>
@@ -1014,62 +580,22 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Called by the rtp module to inform the rtcp module that the session should be left. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00216">216</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_8cc_source.html#l00169">RTP::leaveSession()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p.html#abab3d445e594d97a4ea89d35bc333ff3">RTP::leaveSession()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a> = <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888a901b072177df54efe0296f2a3a40e207">RTP_INP_LEAVE_SESSION</a>;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a195fbb117f333e948761ff3311daea8c">type_var</a> = <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606a5952a7c32724bb524615043a09986d3c">RTP_INP_LEAVE_SESSION</a>;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="aa6fd7dc6190ac8c138ea106ca44e3930"></a><!-- doxytag: member="RTPInnerPacket::operator=" ref="aa6fd7dc6190ac8c138ea106ca44e3930" args="(const RTPInnerPacket &amp;rinp)" -->
+<a class="anchor" id="a9c95ab7be146d697a70ffff43a047923"></a><!-- doxytag: member="RTPInnerPacket::setProfileInitializedPkt" ref="a9c95ab7be146d697a70ffff43a047923" args="(int rtcpPercentage, int port)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> &amp; RTPInnerPacket::operator= </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> &amp;&#160;</td>
-          <td class="paramname"><em>rinp</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Assignment operator. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00064">64</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00048">RTPInnerPacket()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_inner_packet.html#aa6fd7dc6190ac8c138ea106ca44e3930">cPacket::operator=</a>(rinp);
-    <a class="code" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a> = rinp.<a class="code" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a89c20e5afb600314674d6eada18a0dfc">_commonName</a> = opp_strdup(rinp.<a class="code" href="class_r_t_p_inner_packet.html#a89c20e5afb600314674d6eada18a0dfc">_commonName</a>);
-    <a class="code" href="class_r_t_p_inner_packet.html#a85ef5e5e2e0bddcf9a51314a6a2bd031">_mtu</a> = rinp.<a class="code" href="class_r_t_p_inner_packet.html#a85ef5e5e2e0bddcf9a51314a6a2bd031">_mtu</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a541c7d6f462a13015dfe32a1cb857832">_bandwidth</a> = rinp.<a class="code" href="class_r_t_p_inner_packet.html#a541c7d6f462a13015dfe32a1cb857832">_bandwidth</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a4d40b062f6e851fd81dd48df4a691439">_rtcpPercentage</a> = rinp.<a class="code" href="class_r_t_p_inner_packet.html#a4d40b062f6e851fd81dd48df4a691439">_rtcpPercentage</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#aeeb006c523869e1239f9bf5c8b9ab498">_address</a> = rinp.<a class="code" href="class_r_t_p_inner_packet.html#aeeb006c523869e1239f9bf5c8b9ab498">_address</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a1be10333d8e93eb1cee9b09ecb1cad46">_port</a> = rinp.<a class="code" href="class_r_t_p_inner_packet.html#a1be10333d8e93eb1cee9b09ecb1cad46">_port</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a57d7da48996278bafc2b8c8b0f71ec35">_ssrc</a> = rinp.<a class="code" href="class_r_t_p_inner_packet.html#a57d7da48996278bafc2b8c8b0f71ec35">_ssrc</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#adc5c5faae913ecce79a7b059ddceb0d3">_payloadType</a> = rinp.<a class="code" href="class_r_t_p_inner_packet.html#adc5c5faae913ecce79a7b059ddceb0d3">_payloadType</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a6d6a46ef56fad53c58c0e6d6e982f27e">_fileName</a> = opp_strdup(rinp.<a class="code" href="class_r_t_p_inner_packet.html#a6d6a46ef56fad53c58c0e6d6e982f27e">_fileName</a>);
-    <a class="code" href="class_r_t_p_inner_packet.html#aa26b2fbeb17140a431dc057b877e24ef">_clockRate</a> = rinp.<a class="code" href="class_r_t_p_inner_packet.html#aa26b2fbeb17140a431dc057b877e24ef">_clockRate</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a9a98009b6ecfd0407c5add8578fa8a47">_timeStampBase</a> = rinp.<a class="code" href="class_r_t_p_inner_packet.html#a9a98009b6ecfd0407c5add8578fa8a47">_timeStampBase</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a6faf7881b6c382cbb62dfcc5086ce2f2">_sequenceNumberBase</a> = rinp.<a class="code" href="class_r_t_p_inner_packet.html#a6faf7881b6c382cbb62dfcc5086ce2f2">_sequenceNumberBase</a>;
-    <span class="keywordflow">return</span> *<span class="keyword">this</span>;
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a7b3b519afcc4207f39d354a009393938"></a><!-- doxytag: member="RTPInnerPacket::profileInitialized" ref="a7b3b519afcc4207f39d354a009393938" args="(int rtcpPercentage, int port)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_inner_packet.html#a7b3b519afcc4207f39d354a009393938">RTPInnerPacket::profileInitialized</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_inner_packet.html#a9c95ab7be146d697a70ffff43a047923">RTPInnerPacket::setProfileInitializedPkt</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>rtcpPercentage</em>, </td>
@@ -1088,25 +614,25 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called by the profile module after it has received the <a class="el" href="class_r_t_p_inner_packet.html#a039ffdd52b5e98e12841c9771134e436">initializeProfile()</a> message. It informs the rtp module about the percentage of the available bandwidth to be used by rtcp and the preferred port for this profile. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00124">124</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
+<p>Called by the profile module after it has received the initializeProfile() message. </p>
+<p>It informs the rtp module about the percentage of the available bandwidth to be used by rtcp and the preferred port for this profile. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00135">RTPProfile::initializeProfile()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#a26fe2d5ac389602484360c4ae5a62fb8">RTPProfile::initializeProfile()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a> = <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888ae1f78d9bba590a57739a752123e7bf76">RTP_INP_PROFILE_INITIALIZED</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a4d40b062f6e851fd81dd48df4a691439">_rtcpPercentage</a> = rtcpPercentage;
-    <a class="code" href="class_r_t_p_inner_packet.html#a1be10333d8e93eb1cee9b09ecb1cad46">_port</a> = port;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a195fbb117f333e948761ff3311daea8c">type_var</a> = <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606a550eed45818af89ec3148f60a8a1db40">RTP_INP_PROFILE_INITIALIZED</a>;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a569f6eaf0236858e8556cc5852da7b40">rtcpPercentage_var</a> = rtcpPercentage;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a813111f397d52da25ea5b3b21ceca263">port_var</a> = port;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a68dbbcee1910c17967f6b5565595860b"></a><!-- doxytag: member="RTPInnerPacket::rtcpInitialized" ref="a68dbbcee1910c17967f6b5565595860b" args="(uint32 ssrc)" -->
+<a class="anchor" id="af9df59692bcc73e29071836f5598e3ea"></a><!-- doxytag: member="RTPInnerPacket::setRtcpInitializedPkt" ref="af9df59692bcc73e29071836f5598e3ea" args="(uint32 ssrc)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_inner_packet.html#a68dbbcee1910c17967f6b5565595860b">RTPInnerPacket::rtcpInitialized</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_inner_packet.html#af9df59692bcc73e29071836f5598e3ea">RTPInnerPacket::setRtcpInitializedPkt</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>ssrc</em></td><td>)</td>
@@ -1115,24 +641,24 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called by the rtcp module after it has waited for half an rtcp interval for incoming messages from other session participants. It informs the rtp module which later informs the rtp application about the ssrc identifier </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00144">144</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
+<p>Called by the rtcp module after it has waited for half an rtcp interval for incoming messages from other session participants. </p>
+<p>It informs the rtp module which later informs the rtp application about the ssrc identifier </p>
 
-<p>Referenced by <a class="el" href="_r_t_c_p_8cc_source.html#l00116">RTCP::handleSelfMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_c_p.html#aacabb9bc545685dc97a2ffe380a6de41">RTCP::handleSelfMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a> = <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888aa15a0f828a19ab7dcddae100212f0bf9">RTP_INP_RTCP_INITIALIZED</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a57d7da48996278bafc2b8c8b0f71ec35">_ssrc</a> = ssrc;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a195fbb117f333e948761ff3311daea8c">type_var</a> = <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606ad77d70568236e0f15d9d6f7ae49f1405">RTP_INP_RTCP_INITIALIZED</a>;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#ae2b03d7c8654a4a1fd6b82ca2b4ec26f">ssrc_var</a> = ssrc;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a47657d5f6b0d697802b5687d5509c5b4"></a><!-- doxytag: member="RTPInnerPacket::senderModuleControl" ref="a47657d5f6b0d697802b5687d5509c5b4" args="(uint32 ssrc, RTPSenderControlMessage *msg)" -->
+<a class="anchor" id="a46102242c2c61f1bc703a3f8137797e7"></a><!-- doxytag: member="RTPInnerPacket::setSenderModuleControlPkt" ref="a46102242c2c61f1bc703a3f8137797e7" args="(uint32 ssrc, RTPSenderControlMessage *msg)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_inner_packet.html#a47657d5f6b0d697802b5687d5509c5b4">RTPInnerPacket::senderModuleControl</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_inner_packet.html#a46102242c2c61f1bc703a3f8137797e7">RTPInnerPacket::setSenderModuleControlPkt</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>ssrc</em>, </td>
@@ -1152,23 +678,21 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00200">200</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_8cc_source.html#l00203">RTP::senderModuleControl()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p.html#af72cbc88e41cd2d028d487bc10c53d83">RTP::senderModuleControl()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a> = <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888afef73ca182e050207a0384b9684dbe3d">RTP_INP_SENDER_MODULE_CONTROL</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a57d7da48996278bafc2b8c8b0f71ec35">_ssrc</a> = ssrc;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a195fbb117f333e948761ff3311daea8c">type_var</a> = <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606a8becb1a296ed84253ff0a772922d9f4d">RTP_INP_SENDER_MODULE_CONTROL</a>;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#ae2b03d7c8654a4a1fd6b82ca2b4ec26f">ssrc_var</a> = ssrc;
     encapsulate(msg);
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a81a31575c8ee1363c0a01e4532d0ba13"></a><!-- doxytag: member="RTPInnerPacket::senderModuleCreated" ref="a81a31575c8ee1363c0a01e4532d0ba13" args="(uint32 ssrc)" -->
+<a class="anchor" id="a69331b93d77d49a9131bfc9421045108"></a><!-- doxytag: member="RTPInnerPacket::setSenderModuleCreatedPkt" ref="a69331b93d77d49a9131bfc9421045108" args="(uint32 ssrc)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_inner_packet.html#a81a31575c8ee1363c0a01e4532d0ba13">RTPInnerPacket::senderModuleCreated</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_inner_packet.html#a69331b93d77d49a9131bfc9421045108">RTPInnerPacket::setSenderModuleCreatedPkt</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>ssrc</em></td><td>)</td>
@@ -1178,22 +702,20 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00160">160</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00147">RTPProfile::createSenderModule()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#ac55a295bec1621301238be1257e43069">RTPProfile::createSenderModule()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a> = <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888ac5968cd92c06811f3a5b6f0ecc3ddfef">RTP_INP_SENDER_MODULE_CREATED</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a57d7da48996278bafc2b8c8b0f71ec35">_ssrc</a> = ssrc;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a195fbb117f333e948761ff3311daea8c">type_var</a> = <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606a0f2fd25a00d8863ef1bb573c93554eb8">RTP_INP_SENDER_MODULE_CREATED</a>;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#ae2b03d7c8654a4a1fd6b82ca2b4ec26f">ssrc_var</a> = ssrc;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a552ea3d0e5e2ae274eece44cd28ab12a"></a><!-- doxytag: member="RTPInnerPacket::senderModuleDeleted" ref="a552ea3d0e5e2ae274eece44cd28ab12a" args="(uint32 ssrc)" -->
+<a class="anchor" id="a5ac0bba1d5187c998e2cd513424a67f9"></a><!-- doxytag: member="RTPInnerPacket::setSenderModuleDeletedPkt" ref="a5ac0bba1d5187c998e2cd513424a67f9" args="(uint32 ssrc)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_inner_packet.html#a552ea3d0e5e2ae274eece44cd28ab12a">RTPInnerPacket::senderModuleDeleted</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_inner_packet.html#a5ac0bba1d5187c998e2cd513424a67f9">RTPInnerPacket::setSenderModuleDeletedPkt</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>ssrc</em></td><td>)</td>
@@ -1203,22 +725,20 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00174">174</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00184">RTPProfile::deleteSenderModule()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#ab343e6cb950fcef8427e81e2ddcdcebe">RTPProfile::deleteSenderModule()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a> = <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888a5e52b4b7b5fb5a4f208bcc03a638efa5">RTP_INP_SENDER_MODULE_DELETED</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a57d7da48996278bafc2b8c8b0f71ec35">_ssrc</a> = ssrc;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a195fbb117f333e948761ff3311daea8c">type_var</a> = <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606af773adb3ab92696b12fa8a0a242d877f">RTP_INP_SENDER_MODULE_DELETED</a>;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#ae2b03d7c8654a4a1fd6b82ca2b4ec26f">ssrc_var</a> = ssrc;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a73c5f78d56cca62db49cc6ba54ad524f"></a><!-- doxytag: member="RTPInnerPacket::senderModuleInitialized" ref="a73c5f78d56cca62db49cc6ba54ad524f" args="(uint32 ssrc, int payloadType, int clockRate, int timeStampBase, int sequenceNumberBase)" -->
+<a class="anchor" id="a2580359153c64a03527a5247ca42317d"></a><!-- doxytag: member="RTPInnerPacket::setSenderModuleInitializedPkt" ref="a2580359153c64a03527a5247ca42317d" args="(uint32 ssrc, int payloadType, int clockRate, int timeStampBase, int sequenceNumberBase)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_inner_packet.html#a73c5f78d56cca62db49cc6ba54ad524f">RTPInnerPacket::senderModuleInitialized</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_inner_packet.html#a2580359153c64a03527a5247ca42317d">RTPInnerPacket::setSenderModuleInitializedPkt</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>ssrc</em>, </td>
@@ -1256,26 +776,24 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00190">190</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00100">RTPPayloadSender::initializeSenderModule()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#a1f8653338d14096e4296243ab0821ff1">RTPPayloadSender::initializeSenderModule()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a> = <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888aa7cdbe45405af9b4532642c98bc45358">RTP_INP_SENDER_MODULE_INITIALIZED</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a57d7da48996278bafc2b8c8b0f71ec35">_ssrc</a> = ssrc;
-    <a class="code" href="class_r_t_p_inner_packet.html#adc5c5faae913ecce79a7b059ddceb0d3">_payloadType</a> = payloadType;
-    <a class="code" href="class_r_t_p_inner_packet.html#aa26b2fbeb17140a431dc057b877e24ef">_clockRate</a> = clockRate;
-    <a class="code" href="class_r_t_p_inner_packet.html#a9a98009b6ecfd0407c5add8578fa8a47">_timeStampBase</a> = timeStampBase;
-    <a class="code" href="class_r_t_p_inner_packet.html#a6faf7881b6c382cbb62dfcc5086ce2f2">_sequenceNumberBase</a> = sequenceNumberBase;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a195fbb117f333e948761ff3311daea8c">type_var</a> = <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606a8ba4b0d836e0e21255d9e60e072c2ade">RTP_INP_SENDER_MODULE_INITIALIZED</a>;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#ae2b03d7c8654a4a1fd6b82ca2b4ec26f">ssrc_var</a> = ssrc;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a41ae93d41259bf5da715440f8e7ef9db">payloadType_var</a> = payloadType;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#aa151ea916e0b6e9adb875bbbc0bf61ff">clockRate_var</a> = clockRate;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a19bc744b6eeaa506eb1293b1c74414e5">timeStampBase_var</a> = timeStampBase;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a59daadfbced66f7b54af0022308dac73">sequenceNumberBase_var</a> = sequenceNumberBase;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="ad96315d76da3e4068c6107b886884506"></a><!-- doxytag: member="RTPInnerPacket::senderModuleStatus" ref="ad96315d76da3e4068c6107b886884506" args="(uint32 ssrc, RTPSenderStatusMessage *msg)" -->
+<a class="anchor" id="a687773c746c5ba17e32300d878673006"></a><!-- doxytag: member="RTPInnerPacket::setSenderModuleStatusPkt" ref="a687773c746c5ba17e32300d878673006" args="(uint32 ssrc, RTPSenderStatusMessage *msg)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_inner_packet.html#ad96315d76da3e4068c6107b886884506">RTPInnerPacket::senderModuleStatus</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_inner_packet.html#a687773c746c5ba17e32300d878673006">RTPInnerPacket::setSenderModuleStatusPkt</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>ssrc</em>, </td>
@@ -1295,23 +813,21 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00208">208</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00195">RTPPayloadSender::endOfFile()</a>, <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00159">RTPPayloadSender::pause()</a>, <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00131">RTPPayloadSender::play()</a>, and <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00183">RTPPayloadSender::stop()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#aa8d3c549b50edb6e9c17db691d7e726e">RTPPayloadSender::endOfFile()</a>, <a class="el" href="class_r_t_p_payload_sender.html#a1076c39c68c6583d224af968c840acc7">RTPPayloadSender::pause()</a>, <a class="el" href="class_r_t_p_payload_sender.html#a9538606bf2b0d873cd0a0cd7754f7ce9">RTPPayloadSender::play()</a>, and <a class="el" href="class_r_t_p_payload_sender.html#ad9cd79ff818c987d07c1f21b70678588">RTPPayloadSender::stop()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a> = <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888acc1668bccb57b68572a99406553db514">RTP_INP_SENDER_MODULE_STATUS</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html#a57d7da48996278bafc2b8c8b0f71ec35">_ssrc</a> = ssrc;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a195fbb117f333e948761ff3311daea8c">type_var</a> = <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606a5f5ba3115fec14d66b157a59c6eafe1f">RTP_INP_SENDER_MODULE_STATUS</a>;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#ae2b03d7c8654a4a1fd6b82ca2b4ec26f">ssrc_var</a> = ssrc;
     encapsulate(msg);
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a99a575d15fc3f0e38103405b7bf5630a"></a><!-- doxytag: member="RTPInnerPacket::sessionLeft" ref="a99a575d15fc3f0e38103405b7bf5630a" args="()" -->
+<a class="anchor" id="a9a8c18e7aecd94e820dcc7f782fa2ba0"></a><!-- doxytag: member="RTPInnerPacket::setSessionLeftPkt" ref="a9a8c18e7aecd94e820dcc7f782fa2ba0" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_inner_packet.html#a99a575d15fc3f0e38103405b7bf5630a">RTPInnerPacket::sessionLeft</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_inner_packet.html#a9a8c18e7aecd94e820dcc7f782fa2ba0">RTPInnerPacket::setSessionLeftPkt</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [virtual]</code></td>
@@ -1319,255 +835,19 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Called by the rtcp module when the rtcp bye packet has been sent to the network. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00222">222</a> of file <a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_c_p_8cc_source.html#l00262">RTCP::createPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_c_p.html#a2cc04b02279a36be154bac046869bdd4">RTCP::createPacket()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">_type</a> = <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888a042ac5071dbdc50ce390bdd10ca01194">RTP_INP_SESSION_LEFT</a>;
+    <a class="code" href="class_r_t_p_inner_packet___base.html#a195fbb117f333e948761ff3311daea8c">type_var</a> = <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606a6ca0d68c39f873fd7005b93af1375f36">RTP_INP_SESSION_LEFT</a>;
 }
 </pre></div>
 </div>
 </div>
-<hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="aeeb006c523869e1239f9bf5c8b9ab498"></a><!-- doxytag: member="RTPInnerPacket::_address" ref="aeeb006c523869e1239f9bf5c8b9ab498" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_i_p_address.html">IPAddress</a> <a class="el" href="class_r_t_p_inner_packet.html#aeeb006c523869e1239f9bf5c8b9ab498">RTPInnerPacket::_address</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>The address stored this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8h_source.html#l00257">257</a> of file <a class="el" href="_r_t_p_inner_packet_8h_source.html">RTPInnerPacket.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00235">dataIn()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00098">dump()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00274">getAddress()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00132">initializeRTCP()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00064">operator=()</a>, and <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00030">RTPInnerPacket()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a541c7d6f462a13015dfe32a1cb857832"></a><!-- doxytag: member="RTPInnerPacket::_bandwidth" ref="a541c7d6f462a13015dfe32a1cb857832" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="class_r_t_p_inner_packet.html#a541c7d6f462a13015dfe32a1cb857832">RTPInnerPacket::_bandwidth</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>The bandwidth stored in this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8h_source.html#l00247">247</a> of file <a class="el" href="_r_t_p_inner_packet_8h_source.html">RTPInnerPacket.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00098">dump()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00262">getBandwidth()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00132">initializeRTCP()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00064">operator=()</a>, and <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00030">RTPInnerPacket()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aa26b2fbeb17140a431dc057b877e24ef"></a><!-- doxytag: member="RTPInnerPacket::_clockRate" ref="aa26b2fbeb17140a431dc057b877e24ef" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="class_r_t_p_inner_packet.html#aa26b2fbeb17140a431dc057b877e24ef">RTPInnerPacket::_clockRate</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>The clock rate stored in this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8h_source.html#l00282">282</a> of file <a class="el" href="_r_t_p_inner_packet_8h_source.html">RTPInnerPacket.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00098">dump()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00304">getClockRate()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00064">operator=()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00030">RTPInnerPacket()</a>, and <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00190">senderModuleInitialized()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a89c20e5afb600314674d6eada18a0dfc"></a><!-- doxytag: member="RTPInnerPacket::_commonName" ref="a89c20e5afb600314674d6eada18a0dfc" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char* <a class="el" href="class_r_t_p_inner_packet.html#a89c20e5afb600314674d6eada18a0dfc">RTPInnerPacket::_commonName</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>The CNAME stored in this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8h_source.html#l00237">237</a> of file <a class="el" href="_r_t_p_inner_packet_8h_source.html">RTPInnerPacket.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00098">dump()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00250">getCommonName()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00132">initializeRTCP()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00064">operator=()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00030">RTPInnerPacket()</a>, and <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00055">~RTPInnerPacket()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6d6a46ef56fad53c58c0e6d6e982f27e"></a><!-- doxytag: member="RTPInnerPacket::_fileName" ref="a6d6a46ef56fad53c58c0e6d6e982f27e" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char* <a class="el" href="class_r_t_p_inner_packet.html#a6d6a46ef56fad53c58c0e6d6e982f27e">RTPInnerPacket::_fileName</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>The file name stored in this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8h_source.html#l00277">277</a> of file <a class="el" href="_r_t_p_inner_packet_8h_source.html">RTPInnerPacket.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00151">createSenderModule()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00098">dump()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00292">getFileName()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00181">initializeSenderModule()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00064">operator=()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00030">RTPInnerPacket()</a>, and <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00055">~RTPInnerPacket()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a85ef5e5e2e0bddcf9a51314a6a2bd031"></a><!-- doxytag: member="RTPInnerPacket::_mtu" ref="a85ef5e5e2e0bddcf9a51314a6a2bd031" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="class_r_t_p_inner_packet.html#a85ef5e5e2e0bddcf9a51314a6a2bd031">RTPInnerPacket::_mtu</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>The mtu stored in this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8h_source.html#l00242">242</a> of file <a class="el" href="_r_t_p_inner_packet_8h_source.html">RTPInnerPacket.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00098">dump()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00256">getMTU()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00117">initializeProfile()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00132">initializeRTCP()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00181">initializeSenderModule()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00064">operator=()</a>, and <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00030">RTPInnerPacket()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="adc5c5faae913ecce79a7b059ddceb0d3"></a><!-- doxytag: member="RTPInnerPacket::_payloadType" ref="adc5c5faae913ecce79a7b059ddceb0d3" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="class_r_t_p_inner_packet.html#adc5c5faae913ecce79a7b059ddceb0d3">RTPInnerPacket::_payloadType</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>The payload type stored in this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8h_source.html#l00272">272</a> of file <a class="el" href="_r_t_p_inner_packet_8h_source.html">RTPInnerPacket.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00151">createSenderModule()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00098">dump()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00298">getPayloadType()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00064">operator=()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00030">RTPInnerPacket()</a>, and <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00190">senderModuleInitialized()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a1be10333d8e93eb1cee9b09ecb1cad46"></a><!-- doxytag: member="RTPInnerPacket::_port" ref="a1be10333d8e93eb1cee9b09ecb1cad46" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="class_r_t_p_inner_packet.html#a1be10333d8e93eb1cee9b09ecb1cad46">RTPInnerPacket::_port</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>The port stored this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8h_source.html#l00262">262</a> of file <a class="el" href="_r_t_p_inner_packet_8h_source.html">RTPInnerPacket.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00235">dataIn()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00098">dump()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00280">getPort()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00132">initializeRTCP()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00064">operator=()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00124">profileInitialized()</a>, and <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00030">RTPInnerPacket()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a4d40b062f6e851fd81dd48df4a691439"></a><!-- doxytag: member="RTPInnerPacket::_rtcpPercentage" ref="a4d40b062f6e851fd81dd48df4a691439" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="class_r_t_p_inner_packet.html#a4d40b062f6e851fd81dd48df4a691439">RTPInnerPacket::_rtcpPercentage</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>The rtcp percentage stored in this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8h_source.html#l00252">252</a> of file <a class="el" href="_r_t_p_inner_packet_8h_source.html">RTPInnerPacket.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00098">dump()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00268">getRtcpPercentage()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00132">initializeRTCP()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00064">operator=()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00124">profileInitialized()</a>, and <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00030">RTPInnerPacket()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6faf7881b6c382cbb62dfcc5086ce2f2"></a><!-- doxytag: member="RTPInnerPacket::_sequenceNumberBase" ref="a6faf7881b6c382cbb62dfcc5086ce2f2" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="class_r_t_p_inner_packet.html#a6faf7881b6c382cbb62dfcc5086ce2f2">RTPInnerPacket::_sequenceNumberBase</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>The rtp sequence number base stored in this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8h_source.html#l00292">292</a> of file <a class="el" href="_r_t_p_inner_packet_8h_source.html">RTPInnerPacket.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00098">dump()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00316">getSequenceNumberBase()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00064">operator=()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00030">RTPInnerPacket()</a>, and <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00190">senderModuleInitialized()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a57d7da48996278bafc2b8c8b0f71ec35"></a><!-- doxytag: member="RTPInnerPacket::_ssrc" ref="a57d7da48996278bafc2b8c8b0f71ec35" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32 <a class="el" href="class_r_t_p_inner_packet.html#a57d7da48996278bafc2b8c8b0f71ec35">RTPInnerPacket::_ssrc</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>The ssrc identifier stored in this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8h_source.html#l00267">267</a> of file <a class="el" href="_r_t_p_inner_packet_8h_source.html">RTPInnerPacket.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00151">createSenderModule()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00167">deleteSenderModule()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00098">dump()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00286">getSSRC()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00181">initializeSenderModule()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00064">operator=()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00144">rtcpInitialized()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00030">RTPInnerPacket()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00200">senderModuleControl()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00160">senderModuleCreated()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00174">senderModuleDeleted()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00190">senderModuleInitialized()</a>, and <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00208">senderModuleStatus()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9a98009b6ecfd0407c5add8578fa8a47"></a><!-- doxytag: member="RTPInnerPacket::_timeStampBase" ref="a9a98009b6ecfd0407c5add8578fa8a47" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="class_r_t_p_inner_packet.html#a9a98009b6ecfd0407c5add8578fa8a47">RTPInnerPacket::_timeStampBase</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>The rtp time stamp base stored in this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8h_source.html#l00287">287</a> of file <a class="el" href="_r_t_p_inner_packet_8h_source.html">RTPInnerPacket.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00098">dump()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00310">getTimeStampBase()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00064">operator=()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00030">RTPInnerPacket()</a>, and <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00190">senderModuleInitialized()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a258db755328eddfbcf542151527ceb65"></a><!-- doxytag: member="RTPInnerPacket::_type" ref="a258db755328eddfbcf542151527ceb65" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888">RTP_INP_TYPE</a> <a class="el" href="class_r_t_p_inner_packet.html#a258db755328eddfbcf542151527ceb65">RTPInnerPacket::_type</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>The type of this <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_inner_packet_8h_source.html#l00232">232</a> of file <a class="el" href="_r_t_p_inner_packet_8h_source.html">RTPInnerPacket.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00151">createSenderModule()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00235">dataIn()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00228">dataOut()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00167">deleteSenderModule()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00098">dump()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00244">getType()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00090">info()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00117">initializeProfile()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00132">initializeRTCP()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00181">initializeSenderModule()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00216">leaveSession()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00064">operator=()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00124">profileInitialized()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00144">rtcpInitialized()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00030">RTPInnerPacket()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00200">senderModuleControl()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00160">senderModuleCreated()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00174">senderModuleDeleted()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00190">senderModuleInitialized()</a>, <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00208">senderModuleStatus()</a>, and <a class="el" href="_r_t_p_inner_packet_8cc_source.html#l00222">sessionLeft()</a>.</p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_r_t_p_inner_packet_8h_source.html">RTPInnerPacket.h</a></li>
-<li><a class="el" href="_r_t_p_inner_packet_8cc_source.html">RTPInnerPacket.cc</a></li>
+<li><a class="el" href="_r_t_p_inner_packet_8h.html">RTPInnerPacket.h</a></li>
+<li><a class="el" href="_r_t_p_inner_packet_8cc.html">RTPInnerPacket.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -1575,7 +855,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:52 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:30 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

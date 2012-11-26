@@ -20,7 +20,7 @@
    </td>
    <td>
 
-<p>A generic bus model.</p>
+<p>Implements the shared coaxial cable for classic Ethernet.</p>
 
    </td>
 </tr>
@@ -33,7 +33,22 @@
    </td>
    <td>
 
-<p>Performs Ethernet II encapsulation/decapsulation.</p>
+<p>Performs Ethernet II or Ethernet with SNAP encapsulation/decapsulation.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.linklayer.ethernet.EtherFrameClassifier.html">EtherFrameClassifier</a>
+   </td>
+   <td>
+<i>simple&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Simple classifier, that forwards EtherPauseFrames
+to the pauseOut gates, and other frames to the defaultOut
+gate.</p>
 
    </td>
 </tr>
@@ -74,6 +89,7 @@ to the appropriate higher layer by DSAP values.</p>
    <td>
 
 <p>Ethernet MAC layer. MAC performs transmission and reception of frames.
+See the <a href="inet.linklayer.IEtherMAC.html">IEtherMAC</a> for the Ethernet MAC layer general informations.
 Doesn't do encapsulation/decapsulation; see <a href="inet.linklayer.ethernet.EtherLLC.html">EtherLLC</a> and <a href="inet.linklayer.ethernet.EtherEncap.html">EtherEncap</a> for
 that.</p>
 
@@ -81,14 +97,15 @@ that.</p>
 </tr>
 <tr>
    <td>
-<a href="inet.linklayer.ethernet.EtherMAC2.html">EtherMAC2</a>
+<a href="inet.linklayer.ethernet.EtherMACFullDuplex.html">EtherMACFullDuplex</a>
    </td>
    <td>
 <i>simple&nbsp;module</i>
    </td>
    <td>
 
-<p>Ethernet MAC which supports full duplex operation ONLY.</p>
+<p>Ethernet MAC which supports full-duplex operation ONLY.
+See the <a href="inet.linklayer.IEtherMAC.html">IEtherMAC</a> for general informations.</p>
 
    </td>
 </tr>
@@ -108,33 +125,19 @@ with an output queue for QoS and RED support.</p>
 </tr>
 <tr>
    <td>
-<a href="inet.linklayer.ethernet.EthernetInterface2.html">EthernetInterface2</a>
+<a href="inet.linklayer.ethernet.EtherQoSQueue.html">EtherQoSQueue</a>
    </td>
    <td>
 <i>compound&nbsp;module</i>
    </td>
    <td>
 
-<p>Ethernet network interface which supports full-duplex operation only.
-Complements <a href="inet.linklayer.ethernet.EtherMAC2.html">EtherMAC2</a> and <a href="inet.linklayer.ethernet.EtherEncap.html">EtherEncap</a> with an output queue for QoS and
-RED support.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.linklayer.ethernet.EthernetInterfaceNoQueue.html">EthernetInterfaceNoQueue</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>Ethernet network interface. Assumes inifinite queue.</p>
+<p>Queue module that gives the PAUSE frames a higher priority,
+and can be parametrized with an <a href="inet.linklayer.IOutputQueue.html">IOutputQueue</a> for serving the
+other frames.</p>
 
    </td>
 </tr>
 </table>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

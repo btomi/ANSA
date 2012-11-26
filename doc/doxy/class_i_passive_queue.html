@@ -81,26 +81,30 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="IPassiveQueue" -->
-<p><code>#include &lt;<a class="el" href="_i_passive_queue_8h_source.html">IPassiveQueue.h</a>&gt;</code></p>
+<p>Abstract interface for passive queues.  
+ <a href="class_i_passive_queue.html#details">More...</a></p>
+
+<p><code>#include &lt;IPassiveQueue.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for IPassiveQueue:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_i_passive_queue.png" usemap="#IPassiveQueue_map" alt=""/>
   <map id="IPassiveQueue_map" name="IPassiveQueue_map">
-<area href="class_passive_queue_base.html" alt="PassiveQueueBase" shape="rect" coords="472,56,651,80"/>
-<area href="class_ansa_qos_system.html" alt="AnsaQosSystem" shape="rect" coords="0,112,179,136"/>
-<area href="class_drop_tail_qo_s_queue.html" alt="DropTailQoSQueue" shape="rect" coords="189,112,368,136"/>
-<area href="class_drop_tail_queue.html" alt="DropTailQueue" shape="rect" coords="378,112,557,136"/>
-<area href="class_ieee80211_mgmt_base.html" alt="Ieee80211MgmtBase" shape="rect" coords="567,112,746,136"/>
-<area href="class_r_e_d_queue.html" alt="REDQueue" shape="rect" coords="756,112,935,136"/>
-<area href="class_weighted_fair_queue.html" alt="WeightedFairQueue" shape="rect" coords="945,112,1124,136"/>
-<area href="class_ieee80211_mgmt_adhoc.html" alt="Ieee80211MgmtAdhoc" shape="rect" coords="283,168,462,192"/>
-<area href="class_ieee80211_mgmt_a_p_base.html" alt="Ieee80211MgmtAPBase" shape="rect" coords="472,168,651,192"/>
-<area href="class_ieee80211_mgmt_s_t_a.html" alt="Ieee80211MgmtSTA" shape="rect" coords="661,168,840,192"/>
-<area href="class_ieee80211_mgmt_s_t_a_simplified.html" alt="Ieee80211MgmtSTASimplified" shape="rect" coords="850,168,1029,192"/>
-<area href="class_ieee80211_mgmt_a_p.html" alt="Ieee80211MgmtAP" shape="rect" coords="378,224,557,248"/>
-<area href="class_ieee80211_mgmt_a_p_simplified.html" alt="Ieee80211MgmtAPSimplified" shape="rect" coords="567,224,746,248"/>
+<area href="class_passive_queue_base.html" title="Abstract base class for passive queues." alt="PassiveQueueBase" shape="rect" coords="189,56,368,80"/>
+<area href="class_scheduler_base.html" title="Base class for packet schedulers." alt="SchedulerBase" shape="rect" coords="756,56,935,80"/>
+<area href="class_drop_tail_queue.html" title="Drop-front queue." alt="DropTailQueue" shape="rect" coords="0,112,179,136"/>
+<area href="class_f_i_f_o_queue.html" title="Passive FIFO Queue with unlimited buffer space." alt="FIFOQueue" shape="rect" coords="189,112,368,136"/>
+<area href="class_ieee80211_mgmt_base.html" title="Abstract base class for 802.11 infrastructure mode management components." alt="Ieee80211MgmtBase" shape="rect" coords="472,112,651,136"/>
+<area href="class_priority_scheduler.html" title="Schedule packets in strict priority order." alt="PriorityScheduler" shape="rect" coords="661,112,840,136"/>
+<area href="class_w_r_r_scheduler.html" title="This module implements a Weighted Round Robin Scheduler." alt="WRRScheduler" shape="rect" coords="850,112,1029,136"/>
+<area href="class_ieee80211_mgmt_adhoc.html" title="Used in 802.11 ad-hoc mode." alt="Ieee80211MgmtAdhoc" shape="rect" coords="94,168,273,192"/>
+<area href="class_ieee80211_mgmt_a_p_base.html" title="Used in 802.11 infrastructure mode: abstract base class for management frame handling for access poin..." alt="Ieee80211MgmtAPBase" shape="rect" coords="378,168,557,192"/>
+<area href="class_ieee80211_mgmt_s_t_a.html" title="Used in 802.11 infrastructure mode: handles management frames for a station (STA)." alt="Ieee80211MgmtSTA" shape="rect" coords="567,168,746,192"/>
+<area href="class_ieee80211_mgmt_s_t_a_simplified.html" title="Used in 802.11 infrastructure mode: handles management frames for a station (STA)." alt="Ieee80211MgmtSTASimplified" shape="rect" coords="756,168,935,192"/>
+<area href="class_ieee80211_mgmt_adhoc_with_etx.html" title="Used in 802.11 ad-hoc mode." alt="Ieee80211MgmtAdhocWithEtx" shape="rect" coords="94,224,273,248"/>
+<area href="class_ieee80211_mgmt_a_p.html" title="Used in 802.11 infrastructure mode: handles management frames for an access point (AP)..." alt="Ieee80211MgmtAP" shape="rect" coords="283,224,462,248"/>
+<area href="class_ieee80211_mgmt_a_p_simplified.html" title="Used in 802.11 infrastructure mode: handles management frames for an access point (AP)..." alt="Ieee80211MgmtAPSimplified" shape="rect" coords="472,224,651,248"/>
 </map>
  </div></div>
 
@@ -109,12 +113,21 @@ Inheritance diagram for IPassiveQueue:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_passive_queue.html#a9aeb2828ecdaf81d667c38c73267e864">~IPassiveQueue</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_passive_queue.html#af28ddf4ff33afab50f9d34d1b24e2f6d">requestPacket</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_passive_queue.html#af28ddf4ff33afab50f9d34d1b24e2f6d">requestPacket</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The queue should send a packet whenever this method is invoked.  <a href="#af28ddf4ff33afab50f9d34d1b24e2f6d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_passive_queue.html#a2cea5f92ac9bcce96a4fbe1258bb5c47">getNumPendingRequests</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns number of pending requests.  <a href="#a2cea5f92ac9bcce96a4fbe1258bb5c47"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_passive_queue.html#a1adac95e77be9d11077fa0025edd4aee">isEmpty</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true when queue is empty, otherwise return false.  <a href="#a1adac95e77be9d11077fa0025edd4aee"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_passive_queue.html#a2d82cad434bb43591db6caa3c2c1bd8c">clear</a> ()=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all queued packets and stored requests.  <a href="#a2d82cad434bb43591db6caa3c2c1bd8c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_passive_queue.html#a98d1a47d691eeb1d401276a8809fcbaa">addListener</a> (<a class="el" href="class_i_passive_queue_listener.html">IPassiveQueueListener</a> *listener)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new listener to the listener list.  <a href="#a98d1a47d691eeb1d401276a8809fcbaa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_passive_queue.html#a72f7110ea7c8d7657070591f2e8c722b">removeListener</a> (<a class="el" href="class_i_passive_queue_listener.html">IPassiveQueueListener</a> *listener)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a listener from the listener list.  <a href="#a72f7110ea7c8d7657070591f2e8c722b"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Abstract interface for passive queues. </p>
-
-<p>Definition at line <a class="el" href="_i_passive_queue_8h_source.html#l00028">28</a> of file <a class="el" href="_i_passive_queue_8h_source.html">IPassiveQueue.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a9aeb2828ecdaf81d667c38c73267e864"></a><!-- doxytag: member="IPassiveQueue::~IPassiveQueue" ref="a9aeb2828ecdaf81d667c38c73267e864" args="()" -->
 <div class="memitem">
@@ -129,19 +142,41 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_passive_queue_8h_source.html#l00031">31</a> of file <a class="el" href="_i_passive_queue_8h_source.html">IPassiveQueue.h</a>.</p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="af28ddf4ff33afab50f9d34d1b24e2f6d"></a><!-- doxytag: member="IPassiveQueue::requestPacket" ref="af28ddf4ff33afab50f9d34d1b24e2f6d" args="()=0" -->
+<a class="anchor" id="a98d1a47d691eeb1d401276a8809fcbaa"></a><!-- doxytag: member="IPassiveQueue::addListener" ref="a98d1a47d691eeb1d401276a8809fcbaa" args="(IPassiveQueueListener *listener)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_i_passive_queue.html#af28ddf4ff33afab50f9d34d1b24e2f6d">IPassiveQueue::requestPacket</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_passive_queue.html#a98d1a47d691eeb1d401276a8809fcbaa">IPassiveQueue::addListener</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_i_passive_queue_listener.html">IPassiveQueueListener</a> *&#160;</td>
+          <td class="paramname"><em>listener</em></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Adds a new listener to the listener list. </p>
+<p>It does nothing, if the listener list already contains the listener (by pointer equality). </p>
+
+<p>Implemented in <a class="el" href="class_passive_queue_base.html#a15028780130070bea982d1d0daa96ba3">PassiveQueueBase</a>, and <a class="el" href="class_scheduler_base.html#a4c503a3df4ed0f9fb8783be084843df3">SchedulerBase</a>.</p>
+
+<p>Referenced by <a class="el" href="class_scheduler_base.html#a58bc19ae9dd9dfe0cf119f307523e085">SchedulerBase::initialize()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2d82cad434bb43591db6caa3c2c1bd8c"></a><!-- doxytag: member="IPassiveQueue::clear" ref="a2d82cad434bb43591db6caa3c2c1bd8c" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_passive_queue.html#a2d82cad434bb43591db6caa3c2c1bd8c">IPassiveQueue::clear</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [pure virtual]</code></td>
@@ -149,16 +184,104 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The queue should send a packet whenever this method is invoked. If the queue is currently empty, it should send a packet when when one becomes available. </p>
 
-<p>Implemented in <a class="el" href="class_passive_queue_base.html#a57b0190cd7ff0680aec0e0380bfe5f6e">PassiveQueueBase</a>.</p>
+<p>Clear all queued packets and stored requests. </p>
 
-<p>Referenced by <a class="el" href="_ether_m_a_c_base_8cc_source.html#l00533">EtherMACBase::beginSendFrames()</a>, <a class="el" href="_ansa_ether_m_a_c_base_8cc_source.html#l00541">AnsaEtherMACBase::beginSendFrames()</a>, <a class="el" href="_p_p_p_8cc_source.html#l00180">PPP::handleMessage()</a>, <a class="el" href="_ansa_p_p_p_8cc_source.html#l00181">AnsaPPP::handleMessage()</a>, <a class="el" href="_p_p_p_8cc_source.html#l00046">PPP::initialize()</a>, <a class="el" href="_ansa_p_p_p_8cc_source.html#l00043">AnsaPPP::initialize()</a>, <a class="el" href="_ether_m_a_c_base_8cc_source.html#l00083">EtherMACBase::initializeQueueModule()</a>, <a class="el" href="_ansa_ether_m_a_c_base_8cc_source.html#l00085">AnsaEtherMACBase::initializeQueueModule()</a>, <a class="el" href="_ieee80211_mac_8cc_source.html#l00209">Ieee80211Mac::initializeQueueModule()</a>, and <a class="el" href="_ieee80211_mac_8cc_source.html#l00987">Ieee80211Mac::popTransmissionQueue()</a>.</p>
+<p>Implemented in <a class="el" href="class_passive_queue_base.html#ae08864792ac6dd3779e4db5beea4edcb">PassiveQueueBase</a>, and <a class="el" href="class_scheduler_base.html#a6cdaa13da4a97eee383e891cb3762635">SchedulerBase</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2cea5f92ac9bcce96a4fbe1258bb5c47"></a><!-- doxytag: member="IPassiveQueue::getNumPendingRequests" ref="a2cea5f92ac9bcce96a4fbe1258bb5c47" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_i_passive_queue.html#a2cea5f92ac9bcce96a4fbe1258bb5c47">IPassiveQueue::getNumPendingRequests</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns number of pending requests. </p>
+
+<p>Implemented in <a class="el" href="class_passive_queue_base.html#afa29020b772f72ef4ef1c9ef8018979d">PassiveQueueBase</a>, and <a class="el" href="class_scheduler_base.html#ac736a0692925d6504bd1b60d57bdc71f">SchedulerBase</a>.</p>
+
+<p>Referenced by <a class="el" href="class_ether_m_a_c_base.html#af1c1e437afc65392a066194b26a1b7ae">EtherMACBase::getNextFrameFromQueue()</a>, <a class="el" href="class_p_p_p.html#aacbdf3925cd661e8e9cf410d98b8f6a4">PPP::handleMessage()</a>, <a class="el" href="class_p_p_p.html#a4cb478dc8f5ddb7f49c8888a9a4a87eb">PPP::initialize()</a>, <a class="el" href="class_ether_m_a_c_base.html#a15c5b18d84c956cb12c7916b53c5903a">EtherMACBase::initializeQueueModule()</a>, <a class="el" href="class_ether_m_a_c_base.html#a525a5220598c7b57985f9e3d091dd931">EtherMACBase::processConnectDisconnect()</a>, <a class="el" href="class_p_p_p.html#ad592a6882bc9964ed40fe5935dace14f">PPP::refreshOutGateConnection()</a>, and <a class="el" href="class_ether_m_a_c_base.html#a73bdf217918db8aab4f2d0071863a57e">EtherMACBase::requestNextFrameFromExtQueue()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1adac95e77be9d11077fa0025edd4aee"></a><!-- doxytag: member="IPassiveQueue::isEmpty" ref="a1adac95e77be9d11077fa0025edd4aee" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="class_i_passive_queue.html#a1adac95e77be9d11077fa0025edd4aee">IPassiveQueue::isEmpty</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Return true when queue is empty, otherwise return false. </p>
+
+<p>Implemented in <a class="el" href="class_ieee80211_mgmt_base.html#a3c45e66553c34e39d3433130123d2bd7">Ieee80211MgmtBase</a>, <a class="el" href="class_drop_tail_queue.html#aad53053ed4ea72fd2c0b25b6829db1bc">DropTailQueue</a>, <a class="el" href="class_scheduler_base.html#a81d3550d9e1136d18031f34bc4282bfe">SchedulerBase</a>, and <a class="el" href="class_f_i_f_o_queue.html#a34c24d3768824a34ebf18b93abf94246">FIFOQueue</a>.</p>
+
+<p>Referenced by <a class="el" href="class_priority_scheduler.html#a0bcd297322ff46ee8e39fe4b207bba7f">PriorityScheduler::schedulePacket()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a72f7110ea7c8d7657070591f2e8c722b"></a><!-- doxytag: member="IPassiveQueue::removeListener" ref="a72f7110ea7c8d7657070591f2e8c722b" args="(IPassiveQueueListener *listener)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_passive_queue.html#a72f7110ea7c8d7657070591f2e8c722b">IPassiveQueue::removeListener</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_i_passive_queue_listener.html">IPassiveQueueListener</a> *&#160;</td>
+          <td class="paramname"><em>listener</em></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Removes a listener from the listener list. </p>
+<p>It does nothing if the listener was not found on the listener list. </p>
+
+<p>Implemented in <a class="el" href="class_passive_queue_base.html#a4cf1def18d3c69abddcc07c9f9c32abe">PassiveQueueBase</a>, and <a class="el" href="class_scheduler_base.html#a4be01e4377494b0786b2a62a94c1ed88">SchedulerBase</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af28ddf4ff33afab50f9d34d1b24e2f6d"></a><!-- doxytag: member="IPassiveQueue::requestPacket" ref="af28ddf4ff33afab50f9d34d1b24e2f6d" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_passive_queue.html#af28ddf4ff33afab50f9d34d1b24e2f6d">IPassiveQueue::requestPacket</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The queue should send a packet whenever this method is invoked. </p>
+<p>If the queue is currently empty, it should send a packet when when one becomes available. </p>
+
+<p>Implemented in <a class="el" href="class_passive_queue_base.html#a57b0190cd7ff0680aec0e0380bfe5f6e">PassiveQueueBase</a>, and <a class="el" href="class_scheduler_base.html#aafc154b8b3bd9811810d714224b605cf">SchedulerBase</a>.</p>
+
+<p>Referenced by <a class="el" href="class_ether_m_a_c_base.html#af1c1e437afc65392a066194b26a1b7ae">EtherMACBase::getNextFrameFromQueue()</a>, <a class="el" href="class_p_p_p.html#aacbdf3925cd661e8e9cf410d98b8f6a4">PPP::handleMessage()</a>, <a class="el" href="class_ieee80211_mac.html#a3c78df80f39331fe0c35a19b2a991714">Ieee80211Mac::handleUpperMsg()</a>, <a class="el" href="class_p_p_p.html#a4cb478dc8f5ddb7f49c8888a9a4a87eb">PPP::initialize()</a>, <a class="el" href="class_ether_m_a_c_base.html#a15c5b18d84c956cb12c7916b53c5903a">EtherMACBase::initializeQueueModule()</a>, <a class="el" href="class_ieee80211_mac.html#a76503451f2ddc57bec7426c3f9f919ca">Ieee80211Mac::initializeQueueModule()</a>, <a class="el" href="class_ieee80211_mac.html#af9ffa2b13e0336e9cc15334dea0122da">Ieee80211Mac::popTransmissionQueue()</a>, <a class="el" href="class_ether_m_a_c_base.html#a525a5220598c7b57985f9e3d091dd931">EtherMACBase::processConnectDisconnect()</a>, <a class="el" href="class_p_p_p.html#ad592a6882bc9964ed40fe5935dace14f">PPP::refreshOutGateConnection()</a>, <a class="el" href="class_ether_m_a_c_base.html#a73bdf217918db8aab4f2d0071863a57e">EtherMACBase::requestNextFrameFromExtQueue()</a>, and <a class="el" href="class_priority_scheduler.html#a0bcd297322ff46ee8e39fe4b207bba7f">PriorityScheduler::schedulePacket()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="_i_passive_queue_8h_source.html">IPassiveQueue.h</a></li>
+<li><a class="el" href="_i_passive_queue_8h.html">IPassiveQueue.h</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -166,7 +289,7 @@ Public Member Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_i_passive_queue.html">IPassiveQueue</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:49 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:26 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

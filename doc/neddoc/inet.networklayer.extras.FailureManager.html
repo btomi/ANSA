@@ -10,7 +10,7 @@
 <p>Module for managing node failure and recovery in the network. If used,
 it should have exactly one instance in the whole network.</p>
 <p><a href="inet.networklayer.extras.FailureManager.html">FailureManager</a> does not send or receive messages, and has no parameters
-either. Instead, it is invoked from <a href="inet.world.ScenarioManager.html">ScenarioManager</a> scripts, for example(<a href="inet.examples.ansaExamples.PDS_project.example.html">1</a>,<a href="inet.examples.ansaExamples.switchtest.example.html">2</a>):</p>
+either. Instead, it is invoked from <a href="inet.world.scenario.ScenarioManager.html">ScenarioManager</a> scripts, for example:</p>
 <p><pre>
 &lt;scenario&gt;
   &lt;at t=&quot;2&quot;&gt;
@@ -25,13 +25,27 @@ either. Instead, it is invoked from <a href="inet.world.ScenarioManager.html">Sc
 commands:</p>
   <ul><li><code>shutdown</code>: replaces a router module named by the <tt>target</tt> attribute
   with another module that represents a failed router. It currently replaces
-  <a href="inet.nodes.mpls.RSVP_LSR.html">RSVP_LSR</a> with <a href="inet.nodes.mpls.RSVP_FAILED.html">RSVP_FAILED</a>, <a href="inet.nodes.mpls.LDP_LSR.html">LDP_LSR</a> with <a href="inet.nodes.mpls.LDP_FAILED.html">LDP_FAILED</a>, and QuaggaRouter with
-  <a href="inet.nodes.inet.FailedRouter.html">FailedRouter</a>.</li>
+  <a href="inet.nodes.mpls.RSVP_LSR.html">RSVP_LSR</a> with <a href="inet.nodes.mpls.RSVP_FAILED.html">RSVP_FAILED</a>, <a href="inet.nodes.mpls.LDP_LSR.html">LDP_LSR</a> with <a href="inet.nodes.mpls.LDP_FAILED.html">LDP_FAILED</a>.</li>
   <li><code>startup</code>: the inverse of <tt>shutdown</tt>: replaces a <i>failed</i>
   router model named by the <tt>target</tt> attribute with an operational host/router
   module type.</li></ul>
 <p>The operation of <a href="inet.networklayer.extras.FailureManager.html">FailureManager</a> is likely to get refined and generalized in next
 versions.</p>
+<img src="inet.networklayer.extras.FailureManager-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.networklayer.extras.FailureManager.html" title="FailureManager" alt="FailureManager" coords="0,30,129,70">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.networklayer.extras.FailureManager-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.networklayer.extras.FailureManager.html" title="Simple Module FailureManager" alt="" coords="99,83,208,111">
+<area shape="rect" id="node2" href="inet.examples.mpls.ldp.LDPTEST.html" title="Network LDPTEST" alt="" coords="5,6,88,34">
+<area shape="rect" id="node4" href="inet.examples.mpls.testte_tunnel.RSVPTE4.html" title="Network RSVPTE4" alt="" coords="112,6,195,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.networklayer.extras.FailureManager-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.networklayer.extras.FailureManager.html" title="Simple Module FailureManager" alt="" coords="5,6,115,34">
+</map>
 <h3 class="subtitle">Networks:</h3>
 <table class="typestable">
    <tr>
@@ -139,8 +153,8 @@ versions.</p>
 // Module for managing node failure and recovery in the network. If used,
 // it should have exactly one instance in the whole network.
 //
-// FailureManager does not send or receive messages, and has no parameters
-// either. Instead, it is invoked from ScenarioManager scripts, for example:
+// ~FailureManager does not send or receive messages, and has no parameters
+// either. Instead, it is invoked from ~ScenarioManager scripts, for example:
 //
 // </span><span style="color: #800000; ">&lt;pre&gt;</span><span style="color: #808080; font-style: italic; ">&lt;nohtml&gt;
 // &lt;scenario&gt;
@@ -153,18 +167,17 @@ versions.</p>
 // &lt;/scenario&gt;
 // &lt;/nohtml&gt;</span><span style="color: #800000; ">&lt;/pre&gt;</span><span style="color: #808080; font-style: italic; ">
 //
-// It is currently only used with MPLS simulations, and supports the following
+// It is currently only used with ~MPLS simulations, and supports the following
 // commands:
 //
 // - </span><span style="color: #800000; ">&lt;code&gt;</span><span style="color: #808080; font-style: italic; ">shutdown</span><span style="color: #800000; ">&lt;/code&gt;</span><span style="color: #808080; font-style: italic; ">: replaces a router module named by the </span><span style="color: #800000; ">&lt;tt&gt;</span><span style="color: #808080; font-style: italic; ">target</span><span style="color: #800000; ">&lt;/tt&gt;</span><span style="color: #808080; font-style: italic; "> attribute
 //   with another module that represents a failed router. It currently replaces
-//   RSVP_LSR with RSVP_FAILED, LDP_LSR with LDP_FAILED, and QuaggaRouter with
-//   FailedRouter.
+//   ~RSVP_LSR with ~RSVP_FAILED, ~LDP_LSR with ~LDP_FAILED.
 // - </span><span style="color: #800000; ">&lt;code&gt;</span><span style="color: #808080; font-style: italic; ">startup</span><span style="color: #800000; ">&lt;/code&gt;</span><span style="color: #808080; font-style: italic; ">: the inverse of </span><span style="color: #800000; ">&lt;tt&gt;</span><span style="color: #808080; font-style: italic; ">shutdown</span><span style="color: #800000; ">&lt;/tt&gt;</span><span style="color: #808080; font-style: italic; ">: replaces a </span><span style="color: #800000; ">&lt;i&gt;</span><span style="color: #808080; font-style: italic; ">failed</span><span style="color: #800000; ">&lt;/i&gt;</span><span style="color: #808080; font-style: italic; ">
 //   router model named by the </span><span style="color: #800000; ">&lt;tt&gt;</span><span style="color: #808080; font-style: italic; ">target</span><span style="color: #800000; ">&lt;/tt&gt;</span><span style="color: #808080; font-style: italic; "> attribute with an operational host/router
 //   module type.
 //
-// The operation of FailureManager is likely to get refined and generalized in next
+// The operation of ~FailureManager is likely to get refined and generalized in next
 // versions.
 //
 </span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">FailureManager</span><span style="color: #000000; ">
@@ -176,6 +189,5 @@ versions.</p>
 
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

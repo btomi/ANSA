@@ -83,9 +83,15 @@
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_p_p___global.html#a64ba6d3fb361bb5591c36db6dc01f9d8">ltostr</a> (long i)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an integer to string.  <a href="#a64ba6d3fb361bb5591c36db6dc01f9d8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_p_p___global.html#a5545cd41f8cfd68ece1adc16fa40db91">dtostr</a> (double d)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a double to string.  <a href="#a5545cd41f8cfd68ece1adc16fa40db91"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_p_p___global.html#a7adfc7b335166f5c41477f2181f495c3">atod</a> (const char *s)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to double.  <a href="#a7adfc7b335166f5c41477f2181f495c3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_p_p___global.html#a7a945483736b99900d3da3c648c33f5e">atoul</a> (const char *s)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts string to unsigned long.  <a href="#a7a945483736b99900d3da3c648c33f5e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_p_p___global.html#a5bace9db73e2a9fdb17d1452ae272b9d">stripnonalnum</a> (const char *s)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes non-alphanumeric characters from the given string.  <a href="#a5bace9db73e2a9fdb17d1452ae272b9d"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="a7adfc7b335166f5c41477f2181f495c3"></a><!-- doxytag: member="OPP_Global::atod" ref="a7adfc7b335166f5c41477f2181f495c3" args="(const char *s)" -->
@@ -102,14 +108,15 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Converts string to double </p>
 
-<p>Definition at line <a class="el" href="opp__utils_8cc_source.html#l00038">38</a> of file <a class="el" href="opp__utils_8cc_source.html">opp_utils.cc</a>.</p>
+<p>Converts string to double. </p>
+
+<p>Referenced by <a class="el" href="class_r_e_d_dropper.html#aba7beb816ae3a3a41e00ec6596f4ae55">REDDropper::initialize()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordtype">char</span> *e;
-    <span class="keywordtype">double</span> d = ::strtod(s,&amp;e);
+    <span class="keywordtype">double</span> d = ::strtod(s, &amp;e);
     <span class="keywordflow">if</span> (*e)
-        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;invalid cast: &#39;%s&#39; cannot be interpreted as a double&quot;</span>, s);
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Invalid cast: &#39;%s&#39; cannot be interpreted as a double&quot;</span>, s);
     <span class="keywordflow">return</span> d;
 }
 </pre></div>
@@ -129,16 +136,15 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Converts string to unsigned long </p>
 
-<p>Definition at line <a class="el" href="opp__utils_8cc_source.html#l00047">47</a> of file <a class="el" href="opp__utils_8cc_source.html">opp_utils.cc</a>.</p>
+<p>Converts string to unsigned long. </p>
 
-<p>Referenced by <a class="el" href="_routing_table6_8cc_source.html#l00291">RoutingTable6::configureInterfaceFromXML()</a>.</p>
+<p>Referenced by <a class="el" href="class_routing_table6.html#a5d4f86dbabc31663a4bd12f50a72140f">RoutingTable6::configureInterfaceFromXML()</a>, and <a class="el" href="class_w_r_r_scheduler.html#a11921ae840297692637b107dedf93c96">WRRScheduler::initialize()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordtype">char</span> *e;
-    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> d = ::strtoul(s,&amp;e,10);
+    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> d = ::strtoul(s, &amp;e, 10);
     <span class="keywordflow">if</span> (*e)
-        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;invalid cast: &#39;%s&#39; cannot be interpreted as an unsigned long&quot;</span>, s);
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Invalid cast: &#39;%s&#39; cannot be interpreted as an unsigned long&quot;</span>, s);
     <span class="keywordflow">return</span> d;
 }
 </pre></div>
@@ -158,9 +164,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Converts a double to string </p>
 
-<p>Definition at line <a class="el" href="opp__utils_8cc_source.html#l00031">31</a> of file <a class="el" href="opp__utils_8cc_source.html">opp_utils.cc</a>.</p>
+<p>Converts a double to string. </p>
 <div class="fragment"><pre class="fragment">{
     std::ostringstream os;
     os &lt;&lt; d;
@@ -183,13 +188,42 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Converts an integer to string. </p>
 
-<p>Definition at line <a class="el" href="opp__utils_8cc_source.html#l00024">24</a> of file <a class="el" href="opp__utils_8cc_source.html">opp_utils.cc</a>.</p>
+<p>Referenced by <a class="el" href="namespace_diffserv_util.html#ab5f4c1a148fbb41535fff4a96976d79a">DiffservUtil::colorToString()</a>, and <a class="el" href="namespace_diffserv_util.html#a2386ce86c4d6b6cb3cf1035ff8048a70">DiffservUtil::dscpToString()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     std::ostringstream os;
-    os &lt;&lt; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>;
+    os &lt;&lt; i;
     <span class="keywordflow">return</span> os.str();
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a5bace9db73e2a9fdb17d1452ae272b9d"></a><!-- doxytag: member="OPP_Global::stripnonalnum" ref="a5bace9db73e2a9fdb17d1452ae272b9d" args="(const char *s)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="namespace_o_p_p___global.html#a5bace9db73e2a9fdb17d1452ae272b9d">OPP_Global::stripnonalnum</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Removes non-alphanumeric characters from the given string. </p>
+
+<p>Referenced by <a class="el" href="class_ext_interface.html#a48a0b9afce73360c73ef6d0840907766">ExtInterface::registerInterface()</a>, <a class="el" href="class_p_p_p.html#af0cf5df454211761f908bcaffc230ef1">PPP::registerInterface()</a>, and <a class="el" href="class_ether_m_a_c_base.html#a641e70e04914df39ba6da2fd8e580a46">EtherMACBase::registerInterface()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    std::string result;
+    <span class="keywordflow">for</span> (; *s; s++)
+        <span class="keywordflow">if</span> (isalnum(*s))
+            result += *s;
+    <span class="keywordflow">return</span> result;
 }
 </pre></div>
 </div>
@@ -200,7 +234,7 @@ Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="namespace_o_p_p___global.html">OPP_Global</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:56 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:32 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

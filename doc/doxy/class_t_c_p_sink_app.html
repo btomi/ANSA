@@ -76,36 +76,41 @@
 <div class="header">
   <div class="summary">
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">TCPSinkApp Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="TCPSinkApp" -->
-<p><code>#include &lt;<a class="el" href="_t_c_p_sink_app_8h_source.html">TCPSinkApp.h</a>&gt;</code></p>
+<p>Accepts any number of incoming connections, and discards whatever arrives on them.  
+ <a href="class_t_c_p_sink_app.html#details">More...</a></p>
+
+<p><code>#include &lt;TCPSinkApp.h&gt;</code></p>
 
 <p><a href="class_t_c_p_sink_app-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_sink_app.html#ab905022af6cf30954d5873f8db9bb366">initialize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_sink_app.html#a916a3a03f72853a962228e90b978b86e">handleMessage</a> (cMessage *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_sink_app.html#ac86168058fc5a64e4b99cb295424d3cb">finish</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_sink_app.html#ab905022af6cf30954d5873f8db9bb366">initialize</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_sink_app.html#a916a3a03f72853a962228e90b978b86e">handleMessage</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_sink_app.html#ac86168058fc5a64e4b99cb295424d3cb">finish</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_sink_app.html#a94ace021929fa23192cd14cbca0307b8">bytesRcvd</a></td></tr>
+<tr><td colspan="2"><h2><a name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_sink_app.html#aba030a56aa91e5caf9aa2718b4ee2f92">rcvdPkSignal</a> = SIMSIGNAL_NULL</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Accepts any number of incoming connections, and discards whatever arrives on them. </p>
-
-<p>Definition at line <a class="el" href="_t_c_p_sink_app_8h_source.html#l00026">26</a> of file <a class="el" href="_t_c_p_sink_app_8h_source.html">TCPSinkApp.h</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="ac86168058fc5a64e4b99cb295424d3cb"></a><!-- doxytag: member="TCPSinkApp::finish" ref="ac86168058fc5a64e4b99cb295424d3cb" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_sink_app.html#ac86168058fc5a64e4b99cb295424d3cb">TCPSinkApp::finish</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_sink_app.html#ac86168058fc5a64e4b99cb295424d3cb">TCPSinkApp::finish</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -113,10 +118,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_sink_app_8cc_source.html#l00063">63</a> of file <a class="el" href="_t_c_p_sink_app_8cc_source.html">TCPSinkApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    recordScalar(<span class="stringliteral">&quot;bytesRcvd&quot;</span>, <a class="code" href="class_t_c_p_sink_app.html#a94ace021929fa23192cd14cbca0307b8">bytesRcvd</a>);
 }
 </pre></div>
 </div>
@@ -126,7 +128,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_sink_app.html#a916a3a03f72853a962228e90b978b86e">TCPSinkApp::handleMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_sink_app.html#a916a3a03f72853a962228e90b978b86e">TCPSinkApp::handleMessage</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -135,25 +137,26 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_sink_app_8cc_source.html#l00036">36</a> of file <a class="el" href="_t_c_p_sink_app_8cc_source.html">TCPSinkApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (msg-&gt;getKind()==<a class="code" href="_t_c_p_command__m_8h.html#a68611fc79dbc74e8744d74b746cd956ba98ff9f82c08b1d7ae58049835c47368a">TCP_I_PEER_CLOSED</a>)
+    <span class="keywordflow">if</span> (msg-&gt;getKind() == <a class="code" href="_t_c_p_command__m_8h.html#a68611fc79dbc74e8744d74b746cd956ba98ff9f82c08b1d7ae58049835c47368a">TCP_I_PEER_CLOSED</a>)
     {
         <span class="comment">// we close too</span>
         msg-&gt;setKind(<a class="code" href="_t_c_p_command__m_8h.html#a3a8aac9b74215a1768eeaa375c3cc7d6aa18cb807579ad3b72293d3023883ba0a">TCP_C_CLOSE</a>);
         send(msg, <span class="stringliteral">&quot;tcpOut&quot;</span>);
     }
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg-&gt;getKind()==<a class="code" href="_t_c_p_command__m_8h.html#a68611fc79dbc74e8744d74b746cd956ba78bce3d41e158816c5212ed2fc959b06">TCP_I_DATA</a> || msg-&gt;getKind()==<a class="code" href="_t_c_p_command__m_8h.html#a68611fc79dbc74e8744d74b746cd956ba9b994384633a16021eef2cbb604d6ac7">TCP_I_URGENT_DATA</a>)
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg-&gt;getKind() == <a class="code" href="_t_c_p_command__m_8h.html#a68611fc79dbc74e8744d74b746cd956ba78bce3d41e158816c5212ed2fc959b06">TCP_I_DATA</a> || msg-&gt;getKind() == <a class="code" href="_t_c_p_command__m_8h.html#a68611fc79dbc74e8744d74b746cd956ba9b994384633a16021eef2cbb604d6ac7">TCP_I_URGENT_DATA</a>)
     {
-        <a class="code" href="class_t_c_p_sink_app.html#a94ace021929fa23192cd14cbca0307b8">bytesRcvd</a> += <a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(msg)-&gt;getByteLength();
+        cPacket *pk = <a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(msg);
+        <span class="keywordtype">long</span> packetLength = pk-&gt;getByteLength();
+        <a class="code" href="class_t_c_p_sink_app.html#a94ace021929fa23192cd14cbca0307b8">bytesRcvd</a> += packetLength;
+        emit(<a class="code" href="class_t_c_p_sink_app.html#aba030a56aa91e5caf9aa2718b4ee2f92">rcvdPkSignal</a>, pk);
         <span class="keyword">delete</span> msg;
 
         <span class="keywordflow">if</span> (ev.isGUI())
         {
             <span class="keywordtype">char</span> buf[32];
             sprintf(buf, <span class="stringliteral">&quot;rcvd: %ld bytes&quot;</span>, <a class="code" href="class_t_c_p_sink_app.html#a94ace021929fa23192cd14cbca0307b8">bytesRcvd</a>);
-            getDisplayString().setTagArg(<span class="stringliteral">&quot;t&quot;</span>,0,buf);
+            getDisplayString().setTagArg(<span class="stringliteral">&quot;t&quot;</span>, 0, buf);
         }
     }
     <span class="keywordflow">else</span>
@@ -170,7 +173,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_sink_app.html#ab905022af6cf30954d5873f8db9bb366">TCPSinkApp::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_sink_app.html#ab905022af6cf30954d5873f8db9bb366">TCPSinkApp::initialize</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -178,18 +181,19 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_sink_app_8cc_source.html#l00022">22</a> of file <a class="el" href="_t_c_p_sink_app_8cc_source.html">TCPSinkApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keyword">const</span> <span class="keywordtype">char</span> *address = par(<span class="stringliteral">&quot;address&quot;</span>);
-    <span class="keywordtype">int</span> port = par(<span class="stringliteral">&quot;port&quot;</span>);
+    <a class="code" href="class_t_c_p_sink_app.html#ab905022af6cf30954d5873f8db9bb366">cSimpleModule::initialize</a>();
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *localAddress = par(<span class="stringliteral">&quot;localAddress&quot;</span>);
+    <span class="keywordtype">int</span> localPort = par(<span class="stringliteral">&quot;localPort&quot;</span>);
 
     <a class="code" href="class_t_c_p_sink_app.html#a94ace021929fa23192cd14cbca0307b8">bytesRcvd</a> = 0;
     WATCH(<a class="code" href="class_t_c_p_sink_app.html#a94ace021929fa23192cd14cbca0307b8">bytesRcvd</a>);
+    <a class="code" href="class_t_c_p_sink_app.html#aba030a56aa91e5caf9aa2718b4ee2f92">rcvdPkSignal</a> = registerSignal(<span class="stringliteral">&quot;rcvdPk&quot;</span>);
 
-    <a class="code" href="class_t_c_p_socket.html">TCPSocket</a> socket;
-    socket.<a class="code" href="class_t_c_p_socket.html#ab6563d5ef32687b2072e5c08317ba519">setOutputGate</a>(gate(<span class="stringliteral">&quot;tcpOut&quot;</span>));
-    socket.<a class="code" href="class_t_c_p_socket.html#a2c4f6131103b0c9773728d706140aa0d">bind</a>(address[0] ? <a class="code" href="class_i_pv_x_address.html">IPvXAddress</a>(address) : <a class="code" href="class_i_pv_x_address.html">IPvXAddress</a>(), port);
+    <a class="code" href="class_t_c_p_socket.html" title="TCPSocket is a convenience class, to make it easier to manage TCP connections from your application m...">TCPSocket</a> socket;
+    socket.<a class="code" href="class_t_c_p_socket.html#ab6563d5ef32687b2072e5c08317ba519" title="Sets the gate on which to send to TCP.">setOutputGate</a>(gate(<span class="stringliteral">&quot;tcpOut&quot;</span>));
+    socket.<a class="code" href="class_t_c_p_socket.html#aaa0a60b46635abaf60045716a1e8b1ca" title="Read &quot;dataTransferMode&quot; parameter from ini/ned, and set dataTransferMode member value.">readDataTransferModePar</a>(*<span class="keyword">this</span>);
+    socket.<a class="code" href="class_t_c_p_socket.html#a2c4f6131103b0c9773728d706140aa0d" title="Bind the socket to a local port number.">bind</a>(localAddress[0] ? <a class="code" href="class_i_pv_x_address.html" title="Stores an IPv4 or an IPv6 address.">IPvXAddress</a>(localAddress) : <a class="code" href="class_i_pv_x_address.html" title="Stores an IPv4 or an IPv6 address.">IPvXAddress</a>(), localPort);
     socket.<a class="code" href="class_t_c_p_socket.html#abfd870650b679461fa75fbe473c89d30">listen</a>();
 }
 </pre></div>
@@ -207,15 +211,28 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_sink_app_8h_source.html#l00029">29</a> of file <a class="el" href="_t_c_p_sink_app_8h_source.html">TCPSinkApp.h</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_sink_app.html#a916a3a03f72853a962228e90b978b86e">handleMessage()</a>, and <a class="el" href="class_t_c_p_sink_app.html#ab905022af6cf30954d5873f8db9bb366">initialize()</a>.</p>
 
-<p>Referenced by <a class="el" href="_t_c_p_sink_app_8cc_source.html#l00063">finish()</a>, <a class="el" href="_t_c_p_sink_app_8cc_source.html#l00036">handleMessage()</a>, and <a class="el" href="_t_c_p_sink_app_8cc_source.html#l00022">initialize()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="aba030a56aa91e5caf9aa2718b4ee2f92"></a><!-- doxytag: member="TCPSinkApp::rcvdPkSignal" ref="aba030a56aa91e5caf9aa2718b4ee2f92" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_t_c_p_sink_app.html#aba030a56aa91e5caf9aa2718b4ee2f92">TCPSinkApp::rcvdPkSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_t_c_p_sink_app.html#a916a3a03f72853a962228e90b978b86e">handleMessage()</a>, and <a class="el" href="class_t_c_p_sink_app.html#ab905022af6cf30954d5873f8db9bb366">initialize()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_t_c_p_sink_app_8h_source.html">TCPSinkApp.h</a></li>
-<li><a class="el" href="_t_c_p_sink_app_8cc_source.html">TCPSinkApp.cc</a></li>
+<li><a class="el" href="_t_c_p_sink_app_8h.html">TCPSinkApp.h</a></li>
+<li><a class="el" href="_t_c_p_sink_app_8cc.html">TCPSinkApp.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -223,7 +240,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_t_c_p_sink_app.html">TCPSinkApp</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:54 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:31 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

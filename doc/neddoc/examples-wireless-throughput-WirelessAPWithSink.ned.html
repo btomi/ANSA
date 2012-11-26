@@ -20,7 +20,7 @@
    </td>
    <td>
 
-<p>Well, it Models a 802.11 Access Point with a <a href="inet.base.Sink.html">Sink</a>.</p>
+<p>Well, this models a 802.11 Access Point with a Sink.</p>
 
    </td>
 </tr>
@@ -48,14 +48,14 @@
 
 </span><span style="color: #800000; font-weight: bold; ">package</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">examples</span><span style="color: #000000; ">.</span><span style="color: #000000; ">wireless</span><span style="color: #000000; ">.</span><span style="color: #000000; ">throughput</span><span style="color: #000000; ">;
 
-</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">base</span><span style="color: #000000; ">.</span><span style="color: #000000; ">NotificationBoard</span><span style="color: #000000; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">mobility</span><span style="color: #000000; ">.</span><span style="color: #000000; ">models</span><span style="color: #000000; ">.</span><span style="color: #000000; ">StationaryMobility</span><span style="color: #000000; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">linklayer</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ieee80211</span><span style="color: #000000; ">.</span><span style="color: #000000; ">Ieee80211Nic</span><span style="color: #000000; ">;
 </span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">base</span><span style="color: #000000; ">.</span><span style="color: #000000; ">Sink</span><span style="color: #000000; ">;
-</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">mobility</span><span style="color: #000000; ">.</span><span style="color: #000000; ">NullMobility</span><span style="color: #000000; ">;
-</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">linklayer</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ieee80211</span><span style="color: #000000; ">.</span><span style="color: #000000; ">Ieee80211NicAPSimplified</span><span style="color: #000000; ">;
+</span><span style="color: #800000; font-weight: bold; ">import</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">base</span><span style="color: #000000; ">.</span><span style="color: #000000; ">NotificationBoard</span><span style="color: #000000; ">;
 
 
 </span><span style="color: #808080; font-style: italic; ">//
-// Well, it Models a 802.11 Access Point with a Sink.
+// Well, this models a 802.11 Access Point with a Sink.
 //
 </span><span style="color: #800000; font-weight: bold; ">module</span><span style="color: #000000; "> </span><span style="color: #000000; ">WirelessAPWithSink</span><span style="color: #000000; ">
 {
@@ -70,24 +70,25 @@
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
                 </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=169,124&quot;</span><span style="color: #000000; ">);
         }
-        </span><span style="color: #000000; ">wlan</span><span style="color: #000000; ">: </span><span style="color: #000000; ">Ieee80211NicAPSimplified</span><span style="color: #000000; "> {
+        </span><span style="color: #000000; ">wlan</span><span style="color: #000000; ">: </span><span style="color: #000000; ">Ieee80211Nic</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
                 </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=89,225;q=queue&quot;</span><span style="color: #000000; ">);
+                </span><span style="color: #000000; ">mgmtType</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;Ieee80211MgmtAPSimplified&quot;</span><span style="color: #000000; ">);
+                </span><span style="color: #000000; ">mgmt</span><span style="color: #000000; ">.</span><span style="color: #000000; ">encapDecap</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;false&quot;</span><span style="color: #000000; ">;
         }
         </span><span style="color: #000000; ">notificationBoard</span><span style="color: #000000; ">: </span><span style="color: #000000; ">NotificationBoard</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
                 </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=78,60&quot;</span><span style="color: #000000; ">);
         }
-        </span><span style="color: #000000; ">mobility</span><span style="color: #000000; ">: </span><span style="color: #000000; ">NullMobility</span><span style="color: #000000; "> {
+        </span><span style="color: #000000; ">mobility</span><span style="color: #000000; ">: </span><span style="color: #000000; ">StationaryMobility</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
                 </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=71,121&quot;</span><span style="color: #000000; ">);
         }
     </span><span style="color: #800000; font-weight: bold; ">connections</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">allowunconnected</span><span style="color: #000000; ">:
         </span><span style="color: #000000; ">radioIn</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> { </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;m=s&quot;</span><span style="color: #000000; ">); } </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">wlan</span><span style="color: #000000; ">.</span><span style="color: #000000; ">radioIn</span><span style="color: #000000; ">;
-        </span><span style="color: #000000; ">wlan</span><span style="color: #000000; ">.</span><span style="color: #000000; ">uppergateOut</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">sink</span><span style="color: #000000; ">.</span><span style="color: #000000; ">in</span><span style="color: #000000; ">++;
+        </span><span style="color: #000000; ">wlan</span><span style="color: #000000; ">.</span><span style="color: #000000; ">upperLayerOut</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">sink</span><span style="color: #000000; ">.</span><span style="color: #000000; ">in</span><span style="color: #000000; ">++;
 }
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

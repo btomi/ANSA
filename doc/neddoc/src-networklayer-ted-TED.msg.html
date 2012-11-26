@@ -57,7 +57,7 @@ about the given links.</p>
 </span><span style="color: #000000; ">
 
 </span><span style="color: #800000; font-weight: bold; ">cplusplus</span><span style="color: #000000; "> {{
-#</span><span style="color: #000000; ">include</span><span style="color: #000000; "> </span><span style="color: #008000; ">&quot;IPAddress.h&quot;</span><span style="color: #000000; ">
+#</span><span style="color: #000000; ">include</span><span style="color: #000000; "> </span><span style="color: #008000; ">&quot;IPv4Address.h&quot;</span><span style="color: #000000; ">
 
 #</span><span style="color: #000000; ">define</span><span style="color: #000000; "> </span><span style="color: #000000; ">LINK_STATE_MESSAGE</span><span style="color: #000000; ">      </span><span style="color: #008000; ">1</span><span style="color: #000000; ">
 
@@ -65,30 +65,30 @@ about the given links.</p>
 }}
 
 
-</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">noncobject</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; ">;
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">noncobject</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; ">;
 
 </span><span style="color: #808080; font-style: italic; ">//
-// Represents a link in the TED and in LinkStateMsg packets.
+// Represents a link in the ~TED and in ~LinkStateMsg packets.
 //
 </span><span style="color: #800000; font-weight: bold; ">struct</span><span style="color: #000000; "> </span><span style="color: #000000; ">TELinkStateInfo</span><span style="color: #000000; ">
 {
-    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">advrouter</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// routerId of originator of this link state entry
-</span><span style="color: #000000; ">    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">linkid</span><span style="color: #000000; ">;    </span><span style="color: #808080; font-style: italic; ">// identifies link within advrouter; set to peer's address
-</span><span style="color: #000000; ">    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">local</span><span style="color: #000000; ">;     </span><span style="color: #808080; font-style: italic; ">// address of local interface of this link
-</span><span style="color: #000000; ">    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">remote</span><span style="color: #000000; ">;    </span><span style="color: #808080; font-style: italic; ">// address of &quot;gateway&quot; to peer
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">advrouter</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// routerId of originator of this link state entry
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">linkid</span><span style="color: #000000; ">;    </span><span style="color: #808080; font-style: italic; ">// identifies link within advrouter; set to peer's address
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">local</span><span style="color: #000000; ">;     </span><span style="color: #808080; font-style: italic; ">// address of local interface of this link
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">remote</span><span style="color: #000000; ">;    </span><span style="color: #808080; font-style: italic; ">// address of &quot;gateway&quot; to peer
 </span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">metric</span><span style="color: #000000; ">;       </span><span style="color: #808080; font-style: italic; ">// link metric
 </span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">MaxBandwidth</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// maximum bandwidth (bps)
 </span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">UnResvBandwidth</span><span style="color: #000000; ">[</span><span style="color: #008000; ">8</span><span style="color: #000000; ">]; </span><span style="color: #808080; font-style: italic; ">// unreserved bandwidths --FIXME indexed by what?
 </span><span style="color: #000000; ">
     </span><span style="color: #000000; ">simtime_t</span><span style="color: #000000; "> </span><span style="color: #000000; ">timestamp</span><span style="color: #000000; ">;    </span><span style="color: #808080; font-style: italic; ">// time of originating this entry
 </span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">sourceId</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// FIXME looks like this is the same as advrouter -- really needed?
-</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">messageId</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// id assigned to originating LinkStateMsg (FIXME or?)
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">messageId</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// id assigned to originating ~LinkStateMsg (FIXME or?)
 </span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">state</span><span style="color: #000000; ">;             </span><span style="color: #808080; font-style: italic; ">// false = down, true = up
 </span><span style="color: #000000; ">}
 
 
 </span><span style="color: #808080; font-style: italic; ">//
-// Data structure supplied with NF_TED_CHANGE NotificationBoard notifications.
+// Data structure supplied with NF_TED_CHANGE ~NotificationBoard notifications.
 // This triggers the link state protocol to send out up-to-date link state info
 // about the given links.
 //
@@ -99,6 +99,5 @@ about the given links.</p>
 
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

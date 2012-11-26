@@ -21,7 +21,7 @@
    <td>
 
 <p>UDP command codes, sent by the application to <a href="inet.transport.udp.UDP.html">UDP</a>. These constants
-should be set as message kind on a message sent to the <a href="inet.transport.udp.UDP.html">UDP</a> entity.</p>
+should be set as message kind on messages sent to the <a href="inet.transport.udp.UDP.html">UDP</a> entity.</p>
 
    </td>
 </tr>
@@ -48,8 +48,220 @@ constants as message kind on messages it sends to the application.</p>
    </td>
    <td>
 
-<p>Control info for sending/receiving data via UDP. Travels between
-application and the <a href="inet.transport.udp.UDP.html">UDP</a> module.</p>
+<p>Base class for UDP control info classes. The most convenient way to handle
+<a href="inet.transport.udp.UDP.html">UDP</a> is the UDPSocket class, which hides control info from you.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="UDPBindCommand.html">UDPBindCommand</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>Control info for binding an UDP socket. To create and bind a socket,
+send a message to the <a href="inet.transport.udp.UDP.html">UDP</a> module with kind=UDP_C_BIND and an
+<a href="UDPBindCommand.html">UDPBindCommand</a> attached.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="UDPConnectCommand.html">UDPConnectCommand</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>Control info for connecting an UDP socket. To connect a socket,
+send a message to the <a href="inet.transport.udp.UDP.html">UDP</a> module with kind=UDP_C_CONNECT and an
+<a href="UDPConnectCommand.html">UDPConnectCommand</a> attached. If the socket does not exist,
+it will be created.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="UDPSendCommand.html">UDPSendCommand</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>Control info for sending data via UDP. To send a packet, send it to
+the <a href="inet.transport.udp.UDP.html">UDP</a> module with kind=UDP_C_SEND and an <a href="UDPSendCommand.html">UDPSendCommand</a> attached.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="UDPCloseCommand.html">UDPCloseCommand</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>Control info for closing an UDP socket. To close a socket, send a message
+to the <a href="inet.transport.udp.UDP.html">UDP</a> module with kind=UDP_C_CLOSE and an <a href="UDPCloseCommand.html">UDPCloseCommand</a> attached.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="UDPDataIndication.html">UDPDataIndication</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>Control info that is attached to received data packets, sent up from the
+<a href="inet.transport.udp.UDP.html">UDP</a> module to the application with UDP_I_DATA as message kind.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="UDPErrorIndication.html">UDPErrorIndication</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>Control info that is sent up from the <a href="inet.transport.udp.UDP.html">UDP</a> module to the application with
+UDP_I_ERROR as message kind when <a href="inet.transport.udp.UDP.html">UDP</a> receives an ICMP error for a packet
+previously sent from the socket.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="UDPSetOptionCommand.html">UDPSetOptionCommand</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>Base class for UDP socket option control info classes.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="UDPSetTimeToLiveCommand.html">UDPSetTimeToLiveCommand</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>Control info for setting the Time To Live (a.k.a. Hop Limit) option on an
+UDP socket. This option will affect both multicast and unicast packets.
+To set the option, send a message to the <a href="inet.transport.udp.UDP.html">UDP</a> module with kind=UDP_C_SETOPTION
+and an and instance of this control info class attached.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="UDPSetTypeOfServiceCommand.html">UDPSetTypeOfServiceCommand</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>Control info for setting the Type of Service (IPv4) or Traffic Class (IPv6)
+header field on outgoing IPv4/IPv6 packets sent from an UDP socket.
+This is an 8-bit field, the lowest 6 bits are the DSCP (DiffServ Code Point)
+and the highest 2 bits are the ECN (Explicit Congestion Notification).
+To set the option, send a message to  the <a href="inet.transport.udp.UDP.html">UDP</a> module with kind=UDP_C_SETOPTION 
+and an and instance of this control info class attached.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="UDPSetBroadcastCommand.html">UDPSetBroadcastCommand</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>Control info for setting the Broadcast option on an UDP socket.
+To set the option, send a message to the <a href="inet.transport.udp.UDP.html">UDP</a> module with kind=UDP_C_SETOPTION
+and an and instance of this control info class attached.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="UDPSetMulticastInterfaceCommand.html">UDPSetMulticastInterfaceCommand</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>Control info for setting the multicast output interface for an UDP socket.
+To set the option, send a message to the <a href="inet.transport.udp.UDP.html">UDP</a> module with kind=UDP_C_SETOPTION
+and an and instance of this control info class attached.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="UDPSetMulticastLoopCommand.html">UDPSetMulticastLoopCommand</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>Control info for setting the multicast loop option for an UDP socket.
+When the option is true, a copy of the outgoing multicast packet
+is delivered locally via the loopback interface.
+To set the option, send a message to the <a href="inet.transport.udp.UDP.html">UDP</a> module with kind=UDP_C_SETOPTION
+and an instance of this control info class attached.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="UDPJoinMulticastGroupsCommand.html">UDPJoinMulticastGroupsCommand</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>Control info for letting an UDP socket join multicast groups.
+To set the option, send a message to the <a href="inet.transport.udp.UDP.html">UDP</a> module with kind=UDP_C_SETOPTION
+and an and instance of this control info class attached.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="UDPLeaveMulticastGroupsCommand.html">UDPLeaveMulticastGroupsCommand</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>Control info for letting an UDP socket leave multicast groups.
+To set the option, send a message to the <a href="inet.transport.udp.UDP.html">UDP</a> module with kind=UDP_C_SETOPTION
+and an and instance of this control info class attached.</p>
 
    </td>
 </tr>
@@ -57,7 +269,7 @@ application and the <a href="inet.transport.udp.UDP.html">UDP</a> module.</p>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
 // Copyright (C) 2000 Institut fuer Telematik, Universitaet Karlsruhe
-// Copyright (C) 2004 Andras Varga
+// Copyright (C) 2004,2011 Andras Varga
 //
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU Lesser General Public License
@@ -78,63 +290,249 @@ application and the <a href="inet.transport.udp.UDP.html">UDP</a> module.</p>
 #</span><span style="color: #000000; ">include</span><span style="color: #000000; "> </span><span style="color: #008000; ">&quot;IPvXAddress.h&quot;</span><span style="color: #000000; ">
 }}
 
-
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">noncobject</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPvXAddress</span><span style="color: #000000; ">;
 
+
 </span><span style="color: #808080; font-style: italic; ">//
-// \UDP command codes, sent by the application to UDP. These constants
-// should be set as message kind on a message sent to the UDP entity.
+// UDP command codes, sent by the application to ~UDP. These constants
+// should be set as message kind on messages sent to the ~UDP entity.
 //
-// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> UDPControlInfo, UDPStatusInd, UDP
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~UDPControlInfo, ~UDPStatusInd, ~UDP
 //
 </span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPCommandCode</span><span style="color: #000000; ">
 {
-
-    </span><span style="color: #000000; ">UDP_C_DATA</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;    </span><span style="color: #808080; font-style: italic; ">// datagram to send (must carry UDPControlInfo)
-</span><span style="color: #000000; ">    </span><span style="color: #000000; ">UDP_C_BIND</span><span style="color: #000000; "> = </span><span style="color: #008000; ">1</span><span style="color: #000000; ">;    </span><span style="color: #808080; font-style: italic; ">// fill srcPort and srcAddr in UDPControlInfo
-</span><span style="color: #000000; ">    </span><span style="color: #000000; ">UDP_C_CONNECT</span><span style="color: #000000; "> = </span><span style="color: #008000; ">2</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// fill destAddr and destPort in UDPControlInfo
-</span><span style="color: #000000; ">    </span><span style="color: #000000; ">UDP_C_UNBIND</span><span style="color: #000000; "> = </span><span style="color: #008000; ">3</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// fill sockId in UDPControlInfo
+    </span><span style="color: #000000; ">UDP_C_DATA</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;      </span><span style="color: #808080; font-style: italic; ">// send()/sendTo(); see ~UDPSendCommand
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">UDP_C_BIND</span><span style="color: #000000; "> = </span><span style="color: #008000; ">1</span><span style="color: #000000; ">;      </span><span style="color: #808080; font-style: italic; ">// bind(); see ~UDPBindCommand
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">UDP_C_CONNECT</span><span style="color: #000000; "> = </span><span style="color: #008000; ">2</span><span style="color: #000000; ">;   </span><span style="color: #808080; font-style: italic; ">// connect(); see ~UDPConnectCommand
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">UDP_C_SETOPTION</span><span style="color: #000000; "> = </span><span style="color: #008000; ">3</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// setsockopt(); see ~UDPSetTimeToLiveCommand,...
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">UDP_C_CLOSE</span><span style="color: #000000; "> = </span><span style="color: #008000; ">4</span><span style="color: #000000; ">;     </span><span style="color: #808080; font-style: italic; ">// close(); see ~UDPCloseCommand
 </span><span style="color: #000000; ">}
 
+
 </span><span style="color: #808080; font-style: italic; ">//
-// \UDP indications, sent by UDP to the application. UDP will set these
+// UDP indications, sent by ~UDP to the application. ~UDP will set these
 // constants as message kind on messages it sends to the application.
 //
-// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> UDPControlInfo, UDPCommandCode, UDP
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~UDPControlInfo, ~UDPCommandCode, ~UDP
 //
 </span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPStatusInd</span><span style="color: #000000; ">
 {
-
-    </span><span style="color: #000000; ">UDP_I_DATA</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// data packet (set on data packet)
-</span><span style="color: #000000; ">    </span><span style="color: #000000; ">UDP_I_ERROR</span><span style="color: #000000; "> = </span><span style="color: #008000; ">1</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// ICMP error received on a sent datagram
+    </span><span style="color: #000000; ">UDP_I_DATA</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// ~UDP attaches ~UDPIndication to received data packet
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">UDP_I_ERROR</span><span style="color: #000000; "> = </span><span style="color: #008000; ">1</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// ~UDP attaches ~UDPIndication to received data packet
 </span><span style="color: #000000; ">}
 
 
 </span><span style="color: #808080; font-style: italic; ">//
-// Control info for sending/receiving data via \UDP. Travels between
-// application and the UDP module.
+// Base class for UDP control info classes. The most convenient way to handle
+// ~UDP is the UDPSocket class, which hides control info from you.
 //
-// The most convenient way to handle UDP is the UDPSocket class, which hides
-// UDPControlInfo completely from you. But even if you manage talking
-// to UDP yourself without help from UDPSocket, sockId must be obtained
-// from UDPSocket::generateSocketId().
+// sockId must uniquely identify the socket in the ~UDP module; the best way
+// to achieve that is to obtain the value from UDPSocket::generateSocketId().
 //
-</span><span style="color: #0000ff; font-style: italic; ">//# </span><span style="color: #000080; ">TODO</span><span style="color: #0000ff; font-style: italic; "> explain userId, sockId, etc.
-</span><span style="color: #808080; font-style: italic; ">//
-// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> UDPCommandCode
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~UDPCommandCode
 //
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPControlInfo</span><span style="color: #000000; ">
 {
-    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">sockId</span><span style="color: #000000; "> = -</span><span style="color: #008000; ">1</span><span style="color: #000000; ">;   </span><span style="color: #808080; font-style: italic; ">// uniquely identifies the \UDP socket
-</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">userId</span><span style="color: #000000; "> = -</span><span style="color: #008000; ">1</span><span style="color: #000000; ">;   </span><span style="color: #808080; font-style: italic; ">// id than can be freely used by the app
-</span><span style="color: #000000; ">    </span><span style="color: #000000; ">IPvXAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">srcAddr</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// source \IP or \IPv6 address, or local address with BIND
-</span><span style="color: #000000; ">    </span><span style="color: #000000; ">IPvXAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">destAddr</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// destination \IP or \IPv6 address
-</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">srcPort</span><span style="color: #000000; ">;   </span><span style="color: #808080; font-style: italic; ">// \UDP source port in packet, or local port with BIND
-</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">destPort</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// \UDP destination port in packet
-</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">interfaceId</span><span style="color: #000000; "> = -</span><span style="color: #008000; ">1</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// interface on which pk was received/should be sent (see InterfaceTable)
+    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">sockId</span><span style="color: #000000; "> = -</span><span style="color: #008000; ">1</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// must uniquely identify the socket in the ~UDP module
 </span><span style="color: #000000; ">}
 
+</span><span style="color: #808080; font-style: italic; ">//
+// Control info for binding an UDP socket. To create and bind a socket,
+// send a message to the ~UDP module with kind=UDP_C_BIND and an
+// ~UDPBindCommand attached.
+//
+// Both the address and the port may be left unset. If the port is
+// unset, ~UDP will assign an ephemeral port.
+//
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~UDPCommandCode
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPBindCommand</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPControlInfo</span><span style="color: #000000; ">
+{
+    </span><span style="color: #000000; ">IPvXAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">localAddr</span><span style="color: #000000; ">;
+    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">localPort</span><span style="color: #000000; "> = -</span><span style="color: #008000; ">1</span><span style="color: #000000; ">;
+}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Control info for connecting an UDP socket. To connect a socket,
+// send a message to the ~UDP module with kind=UDP_C_CONNECT and an
+// ~UDPConnectCommand attached. If the socket does not exist,
+// it will be created.
+//
+// Both the address and the port must be filled in.
+//
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~UDPCommandCode
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPConnectCommand</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPControlInfo</span><span style="color: #000000; ">
+{
+    </span><span style="color: #000000; ">IPvXAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">remoteAddr</span><span style="color: #000000; ">;
+    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">remotePort</span><span style="color: #000000; "> = -</span><span style="color: #008000; ">1</span><span style="color: #000000; ">;
+}
+
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Control info for sending data via UDP. To send a packet, send it to
+// the ~UDP module with kind=UDP_C_SEND and an ~UDPSendCommand attached.
+//
+// UDP_C_SEND/~UDPSendCommand models both the Unix send() and sendto() calls.
+// If the socket is connected, destAddr/destPort may be left blank (send()),
+// otherwise it must contain the destination for the packet (sendto()).
+//
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~UDPCommandCode
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPSendCommand</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPControlInfo</span><span style="color: #000000; ">
+{
+    </span><span style="color: #000000; ">IPvXAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">destAddr</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// destination IPv4 or IPv6 address
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">destPort</span><span style="color: #000000; "> = -</span><span style="color: #008000; ">1</span><span style="color: #000000; ">;     </span><span style="color: #808080; font-style: italic; ">// destination port
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">interfaceId</span><span style="color: #000000; "> = -</span><span style="color: #008000; ">1</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// interface on which the packet must be sent (see ~InterfaceTable)
+</span><span style="color: #000000; ">}
+
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Control info for closing an UDP socket. To close a socket, send a message
+// to the ~UDP module with kind=UDP_C_CLOSE and an ~UDPCloseCommand attached.
+//
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~UDPCommandCode
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPCloseCommand</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPControlInfo</span><span style="color: #000000; ">
+{
+}
+
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Control info that is attached to received data packets, sent up from the
+// ~UDP module to the application with UDP_I_DATA as message kind.
+//
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~UDPCommandCode
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPDataIndication</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPControlInfo</span><span style="color: #000000; ">
+{
+    </span><span style="color: #000000; ">IPvXAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">srcAddr</span><span style="color: #000000; ">;   </span><span style="color: #808080; font-style: italic; ">// source IPv4 or IPv6 address of the received packet
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">IPvXAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">destAddr</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// destination IPv4 or IPv6 address of the received packet
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">srcPort</span><span style="color: #000000; ">;           </span><span style="color: #808080; font-style: italic; ">// source port of the received packet
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">destPort</span><span style="color: #000000; ">;          </span><span style="color: #808080; font-style: italic; ">// destination port of the received packet
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">ttl</span><span style="color: #000000; ">;               </span><span style="color: #808080; font-style: italic; ">// TTL field of the received packet
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">interfaceId</span><span style="color: #000000; ">;       </span><span style="color: #808080; font-style: italic; ">// interface on which the packet was received (see ~InterfaceTable)
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #000000; "> </span><span style="color: #000000; ">typeOfService</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// IPv4 Type of Service / IPv6 Traffic Class field of received packet
+</span><span style="color: #000000; ">}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Control info that is sent up from the ~UDP module to the application with
+// UDP_I_ERROR as message kind when ~UDP receives an ICMP error for a packet
+// previously sent from the socket.
+//
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~UDPCommandCode
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPErrorIndication</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPControlInfo</span><span style="color: #000000; ">
+{
+    </span><span style="color: #000000; ">IPvXAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">srcAddr</span><span style="color: #000000; ">;   </span><span style="color: #808080; font-style: italic; ">// source IPv4 or IPv6 address of the undeliverable packet
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">IPvXAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">destAddr</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// destination IPv4 or IPv6 address of the undeliverable packet
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">srcPort</span><span style="color: #000000; ">;           </span><span style="color: #808080; font-style: italic; ">// source port of the undeliverable packet
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">destPort</span><span style="color: #000000; ">;          </span><span style="color: #808080; font-style: italic; ">// destination port of the undeliverable packet
+</span><span style="color: #000000; ">}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Base class for UDP socket option control info classes.
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPSetOptionCommand</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPControlInfo</span><span style="color: #000000; ">
+{
+}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Control info for setting the Time To Live (a.k.a. Hop Limit) option on an
+// UDP socket. This option will affect both multicast and unicast packets.
+// To set the option, send a message to the ~UDP module with kind=UDP_C_SETOPTION
+// and an and instance of this control info class attached.
+//
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~UDPCommandCode
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPSetTimeToLiveCommand</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPSetOptionCommand</span><span style="color: #000000; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">ttl</span><span style="color: #000000; ">;
+}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Control info for setting the Type of Service (IPv4) or Traffic Class (IPv6)
+// header field on outgoing IPv4/IPv6 packets sent from an UDP socket.
+// This is an 8-bit field, the lowest 6 bits are the DSCP (DiffServ Code Point)
+// and the highest 2 bits are the ECN (Explicit Congestion Notification).
+// To set the option, send a message to  the ~UDP module with kind=UDP_C_SETOPTION 
+// and an and instance of this control info class attached.
+//
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~UDPCommandCode
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPSetTypeOfServiceCommand</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPSetOptionCommand</span><span style="color: #000000; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #000000; "> </span><span style="color: #000000; ">tos</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// ToS byte for IPv4/IPv6 
+</span><span style="color: #000000; ">}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Control info for setting the Broadcast option on an UDP socket.
+// To set the option, send a message to the ~UDP module with kind=UDP_C_SETOPTION
+// and an and instance of this control info class attached.
+//
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~UDPCommandCode
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPSetBroadcastCommand</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPSetOptionCommand</span><span style="color: #000000; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">broadcast</span><span style="color: #000000; ">;
+}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Control info for setting the multicast output interface for an UDP socket.
+// To set the option, send a message to the ~UDP module with kind=UDP_C_SETOPTION
+// and an and instance of this control info class attached.
+//
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~UDPCommandCode
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPSetMulticastInterfaceCommand</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPSetOptionCommand</span><span style="color: #000000; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">interfaceId</span><span style="color: #000000; ">;
+}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Control info for setting the multicast loop option for an UDP socket.
+// When the option is true, a copy of the outgoing multicast packet
+// is delivered locally via the loopback interface.
+// To set the option, send a message to the ~UDP module with kind=UDP_C_SETOPTION
+// and an instance of this control info class attached.
+//
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~UDPCommandCode
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPSetMulticastLoopCommand</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPSetOptionCommand</span><span style="color: #000000; ">
+{
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">loop</span><span style="color: #000000; ">;
+}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// Control info for letting an UDP socket join multicast groups.
+// To set the option, send a message to the ~UDP module with kind=UDP_C_SETOPTION
+// and an and instance of this control info class attached.
+//
+// The address-interfaceId pairs are passed as two separate arrays.
+// When there are less interfaceIds than multicast addresses,
+// then -1 is assumed (meaning join on all interfaces).
+//
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~UDPCommandCode
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPJoinMulticastGroupsCommand</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPSetOptionCommand</span><span style="color: #000000; ">
+{
+    </span><span style="color: #000000; ">IPvXAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">multicastAddr</span><span style="color: #000000; ">[];
+    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">interfaceId</span><span style="color: #000000; ">[];
+}
+
+</span><span style="color: #808080; font-style: italic; ">//
+//
+// Control info for letting an UDP socket leave multicast groups.
+// To set the option, send a message to the ~UDP module with kind=UDP_C_SETOPTION
+// and an and instance of this control info class attached.
+//
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~UDPCommandCode
+//
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPLeaveMulticastGroupsCommand</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPSetOptionCommand</span><span style="color: #000000; ">
+{
+    </span><span style="color: #000000; ">IPvXAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">multicastAddr</span><span style="color: #000000; ">[];
+}
+
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

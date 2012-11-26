@@ -8,6 +8,38 @@
 <b>File: <a href="src-linklayer-contract-Ieee802Ctrl.msg.html">src/linklayer/contract/Ieee802Ctrl.msg</a></b><br/><p><a href="../doxy/class_ieee802_ctrl.html" target="mainframe"><b>C++ definition</b></a></p>
 
 <p>Control structure for communication between LLC and higher layers</p>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="Ieee802Ctrl-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="Ieee802Ctrl.html" title="Class Ieee802Ctrl" alt="" coords="5,6,93,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="Ieee802Ctrl-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="Ieee802Ctrl.html" title="Class Ieee802Ctrl" alt="" coords="20,6,108,34">
+<area shape="rect" id="node2" href="MeshControlInfo.html" title="Class MeshControlInfo" alt="" coords="5,83,123,111">
+</map>
+<h3 class="subtitle">Known subclasses:</h3>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+<tr>
+   <td>
+<a href="MeshControlInfo.html">MeshControlInfo</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>Control structure for communication between LLC and higher layers</p>
+
+   </td>
+</tr>
+</table>
 <h3 class="subtitle">Fields:</h3>
 <table class="fieldstable">
    <tr>
@@ -82,7 +114,7 @@ int</i>
 int</i>
    </td>
    <td>
-<p>convenience field, used between <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> and IPv6ND</p>
+<p>convenience field, used between <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> and <a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">IPv6NeighbourDiscovery</a></p>
 </td>
 </tr>
 </table>
@@ -94,13 +126,12 @@ int</i>
 {
     </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">src</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// src MAC address (can be left empty when sending)
 </span><span style="color: #000000; ">    </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">dest</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// dest MAC address
-</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">etherType</span><span style="color: #000000; ">;   </span><span style="color: #808080; font-style: italic; ">// used with EthernetIIFrame
-</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">ssap</span><span style="color: #000000; ">;        </span><span style="color: #808080; font-style: italic; ">// used with IEEE 802 LLC (see EtherFrameWithLLC)
-</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">dsap</span><span style="color: #000000; ">;        </span><span style="color: #808080; font-style: italic; ">// used with IEEE 802 LLC (see EtherFrameWithLLC)
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">etherType</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@enum</span><span style="color: #000000; ">(</span><span style="color: #000000; ">EtherType</span><span style="color: #000000; ">);   </span><span style="color: #808080; font-style: italic; ">// used with ~EthernetIIFrame
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">ssap</span><span style="color: #000000; ">;        </span><span style="color: #808080; font-style: italic; ">// used with IEEE 802 LLC (see ~EtherFrameWithLLC)
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">dsap</span><span style="color: #000000; ">;        </span><span style="color: #808080; font-style: italic; ">// used with IEEE 802 LLC (see ~EtherFrameWithLLC)
 </span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">pauseUnits</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// used with IEEE802CTRL_SENDPAUSE
-</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">inputPort</span><span style="color: #000000; ">;   </span><span style="color: #808080; font-style: italic; ">// convenience field, used between IPv6 and IPv6ND
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">inputPort</span><span style="color: #000000; ">;   </span><span style="color: #808080; font-style: italic; ">// convenience field, used between ~IPv6 and ~IPv6NeighbourDiscovery
 </span><span style="color: #000000; ">}
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

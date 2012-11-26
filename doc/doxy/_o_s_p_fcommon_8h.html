@@ -86,18 +86,15 @@
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;ctype.h&gt;</code><br/>
-<code>#include &lt;stdio.h&gt;</code><br/>
 <code>#include &lt;functional&gt;</code><br/>
-</div>
-<p><a href="_o_s_p_fcommon_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="_i_pv4_address_8h.html">IPv4Address.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_i_pv_x_address_resolver_8h.html">IPvXAddressResolver.h</a>&quot;</code><br/>
+</div><table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_o_s_p_f_1_1_authentication_key_type.html">OSPF::AuthenticationKeyType</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_1_1_i_pv4_address___less.html">OSPF::IPv4Address_Less</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address_range.html">OSPF::IPv4AddressRange</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_1_1_i_pv4_address_range___less.html">OSPF::IPv4AddressRange_Less</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_o_s_p_f_1_1_host_route_parameters.html">OSPF::HostRouteParameters</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_o_s_p_f_1_1_l_s_a_key_type.html">OSPF::LSAKeyType</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_1_1_l_s_a_key_type___less.html">OSPF::LSAKeyType_Less</a></td></tr>
@@ -105,6 +102,8 @@ Classes</h2></td></tr>
 <tr><td colspan="2"><h2><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html">OSPF</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><p>All <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> classes are in this namespace. </p>
+<br/></td></tr>
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#ab08ddbd72ec04be1ff6959a492fc3795">LS_REFRESH_TIME</a>&#160;&#160;&#160;1800</td></tr>
@@ -119,10 +118,10 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#ad441394da087bc61e24a5b99455c5589">INITIAL_SEQUENCE_NUMBER</a>&#160;&#160;&#160;-2147483647</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a35f49b34e56993fe20d3a21d144c16d3">MAX_SEQUENCE_NUMBER</a>&#160;&#160;&#160;2147483647</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a1d4e674fb39c33571b1b8b8f28f02b52">VIRTUAL_LINK_TTL</a>&#160;&#160;&#160;32</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a8bdcf4ab14fb83327455dab814a215ea">IPV4_HEADER_LENGTH</a>&#160;&#160;&#160;60</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a18347bf2e66afb72fec8e790c2c21107">IPV4_DATAGRAM_LENGTH</a>&#160;&#160;&#160;65536</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a29da58cf15534d57f74adcd17bbae811">OSPF_HEADER_LENGTH</a>&#160;&#160;&#160;24</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#addec1389ab60c9ffd1fb82b2af2a013e">OSPF_LSA_HEADER_LENGTH</a>&#160;&#160;&#160;20</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a6c54addd0b10eb0d1ee437807a06f1bb">OSPF_HELLO_HEADER_LENGTH</a>&#160;&#160;&#160;20</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#aba6e827bae5829da00cb3a2d53c3102a">OSPF_DD_HEADER_LENGTH</a>&#160;&#160;&#160;8</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#afb9d07f42ccf0d5572f5ac92a73baae3">OSPF_REQUEST_LENGTH</a>&#160;&#160;&#160;12</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a671d94f589156a5e36aa9a605e4de2a5">OSPF_ROUTERLSA_HEADER_LENGTH</a>&#160;&#160;&#160;4</td></tr>
@@ -133,50 +132,39 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a1cf3a5729799225a342d6003d42968b0">OSPF_SUMMARYLSA_HEADER_LENGTH</a>&#160;&#160;&#160;8</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a3bfd52c6e5450a2d6470c454d13ce652">OSPF_ASEXTERNALLSA_HEADER_LENGTH</a>&#160;&#160;&#160;16</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#afc6c43974744735f549c9a67f59f517a">OSPF_ASEXTERNALLSA_TOS_INFO_LENGTH</a>&#160;&#160;&#160;12</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a5750852a20adb974368ba6bf97b72430">OSPF_EXTERNAL_ROUTES_LEARNED_BY_BGP</a>&#160;&#160;&#160;179</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a284b2eb3a644cfe22d046c1abab9f5ee">OSPF_BGP_DEFAULT_COST</a>&#160;&#160;&#160;1</td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#a4a99812a2d079df0f7208f2740cdb0ad">OSPF::Metric</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#ad64f22839cca7ec05fee5b7596411197">OSPF::RouterID</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#a8d10c460f2da4aae5dd61d2a082dfc56">OSPF::AreaID</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#a8ac3195d08bc351276d08e1c28e0d2dc">OSPF::LinkStateID</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#adbcc14dbfc5290248d3f865bd3a56af4">OSPF::RouterID</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#a48c8e4d3af2a46ddb912740d4e2e91b1">OSPF::AreaID</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#ae0387e56ccb51d46ab82fabd74d53de2">OSPF::LinkStateID</a></td></tr>
 <tr><td colspan="2"><h2><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#a2e0cad18e6b80ee3a427a65a0b395aaf">OSPF::AuthenticationType</a> { <a class="el" href="namespace_o_s_p_f.html#a2e0cad18e6b80ee3a427a65a0b395aafaa912eb1946419ebf910b2b8322788ca9">OSPF::NullType</a> =  0, 
-<a class="el" href="namespace_o_s_p_f.html#a2e0cad18e6b80ee3a427a65a0b395aafa13c53535f35435755bfb2dcf2d709076">OSPF::SimplePasswordType</a> =  1, 
-<a class="el" href="namespace_o_s_p_f.html#a2e0cad18e6b80ee3a427a65a0b395aafa2f33878554866e1aa7ef58a8df3d320e">OSPF::CrytographicType</a> =  2
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#a2e0cad18e6b80ee3a427a65a0b395aaf">OSPF::AuthenticationType</a> { <a class="el" href="namespace_o_s_p_f.html#a2e0cad18e6b80ee3a427a65a0b395aafa6672db07b1afd0cf044e3f1a16fc0eaf">OSPF::NULL_TYPE</a> =  0, 
+<a class="el" href="namespace_o_s_p_f.html#a2e0cad18e6b80ee3a427a65a0b395aafa224c35cc32e652bd4a5ef8d5f38dfa03">OSPF::SIMPLE_PASSWORD_TYPE</a> =  1, 
+<a class="el" href="namespace_o_s_p_f.html#a2e0cad18e6b80ee3a427a65a0b395aafabff67e7b5457f7f2bf0d85097346f2af">OSPF::CRYTOGRAPHIC_TYPE</a> =  2
  }</td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a0a5d4565e1086e9a4c10774b3cbe981e">operator==</a> (<a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> leftAddress, <a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> rightAddress)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#acc0ab784997d1f2a80835c088012b21e">operator!=</a> (<a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> leftAddress, <a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> rightAddress)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#ab9a068b080471b1ffd6cd29c1a3dc4a4">operator&lt;</a> (<a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> leftAddress, <a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> rightAddress)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a2671b1bf54d9e127f344c47465479cfa">operator&lt;=</a> (<a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> leftAddress, <a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> rightAddress)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a467e6957eee0034f9baa0af496e70d8c">operator&gt;</a> (<a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> leftAddress, <a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> rightAddress)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#abeeb3ea0931a81bf25100ff3ba026e2d">operator&gt;=</a> (<a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> leftAddress, <a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> rightAddress)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a6eec74df77a2c814602fc7f2c1dc9a9e">operator&amp;</a> (<a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> address, <a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> mask)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a1f29f9f64b7bb432528bc6894d43e01f">operator|</a> (<a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> address, <a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> match)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a48c8f6c5d138cffc1d853d07ad4facd7">operator==</a> (<a class="el" href="struct_o_s_p_f_1_1_i_pv4_address_range.html">OSPF::IPv4AddressRange</a> leftAddressRange, <a class="el" href="struct_o_s_p_f_1_1_i_pv4_address_range.html">OSPF::IPv4AddressRange</a> rightAddressRange)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#ad4dc6dc82d56c0bbd5a70faae47347b7">operator!=</a> (<a class="el" href="struct_o_s_p_f_1_1_i_pv4_address_range.html">OSPF::IPv4AddressRange</a> leftAddressRange, <a class="el" href="struct_o_s_p_f_1_1_i_pv4_address_range.html">OSPF::IPv4AddressRange</a> rightAddressRange)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const RouterID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#a956b5218ee8f3f18d3391ac99f9635dd">OSPF::NULL_ROUTERID</a> (0, 0, 0, 0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const AreaID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#a291fdf79093588fa8aeb40e22fdbbfc7">OSPF::BACKBONE_AREAID</a> (0, 0, 0, 0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const LinkStateID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#a41765ee2a505c81624942c87b56cd5f4">OSPF::NULL_LINKSTATEID</a> (0, 0, 0, 0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#a978dbeb0f114822d5e85797c3dcd03a4">OSPF::NULL_IPV4ADDRESS</a> (0, 0, 0, 0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const IPv4AddressRange&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#ab52eff5511df2676c0a8f83ae90e5898">OSPF::NULL_IPV4ADDRESSRANGE</a> (<a class="el" href="class_i_pv4_address.html">IPv4Address</a>(0, 0, 0, 0), <a class="el" href="class_i_pv4_address.html">IPv4Address</a>(0, 0, 0, 0))</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a2970bb5cbf7634fa0d31114cb68f619c">operator&amp;</a> (<a class="el" href="class_i_pv4_address.html">IPv4Address</a> address, <a class="el" href="class_i_pv4_address.html">IPv4Address</a> mask)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#ac80a02b772ac4fa9c1bcc961168924de">operator|</a> (<a class="el" href="class_i_pv4_address.html">IPv4Address</a> address, <a class="el" href="class_i_pv4_address.html">IPv4Address</a> match)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#ac0c435cc62f71905038c743678a0ff5a">isSameNetwork</a> (<a class="el" href="class_i_pv4_address.html">IPv4Address</a> address1, <a class="el" href="class_i_pv4_address.html">IPv4Address</a> mask1, <a class="el" href="class_i_pv4_address.html">IPv4Address</a> address2, <a class="el" href="class_i_pv4_address.html">IPv4Address</a> mask2)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a2753c47ce66e82cdadc2971fcc7b4550">operator==</a> (<a class="el" href="struct_o_s_p_f_1_1_designated_router_i_d.html">OSPF::DesignatedRouterID</a> leftID, <a class="el" href="struct_o_s_p_f_1_1_designated_router_i_d.html">OSPF::DesignatedRouterID</a> rightID)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#ae324c551afd75c9ab8c55ff571947b9f">operator!=</a> (<a class="el" href="struct_o_s_p_f_1_1_designated_router_i_d.html">OSPF::DesignatedRouterID</a> leftID, <a class="el" href="struct_o_s_p_f_1_1_designated_router_i_d.html">OSPF::DesignatedRouterID</a> rightID)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#add192341579a523d6fa090e1f434630e">IPv4AddressFromAddressString</a> (const char *charForm)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a5206656cf4131a17505ee9db0a60ddb6">IPv4AddressFromULong</a> (unsigned long longForm)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a4da9e68bb3ffcba090d1b07a5f812ce3">ULongFromIPv4Address</a> (<a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> byteForm)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a4f2f8ba751b645157dacc7b6a57f4157">ULongFromAddressString</a> (const char *charForm)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#afd44d2921b349e08aaad2c02678116dc">AddressStringFromIPv4Address</a> (char *buffer, int bufferLength, <a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> byteForm)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#ab7c5bad44da217d3e0c37b75dfb08f98">AddressStringFromULong</a> (char *buffer, int bufferLength, unsigned long longForm)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a78e67828de38551675e5ca853768d07f">HexCharToByte</a> (char hex)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a889a6de7cccb5c78d5bf654ce2351f9f">HexPairToByte</a> (char upperHex, char lowerHex)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#aeac91d9e14bec1c80f39e1774539e625">ipv4AddressFromAddressString</a> (const char *charForm)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#af9fbd9d01fc6ea15828bc84678bdcb80">ipv4NetmaskFromAddressString</a> (const char *charForm)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a6ec7189a223dbe69051bb00affb984a4">hexCharToByte</a> (char hex)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_o_s_p_fcommon_8h.html#a40d204b2903ab06cf47213423c3784a1">hexPairToByte</a> (char upperHex, char lowerHex)</td></tr>
 <tr><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const RouterID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#aa0223d58cbf9a99558b9460b23186730">OSPF::NullRouterID</a> = 0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const AreaID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#adb591659bd229b640cdc32ebaef95222">OSPF::BackboneAreaID</a> = 0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const LinkStateID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#a5fa445758d16c9a7146fb9f59c3647ac">OSPF::NullLinkStateID</a> = 0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const IPv4Address&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#a8948acb62332232ba35305c0a0babc8e">OSPF::NullIPv4Address</a> = { {0, 0, 0, 0} }</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const IPv4Address&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#afdf11c20cc9287464a9a673199e01004">OSPF::AllSPFRouters</a> = { {224, 0, 0, 5} }</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const IPv4Address&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#a3f675193744b50804fea173a3f6f6bdd">OSPF::AllDRouters</a> = { {224, 0, 0, 6} }</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const IPv4AddressRange&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#ad8bce8fb1420d6747aba9a122e7300ea">OSPF::NullIPv4AddressRange</a> = { { {0, 0, 0, 0} }, { {0, 0, 0, 0} } }</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const DesignatedRouterID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#a1025f956e059380bda5d71fc1e3324f6">OSPF::NullDesignatedRouterID</a> = { 0, { {0, 0, 0, 0} } }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const DesignatedRouterID&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html#a29d73750cc11d3ebb94d7faf67bd7ff1">OSPF::NULL_DESIGNATEDROUTERID</a> = { <a class="el" href="class_i_pv4_address.html">IPv4Address</a>(0, 0, 0, 0), <a class="el" href="class_i_pv4_address.html">IPv4Address</a>(0, 0, 0, 0)}</td></tr>
 </table>
 <hr/><h2>Define Documentation</h2>
 <a class="anchor" id="a1dae649919191832d818cf9bba6be0e4"></a><!-- doxytag: member="OSPFcommon.h::CHECK_AGE" ref="a1dae649919191832d818cf9bba6be0e4" args="" -->
@@ -190,7 +178,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00030">30</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_1_1_area.html#af5f4f362ffa8ef455b64ff469b74a752">OSPF::Area::ageDatabase()</a>, and <a class="el" href="class_o_s_p_f_1_1_router.html#af932cd6d5b44b4cd87599aa20e7dd588">OSPF::Router::ageDatabase()</a>.</p>
 
 </div>
 </div>
@@ -205,8 +193,6 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00033">33</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="aae09eb77691b97cc54d7a6a0126cdee3"></a><!-- doxytag: member="OSPFcommon.h::DEFAULT_DESTINATION_MASK" ref="aae09eb77691b97cc54d7a6a0126cdee3" args="" -->
@@ -219,8 +205,6 @@ Variables</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00034">34</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
 
 </div>
 </div>
@@ -235,7 +219,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00035">35</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_1_1_area.html#af5f4f362ffa8ef455b64ff469b74a752">OSPF::Area::ageDatabase()</a>, <a class="el" href="class_o_s_p_f_1_1_router.html#af932cd6d5b44b4cd87599aa20e7dd588">OSPF::Router::ageDatabase()</a>, <a class="el" href="class_o_s_p_f_1_1_area.html#a969e1ab74cb3e5014fffd6395ff08c67">OSPF::Area::getUniqueLinkStateID()</a>, <a class="el" href="class_o_s_p_f_1_1_router.html#a16c48a9dca12af177cd70096b4a3a1cb">OSPF::Router::getUniqueLinkStateID()</a>, <a class="el" href="class_o_s_p_f_1_1_router.html#a2aded30c394db977ffde8237065514e8">OSPF::Router::originateASExternalLSA()</a>, <a class="el" href="class_o_s_p_f_1_1_area.html#af5d1d8065403a2359f3ce59b49759766">OSPF::Area::originateNetworkLSA()</a>, <a class="el" href="class_o_s_p_f_1_1_area.html#af1287abae6d4623984fe95892c3dc514">OSPF::Area::originateRouterLSA()</a>, and <a class="el" href="class_o_s_p_f_1_1_router.html#a542dd39f87a1f348d9f555b9823c9a07">OSPF::Router::updateExternalRoute()</a>.</p>
 
 </div>
 </div>
@@ -250,22 +234,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00040">40</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a8bdcf4ab14fb83327455dab814a215ea"></a><!-- doxytag: member="OSPFcommon.h::IPV4_HEADER_LENGTH" ref="a8bdcf4ab14fb83327455dab814a215ea" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="_o_s_p_fcommon_8h.html#a8bdcf4ab14fb83327455dab814a215ea">IPV4_HEADER_LENGTH</a>&#160;&#160;&#160;60</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00039">39</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_1_1_neighbor.html#aeba1f1b1f949be42ad14dbb1ef78b534">OSPF::Neighbor::retransmitUpdatePacket()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor.html#a98ae9d66d6317b1b9c46610db164b6a7">OSPF::Neighbor::sendDatabaseDescriptionPacket()</a>, <a class="el" href="class_o_s_p_f_1_1_interface.html#a7cdaa81ff7bc0b1d9ec3bd39aa7a1dfd">OSPF::Interface::sendDelayedAcknowledgements()</a>, and <a class="el" href="class_o_s_p_f_1_1_neighbor.html#a5be9443a4841f61bba2211abd64b627a">OSPF::Neighbor::sendLinkStateRequestPacket()</a>.</p>
 
 </div>
 </div>
@@ -280,7 +249,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00032">32</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_1_1_area.html#ab7c6187fd8112847746e8df7a05b7867">OSPF::Area::calculateInterAreaRoutes()</a>, <a class="el" href="class_o_s_p_f_1_1_area.html#ac0e481a8ab4ccd4aea39407096d5d287">OSPF::Area::calculateShortestPathTree()</a>, <a class="el" href="class_o_s_p_f_1_1_router.html#a63a7808c1dc5f74983f800582a5992e4">OSPF::Router::getPreferredEntry()</a>, and <a class="el" href="class_o_s_p_f_1_1_area.html#acc0167d995551e3f774514f7170b064b">OSPF::Area::recheckSummaryLSAs()</a>.</p>
 
 </div>
 </div>
@@ -295,7 +264,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00026">26</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_1_1_area.html#af5f4f362ffa8ef455b64ff469b74a752">OSPF::Area::ageDatabase()</a>, and <a class="el" href="class_o_s_p_f_1_1_router.html#af932cd6d5b44b4cd87599aa20e7dd588">OSPF::Router::ageDatabase()</a>.</p>
 
 </div>
 </div>
@@ -310,7 +279,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00029">29</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_1_1_area.html#af5f4f362ffa8ef455b64ff469b74a752">OSPF::Area::ageDatabase()</a>, <a class="el" href="class_o_s_p_f_1_1_router.html#af932cd6d5b44b4cd87599aa20e7dd588">OSPF::Router::ageDatabase()</a>, <a class="el" href="class_o_s_p_f_1_1_area.html#ab7c6187fd8112847746e8df7a05b7867">OSPF::Area::calculateInterAreaRoutes()</a>, <a class="el" href="class_o_s_p_f_1_1_area.html#ac0e481a8ab4ccd4aea39407096d5d287">OSPF::Area::calculateShortestPathTree()</a>, <a class="el" href="class_o_s_p_f_1_1_interface_state.html#a9f94bc7735d2a404e05eb7e26a38d033">OSPF::InterfaceState::changeState()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state.html#a04b28a8b954660937a38409ecb7127e1">OSPF::NeighborState::changeState()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor.html#aee5542519eed20699c885345250999e0">OSPF::Neighbor::createDatabaseSummary()</a>, <a class="el" href="class_o_s_p_f_1_1_interface.html#a1ab8bc7bfe66c16401bfb4d4d9a08db7">OSPF::Interface::createUpdatePacket()</a>, <a class="el" href="class_o_s_p_f_1_1_router_l_s_a.html#a28d40c118fc47b17d833c314dd064a77">OSPF::RouterLSA::differsFrom()</a>, <a class="el" href="class_o_s_p_f_1_1_network_l_s_a.html#a727daad542a1842abf68e16148f245fb">OSPF::NetworkLSA::differsFrom()</a>, <a class="el" href="class_o_s_p_f_1_1_summary_l_s_a.html#a1bbf381dcda6af5e782b96b71dfb493e">OSPF::SummaryLSA::differsFrom()</a>, <a class="el" href="class_o_s_p_f_1_1_a_s_external_l_s_a.html#ab7bba9f7121597a720e42431261d12be">OSPF::ASExternalLSA::differsFrom()</a>, <a class="el" href="class_o_s_p_f_1_1_router.html#a63a7808c1dc5f74983f800582a5992e4">OSPF::Router::getPreferredEntry()</a>, <a class="el" href="class_o_s_p_f_1_1_router.html#a7d3ec4918c945ee00863f46bb07fe52f">OSPF::Router::installASExternalLSA()</a>, <a class="el" href="class_o_s_p_f_1_1_router.html#acae55a162eaf731e634d0b121a3f59dc">OSPF::Router::notifyAboutRoutingTableChanges()</a>, <a class="el" href="_l_s_a_8h.html#af5197092e66fe113405b42c74a4f4cb6">operator&lt;()</a>, <a class="el" href="_l_s_a_8h.html#a82cd98536c189265d8f588ef72d93f7c">operator==()</a>, <a class="el" href="class_o_s_p_f_1_1_hello_handler.html#a71a21d430a2cc591824255b394675b1f">OSPF::HelloHandler::processPacket()</a>, <a class="el" href="class_o_s_p_f_1_1_link_state_update_handler.html#a6f286c4986b918d12fd620a422e471aa">OSPF::LinkStateUpdateHandler::processPacket()</a>, <a class="el" href="class_o_s_p_f_1_1_area.html#acc0167d995551e3f774514f7170b064b">OSPF::Area::recheckSummaryLSAs()</a>, <a class="el" href="class_o_s_p_f_1_1_router.html#aa7e20ed6b4bdfb18375bb8e10e616e9b">OSPF::Router::removeExternalRoute()</a>, and <a class="el" href="class_o_s_p_f_1_1_neighbor.html#aeba1f1b1f949be42ad14dbb1ef78b534">OSPF::Neighbor::retransmitUpdatePacket()</a>.</p>
 
 </div>
 </div>
@@ -325,7 +294,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00031">31</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="_l_s_a_8h.html#af5197092e66fe113405b42c74a4f4cb6">operator&lt;()</a>, and <a class="el" href="_l_s_a_8h.html#a82cd98536c189265d8f588ef72d93f7c">operator==()</a>.</p>
 
 </div>
 </div>
@@ -340,7 +309,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00036">36</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_1_1_area.html#af5f4f362ffa8ef455b64ff469b74a752">OSPF::Area::ageDatabase()</a>, <a class="el" href="class_o_s_p_f_1_1_router.html#af932cd6d5b44b4cd87599aa20e7dd588">OSPF::Router::ageDatabase()</a>, <a class="el" href="class_o_s_p_f_1_1_interface_state.html#a9f94bc7735d2a404e05eb7e26a38d033">OSPF::InterfaceState::changeState()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state.html#a04b28a8b954660937a38409ecb7127e1">OSPF::NeighborState::changeState()</a>, <a class="el" href="class_o_s_p_f_1_1_area.html#a969e1ab74cb3e5014fffd6395ff08c67">OSPF::Area::getUniqueLinkStateID()</a>, <a class="el" href="class_o_s_p_f_1_1_router.html#a16c48a9dca12af177cd70096b4a3a1cb">OSPF::Router::getUniqueLinkStateID()</a>, <a class="el" href="class_o_s_p_f_1_1_hello_handler.html#a71a21d430a2cc591824255b394675b1f">OSPF::HelloHandler::processPacket()</a>, and <a class="el" href="class_o_s_p_f_1_1_link_state_update_handler.html#a6f286c4986b918d12fd620a422e471aa">OSPF::LinkStateUpdateHandler::processPacket()</a>.</p>
 
 </div>
 </div>
@@ -355,7 +324,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00028">28</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_1_1_neighbor.html#a017e0c755d1453ba62067e627d8c66c0">OSPF::Neighbor::ageTransmittedLSAList()</a>, and <a class="el" href="class_o_s_p_f_1_1_link_state_update_handler.html#a6f286c4986b918d12fd620a422e471aa">OSPF::LinkStateUpdateHandler::processPacket()</a>.</p>
 
 </div>
 </div>
@@ -370,8 +339,6 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00027">27</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a3bfd52c6e5450a2d6470c454d13ce652"></a><!-- doxytag: member="OSPFcommon.h::OSPF_ASEXTERNALLSA_HEADER_LENGTH" ref="a3bfd52c6e5450a2d6470c454d13ce652" args="" -->
@@ -385,7 +352,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00051">51</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="_l_s_a_8h.html#a9710f7389998a80f1d84d85edeab5446">calculateLSASize()</a>.</p>
 
 </div>
 </div>
@@ -400,7 +367,22 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00052">52</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="_l_s_a_8h.html#a9710f7389998a80f1d84d85edeab5446">calculateLSASize()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a284b2eb3a644cfe22d046c1abab9f5ee"></a><!-- doxytag: member="OSPFcommon.h::OSPF_BGP_DEFAULT_COST" ref="a284b2eb3a644cfe22d046c1abab9f5ee" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="_o_s_p_fcommon_8h.html#a284b2eb3a644cfe22d046c1abab9f5ee">OSPF_BGP_DEFAULT_COST</a>&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_o_s_p_f_1_1_router.html#a0065bc8df3b748d831c4ee32131395c8">OSPF::Router::addExternalRouteInIPTable()</a>, and <a class="el" href="class_o_s_p_f_routing.html#a56cf176bc9fa04d309cfd47a512f291f">OSPFRouting::insertExternalRoute()</a>.</p>
 
 </div>
 </div>
@@ -415,7 +397,22 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00043">43</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_1_1_neighbor.html#a98ae9d66d6317b1b9c46610db164b6a7">OSPF::Neighbor::sendDatabaseDescriptionPacket()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5750852a20adb974368ba6bf97b72430"></a><!-- doxytag: member="OSPFcommon.h::OSPF_EXTERNAL_ROUTES_LEARNED_BY_BGP" ref="a5750852a20adb974368ba6bf97b72430" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="_o_s_p_fcommon_8h.html#a5750852a20adb974368ba6bf97b72430">OSPF_EXTERNAL_ROUTES_LEARNED_BY_BGP</a>&#160;&#160;&#160;179</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_o_s_p_f_routing.html#a56cf176bc9fa04d309cfd47a512f291f">OSPFRouting::insertExternalRoute()</a>, and <a class="el" href="class_o_s_p_f_1_1_link_state_update_handler.html#a6f286c4986b918d12fd620a422e471aa">OSPF::LinkStateUpdateHandler::processPacket()</a>.</p>
 
 </div>
 </div>
@@ -430,7 +427,22 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00041">41</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_1_1_link_state_update_handler.html#ad219c826caa44b2c4645ba1b7ca53a61">OSPF::LinkStateUpdateHandler::acknowledgeLSA()</a>, <a class="el" href="class_o_s_p_f_1_1_interface.html#a1ab8bc7bfe66c16401bfb4d4d9a08db7">OSPF::Interface::createUpdatePacket()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor.html#a98ae9d66d6317b1b9c46610db164b6a7">OSPF::Neighbor::sendDatabaseDescriptionPacket()</a>, <a class="el" href="class_o_s_p_f_1_1_interface.html#a7cdaa81ff7bc0b1d9ec3bd39aa7a1dfd">OSPF::Interface::sendDelayedAcknowledgements()</a>, <a class="el" href="class_o_s_p_f_1_1_interface.html#a178d166968863f6e8ab41a1011482bd0">OSPF::Interface::sendHelloPacket()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor.html#a5be9443a4841f61bba2211abd64b627a">OSPF::Neighbor::sendLinkStateRequestPacket()</a>, and <a class="el" href="class_o_s_p_f_1_1_interface.html#aba011f70a7d227e0380a6f91e19d6dd6">OSPF::Interface::sendLSAcknowledgement()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6c54addd0b10eb0d1ee437807a06f1bb"></a><!-- doxytag: member="OSPFcommon.h::OSPF_HELLO_HEADER_LENGTH" ref="a6c54addd0b10eb0d1ee437807a06f1bb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="_o_s_p_fcommon_8h.html#a6c54addd0b10eb0d1ee437807a06f1bb">OSPF_HELLO_HEADER_LENGTH</a>&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_o_s_p_f_1_1_interface.html#a178d166968863f6e8ab41a1011482bd0">OSPF::Interface::sendHelloPacket()</a>.</p>
 
 </div>
 </div>
@@ -445,7 +457,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00046">46</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="_l_s_a_8h.html#a25dc3aadca4bc5b00d42c6e6a3b7975c">calculateLSASize()</a>.</p>
 
 </div>
 </div>
@@ -460,7 +472,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00042">42</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_1_1_link_state_update_handler.html#ad219c826caa44b2c4645ba1b7ca53a61">OSPF::LinkStateUpdateHandler::acknowledgeLSA()</a>, <a class="el" href="_l_s_a_8h.html#a25dc3aadca4bc5b00d42c6e6a3b7975c">calculateLSASize()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor.html#aeba1f1b1f949be42ad14dbb1ef78b534">OSPF::Neighbor::retransmitUpdatePacket()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor.html#a98ae9d66d6317b1b9c46610db164b6a7">OSPF::Neighbor::sendDatabaseDescriptionPacket()</a>, <a class="el" href="class_o_s_p_f_1_1_interface.html#a7cdaa81ff7bc0b1d9ec3bd39aa7a1dfd">OSPF::Interface::sendDelayedAcknowledgements()</a>, and <a class="el" href="class_o_s_p_f_1_1_interface.html#aba011f70a7d227e0380a6f91e19d6dd6">OSPF::Interface::sendLSAcknowledgement()</a>.</p>
 
 </div>
 </div>
@@ -475,7 +487,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00049">49</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="_l_s_a_8h.html#a64d537bc9c05370e480bfca248044267">calculateLSASize()</a>.</p>
 
 </div>
 </div>
@@ -490,7 +502,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00048">48</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="_l_s_a_8h.html#a64d537bc9c05370e480bfca248044267">calculateLSASize()</a>.</p>
 
 </div>
 </div>
@@ -505,7 +517,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00044">44</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_1_1_neighbor.html#a5be9443a4841f61bba2211abd64b627a">OSPF::Neighbor::sendLinkStateRequestPacket()</a>.</p>
 
 </div>
 </div>
@@ -520,7 +532,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00045">45</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="_l_s_a_8h.html#a25dc3aadca4bc5b00d42c6e6a3b7975c">calculateLSASize()</a>.</p>
 
 </div>
 </div>
@@ -535,7 +547,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00050">50</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="_l_s_a_8h.html#a9157aac9fd76d5aad002eb0fe87573f1">calculateLSASize()</a>.</p>
 
 </div>
 </div>
@@ -550,7 +562,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00047">47</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="_l_s_a_8h.html#a25dc3aadca4bc5b00d42c6e6a3b7975c">calculateLSASize()</a>.</p>
 
 </div>
 </div>
@@ -565,108 +577,17 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00038">38</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_1_1_link_state_update_handler.html#ad219c826caa44b2c4645ba1b7ca53a61">OSPF::LinkStateUpdateHandler::acknowledgeLSA()</a>, <a class="el" href="class_o_s_p_f_1_1_interface.html#a3817a838c0eceda3d1947df0cb0b8f96">OSPF::Interface::floodLSA()</a>, <a class="el" href="class_o_s_p_f_1_1_interface_state_designated_router.html#a438e79d72ff2fcde354fdfe8283aa71f">OSPF::InterfaceStateDesignatedRouter::processEvent()</a>, <a class="el" href="class_o_s_p_f_1_1_interface_state_point_to_point.html#aa284d9d617fc3e6c1b6d582137c0ba3a">OSPF::InterfaceStatePointToPoint::processEvent()</a>, <a class="el" href="class_o_s_p_f_1_1_interface_state_waiting.html#a70f72d26276984f9fc7b039364b9e8e1">OSPF::InterfaceStateWaiting::processEvent()</a>, <a class="el" href="class_o_s_p_f_1_1_interface_state_backup.html#a59ab622efe7e53d1679397906685e632">OSPF::InterfaceStateBackup::processEvent()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_down.html#adbe22f81a055c5b3cb08105e71725e0e">OSPF::NeighborStateDown::processEvent()</a>, <a class="el" href="class_o_s_p_f_1_1_link_state_request_handler.html#a523ca80639d942223ed598df83dd98cc">OSPF::LinkStateRequestHandler::processPacket()</a>, <a class="el" href="class_o_s_p_f_1_1_link_state_update_handler.html#a6f286c4986b918d12fd620a422e471aa">OSPF::LinkStateUpdateHandler::processPacket()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor.html#a24aa3029fa59b332626b97157968430d">OSPF::Neighbor::retransmitDatabaseDescriptionPacket()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor.html#aeba1f1b1f949be42ad14dbb1ef78b534">OSPF::Neighbor::retransmitUpdatePacket()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor.html#a98ae9d66d6317b1b9c46610db164b6a7">OSPF::Neighbor::sendDatabaseDescriptionPacket()</a>, <a class="el" href="class_o_s_p_f_1_1_interface.html#a7cdaa81ff7bc0b1d9ec3bd39aa7a1dfd">OSPF::Interface::sendDelayedAcknowledgements()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor.html#a5be9443a4841f61bba2211abd64b627a">OSPF::Neighbor::sendLinkStateRequestPacket()</a>, and <a class="el" href="class_o_s_p_f_1_1_interface.html#aba011f70a7d227e0380a6f91e19d6dd6">OSPF::Interface::sendLSAcknowledgement()</a>.</p>
 
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="afd44d2921b349e08aaad2c02678116dc"></a><!-- doxytag: member="OSPFcommon.h::AddressStringFromIPv4Address" ref="afd44d2921b349e08aaad2c02678116dc" args="(char *buffer, int bufferLength, OSPF::IPv4Address byteForm)" -->
+<a class="anchor" id="a6ec7189a223dbe69051bb00affb984a4"></a><!-- doxytag: member="OSPFcommon.h::hexCharToByte" ref="a6ec7189a223dbe69051bb00affb984a4" args="(char hex)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char* <a class="el" href="_o_s_p_fcommon_8h.html#afd44d2921b349e08aaad2c02678116dc">AddressStringFromIPv4Address</a> </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>bufferLength</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a>&#160;</td>
-          <td class="paramname"><em>byteForm</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00291">291</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (bufferLength &lt; 16) {
-        buffer = <span class="charliteral">&#39;\0&#39;</span>;
-    }
-    <span class="keywordflow">else</span> {
-        sprintf(buffer, <span class="stringliteral">&quot;%d.%d.%d.%d&quot;</span>, byteForm.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[0], byteForm.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[1], byteForm.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[2], byteForm.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[3]);
-    }
-    <span class="keywordflow">return</span> buffer;
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="ab7c5bad44da217d3e0c37b75dfb08f98"></a><!-- doxytag: member="OSPFcommon.h::AddressStringFromULong" ref="ab7c5bad44da217d3e0c37b75dfb08f98" args="(char *buffer, int bufferLength, unsigned long longForm)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* <a class="el" href="_o_s_p_fcommon_8h.html#ab7c5bad44da217d3e0c37b75dfb08f98">AddressStringFromULong</a> </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>bufferLength</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned long&#160;</td>
-          <td class="paramname"><em>longForm</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00302">302</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (bufferLength &lt; 16) {
-        buffer = <span class="charliteral">&#39;\0&#39;</span>;
-    }
-    <span class="keywordflow">else</span> {
-        sprintf(buffer, <span class="stringliteral">&quot;%d.%d.%d.%d&quot;</span>, (<span class="keywordtype">int</span>)((longForm &amp; 0xFF000000) &gt;&gt; 24),
-                                        (<span class="keywordtype">int</span>)((longForm &amp; 0x00FF0000) &gt;&gt; 16),
-                                        (<span class="keywordtype">int</span>)((longForm &amp; 0x0000FF00) &gt;&gt; 8),
-                                        (<span class="keywordtype">int</span>)(longForm &amp; 0x000000FF));
-    }
-    <span class="keywordflow">return</span> buffer;
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a78e67828de38551675e5ca853768d07f"></a><!-- doxytag: member="OSPFcommon.h::HexCharToByte" ref="a78e67828de38551675e5ca853768d07f" args="(char hex)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char <a class="el" href="_o_s_p_fcommon_8h.html#a78e67828de38551675e5ca853768d07f">HexCharToByte</a> </td>
+          <td class="memname">char <a class="el" href="_o_s_p_fcommon_8h.html#a6ec7189a223dbe69051bb00affb984a4">hexCharToByte</a> </td>
           <td>(</td>
           <td class="paramtype">char&#160;</td>
           <td class="paramname"><em>hex</em></td><td>)</td>
@@ -676,7 +597,7 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00316">316</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="_o_s_p_fcommon_8h.html#a40d204b2903ab06cf47213423c3784a1">hexPairToByte()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">switch</span> (hex) {
         <span class="keywordflow">case</span> <span class="charliteral">&#39;0&#39;</span>:   <span class="keywordflow">return</span> 0;
@@ -701,18 +622,19 @@ Variables</h2></td></tr>
         <span class="keywordflow">case</span> <span class="charliteral">&#39;d&#39;</span>:   <span class="keywordflow">return</span> 13;
         <span class="keywordflow">case</span> <span class="charliteral">&#39;e&#39;</span>:   <span class="keywordflow">return</span> 14;
         <span class="keywordflow">case</span> <span class="charliteral">&#39;f&#39;</span>:   <span class="keywordflow">return</span> 15;
-        <span class="keywordflow">default</span>:    <span class="keywordflow">return</span> 0;
+        <span class="keywordflow">default</span>:    <span class="keywordflow">break</span>;
     };
+    <span class="keywordflow">return</span> 0;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a889a6de7cccb5c78d5bf654ce2351f9f"></a><!-- doxytag: member="OSPFcommon.h::HexPairToByte" ref="a889a6de7cccb5c78d5bf654ce2351f9f" args="(char upperHex, char lowerHex)" -->
+<a class="anchor" id="a40d204b2903ab06cf47213423c3784a1"></a><!-- doxytag: member="OSPFcommon.h::hexPairToByte" ref="a40d204b2903ab06cf47213423c3784a1" args="(char upperHex, char lowerHex)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char <a class="el" href="_o_s_p_fcommon_8h.html#a889a6de7cccb5c78d5bf654ce2351f9f">HexPairToByte</a> </td>
+          <td class="memname">char <a class="el" href="_o_s_p_fcommon_8h.html#a40d204b2903ab06cf47213423c3784a1">hexPairToByte</a> </td>
           <td>(</td>
           <td class="paramtype">char&#160;</td>
           <td class="paramname"><em>upperHex</em>, </td>
@@ -732,19 +654,19 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00345">345</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_routing.html#a8d626803b3686f86086c4caa83b9e358">OSPFRouting::loadAuthenticationConfig()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> ((<a class="code" href="_ansa_o_s_p_fcommon_8h.html#a78e67828de38551675e5ca853768d07f">HexCharToByte</a>(upperHex) &lt;&lt; 4) &amp; (<a class="code" href="_ansa_o_s_p_fcommon_8h.html#a78e67828de38551675e5ca853768d07f">HexCharToByte</a>(lowerHex)));
+    <span class="keywordflow">return</span> ((<a class="code" href="_o_s_p_fcommon_8h.html#a6ec7189a223dbe69051bb00affb984a4">hexCharToByte</a>(upperHex) &lt;&lt; 4) &amp; (<a class="code" href="_o_s_p_fcommon_8h.html#a6ec7189a223dbe69051bb00affb984a4">hexCharToByte</a>(lowerHex)));
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="add192341579a523d6fa090e1f434630e"></a><!-- doxytag: member="OSPFcommon.h::IPv4AddressFromAddressString" ref="add192341579a523d6fa090e1f434630e" args="(const char *charForm)" -->
+<a class="anchor" id="aeac91d9e14bec1c80f39e1774539e625"></a><!-- doxytag: member="OSPFcommon.h::ipv4AddressFromAddressString" ref="aeac91d9e14bec1c80f39e1774539e625" args="(const char *charForm)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> <a class="el" href="_o_s_p_fcommon_8h.html#add192341579a523d6fa090e1f434630e">IPv4AddressFromAddressString</a> </td>
+          <td class="memname"><a class="el" href="class_i_pv4_address.html">IPv4Address</a> <a class="el" href="_o_s_p_fcommon_8h.html#aeac91d9e14bec1c80f39e1774539e625">ipv4AddressFromAddressString</a> </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>charForm</em></td><td>)</td>
@@ -754,97 +676,62 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00224">224</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_routing.html#a89163d4bb7adcd8c740903e151904f74">OSPFRouting::loadAreaFromXML()</a>, <a class="el" href="class_o_s_p_f_routing.html#ac65493078bbeb6c48808d191eda44454">OSPFRouting::loadExternalRoute()</a>, <a class="el" href="class_o_s_p_f_routing.html#abc7bbdfb6fe2ab158c64ec7c3579ccdd">OSPFRouting::loadHostRoute()</a>, <a class="el" href="class_o_s_p_f_routing.html#a65f22d4d3ea87506c07667d47f7b2d3b">OSPFRouting::loadInterfaceParameters()</a>, and <a class="el" href="class_o_s_p_f_routing.html#a10bcd85d5d26ce4e06c6f2b01bc6f420">OSPFRouting::loadVirtualLink()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> byteForm = <a class="code" href="namespace_o_s_p_f.html#a8948acb62332232ba35305c0a0babc8e">OSPF::NullIPv4Address</a>;
-
-    <span class="keywordtype">int</span>  lastDot = -1;
-    <span class="keywordtype">int</span>  byteCount = 0;
-    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = 0; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> &lt; 16; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++) {
-        <span class="keywordflow">if</span> (charForm[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>] == <span class="charliteral">&#39;\0&#39;</span>) {
-            <span class="keywordflow">if</span> ((byteCount &lt;= 3) &amp;&amp; (<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> - lastDot - 1 &lt;= 3)) {
-                <span class="keywordflow">switch</span> (<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> - lastDot - 1) {
-                    <span class="keywordflow">case</span> 3: byteForm.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[byteCount] += (((charForm[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> - 3] - <span class="charliteral">&#39;0&#39;</span>) &lt; 3) ? (charForm[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> - 3] - <span class="charliteral">&#39;0&#39;</span>) : 0) * 100;
-                    <span class="keywordflow">case</span> 2: byteForm.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[byteCount] += (charForm[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> - 2] - <span class="charliteral">&#39;0&#39;</span>) * 10;
-                    <span class="keywordflow">case</span> 1: byteForm.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[byteCount] += charForm[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> - 1] - <span class="charliteral">&#39;0&#39;</span>;
-                    <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;
-                }
-            }
-            <span class="keywordflow">break</span>;
-        }
-        <span class="keywordflow">if</span> ((!isdigit(charForm[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>])) &amp;&amp; (charForm[i] != <span class="charliteral">&#39;.&#39;</span>)) {
-            <span class="keywordflow">break</span>;
-        }
-        <span class="keywordflow">if</span> (charForm[i] == <span class="charliteral">&#39;.&#39;</span>) {
-            <span class="keywordflow">if</span> (i == 0) {
-                <span class="keywordflow">break</span>;
-            }
-            <span class="keywordflow">if</span> (i - lastDot - 1 &gt; 3) {
-                <span class="keywordflow">break</span>;
-            }
-            <span class="keywordflow">switch</span> (i - lastDot - 1) {
-                <span class="keywordflow">case</span> 3: byteForm.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[byteCount] += (((charForm[i - 3] - <span class="charliteral">&#39;0&#39;</span>) &lt; 3) ? (charForm[i - 3] - <span class="charliteral">&#39;0&#39;</span>) : 0) * 100;
-                <span class="keywordflow">case</span> 2: byteForm.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[byteCount] += (charForm[i - 2] - <span class="charliteral">&#39;0&#39;</span>) * 10;
-                <span class="keywordflow">case</span> 1: byteForm.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[byteCount] += charForm[i - 1] - <span class="charliteral">&#39;0&#39;</span>;
-                <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;
-            }
-            byteCount++;
-            lastDot = <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>;
-            <span class="keywordflow">if</span> (byteCount &gt; 3) {
-                <span class="keywordflow">break</span>;
-            }
-        }
-    }
-
-    <span class="keywordflow">return</span> byteForm;
+    <span class="keywordflow">return</span> <a class="code" href="class_i_pv_x_address_resolver.html" title="Utility class for finding IPv4 or IPv6 address of a host or router.">IPvXAddressResolver</a>().<a class="code" href="class_i_pv_x_address_resolver.html#a189cac271e45ef9a68622b3a6e0eb3b9" title="Accepts dotted decimal notation (&quot;127.0.0.1&quot;), module name of the host or router (&quot;host[2]&quot;), and empty string (&quot;&quot;).">resolve</a>(charForm, <a class="code" href="class_i_pv_x_address_resolver.html#a12d0783cb0b4f72056045720b5c2e13bad0f2da3b35330e9c1419d25dd29663d4">IPvXAddressResolver::ADDR_IPv4</a>).<a class="code" href="class_i_pv_x_address.html#a961b38a74371d8aa29d8e6906a071d64" title="Get IPv4 address.">get4</a>();
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a5206656cf4131a17505ee9db0a60ddb6"></a><!-- doxytag: member="OSPFcommon.h::IPv4AddressFromULong" ref="a5206656cf4131a17505ee9db0a60ddb6" args="(unsigned long longForm)" -->
+<a class="anchor" id="af9fbd9d01fc6ea15828bc84678bdcb80"></a><!-- doxytag: member="OSPFcommon.h::ipv4NetmaskFromAddressString" ref="af9fbd9d01fc6ea15828bc84678bdcb80" args="(const char *charForm)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> <a class="el" href="_o_s_p_fcommon_8h.html#a5206656cf4131a17505ee9db0a60ddb6">IPv4AddressFromULong</a> </td>
+          <td class="memname"><a class="el" href="class_i_pv4_address.html">IPv4Address</a> <a class="el" href="_o_s_p_fcommon_8h.html#af9fbd9d01fc6ea15828bc84678bdcb80">ipv4NetmaskFromAddressString</a> </td>
           <td>(</td>
-          <td class="paramtype">unsigned long&#160;</td>
-          <td class="paramname"><em>longForm</em></td><td>)</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>charForm</em></td><td>)</td>
           <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00269">269</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_routing.html#a89163d4bb7adcd8c740903e151904f74">OSPFRouting::loadAreaFromXML()</a>, and <a class="el" href="class_o_s_p_f_routing.html#ac65493078bbeb6c48808d191eda44454">OSPFRouting::loadExternalRoute()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-
-    <a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> byteForm;
-
-    byteForm.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[0] = (longForm &amp; 0xFF000000) &gt;&gt; 24;
-    byteForm.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[1] = (longForm &amp; 0x00FF0000) &gt;&gt; 16;
-    byteForm.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[2] = (longForm &amp; 0x0000FF00) &gt;&gt; 8;
-    byteForm.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[3] =  longForm &amp; 0x000000FF;
-    <span class="keywordflow">return</span> byteForm;
+    <span class="keywordflow">return</span> <a class="code" href="class_i_pv_x_address_resolver.html" title="Utility class for finding IPv4 or IPv6 address of a host or router.">IPvXAddressResolver</a>().<a class="code" href="class_i_pv_x_address_resolver.html#a189cac271e45ef9a68622b3a6e0eb3b9" title="Accepts dotted decimal notation (&quot;127.0.0.1&quot;), module name of the host or router (&quot;host[2]&quot;), and empty string (&quot;&quot;).">resolve</a>(charForm, <a class="code" href="class_i_pv_x_address_resolver.html#a12d0783cb0b4f72056045720b5c2e13bad0f2da3b35330e9c1419d25dd29663d4">IPvXAddressResolver::ADDR_IPv4</a>|<a class="code" href="class_i_pv_x_address_resolver.html#a12d0783cb0b4f72056045720b5c2e13ba35b21fdf31283ea7f9bde67f88745e18">IPvXAddressResolver::ADDR_MASK</a>).<a class="code" href="class_i_pv_x_address.html#a961b38a74371d8aa29d8e6906a071d64" title="Get IPv4 address.">get4</a>();
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="acc0ab784997d1f2a80835c088012b21e"></a><!-- doxytag: member="OSPFcommon.h::operator!=" ref="acc0ab784997d1f2a80835c088012b21e" args="(OSPF::IPv4Address leftAddress, OSPF::IPv4Address rightAddress)" -->
+<a class="anchor" id="ac0c435cc62f71905038c743678a0ff5a"></a><!-- doxytag: member="OSPFcommon.h::isSameNetwork" ref="ac0c435cc62f71905038c743678a0ff5a" args="(IPv4Address address1, IPv4Address mask1, IPv4Address address2, IPv4Address mask2)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool operator!= </td>
+          <td class="memname">bool <a class="el" href="_o_s_p_fcommon_8h.html#ac0c435cc62f71905038c743678a0ff5a">isSameNetwork</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a>&#160;</td>
-          <td class="paramname"><em>leftAddress</em>, </td>
+          <td class="paramtype"><a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td>
+          <td class="paramname"><em>address1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a>&#160;</td>
-          <td class="paramname"><em>rightAddress</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td>
+          <td class="paramname"><em>mask1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td>
+          <td class="paramname"><em>address2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td>
+          <td class="paramname"><em>mask2</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -855,41 +742,9 @@ Variables</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00138">138</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_1_1_area.html#a67b4a8728baa677aec445af563c49c65">OSPF::Area::calculateNextHops()</a>, <a class="el" href="class_o_s_p_f_1_1_area.html#af40b19faedd6c394915b461344ee386c">OSPF::Area::findSameOrWorseCostRoute()</a>, and <a class="el" href="class_o_s_p_f_1_1_area.html#a9c777587a66bb46dceff7dacb42a8350">OSPF::Area::originateSummaryLSA()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> (!(leftAddress == rightAddress));
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="ad4dc6dc82d56c0bbd5a70faae47347b7"></a><!-- doxytag: member="OSPFcommon.h::operator!=" ref="ad4dc6dc82d56c0bbd5a70faae47347b7" args="(OSPF::IPv4AddressRange leftAddressRange, OSPF::IPv4AddressRange rightAddressRange)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool operator!= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address_range.html">OSPF::IPv4AddressRange</a>&#160;</td>
-          <td class="paramname"><em>leftAddressRange</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address_range.html">OSPF::IPv4AddressRange</a>&#160;</td>
-          <td class="paramname"><em>rightAddressRange</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00189">189</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> (!(leftAddressRange == rightAddressRange));
+    <span class="keywordflow">return</span> (mask1 == mask2) &amp;&amp; ((address1 &amp; mask1) == (address2 &amp; mask2));
 }
 </pre></div>
 </div>
@@ -918,28 +773,26 @@ Variables</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00200">200</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">return</span> (!(leftID == rightID));
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a6eec74df77a2c814602fc7f2c1dc9a9e"></a><!-- doxytag: member="OSPFcommon.h::operator&amp;" ref="a6eec74df77a2c814602fc7f2c1dc9a9e" args="(OSPF::IPv4Address address, OSPF::IPv4Address mask)" -->
+<a class="anchor" id="a2970bb5cbf7634fa0d31114cb68f619c"></a><!-- doxytag: member="OSPFcommon.h::operator&amp;" ref="a2970bb5cbf7634fa0d31114cb68f619c" args="(IPv4Address address, IPv4Address mask)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> operator&amp; </td>
+          <td class="memname"><a class="el" href="class_i_pv4_address.html">IPv4Address</a> operator&amp; </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td>
           <td class="paramname"><em>address</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td>
           <td class="paramname"><em>mask</em>&#160;</td>
         </tr>
         <tr>
@@ -950,147 +803,10 @@ Variables</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00163">163</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> maskedAddress;
-    maskedAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[0] = address.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[0] &amp; mask.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[0];
-    maskedAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[1] = address.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[1] &amp; mask.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[1];
-    maskedAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[2] = address.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[2] &amp; mask.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[2];
-    maskedAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[3] = address.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[3] &amp; mask.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[3];
+    <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a> maskedAddress;
+    maskedAddress.<a class="code" href="class_i_pv4_address.html#aa394d22a715f60d59dc6d575687607e1" title="name Setting the address">set</a>(address.<a class="code" href="class_i_pv4_address.html#ac4abdd5df9c86071f13af7a3f0931237" title="Returns the address as an int.">getInt</a>() &amp; mask.<a class="code" href="class_i_pv4_address.html#ac4abdd5df9c86071f13af7a3f0931237" title="Returns the address as an int.">getInt</a>());
     <span class="keywordflow">return</span> maskedAddress;
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="ab9a068b080471b1ffd6cd29c1a3dc4a4"></a><!-- doxytag: member="OSPFcommon.h::operator&lt;" ref="ab9a068b080471b1ffd6cd29c1a3dc4a4" args="(OSPF::IPv4Address leftAddress, OSPF::IPv4Address rightAddress)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool operator&lt; </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a>&#160;</td>
-          <td class="paramname"><em>leftAddress</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a>&#160;</td>
-          <td class="paramname"><em>rightAddress</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00143">143</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> leftAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#a8a0425cc07f3d4cc35eab26fa0083f3c">asInt</a>() &lt; rightAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#a8a0425cc07f3d4cc35eab26fa0083f3c">asInt</a>();
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a2671b1bf54d9e127f344c47465479cfa"></a><!-- doxytag: member="OSPFcommon.h::operator&lt;=" ref="a2671b1bf54d9e127f344c47465479cfa" args="(OSPF::IPv4Address leftAddress, OSPF::IPv4Address rightAddress)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool operator&lt;= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a>&#160;</td>
-          <td class="paramname"><em>leftAddress</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a>&#160;</td>
-          <td class="paramname"><em>rightAddress</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00148">148</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> ((leftAddress &lt; rightAddress) || (leftAddress == rightAddress));
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a0a5d4565e1086e9a4c10774b3cbe981e"></a><!-- doxytag: member="OSPFcommon.h::operator==" ref="a0a5d4565e1086e9a4c10774b3cbe981e" args="(OSPF::IPv4Address leftAddress, OSPF::IPv4Address rightAddress)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool operator== </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a>&#160;</td>
-          <td class="paramname"><em>leftAddress</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a>&#160;</td>
-          <td class="paramname"><em>rightAddress</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00130">130</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> (leftAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[0] == rightAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[0] &amp;&amp;
-            leftAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[1] == rightAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[1] &amp;&amp;
-            leftAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[2] == rightAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[2] &amp;&amp;
-            leftAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[3] == rightAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[3]);
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a48c8f6c5d138cffc1d853d07ad4facd7"></a><!-- doxytag: member="OSPFcommon.h::operator==" ref="a48c8f6c5d138cffc1d853d07ad4facd7" args="(OSPF::IPv4AddressRange leftAddressRange, OSPF::IPv4AddressRange rightAddressRange)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool operator== </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address_range.html">OSPF::IPv4AddressRange</a>&#160;</td>
-          <td class="paramname"><em>leftAddressRange</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address_range.html">OSPF::IPv4AddressRange</a>&#160;</td>
-          <td class="paramname"><em>rightAddressRange</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00183">183</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> (leftAddressRange.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a74993d6571119644535ac918c4240722">address</a> == rightAddressRange.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a74993d6571119644535ac918c4240722">address</a> &amp;&amp;
-            leftAddressRange.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a452878c3f507f27d1de9c5b7cda2ae70">mask</a>    == rightAddressRange.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a452878c3f507f27d1de9c5b7cda2ae70">mask</a>);
 }
 </pre></div>
 </div>
@@ -1119,8 +835,6 @@ Variables</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00194">194</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">return</span> (leftID.<a class="code" href="struct_o_s_p_f_1_1_designated_router_i_d.html#a7132bdabe0f15493518622d1b9e84f0f">routerID</a> == rightID.<a class="code" href="struct_o_s_p_f_1_1_designated_router_i_d.html#a7132bdabe0f15493518622d1b9e84f0f">routerID</a> &amp;&amp;
             leftID.<a class="code" href="struct_o_s_p_f_1_1_designated_router_i_d.html#a3e44bfb89c52a2179bfe69cbd73fc30e">ipInterfaceAddress</a> == rightID.<a class="code" href="struct_o_s_p_f_1_1_designated_router_i_d.html#a3e44bfb89c52a2179bfe69cbd73fc30e">ipInterfaceAddress</a>);
@@ -1128,84 +842,20 @@ Variables</h2></td></tr>
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a467e6957eee0034f9baa0af496e70d8c"></a><!-- doxytag: member="OSPFcommon.h::operator&gt;" ref="a467e6957eee0034f9baa0af496e70d8c" args="(OSPF::IPv4Address leftAddress, OSPF::IPv4Address rightAddress)" -->
+<a class="anchor" id="ac80a02b772ac4fa9c1bcc961168924de"></a><!-- doxytag: member="OSPFcommon.h::operator|" ref="ac80a02b772ac4fa9c1bcc961168924de" args="(IPv4Address address, IPv4Address match)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool operator&gt; </td>
+          <td class="memname"><a class="el" href="class_i_pv4_address.html">IPv4Address</a> operator| </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a>&#160;</td>
-          <td class="paramname"><em>leftAddress</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a>&#160;</td>
-          <td class="paramname"><em>rightAddress</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00153">153</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> (!(leftAddress &lt;= rightAddress));
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="abeeb3ea0931a81bf25100ff3ba026e2d"></a><!-- doxytag: member="OSPFcommon.h::operator&gt;=" ref="abeeb3ea0931a81bf25100ff3ba026e2d" args="(OSPF::IPv4Address leftAddress, OSPF::IPv4Address rightAddress)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool operator&gt;= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a>&#160;</td>
-          <td class="paramname"><em>leftAddress</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a>&#160;</td>
-          <td class="paramname"><em>rightAddress</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00158">158</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> (!(leftAddress &lt; rightAddress));
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a1f29f9f64b7bb432528bc6894d43e01f"></a><!-- doxytag: member="OSPFcommon.h::operator|" ref="a1f29f9f64b7bb432528bc6894d43e01f" args="(OSPF::IPv4Address address, OSPF::IPv4Address match)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> operator| </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td>
           <td class="paramname"><em>address</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td>
           <td class="paramname"><em>match</em>&#160;</td>
         </tr>
         <tr>
@@ -1216,59 +866,10 @@ Variables</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00173">173</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a> matchAddress;
-    matchAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[0] = address.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[0] | match.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[0];
-    matchAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[1] = address.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[1] | match.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[1];
-    matchAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[2] = address.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[2] | match.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[2];
-    matchAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[3] = address.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[3] | match.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[3];
+    <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a> matchAddress;
+    matchAddress.<a class="code" href="class_i_pv4_address.html#aa394d22a715f60d59dc6d575687607e1" title="name Setting the address">set</a>(address.<a class="code" href="class_i_pv4_address.html#ac4abdd5df9c86071f13af7a3f0931237" title="Returns the address as an int.">getInt</a>() | match.<a class="code" href="class_i_pv4_address.html#ac4abdd5df9c86071f13af7a3f0931237" title="Returns the address as an int.">getInt</a>());
     <span class="keywordflow">return</span> matchAddress;
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a4f2f8ba751b645157dacc7b6a57f4157"></a><!-- doxytag: member="OSPFcommon.h::ULongFromAddressString" ref="a4f2f8ba751b645157dacc7b6a57f4157" args="(const char *charForm)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned long <a class="el" href="_o_s_p_fcommon_8h.html#a4f2f8ba751b645157dacc7b6a57f4157">ULongFromAddressString</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>charForm</em></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00286">286</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a44aadec2c89ea0ba372ac4ea3025ab52">ULongFromIPv4Address</a>(<a class="code" href="_ansa_o_s_p_fcommon_8h.html#ad23a93ae8dbc9a767ec279d6840100b6">IPv4AddressFromAddressString</a>(charForm));
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a4da9e68bb3ffcba090d1b07a5f812ce3"></a><!-- doxytag: member="OSPFcommon.h::ULongFromIPv4Address" ref="a4da9e68bb3ffcba090d1b07a5f812ce3" args="(OSPF::IPv4Address byteForm)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned long <a class="el" href="_o_s_p_fcommon_8h.html#a4da9e68bb3ffcba090d1b07a5f812ce3">ULongFromIPv4Address</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_o_s_p_f_1_1_i_pv4_address.html">OSPF::IPv4Address</a>&#160;</td>
-          <td class="paramname"><em>byteForm</em></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_o_s_p_fcommon_8h_source.html#l00281">281</a> of file <a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> ((byteForm.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[0] &lt;&lt; 24) + (byteForm.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[1] &lt;&lt; 16) + (byteForm.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[2] &lt;&lt; 8) + byteForm.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address.html#ab663782908267ede8ceb383bbe5062c8">bytes</a>[3]);
 }
 </pre></div>
 </div>
@@ -1279,7 +880,7 @@ Variables</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="_o_s_p_fcommon_8h.html">OSPFcommon.h</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:46 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:22 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

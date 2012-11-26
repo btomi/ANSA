@@ -19,11 +19,7 @@
 <i>simple&nbsp;module</i>
    </td>
    <td>
-
-<p>The RTP module is the center of the RTP layer of an endsystem.
-It communicates with the application, and sends and receives RTP data
-packets.</p>
-
+<i>(no description)</i>
    </td>
 </tr>
 </table>
@@ -31,19 +27,60 @@ packets.</p>
 <pre class="src"><span style="color: #800000; font-weight: bold; ">package</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">transport</span><span style="color: #000000; ">.</span><span style="color: #000000; ">rtp</span><span style="color: #000000; ">;
 
 </span><span style="color: #808080; font-style: italic; ">//
-// The \RTP module is the center of the \RTP layer of an endsystem.
-// It communicates with the application, and sends and receives \RTP data
+// The RTP module is the center of the RTP layer of an endsystem.
+// It communicates with the application, and sends and receives RTP data
 // packets.
 //
 // Much of the work is done by dynamically created Profile, and Payload
 // Sender and Receiver modules (the latter two are created by Profile).
 //
-// See RTPProfile, RTPAVProfile
+// See ~RTPProfile, ~RTPAVProfile
 //
+// TODO Translate:
+// Az ~RTP az appIn gate-en a k&ouml;vetkez&#337; &uuml;zeneteket fogadja az application-t&oacute;l:
+// olyan msg-t, ami ~RTPControlInfo lesz&aacute;rmazott controlinfo-t tartalmaz.
+//   - ~RTPCIEnterSession: Enter new session
+//         Create and initialize an ~RTPProfile module for the session.
+//         params: profileName, commonName, bandwidth, destinationAddress, port
+//   - ~RTPCICreateSenderModule:
+//         K&uuml;ld a profile-nak egy msg-t, hogy hozzon l&eacute;tre &uacute;j modult a fileName f&aacute;jl k&uuml;ld&eacute;s&eacute;re.
+//         params: ssrc, payloadType, fileName
+//   - ~RTPCIDeleteSenderModule:
+//         K&uuml;ld a profile-nak egy msg-t, hogy t&ouml;r&ouml;lje a k&uuml;ld&#337; modult.
+//         params: ssrc
+//   - ~RTPCISenderControl:
+//         K&uuml;ld a profile-nak egy msg-t, hogy a modul hajtsa v&eacute;gre a &lt;command&gt; parancsot.
+//         params: ssrc, command (see ~RTPSenderControlMessageCommands), parameter1, parameter2
+//   - ~RTPCILeaveSession: Leave session
+//         Delete ~RTPProfile module.
+//         params: ---
+//   -
+// Az ~RTP az appOut gate-en a k&ouml;vetkez&#337; &uuml;zeneteket k&uuml;ldi az application-nek:
+// Olyan ~RTPControlMsg msg-t, ami ~RTPControlInfo lesz&aacute;rmazottat tartalmaz:
+//   - ~RTPCISenderModuleCreated:
+//         Elk&uuml;ldi az App r&eacute;sz&eacute;re a l&eacute;trehozott modulhoz tartoz&oacute; ssrc-t
+//         params: ssrc
+//   - ~RTPCISenderModuleDeleted:
+//         &Eacute;rtes&iacute;ti az App-ot, hogy a modul t&ouml;r&ouml;lve lett.
+//         params: ssrc
+//   - ~RTPCISenderStatus:
+//         Elk&uuml;ldi az App r&eacute;sz&eacute;re a modul &aacute;llapot&aacute;t. (PLAYING, FINISHED, STOPPED, PAUSED)
+//         params: ssrc, status (see ~RTPSenderStatus), timeStamp
+//   - ~RTPCISessionEntered:
+//         &Eacute;rtes&iacute;ti az App-ot, hogy l&eacute;trehozott egy &uacute;j session-t (~RTPProfile-t).
+//         params: ssrc
+//   - ~RTPCISessionLeft:
+//         &Eacute;rtes&iacute;ti az App-ot, hogy v&eacute;get lett a session-nek &eacute;s t&ouml;r&ouml;lte az ~RTPProfile-t.
+//         params: ---
+</span><span style="color: #000000; ">
 </span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">RTP</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
         </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/buffer&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">rcvdPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">cPacket</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">rcvdPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;packets received&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">source</span><span style="color: #000000; ">=</span><span style="color: #000000; ">rcvdPk</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;sum(packetBytes)&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;vector(packetBytes)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">endToEndDelay</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;end-to-end delay&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">source</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;messageAge(rcvdPk)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">unit</span><span style="color: #000000; ">=</span><span style="color: #000000; ">s</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">histogram</span><span style="color: #000000; ">,</span><span style="color: #000000; ">vector</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
+
     </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">appIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">RTPInterfacePacket</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);
         </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">profileIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">RTPInnerPacket</span><span style="color: #000000; ">);
@@ -54,9 +91,6 @@ packets.</p>
         </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">rtcpOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">RTPInnerPacket</span><span style="color: #000000; ">);
         </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">udpOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">UDPControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);
 }
-
-
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

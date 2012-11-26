@@ -4,50 +4,305 @@
       <link rel="stylesheet" type="text/css" href="style.css" />
    </head>
    <body onload="if (top.frames['componentsframe'] == undefined) { s = window.location.toString(); window.location = 'index.html?p=' + s.substring(s.lastIndexOf('/')+1); }">
-<h2 class="comptitle">Module Interface <i>Radio</i></h2>
-<b>Package:</b> inet.linklayer.radio<br/><b>File: <a href="src-linklayer-radio-Radio.ned.html">src/linklayer/radio/Radio.ned</a></b><br/>
-<p>Prototype for radio modules. <a href="inet.linklayer.radio.Radio.html">Radio</a> modules deal with the transmission
-of frames over a wireless medium (the radio channel).</p>
-<p><b>Transmission</b></p>
-<p>Upper layers (wireless L2 protocols) can send frames to the radio
-module. Frames will be encapsulated into <a href="AirFrame.html">AirFrame</a> messages and
-distributed to other network nodes within interference distance.
-The <a href="AirFrame.html">AirFrame</a> represents the signal in the radio channel, and
-its fields hold properties of the transmission like the transmit power.</p>
-<p>The global <a href="inet.world.ChannelControl.html">ChannelControl</a> module keeps track of node positions,
-and knows which nodes are within interference distance of others
-(neighbour list). When transmitting, the radio module obtains the
-neighbour list, and sends a copy of the <a href="AirFrame.html">AirFrame</a> to each neighbour.</p>
-<p><b>Reception</b></p>
-<p>Received <a href="AirFrame.html">AirFrame</a> messages get delivered to the radioIn gate of the
-module. If it was found to have been received correctly, it gets
-decapsulated and the frame sent to the upper layer.</p>
-<p>Note: currently the packet is also sent up if it was NOT received
-incorrectly, with its message kind set to COLLISION or BITERROR.
-This may change in the future, as erroneous receptions could also
-be signalled via the <a href="inet.base.NotificationBoard.html">NotificationBoard</a>.</p>
-<p>Determining whether the frame was received correctly is a complicated
-process. The AbstractRadio C++ class from which the <a href="inet.linklayer.radio.Ieee80211Radio.html">Ieee80211Radio</a>
-and <a href="inet.linklayer.radio.GenericRadio.html">GenericRadio</a> are derived, basically first calculates the received
-power of the frame, taking a path loss model into account.
-Then it calculates the signal-noise ratio, thermal noise and other
-frames being counted as noise. It is determined from the SNR
-whether the packet was received correctly, taking modulation
-scheme and possible forward error correction into account.
-For details please see the C++ code and its documentation.</p>
-<p><b>Monitoring the radio state</b></p>
-<p>Wireless L2 protocols and other modules within the node can monitor
-radio transmissions and receptions by subscribing to the
-<code>NF_RADIOSTATE_CHANGED</code> category at the <a href="inet.base.NotificationBoard.html">NotificationBoard</a>
-module of the node.</p>
-<p><b>Dynamically configuring the radio</b></p>
-<p>The bitrate and the receive/transmit channel can be changed by sending
-<a href="inet.linklayer.radio.Radio.html">Radio</a> a blank cMessage with <tt>PHY_C_CONFIGURERADIO</tt> as message kind, and
-a <a href="PhyControlInfo.html">PhyControlInfo</a> object attached to it as control info, to hold the
-new bitrate and/or channel number. If the radio is currently transmitting,
-the change will actually take place after the transmission is completed.</p>
-<p>It is also possible to specify a different bitrate for individual frames;
-to do that, attach a <a href="PhyControlInfo.html">PhyControlInfo</a> with bitrate filled in to the frame.</p>
+<h2 class="comptitle">Simple Module <i>Radio</i></h2>
+<b>Package:</b> inet.linklayer.radio<br/><b>File: <a href="src-linklayer-radio-Radio.ned.html">src/linklayer/radio/Radio.ned</a></b><br/><p><a href="../doxy/class_radio.html" target="mainframe"><b>C++ definition</b></a></p>
+
+<p>This is an abstract module that defines all parameters for radio modules</p>
+<img src="inet.linklayer.radio.Radio-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.linklayer.radio.Radio.html" title="Radio" alt="Radio" coords="0,30,75,70">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.linklayer.radio.Radio-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.linklayer.radio.Radio.html" title="Simple Module Radio" alt="" coords="5,6,77,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.linklayer.radio.Radio-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.linklayer.radio.Radio.html" title="Simple Module Radio" alt="" coords="85,83,157,111">
+<area shape="rect" id="node4" href="inet.linklayer.radio.GenericRadio.html" title="Simple Module GenericRadio" alt="" coords="5,161,107,189">
+<area shape="rect" id="node6" href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html" title="Simple Module Ieee80211Radio" alt="" coords="131,161,245,189">
+<area shape="rect" id="node2" href="inet.linklayer.radio.IRadio.html" title="Module Interface IRadio" alt="" coords="85,6,157,34">
+</map>
+<h3 class="subtitle">Known subclasses:</h3>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+<tr>
+   <td>
+<a href="inet.linklayer.radio.GenericRadio.html">GenericRadio</a>
+   </td>
+   <td>
+<i>simple&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Generic radio module. The implementation is largely based on the
+Mobility Framework's <span class="error" title="Unresolved link">SnrEval</span> and Decider modules.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">Ieee80211Radio</a>
+   </td>
+   <td>
+<i>simple&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Physical layer for the IEEE 802.11 models. Its external interface
+(including gates and how it communicates with other modules)
+is the same as the Radio module's.</p>
+
+   </td>
+</tr>
+</table>
+<h3 class="subtitle">Parameters:</h3>
+<table class="paramstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="defaultvalue">Default value</th>
+      <th class="description">Description</th>
+   </tr>
+<tr class="local">
+   <td>channelNumber</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>0</td>
+   <td>
+<p>channel identifier this radio listens. Works only with simlified management module. Otherwise it scans all the channels as specified in ieee 80211</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>carrierFrequency</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>2.4GHz</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>bitrate</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td></td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>transmitterPower</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>20mW</td>
+   <td>
+<p>power used for transmission of messages (in mW)</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>thermalNoise</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-110dBm</td>
+   <td>
+<p>base noise level (dBm)</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>sensitivity</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-85dBm</td>
+   <td>
+<p>received signals with power below sensitivity are ignored</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>radioModel</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td></td>
+   <td>
+<p>the radio model implementing the IRadioModel interface (C++). e.g. GenericRadioModel, Ieee80211RadioModel</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>NoiseGenerator</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>pathLossAlpha</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>2</td>
+   <td>
+<p>generic FreeSpace model parameters</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>TransmissionAntennaGainIndB</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0dB</td>
+   <td>
+<p>Transmission Antenna Gain</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>ReceiveAntennaGainIndB</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0dB</td>
+   <td>
+<p>Receive Antenna Gain</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>SystemLossFactor</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0dB</td>
+   <td>
+<p>System Loss of Hardware</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>TransmiterAntennaHigh</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1m</td>
+   <td>
+<p>two ray model paramaeters</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>ReceiverAntennaHigh</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1m</td>
+   <td>
+<p>Receiver Antenna High</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>sigma</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1</td>
+   <td>
+<p>LogNormalShadowingModel</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>nak_m</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1</td>
+   <td>
+<p>NakagamiModel</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>K</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>8dB</td>
+   <td>
+<p>RiceModel</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>usage_radio_idle</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1mA</td>
+   <td>
+<p>battery module parameters (if any of them is negative, the battery module is disabled)</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>usage_radio_recv</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1mA</td>
+   <td>
+<p>disable battery registration</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>usage_radio_sleep</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1mA</td>
+   <td>
+<p>disable battery registration</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>usage_radio_send</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1mA</td>
+   <td>
+<p>disable battery registration</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>drawCoverage</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>misc</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>refreshCoverageInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>0s</td>
+   <td>
+<p>update period in simulation time for coverage redraw</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>SensitivityTable</td>
+   <td>
+      <i>xml</i>
+   </td>
+   <td>xml("<NoSensitivityTable> </NoSensitivityTable>")</td>
+   <td>
+   </td>
+</tr>
+</table>
 <h3 class="subtitle">Properties:</h3>
 <table class="propertiestable">
    <tr>
@@ -55,83 +310,167 @@ to do that, attach a <a href="PhyControlInfo.html">PhyControlInfo</a> with bitra
       <th class="value">Value</th>
       <th class="description">Description</th>
    </tr>
-<tr>
-   <td>display</td>
-   <td><i>i=block/wrxtx</i></td>
+</table>
+<h3 class="subtitle">Gates:</h3>
+<table class="gatestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Direction</th>
+      <th class="gatesize">Size</th>
+      <th class="description">Description</th>
+   </tr>
+<tr class="local">
+   <td>upperLayerIn</xsl:if></td>
+   <td><i>input</i></td>
+   <td></td>   <td>
+<p>from higher layer protocol (MAC)</p>
+</td>
+</tr>
+<tr class="local">
+   <td>upperLayerOut</xsl:if></td>
+   <td><i>output</i></td>
+   <td></td>   <td>
+<p>to higher layer protocol (MAC)</p>
+</td>
+</tr>
+<tr class="local">
+   <td>radioIn</xsl:if></td>
+   <td><i>input</i></td>
+   <td></td>   <td>
+<p>to receive frames (AirFrame) on the radio channel</p>
+</td>
+</tr>
+</table>
+<h3 class="subtitle">Signals:</h3>
+<table class="signalstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="unit">Unit</th>
+   </tr>
+<tr class="local">
+   <td>radioState</td>
+   <td><i>
+long   </i></td>
    <td></td>
+</tr>
+<tr class="local">
+   <td>lossRate</td>
+   <td><i>
+double   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>bitrate</td>
+   <td><i>
+double   </i></td>
+   <td>bps</td>
+</tr>
+<tr class="local">
+   <td>channelNo</td>
+   <td><i>
+long   </i></td>
+   <td></td>
+</tr>
+</table>
+<h3 class="subtitle">Statistics:</h3>
+<table class="statisticstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="title">Title</th>
+      <th class="source">Source</th>
+      <th class="record">Record</th>
+      <th class="unit">Unit</th>
+      <th class="interpolationmode">Interpolation Mode</th>
+   </tr>
+<tr class="local">
+   <td>radioState</td>
+   <td>radio state (enum)</td>
+   <td></td>
+   <td>count, vector</td>
+   <td></td>
+   <td>sample-hold</td>
+</tr>
+<tr class="local">
+   <td>lossRate</td>
+   <td>packet loss rate</td>
+   <td></td>
+   <td>min, max, timeavg, vector</td>
+   <td></td>
+   <td>backward-sample-hold</td>
+</tr>
+<tr class="local">
+   <td>bitrate</td>
+   <td>tx bitrate</td>
+   <td></td>
+   <td>min, max, timeavg, vector</td>
+   <td>bps</td>
+   <td>sample-hold</td>
+</tr>
+<tr class="local">
+   <td>channelNo</td>
+   <td>channel no</td>
+   <td></td>
+   <td>histogram, vector</td>
+   <td></td>
+   <td>sample-hold</td>
 </tr>
 </table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
-// Prototype for radio modules. Radio modules deal with the transmission
-// of frames over a wireless medium (the radio channel).
+// This is an abstract module that defines all parameters for radio modules
 //
-// </span><span style="color: #800000; ">&lt;b&gt;</span><span style="color: #808080; font-style: italic; ">Transmission</span><span style="color: #800000; ">&lt;/b&gt;</span><span style="color: #808080; font-style: italic; ">
-//
-// Upper layers (wireless L2 protocols) can send frames to the radio
-// module. Frames will be encapsulated into AirFrame messages and
-// distributed to other network nodes within interference distance.
-// The AirFrame represents the signal in the radio channel, and
-// its fields hold properties of the transmission like the transmit power.
-//
-// The global ChannelControl module keeps track of node positions,
-// and knows which nodes are within interference distance of others
-// (neighbour list). When transmitting, the radio module obtains the
-// neighbour list, and sends a copy of the AirFrame to each neighbour.
-//
-//
-// </span><span style="color: #800000; ">&lt;b&gt;</span><span style="color: #808080; font-style: italic; ">Reception</span><span style="color: #800000; ">&lt;/b&gt;</span><span style="color: #808080; font-style: italic; ">
-//
-// Received AirFrame messages get delivered to the radioIn gate of the
-// module. If it was found to have been received correctly, it gets
-// decapsulated and the frame sent to the upper layer.
-//
-// Note: currently the packet is also sent up if it was NOT received
-// incorrectly, with its message kind set to COLLISION or BITERROR.
-// This may change in the future, as erroneous receptions could also
-// be signalled via the NotificationBoard.
-//
-// Determining whether the frame was received correctly is a complicated
-// process. The AbstractRadio C++ class from which the Ieee80211Radio
-// and GenericRadio are derived, basically first calculates the received
-// power of the frame, taking a path loss model into account.
-// Then it calculates the signal-noise ratio, thermal noise and other
-// frames being counted as noise. It is determined from the SNR
-// whether the packet was received correctly, taking modulation
-// scheme and possible forward error correction into account.
-// For details please see the C++ code and its documentation.
-//
-//
-// </span><span style="color: #800000; ">&lt;b&gt;</span><span style="color: #808080; font-style: italic; ">Monitoring the radio state</span><span style="color: #800000; ">&lt;/b&gt;</span><span style="color: #808080; font-style: italic; ">
-//
-// Wireless L2 protocols and other modules within the node can monitor
-// radio transmissions and receptions by subscribing to the
-// </span><span style="color: #800000; ">&lt;code&gt;</span><span style="color: #808080; font-style: italic; ">NF_RADIOSTATE_CHANGED</span><span style="color: #800000; ">&lt;/code&gt;</span><span style="color: #808080; font-style: italic; "> category at the NotificationBoard
-// module of the node.
-//
-//
-// </span><span style="color: #800000; ">&lt;b&gt;</span><span style="color: #808080; font-style: italic; ">Dynamically configuring the radio</span><span style="color: #800000; ">&lt;/b&gt;</span><span style="color: #808080; font-style: italic; ">
-//
-// The bitrate and the receive/transmit channel can be changed by sending
-// Radio a blank cMessage with </span><span style="color: #800000; ">&lt;tt&gt;</span><span style="color: #808080; font-style: italic; ">PHY_C_CONFIGURERADIO</span><span style="color: #800000; ">&lt;/tt&gt;</span><span style="color: #808080; font-style: italic; "> as message kind, and
-// a PhyControlInfo object attached to it as control info, to hold the
-// new bitrate and/or channel number. If the radio is currently transmitting,
-// the change will actually take place after the transmission is completed.
-//
-// It is also possible to specify a different bitrate for individual frames;
-// to do that, attach a PhyControlInfo with bitrate filled in to the frame.
-//
-</span><span style="color: #800000; font-weight: bold; ">moduleinterface</span><span style="color: #000000; "> </span><span style="color: #000000; ">Radio</span><span style="color: #000000; ">
+</span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">Radio</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #000000; "> </span><span style="color: #000000; ">IRadio</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/wrxtx&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">channelNumber</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">0</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// channel identifier this radio listens. Works only with simlified management module. Otherwise it scans all the channels as specified in ieee 80211
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">carrierFrequency</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;Hz&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">2</span><span style="color: #000000; ">.</span><span style="color: #008000; ">4</span><span style="color: #000000; ">GHz</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">bitrate</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;bps&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">transmitterPower</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;mW&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">20</span><span style="color: #000000; ">mW</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// power used for transmission of messages (in mW)
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">thermalNoise</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;dBm&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(-</span><span style="color: #008000; ">110</span><span style="color: #000000; ">dBm</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// base noise level (dBm)
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">sensitivity</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;dBm&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(-</span><span style="color: #008000; ">85</span><span style="color: #000000; ">dBm</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// received signals with power below sensitivity are ignored
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">radioModel</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// the radio model implementing the IRadioModel interface (C++). e.g. GenericRadioModel, Ieee80211RadioModel
+</span><span style="color: #000000; ">
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">NoiseGenerator</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #808080; font-style: italic; ">// generic FreeSpace model parameters
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">pathLossAlpha</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">2</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// used by the path loss calculation
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">TransmissionAntennaGainIndB</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;dB&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">0</span><span style="color: #000000; ">dB</span><span style="color: #000000; ">);  </span><span style="color: #808080; font-style: italic; ">// Transmission Antenna Gain
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">ReceiveAntennaGainIndB</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;dB&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">0</span><span style="color: #000000; ">dB</span><span style="color: #000000; ">);       </span><span style="color: #808080; font-style: italic; ">// Receive Antenna Gain
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">SystemLossFactor</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;dB&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">0</span><span style="color: #000000; ">dB</span><span style="color: #000000; ">);             </span><span style="color: #808080; font-style: italic; ">// System Loss of Hardware
+</span><span style="color: #000000; ">        </span><span style="color: #808080; font-style: italic; ">// two ray model paramaeters
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">TransmiterAntennaHigh</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;m&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">1</span><span style="color: #000000; ">m</span><span style="color: #000000; ">);   </span><span style="color: #808080; font-style: italic; ">// Transmitter Antenna High
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">ReceiverAntennaHigh</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;m&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">1</span><span style="color: #000000; ">m</span><span style="color: #000000; ">);   </span><span style="color: #808080; font-style: italic; ">// Receiver Antenna High
+</span><span style="color: #000000; ">        </span><span style="color: #808080; font-style: italic; ">// LogNormalShadowingModel
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">sigma</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">1</span><span style="color: #000000; ">);
+        </span><span style="color: #808080; font-style: italic; ">// NakagamiModel
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">nak_m</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">1</span><span style="color: #000000; ">);
+        </span><span style="color: #808080; font-style: italic; ">// RiceModel
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">K</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;dB&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">8</span><span style="color: #000000; ">dB</span><span style="color: #000000; ">);
+
+        </span><span style="color: #808080; font-style: italic; ">// battery module parameters (if any of them is negative, the battery module is disabled)
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">usage_radio_idle</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">mA</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(-</span><span style="color: #008000; ">1</span><span style="color: #000000; ">mA</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// disable battery registration
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">usage_radio_recv</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">mA</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(-</span><span style="color: #008000; ">1</span><span style="color: #000000; ">mA</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// disable battery registration
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">usage_radio_sleep</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">mA</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(-</span><span style="color: #008000; ">1</span><span style="color: #000000; ">mA</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// disable battery registration
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">usage_radio_send</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">mA</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(-</span><span style="color: #008000; ">1</span><span style="color: #000000; ">mA</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// disable battery registration
+</span><span style="color: #000000; ">        </span><span style="color: #808080; font-style: italic; ">// misc
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">drawCoverage</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">true</span><span style="color: #000000; ">);  </span><span style="color: #808080; font-style: italic; ">// draw the coverage area in Tkenv
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">refreshCoverageInterval</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;s&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">0</span><span style="color: #000000; ">s</span><span style="color: #000000; ">);  </span><span style="color: #808080; font-style: italic; ">// update period in simulation time for coverage redraw
+</span><span style="color: #000000; ">
+        </span><span style="color: #000080; font-weight: bold; ">xml</span><span style="color: #000000; "> </span><span style="color: #000000; ">SensitivityTable</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #000080; font-weight: bold; ">xml</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&lt;NoSensitivityTable&gt; &lt;/NoSensitivityTable&gt;&quot;</span><span style="color: #000000; ">));
+
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">bitrate</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;double&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">unit</span><span style="color: #000000; ">=</span><span style="color: #000000; ">bps</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// current transmit bitrate
+</span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">channelNo</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">long</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">radioState</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">long</span><span style="color: #000000; ">);  </span><span style="color: #808080; font-style: italic; ">// enum
+</span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">lossRate</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;double&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// 0..1; percentage of frames received incorrectly in the last period
+</span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">bitrate</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;tx bitrate&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #800080; font-weight: bold; ">min</span><span style="color: #000000; ">,</span><span style="color: #800080; font-weight: bold; ">max</span><span style="color: #000000; ">,</span><span style="color: #000000; ">timeavg</span><span style="color: #000000; ">,</span><span style="color: #000000; ">vector</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">sample</span><span style="color: #000000; ">-</span><span style="color: #000000; ">hold</span><span style="color: #000000; ">; </span><span style="color: #000000; ">unit</span><span style="color: #000000; ">=</span><span style="color: #000000; ">bps</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">channelNo</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;channel no&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">histogram</span><span style="color: #000000; ">,</span><span style="color: #000000; ">vector</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">sample</span><span style="color: #000000; ">-</span><span style="color: #000000; ">hold</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">radioState</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;radio state (enum)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #000000; ">vector</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">sample</span><span style="color: #000000; ">-</span><span style="color: #000000; ">hold</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">lossRate</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;packet loss rate&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #800080; font-weight: bold; ">min</span><span style="color: #000000; ">,</span><span style="color: #800080; font-weight: bold; ">max</span><span style="color: #000000; ">,</span><span style="color: #000000; ">timeavg</span><span style="color: #000000; ">,</span><span style="color: #000000; ">vector</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">backward</span><span style="color: #000000; ">-</span><span style="color: #000000; ">sample</span><span style="color: #000000; ">-</span><span style="color: #000000; ">hold</span><span style="color: #000000; ">);
     </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
-        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">uppergateIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">PhyControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// from higher layer protocol (MAC)
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">uppergateOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">PhyControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// to higher layer protocol (MAC)
+        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">upperLayerIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">PhyControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// from higher layer protocol (MAC)
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">upperLayerOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">PhyControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// to higher layer protocol (MAC)
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">radioIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">AirFrame</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// to receive frames (AirFrame) on the radio channel
 </span><span style="color: #000000; ">}
-
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

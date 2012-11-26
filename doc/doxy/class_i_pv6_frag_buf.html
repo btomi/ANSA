@@ -84,7 +84,10 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="IPv6FragBuf" -->
-<p><code>#include &lt;<a class="el" href="_i_pv6_frag_buf_8h_source.html">IPv6FragBuf.h</a>&gt;</code></p>
+<p>Reassembly buffer for fragmented <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> datagrams.  
+ <a href="class_i_pv6_frag_buf.html#details">More...</a></p>
+
+<p><code>#include &lt;IPv6FragBuf.h&gt;</code></p>
 
 <p><a href="class_i_pv6_frag_buf-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -95,10 +98,15 @@ Classes</h2></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_frag_buf.html#ae5bfc416e675d4711e81929b7545e7f7">IPv6FragBuf</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ctor.  <a href="#ae5bfc416e675d4711e81929b7545e7f7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_frag_buf.html#a8d71eb0719b4db249aeef7f5caa68747">~IPv6FragBuf</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_frag_buf.html#a5e003a9464934dcccfb1dbaedab07b8b">init</a> (<a class="el" href="class_i_c_m_pv6.html">ICMPv6</a> *<a class="el" href="structicmp.html">icmp</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Dtor.  <a href="#a8d71eb0719b4db249aeef7f5caa68747"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_frag_buf.html#a5e003a9464934dcccfb1dbaedab07b8b">init</a> (<a class="el" href="class_i_c_m_pv6.html">ICMPv6</a> *<a class="el" href="structicmp.html">icmp</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize fragmentation buffer.  <a href="#a5e003a9464934dcccfb1dbaedab07b8b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_frag_buf.html#a41bf08bb1a8c81ea15a456b484a0cce5">addFragment</a> (<a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *datagram, <a class="el" href="class_i_pv6_fragment_header.html">IPv6FragmentHeader</a> *fh, simtime_t now)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_frag_buf.html#a49592f256181720463304a701cc6010f">purgeStaleFragments</a> (simtime_t lastupdate)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes a fragment and inserts it into the reassembly buffer.  <a href="#a41bf08bb1a8c81ea15a456b484a0cce5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_frag_buf.html#a49592f256181720463304a701cc6010f">purgeStaleFragments</a> (simtime_t lastupdate)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Throws out all fragments which are incomplete and their last update (last fragment arrival) was before "lastupdate", and sends <a class="el" href="class_i_c_m_p.html" title="ICMP module.">ICMP</a> TIME EXCEEDED message about them.  <a href="#a49592f256181720463304a701cc6010f"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-types"></a>
 Protected Types</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; <a class="el" href="struct_i_pv6_frag_buf_1_1_key.html">Key</a>, <br class="typebreak"/>
@@ -109,9 +117,7 @@ Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_c_m_pv6.html">ICMPv6</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_frag_buf.html#abace170e35b4f517fc3feda4975516e1">icmpModule</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Reassembly buffer for fragmented <a class="el" href="class_i_pv6.html">IPv6</a> datagrams. </p>
-
-<p>Definition at line <a class="el" href="_i_pv6_frag_buf_8h_source.html#l00034">34</a> of file <a class="el" href="_i_pv6_frag_buf_8h_source.html">IPv6FragBuf.h</a>.</p>
+<div class="textblock"><p>Reassembly buffer for fragmented <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> datagrams. </p>
 </div><hr/><h2>Member Typedef Documentation</h2>
 <a class="anchor" id="a21b8e22690c3d40deb7bf9a55b5b7b38"></a><!-- doxytag: member="IPv6FragBuf::Buffers" ref="a21b8e22690c3d40deb7bf9a55b5b7b38" args="" -->
 <div class="memitem">
@@ -123,8 +129,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_pv6_frag_buf_8h_source.html#l00062">62</a> of file <a class="el" href="_i_pv6_frag_buf_8h_source.html">IPv6FragBuf.h</a>.</p>
 
 </div>
 </div>
@@ -142,11 +146,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Ctor. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_frag_buf_8cc_source.html#l00029">29</a> of file <a class="el" href="_i_pv6_frag_buf_8cc_source.html">IPv6FragBuf.cc</a>.</p>
+<p>Ctor. </p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_i_pv6_frag_buf.html#abace170e35b4f517fc3feda4975516e1">icmpModule</a> = NULL;
+    <a class="code" href="class_i_pv6_frag_buf.html#abace170e35b4f517fc3feda4975516e1">icmpModule</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
 }
 </pre></div>
 </div>
@@ -164,9 +167,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Dtor. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_frag_buf_8cc_source.html#l00034">34</a> of file <a class="el" href="_i_pv6_frag_buf_8cc_source.html">IPv6FragBuf.cc</a>.</p>
+<p>Dtor. </p>
 <div class="fragment"><pre class="fragment">{
 }
 </pre></div>
@@ -203,24 +205,27 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Takes a fragment and inserts it into the reassembly buffer. If this fragment completes a datagram, the full reassembled datagram is returned, otherwise NULL. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_frag_buf_8cc_source.html#l00043">43</a> of file <a class="el" href="_i_pv6_frag_buf_8cc_source.html">IPv6FragBuf.cc</a>.</p>
+<p>Takes a fragment and inserts it into the reassembly buffer. </p>
+<p>If this fragment completes a datagram, the full reassembled datagram is returned, otherwise NULL. </p>
+
+<p>Referenced by <a class="el" href="class_i_pv6.html#af5841104d472f7c33a27b5fa53171c40">IPv6::localDeliver()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// find datagram buffer</span>
-    Key key;
+    <a class="code" href="namespace_macho.html#a0fa83256dd70bddc3c97b796db55755e">Key</a> key;
     key.id = fh-&gt;<a class="code" href="class_i_pv6_fragment_header.html#a386232c05da08ca0b97e961419874bd8">getIdentification</a>();
     key.src = datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#aa9bdf8fb570741abc6a1611e204b7140">getSrcAddress</a>();
     key.dest = datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#ae8dcba44d11a32fef197cc663b026f05">getDestAddress</a>();
 
-    Buffers::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_i_pv6_frag_buf.html#a054db87616c86c5e180b47d661767172">bufs</a>.find(key);
+    Buffers::iterator i = <a class="code" href="class_i_pv6_frag_buf.html#a054db87616c86c5e180b47d661767172">bufs</a>.find(key);
 
-    DatagramBuffer *buf = NULL;
+    DatagramBuffer *buf = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
     <span class="keywordflow">if</span> (i==<a class="code" href="class_i_pv6_frag_buf.html#a054db87616c86c5e180b47d661767172">bufs</a>.end())
     {
         <span class="comment">// this is the first fragment of that datagram, create reassembly buffer for it</span>
         buf = &amp;<a class="code" href="class_i_pv6_frag_buf.html#a054db87616c86c5e180b47d661767172">bufs</a>[key];
-        buf-&gt;datagram = NULL;
+        buf-&gt;datagram = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+        buf-&gt;createdAt = now;
     }
     <span class="keywordflow">else</span>
     {
@@ -228,17 +233,45 @@ Protected Attributes</h2></td></tr>
         buf = &amp;(i-&gt;second);
     }
 
-    <span class="comment">// add fragment into reassembly buffer</span>
-    <span class="comment">// FIXME next lines aren&#39;t correct: check 4.5 of RFC 2460 regarding Unfragmentable part, Fragmentable part, etc</span>
-    <span class="keywordtype">int</span> bytes = datagram-&gt;getByteLength() - datagram-&gt;<a class="code" href="class_i_pv6_datagram.html#a7c12eea2642c4f2530778573b7e5068f">calculateHeaderByteLength</a>();
-    <span class="keywordtype">bool</span> isComplete = buf-&gt;buf.addFragment(fh-&gt;<a class="code" href="class_i_pv6_fragment_header.html#a92cf182cc83bc3c1357e69b01932af20">getFragmentOffset</a>(),
-                                           fh-&gt;<a class="code" href="class_i_pv6_fragment_header.html#a92cf182cc83bc3c1357e69b01932af20">getFragmentOffset</a>() + bytes,
-                                           !fh-&gt;<a class="code" href="class_i_pv6_fragment_header.html#a3c7479e0969d0a5fd07635f86d0b4b8b">getMoreFragments</a>());
+    <span class="keywordtype">int</span> fragmentLength = datagram-&gt;<a class="code" href="class_i_pv6_datagram.html#ab30eb43a737b716e2356548538f20f02" title="Calculates the length of the payload and extension headers after the Fragment Header.">calculateFragmentLength</a>();
+    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> offset = fh-&gt;<a class="code" href="class_i_pv6_fragment_header.html#a92cf182cc83bc3c1357e69b01932af20">getFragmentOffset</a>();
+    <span class="keywordtype">bool</span> moreFragments = fh-&gt;<a class="code" href="class_i_pv6_fragment_header.html#a3c7479e0969d0a5fd07635f86d0b4b8b">getMoreFragments</a>();
 
-    <span class="comment">// store datagram. Only one fragment carries the actual modelled</span>
-    <span class="comment">// content (getEncapsulatedPacket()), other (empty) ones are only</span>
-    <span class="comment">// preserved so that we can send them in ICMP if reassembly times out.</span>
-    <span class="keywordflow">if</span> (datagram-&gt;getEncapsulatedPacket())
+    <span class="comment">// RFC 2460 4.5:</span>
+        <span class="comment">// If the length of a fragment, as derived from the fragment packet&#39;s</span>
+        <span class="comment">// Payload Length field, is not a multiple of 8 octets and the M flag</span>
+        <span class="comment">// of that fragment is 1, then that fragment must be discarded and an</span>
+        <span class="comment">// ICMP Parameter Problem, Code 0, message should be sent to the</span>
+        <span class="comment">// source of the fragment, pointing to the Payload Length field of</span>
+        <span class="comment">// the fragment packet.</span>
+    <span class="keywordflow">if</span> (moreFragments &amp;&amp; (fragmentLength % 8) != 0)
+    {
+        <a class="code" href="class_i_pv6_frag_buf.html#abace170e35b4f517fc3feda4975516e1">icmpModule</a>-&gt;<a class="code" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5" title="This method can be called from other modules to send an ICMPv6 error packet.">sendErrorMessage</a>(datagram, <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8a4f3281972041ca8e0c57bc4378b174a0">ICMPv6_PARAMETER_PROBLEM</a>, <a class="code" href="_i_c_m_pv6_message__m_8h.html#aa95bab4ecede743964c3b0b40e4da7f5aab8378a867f86c700f80ea2492eb1d36">ERROREOUS_HDR_FIELD</a>); <span class="comment">// TODO set pointer</span>
+        <span class="keywordflow">return</span> <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+    }
+
+    <span class="comment">// RFC 2460 4.5:</span>
+        <span class="comment">// If the length and offset of a fragment are such that the Payload</span>
+        <span class="comment">// Length of the packet reassembled from that fragment would exceed</span>
+        <span class="comment">// 65,535 octets, then that fragment must be discarded and an ICMP</span>
+        <span class="comment">// Parameter Problem, Code 0, message should be sent to the source of</span>
+        <span class="comment">// the fragment, pointing to the Fragment Offset field of the</span>
+        <span class="comment">// fragment packet.</span>
+    <span class="keywordflow">if</span> (offset + fragmentLength &gt; 65535)
+    {
+        <a class="code" href="class_i_pv6_frag_buf.html#abace170e35b4f517fc3feda4975516e1">icmpModule</a>-&gt;<a class="code" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5" title="This method can be called from other modules to send an ICMPv6 error packet.">sendErrorMessage</a>(datagram, <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8a4f3281972041ca8e0c57bc4378b174a0">ICMPv6_PARAMETER_PROBLEM</a>, <a class="code" href="_i_c_m_pv6_message__m_8h.html#aa95bab4ecede743964c3b0b40e4da7f5aab8378a867f86c700f80ea2492eb1d36">ERROREOUS_HDR_FIELD</a>); <span class="comment">// TODO set pointer</span>
+        <span class="keywordflow">return</span> <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+    }
+
+    <span class="comment">// add fragment to buffer</span>
+    <span class="keywordtype">bool</span> isComplete = buf-&gt;buf.addFragment(offset,
+                                           offset+fragmentLength,
+                                           !moreFragments);
+
+    <span class="comment">// Store the first fragment. The first fragment contains the whole</span>
+    <span class="comment">// encapsulated payload, and extension headers of the</span>
+    <span class="comment">// original datagram.</span>
+    <span class="keywordflow">if</span> (offset == 0)
     {
         <span class="keyword">delete</span> buf-&gt;datagram;
         buf-&gt;datagram = datagram;
@@ -252,17 +285,17 @@ Protected Attributes</h2></td></tr>
     <span class="keywordflow">if</span> (isComplete)
     {
         <span class="comment">// datagram complete: deallocate buffer and return complete datagram</span>
-        <a class="code" href="class_i_pv6_datagram.html">IPv6Datagram</a> *ret = buf-&gt;datagram;
-        ret-&gt;setByteLength(ret-&gt;<a class="code" href="class_i_pv6_datagram.html#a7c12eea2642c4f2530778573b7e5068f">calculateHeaderByteLength</a>()+buf-&gt;buf.getTotalLength()); <span class="comment">// FIXME cf with 4.5 of RFC 2460</span>
-        <span class="comment">//TODO: remove extension header IPv6FragmentHeader; maybe not here but when datagram gets inserted into the reassembly buffer --Andras</span>
+        <a class="code" href="class_i_pv6_datagram.html" title="Represents an IPv6 datagram.">IPv6Datagram</a> *ret = buf-&gt;datagram;
+        ASSERT(ret);
+        ret-&gt;<a class="code" href="class_i_pv6_datagram.html#a2afbb22ced35d7a439d50e6e795da44e" title="Removes and returns the first extension header with the given type.">removeExtensionHeader</a>(<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70a44b6d5555c33179fd295dd7bcfb63eaf">IP_PROT_IPv6EXT_FRAGMENT</a>);
+        ret-&gt;setByteLength(ret-&gt;<a class="code" href="class_i_pv6_datagram.html#aef1757a3cc2ef5de253e8a15c9f1c774" title="Calculates the length of the unfragmentable part of IPv6 header plus the extension headers...">calculateUnfragmentableHeaderByteLength</a>()+buf-&gt;buf.getTotalLength());
         <a class="code" href="class_i_pv6_frag_buf.html#a054db87616c86c5e180b47d661767172">bufs</a>.erase(i);
         <span class="keywordflow">return</span> ret;
     }
     <span class="keywordflow">else</span>
     {
         <span class="comment">// there are still missing fragments</span>
-        buf-&gt;lastupdate = now;
-        <span class="keywordflow">return</span> NULL;
+        <span class="keywordflow">return</span> <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
     }
 }
 </pre></div>
@@ -273,7 +306,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_pv6_frag_buf.html#a5e003a9464934dcccfb1dbaedab07b8b">IPv6FragBuf::init</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6_frag_buf.html#a5e003a9464934dcccfb1dbaedab07b8b">IPv6FragBuf::init</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_c_m_pv6.html">ICMPv6</a> *&#160;</td>
           <td class="paramname"><em>icmp</em></td><td>)</td>
@@ -282,11 +315,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize fragmentation buffer. <a class="el" href="class_i_c_m_p.html">ICMP</a> module is needed for sending TIME_EXCEEDED <a class="el" href="class_i_c_m_p.html">ICMP</a> message in <a class="el" href="class_i_pv6_frag_buf.html#a49592f256181720463304a701cc6010f">purgeStaleFragments()</a>. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_frag_buf_8cc_source.html#l00038">38</a> of file <a class="el" href="_i_pv6_frag_buf_8cc_source.html">IPv6FragBuf.cc</a>.</p>
+<p>Initialize fragmentation buffer. </p>
+<p><a class="el" href="class_i_c_m_p.html" title="ICMP module.">ICMP</a> module is needed for sending TIME_EXCEEDED <a class="el" href="class_i_c_m_p.html" title="ICMP module.">ICMP</a> message in <a class="el" href="class_i_pv6_frag_buf.html#a49592f256181720463304a701cc6010f" title="Throws out all fragments which are incomplete and their last update (last fragment arrival) was befor...">purgeStaleFragments()</a>. </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00037">IPv6::initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#a0efd6df6b67596cbf2fd0ed55cbe3b23">IPv6::initialize()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="class_i_pv6_frag_buf.html#abace170e35b4f517fc3feda4975516e1">icmpModule</a> = icmp;
 }
@@ -298,7 +331,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_pv6_frag_buf.html#a49592f256181720463304a701cc6010f">IPv6FragBuf::purgeStaleFragments</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6_frag_buf.html#a49592f256181720463304a701cc6010f">IPv6FragBuf::purgeStaleFragments</a> </td>
           <td>(</td>
           <td class="paramtype">simtime_t&#160;</td>
           <td class="paramname"><em>lastupdate</em></td><td>)</td>
@@ -307,33 +340,37 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Throws out all fragments which are incomplete and their last update (last fragment arrival) was before "lastupdate", and sends <a class="el" href="class_i_c_m_p.html">ICMP</a> TIME EXCEEDED message about them.</p>
+
+<p>Throws out all fragments which are incomplete and their last update (last fragment arrival) was before "lastupdate", and sends <a class="el" href="class_i_c_m_p.html" title="ICMP module.">ICMP</a> TIME EXCEEDED message about them. </p>
 <p>Timeout should be between 60 seconds and 120 seconds (RFC1122). This method should be called more frequently, maybe every 10..30 seconds or so. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_frag_buf_8cc_source.html#l00104">104</a> of file <a class="el" href="_i_pv6_frag_buf_8cc_source.html">IPv6FragBuf.cc</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#af5841104d472f7c33a27b5fa53171c40">IPv6::localDeliver()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// this method shouldn&#39;t be called too often because iteration on</span>
     <span class="comment">// an std::map is *very* slow...</span>
 
     ASSERT(<a class="code" href="class_i_pv6_frag_buf.html#abace170e35b4f517fc3feda4975516e1">icmpModule</a>);
 
-    <span class="keywordflow">for</span> (Buffers::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>=<a class="code" href="class_i_pv6_frag_buf.html#a054db87616c86c5e180b47d661767172">bufs</a>.begin(); <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>!=<a class="code" href="class_i_pv6_frag_buf.html#a054db87616c86c5e180b47d661767172">bufs</a>.end(); )
+    <span class="keywordflow">for</span> (Buffers::iterator i=<a class="code" href="class_i_pv6_frag_buf.html#a054db87616c86c5e180b47d661767172">bufs</a>.begin(); i!=<a class="code" href="class_i_pv6_frag_buf.html#a054db87616c86c5e180b47d661767172">bufs</a>.end(); )
     {
         <span class="comment">// if too old, remove it</span>
-        DatagramBuffer&amp; buf = <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>-&gt;second;
-        <span class="keywordflow">if</span> (buf.lastupdate &lt; lastupdate)
+        DatagramBuffer&amp; buf = i-&gt;second;
+        <span class="keywordflow">if</span> (buf.createdAt &lt; lastupdate)
         {
-            <span class="comment">// send ICMP error</span>
-            <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;datagram fragment timed out in reassembly buffer, sending ICMP_TIME_EXCEEDED\n&quot;</span>;
-            <a class="code" href="class_i_pv6_frag_buf.html#abace170e35b4f517fc3feda4975516e1">icmpModule</a>-&gt;<a class="code" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5">sendErrorMessage</a>(buf.datagram, <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8aad2a907b4913018dba811497389c011d">ICMPv6_TIME_EXCEEDED</a>, 0);
+            <span class="keywordflow">if</span> (buf.datagram)
+            {
+                                <span class="comment">// send ICMP error</span>
+                                <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;datagram fragment timed out in reassembly buffer, sending ICMP_TIME_EXCEEDED\n&quot;</span>;
+                                <a class="code" href="class_i_pv6_frag_buf.html#abace170e35b4f517fc3feda4975516e1">icmpModule</a>-&gt;<a class="code" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5" title="This method can be called from other modules to send an ICMPv6 error packet.">sendErrorMessage</a>(buf.datagram, <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8aad2a907b4913018dba811497389c011d">ICMPv6_TIME_EXCEEDED</a>, 0);
+            }
 
             <span class="comment">// delete</span>
-            Buffers::iterator oldi = <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++;
+            Buffers::iterator oldi = i++;
             <a class="code" href="class_i_pv6_frag_buf.html#a054db87616c86c5e180b47d661767172">bufs</a>.erase(oldi);
         }
         <span class="keywordflow">else</span>
         {
-            ++<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>;
+            ++i;
         }
     }
 }
@@ -352,9 +389,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_frag_buf_8h_source.html#l00065">65</a> of file <a class="el" href="_i_pv6_frag_buf_8h_source.html">IPv6FragBuf.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_frag_buf_8cc_source.html#l00043">addFragment()</a>, and <a class="el" href="_i_pv6_frag_buf_8cc_source.html#l00104">purgeStaleFragments()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_frag_buf.html#a41bf08bb1a8c81ea15a456b484a0cce5">addFragment()</a>, and <a class="el" href="class_i_pv6_frag_buf.html#a49592f256181720463304a701cc6010f">purgeStaleFragments()</a>.</p>
 
 </div>
 </div>
@@ -369,15 +404,13 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_frag_buf_8h_source.html#l00068">68</a> of file <a class="el" href="_i_pv6_frag_buf_8h_source.html">IPv6FragBuf.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_frag_buf_8cc_source.html#l00038">init()</a>, <a class="el" href="_i_pv6_frag_buf_8cc_source.html#l00029">IPv6FragBuf()</a>, and <a class="el" href="_i_pv6_frag_buf_8cc_source.html#l00104">purgeStaleFragments()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_frag_buf.html#a41bf08bb1a8c81ea15a456b484a0cce5">addFragment()</a>, <a class="el" href="class_i_pv6_frag_buf.html#a5e003a9464934dcccfb1dbaedab07b8b">init()</a>, <a class="el" href="class_i_pv6_frag_buf.html#ae5bfc416e675d4711e81929b7545e7f7">IPv6FragBuf()</a>, and <a class="el" href="class_i_pv6_frag_buf.html#a49592f256181720463304a701cc6010f">purgeStaleFragments()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_i_pv6_frag_buf_8h_source.html">IPv6FragBuf.h</a></li>
-<li><a class="el" href="_i_pv6_frag_buf_8cc_source.html">IPv6FragBuf.cc</a></li>
+<li><a class="el" href="_i_pv6_frag_buf_8h.html">IPv6FragBuf.h</a></li>
+<li><a class="el" href="_i_pv6_frag_buf_8cc.html">IPv6FragBuf.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -385,7 +418,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_i_pv6_frag_buf.html">IPv6FragBuf</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:49 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:26 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

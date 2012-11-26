@@ -6,9 +6,35 @@
    <body onload="if (top.frames['componentsframe'] == undefined) { s = window.location.toString(); window.location = 'index.html?p=' + s.substring(s.lastIndexOf('/')+1); }">
 <h2 class="comptitle">Compound Module <i>NetworkLayer6</i></h2>
 <b>Package:</b> inet.nodes.ipv6<br/><b>File: <a href="src-nodes-ipv6-NetworkLayer6.ned.html">src/nodes/ipv6/NetworkLayer6.ned</a></b><br/>
-<p>Represents an <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> network layer (L3).</p>
-<p>The module has ports to connect to a higher layer (<a href="inet.transport.tcp.TCP.html">TCP</a>,<a href="inet.transport.udp.UDP.html">UDP</a>) and
+<p>Represents an IPv6 network layer (L3).</p>
+<p>The module has ports to connect to a higher layer (TCP, UDP) and
 several network interfaces.</p>
+<img src="inet.nodes.ipv6.NetworkLayer6-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.networklayer.ipv6.IPv6.html" title="IPv6" alt="IPv6" coords="66,149,110,208">
+<area shape="rect" href="inet.networklayer.icmpv6.ICMPv6.html" title="ICMPv6" alt="ICMPv6" coords="171,99,215,158">
+<area shape="rect" href="inet.networklayer.ipv6.IPv6ErrorHandling.html" title="IPv6ErrorHandling" alt="IPv6ErrorHandling" coords="233,107,332,150">
+<area shape="rect" href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html" title="IPv6NeighbourDiscovery" alt="IPv6NeighbourDiscovery" coords="204,169,315,228">
+<area shape="rect" href="inet.networklayer.IIPv6Tunneling.html" title="IIPv6Tunneling" alt="IIPv6Tunneling" coords="14,188,78,247">
+<area shape="rect" href="inet.networklayer.IxMIPv6Support.html" title="IxMIPv6Support" alt="IxMIPv6Support" coords="7,99,85,158">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.nodes.ipv6.NetworkLayer6-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.nodes.ipv6.NetworkLayer6.html" title="Compound Module NetworkLayer6" alt="" coords="461,83,571,111">
+<area shape="rect" id="node2" href="inet.networklayer.IIPv6Tunneling.html" title="Module Interface IIPv6Tunneling" alt="" coords="5,161,115,189">
+<area shape="rect" id="node4" href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html" title="Simple Module IPv6NeighbourDiscovery" alt="" coords="139,161,304,189">
+<area shape="rect" id="node6" href="inet.networklayer.IxMIPv6Support.html" title="Module Interface IxMIPv6Support" alt="" coords="328,161,443,189">
+<area shape="rect" id="node8" href="ned.IdealChannel.html" title="Channel IdealChannel" alt="" coords="467,161,565,189">
+<area shape="rect" id="node10" href="inet.networklayer.ipv6.IPv6ErrorHandling.html" title="Simple Module IPv6ErrorHandling" alt="" coords="589,161,717,189">
+<area shape="rect" id="node12" href="inet.networklayer.icmpv6.ICMPv6.html" title="Simple Module ICMPv6" alt="" coords="741,161,813,189">
+<area shape="rect" id="node14" href="inet.networklayer.ipv6.IPv6.html" title="Simple Module IPv6" alt="" coords="837,161,909,189">
+<area shape="rect" id="node16" href="inet.nodes.ipv6.NodeBase6.html" title="Compound Module NodeBase6" alt="" coords="471,6,561,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.nodes.ipv6.NetworkLayer6-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.nodes.ipv6.NetworkLayer6.html" title="Compound Module NetworkLayer6" alt="" coords="5,6,115,34">
+</map>
 <h3 class="subtitle">Used in compound modules:</h3>
 <table class="typestable">
    <tr>
@@ -18,51 +44,34 @@ several network interfaces.</p>
    </tr>
 <tr>
    <td>
-<a href="inet.ansa.AnsaDualStackHost.html">AnsaDualStackHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.ansa.AnsaDualStackRouter.html">AnsaDualStackRouter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.ipv6.Router6.html">Router6</a>
+<a href="inet.nodes.ipv6.NodeBase6.html">NodeBase6</a>
    </td>
    <td>
 <i>compound&nbsp;module</i>
    </td>
    <td>
 
-<p>IPv6 router.</p>
+<p>BaseHost contains the common lower layers (linklayer and networklayer)
+of Router, StandardHost, WirelessHost etc. </p>
 
    </td>
 </tr>
-<tr>
+</table>
+<h3 class="subtitle">Parameters:</h3>
+<table class="paramstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="defaultvalue">Default value</th>
+      <th class="description">Description</th>
+   </tr>
+<tr class="local">
+   <td>xMIPv6Support</td>
    <td>
-<a href="inet.nodes.ipv6.StandardHost6.html">StandardHost6</a>
+      <i>bool</i>
    </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IPv6 host with <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications.</p>
-
-   </td>
+   <td>false</td>
+   <td>   </td>
 </tr>
 </table>
 <h3 class="subtitle">Properties:</h3>
@@ -93,6 +102,16 @@ several network interfaces.</p>
 </tr>
 <tr class="local">
    <td>ifOut [ ]</xsl:if></td>
+   <td><i>output</i></td>
+   <td></td>   <td></td>
+</tr>
+<tr class="local">
+   <td>sctpIn</xsl:if></td>
+   <td><i>input</i></td>
+   <td></td>   <td></td>
+</tr>
+<tr class="local">
+   <td>sctpOut</xsl:if></td>
    <td><i>output</i></td>
    <td></td>   <td></td>
 </tr>
@@ -137,17 +156,12 @@ several network interfaces.</p>
    <td></td>   <td></td>
 </tr>
 <tr class="local">
-   <td>pingIn</xsl:if></td>
+   <td>pingIn [ ]</xsl:if></td>
    <td><i>input</i></td>
    <td></td>   <td></td>
 </tr>
 <tr class="local">
-   <td>pingOut</xsl:if></td>
-   <td><i>output</i></td>
-   <td></td>   <td></td>
-</tr>
-<tr class="local">
-   <td>errorOut</xsl:if></td>
+   <td>pingOut [ ]</xsl:if></td>
    <td><i>output</i></td>
    <td></td>   <td></td>
 </tr>
@@ -168,21 +182,60 @@ several network interfaces.</p>
    <td>0s</td>
    <td>   </td>
 </tr>
+<tr>
+   <td><a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">neighbourDiscovery</a>.minIntervalBetweenRAs</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>30ms</td>
+   <td>
+<p>minRtrAdvInterval:  0.03 sec for MIPv6 , declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">neighbourDiscovery</a>.maxIntervalBetweenRAs</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>70ms</td>
+   <td>
+<p>MaxrtrAdvInterval: 0.07 sec for MIPv6, declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.networklayer.IxMIPv6Support.html">mipv6support</a>.isHomeAgent</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td></td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.networklayer.IxMIPv6Support.html">mipv6support</a>.isMobileNode</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td></td>
+   <td>   </td>
+</tr>
 </table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
 // Represents an IPv6 network layer (L3).
 //
-// The module has ports to connect to a higher layer (TCP,UDP) and
+// The module has ports to connect to a higher layer (TCP, UDP) and
 // several network interfaces.
 //
 </span><span style="color: #800000; font-weight: bold; ">module</span><span style="color: #000000; "> </span><span style="color: #000000; ">NetworkLayer6</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">xMIPv6Support</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">false</span><span style="color: #000000; ">);
         </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/fork&quot;</span><span style="color: #000000; ">);
     </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">ifIn</span><span style="color: #000000; ">[] </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">IPv6Datagram</span><span style="color: #000000; ">);
         </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">ifOut</span><span style="color: #000000; ">[] </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">IPv6Datagram</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">sctpIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">IPv4ControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">,</span><span style="color: #000000; ">SCTPPacket</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">sctpOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">IPv4ControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">,</span><span style="color: #000000; ">SCTPPacket</span><span style="color: #000000; ">);
         </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">tcpIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">TCPSegment</span><span style="color: #000000; ">,</span><span style="color: #000000; ">IPv6ControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);
         </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">tcpOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">TCPSegment</span><span style="color: #000000; ">,</span><span style="color: #000000; ">IPv6ControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">);
         </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">udpIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">UDPPacket</span><span style="color: #000000; ">,</span><span style="color: #000000; ">IPv6ControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);
@@ -191,23 +244,22 @@ several network interfaces.</p>
         </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">rsvpOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">IPv6ControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">);
         </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">ospfIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">IPv6ControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);
         </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">ospfOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">IPv6ControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">pingIn</span><span style="color: #000000; ">;
-        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">pingOut</span><span style="color: #000000; ">;
-        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">errorOut</span><span style="color: #000000; ">;
+        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">pingIn</span><span style="color: #000000; ">[];
+        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">pingOut</span><span style="color: #000000; ">[];
     </span><span style="color: #800000; font-weight: bold; ">submodules</span><span style="color: #000000; ">:
         </span><span style="color: #000000; ">ipv6</span><span style="color: #000000; ">: </span><span style="color: #000000; ">IPv6</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; ">protocolMapping</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;6:0,17:1,46:2,89:3&quot;</span><span style="color: #000000; ">;
-                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=84,129&quot;</span><span style="color: #000000; ">);
+                </span><span style="color: #000000; ">protocolMapping</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;6:0,17:1,46:2,89:3,132:4&quot;</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// TODO register 132 as sctp in ipv6 code
+</span><span style="color: #000000; ">                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=84,129&quot;</span><span style="color: #000000; ">);
             </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; ">transportIn</span><span style="color: #000000; ">[</span><span style="color: #008000; ">4</span><span style="color: #000000; ">];
-                </span><span style="color: #000000; ">transportOut</span><span style="color: #000000; ">[</span><span style="color: #008000; ">4</span><span style="color: #000000; ">];
+                </span><span style="color: #000000; ">transportIn</span><span style="color: #000000; ">[</span><span style="color: #008000; ">5</span><span style="color: #000000; ">];
+                </span><span style="color: #000000; ">transportOut</span><span style="color: #000000; ">[</span><span style="color: #008000; ">5</span><span style="color: #000000; ">];
                 </span><span style="color: #000000; ">queueIn</span><span style="color: #000000; ">[</span><span style="color: #800000; font-weight: bold; ">sizeof</span><span style="color: #000000; ">(</span><span style="color: #000000; ">ifIn</span><span style="color: #000000; ">)];
                 </span><span style="color: #000000; ">queueOut</span><span style="color: #000000; ">[</span><span style="color: #800000; font-weight: bold; ">sizeof</span><span style="color: #000000; ">(</span><span style="color: #000000; ">ifIn</span><span style="color: #000000; ">)];
         }
         </span><span style="color: #000000; ">icmpv6</span><span style="color: #000000; ">: </span><span style="color: #000000; ">ICMPv6</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=208,79&quot;</span><span style="color: #000000; ">);
+                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=189,79&quot;</span><span style="color: #000000; ">);
         }
         </span><span style="color: #000000; ">ipv6ErrorHandling</span><span style="color: #000000; ">: </span><span style="color: #000000; ">IPv6ErrorHandling</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
@@ -215,7 +267,15 @@ several network interfaces.</p>
         }
         </span><span style="color: #000000; ">neighbourDiscovery</span><span style="color: #000000; ">: </span><span style="color: #000000; ">IPv6NeighbourDiscovery</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=208,171&quot;</span><span style="color: #000000; ">);
+                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=257,149&quot;</span><span style="color: #000000; ">);
+        }
+        </span><span style="color: #000000; ">iptunneling</span><span style="color: #000000; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #000000; ">firstAvailable</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;IPv6Tunneling&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;IPv6Tunneling_None&quot;</span><span style="color: #000000; ">))&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #000000; "> </span><span style="color: #000000; ">IIPv6Tunneling</span><span style="color: #000000; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
+                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=44,168&quot;</span><span style="color: #000000; ">);
+        }
+        </span><span style="color: #000000; ">mipv6support</span><span style="color: #000000; ">: &lt;</span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #000000; ">xMIPv6Support</span><span style="color: #000000; ">?</span><span style="color: #008000; ">&quot;xMIPv6Support&quot;</span><span style="color: #000000; ">:</span><span style="color: #008000; ">&quot;xMIPv6Support_None&quot;</span><span style="color: #000000; ">)&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #000000; "> </span><span style="color: #000000; ">IxMIPv6Support</span><span style="color: #000000; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
+                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=44,79&quot;</span><span style="color: #000000; ">);
         }
     </span><span style="color: #800000; font-weight: bold; ">connections</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">allowunconnected</span><span style="color: #000000; ">:  </span><span style="color: #808080; font-style: italic; ">// FIXME remove 'nocheck'!
 </span><span style="color: #000000; ">        </span><span style="color: #808080; font-style: italic; ">// IPv6 to transport Layer
@@ -231,6 +291,15 @@ several network interfaces.</p>
         </span><span style="color: #000000; ">ipv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">transportOut</span><span style="color: #000000; ">[</span><span style="color: #008000; ">3</span><span style="color: #000000; ">] </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> { </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;m=n&quot;</span><span style="color: #000000; ">); } </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">ospfOut</span><span style="color: #000000; ">;
         </span><span style="color: #000000; ">ipv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">transportIn</span><span style="color: #000000; ">[</span><span style="color: #008000; ">3</span><span style="color: #000000; ">] </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #000000; "> { </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;m=n&quot;</span><span style="color: #000000; ">); } </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #000000; "> </span><span style="color: #000000; ">ospfIn</span><span style="color: #000000; ">;
 
+        </span><span style="color: #000000; ">ipv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">transportOut</span><span style="color: #000000; ">[</span><span style="color: #008000; ">4</span><span style="color: #000000; ">] </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> { </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;m=n&quot;</span><span style="color: #000000; ">); } </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">sctpOut</span><span style="color: #000000; ">;
+        </span><span style="color: #000000; ">ipv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">transportIn</span><span style="color: #000000; ">[</span><span style="color: #008000; ">4</span><span style="color: #000000; ">] </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #000000; "> { </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;m=n&quot;</span><span style="color: #000000; ">); } </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #000000; "> </span><span style="color: #000000; ">sctpIn</span><span style="color: #000000; ">;
+
+        </span><span style="color: #808080; font-style: italic; ">// IPv6 to IPv6 Tunneling
+</span><span style="color: #000000; ">        </span><span style="color: #000000; ">iptunneling</span><span style="color: #000000; ">.</span><span style="color: #000000; ">upperLayerIn</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">upperTunnelingOut</span><span style="color: #000000; ">;
+        </span><span style="color: #000000; ">iptunneling</span><span style="color: #000000; ">.</span><span style="color: #000000; ">upperLayerOut</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">upperTunnelingIn</span><span style="color: #000000; ">;
+        </span><span style="color: #000000; ">iptunneling</span><span style="color: #000000; ">.</span><span style="color: #000000; ">linkLayerIn</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">lowerTunnelingOut</span><span style="color: #000000; ">;
+        </span><span style="color: #000000; ">iptunneling</span><span style="color: #000000; ">.</span><span style="color: #000000; ">linkLayerOut</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">lowerTunnelingIn</span><span style="color: #000000; ">;
+
         </span><span style="color: #808080; font-style: italic; ">// IPv6 to ICMPv6
 </span><span style="color: #000000; ">        </span><span style="color: #000000; ">ipv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">icmpOut</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">icmpv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ipv6In</span><span style="color: #000000; ">;
         </span><span style="color: #000000; ">ipv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">icmpIn</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #000000; "> </span><span style="color: #000000; ">icmpv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ipv6Out</span><span style="color: #000000; ">;
@@ -239,21 +308,30 @@ several network interfaces.</p>
 </span><span style="color: #000000; ">        </span><span style="color: #000000; ">icmpv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">errorOut</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipv6ErrorHandling</span><span style="color: #000000; ">.</span><span style="color: #000000; ">in</span><span style="color: #000000; ">;
 
         </span><span style="color: #808080; font-style: italic; ">// ICMPv6 to ping I/O
-</span><span style="color: #000000; ">        </span><span style="color: #000000; ">icmpv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">pingOut</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">pingOut</span><span style="color: #000000; ">;
-        </span><span style="color: #000000; ">icmpv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">pingIn</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #000000; "> </span><span style="color: #000000; ">pingIn</span><span style="color: #000000; ">;
+</span><span style="color: #000000; ">        </span><span style="color: #800000; font-weight: bold; ">for</span><span style="color: #000000; "> </span><span style="color: #000000; ">i</span><span style="color: #000000; ">=</span><span style="color: #008000; ">0</span><span style="color: #000000; ">..</span><span style="color: #800000; font-weight: bold; ">sizeof</span><span style="color: #000000; ">(</span><span style="color: #000000; ">pingOut</span><span style="color: #000000; ">)-</span><span style="color: #008000; ">1</span><span style="color: #000000; "> {
+            </span><span style="color: #000000; ">icmpv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">pingOut</span><span style="color: #000000; ">++ </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> { </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;m=n&quot;</span><span style="color: #000000; ">); } </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">pingOut</span><span style="color: #000000; ">[</span><span style="color: #000000; ">i</span><span style="color: #000000; ">];
+        }
+        </span><span style="color: #800000; font-weight: bold; ">for</span><span style="color: #000000; "> </span><span style="color: #000000; ">i</span><span style="color: #000000; ">=</span><span style="color: #008000; ">0</span><span style="color: #000000; ">..</span><span style="color: #800000; font-weight: bold; ">sizeof</span><span style="color: #000000; ">(</span><span style="color: #000000; ">pingIn</span><span style="color: #000000; ">)-</span><span style="color: #008000; ">1</span><span style="color: #000000; "> {
+            </span><span style="color: #000000; ">icmpv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">pingIn</span><span style="color: #000000; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #000000; "> { </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;m=n&quot;</span><span style="color: #000000; ">); } </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #000000; "> </span><span style="color: #000000; ">pingIn</span><span style="color: #000000; ">[</span><span style="color: #000000; ">i</span><span style="color: #000000; ">];
+        }
 
         </span><span style="color: #808080; font-style: italic; ">// IPv6 to Neighbour Discovery
 </span><span style="color: #000000; ">        </span><span style="color: #000000; ">ipv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ndOut</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">neighbourDiscovery</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ipv6In</span><span style="color: #000000; ">;
         </span><span style="color: #000000; ">ipv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ndIn</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #000000; "> </span><span style="color: #000000; ">neighbourDiscovery</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ipv6Out</span><span style="color: #000000; ">;
 
+        </span><span style="color: #808080; font-style: italic; ">//IPv6 to Mobile IPv6
+</span><span style="color: #000000; ">        </span><span style="color: #000000; ">ipv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">xMIPv6Out</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">mipv6support</span><span style="color: #000000; ">.</span><span style="color: #000000; ">fromIPv6</span><span style="color: #000000; ">;
+        </span><span style="color: #000000; ">ipv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">xMIPv6In</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #000000; "> </span><span style="color: #000000; ">mipv6support</span><span style="color: #000000; ">.</span><span style="color: #000000; ">toIPv6</span><span style="color: #000000; ">;
+
         </span><span style="color: #808080; font-style: italic; ">// IPv6 to L2
-</span><span style="color: #000000; ">        </span><span style="color: #800000; font-weight: bold; ">for</span><span style="color: #000000; "> </span><span style="color: #000000; ">i</span><span style="color: #000000; ">=</span><span style="color: #008000; ">0</span><span style="color: #000000; ">..</span><span style="color: #800000; font-weight: bold; ">sizeof</span><span style="color: #000000; ">(</span><span style="color: #000000; ">ifOut</span><span style="color: #000000; ">)-</span><span style="color: #008000; ">1</span><span style="color: #000000; "> {
+</span><span style="color: #000000; ">        </span><span style="color: #800000; font-weight: bold; ">for</span><span style="color: #000000; "> </span><span style="color: #000000; ">i</span><span style="color: #000000; ">=</span><span style="color: #008000; ">0</span><span style="color: #000000; ">..</span><span style="color: #800000; font-weight: bold; ">sizeof</span><span style="color: #000000; ">(</span><span style="color: #000000; ">ifIn</span><span style="color: #000000; ">)-</span><span style="color: #008000; ">1</span><span style="color: #000000; "> {
             </span><span style="color: #000000; ">ifIn</span><span style="color: #000000; ">[</span><span style="color: #000000; ">i</span><span style="color: #000000; ">] </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> { </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;m=s&quot;</span><span style="color: #000000; ">); } </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">queueIn</span><span style="color: #000000; ">[</span><span style="color: #000000; ">i</span><span style="color: #000000; ">];
-            </span><span style="color: #000000; ">ifOut</span><span style="color: #000000; ">[</span><span style="color: #000000; ">i</span><span style="color: #000000; ">] </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #000000; "> { </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;m=s&quot;</span><span style="color: #000000; ">); } </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">queueOut</span><span style="color: #000000; ">[</span><span style="color: #000000; ">i</span><span style="color: #000000; ">];
+        }
+        </span><span style="color: #800000; font-weight: bold; ">for</span><span style="color: #000000; "> </span><span style="color: #000000; ">i</span><span style="color: #000000; ">=</span><span style="color: #008000; ">0</span><span style="color: #000000; ">..</span><span style="color: #800000; font-weight: bold; ">sizeof</span><span style="color: #000000; ">(</span><span style="color: #000000; ">ifOut</span><span style="color: #000000; ">)-</span><span style="color: #008000; ">1</span><span style="color: #000000; "> {
+            </span><span style="color: #000000; ">ipv6</span><span style="color: #000000; ">.</span><span style="color: #000000; ">queueOut</span><span style="color: #000000; ">[</span><span style="color: #000000; ">i</span><span style="color: #000000; ">] </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> { </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;m=s&quot;</span><span style="color: #000000; ">); } </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">ifOut</span><span style="color: #000000; ">[</span><span style="color: #000000; ">i</span><span style="color: #000000; ">];
         }
 }
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

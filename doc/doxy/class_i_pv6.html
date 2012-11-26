@@ -83,15 +83,18 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="IPv6" --><!-- doxytag: inherits="QueueBase" -->
-<p><code>#include &lt;<a class="el" href="_i_pv6_8h_source.html">IPv6.h</a>&gt;</code></p>
+<p><a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> implementation.  
+ <a href="class_i_pv6.html#details">More...</a></p>
+
+<p><code>#include &lt;IPv6.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for IPv6:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_i_pv6.png" usemap="#IPv6_map" alt=""/>
   <map id="IPv6_map" name="IPv6_map">
-<area href="class_queue_base.html" alt="QueueBase" shape="rect" coords="0,56,97,80"/>
-<area href="class_abstract_queue.html" alt="AbstractQueue" shape="rect" coords="0,0,97,24"/>
+<area href="class_queue_base.html" title="Queue with constant processing time." alt="QueueBase" shape="rect" coords="0,56,97,80"/>
+<area href="class_abstract_queue.html" title="Abstract base class for single-server queues." alt="AbstractQueue" shape="rect" coords="0,0,97,24"/>
 </map>
  </div></div>
 
@@ -103,26 +106,41 @@ Public Member Functions</h2></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a1264485b45281cf51e54aa6db4790072">getSourceInterfaceFrom</a> (cPacket *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a477638c781f9e8d5b5722684359ef03f">updateDisplayString</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a77767db740051bc4aa5bd83b0cb078af">encapsulate</a> (cPacket *transportPacket, <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&amp;destIE)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#ad512d80b98cc6a39cef47df5e679992c">handleDatagramFromNetwork</a> (<a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *datagram)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a7268e90e7ca92566bd209fdc00c090b6">handleMessageFromHL</a> (cPacket *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a8cc520cdb18b01334b04f2cd1268e370">handleReceivedICMP</a> (<a class="el" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a6bc7266ec57dc06de697562a5dcb9393">fragmentAndRoute</a> (<a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *datagram, <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *destIE=NULL)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3">routePacket</a> (<a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *datagram, <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *destIE, bool fromHL)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a41b8debbd2e25288671df769adb5d332">routeMulticastPacket</a> (<a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *datagram, <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *destIE, <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *fromIE)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a350ba82e187cad4313bea8e3bb5b4838">isLocalAddress</a> (<a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *datagram)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a477638c781f9e8d5b5722684359ef03f">updateDisplayString</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a77a162c6ccb060cd4b690988725c381b">encapsulate</a> (cPacket *transportPacket, <a class="el" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *ctrlInfo)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulate packet coming from higher layers into <a class="el" href="class_i_pv6_datagram.html" title="Represents an IPv6 datagram.">IPv6Datagram</a>.  <a href="#a77a162c6ccb060cd4b690988725c381b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#ad512d80b98cc6a39cef47df5e679992c">handleDatagramFromNetwork</a> (<a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *datagram)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle <a class="el" href="class_i_pv6_datagram.html" title="Represents an IPv6 datagram.">IPv6Datagram</a> messages arriving from lower layer.  <a href="#ad512d80b98cc6a39cef47df5e679992c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a7268e90e7ca92566bd209fdc00c090b6">handleMessageFromHL</a> (cPacket *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle messages (typically packets to be send in <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a>) from transport or <a class="el" href="class_i_c_m_p.html" title="ICMP module.">ICMP</a>.  <a href="#a7268e90e7ca92566bd209fdc00c090b6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a8cc520cdb18b01334b04f2cd1268e370">handleReceivedICMP</a> (<a class="el" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle incoming <a class="el" href="class_i_c_m_p.html" title="ICMP module.">ICMP</a> messages.  <a href="#a8cc520cdb18b01334b04f2cd1268e370"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3">routePacket</a> (<a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *datagram, <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *destIE, bool fromHL)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs routing.  <a href="#a33a99910431c17c57350ee894d9024e3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a61eb7d75c2414e64fbcf82c69f9db7bf">routeMulticastPacket</a> (<a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *datagram, <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *destIE, <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *fromIE, bool fromHL)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Forwards packets to all multicast destinations, using <a class="el" href="class_i_pv6.html#ae2d98f5214c7b23b38c33f7c613ee0a6" title="Performs fragmentation if needed, and sends the original datagram or the fragments through the specif...">fragmentAndSend()</a>.  <a href="#a61eb7d75c2414e64fbcf82c69f9db7bf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#ae2d98f5214c7b23b38c33f7c613ee0a6">fragmentAndSend</a> (<a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *datagram, <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *ie, const <a class="el" href="class_m_a_c_address.html">MACAddress</a> &amp;nextHopAddr, bool fromHL)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs fragmentation if needed, and sends the original datagram or the fragments through the specified interface.  <a href="#ae2d98f5214c7b23b38c33f7c613ee0a6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#af5841104d472f7c33a27b5fa53171c40">localDeliver</a> (<a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *datagram)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform reassembly of fragmented datagrams, then send them up to the higher layers using sendToHL().  <a href="#af5841104d472f7c33a27b5fa53171c40"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual cPacket *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#af2e604305a9ff165129097c1cad62cb2">decapsulate</a> (<a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *datagram)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a69b2be6aa31f567a504fc693a6a3c35e">sendDatagramToOutput</a> (<a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *datagram, <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *ie, const <a class="el" href="class_m_a_c_address.html">MACAddress</a> &amp;macAddr)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a0efd6df6b67596cbf2fd0ed55cbe3b23">initialize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a4276e6135044f1b9f165ea8011040773">endService</a> (cPacket *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Decapsulate and return encapsulated packet after attaching <a class="el" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a>.  <a href="#af2e604305a9ff165129097c1cad62cb2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a69b2be6aa31f567a504fc693a6a3c35e">sendDatagramToOutput</a> (<a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *datagram, <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *ie, const <a class="el" href="class_m_a_c_address.html">MACAddress</a> &amp;macAddr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Last hoplimit check, then send datagram on the given interface.  <a href="#a69b2be6aa31f567a504fc693a6a3c35e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a0efd6df6b67596cbf2fd0ed55cbe3b23">initialize</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization.  <a href="#a0efd6df6b67596cbf2fd0ed55cbe3b23"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a4276e6135044f1b9f165ea8011040773">endService</a> (cPacket *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Processing of <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> datagrams.  <a href="#a4276e6135044f1b9f165ea8011040773"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a641e893f2ada9c52fd0d694fa0947503">determineOutputInterface</a> (const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;destAddress, <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;nextHop, int &amp;interfaceId, <a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *datagram)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the correct interface for the specified destination address.  <a href="#a641e893f2ada9c52fd0d694fa0947503"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_interface_table.html">IInterfaceTable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a37ecb4fa0819c900cda91aafccf65984">ift</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_routing_table6.html">RoutingTable6</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv6_neighbour_discovery.html">IPv6NeighbourDiscovery</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#aced880e3fd1e6a51dbe3059e61655c5b">nd</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_c_m_pv6.html">ICMPv6</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a1f8a4682e5fbb085d113f3510d7f1c70">icmp</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#ab75def425a1fd61f881cd7232ca2c2e3">curFragmentId</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv6_tunneling.html">IPv6Tunneling</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a6950edf0aacd8dbc068adf5876c0868e">tunneling</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#abd2af9bf21cf0c352f09db43528234ec">curFragmentId</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv6_frag_buf.html">IPv6FragBuf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a0a166facf83745ebeac2d6afe8c804ac">fragbuf</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">simtime_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a97e5efda0e71a87c0bbe75c1cc35ea7d">lastCheckTime</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_protocol_mapping.html">ProtocolMapping</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#a1aba1acaafd79119c157bf8d9974979f">mapping</a></td></tr>
@@ -133,9 +151,7 @@ Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6.html#adff2dce8ef8518fa3621409103faf416">numForwarded</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_i_pv6.html">IPv6</a> implementation. </p>
-
-<p>Definition at line <a class="el" href="_i_pv6_8h_source.html#l00036">36</a> of file <a class="el" href="_i_pv6_8h_source.html">IPv6.h</a>.</p>
+<div class="textblock"><p><a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> implementation. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="afa4c6d6174f6efe890e6455e80c4373a"></a><!-- doxytag: member="IPv6::IPv6" ref="afa4c6d6174f6efe890e6455e80c4373a" args="()" -->
 <div class="memitem">
@@ -150,8 +166,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_pv6_8h_source.html#l00124">124</a> of file <a class="el" href="_i_pv6_8h_source.html">IPv6.h</a>.</p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
@@ -171,21 +185,21 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Decapsulate and return encapsulated packet after attaching <a class="el" href="class_i_pv6_control_info.html">IPv6ControlInfo</a>. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_8cc_source.html#l00479">479</a> of file <a class="el" href="_i_pv6_8cc_source.html">IPv6.cc</a>.</p>
+<p>Decapsulate and return encapsulated packet after attaching <a class="el" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a>. </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00397">isLocalAddress()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#af5841104d472f7c33a27b5fa53171c40">localDeliver()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// decapsulate transport packet</span>
-    <a class="code" href="class_interface_entry.html">InterfaceEntry</a> *fromIE = <a class="code" href="class_i_pv6.html#a1264485b45281cf51e54aa6db4790072">getSourceInterfaceFrom</a>(datagram);
+    <a class="code" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> *fromIE = <a class="code" href="class_i_pv6.html#a1264485b45281cf51e54aa6db4790072">getSourceInterfaceFrom</a>(datagram);
     cPacket *packet = datagram-&gt;decapsulate();
 
     <span class="comment">// create and fill in control info</span>
-    <a class="code" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *controlInfo = <span class="keyword">new</span> <a class="code" href="class_i_pv6_control_info.html">IPv6ControlInfo</a>();
+    <a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a> *controlInfo = <span class="keyword">new</span> <a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a>();
     controlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a95b27ccb8d018e7387cdbcd512791e30">setProtocol</a>(datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#a59e20ccfddf021658a4e9d2bb4733437">getTransportProtocol</a>());
     controlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a319cf2aaec7229cc010ae83ab6e18604">setSrcAddr</a>(datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#aa9bdf8fb570741abc6a1611e204b7140">getSrcAddress</a>());
     controlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a061a09229c1cb5c450e90fda062d278f">setDestAddr</a>(datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#ae8dcba44d11a32fef197cc663b026f05">getDestAddress</a>());
+    controlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a3cb44648ffd902c65fb61dfe5b6353a3">setTrafficClass</a>(datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#aac39c9c8dee4e38bd77c32d05cda360a">getTrafficClass</a>());
     controlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a182f2489bf1cc08d0af6c2d04dff24e0">setHopLimit</a>(datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#ad177ab2d5a086315b4f1e6ba3b02b75d">getHopLimit</a>());
     controlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#ac800b6ba75f90922ff85c73c30dee1ee">setInterfaceId</a>(fromIE ? fromIE-&gt;<a class="code" href="class_interface_entry.html#adc901fa42c37ce16b5c0785da81106ce">getInterfaceId</a>() : -1);
 
@@ -200,12 +214,92 @@ Protected Attributes</h2></td></tr>
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a77767db740051bc4aa5bd83b0cb078af"></a><!-- doxytag: member="IPv6::encapsulate" ref="a77767db740051bc4aa5bd83b0cb078af" args="(cPacket *transportPacket, InterfaceEntry *&amp;destIE)" -->
+<a class="anchor" id="a641e893f2ada9c52fd0d694fa0947503"></a><!-- doxytag: member="IPv6::determineOutputInterface" ref="a641e893f2ada9c52fd0d694fa0947503" args="(const IPv6Address &amp;destAddress, IPv6Address &amp;nextHop, int &amp;interfaceId, IPv6Datagram *datagram)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> * <a class="el" href="class_i_pv6.html#a77767db740051bc4aa5bd83b0cb078af">IPv6::encapsulate</a> </td>
+          <td class="memname">bool <a class="el" href="class_i_pv6.html#a641e893f2ada9c52fd0d694fa0947503">IPv6::determineOutputInterface</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;&#160;</td>
+          <td class="paramname"><em>destAddress</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;&#160;</td>
+          <td class="paramname"><em>nextHop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>interfaceId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *&#160;</td>
+          <td class="paramname"><em>datagram</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Determines the correct interface for the specified destination address. </p>
+
+<p>Referenced by <a class="el" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3">routePacket()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="comment">// try destination cache</span>
+    <span class="comment">//IPv6Address nextHop = rt-&gt;lookupDestCache(destAddress, interfaceId);</span>
+    nextHop = <a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;<a class="code" href="class_routing_table6.html#abb5be347a43ea6c6fb5ddfd6711e15a3" title="Looks up the given destination address in the Destination Cache, then returns the next-hop address an...">lookupDestCache</a>(destAddress, interfaceId);
+
+    <span class="keywordflow">if</span> (interfaceId == -1)
+    {
+        <span class="comment">// address not in destination cache: do longest prefix match in routing table</span>
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;do longest prefix match in routing table&quot;</span> &lt;&lt; endl;
+        <span class="keyword">const</span> <a class="code" href="class_i_pv6_route.html" title="Represents a route in the route table.">IPv6Route</a> *route = <a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;<a class="code" href="class_routing_table6.html#aa3ba1d17dc59f3e5d77ead359dd3a999" title="Performs longest prefix match in the routing table and returns the resulting route, or NULL if there was no match.">doLongestPrefixMatch</a>(destAddress);
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;finished longest prefix match in routing table&quot;</span> &lt;&lt; endl;
+        <span class="keywordflow">if</span> (!route)
+        {
+            <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;<a class="code" href="class_routing_table6.html#a79a742fa2d94543412e183ebe0e83d3a" title="IP forwarding on/off.">isRouter</a>())
+            {
+                <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;unroutable, sending ICMPv6_DESTINATION_UNREACHABLE\n&quot;</span>;
+                <a class="code" href="class_i_pv6.html#a6bbf6fb4fe90e967f0c2bac636dfceef">numUnroutable</a>++;
+                <a class="code" href="structicmp.html">icmp</a>-&gt;sendErrorMessage(datagram, <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8a41a9a5f4838bc4483b77b0fdcd13f72b">ICMPv6_DESTINATION_UNREACHABLE</a>, 0); <span class="comment">// FIXME check ICMP &#39;code&#39;</span>
+            }
+            <span class="keywordflow">else</span> <span class="comment">// host</span>
+            {
+                <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;no match in routing table, passing datagram to Neighbour Discovery module for default router selection\n&quot;</span>;
+                send(datagram, <span class="stringliteral">&quot;ndOut&quot;</span>);
+            }
+            <span class="keywordflow">return</span> <span class="keyword">false</span>;
+        }
+        interfaceId = route-&gt;<a class="code" href="class_i_pv6_route.html#adbdd6910c92deca3571fa8e5cd27baf8">getInterfaceId</a>();
+        nextHop = route-&gt;<a class="code" href="class_i_pv6_route.html#abdc06722ce1f1af7236ee2c37fcfa132">getNextHop</a>();
+        <span class="keywordflow">if</span> (nextHop.<a class="code" href="class_i_pv6_address.html#af526cffcc3a4aa5bb96d307de6e8d448" title="Check if the IPv6 Address is undefined.">isUnspecified</a>())
+            nextHop = destAddress;  <span class="comment">// next hop is the host itself</span>
+
+        <span class="comment">// add result into destination cache</span>
+        <a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;<a class="code" href="class_routing_table6.html#a1e7fbe36b5dcdfa80e6af5b0c0eea235" title="Add or update a destination cache entry.">updateDestCache</a>(destAddress, nextHop, interfaceId, route-&gt;<a class="code" href="class_i_pv6_route.html#a71218ba7da774a43d6b0ea1ceb54a302">getExpiryTime</a>());
+    }
+
+    <span class="keywordflow">return</span> <span class="keyword">true</span>;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a77a162c6ccb060cd4b690988725c381b"></a><!-- doxytag: member="IPv6::encapsulate" ref="a77a162c6ccb060cd4b690988725c381b" args="(cPacket *transportPacket, IPv6ControlInfo *ctrlInfo)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> * <a class="el" href="class_i_pv6.html#a77a162c6ccb060cd4b690988725c381b">IPv6::encapsulate</a> </td>
           <td>(</td>
           <td class="paramtype">cPacket *&#160;</td>
           <td class="paramname"><em>transportPacket</em>, </td>
@@ -213,8 +307,8 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&amp;&#160;</td>
-          <td class="paramname"><em>destIE</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *&#160;</td>
+          <td class="paramname"><em>ctrlInfo</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -224,42 +318,54 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Encapsulate packet coming from higher layers into <a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_8cc_source.html#l00502">502</a> of file <a class="el" href="_i_pv6_8cc_source.html">IPv6.cc</a>.</p>
+<p>Encapsulate packet coming from higher layers into <a class="el" href="class_i_pv6_datagram.html" title="Represents an IPv6 datagram.">IPv6Datagram</a>. </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00127">handleMessageFromHL()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#a7268e90e7ca92566bd209fdc00c090b6">handleMessageFromHL()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *controlInfo = check_and_cast&lt;<a class="code" href="class_i_pv6_control_info.html">IPv6ControlInfo</a>*&gt;(transportPacket-&gt;removeControlInfo());
-
-    <a class="code" href="class_i_pv6_datagram.html">IPv6Datagram</a> *datagram = <span class="keyword">new</span> <a class="code" href="class_i_pv6_datagram.html">IPv6Datagram</a>(transportPacket-&gt;getName());
-    datagram-&gt;setByteLength(datagram-&gt;calculateHeaderByteLength());
-    datagram-&gt;encapsulate(transportPacket);
-
-    <span class="comment">// IPV6_MULTICAST_IF option, but allow interface selection for unicast packets as well</span>
-    destIE = <a class="code" href="class_i_pv6.html#a37ecb4fa0819c900cda91aafccf65984">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a92764d620c345b7261de20e9ee5247d7">getInterfaceById</a>(controlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a74046fa005d98f0c304eb39eb28a1ec3">getInterfaceId</a>());
+    <a class="code" href="class_i_pv6_datagram.html" title="Represents an IPv6 datagram.">IPv6Datagram</a> *datagram = <span class="keyword">new</span> <a class="code" href="class_i_pv6_datagram.html" title="Represents an IPv6 datagram.">IPv6Datagram</a>(transportPacket-&gt;getName());
 
     <span class="comment">// set source and destination address</span>
-    <a class="code" href="class_i_pv6_address.html">IPv6Address</a> dest = controlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#abd1d2c1cca62a40e351304d8584b4fd7">getDestAddr</a>();
-    datagram-&gt;setDestAddress(dest);
+    <a class="code" href="class_i_pv6_address.html" title="Stores a 128-bit IPv6 address in an efficient way.">IPv6Address</a> dest = controlInfo-&gt;getDestAddr();
+    datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#aacc1a24a15a5a5c8d773faf2c326bb6e">setDestAddress</a>(dest);
 
-    <a class="code" href="class_i_pv6_address.html">IPv6Address</a> src = controlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a8980bdcd6051ae3fe071bf2c18a0215e">getSrcAddr</a>();
+    <a class="code" href="class_i_pv6_address.html" title="Stores a 128-bit IPv6 address in an efficient way.">IPv6Address</a> src = controlInfo-&gt;getSrcAddr();
 
     <span class="comment">// when source address was given, use it; otherwise it&#39;ll get the address</span>
     <span class="comment">// of the outgoing interface after routing</span>
-    <span class="keywordflow">if</span> (!src.<a class="code" href="class_i_pv6_address.html#af526cffcc3a4aa5bb96d307de6e8d448">isUnspecified</a>())
+    <span class="keywordflow">if</span> (!src.<a class="code" href="class_i_pv6_address.html#af526cffcc3a4aa5bb96d307de6e8d448" title="Check if the IPv6 Address is undefined.">isUnspecified</a>())
     {
         <span class="comment">// if interface parameter does not match existing interface, do not send datagram</span>
-        <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;<a class="code" href="class_routing_table6.html#a24cede6c1b7ed7a17fad2525a4702851">getInterfaceByAddress</a>(src)==NULL)
-            opp_error(<span class="stringliteral">&quot;Wrong source address %s in (%s)%s: no interface with such address&quot;</span>,
-                      src.<a class="code" href="class_i_pv6_address.html#a7c42fb066db81588a439aed1de5e4b3a">str</a>().c_str(), transportPacket-&gt;getClassName(), transportPacket-&gt;getFullName());
-        datagram-&gt;setSrcAddress(src);
+        <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;<a class="code" href="class_routing_table6.html#a24cede6c1b7ed7a17fad2525a4702851" title="Returns an interface given by its address.">getInterfaceByAddress</a>(src)==<a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)
+        {
+            <span class="keyword">delete</span> datagram;
+            <span class="keyword">delete</span> controlInfo;
+<span class="preprocessor">#ifndef WITH_xMIPv6</span>
+<span class="preprocessor"></span>            <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Wrong source address %s in (%s)%s: no interface with such address&quot;</span>,
+                      src.<a class="code" href="class_i_pv6_address.html#a7c42fb066db81588a439aed1de5e4b3a" title="Returns the textual representation of the address in the standard notation.">str</a>().c_str(), transportPacket-&gt;getClassName(), transportPacket-&gt;getFullName());
+<span class="preprocessor">#else </span><span class="comment">/* WITH_xMIPv6 */</span>
+            <span class="keywordflow">return</span> <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+<span class="preprocessor">#endif </span><span class="comment">/* WITH_xMIPv6 */</span>
+
+        }
+        datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#a4ba15a5fcee0c8ae0d6e4d5c9ae176e4">setSrcAddress</a>(src);
     }
 
     <span class="comment">// set other fields</span>
-    datagram-&gt;setHopLimit(controlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a2eea197980c0c35518b3285ab9c123da">getHopLimit</a>()&gt;0 ? controlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a2eea197980c0c35518b3285ab9c123da">getHopLimit</a>() : 32); <span class="comment">//FIXME use iface hop limit instead of 32?</span>
-    datagram-&gt;setTransportProtocol(controlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a6ddd9db30da22159c80f34a5512f9833">getProtocol</a>());
-    <span class="keyword">delete</span> controlInfo;
+    datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#af7bf89f90cb2b5e6b9993df39809e55f">setTrafficClass</a>(controlInfo-&gt;getTrafficClass());
+    datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#a649a2b82391f7b314fbd2b19daa0aef1">setHopLimit</a>(controlInfo-&gt;getHopLimit()&gt;0 ? controlInfo-&gt;getHopLimit() : 32); <span class="comment">//FIXME use iface hop limit instead of 32?</span>
+    datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#aef7bd687abb6879341fc66c2213dc751">setTransportProtocol</a>(controlInfo-&gt;getProtocol());
+
+    <span class="comment">// #### Move extension headers from ctrlInfo to datagram if present</span>
+    <span class="keywordflow">while</span> (0 &lt; controlInfo-&gt;getExtensionHeaderArraySize())
+    {
+        <a class="code" href="class_i_pv6_extension_header.html" title="Class generated from networklayer/ipv6/IPv6Datagram.msg by opp_msgc.">IPv6ExtensionHeader</a>* extHeader = controlInfo-&gt;removeFirstExtensionHeader();
+        datagram-&gt;<a class="code" href="class_i_pv6_datagram.html#a35eed0fdc3508385464c044ba4cf08c7" title="Adds an extension header to the datagram.">addExtensionHeader</a>(extHeader);
+        <span class="comment">// EV &lt;&lt; &quot;Move extension header to datagram.&quot; &lt;&lt; endl;</span>
+    }
+
+    datagram-&gt;setByteLength(datagram-&gt;<a class="code" href="class_i_pv6_datagram.html#a7c12eea2642c4f2530778573b7e5068f" title="Calculates the length of the IPv6 header plus the extension headers.">calculateHeaderByteLength</a>());
+    datagram-&gt;encapsulate(transportPacket);
 
     <span class="comment">// setting IP options is currently not supported</span>
 
@@ -273,7 +379,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_pv6.html#a4276e6135044f1b9f165ea8011040773">IPv6::endService</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6.html#a4276e6135044f1b9f165ea8011040773">IPv6::endService</a> </td>
           <td>(</td>
           <td class="paramtype">cPacket *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -282,24 +388,54 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Processing of <a class="el" href="class_i_pv6.html">IPv6</a> datagrams. Called when a datagram reaches the front of the queue. </p>
+
+<p>Processing of <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> datagrams. </p>
+<p>Called when a datagram reaches the front of the queue. </p>
 
 <p>Implements <a class="el" href="class_abstract_queue.html#ace92c02848b73e048465be50c82aeb01">AbstractQueue</a>.</p>
-
-<p>Definition at line <a class="el" href="_i_pv6_8cc_source.html#l00072">72</a> of file <a class="el" href="_i_pv6_8cc_source.html">IPv6.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (msg-&gt;getArrivalGate()-&gt;isName(<span class="stringliteral">&quot;transportIn&quot;</span>) ||
-       (msg-&gt;getArrivalGate()-&gt;isName(<span class="stringliteral">&quot;ndIn&quot;</span>) &amp;&amp; <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_i_pv6_n_d_message.html">IPv6NDMessage</a>*<span class="keyword">&gt;</span>(msg)) ||
-       (msg-&gt;getArrivalGate()-&gt;isName(<span class="stringliteral">&quot;icmpIn&quot;</span>) &amp;&amp; <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_i_c_m_pv6_message.html">ICMPv6Message</a>*<span class="keyword">&gt;</span>(msg)))<span class="comment">//Added this for ICMP msgs from ICMP module-WEI</span>
+<span class="preprocessor">#ifdef WITH_xMIPv6</span>
+<span class="preprocessor"></span>    <span class="comment">// 28.09.07 - CB</span>
+    <span class="comment">// support for rescheduling datagrams which are supposed to be sent over</span>
+    <span class="comment">// a tentative address.</span>
+    <span class="keywordflow">if</span> (msg-&gt;isSelfMessage())
     {
-        <span class="comment">// packet from upper layers or ND: encapsulate and send out</span>
-        <a class="code" href="class_i_pv6.html#a7268e90e7ca92566bd209fdc00c090b6">handleMessageFromHL</a>( msg );
+        ScheduledDatagram* sDgram = check_and_cast&lt;ScheduledDatagram*&gt;(msg);
+
+        <span class="comment">// take care of datagram which was supposed to be sent over a tentative address</span>
+        <span class="keywordflow">if</span> (sDgram-&gt;ie-&gt;ipv6Data()-&gt;isTentativeAddress(sDgram-&gt;datagram-&gt;getSrcAddress()))
+        {
+            <span class="comment">// address is still tentative - enqueue again</span>
+            <a class="code" href="class_abstract_queue.html#aec57a7fb0af43102a17433e2b7ddd339" title="The queue.">queue</a>.insert(sDgram);
+        }
+        <span class="keywordflow">else</span>
+        {
+            <span class="comment">// address is not tentative anymore - send out datagram</span>
+            <a class="code" href="class_i_pv6.html#adff2dce8ef8518fa3621409103faf416">numForwarded</a>++;
+            <a class="code" href="class_i_pv6.html#ae2d98f5214c7b23b38c33f7c613ee0a6" title="Performs fragmentation if needed, and sends the original datagram or the fragments through the specif...">fragmentAndSend</a>(sDgram-&gt;datagram, sDgram-&gt;ie, sDgram-&gt;macAddr, sDgram-&gt;fromHL);
+            <span class="keyword">delete</span> sDgram;
+        }
+    }
+    <span class="keywordflow">else</span>
+<span class="preprocessor">#endif </span><span class="comment">/* WITH_xMIPv6 */</span>
+
+    <span class="keywordflow">if</span> (msg-&gt;getArrivalGate()-&gt;isName(<span class="stringliteral">&quot;transportIn&quot;</span>)
+            || (msg-&gt;getArrivalGate()-&gt;isName(<span class="stringliteral">&quot;ndIn&quot;</span>) &amp;&amp; <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_i_pv6_n_d_message.html" title="Class generated from networklayer/icmpv6/IPv6NDMessage.msg by opp_msgc.">IPv6NDMessage</a>*<span class="keyword">&gt;</span>(msg))
+            || (msg-&gt;getArrivalGate()-&gt;isName(<span class="stringliteral">&quot;icmpIn&quot;</span>) &amp;&amp; <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_i_c_m_pv6_message.html" title="Class generated from networklayer/icmpv6/ICMPv6Message.msg by opp_msgc.">ICMPv6Message</a>*<span class="keyword">&gt;</span>(msg)) <span class="comment">//Added this for ICMP msgs from ICMP module-WEI</span>
+            || (msg-&gt;getArrivalGate()-&gt;isName(<span class="stringliteral">&quot;upperTunnelingIn&quot;</span>)) <span class="comment">// for tunneling support-CB</span>
+#ifdef WITH_xMIPv6
+            || (msg-&gt;getArrivalGate()-&gt;isName(<span class="stringliteral">&quot;xMIPv6In&quot;</span>) &amp;&amp; <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_mobility_header.html" title="Class generated from networklayer/xmipv6/MobilityHeader.msg by opp_msgc.">MobilityHeader</a>*<span class="keyword">&gt;</span>(msg)) <span class="comment">// Zarrar</span>
+<span class="preprocessor">#endif </span><span class="comment">/* WITH_xMIPv6 */</span>
+       )
+    {
+        <span class="comment">// packet from upper layers, tunnel link-layer output or ND: encapsulate and send out</span>
+        <a class="code" href="class_i_pv6.html#a7268e90e7ca92566bd209fdc00c090b6" title="Handle messages (typically packets to be send in IPv6) from transport or ICMP.">handleMessageFromHL</a>( msg );
     }
     <span class="keywordflow">else</span>
     {
         <span class="comment">// datagram from network or from ND: localDeliver and/or route</span>
-        <a class="code" href="class_i_pv6_datagram.html">IPv6Datagram</a> *dgram = check_and_cast&lt;<a class="code" href="class_i_pv6_datagram.html">IPv6Datagram</a> *&gt;(msg);
-        <a class="code" href="class_i_pv6.html#ad512d80b98cc6a39cef47df5e679992c">handleDatagramFromNetwork</a>(dgram);
+        <a class="code" href="class_i_pv6_datagram.html" title="Represents an IPv6 datagram.">IPv6Datagram</a> *dgram = check_and_cast&lt;<a class="code" href="class_i_pv6_datagram.html" title="Represents an IPv6 datagram.">IPv6Datagram</a> *&gt;(msg);
+        <a class="code" href="class_i_pv6.html#ad512d80b98cc6a39cef47df5e679992c" title="Handle IPv6Datagram messages arriving from lower layer.">handleDatagramFromNetwork</a>(dgram);
     }
 
     <span class="keywordflow">if</span> (ev.isGUI())
@@ -308,12 +444,12 @@ Protected Attributes</h2></td></tr>
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a6bc7266ec57dc06de697562a5dcb9393"></a><!-- doxytag: member="IPv6::fragmentAndRoute" ref="a6bc7266ec57dc06de697562a5dcb9393" args="(IPv6Datagram *datagram, InterfaceEntry *destIE=NULL)" -->
+<a class="anchor" id="ae2d98f5214c7b23b38c33f7c613ee0a6"></a><!-- doxytag: member="IPv6::fragmentAndSend" ref="ae2d98f5214c7b23b38c33f7c613ee0a6" args="(IPv6Datagram *datagram, InterfaceEntry *ie, const MACAddress &amp;nextHopAddr, bool fromHL)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_pv6.html#a6bc7266ec57dc06de697562a5dcb9393">IPv6::fragmentAndRoute</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6.html#ae2d98f5214c7b23b38c33f7c613ee0a6">IPv6::fragmentAndSend</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *&#160;</td>
           <td class="paramname"><em>datagram</em>, </td>
@@ -322,7 +458,19 @@ Protected Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td>
-          <td class="paramname"><em>destIE</em> = <code>NULL</code>&#160;</td>
+          <td class="paramname"><em>ie</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_m_a_c_address.html">MACAddress</a> &amp;&#160;</td>
+          <td class="paramname"><em>nextHopAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fromHL</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -332,28 +480,96 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Fragment packet if needed, then send it. The optional output gate index is only used if higher layer protocol explicitly requests the datagram to be sent out on a specific interface, bypassing the routing table. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_8cc_source.html#l00145">145</a> of file <a class="el" href="_i_pv6_8cc_source.html">IPv6.cc</a>.</p>
+<p>Performs fragmentation if needed, and sends the original datagram or the fragments through the specified interface. </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00127">handleMessageFromHL()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#a4276e6135044f1b9f165ea8011040773">endService()</a>, <a class="el" href="class_i_pv6.html#a7268e90e7ca92566bd209fdc00c090b6">handleMessageFromHL()</a>, <a class="el" href="class_i_pv6.html#a61eb7d75c2414e64fbcf82c69f9db7bf">routeMulticastPacket()</a>, and <a class="el" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3">routePacket()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-<span class="comment">/*</span>
-<span class="comment">FIXME implement fragmentation here.</span>
-<span class="comment">   1. determine output interface</span>
-<span class="comment">   2. compare packet size with interface MTU</span>
-<span class="comment">   3. if bigger, do fragmentation</span>
-<span class="comment">         int mtu = ift-&gt;interfaceByPortNo(outputGateIndex)-&gt;getMTU();</span>
-<span class="comment">*/</span>
-    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;fragmentation not implemented yet\n&quot;</span>;
+    <span class="comment">// hop counter check</span>
+    <span class="keywordflow">if</span> (datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#ad177ab2d5a086315b4f1e6ba3b02b75d">getHopLimit</a>() &lt;= 0)
+    {
+        <span class="comment">// drop datagram, destruction responsibility in ICMP</span>
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;datagram hopLimit reached zero, sending ICMPv6_TIME_EXCEEDED\n&quot;</span>;
+        <a class="code" href="structicmp.html">icmp</a>-&gt;sendErrorMessage(datagram, <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8aad2a907b4913018dba811497389c011d">ICMPv6_TIME_EXCEEDED</a>, 0); <span class="comment">// FIXME check icmp &#39;code&#39;</span>
+        <span class="keywordflow">return</span>;
+    }
 
-    <span class="comment">// route packet</span>
-    <span class="keywordflow">if</span> (destIE!=NULL)
-        <a class="code" href="class_i_pv6.html#a69b2be6aa31f567a504fc693a6a3c35e">sendDatagramToOutput</a>(datagram, destIE, <a class="code" href="class_m_a_c_address.html#a64288e3935e32fec17884c040cf2d2e9">MACAddress::BROADCAST_ADDRESS</a>); <span class="comment">// FIXME what MAC address to use?</span>
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#ae8dcba44d11a32fef197cc663b026f05">getDestAddress</a>().<a class="code" href="class_i_pv6_address.html#a3c3bb6898821e044b12cf31911c90201">isMulticast</a>())
-        <a class="code" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3">routePacket</a>(datagram, destIE, <span class="keyword">true</span>);
-    <span class="keywordflow">else</span>
-        <a class="code" href="class_i_pv6.html#a41b8debbd2e25288671df769adb5d332">routeMulticastPacket</a>(datagram, destIE, NULL);
+        <span class="comment">// ensure source address is filled</span>
+        <span class="keywordflow">if</span> (fromHL &amp;&amp; datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#aa9bdf8fb570741abc6a1611e204b7140">getSrcAddress</a>().<a class="code" href="class_i_pv6_address.html#af526cffcc3a4aa5bb96d307de6e8d448" title="Check if the IPv6 Address is undefined.">isUnspecified</a>() &amp;&amp;
+                        !datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#ae8dcba44d11a32fef197cc663b026f05">getDestAddress</a>().<a class="code" href="class_i_pv6_address.html#a8869e49b83d1b9752e85d2de7090689b">isSolicitedNodeMulticastAddress</a>())
+        {
+                <span class="comment">// source address can be unspecified during DAD</span>
+                <span class="keyword">const</span> <a class="code" href="class_i_pv6_address.html" title="Stores a 128-bit IPv6 address in an efficient way.">IPv6Address</a>&amp; srcAddr = ie-&gt;<a class="code" href="class_interface_entry.html#a19083391271368e371346eb41ccc6c93">ipv6Data</a>()-&gt;<a class="code" href="class_i_pv6_interface_data.html#a56f3fe4007e3df66dc88edd008f059b9" title="Chooses a preferred address for the interface and returns it.">getPreferredAddress</a>();
+                ASSERT(!srcAddr.<a class="code" href="class_i_pv6_address.html#af526cffcc3a4aa5bb96d307de6e8d448" title="Check if the IPv6 Address is undefined.">isUnspecified</a>()); <span class="comment">// FIXME what if we don&#39;t have an address yet?</span>
+                datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#a4ba15a5fcee0c8ae0d6e4d5c9ae176e4">setSrcAddress</a>(srcAddr);
+<span class="preprocessor">        #ifdef WITH_xMIPv6</span>
+<span class="preprocessor"></span>                <span class="comment">// if the datagram has a tentative address as source we have to reschedule it</span>
+                <span class="comment">// as it can not be sent before the address&#39; tentative status is cleared - CB</span>
+                <span class="keywordflow">if</span> (ie-&gt;<a class="code" href="class_interface_entry.html#a19083391271368e371346eb41ccc6c93">ipv6Data</a>()-&gt;<a class="code" href="class_i_pv6_interface_data.html#a90fa17dc7efaa7170176e853cf32dfed" title="Returns true if the ith address of the interface is tentative.">isTentativeAddress</a>(srcAddr))
+                {
+                        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Source address is tentative - enqueueing datagram for later resubmission.&quot;</span> &lt;&lt; endl;
+                        ScheduledDatagram* sDgram = <span class="keyword">new</span> ScheduledDatagram();
+                        sDgram-&gt;datagram = datagram;
+                        sDgram-&gt;ie = ie;
+                        sDgram-&gt;<a class="code" href="class_interface_entry.html#a1b147c7d4618223d25a2965eb56bbc7e" title="link-layer address (for now, only IEEE 802 MAC addresses are supported)">macAddr</a> = nextHopAddr;
+                        sDgram-&gt;fromHL = fromHL;
+                        <a class="code" href="class_abstract_queue.html#aec57a7fb0af43102a17433e2b7ddd339" title="The queue.">queue</a>.insert(sDgram);
+                        <span class="keywordflow">return</span>;
+                }
+<span class="preprocessor">        #endif </span><span class="comment">/* WITH_xMIPv6 */</span>
+        }
+
+    <span class="keywordtype">int</span> mtu = ie-&gt;<a class="code" href="class_interface_entry.html#adbe3ede6fb4652fbfc4abbe2c924cc3b">getMTU</a>();
+
+    <span class="comment">// check if datagram does not require fragmentation</span>
+    <span class="keywordflow">if</span> (datagram-&gt;getByteLength() &lt;= mtu)
+    {
+        <a class="code" href="class_i_pv6.html#a69b2be6aa31f567a504fc693a6a3c35e" title="Last hoplimit check, then send datagram on the given interface.">sendDatagramToOutput</a>(datagram, ie, nextHopAddr);
+        <span class="keywordflow">return</span>;
+    }
+
+    <span class="comment">// routed datagrams are not fragmented</span>
+    <span class="keywordflow">if</span> (!fromHL)
+    {
+        <span class="comment">// FIXME check for multicast datagrams, how many ICMP error should be sent</span>
+        <a class="code" href="structicmp.html">icmp</a>-&gt;sendErrorMessage(datagram, <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8a9fd6c04d078837b701add65951544230">ICMPv6_PACKET_TOO_BIG</a>, 0); <span class="comment">// TODO set MTU</span>
+        <span class="keywordflow">return</span>;
+    }
+
+    <span class="comment">// create and send fragments</span>
+    <span class="keywordtype">int</span> headerLength = datagram-&gt;<a class="code" href="class_i_pv6_datagram.html#aef1757a3cc2ef5de253e8a15c9f1c774" title="Calculates the length of the unfragmentable part of IPv6 header plus the extension headers...">calculateUnfragmentableHeaderByteLength</a>();
+    <span class="keywordtype">int</span> payloadLength = datagram-&gt;getByteLength() - headerLength;
+    <span class="keywordtype">int</span> fragmentLength = ((mtu - headerLength - <a class="code" href="_i_pv6_extension_headers__m_8h.html#ad7a988e8fd4d327bd160cb83cea5b78a">IPv6_FRAGMENT_HEADER_LENGTH</a>) / 8) * 8;
+    ASSERT(fragmentLength &gt; 0);
+
+    <span class="keywordtype">int</span> noOfFragments = (payloadLength + fragmentLength - 1)/ fragmentLength;
+    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Breaking datagram into &quot;</span> &lt;&lt; noOfFragments &lt;&lt; <span class="stringliteral">&quot; fragments\n&quot;</span>;
+    std::string fragMsgName = datagram-&gt;getName();
+    fragMsgName += <span class="stringliteral">&quot;-frag&quot;</span>;
+
+    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> identification = <a class="code" href="class_i_pv6.html#abd2af9bf21cf0c352f09db43528234ec">curFragmentId</a>++;
+    cPacket *encapsulatedPacket = datagram-&gt;decapsulate();
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> offset=0; offset&lt;payloadLength; offset+=fragmentLength)
+    {
+        <span class="keywordtype">bool</span> lastFragment = (offset+fragmentLength &gt;= payloadLength);
+        <span class="keywordtype">int</span> thisFragmentLength = lastFragment ? payloadLength - offset : fragmentLength;
+
+        <a class="code" href="class_i_pv6_fragment_header.html" title="Class generated from networklayer/ipv6/IPv6ExtensionHeaders.msg by opp_msgc.">IPv6FragmentHeader</a> *fh = <span class="keyword">new</span> <a class="code" href="class_i_pv6_fragment_header.html" title="Class generated from networklayer/ipv6/IPv6ExtensionHeaders.msg by opp_msgc.">IPv6FragmentHeader</a>();
+        fh-&gt;<a class="code" href="class_i_pv6_fragment_header.html#a896d4fe28643ec14cd3e958de5ee166c">setIdentification</a>(identification);
+        fh-&gt;<a class="code" href="class_i_pv6_fragment_header.html#a973a5dc64ad58c3b2d4614ac3e861e93">setFragmentOffset</a>(offset);
+        fh-&gt;<a class="code" href="class_i_pv6_fragment_header.html#a4f9ffb919a1f9b03f126fb4e9e5c48eb">setMoreFragments</a>(!lastFragment);
+
+        <a class="code" href="class_i_pv6_datagram.html" title="Represents an IPv6 datagram.">IPv6Datagram</a> *fragment = datagram-&gt;<a class="code" href="class_i_pv6_datagram.html#a75ed977234f31b060443effdf0328d6f">dup</a>();
+        <span class="keywordflow">if</span> (offset == 0)
+            fragment-&gt;encapsulate(encapsulatedPacket);
+        fragment-&gt;setName(fragMsgName.c_str());
+        fragment-&gt;<a class="code" href="class_i_pv6_datagram.html#a35eed0fdc3508385464c044ba4cf08c7" title="Adds an extension header to the datagram.">addExtensionHeader</a>(fh);
+        fragment-&gt;setByteLength(headerLength + fh-&gt;<a class="code" href="class_i_pv6_extension_header.html#ac4bf93e401c1a1de25b87cd927411902">getByteLength</a>() + thisFragmentLength);
+
+        <a class="code" href="class_i_pv6.html#a69b2be6aa31f567a504fc693a6a3c35e" title="Last hoplimit check, then send datagram on the given interface.">sendDatagramToOutput</a>(fragment, ie, nextHopAddr);
+    }
+
+    <span class="keyword">delete</span> datagram;
 }
 </pre></div>
 </div>
@@ -373,12 +589,10 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_8cc_source.html#l00092">92</a> of file <a class="el" href="_i_pv6_8cc_source.html">IPv6.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00479">decapsulate()</a>, and <a class="el" href="_i_pv6_8cc_source.html#l00098">handleDatagramFromNetwork()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#af2e604305a9ff165129097c1cad62cb2">decapsulate()</a>, and <a class="el" href="class_i_pv6.html#ad512d80b98cc6a39cef47df5e679992c">handleDatagramFromNetwork()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     cGate *g = msg-&gt;getArrivalGate();
-    <span class="keywordflow">return</span> g ? <a class="code" href="class_i_pv6.html#a37ecb4fa0819c900cda91aafccf65984">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a8d10b748bc5429c706fab120c719e335">getInterfaceByNetworkLayerGateIndex</a>(g-&gt;getIndex()) : NULL;
+    <span class="keywordflow">return</span> g ? <a class="code" href="class_i_pv6.html#a37ecb4fa0819c900cda91aafccf65984">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a8d10b748bc5429c706fab120c719e335" title="Returns an interface given by its getNetworkLayerGateIndex().">getInterfaceByNetworkLayerGateIndex</a>(g-&gt;getIndex()) : <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
 }
 </pre></div>
 </div>
@@ -388,7 +602,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_pv6.html#ad512d80b98cc6a39cef47df5e679992c">IPv6::handleDatagramFromNetwork</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6.html#ad512d80b98cc6a39cef47df5e679992c">IPv6::handleDatagramFromNetwork</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *&#160;</td>
           <td class="paramname"><em>datagram</em></td><td>)</td>
@@ -397,37 +611,26 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Handle <a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> messages arriving from lower layer. Decrements TTL, then invokes <a class="el" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3">routePacket()</a>. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_8cc_source.html#l00098">98</a> of file <a class="el" href="_i_pv6_8cc_source.html">IPv6.cc</a>.</p>
+<p>Handle <a class="el" href="class_i_pv6_datagram.html" title="Represents an IPv6 datagram.">IPv6Datagram</a> messages arriving from lower layer. </p>
+<p>Decrements TTL, then invokes <a class="el" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3" title="Performs routing.">routePacket()</a>. </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00072">endService()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#a4276e6135044f1b9f165ea8011040773">endService()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="comment">// check for header biterror</span>
-    <span class="keywordflow">if</span> (datagram-&gt;hasBitError())
-    {
-        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;bit error\n&quot;</span>;<span class="keywordflow">return</span>; <span class="comment">// revise!</span>
-<span class="comment">/*FIXME revise</span>
-<span class="comment">        // probability of bit error in header = size of header / size of total message</span>
-<span class="comment">        // (ignore bit error if in payload)</span>
-<span class="comment">        double relativeHeaderLength = datagram-&gt;getHeaderLength() / (double)datagram-&gt;getByteLength();</span>
-<span class="comment">        if (dblrand() &lt;= relativeHeaderLength)</span>
-<span class="comment">        {</span>
-<span class="comment">            EV &lt;&lt; &quot;bit error found, sending ICMP_PARAMETER_PROBLEM\n&quot;;</span>
-<span class="comment">            icmp-&gt;sendErrorMessage(datagram, ICMP_PARAMETER_PROBLEM, 0);</span>
-<span class="comment">            return;</span>
-<span class="comment">        }</span>
-<span class="comment">*/</span>
-    }
+    <span class="comment">// Do not handle header biterrors, because</span>
+    <span class="comment">// 1. IPv6 header does not contain checksum for the header fields, each field is</span>
+    <span class="comment">//    validated when they are processed.</span>
+    <span class="comment">// 2. The Ethernet or PPP frame is dropped by the link-layer if there is a transmission error.</span>
+    ASSERT(!datagram-&gt;hasBitError());
 
     <span class="comment">// remove control info</span>
     <span class="keyword">delete</span> datagram-&gt;removeControlInfo();
 
     <span class="comment">// routepacket</span>
-    <span class="keywordflow">if</span> (!datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#ae8dcba44d11a32fef197cc663b026f05">getDestAddress</a>().<a class="code" href="class_i_pv6_address.html#a3c3bb6898821e044b12cf31911c90201">isMulticast</a>())
-        <a class="code" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3">routePacket</a>(datagram, NULL, <span class="keyword">false</span>);
+    <span class="keywordflow">if</span> (!datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#ae8dcba44d11a32fef197cc663b026f05">getDestAddress</a>().<a class="code" href="class_i_pv6_address.html#a3c3bb6898821e044b12cf31911c90201" title="Utility function based on getScope()">isMulticast</a>())
+        <a class="code" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3" title="Performs routing.">routePacket</a>(datagram, <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, <span class="keyword">false</span>);
     <span class="keywordflow">else</span>
-        <a class="code" href="class_i_pv6.html#a41b8debbd2e25288671df769adb5d332">routeMulticastPacket</a>(datagram, NULL, <a class="code" href="class_i_pv6.html#a1264485b45281cf51e54aa6db4790072">getSourceInterfaceFrom</a>(datagram));
+        <a class="code" href="class_i_pv6.html#a61eb7d75c2414e64fbcf82c69f9db7bf" title="Forwards packets to all multicast destinations, using fragmentAndSend().">routeMulticastPacket</a>(datagram, <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, <a class="code" href="class_i_pv6.html#a1264485b45281cf51e54aa6db4790072">getSourceInterfaceFrom</a>(datagram), <span class="keyword">false</span>);
 }
 </pre></div>
 </div>
@@ -437,7 +640,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_pv6.html#a7268e90e7ca92566bd209fdc00c090b6">IPv6::handleMessageFromHL</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6.html#a7268e90e7ca92566bd209fdc00c090b6">IPv6::handleMessageFromHL</a> </td>
           <td>(</td>
           <td class="paramtype">cPacket *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -446,26 +649,43 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Handle messages (typically packets to be send in <a class="el" href="class_i_pv6.html">IPv6</a>) from transport or <a class="el" href="class_i_c_m_p.html">ICMP</a>. Invokes <a class="el" href="class_i_pv6.html#a77767db740051bc4aa5bd83b0cb078af">encapsulate()</a>, then <a class="el" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3">routePacket()</a>. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_8cc_source.html#l00127">127</a> of file <a class="el" href="_i_pv6_8cc_source.html">IPv6.cc</a>.</p>
+<p>Handle messages (typically packets to be send in <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a>) from transport or <a class="el" href="class_i_c_m_p.html" title="ICMP module.">ICMP</a>. </p>
+<p>Invokes <a class="el" href="class_i_pv6.html#a77a162c6ccb060cd4b690988725c381b" title="Encapsulate packet coming from higher layers into IPv6Datagram.">encapsulate()</a>, then <a class="el" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3" title="Performs routing.">routePacket()</a>. </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00072">endService()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#a4276e6135044f1b9f165ea8011040773">endService()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// if no interface exists, do not send datagram</span>
-    <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6.html#a37ecb4fa0819c900cda91aafccf65984">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a2b0ce46cd92da6f64fc363410dc71904">getNumInterfaces</a>() == 0)
+    <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6.html#a37ecb4fa0819c900cda91aafccf65984">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a2b0ce46cd92da6f64fc363410dc71904" title="Returns the number of interfaces.">getNumInterfaces</a>() == 0)
     {
         <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;No interfaces exist, dropping packet\n&quot;</span>;
         <span class="keyword">delete</span> msg;
         <span class="keywordflow">return</span>;
     }
 
+    <a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a> *controlInfo = check_and_cast&lt;<a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a>*&gt;(msg-&gt;removeControlInfo());
     <span class="comment">// encapsulate upper-layer packet into IPv6Datagram</span>
-    <a class="code" href="class_interface_entry.html">InterfaceEntry</a> *destIE; <span class="comment">// to be filled in by encapsulate()</span>
-    <a class="code" href="class_i_pv6_datagram.html">IPv6Datagram</a> *datagram = <a class="code" href="class_i_pv6.html#a77767db740051bc4aa5bd83b0cb078af">encapsulate</a>(msg, destIE);
+    <span class="comment">// IPV6_MULTICAST_IF option, but allow interface selection for unicast packets as well</span>
+    <a class="code" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> *destIE = <a class="code" href="class_i_pv6.html#a37ecb4fa0819c900cda91aafccf65984">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a92764d620c345b7261de20e9ee5247d7" title="Returns an interface by its Id.">getInterfaceById</a>(controlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a74046fa005d98f0c304eb39eb28a1ec3">getInterfaceId</a>());
+    <a class="code" href="class_i_pv6_datagram.html" title="Represents an IPv6 datagram.">IPv6Datagram</a> *datagram = <a class="code" href="class_i_pv6.html#a77a162c6ccb060cd4b690988725c381b" title="Encapsulate packet coming from higher layers into IPv6Datagram.">encapsulate</a>(msg, controlInfo);
+    <span class="keyword">delete</span> controlInfo;
 
-    <span class="comment">// possibly fragment (in IPv6, only the source node does that), then route it</span>
-    <a class="code" href="class_i_pv6.html#a6bc7266ec57dc06de697562a5dcb9393">fragmentAndRoute</a>(datagram, destIE);
+<span class="preprocessor">#ifdef WITH_xMIPv6</span>
+<span class="preprocessor"></span>    <span class="keywordflow">if</span> (datagram == <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)
+    {
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Encapsulation failed - dropping packet.&quot;</span> &lt;&lt; endl;
+        <span class="keyword">delete</span> msg;
+        <span class="keywordflow">return</span>;
+    }
+<span class="preprocessor">#endif </span><span class="comment">/* WITH_xMIPv6 */</span>
+
+    <span class="comment">// route packet</span>
+    <span class="keywordflow">if</span> (destIE != <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)
+        <a class="code" href="class_i_pv6.html#ae2d98f5214c7b23b38c33f7c613ee0a6" title="Performs fragmentation if needed, and sends the original datagram or the fragments through the specif...">fragmentAndSend</a>(datagram, destIE, <a class="code" href="class_m_a_c_address.html#a64288e3935e32fec17884c040cf2d2e9" title="The broadcast MAC address, ff:ff:ff:ff:ff:ff.">MACAddress::BROADCAST_ADDRESS</a>, <span class="keyword">true</span>); <span class="comment">// FIXME what MAC address to use?</span>
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#ae8dcba44d11a32fef197cc663b026f05">getDestAddress</a>().<a class="code" href="class_i_pv6_address.html#a3c3bb6898821e044b12cf31911c90201" title="Utility function based on getScope()">isMulticast</a>())
+        <a class="code" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3" title="Performs routing.">routePacket</a>(datagram, destIE, <span class="keyword">true</span>);
+    <span class="keywordflow">else</span>
+        <a class="code" href="class_i_pv6.html#a61eb7d75c2414e64fbcf82c69f9db7bf" title="Forwards packets to all multicast destinations, using fragmentAndSend().">routeMulticastPacket</a>(datagram, destIE, <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, <span class="keyword">true</span>);
 }
 </pre></div>
 </div>
@@ -475,7 +695,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_pv6.html#a8cc520cdb18b01334b04f2cd1268e370">IPv6::handleReceivedICMP</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6.html#a8cc520cdb18b01334b04f2cd1268e370">IPv6::handleReceivedICMP</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -484,33 +704,30 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Handle incoming <a class="el" href="class_i_c_m_p.html">ICMP</a> messages. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_8cc_source.html#l00451">451</a> of file <a class="el" href="_i_pv6_8cc_source.html">IPv6.cc</a>.</p>
+<p>Handle incoming <a class="el" href="class_i_c_m_p.html" title="ICMP module.">ICMP</a> messages. </p>
+
+<p>Referenced by <a class="el" href="class_i_pv6.html#af5841104d472f7c33a27b5fa53171c40">localDeliver()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">switch</span> (msg-&gt;<a class="code" href="class_i_c_m_pv6_message.html#a92fc7e6a2fd2f99b271a9029f1ec490a">getType</a>())
-    {
-        <span class="keywordflow">case</span> <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8ac60a8328fb5c35a24712bcb9476f0203">ICMPv6_REDIRECT</a>:  <span class="comment">// TODO implement redirect handling</span>
-        <span class="keywordflow">case</span> <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8a41a9a5f4838bc4483b77b0fdcd13f72b">ICMPv6_DESTINATION_UNREACHABLE</a>:
-        <span class="keywordflow">case</span> <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8a9fd6c04d078837b701add65951544230">ICMPv6_PACKET_TOO_BIG</a>:
-        <span class="keywordflow">case</span> <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8aad2a907b4913018dba811497389c011d">ICMPv6_TIME_EXCEEDED</a>:
-        <span class="keywordflow">case</span> <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8a4f3281972041ca8e0c57bc4378b174a0">ICMPv6_PARAMETER_PROBLEM</a>: {
-            <span class="comment">// ICMP errors are delivered to the appropriate higher layer protocols</span>
-            <a class="code" href="class_i_pv6_datagram.html">IPv6Datagram</a> *bogusPacket = check_and_cast&lt;<a class="code" href="class_i_pv6_datagram.html">IPv6Datagram</a> *&gt;(msg-&gt;getEncapsulatedPacket());
-            <span class="keywordtype">int</span> protocol = bogusPacket-&gt;<a class="code" href="class_i_pv6_datagram___base.html#a59e20ccfddf021658a4e9d2bb4733437">getTransportProtocol</a>();
-            <span class="keywordtype">int</span> gateindex = <a class="code" href="class_i_pv6.html#a1aba1acaafd79119c157bf8d9974979f">mapping</a>.<a class="code" href="class_protocol_mapping.html#aab6b4ece952c398a02f939f86698e5b3">getOutputGateForProtocol</a>(protocol);
-            send(msg, <span class="stringliteral">&quot;transportOut&quot;</span>, gateindex);
-            <span class="keywordflow">break</span>;
+        <span class="keywordtype">int</span> <a class="code" href="dsr_8h.html#a8113b111c9adcbe8245570953727d60a">type</a> = msg-&gt;<a class="code" href="class_i_c_m_pv6_message.html#a92fc7e6a2fd2f99b271a9029f1ec490a">getType</a>();
+        <span class="keywordflow">if</span> (type &lt; 128)
+        {
+        <span class="comment">// ICMP errors are delivered to the appropriate higher layer protocols</span>
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;ICMPv6 packet: passing it to higher layer\n&quot;</span>;
+        <a class="code" href="class_i_pv6_datagram.html" title="Represents an IPv6 datagram.">IPv6Datagram</a> *bogusPacket = check_and_cast&lt;<a class="code" href="class_i_pv6_datagram.html" title="Represents an IPv6 datagram.">IPv6Datagram</a> *&gt;(msg-&gt;getEncapsulatedPacket());
+        <span class="keywordtype">int</span> <a class="code" href="_t_c_p___n_s_c_8cc.html#ad124d3d2e02c729afa303c775295278e">protocol</a> = bogusPacket-&gt;<a class="code" href="class_i_pv6_datagram___base.html#a59e20ccfddf021658a4e9d2bb4733437">getTransportProtocol</a>();
+        <span class="keywordtype">int</span> gateindex = <a class="code" href="class_i_pv6.html#a1aba1acaafd79119c157bf8d9974979f">mapping</a>.<a class="code" href="class_protocol_mapping.html#aab6b4ece952c398a02f939f86698e5b3">getOutputGateForProtocol</a>(protocol);
+        send(msg, <span class="stringliteral">&quot;transportOut&quot;</span>, gateindex);
         }
-        <span class="keywordflow">default</span>: {
-            <span class="comment">// all others are delivered to ICMP:</span>
-            <span class="comment">// ICMPv6_ECHO_REQUEST, ICMPv6_ECHO_REPLY, ICMPv6_MLD_QUERY, ICMPv6_MLD_REPORT,</span>
-            <span class="comment">// ICMPv6_MLD_DONE, ICMPv6_ROUTER_SOL, ICMPv6_ROUTER_AD, ICMPv6_NEIGHBOUR_SOL,</span>
-            <span class="comment">// ICMPv6_NEIGHBOUR_AD, ICMPv6_MLDv2_REPORT</span>
-            <span class="keywordtype">int</span> gateindex = <a class="code" href="class_i_pv6.html#a1aba1acaafd79119c157bf8d9974979f">mapping</a>.<a class="code" href="class_protocol_mapping.html#aab6b4ece952c398a02f939f86698e5b3">getOutputGateForProtocol</a>(<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70ae193d750e5a16d9ab14225311325dd59">IP_PROT_ICMP</a>);
-            send(msg, <span class="stringliteral">&quot;transportOut&quot;</span>, gateindex);
+        <span class="keywordflow">else</span>
+        {
+        <span class="comment">// all others are delivered to ICMP:</span>
+        <span class="comment">// ICMPv6_ECHO_REQUEST, ICMPv6_ECHO_REPLY, ICMPv6_MLD_QUERY, ICMPv6_MLD_REPORT,</span>
+        <span class="comment">// ICMPv6_MLD_DONE, ICMPv6_ROUTER_SOL, ICMPv6_ROUTER_AD, ICMPv6_NEIGHBOUR_SOL,</span>
+        <span class="comment">// ICMPv6_NEIGHBOUR_AD, ICMPv6_MLDv2_REPORT</span>
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;ICMPv6 packet: passing it to ICMPv6 module\n&quot;</span>;
+        send(msg, <span class="stringliteral">&quot;icmpOut&quot;</span>);
         }
-     }
 }
 </pre></div>
 </div>
@@ -520,7 +737,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_pv6.html#a0efd6df6b67596cbf2fd0ed55cbe3b23">IPv6::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6.html#a0efd6df6b67596cbf2fd0ed55cbe3b23">IPv6::initialize</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -528,24 +745,25 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialization </p>
+
+<p>Initialization. </p>
 
 <p>Reimplemented from <a class="el" href="class_queue_base.html#a438aa1bb4e9a14fc76bd478612b354ae">QueueBase</a>.</p>
-
-<p>Definition at line <a class="el" href="_i_pv6_8cc_source.html#l00037">37</a> of file <a class="el" href="_i_pv6_8cc_source.html">IPv6.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_i_pv6.html#a0efd6df6b67596cbf2fd0ed55cbe3b23">QueueBase::initialize</a>();
+    <a class="code" href="class_i_pv6.html#a0efd6df6b67596cbf2fd0ed55cbe3b23" title="Initialization.">QueueBase::initialize</a>();
 
-    <a class="code" href="class_i_pv6.html#a37ecb4fa0819c900cda91aafccf65984">ift</a> = <a class="code" href="class_interface_table_access.html">InterfaceTableAccess</a>().<a class="code" href="class_module_access.html#a44956ddb52973612afbba0eeecf8bb66">get</a>();
-    <a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a> = <a class="code" href="class_routing_table6_access.html">RoutingTable6Access</a>().<a class="code" href="class_module_access.html#a44956ddb52973612afbba0eeecf8bb66">get</a>();
-    <a class="code" href="class_i_pv6.html#aced880e3fd1e6a51dbe3059e61655c5b">nd</a> = <a class="code" href="class_i_pv6_neighbour_discovery_access.html">IPv6NeighbourDiscoveryAccess</a>().<a class="code" href="class_module_access.html#a44956ddb52973612afbba0eeecf8bb66">get</a>();
-    <a class="code" href="structicmp.html">icmp</a> = <a class="code" href="class_i_c_m_pv6_access.html">ICMPv6Access</a>().<a class="code" href="class_module_access.html#a44956ddb52973612afbba0eeecf8bb66">get</a>();
+    <a class="code" href="class_i_pv6.html#a37ecb4fa0819c900cda91aafccf65984">ift</a> = <a class="code" href="class_interface_table_access.html" title="Gives access to IInterfaceTable.">InterfaceTableAccess</a>().<a class="code" href="class_module_access.html#a46a82b1fa0e957eb42d29c8637df1f4f">get</a>();
+    <a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a> = <a class="code" href="class_routing_table6_access.html" title="Gives access to RoutingTable6.">RoutingTable6Access</a>().<a class="code" href="class_module_access.html#a46a82b1fa0e957eb42d29c8637df1f4f">get</a>();
+    <a class="code" href="class_i_pv6.html#aced880e3fd1e6a51dbe3059e61655c5b">nd</a> = <a class="code" href="class_i_pv6_neighbour_discovery_access.html" title="Gives access to IPv6NeighbourDiscovery.">IPv6NeighbourDiscoveryAccess</a>().<a class="code" href="class_module_access.html#a46a82b1fa0e957eb42d29c8637df1f4f">get</a>();
+    <a class="code" href="structicmp.html">icmp</a> = <a class="code" href="class_i_c_m_pv6_access.html" title="Gives access to ICMPv6.">ICMPv6Access</a>().<a class="code" href="class_module_access.html#a46a82b1fa0e957eb42d29c8637df1f4f">get</a>();
+
+    <a class="code" href="class_i_pv6.html#a6950edf0aacd8dbc068adf5876c0868e">tunneling</a> = <a class="code" href="class_i_pv6_tunneling_access.html" title="Gives access to IPv6Tunneling.">IPv6TunnelingAccess</a>().<a class="code" href="class_module_access.html#a46a82b1fa0e957eb42d29c8637df1f4f">get</a>();
 
     <a class="code" href="class_i_pv6.html#a1aba1acaafd79119c157bf8d9974979f">mapping</a>.<a class="code" href="class_protocol_mapping.html#a704b3e85485f45f254836bbbdfdd4637">parseProtocolMapping</a>(par(<span class="stringliteral">&quot;protocolMapping&quot;</span>));
 
-    <a class="code" href="class_i_pv6.html#ab75def425a1fd61f881cd7232ca2c2e3">curFragmentId</a> = 0;
+    <a class="code" href="class_i_pv6.html#abd2af9bf21cf0c352f09db43528234ec">curFragmentId</a> = 0;
     <a class="code" href="class_i_pv6.html#a97e5efda0e71a87c0bbe75c1cc35ea7d">lastCheckTime</a> = 0;
-    <a class="code" href="class_i_pv6.html#a0a166facf83745ebeac2d6afe8c804ac">fragbuf</a>.<a class="code" href="class_i_pv6_frag_buf.html#a5e003a9464934dcccfb1dbaedab07b8b">init</a>(<a class="code" href="structicmp.html">icmp</a>);
+    <a class="code" href="class_i_pv6.html#a0a166facf83745ebeac2d6afe8c804ac">fragbuf</a>.<a class="code" href="class_i_pv6_frag_buf.html#a5e003a9464934dcccfb1dbaedab07b8b" title="Initialize fragmentation buffer.">init</a>(<a class="code" href="structicmp.html">icmp</a>);
 
     <a class="code" href="class_i_pv6.html#a553979ff6e4c9a408ab16462760cf59d">numMulticast</a> = <a class="code" href="class_i_pv6.html#a113ab197d6f585edd16ea021718d718f">numLocalDeliver</a> = <a class="code" href="class_i_pv6.html#a48dd791376fb6ab1f9a819c067c92b5a">numDropped</a> = <a class="code" href="class_i_pv6.html#a6bbf6fb4fe90e967f0c2bac636dfceef">numUnroutable</a> = <a class="code" href="class_i_pv6.html#adff2dce8ef8518fa3621409103faf416">numForwarded</a> = 0;
 
@@ -558,12 +776,12 @@ Protected Attributes</h2></td></tr>
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a350ba82e187cad4313bea8e3bb5b4838"></a><!-- doxytag: member="IPv6::isLocalAddress" ref="a350ba82e187cad4313bea8e3bb5b4838" args="(IPv6Datagram *datagram)" -->
+<a class="anchor" id="af5841104d472f7c33a27b5fa53171c40"></a><!-- doxytag: member="IPv6::localDeliver" ref="af5841104d472f7c33a27b5fa53171c40" args="(IPv6Datagram *datagram)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_pv6.html#a350ba82e187cad4313bea8e3bb5b4838">IPv6::isLocalAddress</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6.html#af5841104d472f7c33a27b5fa53171c40">IPv6::localDeliver</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *&#160;</td>
           <td class="paramname"><em>datagram</em></td><td>)</td>
@@ -572,72 +790,118 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Perform reassembly of fragmented datagrams, then send them up to the higher layers using sendToHL(). </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_8cc_source.html#l00397">397</a> of file <a class="el" href="_i_pv6_8cc_source.html">IPv6.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00272">routeMulticastPacket()</a>, and <a class="el" href="_i_pv6_8cc_source.html#l00165">routePacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#a61eb7d75c2414e64fbcf82c69f9db7bf">routeMulticastPacket()</a>, and <a class="el" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3">routePacket()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-<span class="comment">/* FIXME revise and complete defragmentation</span>
-<span class="comment">    // Defragmentation. skip defragmentation if datagram is not fragmented</span>
-<span class="comment">    if (datagram-&gt;getFragmentOffset()!=0 || datagram-&gt;getMoreFragments())</span>
-<span class="comment">    {</span>
-<span class="comment">        EV &lt;&lt; &quot;Datagram fragment: offset=&quot; &lt;&lt; datagram-&gt;getFragmentOffset()</span>
-<span class="comment">           &lt;&lt; &quot;, MORE=&quot; &lt;&lt; (datagram-&gt;getMoreFragments() ? &quot;true&quot; : &quot;false&quot;) &lt;&lt; &quot;.\n&quot;;</span>
-<span class="comment"></span>
-<span class="comment">        // erase timed out fragments in fragmentation buffer; check every 10 seconds max</span>
-<span class="comment">        if (simTime() &gt;= lastCheckTime + 10)</span>
-<span class="comment">        {</span>
-<span class="comment">            lastCheckTime = simTime();</span>
-<span class="comment">            fragbuf.purgeStaleFragments(simTime()-FRAGMENT_TIMEOUT);</span>
-<span class="comment">        }</span>
-<span class="comment"></span>
-<span class="comment">        datagram = fragbuf.addFragment(datagram, simTime());</span>
-<span class="comment">        if (!datagram)</span>
-<span class="comment">        {</span>
-<span class="comment">            EV &lt;&lt; &quot;No complete datagram yet.\n&quot;;</span>
-<span class="comment">            return;</span>
-<span class="comment">        }</span>
-<span class="comment">        EV &lt;&lt; &quot;This fragment completes the datagram.\n&quot;;</span>
-<span class="comment">    }</span>
-<span class="comment">*/</span>
-    <span class="comment">// decapsulate and send on appropriate output gate</span>
-    <span class="keywordtype">int</span> protocol = datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#a59e20ccfddf021658a4e9d2bb4733437">getTransportProtocol</a>();
-    cPacket *packet = <a class="code" href="class_i_pv6.html#af2e604305a9ff165129097c1cad62cb2">decapsulate</a>(datagram);
+    <span class="comment">// Defragmentation. skip defragmentation if datagram is not fragmented</span>
+        <a class="code" href="class_i_pv6_fragment_header.html" title="Class generated from networklayer/ipv6/IPv6ExtensionHeaders.msg by opp_msgc.">IPv6FragmentHeader</a> *fh = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_i_pv6_fragment_header.html" title="Class generated from networklayer/ipv6/IPv6ExtensionHeaders.msg by opp_msgc.">IPv6FragmentHeader</a>*<span class="keyword">&gt;</span>(datagram-&gt;<a class="code" href="class_i_pv6_datagram.html#a24e883991c7323fc1f79fd1dae35898e" title="Returns the extension header of the specified type, or NULL.">findExtensionHeaderByType</a>(<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70a44b6d5555c33179fd295dd7bcfb63eaf">IP_PROT_IPv6EXT_FRAGMENT</a>));
+        <span class="keywordflow">if</span> (fh)
+    {
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Datagram fragment: offset=&quot;</span> &lt;&lt; fh-&gt;<a class="code" href="class_i_pv6_fragment_header.html#a92cf182cc83bc3c1357e69b01932af20">getFragmentOffset</a>()
+           &lt;&lt; <span class="stringliteral">&quot;, MORE=&quot;</span> &lt;&lt; (fh-&gt;<a class="code" href="class_i_pv6_fragment_header.html#a3c7479e0969d0a5fd07635f86d0b4b8b">getMoreFragments</a>() ? <span class="stringliteral">&quot;true&quot;</span> : <span class="stringliteral">&quot;false&quot;</span>) &lt;&lt; <span class="stringliteral">&quot;.\n&quot;</span>;
 
-    <span class="keywordflow">if</span> (protocol==<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70a3f40fb193e9edf4e297fcd7952acb024">IP_PROT_IPv6_ICMP</a> &amp;&amp; dynamic_cast&lt;IPv6NDMessage*&gt;(packet))
+        <span class="comment">// erase timed out fragments in fragmentation buffer; check every 10 seconds max</span>
+        <span class="keywordflow">if</span> (simTime() &gt;= <a class="code" href="class_i_pv6.html#a97e5efda0e71a87c0bbe75c1cc35ea7d">lastCheckTime</a> + 10)
+        {
+            <a class="code" href="class_i_pv6.html#a97e5efda0e71a87c0bbe75c1cc35ea7d">lastCheckTime</a> = simTime();
+            <a class="code" href="class_i_pv6.html#a0a166facf83745ebeac2d6afe8c804ac">fragbuf</a>.<a class="code" href="class_i_pv6_frag_buf.html#a49592f256181720463304a701cc6010f" title="Throws out all fragments which are incomplete and their last update (last fragment arrival) was befor...">purgeStaleFragments</a>(simTime()-<a class="code" href="_i_pv6_8cc.html#ab4569bcb85a0e86ed668ead8d8c836f2">FRAGMENT_TIMEOUT</a>);
+        }
+
+        datagram = <a class="code" href="class_i_pv6.html#a0a166facf83745ebeac2d6afe8c804ac">fragbuf</a>.<a class="code" href="class_i_pv6_frag_buf.html#a41bf08bb1a8c81ea15a456b484a0cce5" title="Takes a fragment and inserts it into the reassembly buffer.">addFragment</a>(datagram, fh, simTime());
+        <span class="keywordflow">if</span> (!datagram)
+        {
+            <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;No complete datagram yet.\n&quot;</span>;
+            <span class="keywordflow">return</span>;
+        }
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;This fragment completes the datagram.\n&quot;</span>;
+    }
+
+<span class="preprocessor">#ifdef WITH_xMIPv6</span>
+<span class="preprocessor"></span>    <span class="comment">// #### 29.08.07 - CB</span>
+    <span class="comment">// check for extension headers</span>
+    <span class="keywordflow">if</span> (!processExtensionHeaders(datagram))
+    {
+        <span class="comment">// ext. header processing not yet finished</span>
+        <span class="comment">// datagram was sent to another module or dropped</span>
+        <span class="comment">// -&gt; interrupt local delivery process</span>
+        <span class="keywordflow">return</span>;
+    }
+    <span class="comment">// #### end CB</span>
+<span class="preprocessor">#endif </span><span class="comment">/* WITH_xMIPv6 */</span>
+
+    <span class="comment">// decapsulate and send on appropriate output gate</span>
+    <span class="keywordtype">int</span> <a class="code" href="_t_c_p___n_s_c_8cc.html#ad124d3d2e02c729afa303c775295278e">protocol</a> = datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#a59e20ccfddf021658a4e9d2bb4733437">getTransportProtocol</a>();
+    cPacket *packet = <a class="code" href="class_i_pv6.html#af2e604305a9ff165129097c1cad62cb2" title="Decapsulate and return encapsulated packet after attaching IPv6ControlInfo.">decapsulate</a>(datagram);
+
+    <span class="keywordflow">if</span> (protocol == <a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70a3f40fb193e9edf4e297fcd7952acb024">IP_PROT_IPv6_ICMP</a> &amp;&amp; dynamic_cast&lt;IPv6NDMessage*&gt;(packet))
     {
         <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Neigbour Discovery packet: passing it to ND module\n&quot;</span>;
         send(packet, <span class="stringliteral">&quot;ndOut&quot;</span>);
     }
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (protocol==<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70a3f40fb193e9edf4e297fcd7952acb024">IP_PROT_IPv6_ICMP</a> &amp;&amp; dynamic_cast&lt;ICMPv6Message*&gt;(packet))
+<span class="preprocessor">#ifdef WITH_xMIPv6</span>
+<span class="preprocessor"></span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (protocol == <a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70a9d11234b7e69b37c55dc5bd9a744c1a5">IP_PROT_IPv6EXT_MOB</a> &amp;&amp; dynamic_cast&lt;MobilityHeader*&gt;(packet))
     {
-        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;ICMPv6 packet: passing it to ICMPv6 module\n&quot;</span>;
-        send(packet, <span class="stringliteral">&quot;icmpOut&quot;</span>);
+        <span class="comment">// added check for MIPv6 support to prevent nodes w/o the</span>
+        <span class="comment">// xMIP module from processing related messages, 4.9.07 - CB</span>
+        <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;hasMIPv6Support())
+        {
+            <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;MIPv6 packet: passing it to xMIPv6 module\n&quot;</span>;
+            send(check_and_cast&lt;MobilityHeader*&gt;(packet), <span class="stringliteral">&quot;xMIPv6Out&quot;</span>);
+        }
+        <span class="keywordflow">else</span>
+        {
+            <span class="comment">// update 12.9.07 - CB</span>
+            <span class="comment">/*RFC3775, 11.3.5</span>
+<span class="comment">              Any node that does not recognize the Mobility header will return an</span>
+<span class="comment">              ICMP Parameter Problem, Code 1, message to the sender of the packet*/</span>
+            <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;No MIPv6 support on this node!\n&quot;</span>;
+            <a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a> *ctrlInfo = check_and_cast&lt;<a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a>*&gt;(packet-&gt;removeControlInfo());
+            <a class="code" href="structicmp.html">icmp</a>-&gt;sendErrorMessage(packet, ctrlInfo, <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8a4f3281972041ca8e0c57bc4378b174a0">ICMPv6_PARAMETER_PROBLEM</a>, 1);
+
+            <span class="comment">//delete packet; // 13.9.07 - CB, update 21.9.07 - CB</span>
+        }
+    }
+<span class="preprocessor">#endif </span><span class="comment">/* WITH_xMIPv6 */</span>
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (protocol == <a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70a3f40fb193e9edf4e297fcd7952acb024">IP_PROT_IPv6_ICMP</a> &amp;&amp; dynamic_cast&lt;ICMPv6Message*&gt;(packet))
+    {
+        <a class="code" href="class_i_pv6.html#a8cc520cdb18b01334b04f2cd1268e370" title="Handle incoming ICMP messages.">handleReceivedICMP</a>(dynamic_cast&lt;ICMPv6Message*&gt;(packet));
     }<span class="comment">//Added by WEI to forward ICMPv6 msgs to ICMPv6 module.</span>
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (protocol==<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70aaa2ec340c0022e40c080d203075a8959">IP_PROT_IP</a> || protocol==<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70a67a21123d6c6f03044aaf20e35625c22">IP_PROT_IPv6</a>)
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (protocol == <a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70aaa2ec340c0022e40c080d203075a8959">IP_PROT_IP</a> || protocol == <a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70a67a21123d6c6f03044aaf20e35625c22">IP_PROT_IPv6</a>)
     {
         <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Tunnelled IP datagram\n&quot;</span>;
-        <span class="comment">// FIXME handle tunnelling</span>
-        error(<span class="stringliteral">&quot;tunnelling not yet implemented&quot;</span>);
+        send(packet, <span class="stringliteral">&quot;upperTunnelingOut&quot;</span>);
     }
     <span class="keywordflow">else</span>
     {
         <span class="keywordtype">int</span> gateindex = <a class="code" href="class_i_pv6.html#a1aba1acaafd79119c157bf8d9974979f">mapping</a>.<a class="code" href="class_protocol_mapping.html#aab6b4ece952c398a02f939f86698e5b3">getOutputGateForProtocol</a>(protocol);
-        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Protocol &quot;</span> &lt;&lt; protocol &lt;&lt; <span class="stringliteral">&quot;, passing up on gate &quot;</span> &lt;&lt; gateindex &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
-        <span class="comment">//TODO: Indication of forward progress</span>
-        send(packet, <span class="stringliteral">&quot;transportOut&quot;</span>, gateindex);
+
+        <span class="comment">// 21.9.07 - CB</span>
+        cGate* outGate = gate(<span class="stringliteral">&quot;transportOut&quot;</span>, gateindex);
+        <span class="keywordflow">if</span> (!outGate-&gt;isConnected())
+        {
+            <span class="comment">// TODO send ICMP Destination Unreacheable error</span>
+            <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Transport layer gate not connected - dropping packet!\n&quot;</span>;
+            <span class="keyword">delete</span> packet;
+        }
+        <span class="keywordflow">else</span>
+        {
+            <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Protocol &quot;</span> &lt;&lt; protocol &lt;&lt; <span class="stringliteral">&quot;, passing up on gate &quot;</span> &lt;&lt; gateindex &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+            <span class="comment">//TODO: Indication of forward progress</span>
+            send(packet, outGate);
+        }
     }
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a41b8debbd2e25288671df769adb5d332"></a><!-- doxytag: member="IPv6::routeMulticastPacket" ref="a41b8debbd2e25288671df769adb5d332" args="(IPv6Datagram *datagram, InterfaceEntry *destIE, InterfaceEntry *fromIE)" -->
+<a class="anchor" id="a61eb7d75c2414e64fbcf82c69f9db7bf"></a><!-- doxytag: member="IPv6::routeMulticastPacket" ref="a61eb7d75c2414e64fbcf82c69f9db7bf" args="(IPv6Datagram *datagram, InterfaceEntry *destIE, InterfaceEntry *fromIE, bool fromHL)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_pv6.html#a41b8debbd2e25288671df769adb5d332">IPv6::routeMulticastPacket</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6.html#a61eb7d75c2414e64fbcf82c69f9db7bf">IPv6::routeMulticastPacket</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *&#160;</td>
           <td class="paramname"><em>datagram</em>, </td>
@@ -652,7 +916,13 @@ Protected Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td>
-          <td class="paramname"><em>fromIE</em>&#160;</td>
+          <td class="paramname"><em>fromIE</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fromHL</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -662,30 +932,29 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Forwards packets to all multicast destinations, using fragmentAndSend(). </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_8cc_source.html#l00272">272</a> of file <a class="el" href="_i_pv6_8cc_source.html">IPv6.cc</a>.</p>
+<p>Forwards packets to all multicast destinations, using <a class="el" href="class_i_pv6.html#ae2d98f5214c7b23b38c33f7c613ee0a6" title="Performs fragmentation if needed, and sends the original datagram or the fragments through the specif...">fragmentAndSend()</a>. </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00145">fragmentAndRoute()</a>, and <a class="el" href="_i_pv6_8cc_source.html#l00098">handleDatagramFromNetwork()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#ad512d80b98cc6a39cef47df5e679992c">handleDatagramFromNetwork()</a>, and <a class="el" href="class_i_pv6.html#a7268e90e7ca92566bd209fdc00c090b6">handleMessageFromHL()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keyword">const</span> <a class="code" href="class_i_pv6_address.html">IPv6Address</a>&amp; destAddr = datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#ae8dcba44d11a32fef197cc663b026f05">getDestAddress</a>();
+    <span class="keyword">const</span> <a class="code" href="class_i_pv6_address.html" title="Stores a 128-bit IPv6 address in an efficient way.">IPv6Address</a>&amp; destAddr = datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#ae8dcba44d11a32fef197cc663b026f05">getDestAddress</a>();
 
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;destination address &quot;</span> &lt;&lt; destAddr &lt;&lt; <span class="stringliteral">&quot; is multicast, doing multicast routing\n&quot;</span>;
     <a class="code" href="class_i_pv6.html#a553979ff6e4c9a408ab16462760cf59d">numMulticast</a>++;
 
     <span class="comment">// if received from the network...</span>
-    <span class="keywordflow">if</span> (fromIE!=NULL)
+    <span class="keywordflow">if</span> (fromIE != <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)
     {
         <span class="comment">// deliver locally</span>
-        <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;<a class="code" href="class_routing_table6.html#acbf9dbfff5efa25eec0982afa1bbf061">isLocalAddress</a>(destAddr))
+        <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;<a class="code" href="class_routing_table6.html#acbf9dbfff5efa25eec0982afa1bbf061" title="Checks if the address is one of the host&#39;s addresses, i.e.">isLocalAddress</a>(destAddr))
         {
             <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;local delivery of multicast packet\n&quot;</span>;
             <a class="code" href="class_i_pv6.html#a113ab197d6f585edd16ea021718d718f">numLocalDeliver</a>++;
-            <a class="code" href="class_i_pv6.html#a350ba82e187cad4313bea8e3bb5b4838">isLocalAddress</a>((<a class="code" href="class_i_pv6_datagram.html">IPv6Datagram</a> *)datagram-&gt;<a class="code" href="class_i_pv6_datagram.html#a75ed977234f31b060443effdf0328d6f">dup</a>());
+            <a class="code" href="class_i_pv6.html#af5841104d472f7c33a27b5fa53171c40" title="Perform reassembly of fragmented datagrams, then send them up to the higher layers using sendToHL()...">localDeliver</a>((<a class="code" href="class_i_pv6_datagram.html" title="Represents an IPv6 datagram.">IPv6Datagram</a> *)datagram-&gt;<a class="code" href="class_i_pv6_datagram.html#a75ed977234f31b060443effdf0328d6f">dup</a>());
         }
 
         <span class="comment">// if datagram arrived from input gate and IP forwarding is off, delete datagram</span>
-        <span class="keywordflow">if</span> (!<a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;<a class="code" href="class_routing_table6.html#a79a742fa2d94543412e183ebe0e83d3a">isRouter</a>())
+        <span class="keywordflow">if</span> (!<a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;<a class="code" href="class_routing_table6.html#a79a742fa2d94543412e183ebe0e83d3a" title="IP forwarding on/off.">isRouter</a>())
         {
             <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;forwarding is off\n&quot;</span>;
             <span class="keyword">delete</span> datagram;
@@ -709,11 +978,11 @@ Protected Attributes</h2></td></tr>
 
     <span class="comment">// for now, we just send it out on every interface except on which it came. FIXME better!!!</span>
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;sending out datagram on every interface (except incoming one)\n&quot;</span>;
-    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>=0; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>&lt;<a class="code" href="class_i_pv6.html#a37ecb4fa0819c900cda91aafccf65984">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a2b0ce46cd92da6f64fc363410dc71904">getNumInterfaces</a>(); <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++)
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i &lt; <a class="code" href="class_i_pv6.html#a37ecb4fa0819c900cda91aafccf65984">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a2b0ce46cd92da6f64fc363410dc71904" title="Returns the number of interfaces.">getNumInterfaces</a>(); i++)
     {
-        <a class="code" href="class_interface_entry.html">InterfaceEntry</a> *ie = <a class="code" href="class_i_pv6.html#a37ecb4fa0819c900cda91aafccf65984">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a19ce4ca3b47b52b8e2b67c25806c4b49">getInterface</a>(<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>);
-        <span class="keywordflow">if</span> (fromIE!=ie)
-            <a class="code" href="class_i_pv6.html#a69b2be6aa31f567a504fc693a6a3c35e">sendDatagramToOutput</a>((<a class="code" href="class_i_pv6_datagram.html">IPv6Datagram</a> *)datagram-&gt;<a class="code" href="class_i_pv6_datagram.html#a75ed977234f31b060443effdf0328d6f">dup</a>(), ie, <a class="code" href="class_m_a_c_address.html#a64288e3935e32fec17884c040cf2d2e9">MACAddress::BROADCAST_ADDRESS</a>);
+        <a class="code" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> *ie = <a class="code" href="class_i_pv6.html#a37ecb4fa0819c900cda91aafccf65984">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a19ce4ca3b47b52b8e2b67c25806c4b49" title="Returns the InterfaceEntry specified by an index 0..numInterfaces-1.">getInterface</a>(i);
+        <span class="keywordflow">if</span> (fromIE != ie &amp;&amp; !ie-&gt;<a class="code" href="class_interface_entry.html#a0ee93e88273f61390d1293dae55004d1">isLoopback</a>())
+            <a class="code" href="class_i_pv6.html#ae2d98f5214c7b23b38c33f7c613ee0a6" title="Performs fragmentation if needed, and sends the original datagram or the fragments through the specif...">fragmentAndSend</a>((<a class="code" href="class_i_pv6_datagram.html" title="Represents an IPv6 datagram.">IPv6Datagram</a> *)datagram-&gt;<a class="code" href="class_i_pv6_datagram.html#a75ed977234f31b060443effdf0328d6f">dup</a>(), ie, <a class="code" href="class_m_a_c_address.html#a64288e3935e32fec17884c040cf2d2e9" title="The broadcast MAC address, ff:ff:ff:ff:ff:ff.">MACAddress::BROADCAST_ADDRESS</a>, fromHL);
     }
     <span class="keyword">delete</span> datagram;
 
@@ -747,7 +1016,7 @@ Protected Attributes</h2></td></tr>
 <span class="comment">        // FIXME code from the MPLS model: set packet dest address to routerId (???)</span>
 <span class="comment">        datagramCopy-&gt;setDestAddress(rt-&gt;getRouterId());</span>
 <span class="comment"></span>
-<span class="comment">        isLocalAddress(datagramCopy);</span>
+<span class="comment">        localDeliver(datagramCopy);</span>
 <span class="comment">    }</span>
 <span class="comment"></span>
 <span class="comment">    // forward datagram only if IP forward is enabled, or sent locally</span>
@@ -781,7 +1050,7 @@ Protected Attributes</h2></td></tr>
 <span class="comment"></span>
 <span class="comment">                // send</span>
 <span class="comment">                IPv6Address nextHopAddr = routes[i].gateway;</span>
-<span class="comment">                sendDatagramToOutput(datagramCopy, outputGateIndex, macAddr);</span>
+<span class="comment">                fragmentAndSend(datagramCopy, outputGateIndex, macAddr, fromHL);</span>
 <span class="comment">            }</span>
 <span class="comment">        }</span>
 <span class="comment"></span>
@@ -798,7 +1067,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3">IPv6::routePacket</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3">IPv6::routePacket</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *&#160;</td>
           <td class="paramname"><em>datagram</em>, </td>
@@ -823,25 +1092,27 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Performs routing. Based on the routing decision, it dispatches to <a class="el" href="class_i_pv6.html#a350ba82e187cad4313bea8e3bb5b4838">isLocalAddress()</a> for local packets, to fragmentAndSend() for forwarded packets, to <a class="el" href="class_i_pv6.html#a41b8debbd2e25288671df769adb5d332">routeMulticastPacket()</a> for multicast packets, or drops the packet if it's unroutable or forwarding is off. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_8cc_source.html#l00165">165</a> of file <a class="el" href="_i_pv6_8cc_source.html">IPv6.cc</a>.</p>
+<p>Performs routing. </p>
+<p>Based on the routing decision, it dispatches to <a class="el" href="class_i_pv6.html#af5841104d472f7c33a27b5fa53171c40" title="Perform reassembly of fragmented datagrams, then send them up to the higher layers using sendToHL()...">localDeliver()</a> for local packets, to <a class="el" href="class_i_pv6.html#ae2d98f5214c7b23b38c33f7c613ee0a6" title="Performs fragmentation if needed, and sends the original datagram or the fragments through the specif...">fragmentAndSend()</a> for forwarded packets, to <a class="el" href="class_i_pv6.html#a61eb7d75c2414e64fbcf82c69f9db7bf" title="Forwards packets to all multicast destinations, using fragmentAndSend().">routeMulticastPacket()</a> for multicast packets, or drops the packet if it's unroutable or forwarding is off. </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00145">fragmentAndRoute()</a>, and <a class="el" href="_i_pv6_8cc_source.html#l00098">handleDatagramFromNetwork()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#ad512d80b98cc6a39cef47df5e679992c">handleDatagramFromNetwork()</a>, and <a class="el" href="class_i_pv6.html#a7268e90e7ca92566bd209fdc00c090b6">handleMessageFromHL()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// TBD add option handling code here</span>
-    <a class="code" href="class_i_pv6_address.html">IPv6Address</a> destAddress = datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#ae8dcba44d11a32fef197cc663b026f05">getDestAddress</a>();
+    <a class="code" href="class_i_pv6_address.html" title="Stores a 128-bit IPv6 address in an efficient way.">IPv6Address</a> destAddress = datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#ae8dcba44d11a32fef197cc663b026f05">getDestAddress</a>();
 
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Routing datagram `&quot;</span> &lt;&lt; datagram-&gt;getName() &lt;&lt; <span class="stringliteral">&quot;&#39; with dest=&quot;</span> &lt;&lt; destAddress &lt;&lt; <span class="stringliteral">&quot;: &quot;</span>;
 
     <span class="comment">// local delivery of unicast packets</span>
-    <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;<a class="code" href="class_routing_table6.html#acbf9dbfff5efa25eec0982afa1bbf061">isLocalAddress</a>(destAddress))
+    <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;<a class="code" href="class_routing_table6.html#acbf9dbfff5efa25eec0982afa1bbf061" title="Checks if the address is one of the host&#39;s addresses, i.e.">isLocalAddress</a>(destAddress))
     {
         <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;local delivery\n&quot;</span>;
-        <span class="keywordflow">if</span> (datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#aa9bdf8fb570741abc6a1611e204b7140">getSrcAddress</a>().<a class="code" href="class_i_pv6_address.html#af526cffcc3a4aa5bb96d307de6e8d448">isUnspecified</a>())
+
+        <span class="keywordflow">if</span> (datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#aa9bdf8fb570741abc6a1611e204b7140">getSrcAddress</a>().<a class="code" href="class_i_pv6_address.html#af526cffcc3a4aa5bb96d307de6e8d448" title="Check if the IPv6 Address is undefined.">isUnspecified</a>())
             datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#a4ba15a5fcee0c8ae0d6e4d5c9ae176e4">setSrcAddress</a>(destAddress); <span class="comment">// allows two apps on the same host to communicate</span>
+
         <a class="code" href="class_i_pv6.html#a113ab197d6f585edd16ea021718d718f">numLocalDeliver</a>++;
-        <a class="code" href="class_i_pv6.html#a350ba82e187cad4313bea8e3bb5b4838">isLocalAddress</a>(datagram);
+        <a class="code" href="class_i_pv6.html#af5841104d472f7c33a27b5fa53171c40" title="Perform reassembly of fragmented datagrams, then send them up to the higher layers using sendToHL()...">localDeliver</a>(datagram);
         <span class="keywordflow">return</span>;
     }
 
@@ -852,7 +1123,7 @@ Protected Attributes</h2></td></tr>
         <span class="comment">//so we add a 2nd condition</span>
         <span class="comment">// FIXME rewrite code so that condition is cleaner --Andras</span>
         <span class="comment">//if (!rt-&gt;isRouter())</span>
-        <span class="keywordflow">if</span> (!<a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;<a class="code" href="class_routing_table6.html#a79a742fa2d94543412e183ebe0e83d3a">isRouter</a>() &amp;&amp; !(datagram-&gt;getArrivalGate()-&gt;isName(<span class="stringliteral">&quot;ndIn&quot;</span>)))
+        <span class="keywordflow">if</span> (!<a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;<a class="code" href="class_routing_table6.html#a79a742fa2d94543412e183ebe0e83d3a" title="IP forwarding on/off.">isRouter</a>() &amp;&amp; !(datagram-&gt;getArrivalGate()-&gt;isName(<span class="stringliteral">&quot;ndIn&quot;</span>)))
         {
             <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;forwarding is off, dropping packet\n&quot;</span>;
             <a class="code" href="class_i_pv6.html#a48dd791376fb6ab1f9a819c067c92b5a">numDropped</a>++;
@@ -861,7 +1132,7 @@ Protected Attributes</h2></td></tr>
         }
 
         <span class="comment">// don&#39;t forward link-local addresses or weaker</span>
-        <span class="keywordflow">if</span> (destAddress.<a class="code" href="class_i_pv6_address.html#a304edc5014ff3c991ae531aca21d2260">isLinkLocal</a>() || destAddress.<a class="code" href="class_i_pv6_address.html#a2a07372674c8a12ad46111be1fe1134e">isLoopback</a>())
+        <span class="keywordflow">if</span> (destAddress.<a class="code" href="class_i_pv6_address.html#a304edc5014ff3c991ae531aca21d2260" title="Utility function based on getScope()">isLinkLocal</a>() || destAddress.<a class="code" href="class_i_pv6_address.html#a2a07372674c8a12ad46111be1fe1134e" title="Utility function based on getScope()">isLoopback</a>())
         {
             <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;dest address is link-local (or weaker) scope, doesn&#39;t get forwarded\n&quot;</span>;
             <span class="keyword">delete</span> datagram;
@@ -876,62 +1147,87 @@ Protected Attributes</h2></td></tr>
     }
 
     <span class="comment">// routing</span>
-    <span class="comment">// first try destination cache</span>
-    <span class="keywordtype">int</span> interfaceId;
-    <a class="code" href="class_i_pv6_address.html">IPv6Address</a> nextHop = <a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;<a class="code" href="class_routing_table6.html#af91523a83ab946e36d292337435b3679">lookupDestCache</a>(destAddress, interfaceId);
-    <span class="keywordflow">if</span> (interfaceId==-1)
-    {
-        <span class="comment">// address not in destination cache: do longest prefix match in routing table</span>
-        <span class="keyword">const</span> <a class="code" href="class_i_pv6_route.html">IPv6Route</a> *route = <a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;<a class="code" href="class_routing_table6.html#aa3ba1d17dc59f3e5d77ead359dd3a999">doLongestPrefixMatch</a>(destAddress);
-        <span class="keywordflow">if</span> (!route)
-        {
-            <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;<a class="code" href="class_routing_table6.html#a79a742fa2d94543412e183ebe0e83d3a">isRouter</a>())
-            {
-                <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;unroutable, sending ICMPv6_DESTINATION_UNREACHABLE\n&quot;</span>;
-                <a class="code" href="class_i_pv6.html#a6bbf6fb4fe90e967f0c2bac636dfceef">numUnroutable</a>++;
-                <a class="code" href="structicmp.html">icmp</a>-&gt;sendErrorMessage(datagram, <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8a41a9a5f4838bc4483b77b0fdcd13f72b">ICMPv6_DESTINATION_UNREACHABLE</a>, 0); <span class="comment">// FIXME check ICMP &#39;code&#39;</span>
-            }
-            <span class="keywordflow">else</span> <span class="comment">// host</span>
-            {
-                <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;no match in routing table, passing datagram to Neighbour Discovery module for default router selection\n&quot;</span>;
-                send(datagram, <span class="stringliteral">&quot;ndOut&quot;</span>);
-            }
-            <span class="keywordflow">return</span>;
-        }
-        interfaceId = route-&gt;<a class="code" href="class_i_pv6_route.html#adbdd6910c92deca3571fa8e5cd27baf8">getInterfaceId</a>();
-        nextHop = route-&gt;<a class="code" href="class_i_pv6_route.html#abdc06722ce1f1af7236ee2c37fcfa132">getNextHop</a>();
-        <span class="keywordflow">if</span> (nextHop.<a class="code" href="class_i_pv6_address.html#af526cffcc3a4aa5bb96d307de6e8d448">isUnspecified</a>())
-            nextHop = destAddress;  <span class="comment">// next hop is the host itself</span>
+    <span class="keywordtype">int</span> interfaceId = -1;
+    <a class="code" href="class_i_pv6_address.html" title="Stores a 128-bit IPv6 address in an efficient way.">IPv6Address</a> nextHop;
 
-        <span class="comment">// add result into destination cache</span>
-        <a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;<a class="code" href="class_routing_table6.html#a0b95d2a43a904e2cae8521bebe8b3335">updateDestCache</a>(destAddress, nextHop, interfaceId);
+<span class="preprocessor">#ifdef WITH_xMIPv6</span>
+<span class="preprocessor"></span>    <span class="comment">// tunneling support - CB</span>
+    <span class="comment">// check if destination is covered by tunnel lists</span>
+    <span class="keywordflow">if</span> ((datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#a59e20ccfddf021658a4e9d2bb4733437">getTransportProtocol</a>() != <a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70a67a21123d6c6f03044aaf20e35625c22">IP_PROT_IPv6</a>) &amp;&amp; <span class="comment">// if datagram was already tunneled, don&#39;t tunnel again</span>
+         (datagram-&gt;<a class="code" href="class_i_pv6_datagram.html#a0048ad6c0e0c6e522a3fe0f7889d4208" title="Returns the number of extension headers in this datagram.">getExtensionHeaderArraySize</a>() == 0) &amp;&amp; <span class="comment">// we do not already have extension headers - FIXME: check for RH2 existence</span>
+          ((<a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;isMobileNode() &amp;&amp; <a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;isHomeAddress( datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#aa9bdf8fb570741abc6a1611e204b7140">getSrcAddress</a>())) || <span class="comment">// for MNs: only if source address is a HoA // 27.08.07 - CB</span>
+             <a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;isHomeAgent() || <span class="comment">// but always check for tunnel if node is a HA</span>
+             !<a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;isMobileNode() <span class="comment">// or if it is a correspondent or non-MIP node</span>
+          )
+        )
+    {
+        <span class="keywordflow">if</span> (datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#a59e20ccfddf021658a4e9d2bb4733437">getTransportProtocol</a>() == <a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70a9d11234b7e69b37c55dc5bd9a744c1a5">IP_PROT_IPv6EXT_MOB</a>)
+            <span class="comment">// in case of mobility header we can only search for &quot;real&quot; tunnels</span>
+            <span class="comment">// as T2RH or HoA Opt. are not allowed with these messages</span>
+            interfaceId = <a class="code" href="class_i_pv6.html#a6950edf0aacd8dbc068adf5876c0868e">tunneling</a>-&gt;<a class="code" href="class_i_pv6_tunneling.html#add3d710493b045ceb2fe203ff3e4bb69" title="Returns the virtual interface identifier for the tunnel which has the provided destination as destina...">getVIfIndexForDest</a>(destAddress, <a class="code" href="class_i_pv6_tunneling.html#a8167e5cdd0dbcd4c1756f6f01fb690d8a03e6e804de16cce32bc10c6df72dfa86">IPv6Tunneling::NORMAL</a>); <span class="comment">// 10.06.08 - CB</span>
+            <span class="comment">//getVIfIndexForDestForXSplitTunnel(destAddress);</span>
+        <span class="keywordflow">else</span>
+            <span class="comment">// otherwise we can search for everything</span>
+            interfaceId = <a class="code" href="class_i_pv6.html#a6950edf0aacd8dbc068adf5876c0868e">tunneling</a>-&gt;<a class="code" href="class_i_pv6_tunneling.html#add3d710493b045ceb2fe203ff3e4bb69" title="Returns the virtual interface identifier for the tunnel which has the provided destination as destina...">getVIfIndexForDest</a>(destAddress);
     }
+<span class="preprocessor">#else</span>
+<span class="preprocessor"></span>    <span class="comment">// FIXME this is not the same as the code above (when WITH_xMIPv6 is defined),</span>
+    <span class="comment">// so tunneling examples could not work with xMIPv6</span>
+    interfaceId = <a class="code" href="class_i_pv6.html#a6950edf0aacd8dbc068adf5876c0868e">tunneling</a>-&gt;<a class="code" href="class_i_pv6_tunneling.html#add3d710493b045ceb2fe203ff3e4bb69" title="Returns the virtual interface identifier for the tunnel which has the provided destination as destina...">getVIfIndexForDest</a>(destAddress, <a class="code" href="class_i_pv6_tunneling.html#a8167e5cdd0dbcd4c1756f6f01fb690d8a03e6e804de16cce32bc10c6df72dfa86">IPv6Tunneling::NORMAL</a>);
+<span class="preprocessor">#endif </span><span class="comment">/* WITH_xMIPv6 */</span>
 
-    <a class="code" href="class_interface_entry.html">InterfaceEntry</a> *ie = <a class="code" href="class_i_pv6.html#a37ecb4fa0819c900cda91aafccf65984">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a92764d620c345b7261de20e9ee5247d7">getInterfaceById</a>(interfaceId);
-    ASSERT(ie!=NULL);
-    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;next hop for &quot;</span> &lt;&lt; destAddress &lt;&lt; <span class="stringliteral">&quot; is &quot;</span> &lt;&lt; nextHop &lt;&lt; <span class="stringliteral">&quot;, interface &quot;</span> &lt;&lt; ie-&gt;getName() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
-    ASSERT(!nextHop.<a class="code" href="class_i_pv6_address.html#af526cffcc3a4aa5bb96d307de6e8d448">isUnspecified</a>());
-
-    <a class="code" href="class_m_a_c_address.html">MACAddress</a> macAddr = <a class="code" href="class_i_pv6.html#aced880e3fd1e6a51dbe3059e61655c5b">nd</a>-&gt;<a class="code" href="class_i_pv6_neighbour_discovery.html#a567588762bff7af739e72916df55aebc">resolveNeighbour</a>(nextHop, interfaceId);
-    <span class="keywordflow">if</span> (macAddr.isUnspecified())
+    <span class="keywordflow">if</span> (interfaceId &gt; <a class="code" href="class_i_pv6.html#a37ecb4fa0819c900cda91aafccf65984">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a2b0ce46cd92da6f64fc363410dc71904" title="Returns the number of interfaces.">getNumInterfaces</a>())
     {
-        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;no link-layer address for next hop yet, passing datagram to Neighbour Discovery module\n&quot;</span>;
-        send(datagram, <span class="stringliteral">&quot;ndOut&quot;</span>);
+        <span class="comment">// a virtual tunnel interface provides a path to the destination: do tunneling</span>
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;tunneling: src addr=&quot;</span> &lt;&lt; datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#aa9bdf8fb570741abc6a1611e204b7140">getSrcAddress</a>() &lt;&lt; <span class="stringliteral">&quot;, dest addr=&quot;</span> &lt;&lt; destAddress &lt;&lt; std::endl;
+        send(datagram, <span class="stringliteral">&quot;lowerTunnelingOut&quot;</span>);
         <span class="keywordflow">return</span>;
     }
-    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;link-layer address: &quot;</span> &lt;&lt; macAddr &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
 
-    <span class="comment">// set datagram source address if not yet set</span>
-    <span class="keywordflow">if</span> (datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#aa9bdf8fb570741abc6a1611e204b7140">getSrcAddress</a>().<a class="code" href="class_i_pv6_address.html#af526cffcc3a4aa5bb96d307de6e8d448">isUnspecified</a>())
+    <span class="keywordflow">if</span> (interfaceId == -1)
+        <span class="keywordflow">if</span> ( !<a class="code" href="class_i_pv6.html#a641e893f2ada9c52fd0d694fa0947503" title="Determines the correct interface for the specified destination address.">determineOutputInterface</a>(destAddress, nextHop, interfaceId, datagram) )
+            <span class="comment">// no interface found; sent to ND or to ICMP for error processing</span>
+            <span class="comment">//opp_error(&quot;No interface found!&quot;);//return;</span>
+            <span class="keywordflow">return</span>; <span class="comment">// don&#39;t raise error if sent to ND or ICMP!</span>
+
+    <a class="code" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> *ie = <a class="code" href="class_i_pv6.html#a37ecb4fa0819c900cda91aafccf65984">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a92764d620c345b7261de20e9ee5247d7" title="Returns an interface by its Id.">getInterfaceById</a>(interfaceId);
+    ASSERT(ie!=<a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);
+    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;next hop for &quot;</span> &lt;&lt; destAddress &lt;&lt; <span class="stringliteral">&quot; is &quot;</span> &lt;&lt; nextHop &lt;&lt; <span class="stringliteral">&quot;, interface &quot;</span> &lt;&lt; ie-&gt;getName() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+
+    ASSERT(!nextHop.<a class="code" href="class_i_pv6_address.html#af526cffcc3a4aa5bb96d307de6e8d448" title="Check if the IPv6 Address is undefined.">isUnspecified</a>());
+
+<span class="preprocessor">#ifdef WITH_xMIPv6</span>
+<span class="preprocessor"></span>     <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6.html#a73e92e962bcbd04ba0ea9ed4f8a4d4d4">rt</a>-&gt;isMobileNode())
+     {
+          <span class="comment">// if the source address is the HoA and we have a CoA then drop the packet</span>
+          <span class="comment">// (address is topologically incorrect!)</span>
+         <span class="keywordflow">if</span> (datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#aa9bdf8fb570741abc6a1611e204b7140">getSrcAddress</a>() == ie-&gt;<a class="code" href="class_interface_entry.html#a19083391271368e371346eb41ccc6c93">ipv6Data</a>()-&gt;getMNHomeAddress()
+                 &amp;&amp; !ie-&gt;<a class="code" href="class_interface_entry.html#a19083391271368e371346eb41ccc6c93">ipv6Data</a>()-&gt;getGlobalAddress(IPv6InterfaceData::CoA).isUnspecified())
+         {
+              <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Using HoA instead of CoA... dropping datagram&quot;</span> &lt;&lt; endl;
+             <span class="keyword">delete</span> datagram;
+             <a class="code" href="class_i_pv6.html#a48dd791376fb6ab1f9a819c067c92b5a">numDropped</a>++;
+             <span class="keywordflow">return</span>;
+         }
+     }
+<span class="preprocessor">#endif </span><span class="comment">/* WITH_xMIPv6 */</span>
+
+    <a class="code" href="class_m_a_c_address.html" title="Stores an IEEE 802 MAC address (6 octets = 48 bits).">MACAddress</a> macAddr = <a class="code" href="class_i_pv6.html#aced880e3fd1e6a51dbe3059e61655c5b">nd</a>-&gt;<a class="code" href="class_i_pv6_neighbour_discovery.html#a567588762bff7af739e72916df55aebc" title="Public method, to be invoked from the IPv6 module to determine link-layer address and the output inte...">resolveNeighbour</a>(nextHop, interfaceId); <span class="comment">// might initiate NUD</span>
+    <span class="keywordflow">if</span> (macAddr.<a class="code" href="class_m_a_c_address.html#ae41af013d782b46483e7d0c84f0ed107" title="Returns true if all address bytes are zero.">isUnspecified</a>())
     {
-        <span class="keyword">const</span> <a class="code" href="class_i_pv6_address.html">IPv6Address</a>&amp; srcAddr = ie-&gt;<a class="code" href="class_interface_entry.html#aed2588713b620093ada1ebfeb85fdbfc">ipv6Data</a>()-&gt;<a class="code" href="class_i_pv6_interface_data.html#a56f3fe4007e3df66dc88edd008f059b9">getPreferredAddress</a>();
-        ASSERT(!srcAddr.<a class="code" href="class_i_pv6_address.html#af526cffcc3a4aa5bb96d307de6e8d448">isUnspecified</a>()); <span class="comment">// FIXME what if we don&#39;t have an address yet?</span>
-        datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#a4ba15a5fcee0c8ae0d6e4d5c9ae176e4">setSrcAddress</a>(srcAddr);
+        <span class="keywordflow">if</span> (!ie-&gt;<a class="code" href="class_interface_entry.html#a91ff5ecd3f8a0e38a09f40694b760a65">isPointToPoint</a>())
+        {
+            <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;no link-layer address for next hop yet, passing datagram to Neighbour Discovery module\n&quot;</span>;
+            send(datagram, <span class="stringliteral">&quot;ndOut&quot;</span>);
+            <span class="keywordflow">return</span>;
+        }
     }
+    <span class="keywordflow">else</span>
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;link-layer address: &quot;</span> &lt;&lt; macAddr &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
 
     <span class="comment">// send out datagram</span>
     <a class="code" href="class_i_pv6.html#adff2dce8ef8518fa3621409103faf416">numForwarded</a>++;
-    <a class="code" href="class_i_pv6.html#a69b2be6aa31f567a504fc693a6a3c35e">sendDatagramToOutput</a>(datagram, ie, macAddr);
+    <a class="code" href="class_i_pv6.html#ae2d98f5214c7b23b38c33f7c613ee0a6" title="Performs fragmentation if needed, and sends the original datagram or the fragments through the specif...">fragmentAndSend</a>(datagram, ie, macAddr, fromHL);
 }
 </pre></div>
 </div>
@@ -941,7 +1237,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_pv6.html#a69b2be6aa31f567a504fc693a6a3c35e">IPv6::sendDatagramToOutput</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6.html#a69b2be6aa31f567a504fc693a6a3c35e">IPv6::sendDatagramToOutput</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_pv6_datagram.html">IPv6Datagram</a> *&#160;</td>
           <td class="paramname"><em>datagram</em>, </td>
@@ -966,26 +1262,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Last hoplimit check, then send datagram on the given interface. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_8cc_source.html#l00540">540</a> of file <a class="el" href="_i_pv6_8cc_source.html">IPv6.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00145">fragmentAndRoute()</a>, <a class="el" href="_i_pv6_8cc_source.html#l00272">routeMulticastPacket()</a>, and <a class="el" href="_i_pv6_8cc_source.html#l00165">routePacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#ae2d98f5214c7b23b38c33f7c613ee0a6">fragmentAndSend()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="comment">// hop counter check</span>
-    <span class="keywordflow">if</span> (datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#ad177ab2d5a086315b4f1e6ba3b02b75d">getHopLimit</a>() &lt;= 0)
+    <span class="comment">// if link layer uses MAC addresses (basically, not PPP), add control info</span>
+    <span class="keywordflow">if</span> (!macAddr.<a class="code" href="class_m_a_c_address.html#ae41af013d782b46483e7d0c84f0ed107" title="Returns true if all address bytes are zero.">isUnspecified</a>())
     {
-        <span class="comment">// drop datagram, destruction responsibility in ICMP</span>
-        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;datagram hopLimit reached zero, sending ICMPv6_TIME_EXCEEDED\n&quot;</span>;
-        <a class="code" href="structicmp.html">icmp</a>-&gt;sendErrorMessage(datagram, <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8aad2a907b4913018dba811497389c011d">ICMPv6_TIME_EXCEEDED</a>, 0); <span class="comment">// FIXME check icmp &#39;code&#39;</span>
-        <span class="keywordflow">return</span>;
-    }
-
-    <span class="comment">// in link layer uses MAC addresses (basically, not PPP), add control info</span>
-    <span class="keywordflow">if</span> (!macAddr.<a class="code" href="class_m_a_c_address.html#ae41af013d782b46483e7d0c84f0ed107">isUnspecified</a>())
-    {
-        <a class="code" href="class_ieee802_ctrl.html">Ieee802Ctrl</a> *controlInfo = <span class="keyword">new</span> <a class="code" href="class_ieee802_ctrl.html">Ieee802Ctrl</a>();
+        <a class="code" href="class_ieee802_ctrl.html" title="Class generated from linklayer/contract/Ieee802Ctrl.msg by opp_msgc.">Ieee802Ctrl</a> *controlInfo = <span class="keyword">new</span> <a class="code" href="class_ieee802_ctrl.html" title="Class generated from linklayer/contract/Ieee802Ctrl.msg by opp_msgc.">Ieee802Ctrl</a>();
         controlInfo-&gt;<a class="code" href="class_ieee802_ctrl.html#a1292986e26f8b3b242dc9765cc560588">setDest</a>(macAddr);
+        controlInfo-&gt;<a class="code" href="class_ieee802_ctrl.html#a00ac46d99fdc8f1ded8a63baeef0d895">setEtherType</a>(<a class="code" href="_ieee802_ctrl__m_8h.html#a0786b7c38992d7a0faa09df8fe644fe6a48a2bc3ee36231e51d11b926390835c4">ETHERTYPE_IPv6</a>);
         datagram-&gt;setControlInfo(controlInfo);
     }
 
@@ -1000,7 +1287,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_pv6.html#a477638c781f9e8d5b5722684359ef03f">IPv6::updateDisplayString</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6.html#a477638c781f9e8d5b5722684359ef03f">IPv6::updateDisplayString</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -1009,9 +1296,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_8cc_source.html#l00061">61</a> of file <a class="el" href="_i_pv6_8cc_source.html">IPv6.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00072">endService()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#a4276e6135044f1b9f165ea8011040773">endService()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordtype">char</span> buf[80] = <span class="stringliteral">&quot;&quot;</span>;
     <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6.html#adff2dce8ef8518fa3621409103faf416">numForwarded</a>&gt;0) sprintf(buf+strlen(buf), <span class="stringliteral">&quot;fwd:%d &quot;</span>, <a class="code" href="class_i_pv6.html#adff2dce8ef8518fa3621409103faf416">numForwarded</a>);
@@ -1019,26 +1304,24 @@ Protected Attributes</h2></td></tr>
     <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6.html#a553979ff6e4c9a408ab16462760cf59d">numMulticast</a>&gt;0) sprintf(buf+strlen(buf), <span class="stringliteral">&quot;mcast:%d &quot;</span>, <a class="code" href="class_i_pv6.html#a553979ff6e4c9a408ab16462760cf59d">numMulticast</a>);
     <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6.html#a48dd791376fb6ab1f9a819c067c92b5a">numDropped</a>&gt;0) sprintf(buf+strlen(buf), <span class="stringliteral">&quot;DROP:%d &quot;</span>, <a class="code" href="class_i_pv6.html#a48dd791376fb6ab1f9a819c067c92b5a">numDropped</a>);
     <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6.html#a6bbf6fb4fe90e967f0c2bac636dfceef">numUnroutable</a>&gt;0) sprintf(buf+strlen(buf), <span class="stringliteral">&quot;UNROUTABLE:%d &quot;</span>, <a class="code" href="class_i_pv6.html#a6bbf6fb4fe90e967f0c2bac636dfceef">numUnroutable</a>);
-    getDisplayString().setTagArg(<span class="stringliteral">&quot;t&quot;</span>,0,buf);
+    getDisplayString().setTagArg(<span class="stringliteral">&quot;t&quot;</span>, 0, buf);
 }
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="ab75def425a1fd61f881cd7232ca2c2e3"></a><!-- doxytag: member="IPv6::curFragmentId" ref="ab75def425a1fd61f881cd7232ca2c2e3" args="" -->
+<a class="anchor" id="abd2af9bf21cf0c352f09db43528234ec"></a><!-- doxytag: member="IPv6::curFragmentId" ref="abd2af9bf21cf0c352f09db43528234ec" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">long <a class="el" href="class_i_pv6.html#ab75def425a1fd61f881cd7232ca2c2e3">IPv6::curFragmentId</a><code> [protected]</code></td>
+          <td class="memname">unsigned int <a class="el" href="class_i_pv6.html#abd2af9bf21cf0c352f09db43528234ec">IPv6::curFragmentId</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_8h_source.html#l00045">45</a> of file <a class="el" href="_i_pv6_8h_source.html">IPv6.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00037">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#ae2d98f5214c7b23b38c33f7c613ee0a6">fragmentAndSend()</a>, and <a class="el" href="class_i_pv6.html#a0efd6df6b67596cbf2fd0ed55cbe3b23">initialize()</a>.</p>
 
 </div>
 </div>
@@ -1053,9 +1336,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_8h_source.html#l00046">46</a> of file <a class="el" href="_i_pv6_8h_source.html">IPv6.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00037">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#a0efd6df6b67596cbf2fd0ed55cbe3b23">initialize()</a>, and <a class="el" href="class_i_pv6.html#af5841104d472f7c33a27b5fa53171c40">localDeliver()</a>.</p>
 
 </div>
 </div>
@@ -1070,8 +1351,6 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_8h_source.html#l00042">42</a> of file <a class="el" href="_i_pv6_8h_source.html">IPv6.h</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a37ecb4fa0819c900cda91aafccf65984"></a><!-- doxytag: member="IPv6::ift" ref="a37ecb4fa0819c900cda91aafccf65984" args="" -->
@@ -1085,9 +1364,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_8h_source.html#l00039">39</a> of file <a class="el" href="_i_pv6_8h_source.html">IPv6.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00502">encapsulate()</a>, <a class="el" href="_i_pv6_8cc_source.html#l00092">getSourceInterfaceFrom()</a>, <a class="el" href="_i_pv6_8cc_source.html#l00127">handleMessageFromHL()</a>, <a class="el" href="_i_pv6_8cc_source.html#l00037">initialize()</a>, <a class="el" href="_i_pv6_8cc_source.html#l00272">routeMulticastPacket()</a>, and <a class="el" href="_i_pv6_8cc_source.html#l00165">routePacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#a1264485b45281cf51e54aa6db4790072">getSourceInterfaceFrom()</a>, <a class="el" href="class_i_pv6.html#a7268e90e7ca92566bd209fdc00c090b6">handleMessageFromHL()</a>, <a class="el" href="class_i_pv6.html#a0efd6df6b67596cbf2fd0ed55cbe3b23">initialize()</a>, <a class="el" href="class_i_pv6.html#a61eb7d75c2414e64fbcf82c69f9db7bf">routeMulticastPacket()</a>, and <a class="el" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3">routePacket()</a>.</p>
 
 </div>
 </div>
@@ -1102,9 +1379,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_8h_source.html#l00047">47</a> of file <a class="el" href="_i_pv6_8h_source.html">IPv6.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00037">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#a0efd6df6b67596cbf2fd0ed55cbe3b23">initialize()</a>, and <a class="el" href="class_i_pv6.html#af5841104d472f7c33a27b5fa53171c40">localDeliver()</a>.</p>
 
 </div>
 </div>
@@ -1119,9 +1394,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_8h_source.html#l00048">48</a> of file <a class="el" href="_i_pv6_8h_source.html">IPv6.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00451">handleReceivedICMP()</a>, <a class="el" href="_i_pv6_8cc_source.html#l00037">initialize()</a>, and <a class="el" href="_i_pv6_8cc_source.html#l00397">isLocalAddress()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#a8cc520cdb18b01334b04f2cd1268e370">handleReceivedICMP()</a>, <a class="el" href="class_i_pv6.html#a0efd6df6b67596cbf2fd0ed55cbe3b23">initialize()</a>, and <a class="el" href="class_i_pv6.html#af5841104d472f7c33a27b5fa53171c40">localDeliver()</a>.</p>
 
 </div>
 </div>
@@ -1136,9 +1409,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_8h_source.html#l00041">41</a> of file <a class="el" href="_i_pv6_8h_source.html">IPv6.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00037">initialize()</a>, and <a class="el" href="_i_pv6_8cc_source.html#l00165">routePacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#a0efd6df6b67596cbf2fd0ed55cbe3b23">initialize()</a>, and <a class="el" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3">routePacket()</a>.</p>
 
 </div>
 </div>
@@ -1153,9 +1424,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_8h_source.html#l00053">53</a> of file <a class="el" href="_i_pv6_8h_source.html">IPv6.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00037">initialize()</a>, <a class="el" href="_i_pv6_8cc_source.html#l00165">routePacket()</a>, and <a class="el" href="_i_pv6_8cc_source.html#l00061">updateDisplayString()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#a0efd6df6b67596cbf2fd0ed55cbe3b23">initialize()</a>, <a class="el" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3">routePacket()</a>, and <a class="el" href="class_i_pv6.html#a477638c781f9e8d5b5722684359ef03f">updateDisplayString()</a>.</p>
 
 </div>
 </div>
@@ -1170,9 +1439,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_8h_source.html#l00055">55</a> of file <a class="el" href="_i_pv6_8h_source.html">IPv6.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00037">initialize()</a>, <a class="el" href="_i_pv6_8cc_source.html#l00165">routePacket()</a>, and <a class="el" href="_i_pv6_8cc_source.html#l00061">updateDisplayString()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#a4276e6135044f1b9f165ea8011040773">endService()</a>, <a class="el" href="class_i_pv6.html#a0efd6df6b67596cbf2fd0ed55cbe3b23">initialize()</a>, <a class="el" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3">routePacket()</a>, and <a class="el" href="class_i_pv6.html#a477638c781f9e8d5b5722684359ef03f">updateDisplayString()</a>.</p>
 
 </div>
 </div>
@@ -1187,9 +1454,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_8h_source.html#l00052">52</a> of file <a class="el" href="_i_pv6_8h_source.html">IPv6.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00037">initialize()</a>, <a class="el" href="_i_pv6_8cc_source.html#l00272">routeMulticastPacket()</a>, <a class="el" href="_i_pv6_8cc_source.html#l00165">routePacket()</a>, and <a class="el" href="_i_pv6_8cc_source.html#l00061">updateDisplayString()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#a0efd6df6b67596cbf2fd0ed55cbe3b23">initialize()</a>, <a class="el" href="class_i_pv6.html#a61eb7d75c2414e64fbcf82c69f9db7bf">routeMulticastPacket()</a>, <a class="el" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3">routePacket()</a>, and <a class="el" href="class_i_pv6.html#a477638c781f9e8d5b5722684359ef03f">updateDisplayString()</a>.</p>
 
 </div>
 </div>
@@ -1204,9 +1469,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_8h_source.html#l00051">51</a> of file <a class="el" href="_i_pv6_8h_source.html">IPv6.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00037">initialize()</a>, <a class="el" href="_i_pv6_8cc_source.html#l00272">routeMulticastPacket()</a>, and <a class="el" href="_i_pv6_8cc_source.html#l00061">updateDisplayString()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#a0efd6df6b67596cbf2fd0ed55cbe3b23">initialize()</a>, <a class="el" href="class_i_pv6.html#a61eb7d75c2414e64fbcf82c69f9db7bf">routeMulticastPacket()</a>, and <a class="el" href="class_i_pv6.html#a477638c781f9e8d5b5722684359ef03f">updateDisplayString()</a>.</p>
 
 </div>
 </div>
@@ -1221,9 +1484,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_8h_source.html#l00054">54</a> of file <a class="el" href="_i_pv6_8h_source.html">IPv6.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00037">initialize()</a>, <a class="el" href="_i_pv6_8cc_source.html#l00165">routePacket()</a>, and <a class="el" href="_i_pv6_8cc_source.html#l00061">updateDisplayString()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#a641e893f2ada9c52fd0d694fa0947503">determineOutputInterface()</a>, <a class="el" href="class_i_pv6.html#a0efd6df6b67596cbf2fd0ed55cbe3b23">initialize()</a>, and <a class="el" href="class_i_pv6.html#a477638c781f9e8d5b5722684359ef03f">updateDisplayString()</a>.</p>
 
 </div>
 </div>
@@ -1238,15 +1499,28 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_8h_source.html#l00040">40</a> of file <a class="el" href="_i_pv6_8h_source.html">IPv6.h</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6.html#a641e893f2ada9c52fd0d694fa0947503">determineOutputInterface()</a>, <a class="el" href="class_i_pv6.html#a77a162c6ccb060cd4b690988725c381b">encapsulate()</a>, <a class="el" href="class_i_pv6.html#a0efd6df6b67596cbf2fd0ed55cbe3b23">initialize()</a>, <a class="el" href="class_i_pv6.html#af5841104d472f7c33a27b5fa53171c40">localDeliver()</a>, <a class="el" href="class_i_pv6.html#a61eb7d75c2414e64fbcf82c69f9db7bf">routeMulticastPacket()</a>, and <a class="el" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3">routePacket()</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00502">encapsulate()</a>, <a class="el" href="_i_pv6_8cc_source.html#l00037">initialize()</a>, <a class="el" href="_i_pv6_8cc_source.html#l00272">routeMulticastPacket()</a>, and <a class="el" href="_i_pv6_8cc_source.html#l00165">routePacket()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a6950edf0aacd8dbc068adf5876c0868e"></a><!-- doxytag: member="IPv6::tunneling" ref="a6950edf0aacd8dbc068adf5876c0868e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_pv6_tunneling.html">IPv6Tunneling</a>* <a class="el" href="class_i_pv6.html#a6950edf0aacd8dbc068adf5876c0868e">IPv6::tunneling</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_i_pv6.html#a0efd6df6b67596cbf2fd0ed55cbe3b23">initialize()</a>, and <a class="el" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3">routePacket()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_i_pv6_8h_source.html">IPv6.h</a></li>
-<li><a class="el" href="_i_pv6_8cc_source.html">IPv6.cc</a></li>
+<li><a class="el" href="_i_pv6_8h.html">IPv6.h</a></li>
+<li><a class="el" href="_i_pv6_8cc.html">IPv6.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -1254,7 +1528,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_i_pv6.html">IPv6</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:49 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:26 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

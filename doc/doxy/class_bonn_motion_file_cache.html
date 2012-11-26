@@ -86,24 +86,30 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="BonnMotionFileCache" -->
-<p><code>#include &lt;<a class="el" href="_bonn_motion_file_cache_8h_source.html">BonnMotionFileCache.h</a>&gt;</code></p>
+<p>Singleton object to read and store BonnMotion files.  
+ <a href="class_bonn_motion_file_cache.html#details">More...</a></p>
+
+<p><code>#include &lt;BonnMotionFileCache.h&gt;</code></p>
 
 <p><a href="class_bonn_motion_file_cache-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="class_bonn_motion_file.html">BonnMotionFile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonn_motion_file_cache.html#acd2a73b9199e01b31db26ec817604b8b">getFile</a> (const char *filename)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the given document.  <a href="#acd2a73b9199e01b31db26ec817604b8b"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_bonn_motion_file_cache.html">BonnMotionFileCache</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonn_motion_file_cache.html#a995dc4f97f699bb7a7361120f5cb46b1">getInstance</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonn_motion_file_cache.html#a8eda04da33078a95b2971e2c429969e9">deleteInstance</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the singleton instance.  <a href="#a995dc4f97f699bb7a7361120f5cb46b1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonn_motion_file_cache.html#a8eda04da33078a95b2971e2c429969e9">deleteInstance</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the singleton instance.  <a href="#a8eda04da33078a95b2971e2c429969e9"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-types"></a>
 Protected Types</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, <br class="typebreak"/>
 <a class="el" href="class_bonn_motion_file.html">BonnMotionFile</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonn_motion_file_cache.html#ac750dfb8bf1a24c281a65d3f8604fa69">BMFileMap</a></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonn_motion_file_cache.html#a419bd9e8bbf1b82de00d37f69d289257">parseFile</a> (const char *filename, <a class="el" href="class_bonn_motion_file.html">BonnMotionFile</a> &amp;bmFile)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonn_motion_file_cache.html#a419bd9e8bbf1b82de00d37f69d289257">parseFile</a> (const char *filename, <a class="el" href="class_bonn_motion_file.html">BonnMotionFile</a> &amp;bmFile)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonn_motion_file_cache.html#a534f7affd51962e4dcb01281a8ee2b88">BonnMotionFileCache</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonn_motion_file_cache.html#aa5e2662133eef4f16420fdd355eb0edf">~BonnMotionFileCache</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
@@ -114,10 +120,9 @@ Static Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_bonn_motion_file_cache.html">BonnMotionFileCache</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bonn_motion_file_cache.html#a5afb0e0b1382039314aee521db870412">inst</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Singleton object to read and store BonnMotion files. Used within <a class="el" href="class_bonn_motion_mobility.html" title="Uses the BonnMotion native file format. See NED file for more info.">BonnMotionMobility</a>. Needed because otherwise every node would have to open and read the file independently.</p>
+<div class="textblock"><p>Singleton object to read and store BonnMotion files. </p>
+<p>Used within <a class="el" href="class_bonn_motion_mobility.html" title="Uses the BonnMotion native file format.">BonnMotionMobility</a>. Needed because otherwise every node would have to open and read the file independently.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>Andras Varga </dd></dl>
-
-<p>Definition at line <a class="el" href="_bonn_motion_file_cache_8h_source.html#l00053">53</a> of file <a class="el" href="_bonn_motion_file_cache_8h_source.html">BonnMotionFileCache.h</a>.</p>
 </div><hr/><h2>Member Typedef Documentation</h2>
 <a class="anchor" id="ac750dfb8bf1a24c281a65d3f8604fa69"></a><!-- doxytag: member="BonnMotionFileCache::BMFileMap" ref="ac750dfb8bf1a24c281a65d3f8604fa69" args="" -->
 <div class="memitem">
@@ -129,8 +134,6 @@ Static Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_bonn_motion_file_cache_8h_source.html#l00056">56</a> of file <a class="el" href="_bonn_motion_file_cache_8h_source.html">BonnMotionFileCache.h</a>.</p>
 
 </div>
 </div>
@@ -149,9 +152,7 @@ Static Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_bonn_motion_file_cache_8h_source.html#l00060">60</a> of file <a class="el" href="_bonn_motion_file_cache_8h_source.html">BonnMotionFileCache.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_bonn_motion_file_cache_8cc_source.html#l00033">getInstance()</a>.</p>
+<p>Referenced by <a class="el" href="class_bonn_motion_file_cache.html#a995dc4f97f699bb7a7361120f5cb46b1">getInstance()</a>.</p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
@@ -169,8 +170,6 @@ Static Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_bonn_motion_file_cache_8h_source.html#l00061">61</a> of file <a class="el" href="_bonn_motion_file_cache_8h_source.html">BonnMotionFileCache.h</a>.</p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
@@ -181,7 +180,7 @@ Static Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_bonn_motion_file_cache.html#a8eda04da33078a95b2971e2c429969e9">BonnMotionFileCache::deleteInstance</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_bonn_motion_file_cache.html#a8eda04da33078a95b2971e2c429969e9">BonnMotionFileCache::deleteInstance</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [static]</code></td>
@@ -189,16 +188,15 @@ Static Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Deletes the singleton instance. </p>
 
-<p>Definition at line <a class="el" href="_bonn_motion_file_cache_8cc_source.html#l00040">40</a> of file <a class="el" href="_bonn_motion_file_cache_8cc_source.html">BonnMotionFileCache.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_bonn_motion_mobility_8cc_source.html#l00058">BonnMotionMobility::~BonnMotionMobility()</a>.</p>
+<p>Referenced by <a class="el" href="class_bonn_motion_mobility.html#a890e8e118b618dfb90e16398d0aae8bc">BonnMotionMobility::~BonnMotionMobility()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span> (<a class="code" href="class_bonn_motion_file_cache.html#a5afb0e0b1382039314aee521db870412">inst</a>)
     {
         <span class="keyword">delete</span> <a class="code" href="class_bonn_motion_file_cache.html#a5afb0e0b1382039314aee521db870412">inst</a>;
-        <a class="code" href="class_bonn_motion_file_cache.html#a5afb0e0b1382039314aee521db870412">inst</a> = NULL;
+        <a class="code" href="class_bonn_motion_file_cache.html#a5afb0e0b1382039314aee521db870412">inst</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
     }
 }
 </pre></div>
@@ -218,11 +216,10 @@ Static Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Returns the given document. </p>
 
-<p>Definition at line <a class="el" href="_bonn_motion_file_cache_8cc_source.html#l00049">49</a> of file <a class="el" href="_bonn_motion_file_cache_8cc_source.html">BonnMotionFileCache.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_bonn_motion_mobility_8cc_source.html#l00026">BonnMotionMobility::initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_bonn_motion_mobility.html#aefa1902bb0eb0797092868ed523c1327">BonnMotionMobility::initialize()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// if found, return it from cache</span>
     BMFileMap::iterator it = <a class="code" href="class_bonn_motion_file_cache.html#a97929fd681c1e9f2aa8d5269d47655fb">cache</a>.find(std::string(filename));
@@ -230,7 +227,7 @@ Static Protected Attributes</h2></td></tr>
         <span class="keywordflow">return</span> &amp;(it-&gt;second);
 
     <span class="comment">// load and store in cache</span>
-    <a class="code" href="class_bonn_motion_file.html">BonnMotionFile</a>&amp; bmFile = <a class="code" href="class_bonn_motion_file_cache.html#a97929fd681c1e9f2aa8d5269d47655fb">cache</a>[filename];
+    <a class="code" href="class_bonn_motion_file.html" title="Represents a BonnMotion file&#39;s contents.">BonnMotionFile</a>&amp; bmFile = <a class="code" href="class_bonn_motion_file_cache.html#a97929fd681c1e9f2aa8d5269d47655fb">cache</a>[filename];
     <a class="code" href="class_bonn_motion_file_cache.html#a419bd9e8bbf1b82de00d37f69d289257">parseFile</a>(filename, bmFile);
     <span class="keywordflow">return</span> &amp;bmFile;
 }
@@ -250,11 +247,10 @@ Static Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Returns the singleton instance. </p>
 
-<p>Definition at line <a class="el" href="_bonn_motion_file_cache_8cc_source.html#l00033">33</a> of file <a class="el" href="_bonn_motion_file_cache_8cc_source.html">BonnMotionFileCache.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_bonn_motion_mobility_8cc_source.html#l00026">BonnMotionMobility::initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_bonn_motion_mobility.html#aefa1902bb0eb0797092868ed523c1327">BonnMotionMobility::initialize()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span> (!<a class="code" href="class_bonn_motion_file_cache.html#a5afb0e0b1382039314aee521db870412">inst</a>)
         <a class="code" href="class_bonn_motion_file_cache.html#a5afb0e0b1382039314aee521db870412">inst</a> = <span class="keyword">new</span> <a class="code" href="class_bonn_motion_file_cache.html#a534f7affd51962e4dcb01281a8ee2b88">BonnMotionFileCache</a>;
@@ -268,7 +264,7 @@ Static Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_bonn_motion_file_cache.html#a419bd9e8bbf1b82de00d37f69d289257">BonnMotionFileCache::parseFile</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_bonn_motion_file_cache.html#a419bd9e8bbf1b82de00d37f69d289257">BonnMotionFileCache::parseFile</a> </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>filename</em>, </td>
@@ -288,13 +284,11 @@ Static Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_bonn_motion_file_cache_8cc_source.html#l00062">62</a> of file <a class="el" href="_bonn_motion_file_cache_8cc_source.html">BonnMotionFileCache.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_bonn_motion_file_cache_8cc_source.html#l00049">getFile()</a>.</p>
+<p>Referenced by <a class="el" href="class_bonn_motion_file_cache.html#acd2a73b9199e01b31db26ec817604b8b">getFile()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     std::ifstream in(filename, std::ios::in);
     <span class="keywordflow">if</span> (in.fail())
-        opp_error(<span class="stringliteral">&quot;Cannot open file &#39;%s&#39;&quot;</span>,filename);
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Cannot open file &#39;%s&#39;&quot;</span>, filename);
 
     std::string line;
     <span class="keywordflow">while</span> (std::getline(in, line))
@@ -324,9 +318,7 @@ Static Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_bonn_motion_file_cache_8h_source.html#l00057">57</a> of file <a class="el" href="_bonn_motion_file_cache_8h_source.html">BonnMotionFileCache.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_bonn_motion_file_cache_8cc_source.html#l00049">getFile()</a>.</p>
+<p>Referenced by <a class="el" href="class_bonn_motion_file_cache.html#acd2a73b9199e01b31db26ec817604b8b">getFile()</a>.</p>
 
 </div>
 </div>
@@ -341,15 +333,13 @@ Static Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_bonn_motion_file_cache_8h_source.html#l00058">58</a> of file <a class="el" href="_bonn_motion_file_cache_8h_source.html">BonnMotionFileCache.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_bonn_motion_file_cache_8cc_source.html#l00040">deleteInstance()</a>, and <a class="el" href="_bonn_motion_file_cache_8cc_source.html#l00033">getInstance()</a>.</p>
+<p>Referenced by <a class="el" href="class_bonn_motion_file_cache.html#a8eda04da33078a95b2971e2c429969e9">deleteInstance()</a>, and <a class="el" href="class_bonn_motion_file_cache.html#a995dc4f97f699bb7a7361120f5cb46b1">getInstance()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_bonn_motion_file_cache_8h_source.html">BonnMotionFileCache.h</a></li>
-<li><a class="el" href="_bonn_motion_file_cache_8cc_source.html">BonnMotionFileCache.cc</a></li>
+<li><a class="el" href="_bonn_motion_file_cache_8h.html">BonnMotionFileCache.h</a></li>
+<li><a class="el" href="_bonn_motion_file_cache_8cc.html">BonnMotionFileCache.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -357,7 +347,7 @@ Static Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_bonn_motion_file_cache.html">BonnMotionFileCache</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:47 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:23 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

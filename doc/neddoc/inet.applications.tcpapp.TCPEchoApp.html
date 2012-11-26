@@ -7,20 +7,54 @@
 <h2 class="comptitle">Simple Module <i>TCPEchoApp</i></h2>
 <b>Package:</b> inet.applications.tcpapp<br/><b>File: <a href="src-applications-tcpapp-TCPEchoApp.ned.html">src/applications/tcpapp/TCPEchoApp.ned</a></b><br/><p><a href="../doxy/class_t_c_p_echo_app.html" target="mainframe"><b>C++ definition</b></a></p>
 
-<p>Accepts any number of incoming <a href="inet.transport.tcp.TCP.html">TCP</a> connections, and sends back the
+<p>Accepts any number of incoming TCP connections, and sends back the
 messages that arrive on them, The lengths of the messages are
 multiplied by echoFactor before sending them back (echoFactor=1 will
 result in sending back the same message unmodified.) The reply can also be
 delayed by a constant time (echoDelay parameter).</p>
 <p>When <a href="inet.applications.tcpapp.TCPEchoApp.html">TCPEchoApp</a> receives data packets from <a href="inet.transport.tcp.TCP.html">TCP</a> (and such, when they can be
-echoed) depends on the sendQueue/receiveQueue setting of <a href="inet.transport.tcp.TCP.html">TCP</a>.
-With TCPVirtualBytesSendQueue/RcvQueue, <a href="inet.transport.tcp.TCP.html">TCP</a> passes up data to us
+echoed) depends on the dataTransferMode setting.
+With "bytecount" and "bytestream", <a href="inet.transport.tcp.TCP.html">TCP</a> passes up data to us
 as soon as a segment arrives, so it can be echoed immediately.
-With TCPMsgBasedSendQueue/RcvQueue, our local <a href="inet.transport.tcp.TCP.html">TCP</a> reproduces the same
+With "object" mode, our local <a href="inet.transport.tcp.TCP.html">TCP</a> reproduces the same
 messages that the sender app passed down to its <a href="inet.transport.tcp.TCP.html">TCP</a> -- so if the sender
-app sent a single 100 MiB message, it will be echoed only when all
+app sent a single 100 MB message, it will be echoed only when all
 100 megabytes have arrived.</p>
-<p>Compatible with both IPv4 and <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a>.</p>
+<p>The module parameter dataTransferMode should be set the transfer mode in TCP layer.
+Currently you have three choices:</p>
+  <ol><li>set them to "bytecount".
+     This mode manages "virtual bytes", that is, only byte counts are
+     transmitted over the TCP connection and no actual data. cMessage
+     contents, and even message boundaries are not preserved with these
+     classes: for example, if the client sends a single cMessage with
+     length = 1 megabyte over TCP, the receiver-side client will see a
+     sequence of MSS-sized messages.</li>
+  <li>use "object", which transmits
+     cMessage objects (and subclasses) over a TCP connection. The same
+     message object sequence that was sent by the client to the
+     sender-side TCP entity will be reproduced on the receiver side.
+     If a client sends a cMessage with length = 1 megabyte, the
+     receiver-side client will receive the same message object (or a clone)
+     after the TCP entities have completed simulating the transmission
+     of 1 megabyte over the connection. This is a different behaviour
+     from TCPVirtualDataSendQueue/RcvQueue.
+     This mode is not implemented in <span class="error" title="Unresolved link">TCP_NSC</span> yet.</li>
+  <li>use "bytestream", which transmits real bytes of messages.</li></ol>
+<p>Compatible with both <a href="inet.networklayer.ipv4.IPv4.html">IPv4</a> and <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a>.</p>
+<img src="inet.applications.tcpapp.TCPEchoApp-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.applications.tcpapp.TCPEchoApp.html" title="TCPEchoApp" alt="TCPEchoApp" coords="0,30,115,70">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.applications.tcpapp.TCPEchoApp-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.applications.tcpapp.TCPEchoApp.html" title="Simple Module TCPEchoApp" alt="" coords="5,6,107,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.applications.tcpapp.TCPEchoApp-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.applications.tcpapp.TCPEchoApp.html" title="Simple Module TCPEchoApp" alt="" coords="5,83,107,111">
+<area shape="rect" id="node2" href="inet.applications.ITCPApp.html" title="Module Interface ITCPApp" alt="" coords="19,6,93,34">
+</map>
 <h3 class="subtitle">Parameters:</h3>
 <table class="paramstable">
    <tr>
@@ -30,7 +64,7 @@ app sent a single 100 MiB message, it will be echoed only when all
       <th class="description">Description</th>
    </tr>
 <tr class="local">
-   <td>address</td>
+   <td>localAddress</td>
    <td>
       <i>string</i>
    </td>
@@ -40,7 +74,7 @@ app sent a single 100 MiB message, it will be echoed only when all
    </td>
 </tr>
 <tr class="local">
-   <td>port</td>
+   <td>localPort</td>
    <td>
       <i>int</i>
    </td>
@@ -63,6 +97,14 @@ app sent a single 100 MiB message, it will be echoed only when all
       <i>double</i>
    </td>
    <td>0s</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>dataTransferMode</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"bytecount"</td>
    <td>   </td>
 </tr>
 </table>
@@ -98,6 +140,61 @@ app sent a single 100 MiB message, it will be echoed only when all
    <td></td>   <td></td>
 </tr>
 </table>
+<h3 class="subtitle">Signals:</h3>
+<table class="signalstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="unit">Unit</th>
+   </tr>
+<tr class="local">
+   <td>sentPk</td>
+   <td><i>
+cPacket   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>rcvdPk</td>
+   <td><i>
+cPacket   </i></td>
+   <td></td>
+</tr>
+</table>
+<h3 class="subtitle">Statistics:</h3>
+<table class="statisticstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="title">Title</th>
+      <th class="source">Source</th>
+      <th class="record">Record</th>
+      <th class="unit">Unit</th>
+      <th class="interpolationmode">Interpolation Mode</th>
+   </tr>
+<tr class="local">
+   <td>sentPk</td>
+   <td>packets sent</td>
+   <td>sentPk</td>
+   <td>count, sum(packetBytes), vector(packetBytes)</td>
+   <td></td>
+   <td>none</td>
+</tr>
+<tr class="local">
+   <td>endToEndDelay</td>
+   <td>end-to-end delay</td>
+   <td>messageAge(rcvdPk)</td>
+   <td>histogram, vector</td>
+   <td>s</td>
+   <td>none</td>
+</tr>
+<tr class="local">
+   <td>rcvdPk</td>
+   <td>packets received</td>
+   <td>rcvdPk</td>
+   <td>count, sum(packetBytes), vector(packetBytes)</td>
+   <td></td>
+   <td>none</td>
+</tr>
+</table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
 // Accepts any number of incoming TCP connections, and sends back the
@@ -106,31 +203,60 @@ app sent a single 100 MiB message, it will be echoed only when all
 // result in sending back the same message unmodified.) The reply can also be
 // delayed by a constant time (echoDelay parameter).
 //
-// When TCPEchoApp receives data packets from TCP (and such, when they can be
-// echoed) depends on the sendQueue/receiveQueue setting of TCP.
-// With TCPVirtualBytesSendQueue/RcvQueue, TCP passes up data to us
+// When ~TCPEchoApp receives data packets from ~TCP (and such, when they can be
+// echoed) depends on the dataTransferMode setting.
+// With &quot;bytecount&quot; and &quot;bytestream&quot;, ~TCP passes up data to us
 // as soon as a segment arrives, so it can be echoed immediately.
-// With TCPMsgBasedSendQueue/RcvQueue, our local TCP reproduces the same
-// messages that the sender app passed down to its TCP -- so if the sender
-// app sent a single 100 MiB message, it will be echoed only when all
+// With &quot;object&quot; mode, our local ~TCP reproduces the same
+// messages that the sender app passed down to its ~TCP -- so if the sender
+// app sent a single 100 MB message, it will be echoed only when all
 // 100 megabytes have arrived.
 //
-// Compatible with both IPv4 and IPv6.
+// The module parameter dataTransferMode should be set the transfer mode in TCP layer.
+// Currently you have three choices:
 //
-</span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">TCPEchoApp</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #000000; "> </span><span style="color: #000000; ">TCPApp</span><span style="color: #000000; ">
+//   -# set them to &quot;bytecount&quot;.
+//      This mode manages &quot;virtual bytes&quot;, that is, only byte counts are
+//      transmitted over the TCP connection and no actual data. cMessage
+//      contents, and even message boundaries are not preserved with these
+//      classes: for example, if the client sends a single cMessage with
+//      length = 1 megabyte over TCP, the receiver-side client will see a
+//      sequence of MSS-sized messages.
+//
+//   -# use &quot;object&quot;, which transmits
+//      cMessage objects (and subclasses) over a TCP connection. The same
+//      message object sequence that was sent by the client to the
+//      sender-side TCP entity will be reproduced on the receiver side.
+//      If a client sends a cMessage with length = 1 megabyte, the
+//      receiver-side client will receive the same message object (or a clone)
+//      after the TCP entities have completed simulating the transmission
+//      of 1 megabyte over the connection. This is a different behaviour
+//      from TCPVirtualDataSendQueue/RcvQueue.
+//      This mode is not implemented in ~TCP_NSC yet.
+//
+//   -# use &quot;bytestream&quot;, which transmits real bytes of messages.
+//
+// Compatible with both ~IPv4 and ~IPv6.
+//
+</span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">TCPEchoApp</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #000000; "> </span><span style="color: #000000; ">ITCPApp</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">address</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// local address; may be left empty (&quot;&quot;)
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">port</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// port number to listen on
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">localAddress</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// local address; may be left empty (&quot;&quot;)
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">localPort</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// port number to listen on
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">echoFactor</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">1</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">echoDelay</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;s&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">0</span><span style="color: #000000; ">s</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">echoDelay</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">0</span><span style="color: #000000; ">s</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">dataTransferMode</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@enum</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;bytecount&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;object&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;bytestream&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;bytecount&quot;</span><span style="color: #000000; ">);
         </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/app&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">sentPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">cPacket</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">rcvdPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">cPacket</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">rcvdPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;packets received&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">source</span><span style="color: #000000; ">=</span><span style="color: #000000; ">rcvdPk</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;sum(packetBytes)&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;vector(packetBytes)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">sentPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;packets sent&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">source</span><span style="color: #000000; ">=</span><span style="color: #000000; ">sentPk</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;sum(packetBytes)&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;vector(packetBytes)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">endToEndDelay</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;end-to-end delay&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">source</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;messageAge(rcvdPk)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">unit</span><span style="color: #000000; ">=</span><span style="color: #000000; ">s</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">histogram</span><span style="color: #000000; ">,</span><span style="color: #000000; ">vector</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
     </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">tcpIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">TCPCommand</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">);
         </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">tcpOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">TCPCommand</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);
 }
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

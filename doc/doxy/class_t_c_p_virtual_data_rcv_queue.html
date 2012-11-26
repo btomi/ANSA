@@ -85,15 +85,19 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="TCPVirtualDataRcvQueue" --><!-- doxytag: inherits="TCPReceiveQueue" -->
-<p><code>#include &lt;<a class="el" href="_t_c_p_virtual_data_rcv_queue_8h_source.html">TCPVirtualDataRcvQueue.h</a>&gt;</code></p>
+<p>Receive queue that manages "virtual bytes", that is, byte counts only.  
+ <a href="class_t_c_p_virtual_data_rcv_queue.html#details">More...</a></p>
+
+<p><code>#include &lt;TCPVirtualDataRcvQueue.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TCPVirtualDataRcvQueue:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_t_c_p_virtual_data_rcv_queue.png" usemap="#TCPVirtualDataRcvQueue_map" alt=""/>
   <map id="TCPVirtualDataRcvQueue_map" name="TCPVirtualDataRcvQueue_map">
-<area href="class_t_c_p_receive_queue.html" alt="TCPReceiveQueue" shape="rect" coords="0,0,159,24"/>
-<area href="class_t_c_p_msg_based_rcv_queue.html" alt="TCPMsgBasedRcvQueue" shape="rect" coords="0,112,159,136"/>
+<area href="class_t_c_p_receive_queue.html" title="Abstract base class for TCP receive queues." alt="TCPReceiveQueue" shape="rect" coords="85,0,245,24"/>
+<area href="class_t_c_p_byte_stream_rcv_queue.html" title="TCP send queue that stores actual bytes." alt="TCPByteStreamRcvQueue" shape="rect" coords="0,112,160,136"/>
+<area href="class_t_c_p_msg_based_rcv_queue.html" alt="TCPMsgBasedRcvQueue" shape="rect" coords="170,112,330,136"/>
 </map>
  </div></div>
 
@@ -101,51 +105,63 @@ Inheritance diagram for TCPVirtualDataRcvQueue:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_t_c_p_virtual_data_rcv_queue_1_1_region.html">Region</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue_1_1_region.html">Region</a></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a6ff50b1360d80254f69aaf59c7489922">TCPVirtualDataRcvQueue</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ctor.  <a href="#a6ff50b1360d80254f69aaf59c7489922"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#aeda3bd955956c803010cc642ddf7b60b">~TCPVirtualDataRcvQueue</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#adeeeae16fa0cb45c5ae87e6174d793fc">init</a> (uint32 startSeq)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual dtor.  <a href="#aeda3bd955956c803010cc642ddf7b60b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#adeeeae16fa0cb45c5ae87e6174d793fc">init</a> (uint32 startSeq)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Method inherited from <a class="el" href="class_t_c_p_receive_queue.html" title="Abstract base class for TCP receive queues.">TCPReceiveQueue</a>.  <a href="#adeeeae16fa0cb45c5ae87e6174d793fc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#ac6e69a676e9389cbc140d1a65b4c9af6">info</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Method inherited from <a class="el" href="class_t_c_p_receive_queue.html" title="Abstract base class for TCP receive queues.">TCPReceiveQueue</a>.  <a href="#ac6e69a676e9389cbc140d1a65b4c9af6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a83b598c81e2dfc8d72f7584408b99802">insertBytesFromSegment</a> (<a class="el" href="class_t_c_p_segment.html">TCPSegment</a> *tcpseg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Method inherited from <a class="el" href="class_t_c_p_receive_queue.html" title="Abstract base class for TCP receive queues.">TCPReceiveQueue</a>.  <a href="#a83b598c81e2dfc8d72f7584408b99802"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual cPacket *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#af1cafaf5415f693ec82f7f3747ea2311">extractBytesUpTo</a> (uint32 seq)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Method inherited from <a class="el" href="class_t_c_p_receive_queue.html" title="Abstract base class for TCP receive queues.">TCPReceiveQueue</a>.  <a href="#af1cafaf5415f693ec82f7f3747ea2311"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a758ece402d5028e49a78001bfe46824a">getAmountOfBufferedBytes</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Method inherited from <a class="el" href="class_t_c_p_receive_queue.html" title="Abstract base class for TCP receive queues.">TCPReceiveQueue</a>.  <a href="#a758ece402d5028e49a78001bfe46824a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a1264793628d3daad951c7b8e9ccb3573">getAmountOfFreeBytes</a> (uint32 maxRcvBuffer)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Method inherited from <a class="el" href="class_t_c_p_receive_queue.html" title="Abstract base class for TCP receive queues.">TCPReceiveQueue</a>.  <a href="#a1264793628d3daad951c7b8e9ccb3573"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#afb91465790f48c2f74dd2352bdc60e50">getQueueLength</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a3de12b62a10e1c856b3a75bb08e7951e">getQueueStatus</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Method inherited from <a class="el" href="class_t_c_p_receive_queue.html" title="Abstract base class for TCP receive queues.">TCPReceiveQueue</a>.  <a href="#afb91465790f48c2f74dd2352bdc60e50"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a3de12b62a10e1c856b3a75bb08e7951e">getQueueStatus</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Method inherited from <a class="el" href="class_t_c_p_receive_queue.html" title="Abstract base class for TCP receive queues.">TCPReceiveQueue</a>.  <a href="#a3de12b62a10e1c856b3a75bb08e7951e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a8797005ee3238eaa1b5ee432eaeb00df">getLE</a> (uint32 fromSeqNum)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Method inherited from <a class="el" href="class_t_c_p_receive_queue.html" title="Abstract base class for TCP receive queues.">TCPReceiveQueue</a>.  <a href="#a8797005ee3238eaa1b5ee432eaeb00df"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a7fcbb2266911c8cf166b90170c6d7a03">getRE</a> (uint32 toSeqNum)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Method inherited from <a class="el" href="class_t_c_p_receive_queue.html" title="Abstract base class for TCP receive queues.">TCPReceiveQueue</a>.  <a href="#a7fcbb2266911c8cf166b90170c6d7a03"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-types"></a>
 Protected Types</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef std::list&lt; <a class="el" href="struct_t_c_p_virtual_data_rcv_queue_1_1_region.html">Region</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#af6f88d0a61c53fa784940e54451095c4">RegionList</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::list&lt; <a class="el" href="class_t_c_p_virtual_data_rcv_queue_1_1_region.html">Region</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a2ff7e48b9e8b0a60f30efc57631daacd">RegionList</a></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a710b6b567c02c1e3e0535ec919330c7c">merge</a> (uint32 segmentBegin, uint32 segmentEnd)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_i_n_e_t_defs_8h.html#a718b4eb2652c286f4d42dc18a8e71a1a">ulong</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#adefc2b346dd80461a5f49d3aab62a7a7">extractTo</a> (uint32 toSeq)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a164130b33e613c37fb214f3cce384491">merge</a> (<a class="el" href="class_t_c_p_virtual_data_rcv_queue_1_1_region.html">TCPVirtualDataRcvQueue::Region</a> *region)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Merge segment byte range into regionList, the parameter region must created by 'new' operator.  <a href="#a164130b33e613c37fb214f3cce384491"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_c_p_virtual_data_rcv_queue_1_1_region.html">TCPVirtualDataRcvQueue::Region</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a21cc96268b7bd9245557224f1a256feb">extractTo</a> (uint32 toSeq)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
+<a class="el" href="class_t_c_p_virtual_data_rcv_queue_1_1_region.html">TCPVirtualDataRcvQueue::Region</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#ad02db647f5a47ed88a8228ff044e5084">createRegionFromSegment</a> (<a class="el" href="class_t_c_p_segment.html">TCPSegment</a> *tcpseg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="class_t_c_p_virtual_data_rcv_queue_1_1_region.html">Region</a> from tcpseg.  <a href="#ad02db647f5a47ed88a8228ff044e5084"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a48ec8399adbfb1f4706324dd988141c0">rcv_nxt</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#af6f88d0a61c53fa784940e54451095c4">RegionList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a2ff7e48b9e8b0a60f30efc57631daacd">RegionList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Receive queue that manages "virtual bytes", that is, byte counts only.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_t_c_p_virtual_data_send_queue.html">TCPVirtualDataSendQueue</a> </dd></dl>
-
-<p>Definition at line <a class="el" href="_t_c_p_virtual_data_rcv_queue_8h_source.html#l00032">32</a> of file <a class="el" href="_t_c_p_virtual_data_rcv_queue_8h_source.html">TCPVirtualDataRcvQueue.h</a>.</p>
+<div class="textblock"><p>Receive queue that manages "virtual bytes", that is, byte counts only. </p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_t_c_p_virtual_data_send_queue.html" title="Send queue that manages &quot;virtual bytes&quot;, that is, byte counts only.">TCPVirtualDataSendQueue</a> </dd></dl>
 </div><hr/><h2>Member Typedef Documentation</h2>
-<a class="anchor" id="af6f88d0a61c53fa784940e54451095c4"></a><!-- doxytag: member="TCPVirtualDataRcvQueue::RegionList" ref="af6f88d0a61c53fa784940e54451095c4" args="" -->
+<a class="anchor" id="a2ff7e48b9e8b0a60f30efc57631daacd"></a><!-- doxytag: member="TCPVirtualDataRcvQueue::RegionList" ref="a2ff7e48b9e8b0a60f30efc57631daacd" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::list&lt;<a class="el" href="struct_t_c_p_virtual_data_rcv_queue_1_1_region.html">Region</a>&gt; <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#af6f88d0a61c53fa784940e54451095c4">TCPVirtualDataRcvQueue::RegionList</a><code> [protected]</code></td>
+          <td class="memname">typedef std::list&lt;<a class="el" href="class_t_c_p_virtual_data_rcv_queue_1_1_region.html">Region</a>*&gt; <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a2ff7e48b9e8b0a60f30efc57631daacd">TCPVirtualDataRcvQueue::RegionList</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_virtual_data_rcv_queue_8h_source.html#l00042">42</a> of file <a class="el" href="_t_c_p_virtual_data_rcv_queue_8h_source.html">TCPVirtualDataRcvQueue.h</a>.</p>
 
 </div>
 </div>
@@ -163,10 +179,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Ctor. </p>
 
-<p>Definition at line <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00026">26</a> of file <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html">queues/TCPVirtualDataRcvQueue.cc</a>.</p>
-<div class="fragment"><pre class="fragment">                                               : <a class="code" href="class_t_c_p_receive_queue.html#abc03f0e2c058d95f46ca82e2f5f43fde">TCPReceiveQueue</a>()
+<p>Ctor. </p>
+<div class="fragment"><pre class="fragment">                                               : <a class="code" href="class_t_c_p_receive_queue.html#abc03f0e2c058d95f46ca82e2f5f43fde" title="Ctor.">TCPReceiveQueue</a>()
 {
 }
 </pre></div>
@@ -185,15 +200,47 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Virtual dtor. </p>
 
-<p>Definition at line <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00030">30</a> of file <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html">queues/TCPVirtualDataRcvQueue.cc</a>.</p>
+<p>Virtual dtor. </p>
 <div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">while</span> (!<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.empty())
+    {
+        <span class="keyword">delete</span> <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.front();
+        <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.pop_front();
+    }
 }
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ad02db647f5a47ed88a8228ff044e5084"></a><!-- doxytag: member="TCPVirtualDataRcvQueue::createRegionFromSegment" ref="ad02db647f5a47ed88a8228ff044e5084" args="(TCPSegment *tcpseg)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_t_c_p_virtual_data_rcv_queue_1_1_region.html">TCPVirtualDataRcvQueue::Region</a> * <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#ad02db647f5a47ed88a8228ff044e5084">TCPVirtualDataRcvQueue::createRegionFromSegment</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_t_c_p_segment.html">TCPSegment</a> *&#160;</td>
+          <td class="paramname"><em>tcpseg</em></td><td>)</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Create a new <a class="el" href="class_t_c_p_virtual_data_rcv_queue_1_1_region.html">Region</a> from tcpseg. </p>
+<p>Called from <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a83b598c81e2dfc8d72f7584408b99802" title="Method inherited from TCPReceiveQueue.">insertBytesFromSegment()</a> </p>
+
+<p>Reimplemented in <a class="el" href="class_t_c_p_byte_stream_rcv_queue.html#a0996de117f8eec60714baabb7c482cd1">TCPByteStreamRcvQueue</a>.</p>
+
+<p>Referenced by <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a83b598c81e2dfc8d72f7584408b99802">insertBytesFromSegment()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    Region *region = <span class="keyword">new</span> Region(tcpseg-&gt;<a class="code" href="class_t_c_p_segment___base.html#a0dafe41ef5a4306a4106fdb1e22b19e8">getSequenceNo</a>(), tcpseg-&gt;<a class="code" href="class_t_c_p_segment___base.html#a0dafe41ef5a4306a4106fdb1e22b19e8">getSequenceNo</a>()+tcpseg-&gt;<a class="code" href="class_t_c_p_segment___base.html#a7d9f010b71e3bfa267873ab21195fb73">getPayloadLength</a>());
+    <span class="keywordflow">return</span> region;
+}
+</pre></div>
+</div>
+</div>
 <a class="anchor" id="af1cafaf5415f693ec82f7f3747ea2311"></a><!-- doxytag: member="TCPVirtualDataRcvQueue::extractBytesUpTo" ref="af1cafaf5415f693ec82f7f3747ea2311" args="(uint32 seq)" -->
 <div class="memitem">
 <div class="memproto">
@@ -208,31 +255,33 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Should create a packet to be passed up to the app, up to (but NOT including) the given sequence no (usually rcv_nxt). It should return NULL if there's no more data to be passed up -- this method is called several times until it returns NULL. </p>
+
+<p>Method inherited from <a class="el" href="class_t_c_p_receive_queue.html" title="Abstract base class for TCP receive queues.">TCPReceiveQueue</a>. </p>
 
 <p>Implements <a class="el" href="class_t_c_p_receive_queue.html#abfb833d10d529c1f9fda7d09e3616699">TCPReceiveQueue</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_t_c_p_msg_based_rcv_queue.html#ad7704a4fa5bb2a9faf728da118dc1ac9">TCPMsgBasedRcvQueue</a>.</p>
-
-<p>Definition at line <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00129">129</a> of file <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html">queues/TCPVirtualDataRcvQueue.cc</a>.</p>
+<p>Reimplemented in <a class="el" href="class_t_c_p_byte_stream_rcv_queue.html#a923c2539de2037d9930f046328f47695">TCPByteStreamRcvQueue</a>, and <a class="el" href="class_t_c_p_msg_based_rcv_queue.html#ad7704a4fa5bb2a9faf728da118dc1ac9">TCPMsgBasedRcvQueue</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="_i_n_e_t_defs_8h.html#a718b4eb2652c286f4d42dc18a8e71a1a">ulong</a> numBytes = <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#adefc2b346dd80461a5f49d3aab62a7a7">extractTo</a>(seq);
-    <span class="keywordflow">if</span> (numBytes==0)
-        <span class="keywordflow">return</span> NULL;
+    cPacket *msg = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+    Region *reg = <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a21cc96268b7bd9245557224f1a256feb">extractTo</a>(seq);
 
-    cPacket *msg = <span class="keyword">new</span> cPacket(<span class="stringliteral">&quot;data&quot;</span>);
-    msg-&gt;setByteLength(numBytes);
+    <span class="keywordflow">if</span> (reg)
+    {
+        msg = <span class="keyword">new</span> cPacket(<span class="stringliteral">&quot;data&quot;</span>);
+        reg-&gt;copyTo(msg);
+        <span class="keyword">delete</span> reg;
+    }
     <span class="keywordflow">return</span> msg;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="adefc2b346dd80461a5f49d3aab62a7a7"></a><!-- doxytag: member="TCPVirtualDataRcvQueue::extractTo" ref="adefc2b346dd80461a5f49d3aab62a7a7" args="(uint32 toSeq)" -->
+<a class="anchor" id="a21cc96268b7bd9245557224f1a256feb"></a><!-- doxytag: member="TCPVirtualDataRcvQueue::extractTo" ref="a21cc96268b7bd9245557224f1a256feb" args="(uint32 toSeq)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_i_n_e_t_defs_8h.html#a718b4eb2652c286f4d42dc18a8e71a1a">ulong</a> <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#adefc2b346dd80461a5f49d3aab62a7a7">TCPVirtualDataRcvQueue::extractTo</a> </td>
+          <td class="memname"><a class="el" href="class_t_c_p_virtual_data_rcv_queue_1_1_region.html">TCPVirtualDataRcvQueue::Region</a> * <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a21cc96268b7bd9245557224f1a256feb">TCPVirtualDataRcvQueue::extractTo</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>toSeq</em></td><td>)</td>
@@ -242,36 +291,26 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00140">140</a> of file <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html">queues/TCPVirtualDataRcvQueue.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="queues_2_t_c_p_msg_based_rcv_queue_8cc_source.html#l00070">TCPMsgBasedRcvQueue::extractBytesUpTo()</a>, and <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00129">extractBytesUpTo()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_msg_based_rcv_queue.html#ad7704a4fa5bb2a9faf728da118dc1ac9">TCPMsgBasedRcvQueue::extractBytesUpTo()</a>, <a class="el" href="class_t_c_p_byte_stream_rcv_queue.html#a923c2539de2037d9930f046328f47695">TCPByteStreamRcvQueue::extractBytesUpTo()</a>, and <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#af1cafaf5415f693ec82f7f3747ea2311">extractBytesUpTo()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    ASSERT(<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(seq,<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a48ec8399adbfb1f4706324dd988141c0">rcv_nxt</a>));
+    ASSERT(<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(seq, <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a48ec8399adbfb1f4706324dd988141c0">rcv_nxt</a>));
 
-    RegionList::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.begin();
-    <span class="keywordflow">if</span> (i==<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.end())
-        <span class="keywordflow">return</span> 0;
+    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.empty())
+        <span class="keywordflow">return</span> <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
 
-    ASSERT(<a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(i-&gt;begin,i-&gt;end)); <span class="comment">// empty regions cannot exist</span>
+    Region *reg = <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.front();
+    uint32 beg = reg-&gt;getBegin();
 
-    <span class="comment">// seq below 1st region</span>
-    <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(seq,i-&gt;begin))
-        <span class="keywordflow">return</span> 0;
+    <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(seq, beg))
+        <span class="keywordflow">return</span> <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
 
-    <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(seq,i-&gt;end))
+    <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#af4745b9cf95eb5b78d8ae6c3c8429cfc">seqGE</a>(seq, reg-&gt;getEnd()))
     {
-        <span class="comment">// part of 1st region</span>
-        <a class="code" href="_i_n_e_t_defs_8h.html#a718b4eb2652c286f4d42dc18a8e71a1a">ulong</a> octets = seq - i-&gt;begin;
-        i-&gt;begin = seq;
-        <span class="keywordflow">return</span> octets;
+        <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.pop_front();
+        <span class="keywordflow">return</span> reg;
     }
-    <span class="keywordflow">else</span>
-    {
-        <span class="comment">// full 1st region</span>
-        <a class="code" href="_i_n_e_t_defs_8h.html#a718b4eb2652c286f4d42dc18a8e71a1a">ulong</a> octets = i-&gt;end - i-&gt;begin;
-        <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.erase(i);
-        <span class="keywordflow">return</span> octets;
-    }
+
+    <span class="keywordflow">return</span> reg-&gt;split(seq);
 }
 </pre></div>
 </div>
@@ -289,25 +328,18 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns the number of bytes (out-of-order-segments) currently buffered in queue. </p>
+
+<p>Method inherited from <a class="el" href="class_t_c_p_receive_queue.html" title="Abstract base class for TCP receive queues.">TCPReceiveQueue</a>. </p>
 
 <p>Implements <a class="el" href="class_t_c_p_receive_queue.html#a46f4aa6d8cd91c25275f3997fc3e2e04">TCPReceiveQueue</a>.</p>
 
-<p>Definition at line <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00170">170</a> of file <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html">queues/TCPVirtualDataRcvQueue.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00186">getAmountOfFreeBytes()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a1264793628d3daad951c7b8e9ccb3573">getAmountOfFreeBytes()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    uint32 bytes=0;
+    uint32 bytes = 0;
 
-    RegionList::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.begin();
-    <span class="keywordflow">if</span> (i==<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.end()) <span class="comment">// is queue empty?</span>
-        <span class="keywordflow">return</span> 0;
+    <span class="keywordflow">for</span> (RegionList::iterator i = <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.begin(); i != <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.end(); i++)
+        bytes += (*i)-&gt;getLength();
 
-    <span class="keywordflow">while</span> (i!=<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.end())
-    {
-        bytes = bytes + (i-&gt;end - i-&gt;begin);
-        i++;
-    }
     <span class="keywordflow">return</span> bytes;
 }
 </pre></div>
@@ -327,15 +359,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns the number of bytes currently free (=available) in queue. freeRcvBuffer = maxRcvBuffer - usedRcvBuffer </p>
+
+<p>Method inherited from <a class="el" href="class_t_c_p_receive_queue.html" title="Abstract base class for TCP receive queues.">TCPReceiveQueue</a>. </p>
 
 <p>Implements <a class="el" href="class_t_c_p_receive_queue.html#ad40894bf45a33d6e849d0317765bbaa5">TCPReceiveQueue</a>.</p>
-
-<p>Definition at line <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00186">186</a> of file <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html">queues/TCPVirtualDataRcvQueue.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    uint32 usedRcvBuffer = <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a758ece402d5028e49a78001bfe46824a">getAmountOfBufferedBytes</a>();
+    uint32 usedRcvBuffer = <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a758ece402d5028e49a78001bfe46824a" title="Method inherited from TCPReceiveQueue.">getAmountOfBufferedBytes</a>();
     uint32 freeRcvBuffer = maxRcvBuffer - usedRcvBuffer;
-    <span class="keywordflow">return</span> freeRcvBuffer;
+    <span class="keywordflow">return</span> (maxRcvBuffer &gt; usedRcvBuffer) ? freeRcvBuffer : 0;
 }
 </pre></div>
 </div>
@@ -354,24 +385,24 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns left edge of enqueued region. </p>
+
+<p>Method inherited from <a class="el" href="class_t_c_p_receive_queue.html" title="Abstract base class for TCP receive queues.">TCPReceiveQueue</a>. </p>
 
 <p>Implements <a class="el" href="class_t_c_p_receive_queue.html#a63808618fe6b4b592302c440414ac093">TCPReceiveQueue</a>.</p>
-
-<p>Definition at line <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00204">204</a> of file <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html">queues/TCPVirtualDataRcvQueue.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    RegionList::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.begin();
-    <span class="keywordflow">while</span> (i!=<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.end())
+    RegionList::iterator i = <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.begin();
+
+    <span class="keywordflow">while</span> (i != <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.end())
     {
-        <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(i-&gt;begin, fromSeqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(fromSeqNum, i-&gt;end))
+        <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>((*i)-&gt;getBegin(), fromSeqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(fromSeqNum, (*i)-&gt;getEnd()))
         {
 <span class="comment">//            tcpEV &lt;&lt; &quot;Enqueued region: [&quot; &lt;&lt; i-&gt;begin &lt;&lt; &quot;..&quot; &lt;&lt; i-&gt;end &lt;&lt; &quot;)\n&quot;;</span>
-            <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(i-&gt;begin, fromSeqNum))
-                <span class="keywordflow">return</span> i-&gt;begin;
-            <span class="keywordflow">return</span> fromSeqNum;
+            <span class="keywordflow">return</span> (*i)-&gt;getBegin();
         }
+
         i++;
     }
+
     <span class="keywordflow">return</span> fromSeqNum;
 }
 </pre></div>
@@ -390,11 +421,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns the number of blocks currently buffered in queue. </p>
+
+<p>Method inherited from <a class="el" href="class_t_c_p_receive_queue.html" title="Abstract base class for TCP receive queues.">TCPReceiveQueue</a>. </p>
 
 <p>Implements <a class="el" href="class_t_c_p_receive_queue.html#a906163ab3363c8f66c60371e61e3fef6">TCPReceiveQueue</a>.</p>
-
-<p>Definition at line <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00193">193</a> of file <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html">queues/TCPVirtualDataRcvQueue.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">return</span> <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.size();
 }
@@ -406,7 +436,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a3de12b62a10e1c856b3a75bb08e7951e">TCPVirtualDataRcvQueue::getQueueStatus</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a3de12b62a10e1c856b3a75bb08e7951e">TCPVirtualDataRcvQueue::getQueueStatus</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [virtual]</code></td>
@@ -414,13 +444,12 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Shows current queue status. </p>
+
+<p>Method inherited from <a class="el" href="class_t_c_p_receive_queue.html" title="Abstract base class for TCP receive queues.">TCPReceiveQueue</a>. </p>
 
 <p>Implements <a class="el" href="class_t_c_p_receive_queue.html#a7427962bd9ff1587e6e56acbbc59e333">TCPReceiveQueue</a>.</p>
-
-<p>Definition at line <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00198">198</a> of file <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html">queues/TCPVirtualDataRcvQueue.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;receiveQLength=&quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.size() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#ac6e69a676e9389cbc140d1a65b4c9af6">info</a>() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+    <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;receiveQLength=&quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.size() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#ac6e69a676e9389cbc140d1a65b4c9af6" title="Method inherited from TCPReceiveQueue.">info</a>() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
 }
 </pre></div>
 </div>
@@ -439,24 +468,24 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns right edge of enqueued region. </p>
+
+<p>Method inherited from <a class="el" href="class_t_c_p_receive_queue.html" title="Abstract base class for TCP receive queues.">TCPReceiveQueue</a>. </p>
 
 <p>Implements <a class="el" href="class_t_c_p_receive_queue.html#a747e434e4b2f48059269f6ba81c6593c">TCPReceiveQueue</a>.</p>
-
-<p>Definition at line <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00221">221</a> of file <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html">queues/TCPVirtualDataRcvQueue.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    RegionList::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.begin();
-    <span class="keywordflow">while</span> (i!=<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.end())
+    RegionList::iterator i = <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.begin();
+
+    <span class="keywordflow">while</span> (i != <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.end())
     {
-        <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(i-&gt;begin, toSeqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(toSeqNum, i-&gt;end))
+        <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>((*i)-&gt;getBegin(), toSeqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(toSeqNum, (*i)-&gt;getEnd()))
         {
 <span class="comment">//            tcpEV &lt;&lt; &quot;Enqueued region: [&quot; &lt;&lt; i-&gt;begin &lt;&lt; &quot;..&quot; &lt;&lt; i-&gt;end &lt;&lt; &quot;)\n&quot;;</span>
-            <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(toSeqNum, i-&gt;end))
-                <span class="keywordflow">return</span> i-&gt;end;
-            <span class="keywordflow">return</span> toSeqNum;
+            <span class="keywordflow">return</span> (*i)-&gt;getEnd();
         }
+
         i++;
     }
+
     <span class="keywordflow">return</span> toSeqNum;
 }
 </pre></div>
@@ -475,23 +504,22 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns a string with region stored. </p>
 
-<p>Reimplemented in <a class="el" href="class_t_c_p_msg_based_rcv_queue.html#a325fc25951ede88ad561bb540f18269c">TCPMsgBasedRcvQueue</a>.</p>
+<p>Method inherited from <a class="el" href="class_t_c_p_receive_queue.html" title="Abstract base class for TCP receive queues.">TCPReceiveQueue</a>. </p>
 
-<p>Definition at line <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00039">39</a> of file <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html">queues/TCPVirtualDataRcvQueue.cc</a>.</p>
+<p>Reimplemented in <a class="el" href="class_t_c_p_byte_stream_rcv_queue.html#a8f991168a66738f70b9afecd86c80a8a">TCPByteStreamRcvQueue</a>, and <a class="el" href="class_t_c_p_msg_based_rcv_queue.html#a325fc25951ede88ad561bb540f18269c">TCPMsgBasedRcvQueue</a>.</p>
 
-<p>Referenced by <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00198">getQueueStatus()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a3de12b62a10e1c856b3a75bb08e7951e">getQueueStatus()</a>, and <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a83b598c81e2dfc8d72f7584408b99802">insertBytesFromSegment()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     std::string res;
     <span class="keywordtype">char</span> buf[32];
-    sprintf(buf, <span class="stringliteral">&quot;rcv_nxt=%u &quot;</span>, <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a48ec8399adbfb1f4706324dd988141c0">rcv_nxt</a>);
+    sprintf(buf, <span class="stringliteral">&quot;rcv_nxt=%u&quot;</span>, <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a48ec8399adbfb1f4706324dd988141c0">rcv_nxt</a>);
     res = buf;
 
-    <span class="keywordflow">for</span> (RegionList::const_iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>=<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.begin(); <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>!=<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.end(); ++<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>)
+    <span class="keywordflow">for</span> (RegionList::const_iterator i=<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.begin(); i!=<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.end(); ++i)
     {
-        sprintf(buf, <span class="stringliteral">&quot;[%u..%u) &quot;</span>, <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>-&gt;begin, <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>-&gt;end);
-        res+=buf;
+        sprintf(buf, <span class="stringliteral">&quot; [%u..%u)&quot;</span>, (*i)-&gt;getBegin(), (*i)-&gt;getEnd());
+        res += buf;
     }
     <span class="keywordflow">return</span> res;
 }
@@ -503,7 +531,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#adeeeae16fa0cb45c5ae87e6174d793fc">TCPVirtualDataRcvQueue::init</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#adeeeae16fa0cb45c5ae87e6174d793fc">TCPVirtualDataRcvQueue::init</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>startSeq</em></td><td>)</td>
@@ -512,15 +540,20 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set initial receive sequence number. </p>
+
+<p>Method inherited from <a class="el" href="class_t_c_p_receive_queue.html" title="Abstract base class for TCP receive queues.">TCPReceiveQueue</a>. </p>
 
 <p>Implements <a class="el" href="class_t_c_p_receive_queue.html#aa830dbb0737de38e3a564aaa806ea99f">TCPReceiveQueue</a>.</p>
 
 <p>Reimplemented in <a class="el" href="class_t_c_p_msg_based_rcv_queue.html#ae289924ebc9c7b9b4aecb283e0e86925">TCPMsgBasedRcvQueue</a>.</p>
-
-<p>Definition at line <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00034">34</a> of file <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html">queues/TCPVirtualDataRcvQueue.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a48ec8399adbfb1f4706324dd988141c0">rcv_nxt</a> = startSeq;
+
+    <span class="keywordflow">while</span> (!<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.empty())
+    {
+        <span class="keyword">delete</span> <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.front();
+        <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.pop_front();
+    }
 }
 </pre></div>
 </div>
@@ -539,50 +572,58 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called when a <a class="el" href="class_t_c_p.html">TCP</a> segment arrives. Returns sequence number for ACK. </p>
+
+<p>Method inherited from <a class="el" href="class_t_c_p_receive_queue.html" title="Abstract base class for TCP receive queues.">TCPReceiveQueue</a>. </p>
 
 <p>Implements <a class="el" href="class_t_c_p_receive_queue.html#ac17c031fdec7aa75b656bf7e742a38d2">TCPReceiveQueue</a>.</p>
 
 <p>Reimplemented in <a class="el" href="class_t_c_p_msg_based_rcv_queue.html#a1ef3021020a378ff3b1e7ec037600307">TCPMsgBasedRcvQueue</a>.</p>
-
-<p>Definition at line <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00054">54</a> of file <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html">queues/TCPVirtualDataRcvQueue.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a710b6b567c02c1e3e0535ec919330c7c">merge</a>(tcpseg-&gt;<a class="code" href="class_t_c_p_segment___base.html#a0dafe41ef5a4306a4106fdb1e22b19e8">getSequenceNo</a>(), tcpseg-&gt;<a class="code" href="class_t_c_p_segment___base.html#a0dafe41ef5a4306a4106fdb1e22b19e8">getSequenceNo</a>()+tcpseg-&gt;<a class="code" href="class_t_c_p_segment___base.html#a7d9f010b71e3bfa267873ab21195fb73">getPayloadLength</a>());
-    <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#af4745b9cf95eb5b78d8ae6c3c8429cfc">seqGE</a>(<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a48ec8399adbfb1f4706324dd988141c0">rcv_nxt</a>, <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.begin()-&gt;begin))
-        <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a48ec8399adbfb1f4706324dd988141c0">rcv_nxt</a> = <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.begin()-&gt;end;
+    Region *region = <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#ad02db647f5a47ed88a8228ff044e5084" title="Create a new Region from tcpseg.">createRegionFromSegment</a>(tcpseg);
+
+<span class="preprocessor">#ifndef NDEBUG</span>
+<span class="preprocessor"></span>    <span class="keywordflow">if</span> (!<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.empty())
+    {
+        uint32 ob = <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.front()-&gt;getBegin();
+        uint32 oe = <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.back()-&gt;getEnd();
+        uint32 <a class="code" href="structnb.html">nb</a> = region-&gt;getBegin();
+        uint32 ne = region-&gt;getEnd();
+        uint32 minb = <a class="code" href="_t_c_p_segment_8h.html#afa8f232282cc7eb1383555a38be4cc6c">seqMin</a>(ob, nb);
+        uint32 maxe = <a class="code" href="_t_c_p_segment_8h.html#a79a420e41d5e428018d1bfdd8c4fdbc5">seqMax</a>(oe, ne);
+        <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#af4745b9cf95eb5b78d8ae6c3c8429cfc">seqGE</a>(minb, oe) || <a class="code" href="_t_c_p_segment_8h.html#af4745b9cf95eb5b78d8ae6c3c8429cfc">seqGE</a>(minb, ne) || <a class="code" href="_t_c_p_segment_8h.html#af4745b9cf95eb5b78d8ae6c3c8429cfc">seqGE</a>(ob, maxe) || <a class="code" href="_t_c_p_segment_8h.html#af4745b9cf95eb5b78d8ae6c3c8429cfc">seqGE</a>(nb, maxe))
+            <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;The new segment is [%u, %u) out of the acceptable range at the queue %s&quot;</span>,
+                    region-&gt;getBegin(), region-&gt;getEnd(), <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#ac6e69a676e9389cbc140d1a65b4c9af6" title="Method inherited from TCPReceiveQueue.">info</a>().c_str());
+    }
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>
+    <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a164130b33e613c37fb214f3cce384491" title="Merge segment byte range into regionList, the parameter region must created by &#39;new&#39; operator...">merge</a>(region);
+
+    <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#af4745b9cf95eb5b78d8ae6c3c8429cfc">seqGE</a>(<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a48ec8399adbfb1f4706324dd988141c0">rcv_nxt</a>, <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.front()-&gt;getBegin()))
+        <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a48ec8399adbfb1f4706324dd988141c0">rcv_nxt</a> = <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.front()-&gt;getEnd();
+
     <span class="keywordflow">return</span> <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a48ec8399adbfb1f4706324dd988141c0">rcv_nxt</a>;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a710b6b567c02c1e3e0535ec919330c7c"></a><!-- doxytag: member="TCPVirtualDataRcvQueue::merge" ref="a710b6b567c02c1e3e0535ec919330c7c" args="(uint32 segmentBegin, uint32 segmentEnd)" -->
+<a class="anchor" id="a164130b33e613c37fb214f3cce384491"></a><!-- doxytag: member="TCPVirtualDataRcvQueue::merge" ref="a164130b33e613c37fb214f3cce384491" args="(TCPVirtualDataRcvQueue::Region *region)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a710b6b567c02c1e3e0535ec919330c7c">TCPVirtualDataRcvQueue::merge</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a164130b33e613c37fb214f3cce384491">TCPVirtualDataRcvQueue::merge</a> </td>
           <td>(</td>
-          <td class="paramtype">uint32&#160;</td>
-          <td class="paramname"><em>segmentBegin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32&#160;</td>
-          <td class="paramname"><em>segmentEnd</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [protected]</code></td>
+          <td class="paramtype"><a class="el" href="class_t_c_p_virtual_data_rcv_queue_1_1_region.html">TCPVirtualDataRcvQueue::Region</a> *&#160;</td>
+          <td class="paramname"><em>region</em></td><td>)</td>
+          <td><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00062">62</a> of file <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html">queues/TCPVirtualDataRcvQueue.cc</a>.</p>
+<p>Merge segment byte range into regionList, the parameter region must created by 'new' operator. </p>
 
-<p>Referenced by <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00054">insertBytesFromSegment()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a83b598c81e2dfc8d72f7584408b99802">insertBytesFromSegment()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// Here we have to update our existing regions with the octet range</span>
     <span class="comment">// tcpseg represents. We either have to insert tcpseg as a separate region</span>
@@ -590,63 +631,26 @@ Protected Attributes</h2></td></tr>
     <span class="comment">// existing regions; we also may have to merge existing regions if</span>
     <span class="comment">// they become overlapping (or touching) after adding tcpseg.</span>
 
-    Region seg;
-    seg.begin = segmentBegin;
-    seg.end = segmentEnd;
+    RegionList::reverse_iterator i = <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.rbegin();
+    <a class="code" href="class_t_c_p_virtual_data_rcv_queue_1_1_region.html#aeddc96acf70f3299ef59e05396df0e2f">Region::CompareStatus</a> cmp;
 
-    RegionList::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.begin();
-    <span class="keywordflow">if</span> (i==<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.end())
+    <span class="keywordflow">while</span> (i != <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.rend() &amp;&amp; <a class="code" href="class_t_c_p_virtual_data_rcv_queue_1_1_region.html#aeddc96acf70f3299ef59e05396df0e2fa8c7a888bd724cd875dc6bdcd63e8938c">Region::BEFORE</a> != (cmp = (*i)-&gt;compare(*seg)))
     {
-        <span class="comment">// insert as first and only region</span>
-        <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.insert(<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.begin(), seg);
-        <span class="keywordflow">return</span>;
-    }
-
-    <span class="comment">// skip regions which fall entirely before seg (no overlap or touching)</span>
-    <span class="keywordflow">while</span> (i!=<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.end() &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(i-&gt;end,seg.begin))
-    {
-        ++<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>;
-    }
-
-    <span class="keywordflow">if</span> (i==<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.end())
-    {
-        <span class="comment">// seg is entirely past last region: insert as separate region at end</span>
-        <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.insert(<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.end(), seg);
-        <span class="keywordflow">return</span>;
-    }
-
-    <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(seg.end,i-&gt;begin))
-    {
-        <span class="comment">// segment entirely before region &quot;i&quot;: insert as separate region before &quot;i&quot;</span>
-        <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.insert(i, seg);
-        <span class="keywordflow">return</span>;
-    }
-
-    <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(seg.begin,i-&gt;begin))
-    {
-        <span class="comment">// segment starts before region &quot;i&quot;: extend region</span>
-        i-&gt;begin = seg.begin;
-    }
-
-    <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(i-&gt;end,seg.end))
-    {
-        <span class="comment">// segment ends past end of region &quot;i&quot;: extend region</span>
-        i-&gt;end = seg.end;
-
-        <span class="comment">// maybe we have to merge region &quot;i&quot; with next one(s)</span>
-        RegionList::iterator j = <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>;
-        ++j;
-        <span class="keywordflow">while</span> (j!=<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.end() &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#af4745b9cf95eb5b78d8ae6c3c8429cfc">seqGE</a>(i-&gt;end,j-&gt;begin)) <span class="comment">// while there&#39;s overlap</span>
+        <span class="keywordflow">if</span> (cmp != <a class="code" href="class_t_c_p_virtual_data_rcv_queue_1_1_region.html#aeddc96acf70f3299ef59e05396df0e2fa65061c4793cee0074a5e1f44b6175bc1">Region::AFTER</a>)
         {
-            <span class="comment">// if &quot;j&quot; is longer: extend &quot;i&quot;</span>
-            <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(i-&gt;end,j-&gt;end))
-                i-&gt;end = j-&gt;end;
-
-            <span class="comment">// erase &quot;j&quot; (it was merged into &quot;i&quot;)</span>
-            RegionList::iterator oldj = j++;
-            <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.erase(oldj);
+            <span class="keywordflow">if</span> (seg-&gt;merge(*i))
+            {
+                <span class="keyword">delete</span> *i;
+                i = (RegionList::reverse_iterator)(<a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.erase((++i).base()));
+                <span class="keywordflow">continue</span>;
+            }
+            <span class="keywordflow">else</span>
+                <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Model error: merge of region [%u,%u) with [%u,%u) unsuccessful&quot;</span>, (*i)-&gt;getBegin(), (*i)-&gt;getEnd(), seg-&gt;getBegin(), seg-&gt;getEnd());
         }
+        ++i;
     }
+
+    <a class="code" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">regionList</a>.insert(i.base(), seg);
 }
 </pre></div>
 </div>
@@ -663,9 +667,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_virtual_data_rcv_queue_8h_source.html#l00035">35</a> of file <a class="el" href="_t_c_p_virtual_data_rcv_queue_8h_source.html">TCPVirtualDataRcvQueue.h</a>.</p>
-
-<p>Referenced by <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00140">extractTo()</a>, <a class="el" href="queues_2_t_c_p_msg_based_rcv_queue_8cc_source.html#l00037">TCPMsgBasedRcvQueue::info()</a>, <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00039">info()</a>, <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00034">init()</a>, <a class="el" href="queues_2_t_c_p_msg_based_rcv_queue_8cc_source.html#l00053">TCPMsgBasedRcvQueue::insertBytesFromSegment()</a>, and <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00054">insertBytesFromSegment()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a21cc96268b7bd9245557224f1a256feb">extractTo()</a>, <a class="el" href="class_t_c_p_msg_based_rcv_queue.html#a325fc25951ede88ad561bb540f18269c">TCPMsgBasedRcvQueue::info()</a>, <a class="el" href="class_t_c_p_byte_stream_rcv_queue.html#a8f991168a66738f70b9afecd86c80a8a">TCPByteStreamRcvQueue::info()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#ac6e69a676e9389cbc140d1a65b4c9af6">info()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#adeeeae16fa0cb45c5ae87e6174d793fc">init()</a>, <a class="el" href="class_t_c_p_msg_based_rcv_queue.html#a1ef3021020a378ff3b1e7ec037600307">TCPMsgBasedRcvQueue::insertBytesFromSegment()</a>, and <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a83b598c81e2dfc8d72f7584408b99802">insertBytesFromSegment()</a>.</p>
 
 </div>
 </div>
@@ -674,21 +676,19 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#af6f88d0a61c53fa784940e54451095c4">RegionList</a> <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">TCPVirtualDataRcvQueue::regionList</a><code> [protected]</code></td>
+          <td class="memname"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a2ff7e48b9e8b0a60f30efc57631daacd">RegionList</a> <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a634551288bef5f92a3e2cc32d52dd037">TCPVirtualDataRcvQueue::regionList</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_virtual_data_rcv_queue_8h_source.html#l00043">43</a> of file <a class="el" href="_t_c_p_virtual_data_rcv_queue_8h_source.html">TCPVirtualDataRcvQueue.h</a>.</p>
-
-<p>Referenced by <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00140">extractTo()</a>, <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00170">getAmountOfBufferedBytes()</a>, <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00204">getLE()</a>, <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00193">getQueueLength()</a>, <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00198">getQueueStatus()</a>, <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00221">getRE()</a>, <a class="el" href="queues_2_t_c_p_msg_based_rcv_queue_8cc_source.html#l00037">TCPMsgBasedRcvQueue::info()</a>, <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00039">info()</a>, <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00054">insertBytesFromSegment()</a>, and <a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html#l00062">merge()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a21cc96268b7bd9245557224f1a256feb">extractTo()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a758ece402d5028e49a78001bfe46824a">getAmountOfBufferedBytes()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a8797005ee3238eaa1b5ee432eaeb00df">getLE()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#afb91465790f48c2f74dd2352bdc60e50">getQueueLength()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a3de12b62a10e1c856b3a75bb08e7951e">getQueueStatus()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a7fcbb2266911c8cf166b90170c6d7a03">getRE()</a>, <a class="el" href="class_t_c_p_msg_based_rcv_queue.html#a325fc25951ede88ad561bb540f18269c">TCPMsgBasedRcvQueue::info()</a>, <a class="el" href="class_t_c_p_byte_stream_rcv_queue.html#a8f991168a66738f70b9afecd86c80a8a">TCPByteStreamRcvQueue::info()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#ac6e69a676e9389cbc140d1a65b4c9af6">info()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#adeeeae16fa0cb45c5ae87e6174d793fc">init()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a83b598c81e2dfc8d72f7584408b99802">insertBytesFromSegment()</a>, <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#a164130b33e613c37fb214f3cce384491">merge()</a>, and <a class="el" href="class_t_c_p_virtual_data_rcv_queue.html#aeda3bd955956c803010cc642ddf7b60b">~TCPVirtualDataRcvQueue()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_t_c_p_virtual_data_rcv_queue_8h_source.html">TCPVirtualDataRcvQueue.h</a></li>
-<li><a class="el" href="queues_2_t_c_p_virtual_data_rcv_queue_8cc_source.html">queues/TCPVirtualDataRcvQueue.cc</a></li>
+<li><a class="el" href="_t_c_p_virtual_data_rcv_queue_8h.html">TCPVirtualDataRcvQueue.h</a></li>
+<li><a class="el" href="_t_c_p_virtual_data_rcv_queue_8cc.html">TCPVirtualDataRcvQueue.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -696,7 +696,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_t_c_p_virtual_data_rcv_queue.html">TCPVirtualDataRcvQueue</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:54 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:31 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

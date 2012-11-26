@@ -10,6 +10,17 @@
 <p>Ethernet II headers contain a 16-bit <a href="EtherType.html">EtherType</a> to identify
 the encapsulated protocol.</p>
 <p>Header length: src(6)+dest(6)+etherType(2) = 14 bytes</p>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="EthernetIIFrame-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="EthernetIIFrame.html" title="Packet EthernetIIFrame" alt="" coords="5,6,120,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="EthernetIIFrame-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="EthernetIIFrame.html" title="Packet EthernetIIFrame" alt="" coords="5,83,120,111">
+<area shape="rect" id="node2" href="EtherFrame.html" title="Packet EtherFrame" alt="" coords="17,6,108,34">
+</map>
 <h3 class="subtitle">Extends:</h3>
 <table class="typestable">
    <tr>
@@ -29,25 +40,6 @@ the encapsulated protocol.</p>
 <p>Common base class for classes representing Ethernet II and 802.3 frame types,
 containing their common header fields.</p>
 
-   </td>
-</tr>
-</table>
-<h3 class="subtitle">Known subclasses:</h3>
-<table class="typestable">
-   <tr>
-      <th class="name">Name</th>
-      <th class="type">Type</th>
-      <th class="description">Description</th>
-   </tr>
-<tr>
-   <td>
-<a href="AnsaEtherFrame.html">AnsaEtherFrame</a>
-   </td>
-   <td>
-<i>packet</i>
-   </td>
-   <td>
-<i>(no description)</i>
    </td>
 </tr>
 </table>
@@ -80,25 +72,32 @@ MACAddress</i>
       <i>
 MACAddress</i>
    </td>
+   <td></td>
+</tr>
+<tr class="inherited">
+   <td>frameByteLength</td>
    <td>
-<p>MessageId id; -- uncomment for tracing frames</p>
+      <i>
+int</i>
+   </td>
+   <td>
+<p>frame length without physical layer overhead (preamble, SFD, carrier extension); used by MAC layer</p>
 </td>
 </tr>
 </table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
-// Ethernet II headers contain a 16-bit EtherType to identify
+// Ethernet II headers contain a 16-bit ~EtherType to identify
 // the encapsulated protocol.
 //
 // Header length: src(6)+dest(6)+etherType(2) = 14 bytes
 //
 </span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">EthernetIIFrame</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">EtherFrame</span><span style="color: #000000; ">
 {
-    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">etherType</span><span style="color: #000000; ">;
+    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">etherType</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@enum</span><span style="color: #000000; ">(</span><span style="color: #000000; ">EtherType</span><span style="color: #000000; ">);
 }
 
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

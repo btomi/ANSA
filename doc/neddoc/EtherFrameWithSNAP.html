@@ -8,10 +8,21 @@
 <b>File: <a href="src-linklayer-ethernet-EtherFrame.msg.html">src/linklayer/ethernet/EtherFrame.msg</a></b><br/><p><a href="../doxy/class_ether_frame_with_s_n_a_p.html" target="mainframe"><b>C++ definition</b></a></p>
 
 <p>Ethernet frame with 802.3 LLC and SNAP headers.</p>
-<p>The fields ssap, dsap and control are not included in the class because
-they are always set to fixed values: 0xAA, 0xAA, 0x03.</p>
+<p>The ssap, dsap and control LLC fields are set to fixed values in the
+frame: 0xAA, 0xAA, 0x03.</p>
 <p>Header length: src(6)+dest(6)+length(2)+ssap(1)+dsap(1)+control(1)+
 orgCode(3)+localCode(2) = 22 bytes</p>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="EtherFrameWithSNAP-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="EtherFrameWithSNAP.html" title="Packet EtherFrameWithSNAP" alt="" coords="5,6,160,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="EtherFrameWithSNAP-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="EtherFrameWithSNAP.html" title="Packet EtherFrameWithSNAP" alt="" coords="5,83,160,111">
+<area shape="rect" id="node2" href="EtherFrameWithLLC.html" title="Packet EtherFrameWithLLC" alt="" coords="12,6,153,34">
+</map>
 <h3 class="subtitle">Extends:</h3>
 <table class="typestable">
    <tr>
@@ -21,15 +32,14 @@ orgCode(3)+localCode(2) = 22 bytes</p>
    </tr>
 <tr>
    <td>
-<a href="EtherFrame.html">EtherFrame</a>
+<a href="EtherFrameWithLLC.html">EtherFrameWithLLC</a>
    </td>
    <td>
 <i>packet</i>
    </td>
    <td>
 
-<p>Common base class for classes representing Ethernet II and 802.3 frame types,
-containing their common header fields.</p>
+<p>Ethernet frame with 802.3 LLC header.</p>
 
    </td>
 </tr>
@@ -42,13 +52,37 @@ containing their common header fields.</p>
       <th class="description">Description</th>
    </tr>
 <tr class="local">
+   <td>dsap</td>
+   <td>
+      <i>
+int</i>
+   </td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>ssap</td>
+   <td>
+      <i>
+int</i>
+   </td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>control</td>
+   <td>
+      <i>
+int</i>
+   </td>
+   <td></td>
+</tr>
+<tr class="local">
    <td>orgCode</td>
    <td>
       <i>
-long</i>
+int</i>
    </td>
    <td>
-<p>SNAP organization code, 0 for <a href="inet.networklayer.ipv4.IP.html">IP</a> and <a href="inet.networklayer.arp.ARP.html">ARP</a></p>
+<p>organizationally unique identifier (OUI); 0 for protocols that have an EtherType (ARP, IPv4, IPv6, etc.)</p>
 </td>
 </tr>
 <tr class="local">
@@ -58,7 +92,7 @@ long</i>
 int</i>
    </td>
    <td>
-<p>SNAP local code (stores <a href="EtherType.html">EtherType</a> for <a href="inet.networklayer.ipv4.IP.html">IP</a> and <a href="inet.networklayer.arp.ARP.html">ARP</a>)</p>
+<p>protocol identifier (PID); stores <a href="EtherType.html">EtherType</a> if orgCode is 0</p>
 </td>
 </tr>
 <tr class="inherited">
@@ -75,8 +109,16 @@ MACAddress</i>
       <i>
 MACAddress</i>
    </td>
+   <td></td>
+</tr>
+<tr class="inherited">
+   <td>frameByteLength</td>
    <td>
-<p>MessageId id; -- uncomment for tracing frames</p>
+      <i>
+int</i>
+   </td>
+   <td>
+<p>frame length without physical layer overhead (preamble, SFD, carrier extension); used by MAC layer</p>
 </td>
 </tr>
 </table>
@@ -84,20 +126,22 @@ MACAddress</i>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
 // Ethernet frame with 802.3 LLC and SNAP headers.
 //
-// The fields ssap, dsap and control are not included in the class because
-// they are always set to fixed values: 0xAA, 0xAA, 0x03.
+// The ssap, dsap and control LLC fields are set to fixed values in the
+// frame: 0xAA, 0xAA, 0x03.
 //
 // Header length: src(6)+dest(6)+length(2)+ssap(1)+dsap(1)+control(1)+
 // orgCode(3)+localCode(2) = 22 bytes
 //
-</span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">EtherFrameWithSNAP</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">EtherFrame</span><span style="color: #000000; ">
+</span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">EtherFrameWithSNAP</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">EtherFrameWithLLC</span><span style="color: #000000; ">
 {
-    </span><span style="color: #000080; font-weight: bold; ">long</span><span style="color: #000000; "> </span><span style="color: #000000; ">orgCode</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// SNAP organization code, 0 for IP and ARP
-</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">localcode</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// SNAP local code (stores EtherType for IP and ARP)
+    </span><span style="color: #000000; ">dsap</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">xAA</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">ssap</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">xAA</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">control</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">x03</span><span style="color: #000000; ">;
+    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">orgCode</span><span style="color: #000000; ">;   </span><span style="color: #808080; font-style: italic; ">// organizationally unique identifier (OUI); 0 for protocols that have an EtherType (ARP, IPv4, IPv6, etc.)
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">localcode</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// protocol identifier (PID); stores ~EtherType if orgCode is 0
 </span><span style="color: #000000; ">}
 
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

@@ -125,6 +125,9 @@ Not Implemented</p>
 </span><span style="color: #800000; font-weight: bold; ">cplusplus</span><span style="color: #000000; "> {{
 #</span><span style="color: #000000; ">include</span><span style="color: #000000; "> </span><span style="color: #008000; ">&quot;IPv6Address.h&quot;</span><span style="color: #000000; ">
 #</span><span style="color: #000000; ">include</span><span style="color: #000000; "> </span><span style="color: #008000; ">&quot;IPv6Datagram.h&quot;</span><span style="color: #000000; ">
+#</span><span style="color: #000000; ">include</span><span style="color: #000000; "> </span><span style="color: #008000; ">&quot;IPProtocolId_m.h&quot;</span><span style="color: #000000; ">
+
+#</span><span style="color: #000000; ">define</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv6_FRAGMENT_HEADER_LENGTH</span><span style="color: #000000; "> </span><span style="color: #008000; ">8</span><span style="color: #000000; ">
 }}
 
 
@@ -139,7 +142,9 @@ Not Implemented</p>
 //
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv6HopByHopOptionsHeader</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv6ExtensionHeader</span><span style="color: #000000; ">
 {
-}
+    </span><span style="color: #000000; ">extensionType</span><span style="color: #000000; "> = </span><span style="color: #000000; ">IP_PROT_IPv6EXT_HOP</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">byteLength</span><span style="color: #000000; "> = </span><span style="color: #008000; ">8</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// FIXME verify
+</span><span style="color: #000000; ">}
 
 </span><span style="color: #808080; font-style: italic; ">//
 // Routing Header
@@ -148,8 +153,12 @@ Not Implemented</p>
 //
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv6RoutingHeader</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv6ExtensionHeader</span><span style="color: #000000; ">
 {
-    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #000000; "> </span><span style="color: #000000; ">routingType</span><span style="color: #000000; ">;
-    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #000000; "> </span><span style="color: #000000; ">segmentsLeft</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; font-weight: bold; ">@customize</span><span style="color: #000000; ">(</span><span style="color: #008000; ">true</span><span style="color: #000000; ">);
+    </span><span style="color: #000000; ">extensionType</span><span style="color: #000000; "> = </span><span style="color: #000000; ">IP_PROT_IPv6EXT_ROUTING</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">byteLength</span><span style="color: #000000; "> = </span><span style="color: #008000; ">8</span><span style="color: #000000; ">;
+    </span><span style="color: #808080; font-style: italic; ">//byteLength = 8+16*getAddressArraySize() when routingType == 0
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">uint8</span><span style="color: #000000; "> </span><span style="color: #000000; ">routingType</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">uint8</span><span style="color: #000000; "> </span><span style="color: #000000; ">segmentsLeft</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">IPv6Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">address</span><span style="color: #000000; ">[];
 }
 
@@ -160,7 +169,9 @@ Not Implemented</p>
 //
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv6FragmentHeader</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv6ExtensionHeader</span><span style="color: #000000; ">
 {
-    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">fragmentOffset</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">extensionType</span><span style="color: #000000; "> = </span><span style="color: #000000; ">IP_PROT_IPv6EXT_FRAGMENT</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">byteLength</span><span style="color: #000000; "> = </span><span style="color: #000000; ">IPv6_FRAGMENT_HEADER_LENGTH</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// FIXME verify
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">fragmentOffset</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">identification</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// datagram ID: identifies which datagram this fragment belongs to.
 </span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">moreFragments</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">//Is this the last fragment?
 </span><span style="color: #000000; ">}
@@ -172,7 +183,10 @@ Not Implemented</p>
 //
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv6DestinationOptionsHeader</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv6ExtensionHeader</span><span style="color: #000000; ">
 {
-}
+    </span><span style="color: #000000; ">extensionType</span><span style="color: #000000; "> = </span><span style="color: #000000; ">IP_PROT_IPv6EXT_DEST</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">byteLength</span><span style="color: #000000; "> = </span><span style="color: #008000; ">8</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// FIXME verify
+</span><span style="color: #000000; ">    </span><span style="color: #808080; font-style: italic; ">// byteLength = 20; // FIXME only valid for Home Address Option!
+</span><span style="color: #000000; ">}
 
 </span><span style="color: #808080; font-style: italic; ">//
 // Authentication Header
@@ -181,7 +195,9 @@ Not Implemented</p>
 //
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv6AuthenticationHeader</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv6ExtensionHeader</span><span style="color: #000000; ">
 {
-}
+    </span><span style="color: #000000; ">extensionType</span><span style="color: #000000; "> = </span><span style="color: #000000; ">IP_PROT_IPv6EXT_AUTH</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">byteLength</span><span style="color: #000000; "> = </span><span style="color: #008000; ">8</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// FIXME verify
+</span><span style="color: #000000; ">}
 
 </span><span style="color: #808080; font-style: italic; ">//
 // Encapsulating Security Payload Header
@@ -190,8 +206,9 @@ Not Implemented</p>
 //
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv6EncapsulatingSecurityPayloadHeader</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv6ExtensionHeader</span><span style="color: #000000; ">
 {
-}
+    </span><span style="color: #000000; ">extensionType</span><span style="color: #000000; "> = </span><span style="color: #000000; ">IP_PROT_IPv6EXT_ESP</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">byteLength</span><span style="color: #000000; "> = </span><span style="color: #008000; ">8</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// FIXME verify
+</span><span style="color: #000000; ">}
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

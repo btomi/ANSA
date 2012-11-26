@@ -9,14 +9,38 @@
 
 <p>Keeps the table of network interfaces.</p>
 <p>Interfaces are dynamically registered by the corresponding L2 modules, e.g.
-PPPInterface(<a href="inet.ansa.ppp.PPPInterface.html">1</a>,<a href="inet.linklayer.ppp.PPPInterface.html">2</a>). In addition to registered interfaces, a loopback interface
+<a href="inet.linklayer.ppp.PPPInterface.html">PPPInterface</a>. In addition to registered interfaces, a loopback interface
 will also be created. This table only contains protocol-independent
-properties of interfaces -- <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> specific per-interface data
-(addresses etc) are kept in <a href="inet.networklayer.ipv4.RoutingTable.html">RoutingTable</a> and <a href="inet.networklayer.ipv6.RoutingTable6.html">RoutingTable6</a>.</p>
+properties of interfaces -- IPv4 or IPv6 specific per-interface data
+(addresses etc) are kept in <a href="inet.networklayer.ipv4.RoutingTable.html">RoutingTable</a> and <a href="inet.networklayer.ipv6.RoutingTable6.html">RoutingTable6</a>.
+Must be named as "interfaceTable".</p>
 <p>This module has no gates; all functionality can be accessed via member
 functions of the C++ module class. For detailed info, please see the C++
 documentation of the class (Doxygen).</p>
 <p><b>Author:</b>: Andras Varga</p>
+<img src="inet.networklayer.common.InterfaceTable-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.networklayer.common.InterfaceTable.html" title="InterfaceTable" alt="InterfaceTable" coords="0,30,126,70">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.networklayer.common.InterfaceTable-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.networklayer.common.InterfaceTable.html" title="Simple Module InterfaceTable" alt="" coords="477,83,581,111">
+<area shape="rect" id="node2" href="inet.nodes.wireless.AccessPoint.html" title="Compound Module AccessPoint" alt="" coords="5,6,101,34">
+<area shape="rect" id="node4" href="inet.examples.bgpv4.BGPUpdate.BGPRouter.html" title="Compound Module BGPRouter" alt="" coords="125,6,213,34">
+<area shape="rect" id="node6" href="inet.examples.bgpv4.BGPOpen.BGPRouterSimple.html" title="Compound Module BGPRouterSimple" alt="" coords="237,6,365,34">
+<area shape="rect" id="node8" href="inet.examples.inet.routerperf.BurstHost.html" title="Compound Module BurstHost" alt="" coords="389,6,469,34">
+<area shape="rect" id="node10" href="inet.examples.traci_launchd.Car.html" title="Compound Module Car" alt="" coords="493,6,565,34">
+<area shape="rect" id="node13" href="inet.nodes.mpls.LDP_LSR.html" title="Compound Module LDP_LSR" alt="" coords="589,6,669,34">
+<area shape="rect" id="node15" href="inet.nodes.inet.NodeBase.html" title="Compound Module NodeBase" alt="" coords="693,6,776,34">
+<area shape="rect" id="node17" href="inet.nodes.ipv6.NodeBase6.html" title="Compound Module NodeBase6" alt="" coords="800,6,891,34">
+<area shape="rect" id="node19" href="inet.nodes.mpls.RSVP_LSR.html" title="Compound Module RSVP_LSR" alt="" coords="915,6,1005,34">
+<area shape="rect" id="node21" href="inet.transport.rtp.RTPHost.html" title="Compound Module RTPHost" alt="" coords="1029,6,1107,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.networklayer.common.InterfaceTable-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.networklayer.common.InterfaceTable.html" title="Simple Module InterfaceTable" alt="" coords="5,6,109,34">
+</map>
 <h3 class="subtitle">Used in compound modules:</h3>
 <table class="typestable">
    <tr>
@@ -26,7 +50,62 @@ documentation of the class (Doxygen).</p>
    </tr>
 <tr>
    <td>
-<a href="inet.ansa.AnsaDualStackHost.html">AnsaDualStackHost</a>
+<a href="inet.nodes.wireless.AccessPoint.html">AccessPoint</a>
+   </td>
+   <td>
+<i>compound&nbsp;module</i>
+   </td>
+   <td>
+
+<p>A generic access point supporting multiple wireless radios, and
+multiple ethernet ports. The type of the ethernet MAC, relay unit
+and wireless card can be specified as parameters.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.bgpv4.BGPUpdate.BGPRouter.html">BGPRouter</a>
+   </td>
+   <td>
+<i>compound&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Example IP router with BGPv4 and OSPFv4 support.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.bgpv4.BGPOpen.BGPRouterSimple.html">BGPRouterSimple</a>
+   </td>
+   <td>
+<i>compound&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Example IPv4 router with BGPv4 support.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.inet.routerperf.BurstHost.html">BurstHost</a>
+   </td>
+   <td>
+<i>compound&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Definition of an IP node with a transport generator that connects
+to IP directly, without TCP or UDP.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.traci.Car.html">Car</a>
    </td>
    <td>
 <i>compound&nbsp;module</i>
@@ -37,68 +116,13 @@ documentation of the class (Doxygen).</p>
 </tr>
 <tr>
    <td>
-<a href="inet.ansa.ANSATrafGenHost.html">ANSATrafGenHost</a>
+<a href="inet.examples.traci_launchd.Car.html">Car</a>
    </td>
    <td>
 <i>compound&nbsp;module</i>
    </td>
    <td>
-
-<p>IP Traffic generator</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.ansa.nodes.ARouter.html">ARouter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP router.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.ansa.nodes.AStandardHost.html">AStandardHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.BurstHost.html">BurstHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>Definition of an <a href="inet.networklayer.ipv4.IP.html">IP</a> node with a transport generator that connects
-to <a href="inet.networklayer.ipv4.IP.html">IP</a> directly, without <a href="inet.transport.tcp.TCP.html">TCP</a> or <a href="inet.transport.udp.UDP.html">UDP</a>.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.ExtRouter.html">ExtRouter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>External router.</p>
-
+<i>(no description)</i>
    </td>
 </tr>
 <tr>
@@ -110,117 +134,35 @@ to <a href="inet.networklayer.ipv4.IP.html">IP</a> directly, without <a href="in
    </td>
    <td>
 
-<p>An <a href="inet.networklayer.ldp.LDP.html">LDP</a>-capable router.</p>
+<p>An LDP-capable router.</p>
 
    </td>
 </tr>
 <tr>
    <td>
-<a href="inet.nodes.adhoc.MFMobileHost.html">MFMobileHost</a>
+<a href="inet.nodes.inet.NodeBase.html">NodeBase</a>
    </td>
    <td>
 <i>compound&nbsp;module</i>
    </td>
    <td>
 
-<p>Models a mobile host with a wireless (802.11b) card in ad-hoc mode.
-This model contains the Mobility Framework's 802.11 implementation, <a href="inet.linklayer.mf80211.Nic80211.html">Nic80211</a>,
-and <a href="inet.networklayer.ipv4.IP.html">IP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a> and <a href="inet.transport.udp.UDP.html">UDP</a> protocols. The mobility model can be dynamically
-specified with the mobilityType parameter.</p>
+<p>Contains the common lower layers (linklayer and networklayer)
+of Router, StandardHost, WirelessHost etc. </p>
 
    </td>
 </tr>
 <tr>
    <td>
-<a href="inet.nodes.adhoc.MobileHost.html">MobileHost</a>
+<a href="inet.nodes.ipv6.NodeBase6.html">NodeBase6</a>
    </td>
    <td>
 <i>compound&nbsp;module</i>
    </td>
    <td>
 
-<p>Models a mobile host with a wireless (802.11b) card in ad-hoc mode.
-This model contains the new IEEE 802.11 implementation, <a href="inet.linklayer.ieee80211.Ieee80211Nic.html">Ieee80211Nic</a>,
-and <a href="inet.networklayer.ipv4.IP.html">IP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a> and <a href="inet.transport.udp.UDP.html">UDP</a> protocols. The mobility model can be
-dynamically specified with the mobilityType parameter.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.OSPFRouter.html">OSPFRouter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>An OSPFv2 router.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.ansa.rip.RedistrRouter.html">RedistrRouter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP router.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.ansa.rip.RIPGenRouter.html">RIPGenRouter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP router.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.ansa.rip.RIPRouter.html">RIPRouter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP router.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.Router.html">Router</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP router.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.ipv6.Router6.html">Router6</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IPv6 router.</p>
+<p>BaseHost contains the common lower layers (linklayer and networklayer)
+of Router, StandardHost, WirelessHost etc. </p>
 
    </td>
 </tr>
@@ -248,128 +190,23 @@ dynamically specified with the mobilityType parameter.</p>
 <i>(no description)</i>
    </td>
 </tr>
-<tr>
+</table>
+<h3 class="subtitle">Parameters:</h3>
+<table class="paramstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="defaultvalue">Default value</th>
+      <th class="description">Description</th>
+   </tr>
+<tr class="local">
+   <td>displayAddresses</td>
    <td>
-<a href="inet.nodes.inet.StandardHost.html">StandardHost</a>
+      <i>bool</i>
    </td>
+   <td>true</td>
    <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.sctp.SCTP.html">SCTP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.ipv6.StandardHost6.html">StandardHost6</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IPv6 host with <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.StandardHostWithDLDuplicatesGenerator.html">StandardHostWithDLDuplicatesGenerator</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.sctp.SCTP.html">SCTP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications AND <a href="inet.linklayer.ppp.PPPInterfaceWithDLDuplicatesGenerator.html">PPPInterfaceWithDLDuplicatesGenerator</a>.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.StandardHostWithDLThruputMeter.html">StandardHostWithDLThruputMeter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.sctp.SCTP.html">SCTP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications AND <a href="inet.linklayer.ppp.PPPInterfaceWithDLThruputMeter.html">PPPInterfaceWithDLThruputMeter</a>.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.StandardHostWithULDropsGenerator.html">StandardHostWithULDropsGenerator</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.sctp.SCTP.html">SCTP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications AND <a href="inet.linklayer.ppp.PPPInterfaceWithULDropsGenerator.html">PPPInterfaceWithULDropsGenerator</a>.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.StandardHostWithULThruputMeter.html">StandardHostWithULThruputMeter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.sctp.SCTP.html">SCTP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications AND <a href="inet.linklayer.ppp.PPPInterfaceWithULThruputMeter.html">PPPInterfaceWithULThruputMeter</a>.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.TCPSpoofingHost.html">TCPSpoofingHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.applications.tcpapp.TCPSpoof.html">TCPSpoof</a> in the application layer.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.wireless.WirelessHost.html">WirelessHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>Models a host with one wireless (802.11b) card in infrastructure mode.
-This module is basically a <a href="inet.nodes.inet.StandardHost.html">StandardHost</a> with an <a href="inet.linklayer.ieee80211.Ieee80211NicSTA.html">Ieee80211NicSTA</a> added.
-It should be used in conjunction with <a href="inet.nodes.wireless.WirelessAP.html">WirelessAP</a>, or any other AP model
-which contains <a href="inet.linklayer.ieee80211.Ieee80211NicAP.html">Ieee80211NicAP</a>.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.wireless.WirelessHostSimplified.html">WirelessHostSimplified</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>Models a host with one wireless (802.11b) card in infrastructure mode,
-but using a simplified NIC that does not support handovers.
-This module is basically a <a href="inet.nodes.inet.StandardHost.html">StandardHost</a> with an <a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">Ieee80211NicSTASimplified</a>
-added. It should be used in conjunction with <a href="inet.nodes.wireless.WirelessAPSimplified.html">WirelessAPSimplified</a>,
-or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">Ieee80211NicAPSimplified</a>.</p>
-
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 </table>
@@ -391,10 +228,11 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
 // Keeps the table of network interfaces.
 //
 // Interfaces are dynamically registered by the corresponding L2 modules, e.g.
-// PPPInterface. In addition to registered interfaces, a loopback interface
+// ~PPPInterface. In addition to registered interfaces, a loopback interface
 // will also be created. This table only contains protocol-independent
-// properties of interfaces -- IP or IPv6 specific per-interface data
-// (addresses etc) are kept in RoutingTable and RoutingTable6.
+// properties of interfaces -- IPv4 or IPv6 specific per-interface data
+// (addresses etc) are kept in ~RoutingTable and ~RoutingTable6.
+// Must be named as &quot;interfaceTable&quot;.
 //
 // This module has no gates; all functionality can be accessed via member
 // functions of the C++ module class. For detailed info, please see the C++
@@ -405,10 +243,10 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
 </span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">InterfaceTable</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/table&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">displayAddresses</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">true</span><span style="color: #000000; ">);  </span><span style="color: #808080; font-style: italic; ">// whether to display IP addresses on links
+</span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/table&quot;</span><span style="color: #000000; ">);
 }
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

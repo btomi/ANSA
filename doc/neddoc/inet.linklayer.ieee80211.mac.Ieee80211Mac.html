@@ -7,14 +7,14 @@
 <h2 class="comptitle">Simple Module <i>Ieee80211Mac</i></h2>
 <b>Package:</b> inet.linklayer.ieee80211.mac<br/><b>File: <a href="src-linklayer-ieee80211-mac-Ieee80211Mac.ned.html">src/linklayer/ieee80211/mac/Ieee80211Mac.ned</a></b><br/><p><a href="../doxy/class_ieee80211_mac.html" target="mainframe"><b>C++ definition</b></a></p>
 
-<p>Implementation of the 802.11b MAC protocol. This module is intended
-to be used in combination with the <a href="inet.linklayer.radio.Ieee80211Radio.html">Ieee80211Radio</a> module as the physical
-layer. (The <a href="inet.linklayer.mf80211.phyLayer.snrEval.SnrEval80211.html">SnrEval80211</a> and <a href="inet.linklayer.mf80211.phyLayer.decider.Decider80211.html">Decider80211</a> modules should also work if
+<p>Implementation of the 802.11 MAC protocol. This module is intended
+to be used in combination with the Ieee80211Radio module as the physical
+layer. (The SnrEval80211 and Decider80211 modules should also work if
 per-packet bitrate setting gets implemented.)</p>
 <p>Encapsulation/decapsulation must be done in the upper layers. (It is
-typically in the 802.11 management module, see in <a href="inet.linklayer.ieee80211.Ieee80211Nic.html">Ieee80211Nic</a>).
-The base class for 802.11 frame messages is <a href="Ieee80211Frame.html">Ieee80211Frame</a>, but this
-module expects <a href="Ieee80211DataOrMgmtFrame.html">Ieee80211DataOrMgmtFrame</a> (a subclass) from upper layers
+typically in the 802.11 management module, see in Ieee80211Nic).
+The base class for 802.11 frame messages is Ieee80211Frame, but this
+module expects Ieee80211DataOrMgmtFrame (a subclass) from upper layers
 (the management module). This module will assign the transmitter address
 (address 2) and the frame sequence number/fragment number fields in the
 frames; all other fields must already be filled when this module gets
@@ -29,10 +29,24 @@ interface.</p>
 3) polling (PCF). Physical layer algorithms such as frequency hopping and
 direct sequence spread spectrum are not modelled directly.</p>
 <p>Fields related to the above unsupported features are omitted from
-management frame formats as well (for example(<a href="inet.examples.ansaExamples.PDS_project.example.html">1</a>,<a href="inet.examples.ansaExamples.switchtest.example.html">2</a>), FH/DS/CF parameter sets,
+management frame formats as well (for example, FH/DS/CF parameter sets,
 beacon/probe timestamp which is related to physical layer synchronization,
 listen interval which is related to power management, capability information
 which is related to PCF and other non-modelled features).</p>
+<img src="inet.linklayer.ieee80211.mac.Ieee80211Mac-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html" title="Ieee80211Mac" alt="Ieee80211Mac" coords="0,30,127,70">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.linklayer.ieee80211.mac.Ieee80211Mac-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html" title="Simple Module Ieee80211Mac" alt="" coords="5,83,112,111">
+<area shape="rect" id="node2" href="inet.linklayer.ieee80211.Ieee80211Nic.html" title="Compound Module Ieee80211Nic" alt="" coords="8,6,109,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.linklayer.ieee80211.mac.Ieee80211Mac-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html" title="Simple Module Ieee80211Mac" alt="" coords="5,6,112,34">
+</map>
 <h3 class="subtitle">Used in compound modules:</h3>
 <table class="typestable">
    <tr>
@@ -51,78 +65,7 @@ which is related to PCF and other non-modelled features).</p>
 
 <p>This NIC implements an 802.11 network interface card.
 It can be configured via the mgmtType parameter to act
-as an AP or a STA, or for ad-hoc mode.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.linklayer.ieee80211.Ieee80211NicAdhoc.html">Ieee80211NicAdhoc</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>This NIC implements an 802.11 network interface card in ad-hoc mode.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.linklayer.ieee80211.Ieee80211NicAP.html">Ieee80211NicAP</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>This NIC implements an 802.11 network interface card,
-in an AP, using infrastructure mode.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">Ieee80211NicAPSimplified</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>This NIC implements an infrastructure mode 802.11 network interface card
-for a wireless Access Point (AP), but using a simplified mgmt module
-that does not support handovers.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.linklayer.ieee80211.Ieee80211NicSTA.html">Ieee80211NicSTA</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>This NIC implements an 802.11 network interface card,
-in a STA, using infrastructure mode.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">Ieee80211NicSTASimplified</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>This NIC implements an infrastructure mode 802.11 network interface card
-for a host (STA), but using a simplified mgmt module that does not
-support handovers.</p>
+as an AP or a STA, or for ad-hoc mode. </p>
 
    </td>
 </tr>
@@ -162,9 +105,141 @@ a generated MAC address in init stage 0.</p>
    <td>
       <i>int</i>
    </td>
-   <td></td>
+   <td>50</td>
    <td>
 <p>max queue length in frames; only used if queueModule==""</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>EDCA</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>enable Enhanced Distributed Channel Access (802.11e)</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>classifier</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"Ieee80211eClassifier"</td>
+   <td>
+<p>parameters for EDCA = true</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>defaultAC</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>0</td>
+   <td>
+<p>the default AC category for frames that cannot be classified</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>AIFSN0</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>7</td>
+   <td>
+<p>AIFSN for background</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>AIFSN1</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>3</td>
+   <td>
+<p>AIFSN for best effort</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>AIFSN2</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>2</td>
+   <td>
+<p>AIFSN for video</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>AIFSN3</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>2</td>
+   <td>
+<p>AIFSN for voice</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>TXOP0</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0s</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>TXOP1</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0s</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>TXOP2</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>3.008ms</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>TXOP3</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1.504ms</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>AIFSN</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>2</td>
+   <td>
+<p>parameters for EDCA = false</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>useModulationParameters</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>if true, slot time, DIFS, and ACK timeout (aPHY-RX-START-Delay) are function of modulation time (2007 standard)</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>prioritizeMulticast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>if true, prioritize multicast frames (9.3.2.1 Fundamental access)</p>
    </td>
 </tr>
 <tr class="local">
@@ -173,6 +248,48 @@ a generated MAC address in init stage 0.</p>
       <i>double</i>
    </td>
    <td></td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>opMode</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"g"</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>wifiPreambleMode</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"LONG"</td>
+   <td>
+<p>preamble mode; see IEEE 2007, 19.3.2</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>basicBitrate</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>2e6bps</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>mtu</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1500B</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>slotTime</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>9us</td>
    <td>   </td>
 </tr>
 <tr class="local">
@@ -206,7 +323,17 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr class="local">
-   <td>cwMinBroadcast</td>
+   <td>cwMaxData</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>-1</td>
+   <td>
+<p>contention window for normal data frames, -1 means default</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>cwMinMulticast</td>
    <td>
       <i>int</i>
    </td>
@@ -216,12 +343,151 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr class="local">
-   <td>mtu</td>
+   <td>fixFSM</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+   </td>
+</tr>
+<tr class="local">
+   <td>phyHeaderLength</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1</td>
+   <td>
+<p>if -1, the MAC will compute it in function of the modulation type</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>forceBitRate</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>if true, the MAC will force the bitrate to the physical layer</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>autoBitrate</td>
    <td>
       <i>int</i>
    </td>
-   <td>1500</td>
+   <td>0</td>
+   <td>
+<p>0 = constant bit rate (autobitrate algorithm disabled), 1 = ARF Rate, 2 = AARF Rate</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>minTimerTimeout</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>15</td>
+   <td>
+<p>parameters used by the autobitrate</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>timerTimeout</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>minTimerTimeout</td>
    <td>   </td>
+</tr>
+<tr class="local">
+   <td>minSuccessThreshold</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>10</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>successThreshold</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>minSuccessThreshold</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>maxSuccessThreshold</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>60</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>successCoeff</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>2.0</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>timerCoeff</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>2.0</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>duplicateDetectionFilter</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>duplicate detection</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>purgeOldTuples</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>delete old tuples in the duplicate list</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>duplicateTimeOut</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>20s</td>
+   <td>
+<p>timeout for the duplicate detection</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>throughputTimePeriod</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0</td>
+   <td>
+<p>statistics</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>multiMac</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>allows multiples mac interfaces in the same link layer</p>
+   </td>
 </tr>
 </table>
 <h3 class="subtitle">Properties:</h3>
@@ -234,7 +500,8 @@ a generated MAC address in init stage 0.</p>
 <tr>
    <td>display</td>
    <td><i>i=block/layer</i></td>
-   <td></td>
+   <td>
+</td>
 </tr>
 </table>
 <h3 class="subtitle">Gates:</h3>
@@ -246,29 +513,29 @@ a generated MAC address in init stage 0.</p>
       <th class="description">Description</th>
    </tr>
 <tr class="local">
-   <td>uppergateIn</xsl:if></td>
+   <td>upperLayerIn</xsl:if></td>
    <td><i>input</i></td>
    <td></td>   <td></td>
 </tr>
 <tr class="local">
-   <td>uppergateOut</xsl:if></td>
+   <td>upperLayerOut</xsl:if></td>
    <td><i>output</i></td>
    <td></td>   <td></td>
 </tr>
 <tr class="local">
-   <td>lowergateIn</xsl:if></td>
+   <td>lowerLayerIn</xsl:if></td>
    <td><i>input</i></td>
    <td></td>   <td></td>
 </tr>
 <tr class="local">
-   <td>lowergateOut</xsl:if></td>
+   <td>lowerLayerOut</xsl:if></td>
    <td><i>output</i></td>
    <td></td>   <td></td>
 </tr>
 </table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
-// Implementation of the 802.11b MAC protocol. This module is intended
+// Implementation of the 802.11 MAC protocol. This module is intended
 // to be used in combination with the Ieee80211Radio module as the physical
 // layer. (The SnrEval80211 and Decider80211 modules should also work if
 // per-packet bitrate setting gets implemented.)
@@ -306,22 +573,67 @@ a generated MAC address in init stage 0.</p>
         </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">address</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;auto&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// MAC address as hex string (12 hex digits), or
 </span><span style="color: #000000; ">                                          </span><span style="color: #808080; font-style: italic; ">// &quot;auto&quot;. &quot;auto&quot; values will be replaced by
 </span><span style="color: #000000; ">                                          </span><span style="color: #808080; font-style: italic; ">// a generated MAC address in init stage 0.
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">queueModule</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">);    </span><span style="color: #808080; font-style: italic; ">// name of optional external queue module
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">maxQueueSize</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// max queue length in frames; only used if queueModule==&quot;&quot;
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">bitrate</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;bps&quot;</span><span style="color: #000000; ">);
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">queueModule</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// name of optional external queue module
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">maxQueueSize</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">50</span><span style="color: #000000; ">);   </span><span style="color: #808080; font-style: italic; ">// max queue length in frames; only used if queueModule==&quot;&quot;
+</span><span style="color: #000000; ">
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">EDCA</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">false</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// enable Enhanced Distributed Channel Access (802.11e)
+</span><span style="color: #000000; ">        </span><span style="color: #808080; font-style: italic; ">// parameters for EDCA = true
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">classifier</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;Ieee80211eClassifier&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">defaultAC</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">0</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// the default AC category for frames that cannot be classified
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">AIFSN0</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">7</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// AIFSN for background
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">AIFSN1</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">3</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// AIFSN for best effort
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">AIFSN2</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">2</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// AIFSN for video
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">AIFSN3</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">2</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// AIFSN for voice
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">TXOP0</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">0</span><span style="color: #000000; ">s</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">TXOP1</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">0</span><span style="color: #000000; ">s</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">TXOP2</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">3</span><span style="color: #000000; ">.</span><span style="color: #008000; ">008</span><span style="color: #000000; ">ms</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">TXOP3</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">1</span><span style="color: #000000; ">.</span><span style="color: #008000; ">504</span><span style="color: #000000; ">ms</span><span style="color: #000000; ">);
+        </span><span style="color: #808080; font-style: italic; ">// parameters for EDCA = false 
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">AIFSN</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">2</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// if there is only one AC (EDCA = false)
+</span><span style="color: #000000; ">
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">useModulationParameters</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">false</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// if true, slot time, DIFS, and ACK timeout (aPHY-RX-START-Delay) are function of modulation time (2007 standard)
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">prioritizeMulticast</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">false</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// if true, prioritize multicast frames (9.3.2.1 Fundamental access)
+</span><span style="color: #000000; ">
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">bitrate</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;bps&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">opMode</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@enum</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;b&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;g&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;a&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;p&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;g&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">wifiPreambleMode</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@enum</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;LONG&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;SHORT&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;LONG&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// preamble mode; see IEEE 2007, 19.3.2
+</span><span style="color: #000000; ">
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">basicBitrate</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;bps&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">2</span><span style="color: #000000; ">e6bps</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">mtu</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;B&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">1500</span><span style="color: #000000; ">B</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">slotTime</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;s&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">9</span><span style="color: #000000; ">us</span><span style="color: #000000; ">);
         </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">rtsThresholdBytes</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;B&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">2346</span><span style="color: #000000; ">B</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// longer messages will be sent using RTS/CTS
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">retryLimit</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(-</span><span style="color: #008000; ">1</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// maximum number of retries per message, -1 means default
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">cwMinData</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(-</span><span style="color: #008000; ">1</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// contention window for normal data frames, -1 means default
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">cwMinBroadcast</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(-</span><span style="color: #008000; ">1</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// contention window for broadcast messages, -1 means default
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">mtu</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">1500</span><span style="color: #000000; ">);
-        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/layer&quot;</span><span style="color: #000000; ">);
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">cwMaxData</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(-</span><span style="color: #008000; ">1</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// contention window for normal data frames, -1 means default
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">cwMinMulticast</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(-</span><span style="color: #008000; ">1</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// contention window for broadcast messages, -1 means default
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">fixFSM</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">true</span><span style="color: #000000; ">);
+
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">phyHeaderLength</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(-</span><span style="color: #008000; ">1</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// if -1, the MAC will compute it in function of the modulation type
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">forceBitRate</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">false</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// if true, the MAC will force the bitrate to the physical layer
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">autoBitrate</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@enum</span><span style="color: #000000; ">(</span><span style="color: #008000; ">0</span><span style="color: #000000; ">,</span><span style="color: #008000; ">1</span><span style="color: #000000; ">,</span><span style="color: #008000; ">2</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">0</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// 0 = constant bit rate (autobitrate algorithm disabled), 1 = ARF Rate, 2 = AARF Rate
+</span><span style="color: #000000; ">        </span><span style="color: #808080; font-style: italic; ">// parameters used by the autobitrate
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">minTimerTimeout</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">15</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">timerTimeout</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #000000; ">minTimerTimeout</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">minSuccessThreshold</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">10</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">successThreshold</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #000000; ">minSuccessThreshold</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">maxSuccessThreshold</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">60</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">successCoeff</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">2</span><span style="color: #000000; ">.</span><span style="color: #008000; ">0</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">timerCoeff</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">2</span><span style="color: #000000; ">.</span><span style="color: #008000; ">0</span><span style="color: #000000; ">);
+        </span><span style="color: #808080; font-style: italic; ">// duplicate detection
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">duplicateDetectionFilter</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">true</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// whether to detect and filter out duplicate frames
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">purgeOldTuples</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">true</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// delete old tuples in the duplicate list
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">duplicateTimeOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;s&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">20</span><span style="color: #000000; ">s</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// timeout for the duplicate detection
+</span><span style="color: #000000; ">        </span><span style="color: #808080; font-style: italic; ">// statistics
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">throughputTimePeriod</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;s&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">0</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// period of time used by throughput measurement statistic
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">multiMac</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">false</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// allows multiples mac interfaces in the same link layer
+</span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/layer&quot;</span><span style="color: #000000; ">);
+
     </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
-        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">uppergateIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">Ieee80211Frame</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">uppergateOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">Ieee80211Frame</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">lowergateIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">Ieee80211Frame</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">lowergateOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">Ieee80211Frame</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">upperLayerIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">Ieee80211Frame</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">upperLayerOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">Ieee80211Frame</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">lowerLayerIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">Ieee80211Frame</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">lowerLayerOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">Ieee80211Frame</span><span style="color: #000000; ">);
 }
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

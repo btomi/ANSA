@@ -82,7 +82,10 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="TCPSerializer" -->
-<p><code>#include &lt;<a class="el" href="_t_c_p_serializer_8h_source.html">TCPSerializer.h</a>&gt;</code></p>
+<p>Converts between <a class="el" href="class_t_c_p_segment.html" title="Represents a TCP segment.">TCPSegment</a> and binary (network byte order) <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> header.  
+ <a href="class_t_c_p_serializer.html#details">More...</a></p>
+
+<p><code>#include &lt;TCPSerializer.h&gt;</code></p>
 
 <p><a href="class_t_c_p_serializer-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -90,16 +93,18 @@
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_serializer.html#a1289b1fb0bf01f95de04274629b4b6b1">TCPSerializer</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_serializer.html#a72028a325c7858bfe5f563de21e7ad67">serialize</a> (const <a class="el" href="class_t_c_p_segment.html">TCPSegment</a> *source, unsigned char *destbuf, unsigned int bufsize)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes a <a class="el" href="class_t_c_p_segment.html" title="Represents a TCP segment.">TCPSegment</a> for transmission on the wire.  <a href="#a72028a325c7858bfe5f563de21e7ad67"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_serializer.html#aa1000d9342fad9463cd97a2db8fd0e25">serialize</a> (const <a class="el" href="class_t_c_p_segment.html">TCPSegment</a> *source, unsigned char *destbuf, unsigned int bufsize, const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;srcIp, const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;destIp)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_serializer.html#a2fbcb2043b23f2f6b3acba28444072c5">parse</a> (const unsigned char *srcbuf, unsigned int bufsize, <a class="el" href="class_t_c_p_segment.html">TCPSegment</a> *dest)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes a <a class="el" href="class_t_c_p_segment.html" title="Represents a TCP segment.">TCPSegment</a> for transmission on the wire.  <a href="#aa1000d9342fad9463cd97a2db8fd0e25"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_serializer.html#a7194cfc789c92b81cf5f521cdddade48">parse</a> (const unsigned char *srcbuf, unsigned int bufsize, <a class="el" href="class_t_c_p_segment.html">TCPSegment</a> *dest, bool withBytes)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a packet sniffed from the wire into a <a class="el" href="class_t_c_p_segment.html" title="Represents a TCP segment.">TCPSegment</a>.  <a href="#a7194cfc789c92b81cf5f521cdddade48"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_serializer.html#ac82cd691d5d3086914a27e6344ca8149">checksum</a> (const void *addr, unsigned int count, const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;srcIp, const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;destIp)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_serializer.html#ac82cd691d5d3086914a27e6344ca8149">checksum</a> (const <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *addr, unsigned int count, const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;srcIp, const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;destIp)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate checksum with pseudo header.  <a href="#ac82cd691d5d3086914a27e6344ca8149"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Converts between <a class="el" href="class_t_c_p_segment.html">TCPSegment</a> and binary (network byte order) <a class="el" href="class_t_c_p.html">TCP</a> header. </p>
-
-<p>Definition at line <a class="el" href="_t_c_p_serializer_8h_source.html#l00034">34</a> of file <a class="el" href="_t_c_p_serializer_8h_source.html">TCPSerializer.h</a>.</p>
+<div class="textblock"><p>Converts between <a class="el" href="class_t_c_p_segment.html" title="Represents a TCP segment.">TCPSegment</a> and binary (network byte order) <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> header. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a1289b1fb0bf01f95de04274629b4b6b1"></a><!-- doxytag: member="TCPSerializer::TCPSerializer" ref="a1289b1fb0bf01f95de04274629b4b6b1" args="()" -->
 <div class="memitem">
@@ -114,8 +119,6 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_serializer_8h_source.html#l00037">37</a> of file <a class="el" href="_t_c_p_serializer_8h_source.html">TCPSerializer.h</a>.</p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
@@ -128,7 +131,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">uint16_t <a class="el" href="class_t_c_p_serializer.html#ac82cd691d5d3086914a27e6344ca8149">TCPSerializer::checksum</a> </td>
           <td>(</td>
-          <td class="paramtype">const void *&#160;</td>
+          <td class="paramtype">const <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>addr</em>, </td>
         </tr>
         <tr>
@@ -157,23 +160,24 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Calculate checksum with pseudo header. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_serializer_8cc_source.html#l00241">241</a> of file <a class="el" href="_t_c_p_serializer_8cc_source.html">TCPSerializer.cc</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p___n_s_c.html#ac6f917f4260a5caca56692640438b86f">TCP_NSC::handleIpInputMessage()</a>, and <a class="el" href="class_t_c_p__lw_i_p.html#aa8bb23b9ff4079cb984e7e86e6fe0dd0">TCP_lwIP::handleIpInputMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     uint32_t sum = <a class="code" href="class_t_c_p_i_pchecksum.html#aafe6c38ffa377215c1ddd566157e3c89">TCPIPchecksum::_checksum</a>(addr, count);
 
-    ASSERT(srcIp.<a class="code" href="class_i_pv_x_address.html#aaac624284694bf83bdb12d55a018525e">wordCount</a>() == destIp.<a class="code" href="class_i_pv_x_address.html#aaac624284694bf83bdb12d55a018525e">wordCount</a>());
+    ASSERT(srcIp.<a class="code" href="class_i_pv_x_address.html#aaac624284694bf83bdb12d55a018525e" title="Returns length of internal binary representation of address, (count of 32-bit unsigned integers...">wordCount</a>() == destIp.<a class="code" href="class_i_pv_x_address.html#aaac624284694bf83bdb12d55a018525e" title="Returns length of internal binary representation of address, (count of 32-bit unsigned integers...">wordCount</a>());
 
     <span class="comment">//sum += srcip;</span>
-    sum += htons(<a class="code" href="class_t_c_p_i_pchecksum.html#aafe6c38ffa377215c1ddd566157e3c89">TCPIPchecksum::_checksum</a>(srcIp.<a class="code" href="class_i_pv_x_address.html#ad335c80d952217df6b4d7b711c17aaa1">words</a>(), <span class="keyword">sizeof</span>(uint32)*srcIp.<a class="code" href="class_i_pv_x_address.html#aaac624284694bf83bdb12d55a018525e">wordCount</a>()));
+    sum += <a class="code" href="aodv__uu__omnet_8h.html#a51799f5ebb4c7228ef7e95c247030f42">htons</a>(<a class="code" href="class_t_c_p_i_pchecksum.html#aafe6c38ffa377215c1ddd566157e3c89">TCPIPchecksum::_checksum</a>(srcIp.<a class="code" href="class_i_pv_x_address.html#ad335c80d952217df6b4d7b711c17aaa1" title="Returns pointer to internal binary representation of address, four 32-bit unsigned integers...">words</a>(), <span class="keyword">sizeof</span>(uint32)*srcIp.<a class="code" href="class_i_pv_x_address.html#aaac624284694bf83bdb12d55a018525e" title="Returns length of internal binary representation of address, (count of 32-bit unsigned integers...">wordCount</a>()));
 
     <span class="comment">//sum += destip;</span>
-    sum += htons(<a class="code" href="class_t_c_p_i_pchecksum.html#aafe6c38ffa377215c1ddd566157e3c89">TCPIPchecksum::_checksum</a>(destIp.<a class="code" href="class_i_pv_x_address.html#ad335c80d952217df6b4d7b711c17aaa1">words</a>(), <span class="keyword">sizeof</span>(uint32)*destIp.<a class="code" href="class_i_pv_x_address.html#aaac624284694bf83bdb12d55a018525e">wordCount</a>()));
+    sum += <a class="code" href="aodv__uu__omnet_8h.html#a51799f5ebb4c7228ef7e95c247030f42">htons</a>(<a class="code" href="class_t_c_p_i_pchecksum.html#aafe6c38ffa377215c1ddd566157e3c89">TCPIPchecksum::_checksum</a>(destIp.<a class="code" href="class_i_pv_x_address.html#ad335c80d952217df6b4d7b711c17aaa1" title="Returns pointer to internal binary representation of address, four 32-bit unsigned integers...">words</a>(), <span class="keyword">sizeof</span>(uint32)*destIp.<a class="code" href="class_i_pv_x_address.html#aaac624284694bf83bdb12d55a018525e" title="Returns length of internal binary representation of address, (count of 32-bit unsigned integers...">wordCount</a>()));
 
-    sum += htons(count); <span class="comment">// TCP length</span>
+    sum += <a class="code" href="aodv__uu__omnet_8h.html#a51799f5ebb4c7228ef7e95c247030f42">htons</a>(count); <span class="comment">// TCP length</span>
 
-    sum += htons(<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70a69fd8777dfd279b247a88b6eec793bd7">IP_PROT_TCP</a>); <span class="comment">// PTCL</span>
+    sum += <a class="code" href="aodv__uu__omnet_8h.html#a51799f5ebb4c7228ef7e95c247030f42">htons</a>(<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70a69fd8777dfd279b247a88b6eec793bd7">IP_PROT_TCP</a>); <span class="comment">// PTCL</span>
 
     <span class="keywordflow">while</span> (sum &gt;&gt; 16)
         sum = (sum &amp; 0xFFFF) + (sum &gt;&gt; 16);
@@ -183,12 +187,12 @@ Static Public Member Functions</h2></td></tr>
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a2fbcb2043b23f2f6b3acba28444072c5"></a><!-- doxytag: member="TCPSerializer::parse" ref="a2fbcb2043b23f2f6b3acba28444072c5" args="(const unsigned char *srcbuf, unsigned int bufsize, TCPSegment *dest)" -->
+<a class="anchor" id="a7194cfc789c92b81cf5f521cdddade48"></a><!-- doxytag: member="TCPSerializer::parse" ref="a7194cfc789c92b81cf5f521cdddade48" args="(const unsigned char *srcbuf, unsigned int bufsize, TCPSegment *dest, bool withBytes)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_serializer.html#a2fbcb2043b23f2f6b3acba28444072c5">TCPSerializer::parse</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_serializer.html#a7194cfc789c92b81cf5f521cdddade48">TCPSerializer::parse</a> </td>
           <td>(</td>
           <td class="paramtype">const unsigned char *&#160;</td>
           <td class="paramname"><em>srcbuf</em>, </td>
@@ -203,7 +207,13 @@ Static Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="class_t_c_p_segment.html">TCPSegment</a> *&#160;</td>
-          <td class="paramname"><em>dest</em>&#160;</td>
+          <td class="paramname"><em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>withBytes</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -213,42 +223,36 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Puts a packet sniffed from the wire into a <a class="el" href="class_t_c_p_segment.html">TCPSegment</a>. TODO dest why not reference? </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_serializer_8cc_source.html#l00157">157</a> of file <a class="el" href="_t_c_p_serializer_8cc_source.html">TCPSerializer.cc</a>.</p>
+<p>Puts a packet sniffed from the wire into a <a class="el" href="class_t_c_p_segment.html" title="Represents a TCP segment.">TCPSegment</a>. </p>
+<p>TODO dest why not reference? </p>
 
-<p>Referenced by <a class="el" href="_i_p_serializer_8cc_source.html#l00107">IPSerializer::parse()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#a80fbee98b2d32974f0650c860840e89a">TCP_NSC_VirtualDataSendQueue::createSegmentWithBytes()</a>, <a class="el" href="class_tcp_lwip_virtual_data_send_queue.html#a1e4c1bcf5c17f1f1fe0e9ba4f1214416">TcpLwipVirtualDataSendQueue::createSegmentWithBytes()</a>, <a class="el" href="class_t_c_p___n_s_c___byte_stream_send_queue.html#a3c841a0d3dfe99ac6c4ae80745b03e3d">TCP_NSC_ByteStreamSendQueue::createSegmentWithBytes()</a>, <a class="el" href="class_tcp_lwip_byte_stream_send_queue.html#a497b6d3ed0efb6c54dd003e6e43c8d3a">TcpLwipByteStreamSendQueue::createSegmentWithBytes()</a>, <a class="el" href="class_tcp_lwip_msg_based_send_queue.html#a37753c4cf2acf450d520aad9c0c40559">TcpLwipMsgBasedSendQueue::createSegmentWithBytes()</a>, <a class="el" href="class_t_c_p__lw_i_p.html#a4c2bbef15024698ddf1dec03163c2146">TCP_lwIP::ip_output()</a>, and <a class="el" href="class_t_c_p___n_s_c.html#ab95f395174d072737b9f1a3e978fba51">TCP_NSC::sendToIP()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     ASSERT(buf);
     ASSERT(tcpseg);
     <span class="keyword">struct </span><a class="code" href="structtcphdr.html">tcphdr</a> const * <span class="keyword">const</span> tcp = (<span class="keyword">struct </span><a class="code" href="structtcphdr.html">tcphdr</a> * const ) (buf);
 
     <span class="comment">// fill TCP header structure</span>
-    tcpseg-&gt;setSrcPort(ntohs(tcp-&gt;<a class="code" href="structtcphdr.html#ae5c47c843c9dc71c25dce52df167d47c">th_sport</a>));
-    tcpseg-&gt;setDestPort(ntohs(tcp-&gt;<a class="code" href="structtcphdr.html#ac347d4aa4da2cc2e09d6668e69c40023">th_dport</a>));
-    tcpseg-&gt;setSequenceNo(ntohl(tcp-&gt;<a class="code" href="structtcphdr.html#a78d37e5bdccde61a1e9637634230f7a4">th_seq</a>));
-    tcpseg-&gt;setAckNo(ntohl(tcp-&gt;<a class="code" href="structtcphdr.html#a8b984173a3ff103c3c837adb5a5ef238">th_ack</a>));
-    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> hdrLength =tcp-&gt;<a class="code" href="structtcphdr.html#aa816a5351f6bbae0db213c0c7bd2ad21">th_offs</a> * 4;
+    tcpseg-&gt;setSrcPort(<a class="code" href="aodv__uu__omnet_8h.html#ada37feda716b4ba89cf9dba34288141d">ntohs</a>(tcp-&gt;<a class="code" href="structtcphdr.html#ae5c47c843c9dc71c25dce52df167d47c">th_sport</a>));
+    tcpseg-&gt;setDestPort(<a class="code" href="aodv__uu__omnet_8h.html#ada37feda716b4ba89cf9dba34288141d">ntohs</a>(tcp-&gt;<a class="code" href="structtcphdr.html#ac347d4aa4da2cc2e09d6668e69c40023">th_dport</a>));
+    tcpseg-&gt;setSequenceNo(<a class="code" href="aodv__uu__omnet_8h.html#ac317b3e903719ba02894f1710f7f2439">ntohl</a>(tcp-&gt;<a class="code" href="structtcphdr.html#a78d37e5bdccde61a1e9637634230f7a4">th_seq</a>));
+    tcpseg-&gt;setAckNo(<a class="code" href="aodv__uu__omnet_8h.html#ac317b3e903719ba02894f1710f7f2439">ntohl</a>(tcp-&gt;<a class="code" href="structtcphdr.html#a8b984173a3ff103c3c837adb5a5ef238">th_ack</a>));
+    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> hdrLength = tcp-&gt;<a class="code" href="structtcphdr.html#aa816a5351f6bbae0db213c0c7bd2ad21">th_offs</a> * 4;
     tcpseg-&gt;setHeaderLength(hdrLength);
 
     <span class="comment">// set flags</span>
     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> flags = tcp-&gt;<a class="code" href="structtcphdr.html#a281ecf39fbce60f7c07fddb12563a3e3">th_flags</a>;
-    <span class="keywordflow">if</span> ((flags &amp; <a class="code" href="tcp_8h.html#a1cec9b372679734fcd8394d779442ddb">TH_FIN</a>) == TH_FIN)
-        tcpseg-&gt;setFinBit(<span class="keyword">true</span>);
-    <span class="keywordflow">if</span> ((flags &amp; <a class="code" href="tcp_8h.html#a91006117f7ae427b957773ab0e80bfa4">TH_SYN</a>) == TH_SYN)
-        tcpseg-&gt;setSynBit(<span class="keyword">true</span>);
-    <span class="keywordflow">if</span> ((flags &amp; <a class="code" href="tcp_8h.html#a7f2ce15991898c8d3397045087c4381f">TH_RST</a>) == TH_RST)
-        tcpseg-&gt;setRstBit(<span class="keyword">true</span>);
-    <span class="keywordflow">if</span> ((flags &amp; <a class="code" href="tcp_8h.html#a45b9964096064c9a0c84fbddd2c80d38">TH_PUSH</a>) == TH_PUSH)
-        tcpseg-&gt;setPshBit(<span class="keyword">true</span>);
-    <span class="keywordflow">if</span> ((flags &amp; <a class="code" href="tcp_8h.html#a362dae974cf06bab2b79b70f0cde524f">TH_ACK</a>) == TH_ACK)
-        tcpseg-&gt;setAckBit(<span class="keyword">true</span>);
-    <span class="keywordflow">if</span> ((flags &amp; <a class="code" href="tcp_8h.html#a7b18ca973f14696013696a00c5235f32">TH_URG</a>) == TH_URG)
-        tcpseg-&gt;setUrgBit(<span class="keyword">true</span>);
+    tcpseg-&gt;setFinBit((flags &amp; <a class="code" href="util_2headerserializers_2tcp_2headers_2tcp_8h.html#a1cec9b372679734fcd8394d779442ddb">TH_FIN</a>) == TH_FIN);
+    tcpseg-&gt;setSynBit((flags &amp; <a class="code" href="util_2headerserializers_2tcp_2headers_2tcp_8h.html#a91006117f7ae427b957773ab0e80bfa4">TH_SYN</a>) == TH_SYN);
+    tcpseg-&gt;setRstBit((flags &amp; <a class="code" href="util_2headerserializers_2tcp_2headers_2tcp_8h.html#a7f2ce15991898c8d3397045087c4381f">TH_RST</a>) == TH_RST);
+    tcpseg-&gt;setPshBit((flags &amp; <a class="code" href="util_2headerserializers_2tcp_2headers_2tcp_8h.html#a45b9964096064c9a0c84fbddd2c80d38">TH_PUSH</a>) == TH_PUSH);
+    tcpseg-&gt;setAckBit((flags &amp; <a class="code" href="util_2headerserializers_2tcp_2headers_2tcp_8h.html#a362dae974cf06bab2b79b70f0cde524f">TH_ACK</a>) == TH_ACK);
+    tcpseg-&gt;setUrgBit((flags &amp; <a class="code" href="util_2headerserializers_2tcp_2headers_2tcp_8h.html#a7b18ca973f14696013696a00c5235f32">TH_URG</a>) == TH_URG);
 
-    tcpseg-&gt;setWindow(ntohs(tcp-&gt;<a class="code" href="structtcphdr.html#a3f3265a73cfb13b8812fea80a499e290">th_win</a>));
+    tcpseg-&gt;setWindow(<a class="code" href="aodv__uu__omnet_8h.html#ada37feda716b4ba89cf9dba34288141d">ntohs</a>(tcp-&gt;<a class="code" href="structtcphdr.html#a3f3265a73cfb13b8812fea80a499e290">th_win</a>));
     <span class="comment">// Checksum (header checksum): modelled by cMessage::hasBitError()</span>
-    tcpseg-&gt;setUrgentPointer(ntohs(tcp-&gt;<a class="code" href="structtcphdr.html#a9a66677a42d71b35d23ba10d61a84250">th_urp</a>));
+    tcpseg-&gt;setUrgentPointer(<a class="code" href="aodv__uu__omnet_8h.html#ada37feda716b4ba89cf9dba34288141d">ntohs</a>(tcp-&gt;<a class="code" href="structtcphdr.html#a9a66677a42d71b35d23ba10d61a84250">th_urp</a>));
 
     <span class="keywordflow">if</span> (hdrLength &gt; <a class="code" href="_t_c_p_segment__m_8h.html#a77315d68700647283fc64814a5862090">TCP_HEADER_OCTETS</a>) <span class="comment">// options present?</span>
     {
@@ -256,14 +260,14 @@ Static Public Member Functions</h2></td></tr>
         <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> optionsCounter = 0; <span class="comment">// index for tcpseg-&gt;setOptions[]</span>
 
         <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> length = 0;
-        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> j=0; j&lt;optionBytes; j+=length)
+        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> j=0; j&lt;optionBytes; j += length)
         {
             <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> * options = ((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> * )tcp-&gt;<a class="code" href="structtcphdr.html#a8441e5ad9f2a4882645c7188fc5d533f">th_options</a>)+j;
             <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> kind = options[0];
             length = options[1];
 
-            <a class="code" href="class_t_c_p_option.html">TCPOption</a> tmpOption;
-            <span class="keywordflow">switch</span>(kind)
+            <a class="code" href="class_t_c_p_option.html" title="Class generated from transport/tcp_common/TCPSegment.msg by opp_msgc.">TCPOption</a> tmpOption;
+            <span class="keywordflow">switch</span> (kind)
             {
                 <span class="keywordflow">case</span> <a class="code" href="_t_c_p_segment__m_8h.html#aad5daaa0da17557e7745d86d2bf140a0a4ae49568e5542f0b26db05424e61bd37">TCPOPTION_END_OF_OPTION_LIST</a>: <span class="comment">// EOL</span>
                 <span class="keywordflow">case</span> <a class="code" href="_t_c_p_segment__m_8h.html#aad5daaa0da17557e7745d86d2bf140a0a3815105fc6965c050aceeac9863abbcb">TCPOPTION_NO_OPERATION</a>: <span class="comment">// NOP</span>
@@ -292,13 +296,19 @@ Static Public Member Functions</h2></td></tr>
             }
             <span class="comment">// write option to tcp header</span>
             tcpseg-&gt;setOptionsArraySize(tcpseg-&gt;getOptionsArraySize()+1);
-            tcpseg-&gt;setOptions(optionsCounter,tmpOption);
+            tcpseg-&gt;setOptions(optionsCounter, tmpOption);
             optionsCounter++;
         } <span class="comment">// for j</span>
     } <span class="comment">// if options present</span>
 
     tcpseg-&gt;setByteLength(bufsize);
-    tcpseg-&gt;setPayloadLength(bufsize - tcpseg-&gt;getHeaderLength());
+    tcpseg-&gt;setPayloadLength(bufsize - hdrLength);
+
+    <span class="keywordflow">if</span> (withBytes)
+    {
+        <span class="comment">// parse data</span>
+        tcpseg-&gt;getByteArray().setDataFromBuffer(buf + hdrLength, bufsize - hdrLength);
+    }
 }
 </pre></div>
 </div>
@@ -333,11 +343,11 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Serializes a <a class="el" href="class_t_c_p_segment.html">TCPSegment</a> for transmission on the wire. The checksum is NOT filled in. Returns the length of data written into buffer. TODO msg why not a const reference? </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_serializer_8cc_source.html#l00043">43</a> of file <a class="el" href="_t_c_p_serializer_8cc_source.html">TCPSerializer.cc</a>.</p>
+<p>Serializes a <a class="el" href="class_t_c_p_segment.html" title="Represents a TCP segment.">TCPSegment</a> for transmission on the wire. </p>
+<p>The checksum is NOT filled in. Returns the length of data written into buffer. TODO msg why not a const reference? </p>
 
-<p>Referenced by <a class="el" href="_i_p_serializer_8cc_source.html#l00057">IPSerializer::serialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p___n_s_c.html#ac6f917f4260a5caca56692640438b86f">TCP_NSC::handleIpInputMessage()</a>, and <a class="el" href="class_t_c_p__lw_i_p.html#aa8bb23b9ff4079cb984e7e86e6fe0dd0">TCP_lwIP::handleIpInputMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     ASSERT(buf);
     ASSERT(tcpseg);
@@ -348,29 +358,29 @@ Static Public Member Functions</h2></td></tr>
 
     <span class="comment">// fill TCP header structure</span>
     tcp-&gt;<a class="code" href="structtcphdr.html#a6bdf6060cd27fa9674aec9100aa9af04">th_sum</a> = 0;
-    tcp-&gt;<a class="code" href="structtcphdr.html#ae5c47c843c9dc71c25dce52df167d47c">th_sport</a> = htons(tcpseg-&gt;getSrcPort());
-    tcp-&gt;<a class="code" href="structtcphdr.html#ac347d4aa4da2cc2e09d6668e69c40023">th_dport</a> = htons(tcpseg-&gt;getDestPort());
-    tcp-&gt;<a class="code" href="structtcphdr.html#a78d37e5bdccde61a1e9637634230f7a4">th_seq</a> = htonl(tcpseg-&gt;getSequenceNo());
-    tcp-&gt;<a class="code" href="structtcphdr.html#a8b984173a3ff103c3c837adb5a5ef238">th_ack</a> = htonl(tcpseg-&gt;getAckNo());
+    tcp-&gt;<a class="code" href="structtcphdr.html#ae5c47c843c9dc71c25dce52df167d47c">th_sport</a> = <a class="code" href="aodv__uu__omnet_8h.html#a51799f5ebb4c7228ef7e95c247030f42">htons</a>(tcpseg-&gt;getSrcPort());
+    tcp-&gt;<a class="code" href="structtcphdr.html#ac347d4aa4da2cc2e09d6668e69c40023">th_dport</a> = <a class="code" href="aodv__uu__omnet_8h.html#a51799f5ebb4c7228ef7e95c247030f42">htons</a>(tcpseg-&gt;getDestPort());
+    tcp-&gt;<a class="code" href="structtcphdr.html#a78d37e5bdccde61a1e9637634230f7a4">th_seq</a> = <a class="code" href="aodv__uu__omnet_8h.html#ae4027a6ad07f13aa12eab285a1b46019">htonl</a>(tcpseg-&gt;getSequenceNo());
+    tcp-&gt;<a class="code" href="structtcphdr.html#a8b984173a3ff103c3c837adb5a5ef238">th_ack</a> = <a class="code" href="aodv__uu__omnet_8h.html#ae4027a6ad07f13aa12eab285a1b46019">htonl</a>(tcpseg-&gt;getAckNo());
     tcp-&gt;<a class="code" href="structtcphdr.html#aa816a5351f6bbae0db213c0c7bd2ad21">th_offs</a> = <a class="code" href="_t_c_p_segment__m_8h.html#a77315d68700647283fc64814a5862090">TCP_HEADER_OCTETS</a> / 4;
 
     <span class="comment">// set flags</span>
     <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> flags = 0;
-    <span class="keywordflow">if</span>(tcpseg-&gt;getFinBit())
-        flags |= <a class="code" href="tcp_8h.html#a1cec9b372679734fcd8394d779442ddb">TH_FIN</a>;
-    <span class="keywordflow">if</span>(tcpseg-&gt;getSynBit())
-        flags |= <a class="code" href="tcp_8h.html#a91006117f7ae427b957773ab0e80bfa4">TH_SYN</a>;
-    <span class="keywordflow">if</span>(tcpseg-&gt;getRstBit())
-        flags |= <a class="code" href="tcp_8h.html#a7f2ce15991898c8d3397045087c4381f">TH_RST</a>;
-    <span class="keywordflow">if</span>(tcpseg-&gt;getPshBit())
-        flags |= <a class="code" href="tcp_8h.html#a45b9964096064c9a0c84fbddd2c80d38">TH_PUSH</a>;
-    <span class="keywordflow">if</span>(tcpseg-&gt;getAckBit())
-        flags |= <a class="code" href="tcp_8h.html#a362dae974cf06bab2b79b70f0cde524f">TH_ACK</a>;
-    <span class="keywordflow">if</span>(tcpseg-&gt;getUrgBit())
-        flags |= <a class="code" href="tcp_8h.html#a7b18ca973f14696013696a00c5235f32">TH_URG</a>;
-    tcp-&gt;<a class="code" href="structtcphdr.html#a281ecf39fbce60f7c07fddb12563a3e3">th_flags</a> = (<a class="code" href="tcp_8h.html#a618dec9145afa92eb20e74a97625f754">TH_FLAGS</a> &amp; flags);
-    tcp-&gt;<a class="code" href="structtcphdr.html#a3f3265a73cfb13b8812fea80a499e290">th_win</a> = htons(tcpseg-&gt;getWindow());
-    tcp-&gt;<a class="code" href="structtcphdr.html#a9a66677a42d71b35d23ba10d61a84250">th_urp</a> = htons(tcpseg-&gt;getUrgentPointer());
+    <span class="keywordflow">if</span> (tcpseg-&gt;getFinBit())
+        flags |= <a class="code" href="util_2headerserializers_2tcp_2headers_2tcp_8h.html#a1cec9b372679734fcd8394d779442ddb">TH_FIN</a>;
+    <span class="keywordflow">if</span> (tcpseg-&gt;getSynBit())
+        flags |= <a class="code" href="util_2headerserializers_2tcp_2headers_2tcp_8h.html#a91006117f7ae427b957773ab0e80bfa4">TH_SYN</a>;
+    <span class="keywordflow">if</span> (tcpseg-&gt;getRstBit())
+        flags |= <a class="code" href="util_2headerserializers_2tcp_2headers_2tcp_8h.html#a7f2ce15991898c8d3397045087c4381f">TH_RST</a>;
+    <span class="keywordflow">if</span> (tcpseg-&gt;getPshBit())
+        flags |= <a class="code" href="util_2headerserializers_2tcp_2headers_2tcp_8h.html#a45b9964096064c9a0c84fbddd2c80d38">TH_PUSH</a>;
+    <span class="keywordflow">if</span> (tcpseg-&gt;getAckBit())
+        flags |= <a class="code" href="util_2headerserializers_2tcp_2headers_2tcp_8h.html#a362dae974cf06bab2b79b70f0cde524f">TH_ACK</a>;
+    <span class="keywordflow">if</span> (tcpseg-&gt;getUrgBit())
+        flags |= <a class="code" href="util_2headerserializers_2tcp_2headers_2tcp_8h.html#a7b18ca973f14696013696a00c5235f32">TH_URG</a>;
+    tcp-&gt;<a class="code" href="structtcphdr.html#a281ecf39fbce60f7c07fddb12563a3e3">th_flags</a> = (<a class="code" href="util_2headerserializers_2tcp_2headers_2tcp_8h.html#a618dec9145afa92eb20e74a97625f754">TH_FLAGS</a> &amp; flags);
+    tcp-&gt;<a class="code" href="structtcphdr.html#a3f3265a73cfb13b8812fea80a499e290">th_win</a> = <a class="code" href="aodv__uu__omnet_8h.html#a51799f5ebb4c7228ef7e95c247030f42">htons</a>(tcpseg-&gt;getWindow());
+    tcp-&gt;<a class="code" href="structtcphdr.html#a9a66677a42d71b35d23ba10d61a84250">th_urp</a> = <a class="code" href="aodv__uu__omnet_8h.html#a51799f5ebb4c7228ef7e95c247030f42">htons</a>(tcpseg-&gt;getUrgentPointer());
 
     <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> numOptions = tcpseg-&gt;getOptionsArraySize();
     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> lengthCounter = 0;
@@ -379,9 +389,9 @@ Static Public Member Functions</h2></td></tr>
     {
         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> maxOptLength = tcpseg-&gt;getHeaderLength()-<a class="code" href="_t_c_p_segment__m_8h.html#a77315d68700647283fc64814a5862090">TCP_HEADER_OCTETS</a>;
 
-        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>=0; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> &lt; numOptions; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++)
+        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> i=0; i &lt; numOptions; i++)
         {
-            <a class="code" href="class_t_c_p_option.html">TCPOption</a> option = tcpseg-&gt;getOptions(<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>);
+            <a class="code" href="class_t_c_p_option.html" title="Class generated from transport/tcp_common/TCPSegment.msg by opp_msgc.">TCPOption</a> option = tcpseg-&gt;getOptions(i);
             <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> kind = option.<a class="code" href="class_t_c_p_option.html#a6238dc83030805e805f4bf1408ea07c9">getKind</a>();
             <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> length = option.<a class="code" href="class_t_c_p_option.html#aa74ae1e636ad1868f3b00b07c53aeb6e">getLength</a>(); <span class="comment">// length &gt;= 1</span>
             options = ((<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> * )tcp-&gt;<a class="code" href="structtcphdr.html#a8441e5ad9f2a4882645c7188fc5d533f">th_options</a>)+lengthCounter;
@@ -391,16 +401,16 @@ Static Public Member Functions</h2></td></tr>
             ASSERT(lengthCounter &lt;= maxOptLength);
 
             options[0] = kind;
-            <span class="keywordflow">if</span>(length&gt;1)
+            <span class="keywordflow">if</span> (length&gt;1)
             {
                 options[1] = length;
             }
             <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> optlen = option.<a class="code" href="class_t_c_p_option.html#ab6fdfa2cdc260ae8a42818befcf236a5">getValuesArraySize</a>();
-            <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> k=0; k&lt;optlen; k++)
+            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> k=0; k&lt;optlen; k++)
             {
                 <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value = option.<a class="code" href="class_t_c_p_option.html#a1875afa2640add4375c000c42b6d38d6">getValues</a>(k);
                 <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> p0 = 2 + 4*k;
-                <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> p = <a class="code" href="_s_c_t_p_association_8h.html#ad61931b1ae6b8e5bb714e2e6744f4470">std::min</a>((<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>)length-1, 5 + 4*k); p &gt;= p0; p--)
+                <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> p = <a class="code" href="_s_c_t_p_association_8h.html#ad61931b1ae6b8e5bb714e2e6744f4470" title="Returns the minimum of a and b.">std::min</a>((<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>)length-1, 5 + 4*k); p &gt;= p0; p--)
                 {
                     options[p] = value &amp; 0xFF;
                     value = value &gt;&gt; 8;
@@ -420,21 +430,15 @@ Static Public Member Functions</h2></td></tr>
     <span class="keywordflow">if</span> (tcpseg-&gt;getByteLength() &gt; tcpseg-&gt;getHeaderLength()) <span class="comment">// data present? FIXME TODO: || tcpseg-&gt;getEncapsulatedPacket()!=NULL</span>
     {
         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> dataLength = tcpseg-&gt;getByteLength() - tcpseg-&gt;getHeaderLength();
-        <span class="comment">// TCPPayloadMessage *tcpP = check_and_cast&lt;TCPPayloadMessage* &gt;(tcpseg-&gt;getEncapsulatedPacket()); // FIXME</span>
         <span class="keywordtype">char</span> *tcpData = (<span class="keywordtype">char</span> *)options+lengthCounter;
-        memset(tcpData, <span class="charliteral">&#39;t&#39;</span>, dataLength); <span class="comment">// fill data part with &#39;t&#39;</span>
-        <span class="comment">/*</span>
-<span class="comment">        for (unsigned int i=0; i &lt; dataLength; i++)</span>
-<span class="comment">        {</span>
-<span class="comment">            if (i &lt; tcpseg-&gt;getPayloadArraySize())</span>
-<span class="comment">            {</span>
-<span class="comment">//              tcpData[i] = (unsigned char) tcpP.msg; // FIXME</span>
-<span class="comment">                tcpData[i] = &#39;t&#39;; // FIXME - write &#39;t&#39; as dummy data</span>
-<span class="comment">            }</span>
-<span class="comment">            else</span>
-<span class="comment">                {tcpData[i] = &#39;t&#39;;} // write &#39;t&#39; as dummy data</span>
-<span class="comment">        }</span>
-<span class="comment">        */</span>
+
+        <span class="keywordflow">if</span> (tcpseg-&gt;getByteArray().getDataArraySize() &gt; 0)
+        {
+            ASSERT(tcpseg-&gt;getByteArray().getDataArraySize() == dataLength);
+            tcpseg-&gt;getByteArray().copyDataToBuffer(tcpData, dataLength);
+        }
+        <span class="keywordflow">else</span>
+            memset(tcpData, <span class="charliteral">&#39;t&#39;</span>, dataLength); <span class="comment">// fill data part with &#39;t&#39;</span>
     }
     <span class="keywordflow">return</span> writtenbytes;
 }
@@ -483,13 +487,13 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Serializes a <a class="el" href="class_t_c_p_segment.html">TCPSegment</a> for transmission on the wire. The checksum is NOT filled in. (The kernel does that when sending the frame over a raw socket.) Returns the length of data written into buffer. TODO msg why not a const reference? TODO pseudoheader vs <a class="el" href="class_i_pv6.html">IPv6</a>, pseudoheder.len should calculated by the <a class="el" href="class_t_c_p_serializer.html#a72028a325c7858bfe5f563de21e7ad67">serialize()</a>, etc </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_serializer_8cc_source.html#l00146">146</a> of file <a class="el" href="_t_c_p_serializer_8cc_source.html">TCPSerializer.cc</a>.</p>
+<p>Serializes a <a class="el" href="class_t_c_p_segment.html" title="Represents a TCP segment.">TCPSegment</a> for transmission on the wire. </p>
+<p>The checksum is NOT filled in. (The kernel does that when sending the frame over a raw socket.) Returns the length of data written into buffer. TODO msg why not a const reference? TODO pseudoheader vs <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a>, pseudoheder.len should calculated by the <a class="el" href="class_t_c_p_serializer.html#a72028a325c7858bfe5f563de21e7ad67" title="Serializes a TCPSegment for transmission on the wire.">serialize()</a>, etc </p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordtype">int</span> writtenbytes = <a class="code" href="class_t_c_p_serializer.html#a72028a325c7858bfe5f563de21e7ad67">serialize</a>(tcpseg, buf, bufsize);
+    <span class="keywordtype">int</span> writtenbytes = <a class="code" href="class_t_c_p_serializer.html#a72028a325c7858bfe5f563de21e7ad67" title="Serializes a TCPSegment for transmission on the wire.">serialize</a>(tcpseg, buf, bufsize);
     <span class="keyword">struct </span><a class="code" href="structtcphdr.html">tcphdr</a> *tcp = (<span class="keyword">struct </span><a class="code" href="structtcphdr.html">tcphdr</a>*) (buf);
-    tcp-&gt;<a class="code" href="structtcphdr.html#a6bdf6060cd27fa9674aec9100aa9af04">th_sum</a> = <a class="code" href="class_t_c_p_serializer.html#ac82cd691d5d3086914a27e6344ca8149">checksum</a>(tcp, writtenbytes, srcIp, destIp);
+    tcp-&gt;<a class="code" href="structtcphdr.html#a6bdf6060cd27fa9674aec9100aa9af04">th_sum</a> = <a class="code" href="class_t_c_p_serializer.html#ac82cd691d5d3086914a27e6344ca8149" title="Calculate checksum with pseudo header.">checksum</a>(tcp, writtenbytes, srcIp, destIp);
 
     <span class="keywordflow">return</span> writtenbytes;
 }
@@ -497,8 +501,8 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_t_c_p_serializer_8h_source.html">TCPSerializer.h</a></li>
-<li><a class="el" href="_t_c_p_serializer_8cc_source.html">TCPSerializer.cc</a></li>
+<li><a class="el" href="_t_c_p_serializer_8h.html">TCPSerializer.h</a></li>
+<li><a class="el" href="_t_c_p_serializer_8cc.html">TCPSerializer.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -506,7 +510,7 @@ Static Public Member Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_t_c_p_serializer.html">TCPSerializer</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:54 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:31 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

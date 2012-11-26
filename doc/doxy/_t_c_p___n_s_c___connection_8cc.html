@@ -73,19 +73,237 @@
 </script>
 <div id="doc-content">
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Defines</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">TCP_NSC_Connection.cc File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_t_c_p___n_s_c___connection_8h.html">TCP_NSC_Connection.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="defs_8h.html">headers/defs.h</a>&quot;</code><br/>
+<code>#include &lt;sim_interface.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="util_2headerserializers_2tcp_2headers_2tcp_8h.html">headers/tcp.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_t_c_p___n_s_c_8h.html">TCP_NSC.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_t_c_p___n_s_c___queues_8h.html">TCP_NSC_Queues.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_t_c_p_command__m_8h.html">TCPCommand_m.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_t_c_p_i_pchecksum_8h.html">TCPIPchecksum.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_t_c_p_segment_8h.html">TCPSegment.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_t_c_p_serializer_8h.html">TCPSerializer.h</a>&quot;</code><br/>
+<code>#include &lt;assert.h&gt;</code><br/>
+<code>#include &lt;dlfcn.h&gt;</code><br/>
+<code>#include &lt;netinet/in.h&gt;</code><br/>
+</div><table class="memberdecls">
+<tr><td colspan="2"><h2><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsc__iphdr.html">nsc_iphdr</a></td></tr>
+<tr><td colspan="2"><h2><a name="define-members"></a>
+Defines</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a601325e92d65fe658c80eab711e12304">tcpEV</a>&#160;&#160;&#160;((ev.isDisabled())||(<a class="el" href="class_t_c_p___n_s_c.html#ad3ea3b2335440046cae00957f67706a8">TCP_NSC::testingS</a>)) ? ev : ev</td></tr>
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structnsc__iphdr.html">nsc_iphdr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a1f2005e701bf1c6386ff1d58f6cca7e3">__attribute__</a> ((packed))</td></tr>
+<tr><td colspan="2"><h2><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a6b000e4871078da77b2555e67f117cc5">ihl</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a5408ac5df4c170828874e1b10b4c35a0">version</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a3bdbe295d838b7f44e47ad5f4c3fac27">tos</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a65b0163ced0d7ce7af900910efff2898">tot_len</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a4fc3a0c58dfbd1e68224521185cb9384">id</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a98bed353dfaa38f10185538436fb1a21">frag_off</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a4d402503271315376ddf4e47674d4965">ttl</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c___connection_8cc.html#ad124d3d2e02c729afa303c775295278e">protocol</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a0d7f4dec78a9c4400cd80618a0416c01">check</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c___connection_8cc.html#abf10c772acb08ceb96c6432c47395562">saddr</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c___connection_8cc.html#ac9fb74acda6412a6c8cf19bdf3c5a947">daddr</a></td></tr>
+</table>
+<hr/><h2>Define Documentation</h2>
+<a class="anchor" id="a601325e92d65fe658c80eab711e12304"></a><!-- doxytag: member="TCP_NSC_Connection.cc::tcpEV" ref="a601325e92d65fe658c80eab711e12304" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a601325e92d65fe658c80eab711e12304">tcpEV</a>&#160;&#160;&#160;((ev.isDisabled())||(<a class="el" href="class_t_c_p___n_s_c.html#ad3ea3b2335440046cae00957f67706a8">TCP_NSC::testingS</a>)) ? ev : ev</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
-<p><a href="_t_c_p___n_s_c___connection_8cc_source.html">Go to the source code of this file.</a></p>
+<p>Referenced by <a class="el" href="class_t_c_p___n_s_c___connection.html#a19e5fb213290da69e2de7f36347ff6a8">TCP_NSC_Connection::do_SEND()</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="a1f2005e701bf1c6386ff1d58f6cca7e3"></a><!-- doxytag: member="TCP_NSC_Connection.cc::__attribute__" ref="a1f2005e701bf1c6386ff1d58f6cca7e3" args="((packed))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structnsc__iphdr.html">nsc_iphdr</a> <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a1f2005e701bf1c6386ff1d58f6cca7e3">__attribute__</a> </td>
+          <td>(</td>
+          <td class="paramtype">(packed)&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Variable Documentation</h2>
+<a class="anchor" id="a0d7f4dec78a9c4400cd80618a0416c01"></a><!-- doxytag: member="TCP_NSC_Connection.cc::check" ref="a0d7f4dec78a9c4400cd80618a0416c01" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a0d7f4dec78a9c4400cd80618a0416c01">check</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac9fb74acda6412a6c8cf19bdf3c5a947"></a><!-- doxytag: member="TCP_NSC_Connection.cc::daddr" ref="ac9fb74acda6412a6c8cf19bdf3c5a947" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#ac9fb74acda6412a6c8cf19bdf3c5a947">daddr</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a98bed353dfaa38f10185538436fb1a21"></a><!-- doxytag: member="TCP_NSC_Connection.cc::frag_off" ref="a98bed353dfaa38f10185538436fb1a21" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a98bed353dfaa38f10185538436fb1a21">frag_off</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4fc3a0c58dfbd1e68224521185cb9384"></a><!-- doxytag: member="TCP_NSC_Connection.cc::id" ref="a4fc3a0c58dfbd1e68224521185cb9384" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a4fc3a0c58dfbd1e68224521185cb9384">id</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6b000e4871078da77b2555e67f117cc5"></a><!-- doxytag: member="TCP_NSC_Connection.cc::ihl" ref="a6b000e4871078da77b2555e67f117cc5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a6b000e4871078da77b2555e67f117cc5">ihl</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad124d3d2e02c729afa303c775295278e"></a><!-- doxytag: member="TCP_NSC_Connection.cc::protocol" ref="ad124d3d2e02c729afa303c775295278e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#ad124d3d2e02c729afa303c775295278e">protocol</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="abf10c772acb08ceb96c6432c47395562"></a><!-- doxytag: member="TCP_NSC_Connection.cc::saddr" ref="abf10c772acb08ceb96c6432c47395562" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#abf10c772acb08ceb96c6432c47395562">saddr</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3bdbe295d838b7f44e47ad5f4c3fac27"></a><!-- doxytag: member="TCP_NSC_Connection.cc::tos" ref="a3bdbe295d838b7f44e47ad5f4c3fac27" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a3bdbe295d838b7f44e47ad5f4c3fac27">tos</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a65b0163ced0d7ce7af900910efff2898"></a><!-- doxytag: member="TCP_NSC_Connection.cc::tot_len" ref="a65b0163ced0d7ce7af900910efff2898" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a65b0163ced0d7ce7af900910efff2898">tot_len</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4d402503271315376ddf4e47674d4965"></a><!-- doxytag: member="TCP_NSC_Connection.cc::ttl" ref="a4d402503271315376ddf4e47674d4965" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a4d402503271315376ddf4e47674d4965">ttl</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a5408ac5df4c170828874e1b10b4c35a0"></a><!-- doxytag: member="TCP_NSC_Connection.cc::version" ref="a5408ac5df4c170828874e1b10b4c35a0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a5408ac5df4c170828874e1b10b4c35a0">version</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_t_c_p___n_s_c___connection_8cc.html">TCP_NSC_Connection.cc</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:46 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:22 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -6,7 +6,165 @@
    <body onload="if (top.frames['componentsframe'] == undefined) { s = window.location.toString(); window.location = 'index.html?p=' + s.substring(s.lastIndexOf('/')+1); }">
 <h2 class="comptitle">Compound Module <i>Router</i></h2>
 <b>Package:</b> inet.nodes.inet<br/><b>File: <a href="src-nodes-inet-Router.ned.html">src/nodes/inet/Router.ned</a></b><br/>
-<p>IP router.</p>
+<p>IPv4 router that supports wireless, Ethernet, PPP and external interfaces.
+By default, no wireless and external interfaces are added; the number of
+Ethernet and PPP ports depends on the external connections.</p>
+  <ul><li>Can be connected via ethernet interface to other nodes using
+  the ethg gate. By default full-duplex connections are supported
+  only (twisted pair). Set **.eth.typename="EthernetInterface" for
+  a full/half-duplex CSMA/CD implementation (coaxial cable)</li>
+  <li>By default contains no wireless cards, however it can be configured
+  by the numRadios parameter. Wirless card type is configured by the
+  **.wlan.typename parameter. see:  inet.linklayer.ieee80211 or other
+  modules implementing <a href="inet.linklayer.IWirelessNic.html">IWirelessNic</a></li>
+  <li>Also external interfaces can be configured for HW in the loop simulation
+  using the numExtInterfaces parameter and setting the type using
+  **.ext.typename in the INI file. see: <a href="inet.linklayer.ext.ExtInterface.html">ExtInterface</a> and <a href="inet.linklayer.IExternalNic.html">IExternalNic</a></li>
+  <li>PPP queueing type can be set using **.ppp.queueType see: <a href="inet.linklayer.ppp.PPPInterface.html">PPPInterface</a></li>
+  <li>If wireless card is present, node mobility can be set using **.mobility.typename
+  see: inet.mobility and <a href="inet.mobility.IMobility.html">IMobility</a></li></ul>
+<img src="inet.nodes.inet.Router-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.base.NotificationBoard.html" title="NotificationBoard" alt="NotificationBoard" coords="5,214,105,273">
+<area shape="rect" href="inet.mobility.IMobility.html" title="IMobility" alt="IMobility" coords="33,149,78,192">
+<area shape="rect" href="inet.nodes.inet.NetworkLayer.html" title="NetworkLayer" alt="NetworkLayer" coords="293,307,369,366">
+<area shape="rect" href="inet.networklayer.ipv4.RoutingTable.html" title="RoutingTable" alt="RoutingTable" coords="20,307,91,366">
+<area shape="rect" href="inet.networklayer.common.InterfaceTable.html" title="InterfaceTable" alt="InterfaceTable" coords="14,406,96,465">
+<area shape="rect" href="inet.util.PcapRecorder.html" title="PcapRecorder" alt="PcapRecorder" coords="62,279,261,338">
+<area shape="rect" href="inet.linklayer.IWirelessNic.html" title="IWirelessNic" alt="IWirelessNic" coords="114,406,209,465">
+<area shape="rect" href="inet.linklayer.IWiredNic.html" title="IWiredNic" alt="IWiredNic" coords="236,406,333,465">
+<area shape="rect" href="inet.linklayer.IWiredNic.html" title="IWiredNic" alt="IWiredNic" coords="360,406,459,465">
+<area shape="rect" href="inet.linklayer.IExternalNic.html" title="IExternalNic" alt="IExternalNic" coords="484,406,614,465">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.nodes.inet.Router-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.nodes.inet.Router.html" title="Compound Module Router" alt="" coords="1524,83,1596,111">
+<area shape="rect" id="node2" href="inet.examples.ethernet.arptest2.ARPTest.html" title="Network ARPTest" alt="" coords="5,6,80,34">
+<area shape="rect" id="node5" href="inet.examples.inet.bulktransfer.BulkTransfer.html" title="Network BulkTransfer" alt="" coords="104,6,200,34">
+<area shape="rect" id="node7" href="inet.examples.diffserv.simple_.DiffservNetwork.html" title="Network DiffservNetwork" alt="" coords="224,6,341,34">
+<area shape="rect" id="node10" href="inet.examples.emulation.extserver.extserver.html" title="Network extserver" alt="" coords="365,6,440,34">
+<area shape="rect" id="node12" href="inet.examples.inet.flatnet.FlatNet.html" title="Network FlatNet" alt="" coords="464,6,536,34">
+<area shape="rect" id="node14" href="inet.examples.inet.hierarchical.Hierarchical.html" title="Network Hierarchical" alt="" coords="560,6,651,34">
+<area shape="rect" id="node16" href="inet.examples.inet.hierarchical99.Hierarchical99.html" title="Network Hierarchical99" alt="" coords="675,6,779,34">
+<area shape="rect" id="node18" href="inet.examples.httptools.socket.tenserverssocket.Http10Servers.html" title="Network Http10Servers" alt="" coords="803,6,909,34">
+<area shape="rect" id="node20" href="inet.examples.httptools.socket.simpleddos.HttpNnodes.html" title="Network HttpNnodes" alt="" coords="933,6,1024,34">
+<area shape="rect" id="node22" href="inet.examples.inet.ipv4largenet.IPv4LargeLAN.html" title="Compound Module IPv4LargeLAN" alt="" coords="1048,6,1155,34">
+<area shape="rect" id="node24" href="inet.examples.inet.ipv4largenet.IPv4LargeNet.html" title="Network IPv4LargeNet" alt="" coords="1179,6,1280,34">
+<area shape="rect" id="node26" href="inet.examples.inet.ipv4largenet.IPv4MediumLAN.html" title="Compound Module IPv4MediumLAN" alt="" coords="1304,6,1424,34">
+<area shape="rect" id="node28" href="inet.examples.inet.ipv4largenet.IPv4SmallLAN.html" title="Compound Module IPv4SmallLAN" alt="" coords="1448,6,1555,34">
+<area shape="rect" id="node30" href="inet.examples.inet.kidsnw1.KIDSNw1.html" title="Network KIDSNw1" alt="" coords="1579,6,1659,34">
+<area shape="rect" id="node32" href="inet.examples.sctp.multihomed.multi.html" title="Network multi" alt="" coords="1683,6,1755,34">
+<area shape="rect" id="node34" href="inet.examples.inet.multicast.MulticastNetwork.html" title="Network MulticastNetwork" alt="" coords="1779,6,1901,34">
+<area shape="rect" id="node36" href="inet.examples.wireless.multiradio.MultiRadio.html" title="Network MultiRadio" alt="" coords="1925,6,2008,34">
+<area shape="rect" id="node38" href="inet.examples.sctp.nclients.NClients.html" title="Network NClients" alt="" coords="2032,6,2104,34">
+<area shape="rect" id="node41" href="inet.examples.inet.nclients.NClients2.html" title="Network NClients2" alt="" coords="2128,6,2208,34">
+<area shape="rect" id="node43" href="inet.examples.inet.routerperf.RouterPerfNetwork.html" title="Network RouterPerfNetwork" alt="" coords="2232,6,2365,34">
+<area shape="rect" id="node45" href="inet.examples.rtp.multicast1.RTPMulticast1.html" title="Network RTPMulticast1" alt="" coords="2389,6,2499,34">
+<area shape="rect" id="node47" href="inet.examples.rtp.unicast1.RTPUnicast1.html" title="Network RTPUnicast1" alt="" coords="2523,6,2624,34">
+<area shape="rect" id="node49" href="inet.examples.inet.tcpsack.tcpsack.html" title="Network tcpsack" alt="" coords="2648,6,2720,34">
+<area shape="rect" id="node51" href="inet.examples.emulation.traceroute.Traceroute.html" title="Network Traceroute" alt="" coords="2744,6,2827,34">
+<area shape="rect" id="node53" href="inet.examples.inet.broadcast.UDPBroadcastNetwork.html" title="Network UDPBroadcastNetwork" alt="" coords="2851,6,3008,34">
+<area shape="rect" id="node55" href="inet.examples.inet.udpburst.UDPBurst.html" title="Network UDPBurst" alt="" coords="3032,6,3115,34">
+<area shape="rect" id="node57" href="inet.examples.dhcp.wlan.WirelessNetWithDHCP.html" title="Network WirelessNetWithDHCP" alt="" coords="3139,6,3299,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.nodes.inet.Router-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.nodes.inet.Router.html" title="Compound Module Router" alt="" coords="17,83,89,111">
+<area shape="rect" id="node4" href="inet.nodes.ospfv2.OSPFRouter.html" title="Compound Module OSPFRouter" alt="" coords="5,161,101,189">
+<area shape="rect" id="node2" href="inet.nodes.inet.NodeBase.html" title="Compound Module NodeBase" alt="" coords="12,6,95,34">
+</map>
+<h3 class="subtitle">Extends:</h3>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+<tr>
+   <td>
+<a href="inet.nodes.inet.NodeBase.html">NodeBase</a>
+   </td>
+   <td>
+<i>compound&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Contains the common lower layers (linklayer and networklayer)
+of Router, StandardHost, WirelessHost etc. </p>
+
+   </td>
+</tr>
+</table>
+<h3 class="subtitle">Known subclasses:</h3>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+<tr>
+   <td>
+<a href="inet.nodes.ospfv2.OSPFRouter.html">OSPFRouter</a>
+   </td>
+   <td>
+<i>compound&nbsp;module</i>
+   </td>
+   <td>
+
+<p>An OSPFv2 router.</p>
+
+   </td>
+</tr>
+</table>
+<h3 class="subtitle">Used in compound modules:</h3>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+<tr>
+   <td>
+<a href="inet.examples.inet.ipv4largenet.IPv4LargeLAN.html">IPv4LargeLAN</a>
+   </td>
+   <td>
+<i>compound&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Several hosts and an Ethernet hub on a switch. One port of the hub
+connect to a 10Base2 segment.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.inet.ipv4largenet.IPv4MediumLAN.html">IPv4MediumLAN</a>
+   </td>
+   <td>
+<i>compound&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Several hosts and a router on an Ethernet hub and a switch</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.inet.ipv4largenet.IPv4SmallLAN.html">IPv4SmallLAN</a>
+   </td>
+   <td>
+<i>compound&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Several hosts on a router; part of <a href="inet.examples.inet.ipv4largenet.IPv4LargeNet.html">IPv4LargeNet</a>.</p>
+
+   </td>
+</tr>
+</table>
 <h3 class="subtitle">Networks:</h3>
 <table class="typestable">
    <tr>
@@ -49,6 +207,42 @@
 </tr>
 <tr>
    <td>
+<a href="inet.examples.diffserv.onedomain.DiffservNetwork.html">DiffservNetwork</a>
+   </td>
+   <td>
+<i>network</i>
+   </td>
+   <td>
+<i>(no description)</i>
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.diffserv.simple_.DiffservNetwork.html">DiffservNetwork</a>
+   </td>
+   <td>
+<i>network</i>
+   </td>
+   <td>
+
+<p>This network contains a router with an 10Mbps Ethernet interface,
+and with a 128kbps dialup connection to a server.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.emulation.extserver.extserver.html">extserver</a>
+   </td>
+   <td>
+<i>network</i>
+   </td>
+   <td>
+<i>(no description)</i>
+   </td>
+</tr>
+<tr>
+   <td>
 <a href="inet.examples.inet.flatnet.FlatNet.html">FlatNet</a>
    </td>
    <td>
@@ -56,6 +250,69 @@
    </td>
    <td>
 <i>(no description)</i>
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.inet.hierarchical.Hierarchical.html">Hierarchical</a>
+   </td>
+   <td>
+<i>network</i>
+   </td>
+   <td>
+<i>(no description)</i>
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.inet.hierarchical99.Hierarchical99.html">Hierarchical99</a>
+   </td>
+   <td>
+<i>network</i>
+   </td>
+   <td>
+
+<p>This hierarchical network topology contains 3 levels, 72 hosts and 27 routers.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.httptools.socket.tenserverssocket.Http10Servers.html">Http10Servers</a>
+   </td>
+   <td>
+<i>network</i>
+   </td>
+   <td>
+
+<p>10-nodes test scenario for sockets.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.httptools.socket.simpleddos.HttpNnodes.html">HttpNnodes</a>
+   </td>
+   <td>
+<i>network</i>
+   </td>
+   <td>
+
+<p>n-nodes test scenario for sockets.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.inet.ipv4largenet.IPv4LargeNet.html">IPv4LargeNet</a>
+   </td>
+   <td>
+<i>network</i>
+   </td>
+   <td>
+
+<p>A large Ethernet LAN -- see model description</p>
+
    </td>
 </tr>
 <tr>
@@ -83,6 +340,17 @@
 <tr>
    <td>
 <a href="inet.examples.inet.multicast.MulticastNetwork.html">MulticastNetwork</a>
+   </td>
+   <td>
+<i>network</i>
+   </td>
+   <td>
+<i>(no description)</i>
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.wireless.multiradio.MultiRadio.html">MultiRadio</a>
    </td>
    <td>
 <i>network</i>
@@ -126,39 +394,6 @@
 </tr>
 <tr>
    <td>
-<a href="inet.examples.inet.redtest.REDTest.html">REDTest</a>
-   </td>
-   <td>
-<i>network</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.examples.inet.redtest.REDTestDebug.html">REDTestDebug</a>
-   </td>
-   <td>
-<i>network</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.examples.inet.redtest.REDTestTh.html">REDTestTh</a>
-   </td>
-   <td>
-<i>network</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
 <a href="inet.examples.inet.routerperf.RouterPerfNetwork.html">RouterPerfNetwork</a>
    </td>
    <td>
@@ -171,6 +406,17 @@
 <tr>
    <td>
 <a href="inet.examples.rtp.multicast1.RTPMulticast1.html">RTPMulticast1</a>
+   </td>
+   <td>
+<i>network</i>
+   </td>
+   <td>
+<i>(no description)</i>
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.rtp.unicast1.RTPUnicast1.html">RTPUnicast1</a>
    </td>
    <td>
 <i>network</i>
@@ -201,6 +447,41 @@
 <i>(no description)</i>
    </td>
 </tr>
+<tr>
+   <td>
+<a href="inet.examples.inet.broadcast.UDPBroadcastNetwork.html">UDPBroadcastNetwork</a>
+   </td>
+   <td>
+<i>network</i>
+   </td>
+   <td>
+<i>(no description)</i>
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.inet.udpburst.UDPBurst.html">UDPBurst</a>
+   </td>
+   <td>
+<i>network</i>
+   </td>
+   <td>
+<i>(no description)</i>
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.dhcp.wlan.WirelessNetWithDHCP.html">WirelessNetWithDHCP</a>
+   </td>
+   <td>
+<i>network</i>
+   </td>
+   <td>
+
+<p>TODO auto-generated module</p>
+
+   </td>
+</tr>
 </table>
 <h3 class="subtitle">Parameters:</h3>
 <table class="paramstable">
@@ -210,12 +491,64 @@
       <th class="defaultvalue">Default value</th>
       <th class="description">Description</th>
    </tr>
-<tr class="local">
+<tr class="inherited">
+   <td>numExtInterfaces</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>0</td>
+   <td>   </td>
+</tr>
+<tr class="inherited">
+   <td>numRadios</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>0</td>
+   <td>
+<p>the number of radios in the router. by default no wireless</p>
+   </td>
+</tr>
+<tr class="inherited">
+   <td>numPcapRecorders</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>0</td>
+   <td>
+<p>no of PcapRecorders.</p>
+   </td>
+</tr>
+<tr class="inherited">
+   <td>mobilityType</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"StationaryMobility"</td>
+   <td>   </td>
+</tr>
+<tr class="inherited">
    <td>routingFile</td>
    <td>
       <i>string</i>
    </td>
    <td>""</td>
+   <td>   </td>
+</tr>
+<tr class="inherited">
+   <td>IPForward</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>   </td>
+</tr>
+<tr class="inherited">
+   <td>forwardMulticast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
    <td>   </td>
 </tr>
 </table>
@@ -227,6 +560,11 @@
       <th class="description">Description</th>
    </tr>
 <tr>
+   <td>display</td>
+   <td><i>i=abstract/router</i></td>
+   <td></td>
+</tr>
+<tr>
    <td>node</td>
    <td><i></i></td>
    <td></td>
@@ -234,11 +572,6 @@
 <tr>
    <td>labels</td>
    <td><i>node</i></td>
-   <td></td>
-</tr>
-<tr>
-   <td>display</td>
-   <td><i>i=abstract/router</i></td>
    <td></td>
 </tr>
 </table>
@@ -250,12 +583,17 @@
       <th class="gatesize">Size</th>
       <th class="description">Description</th>
    </tr>
-<tr class="local">
+<tr class="inherited">
+   <td>radioIn [ ]</xsl:if></td>
+   <td><i>input</i></td>
+   <td>numRadios</td>   <td></td>
+</tr>
+<tr class="inherited">
    <td>pppg [ ]</xsl:if></td>
    <td><i>inout</i></td>
    <td></td>   <td></td>
 </tr>
-<tr class="local">
+<tr class="inherited">
    <td>ethg [ ]</xsl:if></td>
    <td><i>inout</i></td>
    <td></td>   <td></td>
@@ -270,11 +608,43 @@
       <th class="description">Description</th>
    </tr>
 <tr>
-   <td><a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
+   <td><a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
    <td>
       <i>double</i>
    </td>
    <td>0s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>60s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
    <td>   </td>
 </tr>
 <tr>
@@ -284,7 +654,7 @@
    </td>
    <td>1s</td>
    <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -294,7 +664,7 @@
    </td>
    <td>3</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -308,136 +678,133 @@
    </td>
 </tr>
 <tr>
-   <td><a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
+   <td><a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
+   <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
+   <td><a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.routerId</td>
    <td>
       <i>string</i>
    </td>
    <td>"auto"</td>
    <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
+<p>for routers, the router id using IPv4 address dotted
+notation; specify "auto" to select the highest
+interface address; should be left empty ("") for hosts</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>100Mbps</td>
-   <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
+   <td><a href="inet.util.PcapRecorder.html">pcapRecorder</a>.verbose</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>whether to log packets on the module output</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.util.PcapRecorder.html">pcapRecorder</a>.pcapFile</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>the PCAP file to be written</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.util.PcapRecorder.html">pcapRecorder</a>.snaplen</td>
    <td>
       <i>int</i>
    </td>
-   <td>1500</td>
-   <td>   </td>
+   <td>65535</td>
+   <td>
+<p>maximum number of bytes to record per packet</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.util.PcapRecorder.html">pcapRecorder</a>.dumpBadFrames</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>enable dump of frames with hasBitError</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.util.PcapRecorder.html">pcapRecorder</a>.moduleNamePatterns</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"wlan[*] eth[*] ppp[*]"</td>
+   <td>
+<p>space-separated list of sibling module names to listen on</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.util.PcapRecorder.html">pcapRecorder</a>.sendingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetSentToLower"</td>
+   <td>
+<p>space-separated list of outbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.util.PcapRecorder.html">pcapRecorder</a>.receivingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetReceivedFromLower"</td>
+   <td>
+<p>space-separated list of inbound packet signals to subscribe to</p>
+   </td>
 </tr>
 </table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
-// \IP router.
+// IPv4 router that supports wireless, Ethernet, PPP and external interfaces.
+// By default, no wireless and external interfaces are added; the number of
+// Ethernet and PPP ports depends on the external connections.
 //
-</span><span style="color: #800000; font-weight: bold; ">module</span><span style="color: #000000; "> </span><span style="color: #000000; ">Router</span><span style="color: #000000; ">
+// - Can be connected via ethernet interface to other nodes using
+//   the ethg gate. By default full-duplex connections are supported
+//   only (twisted pair). Set **.eth.typename=&quot;EthernetInterface&quot; for
+//   a full/half-duplex CSMA/CD implementation (coaxial cable)
+// - By default contains no wireless cards, however it can be configured
+//   by the numRadios parameter. Wirless card type is configured by the
+//   **.wlan.typename parameter. see:  inet.linklayer.ieee80211 or other
+//   modules implementing ~IWirelessNic
+// - Also external interfaces can be configured for HW in the loop simulation
+//   using the numExtInterfaces parameter and setting the type using
+//   **.ext.typename in the INI file. see: ~ExtInterface and ~IExternalNic
+// - PPP queueing type can be set using **.ppp.queueType see: ~PPPInterface
+// - If wireless card is present, node mobility can be set using **.mobility.typename
+//   see: inet.mobility and ~IMobility
+//
+</span><span style="color: #800000; font-weight: bold; ">module</span><span style="color: #000000; "> </span><span style="color: #000000; ">Router</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">NodeBase</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-        </span><span style="color: #000000; font-weight: bold; ">@node</span><span style="color: #000000; ">();
-        </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">node</span><span style="color: #000000; ">,</span><span style="color: #000000; ">ethernet</span><span style="color: #000000; ">-</span><span style="color: #000000; ">node</span><span style="color: #000000; ">);
         </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=abstract/router&quot;</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">routingFile</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">);
-    </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
-        </span><span style="color: #000080; font-weight: bold; ">inout</span><span style="color: #000000; "> </span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">[] </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">PPPFrame</span><span style="color: #000000; ">-</span><span style="color: #000000; ">conn</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">inout</span><span style="color: #000000; "> </span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">[] </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">EtherFrame</span><span style="color: #000000; ">-</span><span style="color: #000000; ">conn</span><span style="color: #000000; ">);
-    </span><span style="color: #800000; font-weight: bold; ">submodules</span><span style="color: #000000; ">:
-        </span><span style="color: #000000; ">namTrace</span><span style="color: #000000; ">: </span><span style="color: #000000; ">NAMTraceWriter</span><span style="color: #000000; "> {
-            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; ">namid</span><span style="color: #000000; "> = -</span><span style="color: #008000; ">1</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// auto
-</span><span style="color: #000000; ">                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=330,60&quot;</span><span style="color: #000000; ">);
-        }
-        </span><span style="color: #000000; ">notificationBoard</span><span style="color: #000000; ">: </span><span style="color: #000000; ">NotificationBoard</span><span style="color: #000000; "> {
-            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=60,60&quot;</span><span style="color: #000000; ">);
-        }
-        </span><span style="color: #000000; ">interfaceTable</span><span style="color: #000000; ">: </span><span style="color: #000000; ">InterfaceTable</span><span style="color: #000000; "> {
-            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=150,60&quot;</span><span style="color: #000000; ">);
-        }
-        </span><span style="color: #000000; ">routingTable</span><span style="color: #000000; ">: </span><span style="color: #000000; ">RoutingTable</span><span style="color: #000000; "> {
-            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; ">IPForward</span><span style="color: #000000; "> = </span><span style="color: #008000; ">true</span><span style="color: #000000; ">;
-                </span><span style="color: #000000; ">routerId</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;auto&quot;</span><span style="color: #000000; ">;
-                </span><span style="color: #000000; ">routingFile</span><span style="color: #000000; "> = </span><span style="color: #000000; ">routingFile</span><span style="color: #000000; ">;
-                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=240,60&quot;</span><span style="color: #000000; ">);
-        }
-        </span><span style="color: #000000; ">networkLayer</span><span style="color: #000000; ">: </span><span style="color: #000000; ">NetworkLayer</span><span style="color: #000000; "> {
-            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=200,141;q=queue&quot;</span><span style="color: #000000; ">);
-            </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; ">ifIn</span><span style="color: #000000; ">[</span><span style="color: #800000; font-weight: bold; ">sizeof</span><span style="color: #000000; ">(</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">)+</span><span style="color: #800000; font-weight: bold; ">sizeof</span><span style="color: #000000; ">(</span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">)];
-                </span><span style="color: #000000; ">ifOut</span><span style="color: #000000; ">[</span><span style="color: #800000; font-weight: bold; ">sizeof</span><span style="color: #000000; ">(</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">)+</span><span style="color: #800000; font-weight: bold; ">sizeof</span><span style="color: #000000; ">(</span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">)];
-        }
-        </span><span style="color: #000000; ">ppp</span><span style="color: #000000; ">[</span><span style="color: #800000; font-weight: bold; ">sizeof</span><span style="color: #000000; ">(</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">)]: </span><span style="color: #000000; ">PPPInterface</span><span style="color: #000000; "> {
-            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=90,257,row,110;q=l2queue&quot;</span><span style="color: #000000; ">);
-        }
-        </span><span style="color: #000000; ">eth</span><span style="color: #000000; ">[</span><span style="color: #800000; font-weight: bold; ">sizeof</span><span style="color: #000000; ">(</span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">)]: </span><span style="color: #000000; ">EthernetInterface</span><span style="color: #000000; "> {
-            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=145,257,row,110;q=l2queue&quot;</span><span style="color: #000000; ">);
-        }
-    </span><span style="color: #800000; font-weight: bold; ">connections</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">allowunconnected</span><span style="color: #000000; ">:
-        </span><span style="color: #808080; font-style: italic; ">// connections to network outside
-</span><span style="color: #000000; ">        </span><span style="color: #800000; font-weight: bold; ">for</span><span style="color: #000000; "> </span><span style="color: #000000; ">i</span><span style="color: #000000; ">=</span><span style="color: #008000; ">0</span><span style="color: #000000; ">..</span><span style="color: #800000; font-weight: bold; ">sizeof</span><span style="color: #000000; ">(</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">)-</span><span style="color: #008000; ">1</span><span style="color: #000000; "> {
-            </span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">[</span><span style="color: #000000; ">i</span><span style="color: #000000; ">] </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">ppp</span><span style="color: #000000; ">[</span><span style="color: #000000; ">i</span><span style="color: #000000; ">].</span><span style="color: #000000; ">phys</span><span style="color: #000000; ">;
-            </span><span style="color: #000000; ">ppp</span><span style="color: #000000; ">[</span><span style="color: #000000; ">i</span><span style="color: #000000; ">].</span><span style="color: #000000; ">netwOut</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">networkLayer</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ifIn</span><span style="color: #000000; ">[</span><span style="color: #000000; ">i</span><span style="color: #000000; ">];
-            </span><span style="color: #000000; ">ppp</span><span style="color: #000000; ">[</span><span style="color: #000000; ">i</span><span style="color: #000000; ">].</span><span style="color: #000000; ">netwIn</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #000000; "> </span><span style="color: #000000; ">networkLayer</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ifOut</span><span style="color: #000000; ">[</span><span style="color: #000000; ">i</span><span style="color: #000000; ">];
-        }
-
-        </span><span style="color: #800000; font-weight: bold; ">for</span><span style="color: #000000; "> </span><span style="color: #000000; ">i</span><span style="color: #000000; ">=</span><span style="color: #008000; ">0</span><span style="color: #000000; ">..</span><span style="color: #800000; font-weight: bold; ">sizeof</span><span style="color: #000000; ">(</span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">)-</span><span style="color: #008000; ">1</span><span style="color: #000000; "> {
-            </span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">[</span><span style="color: #000000; ">i</span><span style="color: #000000; ">] </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">eth</span><span style="color: #000000; ">[</span><span style="color: #000000; ">i</span><span style="color: #000000; ">].</span><span style="color: #000000; ">phys</span><span style="color: #000000; ">;
-            </span><span style="color: #000000; ">eth</span><span style="color: #000000; ">[</span><span style="color: #000000; ">i</span><span style="color: #000000; ">].</span><span style="color: #000000; ">netwOut</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">networkLayer</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ifIn</span><span style="color: #000000; ">[</span><span style="color: #800000; font-weight: bold; ">sizeof</span><span style="color: #000000; ">(</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">)+</span><span style="color: #000000; ">i</span><span style="color: #000000; ">];
-            </span><span style="color: #000000; ">eth</span><span style="color: #000000; ">[</span><span style="color: #000000; ">i</span><span style="color: #000000; ">].</span><span style="color: #000000; ">netwIn</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--</span><span style="color: #000000; "> </span><span style="color: #000000; ">networkLayer</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ifOut</span><span style="color: #000000; ">[</span><span style="color: #800000; font-weight: bold; ">sizeof</span><span style="color: #000000; ">(</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">)+</span><span style="color: #000000; ">i</span><span style="color: #000000; ">];
-        }
+        </span><span style="color: #000000; ">IPForward</span><span style="color: #000000; "> = </span><span style="color: #008000; ">true</span><span style="color: #000000; ">;
 }
-
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

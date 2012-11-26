@@ -75,6 +75,7 @@
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle">
@@ -82,41 +83,82 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="Ieee80211MgmtAPBase" --><!-- doxytag: inherits="Ieee80211MgmtBase" -->
-<p><code>#include &lt;<a class="el" href="_ieee80211_mgmt_a_p_base_8h_source.html">Ieee80211MgmtAPBase.h</a>&gt;</code></p>
+<p>Used in 802.11 infrastructure mode: abstract base class for management frame handling for access points (APs).  
+ <a href="class_ieee80211_mgmt_a_p_base.html#details">More...</a></p>
+
+<p><code>#include &lt;Ieee80211MgmtAPBase.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Ieee80211MgmtAPBase:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_ieee80211_mgmt_a_p_base.png" usemap="#Ieee80211MgmtAPBase_map" alt=""/>
   <map id="Ieee80211MgmtAPBase_map" name="Ieee80211MgmtAPBase_map">
-<area href="class_ieee80211_mgmt_base.html" alt="Ieee80211MgmtBase" shape="rect" coords="91,112,263,136"/>
-<area href="class_passive_queue_base.html" alt="PassiveQueueBase" shape="rect" coords="0,56,172,80"/>
-<area href="class_i_notifiable.html" alt="INotifiable" shape="rect" coords="182,56,354,80"/>
-<area href="class_i_passive_queue.html" alt="IPassiveQueue" shape="rect" coords="0,0,172,24"/>
-<area href="class_ieee80211_mgmt_a_p.html" alt="Ieee80211MgmtAP" shape="rect" coords="0,224,172,248"/>
-<area href="class_ieee80211_mgmt_a_p_simplified.html" alt="Ieee80211MgmtAPSimplified" shape="rect" coords="182,224,354,248"/>
+<area href="class_ieee80211_mgmt_base.html" title="Abstract base class for 802.11 infrastructure mode management components." alt="Ieee80211MgmtBase" shape="rect" coords="91,112,263,136"/>
+<area href="class_passive_queue_base.html" title="Abstract base class for passive queues." alt="PassiveQueueBase" shape="rect" coords="0,56,172,80"/>
+<area href="class_i_notifiable.html" title="Clients can receive change notifications from the NotificationBoard via this interface." alt="INotifiable" shape="rect" coords="182,56,354,80"/>
+<area href="class_i_passive_queue.html" title="Abstract interface for passive queues." alt="IPassiveQueue" shape="rect" coords="0,0,172,24"/>
+<area href="class_ieee80211_mgmt_a_p.html" title="Used in 802.11 infrastructure mode: handles management frames for an access point (AP)..." alt="Ieee80211MgmtAP" shape="rect" coords="0,224,172,248"/>
+<area href="class_ieee80211_mgmt_a_p_simplified.html" title="Used in 802.11 infrastructure mode: handles management frames for an access point (AP)..." alt="Ieee80211MgmtAPSimplified" shape="rect" coords="182,224,354,248"/>
 </map>
  </div></div>
 
 <p><a href="class_ieee80211_mgmt_a_p_base-members.html">List of all members.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_mgmt_a_p_base.html#a40d489c2ff2af7c9dcd12741e347a5f2">EncapDecap</a> { <a class="el" href="class_ieee80211_mgmt_a_p_base.html#a40d489c2ff2af7c9dcd12741e347a5f2ac08b65dbe88c4c413995e89d787e5531">ENCAP_DECAP_TRUE</a> =  1, 
+<a class="el" href="class_ieee80211_mgmt_a_p_base.html#a40d489c2ff2af7c9dcd12741e347a5f2a4bd16a315cc17acf12533c572b2ca60f">ENCAP_DECAP_FALSE</a>, 
+<a class="el" href="class_ieee80211_mgmt_a_p_base.html#a40d489c2ff2af7c9dcd12741e347a5f2a76f5507563f2b563b9ec80ce7ad8a3a9">ENCAP_DECAP_ETH</a>
+ }</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_mgmt_a_p_base.html#a71294ee4a1b1bad07bfec2667df7fe2c">numInitStages</a> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_mgmt_a_p_base.html#abdb240bc75033b0886f942f9a25f6db1">initialize</a> (int)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_mgmt_a_p_base.html#ac5e268ac5672704ec9bc7f4ab2ff9ae5">distributeReceivedDataFrame</a> (<a class="el" href="class_ieee80211_data_frame.html">Ieee80211DataFrame</a> *frame)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_mgmt_a_p_base.html#abdb240bc75033b0886f942f9a25f6db1">initialize</a> (int)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_mgmt_a_p_base.html#ac5e268ac5672704ec9bc7f4ab2ff9ae5">distributeReceivedDataFrame</a> (<a class="el" href="class_ieee80211_data_frame.html">Ieee80211DataFrame</a> *frame)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility function for APs: sends back a data frame we received from a STA to the wireless LAN, after tweaking fromDS/toDS bits and shuffling addresses as needed.  <a href="#ac5e268ac5672704ec9bc7f4ab2ff9ae5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_ieee80211_data_frame.html">Ieee80211DataFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_mgmt_a_p_base.html#ac1e4e00aaa5f350fb0783279c21248f7">encapsulate</a> (cPacket *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility function for <a class="el" href="class_ieee80211_mgmt_base.html#af131daff6c71a51e5599213193db691f" title="Should be redefined to encapsulate and enqueue msgs from higher layers.">handleUpperMessage()</a>  <a href="#ac1e4e00aaa5f350fb0783279c21248f7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_ieee80211_data_frame.html">Ieee80211DataFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_mgmt_a_p_base.html#a2d4fea33ff46be5cfaf54230cc5479ad">convertFromEtherFrame</a> (<a class="el" href="class_ether_frame.html">EtherFrame</a> *ethframe)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility function: converts <a class="el" href="class_ether_frame.html" title="Class generated from linklayer/ethernet/EtherFrame.msg by opp_msgc.">EtherFrame</a> to <a class="el" href="class_ieee80211_frame.html" title="Class generated from linklayer/ieee80211/mac/Ieee80211Frame.msg by opp_msgc.">Ieee80211Frame</a>.  <a href="#a2d4fea33ff46be5cfaf54230cc5479ad"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_ether_frame.html">EtherFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_mgmt_a_p_base.html#a64fdab1d74007e971a5e57b0eca77bee">convertToEtherFrame</a> (<a class="el" href="class_ieee80211_data_frame.html">Ieee80211DataFrame</a> *frame)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility function: converts <a class="el" href="class_ieee80211_frame.html" title="Class generated from linklayer/ieee80211/mac/Ieee80211Frame.msg by opp_msgc.">Ieee80211Frame</a> to <a class="el" href="class_ether_frame.html" title="Class generated from linklayer/ethernet/EtherFrame.msg by opp_msgc.">EtherFrame</a>.  <a href="#a64fdab1d74007e971a5e57b0eca77bee"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_mgmt_a_p_base.html#aabce5170453bfe85f4b132bbaf6e5b09">sendToUpperLayer</a> (<a class="el" href="class_ieee80211_data_frame.html">Ieee80211DataFrame</a> *frame)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility function: send a frame to upperLayerOut.  <a href="#aabce5170453bfe85f4b132bbaf6e5b09"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_mgmt_a_p_base.html#a82dc79e17c0921275ee4e1440088a199">hasRelayUnit</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_mgmt_a_p_base.html#aa5972c88c03f18e1f33a0526a2a87f73">isConnectedToHL</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ieee80211_mgmt_a_p_base.html#a40d489c2ff2af7c9dcd12741e347a5f2">EncapDecap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_mgmt_a_p_base.html#a3536e38bf07137c4ff2447a6b70f72d7">encapDecap</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Used in 802.11 infrastructure mode: abstract base class for management frame handling for access points (APs). This class extends <a class="el" href="class_ieee80211_mgmt_base.html">Ieee80211MgmtBase</a> with utility functions that are useful for implementing AP functionality.</p>
+<div class="textblock"><p>Used in 802.11 infrastructure mode: abstract base class for management frame handling for access points (APs). </p>
+<p>This class extends <a class="el" href="class_ieee80211_mgmt_base.html" title="Abstract base class for 802.11 infrastructure mode management components.">Ieee80211MgmtBase</a> with utility functions that are useful for implementing AP functionality.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>Andras Varga </dd></dl>
-
-<p>Definition at line <a class="el" href="_ieee80211_mgmt_a_p_base_8h_source.html#l00034">34</a> of file <a class="el" href="_ieee80211_mgmt_a_p_base_8h_source.html">Ieee80211MgmtAPBase.h</a>.</p>
-</div><hr/><h2>Member Function Documentation</h2>
+</div><hr/><h2>Member Enumeration Documentation</h2>
+<a class="anchor" id="a40d489c2ff2af7c9dcd12741e347a5f2"></a><!-- doxytag: member="Ieee80211MgmtAPBase::EncapDecap" ref="a40d489c2ff2af7c9dcd12741e347a5f2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="class_ieee80211_mgmt_a_p_base.html#a40d489c2ff2af7c9dcd12741e347a5f2">Ieee80211MgmtAPBase::EncapDecap</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a40d489c2ff2af7c9dcd12741e347a5f2ac08b65dbe88c4c413995e89d787e5531"></a><!-- doxytag: member="ENCAP_DECAP_TRUE" ref="a40d489c2ff2af7c9dcd12741e347a5f2ac08b65dbe88c4c413995e89d787e5531" args="" -->ENCAP_DECAP_TRUE</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a40d489c2ff2af7c9dcd12741e347a5f2a4bd16a315cc17acf12533c572b2ca60f"></a><!-- doxytag: member="ENCAP_DECAP_FALSE" ref="a40d489c2ff2af7c9dcd12741e347a5f2a4bd16a315cc17acf12533c572b2ca60f" args="" -->ENCAP_DECAP_FALSE</em>&nbsp;</td><td>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a40d489c2ff2af7c9dcd12741e347a5f2a76f5507563f2b563b9ec80ce7ad8a3a9"></a><!-- doxytag: member="ENCAP_DECAP_ETH" ref="a40d489c2ff2af7c9dcd12741e347a5f2a76f5507563f2b563b9ec80ce7ad8a3a9" args="" -->ENCAP_DECAP_ETH</em>&nbsp;</td><td>
+</td></tr>
+</table>
+</dd>
+</dl>
+<div class="fragment"><pre class="fragment">{ <a class="code" href="class_ieee80211_mgmt_a_p_base.html#a40d489c2ff2af7c9dcd12741e347a5f2ac08b65dbe88c4c413995e89d787e5531">ENCAP_DECAP_TRUE</a> = 1, <a class="code" href="class_ieee80211_mgmt_a_p_base.html#a40d489c2ff2af7c9dcd12741e347a5f2a4bd16a315cc17acf12533c572b2ca60f">ENCAP_DECAP_FALSE</a>, <a class="code" href="class_ieee80211_mgmt_a_p_base.html#a40d489c2ff2af7c9dcd12741e347a5f2a76f5507563f2b563b9ec80ce7ad8a3a9">ENCAP_DECAP_ETH</a>} <a class="code" href="class_ieee80211_mgmt_a_p_base.html#a40d489c2ff2af7c9dcd12741e347a5f2">EncapDecap</a>;
+</pre></div>
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a2d4fea33ff46be5cfaf54230cc5479ad"></a><!-- doxytag: member="Ieee80211MgmtAPBase::convertFromEtherFrame" ref="a2d4fea33ff46be5cfaf54230cc5479ad" args="(EtherFrame *ethframe)" -->
 <div class="memitem">
 <div class="memproto">
@@ -131,19 +173,28 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Utility function: converts <a class="el" href="class_ether_frame.html">EtherFrame</a> to <a class="el" href="class_ieee80211_frame.html">Ieee80211Frame</a>. This is needed because MACRelayUnit which we use for LAN bridging functionality deals with EtherFrames. </p>
 
-<p>Definition at line <a class="el" href="_ieee80211_mgmt_a_p_base_8cc_source.html#l00069">69</a> of file <a class="el" href="_ieee80211_mgmt_a_p_base_8cc_source.html">Ieee80211MgmtAPBase.cc</a>.</p>
+<p>Utility function: converts <a class="el" href="class_ether_frame.html" title="Class generated from linklayer/ethernet/EtherFrame.msg by opp_msgc.">EtherFrame</a> to <a class="el" href="class_ieee80211_frame.html" title="Class generated from linklayer/ieee80211/mac/Ieee80211Frame.msg by opp_msgc.">Ieee80211Frame</a>. </p>
+<p>This is needed because MACRelayUnit which we use for LAN bridging functionality deals with EtherFrames. </p>
 
-<p>Referenced by <a class="el" href="_ieee80211_mgmt_a_p_simplified_8cc_source.html#l00038">Ieee80211MgmtAPSimplified::handleUpperMessage()</a>, and <a class="el" href="_ieee80211_mgmt_a_p_8cc_source.html#l00078">Ieee80211MgmtAP::handleUpperMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_ieee80211_mgmt_a_p_base.html#ac1e4e00aaa5f350fb0783279c21248f7">encapsulate()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="comment">// create new frame</span>
-    <a class="code" href="class_ieee80211_data_frame.html">Ieee80211DataFrame</a> *frame = <span class="keyword">new</span> <a class="code" href="class_ieee80211_data_frame.html">Ieee80211DataFrame</a>(ethframe-&gt;getName());
+<span class="preprocessor">#ifdef WITH_ETHERNET</span>
+<span class="preprocessor"></span>    <span class="comment">// create new frame</span>
+    <a class="code" href="class_ieee80211_data_frame_with_s_n_a_p.html" title="Class generated from linklayer/ieee80211/mac/Ieee80211Frame.msg by opp_msgc.">Ieee80211DataFrameWithSNAP</a> *frame = <span class="keyword">new</span> <a class="code" href="class_ieee80211_data_frame_with_s_n_a_p.html" title="Class generated from linklayer/ieee80211/mac/Ieee80211Frame.msg by opp_msgc.">Ieee80211DataFrameWithSNAP</a>(ethframe-&gt;getName());
     frame-&gt;<a class="code" href="class_ieee80211_frame.html#a9e09970b318964602781bc4a37e2b12b">setFromDS</a>(<span class="keyword">true</span>);
 
     <span class="comment">// copy addresses from ethernet frame (transmitter addr will be set to our addr by MAC)</span>
     frame-&gt;<a class="code" href="class_ieee80211_frame.html#ac55a5ec0719a3675fdfeb15e99c07a9f">setReceiverAddress</a>(ethframe-&gt;<a class="code" href="class_ether_frame.html#a0fc8027cd1ecc275bd2fc6cb1977d51b">getDest</a>());
     frame-&gt;<a class="code" href="class_ieee80211_data_or_mgmt_frame.html#a11b4d9f0059c580ffc5502dbc8d887f7">setAddress3</a>(ethframe-&gt;<a class="code" href="class_ether_frame.html#ad28a0f89c2e9e5dbe274ed8b9fd419a7">getSrc</a>());
+
+    <span class="comment">// copy EtherType from original frame</span>
+    <span class="keywordflow">if</span> (dynamic_cast&lt;EthernetIIFrame *&gt;(ethframe))
+        frame-&gt;<a class="code" href="class_ieee80211_data_frame_with_s_n_a_p.html#af60b9b691280956ac9d085cf46162a59">setEtherType</a>(((<a class="code" href="class_ethernet_i_i_frame.html" title="Class generated from linklayer/ethernet/EtherFrame.msg by opp_msgc.">EthernetIIFrame</a> *) ethframe)-&gt;getEtherType());
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dynamic_cast&lt;EtherFrameWithSNAP *&gt;(ethframe))
+        frame-&gt;<a class="code" href="class_ieee80211_data_frame_with_s_n_a_p.html#af60b9b691280956ac9d085cf46162a59">setEtherType</a>(((<a class="code" href="class_ether_frame_with_s_n_a_p.html" title="Class generated from linklayer/ethernet/EtherFrame.msg by opp_msgc.">EtherFrameWithSNAP</a> *) ethframe)-&gt;getLocalcode());
+    <span class="keywordflow">else</span>
+        error(<span class="stringliteral">&quot;Unaccepted EtherFrame type: %s, contains no EtherType&quot;</span>, ethframe-&gt;getClassName());
 
     <span class="comment">// encapsulate payload</span>
     cPacket *payload = ethframe-&gt;decapsulate();
@@ -154,7 +205,10 @@ Protected Attributes</h2></td></tr>
 
     <span class="comment">// done</span>
     <span class="keywordflow">return</span> frame;
-}
+<span class="preprocessor">#else</span>
+<span class="preprocessor"></span>    <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;INET compiled without ETHERNET feature!&quot;</span>);
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>}
 </pre></div>
 </div>
 </div>
@@ -172,27 +226,35 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Utility function: converts the given frame to <a class="el" href="class_ether_frame.html">EtherFrame</a>, deleting the original frame. This function is needed for LAN bridging functionality: MACRelayUnit deals with EtherFrames. </p>
 
-<p>Definition at line <a class="el" href="_ieee80211_mgmt_a_p_base_8cc_source.html#l00051">51</a> of file <a class="el" href="_ieee80211_mgmt_a_p_base_8cc_source.html">Ieee80211MgmtAPBase.cc</a>.</p>
+<p>Utility function: converts <a class="el" href="class_ieee80211_frame.html" title="Class generated from linklayer/ieee80211/mac/Ieee80211Frame.msg by opp_msgc.">Ieee80211Frame</a> to <a class="el" href="class_ether_frame.html" title="Class generated from linklayer/ethernet/EtherFrame.msg by opp_msgc.">EtherFrame</a>. </p>
+<p>This is needed because MACRelayUnit which we use for LAN bridging functionality deals with EtherFrames. </p>
 
-<p>Referenced by <a class="el" href="_ieee80211_mgmt_a_p_simplified_8cc_source.html#l00057">Ieee80211MgmtAPSimplified::handleDataFrame()</a>, and <a class="el" href="_ieee80211_mgmt_a_p_8cc_source.html#l00145">Ieee80211MgmtAP::handleDataFrame()</a>.</p>
+<p>Referenced by <a class="el" href="class_ieee80211_mgmt_a_p_base.html#aabce5170453bfe85f4b132bbaf6e5b09">sendToUpperLayer()</a>.</p>
 <div class="fragment"><pre class="fragment">{
+<span class="preprocessor">#ifdef WITH_ETHERNET</span>
+<span class="preprocessor"></span>    <a class="code" href="class_ieee80211_data_frame_with_s_n_a_p.html" title="Class generated from linklayer/ieee80211/mac/Ieee80211Frame.msg by opp_msgc.">Ieee80211DataFrameWithSNAP</a> *frame = check_and_cast&lt;<a class="code" href="class_ieee80211_data_frame_with_s_n_a_p.html" title="Class generated from linklayer/ieee80211/mac/Ieee80211Frame.msg by opp_msgc.">Ieee80211DataFrameWithSNAP</a> *&gt;(frame_);
+
     <span class="comment">// create a matching ethernet frame</span>
-    <a class="code" href="class_ether_frame.html">EtherFrame</a> *ethframe = <span class="keyword">new</span> <a class="code" href="class_ethernet_i_i_frame.html">EthernetIIFrame</a>(frame-&gt;getName()); <span class="comment">//TODO option to use EtherFrameWithSNAP instead</span>
+    <a class="code" href="class_ethernet_i_i_frame.html" title="Class generated from linklayer/ethernet/EtherFrame.msg by opp_msgc.">EthernetIIFrame</a> *ethframe = <span class="keyword">new</span> <a class="code" href="class_ethernet_i_i_frame.html" title="Class generated from linklayer/ethernet/EtherFrame.msg by opp_msgc.">EthernetIIFrame</a>(frame-&gt;getName()); <span class="comment">//TODO option to use EtherFrameWithSNAP instead</span>
     ethframe-&gt;<a class="code" href="class_ether_frame.html#a82827269117ecb944dcc2c513713c04d">setDest</a>(frame-&gt;<a class="code" href="class_ieee80211_data_or_mgmt_frame.html#af1bad63bfd1bd1f7b5dd7c5463219095">getAddress3</a>());
-    ethframe-&gt;<a class="code" href="class_ether_frame.html#a969e744a68054035d3efa84c1ac40578">setSrc</a>(frame-&gt;<a class="code" href="class_ieee80211_two_address_frame.html#a88c59cc71e76df61f0418642f8381ee9">getTransmitterAddress</a>());
-    <span class="comment">//XXX set ethertype</span>
+    ethframe-&gt;setSrc(frame-&gt;<a class="code" href="class_ieee80211_two_address_frame.html#a88c59cc71e76df61f0418642f8381ee9">getTransmitterAddress</a>());
+    ethframe-&gt;setEtherType(frame-&gt;<a class="code" href="class_ieee80211_data_frame_with_s_n_a_p.html#ab9468159be6b49a973dadd89c207e0d4">getEtherType</a>());
 
     <span class="comment">// encapsulate the payload in there</span>
     cPacket *payload = frame-&gt;decapsulate();
     <span class="keyword">delete</span> frame;
-    ASSERT(payload!=NULL);
+    ASSERT(payload!=<a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);
     ethframe-&gt;encapsulate(payload);
+    <span class="keywordflow">if</span> (ethframe-&gt;getByteLength() &lt; <a class="code" href="_ethernet_8h.html#af1aeba82bae190f10e219e04546e8cb7">MIN_ETHERNET_FRAME_BYTES</a>)
+        ethframe-&gt;setByteLength(<a class="code" href="_ethernet_8h.html#af1aeba82bae190f10e219e04546e8cb7">MIN_ETHERNET_FRAME_BYTES</a>);
 
     <span class="comment">// done</span>
     <span class="keywordflow">return</span> ethframe;
-}
+<span class="preprocessor">#else</span>
+<span class="preprocessor"></span>    <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;INET compiled without ETHERNET feature!&quot;</span>);
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>}
 </pre></div>
 </div>
 </div>
@@ -201,7 +263,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_ieee80211_mgmt_a_p_base.html#ac5e268ac5672704ec9bc7f4ab2ff9ae5">Ieee80211MgmtAPBase::distributeReceivedDataFrame</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_ieee80211_mgmt_a_p_base.html#ac5e268ac5672704ec9bc7f4ab2ff9ae5">Ieee80211MgmtAPBase::distributeReceivedDataFrame</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_ieee80211_data_frame.html">Ieee80211DataFrame</a> *&#160;</td>
           <td class="paramname"><em>frame</em></td><td>)</td>
@@ -210,11 +272,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Utility function for APs: sends back a data frame we received from a STA to the wireless LAN, after tweaking fromDS/toDS bits and shuffling addresses as needed. </p>
 
-<p>Definition at line <a class="el" href="_ieee80211_mgmt_a_p_base_8cc_source.html#l00035">35</a> of file <a class="el" href="_ieee80211_mgmt_a_p_base_8cc_source.html">Ieee80211MgmtAPBase.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_ieee80211_mgmt_a_p_simplified_8cc_source.html#l00057">Ieee80211MgmtAPSimplified::handleDataFrame()</a>, and <a class="el" href="_ieee80211_mgmt_a_p_8cc_source.html#l00145">Ieee80211MgmtAP::handleDataFrame()</a>.</p>
+<p>Referenced by <a class="el" href="class_ieee80211_mgmt_a_p_simplified.html#a995e7ceff2192694c7999d8a07ea1a8c">Ieee80211MgmtAPSimplified::handleDataFrame()</a>, and <a class="el" href="class_ieee80211_mgmt_a_p.html#a725155999cce112150ffa68c47c5f580">Ieee80211MgmtAP::handleDataFrame()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// adjust toDS/fromDS bits, and shuffle addresses</span>
     frame-&gt;<a class="code" href="class_ieee80211_frame.html#ab035d5d2ae4ab7a4cd36103fc9a72992">setToDS</a>(<span class="keyword">false</span>);
@@ -223,11 +284,68 @@ Protected Attributes</h2></td></tr>
     <span class="comment">// move destination address to address1 (receiver address),</span>
     <span class="comment">// and fill address3 with original source address;</span>
     <span class="comment">// sender address (address2) will be filled in by MAC</span>
-    ASSERT(!frame-&gt;<a class="code" href="class_ieee80211_data_or_mgmt_frame.html#af1bad63bfd1bd1f7b5dd7c5463219095">getAddress3</a>().<a class="code" href="class_m_a_c_address.html#ae41af013d782b46483e7d0c84f0ed107">isUnspecified</a>());
+    ASSERT(!frame-&gt;<a class="code" href="class_ieee80211_data_or_mgmt_frame.html#af1bad63bfd1bd1f7b5dd7c5463219095">getAddress3</a>().<a class="code" href="class_m_a_c_address.html#ae41af013d782b46483e7d0c84f0ed107" title="Returns true if all address bytes are zero.">isUnspecified</a>());
     frame-&gt;<a class="code" href="class_ieee80211_frame.html#ac55a5ec0719a3675fdfeb15e99c07a9f">setReceiverAddress</a>(frame-&gt;<a class="code" href="class_ieee80211_data_or_mgmt_frame.html#af1bad63bfd1bd1f7b5dd7c5463219095">getAddress3</a>());
     frame-&gt;<a class="code" href="class_ieee80211_data_or_mgmt_frame.html#a11b4d9f0059c580ffc5502dbc8d887f7">setAddress3</a>(frame-&gt;<a class="code" href="class_ieee80211_two_address_frame.html#a88c59cc71e76df61f0418642f8381ee9">getTransmitterAddress</a>());
 
-    <a class="code" href="class_ieee80211_mgmt_base.html#a350a3d70798831a71a3b70fb70b89e5a">sendOrEnqueue</a>(frame);
+    <a class="code" href="class_ieee80211_mgmt_base.html#a350a3d70798831a71a3b70fb70b89e5a" title="Utility method for implementing handleUpperMessage(): gives the message to PassiveQueueBase.">sendOrEnqueue</a>(frame);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ac1e4e00aaa5f350fb0783279c21248f7"></a><!-- doxytag: member="Ieee80211MgmtAPBase::encapsulate" ref="ac1e4e00aaa5f350fb0783279c21248f7" args="(cPacket *msg)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ieee80211_data_frame.html">Ieee80211DataFrame</a> * <a class="el" href="class_ieee80211_mgmt_a_p_base.html#ac1e4e00aaa5f350fb0783279c21248f7">Ieee80211MgmtAPBase::encapsulate</a> </td>
+          <td>(</td>
+          <td class="paramtype">cPacket *&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Utility function for <a class="el" href="class_ieee80211_mgmt_base.html#af131daff6c71a51e5599213193db691f" title="Should be redefined to encapsulate and enqueue msgs from higher layers.">handleUpperMessage()</a> </p>
+
+<p>Referenced by <a class="el" href="class_ieee80211_mgmt_a_p_simplified.html#ac0559a158cc52feada4506f5263689ba">Ieee80211MgmtAPSimplified::handleUpperMessage()</a>, and <a class="el" href="class_ieee80211_mgmt_a_p.html#a619399638a27fcd0e0fa1335c119d2c1">Ieee80211MgmtAP::handleUpperMessage()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">switch</span> (<a class="code" href="class_ieee80211_mgmt_a_p_base.html#a3536e38bf07137c4ff2447a6b70f72d7">encapDecap</a>)
+    {
+        <span class="keywordflow">case</span> <a class="code" href="class_ieee80211_mgmt_a_p_base.html#a40d489c2ff2af7c9dcd12741e347a5f2a76f5507563f2b563b9ec80ce7ad8a3a9">ENCAP_DECAP_ETH</a>:
+<span class="preprocessor">#ifdef WITH_ETHERNET</span>
+<span class="preprocessor"></span>            <span class="keywordflow">return</span> <a class="code" href="class_ieee80211_mgmt_a_p_base.html#a2d4fea33ff46be5cfaf54230cc5479ad" title="Utility function: converts EtherFrame to Ieee80211Frame.">convertFromEtherFrame</a>(check_and_cast&lt;EtherFrame *&gt;(msg));
+<span class="preprocessor">#else</span>
+<span class="preprocessor"></span>            <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;INET compiled without ETHERNET feature, but the &#39;encapDecap&#39; parameter is set to &#39;eth&#39;!&quot;</span>);
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>            <span class="keywordflow">break</span>;
+        <span class="keywordflow">case</span> <a class="code" href="class_ieee80211_mgmt_a_p_base.html#a40d489c2ff2af7c9dcd12741e347a5f2ac08b65dbe88c4c413995e89d787e5531">ENCAP_DECAP_TRUE</a>:
+            {
+                <a class="code" href="class_ieee802_ctrl.html" title="Class generated from linklayer/contract/Ieee802Ctrl.msg by opp_msgc.">Ieee802Ctrl</a>* ctrl = check_and_cast&lt;<a class="code" href="class_ieee802_ctrl.html" title="Class generated from linklayer/contract/Ieee802Ctrl.msg by opp_msgc.">Ieee802Ctrl</a>*&gt;(msg-&gt;removeControlInfo());
+                <a class="code" href="class_ieee80211_data_frame_with_s_n_a_p.html" title="Class generated from linklayer/ieee80211/mac/Ieee80211Frame.msg by opp_msgc.">Ieee80211DataFrameWithSNAP</a> *frame = <span class="keyword">new</span> <a class="code" href="class_ieee80211_data_frame_with_s_n_a_p.html" title="Class generated from linklayer/ieee80211/mac/Ieee80211Frame.msg by opp_msgc.">Ieee80211DataFrameWithSNAP</a>(msg-&gt;getName());
+                frame-&gt;<a class="code" href="class_ieee80211_frame.html#a9e09970b318964602781bc4a37e2b12b">setFromDS</a>(<span class="keyword">true</span>);
+
+                <span class="comment">// copy addresses from ethernet frame (transmitter addr will be set to our addr by MAC)</span>
+                frame-&gt;setAddress3(ctrl-&gt;<a class="code" href="class_ieee802_ctrl.html#a80d343029d4dc57b48cfd862cb30076b">getSrc</a>());
+                frame-&gt;setReceiverAddress(ctrl-&gt;<a class="code" href="class_ieee802_ctrl.html#a44abf8e022b465968d9d0aa6bd08d626">getDest</a>());
+                frame-&gt;setEtherType(ctrl-&gt;<a class="code" href="class_ieee802_ctrl.html#aeacba74b1541b3a70d431f55e9d06527">getEtherType</a>());
+                <span class="keyword">delete</span> ctrl;
+
+                <span class="comment">// encapsulate payload</span>
+                frame-&gt;encapsulate(msg);
+                <span class="keywordflow">return</span> frame;
+            }
+            <span class="keywordflow">break</span>;
+        <span class="keywordflow">case</span> <a class="code" href="class_ieee80211_mgmt_a_p_base.html#a40d489c2ff2af7c9dcd12741e347a5f2a4bd16a315cc17acf12533c572b2ca60f">ENCAP_DECAP_FALSE</a>:
+            <span class="keywordflow">return</span> check_and_cast&lt;<a class="code" href="class_ieee80211_data_frame.html" title="Class generated from linklayer/ieee80211/mac/Ieee80211Frame.msg by opp_msgc.">Ieee80211DataFrame</a> *&gt;(msg);
+            <span class="keywordflow">break</span>;
+        <span class="keywordflow">default</span>:
+            <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Unknown encapDecap value: %d&quot;</span>, <a class="code" href="class_ieee80211_mgmt_a_p_base.html#a3536e38bf07137c4ff2447a6b70f72d7">encapDecap</a>);
+            <span class="keywordflow">break</span>;
+    }
+    <span class="keywordflow">return</span> <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
 }
 </pre></div>
 </div>
@@ -237,7 +355,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_ieee80211_mgmt_a_p_base.html#abdb240bc75033b0886f942f9a25f6db1">Ieee80211MgmtAPBase::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_ieee80211_mgmt_a_p_base.html#abdb240bc75033b0886f942f9a25f6db1">Ieee80211MgmtAPBase::initialize</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>stage</em></td><td>)</td>
@@ -250,15 +368,22 @@ Protected Attributes</h2></td></tr>
 <p>Reimplemented from <a class="el" href="class_ieee80211_mgmt_base.html#aaa9f842b2aca6ee182ad45434d0e8a45">Ieee80211MgmtBase</a>.</p>
 
 <p>Reimplemented in <a class="el" href="class_ieee80211_mgmt_a_p.html#a36406c3128da871fd778370e54f62520">Ieee80211MgmtAP</a>, and <a class="el" href="class_ieee80211_mgmt_a_p_simplified.html#a58a6841319af12160d0baa79fc33dc30">Ieee80211MgmtAPSimplified</a>.</p>
-
-<p>Definition at line <a class="el" href="_ieee80211_mgmt_a_p_base_8cc_source.html#l00024">24</a> of file <a class="el" href="_ieee80211_mgmt_a_p_base_8cc_source.html">Ieee80211MgmtAPBase.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="class_passive_queue_base.html#a3a488890814dbb44a5a13484bc53c8e7">Ieee80211MgmtBase::initialize</a>(stage);
-
-    <span class="keywordflow">if</span> (stage==0)
+    <span class="keywordflow">if</span> (stage == 0)
     {
-        <a class="code" href="class_ieee80211_mgmt_a_p_base.html#a82dc79e17c0921275ee4e1440088a199">hasRelayUnit</a> = gate(<span class="stringliteral">&quot;uppergateOut&quot;</span>)-&gt;getPathEndGate()-&gt;isConnected();
-        WATCH(<a class="code" href="class_ieee80211_mgmt_a_p_base.html#a82dc79e17c0921275ee4e1440088a199">hasRelayUnit</a>);
+        <a class="code" href="class_ieee80211_mgmt_a_p_base.html#aa5972c88c03f18e1f33a0526a2a87f73">isConnectedToHL</a> = gate(<span class="stringliteral">&quot;upperLayerOut&quot;</span>)-&gt;getPathEndGate()-&gt;isConnected();
+        <span class="keyword">const</span> <span class="keywordtype">char</span> * encDec = par(<span class="stringliteral">&quot;encapDecap&quot;</span>).stringValue();
+        <span class="keywordflow">if</span> (!strcmp(encDec, <span class="stringliteral">&quot;true&quot;</span>))
+            <a class="code" href="class_ieee80211_mgmt_a_p_base.html#a3536e38bf07137c4ff2447a6b70f72d7">encapDecap</a> = <a class="code" href="class_ieee80211_mgmt_a_p_base.html#a40d489c2ff2af7c9dcd12741e347a5f2ac08b65dbe88c4c413995e89d787e5531">ENCAP_DECAP_TRUE</a>;
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(encDec, <span class="stringliteral">&quot;false&quot;</span>))
+            <a class="code" href="class_ieee80211_mgmt_a_p_base.html#a3536e38bf07137c4ff2447a6b70f72d7">encapDecap</a> = <a class="code" href="class_ieee80211_mgmt_a_p_base.html#a40d489c2ff2af7c9dcd12741e347a5f2a4bd16a315cc17acf12533c572b2ca60f">ENCAP_DECAP_FALSE</a>;
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(encDec, <span class="stringliteral">&quot;eth&quot;</span>))
+            <a class="code" href="class_ieee80211_mgmt_a_p_base.html#a3536e38bf07137c4ff2447a6b70f72d7">encapDecap</a> = <a class="code" href="class_ieee80211_mgmt_a_p_base.html#a40d489c2ff2af7c9dcd12741e347a5f2a76f5507563f2b563b9ec80ce7ad8a3a9">ENCAP_DECAP_ETH</a>;
+        <span class="keywordflow">else</span>
+            <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Unknown encapDecap parameter value: &#39;%s&#39;! Must be &#39;true&#39;,&#39;false&#39; or &#39;eth&#39;.&quot;</span>, encDec);
+
+        WATCH(<a class="code" href="class_ieee80211_mgmt_a_p_base.html#aa5972c88c03f18e1f33a0526a2a87f73">isConnectedToHL</a>);
     }
 }
 </pre></div>
@@ -281,33 +406,105 @@ Protected Attributes</h2></td></tr>
 <p>Reimplemented from <a class="el" href="class_ieee80211_mgmt_base.html#a0d931abecbdbf8847be19bb765f5eede">Ieee80211MgmtBase</a>.</p>
 
 <p>Reimplemented in <a class="el" href="class_ieee80211_mgmt_a_p.html#acb327eb4bb0949656b6dfd0a8783d55f">Ieee80211MgmtAP</a>, and <a class="el" href="class_ieee80211_mgmt_a_p_simplified.html#a99b387ead5f5bf1c27159f09fe65d279">Ieee80211MgmtAPSimplified</a>.</p>
-
-<p>Definition at line <a class="el" href="_ieee80211_mgmt_a_p_base_8h_source.html#l00040">40</a> of file <a class="el" href="_ieee80211_mgmt_a_p_base_8h_source.html">Ieee80211MgmtAPBase.h</a>.</p>
 <div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> 2;}
 </pre></div>
 </div>
 </div>
-<hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="a82dc79e17c0921275ee4e1440088a199"></a><!-- doxytag: member="Ieee80211MgmtAPBase::hasRelayUnit" ref="a82dc79e17c0921275ee4e1440088a199" args="" -->
+<a class="anchor" id="aabce5170453bfe85f4b132bbaf6e5b09"></a><!-- doxytag: member="Ieee80211MgmtAPBase::sendToUpperLayer" ref="aabce5170453bfe85f4b132bbaf6e5b09" args="(Ieee80211DataFrame *frame)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="class_ieee80211_mgmt_a_p_base.html#a82dc79e17c0921275ee4e1440088a199">Ieee80211MgmtAPBase::hasRelayUnit</a><code> [protected]</code></td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_ieee80211_mgmt_a_p_base.html#aabce5170453bfe85f4b132bbaf6e5b09">Ieee80211MgmtAPBase::sendToUpperLayer</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_ieee80211_data_frame.html">Ieee80211DataFrame</a> *&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td><code> [protected, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_ieee80211_mgmt_a_p_base_8h_source.html#l00037">37</a> of file <a class="el" href="_ieee80211_mgmt_a_p_base_8h_source.html">Ieee80211MgmtAPBase.h</a>.</p>
+<p>Utility function: send a frame to upperLayerOut. </p>
+<p>If convertToEtherFrameFlag is true, converts the given frame to <a class="el" href="class_ether_frame.html" title="Class generated from linklayer/ethernet/EtherFrame.msg by opp_msgc.">EtherFrame</a>, deleting the original frame, and send the converted frame. This function is needed for LAN bridging functionality: MACRelayUnit deals with EtherFrames. </p>
 
-<p>Referenced by <a class="el" href="_ieee80211_mgmt_a_p_simplified_8cc_source.html#l00057">Ieee80211MgmtAPSimplified::handleDataFrame()</a>, <a class="el" href="_ieee80211_mgmt_a_p_8cc_source.html#l00145">Ieee80211MgmtAP::handleDataFrame()</a>, and <a class="el" href="_ieee80211_mgmt_a_p_base_8cc_source.html#l00024">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_ieee80211_mgmt_a_p_simplified.html#a995e7ceff2192694c7999d8a07ea1a8c">Ieee80211MgmtAPSimplified::handleDataFrame()</a>, and <a class="el" href="class_ieee80211_mgmt_a_p.html#a725155999cce112150ffa68c47c5f580">Ieee80211MgmtAP::handleDataFrame()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> (!<a class="code" href="class_ieee80211_mgmt_a_p_base.html#aa5972c88c03f18e1f33a0526a2a87f73">isConnectedToHL</a>)
+    {
+        <span class="keyword">delete</span> frame;
+        <span class="keywordflow">return</span>;
+    }
+    cPacket *outFrame = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+    <span class="keywordflow">switch</span> (<a class="code" href="class_ieee80211_mgmt_a_p_base.html#a3536e38bf07137c4ff2447a6b70f72d7">encapDecap</a>)
+    {
+        <span class="keywordflow">case</span> <a class="code" href="class_ieee80211_mgmt_a_p_base.html#a40d489c2ff2af7c9dcd12741e347a5f2a76f5507563f2b563b9ec80ce7ad8a3a9">ENCAP_DECAP_ETH</a>:
+<span class="preprocessor">#ifdef WITH_ETHERNET</span>
+<span class="preprocessor"></span>            outFrame = <a class="code" href="class_ieee80211_mgmt_a_p_base.html#a64fdab1d74007e971a5e57b0eca77bee" title="Utility function: converts Ieee80211Frame to EtherFrame.">convertToEtherFrame</a>(frame);
+<span class="preprocessor">#else</span>
+<span class="preprocessor"></span>            <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;INET compiled without ETHERNET feature, but the &#39;encapDecap&#39; parameter is set to &#39;eth&#39;!&quot;</span>);
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>            <span class="keywordflow">break</span>;
+        <span class="keywordflow">case</span> <a class="code" href="class_ieee80211_mgmt_a_p_base.html#a40d489c2ff2af7c9dcd12741e347a5f2ac08b65dbe88c4c413995e89d787e5531">ENCAP_DECAP_TRUE</a>:
+            {
+                cPacket* payload = frame-&gt;decapsulate();
+                <a class="code" href="class_ieee802_ctrl.html" title="Class generated from linklayer/contract/Ieee802Ctrl.msg by opp_msgc.">Ieee802Ctrl</a> *ctrl = <span class="keyword">new</span> <a class="code" href="class_ieee802_ctrl.html" title="Class generated from linklayer/contract/Ieee802Ctrl.msg by opp_msgc.">Ieee802Ctrl</a>();
+                ctrl-&gt;<a class="code" href="class_ieee802_ctrl.html#a941da2315c16825c2bf3d4ae274d1699">setSrc</a>(frame-&gt;<a class="code" href="class_ieee80211_two_address_frame.html#a88c59cc71e76df61f0418642f8381ee9">getTransmitterAddress</a>());
+                ctrl-&gt;<a class="code" href="class_ieee802_ctrl.html#a1292986e26f8b3b242dc9765cc560588">setDest</a>(frame-&gt;<a class="code" href="class_ieee80211_data_or_mgmt_frame.html#af1bad63bfd1bd1f7b5dd7c5463219095">getAddress3</a>());
+                <a class="code" href="class_ieee80211_data_frame_with_s_n_a_p.html" title="Class generated from linklayer/ieee80211/mac/Ieee80211Frame.msg by opp_msgc.">Ieee80211DataFrameWithSNAP</a> *frameWithSNAP = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_ieee80211_data_frame_with_s_n_a_p.html" title="Class generated from linklayer/ieee80211/mac/Ieee80211Frame.msg by opp_msgc.">Ieee80211DataFrameWithSNAP</a> *<span class="keyword">&gt;</span>(frame);
+                <span class="keywordflow">if</span> (frameWithSNAP)
+                    ctrl-&gt;<a class="code" href="class_ieee802_ctrl.html#a00ac46d99fdc8f1ded8a63baeef0d895">setEtherType</a>(frameWithSNAP-&gt;<a class="code" href="class_ieee80211_data_frame_with_s_n_a_p.html#ab9468159be6b49a973dadd89c207e0d4">getEtherType</a>());
+                payload-&gt;setControlInfo(ctrl);
+                <span class="keyword">delete</span> frame;
+                outFrame = payload;
+            }
+            <span class="keywordflow">break</span>;
+        <span class="keywordflow">case</span> <a class="code" href="class_ieee80211_mgmt_a_p_base.html#a40d489c2ff2af7c9dcd12741e347a5f2a4bd16a315cc17acf12533c572b2ca60f">ENCAP_DECAP_FALSE</a>:
+            outFrame = frame;
+            <span class="keywordflow">break</span>;
+        <span class="keywordflow">default</span>:
+            <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Unknown encapDecap value: %d&quot;</span>, <a class="code" href="class_ieee80211_mgmt_a_p_base.html#a3536e38bf07137c4ff2447a6b70f72d7">encapDecap</a>);
+            <span class="keywordflow">break</span>;
+    }
+    send(outFrame, <span class="stringliteral">&quot;upperLayerOut&quot;</span>);
+}
+</pre></div>
+</div>
+</div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a3536e38bf07137c4ff2447a6b70f72d7"></a><!-- doxytag: member="Ieee80211MgmtAPBase::encapDecap" ref="a3536e38bf07137c4ff2447a6b70f72d7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ieee80211_mgmt_a_p_base.html#a40d489c2ff2af7c9dcd12741e347a5f2">EncapDecap</a> <a class="el" href="class_ieee80211_mgmt_a_p_base.html#a3536e38bf07137c4ff2447a6b70f72d7">Ieee80211MgmtAPBase::encapDecap</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_ieee80211_mgmt_a_p_base.html#ac1e4e00aaa5f350fb0783279c21248f7">encapsulate()</a>, <a class="el" href="class_ieee80211_mgmt_a_p_base.html#abdb240bc75033b0886f942f9a25f6db1">initialize()</a>, and <a class="el" href="class_ieee80211_mgmt_a_p_base.html#aabce5170453bfe85f4b132bbaf6e5b09">sendToUpperLayer()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa5972c88c03f18e1f33a0526a2a87f73"></a><!-- doxytag: member="Ieee80211MgmtAPBase::isConnectedToHL" ref="aa5972c88c03f18e1f33a0526a2a87f73" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_ieee80211_mgmt_a_p_base.html#aa5972c88c03f18e1f33a0526a2a87f73">Ieee80211MgmtAPBase::isConnectedToHL</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_ieee80211_mgmt_a_p_simplified.html#a995e7ceff2192694c7999d8a07ea1a8c">Ieee80211MgmtAPSimplified::handleDataFrame()</a>, <a class="el" href="class_ieee80211_mgmt_a_p.html#a725155999cce112150ffa68c47c5f580">Ieee80211MgmtAP::handleDataFrame()</a>, <a class="el" href="class_ieee80211_mgmt_a_p_base.html#abdb240bc75033b0886f942f9a25f6db1">initialize()</a>, and <a class="el" href="class_ieee80211_mgmt_a_p_base.html#aabce5170453bfe85f4b132bbaf6e5b09">sendToUpperLayer()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_ieee80211_mgmt_a_p_base_8h_source.html">Ieee80211MgmtAPBase.h</a></li>
-<li><a class="el" href="_ieee80211_mgmt_a_p_base_8cc_source.html">Ieee80211MgmtAPBase.cc</a></li>
+<li><a class="el" href="_ieee80211_mgmt_a_p_base_8h.html">Ieee80211MgmtAPBase.h</a></li>
+<li><a class="el" href="_ieee80211_mgmt_a_p_base_8cc.html">Ieee80211MgmtAPBase.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -315,7 +512,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_ieee80211_mgmt_a_p_base.html">Ieee80211MgmtAPBase</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:48 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:25 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

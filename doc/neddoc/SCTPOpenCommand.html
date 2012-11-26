@@ -9,7 +9,7 @@
 
 <p>Control info to be used for active or passive <a href="inet.transport.sctp.SCTP.html">SCTP</a> open.</p>
 <p>localAddr, remoteAddr, localPort, remotePort should be self-explanatory.
-localAddr is optional because <a href="inet.transport.sctp.SCTP.html">SCTP</a> can learn it from <a href="inet.networklayer.ipv4.IP.html">IP</a> when a packet
+localAddr is optional because <a href="inet.transport.sctp.SCTP.html">SCTP</a> can learn it from IP when a packet
 is received from the peer; localPort is optional because <a href="inet.transport.sctp.SCTP.html">SCTP</a> supports
 ephemeral ports.</p>
 <p>The sendQueueClass, receiveQueueClass and sctpAlgorithmClass fields
@@ -25,7 +25,18 @@ and the connection structure with the old connId remains listening.
 With fork=false, all the above does not happen: the first connection
 is accepted (with the original connId), and further incoming connections
 will be refused by <a href="inet.transport.sctp.SCTP.html">SCTP</a> by sending an RST segment.</p>
-<p><b>See also:</b> <a href="TcpCommandCode.html">TcpCommandCode</a>, SCTPMain</p>
+<p><b>See also:</b> <a href="TcpCommandCode.html">TcpCommandCode</a>, <a href="inet.transport.sctp.SCTP.html">SCTP</a></p>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="SCTPOpenCommand-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="SCTPOpenCommand.html" title="Class SCTPOpenCommand" alt="" coords="5,6,155,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="SCTPOpenCommand-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="SCTPOpenCommand.html" title="Class SCTPOpenCommand" alt="" coords="5,83,155,111">
+<area shape="rect" id="node2" href="SCTPCommand.html" title="Class SCTPCommand" alt="" coords="21,6,139,34">
+</map>
 <h3 class="subtitle">Extends:</h3>
 <table class="typestable">
    <tr>
@@ -42,7 +53,7 @@ will be refused by <a href="inet.transport.sctp.SCTP.html">SCTP</a> by sending a
    </td>
    <td>
 
-<p>Control info for <a href="inet.transport.sctp.SCTP.html">SCTP</a> connections. This class is to be set as control info
+<p>Control info for SCTP connections. This class is to be set as control info
 (see cMessage::setControlInfo()) on all messages exchanged between <a href="inet.transport.sctp.SCTP.html">SCTP</a> and
 application, in both directions. Some commands and indications
 (SCTP_C_OPEN_xxx, SCTP_I_STATUS) use subclasses.</p>
@@ -234,15 +245,15 @@ int</i>
 </table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
-// Control info to be used for active or passive SCTP open.
+// Control info to be used for active or passive ~SCTP open.
 //
 // localAddr, remoteAddr, localPort, remotePort should be self-explanatory.
-// localAddr is optional because SCTP can learn it from IP when a packet
-// is received from the peer; localPort is optional because SCTP supports
+// localAddr is optional because ~SCTP can learn it from IP when a packet
+// is received from the peer; localPort is optional because ~SCTP supports
 // ephemeral ports.
 //
 // The sendQueueClass, receiveQueueClass and sctpAlgorithmClass fields
-// allow per-connection SCTP configuration. These fields may contain
+// allow per-connection ~SCTP configuration. These fields may contain
 // names of classes subclassed from SCTPSendQueue, SCTPReceiveQueue
 // and SCTPAlgorithm, respectively. If not set, module parameters with
 // similar names are used.
@@ -250,13 +261,13 @@ int</i>
 // The fork parameter is used with passive open, and controls what happens
 // when an incoming connection is received. With fork=true, it emulates
 // the Unix accept(2) syscall semantics: a new connection structure
-// is created for the connection (with a new connId, see in SCTPCommand),
+// is created for the connection (with a new connId, see in ~SCTPCommand),
 // and the connection structure with the old connId remains listening.
 // With fork=false, all the above does not happen: the first connection
 // is accepted (with the original connId), and further incoming connections
-// will be refused by SCTP by sending an RST segment.
+// will be refused by ~SCTP by sending an RST segment.
 //
-// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> TcpCommandCode, SCTPMain
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~TcpCommandCode, ~SCTP
 //
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">SCTPOpenCommand</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">SCTPCommand</span><span style="color: #000000; ">
 {
@@ -277,6 +288,5 @@ int</i>
 
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

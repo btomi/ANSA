@@ -79,13 +79,17 @@
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">UDP Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="UDP" -->
-<p><code>#include &lt;<a class="el" href="_u_d_p_8h_source.html">UDP.h</a>&gt;</code></p>
+<p>Implements the <a class="el" href="class_u_d_p.html" title="Implements the UDP protocol: encapsulates/decapsulates user data into/from UDP.">UDP</a> protocol: encapsulates/decapsulates user data into/from <a class="el" href="class_u_d_p.html" title="Implements the UDP protocol: encapsulates/decapsulates user data into/from UDP.">UDP</a>.  
+ <a href="class_u_d_p.html#details">More...</a></p>
+
+<p><code>#include &lt;UDP.h&gt;</code></p>
 
 <p><a href="class_u_d_p-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -104,25 +108,36 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#ac9c6eaf3e5f1bd64ea3ac0552137ca0e">~UDP</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a5c2df70abc011c2753a47cbff187a306">updateDisplayString</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a7ad4f9f51d27f92e0d23041f9b64a896">bind</a> (int gateIndex, <a class="el" href="class_u_d_p_control_info.html">UDPControlInfo</a> *ctrl)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a9fb94355db86e280d8de7b1ef7ced43c">connect</a> (int sockId, <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> addr, int port)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a92b95e9e592cd6beff8f0b20228bc214">unbind</a> (int sockId)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a5c2df70abc011c2753a47cbff187a306">updateDisplayString</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a9742a939d6d1ad17963654e4abe3c19f">getSocketById</a> (int sockId)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#ae019fcc358a2dc4ce16865045e13faa5">getOrCreateSocket</a> (int sockId, int gateIndex)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a5eab1ba9ab89fc6a5b20e96f866a3267">createSocket</a> (int sockId, int gateIndex, const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;localAddr, int localPort)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#ad6bf857de4fcc262b4ffa31d4c895af1">bind</a> (int sockId, int gateIndex, const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;localAddr, int localPort)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a04df69f51d53431f4fd3fcb39dafcf46">connect</a> (int sockId, int gateIndex, const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;remoteAddr, int remotePort)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a18fe24ec45ff3c47e167c4b948cbade1">close</a> (int sockId)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#ad09b530cd871cfb3a1defe37b57066c1">setTimeToLive</a> (<a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *sd, int <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a4d402503271315376ddf4e47674d4965">ttl</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#ad9564e90d237f2409a71e403894e756e">setTypeOfService</a> (<a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *sd, int typeOfService)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#aa70fdc6f88f17e4265e21a2772dba154">setBroadcast</a> (<a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *sd, bool broadcast)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#adcc7a9232aba1c5f35c61d8ad59dcd3f">setMulticastOutputInterface</a> (<a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *sd, int interfaceId)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a2ad9fb3abed533303e5ec070fecaa0c6">setMulticastLoop</a> (<a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *sd, bool loop)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#aaf04330af5e75e19fe526482a1380765">joinMulticastGroups</a> (<a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *sd, const std::vector&lt; <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &gt; &amp;multicastAddresses, const std::vector&lt; int &gt; interfaceIds)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a4dd6cf805a04323c3dce579528932952">leaveMulticastGroups</a> (<a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *sd, const std::vector&lt; <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &gt; &amp;multicastAddresses)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a7d2d897cc12dc6bce65439546c4405ec">addMulticastAddressToInterface</a> (<a class="el" href="class_interface_entry.html">InterfaceEntry</a> *ie, const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;multicastAddr)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a28ca0f88569dadf1b8f5eaad7e039c49">getEphemeralPort</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a7e436c2b0a7b563bae29603603422cc0">matchesSocket</a> (<a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *sd, <a class="el" href="class_u_d_p_packet.html">UDPPacket</a> *udp, <a class="el" href="class_i_p_control_info.html">IPControlInfo</a> *ctrl)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a6529b4917795bbb08f2fe013045718aa">matchesSocket</a> (<a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *sd, <a class="el" href="class_u_d_p_packet.html">UDPPacket</a> *udp, <a class="el" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *ctrl)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a329e083aa2cd0a847fd977f2833e1645">matchesSocket</a> (<a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *sd, const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;localAddr, const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;remoteAddr, <a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a> remotePort)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#affa73f57d52206f4aa5bc2539ac63c0f">sendUp</a> (cPacket *payload, <a class="el" href="class_u_d_p_packet.html">UDPPacket</a> *udpHeader, <a class="el" href="class_i_p_control_info.html">IPControlInfo</a> *ctrl, <a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *sd)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#ac693a0a152b8577d646493c325f15b45">sendUp</a> (cPacket *payload, <a class="el" href="class_u_d_p_packet.html">UDPPacket</a> *udpHeader, <a class="el" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *ctrl, <a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *sd)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a5a411e560693182d2cde11ab5566e1fc">processUndeliverablePacket</a> (<a class="el" href="class_u_d_p_packet.html">UDPPacket</a> *udpPacket, cPolymorphic *ctrl)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#aa6d3f6a65fcb255abab778a7f13ca771">sendUpErrorNotification</a> (<a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *sd, int msgkind, const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;localAddr, const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;remoteAddr, <a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a> remotePort)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a8f0e27d03d3e209f437bfa72dd3efe38">processICMPError</a> (cPacket *icmpErrorMsg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a333fddcf308d3c6348c9cc5e6bfa796d">processUDPPacket</a> (<a class="el" href="class_u_d_p_packet.html">UDPPacket</a> *udpPacket)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a1d2e34c55abb9e373694d77d3bac8f09">processMsgFromApp</a> (cPacket *appData)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#ae251c9826aa3b5242ad02d6620ea2616">processCommandFromApp</a> (cMessage *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_u_d_p_packet.html">UDPPacket</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#af5e2c13d9e3a33936212cefdfa723d18">createUDPPacket</a> (const char *name)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a9ff0a87c6965238d54bb67997d6912ca">initialize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a79daccc47126abbf6740b029d7a57089">handleMessage</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a3c201cb4d38613bdf338cb4730860322">findSocketForUnicastPacket</a> (const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;localAddr, <a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a> localPort, const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;remoteAddr, <a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a> remotePort)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#ac32a790cb4026b222eac4735739a88e1">findSocketsForMcastBcastPacket</a> (const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;localAddr, <a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a> localPort, const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;remoteAddr, <a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a> remotePort, bool isMulticast, bool isBroadcast)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a8b59bd0821d701272e6fa02bfe0eb948">findSocketByLocalAddress</a> (const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;localAddr, <a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a> localPort)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#ac87b9d1c06d79d9d3c3fedbfc6bc52c4">sendUp</a> (cPacket *payload, <a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *sd, const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;srcAddr, <a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a> srcPort, const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;destAddr, <a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a> destPort, int interfaceId, int <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a4d402503271315376ddf4e47674d4965">ttl</a>, unsigned char <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a3bdbe295d838b7f44e47ad5f4c3fac27">tos</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a66b24ca026727b5158445a8c790f2817">sendDown</a> (cPacket *appData, const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;srcAddr, <a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a> srcPort, const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;destAddr, <a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a> destPort, int interfaceId, bool multicastLoop, int <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a4d402503271315376ddf4e47674d4965">ttl</a>, unsigned char <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a3bdbe295d838b7f44e47ad5f4c3fac27">tos</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#ac47e00e6d7d0daddef466c4574134eb8">processUndeliverablePacket</a> (<a class="el" href="class_u_d_p_packet.html">UDPPacket</a> *udpPacket, cObject *ctrl)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a743aa187bec30950907dfc6362052263">sendUpErrorIndication</a> (<a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *sd, const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;localAddr, <a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a> localPort, const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;remoteAddr, <a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a> remotePort)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a8f0e27d03d3e209f437bfa72dd3efe38">processICMPError</a> (cPacket *icmpErrorMsg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a333fddcf308d3c6348c9cc5e6bfa796d">processUDPPacket</a> (<a class="el" href="class_u_d_p_packet.html">UDPPacket</a> *udpPacket)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a5f05780879364c1bf6f2340005973dc6">processPacketFromApp</a> (cPacket *appData)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#ae251c9826aa3b5242ad02d6620ea2616">processCommandFromApp</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_u_d_p_packet.html">UDPPacket</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#af5e2c13d9e3a33936212cefdfa723d18">createUDPPacket</a> (const char *<a class="el" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a9ff0a87c6965238d54bb67997d6912ca">initialize</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a79daccc47126abbf6740b029d7a57089">handleMessage</a> (cMessage *msg)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_u_d_p.html#a68d5e94d3be14183856abf7f7ac8002a">SocketsByIdMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a7019475e3a2bd786a634fbbe72aa91c6">socketsByIdMap</a></td></tr>
@@ -134,12 +149,17 @@ Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#ab6bee27f7907a894de4173e003adbd69">numPassedUp</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#ac262e3d6e3c88dbb2ff457c1c8837162">numDroppedWrongPort</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a9ed09aeb9c434f9c7931dc82d3b2d34c">numDroppedBadChecksum</a></td></tr>
+<tr><td colspan="2"><h2><a name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a9a90026ea04513678cd59de29b851b26">rcvdPkSignal</a> = SIMSIGNAL_NULL</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a084eb773d6288f5943ff2c2126e8d75c">sentPkSignal</a> = SIMSIGNAL_NULL</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#ac3b38f02ac17afeb9f43b83aefb43509">passedUpPkSignal</a> = SIMSIGNAL_NULL</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a4593f76dd370cf75ae61290b4f3e1a7d">droppedPkWrongPortSignal</a> = SIMSIGNAL_NULL</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p.html#a2486e7ca20282de643b267535da280b3">droppedPkBadChecksumSignal</a> = SIMSIGNAL_NULL</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Implements the <a class="el" href="class_u_d_p.html">UDP</a> protocol: encapsulates/decapsulates user data into/from <a class="el" href="class_u_d_p.html">UDP</a>.</p>
+<div class="textblock"><p>Implements the <a class="el" href="class_u_d_p.html" title="Implements the UDP protocol: encapsulates/decapsulates user data into/from UDP.">UDP</a> protocol: encapsulates/decapsulates user data into/from <a class="el" href="class_u_d_p.html" title="Implements the UDP protocol: encapsulates/decapsulates user data into/from UDP.">UDP</a>. </p>
 <p>More info in the NED file. </p>
-
-<p>Definition at line <a class="el" href="_u_d_p_8h_source.html#l00046">46</a> of file <a class="el" href="_u_d_p_8h_source.html">UDP.h</a>.</p>
 </div><hr/><h2>Member Typedef Documentation</h2>
 <a class="anchor" id="a17d5eac534fa0d896ceef2831cd28d77"></a><!-- doxytag: member="UDP::SockDescList" ref="a17d5eac534fa0d896ceef2831cd28d77" args="" -->
 <div class="memitem">
@@ -151,8 +171,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_u_d_p_8h_source.html#l00062">62</a> of file <a class="el" href="_u_d_p_8h_source.html">UDP.h</a>.</p>
 
 </div>
 </div>
@@ -167,8 +185,6 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8h_source.html#l00063">63</a> of file <a class="el" href="_u_d_p_8h_source.html">UDP.h</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a829a029b999e1f99838cd59e10eab3a9"></a><!-- doxytag: member="UDP::SocketsByPortMap" ref="a829a029b999e1f99838cd59e10eab3a9" args="" -->
@@ -181,8 +197,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_u_d_p_8h_source.html#l00064">64</a> of file <a class="el" href="_u_d_p_8h_source.html">UDP.h</a>.</p>
 
 </div>
 </div>
@@ -200,8 +214,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_u_d_p_8h_source.html#l00122">122</a> of file <a class="el" href="_u_d_p_8h_source.html">UDP.h</a>.</p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
@@ -219,31 +231,29 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_u_d_p_8cc_source.html#l00075">75</a> of file <a class="el" href="_u_d_p_8cc_source.html">UDP.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">for</span> (SocketsByIdMap::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>=<a class="code" href="class_u_d_p.html#a7019475e3a2bd786a634fbbe72aa91c6">socketsByIdMap</a>.begin(); <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>!=<a class="code" href="class_u_d_p.html#a7019475e3a2bd786a634fbbe72aa91c6">socketsByIdMap</a>.end(); ++<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>)
-        <span class="keyword">delete</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>-&gt;second;
+    <span class="keywordflow">for</span> (SocketsByIdMap::iterator i=<a class="code" href="class_u_d_p.html#a7019475e3a2bd786a634fbbe72aa91c6">socketsByIdMap</a>.begin(); i!=<a class="code" href="class_u_d_p.html#a7019475e3a2bd786a634fbbe72aa91c6">socketsByIdMap</a>.end(); ++i)
+        <span class="keyword">delete</span> i-&gt;second;
 }
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a7ad4f9f51d27f92e0d23041f9b64a896"></a><!-- doxytag: member="UDP::bind" ref="a7ad4f9f51d27f92e0d23041f9b64a896" args="(int gateIndex, UDPControlInfo *ctrl)" -->
+<a class="anchor" id="a7d2d897cc12dc6bce65439546c4405ec"></a><!-- doxytag: member="UDP::addMulticastAddressToInterface" ref="a7d2d897cc12dc6bce65439546c4405ec" args="(InterfaceEntry *ie, const IPvXAddress &amp;multicastAddr)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p.html#a7ad4f9f51d27f92e0d23041f9b64a896">UDP::bind</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p.html#a7d2d897cc12dc6bce65439546c4405ec">UDP::addMulticastAddressToInterface</a> </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>gateIndex</em>, </td>
+          <td class="paramtype"><a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td>
+          <td class="paramname"><em>ie</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_u_d_p_control_info.html">UDPControlInfo</a> *&#160;</td>
-          <td class="paramname"><em>ctrl</em>&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;&#160;</td>
+          <td class="paramname"><em>multicastAddr</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -254,52 +264,30 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8cc_source.html#l00100">100</a> of file <a class="el" href="_u_d_p_8cc_source.html">UDP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_8cc_source.html#l00531">processCommandFromApp()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#aaf04330af5e75e19fe526482a1380765">joinMulticastGroups()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="comment">// XXX checks could be added, of when the bind should be allowed to proceed</span>
-
-    <span class="comment">// create and fill in SockDesc</span>
-    SockDesc *sd = <span class="keyword">new</span> SockDesc();
-    sd-&gt;sockId = ctrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a8a846212bd94f8f2b59ea56c3238ae6f">getSockId</a>();
-    sd-&gt;userId = ctrl-&gt;<a class="code" href="class_u_d_p_control_info.html#aa77dbd727be5ceb2a7921ed96349ae82">getUserId</a>();
-    sd-&gt;appGateIndex = gateIndex;
-    sd-&gt;localAddr = ctrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a0dbca3fa110977e974dba0c3f7e28604">getSrcAddr</a>();
-    sd-&gt;remoteAddr = ctrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a477fd2ebd3ff52956f283bf4a8f8a0d8">getDestAddr</a>();
-    sd-&gt;localPort = ctrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a174a1520000a47394c851bcc9990b1b5">getSrcPort</a>();
-    sd-&gt;remotePort = ctrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a8a288303fcf9d8740a3d285ab82a2ded">getDestPort</a>();
-    sd-&gt;interfaceId = ctrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a371cfc0b09b71bf2cb851dfcfdc37583">getInterfaceId</a>();
-
-    <span class="keywordflow">if</span> (sd-&gt;sockId==-1)
-        error(<span class="stringliteral">&quot;sockId in BIND message not filled in&quot;</span>);
-    <span class="keywordflow">if</span> (sd-&gt;localPort==0)
-        sd-&gt;localPort = <a class="code" href="class_u_d_p.html#a28ca0f88569dadf1b8f5eaad7e039c49">getEphemeralPort</a>();
-
-    sd-&gt;onlyLocalPortIsSet = sd-&gt;localAddr.isUnspecified() &amp;&amp;
-                             sd-&gt;remoteAddr.isUnspecified() &amp;&amp;
-                             sd-&gt;remotePort==0 &amp;&amp;
-                             sd-&gt;interfaceId==-1;
-
-    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Binding socket: &quot;</span> &lt;&lt; *sd &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
-
-    <span class="comment">// add to socketsByIdMap</span>
-    ASSERT(<a class="code" href="class_u_d_p.html#a7019475e3a2bd786a634fbbe72aa91c6">socketsByIdMap</a>.find(sd-&gt;sockId)==<a class="code" href="class_u_d_p.html#a7019475e3a2bd786a634fbbe72aa91c6">socketsByIdMap</a>.end());
-    <a class="code" href="class_u_d_p.html#a7019475e3a2bd786a634fbbe72aa91c6">socketsByIdMap</a>[sd-&gt;sockId] = sd;
-
-    <span class="comment">// add to socketsByPortMap</span>
-    <a class="code" href="class_u_d_p.html#a17d5eac534fa0d896ceef2831cd28d77">SockDescList</a>&amp; list = <a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>[sd-&gt;localPort]; <span class="comment">// create if doesn&#39;t exist</span>
-    list.push_back(sd);
+    <span class="keywordflow">if</span> (!multicastAddr.<a class="code" href="class_i_pv_x_address.html#a43ef7d0a976817991cfd41d09435225d" title="Is this an IPv6 address?">isIPv6</a>())
+    {
+<span class="preprocessor">#ifdef WITH_IPv4</span>
+<span class="preprocessor"></span>        ie-&gt;<a class="code" href="class_interface_entry.html#a4f52f31546a140edf6979882492e1a0b">ipv4Data</a>()-&gt;<a class="code" href="class_i_pv4_interface_data.html#a0ced2d5b5dfaa92205e1a0de34d9f0b3">joinMulticastGroup</a>(multicastAddr.<a class="code" href="class_i_pv_x_address.html#a961b38a74371d8aa29d8e6906a071d64" title="Get IPv4 address.">get4</a>());
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>    }
+    <span class="keywordflow">else</span>
+    {
+<span class="preprocessor">#ifdef WITH_IPv6</span>
+<span class="preprocessor"></span>        ie-&gt;<a class="code" href="class_interface_entry.html#a19083391271368e371346eb41ccc6c93">ipv6Data</a>()-&gt;<a class="code" href="class_i_pv6_interface_data.html#a715b339dc41612149940ed0607af1535" title="Assigns the given address to the interface.">assignAddress</a>(multicastAddr.<a class="code" href="class_i_pv_x_address.html#a733678e1e28f88c954cfce854af576c6" title="Get IPv6 address.">get6</a>(), <span class="keyword">false</span>, SimTime::getMaxTime(), SimTime::getMaxTime());
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>    }
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a9fb94355db86e280d8de7b1ef7ced43c"></a><!-- doxytag: member="UDP::connect" ref="a9fb94355db86e280d8de7b1ef7ced43c" args="(int sockId, IPvXAddress addr, int port)" -->
+<a class="anchor" id="ad6bf857de4fcc262b4ffa31d4c895af1"></a><!-- doxytag: member="UDP::bind" ref="ad6bf857de4fcc262b4ffa31d4c895af1" args="(int sockId, int gateIndex, const IPvXAddress &amp;localAddr, int localPort)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p.html#a9fb94355db86e280d8de7b1ef7ced43c">UDP::connect</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p.html#ad6bf857de4fcc262b4ffa31d4c895af1">UDP::bind</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>sockId</em>, </td>
@@ -307,14 +295,20 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_i_pv_x_address.html">IPvXAddress</a>&#160;</td>
-          <td class="paramname"><em>addr</em>, </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>gateIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;&#160;</td>
+          <td class="paramname"><em>localAddr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>port</em>&#160;</td>
+          <td class="paramname"><em>localPort</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -325,25 +319,191 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8cc_source.html#l00136">136</a> of file <a class="el" href="_u_d_p_8cc_source.html">UDP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_8cc_source.html#l00531">processCommandFromApp()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#ae251c9826aa3b5242ad02d6620ea2616">processCommandFromApp()</a>.</p>
 <div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> (sockId == -1)
+        error(<span class="stringliteral">&quot;sockId in BIND message not filled in&quot;</span>);
+
+    <span class="keywordflow">if</span> (localPort&lt;-1 || localPort&gt;65535) <span class="comment">// -1: ephemeral port</span>
+        error(<span class="stringliteral">&quot;bind: invalid local port number %d&quot;</span>, localPort);
+
+    <span class="comment">// do not allow two apps to bind to the same address/port combination</span>
+    SockDesc *existing = <a class="code" href="class_u_d_p.html#a8b59bd0821d701272e6fa02bfe0eb948">findSocketByLocalAddress</a>(localAddr, localPort);
+    <span class="keywordflow">if</span> (existing != <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)
+        error(<span class="stringliteral">&quot;bind: local address/port %s:%u already taken&quot;</span>, localAddr.<a class="code" href="class_i_pv_x_address.html#a27e3ec9ec324d86c1874a03db4788a92" title="Returns the string representation of the address (e.g.">str</a>().c_str(), localPort);
+
+    SocketsByIdMap::iterator it = <a class="code" href="class_u_d_p.html#a7019475e3a2bd786a634fbbe72aa91c6">socketsByIdMap</a>.find(sockId);
+    <span class="keywordflow">if</span> (it != <a class="code" href="class_u_d_p.html#a7019475e3a2bd786a634fbbe72aa91c6">socketsByIdMap</a>.end())
+    {
+        SockDesc *sd = it-&gt;second;
+        <span class="keywordflow">if</span> (sd-&gt;isBound)
+            error(<span class="stringliteral">&quot;bind: socket is already bound (sockId=%d)&quot;</span>, sockId);
+
+        sd-&gt;isBound = <span class="keyword">true</span>;
+        sd-&gt;localAddr = localAddr;
+        <span class="keywordflow">if</span> (localPort != -1 &amp;&amp; sd-&gt;localPort != localPort)
+        {
+            <a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>[sd-&gt;localPort].remove(sd);
+            sd-&gt;localPort = localPort;
+            <a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>[sd-&gt;localPort].push_back(sd);
+        }
+    }
+    <span class="keywordflow">else</span>
+    {
+        SockDesc *sd = <a class="code" href="class_u_d_p.html#a5eab1ba9ab89fc6a5b20e96f866a3267">createSocket</a>(sockId, gateIndex, localAddr, localPort);
+        sd-&gt;isBound = <span class="keyword">true</span>;
+    }
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a18fe24ec45ff3c47e167c4b948cbade1"></a><!-- doxytag: member="UDP::close" ref="a18fe24ec45ff3c47e167c4b948cbade1" args="(int sockId)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p.html#a18fe24ec45ff3c47e167c4b948cbade1">UDP::close</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sockId</em></td><td>)</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_u_d_p.html#ae251c9826aa3b5242ad02d6620ea2616">processCommandFromApp()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="comment">// remove from socketsByIdMap</span>
     SocketsByIdMap::iterator it = <a class="code" href="class_u_d_p.html#a7019475e3a2bd786a634fbbe72aa91c6">socketsByIdMap</a>.find(sockId);
     <span class="keywordflow">if</span> (it==<a class="code" href="class_u_d_p.html#a7019475e3a2bd786a634fbbe72aa91c6">socketsByIdMap</a>.end())
         error(<span class="stringliteral">&quot;socket id=%d doesn&#39;t exist (already closed?)&quot;</span>, sockId);
-    <span class="keywordflow">if</span> (addr.<a class="code" href="class_i_pv_x_address.html#aa3534408a9aa5e4cb3fc141597d0ed1e">isUnspecified</a>())
-        opp_error(<span class="stringliteral">&quot;connect: unspecified remote address&quot;</span>);
-    <span class="keywordflow">if</span> (port&lt;=0 || port&gt;65535)
-        opp_error(<span class="stringliteral">&quot;connect: invalid remote port number %d&quot;</span>, port);
-
     SockDesc *sd = it-&gt;second;
-    sd-&gt;remoteAddr = addr;
-    sd-&gt;remotePort = port;
+    <a class="code" href="class_u_d_p.html#a7019475e3a2bd786a634fbbe72aa91c6">socketsByIdMap</a>.erase(it);
 
+    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Closing socket: &quot;</span> &lt;&lt; *sd &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+
+    <span class="comment">// remove from socketsByPortMap</span>
+    <a class="code" href="class_u_d_p.html#a17d5eac534fa0d896ceef2831cd28d77">SockDescList</a>&amp; <a class="code" href="structlist.html">list</a> = <a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>[sd-&gt;localPort];
+    <span class="keywordflow">for</span> (SockDescList::iterator it = list.begin(); it != list.end(); ++it)
+        <span class="keywordflow">if</span> (*it == sd)
+            {list.erase(it); <span class="keywordflow">break</span>;}
+    <span class="keywordflow">if</span> (list.empty())
+        <a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>.erase(sd-&gt;localPort);
+    <span class="keyword">delete</span> sd;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a04df69f51d53431f4fd3fcb39dafcf46"></a><!-- doxytag: member="UDP::connect" ref="a04df69f51d53431f4fd3fcb39dafcf46" args="(int sockId, int gateIndex, const IPvXAddress &amp;remoteAddr, int remotePort)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p.html#a04df69f51d53431f4fd3fcb39dafcf46">UDP::connect</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sockId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>gateIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;&#160;</td>
+          <td class="paramname"><em>remoteAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>remotePort</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_u_d_p.html#ae251c9826aa3b5242ad02d6620ea2616">processCommandFromApp()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> (remoteAddr.<a class="code" href="class_i_pv_x_address.html#aa3534408a9aa5e4cb3fc141597d0ed1e" title="True if the structure has not been assigned any address yet.">isUnspecified</a>())
+        error(<span class="stringliteral">&quot;connect: unspecified remote address&quot;</span>);
+    <span class="keywordflow">if</span> (remotePort&lt;=0 || remotePort&gt;65535)
+        error(<span class="stringliteral">&quot;connect: invalid remote port number %d&quot;</span>, remotePort);
+
+    SockDesc *sd = <a class="code" href="class_u_d_p.html#ae019fcc358a2dc4ce16865045e13faa5">getOrCreateSocket</a>(sockId, gateIndex);
+    sd-&gt;remoteAddr = remoteAddr;
+    sd-&gt;remotePort = remotePort;
     sd-&gt;onlyLocalPortIsSet = <span class="keyword">false</span>;
 
-    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Connecting socket: &quot;</span> &lt;&lt; *sd &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Socket connected: &quot;</span> &lt;&lt; *sd &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a5eab1ba9ab89fc6a5b20e96f866a3267"></a><!-- doxytag: member="UDP::createSocket" ref="a5eab1ba9ab89fc6a5b20e96f866a3267" args="(int sockId, int gateIndex, const IPvXAddress &amp;localAddr, int localPort)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_u_d_p_1_1_sock_desc.html">UDP::SockDesc</a> * <a class="el" href="class_u_d_p.html#a5eab1ba9ab89fc6a5b20e96f866a3267">UDP::createSocket</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sockId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>gateIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;&#160;</td>
+          <td class="paramname"><em>localAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>localPort</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_u_d_p.html#ad6bf857de4fcc262b4ffa31d4c895af1">bind()</a>, and <a class="el" href="class_u_d_p.html#ae019fcc358a2dc4ce16865045e13faa5">getOrCreateSocket()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="comment">// create and fill in SockDesc</span>
+    SockDesc *sd = <span class="keyword">new</span> SockDesc(sockId, gateIndex);
+    sd-&gt;isBound = <span class="keyword">false</span>;
+    sd-&gt;localAddr = localAddr;
+    sd-&gt;localPort = localPort == -1 ? <a class="code" href="class_u_d_p.html#a28ca0f88569dadf1b8f5eaad7e039c49">getEphemeralPort</a>() : localPort;
+    sd-&gt;onlyLocalPortIsSet = sd-&gt;localAddr.isUnspecified();
+
+    <span class="comment">// add to socketsByIdMap</span>
+    <a class="code" href="class_u_d_p.html#a7019475e3a2bd786a634fbbe72aa91c6">socketsByIdMap</a>[sockId] = sd;
+
+    <span class="comment">// add to socketsByPortMap</span>
+    <a class="code" href="class_u_d_p.html#a17d5eac534fa0d896ceef2831cd28d77">SockDescList</a>&amp; <a class="code" href="structlist.html">list</a> = <a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>[sd-&gt;localPort]; <span class="comment">// create if doesn&#39;t exist</span>
+    list.push_back(sd);
+
+    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Socket created: &quot;</span> &lt;&lt; *sd &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+    <span class="keywordflow">return</span> sd;
 }
 </pre></div>
 </div>
@@ -363,11 +523,196 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8cc_source.html#l00526">526</a> of file <a class="el" href="_u_d_p_8cc_source.html">UDP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_8cc_source.html#l00483">processMsgFromApp()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#a66b24ca026727b5158445a8c790f2817">sendDown()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_u_d_p_packet.html">UDPPacket</a>(name);
+    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_u_d_p_packet.html" title="Class generated from transport/udp/UDPPacket.msg by opp_msgc.">UDPPacket</a>(<a class="code" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a8b59bd0821d701272e6fa02bfe0eb948"></a><!-- doxytag: member="UDP::findSocketByLocalAddress" ref="a8b59bd0821d701272e6fa02bfe0eb948" args="(const IPvXAddress &amp;localAddr, ushort localPort)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_u_d_p_1_1_sock_desc.html">UDP::SockDesc</a> * <a class="el" href="class_u_d_p.html#a8b59bd0821d701272e6fa02bfe0eb948">UDP::findSocketByLocalAddress</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;&#160;</td>
+          <td class="paramname"><em>localAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a>&#160;</td>
+          <td class="paramname"><em>localPort</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_u_d_p.html#ad6bf857de4fcc262b4ffa31d4c895af1">bind()</a>, and <a class="el" href="class_u_d_p.html#a8f0e27d03d3e209f437bfa72dd3efe38">processICMPError()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    SocketsByPortMap::iterator it = <a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>.find(localPort);
+    <span class="keywordflow">if</span> (it == <a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>.end())
+        <span class="keywordflow">return</span> <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+
+    <a class="code" href="class_u_d_p.html#a17d5eac534fa0d896ceef2831cd28d77">SockDescList</a>&amp; <a class="code" href="structlist.html">list</a> = it-&gt;second;
+    <span class="keywordflow">for</span> (SockDescList::iterator it = list.begin(); it != list.end(); ++it)
+    {
+        SockDesc *sd = *it;
+        <span class="keywordflow">if</span> (sd-&gt;localAddr.isUnspecified() || sd-&gt;localAddr == localAddr)
+            <span class="keywordflow">return</span> sd;
+    }
+    <span class="keywordflow">return</span> <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a3c201cb4d38613bdf338cb4730860322"></a><!-- doxytag: member="UDP::findSocketForUnicastPacket" ref="a3c201cb4d38613bdf338cb4730860322" args="(const IPvXAddress &amp;localAddr, ushort localPort, const IPvXAddress &amp;remoteAddr, ushort remotePort)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_u_d_p_1_1_sock_desc.html">UDP::SockDesc</a> * <a class="el" href="class_u_d_p.html#a3c201cb4d38613bdf338cb4730860322">UDP::findSocketForUnicastPacket</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;&#160;</td>
+          <td class="paramname"><em>localAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a>&#160;</td>
+          <td class="paramname"><em>localPort</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;&#160;</td>
+          <td class="paramname"><em>remoteAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a>&#160;</td>
+          <td class="paramname"><em>remotePort</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_u_d_p.html#a333fddcf308d3c6348c9cc5e6bfa796d">processUDPPacket()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    SocketsByPortMap::iterator it = <a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>.find(localPort);
+    <span class="keywordflow">if</span> (it == <a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>.end())
+        <span class="keywordflow">return</span> <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+
+    <a class="code" href="class_u_d_p.html#a17d5eac534fa0d896ceef2831cd28d77">SockDescList</a>&amp; <a class="code" href="structlist.html">list</a> = it-&gt;second;
+    <span class="keywordflow">for</span> (SockDescList::iterator it = list.begin(); it != list.end(); ++it)
+    {
+        SockDesc *sd = *it;
+        <span class="keywordflow">if</span> (sd-&gt;onlyLocalPortIsSet || (
+                (sd-&gt;remotePort == -1 || sd-&gt;remotePort == remotePort) &amp;&amp;
+                (sd-&gt;localAddr.isUnspecified() || sd-&gt;localAddr == localAddr) &amp;&amp;
+                (sd-&gt;remoteAddr.isUnspecified() || sd-&gt;remoteAddr == remoteAddr)
+        ))
+            <span class="keywordflow">return</span> sd;
+    }
+    <span class="keywordflow">return</span> <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ac32a790cb4026b222eac4735739a88e1"></a><!-- doxytag: member="UDP::findSocketsForMcastBcastPacket" ref="ac32a790cb4026b222eac4735739a88e1" args="(const IPvXAddress &amp;localAddr, ushort localPort, const IPvXAddress &amp;remoteAddr, ushort remotePort, bool isMulticast, bool isBroadcast)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="struct_u_d_p_1_1_sock_desc.html">UDP::SockDesc</a> * &gt; <a class="el" href="class_u_d_p.html#ac32a790cb4026b222eac4735739a88e1">UDP::findSocketsForMcastBcastPacket</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;&#160;</td>
+          <td class="paramname"><em>localAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a>&#160;</td>
+          <td class="paramname"><em>localPort</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;&#160;</td>
+          <td class="paramname"><em>remoteAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a>&#160;</td>
+          <td class="paramname"><em>remotePort</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isMulticast</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isBroadcast</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_u_d_p.html#a333fddcf308d3c6348c9cc5e6bfa796d">processUDPPacket()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    ASSERT(isMulticast || isBroadcast);
+    std::vector&lt;SockDesc*&gt; result;
+    SocketsByPortMap::iterator it = <a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>.find(localPort);
+    <span class="keywordflow">if</span> (it == <a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>.end())
+        <span class="keywordflow">return</span> result;
+
+    <a class="code" href="class_u_d_p.html#a17d5eac534fa0d896ceef2831cd28d77">SockDescList</a>&amp; <a class="code" href="structlist.html">list</a> = it-&gt;second;
+    <span class="keywordflow">for</span> (SockDescList::iterator it = list.begin(); it != list.end(); ++it)
+    {
+        SockDesc *sd = *it;
+        <span class="keywordflow">if</span> (isBroadcast)
+        {
+            <span class="keywordflow">if</span> (sd-&gt;isBroadcast)
+            {
+                <span class="keywordflow">if</span> ((sd-&gt;remotePort == -1 || sd-&gt;remotePort == remotePort) &amp;&amp;
+                    (sd-&gt;remoteAddr.isUnspecified() || sd-&gt;remoteAddr == remoteAddr))
+                    result.push_back(sd);
+            }
+        }
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (isMulticast)
+        {
+            <span class="keywordflow">if</span> (sd-&gt;multicastAddrs.find(localAddr) != sd-&gt;multicastAddrs.end())
+            {
+                <span class="keywordflow">if</span> ((sd-&gt;remotePort == -1 || sd-&gt;remotePort == remotePort) &amp;&amp;
+                    (sd-&gt;remoteAddr.isUnspecified() || sd-&gt;remoteAddr == remoteAddr))
+                    result.push_back(sd);
+            }
+        }
+    }
+    <span class="keywordflow">return</span> result;
 }
 </pre></div>
 </div>
@@ -386,16 +731,14 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8cc_source.html#l00176">176</a> of file <a class="el" href="_u_d_p_8cc_source.html">UDP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_8cc_source.html#l00100">bind()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#a5eab1ba9ab89fc6a5b20e96f866a3267">createSocket()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// start at the last allocated port number + 1, and search for an unused one</span>
     <a class="code" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a> searchUntil = <a class="code" href="class_u_d_p.html#a277fa200fd58e593bc1263149ce85831">lastEphemeralPort</a>++;
     <span class="keywordflow">if</span> (<a class="code" href="class_u_d_p.html#a277fa200fd58e593bc1263149ce85831">lastEphemeralPort</a> == <a class="code" href="_u_d_p_8cc.html#a689da7c4b794eb247004b316117da9d9">EPHEMERAL_PORTRANGE_END</a>) <span class="comment">// wrap</span>
         <a class="code" href="class_u_d_p.html#a277fa200fd58e593bc1263149ce85831">lastEphemeralPort</a> = <a class="code" href="_u_d_p_8cc.html#ae0f9dd1223cbb93271a6c1d5789b5be5">EPHEMERAL_PORTRANGE_START</a>;
 
-    <span class="keywordflow">while</span> (<a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>.find(<a class="code" href="class_u_d_p.html#a277fa200fd58e593bc1263149ce85831">lastEphemeralPort</a>)!=<a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>.end())
+    <span class="keywordflow">while</span> (<a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>.find(<a class="code" href="class_u_d_p.html#a277fa200fd58e593bc1263149ce85831">lastEphemeralPort</a>) != <a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>.end())
     {
         <span class="keywordflow">if</span> (<a class="code" href="class_u_d_p.html#a277fa200fd58e593bc1263149ce85831">lastEphemeralPort</a> == searchUntil) <span class="comment">// got back to starting point?</span>
             error(<span class="stringliteral">&quot;Ephemeral port range %d..%d exhausted, all ports occupied&quot;</span>, <a class="code" href="_u_d_p_8cc.html#ae0f9dd1223cbb93271a6c1d5789b5be5">EPHEMERAL_PORTRANGE_START</a>, <a class="code" href="_u_d_p_8cc.html#a689da7c4b794eb247004b316117da9d9">EPHEMERAL_PORTRANGE_END</a>);
@@ -410,12 +753,75 @@ Protected Attributes</h2></td></tr>
 </pre></div>
 </div>
 </div>
+<a class="anchor" id="ae019fcc358a2dc4ce16865045e13faa5"></a><!-- doxytag: member="UDP::getOrCreateSocket" ref="ae019fcc358a2dc4ce16865045e13faa5" args="(int sockId, int gateIndex)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_u_d_p_1_1_sock_desc.html">UDP::SockDesc</a> * <a class="el" href="class_u_d_p.html#ae019fcc358a2dc4ce16865045e13faa5">UDP::getOrCreateSocket</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sockId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>gateIndex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_u_d_p.html#a04df69f51d53431f4fd3fcb39dafcf46">connect()</a>, <a class="el" href="class_u_d_p.html#ae251c9826aa3b5242ad02d6620ea2616">processCommandFromApp()</a>, and <a class="el" href="class_u_d_p.html#a5f05780879364c1bf6f2340005973dc6">processPacketFromApp()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="comment">// validate sockId</span>
+    <span class="keywordflow">if</span> (sockId == -1)
+        error(<span class="stringliteral">&quot;sockId in UDP command not filled in&quot;</span>);
+
+    SocketsByIdMap::iterator it = <a class="code" href="class_u_d_p.html#a7019475e3a2bd786a634fbbe72aa91c6">socketsByIdMap</a>.find(sockId);
+    <span class="keywordflow">if</span> (it != <a class="code" href="class_u_d_p.html#a7019475e3a2bd786a634fbbe72aa91c6">socketsByIdMap</a>.end())
+        <span class="keywordflow">return</span> it-&gt;second;
+
+    <span class="keywordflow">return</span> <a class="code" href="class_u_d_p.html#a5eab1ba9ab89fc6a5b20e96f866a3267">createSocket</a>(sockId, gateIndex, <a class="code" href="class_i_pv_x_address.html" title="Stores an IPv4 or an IPv6 address.">IPvXAddress</a>(), -1);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a9742a939d6d1ad17963654e4abe3c19f"></a><!-- doxytag: member="UDP::getSocketById" ref="a9742a939d6d1ad17963654e4abe3c19f" args="(int sockId)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_u_d_p_1_1_sock_desc.html">UDP::SockDesc</a> * <a class="el" href="class_u_d_p.html#a9742a939d6d1ad17963654e4abe3c19f">UDP::getSocketById</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sockId</em></td><td>)</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+    SocketsByIdMap::iterator it = <a class="code" href="class_u_d_p.html#a7019475e3a2bd786a634fbbe72aa91c6">socketsByIdMap</a>.find(sockId);
+    <span class="keywordflow">if</span> (it==<a class="code" href="class_u_d_p.html#a7019475e3a2bd786a634fbbe72aa91c6">socketsByIdMap</a>.end())
+        error(<span class="stringliteral">&quot;socket id=%d doesn&#39;t exist (already closed?)&quot;</span>, sockId);
+    <span class="keywordflow">return</span> it-&gt;second;
+}
+</pre></div>
+</div>
+</div>
 <a class="anchor" id="a79daccc47126abbf6740b029d7a57089"></a><!-- doxytag: member="UDP::handleMessage" ref="a79daccc47126abbf6740b029d7a57089" args="(cMessage *msg)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p.html#a79daccc47126abbf6740b029d7a57089">UDP::handleMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p.html#a79daccc47126abbf6740b029d7a57089">UDP::handleMessage</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -424,21 +830,19 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_u_d_p_8cc_source.html#l00196">196</a> of file <a class="el" href="_u_d_p_8cc_source.html">UDP.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// received from IP layer</span>
     <span class="keywordflow">if</span> (msg-&gt;arrivedOn(<span class="stringliteral">&quot;ipIn&quot;</span>) || msg-&gt;arrivedOn(<span class="stringliteral">&quot;ipv6In&quot;</span>))
     {
-        <span class="keywordflow">if</span> (dynamic_cast&lt;ICMPMessage *&gt;(msg) || <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *<span class="keyword">&gt;</span>(msg))
-            <a class="code" href="class_u_d_p.html#a8f0e27d03d3e209f437bfa72dd3efe38">processICMPError</a>(<a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(msg));
+        <span class="keywordflow">if</span> (dynamic_cast&lt;UDPPacket *&gt;(msg) != <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)
+            <a class="code" href="class_u_d_p.html#a333fddcf308d3c6348c9cc5e6bfa796d">processUDPPacket</a>((<a class="code" href="class_u_d_p_packet.html" title="Class generated from transport/udp/UDPPacket.msg by opp_msgc.">UDPPacket</a> *)msg);
         <span class="keywordflow">else</span>
-            <a class="code" href="class_u_d_p.html#a333fddcf308d3c6348c9cc5e6bfa796d">processUDPPacket</a>(check_and_cast&lt;UDPPacket *&gt;(msg));
+            <a class="code" href="class_u_d_p.html#a8f0e27d03d3e209f437bfa72dd3efe38">processICMPError</a>(<a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(msg));  <span class="comment">// assume it&#39;s an ICMP error</span>
     }
     <span class="keywordflow">else</span> <span class="comment">// received from application layer</span>
     {
         <span class="keywordflow">if</span> (msg-&gt;getKind()==<a class="code" href="_u_d_p_control_info__m_8h.html#a33f565d232e66cb696ba21aa616c2a87a33e7476202418b695b319318e70c894e">UDP_C_DATA</a>)
-            <a class="code" href="class_u_d_p.html#a1d2e34c55abb9e373694d77d3bac8f09">processMsgFromApp</a>(<a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(msg));
+            <a class="code" href="class_u_d_p.html#a5f05780879364c1bf6f2340005973dc6">processPacketFromApp</a>(<a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(msg));
         <span class="keywordflow">else</span>
             <a class="code" href="class_u_d_p.html#ae251c9826aa3b5242ad02d6620ea2616">processCommandFromApp</a>(msg);
     }
@@ -454,7 +858,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p.html#a9ff0a87c6965238d54bb67997d6912ca">UDP::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p.html#a9ff0a87c6965238d54bb67997d6912ca">UDP::initialize</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -462,15 +866,13 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_u_d_p_8cc_source.html#l00081">81</a> of file <a class="el" href="_u_d_p_8cc_source.html">UDP.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     WATCH_PTRMAP(<a class="code" href="class_u_d_p.html#a7019475e3a2bd786a634fbbe72aa91c6">socketsByIdMap</a>);
     WATCH_MAP(<a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>);
 
     <a class="code" href="class_u_d_p.html#a277fa200fd58e593bc1263149ce85831">lastEphemeralPort</a> = <a class="code" href="_u_d_p_8cc.html#ae0f9dd1223cbb93271a6c1d5789b5be5">EPHEMERAL_PORTRANGE_START</a>;
-    <a class="code" href="structicmp.html">icmp</a> = NULL;
-    <a class="code" href="class_u_d_p.html#a63a772449305921a2f57b9066336c389">icmpv6</a> = NULL;
+    <a class="code" href="structicmp.html">icmp</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+    <a class="code" href="class_u_d_p.html#a63a772449305921a2f57b9066336c389">icmpv6</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
 
     <a class="code" href="class_u_d_p.html#aa7f7b7568b014af23fb3f7c2efc218c1">numSent</a> = 0;
     <a class="code" href="class_u_d_p.html#ab6bee27f7907a894de4173e003adbd69">numPassedUp</a> = 0;
@@ -480,16 +882,21 @@ Protected Attributes</h2></td></tr>
     WATCH(<a class="code" href="class_u_d_p.html#ab6bee27f7907a894de4173e003adbd69">numPassedUp</a>);
     WATCH(<a class="code" href="class_u_d_p.html#ac262e3d6e3c88dbb2ff457c1c8837162">numDroppedWrongPort</a>);
     WATCH(<a class="code" href="class_u_d_p.html#a9ed09aeb9c434f9c7931dc82d3b2d34c">numDroppedBadChecksum</a>);
+    <a class="code" href="class_u_d_p.html#a9a90026ea04513678cd59de29b851b26">rcvdPkSignal</a> = registerSignal(<span class="stringliteral">&quot;rcvdPk&quot;</span>);
+    <a class="code" href="class_u_d_p.html#a084eb773d6288f5943ff2c2126e8d75c">sentPkSignal</a> = registerSignal(<span class="stringliteral">&quot;sentPk&quot;</span>);
+    <a class="code" href="class_u_d_p.html#ac3b38f02ac17afeb9f43b83aefb43509">passedUpPkSignal</a> = registerSignal(<span class="stringliteral">&quot;passedUpPk&quot;</span>);
+    <a class="code" href="class_u_d_p.html#a4593f76dd370cf75ae61290b4f3e1a7d">droppedPkWrongPortSignal</a> = registerSignal(<span class="stringliteral">&quot;droppedPkWrongPort&quot;</span>);
+    <a class="code" href="class_u_d_p.html#a2486e7ca20282de643b267535da280b3">droppedPkBadChecksumSignal</a> = registerSignal(<span class="stringliteral">&quot;droppedPkBadChecksum&quot;</span>);
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a7e436c2b0a7b563bae29603603422cc0"></a><!-- doxytag: member="UDP::matchesSocket" ref="a7e436c2b0a7b563bae29603603422cc0" args="(SockDesc *sd, UDPPacket *udp, IPControlInfo *ctrl)" -->
+<a class="anchor" id="aaf04330af5e75e19fe526482a1380765"></a><!-- doxytag: member="UDP::joinMulticastGroups" ref="aaf04330af5e75e19fe526482a1380765" args="(SockDesc *sd, const std::vector&lt; IPvXAddress &gt; &amp;multicastAddresses, const std::vector&lt; int &gt; interfaceIds)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="class_u_d_p.html#a7e436c2b0a7b563bae29603603422cc0">UDP::matchesSocket</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p.html#aaf04330af5e75e19fe526482a1380765">UDP::joinMulticastGroups</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *&#160;</td>
           <td class="paramname"><em>sd</em>, </td>
@@ -497,14 +904,14 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_u_d_p_packet.html">UDPPacket</a> *&#160;</td>
-          <td class="paramname"><em>udp</em>, </td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>multicastAddresses</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_i_p_control_info.html">IPControlInfo</a> *&#160;</td>
-          <td class="paramname"><em>ctrl</em>&#160;</td>
+          <td class="paramtype">const std::vector&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>interfaceIds</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -515,30 +922,43 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8cc_source.html#l00230">230</a> of file <a class="el" href="_u_d_p_8cc_source.html">UDP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_8cc_source.html#l00326">processICMPError()</a>, and <a class="el" href="_u_d_p_8cc_source.html#l00408">processUDPPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#ae251c9826aa3b5242ad02d6620ea2616">processCommandFromApp()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="comment">// IPv4 version</span>
-    <span class="keywordflow">if</span> (sd-&gt;remotePort!=0 &amp;&amp; sd-&gt;remotePort!=udp-&gt;<a class="code" href="class_u_d_p_packet.html#a1e3c1f0aef8672ba75277dc6733962e0">getSourcePort</a>())
-        <span class="keywordflow">return</span> <span class="keyword">false</span>;
-    <span class="keywordflow">if</span> (!sd-&gt;localAddr.isUnspecified() &amp;&amp; sd-&gt;localAddr.get4()!=ipCtrl-&gt;getDestAddr())
-        <span class="keywordflow">return</span> <span class="keyword">false</span>;
-    <span class="keywordflow">if</span> (!sd-&gt;remoteAddr.isUnspecified() &amp;&amp; sd-&gt;remoteAddr.get4()!=ipCtrl-&gt;getSrcAddr())
-        <span class="keywordflow">return</span> <span class="keyword">false</span>;
-    <span class="keywordflow">if</span> (sd-&gt;interfaceId!=-1 &amp;&amp; sd-&gt;interfaceId!=ipCtrl-&gt;getInterfaceId())
-        <span class="keywordflow">return</span> <span class="keyword">false</span>;
-    <span class="keywordflow">return</span> <span class="keyword">true</span>;
+    <span class="keywordtype">int</span> multicastAddressesLen = multicastAddresses.size();
+    <span class="keywordtype">int</span> interfaceIdsLen = interfaceIds.size();
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; multicastAddressesLen; k++)
+    {
+        <span class="keyword">const</span> <a class="code" href="class_i_pv_x_address.html" title="Stores an IPv4 or an IPv6 address.">IPvXAddress</a> &amp;multicastAddr = multicastAddresses[k];
+        <span class="keywordtype">int</span> interfaceId = k &lt; interfaceIdsLen ? interfaceIds[k] : -1;
+        ASSERT(multicastAddr.<a class="code" href="class_i_pv_x_address.html#a166a226b6144dd7791afb4aea63acd35" title="True if the stored address is a multicast address.">isMulticast</a>());
+        sd-&gt;multicastAddrs[multicastAddr] = interfaceId;
+
+        <span class="comment">// add the multicast address to the selected interface or all interfaces</span>
+        <a class="code" href="class_i_interface_table.html" title="A C++ interface to abstract the functionality of InterfaceTable.">IInterfaceTable</a> *ift = <a class="code" href="class_interface_table_access.html" title="Gives access to IInterfaceTable.">InterfaceTableAccess</a>().<a class="code" href="class_module_access.html#a46a82b1fa0e957eb42d29c8637df1f4f">get</a>(<span class="keyword">this</span>);
+        <span class="keywordflow">if</span> (interfaceId != -1)
+        {
+            <a class="code" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> *ie = ift-&gt;<a class="code" href="class_i_interface_table.html#a92764d620c345b7261de20e9ee5247d7" title="Returns an interface by its Id.">getInterfaceById</a>(interfaceId);
+            <span class="keywordflow">if</span> (!ie)
+                error(<span class="stringliteral">&quot;Interface id=%d does not exist&quot;</span>, interfaceId);
+            <a class="code" href="class_u_d_p.html#a7d2d897cc12dc6bce65439546c4405ec">addMulticastAddressToInterface</a>(ie, multicastAddr);
+        }
+        <span class="keywordflow">else</span>
+        {
+            <span class="keywordtype">int</span> n = ift-&gt;<a class="code" href="class_i_interface_table.html#a2b0ce46cd92da6f64fc363410dc71904" title="Returns the number of interfaces.">getNumInterfaces</a>();
+            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; n; i++)
+                <a class="code" href="class_u_d_p.html#a7d2d897cc12dc6bce65439546c4405ec">addMulticastAddressToInterface</a>(ift-&gt;<a class="code" href="class_i_interface_table.html#a19ce4ca3b47b52b8e2b67c25806c4b49" title="Returns the InterfaceEntry specified by an index 0..numInterfaces-1.">getInterface</a>(i), multicastAddr);
+        }
+    }
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a6529b4917795bbb08f2fe013045718aa"></a><!-- doxytag: member="UDP::matchesSocket" ref="a6529b4917795bbb08f2fe013045718aa" args="(SockDesc *sd, UDPPacket *udp, IPv6ControlInfo *ctrl)" -->
+<a class="anchor" id="a4dd6cf805a04323c3dce579528932952"></a><!-- doxytag: member="UDP::leaveMulticastGroups" ref="a4dd6cf805a04323c3dce579528932952" args="(SockDesc *sd, const std::vector&lt; IPvXAddress &gt; &amp;multicastAddresses)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="class_u_d_p.html#a7e436c2b0a7b563bae29603603422cc0">UDP::matchesSocket</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p.html#a4dd6cf805a04323c3dce579528932952">UDP::leaveMulticastGroups</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *&#160;</td>
           <td class="paramname"><em>sd</em>, </td>
@@ -546,14 +966,8 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_u_d_p_packet.html">UDPPacket</a> *&#160;</td>
-          <td class="paramname"><em>udp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *&#160;</td>
-          <td class="paramname"><em>ctrl</em>&#160;</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>multicastAddresses</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -564,64 +978,11 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8cc_source.html#l00244">244</a> of file <a class="el" href="_u_d_p_8cc_source.html">UDP.cc</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#ae251c9826aa3b5242ad02d6620ea2616">processCommandFromApp()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="comment">// IPv6 version</span>
-    <span class="keywordflow">if</span> (sd-&gt;remotePort!=0 &amp;&amp; sd-&gt;remotePort!=udp-&gt;<a class="code" href="class_u_d_p_packet.html#a1e3c1f0aef8672ba75277dc6733962e0">getSourcePort</a>())
-        <span class="keywordflow">return</span> <span class="keyword">false</span>;
-    <span class="keywordflow">if</span> (!sd-&gt;localAddr.isUnspecified() &amp;&amp; sd-&gt;localAddr.get6()!=ipCtrl-&gt;getDestAddr())
-        <span class="keywordflow">return</span> <span class="keyword">false</span>;
-    <span class="keywordflow">if</span> (!sd-&gt;remoteAddr.isUnspecified() &amp;&amp; sd-&gt;remoteAddr.get6()!=ipCtrl-&gt;getSrcAddr())
-        <span class="keywordflow">return</span> <span class="keyword">false</span>;
-    <span class="keywordflow">if</span> (sd-&gt;interfaceId!=-1 &amp;&amp; sd-&gt;interfaceId!=ipCtrl-&gt;getInterfaceId())
-        <span class="keywordflow">return</span> <span class="keyword">false</span>;
-    <span class="keywordflow">return</span> <span class="keyword">true</span>;
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a329e083aa2cd0a847fd977f2833e1645"></a><!-- doxytag: member="UDP::matchesSocket" ref="a329e083aa2cd0a847fd977f2833e1645" args="(SockDesc *sd, const IPvXAddress &amp;localAddr, const IPvXAddress &amp;remoteAddr, ushort remotePort)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="class_u_d_p.html#a7e436c2b0a7b563bae29603603422cc0">UDP::matchesSocket</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *&#160;</td>
-          <td class="paramname"><em>sd</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;&#160;</td>
-          <td class="paramname"><em>localAddr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;&#160;</td>
-          <td class="paramname"><em>remoteAddr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a>&#160;</td>
-          <td class="paramname"><em>remotePort</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [protected, virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_u_d_p_8cc_source.html#l00258">258</a> of file <a class="el" href="_u_d_p_8cc_source.html">UDP.cc</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> (sd-&gt;remotePort==0 || sd-&gt;remotePort!=remotePort) &amp;&amp;
-           (sd-&gt;localAddr.isUnspecified() || sd-&gt;localAddr==localAddr) &amp;&amp;
-           (sd-&gt;remoteAddr.isUnspecified() || sd-&gt;remoteAddr==remoteAddr);
+    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; multicastAddresses.size(); i++)
+        sd-&gt;multicastAddrs.erase(multicastAddresses[i]);
+    <span class="comment">// note: we cannot remove the address from the interface, because someone else may still use it</span>
 }
 </pre></div>
 </div>
@@ -631,7 +992,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p.html#ae251c9826aa3b5242ad02d6620ea2616">UDP::processCommandFromApp</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p.html#ae251c9826aa3b5242ad02d6620ea2616">UDP::processCommandFromApp</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -641,28 +1002,68 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8cc_source.html#l00531">531</a> of file <a class="el" href="_u_d_p_8cc_source.html">UDP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_8cc_source.html#l00196">handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#a79daccc47126abbf6740b029d7a57089">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_u_d_p_control_info.html">UDPControlInfo</a> *udpCtrl = check_and_cast&lt;<a class="code" href="class_u_d_p_control_info.html">UDPControlInfo</a> *&gt;(msg-&gt;removeControlInfo());
     <span class="keywordflow">switch</span> (msg-&gt;getKind())
     {
-        <span class="keywordflow">case</span> <a class="code" href="_u_d_p_control_info__m_8h.html#a33f565d232e66cb696ba21aa616c2a87aadaa32df8db2d6eaa9cf5779f6f7e8c1">UDP_C_BIND</a>:
-            <a class="code" href="class_u_d_p.html#a7ad4f9f51d27f92e0d23041f9b64a896">bind</a>(msg-&gt;getArrivalGate()-&gt;getIndex(), udpCtrl);
+        <span class="keywordflow">case</span> <a class="code" href="_u_d_p_control_info__m_8h.html#a33f565d232e66cb696ba21aa616c2a87aadaa32df8db2d6eaa9cf5779f6f7e8c1">UDP_C_BIND</a>: {
+            <a class="code" href="class_u_d_p_bind_command.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPBindCommand</a> *ctrl = check_and_cast&lt;<a class="code" href="class_u_d_p_bind_command.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPBindCommand</a>*&gt;(msg-&gt;getControlInfo());
+            <a class="code" href="class_u_d_p.html#ad6bf857de4fcc262b4ffa31d4c895af1">bind</a>(ctrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a8a846212bd94f8f2b59ea56c3238ae6f">getSockId</a>(), msg-&gt;getArrivalGate()-&gt;getIndex(), ctrl-&gt;<a class="code" href="class_u_d_p_bind_command.html#a8125a2c071e2689576708ae13c15deeb">getLocalAddr</a>(), ctrl-&gt;<a class="code" href="class_u_d_p_bind_command.html#ab75f0195f073642b62cd66c172b67dac">getLocalPort</a>());
             <span class="keywordflow">break</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_u_d_p_control_info__m_8h.html#a33f565d232e66cb696ba21aa616c2a87af6f0e0f8d0d70fe99c7869d59b055b24">UDP_C_CONNECT</a>:
-            <a class="code" href="class_u_d_p.html#a9fb94355db86e280d8de7b1ef7ced43c">connect</a>(udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a8a846212bd94f8f2b59ea56c3238ae6f">getSockId</a>(), udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a477fd2ebd3ff52956f283bf4a8f8a0d8">getDestAddr</a>(), udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a8a288303fcf9d8740a3d285ab82a2ded">getDestPort</a>());
+        }
+        <span class="keywordflow">case</span> <a class="code" href="_u_d_p_control_info__m_8h.html#a33f565d232e66cb696ba21aa616c2a87af6f0e0f8d0d70fe99c7869d59b055b24">UDP_C_CONNECT</a>: {
+            <a class="code" href="class_u_d_p_connect_command.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPConnectCommand</a> *ctrl = check_and_cast&lt;<a class="code" href="class_u_d_p_connect_command.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPConnectCommand</a>*&gt;(msg-&gt;getControlInfo());
+            <a class="code" href="class_u_d_p.html#a04df69f51d53431f4fd3fcb39dafcf46">connect</a>(ctrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a8a846212bd94f8f2b59ea56c3238ae6f">getSockId</a>(), msg-&gt;getArrivalGate()-&gt;getIndex(), ctrl-&gt;<a class="code" href="class_u_d_p_connect_command.html#ac1e1435bb710bdc8d1cde6e3f9232552">getRemoteAddr</a>(), ctrl-&gt;<a class="code" href="class_u_d_p_connect_command.html#a2d243c233cf5cb6f806c4da227effa86">getRemotePort</a>());
             <span class="keywordflow">break</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_u_d_p_control_info__m_8h.html#a33f565d232e66cb696ba21aa616c2a87ae9cd828ab4c679755e7fad0da1ee1413">UDP_C_UNBIND</a>:
-            <a class="code" href="class_u_d_p.html#a92b95e9e592cd6beff8f0b20228bc214">unbind</a>(udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a8a846212bd94f8f2b59ea56c3238ae6f">getSockId</a>());
+        }
+        <span class="keywordflow">case</span> <a class="code" href="_u_d_p_control_info__m_8h.html#a33f565d232e66cb696ba21aa616c2a87ab0097cc67c9d5d312dd11153178d3f1c">UDP_C_CLOSE</a>: {
+            <a class="code" href="class_u_d_p_close_command.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPCloseCommand</a> *ctrl = check_and_cast&lt;<a class="code" href="class_u_d_p_close_command.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPCloseCommand</a>*&gt;(msg-&gt;getControlInfo());
+            <a class="code" href="class_u_d_p.html#a18fe24ec45ff3c47e167c4b948cbade1">close</a>(ctrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a8a846212bd94f8f2b59ea56c3238ae6f">getSockId</a>());
             <span class="keywordflow">break</span>;
-        <span class="keywordflow">default</span>:
-            error(<span class="stringliteral">&quot;unknown command code (message kind) %d received from app&quot;</span>, msg-&gt;getKind());
+        }
+        <span class="keywordflow">case</span> <a class="code" href="_u_d_p_control_info__m_8h.html#a33f565d232e66cb696ba21aa616c2a87a07b97f56312ca58774256db4dc357dbd">UDP_C_SETOPTION</a>: {
+            <a class="code" href="class_u_d_p_set_option_command.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPSetOptionCommand</a> *ctrl = check_and_cast&lt;<a class="code" href="class_u_d_p_set_option_command.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPSetOptionCommand</a> *&gt;(msg-&gt;getControlInfo());
+            SockDesc *sd = <a class="code" href="class_u_d_p.html#ae019fcc358a2dc4ce16865045e13faa5">getOrCreateSocket</a>(ctrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a8a846212bd94f8f2b59ea56c3238ae6f">getSockId</a>(), msg-&gt;getArrivalGate()-&gt;getIndex());
+
+            <span class="keywordflow">if</span> (dynamic_cast&lt;UDPSetTimeToLiveCommand*&gt;(ctrl))
+                <a class="code" href="class_u_d_p.html#ad09b530cd871cfb3a1defe37b57066c1">setTimeToLive</a>(sd, ((<a class="code" href="class_u_d_p_set_time_to_live_command.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPSetTimeToLiveCommand</a>*)ctrl)-&gt;getTtl());
+            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dynamic_cast&lt;UDPSetTypeOfServiceCommand*&gt;(ctrl))
+                <a class="code" href="class_u_d_p.html#ad9564e90d237f2409a71e403894e756e">setTypeOfService</a>(sd, ((<a class="code" href="class_u_d_p_set_type_of_service_command.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPSetTypeOfServiceCommand</a>*)ctrl)-&gt;getTos());
+            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dynamic_cast&lt;UDPSetBroadcastCommand*&gt;(ctrl))
+                <a class="code" href="class_u_d_p.html#aa70fdc6f88f17e4265e21a2772dba154">setBroadcast</a>(sd, ((<a class="code" href="class_u_d_p_set_broadcast_command.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPSetBroadcastCommand</a>*)ctrl)-&gt;getBroadcast());
+            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dynamic_cast&lt;UDPSetMulticastInterfaceCommand*&gt;(ctrl))
+                <a class="code" href="class_u_d_p.html#adcc7a9232aba1c5f35c61d8ad59dcd3f">setMulticastOutputInterface</a>(sd, ((<a class="code" href="class_u_d_p_set_multicast_interface_command.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPSetMulticastInterfaceCommand</a>*)ctrl)-&gt;getInterfaceId());
+            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dynamic_cast&lt;UDPSetMulticastLoopCommand*&gt;(ctrl))
+                <a class="code" href="class_u_d_p.html#a2ad9fb3abed533303e5ec070fecaa0c6">setMulticastLoop</a>(sd, ((<a class="code" href="class_u_d_p_set_multicast_loop_command.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPSetMulticastLoopCommand</a>*)ctrl)-&gt;getLoop());
+            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dynamic_cast&lt;UDPJoinMulticastGroupsCommand*&gt;(ctrl))
+            {
+                <a class="code" href="class_u_d_p_join_multicast_groups_command.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPJoinMulticastGroupsCommand</a> *cmd = (<a class="code" href="class_u_d_p_join_multicast_groups_command.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPJoinMulticastGroupsCommand</a>*)ctrl;
+                std::vector&lt;IPvXAddress&gt; addresses;
+                std::vector&lt;int&gt; interfaceIds;
+                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (int)cmd-&gt;<a class="code" href="class_u_d_p_join_multicast_groups_command.html#a30f696bd0f379a36393285cbb23c90cc">getMulticastAddrArraySize</a>(); i++)
+                    addresses.push_back(cmd-&gt;<a class="code" href="class_u_d_p_join_multicast_groups_command.html#a6fda078339e6ac1fc809a5a82090e39a">getMulticastAddr</a>(i));
+                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (int)cmd-&gt;<a class="code" href="class_u_d_p_join_multicast_groups_command.html#a4156f5f419bde2160133a3345ed9320b">getInterfaceIdArraySize</a>(); i++)
+                    interfaceIds.push_back(cmd-&gt;<a class="code" href="class_u_d_p_join_multicast_groups_command.html#a5e2ae344b69cf1b0f2eedfde2af8f7b7">getInterfaceId</a>(i));
+                <a class="code" href="class_u_d_p.html#aaf04330af5e75e19fe526482a1380765">joinMulticastGroups</a>(sd, addresses, interfaceIds);
+            }
+            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dynamic_cast&lt;UDPLeaveMulticastGroupsCommand*&gt;(ctrl))
+            {
+                <a class="code" href="class_u_d_p_leave_multicast_groups_command.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPLeaveMulticastGroupsCommand</a> *cmd = (<a class="code" href="class_u_d_p_leave_multicast_groups_command.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPLeaveMulticastGroupsCommand</a>*)ctrl;
+                std::vector&lt;IPvXAddress&gt; addresses;
+                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (int)cmd-&gt;<a class="code" href="class_u_d_p_leave_multicast_groups_command.html#a585696bda5c6dc83ed6121645bd52b55">getMulticastAddrArraySize</a>(); i++)
+                    addresses.push_back(cmd-&gt;<a class="code" href="class_u_d_p_leave_multicast_groups_command.html#ae807369ee8c1783848b9e46c82b2e599">getMulticastAddr</a>(i));
+                <a class="code" href="class_u_d_p.html#a4dd6cf805a04323c3dce579528932952">leaveMulticastGroups</a>(sd, addresses);
+            }
+            <span class="keywordflow">else</span>
+                <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Unknown subclass of UDPSetOptionCommand received from app: %s&quot;</span>, ctrl-&gt;getClassName());
+            <span class="keywordflow">break</span>;
+        }
+        <span class="keywordflow">default</span>: {
+            <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Unknown command code (message kind) %d received from app&quot;</span>, msg-&gt;getKind());
+        }
     }
 
-    <span class="keyword">delete</span> udpCtrl;
-    <span class="keyword">delete</span> msg;
+    <span class="keyword">delete</span> msg; <span class="comment">// also deletes control info in it</span>
 }
 </pre></div>
 </div>
@@ -672,7 +1073,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p.html#a8f0e27d03d3e209f437bfa72dd3efe38">UDP::processICMPError</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p.html#a8f0e27d03d3e209f437bfa72dd3efe38">UDP::processICMPError</a> </td>
           <td>(</td>
           <td class="paramtype">cPacket *&#160;</td>
           <td class="paramname"><em>icmpErrorMsg</em></td><td>)</td>
@@ -682,83 +1083,76 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8cc_source.html#l00326">326</a> of file <a class="el" href="_u_d_p_8cc_source.html">UDP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_8cc_source.html#l00196">handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#a79daccc47126abbf6740b029d7a57089">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// extract details from the error message, then try to notify socket that sent bogus packet</span>
-    <span class="keywordtype">int</span> type, code;
-    <a class="code" href="class_i_pv_x_address.html">IPvXAddress</a> localAddr, remoteAddr;
+    <span class="keywordtype">int</span> <a class="code" href="dsr_8h.html#a8113b111c9adcbe8245570953727d60a">type</a>, code;
+    <a class="code" href="class_i_pv_x_address.html" title="Stores an IPv4 or an IPv6 address.">IPvXAddress</a> localAddr, remoteAddr;
     <a class="code" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a> localPort, remotePort;
 
-    <span class="keywordflow">if</span> (dynamic_cast&lt;ICMPMessage *&gt;(msg))
+<span class="preprocessor">#ifdef WITH_IPv4</span>
+<span class="preprocessor"></span>    <span class="keywordflow">if</span> (dynamic_cast&lt;ICMPMessage *&gt;(pk))
     {
-        <a class="code" href="class_i_c_m_p_message.html">ICMPMessage</a> *icmpMsg = (<a class="code" href="class_i_c_m_p_message.html">ICMPMessage</a> *)msg;
+        <a class="code" href="class_i_c_m_p_message.html" title="Class generated from networklayer/ipv4/ICMPMessage.msg by opp_msgc.">ICMPMessage</a> *icmpMsg = (<a class="code" href="class_i_c_m_p_message.html" title="Class generated from networklayer/ipv4/ICMPMessage.msg by opp_msgc.">ICMPMessage</a> *)pk;
         type = icmpMsg-&gt;<a class="code" href="class_i_c_m_p_message.html#a93a1643bfbdfe838cb8b26207b5d7673">getType</a>();
         code = icmpMsg-&gt;<a class="code" href="class_i_c_m_p_message.html#a1eb1213018b26b5d182b37ef78cdb358">getCode</a>();
         <span class="comment">// Note: we must NOT use decapsulate() because payload in ICMP is conceptually truncated</span>
-        <a class="code" href="class_i_p_datagram.html">IPDatagram</a> *datagram = check_and_cast&lt;<a class="code" href="class_i_p_datagram.html">IPDatagram</a> *&gt;(icmpMsg-&gt;getEncapsulatedPacket());
-        <a class="code" href="class_u_d_p_packet.html">UDPPacket</a> *packet = check_and_cast&lt;<a class="code" href="class_u_d_p_packet.html">UDPPacket</a> *&gt;(datagram-&gt;getEncapsulatedPacket());
-        localAddr = datagram-&gt;<a class="code" href="class_i_p_datagram.html#ab024d29cffd3dbb1ba4d34fe64794cdd">getSrcAddress</a>();
-        remoteAddr = datagram-&gt;<a class="code" href="class_i_p_datagram.html#afe5a14d5aefc5cc9e0ffeedb31a62d1c">getDestAddress</a>();
+        <a class="code" href="class_i_pv4_datagram.html" title="Represents an IPv4 datagram.">IPv4Datagram</a> *datagram = check_and_cast&lt;<a class="code" href="class_i_pv4_datagram.html" title="Represents an IPv4 datagram.">IPv4Datagram</a> *&gt;(icmpMsg-&gt;getEncapsulatedPacket());
+        <a class="code" href="class_u_d_p_packet.html" title="Class generated from transport/udp/UDPPacket.msg by opp_msgc.">UDPPacket</a> *packet = check_and_cast&lt;<a class="code" href="class_u_d_p_packet.html" title="Class generated from transport/udp/UDPPacket.msg by opp_msgc.">UDPPacket</a> *&gt;(datagram-&gt;getEncapsulatedPacket());
+        localAddr = datagram-&gt;<a class="code" href="class_i_pv4_datagram___base.html#acceccdd20ae221d9c6be84b6ad0275fd">getSrcAddress</a>();
+        remoteAddr = datagram-&gt;<a class="code" href="class_i_pv4_datagram___base.html#ab1eb910524b107db870c18d8004e7ed7">getDestAddress</a>();
         localPort = packet-&gt;getSourcePort();
         remotePort = packet-&gt;getDestinationPort();
         <span class="keyword">delete</span> icmpMsg;
     }
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dynamic_cast&lt;ICMPv6Message *&gt;(msg))
+    <span class="keywordflow">else</span>
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span><span class="preprocessor">#ifdef WITH_IPv6</span>
+<span class="preprocessor"></span>    <span class="keywordflow">if</span> (dynamic_cast&lt;ICMPv6Message *&gt;(pk))
     {
-        <a class="code" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *icmpMsg = (<a class="code" href="class_i_c_m_pv6_message.html">ICMPv6Message</a> *)msg;
+        <a class="code" href="class_i_c_m_pv6_message.html" title="Class generated from networklayer/icmpv6/ICMPv6Message.msg by opp_msgc.">ICMPv6Message</a> *icmpMsg = (<a class="code" href="class_i_c_m_pv6_message.html" title="Class generated from networklayer/icmpv6/ICMPv6Message.msg by opp_msgc.">ICMPv6Message</a> *)pk;
         type = icmpMsg-&gt;<a class="code" href="class_i_c_m_pv6_message.html#a92fc7e6a2fd2f99b271a9029f1ec490a">getType</a>();
         code = -1; <span class="comment">// FIXME this is dependent on getType()...</span>
         <span class="comment">// Note: we must NOT use decapsulate() because payload in ICMP is conceptually truncated</span>
-        <a class="code" href="class_i_pv6_datagram.html">IPv6Datagram</a> *datagram = check_and_cast&lt;<a class="code" href="class_i_pv6_datagram.html">IPv6Datagram</a> *&gt;(icmpMsg-&gt;getEncapsulatedPacket());
-        <a class="code" href="class_u_d_p_packet.html">UDPPacket</a> *packet = check_and_cast&lt;<a class="code" href="class_u_d_p_packet.html">UDPPacket</a> *&gt;(datagram-&gt;getEncapsulatedPacket());
+        <a class="code" href="class_i_pv6_datagram.html" title="Represents an IPv6 datagram.">IPv6Datagram</a> *datagram = check_and_cast&lt;<a class="code" href="class_i_pv6_datagram.html" title="Represents an IPv6 datagram.">IPv6Datagram</a> *&gt;(icmpMsg-&gt;getEncapsulatedPacket());
+        <a class="code" href="class_u_d_p_packet.html" title="Class generated from transport/udp/UDPPacket.msg by opp_msgc.">UDPPacket</a> *packet = check_and_cast&lt;<a class="code" href="class_u_d_p_packet.html" title="Class generated from transport/udp/UDPPacket.msg by opp_msgc.">UDPPacket</a> *&gt;(datagram-&gt;getEncapsulatedPacket());
         localAddr = datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#aa9bdf8fb570741abc6a1611e204b7140">getSrcAddress</a>();
         remoteAddr = datagram-&gt;<a class="code" href="class_i_pv6_datagram___base.html#ae8dcba44d11a32fef197cc663b026f05">getDestAddress</a>();
         localPort = packet-&gt;getSourcePort();
         remotePort = packet-&gt;getDestinationPort();
         <span class="keyword">delete</span> icmpMsg;
     }
+    <span class="keywordflow">else</span>
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>    {
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Unrecognized packet (%s)%s: not an ICMP error message&quot;</span>, pk-&gt;getClassName(), pk-&gt;getName());
+    }
+
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;ICMP error received: type=&quot;</span> &lt;&lt; type &lt;&lt; <span class="stringliteral">&quot; code=&quot;</span> &lt;&lt; code
        &lt;&lt; <span class="stringliteral">&quot; about packet &quot;</span> &lt;&lt; localAddr &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; localPort &lt;&lt; <span class="stringliteral">&quot; &gt; &quot;</span>
        &lt;&lt; remoteAddr &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; remotePort &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
 
     <span class="comment">// identify socket and report error to it</span>
-    SocketsByPortMap::iterator it = <a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>.find(localPort);
-    <span class="keywordflow">if</span> (it==<a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>.end())
+    SockDesc *sd = <a class="code" href="class_u_d_p.html#a8b59bd0821d701272e6fa02bfe0eb948">findSocketByLocalAddress</a>(localAddr, localPort);
+    <span class="keywordflow">if</span> (!sd)
     {
         <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;No socket on that local port, ignoring ICMP error\n&quot;</span>;
         <span class="keywordflow">return</span>;
     }
-    <a class="code" href="class_u_d_p.html#a17d5eac534fa0d896ceef2831cd28d77">SockDescList</a>&amp; list = it-&gt;second;
-    SockDesc *srcSocket = NULL;
-    <span class="keywordflow">for</span> (SockDescList::iterator it=list.begin(); it!=list.end(); ++it)
-    {
-        SockDesc *sd = *it;
-        <span class="keywordflow">if</span> (sd-&gt;onlyLocalPortIsSet || <a class="code" href="class_u_d_p.html#a7e436c2b0a7b563bae29603603422cc0">matchesSocket</a>(sd, localAddr, remoteAddr, remotePort))
-        {
-            srcSocket = sd; <span class="comment">// FIXME what to do if there&#39;s more than one matching socket ???</span>
-        }
-    }
-    <span class="keywordflow">if</span> (!srcSocket)
-    {
-        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;No matching socket, ignoring ICMP error\n&quot;</span>;
-        <span class="keywordflow">return</span>;
-    }
 
     <span class="comment">// send UDP_I_ERROR to socket</span>
-    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Source socket is sockId=&quot;</span> &lt;&lt; srcSocket-&gt;sockId &lt;&lt; <span class="stringliteral">&quot;, notifying.\n&quot;</span>;
-    <a class="code" href="class_u_d_p.html#aa6d3f6a65fcb255abab778a7f13ca771">sendUpErrorNotification</a>(srcSocket, <a class="code" href="_u_d_p_control_info__m_8h.html#a0cb49935325d643afaee9208fcb27733a484b0da8b16fcb50610630a68c1bf8d7">UDP_I_ERROR</a>, localAddr, remoteAddr, remotePort);
+    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Source socket is sockId=&quot;</span> &lt;&lt; sd-&gt;sockId &lt;&lt; <span class="stringliteral">&quot;, notifying.\n&quot;</span>;
+    <a class="code" href="class_u_d_p.html#a743aa187bec30950907dfc6362052263">sendUpErrorIndication</a>(sd, localAddr, localPort, remoteAddr, remotePort);
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a1d2e34c55abb9e373694d77d3bac8f09"></a><!-- doxytag: member="UDP::processMsgFromApp" ref="a1d2e34c55abb9e373694d77d3bac8f09" args="(cPacket *appData)" -->
+<a class="anchor" id="a5f05780879364c1bf6f2340005973dc6"></a><!-- doxytag: member="UDP::processPacketFromApp" ref="a5f05780879364c1bf6f2340005973dc6" args="(cPacket *appData)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p.html#a1d2e34c55abb9e373694d77d3bac8f09">UDP::processMsgFromApp</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p.html#a5f05780879364c1bf6f2340005973dc6">UDP::processPacketFromApp</a> </td>
           <td>(</td>
           <td class="paramtype">cPacket *&#160;</td>
           <td class="paramname"><em>appData</em></td><td>)</td>
@@ -768,49 +1162,25 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8cc_source.html#l00483">483</a> of file <a class="el" href="_u_d_p_8cc_source.html">UDP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_8cc_source.html#l00196">handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#a79daccc47126abbf6740b029d7a57089">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_u_d_p_control_info.html">UDPControlInfo</a> *udpCtrl = check_and_cast&lt;<a class="code" href="class_u_d_p_control_info.html">UDPControlInfo</a> *&gt;(appData-&gt;removeControlInfo());
+    <a class="code" href="class_u_d_p_send_command.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPSendCommand</a> *ctrl = check_and_cast&lt;<a class="code" href="class_u_d_p_send_command.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPSendCommand</a> *&gt;(appData-&gt;removeControlInfo());
 
-    <a class="code" href="class_u_d_p_packet.html">UDPPacket</a> *udpPacket = <a class="code" href="class_u_d_p.html#af5e2c13d9e3a33936212cefdfa723d18">createUDPPacket</a>(appData-&gt;getName());
-    udpPacket-&gt;setByteLength(<a class="code" href="_ansa_u_d_p_8h.html#aef334ff0aa0d9bd45ea8385f98a49805">UDP_HEADER_BYTES</a>);
-    udpPacket-&gt;encapsulate(appData);
+    SockDesc *sd = <a class="code" href="class_u_d_p.html#ae019fcc358a2dc4ce16865045e13faa5">getOrCreateSocket</a>(ctrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a8a846212bd94f8f2b59ea56c3238ae6f">getSockId</a>(), appData-&gt;getArrivalGate()-&gt;getIndex());
+    <span class="keyword">const</span> <a class="code" href="class_i_pv_x_address.html" title="Stores an IPv4 or an IPv6 address.">IPvXAddress</a>&amp; destAddr = ctrl-&gt;<a class="code" href="class_u_d_p_send_command.html#a3be931270d863730771fdc0545074a28">getDestAddr</a>().<a class="code" href="class_i_pv_x_address.html#aa3534408a9aa5e4cb3fc141597d0ed1e" title="True if the structure has not been assigned any address yet.">isUnspecified</a>() ? sd-&gt;remoteAddr : ctrl-&gt;<a class="code" href="class_u_d_p_send_command.html#a3be931270d863730771fdc0545074a28">getDestAddr</a>();
+    <span class="keywordtype">int</span> destPort = ctrl-&gt;<a class="code" href="class_u_d_p_send_command.html#a23d2dc044f19ee5ae41ddc0d84570eb4">getDestPort</a>() == -1 ? sd-&gt;remotePort : ctrl-&gt;<a class="code" href="class_u_d_p_send_command.html#a23d2dc044f19ee5ae41ddc0d84570eb4">getDestPort</a>();
+    <span class="keywordflow">if</span> (destAddr.isUnspecified() || destPort == -1)
+        error(<span class="stringliteral">&quot;send: missing destination address or port when sending over unconnected port&quot;</span>);
 
-    <span class="comment">// set source and destination port</span>
-    udpPacket-&gt;<a class="code" href="class_u_d_p_packet.html#a6cceeaa862cc9960a7b6cfb95ebad2d7">setSourcePort</a>(udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a174a1520000a47394c851bcc9990b1b5">getSrcPort</a>());
-    udpPacket-&gt;setDestinationPort(udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a8a288303fcf9d8740a3d285ab82a2ded">getDestPort</a>());
-
-    <span class="keywordflow">if</span> (!udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a477fd2ebd3ff52956f283bf4a8f8a0d8">getDestAddr</a>().<a class="code" href="class_i_pv_x_address.html#a43ef7d0a976817991cfd41d09435225d">isIPv6</a>())
+    <span class="keywordtype">int</span> interfaceId = ctrl-&gt;<a class="code" href="class_u_d_p_send_command.html#ac2636fdfa8df11da058eb2c6bf45055e">getInterfaceId</a>();
+    <span class="keywordflow">if</span> (interfaceId == -1 &amp;&amp; destAddr.isMulticast())
     {
-        <span class="comment">// send to IPv4</span>
-        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Sending app packet &quot;</span> &lt;&lt; appData-&gt;getName() &lt;&lt; <span class="stringliteral">&quot; over IPv4.\n&quot;</span>;
-        <a class="code" href="class_i_p_control_info.html">IPControlInfo</a> *ipControlInfo = <span class="keyword">new</span> <a class="code" href="class_i_p_control_info.html">IPControlInfo</a>();
-        ipControlInfo-&gt;<a class="code" href="class_i_p_control_info___base.html#a78e061aecfa0388abb94af81ac6d6db0">setProtocol</a>(<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70ab9e6b0f8ec9223d758f4825004489bd2">IP_PROT_UDP</a>);
-        ipControlInfo-&gt;<a class="code" href="class_i_p_control_info___base.html#aa3ab93f45185a2567d84803fc39b5a60">setSrcAddr</a>(udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a0dbca3fa110977e974dba0c3f7e28604">getSrcAddr</a>().<a class="code" href="class_i_pv_x_address.html#a00acd2be0fc0f254afb2eb7540a4ea6e">get4</a>());
-        ipControlInfo-&gt;<a class="code" href="class_i_p_control_info___base.html#a9966e4ad4c21b7cb8fea36d19752af54">setDestAddr</a>(udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a477fd2ebd3ff52956f283bf4a8f8a0d8">getDestAddr</a>().<a class="code" href="class_i_pv_x_address.html#a00acd2be0fc0f254afb2eb7540a4ea6e">get4</a>());
-        ipControlInfo-&gt;<a class="code" href="class_i_p_control_info___base.html#af4d1b56cf7126a13a3369f1d19879189">setInterfaceId</a>(udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a371cfc0b09b71bf2cb851dfcfdc37583">getInterfaceId</a>());
-        udpPacket-&gt;setControlInfo(ipControlInfo);
-        <span class="keyword">delete</span> udpCtrl;
-
-        send(udpPacket,<span class="stringliteral">&quot;ipOut&quot;</span>);
+        std::map&lt;IPvXAddress,int&gt;::iterator it = sd-&gt;multicastAddrs.find(destAddr);
+        interfaceId = (it != sd-&gt;multicastAddrs.end() &amp;&amp; it-&gt;second != -1) ? it-&gt;second : sd-&gt;multicastOutputInterfaceId;
     }
-    <span class="keywordflow">else</span>
-    {
-        <span class="comment">// send to IPv6</span>
-        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Sending app packet &quot;</span> &lt;&lt; appData-&gt;getName() &lt;&lt; <span class="stringliteral">&quot; over IPv6.\n&quot;</span>;
-        <a class="code" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *ipControlInfo = <span class="keyword">new</span> <a class="code" href="class_i_pv6_control_info.html">IPv6ControlInfo</a>();
-        ipControlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a95b27ccb8d018e7387cdbcd512791e30">setProtocol</a>(<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70ab9e6b0f8ec9223d758f4825004489bd2">IP_PROT_UDP</a>);
-        ipControlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a319cf2aaec7229cc010ae83ab6e18604">setSrcAddr</a>(udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a0dbca3fa110977e974dba0c3f7e28604">getSrcAddr</a>().<a class="code" href="class_i_pv_x_address.html#a733678e1e28f88c954cfce854af576c6">get6</a>());
-        ipControlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a061a09229c1cb5c450e90fda062d278f">setDestAddr</a>(udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a477fd2ebd3ff52956f283bf4a8f8a0d8">getDestAddr</a>().<a class="code" href="class_i_pv_x_address.html#a733678e1e28f88c954cfce854af576c6">get6</a>());
-        <span class="comment">// ipControlInfo-&gt;setInterfaceId(udpCtrl-&gt;InterfaceId()); FIXME extend IPv6 with this!!!</span>
-        udpPacket-&gt;setControlInfo(ipControlInfo);
-        <span class="keyword">delete</span> udpCtrl;
+    <a class="code" href="class_u_d_p.html#a66b24ca026727b5158445a8c790f2817">sendDown</a>(appData, sd-&gt;localAddr, sd-&gt;localPort, destAddr, destPort, interfaceId, sd-&gt;multicastLoop, sd-&gt;ttl, sd-&gt;typeOfService);
 
-        send(udpPacket,<span class="stringliteral">&quot;ipv6Out&quot;</span>);
-    }
-    <a class="code" href="class_u_d_p.html#aa7f7b7568b014af23fb3f7c2efc218c1">numSent</a>++;
+    <span class="keyword">delete</span> ctrl; <span class="comment">// cannot be deleted earlier, due to destAddr</span>
 }
 </pre></div>
 </div>
@@ -820,7 +1190,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p.html#a333fddcf308d3c6348c9cc5e6bfa796d">UDP::processUDPPacket</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p.html#a333fddcf308d3c6348c9cc5e6bfa796d">UDP::processUDPPacket</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_u_d_p_packet.html">UDPPacket</a> *&#160;</td>
           <td class="paramname"><em>udpPacket</em></td><td>)</td>
@@ -830,90 +1200,115 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8cc_source.html#l00408">408</a> of file <a class="el" href="_u_d_p_8cc_source.html">UDP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_8cc_source.html#l00196">handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#a79daccc47126abbf6740b029d7a57089">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
+    emit(<a class="code" href="class_u_d_p.html#a9a90026ea04513678cd59de29b851b26">rcvdPkSignal</a>, udpPacket);
+
     <span class="comment">// simulate checksum: discard packet if it has bit error</span>
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Packet &quot;</span> &lt;&lt; udpPacket-&gt;getName() &lt;&lt; <span class="stringliteral">&quot; received from network, dest port &quot;</span> &lt;&lt; udpPacket-&gt;<a class="code" href="class_u_d_p_packet.html#a6bdf0821eb52e39c4e44ab619226645d">getDestinationPort</a>() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+
     <span class="keywordflow">if</span> (udpPacket-&gt;hasBitError())
     {
         <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Packet has bit error, discarding\n&quot;</span>;
-        <span class="keyword">delete</span> udpPacket;
+        emit(<a class="code" href="class_u_d_p.html#a2486e7ca20282de643b267535da280b3">droppedPkBadChecksumSignal</a>, udpPacket);
         <a class="code" href="class_u_d_p.html#a9ed09aeb9c434f9c7931dc82d3b2d34c">numDroppedBadChecksum</a>++;
+        <span class="keyword">delete</span> udpPacket;
+
         <span class="keywordflow">return</span>;
     }
 
+    <a class="code" href="class_i_pv_x_address.html" title="Stores an IPv4 or an IPv6 address.">IPvXAddress</a> srcAddr;
+    <a class="code" href="class_i_pv_x_address.html" title="Stores an IPv4 or an IPv6 address.">IPvXAddress</a> destAddr;
+    <span class="keywordtype">bool</span> isMulticast, isBroadcast;
+    <span class="keywordtype">int</span> srcPort = udpPacket-&gt;<a class="code" href="class_u_d_p_packet.html#a1e3c1f0aef8672ba75277dc6733962e0">getSourcePort</a>();
     <span class="keywordtype">int</span> destPort = udpPacket-&gt;<a class="code" href="class_u_d_p_packet.html#a6bdf0821eb52e39c4e44ab619226645d">getDestinationPort</a>();
-    cPolymorphic *ctrl = udpPacket-&gt;removeControlInfo();
+    <span class="keywordtype">int</span> interfaceId;
+    <span class="keywordtype">int</span> <a class="code" href="_t_c_p___n_s_c_8cc.html#a4d402503271315376ddf4e47674d4965">ttl</a>;
+    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="_t_c_p___n_s_c_8cc.html#a3bdbe295d838b7f44e47ad5f4c3fac27">tos</a>;
 
-    <span class="comment">// send back ICMP error if no socket is bound to that port</span>
-    SocketsByPortMap::iterator it = <a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>.find(destPort);
-    <span class="keywordflow">if</span> (it==<a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>.end())
+    cObject *ctrl = udpPacket-&gt;removeControlInfo();
+    <span class="keywordflow">if</span> (dynamic_cast&lt;IPv4ControlInfo *&gt;(ctrl)!=<a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)
     {
-        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;No socket registered on port &quot;</span> &lt;&lt; destPort &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
-        <a class="code" href="class_u_d_p.html#a5a411e560693182d2cde11ab5566e1fc">processUndeliverablePacket</a>(udpPacket, ctrl);
-        <span class="keywordflow">return</span>;
+        <a class="code" href="class_i_pv4_control_info.html" title="Control information for sending/receiving packets over IPv4.">IPv4ControlInfo</a> *ctrl4 = (<a class="code" href="class_i_pv4_control_info.html" title="Control information for sending/receiving packets over IPv4.">IPv4ControlInfo</a> *)ctrl;
+        srcAddr = ctrl4-&gt;<a class="code" href="class_i_pv4_control_info___base.html#aebb0c14b75707e7678b4871934b56ee7">getSrcAddr</a>();
+        destAddr = ctrl4-&gt;<a class="code" href="class_i_pv4_control_info___base.html#ae4a58b74b688001db9cf58f39705102e">getDestAddr</a>();
+        interfaceId = ctrl4-&gt;<a class="code" href="class_i_pv4_control_info___base.html#aa391216b02348e71a25b7015883dcd7a">getInterfaceId</a>();
+        ttl = ctrl4-&gt;<a class="code" href="class_i_pv4_control_info___base.html#abbebaebf18873846955cc6508a399abe">getTimeToLive</a>();
+        tos = ctrl4-&gt;<a class="code" href="class_i_pv4_control_info___base.html#ad26be79a64bee5fbb9dbed27f6a3c1e9">getTypeOfService</a>();
+        isMulticast = ctrl4-&gt;<a class="code" href="class_i_pv4_control_info___base.html#ae4a58b74b688001db9cf58f39705102e">getDestAddr</a>().<a class="code" href="class_i_pv4_address.html#ab8ffdff7f4dc2ff8f2d6a0eed468b476" title="Returns true if this address is in the multicast address range, 224.0.0.0 thru 239.255.255.255, that is, it&#39;s a class D address.">isMulticast</a>();
+        isBroadcast = ctrl4-&gt;<a class="code" href="class_i_pv4_control_info___base.html#ae4a58b74b688001db9cf58f39705102e">getDestAddr</a>() == <a class="code" href="class_i_pv4_address.html#abc2da8e3ab9691fa0718d0f18ac852f7" title="255.255.255.255">IPv4Address::ALLONES_ADDRESS</a>;  <span class="comment">// note: we cannot recognize other broadcast addresses (where the host part is all-ones), because here we don&#39;t know the netmask</span>
     }
-    <a class="code" href="class_u_d_p.html#a17d5eac534fa0d896ceef2831cd28d77">SockDescList</a>&amp; list = it-&gt;second;
-
-    <span class="keywordtype">int</span> matches = 0;
-
-    <span class="comment">// deliver a copy of the packet to each matching socket</span>
-    cPacket *payload = udpPacket-&gt;getEncapsulatedPacket();
-    <span class="keywordflow">if</span> (dynamic_cast&lt;IPControlInfo *&gt;(ctrl)!=NULL)
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dynamic_cast&lt;IPv6ControlInfo *&gt;(ctrl)!=<a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)
     {
-        <a class="code" href="class_i_p_control_info.html">IPControlInfo</a> *ctrl4 = (<a class="code" href="class_i_p_control_info.html">IPControlInfo</a> *)ctrl;
-        <span class="keywordflow">for</span> (SockDescList::iterator it=list.begin(); it!=list.end(); ++it)
+        <a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a> *ctrl6 = (<a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a> *)ctrl;
+        srcAddr = ctrl6-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a8980bdcd6051ae3fe071bf2c18a0215e">getSrcAddr</a>();
+        destAddr = ctrl6-&gt;<a class="code" href="class_i_pv6_control_info___base.html#abd1d2c1cca62a40e351304d8584b4fd7">getDestAddr</a>();
+        interfaceId = ctrl6-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a74046fa005d98f0c304eb39eb28a1ec3">getInterfaceId</a>();
+        ttl = ctrl6-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a2eea197980c0c35518b3285ab9c123da">getHopLimit</a>();
+        tos = ctrl6-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a3bc996f035208dfe73c03a8e078608dc">getTrafficClass</a>();
+        isMulticast = ctrl6-&gt;<a class="code" href="class_i_pv6_control_info___base.html#abd1d2c1cca62a40e351304d8584b4fd7">getDestAddr</a>().<a class="code" href="class_i_pv6_address.html#a3c3bb6898821e044b12cf31911c90201" title="Utility function based on getScope()">isMulticast</a>();
+        isBroadcast = <span class="keyword">false</span>;  <span class="comment">// IPv6 has no broadcast, just various multicasts</span>
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ctrl == <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)
+    {
+        error(<span class="stringliteral">&quot;(%s)%s arrived from lower layer without control info&quot;</span>,
+                udpPacket-&gt;getClassName(), udpPacket-&gt;getName());
+    }
+    <span class="keywordflow">else</span>
+    {
+        error(<span class="stringliteral">&quot;(%s)%s arrived from lower layer with unrecognized control info %s&quot;</span>,
+                udpPacket-&gt;getClassName(), udpPacket-&gt;getName(), ctrl-&gt;getClassName());
+    }
+
+    <span class="keywordflow">if</span> (!isMulticast &amp;&amp; !isBroadcast)
+    {
+        <span class="comment">// unicast packet, there must be only one socket listening</span>
+        SockDesc *sd = <a class="code" href="class_u_d_p.html#a3c201cb4d38613bdf338cb4730860322">findSocketForUnicastPacket</a>(destAddr, destPort, srcAddr, srcPort);
+        <span class="keywordflow">if</span> (!sd)
         {
-            SockDesc *sd = *it;
-            <span class="keywordflow">if</span> (sd-&gt;onlyLocalPortIsSet || <a class="code" href="class_u_d_p.html#a7e436c2b0a7b563bae29603603422cc0">matchesSocket</a>(sd, udpPacket, ctrl4))
-            {
-                <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Socket sockId=&quot;</span> &lt;&lt; sd-&gt;sockId &lt;&lt; <span class="stringliteral">&quot; matches, sending up a copy.\n&quot;</span>;
-                <a class="code" href="class_u_d_p.html#affa73f57d52206f4aa5bc2539ac63c0f">sendUp</a>((cPacket*)payload-&gt;dup(), udpPacket, ctrl4, sd);
-                matches++;
-            }
+            <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;No socket registered on port &quot;</span> &lt;&lt; destPort &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+            <a class="code" href="class_u_d_p.html#ac47e00e6d7d0daddef466c4574134eb8">processUndeliverablePacket</a>(udpPacket, ctrl);
+            <span class="keywordflow">return</span>;
         }
-    }
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dynamic_cast&lt;IPv6ControlInfo *&gt;(ctrl)!=NULL)
-    {
-        <a class="code" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *ctrl6 = (<a class="code" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *)ctrl;
-        <span class="keywordflow">for</span> (SockDescList::iterator it=list.begin(); it!=list.end(); ++it)
+        <span class="keywordflow">else</span>
         {
-            SockDesc *sd = *it;
-            <span class="keywordflow">if</span> (sd-&gt;onlyLocalPortIsSet || <a class="code" href="class_u_d_p.html#a7e436c2b0a7b563bae29603603422cc0">matchesSocket</a>(sd, udpPacket, ctrl6))
-            {
-                <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Socket sockId=&quot;</span> &lt;&lt; sd-&gt;sockId &lt;&lt; <span class="stringliteral">&quot; matches, sending up a copy.\n&quot;</span>;
-                <a class="code" href="class_u_d_p.html#affa73f57d52206f4aa5bc2539ac63c0f">sendUp</a>((cPacket*)payload-&gt;dup(), udpPacket, ctrl6, sd);
-                matches++;
-            }
+            cPacket *payload = udpPacket-&gt;decapsulate();
+            <a class="code" href="class_u_d_p.html#ac87b9d1c06d79d9d3c3fedbfc6bc52c4">sendUp</a>(payload, sd, srcAddr, srcPort, destAddr, destPort, interfaceId, ttl, tos);
+            <span class="keyword">delete</span> udpPacket;
+            <span class="keyword">delete</span> ctrl;
         }
     }
     <span class="keywordflow">else</span>
     {
-        error(<span class="stringliteral">&quot;(%s)%s arrived from lower layer without control info&quot;</span>, udpPacket-&gt;getClassName(), udpPacket-&gt;getName());
+        <span class="comment">// multicast packet: find all matching sockets, and send up a copy to each</span>
+        std::vector&lt;SockDesc*&gt; sds = <a class="code" href="class_u_d_p.html#ac32a790cb4026b222eac4735739a88e1">findSocketsForMcastBcastPacket</a>(destAddr, destPort, srcAddr, srcPort, isMulticast, isBroadcast);
+        <span class="keywordflow">if</span> (sds.empty())
+        {
+            <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;No socket registered on port &quot;</span> &lt;&lt; destPort &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+            <a class="code" href="class_u_d_p.html#ac47e00e6d7d0daddef466c4574134eb8">processUndeliverablePacket</a>(udpPacket, ctrl);
+            <span class="keywordflow">return</span>;
+        }
+        <span class="keywordflow">else</span>
+        {
+            cPacket *payload = udpPacket-&gt;decapsulate();
+            <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i;
+            <span class="keywordflow">for</span> (i = 0; i &lt; sds.size()-1; i++)      <span class="comment">// sds.size() &gt;= 1</span>
+                <a class="code" href="class_u_d_p.html#ac87b9d1c06d79d9d3c3fedbfc6bc52c4">sendUp</a>(payload-&gt;dup(), sds[i], srcAddr, srcPort, destAddr, destPort, interfaceId, <a class="code" href="_t_c_p___n_s_c_8cc.html#a4d402503271315376ddf4e47674d4965">ttl</a>, <a class="code" href="_t_c_p___n_s_c_8cc.html#a3bdbe295d838b7f44e47ad5f4c3fac27">tos</a>); <span class="comment">// dup() to all but the last one</span>
+            <a class="code" href="class_u_d_p.html#ac87b9d1c06d79d9d3c3fedbfc6bc52c4">sendUp</a>(payload, sds[i], srcAddr, srcPort, destAddr, destPort, interfaceId, ttl, tos);  <span class="comment">// send original to last socket</span>
+            <span class="keyword">delete</span> udpPacket;
+            <span class="keyword">delete</span> ctrl;
+        }
     }
-
-    <span class="comment">// send back ICMP error if there is no matching socket</span>
-    <span class="keywordflow">if</span> (matches==0)
-    {
-        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;None of the sockets on port &quot;</span> &lt;&lt; destPort &lt;&lt; <span class="stringliteral">&quot; matches the packet\n&quot;</span>;
-        <a class="code" href="class_u_d_p.html#a5a411e560693182d2cde11ab5566e1fc">processUndeliverablePacket</a>(udpPacket, ctrl);
-        <span class="keywordflow">return</span>;
-    }
-
-    <span class="keyword">delete</span> udpPacket;
-    <span class="keyword">delete</span> ctrl;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a5a411e560693182d2cde11ab5566e1fc"></a><!-- doxytag: member="UDP::processUndeliverablePacket" ref="a5a411e560693182d2cde11ab5566e1fc" args="(UDPPacket *udpPacket, cPolymorphic *ctrl)" -->
+<a class="anchor" id="ac47e00e6d7d0daddef466c4574134eb8"></a><!-- doxytag: member="UDP::processUndeliverablePacket" ref="ac47e00e6d7d0daddef466c4574134eb8" args="(UDPPacket *udpPacket, cObject *ctrl)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p.html#a5a411e560693182d2cde11ab5566e1fc">UDP::processUndeliverablePacket</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p.html#ac47e00e6d7d0daddef466c4574134eb8">UDP::processUndeliverablePacket</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_u_d_p_packet.html">UDPPacket</a> *&#160;</td>
           <td class="paramname"><em>udpPacket</em>, </td>
@@ -921,7 +1316,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">cPolymorphic *&#160;</td>
+          <td class="paramtype">cObject *&#160;</td>
           <td class="paramname"><em>ctrl</em>&#160;</td>
         </tr>
         <tr>
@@ -933,64 +1328,113 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8cc_source.html#l00299">299</a> of file <a class="el" href="_u_d_p_8cc_source.html">UDP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_8cc_source.html#l00408">processUDPPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#a333fddcf308d3c6348c9cc5e6bfa796d">processUDPPacket()</a>.</p>
 <div class="fragment"><pre class="fragment">{
+    emit(<a class="code" href="class_u_d_p.html#a4593f76dd370cf75ae61290b4f3e1a7d">droppedPkWrongPortSignal</a>, udpPacket);
     <a class="code" href="class_u_d_p.html#ac262e3d6e3c88dbb2ff457c1c8837162">numDroppedWrongPort</a>++;
 
     <span class="comment">// send back ICMP PORT_UNREACHABLE</span>
-    <span class="keywordflow">if</span> (dynamic_cast&lt;IPControlInfo *&gt;(ctrl)!=NULL)
+    <span class="keywordflow">if</span> (dynamic_cast&lt;IPv4ControlInfo *&gt;(ctrl) != <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)
     {
-        <span class="keywordflow">if</span> (!<a class="code" href="structicmp.html">icmp</a>)
-            <a class="code" href="structicmp.html">icmp</a> = <a class="code" href="class_i_c_m_p_access.html">ICMPAccess</a>().<a class="code" href="class_module_access.html#a44956ddb52973612afbba0eeecf8bb66">get</a>();
-        <a class="code" href="class_i_p_control_info.html">IPControlInfo</a> *ctrl4 = (<a class="code" href="class_i_p_control_info.html">IPControlInfo</a> *)ctrl;
-        <span class="keywordflow">if</span> (!ctrl4-&gt;<a class="code" href="class_i_p_control_info___base.html#a7bf28cf9cabb8990038a769ed578aa13">getDestAddr</a>().<a class="code" href="class_i_p_address.html#a9b6b5a118e8e1f6f83f2ccffd5a72125">isMulticast</a>())
+<span class="preprocessor">#ifdef WITH_IPv4</span>
+<span class="preprocessor"></span>        <a class="code" href="class_i_pv4_control_info.html" title="Control information for sending/receiving packets over IPv4.">IPv4ControlInfo</a> *ctrl4 = (<a class="code" href="class_i_pv4_control_info.html" title="Control information for sending/receiving packets over IPv4.">IPv4ControlInfo</a> *)ctrl;
+
+        <span class="keywordflow">if</span> (!ctrl4-&gt;<a class="code" href="class_i_pv4_control_info___base.html#ae4a58b74b688001db9cf58f39705102e">getDestAddr</a>().<a class="code" href="class_i_pv4_address.html#ab8ffdff7f4dc2ff8f2d6a0eed468b476" title="Returns true if this address is in the multicast address range, 224.0.0.0 thru 239.255.255.255, that is, it&#39;s a class D address.">isMulticast</a>())
+        {
+            <span class="keywordflow">if</span> (!<a class="code" href="structicmp.html">icmp</a>)
+                <a class="code" href="structicmp.html">icmp</a> = <a class="code" href="class_i_c_m_p_access.html" title="Gives access to ICMP.">ICMPAccess</a>().<a class="code" href="class_module_access.html#a46a82b1fa0e957eb42d29c8637df1f4f">get</a>();
             <a class="code" href="structicmp.html">icmp</a>-&gt;sendErrorMessage(udpPacket, ctrl4, <a class="code" href="_i_c_m_p_message__m_8h.html#a58484b3a48e17f8f130c3c0f890d21b6a3fdf41118f21173da27f0001f4c37535">ICMP_DESTINATION_UNREACHABLE</a>, <a class="code" href="_i_c_m_p_message__m_8h.html#afbe2051fc16d270d8016371533b8d632af99b57d67aef38527f238049ed756ea5">ICMP_DU_PORT_UNREACHABLE</a>);
+        }
+        <span class="keywordflow">else</span>
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>            <span class="keyword">delete</span> udpPacket;
     }
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dynamic_cast&lt;IPv6ControlInfo *&gt;(udpPacket-&gt;getControlInfo())!=NULL)
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dynamic_cast&lt;IPv6ControlInfo *&gt;(ctrl) != <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)
     {
-        <span class="keywordflow">if</span> (!<a class="code" href="class_u_d_p.html#a63a772449305921a2f57b9066336c389">icmpv6</a>)
-            <a class="code" href="class_u_d_p.html#a63a772449305921a2f57b9066336c389">icmpv6</a> = <a class="code" href="class_i_c_m_pv6_access.html">ICMPv6Access</a>().<a class="code" href="class_module_access.html#a44956ddb52973612afbba0eeecf8bb66">get</a>();
-        <a class="code" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *ctrl6 = (<a class="code" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *)ctrl;
-        <span class="keywordflow">if</span> (!ctrl6-&gt;<a class="code" href="class_i_pv6_control_info___base.html#abd1d2c1cca62a40e351304d8584b4fd7">getDestAddr</a>().<a class="code" href="class_i_pv6_address.html#a3c3bb6898821e044b12cf31911c90201">isMulticast</a>())
-            <a class="code" href="class_u_d_p.html#a63a772449305921a2f57b9066336c389">icmpv6</a>-&gt;<a class="code" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5">sendErrorMessage</a>(udpPacket, ctrl6, <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8a41a9a5f4838bc4483b77b0fdcd13f72b">ICMPv6_DESTINATION_UNREACHABLE</a>, <a class="code" href="_i_c_m_pv6_message__m_8h.html#a0de5d721e9e426e7acecf6830de1331fab2b3f40a670851f27dce16f11123f05c">PORT_UNREACHABLE</a>);
+<span class="preprocessor">#ifdef WITH_IPv6</span>
+<span class="preprocessor"></span>        <a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a> *ctrl6 = (<a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a> *)ctrl;
+
+        <span class="keywordflow">if</span> (!ctrl6-&gt;<a class="code" href="class_i_pv6_control_info___base.html#abd1d2c1cca62a40e351304d8584b4fd7">getDestAddr</a>().<a class="code" href="class_i_pv6_address.html#a3c3bb6898821e044b12cf31911c90201" title="Utility function based on getScope()">isMulticast</a>())
+        {
+            <span class="keywordflow">if</span> (!<a class="code" href="class_u_d_p.html#a63a772449305921a2f57b9066336c389">icmpv6</a>)
+                <a class="code" href="class_u_d_p.html#a63a772449305921a2f57b9066336c389">icmpv6</a> = <a class="code" href="class_i_c_m_pv6_access.html" title="Gives access to ICMPv6.">ICMPv6Access</a>().<a class="code" href="class_module_access.html#a46a82b1fa0e957eb42d29c8637df1f4f">get</a>();
+            <a class="code" href="class_u_d_p.html#a63a772449305921a2f57b9066336c389">icmpv6</a>-&gt;<a class="code" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5" title="This method can be called from other modules to send an ICMPv6 error packet.">sendErrorMessage</a>(udpPacket, ctrl6, <a class="code" href="_i_c_m_pv6_message__m_8h.html#a007402fd73fa0142d3b888578b1280f8a41a9a5f4838bc4483b77b0fdcd13f72b">ICMPv6_DESTINATION_UNREACHABLE</a>, <a class="code" href="_i_c_m_pv6_message__m_8h.html#a0de5d721e9e426e7acecf6830de1331fab2b3f40a670851f27dce16f11123f05c">PORT_UNREACHABLE</a>);
+        }
+        <span class="keywordflow">else</span>
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>            <span class="keyword">delete</span> udpPacket;
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ctrl == <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)
+    {
+        error(<span class="stringliteral">&quot;(%s)%s arrived from lower layer without control info&quot;</span>,
+                udpPacket-&gt;getClassName(), udpPacket-&gt;getName());
     }
     <span class="keywordflow">else</span>
     {
-        error(<span class="stringliteral">&quot;(%s)%s arrived from lower layer without control info&quot;</span>, udpPacket-&gt;getClassName(), udpPacket-&gt;getName());
+        error(<span class="stringliteral">&quot;(%s)%s arrived from lower layer with unrecognized control info %s&quot;</span>,
+                udpPacket-&gt;getClassName(), udpPacket-&gt;getName(), ctrl-&gt;getClassName());
     }
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="affa73f57d52206f4aa5bc2539ac63c0f"></a><!-- doxytag: member="UDP::sendUp" ref="affa73f57d52206f4aa5bc2539ac63c0f" args="(cPacket *payload, UDPPacket *udpHeader, IPControlInfo *ctrl, SockDesc *sd)" -->
+<a class="anchor" id="a66b24ca026727b5158445a8c790f2817"></a><!-- doxytag: member="UDP::sendDown" ref="a66b24ca026727b5158445a8c790f2817" args="(cPacket *appData, const IPvXAddress &amp;srcAddr, ushort srcPort, const IPvXAddress &amp;destAddr, ushort destPort, int interfaceId, bool multicastLoop, int ttl, unsigned char tos)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p.html#affa73f57d52206f4aa5bc2539ac63c0f">UDP::sendUp</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p.html#a66b24ca026727b5158445a8c790f2817">UDP::sendDown</a> </td>
           <td>(</td>
           <td class="paramtype">cPacket *&#160;</td>
-          <td class="paramname"><em>payload</em>, </td>
+          <td class="paramname"><em>appData</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_u_d_p_packet.html">UDPPacket</a> *&#160;</td>
-          <td class="paramname"><em>udpHeader</em>, </td>
+          <td class="paramtype">const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;&#160;</td>
+          <td class="paramname"><em>srcAddr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_i_p_control_info.html">IPControlInfo</a> *&#160;</td>
-          <td class="paramname"><em>ctrl</em>, </td>
+          <td class="paramtype"><a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a>&#160;</td>
+          <td class="paramname"><em>srcPort</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *&#160;</td>
-          <td class="paramname"><em>sd</em>&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;&#160;</td>
+          <td class="paramname"><em>destAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a>&#160;</td>
+          <td class="paramname"><em>destPort</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>interfaceId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>multicastLoop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ttl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>tos</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1001,33 +1445,66 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8cc_source.html#l00265">265</a> of file <a class="el" href="_u_d_p_8cc_source.html">UDP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_8cc_source.html#l00408">processUDPPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#a5f05780879364c1bf6f2340005973dc6">processPacketFromApp()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="comment">// send payload with UDPControlInfo up to the application -- IPv4 version</span>
-    <a class="code" href="class_u_d_p_control_info.html">UDPControlInfo</a> *udpCtrl = <span class="keyword">new</span> <a class="code" href="class_u_d_p_control_info.html">UDPControlInfo</a>();
-    udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a4173f10b3aa9a7e1f8ae84e95ef353dd">setSockId</a>(sd-&gt;sockId);
-    udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a440d789046e162348e04373e0834d0fe">setUserId</a>(sd-&gt;userId);
-    udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a6798ce843ebca015e43efe5f351d9a1a">setSrcAddr</a>(ipCtrl-&gt;getSrcAddr());
-    udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a7a0b58d8f2fbce599b12c2c0e065d6f0">setDestAddr</a>(ipCtrl-&gt;getDestAddr());
-    udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a56d5e47d4f0d1f519975a9f5ad8cc48d">setSrcPort</a>(udpHeader-&gt;<a class="code" href="class_u_d_p_packet.html#a1e3c1f0aef8672ba75277dc6733962e0">getSourcePort</a>());
-    udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#ae0ec2e547fefb2ba11925b1197c74bde">setDestPort</a>(udpHeader-&gt;<a class="code" href="class_u_d_p_packet.html#a6bdf0821eb52e39c4e44ab619226645d">getDestinationPort</a>());
-    udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#aff214b8fd2b5221f48f3c21b7a70f52f">setInterfaceId</a>(ipCtrl-&gt;getInterfaceId());
-    payload-&gt;setControlInfo(udpCtrl);
+    <span class="keywordflow">if</span> (destAddr.<a class="code" href="class_i_pv_x_address.html#aa3534408a9aa5e4cb3fc141597d0ed1e" title="True if the structure has not been assigned any address yet.">isUnspecified</a>())
+        error(<span class="stringliteral">&quot;send: unspecified destination address&quot;</span>);
+    <span class="keywordflow">if</span> (destPort&lt;=0 || destPort&gt;65535)
+        error(<span class="stringliteral">&quot;send invalid remote port number %d&quot;</span>, destPort);
 
-    send(payload, <span class="stringliteral">&quot;appOut&quot;</span>, sd-&gt;appGateIndex);
-    <a class="code" href="class_u_d_p.html#ab6bee27f7907a894de4173e003adbd69">numPassedUp</a>++;
+    <a class="code" href="class_u_d_p_packet.html" title="Class generated from transport/udp/UDPPacket.msg by opp_msgc.">UDPPacket</a> *udpPacket = <a class="code" href="class_u_d_p.html#af5e2c13d9e3a33936212cefdfa723d18">createUDPPacket</a>(appData-&gt;getName());
+    udpPacket-&gt;setByteLength(<a class="code" href="aodv__uu__omnet_8cc.html#aef334ff0aa0d9bd45ea8385f98a49805">UDP_HEADER_BYTES</a>);
+    udpPacket-&gt;encapsulate(appData);
+
+    <span class="comment">// set source and destination port</span>
+    udpPacket-&gt;<a class="code" href="class_u_d_p_packet.html#a6cceeaa862cc9960a7b6cfb95ebad2d7">setSourcePort</a>(srcPort);
+    udpPacket-&gt;<a class="code" href="class_u_d_p_packet.html#af8a240dfbbf1f548d61c5113f537f89d">setDestinationPort</a>(destPort);
+
+    <span class="keywordflow">if</span> (!destAddr.<a class="code" href="class_i_pv_x_address.html#a43ef7d0a976817991cfd41d09435225d" title="Is this an IPv6 address?">isIPv6</a>())
+    {
+        <span class="comment">// send to IPv4</span>
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Sending app packet &quot;</span> &lt;&lt; appData-&gt;getName() &lt;&lt; <span class="stringliteral">&quot; over IPv4.\n&quot;</span>;
+        <a class="code" href="class_i_pv4_control_info.html" title="Control information for sending/receiving packets over IPv4.">IPv4ControlInfo</a> *ipControlInfo = <span class="keyword">new</span> <a class="code" href="class_i_pv4_control_info.html" title="Control information for sending/receiving packets over IPv4.">IPv4ControlInfo</a>();
+        ipControlInfo-&gt;<a class="code" href="class_i_pv4_control_info___base.html#a6ddcce49c451a0fcc1149d8e6511e534">setProtocol</a>(<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70ab9e6b0f8ec9223d758f4825004489bd2">IP_PROT_UDP</a>);
+        ipControlInfo-&gt;<a class="code" href="class_i_pv4_control_info___base.html#a3d6ed870000e7aa80cb24ef2a2cdf34d">setSrcAddr</a>(srcAddr.<a class="code" href="class_i_pv_x_address.html#a961b38a74371d8aa29d8e6906a071d64" title="Get IPv4 address.">get4</a>());
+        ipControlInfo-&gt;<a class="code" href="class_i_pv4_control_info___base.html#a51ff5ef6365b560939f817cb9ed22a05">setDestAddr</a>(destAddr.<a class="code" href="class_i_pv_x_address.html#a961b38a74371d8aa29d8e6906a071d64" title="Get IPv4 address.">get4</a>());
+        ipControlInfo-&gt;<a class="code" href="class_i_pv4_control_info___base.html#acc4f6530ac38f952a5cc518b9bbaefb9">setInterfaceId</a>(interfaceId);
+        ipControlInfo-&gt;<a class="code" href="class_i_pv4_control_info___base.html#a42b8c3a201bfcfed194e2f74b961b880">setMulticastLoop</a>(multicastLoop);
+        ipControlInfo-&gt;<a class="code" href="class_i_pv4_control_info___base.html#aa7f5d553ff3a314e932b48c48eb6eda8">setTimeToLive</a>(<a class="code" href="_t_c_p___n_s_c_8cc.html#a4d402503271315376ddf4e47674d4965">ttl</a>);
+        ipControlInfo-&gt;<a class="code" href="class_i_pv4_control_info___base.html#a033e5e2cd83c0d863ff932d96a92be6b">setTypeOfService</a>(<a class="code" href="_t_c_p___n_s_c_8cc.html#a3bdbe295d838b7f44e47ad5f4c3fac27">tos</a>);
+        udpPacket-&gt;setControlInfo(ipControlInfo);
+
+        emit(<a class="code" href="class_u_d_p.html#a084eb773d6288f5943ff2c2126e8d75c">sentPkSignal</a>, udpPacket);
+        send(udpPacket, <span class="stringliteral">&quot;ipOut&quot;</span>);
+    }
+    <span class="keywordflow">else</span>
+    {
+        <span class="comment">// send to IPv6</span>
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Sending app packet &quot;</span> &lt;&lt; appData-&gt;getName() &lt;&lt; <span class="stringliteral">&quot; over IPv6.\n&quot;</span>;
+        <a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a> *ipControlInfo = <span class="keyword">new</span> <a class="code" href="class_i_pv6_control_info.html" title="Control information for sending/receiving packets over IPv6.">IPv6ControlInfo</a>();
+        ipControlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a95b27ccb8d018e7387cdbcd512791e30">setProtocol</a>(<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70ab9e6b0f8ec9223d758f4825004489bd2">IP_PROT_UDP</a>);
+        ipControlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a319cf2aaec7229cc010ae83ab6e18604">setSrcAddr</a>(srcAddr.<a class="code" href="class_i_pv_x_address.html#a733678e1e28f88c954cfce854af576c6" title="Get IPv6 address.">get6</a>());
+        ipControlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a061a09229c1cb5c450e90fda062d278f">setDestAddr</a>(destAddr.<a class="code" href="class_i_pv_x_address.html#a733678e1e28f88c954cfce854af576c6" title="Get IPv6 address.">get6</a>());
+        ipControlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#ac800b6ba75f90922ff85c73c30dee1ee">setInterfaceId</a>(interfaceId);
+        ipControlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#ab1b43df9d1e71718319f0e047b574ebd">setMulticastLoop</a>(multicastLoop);
+        ipControlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a182f2489bf1cc08d0af6c2d04dff24e0">setHopLimit</a>(<a class="code" href="_t_c_p___n_s_c_8cc.html#a4d402503271315376ddf4e47674d4965">ttl</a>);
+        ipControlInfo-&gt;<a class="code" href="class_i_pv6_control_info___base.html#a3cb44648ffd902c65fb61dfe5b6353a3">setTrafficClass</a>(<a class="code" href="_t_c_p___n_s_c_8cc.html#a3bdbe295d838b7f44e47ad5f4c3fac27">tos</a>);
+        udpPacket-&gt;setControlInfo(ipControlInfo);
+
+        emit(<a class="code" href="class_u_d_p.html#a084eb773d6288f5943ff2c2126e8d75c">sentPkSignal</a>, udpPacket);
+        send(udpPacket, <span class="stringliteral">&quot;ipv6Out&quot;</span>);
+    }
+    <a class="code" href="class_u_d_p.html#aa7f7b7568b014af23fb3f7c2efc218c1">numSent</a>++;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="ac693a0a152b8577d646493c325f15b45"></a><!-- doxytag: member="UDP::sendUp" ref="ac693a0a152b8577d646493c325f15b45" args="(cPacket *payload, UDPPacket *udpHeader, IPv6ControlInfo *ctrl, SockDesc *sd)" -->
+<a class="anchor" id="ac87b9d1c06d79d9d3c3fedbfc6bc52c4"></a><!-- doxytag: member="UDP::sendUp" ref="ac87b9d1c06d79d9d3c3fedbfc6bc52c4" args="(cPacket *payload, SockDesc *sd, const IPvXAddress &amp;srcAddr, ushort srcPort, const IPvXAddress &amp;destAddr, ushort destPort, int interfaceId, int ttl, unsigned char tos)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p.html#affa73f57d52206f4aa5bc2539ac63c0f">UDP::sendUp</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p.html#ac87b9d1c06d79d9d3c3fedbfc6bc52c4">UDP::sendUp</a> </td>
           <td>(</td>
           <td class="paramtype">cPacket *&#160;</td>
           <td class="paramname"><em>payload</em>, </td>
@@ -1035,20 +1512,50 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_u_d_p_packet.html">UDPPacket</a> *&#160;</td>
-          <td class="paramname"><em>udpHeader</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_i_pv6_control_info.html">IPv6ControlInfo</a> *&#160;</td>
-          <td class="paramname"><em>ctrl</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype"><a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *&#160;</td>
-          <td class="paramname"><em>sd</em>&#160;</td>
+          <td class="paramname"><em>sd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;&#160;</td>
+          <td class="paramname"><em>srcAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a>&#160;</td>
+          <td class="paramname"><em>srcPort</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;&#160;</td>
+          <td class="paramname"><em>destAddr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a>&#160;</td>
+          <td class="paramname"><em>destPort</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>interfaceId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ttl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>tos</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1059,31 +1566,36 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8cc_source.html#l00282">282</a> of file <a class="el" href="_u_d_p_8cc_source.html">UDP.cc</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#a333fddcf308d3c6348c9cc5e6bfa796d">processUDPPacket()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="comment">// send payload with UDPControlInfo up to the application -- IPv6 version</span>
-    <a class="code" href="class_u_d_p_control_info.html">UDPControlInfo</a> *udpCtrl = <span class="keyword">new</span> <a class="code" href="class_u_d_p_control_info.html">UDPControlInfo</a>();
-    udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a4173f10b3aa9a7e1f8ae84e95ef353dd">setSockId</a>(sd-&gt;sockId);
-    udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a440d789046e162348e04373e0834d0fe">setUserId</a>(sd-&gt;userId);
-    udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a6798ce843ebca015e43efe5f351d9a1a">setSrcAddr</a>(ipCtrl-&gt;getSrcAddr());
-    udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a7a0b58d8f2fbce599b12c2c0e065d6f0">setDestAddr</a>(ipCtrl-&gt;getDestAddr());
-    udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a56d5e47d4f0d1f519975a9f5ad8cc48d">setSrcPort</a>(udpHeader-&gt;<a class="code" href="class_u_d_p_packet.html#a1e3c1f0aef8672ba75277dc6733962e0">getSourcePort</a>());
-    udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#ae0ec2e547fefb2ba11925b1197c74bde">setDestPort</a>(udpHeader-&gt;<a class="code" href="class_u_d_p_packet.html#a6bdf0821eb52e39c4e44ab619226645d">getDestinationPort</a>());
-    udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#aff214b8fd2b5221f48f3c21b7a70f52f">setInterfaceId</a>(ipCtrl-&gt;getInterfaceId());
-    payload-&gt;setControlInfo(udpCtrl);
+    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Sending payload up to socket sockId=&quot;</span> &lt;&lt; sd-&gt;sockId &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
 
+    <span class="comment">// send payload with UDPControlInfo up to the application</span>
+    <a class="code" href="class_u_d_p_data_indication.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPDataIndication</a> *udpCtrl = <span class="keyword">new</span> <a class="code" href="class_u_d_p_data_indication.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPDataIndication</a>();
+    udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a4173f10b3aa9a7e1f8ae84e95ef353dd">setSockId</a>(sd-&gt;sockId);
+    udpCtrl-&gt;<a class="code" href="class_u_d_p_data_indication.html#aab6c483871b55edd4b274eccdbf7a273">setSrcAddr</a>(srcAddr);
+    udpCtrl-&gt;<a class="code" href="class_u_d_p_data_indication.html#aadf95e604c6068db051c13e12e456c5e">setDestAddr</a>(destAddr);
+    udpCtrl-&gt;<a class="code" href="class_u_d_p_data_indication.html#a9db159295087190dc7158a67535ac7c0">setSrcPort</a>(srcPort);
+    udpCtrl-&gt;<a class="code" href="class_u_d_p_data_indication.html#a62d1640961e54686be0227b3ef03e764">setDestPort</a>(destPort);
+    udpCtrl-&gt;<a class="code" href="class_u_d_p_data_indication.html#a442107ed4f653a217f40705ee334b0c6">setInterfaceId</a>(interfaceId);
+    udpCtrl-&gt;<a class="code" href="class_u_d_p_data_indication.html#acf49774634278cd1890f9306177a5b66">setTtl</a>(<a class="code" href="_t_c_p___n_s_c_8cc.html#a4d402503271315376ddf4e47674d4965">ttl</a>);
+    udpCtrl-&gt;<a class="code" href="class_u_d_p_data_indication.html#a031900501726380ec50af36c0ce1139f">setTypeOfService</a>(<a class="code" href="_t_c_p___n_s_c_8cc.html#a3bdbe295d838b7f44e47ad5f4c3fac27">tos</a>);
+    payload-&gt;setControlInfo(udpCtrl);
+    payload-&gt;setKind(<a class="code" href="_u_d_p_control_info__m_8h.html#a0cb49935325d643afaee9208fcb27733a53bfdb70d4246591854611edf4815f89">UDP_I_DATA</a>);
+
+    emit(<a class="code" href="class_u_d_p.html#ac3b38f02ac17afeb9f43b83aefb43509">passedUpPkSignal</a>, payload);
     send(payload, <span class="stringliteral">&quot;appOut&quot;</span>, sd-&gt;appGateIndex);
     <a class="code" href="class_u_d_p.html#ab6bee27f7907a894de4173e003adbd69">numPassedUp</a>++;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="aa6d3f6a65fcb255abab778a7f13ca771"></a><!-- doxytag: member="UDP::sendUpErrorNotification" ref="aa6d3f6a65fcb255abab778a7f13ca771" args="(SockDesc *sd, int msgkind, const IPvXAddress &amp;localAddr, const IPvXAddress &amp;remoteAddr, ushort remotePort)" -->
+<a class="anchor" id="a743aa187bec30950907dfc6362052263"></a><!-- doxytag: member="UDP::sendUpErrorIndication" ref="a743aa187bec30950907dfc6362052263" args="(SockDesc *sd, const IPvXAddress &amp;localAddr, ushort localPort, const IPvXAddress &amp;remoteAddr, ushort remotePort)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p.html#aa6d3f6a65fcb255abab778a7f13ca771">UDP::sendUpErrorNotification</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p.html#a743aa187bec30950907dfc6362052263">UDP::sendUpErrorIndication</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *&#160;</td>
           <td class="paramname"><em>sd</em>, </td>
@@ -1091,14 +1603,14 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>msgkind</em>, </td>
+          <td class="paramtype">const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;&#160;</td>
+          <td class="paramname"><em>localAddr</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="class_i_pv_x_address.html">IPvXAddress</a> &amp;&#160;</td>
-          <td class="paramname"><em>localAddr</em>, </td>
+          <td class="paramtype"><a class="el" href="_i_n_e_t_defs_8h.html#ab95f123a6c9bcfee6a343170ef8c5f69">ushort</a>&#160;</td>
+          <td class="paramname"><em>localPort</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1121,18 +1633,15 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8cc_source.html#l00393">393</a> of file <a class="el" href="_u_d_p_8cc_source.html">UDP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_8cc_source.html#l00326">processICMPError()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#a8f0e27d03d3e209f437bfa72dd3efe38">processICMPError()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    cPacket *notifyMsg = <span class="keyword">new</span> cPacket(<span class="stringliteral">&quot;ERROR&quot;</span>, msgkind);
-    <a class="code" href="class_u_d_p_control_info.html">UDPControlInfo</a> *udpCtrl = <span class="keyword">new</span> <a class="code" href="class_u_d_p_control_info.html">UDPControlInfo</a>();
+    cMessage *notifyMsg = <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;ERROR&quot;</span>, <a class="code" href="_u_d_p_control_info__m_8h.html#a0cb49935325d643afaee9208fcb27733a484b0da8b16fcb50610630a68c1bf8d7">UDP_I_ERROR</a>);
+    <a class="code" href="class_u_d_p_error_indication.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPErrorIndication</a> *udpCtrl = <span class="keyword">new</span> <a class="code" href="class_u_d_p_error_indication.html" title="Class generated from transport/contract/UDPControlInfo.msg by opp_msgc.">UDPErrorIndication</a>();
     udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a4173f10b3aa9a7e1f8ae84e95ef353dd">setSockId</a>(sd-&gt;sockId);
-    udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a440d789046e162348e04373e0834d0fe">setUserId</a>(sd-&gt;userId);
-    udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a6798ce843ebca015e43efe5f351d9a1a">setSrcAddr</a>(localAddr);
-    udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a7a0b58d8f2fbce599b12c2c0e065d6f0">setDestAddr</a>(remoteAddr);
-    udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#a56d5e47d4f0d1f519975a9f5ad8cc48d">setSrcPort</a>(sd-&gt;localPort);
-    udpCtrl-&gt;<a class="code" href="class_u_d_p_control_info.html#ae0ec2e547fefb2ba11925b1197c74bde">setDestPort</a>(remotePort);
+    udpCtrl-&gt;<a class="code" href="class_u_d_p_error_indication.html#a5db743cad0997595e28a942f56a1a2c8">setSrcAddr</a>(localAddr);
+    udpCtrl-&gt;<a class="code" href="class_u_d_p_error_indication.html#a8fa77062cf0c42879e657b47065818aa">setDestAddr</a>(remoteAddr);
+    udpCtrl-&gt;<a class="code" href="class_u_d_p_error_indication.html#aa2a75c27add72c83cda54bbe6290f32d">setSrcPort</a>(sd-&gt;localPort);
+    udpCtrl-&gt;<a class="code" href="class_u_d_p_error_indication.html#af271ef05d9a061b99ab1a4e277b8ca5b">setDestPort</a>(remotePort);
     notifyMsg-&gt;setControlInfo(udpCtrl);
 
     send(notifyMsg, <span class="stringliteral">&quot;appOut&quot;</span>, sd-&gt;appGateIndex);
@@ -1140,42 +1649,162 @@ Protected Attributes</h2></td></tr>
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a92b95e9e592cd6beff8f0b20228bc214"></a><!-- doxytag: member="UDP::unbind" ref="a92b95e9e592cd6beff8f0b20228bc214" args="(int sockId)" -->
+<a class="anchor" id="aa70fdc6f88f17e4265e21a2772dba154"></a><!-- doxytag: member="UDP::setBroadcast" ref="aa70fdc6f88f17e4265e21a2772dba154" args="(SockDesc *sd, bool broadcast)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p.html#a92b95e9e592cd6beff8f0b20228bc214">UDP::unbind</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p.html#aa70fdc6f88f17e4265e21a2772dba154">UDP::setBroadcast</a> </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>sockId</em></td><td>)</td>
-          <td><code> [protected, virtual]</code></td>
+          <td class="paramtype"><a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *&#160;</td>
+          <td class="paramname"><em>sd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>broadcast</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8cc_source.html#l00155">155</a> of file <a class="el" href="_u_d_p_8cc_source.html">UDP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_8cc_source.html#l00531">processCommandFromApp()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#ae251c9826aa3b5242ad02d6620ea2616">processCommandFromApp()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="comment">// remove from socketsByIdMap</span>
-    SocketsByIdMap::iterator it = <a class="code" href="class_u_d_p.html#a7019475e3a2bd786a634fbbe72aa91c6">socketsByIdMap</a>.find(sockId);
-    <span class="keywordflow">if</span> (it==<a class="code" href="class_u_d_p.html#a7019475e3a2bd786a634fbbe72aa91c6">socketsByIdMap</a>.end())
-        error(<span class="stringliteral">&quot;socket id=%d doesn&#39;t exist (already closed?)&quot;</span>, sockId);
-    SockDesc *sd = it-&gt;second;
-    <a class="code" href="class_u_d_p.html#a7019475e3a2bd786a634fbbe72aa91c6">socketsByIdMap</a>.erase(it);
+    sd-&gt;isBroadcast = broadcast;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a2ad9fb3abed533303e5ec070fecaa0c6"></a><!-- doxytag: member="UDP::setMulticastLoop" ref="a2ad9fb3abed533303e5ec070fecaa0c6" args="(SockDesc *sd, bool loop)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p.html#a2ad9fb3abed533303e5ec070fecaa0c6">UDP::setMulticastLoop</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *&#160;</td>
+          <td class="paramname"><em>sd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>loop</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
-    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Unbinding socket: &quot;</span> &lt;&lt; *sd &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+<p>Referenced by <a class="el" href="class_u_d_p.html#ae251c9826aa3b5242ad02d6620ea2616">processCommandFromApp()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    sd-&gt;multicastLoop = loop;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="adcc7a9232aba1c5f35c61d8ad59dcd3f"></a><!-- doxytag: member="UDP::setMulticastOutputInterface" ref="adcc7a9232aba1c5f35c61d8ad59dcd3f" args="(SockDesc *sd, int interfaceId)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p.html#adcc7a9232aba1c5f35c61d8ad59dcd3f">UDP::setMulticastOutputInterface</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *&#160;</td>
+          <td class="paramname"><em>sd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>interfaceId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
-    <span class="comment">// remove from socketsByPortMap</span>
-    <a class="code" href="class_u_d_p.html#a17d5eac534fa0d896ceef2831cd28d77">SockDescList</a>&amp; list = <a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>[sd-&gt;localPort];
-    <span class="keywordflow">for</span> (SockDescList::iterator it=list.begin(); it!=list.end(); ++it)
-        <span class="keywordflow">if</span> (*it == sd)
-            {list.erase(it); <span class="keywordflow">break</span>;}
-    <span class="keywordflow">if</span> (list.empty())
-        <a class="code" href="class_u_d_p.html#af6f8ebb75300e83c3b28ba5bd0ed585d">socketsByPortMap</a>.erase(sd-&gt;localPort);
-    <span class="keyword">delete</span> sd;
+<p>Referenced by <a class="el" href="class_u_d_p.html#ae251c9826aa3b5242ad02d6620ea2616">processCommandFromApp()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    sd-&gt;multicastOutputInterfaceId = interfaceId;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ad09b530cd871cfb3a1defe37b57066c1"></a><!-- doxytag: member="UDP::setTimeToLive" ref="ad09b530cd871cfb3a1defe37b57066c1" args="(SockDesc *sd, int ttl)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p.html#ad09b530cd871cfb3a1defe37b57066c1">UDP::setTimeToLive</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *&#160;</td>
+          <td class="paramname"><em>sd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ttl</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_u_d_p.html#ae251c9826aa3b5242ad02d6620ea2616">processCommandFromApp()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    sd-&gt;ttl = <a class="code" href="_t_c_p___n_s_c_8cc.html#a4d402503271315376ddf4e47674d4965">ttl</a>;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ad9564e90d237f2409a71e403894e756e"></a><!-- doxytag: member="UDP::setTypeOfService" ref="ad9564e90d237f2409a71e403894e756e" args="(SockDesc *sd, int typeOfService)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p.html#ad9564e90d237f2409a71e403894e756e">UDP::setTypeOfService</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_u_d_p_1_1_sock_desc.html">SockDesc</a> *&#160;</td>
+          <td class="paramname"><em>sd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>typeOfService</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_u_d_p.html#ae251c9826aa3b5242ad02d6620ea2616">processCommandFromApp()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    sd-&gt;typeOfService = typeOfService;
 }
 </pre></div>
 </div>
@@ -1185,7 +1814,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p.html#a5c2df70abc011c2753a47cbff187a306">UDP::updateDisplayString</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p.html#a5c2df70abc011c2753a47cbff187a306">UDP::updateDisplayString</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -1194,23 +1823,51 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8cc_source.html#l00218">218</a> of file <a class="el" href="_u_d_p_8cc_source.html">UDP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_8cc_source.html#l00196">handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#a79daccc47126abbf6740b029d7a57089">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordtype">char</span> buf[80];
     sprintf(buf, <span class="stringliteral">&quot;passed up: %d pks\nsent: %d pks&quot;</span>, <a class="code" href="class_u_d_p.html#ab6bee27f7907a894de4173e003adbd69">numPassedUp</a>, <a class="code" href="class_u_d_p.html#aa7f7b7568b014af23fb3f7c2efc218c1">numSent</a>);
-    <span class="keywordflow">if</span> (<a class="code" href="class_u_d_p.html#ac262e3d6e3c88dbb2ff457c1c8837162">numDroppedWrongPort</a>&gt;0)
+    <span class="keywordflow">if</span> (<a class="code" href="class_u_d_p.html#ac262e3d6e3c88dbb2ff457c1c8837162">numDroppedWrongPort</a> &gt; 0)
     {
         sprintf(buf+strlen(buf), <span class="stringliteral">&quot;\ndropped (no app): %d pks&quot;</span>, <a class="code" href="class_u_d_p.html#ac262e3d6e3c88dbb2ff457c1c8837162">numDroppedWrongPort</a>);
-        getDisplayString().setTagArg(<span class="stringliteral">&quot;i&quot;</span>,1,<span class="stringliteral">&quot;red&quot;</span>);
+        getDisplayString().setTagArg(<span class="stringliteral">&quot;i&quot;</span>, 1, <span class="stringliteral">&quot;red&quot;</span>);
     }
-    getDisplayString().setTagArg(<span class="stringliteral">&quot;t&quot;</span>,0,buf);
+    getDisplayString().setTagArg(<span class="stringliteral">&quot;t&quot;</span>, 0, buf);
 }
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a2486e7ca20282de643b267535da280b3"></a><!-- doxytag: member="UDP::droppedPkBadChecksumSignal" ref="a2486e7ca20282de643b267535da280b3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_u_d_p.html#a2486e7ca20282de643b267535da280b3">UDP::droppedPkBadChecksumSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_u_d_p.html#a9ff0a87c6965238d54bb67997d6912ca">initialize()</a>, and <a class="el" href="class_u_d_p.html#a333fddcf308d3c6348c9cc5e6bfa796d">processUDPPacket()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4593f76dd370cf75ae61290b4f3e1a7d"></a><!-- doxytag: member="UDP::droppedPkWrongPortSignal" ref="a4593f76dd370cf75ae61290b4f3e1a7d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_u_d_p.html#a4593f76dd370cf75ae61290b4f3e1a7d">UDP::droppedPkWrongPortSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_u_d_p.html#a9ff0a87c6965238d54bb67997d6912ca">initialize()</a>, and <a class="el" href="class_u_d_p.html#ac47e00e6d7d0daddef466c4574134eb8">processUndeliverablePacket()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a4995c941113ffc075a8a4b6051fb1ca4"></a><!-- doxytag: member="UDP::icmp" ref="a4995c941113ffc075a8a4b6051fb1ca4" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -1221,8 +1878,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_u_d_p_8h_source.html#l00073">73</a> of file <a class="el" href="_u_d_p_8h_source.html">UDP.h</a>.</p>
 
 </div>
 </div>
@@ -1237,9 +1892,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8h_source.html#l00074">74</a> of file <a class="el" href="_u_d_p_8h_source.html">UDP.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_8cc_source.html#l00081">initialize()</a>, and <a class="el" href="_u_d_p_8cc_source.html#l00299">processUndeliverablePacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#a9ff0a87c6965238d54bb67997d6912ca">initialize()</a>, and <a class="el" href="class_u_d_p.html#ac47e00e6d7d0daddef466c4574134eb8">processUndeliverablePacket()</a>.</p>
 
 </div>
 </div>
@@ -1254,9 +1907,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8h_source.html#l00072">72</a> of file <a class="el" href="_u_d_p_8h_source.html">UDP.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_8cc_source.html#l00176">getEphemeralPort()</a>, and <a class="el" href="_u_d_p_8cc_source.html#l00081">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#a28ca0f88569dadf1b8f5eaad7e039c49">getEphemeralPort()</a>, and <a class="el" href="class_u_d_p.html#a9ff0a87c6965238d54bb67997d6912ca">initialize()</a>.</p>
 
 </div>
 </div>
@@ -1271,9 +1922,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8h_source.html#l00080">80</a> of file <a class="el" href="_u_d_p_8h_source.html">UDP.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_8cc_source.html#l00081">initialize()</a>, and <a class="el" href="_u_d_p_8cc_source.html#l00408">processUDPPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#a9ff0a87c6965238d54bb67997d6912ca">initialize()</a>, and <a class="el" href="class_u_d_p.html#a333fddcf308d3c6348c9cc5e6bfa796d">processUDPPacket()</a>.</p>
 
 </div>
 </div>
@@ -1288,9 +1937,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8h_source.html#l00079">79</a> of file <a class="el" href="_u_d_p_8h_source.html">UDP.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_8cc_source.html#l00081">initialize()</a>, <a class="el" href="_u_d_p_8cc_source.html#l00299">processUndeliverablePacket()</a>, and <a class="el" href="_u_d_p_8cc_source.html#l00218">updateDisplayString()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#a9ff0a87c6965238d54bb67997d6912ca">initialize()</a>, <a class="el" href="class_u_d_p.html#ac47e00e6d7d0daddef466c4574134eb8">processUndeliverablePacket()</a>, and <a class="el" href="class_u_d_p.html#a5c2df70abc011c2753a47cbff187a306">updateDisplayString()</a>.</p>
 
 </div>
 </div>
@@ -1305,9 +1952,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8h_source.html#l00078">78</a> of file <a class="el" href="_u_d_p_8h_source.html">UDP.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_8cc_source.html#l00081">initialize()</a>, <a class="el" href="_u_d_p_8cc_source.html#l00265">sendUp()</a>, and <a class="el" href="_u_d_p_8cc_source.html#l00218">updateDisplayString()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#a9ff0a87c6965238d54bb67997d6912ca">initialize()</a>, <a class="el" href="class_u_d_p.html#ac87b9d1c06d79d9d3c3fedbfc6bc52c4">sendUp()</a>, and <a class="el" href="class_u_d_p.html#a5c2df70abc011c2753a47cbff187a306">updateDisplayString()</a>.</p>
 
 </div>
 </div>
@@ -1322,9 +1967,52 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8h_source.html#l00077">77</a> of file <a class="el" href="_u_d_p_8h_source.html">UDP.h</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#a9ff0a87c6965238d54bb67997d6912ca">initialize()</a>, <a class="el" href="class_u_d_p.html#a66b24ca026727b5158445a8c790f2817">sendDown()</a>, and <a class="el" href="class_u_d_p.html#a5c2df70abc011c2753a47cbff187a306">updateDisplayString()</a>.</p>
 
-<p>Referenced by <a class="el" href="_u_d_p_8cc_source.html#l00081">initialize()</a>, <a class="el" href="_u_d_p_8cc_source.html#l00483">processMsgFromApp()</a>, and <a class="el" href="_u_d_p_8cc_source.html#l00218">updateDisplayString()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="ac3b38f02ac17afeb9f43b83aefb43509"></a><!-- doxytag: member="UDP::passedUpPkSignal" ref="ac3b38f02ac17afeb9f43b83aefb43509" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_u_d_p.html#ac3b38f02ac17afeb9f43b83aefb43509">UDP::passedUpPkSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_u_d_p.html#a9ff0a87c6965238d54bb67997d6912ca">initialize()</a>, and <a class="el" href="class_u_d_p.html#ac87b9d1c06d79d9d3c3fedbfc6bc52c4">sendUp()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9a90026ea04513678cd59de29b851b26"></a><!-- doxytag: member="UDP::rcvdPkSignal" ref="a9a90026ea04513678cd59de29b851b26" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_u_d_p.html#a9a90026ea04513678cd59de29b851b26">UDP::rcvdPkSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_u_d_p.html#a9ff0a87c6965238d54bb67997d6912ca">initialize()</a>, and <a class="el" href="class_u_d_p.html#a333fddcf308d3c6348c9cc5e6bfa796d">processUDPPacket()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a084eb773d6288f5943ff2c2126e8d75c"></a><!-- doxytag: member="UDP::sentPkSignal" ref="a084eb773d6288f5943ff2c2126e8d75c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_u_d_p.html#a084eb773d6288f5943ff2c2126e8d75c">UDP::sentPkSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_u_d_p.html#a9ff0a87c6965238d54bb67997d6912ca">initialize()</a>, and <a class="el" href="class_u_d_p.html#a66b24ca026727b5158445a8c790f2817">sendDown()</a>.</p>
 
 </div>
 </div>
@@ -1339,9 +2027,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8h_source.html#l00068">68</a> of file <a class="el" href="_u_d_p_8h_source.html">UDP.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_8cc_source.html#l00100">bind()</a>, <a class="el" href="_u_d_p_8cc_source.html#l00136">connect()</a>, <a class="el" href="_u_d_p_8cc_source.html#l00081">initialize()</a>, <a class="el" href="_u_d_p_8cc_source.html#l00155">unbind()</a>, and <a class="el" href="_u_d_p_8cc_source.html#l00075">~UDP()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#ad6bf857de4fcc262b4ffa31d4c895af1">bind()</a>, <a class="el" href="class_u_d_p.html#a18fe24ec45ff3c47e167c4b948cbade1">close()</a>, <a class="el" href="class_u_d_p.html#a5eab1ba9ab89fc6a5b20e96f866a3267">createSocket()</a>, <a class="el" href="class_u_d_p.html#ae019fcc358a2dc4ce16865045e13faa5">getOrCreateSocket()</a>, <a class="el" href="class_u_d_p.html#a9742a939d6d1ad17963654e4abe3c19f">getSocketById()</a>, <a class="el" href="class_u_d_p.html#a9ff0a87c6965238d54bb67997d6912ca">initialize()</a>, and <a class="el" href="class_u_d_p.html#ac9c6eaf3e5f1bd64ea3ac0552137ca0e">~UDP()</a>.</p>
 
 </div>
 </div>
@@ -1356,15 +2042,13 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_8h_source.html#l00069">69</a> of file <a class="el" href="_u_d_p_8h_source.html">UDP.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_8cc_source.html#l00100">bind()</a>, <a class="el" href="_u_d_p_8cc_source.html#l00176">getEphemeralPort()</a>, <a class="el" href="_u_d_p_8cc_source.html#l00081">initialize()</a>, <a class="el" href="_u_d_p_8cc_source.html#l00326">processICMPError()</a>, <a class="el" href="_u_d_p_8cc_source.html#l00408">processUDPPacket()</a>, and <a class="el" href="_u_d_p_8cc_source.html#l00155">unbind()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p.html#ad6bf857de4fcc262b4ffa31d4c895af1">bind()</a>, <a class="el" href="class_u_d_p.html#a18fe24ec45ff3c47e167c4b948cbade1">close()</a>, <a class="el" href="class_u_d_p.html#a5eab1ba9ab89fc6a5b20e96f866a3267">createSocket()</a>, <a class="el" href="class_u_d_p.html#a8b59bd0821d701272e6fa02bfe0eb948">findSocketByLocalAddress()</a>, <a class="el" href="class_u_d_p.html#a3c201cb4d38613bdf338cb4730860322">findSocketForUnicastPacket()</a>, <a class="el" href="class_u_d_p.html#ac32a790cb4026b222eac4735739a88e1">findSocketsForMcastBcastPacket()</a>, <a class="el" href="class_u_d_p.html#a28ca0f88569dadf1b8f5eaad7e039c49">getEphemeralPort()</a>, and <a class="el" href="class_u_d_p.html#a9ff0a87c6965238d54bb67997d6912ca">initialize()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_u_d_p_8h_source.html">UDP.h</a></li>
-<li><a class="el" href="_u_d_p_8cc_source.html">UDP.cc</a></li>
+<li><a class="el" href="_u_d_p_8h.html">UDP.h</a></li>
+<li><a class="el" href="_u_d_p_8cc.html">UDP.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -1372,7 +2056,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_u_d_p.html">UDP</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:54 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:32 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

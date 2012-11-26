@@ -7,7 +7,7 @@
 <h2 class="comptitle">Simple Module <i>TCPGenericSrvApp</i></h2>
 <b>Package:</b> inet.applications.tcpapp<br/><b>File: <a href="src-applications-tcpapp-TCPGenericSrvApp.ned.html">src/applications/tcpapp/TCPGenericSrvApp.ned</a></b><br/><p><a href="../doxy/class_t_c_p_generic_srv_app.html" target="mainframe"><b>C++ definition</b></a></p>
 
-<p>Generic server application for modelling <a href="inet.transport.tcp.TCP.html">TCP</a>-based request-reply style
+<p>Generic server application for modelling TCP-based request-reply style
 protocols or applications.</p>
 <p>Requires message object preserving sendQueue/receiveQueue classes
 to be used with <a href="inet.transport.tcp.TCP.html">TCP</a> (that is, TCPMsgBasedSendQueue and TCPMsgBasedRcvQueue;
@@ -18,8 +18,22 @@ contain how large the reply should be (number of bytes). <a href="inet.applicati
 will just change the length of the received message accordingly, and send
 back the same message object. The reply can be delayed by a constant time
 (replyDelay parameter).</p>
-<p>Compatible with both IPv4 and <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a>.</p>
+<p>Compatible with both <a href="inet.networklayer.ipv4.IPv4.html">IPv4</a> and <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a>.</p>
 <p><b>See also:</b> <a href="GenericAppMsg.html">GenericAppMsg</a>, <a href="inet.applications.tcpapp.TCPBasicClientApp.html">TCPBasicClientApp</a>, <a href="inet.applications.tcpapp.TelnetApp.html">TelnetApp</a></p>
+<img src="inet.applications.tcpapp.TCPGenericSrvApp-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.applications.tcpapp.TCPGenericSrvApp.html" title="TCPGenericSrvApp" alt="TCPGenericSrvApp" coords="0,30,147,70">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.applications.tcpapp.TCPGenericSrvApp-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.applications.tcpapp.TCPGenericSrvApp.html" title="Simple Module TCPGenericSrvApp" alt="" coords="5,6,141,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.applications.tcpapp.TCPGenericSrvApp-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.applications.tcpapp.TCPGenericSrvApp.html" title="Simple Module TCPGenericSrvApp" alt="" coords="5,83,141,111">
+<area shape="rect" id="node2" href="inet.applications.ITCPApp.html" title="Module Interface ITCPApp" alt="" coords="36,6,111,34">
+</map>
 <h3 class="subtitle">Parameters:</h3>
 <table class="paramstable">
    <tr>
@@ -29,7 +43,7 @@ back the same message object. The reply can be delayed by a constant time
       <th class="description">Description</th>
    </tr>
 <tr class="local">
-   <td>address</td>
+   <td>localAddress</td>
    <td>
       <i>string</i>
    </td>
@@ -39,13 +53,13 @@ back the same message object. The reply can be delayed by a constant time
    </td>
 </tr>
 <tr class="local">
-   <td>port</td>
+   <td>localPort</td>
    <td>
       <i>int</i>
    </td>
    <td>1000</td>
    <td>
-<p>port number to listen on</p>
+<p>localPort number to listen on</p>
    </td>
 </tr>
 <tr class="local">
@@ -89,39 +103,98 @@ back the same message object. The reply can be delayed by a constant time
    <td></td>   <td></td>
 </tr>
 </table>
+<h3 class="subtitle">Signals:</h3>
+<table class="signalstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="unit">Unit</th>
+   </tr>
+<tr class="local">
+   <td>sentPk</td>
+   <td><i>
+<a href="../doxy/class_generic_app_msg.html" target="mainframe">GenericAppMsg</a>   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>rcvdPk</td>
+   <td><i>
+<a href="../doxy/class_generic_app_msg.html" target="mainframe">GenericAppMsg</a>   </i></td>
+   <td></td>
+</tr>
+</table>
+<h3 class="subtitle">Statistics:</h3>
+<table class="statisticstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="title">Title</th>
+      <th class="source">Source</th>
+      <th class="record">Record</th>
+      <th class="unit">Unit</th>
+      <th class="interpolationmode">Interpolation Mode</th>
+   </tr>
+<tr class="local">
+   <td>sentPk</td>
+   <td>packets sent</td>
+   <td>sentPk</td>
+   <td>count, sum(packetBytes), vector(packetBytes)</td>
+   <td></td>
+   <td>none</td>
+</tr>
+<tr class="local">
+   <td>endToEndDelay</td>
+   <td>end-to-end delay</td>
+   <td>messageAge(rcvdPk)</td>
+   <td>histogram, vector</td>
+   <td>s</td>
+   <td>none</td>
+</tr>
+<tr class="local">
+   <td>rcvdPk</td>
+   <td>packets received</td>
+   <td>rcvdPk</td>
+   <td>count, sum(packetBytes), vector(packetBytes)</td>
+   <td></td>
+   <td>none</td>
+</tr>
+</table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
 // Generic server application for modelling TCP-based request-reply style
 // protocols or applications.
 //
 // Requires message object preserving sendQueue/receiveQueue classes
-// to be used with TCP (that is, TCPMsgBasedSendQueue and TCPMsgBasedRcvQueue;
+// to be used with ~TCP (that is, TCPMsgBasedSendQueue and TCPMsgBasedRcvQueue;
 // TCPVirtualBytesSendQueue/RcvQueue are not good).
 //
-// The module accepts any number of incoming \TCP connections, and expects
-// to receive messages of class GenericAppMsg on them. A message should
-// contain how large the reply should be (number of bytes). TCPGenericSrvApp
+// The module accepts any number of incoming TCP connections, and expects
+// to receive messages of class ~GenericAppMsg on them. A message should
+// contain how large the reply should be (number of bytes). ~TCPGenericSrvApp
 // will just change the length of the received message accordingly, and send
 // back the same message object. The reply can be delayed by a constant time
 // (replyDelay parameter).
 //
-// Compatible with both IPv4 and IPv6.
+// Compatible with both ~IPv4 and ~IPv6.
 //
-// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> GenericAppMsg, TCPBasicClientApp, TelnetApp
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~GenericAppMsg, ~TCPBasicClientApp, ~TelnetApp
 //
-</span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">TCPGenericSrvApp</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #000000; "> </span><span style="color: #000000; ">TCPApp</span><span style="color: #000000; ">
+</span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">TCPGenericSrvApp</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #000000; "> </span><span style="color: #000000; ">ITCPApp</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">address</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// local address; may be left empty (&quot;&quot;)
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">port</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">1000</span><span style="color: #000000; ">);     </span><span style="color: #808080; font-style: italic; ">// port number to listen on
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">replyDelay</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;s&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">0</span><span style="color: #000000; ">s</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">localAddress</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// local address; may be left empty (&quot;&quot;)
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">localPort</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">1000</span><span style="color: #000000; ">);     </span><span style="color: #808080; font-style: italic; ">// localPort number to listen on
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">replyDelay</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">0</span><span style="color: #000000; ">s</span><span style="color: #000000; ">);
         </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/app&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">sentPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">GenericAppMsg</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">rcvdPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">GenericAppMsg</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">rcvdPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;packets received&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">source</span><span style="color: #000000; ">=</span><span style="color: #000000; ">rcvdPk</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;sum(packetBytes)&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;vector(packetBytes)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">sentPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;packets sent&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">source</span><span style="color: #000000; ">=</span><span style="color: #000000; ">sentPk</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;sum(packetBytes)&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;vector(packetBytes)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">endToEndDelay</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;end-to-end delay&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">source</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;messageAge(rcvdPk)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">unit</span><span style="color: #000000; ">=</span><span style="color: #000000; ">s</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">histogram</span><span style="color: #000000; ">,</span><span style="color: #000000; ">vector</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
     </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">tcpIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">TCPCommand</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">);
         </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">tcpOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">TCPCommand</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);
 }
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

@@ -81,16 +81,19 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="IClassifier" -->
-<p><code>#include &lt;<a class="el" href="_i_classifier_8h_source.html">IClassifier.h</a>&gt;</code></p>
+<p>This is an abstract interface for packet classifiers in <a class="el" href="class_m_p_l_s.html" title="Implements the MPLS protocol; see the NED file for more info.">MPLS</a> ingress routers.  
+ <a href="class_i_classifier.html#details">More...</a></p>
+
+<p><code>#include &lt;IClassifier.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for IClassifier:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_i_classifier.png" usemap="#IClassifier_map" alt=""/>
   <map id="IClassifier_map" name="IClassifier_map">
-<area href="class_i_r_s_v_p_classifier.html" alt="IRSVPClassifier" shape="rect" coords="0,56,102,80"/>
-<area href="class_l_d_p.html" alt="LDP" shape="rect" coords="112,56,214,80"/>
-<area href="class_simple_classifier.html" alt="SimpleClassifier" shape="rect" coords="0,112,102,136"/>
+<area href="class_i_r_s_v_p_classifier.html" title="TODO." alt="IRSVPClassifier" shape="rect" coords="0,56,102,80"/>
+<area href="class_l_d_p.html" title="LDP (rfc 3036) protocol implementation." alt="LDP" shape="rect" coords="112,56,214,80"/>
+<area href="class_simple_classifier.html" title="TODO documentation." alt="SimpleClassifier" shape="rect" coords="0,112,102,136"/>
 </map>
  </div></div>
 
@@ -99,14 +102,14 @@ Inheritance diagram for IClassifier:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_classifier.html#a8ed25f0baa2b39965296f50bcc32195a">~IClassifier</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_classifier.html#aba6e1b589f1c6a6416a6118001b33e31">lookupLabel</a> (<a class="el" href="class_i_p_datagram.html">IPDatagram</a> *ipdatagram, <a class="el" href="_l_i_b_table_8h.html#a40d505abe4d03bca1c9776ebb1a874e5">LabelOpVector</a> &amp;outLabel, std::string &amp;outInterface, int &amp;color)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_classifier.html#a5d13270f14eee075ae99fca54792235c">lookupLabel</a> (<a class="el" href="class_i_pv4_datagram.html">IPv4Datagram</a> *ipdatagram, <a class="el" href="_l_i_b_table_8h.html#a40d505abe4d03bca1c9776ebb1a874e5">LabelOpVector</a> &amp;outLabel, std::string &amp;outInterface, int &amp;color)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The ipdatagram argument is an input parameter, the rest (outLabel, outInterface, color) are output parameters only.  <a href="#a5d13270f14eee075ae99fca54792235c"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>This is an abstract interface for packet classifiers in <a class="el" href="class_m_p_l_s.html">MPLS</a> ingress routers. The <a class="el" href="class_m_p_l_s.html">MPLS</a> module holds a pointer to an <a class="el" href="class_i_classifier.html">IClassifier</a> object, and uses it to classify <a class="el" href="class_i_p.html">IP</a> datagrams and find the right label-switched path for them.</p>
-<p>A known sub-interface is <a class="el" href="class_i_r_s_v_p_classifier.html">IRSVPClassifier</a>.</p>
-<p>Known concrete classifier classes are the <a class="el" href="class_l_d_p.html">LDP</a> module class and (via <a class="el" href="class_i_r_s_v_p_classifier.html">IRSVPClassifier</a>) RSVP_TE's <a class="el" href="class_simple_classifier.html">SimpleClassifier</a> module class. </p>
-
-<p>Definition at line <a class="el" href="_i_classifier_8h_source.html#l00033">33</a> of file <a class="el" href="_i_classifier_8h_source.html">IClassifier.h</a>.</p>
+<div class="textblock"><p>This is an abstract interface for packet classifiers in <a class="el" href="class_m_p_l_s.html" title="Implements the MPLS protocol; see the NED file for more info.">MPLS</a> ingress routers. </p>
+<p>The <a class="el" href="class_m_p_l_s.html" title="Implements the MPLS protocol; see the NED file for more info.">MPLS</a> module holds a pointer to an <a class="el" href="class_i_classifier.html" title="This is an abstract interface for packet classifiers in MPLS ingress routers.">IClassifier</a> object, and uses it to classify <a class="el" href="class_i_pv4.html" title="Implements the IPv4 protocol.">IPv4</a> datagrams and find the right label-switched path for them.</p>
+<p>A known sub-interface is <a class="el" href="class_i_r_s_v_p_classifier.html" title="TODO.">IRSVPClassifier</a>.</p>
+<p>Known concrete classifier classes are the <a class="el" href="class_l_d_p.html" title="LDP (rfc 3036) protocol implementation.">LDP</a> module class and (via <a class="el" href="class_i_r_s_v_p_classifier.html" title="TODO.">IRSVPClassifier</a>) RSVP_TE's <a class="el" href="class_simple_classifier.html" title="TODO documentation.">SimpleClassifier</a> module class. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8ed25f0baa2b39965296f50bcc32195a"></a><!-- doxytag: member="IClassifier::~IClassifier" ref="a8ed25f0baa2b39965296f50bcc32195a" args="()" -->
 <div class="memitem">
@@ -121,21 +124,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_classifier_8h_source.html#l00036">36</a> of file <a class="el" href="_i_classifier_8h_source.html">IClassifier.h</a>.</p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="aba6e1b589f1c6a6416a6118001b33e31"></a><!-- doxytag: member="IClassifier::lookupLabel" ref="aba6e1b589f1c6a6416a6118001b33e31" args="(IPDatagram *ipdatagram, LabelOpVector &amp;outLabel, std::string &amp;outInterface, int &amp;color)=0" -->
+<a class="anchor" id="a5d13270f14eee075ae99fca54792235c"></a><!-- doxytag: member="IClassifier::lookupLabel" ref="a5d13270f14eee075ae99fca54792235c" args="(IPv4Datagram *ipdatagram, LabelOpVector &amp;outLabel, std::string &amp;outInterface, int &amp;color)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool <a class="el" href="class_i_classifier.html#aba6e1b589f1c6a6416a6118001b33e31">IClassifier::lookupLabel</a> </td>
+          <td class="memname">virtual bool <a class="el" href="class_i_classifier.html#a5d13270f14eee075ae99fca54792235c">IClassifier::lookupLabel</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_i_p_datagram.html">IPDatagram</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_i_pv4_datagram.html">IPv4Datagram</a> *&#160;</td>
           <td class="paramname"><em>ipdatagram</em>, </td>
         </tr>
         <tr>
@@ -164,18 +165,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The ipdatagram argument is an input parameter, the rest (outLabel, outInterface, color) are output parameters only.</p>
-<p>In subclasses, this function should be implemented to determine the forwarding equivalence class for the <a class="el" href="class_i_p.html">IP</a> datagram passed, and map it to an outLabel and outInterface.</p>
+
+<p>The ipdatagram argument is an input parameter, the rest (outLabel, outInterface, color) are output parameters only. </p>
+<p>In subclasses, this function should be implemented to determine the forwarding equivalence class for the <a class="el" href="class_i_pv4.html" title="Implements the IPv4 protocol.">IPv4</a> datagram passed, and map it to an outLabel and outInterface.</p>
 <p>The color parameter (which can be set to an arbitrary value) will only be used for the NAM trace if one will be recorded. </p>
 
-<p>Implemented in <a class="el" href="class_l_d_p.html#a32c1d82d8c9a523a4c1e09858f14d315">LDP</a>, and <a class="el" href="class_simple_classifier.html#a06b4668153f537bc02defabea2455639">SimpleClassifier</a>.</p>
+<p>Implemented in <a class="el" href="class_l_d_p.html#afdfb80634fed9930abc62ab5733d49fa">LDP</a>, and <a class="el" href="class_simple_classifier.html#a56f2d863e36a5272c9d1619edcb495d7">SimpleClassifier</a>.</p>
 
-<p>Referenced by <a class="el" href="_m_p_l_s_8cc_source.html#l00112">MPLS::tryLabelAndForwardIPDatagram()</a>.</p>
+<p>Referenced by <a class="el" href="class_m_p_l_s.html#a980b6351f271bcc69db381edef846b2d">MPLS::tryLabelAndForwardIPv4Datagram()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="_i_classifier_8h_source.html">IClassifier.h</a></li>
+<li><a class="el" href="_i_classifier_8h.html">IClassifier.h</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -183,7 +185,7 @@ Public Member Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_i_classifier.html">IClassifier</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:47 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:24 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

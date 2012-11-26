@@ -9,217 +9,35 @@
 
 <p>Generates ping requests and calculates the packet loss and round trip
 parameters of the replies.</p>
-<p>Start/stop time, interval etc can be specified via parameters. To disable,
-specify empty destAddr or stopTime&lt;=startTime.</p>
+<p>Start/stop time, sendInterval etc. can be specified via parameters. An address
+may be given in the dotted decimal notation (or, for IPv6, in the usual
+notation with colons), or with the module name.
+(The IPvXAddressResolver class is used to resolve the address.)
+To disable send, specify empty destAddr.</p>
 <p>Every ping request is sent out with a sequence number, and replies are
 expected to arrive in the same order. Whenever there's a jump in the
 in the received ping responses' sequence number (e.g. 1, 2, 3, 5), then
-the missing pings (number 4 in this example(<a href="inet.examples.ansaExamples.PDS_project.example.html">1</a>,<a href="inet.examples.ansaExamples.switchtest.example.html">2</a>)) is counted as lost.
+the missing pings (number 4 in this example) is counted as lost.
 Then if it still arrives later (that is, a reply with a sequence number
 smaller than the largest one received so far) it will be counted as
 out-of-sequence arrival. So the number of really lost pings will be
 "lost" minus "out-of-order" (assuming there's no duplicate or bogus reply).</p>
-<p>Uses <a href="PingPayload.html">PingPayload</a> as payload for the <a href="inet.networklayer.ipv4.ICMP.html">ICMP</a>(v6) Echo Request/Reply packets.</p>
-<p><b>See also:</b> <a href="PingPayload.html">PingPayload</a>, <a href="inet.networklayer.ipv4.ICMP.html">ICMP</a>, ICMPv6Core</p>
-<h3 class="subtitle">Used in compound modules:</h3>
-<table class="typestable">
-   <tr>
-      <th class="name">Name</th>
-      <th class="type">Type</th>
-      <th class="description">Description</th>
-   </tr>
-<tr>
-   <td>
-<a href="inet.ansa.AnsaDualStackHost.html">AnsaDualStackHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.ansa.AnsaDualStackRouter.html">AnsaDualStackRouter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.ansa.ANSATrafGenHost.html">ANSATrafGenHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP Traffic generator</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.ansa.nodes.AStandardHost.html">AStandardHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.adhoc.MFMobileHost.html">MFMobileHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>Models a mobile host with a wireless (802.11b) card in ad-hoc mode.
-This model contains the Mobility Framework's 802.11 implementation, <a href="inet.linklayer.mf80211.Nic80211.html">Nic80211</a>,
-and <a href="inet.networklayer.ipv4.IP.html">IP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a> and <a href="inet.transport.udp.UDP.html">UDP</a> protocols. The mobility model can be dynamically
-specified with the mobilityType parameter.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.adhoc.MobileHost.html">MobileHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>Models a mobile host with a wireless (802.11b) card in ad-hoc mode.
-This model contains the new IEEE 802.11 implementation, <a href="inet.linklayer.ieee80211.Ieee80211Nic.html">Ieee80211Nic</a>,
-and <a href="inet.networklayer.ipv4.IP.html">IP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a> and <a href="inet.transport.udp.UDP.html">UDP</a> protocols. The mobility model can be
-dynamically specified with the mobilityType parameter.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.StandardHost.html">StandardHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.sctp.SCTP.html">SCTP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.ipv6.StandardHost6.html">StandardHost6</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IPv6 host with <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.StandardHostWithDLDuplicatesGenerator.html">StandardHostWithDLDuplicatesGenerator</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.sctp.SCTP.html">SCTP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications AND <a href="inet.linklayer.ppp.PPPInterfaceWithDLDuplicatesGenerator.html">PPPInterfaceWithDLDuplicatesGenerator</a>.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.StandardHostWithDLThruputMeter.html">StandardHostWithDLThruputMeter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.sctp.SCTP.html">SCTP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications AND <a href="inet.linklayer.ppp.PPPInterfaceWithDLThruputMeter.html">PPPInterfaceWithDLThruputMeter</a>.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.StandardHostWithULDropsGenerator.html">StandardHostWithULDropsGenerator</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.sctp.SCTP.html">SCTP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications AND <a href="inet.linklayer.ppp.PPPInterfaceWithULDropsGenerator.html">PPPInterfaceWithULDropsGenerator</a>.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.StandardHostWithULThruputMeter.html">StandardHostWithULThruputMeter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.sctp.SCTP.html">SCTP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications AND <a href="inet.linklayer.ppp.PPPInterfaceWithULThruputMeter.html">PPPInterfaceWithULThruputMeter</a>.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.wireless.WirelessHost.html">WirelessHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>Models a host with one wireless (802.11b) card in infrastructure mode.
-This module is basically a <a href="inet.nodes.inet.StandardHost.html">StandardHost</a> with an <a href="inet.linklayer.ieee80211.Ieee80211NicSTA.html">Ieee80211NicSTA</a> added.
-It should be used in conjunction with <a href="inet.nodes.wireless.WirelessAP.html">WirelessAP</a>, or any other AP model
-which contains <a href="inet.linklayer.ieee80211.Ieee80211NicAP.html">Ieee80211NicAP</a>.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.wireless.WirelessHostSimplified.html">WirelessHostSimplified</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>Models a host with one wireless (802.11b) card in infrastructure mode,
-but using a simplified NIC that does not support handovers.
-This module is basically a <a href="inet.nodes.inet.StandardHost.html">StandardHost</a> with an <a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">Ieee80211NicSTASimplified</a>
-added. It should be used in conjunction with <a href="inet.nodes.wireless.WirelessAPSimplified.html">WirelessAPSimplified</a>,
-or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">Ieee80211NicAPSimplified</a>.</p>
-
-   </td>
-</tr>
-</table>
+<p>Uses <a href="PingPayload.html">PingPayload</a> as payload for the ICMP(v6) Echo Request/Reply packets.</p>
+<p><b>See also:</b> <a href="PingPayload.html">PingPayload</a>, <a href="inet.networklayer.ipv4.ICMP.html">ICMP</a>, <a href="inet.networklayer.icmpv6.ICMPv6.html">ICMPv6</a></p>
+<img src="inet.applications.pingapp.PingApp-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.applications.pingapp.PingApp.html" title="PingApp" alt="PingApp" coords="0,30,89,70">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.applications.pingapp.PingApp-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.applications.pingapp.PingApp.html" title="Simple Module PingApp" alt="" coords="5,6,77,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.applications.pingapp.PingApp-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.applications.pingapp.PingApp.html" title="Simple Module PingApp" alt="" coords="7,83,79,111">
+<area shape="rect" id="node2" href="inet.applications.IPingApp.html" title="Module Interface IPingApp" alt="" coords="5,6,80,34">
+</map>
 <h3 class="subtitle">Parameters:</h3>
 <table class="paramstable">
    <tr>
@@ -235,7 +53,7 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
    </td>
    <td>""</td>
    <td>
-<p>destination <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address</p>
+<p>destination address</p>
    </td>
 </tr>
 <tr class="local">
@@ -245,7 +63,7 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
    </td>
    <td>""</td>
    <td>
-<p>source <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address (useful with <a href="inet.examples.sctp.multihomed.multi.html">multi</a>-homing)</p>
+<p>source address (useful with multi-homing)</p>
    </td>
 </tr>
 <tr class="local">
@@ -259,7 +77,7 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
    </td>
 </tr>
 <tr class="local">
-   <td>interval</td>
+   <td>sendInterval</td>
    <td>
       <i>double</i>
    </td>
@@ -275,7 +93,7 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
    </td>
    <td>32</td>
    <td>
-<p>TTL or hopLimit for <a href="inet.networklayer.ipv4.IP.html">IP</a> packets</p>
+<p>TTL or hopLimit for IP packets</p>
    </td>
 </tr>
 <tr class="local">
@@ -293,7 +111,7 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
    <td>
       <i>double</i>
    </td>
-   <td>uniform(0s,this.interval)</td>
+   <td>uniform(0s,this.sendInterval)</td>
    <td>
 <p>send first ping at startTime</p>
    </td>
@@ -305,7 +123,7 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
    </td>
    <td>0s</td>
    <td>
-<p>send no pings after stopTime, 0 means forever</p>
+<p>time to finish sending, 0 means forever</p>
    </td>
 </tr>
 <tr class="local">
@@ -313,9 +131,9 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
    <td>
       <i>bool</i>
    </td>
-   <td>true</td>
+   <td>false</td>
    <td>
-<p>dump on stdout</p>
+<p>log to stdout</p>
    </td>
 </tr>
 </table>
@@ -361,13 +179,105 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
    <td></td>   <td></td>
 </tr>
 </table>
+<h3 class="subtitle">Signals:</h3>
+<table class="signalstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="unit">Unit</th>
+   </tr>
+<tr class="local">
+   <td>outOfOrderArrivals</td>
+   <td><i>
+long   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>pingRxSeq</td>
+   <td><i>
+long   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>numLost</td>
+   <td><i>
+long   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>pingTxSeq</td>
+   <td><i>
+long   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>rtt</td>
+   <td><i>
+simtime_t   </i></td>
+   <td></td>
+</tr>
+</table>
+<h3 class="subtitle">Statistics:</h3>
+<table class="statisticstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="title">Title</th>
+      <th class="source">Source</th>
+      <th class="record">Record</th>
+      <th class="unit">Unit</th>
+      <th class="interpolationmode">Interpolation Mode</th>
+   </tr>
+<tr class="local">
+   <td>pingRxSeq</td>
+   <td>ping rx seq</td>
+   <td></td>
+   <td>count, vector</td>
+   <td></td>
+   <td>none</td>
+</tr>
+<tr class="local">
+   <td>numOutOfOrderArrivals</td>
+   <td>ping out-of-order arrivals</td>
+   <td></td>
+   <td>last, vector</td>
+   <td></td>
+   <td>none</td>
+</tr>
+<tr class="local">
+   <td>numLost</td>
+   <td>pings lost</td>
+   <td></td>
+   <td>last, vector</td>
+   <td></td>
+   <td>none</td>
+</tr>
+<tr class="local">
+   <td>pingTxSeq</td>
+   <td>ping tx seq</td>
+   <td></td>
+   <td>count, vector</td>
+   <td></td>
+   <td>none</td>
+</tr>
+<tr class="local">
+   <td>rtt</td>
+   <td>ping round-trip time</td>
+   <td></td>
+   <td>histogram, vector</td>
+   <td>s</td>
+   <td>none</td>
+</tr>
+</table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
 // Generates ping requests and calculates the packet loss and round trip
 // parameters of the replies.
 //
-// Start/stop time, interval etc can be specified via parameters. To disable,
-// specify empty destAddr or stopTime&lt;=startTime.
+// Start/stop time, sendInterval etc. can be specified via parameters. An address
+// may be given in the dotted decimal notation (or, for IPv6, in the usual
+// notation with colons), or with the module name.
+// (The IPvXAddressResolver class is used to resolve the address.)
+// To disable send, specify empty destAddr.
 //
 // Every ping request is sent out with a sequence number, and replies are
 // expected to arrive in the same order. Whenever there's a jump in the
@@ -378,32 +288,40 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
 // out-of-sequence arrival. So the number of really lost pings will be
 // &quot;lost&quot; minus &quot;out-of-order&quot; (assuming there's no duplicate or bogus reply).
 //
-// Uses PingPayload as payload for the ICMP(v6) Echo Request/Reply packets.
+// Uses ~PingPayload as payload for the ICMP(v6) Echo Request/Reply packets.
 //
-// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> PingPayload, ICMP, ICMPv6Core
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~PingPayload, ~ICMP, ~ICMPv6
 //
-</span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">PingApp</span><span style="color: #000000; ">
+</span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">PingApp</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPingApp</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">destAddr</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// destination IP or IPv6 address
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">srcAddr</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// source IP or IPv6 address (useful with multi-homing)
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">destAddr</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// destination address
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">srcAddr</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// source address (useful with multi-homing)
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">packetSize</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;B&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">56</span><span style="color: #000000; ">B</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// of ping payload, in bytes
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">volatile</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">interval</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;s&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">1</span><span style="color: #000000; ">s</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// time to wait between pings (can be random)
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">volatile</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">sendInterval</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;s&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">1</span><span style="color: #000000; ">s</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// time to wait between pings (can be random)
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">hopLimit</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">32</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// TTL or hopLimit for IP packets
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">count</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">0</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// stop after count ping requests, 0 means continuously
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">startTime</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;s&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #800080; font-weight: bold; ">uniform</span><span style="color: #000000; ">(</span><span style="color: #008000; ">0</span><span style="color: #000000; ">s</span><span style="color: #000000; ">,</span><span style="color: #800000; font-weight: bold; ">this</span><span style="color: #000000; ">.</span><span style="color: #000000; ">interval</span><span style="color: #000000; ">)); </span><span style="color: #808080; font-style: italic; ">// send first ping at startTime
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">stopTime</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;s&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">0</span><span style="color: #000000; ">s</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// send no pings after stopTime, 0 means forever
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">printPing</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">true</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// dump on stdout
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">startTime</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;s&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #800080; font-weight: bold; ">uniform</span><span style="color: #000000; ">(</span><span style="color: #008000; ">0</span><span style="color: #000000; ">s</span><span style="color: #000000; ">,</span><span style="color: #800000; font-weight: bold; ">this</span><span style="color: #000000; ">.</span><span style="color: #000000; ">sendInterval</span><span style="color: #000000; ">)); </span><span style="color: #808080; font-style: italic; ">// send first ping at startTime
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">stopTime</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;s&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">0</span><span style="color: #000000; ">s</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// time to finish sending, 0 means forever
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">printPing</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">false</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// log to stdout
 </span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/app&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">rtt</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">simtime_t</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">numLost</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">long</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">outOfOrderArrivals</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">long</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">pingTxSeq</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">long</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">pingRxSeq</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">long</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">rtt</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;ping round-trip time&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">unit</span><span style="color: #000000; ">=</span><span style="color: #000000; ">s</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">histogram</span><span style="color: #000000; ">,</span><span style="color: #000000; ">vector</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">numLost</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;pings lost&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">last</span><span style="color: #000000; ">,</span><span style="color: #000000; ">vector</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">numOutOfOrderArrivals</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;ping out-of-order arrivals&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">last</span><span style="color: #000000; ">,</span><span style="color: #000000; ">vector</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">pingTxSeq</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;ping tx seq&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #000000; ">vector</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">pingRxSeq</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;ping rx seq&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #000000; ">vector</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
     </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
-        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">pingIn</span><span style="color: #000000; ">;
-        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">pingOut</span><span style="color: #000000; ">;
-        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">pingv6In</span><span style="color: #000000; ">;
-        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">pingv6Out</span><span style="color: #000000; ">;
+        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">pingIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">PingPayload</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">pingOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">PingPayload</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">pingv6In</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">PingPayload</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">pingv6Out</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">PingPayload</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);
 }
 
-
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

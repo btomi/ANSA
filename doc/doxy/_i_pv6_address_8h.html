@@ -80,21 +80,20 @@
 <div class="title">IPv6Address.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;omnetpp.h&gt;</code><br/>
-<code>#include &lt;iostream&gt;</code><br/>
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br/>
 <code>#include &lt;string&gt;</code><br/>
-<code>#include &quot;<a class="el" href="_i_n_e_t_defs_8h_source.html">INETDefs.h</a>&quot;</code><br/>
-</div>
-<p><a href="_i_pv6_address_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<code>#include &quot;<a class="el" href="_i_n_e_t_defs_8h.html">INETDefs.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="uint128_8h.html">uint128.h</a>&quot;</code><br/>
+</div><table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html">IPv6Address</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores a 128-bit <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> address in an efficient way.  <a href="class_i_pv6_address.html#details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_pv6_address_8h.html#afc8dbb2adc384a5845511fc2fe0eb923">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;<a class="el" href="structip.html">ip</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_pv6_address_8h.html#ae1652ec62d313f21c94d35191e05c584">doPacking</a> (cCommBuffer *buf, const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;addr)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_pv6_address_8h.html#a4bde9956876e46ac405ebdeeb0fabd6d">doUnpacking</a> (cCommBuffer *buf, <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;addr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_pv6_address_8h.html#ae1652ec62d313f21c94d35191e05c584">doPacking</a> (cCommBuffer *buf, const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;addr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_i_pv6_address_8h.html#a4bde9956876e46ac405ebdeeb0fabd6d">doUnpacking</a> (cCommBuffer *buf, <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;addr)</td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="ae1652ec62d313f21c94d35191e05c584"></a><!-- doxytag: member="IPv6Address.h::doPacking" ref="ae1652ec62d313f21c94d35191e05c584" args="(cCommBuffer *buf, const IPv6Address &amp;addr)" -->
@@ -102,7 +101,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="_u_d_p_packet__m_8h.html#af2943e653393320faf22740d12600a8f">doPacking</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="_power_control_messages__m_8h.html#adb3889104500e85f634646803f5a0346">doPacking</a> </td>
           <td>(</td>
           <td class="paramtype">cCommBuffer *&#160;</td>
           <td class="paramname"><em>buf</em>, </td>
@@ -121,10 +120,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00299">299</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    buf-&gt;pack(addr.<a class="code" href="class_i_pv6_address.html#a36c9b020f0c21f5d2289466bdab62716">words</a>(), 4);
+    buf-&gt;pack(addr.<a class="code" href="class_i_pv6_address.html#a36c9b020f0c21f5d2289466bdab62716" title="Returns a pointer to the internal binary representation of the address: four 32-bit words...">words</a>(), 4);
 }
 </pre></div>
 </div>
@@ -134,7 +131,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="_u_d_p_packet__m_8h.html#a0e210e62c22df52ed30db275bc78dfb0">doUnpacking</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="_power_control_messages__m_8h.html#a9c656d192cb53794a46e3ce948ebe914">doUnpacking</a> </td>
           <td>(</td>
           <td class="paramtype">cCommBuffer *&#160;</td>
           <td class="paramname"><em>buf</em>, </td>
@@ -153,10 +150,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00304">304</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    buf-&gt;unpack(addr.<a class="code" href="class_i_pv6_address.html#a36c9b020f0c21f5d2289466bdab62716">words</a>(), 4);
+    buf-&gt;unpack(addr.<a class="code" href="class_i_pv6_address.html#a36c9b020f0c21f5d2289466bdab62716" title="Returns a pointer to the internal binary representation of the address: four 32-bit words...">words</a>(), 4);
 }
 </pre></div>
 </div>
@@ -185,11 +180,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>FIXME TBD turn it into a proper class </p>
-
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00294">294</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> os &lt;&lt; ip.<a class="code" href="class_i_pv6_address.html#a7c42fb066db81588a439aed1de5e4b3a">str</a>();
+    <span class="keywordflow">return</span> os &lt;&lt; ip.<a class="code" href="class_i_pv6_address.html#a7c42fb066db81588a439aed1de5e4b3a" title="Returns the textual representation of the address in the standard notation.">str</a>();
 }
 </pre></div>
 </div>
@@ -200,7 +192,7 @@ Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="_i_pv6_address_8h.html">IPv6Address.h</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:45 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:21 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

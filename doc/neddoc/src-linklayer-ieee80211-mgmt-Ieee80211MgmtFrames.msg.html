@@ -70,6 +70,17 @@ for completeness.</p>
 </tr>
 <tr>
    <td>
+<a href="Ieee80211HWMPCode.html">Ieee80211HWMPCode</a>
+   </td>
+   <td>
+<i>enum</i>
+   </td>
+   <td>
+<i>(no description)</i>
+   </td>
+</tr>
+<tr>
+   <td>
 <a href="Ieee80211SupportedRatesElement.html">Ieee80211SupportedRatesElement</a>
    </td>
    <td>
@@ -226,6 +237,105 @@ for completeness.</p>
 </tr>
 <tr>
    <td>
+<a href="Ieee80211ActionFrameBody.html">Ieee80211ActionFrameBody</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+<i>(no description)</i>
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="Ieee80211ActionHWMPFrameBody.html">Ieee80211ActionHWMPFrameBody</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+<i>(no description)</i>
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="PREQElem.html">PREQElem</a>
+   </td>
+   <td>
+<i>struct</i>
+   </td>
+   <td>
+<i>(no description)</i>
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="PERRElem.html">PERRElem</a>
+   </td>
+   <td>
+<i>struct</i>
+   </td>
+   <td>
+<i>(no description)</i>
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="Ieee80211ActionRANNFrameBody.html">Ieee80211ActionRANNFrameBody</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+<i>(no description)</i>
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="Ieee80211ActionPREQFrameBody.html">Ieee80211ActionPREQFrameBody</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+<i>(no description)</i>
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="Ieee80211ActionPREPFrameBody.html">Ieee80211ActionPREPFrameBody</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+<i>(no description)</i>
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="Ieee80211ActionPERRFrameBody.html">Ieee80211ActionPERRFrameBody</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+<i>(no description)</i>
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="Ieee80211ActionGANNFrameBody.html">Ieee80211ActionGANNFrameBody</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+<i>(no description)</i>
+   </td>
+</tr>
+<tr>
+   <td>
 <a href="Ieee80211AuthenticationFrame.html">Ieee80211AuthenticationFrame</a>
    </td>
    <td>
@@ -354,6 +464,19 @@ for completeness.</p>
 
    </td>
 </tr>
+<tr>
+   <td>
+<a href="Ieee80211ActionFrame.html">Ieee80211ActionFrame</a>
+   </td>
+   <td>
+<i>packet</i>
+   </td>
+   <td>
+
+<p>Action frames</p>
+
+   </td>
+</tr>
 </table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
@@ -379,6 +502,8 @@ for completeness.</p>
 </span><span style="color: #800000; font-weight: bold; ">cplusplus</span><span style="color: #000000; "> {{
 #</span><span style="color: #000000; ">include</span><span style="color: #000000; "> </span><span style="color: #008000; ">&quot;MACAddress.h&quot;</span><span style="color: #000000; ">
 #</span><span style="color: #000000; ">include</span><span style="color: #000000; "> </span><span style="color: #008000; ">&quot;Ieee80211Frame_m.h&quot;</span><span style="color: #000000; ">
+#</span><span style="color: #000000; ">define</span><span style="color: #000000; "> </span><span style="color: #000000; ">PREQElemLen</span><span style="color: #000000; "> </span><span style="color: #008000; ">11</span><span style="color: #000000; ">
+#</span><span style="color: #000000; ">define</span><span style="color: #000000; "> </span><span style="color: #000000; ">PERRElemLen</span><span style="color: #000000; "> </span><span style="color: #008000; ">13</span><span style="color: #000000; ">
 }}
 
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">noncobject</span><span style="color: #000000; "> </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; ">;
@@ -400,6 +525,8 @@ for completeness.</p>
     </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">CFPollable</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">CFPollRequest</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">privacy</span><span style="color: #000000; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">DelayedBlockAck</span><span style="color: #000000; ">;
+    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">InmediateBlockAck</span><span style="color: #000000; ">;
 }
 
 </span><span style="color: #808080; font-style: italic; ">//
@@ -429,6 +556,21 @@ for completeness.</p>
     </span><span style="color: #000000; ">RC_NONASS_CLASS3</span><span style="color: #000000; "> = </span><span style="color: #008000; ">7</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">RC_DIASS_MS_LEAVING</span><span style="color: #000000; "> = </span><span style="color: #008000; ">8</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">RC_NONAUTH_ASS_REQUEST</span><span style="color: #000000; "> = </span><span style="color: #008000; ">9</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">RC_MESH_PEERING_CANCELLED</span><span style="color: #000000; "> = </span><span style="color: #008000; ">52</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">RC_MESH_MAX_PEERS</span><span style="color: #000000; "> = </span><span style="color: #008000; ">53</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">RC_MESH_CONFIGURATION_POLICY_VIOLATION</span><span style="color: #000000; "> = </span><span style="color: #008000; ">54</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">RC_MESH_CLOSE_RCVD</span><span style="color: #000000; "> = </span><span style="color: #008000; ">55</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">RC_MESH_MAX_RETRIES</span><span style="color: #000000; "> = </span><span style="color: #008000; ">56</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">RC_MESH_CONFIRM_TIMEOUT</span><span style="color: #000000; "> = </span><span style="color: #008000; ">57</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">RC_MESH_INVALID_GTK</span><span style="color: #000000; "> = </span><span style="color: #008000; ">58</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">RC_MESH_INCONSISTENT_PARAMETERS</span><span style="color: #000000; "> = </span><span style="color: #008000; ">59</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">RC_MESH_INVALID_SECURITY_CAPABILITY</span><span style="color: #000000; "> = </span><span style="color: #008000; ">60</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">RC_MESH_PATH_ERROR_NO_PROXY_INFORMATION</span><span style="color: #000000; "> = </span><span style="color: #008000; ">61</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">RC_MESH_PATH_ERROR_NO_FORWARDING_INFORMATION</span><span style="color: #000000; "> = </span><span style="color: #008000; ">60</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">RC_MESH_PATH_ERROR_DESTINATION_UNREACHABLE</span><span style="color: #000000; "> = </span><span style="color: #008000; ">63</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">RC_MAC_ADDRESS_ALREADY_EXISTS_IN_MBSS</span><span style="color: #000000; "> = </span><span style="color: #008000; ">64</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">RC_MESH_CHANNEL_SWITCH_REGULATORY_REQUIREMENTS</span><span style="color: #000000; "> = </span><span style="color: #008000; ">65</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">RC_MESH_CHANNEL_SWITCH_UNSPECIFIED</span><span style="color: #000000; "> = </span><span style="color: #008000; ">66</span><span style="color: #000000; ">;
 }
 
 </span><span style="color: #808080; font-style: italic; ">//
@@ -448,6 +590,18 @@ for completeness.</p>
     </span><span style="color: #000000; ">SC_AUTH_TIMEOUT</span><span style="color: #000000; "> = </span><span style="color: #008000; ">16</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">SC_ASS_TOO_MANY_MS</span><span style="color: #000000; "> = </span><span style="color: #008000; ">17</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">SC_DATARATE_UNSUP</span><span style="color: #000000; "> = </span><span style="color: #008000; ">18</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">SC_AUTH_REJECT_ANTI_CLOGING</span><span style="color: #000000; "> = </span><span style="color: #008000; ">76</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">SC_AUTH_REJECT_FINITE_CYC_GROUP_UNS</span><span style="color: #000000; "> = </span><span style="color: #008000; ">77</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">SC_TBTT_REQUEST</span><span style="color: #000000; "> = </span><span style="color: #008000; ">78</span><span style="color: #000000; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211HWMPCode</span><span style="color: #000000; ">
+{
+    </span><span style="color: #000000; ">IE11S_GANN</span><span style="color: #000000; "> = </span><span style="color: #008000; ">125</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IE11S_RANN</span><span style="color: #000000; "> = </span><span style="color: #008000; ">126</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IE11S_PREQ</span><span style="color: #000000; "> = </span><span style="color: #008000; ">130</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IE11S_PREP</span><span style="color: #000000; "> = </span><span style="color: #008000; ">131</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IE11S_PERR</span><span style="color: #000000; "> = </span><span style="color: #008000; ">132</span><span style="color: #000000; ">;
 }
 
 </span><span style="color: #808080; font-style: italic; ">//
@@ -570,7 +724,92 @@ for completeness.</p>
 {
 }
 
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211ActionFrameBody</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211FrameBody</span><span style="color: #000000; ">
+{
+}
 
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211ActionHWMPFrameBody</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211ActionFrameBody</span><span style="color: #000000; ">
+{
+     </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">id</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; ">(</span><span style="color: #000000; ">Ieee80211HWMPCode</span><span style="color: #000000; ">);
+     </span><span style="color: #808080; font-style: italic; ">//unsigned char length; 
+</span><span style="color: #000000; ">     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #000000; "> </span><span style="color: #000000; ">flags</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;
+     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #000000; "> </span><span style="color: #000000; ">hopsCount</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;
+     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #000000; "> </span><span style="color: #000000; ">TTL</span><span style="color: #000000; "> = </span><span style="color: #008000; ">32</span><span style="color: #000000; ">;
+ }
+
+
+</span><span style="color: #800000; font-weight: bold; ">struct</span><span style="color: #000000; "> </span><span style="color: #000000; ">PREQElem</span><span style="color: #000000; ">
+{
+     </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">TO</span><span style="color: #000000; "> = </span><span style="color: #008000; ">true</span><span style="color: #000000; ">;
+     </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">USN</span><span style="color: #000000; "> = </span><span style="color: #008000; ">false</span><span style="color: #000000; ">;
+     </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">targetAddress</span><span style="color: #000000; ">;
+     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">targetSeqNumber</span><span style="color: #000000; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">struct</span><span style="color: #000000; "> </span><span style="color: #000000; ">PERRElem</span><span style="color: #000000; ">
+{
+     </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">RC</span><span style="color: #000000; ">;
+     </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">AE</span><span style="color: #000000; ">;
+     </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">destAddress</span><span style="color: #000000; ">;
+     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">destSeqNumber</span><span style="color: #000000; ">;
+     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">destExternalAddress</span><span style="color: #000000; ">;
+     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">reasonCode</span><span style="color: #000000; ">;
+}
+
+     
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211ActionRANNFrameBody</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211ActionHWMPFrameBody</span><span style="color: #000000; ">
+{
+     </span><span style="color: #000000; ">bodyLength</span><span style="color: #000000; "> = </span><span style="color: #008000; ">23</span><span style="color: #000000; ">;
+     </span><span style="color: #000000; ">id</span><span style="color: #000000; "> = </span><span style="color: #000000; ">IE11S_RANN</span><span style="color: #000000; ">;
+     </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">root</span><span style="color: #000000; ">;
+     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">seqNumber</span><span style="color: #000000; ">;
+     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">interval</span><span style="color: #000000; ">;
+     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">metric</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; ">  </span><span style="color: #000000; ">Ieee80211ActionPREQFrameBody</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211ActionHWMPFrameBody</span><span style="color: #000000; ">
+{
+     </span><span style="color: #000000; ">bodyLength</span><span style="color: #000000; "> = </span><span style="color: #008000; ">26</span><span style="color: #000000; ">;
+     </span><span style="color: #000000; ">id</span><span style="color: #000000; "> = </span><span style="color: #000000; ">IE11S_PREQ</span><span style="color: #000000; ">;
+     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">pathDiscoveryId</span><span style="color: #000000; ">;
+     </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">originator</span><span style="color: #000000; ">;
+     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">originatorSeqNumber</span><span style="color: #000000; ">;
+     </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">originatorExternalAddr</span><span style="color: #000000; ">;
+     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">lifeTime</span><span style="color: #000000; ">;
+     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">metric</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;
+     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #000000; "> </span><span style="color: #000000; ">targetCount</span><span style="color: #000000; ">;
+     </span><span style="color: #000000; ">PREQElem</span><span style="color: #000000; "> </span><span style="color: #000000; ">preqElem</span><span style="color: #000000; ">[];
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; ">  </span><span style="color: #000000; ">Ieee80211ActionPREPFrameBody</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211ActionHWMPFrameBody</span><span style="color: #000000; ">
+{
+     </span><span style="color: #000000; ">bodyLength</span><span style="color: #000000; "> = </span><span style="color: #008000; ">37</span><span style="color: #000000; ">;
+     </span><span style="color: #000000; ">id</span><span style="color: #000000; "> = </span><span style="color: #000000; ">IE11S_PREP</span><span style="color: #000000; ">;
+     </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">target</span><span style="color: #000000; ">;
+     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">targetSeqNumber</span><span style="color: #000000; ">;
+     </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">tagetExternalAddr</span><span style="color: #000000; ">;
+     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">lifeTime</span><span style="color: #000000; ">;
+     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">metric</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;
+     </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">originator</span><span style="color: #000000; ">;
+     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">originatorSeqNumber</span><span style="color: #000000; ">;
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; ">  </span><span style="color: #000000; ">Ieee80211ActionPERRFrameBody</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211ActionHWMPFrameBody</span><span style="color: #000000; ">
+{
+     </span><span style="color: #000000; ">bodyLength</span><span style="color: #000000; "> = </span><span style="color: #008000; ">2</span><span style="color: #000000; ">;
+     </span><span style="color: #000000; ">id</span><span style="color: #000000; "> = </span><span style="color: #000000; ">IE11S_PERR</span><span style="color: #000000; ">;
+     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #000000; "> </span><span style="color: #000000; ">numDestination</span><span style="color: #000000; ">;
+     </span><span style="color: #000000; ">PERRElem</span><span style="color: #000000; "> </span><span style="color: #000000; ">perrElem</span><span style="color: #000000; ">[];
+}
+
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; ">  </span><span style="color: #000000; ">Ieee80211ActionGANNFrameBody</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211ActionHWMPFrameBody</span><span style="color: #000000; ">
+{
+    </span><span style="color: #000000; ">bodyLength</span><span style="color: #000000; "> = </span><span style="color: #008000; ">15</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">id</span><span style="color: #000000; "> = </span><span style="color: #000000; ">IE11S_GANN</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">meshGateAddress</span><span style="color: #000000; ">;
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">meshGateSeqNumber</span><span style="color: #000000; ">;
+    
+}
 </span><span style="color: #808080; font-style: italic; ">//--------------------------------------------------------------
 </span><span style="color: #000000; ">
 
@@ -674,7 +913,15 @@ for completeness.</p>
     </span><span style="color: #000000; ">Ieee80211ProbeResponseFrameBody</span><span style="color: #000000; "> </span><span style="color: #000000; ">body</span><span style="color: #000000; ">;
 }
 
+</span><span style="color: #808080; font-style: italic; ">//
+// Action frames
+//
+</span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211ActionFrame</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211ManagementFrame</span><span style="color: #000000; ">
+{
+    </span><span style="color: #000000; ">type</span><span style="color: #000000; "> = </span><span style="color: #000000; ">ST_ACTION</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">byteLength</span><span style="color: #000000; "> = </span><span style="color: #008000; ">28</span><span style="color: #000000; ">+</span><span style="color: #000000; ">getBody</span><span style="color: #000000; ">().</span><span style="color: #000000; ">getBodyLength</span><span style="color: #000000; ">();
+    </span><span style="color: #000000; ">Ieee80211ActionFrameBody</span><span style="color: #000000; "> </span><span style="color: #000000; ">body</span><span style="color: #000000; ">;
+}
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

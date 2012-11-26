@@ -10,6 +10,17 @@
 <p>Hop-by-Hop Options Header.
 RFC 2460 Section 4.3
 Next Header Value: 0</p>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="IPv6HopByHopOptionsHeader-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="IPv6HopByHopOptionsHeader.html" title="Class IPv6HopByHopOptionsHeader" alt="" coords="5,6,205,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="IPv6HopByHopOptionsHeader-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="IPv6HopByHopOptionsHeader.html" title="Class IPv6HopByHopOptionsHeader" alt="" coords="5,83,205,111">
+<area shape="rect" id="node2" href="IPv6ExtensionHeader.html" title="Class IPv6ExtensionHeader" alt="" coords="31,6,180,34">
+</map>
 <h3 class="subtitle">Extends:</h3>
 <table class="typestable">
    <tr>
@@ -31,6 +42,30 @@ Next Header Value: 0</p>
    </td>
 </tr>
 </table>
+<h3 class="subtitle">Fields:</h3>
+<table class="fieldstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+<tr class="local">
+   <td>extensionType</td>
+   <td>
+      <i>
+short</i>
+   </td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>byteLength</td>
+   <td>
+      <i>
+short</i>
+   </td>
+   <td></td>
+</tr>
+</table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
 // Hop-by-Hop Options Header.
@@ -39,9 +74,10 @@ Next Header Value: 0</p>
 //
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv6HopByHopOptionsHeader</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv6ExtensionHeader</span><span style="color: #000000; ">
 {
-}
+    </span><span style="color: #000000; ">extensionType</span><span style="color: #000000; "> = </span><span style="color: #000000; ">IP_PROT_IPv6EXT_HOP</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">byteLength</span><span style="color: #000000; "> = </span><span style="color: #008000; ">8</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// FIXME verify
+</span><span style="color: #000000; ">}
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

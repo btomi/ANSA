@@ -10,28 +10,20 @@
 <p>Used in 802.11 infrastructure mode: handles management frames for a station (STA).</p>
 <p>Relies on the MAC layer (<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">Ieee80211Mac</a>) for reception and transmission of frames.</p>
 <p><b>Author:</b> Andras Varga</p>
-<h3 class="subtitle">Used in compound modules:</h3>
-<table class="typestable">
-   <tr>
-      <th class="name">Name</th>
-      <th class="type">Type</th>
-      <th class="description">Description</th>
-   </tr>
-<tr>
-   <td>
-<a href="inet.linklayer.ieee80211.Ieee80211NicSTA.html">Ieee80211NicSTA</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>This NIC implements an 802.11 network interface card,
-in a STA, using infrastructure mode.</p>
-
-   </td>
-</tr>
-</table>
+<img src="inet.linklayer.ieee80211.mgmt.Ieee80211MgmtSTA-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.linklayer.ieee80211.mgmt.Ieee80211MgmtSTA.html" title="Ieee80211MgmtSTA" alt="Ieee80211MgmtSTA" coords="0,30,157,70">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.linklayer.ieee80211.mgmt.Ieee80211MgmtSTA-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.linklayer.ieee80211.mgmt.Ieee80211MgmtSTA.html" title="Simple Module Ieee80211MgmtSTA" alt="" coords="5,6,147,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.linklayer.ieee80211.mgmt.Ieee80211MgmtSTA-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.linklayer.ieee80211.mgmt.Ieee80211MgmtSTA.html" title="Simple Module Ieee80211MgmtSTA" alt="" coords="5,83,147,111">
+<area shape="rect" id="node2" href="inet.linklayer.ieee80211.mgmt.IIeee80211Mgmt.html" title="Module Interface IIeee80211Mgmt" alt="" coords="17,6,135,34">
+</map>
 <h3 class="subtitle">Parameters:</h3>
 <table class="paramstable">
    <tr>
@@ -73,12 +65,12 @@ in a STA, using infrastructure mode.</p>
       <th class="description">Description</th>
    </tr>
 <tr class="local">
-   <td>uppergateIn</xsl:if></td>
+   <td>upperLayerIn</xsl:if></td>
    <td><i>input</i></td>
    <td></td>   <td></td>
 </tr>
 <tr class="local">
-   <td>uppergateOut</xsl:if></td>
+   <td>upperLayerOut</xsl:if></td>
    <td><i>output</i></td>
    <td></td>   <td></td>
 </tr>
@@ -95,36 +87,112 @@ in a STA, using infrastructure mode.</p>
 <tr class="local">
    <td>agentIn</xsl:if></td>
    <td><i>input</i></td>
-   <td></td>   <td></td>
+   <td></td>   <td>
+<p>used for attaching an agent algorithm</p>
+</td>
 </tr>
 <tr class="local">
    <td>agentOut</xsl:if></td>
    <td><i>output</i></td>
-   <td></td>   <td></td>
+   <td></td>   <td>
+<p>used for attaching an agent algorithm</p>
+</td>
+</tr>
+</table>
+<h3 class="subtitle">Signals:</h3>
+<table class="signalstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="unit">Unit</th>
+   </tr>
+<tr class="local">
+   <td>dataQueueLen</td>
+   <td><i>
+long   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>dropPkByQueue</td>
+   <td><i>
+cMessage   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>dequeuePk</td>
+   <td><i>
+cMessage   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>enqueuePk</td>
+   <td><i>
+cMessage   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>queueingTime</td>
+   <td><i>
+simtime_t   </i></td>
+   <td>s</td>
+</tr>
+</table>
+<h3 class="subtitle">Statistics:</h3>
+<table class="statisticstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="title">Title</th>
+      <th class="source">Source</th>
+      <th class="record">Record</th>
+      <th class="unit">Unit</th>
+      <th class="interpolationmode">Interpolation Mode</th>
+   </tr>
+<tr class="local">
+   <td>dataQueueLen</td>
+   <td>data queue length</td>
+   <td></td>
+   <td>max, timeavg, vector</td>
+   <td></td>
+   <td>sample-hold</td>
+</tr>
+<tr class="local">
+   <td>dropPkByQueue</td>
+   <td>packets dropped by queue</td>
+   <td>dropPkByQueue</td>
+   <td>count, sum(packetBytes), vector(packetBytes)</td>
+   <td></td>
+   <td>none</td>
 </tr>
 </table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
 // Used in 802.11 infrastructure mode: handles management frames for a station (STA).
 //
-// Relies on the MAC layer (Ieee80211Mac) for reception and transmission of frames.
+// Relies on the MAC layer (~Ieee80211Mac) for reception and transmission of frames.
 //
 // </span><span style="color: #000080; ">@author</span><span style="color: #808080; font-style: italic; "> Andras Varga
 //
-</span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211MgmtSTA</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211Mgmt</span><span style="color: #000000; ">
+</span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211MgmtSTA</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #000000; "> </span><span style="color: #000000; ">IIeee80211Mgmt</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">frameCapacity</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">100</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// maximum queue length
 </span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/cogwheel&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">enqueuePk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">cMessage</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">dequeuePk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">cMessage</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">dropPkByQueue</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">cMessage</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">queueingTime</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">simtime_t</span><span style="color: #000000; ">; </span><span style="color: #000000; ">unit</span><span style="color: #000000; ">=</span><span style="color: #000000; ">s</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">dataQueueLen</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">long</span><span style="color: #000000; ">);  </span><span style="color: #808080; font-style: italic; ">// number of stored packets
+</span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">dataQueueLen</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;data queue length&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #800080; font-weight: bold; ">max</span><span style="color: #000000; ">,</span><span style="color: #000000; ">timeavg</span><span style="color: #000000; ">,</span><span style="color: #000000; ">vector</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">sample</span><span style="color: #000000; ">-</span><span style="color: #000000; ">hold</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">dropPkByQueue</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;packets dropped by queue&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">source</span><span style="color: #000000; ">=</span><span style="color: #000000; ">dropPkByQueue</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;sum(packetBytes)&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;vector(packetBytes)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
     </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
-        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">uppergateIn</span><span style="color: #000000; ">;
-        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">uppergateOut</span><span style="color: #000000; ">;
+        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">upperLayerIn</span><span style="color: #000000; ">;
+        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">upperLayerOut</span><span style="color: #000000; ">;
         </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">macIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">Ieee80211Frame</span><span style="color: #000000; ">);
         </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">macOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">Ieee80211Frame</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">agentIn</span><span style="color: #000000; ">;
-        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">agentOut</span><span style="color: #000000; ">;
-}
+        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">agentIn</span><span style="color: #000000; ">;   </span><span style="color: #808080; font-style: italic; ">// used for attaching an agent algorithm
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">agentOut</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// used for attaching an agent algorithm
+</span><span style="color: #000000; ">}
+
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

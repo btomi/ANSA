@@ -10,12 +10,12 @@
 Step 1: - Check which layer the packet is coming from
 Alternative 1: From layer 3
     Step 1: Find and check the next hop of this packet
-    Alternative 1: Next hop belongs to this <a href="inet.networklayer.mpls.MPLS.html">MPLS</a> cloud
-        Step 1: Encapsulate the packet in an <a href="inet.networklayer.mpls.MPLS.html">MPLS</a> packet with
+    Alternative 1: Next hop belongs to this MPLS cloud
+        Step 1: Encapsulate the packet in an MPLS packet with
         IP_NATIVE_LABEL label
         Step 2: Send to the next hop
         Step 3: Return
-    Alternative 2: Next hop does not belong to this <a href="inet.networklayer.mpls.MPLS.html">MPLS</a> cloud
+    Alternative 2: Next hop does not belong to this MPLS cloud
         Step 1: Send the packet to the next hop
 Alternative 2: From layer 2
     Step 1: Record the packet incoming interface
@@ -31,7 +31,7 @@ Alternative 2: From layer 2
     Alternative 2: No
         Step 1: Continue to the next step
     Step 3: Check the packet type
-    Alternative 1: The packet is native <a href="inet.networklayer.ipv4.IP.html">IP</a>
+    Alternative 1: The packet is native IP
         Step 1: Check the LSR type
         Alternative 1: The LSR is an Ingress Router
             Step 1: Look up LIB for outgoing label
@@ -50,7 +50,7 @@ Alternative 2: From layer 2
         Alternative 2: The LSR is not an Ingress Router
             Step 1: Print out the error
             Step 2: Delete the packet and return
-    Alternative 2: The packet is <a href="inet.networklayer.mpls.MPLS.html">MPLS</a>
+    Alternative 2: The packet is MPLS
         Step 1: Check the LSR type
         Alternative 1: The LSR is an Egress Router
             Step 1: POP the top label
@@ -72,6 +72,5 @@ Alternative 2: From layer 2
                 Step 3: Return
 Step 2: Return
 </pre></p>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

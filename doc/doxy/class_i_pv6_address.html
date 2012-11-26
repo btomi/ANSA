@@ -85,7 +85,10 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="IPv6Address" -->
-<p><code>#include &lt;<a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>&gt;</code></p>
+<p>Stores a 128-bit <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> address in an efficient way.  
+ <a href="class_i_pv6_address.html#details">More...</a></p>
+
+<p><code>#include &lt;IPv6Address.h&gt;</code></p>
 
 <p><a href="class_i_pv6_address-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -101,56 +104,105 @@ Public Types</h2></td></tr>
 <a class="el" href="class_i_pv6_address.html#a228f9d2016a079d8680e6b93a4ce9778a1afdb7b7efb0d8d1139ee2cf34077b93">GLOBAL</a>
 <br/>
  }</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> address scope (RFC 3513)  <a href="class_i_pv6_address.html#a228f9d2016a079d8680e6b93a4ce9778">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a091e827de954eb1c395c906569805ede">IPv6Address</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a091e827de954eb1c395c906569805ede"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a759252c8a76d51c4d835f6d17fddf1e5">IPv6Address</a> (uint32 segment0, uint32 segment1, uint32 segment2, uint32 segment3)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> address from four 32-bit integers.  <a href="#a759252c8a76d51c4d835f6d17fddf1e5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a6f87d40dc2c9f15693d08ef9f85411f7">IPv6Address</a> (const <a class="el" href="class_uint128.html">Uint128</a> &amp;addr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a6f87d40dc2c9f15693d08ef9f85411f7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#afce30159a58e16ff4a44ea68a7cd5b1a">IPv6Address</a> (const char *addr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#afce30159a58e16ff4a44ea68a7cd5b1a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a6a4baa0e807853164ae2146fbe99134d">operator&lt;</a> (const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;addr) const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a77c16012f92cc1f501374fe32d433da6">operator&gt;</a> (const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;addr) const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a5281130f1fea745ffb389db767d90ba9">operator==</a> (const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;addr) const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a2588e38727135e7b3603deb147109fc4">operator!=</a> (const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;addr) const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a85e0ff7346a455454c337959e7f2ca26">compare</a> (const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;addr) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns -1, 0 or 1.  <a href="#a85e0ff7346a455454c337959e7f2ca26"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a384e495d87184ff4306da4328707c32c">tryParse</a> (const char *addr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries parsing an <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> address string into the object.  <a href="#a384e495d87184ff4306da4328707c32c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a55ffa37e2140d970b86e62d03b973ea2">tryParseAddrWithPrefix</a> (const char *addr, int &amp;prefixLen)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a5560a79b66ee963af78b0a1dde71ce99">set</a> (const char *addr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Expects a string in the "&lt;address&gt;/&lt;prefixlength&gt;" syntax, parses the address into the object (see <a class="el" href="class_i_pv6_address.html#a384e495d87184ff4306da4328707c32c" title="Tries parsing an IPv6 address string into the object.">tryParse()</a>, and returns the prefix length (a 0..128 integer) in the second argument.  <a href="#a55ffa37e2140d970b86e62d03b973ea2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a5560a79b66ee963af78b0a1dde71ce99">set</a> (const char *addr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> address.  <a href="#a5560a79b66ee963af78b0a1dde71ce99"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a7c42fb066db81588a439aed1de5e4b3a">str</a> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a0f96b12576a58d7d7276646bc2336be7">set</a> (uint32 d0, uint32 d1, uint32 d2, uint32 d3)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the textual representation of the address in the standard notation.  <a href="#a7c42fb066db81588a439aed1de5e4b3a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a0f96b12576a58d7d7276646bc2336be7">set</a> (uint32 d0, uint32 d1, uint32 d2, uint32 d3)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> address from four 32-bit integers.  <a href="#a0f96b12576a58d7d7276646bc2336be7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a66f3a937eefd7e72c411677953eeba5f">set</a> (const <a class="el" href="class_uint128.html">Uint128</a> &amp;addr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the address from the given <a class="el" href="class_uint128.html" title="Copyright (c) 2005 Jan Ringo, www.ringos.cz.">Uint128</a>.  <a href="#a66f3a937eefd7e72c411677953eeba5f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a65ce07300dc1f96d107a4a0f42758d99">operator Uint128</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts to <a class="el" href="class_uint128.html" title="Copyright (c) 2005 Jan Ringo, www.ringos.cz.">Uint128</a>.  <a href="#a65ce07300dc1f96d107a4a0f42758d99"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint32 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a36c9b020f0c21f5d2289466bdab62716">words</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the internal binary representation of the address: four 32-bit words, most significant word first.  <a href="#a36c9b020f0c21f5d2289466bdab62716"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const uint32 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a4702667a0a119fff6899ae7e7c27e822">words</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the internal binary representation of the address: four 32-bit words, most significant word first.  <a href="#a4702667a0a119fff6899ae7e7c27e822"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv6_address.html#a228f9d2016a079d8680e6b93a4ce9778">Scope</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31">getScope</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> address scope.  <a href="#a7b47fefdfe99444721197fad4aa8de31"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv6_address.html">IPv6Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#afb604314abc5c3a3118e8c93d17e9201">getPrefix</a> (int prefixLength) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> first prefixLength bits of the address, with the rest set to zero.  <a href="#afb604314abc5c3a3118e8c93d17e9201"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv6_address.html">IPv6Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#aa982a6215bc1044af2072330500b6e33">getSuffix</a> (int prefixLength) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the last 128-prefixLength bits of the address, with the first bits set to zero.  <a href="#aa982a6215bc1044af2072330500b6e33"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a6820830388fdffcd01de42d2f9fe2762">setPrefix</a> (const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;fromAddr, int prefixLength)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Overwrites the first prefixLength bits of the address with the bits from the address passed as argument.  <a href="#a6820830388fdffcd01de42d2f9fe2762"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#aef3dea13d2ff3c826e853cbecd25c413">setSuffix</a> (const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;fromAddr, int prefixLength)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Overwrites the last 128-prefixLength bits of the address with the bits from address passed as argument.  <a href="#aef3dea13d2ff3c826e853cbecd25c413"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv6_address.html">IPv6Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#ab135c68c866eb93e17b4a8b070abf750">formSolicitedNodeMulticastAddress</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the solicited-node multicast address for this address.  <a href="#ab135c68c866eb93e17b4a8b070abf750"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a8869e49b83d1b9752e85d2de7090689b">isSolicitedNodeMulticastAddress</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv6_address.html">IPv6Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a8b6563e274a116dd7108a300062399a2">formSubnetRouterAnycastAddress</a> (int prefixLength) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the subnet-router anycast address for this address by setting its suffix (the last 128-prefixLength bits) to all-zeroes.  <a href="#a8b6563e274a116dd7108a300062399a2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a4d9102b52fcf98d1945c75a098bc678a">matches</a> (const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;prefix, int prefixLength) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the address matches the given prefix.  <a href="#a4d9102b52fcf98d1945c75a098bc678a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#af526cffcc3a4aa5bb96d307de6e8d448">isUnspecified</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> Address is undefined.  <a href="#af526cffcc3a4aa5bb96d307de6e8d448"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a3c3bb6898821e044b12cf31911c90201">isMulticast</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility function based on <a class="el" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31" title="Get the IPv6 address scope.">getScope()</a>  <a href="#a3c3bb6898821e044b12cf31911c90201"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a052b40d4f11c907cfacd29462dd5e385">isUnicast</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility function based on <a class="el" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31" title="Get the IPv6 address scope.">getScope()</a>  <a href="#a052b40d4f11c907cfacd29462dd5e385"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a2a07372674c8a12ad46111be1fe1134e">isLoopback</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility function based on <a class="el" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31" title="Get the IPv6 address scope.">getScope()</a>  <a href="#a2a07372674c8a12ad46111be1fe1134e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a304edc5014ff3c991ae531aca21d2260">isLinkLocal</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility function based on <a class="el" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31" title="Get the IPv6 address scope.">getScope()</a>  <a href="#a304edc5014ff3c991ae531aca21d2260"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a6848bd7b576ddd4b1445aad775ba09a1">isSiteLocal</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility function based on <a class="el" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31" title="Get the IPv6 address scope.">getScope()</a>  <a href="#a6848bd7b576ddd4b1445aad775ba09a1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#aa2c2499a9e2ca1fd41b615d38654d8aa">isGlobal</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility function based on <a class="el" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31" title="Get the IPv6 address scope.">getScope()</a>  <a href="#aa2c2499a9e2ca1fd41b615d38654d8aa"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a38e774ffade5ca58c1191f743eaa0aca">getMulticastScope</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the 4-bit scope field of an <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> multicast address.  <a href="#a38e774ffade5ca58c1191f743eaa0aca"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a7b5960c4ebf464e4c94cbe20556bb5ee">scopeName</a> (<a class="el" href="class_i_pv6_address.html#a228f9d2016a079d8680e6b93a4ce9778">Scope</a> s)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a0bcf37e66a36c5023d76050572a34fda">constructMask</a> (int prefixLength, uint32 *mask)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the string representation of the given scope.  <a href="#a7b5960c4ebf464e4c94cbe20556bb5ee"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a0bcf37e66a36c5023d76050572a34fda">constructMask</a> (int prefixLength, uint32 *mask)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a 128-bit mask based on the prefix length.  <a href="#a0bcf37e66a36c5023d76050572a34fda"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_i_pv6_address.html">IPv6Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#aa8a3ef9e930a6703ea9cbde5a3ecaaca">formLinkLocalAddress</a> (const <a class="el" href="class_interface_token.html">InterfaceToken</a> &amp;ident)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Forms a link-local address using the given interface identifier.  <a href="#aa8a3ef9e930a6703ea9cbde5a3ecaaca"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr><td colspan="2"><div class="groupHeader">Predefined addresses</div></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_i_pv6_address.html">IPv6Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a0c1e137cb3b1470ec6b8d9a95e03dbe5">UNSPECIFIED_ADDRESS</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The unspecified address.  <a href="#a0c1e137cb3b1470ec6b8d9a95e03dbe5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_i_pv6_address.html">IPv6Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a0ca201480138fbe7578ff598baade998">LOOPBACK_ADDRESS</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The loopback address.  <a href="#a0ca201480138fbe7578ff598baade998"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_i_pv6_address.html">IPv6Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#affc233fad6ef60e013d37bd105a7d2fd">ALL_NODES_1</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">All-nodes multicast address, scope 1 (interface-local)  <a href="#affc233fad6ef60e013d37bd105a7d2fd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_i_pv6_address.html">IPv6Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#af71ff608917fe0fc14baf50d11815aeb">ALL_NODES_2</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">All-nodes multicast address, scope 2 (link-local)  <a href="#af71ff608917fe0fc14baf50d11815aeb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_i_pv6_address.html">IPv6Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a6b3ccf4a474ef48fb87935d5d4f92c17">ALL_ROUTERS_1</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">All-routers multicast address, scope 1 (interface-local)  <a href="#a6b3ccf4a474ef48fb87935d5d4f92c17"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_i_pv6_address.html">IPv6Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a3550339d4b3388eb3891c4744dca2aa1">ALL_ROUTERS_2</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">All-routers multicast address, scope 2 (link-local)  <a href="#a3550339d4b3388eb3891c4744dca2aa1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_i_pv6_address.html">IPv6Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#ae88319a24467c2ed45c6ef94c1105007">ALL_ROUTERS_5</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">All-routers multicast address, scope 5 (site-local)  <a href="#ae88319a24467c2ed45c6ef94c1105007"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_i_pv6_address.html">IPv6Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a05683ca5f1a158a96c9a319314cb47bd">SOLICITED_NODE_PREFIX</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The solicited-node multicast address prefix (prefix length = 104)  <a href="#a05683ca5f1a158a96c9a319314cb47bd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_i_pv6_address.html">IPv6Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#ac34c13834df9731ffbdc909f98228df7">LINKLOCAL_PREFIX</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The link-local prefix (fe80::)  <a href="#ac34c13834df9731ffbdc909f98228df7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_i_pv6_address.html">IPv6Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#a2aebd37f8e2b7977e76f62395fc1a30a">LL_MANET_ROUTERS</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Link-local MANET routers multicast address.  <a href="#a2aebd37f8e2b7977e76f62395fc1a30a"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#ad96c293a63f814c05c360b46ad0f3e5b">doTryParse</a> (const char *&amp;addr)</td></tr>
@@ -159,10 +211,8 @@ Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a> [4]</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Stores an <a class="el" href="class_i_pv6.html">IPv6</a> address. Compliant to RFC 3513 - Internet Protocol Version 6 (<a class="el" href="class_i_pv6.html">IPv6</a>) Addressing Architecture.</p>
-<p>Storage is efficient: an object occupies size of an <a class="el" href="class_i_pv6.html">IPv6</a> address (128bits=16 bytes). </p>
-
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00037">37</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
+<div class="textblock"><p>Stores a 128-bit <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> address in an efficient way. </p>
+<p>Complies to RFC 3513, "Internet Protocol Version 6 (IPv6) Addressing Architecture." </p>
 </div><hr/><h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="a228f9d2016a079d8680e6b93a4ce9778"></a><!-- doxytag: member="IPv6Address::Scope" ref="a228f9d2016a079d8680e6b93a4ce9778" args="" -->
 <div class="memitem">
@@ -174,7 +224,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p><a class="el" href="class_i_pv6.html">IPv6</a> address scope (RFC 3513) </p>
+
+<p><a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> address scope (RFC 3513) </p>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="a228f9d2016a079d8680e6b93a4ce9778a18f474c2588cd71fbef3f07006390d7b"></a><!-- doxytag: member="UNSPECIFIED" ref="a228f9d2016a079d8680e6b93a4ce9778a18f474c2588cd71fbef3f07006390d7b" args="" -->UNSPECIFIED</em>&nbsp;</td><td>
 </td></tr>
@@ -191,8 +242,6 @@ Private Attributes</h2></td></tr>
 </table>
 </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00052">52</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             <a class="code" href="class_i_pv6_address.html#a228f9d2016a079d8680e6b93a4ce9778a18f474c2588cd71fbef3f07006390d7b">UNSPECIFIED</a>,
             <a class="code" href="class_i_pv6_address.html#a228f9d2016a079d8680e6b93a4ce9778a1830f008cbc09668fcf3a690e87e36c6">LOOPBACK</a>,
@@ -218,14 +267,12 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Constructor Set all 128 bits of the <a class="el" href="class_i_pv6.html">IPv6</a> address to '0'. 0:0:0:0:0:0:0:0 </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00097">97</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
+<p>Constructor. </p>
+<p>Initializes the <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> address to ::0 (all-zeroes). </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_address_8cc_source.html#l00302">getPrefix()</a>, and <a class="el" href="_i_pv6_address_8cc_source.html#l00312">getSuffix()</a>.</p>
-<div class="fragment"><pre class="fragment">                       {
-            <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0]=<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1]=<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2]=<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3]=0;
-        }
+<p>Referenced by <a class="el" href="class_i_pv6_address.html#afb604314abc5c3a3118e8c93d17e9201">getPrefix()</a>, and <a class="el" href="class_i_pv6_address.html#aa982a6215bc1044af2072330500b6e33">getSuffix()</a>.</p>
+<div class="fragment"><pre class="fragment">{<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0] = <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1] = <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2] = <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3] = 0;}
 </pre></div>
 </div>
 </div>
@@ -265,15 +312,36 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Constructor. Constructs an <a class="el" href="class_i_pv6.html">IPv6</a> address based from the 4 given segments. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00105">105</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
+<p>Constructs an <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> address from four 32-bit integers. </p>
+<p>The most significant word should be passed in the first argument. </p>
 <div class="fragment"><pre class="fragment">                                                                                         {
             <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0] = segment0;
             <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1] = segment1;
             <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2] = segment2;
             <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3] = segment3;
         }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a6f87d40dc2c9f15693d08ef9f85411f7"></a><!-- doxytag: member="IPv6Address::IPv6Address" ref="a6f87d40dc2c9f15693d08ef9f85411f7" args="(const Uint128 &amp;addr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_pv6_address.html#a091e827de954eb1c395c906569805ede">IPv6Address::IPv6Address</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_uint128.html">Uint128</a> &amp;&#160;</td>
+          <td class="paramname"><em>addr</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor. </p>
+<p>Sets the address from the given 128-bit integer. </p>
+<div class="fragment"><pre class="fragment">{<span class="keyword">set</span>(addr);}
 </pre></div>
 </div>
 </div>
@@ -286,14 +354,14 @@ Private Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>addr</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td><code> [inline, explicit]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Constructor. Sets the address from the given text representation. See documentation of <a class="el" href="class_i_pv6_address.html#a384e495d87184ff4306da4328707c32c">tryParse()</a> for supported syntax. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00116">116</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
+<p>Constructor. </p>
+<p>Sets the address from the given text representation. See documentation of <a class="el" href="class_i_pv6_address.html#a384e495d87184ff4306da4328707c32c" title="Tries parsing an IPv6 address string into the object.">tryParse()</a> for supported syntax. </p>
 <div class="fragment"><pre class="fragment">{<span class="keyword">set</span>(addr);}
 </pre></div>
 </div>
@@ -313,14 +381,13 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns -1, 0 or 1. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00128">128</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
-<div class="fragment"><pre class="fragment">                                                    {
-            <span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0]&lt;addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0] ? -1 : <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0]&gt;addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0] ? 1 :
-                   <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1]&lt;addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1] ? -1 : <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1]&gt;addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1] ? 1 :
-                   <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2]&lt;addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2] ? -1 : <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2]&gt;addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2] ? 1 :
-                   <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3]&lt;addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3] ? -1 : <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3]&gt;addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3] ? 1 : 0;
+<p>Returns -1, 0 or 1. </p>
+<div class="fragment"><pre class="fragment">        {
+            <span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0] &lt; addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0] ? -1 : <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0] &gt; addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0] ? 1 :
+                   <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1] &lt; addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1] ? -1 : <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1] &gt; addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1] ? 1 :
+                   <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2] &lt; addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2] ? -1 : <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2] &gt; addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2] ? 1 :
+                   <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3] &lt; addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3] ? -1 : <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3] &gt; addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3] ? 1 : 0;
         }
 </pre></div>
 </div>
@@ -330,7 +397,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_pv6_address.html#a0bcf37e66a36c5023d76050572a34fda">IPv6Address::constructMask</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6_address.html#a0bcf37e66a36c5023d76050572a34fda">IPv6Address::constructMask</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>prefixLength</em>, </td>
@@ -349,13 +416,13 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Construct a 128 bit mask based on the prefix length. Mask should point to an array of four 32-bit unsigned integers. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8cc_source.html#l00259">259</a> of file <a class="el" href="_i_pv6_address_8cc_source.html">IPv6Address.cc</a>.</p>
+<p>Construct a 128-bit mask based on the prefix length. </p>
+<p>Mask should point to an array of four 32-bit words, most significant word first. </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_address_8cc_source.html#l00302">getPrefix()</a>, <a class="el" href="_i_pv6_address_8cc_source.html#l00312">getSuffix()</a>, <a class="el" href="_i_pv6_address_8cc_source.html#l00360">matches()</a>, <a class="el" href="_i_pv6_address_8cc_source.html#l00323">setPrefix()</a>, and <a class="el" href="_i_pv6_address_8cc_source.html#l00338">setSuffix()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_address.html#afb604314abc5c3a3118e8c93d17e9201">getPrefix()</a>, <a class="el" href="class_i_pv6_address.html#aa982a6215bc1044af2072330500b6e33">getSuffix()</a>, <a class="el" href="class_i_pv6_address.html#a4d9102b52fcf98d1945c75a098bc678a">matches()</a>, <a class="el" href="class_i_pv6_address.html#a6820830388fdffcd01de42d2f9fe2762">setPrefix()</a>, and <a class="el" href="class_i_pv6_address.html#aef3dea13d2ff3c826e853cbecd25c413">setSuffix()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    ASSERT(prefixLength&gt;=0 &amp;&amp; prefixLength&lt;=128 &amp;&amp; mask!=NULL);
+    ASSERT(prefixLength&gt;=0 &amp;&amp; prefixLength&lt;=128 &amp;&amp; mask!=<a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>);
 
     <span class="comment">// create a mask based on the prefix length.</span>
     <span class="keywordflow">if</span> (prefixLength==0)
@@ -413,11 +480,9 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8cc_source.html#l00070">70</a> of file <a class="el" href="_i_pv6_address_8cc_source.html">IPv6Address.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_address_8cc_source.html#l00110">tryParse()</a>, and <a class="el" href="_i_pv6_address_8cc_source.html#l00121">tryParseAddrWithPrefix()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_address.html#a384e495d87184ff4306da4328707c32c">tryParse()</a>, and <a class="el" href="class_i_pv6_address.html#a55ffa37e2140d970b86e62d03b973ea2">tryParseAddrWithPrefix()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (!strcmp(addr,<span class="stringliteral">&quot;&lt;unspec&gt;&quot;</span>))
+    <span class="keywordflow">if</span> (!strcmp(addr, <span class="stringliteral">&quot;&lt;unspec&gt;&quot;</span>))
     {
         addr += 8;
         <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0] = <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1] = <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2] = <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3] = 0;
@@ -425,32 +490,32 @@ Private Attributes</h2></td></tr>
     }
 
     <span class="comment">// parse and store 16-bit units</span>
-    <span class="keywordtype">int</span> octals[8];
-    <span class="keywordtype">int</span> numOctals = parseOctals(addr, octals);
+    <span class="keywordtype">int</span> groups[8];
+    <span class="keywordtype">int</span> numGroups = parseGroups(addr, groups);
 
     <span class="comment">// if address string contains &quot;::&quot;, parse and store second half too</span>
     <span class="keywordflow">if</span> (*addr==<span class="charliteral">&#39;:&#39;</span> &amp;&amp; *(addr+1)==<span class="charliteral">&#39;:&#39;</span>)
     {
         addr += 2;
-        <span class="keywordtype">int</span> suffixOctals[8];
-        <span class="keywordtype">int</span> numSuffixOctals = parseOctals(addr, suffixOctals);
+        <span class="keywordtype">int</span> suffixGroups[8];
+        <span class="keywordtype">int</span> numSuffixGroups = parseGroups(addr, suffixGroups);
 
-        <span class="comment">// merge suffixOctals[] into octals[]</span>
-        <span class="keywordflow">if</span> (numOctals+numSuffixOctals&gt;8)
+        <span class="comment">// merge suffixGroups[] into groups[]</span>
+        <span class="keywordflow">if</span> (numGroups+numSuffixGroups&gt;8)
             <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// too many</span>
-        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>=numOctals; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>&lt;8; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++) {
-            <span class="keywordtype">int</span> j = <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>-8+numSuffixOctals;
-            octals[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>] = j&lt;0 ? 0 : suffixOctals[j];
+        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=numGroups; i&lt;8; i++) {
+            <span class="keywordtype">int</span> j = i-8+numSuffixGroups;
+            groups[i] = j&lt;0 ? 0 : suffixGroups[j];
         }
-        numOctals = 8;
+        numGroups = 8;
     }
 
-    <span class="keywordflow">if</span> (numOctals!=8)
+    <span class="keywordflow">if</span> (numGroups!=8)
         <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// too few</span>
 
-    <span class="comment">// copy octets to d[]</span>
-    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>=0; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>&lt;4; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++)
-        <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>] = (octals[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>*2]&lt;&lt;16) + octals[2*<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> + 1];
+    <span class="comment">// copy groups to d[]</span>
+    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;4; i++)
+        <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[i] = (groups[i*2]&lt;&lt;16) + groups[2*i + 1];
 
     <span class="keywordflow">return</span> <span class="keyword">true</span>;
 }
@@ -471,15 +536,14 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Forms a link-local address using the given interface identifier. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8cc_source.html#l00352">352</a> of file <a class="el" href="_i_pv6_address_8cc_source.html">IPv6Address.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00730">IPv6NeighbourDiscovery::assignLinkLocalAddress()</a>, and <a class="el" href="_flat_network_configurator6_8cc_source.html#l00077">FlatNetworkConfigurator6::configureAdvPrefixes()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_neighbour_discovery.html#a5438ceb3077ec49d9b393136a9a5e768">IPv6NeighbourDiscovery::assignLinkLocalAddress()</a>, <a class="el" href="class_routing_table6.html#a84a7121fd02397bfd4ea169675381e3e">RoutingTable6::assignRequiredNodeAddresses()</a>, and <a class="el" href="class_flat_network_configurator6.html#a4b3401699c2735d6a42e36c3df86b010">FlatNetworkConfigurator6::configureAdvPrefixes()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_i_pv6_address.html">IPv6Address</a> suffix(0, 0, ident.<a class="code" href="class_interface_token.html#af90ce6bfecdaf8a2220c1d4394ce6e6b">normal</a>(), ident.<a class="code" href="class_interface_token.html#a1a2804e3d0693eb983c850e10f910f54">low</a>());
-    <a class="code" href="class_i_pv6_address.html">IPv6Address</a> linkLocalAddr = <a class="code" href="class_i_pv6_address.html#ac34c13834df9731ffbdc909f98228df7">IPv6Address::LINKLOCAL_PREFIX</a>;
-    linkLocalAddr.<a class="code" href="class_i_pv6_address.html#aef3dea13d2ff3c826e853cbecd25c413">setSuffix</a>(suffix, 128-ident.<a class="code" href="class_interface_token.html#ac24d3ff83613e4a7721526553053c312">length</a>());
+    <a class="code" href="class_i_pv6_address.html" title="Stores a 128-bit IPv6 address in an efficient way.">IPv6Address</a> suffix(0, 0, ident.<a class="code" href="class_interface_token.html#af90ce6bfecdaf8a2220c1d4394ce6e6b">normal</a>(), ident.<a class="code" href="class_interface_token.html#a1a2804e3d0693eb983c850e10f910f54">low</a>());
+    <a class="code" href="class_i_pv6_address.html" title="Stores a 128-bit IPv6 address in an efficient way.">IPv6Address</a> linkLocalAddr = <a class="code" href="class_i_pv6_address.html#ac34c13834df9731ffbdc909f98228df7" title="The link-local prefix (fe80::)">IPv6Address::LINKLOCAL_PREFIX</a>;
+    linkLocalAddr.<a class="code" href="class_i_pv6_address.html#aef3dea13d2ff3c826e853cbecd25c413" title="Overwrites the last 128-prefixLength bits of the address with the bits from address passed as argumen...">setSuffix</a>(suffix, 128-ident.<a class="code" href="class_interface_token.html#ac24d3ff83613e4a7721526553053c312">length</a>());
     <span class="keywordflow">return</span> linkLocalAddr;
 }
 </pre></div>
@@ -498,13 +562,13 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Create solicited-node multicast address for this address. This function replaces the prefix with FF02:0:0:0:0:1:FF00:0/104. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00224">224</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
+<p>Returns the solicited-node multicast address for this address. </p>
+<p>This function replaces the prefix with FF02:0:0:0:0:1:FF00:0/104. </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00593">IPv6NeighbourDiscovery::initiateAddressResolution()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00756">IPv6NeighbourDiscovery::initiateDAD()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00646">IPv6NeighbourDiscovery::processARTimeout()</a>, and <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00783">IPv6NeighbourDiscovery::processDADTimeout()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_neighbour_discovery.html#a6afff1bf1db0e7b69f3f6782a87b5b82">IPv6NeighbourDiscovery::initiateAddressResolution()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#aab8e413cb12b66797d5e497f9fe6fddd">IPv6NeighbourDiscovery::initiateDAD()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#a61e880bea24c63e2661d2722077ac172">IPv6NeighbourDiscovery::processARTimeout()</a>, and <a class="el" href="class_i_pv6_neighbour_discovery.html#a13117cd0ac035e0a0fd198d872b209c3">IPv6NeighbourDiscovery::processDADTimeout()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                              {
-            <span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a091e827de954eb1c395c906569805ede">IPv6Address</a>(*this).setPrefix(<a class="code" href="class_i_pv6_address.html#a05683ca5f1a158a96c9a319314cb47bd">SOLICITED_NODE_PREFIX</a>, 104);
+            <span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a091e827de954eb1c395c906569805ede" title="Constructor.">IPv6Address</a>(*this).setPrefix(<a class="code" href="class_i_pv6_address.html#a05683ca5f1a158a96c9a319314cb47bd" title="The solicited-node multicast address prefix (prefix length = 104)">SOLICITED_NODE_PREFIX</a>, 104);
         };
 </pre></div>
 </div>
@@ -523,16 +587,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>RFC 3513: Section 2.6.1 The Subnet-Router anycast address is predefined. Its format is as follows: </p>
-<pre>
- |                         n bits                 |   128-n bits   |
- +------------------------------------------------+----------------+
- |                   subnet prefix                | 00000000000000 |
- +------------------------------------------------+----------------+
- </pre> 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00240">240</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
-<div class="fragment"><pre class="fragment">                                                                           {
-            <span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a091e827de954eb1c395c906569805ede">IPv6Address</a>(*this).setSuffix(<a class="code" href="class_i_pv6_address.html#a0c1e137cb3b1470ec6b8d9a95e03dbe5">UNSPECIFIED_ADDRESS</a>, prefixLength);
+
+<p>Returns the subnet-router anycast address for this address by setting its suffix (the last 128-prefixLength bits) to all-zeroes. </p>
+<p>See section 2.6.1 of RFC 3513. </p>
+<div class="fragment"><pre class="fragment">        {
+            <span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a091e827de954eb1c395c906569805ede" title="Constructor.">IPv6Address</a>(*this).setSuffix(<a class="code" href="class_i_pv6_address.html#a0c1e137cb3b1470ec6b8d9a95e03dbe5" title="The unspecified address.">UNSPECIFIED_ADDRESS</a>, prefixLength);
         }
 </pre></div>
 </div>
@@ -550,12 +609,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the 4-bit scope field of an <a class="el" href="class_i_pv6.html">IPv6</a> multicast address. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8cc_source.html#l00372">372</a> of file <a class="el" href="_i_pv6_address_8cc_source.html">IPv6Address.cc</a>.</p>
+<p>Get the 4-bit scope field of an <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> multicast address. </p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span> ((<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0] &amp; <a class="code" href="_i_pv6_address_8cc.html#a3529bd4fe754fd51cdd382f16d9e6757">MULTICAST_MASK</a>)!=<a class="code" href="_i_pv6_address_8cc.html#a2e97eea4874ef7547f00f8063b77ff9f">MULTICAST_PREFIX</a>)
-        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;IPv6Address::getMulticastScope(): %s is not a multicast address&quot;</span>, <a class="code" href="class_i_pv6_address.html#a7c42fb066db81588a439aed1de5e4b3a">str</a>().c_str());
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;IPv6Address::getMulticastScope(): %s is not a multicast address&quot;</span>, <a class="code" href="class_i_pv6_address.html#a7c42fb066db81588a439aed1de5e4b3a" title="Returns the textual representation of the address in the standard notation.">str</a>().c_str());
     <span class="keywordflow">return</span> (<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0] &gt;&gt; 16) &amp; 0x0F;
 }
 </pre></div>
@@ -575,18 +633,15 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the <a class="el" href="class_i_pv6.html">IPv6</a> first prefixLength bits of the address, with the rest set to zero. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8cc_source.html#l00302">302</a> of file <a class="el" href="_i_pv6_address_8cc_source.html">IPv6Address.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="device_configurator_8cc_source.html#l00095">DeviceConfigurator::loadInterfaceConfig()</a>, and <a class="el" href="ansa_ospf_routing6_8cc_source.html#l00320">AnsaOspfRouting6::loadInterfaceConfig()</a>.</p>
+<p>Get the <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> first prefixLength bits of the address, with the rest set to zero. </p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// First we construct a mask.</span>
     uint32 mask[4];
-    <a class="code" href="class_i_pv6_address.html#a0bcf37e66a36c5023d76050572a34fda">constructMask</a>(prefixLength, mask);
+    <a class="code" href="class_i_pv6_address.html#a0bcf37e66a36c5023d76050572a34fda" title="Construct a 128-bit mask based on the prefix length.">constructMask</a>(prefixLength, mask);
 
     <span class="comment">// Now we mask each IPv6 address segment and create a new IPv6 Address!</span>
-    <span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a091e827de954eb1c395c906569805ede">IPv6Address</a>(<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0]&amp;mask[0],<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1]&amp;mask[1],<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2]&amp;mask[2],<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3]&amp;mask[3] );
+    <span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a091e827de954eb1c395c906569805ede" title="Constructor.">IPv6Address</a>(<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0]&amp;mask[0], <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1]&amp;mask[1], <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2]&amp;mask[2], <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3]&amp;mask[3] );
 }
 </pre></div>
 </div>
@@ -604,11 +659,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the <a class="el" href="class_i_pv6.html">IPv6</a> address scope. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8cc_source.html#l00206">206</a> of file <a class="el" href="_i_pv6_address_8cc_source.html">IPv6Address.cc</a>.</p>
+<p>Get the <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> address scope. </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_interface_data_8cc_source.html#l00226">IPv6InterfaceData::addrLess()</a>, and <a class="el" href="common_8cc_source.html#l00083">getLevel()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_interface_data.html#ab222ed1d1ae8dcc45a13d8be4d775c9e">IPv6InterfaceData::addrLess()</a>, <a class="el" href="class_s_c_t_p_association.html#af7f42a8ff64e87e817ef9d6c50e992e8">SCTPAssociation::getAddressLevel()</a>, <a class="el" href="class_i_pv_x_address_resolver.html#a251322b2fe9507f6fc5954832cc0823d">IPvXAddressResolver::getIPv6AddressFrom()</a>, and <a class="el" href="classx_m_i_pv6.html#a76aa252788e65565db139790e9abda3b">xMIPv6::validateType2RH()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">//Mask the given IPv6 address with the different mask types</span>
     <span class="comment">//to get only the IPv6 address scope. Compare the masked</span>
@@ -663,17 +717,16 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the last 128-prefixLength bits of the address, with the first bits set to zero. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8cc_source.html#l00312">312</a> of file <a class="el" href="_i_pv6_address_8cc_source.html">IPv6Address.cc</a>.</p>
+<p>Get the last 128-prefixLength bits of the address, with the first bits set to zero. </p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// First we construct a mask.</span>
     uint32 mask[4];
-    <a class="code" href="class_i_pv6_address.html#a0bcf37e66a36c5023d76050572a34fda">constructMask</a>(prefixLength, mask);
+    <a class="code" href="class_i_pv6_address.html#a0bcf37e66a36c5023d76050572a34fda" title="Construct a 128-bit mask based on the prefix length.">constructMask</a>(prefixLength, mask);
 
     <span class="comment">// Now we mask each IPv6 address segment, inverse it</span>
     <span class="comment">// and create a new IPv6 Address!</span>
-    <span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a091e827de954eb1c395c906569805ede">IPv6Address</a>(<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0]&amp;~mask[0],<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1]&amp;~mask[1],<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2]&amp;~mask[2],<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3]&amp;~mask[3] );
+    <span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a091e827de954eb1c395c906569805ede" title="Constructor.">IPv6Address</a>(<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0]&amp;~mask[0], <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1]&amp;~mask[1], <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2]&amp;~mask[2], <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3]&amp;~mask[3] );
 }
 </pre></div>
 </div>
@@ -691,12 +744,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Utility function based on <a class="el" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31">getScope()</a> </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00275">275</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
+<p>Utility function based on <a class="el" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31" title="Get the IPv6 address scope.">getScope()</a> </p>
 
-<p>Referenced by <a class="el" href="_flat_network_configurator6_8cc_source.html#l00133">FlatNetworkConfigurator6::addOwnAdvPrefixRoutes()</a>, <a class="el" href="_flat_network_configurator6_8cc_source.html#l00168">FlatNetworkConfigurator6::addStaticRoutes()</a>, <a class="el" href="_i_p_address_resolver_8cc_source.html#l00179">IPAddressResolver::getIPv6AddressFrom()</a>, <a class="el" href="ansa_routing_table6_8cc_source.html#l00110">AnsaRoutingTable6::initialize()</a>, and <a class="el" href="_routing_table6_8cc_source.html#l00083">RoutingTable6::initialize()</a>.</p>
-<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31">getScope</a>()==<a class="code" href="class_i_pv6_address.html#a228f9d2016a079d8680e6b93a4ce9778a1afdb7b7efb0d8d1139ee2cf34077b93">GLOBAL</a>;}
+<p>Referenced by <a class="el" href="class_flat_network_configurator6.html#aa4e9be7807116b4b03193292cefa7368">FlatNetworkConfigurator6::addOwnAdvPrefixRoutes()</a>, <a class="el" href="class_i_pv6_interface_data.html#ab222ed1d1ae8dcc45a13d8be4d775c9e">IPv6InterfaceData::addrLess()</a>, <a class="el" href="class_flat_network_configurator6.html#a684fdefcfe46d118e158423c3f77fe22">FlatNetworkConfigurator6::addStaticRoutes()</a>, <a class="el" href="class_i_pv6_interface_data.html#a715b339dc41612149940ed0607af1535">IPv6InterfaceData::assignAddress()</a>, <a class="el" href="class_ping_test_app.html#ac662fd9d3df24fe1b1937fe4a738e5b2">PingTestApp::getAllAddresses()</a>, <a class="el" href="class_i_pv6_interface_data.html#a62ef23ac89f9dad49b264162d4490d2f">IPv6InterfaceData::info()</a>, <a class="el" href="class_routing_table6.html#a3a930dca8cabc52375c754dfce15252d">RoutingTable6::initialize()</a>, and <a class="el" href="classx_m_i_pv6.html#a80478448775796f23843a482c136a445">xMIPv6::validateBUMessage()</a>.</p>
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31" title="Get the IPv6 address scope.">getScope</a>()==<a class="code" href="class_i_pv6_address.html#a228f9d2016a079d8680e6b93a4ce9778a1afdb7b7efb0d8d1139ee2cf34077b93">GLOBAL</a>;}
 </pre></div>
 </div>
 </div>
@@ -713,12 +765,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Utility function based on <a class="el" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31">getScope()</a> </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00269">269</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
+<p>Utility function based on <a class="el" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31" title="Get the IPv6 address scope.">getScope()</a> </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01278">IPv6NeighbourDiscovery::processRAPrefixInfo()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01362">IPv6NeighbourDiscovery::processRAPrefixInfoForAddrAutoConf()</a>, <a class="el" href="_i_pv6_8cc_source.html#l00165">IPv6::routePacket()</a>, and <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01529">IPv6NeighbourDiscovery::validateRAPacket()</a>.</p>
-<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31">getScope</a>()==<a class="code" href="class_i_pv6_address.html#a228f9d2016a079d8680e6b93a4ce9778adcb14b74e4d4aa375dd4db23d19d3332">LINK</a>;}
+<p>Referenced by <a class="el" href="class_i_pv6_neighbour_discovery.html#a5acf0814f6ca500c38d87763c0a5aef7">IPv6NeighbourDiscovery::processRAPrefixInfo()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#ae187033477823763f0fc0063353821f6">IPv6NeighbourDiscovery::processRAPrefixInfoForAddrAutoConf()</a>, <a class="el" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3">IPv6::routePacket()</a>, and <a class="el" href="class_i_pv6_neighbour_discovery.html#a902261563ea0bd130700a148a062781c">IPv6NeighbourDiscovery::validateRAPacket()</a>.</p>
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31" title="Get the IPv6 address scope.">getScope</a>()==<a class="code" href="class_i_pv6_address.html#a228f9d2016a079d8680e6b93a4ce9778adcb14b74e4d4aa375dd4db23d19d3332">LINK</a>;}
 </pre></div>
 </div>
 </div>
@@ -735,12 +786,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Utility function based on <a class="el" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31">getScope()</a> </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00266">266</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
+<p>Utility function based on <a class="el" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31" title="Get the IPv6 address scope.">getScope()</a> </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00165">IPv6::routePacket()</a>.</p>
-<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31">getScope</a>()==<a class="code" href="class_i_pv6_address.html#a228f9d2016a079d8680e6b93a4ce9778a1830f008cbc09668fcf3a690e87e36c6">LOOPBACK</a>;}
+<p>Referenced by <a class="el" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3">IPv6::routePacket()</a>.</p>
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31" title="Get the IPv6 address scope.">getScope</a>()==<a class="code" href="class_i_pv6_address.html#a228f9d2016a079d8680e6b93a4ce9778a1830f008cbc09668fcf3a690e87e36c6">LOOPBACK</a>;}
 </pre></div>
 </div>
 </div>
@@ -757,12 +807,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Utility function based on <a class="el" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31">getScope()</a> </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00260">260</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
+<p>Utility function based on <a class="el" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31" title="Get the IPv6 address scope.">getScope()</a> </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_8cc_source.html#l00145">IPv6::fragmentAndRoute()</a>, <a class="el" href="_i_pv6_8cc_source.html#l00098">IPv6::handleDatagramFromNetwork()</a>, <a class="el" href="_u_d_p_8cc_source.html#l00299">UDP::processUndeliverablePacket()</a>, <a class="el" href="_ansa_u_d_p_8cc_source.html#l00300">AnsaUDP::processUndeliverablePacket()</a>, <a class="el" href="_i_c_m_pv6_8cc_source.html#l00238">ICMPv6::validateDatagramPromptingError()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01934">IPv6NeighbourDiscovery::validateNAPacket()</a>, and <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01628">IPv6NeighbourDiscovery::validateNSPacket()</a>.</p>
-<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31">getScope</a>()==<a class="code" href="class_i_pv6_address.html#a228f9d2016a079d8680e6b93a4ce9778a6e491ccbff7af76fe596036bea18978c">MULTICAST</a>;}
+<p>Referenced by <a class="el" href="class_i_pv6.html#ad512d80b98cc6a39cef47df5e679992c">IPv6::handleDatagramFromNetwork()</a>, <a class="el" href="class_i_pv6.html#a7268e90e7ca92566bd209fdc00c090b6">IPv6::handleMessageFromHL()</a>, <a class="el" href="class_i_c_m_pv6.html#af42e4f033f33ef7dcf95f694e0941297">ICMPv6::processEchoRequest()</a>, <a class="el" href="class_u_d_p.html#a333fddcf308d3c6348c9cc5e6bfa796d">UDP::processUDPPacket()</a>, <a class="el" href="class_u_d_p.html#ac47e00e6d7d0daddef466c4574134eb8">UDP::processUndeliverablePacket()</a>, <a class="el" href="class_i_c_m_pv6.html#ac9119ae006608365bdb41a050c130f72">ICMPv6::validateDatagramPromptingError()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#a8f18a6e238820911ee6253f12b766fad">IPv6NeighbourDiscovery::validateNAPacket()</a>, and <a class="el" href="class_i_pv6_neighbour_discovery.html#a72d9ee3401361c560c47f5172c05c1a4">IPv6NeighbourDiscovery::validateNSPacket()</a>.</p>
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31" title="Get the IPv6 address scope.">getScope</a>()==<a class="code" href="class_i_pv6_address.html#a228f9d2016a079d8680e6b93a4ce9778a6e491ccbff7af76fe596036bea18978c">MULTICAST</a>;}
 </pre></div>
 </div>
 </div>
@@ -779,10 +828,30 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Utility function based on <a class="el" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31">getScope()</a> </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00272">272</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
-<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31">getScope</a>()==<a class="code" href="class_i_pv6_address.html#a228f9d2016a079d8680e6b93a4ce9778a20a0ca2d5505df212033e9c628657578">SITE</a>;}
+<p>Utility function based on <a class="el" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31" title="Get the IPv6 address scope.">getScope()</a> </p>
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31" title="Get the IPv6 address scope.">getScope</a>()==<a class="code" href="class_i_pv6_address.html#a228f9d2016a079d8680e6b93a4ce9778a20a0ca2d5505df212033e9c628657578">SITE</a>;}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a8869e49b83d1b9752e85d2de7090689b"></a><!-- doxytag: member="IPv6Address::isSolicitedNodeMulticastAddress" ref="a8869e49b83d1b9752e85d2de7090689b" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_i_pv6_address.html#a8869e49b83d1b9752e85d2de7090689b">IPv6Address::isSolicitedNodeMulticastAddress</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_i_pv6.html#ae2d98f5214c7b23b38c33f7c613ee0a6">IPv6::fragmentAndSend()</a>.</p>
+<div class="fragment"><pre class="fragment">                                                     {
+            <span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a4d9102b52fcf98d1945c75a098bc678a" title="Returns true if the address matches the given prefix.">matches</a>(<a class="code" href="class_i_pv6_address.html#a05683ca5f1a158a96c9a319314cb47bd" title="The solicited-node multicast address prefix (prefix length = 104)">SOLICITED_NODE_PREFIX</a>, 104);
+        }
 </pre></div>
 </div>
 </div>
@@ -799,12 +868,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Utility function based on <a class="el" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31">getScope()</a> </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00263">263</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
+<p>Utility function based on <a class="el" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31" title="Get the IPv6 address scope.">getScope()</a> </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01671">IPv6NeighbourDiscovery::processNSForTentativeAddress()</a>.</p>
-<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31">getScope</a>()!=<a class="code" href="class_i_pv6_address.html#a228f9d2016a079d8680e6b93a4ce9778a6e491ccbff7af76fe596036bea18978c">MULTICAST</a> &amp;&amp; <a class="code" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31">getScope</a>()!=<a class="code" href="class_i_pv6_address.html#a228f9d2016a079d8680e6b93a4ce9778a18f474c2588cd71fbef3f07006390d7b">UNSPECIFIED</a>;}
+<p>Referenced by <a class="el" href="class_i_pv6_tunneling.html#a766b601e89d6251771b8405bce8a334e">IPv6Tunneling::createTunnel()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#a1d21eff02fed770d1bf56dbb995c3db9">IPv6NeighbourDiscovery::processNSForTentativeAddress()</a>, <a class="el" href="classx_m_i_pv6.html#a80478448775796f23843a482c136a445">xMIPv6::validateBUMessage()</a>, and <a class="el" href="classx_m_i_pv6.html#a76aa252788e65565db139790e9abda3b">xMIPv6::validateType2RH()</a>.</p>
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31" title="Get the IPv6 address scope.">getScope</a>()!=<a class="code" href="class_i_pv6_address.html#a228f9d2016a079d8680e6b93a4ce9778a6e491ccbff7af76fe596036bea18978c">MULTICAST</a> &amp;&amp; <a class="code" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31" title="Get the IPv6 address scope.">getScope</a>()!=<a class="code" href="class_i_pv6_address.html#a228f9d2016a079d8680e6b93a4ce9778a18f474c2588cd71fbef3f07006390d7b">UNSPECIFIED</a>;}
 </pre></div>
 </div>
 </div>
@@ -821,11 +889,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Check if the <a class="el" href="class_i_pv6.html">IPv6</a> Address is undefined. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00257">257</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
+<p>Check if the <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> Address is undefined. </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00730">IPv6NeighbourDiscovery::assignLinkLocalAddress()</a>, <a class="el" href="_flat_network_configurator6_8cc_source.html#l00077">FlatNetworkConfigurator6::configureAdvPrefixes()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01566">IPv6NeighbourDiscovery::createAndSendNSPacket()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00381">IPv6NeighbourDiscovery::determineNextHop()</a>, <a class="el" href="_i_pv6_8cc_source.html#l00502">IPv6::encapsulate()</a>, <a class="el" href="_routing_table6_8cc_source.html#l00354">RoutingTable6::getInterfaceByAddress()</a>, <a class="el" href="_i_p_address_resolver_8cc_source.html#l00179">IPAddressResolver::getIPv6AddressFrom()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01699">IPv6NeighbourDiscovery::processNSForNonTentativeAddress()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01671">IPv6NeighbourDiscovery::processNSForTentativeAddress()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01362">IPv6NeighbourDiscovery::processRAPrefixInfoForAddrAutoConf()</a>, <a class="el" href="_i_pv6_8cc_source.html#l00165">IPv6::routePacket()</a>, <a class="el" href="_i_c_m_pv6_8cc_source.html#l00130">ICMPv6::sendErrorMessage()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01761">IPv6NeighbourDiscovery::sendSolicitedNA()</a>, <a class="el" href="_i_pv6_address_8cc_source.html#l00177">str()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01628">IPv6NeighbourDiscovery::validateNSPacket()</a>, and <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01010">IPv6NeighbourDiscovery::validateRSPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_neighbour_discovery.html#a5438ceb3077ec49d9b393136a9a5e768">IPv6NeighbourDiscovery::assignLinkLocalAddress()</a>, <a class="el" href="class_flat_network_configurator6.html#a4b3401699c2735d6a42e36c3df86b010">FlatNetworkConfigurator6::configureAdvPrefixes()</a>, <a class="el" href="classx_m_i_pv6.html#aeb5f2e142a78cfb3cfb609580fbc44f5">xMIPv6::createAndSendBRRMessage()</a>, <a class="el" href="classx_m_i_pv6.html#acc6fa7a76bbdf7dd0d289131b3f93784">xMIPv6::createAndSendBUMessage()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#aedad2b550812f9be54ab691296e5876d">IPv6NeighbourDiscovery::createAndSendNSPacket()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#a4bddad274cd8eb1472d37ddcd559c629">IPv6NeighbourDiscovery::determineNextHop()</a>, <a class="el" href="class_i_pv6.html#a641e893f2ada9c52fd0d694fa0947503">IPv6::determineOutputInterface()</a>, <a class="el" href="class_i_pv6.html#a77a162c6ccb060cd4b690988725c381b">IPv6::encapsulate()</a>, <a class="el" href="class_i_pv6_tunneling.html#ab7f405c4359671ad1021598935fde70d">IPv6Tunneling::encapsulateDatagram()</a>, <a class="el" href="class_i_pv_x_address.html#a36d55e706dccf5e1c9fa63e64be31bf4">IPvXAddress::equals()</a>, <a class="el" href="class_i_pv6.html#ae2d98f5214c7b23b38c33f7c613ee0a6">IPv6::fragmentAndSend()</a>, <a class="el" href="class_ping_test_app.html#ac662fd9d3df24fe1b1937fe4a738e5b2">PingTestApp::getAllAddresses()</a>, <a class="el" href="class_routing_table6.html#a24cede6c1b7ed7a17fad2525a4702851">RoutingTable6::getInterfaceByAddress()</a>, <a class="el" href="class_i_pv_x_address_resolver.html#a28b5da1145cfddd0859143927c4f1ab6">IPvXAddressResolver::getInterfaceIPv6Address()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#abccb93f2300252252370c5cfab5017c6">IPv6NeighbourDiscovery::processNSForNonTentativeAddress()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#a1d21eff02fed770d1bf56dbb995c3db9">IPv6NeighbourDiscovery::processNSForTentativeAddress()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#ae187033477823763f0fc0063353821f6">IPv6NeighbourDiscovery::processRAPrefixInfoForAddrAutoConf()</a>, <a class="el" href="class_i_pv6.html#a33a99910431c17c57350ee894d9024e3">IPv6::routePacket()</a>, <a class="el" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5">ICMPv6::sendErrorMessage()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#ac2a5f2e2cbd6845ecd10038fce448ead">IPv6NeighbourDiscovery::sendSolicitedNA()</a>, <a class="el" href="classx_m_i_pv6.html#aeb4896cd2b4e58a7c80f6f2e1fbdecf2">xMIPv6::sendTestInit()</a>, <a class="el" href="class_i_pv6_address.html#a7c42fb066db81588a439aed1de5e4b3a">str()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#a72d9ee3401361c560c47f5172c05c1a4">IPv6NeighbourDiscovery::validateNSPacket()</a>, and <a class="el" href="class_i_pv6_neighbour_discovery.html#a09f8b6d13b8546d9c3d735589df9e37f">IPv6NeighbourDiscovery::validateRSPacket()</a>.</p>
 <div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> (<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0]|<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1]|<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2]|<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3])==0;}
 </pre></div>
 </div>
@@ -854,21 +921,39 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Returns true if the address matches the given prefix. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8cc_source.html#l00360">360</a> of file <a class="el" href="_i_pv6_address_8cc_source.html">IPv6Address.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="ansa_ospf_area6_8cc_source.html#l00145">AnsaOspf6::Area::ContainsAddress()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01566">IPv6NeighbourDiscovery::createAndSendNSPacket()</a>, <a class="el" href="ansa_routing_table6_8cc_source.html#l00195">AnsaRoutingTable6::doLongestPrefixMatch()</a>, <a class="el" href="_routing_table6_8cc_source.html#l00417">RoutingTable6::doLongestPrefixMatch()</a>, <a class="el" href="_routing_table6_8cc_source.html#l00369">RoutingTable6::isLocalAddress()</a>, <a class="el" href="_routing_table6_8cc_source.html#l00442">RoutingTable6::isPrefixPresent()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01362">IPv6NeighbourDiscovery::processRAPrefixInfoForAddrAutoConf()</a>, and <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01628">IPv6NeighbourDiscovery::validateNSPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_neighbour_discovery.html#aedad2b550812f9be54ab691296e5876d">IPv6NeighbourDiscovery::createAndSendNSPacket()</a>, <a class="el" href="class_routing_table6.html#aa3ba1d17dc59f3e5d77ead359dd3a999">RoutingTable6::doLongestPrefixMatch()</a>, <a class="el" href="class_routing_table6.html#acbf9dbfff5efa25eec0982afa1bbf061">RoutingTable6::isLocalAddress()</a>, <a class="el" href="class_routing_table6.html#afef0aa2431b02b3744b58238c7a73547">RoutingTable6::isPrefixPresent()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#ae187033477823763f0fc0063353821f6">IPv6NeighbourDiscovery::processRAPrefixInfoForAddrAutoConf()</a>, and <a class="el" href="class_i_pv6_neighbour_discovery.html#a72d9ee3401361c560c47f5172c05c1a4">IPv6NeighbourDiscovery::validateNSPacket()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// first we construct a mask.</span>
     uint32 mask[4];
-    <a class="code" href="class_i_pv6_address.html#a0bcf37e66a36c5023d76050572a34fda">constructMask</a>(prefixLength, mask);
+    <a class="code" href="class_i_pv6_address.html#a0bcf37e66a36c5023d76050572a34fda" title="Construct a 128-bit mask based on the prefix length.">constructMask</a>(prefixLength, mask);
 
     <span class="comment">// xor the bits of the 2 addresses, and the result should be zero wherever</span>
     <span class="comment">// the mask has 1 bits</span>
     <span class="keywordflow">return</span> (((<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0]^prefix.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0])&amp;mask[0]) | ((<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1]^prefix.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1])&amp;mask[1]) |
             ((<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2]^prefix.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2])&amp;mask[2]) | ((<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3]^prefix.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3])&amp;mask[3]))==0;
 }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a65ce07300dc1f96d107a4a0f42758d99"></a><!-- doxytag: member="IPv6Address::operator Uint128" ref="a65ce07300dc1f96d107a4a0f42758d99" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IPv6Address::operator <a class="el" href="class_uint128.html">Uint128</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Converts to <a class="el" href="class_uint128.html" title="Copyright (c) 2005 Jan Ringo, www.ringos.cz.">Uint128</a>. </p>
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> (<a class="code" href="class_uint128.html" title="Copyright (c) 2005 Jan Ringo, www.ringos.cz.">Uint128</a>(<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0])&lt;&lt;96u) + (<a class="code" href="class_uint128.html" title="Copyright (c) 2005 Jan Ringo, www.ringos.cz.">Uint128</a>(<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1])&lt;&lt;64u) + (<a class="code" href="class_uint128.html" title="Copyright (c) 2005 Jan Ringo, www.ringos.cz.">Uint128</a>(<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2])&lt;&lt;32u) + <a class="code" href="class_uint128.html" title="Copyright (c) 2005 Jan Ringo, www.ringos.cz.">Uint128</a>(<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3]);}
 </pre></div>
 </div>
 </div>
@@ -886,8 +971,6 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00123">123</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
 <div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> !<a class="code" href="class_i_pv6_address.html#a5281130f1fea745ffb389db767d90ba9">operator==</a>(addr);}
 </pre></div>
 </div>
@@ -906,9 +989,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00118">118</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
-<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a85e0ff7346a455454c337959e7f2ca26">compare</a>(addr)&lt;0;}
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a85e0ff7346a455454c337959e7f2ca26" title="Returns -1, 0 or 1.">compare</a>(addr) &lt; 0;}
 </pre></div>
 </div>
 </div>
@@ -926,10 +1007,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00120">120</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
-<div class="fragment"><pre class="fragment">                                                       {
-            <span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3]==addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3] &amp;&amp; <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0]==addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0] &amp;&amp; <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1]==addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1] &amp;&amp; <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2]==addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2]; <span class="comment">// d[3] differs most often, compare it first</span>
+<div class="fragment"><pre class="fragment">        {
+            <span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3]==addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3] &amp;&amp; <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2]==addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2] &amp;&amp; <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1]==addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1] &amp;&amp; <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0]==addr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0]; <span class="comment">// d[3] differs most often, compare that first</span>
         }
 </pre></div>
 </div>
@@ -948,9 +1027,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00119">119</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
-<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a85e0ff7346a455454c337959e7f2ca26">compare</a>(addr)&gt;0;}
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#a85e0ff7346a455454c337959e7f2ca26" title="Returns -1, 0 or 1.">compare</a>(addr) &gt; 0;}
 </pre></div>
 </div>
 </div>
@@ -968,11 +1045,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Return the string representation of the given scope. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8cc_source.html#l00245">245</a> of file <a class="el" href="_i_pv6_address_8cc_source.html">IPv6Address.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_interface_data_8cc_source.html#l00075">IPv6InterfaceData::info()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_interface_data.html#a62ef23ac89f9dad49b264162d4490d2f">IPv6InterfaceData::info()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">switch</span> (scope)
     {
@@ -993,7 +1069,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_pv6_address.html#a5560a79b66ee963af78b0a1dde71ce99">IPv6Address::set</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6_address.html#a5560a79b66ee963af78b0a1dde71ce99">IPv6Address::set</a> </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>addr</em></td><td>)</td>
@@ -1002,11 +1078,13 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Sets the <a class="el" href="class_i_pv6.html">IPv6</a> address. Given a string. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8cc_source.html#l00143">143</a> of file <a class="el" href="_i_pv6_address_8cc_source.html">IPv6Address.cc</a>.</p>
+<p>Sets the <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> address. </p>
+<p>Given a string. </p>
+
+<p>Referenced by <a class="el" href="class_routing_table6.html#a0a0c804ccf3360f7476aa1e21b66e79e">RoutingTable6::configureTunnelFromXML()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (!<a class="code" href="class_i_pv6_address.html#a384e495d87184ff4306da4328707c32c">tryParse</a>(addr))
+    <span class="keywordflow">if</span> (!<a class="code" href="class_i_pv6_address.html#a384e495d87184ff4306da4328707c32c" title="Tries parsing an IPv6 address string into the object.">tryParse</a>(addr))
         <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;IPv6Address: cannot interpret address string `%s&#39;&quot;</span>, addr);
 }
 </pre></div>
@@ -1017,7 +1095,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_pv6_address.html#a5560a79b66ee963af78b0a1dde71ce99">IPv6Address::set</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6_address.html#a5560a79b66ee963af78b0a1dde71ce99">IPv6Address::set</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>d0</em>, </td>
@@ -1048,11 +1126,38 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set the address to the given four 32-bit integers. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00162">162</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
+<p>Sets the <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> address from four 32-bit integers. </p>
+<p>The most significant word should be passed in the first argument. </p>
 <div class="fragment"><pre class="fragment">                                                             {
-            <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0]=d0; <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1]=d1; <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2]=d2; <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3]=d3;
+            <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0] = d0; <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1] = d1; <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2] = d2; <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3] = d3;
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a66f3a937eefd7e72c411677953eeba5f"></a><!-- doxytag: member="IPv6Address::set" ref="a66f3a937eefd7e72c411677953eeba5f" args="(const Uint128 &amp;addr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6_address.html#a5560a79b66ee963af78b0a1dde71ce99">IPv6Address::set</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_uint128.html">Uint128</a> &amp;&#160;</td>
+          <td class="paramname"><em>addr</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the address from the given <a class="el" href="class_uint128.html" title="Copyright (c) 2005 Jan Ringo, www.ringos.cz.">Uint128</a>. </p>
+<div class="fragment"><pre class="fragment">                                      {
+            uint64_t lo = addr.<a class="code" href="class_uint128.html#ab24b5ebaeeb3b0bd939f6e53e92c691f">getLo</a>();
+            uint64_t hi = addr.<a class="code" href="class_uint128.html#ab07295e3609c66e42920cdb01f4d5ae0">getHi</a>();
+            <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0] = (hi&gt;&gt;32) &amp; 0xffffffff;
+            <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1] = hi &amp; 0xffffffff;
+            <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2] = (lo&gt;&gt;32) &amp; 0xffffffff;
+            <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3] = lo &amp; 0xffffffff;
         }
 </pre></div>
 </div>
@@ -1081,15 +1186,15 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Overwrites the first prefixLength bits of the address with the bits from the address passed as argument. Return value is the object itself. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8cc_source.html#l00323">323</a> of file <a class="el" href="_i_pv6_address_8cc_source.html">IPv6Address.cc</a>.</p>
+<p>Overwrites the first prefixLength bits of the address with the bits from the address passed as argument. </p>
+<p>Return value is the object itself. </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_address_8h_source.html#l00224">formSolicitedNodeMulticastAddress()</a>, and <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01362">IPv6NeighbourDiscovery::processRAPrefixInfoForAddrAutoConf()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_address.html#ab135c68c866eb93e17b4a8b070abf750">formSolicitedNodeMulticastAddress()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#a4482770f35807ddc238a9259e85752e3">IPv6NeighbourDiscovery::processRAPacket()</a>, and <a class="el" href="class_i_pv6_neighbour_discovery.html#ae187033477823763f0fc0063353821f6">IPv6NeighbourDiscovery::processRAPrefixInfoForAddrAutoConf()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// first we construct a mask.</span>
     uint32 mask[4];
-    <a class="code" href="class_i_pv6_address.html#a0bcf37e66a36c5023d76050572a34fda">constructMask</a>(prefixLength, mask);
+    <a class="code" href="class_i_pv6_address.html#a0bcf37e66a36c5023d76050572a34fda" title="Construct a 128-bit mask based on the prefix length.">constructMask</a>(prefixLength, mask);
 
     <span class="comment">// combine the addresses</span>
     <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0] = (<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0]&amp;~mask[0]) | (fromAddr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0]&amp;mask[0]);
@@ -1125,15 +1230,15 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Overwrites the last 128-prefixLength bits of the address with the bits from address passed as argument. Return value is the object itself. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8cc_source.html#l00338">338</a> of file <a class="el" href="_i_pv6_address_8cc_source.html">IPv6Address.cc</a>.</p>
+<p>Overwrites the last 128-prefixLength bits of the address with the bits from address passed as argument. </p>
+<p>Return value is the object itself. </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_address_8cc_source.html#l00352">formLinkLocalAddress()</a>, and <a class="el" href="_i_pv6_address_8h_source.html#l00240">formSubnetRouterAnycastAddress()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_address.html#aa8a3ef9e930a6703ea9cbde5a3ecaaca">formLinkLocalAddress()</a>, and <a class="el" href="class_i_pv6_address.html#a8b6563e274a116dd7108a300062399a2">formSubnetRouterAnycastAddress()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// first we construct a mask.</span>
     uint32 mask[4];
-    <a class="code" href="class_i_pv6_address.html#a0bcf37e66a36c5023d76050572a34fda">constructMask</a>(prefixLength, mask);
+    <a class="code" href="class_i_pv6_address.html#a0bcf37e66a36c5023d76050572a34fda" title="Construct a 128-bit mask based on the prefix length.">constructMask</a>(prefixLength, mask);
 
     <span class="comment">// combine the addresses</span>
     <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0] = (<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0]&amp;mask[0]) | (fromAddr.<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0]&amp;~mask[0]);
@@ -1158,36 +1263,35 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the <a class="el" href="class_i_pv6.html">IPv6</a> address as a "standard string". </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8cc_source.html#l00177">177</a> of file <a class="el" href="_i_pv6_address_8cc_source.html">IPv6Address.cc</a>.</p>
+<p>Returns the textual representation of the address in the standard notation. </p>
 
-<p>Referenced by <a class="el" href="ansa_routing_table6_8cc_source.html#l00195">AnsaRoutingTable6::doLongestPrefixMatch()</a>, <a class="el" href="_routing_table6_8cc_source.html#l00417">RoutingTable6::doLongestPrefixMatch()</a>, <a class="el" href="_t_c_p_dump_8cc_source.html#l00424">TCPDumper::dumpIPv6()</a>, <a class="el" href="_i_pv6_8cc_source.html#l00502">IPv6::encapsulate()</a>, <a class="el" href="_routing_table6_8cc_source.html#l00354">RoutingTable6::getInterfaceByAddress()</a>, <a class="el" href="_i_pv6_address_8cc_source.html#l00372">getMulticastScope()</a>, <a class="el" href="_routing_table6_8cc_source.html#l00369">RoutingTable6::isLocalAddress()</a>, <a class="el" href="_routing_table6_8cc_source.html#l00403">RoutingTable6::lookupDestCache()</a>, <a class="el" href="ansa_ospf_routing_table_entry6_8h_source.html#l00175">operator&lt;&lt;()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00314">IPv6NeighbourDiscovery::reachabilityConfirmed()</a>, and <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00286">IPv6NeighbourDiscovery::resolveNeighbour()</a>.</p>
+<p>Referenced by <a class="el" href="class_routing_table6.html#aa3ba1d17dc59f3e5d77ead359dd3a999">RoutingTable6::doLongestPrefixMatch()</a>, <a class="el" href="class_packet_dump.html#a5a3707ad0ee37cfefeee21972d6be23e">PacketDump::dumpIPv6()</a>, <a class="el" href="class_i_pv6.html#a77a162c6ccb060cd4b690988725c381b">IPv6::encapsulate()</a>, <a class="el" href="class_routing_table6.html#a24cede6c1b7ed7a17fad2525a4702851">RoutingTable6::getInterfaceByAddress()</a>, <a class="el" href="class_i_pv6_address.html#a38e774ffade5ca58c1191f743eaa0aca">getMulticastScope()</a>, <a class="el" href="class_routing_table6.html#acbf9dbfff5efa25eec0982afa1bbf061">RoutingTable6::isLocalAddress()</a>, <a class="el" href="class_routing_table6.html#abb5be347a43ea6c6fb5ddfd6711e15a3">RoutingTable6::lookupDestCache()</a>, <a class="el" href="_i_pv6_address_8h.html#afc8dbb2adc384a5845511fc2fe0eb923">operator&lt;&lt;()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#abcd9999f935e23b593499f8d23a970bf">IPv6NeighbourDiscovery::reachabilityConfirmed()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#a567588762bff7af739e72916df55aebc">IPv6NeighbourDiscovery::resolveNeighbour()</a>, and <a class="el" href="class_interface_table.html#a541865f79aa57c4214cf1e1bd98b54bf">InterfaceTable::updateLinkDisplayString()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6_address.html#af526cffcc3a4aa5bb96d307de6e8d448">isUnspecified</a>())
+    <span class="keywordflow">if</span> (<a class="code" href="class_i_pv6_address.html#af526cffcc3a4aa5bb96d307de6e8d448" title="Check if the IPv6 Address is undefined.">isUnspecified</a>())
         <span class="keywordflow">return</span> std::string(<span class="stringliteral">&quot;&lt;unspec&gt;&quot;</span>);
 
-    <span class="comment">// convert to 16-bit octals</span>
-    <span class="keywordtype">int</span> octals[8] = {
+    <span class="comment">// convert to 16-bit grops</span>
+    <span class="keywordtype">int</span> groups[8] = {
         (<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0]&gt;&gt;16), (<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[0]&amp;0xffff), (<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1]&gt;&gt;16), (<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[1]&amp;0xffff),
         (<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2]&gt;&gt;16), (<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[2]&amp;0xffff), (<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3]&gt;&gt;16), (<a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>[3]&amp;0xffff)
     };
 
-    <span class="comment">// find longest sequence of zeros in octals[]</span>
+    <span class="comment">// find longest sequence of zeros in groups[]</span>
     <span class="keywordtype">int</span> start, end;
-    findGap(octals, start, end);
+    findGap(groups, start, end);
     <span class="keywordflow">if</span> (start==0 &amp;&amp; end==8)
         <span class="keywordflow">return</span> <span class="stringliteral">&quot;::0&quot;</span>;  <span class="comment">// the unspecified address is a special case</span>
 
-    <span class="comment">// print octals, replacing gap with &quot;::&quot;</span>
+    <span class="comment">// print groups, replacing gap with &quot;::&quot;</span>
     std::stringstream os;
     os &lt;&lt; std::hex;
-    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>=0; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>&lt;start; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++)
-        os &lt;&lt; (<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>==0?<span class="stringliteral">&quot;&quot;</span>:<span class="stringliteral">&quot;:&quot;</span>) &lt;&lt; octals[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>];
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;start; i++)
+        os &lt;&lt; (i==0?<span class="stringliteral">&quot;&quot;</span>:<span class="stringliteral">&quot;:&quot;</span>) &lt;&lt; groups[i];
     <span class="keywordflow">if</span> (start!=end)
         os &lt;&lt; <span class="stringliteral">&quot;::&quot;</span>;
     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j=end; j&lt;8; j++)
-        os &lt;&lt; (j==end?<span class="stringliteral">&quot;&quot;</span>:<span class="stringliteral">&quot;:&quot;</span>) &lt;&lt; octals[j];
+        os &lt;&lt; (j==end?<span class="stringliteral">&quot;&quot;</span>:<span class="stringliteral">&quot;:&quot;</span>) &lt;&lt; groups[j];
     <span class="keywordflow">return</span> os.str();
 }
 </pre></div>
@@ -1207,12 +1311,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Try parsing an <a class="el" href="class_i_pv6.html">IPv6</a> address. Return true if the string contained a well-formed <a class="el" href="class_i_pv6.html">IPv6</a> address, and false otherwise.</p>
-<p>TBD: explain syntax (refer to RFC?) </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8cc_source.html#l00110">110</a> of file <a class="el" href="_i_pv6_address_8cc_source.html">IPv6Address.cc</a>.</p>
+<p>Tries parsing an <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> address string into the object. </p>
+<p>Returns true if the string contains a well-formed <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> address, and false otherwise. All RFC 3513 notations are accepted (e.g. FEDC:BA98:7654:3210:FEDC:BA98:7654:3210, FF01::101, ::1), plus also "&lt;unspec&gt;" as a synonym for the unspecified address (all-zeroes). </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_address_8cc_source.html#l00143">set()</a>, and <a class="el" href="_i_pv_x_address_8cc_source.html#l00021">IPvXAddress::tryParse()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_address.html#a5560a79b66ee963af78b0a1dde71ce99">set()</a>, and <a class="el" href="class_i_pv_x_address.html#ace8753204de3512c43c812e744098709">IPvXAddress::tryParse()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span> (!addr)
         <span class="keywordflow">return</span> <span class="keyword">false</span>;
@@ -1249,11 +1352,11 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>FIXME </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8cc_source.html#l00121">121</a> of file <a class="el" href="_i_pv6_address_8cc_source.html">IPv6Address.cc</a>.</p>
+<p>Expects a string in the "&lt;address&gt;/&lt;prefixlength&gt;" syntax, parses the address into the object (see <a class="el" href="class_i_pv6_address.html#a384e495d87184ff4306da4328707c32c" title="Tries parsing an IPv6 address string into the object.">tryParse()</a>, and returns the prefix length (a 0..128 integer) in the second argument. </p>
+<p>The return value is true if the operation was successful, and false if it was not (e.g. no slash in the input string, invalid address syntax, prefix length is out of range, etc.). </p>
 
-<p>Referenced by <a class="el" href="_routing_table6_8cc_source.html#l00291">RoutingTable6::configureInterfaceFromXML()</a>, <a class="el" href="device_configurator_8cc_source.html#l00095">DeviceConfigurator::loadInterfaceConfig()</a>, <a class="el" href="ansa_ospf_routing6_8cc_source.html#l00320">AnsaOspfRouting6::loadInterfaceConfig()</a>, and <a class="el" href="device_configurator_8cc_source.html#l00226">DeviceConfigurator::loadStaticRouting()</a>.</p>
+<p>Referenced by <a class="el" href="class_routing_table6.html#a5d4f86dbabc31663a4bd12f50a72140f">RoutingTable6::configureInterfaceFromXML()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span> (!addr)
         <span class="keywordflow">return</span> <span class="keyword">false</span>;
@@ -1265,7 +1368,7 @@ Private Attributes</h2></td></tr>
 
     <span class="comment">// parse prefix</span>
     <span class="keywordtype">char</span> *e;
-    prefixLen = strtoul(addr,&amp;e,10);
+    prefixLen = strtoul(addr, &amp;e, 10);
     <span class="keywordflow">if</span> (addr==e)
         <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// no number after &#39;/&#39;</span>
     <span class="keywordflow">if</span> (*e!=0)
@@ -1290,11 +1393,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns pointer to internal binary representation of address, four 32-bit unsigned integers. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00170">170</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
+<p>Returns a pointer to the internal binary representation of the address: four 32-bit words, most significant word first. </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_address_8h_source.html#l00299">doPacking()</a>, and <a class="el" href="_i_pv6_address_8h_source.html#l00304">doUnpacking()</a>.</p>
+<p>Referenced by <a class="el" href="_i_pv6_address_8h.html#ae1652ec62d313f21c94d35191e05c584">doPacking()</a>, <a class="el" href="_i_pv6_address_8h.html#a4bde9956876e46ac405ebdeeb0fabd6d">doUnpacking()</a>, and <a class="el" href="class_i_pv_x_address.html#a36d55e706dccf5e1c9fa63e64be31bf4">IPvXAddress::equals()</a>.</p>
 <div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>;}
 </pre></div>
 </div>
@@ -1312,9 +1414,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns pointer to internal binary representation of address, four 32-bit unsigned integers. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00176">176</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
+<p>Returns a pointer to the internal binary representation of the address: four 32-bit words, most significant word first. </p>
 <div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_i_pv6_address.html#aed8026051a70e4822bc40792f32351b0">d</a>;}
 </pre></div>
 </div>
@@ -1330,11 +1431,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>All-nodes multicast address, scope 1 (interface-local) </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00071">71</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_routing_table6_8cc_source.html#l00369">RoutingTable6::isLocalAddress()</a>.</p>
+<p>Referenced by <a class="el" href="class_routing_table6.html#acbf9dbfff5efa25eec0982afa1bbf061">RoutingTable6::isLocalAddress()</a>.</p>
 
 </div>
 </div>
@@ -1348,11 +1448,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>All-nodes multicast address, scope 2 (link-local) </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00074">74</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_routing_table6_8cc_source.html#l00369">RoutingTable6::isLocalAddress()</a>, and <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01761">IPv6NeighbourDiscovery::sendSolicitedNA()</a>.</p>
+<p>Referenced by <a class="el" href="class_routing_table6.html#acbf9dbfff5efa25eec0982afa1bbf061">RoutingTable6::isLocalAddress()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#ac2a5f2e2cbd6845ecd10038fce448ead">IPv6NeighbourDiscovery::sendSolicitedNA()</a>, and <a class="el" href="class_i_pv6_neighbour_discovery.html#a30bc9cd2bec93e40e238fe91b573ca9f">IPv6NeighbourDiscovery::sendUnsolicitedNA()</a>.</p>
 
 </div>
 </div>
@@ -1366,11 +1465,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>All-routers multicast address, scope 1 (interface-local) </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00077">77</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_routing_table6_8cc_source.html#l00369">RoutingTable6::isLocalAddress()</a>.</p>
+<p>Referenced by <a class="el" href="class_routing_table6.html#acbf9dbfff5efa25eec0982afa1bbf061">RoutingTable6::isLocalAddress()</a>.</p>
 
 </div>
 </div>
@@ -1384,11 +1482,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>All-routers multicast address, scope 2 (link-local) </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00080">80</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00828">IPv6NeighbourDiscovery::createAndSendRSPacket()</a>, and <a class="el" href="_routing_table6_8cc_source.html#l00369">RoutingTable6::isLocalAddress()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_neighbour_discovery.html#a75431d6a5076b17ae0630f2fc4aa441a">IPv6NeighbourDiscovery::createAndSendRSPacket()</a>, and <a class="el" href="class_routing_table6.html#acbf9dbfff5efa25eec0982afa1bbf061">RoutingTable6::isLocalAddress()</a>.</p>
 
 </div>
 </div>
@@ -1402,11 +1499,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>All-routers multicast address, scope 5 (site-local) </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00083">83</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_routing_table6_8cc_source.html#l00369">RoutingTable6::isLocalAddress()</a>.</p>
+<p>Referenced by <a class="el" href="class_routing_table6.html#acbf9dbfff5efa25eec0982afa1bbf061">RoutingTable6::isLocalAddress()</a>.</p>
 
 </div>
 </div>
@@ -1421,9 +1517,7 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00042">42</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_address_8h_source.html#l00128">compare()</a>, <a class="el" href="_i_pv6_address_8cc_source.html#l00070">doTryParse()</a>, <a class="el" href="_i_pv6_address_8cc_source.html#l00372">getMulticastScope()</a>, <a class="el" href="_i_pv6_address_8cc_source.html#l00302">getPrefix()</a>, <a class="el" href="_i_pv6_address_8cc_source.html#l00206">getScope()</a>, <a class="el" href="_i_pv6_address_8cc_source.html#l00312">getSuffix()</a>, <a class="el" href="_i_pv6_address_8cc_source.html#l00360">matches()</a>, <a class="el" href="_i_pv6_address_8h_source.html#l00120">operator==()</a>, <a class="el" href="_i_pv_x_address_8h_source.html#l00130">IPvXAddress::set()</a>, <a class="el" href="_i_pv6_address_8cc_source.html#l00323">setPrefix()</a>, <a class="el" href="_i_pv6_address_8cc_source.html#l00338">setSuffix()</a>, and <a class="el" href="_i_pv6_address_8cc_source.html#l00177">str()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_address.html#a85e0ff7346a455454c337959e7f2ca26">compare()</a>, <a class="el" href="class_i_pv6_address.html#ad96c293a63f814c05c360b46ad0f3e5b">doTryParse()</a>, <a class="el" href="class_i_pv6_address.html#a38e774ffade5ca58c1191f743eaa0aca">getMulticastScope()</a>, <a class="el" href="class_i_pv6_address.html#afb604314abc5c3a3118e8c93d17e9201">getPrefix()</a>, <a class="el" href="class_i_pv6_address.html#a7b47fefdfe99444721197fad4aa8de31">getScope()</a>, <a class="el" href="class_i_pv6_address.html#aa982a6215bc1044af2072330500b6e33">getSuffix()</a>, <a class="el" href="class_i_pv6_address.html#a4d9102b52fcf98d1945c75a098bc678a">matches()</a>, <a class="el" href="class_i_pv6_address.html#a5281130f1fea745ffb389db767d90ba9">operator==()</a>, <a class="el" href="class_i_pv6_address.html#a6820830388fdffcd01de42d2f9fe2762">setPrefix()</a>, <a class="el" href="class_i_pv6_address.html#aef3dea13d2ff3c826e853cbecd25c413">setSuffix()</a>, and <a class="el" href="class_i_pv6_address.html#a7c42fb066db81588a439aed1de5e4b3a">str()</a>.</p>
 
 </div>
 </div>
@@ -1437,11 +1531,25 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The link-local prefix (fe80::) </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00089">89</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
+<p>Referenced by <a class="el" href="class_routing_table6.html#ab78638e39019d6ca1690d926da5f04fe">RoutingTable6::configureInterfaceForIPv6()</a>, and <a class="el" href="class_i_pv6_address.html#aa8a3ef9e930a6703ea9cbde5a3ecaaca">formLinkLocalAddress()</a>.</p>
 
-<p>Referenced by <a class="el" href="_i_pv6_address_8cc_source.html#l00352">formLinkLocalAddress()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a2aebd37f8e2b7977e76f62395fc1a30a"></a><!-- doxytag: member="IPv6Address::LL_MANET_ROUTERS" ref="a2aebd37f8e2b7977e76f62395fc1a30a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> <a class="el" href="class_i_pv6_address.html#a2aebd37f8e2b7977e76f62395fc1a30a">IPv6Address::LL_MANET_ROUTERS</a><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Link-local MANET routers multicast address. </p>
 
 </div>
 </div>
@@ -1455,11 +1563,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The loopback address </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00068">68</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
+<p>The loopback address. </p>
 
-<p>Referenced by <a class="el" href="_i_c_m_pv6_8cc_source.html#l00130">ICMPv6::sendErrorMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_c_m_pv6.html#a3968b2c9964bb40a3d14b3fda9fdbba5">ICMPv6::sendErrorMessage()</a>.</p>
 
 </div>
 </div>
@@ -1473,11 +1580,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The solicited-node multicast address prefix (prefix length = 104) </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00086">86</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_routing_table6_8cc_source.html#l00369">RoutingTable6::isLocalAddress()</a>, and <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01628">IPv6NeighbourDiscovery::validateNSPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_routing_table6.html#acbf9dbfff5efa25eec0982afa1bbf061">RoutingTable6::isLocalAddress()</a>, and <a class="el" href="class_i_pv6_neighbour_discovery.html#a72d9ee3401361c560c47f5172c05c1a4">IPv6NeighbourDiscovery::validateNSPacket()</a>.</p>
 
 </div>
 </div>
@@ -1491,17 +1597,16 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The unspecified address </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_address_8h_source.html#l00065">65</a> of file <a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a>.</p>
+<p>The unspecified address. </p>
 
-<p>Referenced by <a class="el" href="ansa_routing_table6_8cc_source.html#l00226">AnsaRoutingTable6::addDirectRoute()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00828">IPv6NeighbourDiscovery::createAndSendRSPacket()</a>, <a class="el" href="_i_pv6_interface_data_8cc_source.html#l00210">IPv6InterfaceData::getLinkLocalAddress()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00756">IPv6NeighbourDiscovery::initiateDAD()</a>, <a class="el" href="device_configurator_8cc_source.html#l00291">DeviceConfigurator::loadDefaultRouter()</a>, <a class="el" href="_routing_table6_8cc_source.html#l00403">RoutingTable6::lookupDestCache()</a>, <a class="el" href="ansa_routing_table6_8cc_source.html#l00034">AnsaIPv6Route::printRoute()</a>, and <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00783">IPv6NeighbourDiscovery::processDADTimeout()</a>.</p>
+<p>Referenced by <a class="el" href="class_routing_table6.html#ab78638e39019d6ca1690d926da5f04fe">RoutingTable6::configureInterfaceForIPv6()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#a75431d6a5076b17ae0630f2fc4aa441a">IPv6NeighbourDiscovery::createAndSendRSPacket()</a>, <a class="el" href="class_i_pv6_tunneling.html#a766b601e89d6251771b8405bce8a334e">IPv6Tunneling::createTunnel()</a>, <a class="el" href="class_i_pv6_interface_data.html#a3b9fa2d8e186014cf9c758e45b5a56df">IPv6InterfaceData::getLinkLocalAddress()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#aab8e413cb12b66797d5e497f9fe6fddd">IPv6NeighbourDiscovery::initiateDAD()</a>, <a class="el" href="class_routing_table6.html#abb5be347a43ea6c6fb5ddfd6711e15a3">RoutingTable6::lookupDestCache()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#a13117cd0ac035e0a0fd198d872b209c3">IPv6NeighbourDiscovery::processDADTimeout()</a>, and <a class="el" href="class_i_pv6_neighbour_discovery.html#a9f6c83de24b3e270c3843cc213b5250a">IPv6NeighbourDiscovery::selectDefaultRouter()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_i_pv6_address_8h_source.html">IPv6Address.h</a></li>
-<li><a class="el" href="_i_pv6_address_8cc_source.html">IPv6Address.cc</a></li>
+<li><a class="el" href="_i_pv6_address_8h.html">IPv6Address.h</a></li>
+<li><a class="el" href="_i_pv6_address_8cc.html">IPv6Address.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -1509,7 +1614,7 @@ Private Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_i_pv6_address.html">IPv6Address</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:49 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:26 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

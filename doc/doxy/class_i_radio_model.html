@@ -81,15 +81,18 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="IRadioModel" -->
-<p><code>#include &lt;<a class="el" href="_i_radio_model_8h_source.html">IRadioModel.h</a>&gt;</code></p>
+<p>Abstract class to encapsulate the calculation of received power of a radio transmission.  
+ <a href="class_i_radio_model.html#details">More...</a></p>
+
+<p><code>#include &lt;IRadioModel.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for IRadioModel:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_i_radio_model.png" usemap="#IRadioModel_map" alt=""/>
   <map id="IRadioModel_map" name="IRadioModel_map">
-<area href="class_generic_radio_model.html" alt="GenericRadioModel" shape="rect" coords="0,56,138,80"/>
-<area href="class_ieee80211_radio_model.html" alt="Ieee80211RadioModel" shape="rect" coords="148,56,286,80"/>
+<area href="class_generic_radio_model.html" title="Generic radio model." alt="GenericRadioModel" shape="rect" coords="0,56,138,80"/>
+<area href="class_ieee80211_radio_model.html" title="Radio model for IEEE 802.11." alt="Ieee80211RadioModel" shape="rect" coords="148,56,286,80"/>
 </map>
  </div></div>
 
@@ -97,15 +100,22 @@ Inheritance diagram for IRadioModel:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_radio_model.html#a77a41286d82a93c67d1b834e4236f0d3">initializeFrom</a> (cModule *radioModule)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_radio_model.html#a77a41286d82a93c67d1b834e4236f0d3">initializeFrom</a> (cModule *radioModule)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows parameters to be read from the module parameters of a module that contains this object.  <a href="#a77a41286d82a93c67d1b834e4236f0d3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_radio_model.html#aae11487a0415a6332f0cdf84d08fbc8b">~IRadioModel</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <a href="#aae11487a0415a6332f0cdf84d08fbc8b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_radio_model.html#af8aff6a5a5c7b81321818141c7d97b95">calculateDuration</a> (<a class="el" href="class_air_frame.html">AirFrame</a> *)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Should be defined to calculate the duration of the <a class="el" href="class_air_frame.html" title="Class generated from linklayer/radio/AirFrame.msg by opp_msgc.">AirFrame</a>.  <a href="#af8aff6a5a5c7b81321818141c7d97b95"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_radio_model.html#a107eaa67a662f3dce05eb691dae90f84">isReceivedCorrectly</a> (<a class="el" href="class_air_frame.html">AirFrame</a> *airframe, const <a class="el" href="_snr_list_8h.html#a241b5e7c9575e932988a55f7a5012a61">SnrList</a> &amp;receivedList)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Should be defined to calculate whether the frame has been received correctly.  <a href="#a107eaa67a662f3dce05eb691dae90f84"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_radio_model.html#ac6822e571dc7ddff25561a6b3b1a56da">haveTestFrame</a> ()=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_radio_model.html#a09839ec150413ee074b009b971c881dd">calculateDurationTestFrame</a> (<a class="el" href="class_air_frame.html">AirFrame</a> *airframe)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_radio_model.html#a2b9d022e59b5040a263ac76c04db28aa">getTestFrameError</a> (double snirMin, double bitrate)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_radio_model.html#aa96f4e38c90522742171fd2c1f1a2ee9">getTestFrameSize</a> ()=0</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Abstract class to encapsulate the calculation of received power of a radio transmission. The calculation may include the effects of path loss, antenna gain, etc. </p>
-
-<p>Definition at line <a class="el" href="_i_radio_model_8h_source.html#l00030">30</a> of file <a class="el" href="_i_radio_model_8h_source.html">IRadioModel.h</a>.</p>
+<div class="textblock"><p>Abstract class to encapsulate the calculation of received power of a radio transmission. </p>
+<p>The calculation may include the effects of path loss, antenna gain, etc. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aae11487a0415a6332f0cdf84d08fbc8b"></a><!-- doxytag: member="IRadioModel::~IRadioModel" ref="aae11487a0415a6332f0cdf84d08fbc8b" args="()" -->
 <div class="memitem">
@@ -120,9 +130,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Virtual destructor. </p>
 
-<p>Definition at line <a class="el" href="_i_radio_model_8h_source.html#l00042">42</a> of file <a class="el" href="_i_radio_model_8h_source.html">IRadioModel.h</a>.</p>
+<p>Virtual destructor. </p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
@@ -142,11 +151,105 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Should be defined to calculate the duration of the <a class="el" href="class_air_frame.html">AirFrame</a>. Usually the duration is just the frame length divided by the bitrate. However, in some cases, notably IEEE 802.11, the header has a different modulation (and thus a different bitrate) than the rest of the message. </p>
 
-<p>Implemented in <a class="el" href="class_generic_radio_model.html#af1154c80f6921db39470dc0b412aa204">GenericRadioModel</a>, and <a class="el" href="class_ieee80211_radio_model.html#a705603deb14546aa86d80290642365c3">Ieee80211RadioModel</a>.</p>
+<p>Should be defined to calculate the duration of the <a class="el" href="class_air_frame.html" title="Class generated from linklayer/radio/AirFrame.msg by opp_msgc.">AirFrame</a>. </p>
+<p>Usually the duration is just the frame length divided by the bitrate. However, in some cases, notably IEEE 802.11, the header has a different modulation (and thus a different bitrate) than the rest of the message. </p>
 
-<p>Referenced by <a class="el" href="_abstract_radio_8cc_source.html#l00186">AbstractRadio::encapsulatePacket()</a>.</p>
+<p>Implemented in <a class="el" href="class_ieee80211_radio_model.html#a705603deb14546aa86d80290642365c3">Ieee80211RadioModel</a>, and <a class="el" href="class_generic_radio_model.html#af1154c80f6921db39470dc0b412aa204">GenericRadioModel</a>.</p>
+
+<p>Referenced by <a class="el" href="class_radio.html#a0ec87649c6c0c5a7932ed1d2d2932e3c">Radio::encapsulatePacket()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a09839ec150413ee074b009b971c881dd"></a><!-- doxytag: member="IRadioModel::calculateDurationTestFrame" ref="a09839ec150413ee074b009b971c881dd" args="(AirFrame *airframe)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double <a class="el" href="class_i_radio_model.html#a09839ec150413ee074b009b971c881dd">IRadioModel::calculateDurationTestFrame</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_air_frame.html">AirFrame</a> *&#160;</td>
+          <td class="paramname"><em>airframe</em></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_ieee80211_radio_model.html#ace3e477a57c05de5a634dd9f0093fb01">Ieee80211RadioModel</a>, and <a class="el" href="class_generic_radio_model.html#a17ec3ef8df36866764e8da419215a9c9">GenericRadioModel</a>.</p>
+
+<p>Referenced by <a class="el" href="class_radio.html#af100bd015f108a40c5169f3db290f071">Radio::sendUp()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2b9d022e59b5040a263ac76c04db28aa"></a><!-- doxytag: member="IRadioModel::getTestFrameError" ref="a2b9d022e59b5040a263ac76c04db28aa" args="(double snirMin, double bitrate)=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double <a class="el" href="class_i_radio_model.html#a2b9d022e59b5040a263ac76c04db28aa">IRadioModel::getTestFrameError</a> </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>snirMin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>bitrate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_ieee80211_radio_model.html#a85e63b4f9074906dae2685ecbc15cda4">Ieee80211RadioModel</a>, and <a class="el" href="class_generic_radio_model.html#a5e2e69966b499ac9bda07f425eb9091c">GenericRadioModel</a>.</p>
+
+<p>Referenced by <a class="el" href="class_radio.html#af100bd015f108a40c5169f3db290f071">Radio::sendUp()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa96f4e38c90522742171fd2c1f1a2ee9"></a><!-- doxytag: member="IRadioModel::getTestFrameSize" ref="aa96f4e38c90522742171fd2c1f1a2ee9" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_i_radio_model.html#aa96f4e38c90522742171fd2c1f1a2ee9">IRadioModel::getTestFrameSize</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_ieee80211_radio_model.html#ad662408f067a4a205467559ebd159f2a">Ieee80211RadioModel</a>, and <a class="el" href="class_generic_radio_model.html#a57fe762365a53feb2d4e9a8ec3bef60b">GenericRadioModel</a>.</p>
+
+<p>Referenced by <a class="el" href="class_radio.html#af100bd015f108a40c5169f3db290f071">Radio::sendUp()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac6822e571dc7ddff25561a6b3b1a56da"></a><!-- doxytag: member="IRadioModel::haveTestFrame" ref="ac6822e571dc7ddff25561a6b3b1a56da" args="()=0" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="class_i_radio_model.html#ac6822e571dc7ddff25561a6b3b1a56da">IRadioModel::haveTestFrame</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implemented in <a class="el" href="class_ieee80211_radio_model.html#a922fafef7d31f6a3458db8056209d0e6">Ieee80211RadioModel</a>, and <a class="el" href="class_generic_radio_model.html#a16c66fde17905254a75052c482cbc382">GenericRadioModel</a>.</p>
+
+<p>Referenced by <a class="el" href="class_radio.html#af100bd015f108a40c5169f3db290f071">Radio::sendUp()</a>.</p>
 
 </div>
 </div>
@@ -155,7 +258,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_i_radio_model.html#a77a41286d82a93c67d1b834e4236f0d3">IRadioModel::initializeFrom</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_radio_model.html#a77a41286d82a93c67d1b834e4236f0d3">IRadioModel::initializeFrom</a> </td>
           <td>(</td>
           <td class="paramtype">cModule *&#160;</td>
           <td class="paramname"><em>radioModule</em></td><td>)</td>
@@ -164,11 +267,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Allows parameters to be read from the module parameters of a module that contains this object. </p>
 
-<p>Implemented in <a class="el" href="class_generic_radio_model.html#a25b0db4fae6bfa7d46ff38e1b7bd072e">GenericRadioModel</a>, and <a class="el" href="class_ieee80211_radio_model.html#a51982beedcc8e5d8cd468000a0edb56e">Ieee80211RadioModel</a>.</p>
+<p>Implemented in <a class="el" href="class_ieee80211_radio_model.html#a51982beedcc8e5d8cd468000a0edb56e">Ieee80211RadioModel</a>, and <a class="el" href="class_generic_radio_model.html#a25b0db4fae6bfa7d46ff38e1b7bd072e">GenericRadioModel</a>.</p>
 
-<p>Referenced by <a class="el" href="_abstract_radio_8cc_source.html#l00036">AbstractRadio::initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_radio.html#afccd94dfecf0ed8f29cfa8cd80255de5">Radio::initialize()</a>.</p>
 
 </div>
 </div>
@@ -196,16 +300,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Should be defined to calculate whether the frame has been received correctly. Input is the signal-noise ratio over the duration of the frame. The calculation may take into account the modulation scheme, possible error correction code, etc. </p>
 
-<p>Implemented in <a class="el" href="class_generic_radio_model.html#adb06639d7e365ddb00b0b42eccecb515">GenericRadioModel</a>, and <a class="el" href="class_ieee80211_radio_model.html#a4c204e1ee87745839618b0ba19bff53f">Ieee80211RadioModel</a>.</p>
+<p>Should be defined to calculate whether the frame has been received correctly. </p>
+<p>Input is the signal-noise ratio over the duration of the frame. The calculation may take into account the modulation scheme, possible error correction code, etc. </p>
 
-<p>Referenced by <a class="el" href="_abstract_radio_8cc_source.html#l00467">AbstractRadio::handleLowerMsgEnd()</a>.</p>
+<p>Implemented in <a class="el" href="class_ieee80211_radio_model.html#a4c204e1ee87745839618b0ba19bff53f">Ieee80211RadioModel</a>, and <a class="el" href="class_generic_radio_model.html#adb06639d7e365ddb00b0b42eccecb515">GenericRadioModel</a>.</p>
+
+<p>Referenced by <a class="el" href="class_radio.html#a574946067983f291af031885c585c99d">Radio::handleLowerMsgEnd()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="_i_radio_model_8h_source.html">IRadioModel.h</a></li>
+<li><a class="el" href="_i_radio_model_8h.html">IRadioModel.h</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -213,7 +319,7 @@ Public Member Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_i_radio_model.html">IRadioModel</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:49 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:27 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

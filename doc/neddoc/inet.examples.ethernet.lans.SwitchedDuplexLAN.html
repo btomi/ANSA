@@ -5,7 +5,27 @@
    </head>
    <body onload="if (top.frames['componentsframe'] == undefined) { s = window.location.toString(); window.location = 'index.html?p=' + s.substring(s.lastIndexOf('/')+1); }">
 <h2 class="comptitle">Network <i>SwitchedDuplexLAN</i></h2>
-<b>Package:</b> inet.examples.ethernet.lans<br/><b>File: <a href="examples-ethernet-lans-Networks.ned.html">examples/ethernet/lans/Networks.ned</a></b><br/><p>(no description)</p><h3 class="subtitle">Properties:</h3>
+<b>Package:</b> inet.examples.ethernet.lans<br/><b>File: <a href="examples-ethernet-lans-Networks.ned.html">examples/ethernet/lans/Networks.ned</a></b><br/><p>(no description)</p><img src="inet.examples.ethernet.lans.SwitchedDuplexLAN-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html" title="EtherHostFullDuplex" alt="EtherHostFullDuplex" coords="143,717,187,776">
+<area shape="rect" href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html" title="EtherHostFullDuplex" alt="EtherHostFullDuplex" coords="235,787,279,846">
+<area shape="rect" href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html" title="EtherHostFullDuplex" alt="EtherHostFullDuplex" coords="140,861,184,920">
+<area shape="rect" href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html" title="EtherHostFullDuplex" alt="EtherHostFullDuplex" coords="41,789,85,848">
+<area shape="rect" href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherSwitchFullDuplex.html" title="EtherSwitchFullDuplex" alt="EtherSwitchFullDuplex" coords="144,793,188,839">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.examples.ethernet.lans.SwitchedDuplexLAN-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.examples.ethernet.lans.SwitchedDuplexLAN.html" title="Network SwitchedDuplexLAN" alt="" coords="184,6,325,34">
+<area shape="rect" id="node2" href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherSwitchFullDuplex.html" title="Compound Module EtherSwitchFullDuplex" alt="" coords="5,83,160,111">
+<area shape="rect" id="node4" href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html" title="Compound Module EtherHostFullDuplex" alt="" coords="184,83,325,111">
+<area shape="rect" id="node6" href="inet.examples.ethernet.lans.SwitchedDuplexLAN.ethernetline.html" title="Channel ethernetline" alt="" coords="349,83,437,111">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.examples.ethernet.lans.SwitchedDuplexLAN-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.examples.ethernet.lans.SwitchedDuplexLAN.html" title="Network SwitchedDuplexLAN" alt="" coords="5,6,147,34">
+</map>
+<h3 class="subtitle">Properties:</h3>
 <table class="propertiestable">
    <tr>
       <th class="name">Name</th>
@@ -27,7 +47,7 @@
       <th class="description">Description</th>
    </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostA</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.destAddress</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostA</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.destAddress</td>
    <td>
       <i>string</i>
    </td>
@@ -37,17 +57,27 @@
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostA</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.startTime</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostA</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.startTime</td>
    <td>
       <i>double</i>
    </td>
-   <td>this.waitTime</td>
+   <td>this.sendInterval</td>
    <td>
 <p>time of sending the first request</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostA</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.waitTime</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostA</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.stopTime</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0</td>
+   <td>
+<p>time of finish sending, 0 means forever</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostA</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.sendInterval</td>
    <td>
       <i>double</i>
    </td>
@@ -57,7 +87,7 @@
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostA</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.reqLength</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostA</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.reqLength</td>
    <td>
       <i>int</i>
    </td>
@@ -67,7 +97,7 @@
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostA</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.respLength</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostA</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.respLength</td>
    <td>
       <i>int</i>
    </td>
@@ -77,22 +107,30 @@
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostA</a>.<a href="inet.linklayer.ethernet.EtherMAC2.html">mac</a>.promiscuous</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostA</a>.<a href="inet.linklayer.ethernet.EtherQoSQueue.html">queue</a>.<a href="inet.linklayer.queue.DropTailQueue.html">pauseQueue</a>.frameCapacity</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>100</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostA</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.promiscuous</td>
    <td>
       <i>bool</i>
    </td>
-   <td>false</td>
+   <td></td>
    <td>
 <p>if true, all packets are received, otherwise only the
 ones with matching destination MAC address</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostA</a>.<a href="inet.linklayer.ethernet.EtherMAC2.html">mac</a>.address</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostA</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.address</td>
    <td>
       <i>string</i>
    </td>
-   <td>"auto"</td>
+   <td></td>
    <td>
 <p>MAC address as hex string (12 hex digits), or
 "auto". "auto" values will be replaced by
@@ -100,26 +138,36 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostA</a>.<a href="inet.linklayer.ethernet.EtherMAC2.html">mac</a>.txQueueLimit</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostA</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.duplexMode</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td></td>
+   <td>
+<p>selects full-duplex (true) or half-duplex (false) operation</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostA</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.txQueueLimit</td>
    <td>
       <i>int</i>
    </td>
-   <td>1000</td>
+   <td></td>
    <td>
 <p>maximum number of frames queued up for transmission;
 additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostA</a>.<a href="inet.linklayer.ethernet.EtherMAC2.html">mac</a>.mtu</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostA</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.mtu</td>
    <td>
       <i>int</i>
    </td>
-   <td>1500</td>
+   <td></td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostB</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.destAddress</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostB</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.destAddress</td>
    <td>
       <i>string</i>
    </td>
@@ -129,17 +177,27 @@ additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostB</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.startTime</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostB</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.startTime</td>
    <td>
       <i>double</i>
    </td>
-   <td>this.waitTime</td>
+   <td>this.sendInterval</td>
    <td>
 <p>time of sending the first request</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostB</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.waitTime</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostB</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.stopTime</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0</td>
+   <td>
+<p>time of finish sending, 0 means forever</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostB</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.sendInterval</td>
    <td>
       <i>double</i>
    </td>
@@ -149,7 +207,7 @@ additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostB</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.reqLength</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostB</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.reqLength</td>
    <td>
       <i>int</i>
    </td>
@@ -159,7 +217,7 @@ additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostB</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.respLength</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostB</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.respLength</td>
    <td>
       <i>int</i>
    </td>
@@ -169,22 +227,30 @@ additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostB</a>.<a href="inet.linklayer.ethernet.EtherMAC2.html">mac</a>.promiscuous</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostB</a>.<a href="inet.linklayer.ethernet.EtherQoSQueue.html">queue</a>.<a href="inet.linklayer.queue.DropTailQueue.html">pauseQueue</a>.frameCapacity</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>100</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostB</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.promiscuous</td>
    <td>
       <i>bool</i>
    </td>
-   <td>false</td>
+   <td></td>
    <td>
 <p>if true, all packets are received, otherwise only the
 ones with matching destination MAC address</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostB</a>.<a href="inet.linklayer.ethernet.EtherMAC2.html">mac</a>.address</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostB</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.address</td>
    <td>
       <i>string</i>
    </td>
-   <td>"auto"</td>
+   <td></td>
    <td>
 <p>MAC address as hex string (12 hex digits), or
 "auto". "auto" values will be replaced by
@@ -192,26 +258,36 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostB</a>.<a href="inet.linklayer.ethernet.EtherMAC2.html">mac</a>.txQueueLimit</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostB</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.duplexMode</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td></td>
+   <td>
+<p>selects full-duplex (true) or half-duplex (false) operation</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostB</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.txQueueLimit</td>
    <td>
       <i>int</i>
    </td>
-   <td>1000</td>
+   <td></td>
    <td>
 <p>maximum number of frames queued up for transmission;
 additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostB</a>.<a href="inet.linklayer.ethernet.EtherMAC2.html">mac</a>.mtu</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostB</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.mtu</td>
    <td>
       <i>int</i>
    </td>
-   <td>1500</td>
+   <td></td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostC</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.destAddress</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostC</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.destAddress</td>
    <td>
       <i>string</i>
    </td>
@@ -221,17 +297,27 @@ additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostC</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.startTime</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostC</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.startTime</td>
    <td>
       <i>double</i>
    </td>
-   <td>this.waitTime</td>
+   <td>this.sendInterval</td>
    <td>
 <p>time of sending the first request</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostC</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.waitTime</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostC</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.stopTime</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0</td>
+   <td>
+<p>time of finish sending, 0 means forever</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostC</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.sendInterval</td>
    <td>
       <i>double</i>
    </td>
@@ -241,7 +327,7 @@ additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostC</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.reqLength</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostC</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.reqLength</td>
    <td>
       <i>int</i>
    </td>
@@ -251,7 +337,7 @@ additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostC</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.respLength</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostC</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.respLength</td>
    <td>
       <i>int</i>
    </td>
@@ -261,22 +347,30 @@ additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostC</a>.<a href="inet.linklayer.ethernet.EtherMAC2.html">mac</a>.promiscuous</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostC</a>.<a href="inet.linklayer.ethernet.EtherQoSQueue.html">queue</a>.<a href="inet.linklayer.queue.DropTailQueue.html">pauseQueue</a>.frameCapacity</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>100</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostC</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.promiscuous</td>
    <td>
       <i>bool</i>
    </td>
-   <td>false</td>
+   <td></td>
    <td>
 <p>if true, all packets are received, otherwise only the
 ones with matching destination MAC address</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostC</a>.<a href="inet.linklayer.ethernet.EtherMAC2.html">mac</a>.address</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostC</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.address</td>
    <td>
       <i>string</i>
    </td>
-   <td>"auto"</td>
+   <td></td>
    <td>
 <p>MAC address as hex string (12 hex digits), or
 "auto". "auto" values will be replaced by
@@ -284,26 +378,36 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostC</a>.<a href="inet.linklayer.ethernet.EtherMAC2.html">mac</a>.txQueueLimit</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostC</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.duplexMode</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td></td>
+   <td>
+<p>selects full-duplex (true) or half-duplex (false) operation</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostC</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.txQueueLimit</td>
    <td>
       <i>int</i>
    </td>
-   <td>1000</td>
+   <td></td>
    <td>
 <p>maximum number of frames queued up for transmission;
 additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostC</a>.<a href="inet.linklayer.ethernet.EtherMAC2.html">mac</a>.mtu</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostC</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.mtu</td>
    <td>
       <i>int</i>
    </td>
-   <td>1500</td>
+   <td></td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostD</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.destAddress</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostD</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.destAddress</td>
    <td>
       <i>string</i>
    </td>
@@ -313,17 +417,27 @@ additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostD</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.startTime</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostD</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.startTime</td>
    <td>
       <i>double</i>
    </td>
-   <td>this.waitTime</td>
+   <td>this.sendInterval</td>
    <td>
 <p>time of sending the first request</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostD</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.waitTime</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostD</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.stopTime</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0</td>
+   <td>
+<p>time of finish sending, 0 means forever</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostD</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.sendInterval</td>
    <td>
       <i>double</i>
    </td>
@@ -333,7 +447,7 @@ additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostD</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.reqLength</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostD</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.reqLength</td>
    <td>
       <i>int</i>
    </td>
@@ -343,7 +457,7 @@ additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostD</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.respLength</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostD</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.respLength</td>
    <td>
       <i>int</i>
    </td>
@@ -353,22 +467,30 @@ additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostD</a>.<a href="inet.linklayer.ethernet.EtherMAC2.html">mac</a>.promiscuous</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostD</a>.<a href="inet.linklayer.ethernet.EtherQoSQueue.html">queue</a>.<a href="inet.linklayer.queue.DropTailQueue.html">pauseQueue</a>.frameCapacity</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>100</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostD</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.promiscuous</td>
    <td>
       <i>bool</i>
    </td>
-   <td>false</td>
+   <td></td>
    <td>
 <p>if true, all packets are received, otherwise only the
 ones with matching destination MAC address</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostD</a>.<a href="inet.linklayer.ethernet.EtherMAC2.html">mac</a>.address</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostD</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.address</td>
    <td>
       <i>string</i>
    </td>
-   <td>"auto"</td>
+   <td></td>
    <td>
 <p>MAC address as hex string (12 hex digits), or
 "auto". "auto" values will be replaced by
@@ -376,26 +498,36 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostD</a>.<a href="inet.linklayer.ethernet.EtherMAC2.html">mac</a>.txQueueLimit</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostD</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.duplexMode</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td></td>
+   <td>
+<p>selects full-duplex (true) or half-duplex (false) operation</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostD</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.txQueueLimit</td>
    <td>
       <i>int</i>
    </td>
-   <td>1000</td>
+   <td></td>
    <td>
 <p>maximum number of frames queued up for transmission;
 additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherHost2.html">hostD</a>.<a href="inet.linklayer.ethernet.EtherMAC2.html">mac</a>.mtu</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherHostFullDuplex.html">hostD</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.mtu</td>
    <td>
       <i>int</i>
    </td>
-   <td>1500</td>
+   <td></td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherSwitch2.html">switch</a>.<a href="inet.linklayer.etherswitch.MACRelayUnit.html">relayUnit</a>.addressTableFile</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherSwitchFullDuplex.html">switch</a>.<a href="inet.linklayer.IMACRelayUnit.html">relayUnit</a>.addressTableFile</td>
    <td>
       <i>string</i>
    </td>
@@ -405,7 +537,7 @@ additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherSwitch2.html">switch</a>.<a href="inet.linklayer.etherswitch.MACRelayUnit.html">relayUnit</a>.addressTableSize</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherSwitchFullDuplex.html">switch</a>.<a href="inet.linklayer.IMACRelayUnit.html">relayUnit</a>.addressTableSize</td>
    <td>
       <i>int</i>
    </td>
@@ -415,7 +547,7 @@ additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherSwitch2.html">switch</a>.<a href="inet.linklayer.etherswitch.MACRelayUnit.html">relayUnit</a>.agingTime</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherSwitchFullDuplex.html">switch</a>.<a href="inet.linklayer.IMACRelayUnit.html">relayUnit</a>.agingTime</td>
    <td>
       <i>double</i>
    </td>
@@ -426,11 +558,11 @@ additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherSwitch2.html">switch</a>.<a href="inet.linklayer.ethernet.EtherMAC2.html">mac</a>.address</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherSwitchFullDuplex.html">switch</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.address</td>
    <td>
       <i>string</i>
    </td>
-   <td>"auto"</td>
+   <td></td>
    <td>
 <p>MAC address as hex string (12 hex digits), or
 "auto". "auto" values will be replaced by
@@ -438,46 +570,75 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherSwitch2.html">switch</a>.<a href="inet.linklayer.ethernet.EtherMAC2.html">mac</a>.txQueueLimit</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherSwitchFullDuplex.html">switch</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.duplexMode</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td></td>
+   <td>
+<p>selects full-duplex (true) or half-duplex (false) operation</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherSwitchFullDuplex.html">switch</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.txQueueLimit</td>
    <td>
       <i>int</i>
    </td>
-   <td>1000</td>
+   <td></td>
    <td>
 <p>maximum number of frames queued up for transmission;
 additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ethernet.EtherSwitch2.html">switch</a>.<a href="inet.linklayer.ethernet.EtherMAC2.html">mac</a>.mtu</td>
+   <td><a href="inet.examples.ethernet.lans.SwitchedDuplexLAN.EtherSwitchFullDuplex.html">switch</a>.<a href="inet.linklayer.IEtherMAC.html">mac</a>.mtu</td>
    <td>
       <i>int</i>
    </td>
-   <td>1500</td>
+   <td></td>
    <td>   </td>
 </tr>
 </table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #800000; font-weight: bold; ">network</span><span style="color: #000000; "> </span><span style="color: #000000; ">SwitchedDuplexLAN</span><span style="color: #000000; ">
 {
+    </span><span style="color: #800000; font-weight: bold; ">types</span><span style="color: #000000; ">:
+        </span><span style="color: #800000; font-weight: bold; ">channel</span><span style="color: #000000; "> </span><span style="color: #000000; ">ethernetline</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">DatarateChannel</span><span style="color: #000000; ">
+        {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
+                </span><span style="color: #000000; ">delay</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">.</span><span style="color: #008000; ">1</span><span style="color: #000000; ">us</span><span style="color: #000000; ">;
+                </span><span style="color: #000000; ">datarate</span><span style="color: #000000; "> = </span><span style="color: #008000; ">10</span><span style="color: #000000; ">Mbps</span><span style="color: #000000; ">;
+        }
+
+        </span><span style="color: #800000; font-weight: bold; ">module</span><span style="color: #000000; "> </span><span style="color: #000000; ">EtherHostFullDuplex</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">EtherHost</span><span style="color: #000000; ">
+        {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
+                </span><span style="color: #000000; ">csmacdSupport</span><span style="color: #000000; "> = </span><span style="color: #008000; ">false</span><span style="color: #000000; ">;
+        }
+
+        </span><span style="color: #800000; font-weight: bold; ">module</span><span style="color: #000000; "> </span><span style="color: #000000; ">EtherSwitchFullDuplex</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">EtherSwitch</span><span style="color: #000000; ">
+        {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
+                </span><span style="color: #000000; ">csmacdSupport</span><span style="color: #000000; "> = </span><span style="color: #008000; ">false</span><span style="color: #000000; ">;
+        }
     </span><span style="color: #800000; font-weight: bold; ">submodules</span><span style="color: #000000; ">:
-        </span><span style="color: #000000; ">hostA</span><span style="color: #000000; ">: </span><span style="color: #000000; ">EtherHost2</span><span style="color: #000000; "> {
+        </span><span style="color: #000000; ">hostA</span><span style="color: #000000; ">: </span><span style="color: #000000; ">EtherHostFullDuplex</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
                 </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=161,55&quot;</span><span style="color: #000000; ">);
         }
-        </span><span style="color: #000000; ">hostB</span><span style="color: #000000; ">: </span><span style="color: #000000; ">EtherHost2</span><span style="color: #000000; "> {
+        </span><span style="color: #000000; ">hostB</span><span style="color: #000000; ">: </span><span style="color: #000000; ">EtherHostFullDuplex</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
                 </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=253,125&quot;</span><span style="color: #000000; ">);
         }
-        </span><span style="color: #000000; ">hostC</span><span style="color: #000000; ">: </span><span style="color: #000000; ">EtherHost2</span><span style="color: #000000; "> {
+        </span><span style="color: #000000; ">hostC</span><span style="color: #000000; ">: </span><span style="color: #000000; ">EtherHostFullDuplex</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
                 </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=158,199&quot;</span><span style="color: #000000; ">);
         }
-        </span><span style="color: #000000; ">hostD</span><span style="color: #000000; ">: </span><span style="color: #000000; ">EtherHost2</span><span style="color: #000000; "> {
+        </span><span style="color: #000000; ">hostD</span><span style="color: #000000; ">: </span><span style="color: #000000; ">EtherHostFullDuplex</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
                 </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=59,127&quot;</span><span style="color: #000000; ">);
         }
-        </span><span style="color: #000000; ">switch</span><span style="color: #000000; ">: </span><span style="color: #000000; ">EtherSwitch2</span><span style="color: #000000; "> {
+        </span><span style="color: #000000; ">switch</span><span style="color: #000000; ">: </span><span style="color: #000000; ">EtherSwitchFullDuplex</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
                 </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=162,124&quot;</span><span style="color: #000000; ">);
             </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
@@ -489,8 +650,6 @@ additional frames are dropped. Only used if queueModule==""</p>
         </span><span style="color: #000000; ">switch</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">[</span><span style="color: #008000; ">2</span><span style="color: #000000; ">] </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">ethernetline</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">hostC</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">;
         </span><span style="color: #000000; ">switch</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">[</span><span style="color: #008000; ">3</span><span style="color: #000000; ">] </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">ethernetline</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">hostD</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">;
 }
-
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

@@ -20,7 +20,8 @@
    </td>
    <td>
 
-<p>Message that carries raw bytes. Used with emulation-related features.</p>
+<p>Message that carries raw bytes.
+Used with emulation-related features.</p>
 
    </td>
 </tr>
@@ -28,6 +29,7 @@
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
 // (C) 2005 Vojtech Janota
+// (C) 2010 Zoltan Bojthe
 //
 // This library is free software, you can redistribute it
 // and/or modify
@@ -42,18 +44,22 @@
 </span><span style="color: #000000; ">
 </span><span style="color: #800000; font-weight: bold; ">cplusplus</span><span style="color: #000000; "> {{
 #</span><span style="color: #000000; ">include</span><span style="color: #000000; "> </span><span style="color: #008000; ">&quot;INETDefs.h&quot;</span><span style="color: #000000; ">
+
+#</span><span style="color: #000000; ">include</span><span style="color: #000000; "> </span><span style="color: #008000; ">&quot;ByteArray.h&quot;</span><span style="color: #000000; ">
 }}
 
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">noncobject</span><span style="color: #000000; "> </span><span style="color: #000000; ">ByteArray</span><span style="color: #000000; ">;
 
 </span><span style="color: #808080; font-style: italic; ">//
-// Message that carries raw bytes. Used with emulation-related features.
+// Message that carries raw bytes.
+// Used with emulation-related features.
 //
 </span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">ByteArrayMessage</span><span style="color: #000000; ">
 {
     </span><span style="color: #000000; font-weight: bold; ">@customize</span><span style="color: #000000; ">(</span><span style="color: #008000; ">true</span><span style="color: #000000; ">);
-    </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #000000; "> </span><span style="color: #000000; ">data</span><span style="color: #000000; ">[];
+    </span><span style="color: #000000; ">ByteArray</span><span style="color: #000000; "> </span><span style="color: #000000; ">byteArray</span><span style="color: #000000; ">;
 }
+
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

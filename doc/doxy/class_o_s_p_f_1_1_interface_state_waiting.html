@@ -81,7 +81,7 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="OSPF::InterfaceStateWaiting" --><!-- doxytag: inherits="OSPF::InterfaceState" -->
-<p><code>#include &lt;<a class="el" href="_o_s_p_f_interface_state_waiting_8h_source.html">OSPFInterfaceStateWaiting.h</a>&gt;</code></p>
+<p><code>#include &lt;OSPFInterfaceStateWaiting.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for OSPF::InterfaceStateWaiting:</div>
 <div class="dyncontent">
@@ -96,22 +96,18 @@ Inheritance diagram for OSPF::InterfaceStateWaiting:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_1_1_interface_state_waiting.html#a1c171914cc5f51b2abfd31a2989f381f">ProcessEvent</a> (<a class="el" href="class_o_s_p_f_1_1_interface.html">Interface</a> *intf, <a class="el" href="class_o_s_p_f_1_1_interface.html#ae0aca9ab8ca338c25d9afa6e65fc8824">Interface::InterfaceEventType</a> event)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_1_1_interface_state_waiting.html#a70f72d26276984f9fc7b039364b9e8e1">processEvent</a> (<a class="el" href="class_o_s_p_f_1_1_interface.html">Interface</a> *intf, <a class="el" href="class_o_s_p_f_1_1_interface.html#ae0aca9ab8ca338c25d9afa6e65fc8824">Interface::InterfaceEventType</a> event)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <br class="typebreak"/>
-<a class="el" href="class_o_s_p_f_1_1_interface.html#a68805ad1115c7149d5f8a139437e6249">Interface::InterfaceStateType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_1_1_interface_state_waiting.html#ad0568a18125c70edb03df5903b87caac">GetState</a> (void) const </td></tr>
+<a class="el" href="class_o_s_p_f_1_1_interface.html#a68805ad1115c7149d5f8a139437e6249">Interface::InterfaceStateType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_1_1_interface_state_waiting.html#aba0235cbde4e4c8b07eafb3e5e561bda">getState</a> () const </td></tr>
 </table>
-<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_o_s_p_f_interface_state_waiting_8h_source.html#l00025">25</a> of file <a class="el" href="_o_s_p_f_interface_state_waiting_8h_source.html">OSPFInterfaceStateWaiting.h</a>.</p>
-</div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="ad0568a18125c70edb03df5903b87caac"></a><!-- doxytag: member="OSPF::InterfaceStateWaiting::GetState" ref="ad0568a18125c70edb03df5903b87caac" args="(void) const " -->
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="aba0235cbde4e4c8b07eafb3e5e561bda"></a><!-- doxytag: member="OSPF::InterfaceStateWaiting::getState" ref="aba0235cbde4e4c8b07eafb3e5e561bda" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="class_o_s_p_f_1_1_interface.html#a68805ad1115c7149d5f8a139437e6249">Interface::InterfaceStateType</a> <a class="el" href="class_o_s_p_f_1_1_interface_state_waiting.html#ad0568a18125c70edb03df5903b87caac">OSPF::InterfaceStateWaiting::GetState</a> </td>
+          <td class="memname">virtual <a class="el" href="class_o_s_p_f_1_1_interface.html#a68805ad1115c7149d5f8a139437e6249">Interface::InterfaceStateType</a> <a class="el" href="class_o_s_p_f_1_1_interface_state_waiting.html#aba0235cbde4e4c8b07eafb3e5e561bda">OSPF::InterfaceStateWaiting::getState</a> </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td> const<code> [inline, virtual]</code></td>
         </tr>
@@ -119,19 +115,17 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Implements <a class="el" href="class_o_s_p_f_1_1_interface_state.html#a67e02942e33a243dd57f1130015f41b6">OSPF::InterfaceState</a>.</p>
-
-<p>Definition at line <a class="el" href="_o_s_p_f_interface_state_waiting_8h_source.html#l00029">29</a> of file <a class="el" href="_o_s_p_f_interface_state_waiting_8h_source.html">OSPFInterfaceStateWaiting.h</a>.</p>
-<div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> <a class="code" href="class_o_s_p_f_1_1_interface.html#a68805ad1115c7149d5f8a139437e6249a4b12c46ab26b94b0f002e9a8f54ae385">Interface::WaitingState</a>; }
+<p>Implements <a class="el" href="class_o_s_p_f_1_1_interface_state.html#a8ac70ec19096b5cc66827982a80540fb">OSPF::InterfaceState</a>.</p>
+<div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> <a class="code" href="class_o_s_p_f_1_1_interface.html#a68805ad1115c7149d5f8a139437e6249a466fb613028467b9186db98b2a7e958c">Interface::WAITING_STATE</a>; }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a1c171914cc5f51b2abfd31a2989f381f"></a><!-- doxytag: member="OSPF::InterfaceStateWaiting::ProcessEvent" ref="a1c171914cc5f51b2abfd31a2989f381f" args="(Interface *intf, Interface::InterfaceEventType event)" -->
+<a class="anchor" id="a70f72d26276984f9fc7b039364b9e8e1"></a><!-- doxytag: member="OSPF::InterfaceStateWaiting::processEvent" ref="a70f72d26276984f9fc7b039364b9e8e1" args="(Interface *intf, Interface::InterfaceEventType event)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_o_s_p_f_1_1_interface_state_waiting.html#a1c171914cc5f51b2abfd31a2989f381f">OSPF::InterfaceStateWaiting::ProcessEvent</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_o_s_p_f_1_1_interface_state_waiting.html#a70f72d26276984f9fc7b039364b9e8e1">OSPF::InterfaceStateWaiting::processEvent</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_o_s_p_f_1_1_interface.html">OSPF::Interface</a> *&#160;</td>
           <td class="paramname"><em>intf</em>, </td>
@@ -151,48 +145,46 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Implements <a class="el" href="class_o_s_p_f_1_1_interface_state.html#a2a41c0f4f5decb321c67e0fcceac9bca">OSPF::InterfaceState</a>.</p>
-
-<p>Definition at line <a class="el" href="_o_s_p_f_interface_state_waiting_8cc_source.html#l00025">25</a> of file <a class="el" href="_o_s_p_f_interface_state_waiting_8cc_source.html">OSPFInterfaceStateWaiting.cc</a>.</p>
+<p>Implements <a class="el" href="class_o_s_p_f_1_1_interface_state.html#a0949f7d2b10c7537c2468b42ab30f77a">OSPF::InterfaceState</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> ((<a class="code" href="namespacecesnet.html#a56e29c69128db750fc49a508a16cf7ba">event</a> == <a class="code" href="class_o_s_p_f_1_1_interface.html#ae0aca9ab8ca338c25d9afa6e65fc8824a1449c6066285b3bb8ab9ea5794e74446">OSPF::Interface::BackupSeen</a>) ||
-        (<a class="code" href="namespacecesnet.html#a56e29c69128db750fc49a508a16cf7ba">event</a> == <a class="code" href="class_o_s_p_f_1_1_interface.html#ae0aca9ab8ca338c25d9afa6e65fc8824ae1fb186ab28c6abab8fd0b0239a65ec4">OSPF::Interface::WaitTimer</a>))
+    <span class="keywordflow">if</span> ((event == <a class="code" href="class_o_s_p_f_1_1_interface.html#ae0aca9ab8ca338c25d9afa6e65fc8824a12fa98710ca2411243166bf2d9e4ac92">OSPF::Interface::BACKUP_SEEN</a>) ||
+        (event == <a class="code" href="class_o_s_p_f_1_1_interface.html#ae0aca9ab8ca338c25d9afa6e65fc8824a33c1b3f1558da4d7bc16cfe4352efd80">OSPF::Interface::WAIT_TIMER</a>))
     {
-        <a class="code" href="class_o_s_p_f_1_1_interface_state.html#a4a784ea0a363117c123cdac528001767">CalculateDesignatedRouter</a>(intf);
+        <a class="code" href="class_o_s_p_f_1_1_interface_state.html#a6a9592a636f20c163e3af0f27bfedcb2">calculateDesignatedRouter</a>(intf);
     }
-    <span class="keywordflow">if</span> (<a class="code" href="namespacecesnet.html#a56e29c69128db750fc49a508a16cf7ba">event</a> == <a class="code" href="class_o_s_p_f_1_1_interface.html#ae0aca9ab8ca338c25d9afa6e65fc8824aff0fe406e16e5989df3d3d5f789b04bf">OSPF::Interface::InterfaceDown</a>) {
-        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#aa74a52ba5410d79366928fd4a2074baa">Reset</a>();
-        <a class="code" href="class_o_s_p_f_1_1_interface_state.html#a10805e77b3f9a99f2e678f8e29f3b7bc">ChangeState</a>(intf, <span class="keyword">new</span> <a class="code" href="class_o_s_p_f_1_1_interface_state_down.html">OSPF::InterfaceStateDown</a>, <span class="keyword">this</span>);
+    <span class="keywordflow">if</span> (event == <a class="code" href="class_o_s_p_f_1_1_interface.html#ae0aca9ab8ca338c25d9afa6e65fc8824a69f487ae071e98e0a7ec1321ff046d52">OSPF::Interface::INTERFACE_DOWN</a>) {
+        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a642aa861ea7dc896a950899dda0760d6">reset</a>();
+        <a class="code" href="class_o_s_p_f_1_1_interface_state.html#a9f94bc7735d2a404e05eb7e26a38d033">changeState</a>(intf, <span class="keyword">new</span> <a class="code" href="class_o_s_p_f_1_1_interface_state_down.html">OSPF::InterfaceStateDown</a>, <span class="keyword">this</span>);
     }
-    <span class="keywordflow">if</span> (<a class="code" href="namespacecesnet.html#a56e29c69128db750fc49a508a16cf7ba">event</a> == <a class="code" href="class_o_s_p_f_1_1_interface.html#ae0aca9ab8ca338c25d9afa6e65fc8824a53043ecda3212723eb1b31f0da71b5c4">OSPF::Interface::LoopIndication</a>) {
-        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#aa74a52ba5410d79366928fd4a2074baa">Reset</a>();
-        <a class="code" href="class_o_s_p_f_1_1_interface_state.html#a10805e77b3f9a99f2e678f8e29f3b7bc">ChangeState</a>(intf, <span class="keyword">new</span> <a class="code" href="class_o_s_p_f_1_1_interface_state_loopback.html">OSPF::InterfaceStateLoopback</a>, <span class="keyword">this</span>);
+    <span class="keywordflow">if</span> (event == <a class="code" href="class_o_s_p_f_1_1_interface.html#ae0aca9ab8ca338c25d9afa6e65fc8824a3febf5a27634cdb7a271f122e57c4a16">OSPF::Interface::LOOP_INDICATION</a>) {
+        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a642aa861ea7dc896a950899dda0760d6">reset</a>();
+        <a class="code" href="class_o_s_p_f_1_1_interface_state.html#a9f94bc7735d2a404e05eb7e26a38d033">changeState</a>(intf, <span class="keyword">new</span> <a class="code" href="class_o_s_p_f_1_1_interface_state_loopback.html">OSPF::InterfaceStateLoopback</a>, <span class="keyword">this</span>);
     }
-    <span class="keywordflow">if</span> (<a class="code" href="namespacecesnet.html#a56e29c69128db750fc49a508a16cf7ba">event</a> == <a class="code" href="class_o_s_p_f_1_1_interface.html#ae0aca9ab8ca338c25d9afa6e65fc8824a201aa41e319d6cde96895c357a8ade48">OSPF::Interface::HelloTimer</a>) {
-        <span class="keywordflow">if</span> (intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#afc695bd11de24180427aef1161c772a9">GetType</a>() == <a class="code" href="class_o_s_p_f_1_1_interface.html#a558b3988a38b079460b57f092eacf4aca15decf080ad941585245418cfb9458c9">OSPF::Interface::Broadcast</a>) {
-            intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#af5bcfcd208d73be7deeda67c1072ec19">SendHelloPacket</a>(<a class="code" href="namespace_o_s_p_f.html#afdf11c20cc9287464a9a673199e01004">OSPF::AllSPFRouters</a>);
+    <span class="keywordflow">if</span> (event == <a class="code" href="class_o_s_p_f_1_1_interface.html#ae0aca9ab8ca338c25d9afa6e65fc8824af57361b3b96d3f8b246e30541a08c876">OSPF::Interface::HELLO_TIMER</a>) {
+        <span class="keywordflow">if</span> (intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a29189950efe0c6411fb5181175d57310">getType</a>() == <a class="code" href="class_o_s_p_f_1_1_interface.html#a558b3988a38b079460b57f092eacf4aca237bd0e7c65b27bf1d75ddeccf7f67f9">OSPF::Interface::BROADCAST</a>) {
+            intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a178d166968863f6e8ab41a1011482bd0">sendHelloPacket</a>(<a class="code" href="class_i_pv4_address.html#a77ed6f2a43dda6acc0456331738b6f76" title="224.0.0.5 All OSPF routers (DR Others)">IPv4Address::ALL_OSPF_ROUTERS_MCAST</a>);
         } <span class="keywordflow">else</span> {    <span class="comment">// OSPF::Interface::NBMA</span>
-            <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> neighborCount = intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a3cb63721849b942a133667f25746482b">GetNeighborCount</a>();
-            <span class="keywordtype">int</span>           ttl           = (intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#afc695bd11de24180427aef1161c772a9">GetType</a>() == <a class="code" href="class_o_s_p_f_1_1_interface.html#a558b3988a38b079460b57f092eacf4acaf27b340cd6ffc282630c03185294088b">OSPF::Interface::Virtual</a>) ? <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a1d4e674fb39c33571b1b8b8f28f02b52">VIRTUAL_LINK_TTL</a> : 1;
-            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = 0; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> &lt; neighborCount; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++) {
-                <a class="code" href="class_o_s_p_f_1_1_neighbor.html">OSPF::Neighbor</a>* neighbor = intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a259d687e493b93dd618fe7b352c3401a">GetNeighbor</a>(<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>);
-                <span class="keywordflow">if</span> (neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a81e7ec86bff4a427f34bd091e3fb6698">GetPriority</a>() &gt; 0) {
-                    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#af5bcfcd208d73be7deeda67c1072ec19">SendHelloPacket</a>(neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#afb8fc0467b13a32ccd3b088528bb9266">GetAddress</a>(), ttl);
+            <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> neighborCount = intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a6a90e93cdcb3b46266e37a12b4cbe4fc">getNeighborCount</a>();
+            <span class="keywordtype">int</span> <a class="code" href="_t_c_p___n_s_c_8cc.html#a4d402503271315376ddf4e47674d4965">ttl</a> = (intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a29189950efe0c6411fb5181175d57310">getType</a>() == <a class="code" href="class_o_s_p_f_1_1_interface.html#a558b3988a38b079460b57f092eacf4aca5ea9dce97089a750f8ad3c1ec49fa389">OSPF::Interface::VIRTUAL</a>) ? <a class="code" href="_o_s_p_fcommon_8h.html#a1d4e674fb39c33571b1b8b8f28f02b52">VIRTUAL_LINK_TTL</a> : 1;
+            <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> i = 0; i &lt; neighborCount; i++) {
+                <a class="code" href="class_o_s_p_f_1_1_neighbor.html">OSPF::Neighbor</a>* <a class="code" href="structneighbor.html">neighbor</a> = intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#aea84966c1b8f7dec168a48131714569b">getNeighbor</a>(i);
+                <span class="keywordflow">if</span> (neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a8f7e17d374d3bc20e79f071e9bc59d28">getPriority</a>() &gt; 0) {
+                    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a178d166968863f6e8ab41a1011482bd0">sendHelloPacket</a>(neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a5de77058501383c2655be390494f1b92">getAddress</a>(), <a class="code" href="_t_c_p___n_s_c_8cc.html#a4d402503271315376ddf4e47674d4965">ttl</a>);
                 }
             }
         }
-        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a353330e70282153a34fcf9d4ee276acc">GetArea</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a6aee4ce011dc75bc4c42269d90b71192">GetRouter</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#ab2b6452dadb00d2970e3432b0b29e17f">GetMessageHandler</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_message_handler.html#a7680ccb9763e25c9841911992bc7caa5">StartTimer</a>(intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a456fa7255ea279ae0b1788fe8d32f828">GetHelloTimer</a>(), intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#acbe4102fed53ad77e349da0ed816c023">GetHelloInterval</a>());
+        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a42decc255df2e2adb5619f0d1cd52bc0">getArea</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a040af0c880f8a8bcc0e09b1ade647be1">getRouter</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#a0142a9cc0f45692f0af116de386f9d6b">getMessageHandler</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_message_handler.html#a255276f12e233566a769fe286335fd21">startTimer</a>(intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a5fb386ec29faad2ec9d3f38257f6932b">getHelloTimer</a>(), intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a418bc6eef24a4321a4bc8f6e856803ef">getHelloInterval</a>());
     }
-    <span class="keywordflow">if</span> (<a class="code" href="namespacecesnet.html#a56e29c69128db750fc49a508a16cf7ba">event</a> == <a class="code" href="class_o_s_p_f_1_1_interface.html#ae0aca9ab8ca338c25d9afa6e65fc8824a32c11ca15d804668badbab6543eee1a8">OSPF::Interface::AcknowledgementTimer</a>) {
-        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#af95c6306ce9369415e0604b2682a920d">SendDelayedAcknowledgements</a>();
+    <span class="keywordflow">if</span> (event == <a class="code" href="class_o_s_p_f_1_1_interface.html#ae0aca9ab8ca338c25d9afa6e65fc8824a17b73729549ac5eee328ea0396e713cd">OSPF::Interface::ACKNOWLEDGEMENT_TIMER</a>) {
+        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a7cdaa81ff7bc0b1d9ec3bd39aa7a1dfd">sendDelayedAcknowledgements</a>();
     }
 }
 </pre></div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_o_s_p_f_interface_state_waiting_8h_source.html">OSPFInterfaceStateWaiting.h</a></li>
-<li><a class="el" href="_o_s_p_f_interface_state_waiting_8cc_source.html">OSPFInterfaceStateWaiting.cc</a></li>
+<li><a class="el" href="_o_s_p_f_interface_state_waiting_8h.html">OSPFInterfaceStateWaiting.h</a></li>
+<li><a class="el" href="_o_s_p_f_interface_state_waiting_8cc.html">OSPFInterfaceStateWaiting.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -201,7 +193,7 @@ Public Member Functions</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_o_s_p_f.html">OSPF</a>      </li>
       <li class="navelem"><a class="el" href="class_o_s_p_f_1_1_interface_state_waiting.html">InterfaceStateWaiting</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:56 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:32 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

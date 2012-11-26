@@ -82,14 +82,17 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="TCP_NSC_VirtualDataSendQueue" --><!-- doxytag: inherits="TCP_NSC_SendQueue" -->
-<p><code>#include &lt;<a class="el" href="_t_c_p___n_s_c___virtual_data_queues_8h_source.html">TCP_NSC_VirtualDataQueues.h</a>&gt;</code></p>
+<p>Send queue that manages "virtual bytes", that is, byte counts only.  
+ <a href="class_t_c_p___n_s_c___virtual_data_send_queue.html#details">More...</a></p>
+
+<p><code>#include &lt;TCP_NSC_VirtualDataQueues.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TCP_NSC_VirtualDataSendQueue:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_t_c_p___n_s_c___virtual_data_send_queue.png" usemap="#TCP_NSC_VirtualDataSendQueue_map" alt=""/>
   <map id="TCP_NSC_VirtualDataSendQueue_map" name="TCP_NSC_VirtualDataSendQueue_map">
-<area href="class_t_c_p___n_s_c___send_queue.html" alt="TCP_NSC_SendQueue" shape="rect" coords="0,0,206,24"/>
+<area href="class_t_c_p___n_s_c___send_queue.html" title="Abstract base class for TCP_NSC send queues." alt="TCP_NSC_SendQueue" shape="rect" coords="0,0,206,24"/>
 </map>
  </div></div>
 
@@ -98,22 +101,29 @@ Inheritance diagram for TCP_NSC_VirtualDataSendQueue:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#ab4f5476f03cc1a87b8e62196dfa0f0b5">TCP_NSC_VirtualDataSendQueue</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#ab7135283bfd19a2bdbd23ba696799ea2">~TCP_NSC_VirtualDataSendQueue</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#af3c96f1ea129b3e71978725efdf05590">setConnection</a> (<a class="el" href="class_t_c_p___n_s_c___connection.html">TCP_NSC_Connection</a> *connP)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#af6826305371ce41c3b88e84fe1eff824">enqueueAppData</a> (cPacket *msgP)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#ade85fa7f8dc5455aefd2c929900f28dd">getNscMsg</a> (void *bufferP, int bufferLengthP)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#a93f5616db396c508a9728c894d0f6ea5">dequeueNscMsg</a> (int msgLengthP)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_i_n_e_t_defs_8h.html#a718b4eb2652c286f4d42dc18a8e71a1a">ulong</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#a1b06b4850403fac42b8dcc583a98a927">getBytesAvailable</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_t_c_p_segment.html">TCPSegment</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#ade3466c721a3e09de9b4d98281e2d66c">createSegmentWithBytes</a> (const void *tcpDataP, int tcpLengthP)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#aa64f1a2b8edacb94a89b0578344d3a6e">discardUpTo</a> (uint32 seqNumP)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ctor.  <a href="#ab4f5476f03cc1a87b8e62196dfa0f0b5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#a2892bfdd113bb903f7d927ac83c745b3">~TCP_NSC_VirtualDataSendQueue</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual dtor.  <a href="#a2892bfdd113bb903f7d927ac83c745b3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#ab59582caf328fb30c91625e5ce89496c">setConnection</a> (<a class="el" href="class_t_c_p___n_s_c___connection.html">TCP_NSC_Connection</a> *connP)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">set connection queue, and initialise queue variables.  <a href="#ab59582caf328fb30c91625e5ce89496c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#a1f13bbe56efe3adb517b9f756275f7c7">enqueueAppData</a> (cPacket *msgP)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called on SEND app command, it inserts in the queue the data the user wants to send.  <a href="#a1f13bbe56efe3adb517b9f756275f7c7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#a79178a157647db84c84d29d4ca6c7393">getBytesForTcpLayer</a> (<a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *bufferP, int bufferLengthP) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy data to the buffer for send to NSC.  <a href="#a79178a157647db84c84d29d4ca6c7393"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#af968e91df9aa054b9507939c8e2e21c4">dequeueTcpLayerMsg</a> (int msgLengthP)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The function should remove msgLengthP bytes from NSCqueue.  <a href="#af968e91df9aa054b9507939c8e2e21c4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#af1f957a26b36ba0964113d45a90320f2">getBytesAvailable</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility function: returns how many bytes are available in the queue.  <a href="#af1f957a26b36ba0964113d45a90320f2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_t_c_p_segment.html">TCPSegment</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#a80fbee98b2d32974f0650c860840e89a">createSegmentWithBytes</a> (const <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *tcpDataP, int tcpLengthP)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> wants to send or retransmit data, it constructs a <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> segment which contains the data from the requested sequence number range.  <a href="#a80fbee98b2d32974f0650c860840e89a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#a1ef57581c7f62324a84655b4e88f33b1">discardUpTo</a> (uint32 seqNumP)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells the queue that bytes up to (but NOT including) seqNum have been transmitted and ACKed, so they can be removed from the queue.  <a href="#a1ef57581c7f62324a84655b4e88f33b1"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#af829f2985a1c839d01dbf180dec71496">unsentNscBytesM</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Send/Receive queue that manages "virtual bytes", that is, byte counts only. </p>
-
-<p>Definition at line <a class="el" href="_t_c_p___n_s_c___virtual_data_queues_8h_source.html#l00032">32</a> of file <a class="el" href="_t_c_p___n_s_c___virtual_data_queues_8h_source.html">TCP_NSC_VirtualDataQueues.h</a>.</p>
+<div class="textblock"><p>Send queue that manages "virtual bytes", that is, byte counts only. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ab4f5476f03cc1a87b8e62196dfa0f0b5"></a><!-- doxytag: member="TCP_NSC_VirtualDataSendQueue::TCP_NSC_VirtualDataSendQueue" ref="ab4f5476f03cc1a87b8e62196dfa0f0b5" args="()" -->
 <div class="memitem">
@@ -128,16 +138,21 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Ctor. </p>
 
+<p>Ctor. </p>
+<div class="fragment"><pre class="fragment">    :
+    <a class="code" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#af829f2985a1c839d01dbf180dec71496">unsentNscBytesM</a>(0)
+{
+}
+</pre></div>
 </div>
 </div>
-<a class="anchor" id="ab7135283bfd19a2bdbd23ba696799ea2"></a><!-- doxytag: member="TCP_NSC_VirtualDataSendQueue::~TCP_NSC_VirtualDataSendQueue" ref="ab7135283bfd19a2bdbd23ba696799ea2" args="()" -->
+<a class="anchor" id="a2892bfdd113bb903f7d927ac83c745b3"></a><!-- doxytag: member="TCP_NSC_VirtualDataSendQueue::~TCP_NSC_VirtualDataSendQueue" ref="a2892bfdd113bb903f7d927ac83c745b3" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#ab7135283bfd19a2bdbd23ba696799ea2">TCP_NSC_VirtualDataSendQueue::~TCP_NSC_VirtualDataSendQueue</a> </td>
+          <td class="memname"><a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#a2892bfdd113bb903f7d927ac83c745b3">TCP_NSC_VirtualDataSendQueue::~TCP_NSC_VirtualDataSendQueue</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [virtual]</code></td>
@@ -145,19 +160,22 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Virtual dtor. </p>
 
+<p>Virtual dtor. </p>
+<div class="fragment"><pre class="fragment">{
+}
+</pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="ade3466c721a3e09de9b4d98281e2d66c"></a><!-- doxytag: member="TCP_NSC_VirtualDataSendQueue::createSegmentWithBytes" ref="ade3466c721a3e09de9b4d98281e2d66c" args="(const void *tcpDataP, int tcpLengthP)" -->
+<a class="anchor" id="a80fbee98b2d32974f0650c860840e89a"></a><!-- doxytag: member="TCP_NSC_VirtualDataSendQueue::createSegmentWithBytes" ref="a80fbee98b2d32974f0650c860840e89a" args="(const void *tcpDataP, int tcpLengthP)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="class_t_c_p_segment.html">TCPSegment</a>* <a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#ade3466c721a3e09de9b4d98281e2d66c">TCP_NSC_VirtualDataSendQueue::createSegmentWithBytes</a> </td>
+          <td class="memname"><a class="el" href="class_t_c_p_segment.html">TCPSegment</a> * <a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#a80fbee98b2d32974f0650c860840e89a">TCP_NSC_VirtualDataSendQueue::createSegmentWithBytes</a> </td>
           <td>(</td>
-          <td class="paramtype">const void *&#160;</td>
+          <td class="paramtype">const <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>tcpDataP</em>, </td>
         </tr>
         <tr>
@@ -174,19 +192,30 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called when the <a class="el" href="class_t_c_p.html">TCP</a> wants to send or retransmit data, it constructs a <a class="el" href="class_t_c_p.html">TCP</a> segment which contains the data from the requested sequence number range. The actually returned segment may contain less then maxNumBytes bytes if the subclass wants to reproduce the original segment boundaries when retransmitting.</p>
-<p>called from inside of send_callback() called before called the send() to <a class="el" href="class_i_p.html">IP</a> layer </p>
+
+<p>Called when the <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> wants to send or retransmit data, it constructs a <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> segment which contains the data from the requested sequence number range. </p>
+<p>The actually returned segment may contain less then maxNumBytes bytes if the subclass wants to reproduce the original segment boundaries when retransmitting.</p>
+<p>called from inside of send_callback() called before called the send() to IP layer </p>
 
 <p>Implements <a class="el" href="class_t_c_p___n_s_c___send_queue.html#a1af3799e52fba7caeaf301fd90ee73b5">TCP_NSC_SendQueue</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    ASSERT(tcpDataP);
 
+    <a class="code" href="class_t_c_p_segment.html" title="Represents a TCP segment.">TCPSegment</a> *tcpseg = <span class="keyword">new</span> <a class="code" href="class_t_c_p_segment.html" title="Represents a TCP segment.">TCPSegment</a>(<span class="stringliteral">&quot;tcp-segment&quot;</span>);
+
+    <a class="code" href="class_t_c_p_serializer.html" title="Converts between TCPSegment and binary (network byte order) TCP header.">TCPSerializer</a>().<a class="code" href="class_t_c_p_serializer.html#a7194cfc789c92b81cf5f521cdddade48" title="Puts a packet sniffed from the wire into a TCPSegment.">parse</a>((<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)tcpDataP, tcpLengthP, tcpseg, <span class="keyword">false</span>);
+
+    <span class="keywordflow">return</span> tcpseg;
+}
+</pre></div>
 </div>
 </div>
-<a class="anchor" id="a93f5616db396c508a9728c894d0f6ea5"></a><!-- doxytag: member="TCP_NSC_VirtualDataSendQueue::dequeueNscMsg" ref="a93f5616db396c508a9728c894d0f6ea5" args="(int msgLengthP)" -->
+<a class="anchor" id="af968e91df9aa054b9507939c8e2e21c4"></a><!-- doxytag: member="TCP_NSC_VirtualDataSendQueue::dequeueTcpLayerMsg" ref="af968e91df9aa054b9507939c8e2e21c4" args="(int msgLengthP)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#a93f5616db396c508a9728c894d0f6ea5">TCP_NSC_VirtualDataSendQueue::dequeueNscMsg</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#af968e91df9aa054b9507939c8e2e21c4">TCP_NSC_VirtualDataSendQueue::dequeueTcpLayerMsg</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>msgLengthP</em></td><td>)</td>
@@ -195,19 +224,26 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Remove msgLengthP bytes from NSCqueue</p>
+
+<p>The function should remove msgLengthP bytes from NSCqueue. </p>
+<p>But the NSC sometimes reread from this datapart (when data destroyed in IP Layer) inside of <a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#a80fbee98b2d32974f0650c860840e89a" title="Called when the TCP wants to send or retransmit data, it constructs a TCP segment which contains the ...">createSegmentWithBytes()</a> function.</p>
 <p>called with return value of socket-&gt;send_data() if larger than 0 </p>
 
-<p>Implements <a class="el" href="class_t_c_p___n_s_c___send_queue.html#abf531ecfc125a8c5389f32a6c5c8a6a2">TCP_NSC_SendQueue</a>.</p>
+<p>Implements <a class="el" href="class_t_c_p___n_s_c___send_queue.html#af1efb8cd07fe604fd74147a8ece63c25">TCP_NSC_SendQueue</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    ASSERT(msgLengthP &lt;= <a class="code" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#af829f2985a1c839d01dbf180dec71496">unsentNscBytesM</a>);
 
+    <a class="code" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#af829f2985a1c839d01dbf180dec71496">unsentNscBytesM</a> -= msgLengthP;
+}
+</pre></div>
 </div>
 </div>
-<a class="anchor" id="aa64f1a2b8edacb94a89b0578344d3a6e"></a><!-- doxytag: member="TCP_NSC_VirtualDataSendQueue::discardUpTo" ref="aa64f1a2b8edacb94a89b0578344d3a6e" args="(uint32 seqNumP)" -->
+<a class="anchor" id="a1ef57581c7f62324a84655b4e88f33b1"></a><!-- doxytag: member="TCP_NSC_VirtualDataSendQueue::discardUpTo" ref="a1ef57581c7f62324a84655b4e88f33b1" args="(uint32 seqNumP)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#aa64f1a2b8edacb94a89b0578344d3a6e">TCP_NSC_VirtualDataSendQueue::discardUpTo</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#a1ef57581c7f62324a84655b4e88f33b1">TCP_NSC_VirtualDataSendQueue::discardUpTo</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>seqNumP</em></td><td>)</td>
@@ -216,18 +252,22 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Tells the queue that bytes up to (but NOT including) seqNum have been transmitted and ACKed, so they can be removed from the queue. </p>
 
 <p>Implements <a class="el" href="class_t_c_p___n_s_c___send_queue.html#a9be7d952a33aa091becc8df68b567a21">TCP_NSC_SendQueue</a>.</p>
-
+<div class="fragment"><pre class="fragment">{
+    <span class="comment">// nothing to do here</span>
+}
+</pre></div>
 </div>
 </div>
-<a class="anchor" id="af6826305371ce41c3b88e84fe1eff824"></a><!-- doxytag: member="TCP_NSC_VirtualDataSendQueue::enqueueAppData" ref="af6826305371ce41c3b88e84fe1eff824" args="(cPacket *msgP)" -->
+<a class="anchor" id="a1f13bbe56efe3adb517b9f756275f7c7"></a><!-- doxytag: member="TCP_NSC_VirtualDataSendQueue::enqueueAppData" ref="a1f13bbe56efe3adb517b9f756275f7c7" args="(cPacket *msgP)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#af6826305371ce41c3b88e84fe1eff824">TCP_NSC_VirtualDataSendQueue::enqueueAppData</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#a1f13bbe56efe3adb517b9f756275f7c7">TCP_NSC_VirtualDataSendQueue::enqueueAppData</a> </td>
           <td>(</td>
           <td class="paramtype">cPacket *&#160;</td>
           <td class="paramname"><em>msgP</em></td><td>)</td>
@@ -236,39 +276,53 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called on SEND app command, it inserts in the queue the data the user wants to send. Implementations of this abstract class will decide what this means: copying actual bytes, just increasing the "last byte queued" variable, or storing cMessage object(s). The msg object should not be referenced after this point (sendQueue may delete it.) </p>
+
+<p>Called on SEND app command, it inserts in the queue the data the user wants to send. </p>
+<p>Implementations of this abstract class will decide what this means: copying actual bytes, just increasing the "last byte queued" variable, or storing cMessage object(s). The msg object should not be referenced after this point (sendQueue may delete it.) </p>
 
 <p>Implements <a class="el" href="class_t_c_p___n_s_c___send_queue.html#ae362f60112c3ef36af12ea632c859fdd">TCP_NSC_SendQueue</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    ASSERT(msgP);
 
+    <span class="keywordtype">int</span> bytes = msgP-&gt;getByteLength();
+    <span class="keyword">delete</span> msgP;
+
+    <a class="code" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#af829f2985a1c839d01dbf180dec71496">unsentNscBytesM</a> += bytes;
+}
+</pre></div>
 </div>
 </div>
-<a class="anchor" id="a1b06b4850403fac42b8dcc583a98a927"></a><!-- doxytag: member="TCP_NSC_VirtualDataSendQueue::getBytesAvailable" ref="a1b06b4850403fac42b8dcc583a98a927" args="()" -->
+<a class="anchor" id="af1f957a26b36ba0964113d45a90320f2"></a><!-- doxytag: member="TCP_NSC_VirtualDataSendQueue::getBytesAvailable" ref="af1f957a26b36ba0964113d45a90320f2" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_i_n_e_t_defs_8h.html#a718b4eb2652c286f4d42dc18a8e71a1a">ulong</a> <a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#a1b06b4850403fac42b8dcc583a98a927">TCP_NSC_VirtualDataSendQueue::getBytesAvailable</a> </td>
+          <td class="memname"><a class="el" href="_i_n_e_t_defs_8h.html#a718b4eb2652c286f4d42dc18a8e71a1a">ulong</a> <a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#af1f957a26b36ba0964113d45a90320f2">TCP_NSC_VirtualDataSendQueue::getBytesAvailable</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Utility function: returns how many bytes are available in the queue. </p>
 
-<p>Implements <a class="el" href="class_t_c_p___n_s_c___send_queue.html#a6691a8ec9659d9457b76653ee839acb1">TCP_NSC_SendQueue</a>.</p>
-
+<p>Implements <a class="el" href="class_t_c_p___n_s_c___send_queue.html#ab2f540db89a66c1113e652208d7a42f5">TCP_NSC_SendQueue</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">return</span> <a class="code" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#af829f2985a1c839d01dbf180dec71496">unsentNscBytesM</a>; <span class="comment">// TODO</span>
+}
+</pre></div>
 </div>
 </div>
-<a class="anchor" id="ade85fa7f8dc5455aefd2c929900f28dd"></a><!-- doxytag: member="TCP_NSC_VirtualDataSendQueue::getNscMsg" ref="ade85fa7f8dc5455aefd2c929900f28dd" args="(void *bufferP, int bufferLengthP)" -->
+<a class="anchor" id="a79178a157647db84c84d29d4ca6c7393"></a><!-- doxytag: member="TCP_NSC_VirtualDataSendQueue::getBytesForTcpLayer" ref="a79178a157647db84c84d29d4ca6c7393" args="(void *bufferP, int bufferLengthP) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual int <a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#ade85fa7f8dc5455aefd2c929900f28dd">TCP_NSC_VirtualDataSendQueue::getNscMsg</a> </td>
+          <td class="memname">int <a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#a79178a157647db84c84d29d4ca6c7393">TCP_NSC_VirtualDataSendQueue::getBytesForTcpLayer</a> </td>
           <td>(</td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>bufferP</em>, </td>
         </tr>
         <tr>
@@ -280,24 +334,31 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [virtual]</code></td>
+          <td></td><td> const<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Copy data to the buffer for send to NSC. returns lengh of copied data. create msg for socket-&gt;send_data()</p>
+
+<p>Copy data to the buffer for send to NSC. </p>
+<p>returns lengh of copied data. create msg for socket-&gt;send_data()</p>
 <p>called before called socket-&gt;send_data() </p>
 
-<p>Implements <a class="el" href="class_t_c_p___n_s_c___send_queue.html#a2f70bf1b33917ae3002631cc41bf5d7f">TCP_NSC_SendQueue</a>.</p>
+<p>Implements <a class="el" href="class_t_c_p___n_s_c___send_queue.html#ae4230d762c43e4f01c568dbefd5d8d39">TCP_NSC_SendQueue</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    ASSERT(bufferP);
 
+    <span class="keywordflow">return</span> (<a class="code" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#af829f2985a1c839d01dbf180dec71496">unsentNscBytesM</a> &gt; bufferLengthP) ? bufferLengthP : <a class="code" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#af829f2985a1c839d01dbf180dec71496">unsentNscBytesM</a>;
+}
+</pre></div>
 </div>
 </div>
-<a class="anchor" id="af3c96f1ea129b3e71978725efdf05590"></a><!-- doxytag: member="TCP_NSC_VirtualDataSendQueue::setConnection" ref="af3c96f1ea129b3e71978725efdf05590" args="(TCP_NSC_Connection *connP)" -->
+<a class="anchor" id="ab59582caf328fb30c91625e5ce89496c"></a><!-- doxytag: member="TCP_NSC_VirtualDataSendQueue::setConnection" ref="ab59582caf328fb30c91625e5ce89496c" args="(TCP_NSC_Connection *connP)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#af3c96f1ea129b3e71978725efdf05590">TCP_NSC_VirtualDataSendQueue::setConnection</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#ab59582caf328fb30c91625e5ce89496c">TCP_NSC_VirtualDataSendQueue::setConnection</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_t_c_p___n_s_c___connection.html">TCP_NSC_Connection</a> *&#160;</td>
           <td class="paramname"><em>connP</em></td><td>)</td>
@@ -306,10 +367,15 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>set connection queue. </p>
+
+<p>set connection queue, and initialise queue variables. </p>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p___n_s_c___send_queue.html#a3725b0016361e65cbe60d003f85bbf3c">TCP_NSC_SendQueue</a>.</p>
-
+<div class="fragment"><pre class="fragment">{
+    <a class="code" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#af829f2985a1c839d01dbf180dec71496">unsentNscBytesM</a> = 0;
+    <a class="code" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#ab59582caf328fb30c91625e5ce89496c" title="set connection queue, and initialise queue variables.">TCP_NSC_SendQueue::setConnection</a>(connP);
+}
+</pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
@@ -324,12 +390,13 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p___n_s_c___virtual_data_queues_8h_source.html#l00100">100</a> of file <a class="el" href="_t_c_p___n_s_c___virtual_data_queues_8h_source.html">TCP_NSC_VirtualDataQueues.h</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#af968e91df9aa054b9507939c8e2e21c4">dequeueTcpLayerMsg()</a>, <a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#a1f13bbe56efe3adb517b9f756275f7c7">enqueueAppData()</a>, <a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#af1f957a26b36ba0964113d45a90320f2">getBytesAvailable()</a>, <a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#a79178a157647db84c84d29d4ca6c7393">getBytesForTcpLayer()</a>, and <a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html#ab59582caf328fb30c91625e5ce89496c">setConnection()</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="_t_c_p___n_s_c___virtual_data_queues_8h_source.html">TCP_NSC_VirtualDataQueues.h</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li><a class="el" href="_t_c_p___n_s_c___virtual_data_queues_8h.html">TCP_NSC_VirtualDataQueues.h</a></li>
+<li><a class="el" href="_t_c_p___n_s_c___virtual_data_queues_8cc.html">TCP_NSC_VirtualDataQueues.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -337,7 +404,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_t_c_p___n_s_c___virtual_data_send_queue.html">TCP_NSC_VirtualDataSendQueue</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:53 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:31 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

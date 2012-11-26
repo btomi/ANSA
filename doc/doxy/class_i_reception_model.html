@@ -81,14 +81,22 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="IReceptionModel" -->
-<p><code>#include &lt;<a class="el" href="_i_reception_model_8h_source.html">IReceptionModel.h</a>&gt;</code></p>
+<p>Abstract class to encapsulate the calculation of received power of a radio transmission.  
+ <a href="class_i_reception_model.html#details">More...</a></p>
+
+<p><code>#include &lt;IReceptionModel.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for IReceptionModel:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_i_reception_model.png" usemap="#IReceptionModel_map" alt=""/>
   <map id="IReceptionModel_map" name="IReceptionModel_map">
-<area href="class_path_loss_reception_model.html" alt="PathLossReceptionModel" shape="rect" coords="0,56,154,80"/>
+<area href="class_free_space_model.html" alt="FreeSpaceModel" shape="rect" coords="360,56,530,80"/>
+<area href="class_log_normal_shadowing_model.html" alt="LogNormalShadowingModel" shape="rect" coords="0,112,170,136"/>
+<area href="class_nakagami_model.html" alt="NakagamiModel" shape="rect" coords="180,112,350,136"/>
+<area href="class_rayleigh_model.html" alt="RayleighModel" shape="rect" coords="360,112,530,136"/>
+<area href="class_rice_model.html" alt="RiceModel" shape="rect" coords="540,112,710,136"/>
+<area href="class_two_ray_ground_model.html" alt="TwoRayGroundModel" shape="rect" coords="720,112,890,136"/>
 </map>
  </div></div>
 
@@ -96,14 +104,16 @@ Inheritance diagram for IReceptionModel:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_reception_model.html#a054edd0e5822f95dff9501b96802d2ab">initializeFrom</a> (cModule *radioModule)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_reception_model.html#a054edd0e5822f95dff9501b96802d2ab">initializeFrom</a> (cModule *radioModule)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows parameters to be read from the module parameters of a module that contains this object.  <a href="#a054edd0e5822f95dff9501b96802d2ab"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_reception_model.html#a4c62c5996f5afac48e0f0a88bdeed308">calculateReceivedPower</a> (double pSend, double carrierFrequency, double distance)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">To be redefined to calculate the received power of a transmission.  <a href="#a4c62c5996f5afac48e0f0a88bdeed308"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_reception_model.html#a3847fb348f7542afc8f20b0d249220b0">~IReceptionModel</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor.  <a href="#a3847fb348f7542afc8f20b0d249220b0"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Abstract class to encapsulate the calculation of received power of a radio transmission. The calculation may include the effects of path loss, antenna gain, etc. </p>
-
-<p>Definition at line <a class="el" href="_i_reception_model_8h_source.html#l00029">29</a> of file <a class="el" href="_i_reception_model_8h_source.html">IReceptionModel.h</a>.</p>
+<div class="textblock"><p>Abstract class to encapsulate the calculation of received power of a radio transmission. </p>
+<p>The calculation may include the effects of path loss, antenna gain, etc. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a3847fb348f7542afc8f20b0d249220b0"></a><!-- doxytag: member="IReceptionModel::~IReceptionModel" ref="a3847fb348f7542afc8f20b0d249220b0" args="()" -->
 <div class="memitem">
@@ -118,9 +128,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Virtual destructor. </p>
 
-<p>Definition at line <a class="el" href="_i_reception_model_8h_source.html#l00046">46</a> of file <a class="el" href="_i_reception_model_8h_source.html">IReceptionModel.h</a>.</p>
+<p>Virtual destructor. </p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
@@ -156,11 +165,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>To be redefined to calculate the received power of a transmission. </p>
 
-<p>Implemented in <a class="el" href="class_path_loss_reception_model.html#a126b13349a7602b64d973f404c8fc517">PathLossReceptionModel</a>.</p>
+<p>Implemented in <a class="el" href="class_free_space_model.html#a59ec71dd4e28d060bd8824fce48b9c1c">FreeSpaceModel</a>, <a class="el" href="class_rayleigh_model.html#a4f6817f3bbcb121806ea9ea1ae68f71e">RayleighModel</a>, <a class="el" href="class_rice_model.html#af6b855b0b05e6beae5806f758e4cd813">RiceModel</a>, <a class="el" href="class_log_normal_shadowing_model.html#a5a71396694b89b2a394bc336c274c2e7">LogNormalShadowingModel</a>, <a class="el" href="class_nakagami_model.html#a89b648aa830a36b3f1ad4806a388c0c8">NakagamiModel</a>, and <a class="el" href="class_two_ray_ground_model.html#a44104bcb6a89b5c75e396a242bcffa6f">TwoRayGroundModel</a>.</p>
 
-<p>Referenced by <a class="el" href="_abstract_radio_8cc_source.html#l00391">AbstractRadio::handleLowerMsgStart()</a>.</p>
+<p>Referenced by <a class="el" href="class_radio.html#abca1bc386b44ad57cc1f7e9d8eaf7d4f">Radio::handleLowerMsgStart()</a>.</p>
 
 </div>
 </div>
@@ -169,7 +179,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_i_reception_model.html#a054edd0e5822f95dff9501b96802d2ab">IReceptionModel::initializeFrom</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_reception_model.html#a054edd0e5822f95dff9501b96802d2ab">IReceptionModel::initializeFrom</a> </td>
           <td>(</td>
           <td class="paramtype">cModule *&#160;</td>
           <td class="paramname"><em>radioModule</em></td><td>)</td>
@@ -178,16 +188,17 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Allows parameters to be read from the module parameters of a module that contains this object. </p>
 
-<p>Implemented in <a class="el" href="class_path_loss_reception_model.html#add9c5f7e304261adae2cf281802019ab">PathLossReceptionModel</a>.</p>
+<p>Implemented in <a class="el" href="class_free_space_model.html#a0c940a10d30825d938c4ba92f4a84f7e">FreeSpaceModel</a>, <a class="el" href="class_rayleigh_model.html#a5d2d9d9937467cdba8d632ed1b47ff88">RayleighModel</a>, <a class="el" href="class_rice_model.html#a8bc64c69043cc95f8e7fba926b239aef">RiceModel</a>, <a class="el" href="class_log_normal_shadowing_model.html#a13178c688e11e461eb38f07b1d95d7b8">LogNormalShadowingModel</a>, <a class="el" href="class_nakagami_model.html#a0f4a837ddcb28f54478034a706abd2ed">NakagamiModel</a>, and <a class="el" href="class_two_ray_ground_model.html#a35e5d844400c2981ba18eec6dc24b3fa">TwoRayGroundModel</a>.</p>
 
-<p>Referenced by <a class="el" href="_abstract_radio_8cc_source.html#l00036">AbstractRadio::initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_radio.html#afccd94dfecf0ed8f29cfa8cd80255de5">Radio::initialize()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="_i_reception_model_8h_source.html">IReceptionModel.h</a></li>
+<li><a class="el" href="_i_reception_model_8h.html">IReceptionModel.h</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -195,7 +206,7 @@ Public Member Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_i_reception_model.html">IReceptionModel</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:49 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:27 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

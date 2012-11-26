@@ -76,39 +76,44 @@
 <div class="header">
   <div class="summary">
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">Sink Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="Sink" -->
-<p><code>#include &lt;<a class="el" href="_sink_8h_source.html">Sink.h</a>&gt;</code></p>
+<p>A module that just deletes every packet it receives, and collects basic statistics (packet count, bit count, packet rate, bit rate).  
+ <a href="class_sink.html#details">More...</a></p>
+
+<p><code>#include &lt;Sink.h&gt;</code></p>
 
 <p><a href="class_sink-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sink.html#a114f830a90f094399dfed6a0c30a57bc">initialize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sink.html#a87e0d0132d6dfbee8fa208b2aafe1f5b">handleMessage</a> (cMessage *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sink.html#a3e230eb11f401e33d151ee2d59924aec">finish</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sink.html#a114f830a90f094399dfed6a0c30a57bc">initialize</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sink.html#a87e0d0132d6dfbee8fa208b2aafe1f5b">handleMessage</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sink.html#a3e230eb11f401e33d151ee2d59924aec">finish</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sink.html#a9b1954d9da753fe0b9474ead53f8f9f4">numPackets</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sink.html#ae1b897d73275eb4d7713f61756156c0b">numBits</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sink.html#aa557d523fd82214b5f7965290a3a6bf3">throughput</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sink.html#adac669ecbcd1ad1a3f95d6fabc7ba43b">packetPerSec</a></td></tr>
+<tr><td colspan="2"><h2><a name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sink.html#ac34179aa5a7dec5c49e8946995c7b889">rcvdPkSignal</a> = SIMSIGNAL_NULL</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>A module that just deletes every packet it receives, and collects basic statistics (packet count, bit count, packet rate, bit rate). </p>
-
-<p>Definition at line <a class="el" href="_sink_8h_source.html#l00027">27</a> of file <a class="el" href="_sink_8h_source.html">Sink.h</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a3e230eb11f401e33d151ee2d59924aec"></a><!-- doxytag: member="Sink::finish" ref="a3e230eb11f401e33d151ee2d59924aec" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_sink.html#a3e230eb11f401e33d151ee2d59924aec">Sink::finish</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_sink.html#a3e230eb11f401e33d151ee2d59924aec">Sink::finish</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -116,11 +121,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_sink_8cc_source.html#l00048">48</a> of file <a class="el" href="_sink_8cc_source.html">Sink.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    recordScalar(<span class="stringliteral">&quot;numPackets&quot;</span>, <a class="code" href="class_sink.html#a9b1954d9da753fe0b9474ead53f8f9f4">numPackets</a>);
-    recordScalar(<span class="stringliteral">&quot;numBits&quot;</span>, <a class="code" href="class_sink.html#ae1b897d73275eb4d7713f61756156c0b">numBits</a>);
     recordScalar(<span class="stringliteral">&quot;throughput&quot;</span>, <a class="code" href="class_sink.html#aa557d523fd82214b5f7965290a3a6bf3">throughput</a>);
     recordScalar(<span class="stringliteral">&quot;packetPerSec&quot;</span>, <a class="code" href="class_sink.html#adac669ecbcd1ad1a3f95d6fabc7ba43b">packetPerSec</a>);
 }
@@ -132,7 +133,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_sink.html#a87e0d0132d6dfbee8fa208b2aafe1f5b">Sink::handleMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_sink.html#a87e0d0132d6dfbee8fa208b2aafe1f5b">Sink::handleMessage</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -141,12 +142,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_sink_8cc_source.html#l00037">37</a> of file <a class="el" href="_sink_8cc_source.html">Sink.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="class_sink.html#a9b1954d9da753fe0b9474ead53f8f9f4">numPackets</a>++;
-    <a class="code" href="class_sink.html#ae1b897d73275eb4d7713f61756156c0b">numBits</a> += <a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(msg)-&gt;getBitLength();
-
+    cPacket *packet = <a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(msg);
+    <a class="code" href="class_sink.html#ae1b897d73275eb4d7713f61756156c0b">numBits</a> += packet-&gt;getBitLength();
+    emit(<a class="code" href="class_sink.html#ac34179aa5a7dec5c49e8946995c7b889">rcvdPkSignal</a>, packet);
     <a class="code" href="class_sink.html#aa557d523fd82214b5f7965290a3a6bf3">throughput</a> = <a class="code" href="class_sink.html#ae1b897d73275eb4d7713f61756156c0b">numBits</a> / simTime();
     <a class="code" href="class_sink.html#adac669ecbcd1ad1a3f95d6fabc7ba43b">packetPerSec</a> = <a class="code" href="class_sink.html#a9b1954d9da753fe0b9474ead53f8f9f4">numPackets</a> / simTime();
 
@@ -160,7 +160,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_sink.html#a114f830a90f094399dfed6a0c30a57bc">Sink::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_sink.html#a114f830a90f094399dfed6a0c30a57bc">Sink::initialize</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -168,13 +168,12 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_sink_8cc_source.html#l00024">24</a> of file <a class="el" href="_sink_8cc_source.html">Sink.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="class_sink.html#a9b1954d9da753fe0b9474ead53f8f9f4">numPackets</a> = 0;
     <a class="code" href="class_sink.html#ae1b897d73275eb4d7713f61756156c0b">numBits</a> = 0;
     <a class="code" href="class_sink.html#aa557d523fd82214b5f7965290a3a6bf3">throughput</a> = 0;
     <a class="code" href="class_sink.html#adac669ecbcd1ad1a3f95d6fabc7ba43b">packetPerSec</a> = 0;
+    <a class="code" href="class_sink.html#ac34179aa5a7dec5c49e8946995c7b889">rcvdPkSignal</a> = registerSignal(<span class="stringliteral">&quot;rcvdPk&quot;</span>);
 
     WATCH(<a class="code" href="class_sink.html#a9b1954d9da753fe0b9474ead53f8f9f4">numPackets</a>);
     WATCH(<a class="code" href="class_sink.html#ae1b897d73275eb4d7713f61756156c0b">numBits</a>);
@@ -196,9 +195,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sink_8h_source.html#l00031">31</a> of file <a class="el" href="_sink_8h_source.html">Sink.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_sink_8cc_source.html#l00048">finish()</a>, <a class="el" href="_sink_8cc_source.html#l00037">handleMessage()</a>, and <a class="el" href="_sink_8cc_source.html#l00024">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_sink.html#a87e0d0132d6dfbee8fa208b2aafe1f5b">handleMessage()</a>, and <a class="el" href="class_sink.html#a114f830a90f094399dfed6a0c30a57bc">initialize()</a>.</p>
 
 </div>
 </div>
@@ -213,9 +210,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sink_8h_source.html#l00030">30</a> of file <a class="el" href="_sink_8h_source.html">Sink.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_sink_8cc_source.html#l00048">finish()</a>, <a class="el" href="_sink_8cc_source.html#l00037">handleMessage()</a>, and <a class="el" href="_sink_8cc_source.html#l00024">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_sink.html#a87e0d0132d6dfbee8fa208b2aafe1f5b">handleMessage()</a>, and <a class="el" href="class_sink.html#a114f830a90f094399dfed6a0c30a57bc">initialize()</a>.</p>
 
 </div>
 </div>
@@ -230,9 +225,22 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sink_8h_source.html#l00033">33</a> of file <a class="el" href="_sink_8h_source.html">Sink.h</a>.</p>
+<p>Referenced by <a class="el" href="class_sink.html#a3e230eb11f401e33d151ee2d59924aec">finish()</a>, <a class="el" href="class_sink.html#a87e0d0132d6dfbee8fa208b2aafe1f5b">handleMessage()</a>, and <a class="el" href="class_sink.html#a114f830a90f094399dfed6a0c30a57bc">initialize()</a>.</p>
 
-<p>Referenced by <a class="el" href="_sink_8cc_source.html#l00048">finish()</a>, <a class="el" href="_sink_8cc_source.html#l00037">handleMessage()</a>, and <a class="el" href="_sink_8cc_source.html#l00024">initialize()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="ac34179aa5a7dec5c49e8946995c7b889"></a><!-- doxytag: member="Sink::rcvdPkSignal" ref="ac34179aa5a7dec5c49e8946995c7b889" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_sink.html#ac34179aa5a7dec5c49e8946995c7b889">Sink::rcvdPkSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_sink.html#a87e0d0132d6dfbee8fa208b2aafe1f5b">handleMessage()</a>, and <a class="el" href="class_sink.html#a114f830a90f094399dfed6a0c30a57bc">initialize()</a>.</p>
 
 </div>
 </div>
@@ -247,15 +255,13 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_sink_8h_source.html#l00032">32</a> of file <a class="el" href="_sink_8h_source.html">Sink.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_sink_8cc_source.html#l00048">finish()</a>, <a class="el" href="_sink_8cc_source.html#l00037">handleMessage()</a>, and <a class="el" href="_sink_8cc_source.html#l00024">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_sink.html#a3e230eb11f401e33d151ee2d59924aec">finish()</a>, <a class="el" href="class_sink.html#a87e0d0132d6dfbee8fa208b2aafe1f5b">handleMessage()</a>, and <a class="el" href="class_sink.html#a114f830a90f094399dfed6a0c30a57bc">initialize()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_sink_8h_source.html">Sink.h</a></li>
-<li><a class="el" href="_sink_8cc_source.html">Sink.cc</a></li>
+<li><a class="el" href="_sink_8h.html">Sink.h</a></li>
+<li><a class="el" href="_sink_8cc.html">Sink.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -263,7 +269,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_sink.html">Sink</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:53 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:30 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

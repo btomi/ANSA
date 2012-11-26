@@ -82,14 +82,17 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="RTPAVProfilePayload32Sender" --><!-- doxytag: inherits="RTPPayloadSender" -->
-<p><code>#include &lt;<a class="el" href="_r_t_p_a_v_profile_payload32_sender_8h_source.html">RTPAVProfilePayload32Sender.h</a>&gt;</code></p>
+<p>An <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html" title="An RTPAVProfilePayload32Sender is a module for sending data of payload type 32 in the rtp audio/video...">RTPAVProfilePayload32Sender</a> is a module for sending data of payload type 32 in the rtp audio/video profile, which is mpeg video.  
+ <a href="class_r_t_p_a_v_profile_payload32_sender.html#details">More...</a></p>
+
+<p><code>#include &lt;RTPAVProfilePayload32Sender.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for RTPAVProfilePayload32Sender:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_r_t_p_a_v_profile_payload32_sender.png" usemap="#RTPAVProfilePayload32Sender_map" alt=""/>
   <map id="RTPAVProfilePayload32Sender_map" name="RTPAVProfilePayload32Sender_map">
-<area href="class_r_t_p_payload_sender.html" alt="RTPPayloadSender" shape="rect" coords="0,0,191,24"/>
+<area href="class_r_t_p_payload_sender.html" title="The class RTPPayloadSender is the base class for all modules creating RTP data packets." alt="RTPPayloadSender" shape="rect" coords="0,0,191,24"/>
 </map>
  </div></div>
 
@@ -97,26 +100,31 @@ Inheritance diagram for RTPAVProfilePayload32Sender:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#a659955ebcef6b036f57a503607e6472f">initialize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#a8bbc7ffcabe829c7e29e183d422c50cb">initializeSenderModule</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinpIn)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#a659955ebcef6b036f57a503607e6472f">initialize</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the module.  <a href="#a659955ebcef6b036f57a503607e6472f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#a8bbc7ffcabe829c7e29e183d422c50cb">initializeSenderModule</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinpIn)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The main method.  <a href="#a8bbc7ffcabe829c7e29e183d422c50cb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#abcffc8019d25b3a660220c0759747629">sendPacket</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This method sends one mpeg frame.  <a href="#abcffc8019d25b3a660220c0759747629"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#adcc1b6856fa7a157967595db4ed37be2">_initialDelay</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The initial delay of the mpeg video.  <a href="#adcc1b6856fa7a157967595db4ed37be2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#a49e5da6888947911766f3020ea5543ee">_framesPerSecond</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of frames per second of the mpeg video.  <a href="#a49e5da6888947911766f3020ea5543ee"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#a526ed5b166373e08b54a4ed468fbed58">_frameNumber</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of the current mpeg frame.  <a href="#a526ed5b166373e08b54a4ed468fbed58"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>An <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html">RTPAVProfilePayload32Sender</a> is a module for sending data of payload type 32 in the rtp audio/video profile, which is mpeg video. This implementation doesn't send real mpeg data it just reads the gdf file created by Mpeg_Stat and sends rtp data packets which contain an <a class="el" href="class_r_t_p_mpeg_packet.html">RTPMpegPacket</a>. The corresponding receiver module <a class="el" href="class_r_t_p_a_v_profile_payload32_receiver.html">RTPAVProfilePayload32Receiver</a>. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8h_source.html#l00033">33</a> of file <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8h_source.html">RTPAVProfilePayload32Sender.h</a>.</p>
+<div class="textblock"><p>An <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html" title="An RTPAVProfilePayload32Sender is a module for sending data of payload type 32 in the rtp audio/video...">RTPAVProfilePayload32Sender</a> is a module for sending data of payload type 32 in the rtp audio/video profile, which is mpeg video. </p>
+<p>This implementation doesn't send real mpeg data it just reads the gdf file created by Mpeg_Stat and sends rtp data packets which contain an <a class="el" href="class_r_t_p_mpeg_packet.html" title="Class generated from transport/rtp/profiles/avprofile/RTPMpegPacket.msg by opp_msgc.">RTPMpegPacket</a>. The corresponding receiver module <a class="el" href="class_r_t_p_a_v_profile_payload32_receiver.html" title="This module is used to receive getData(mpeg video) of payload 32 for rtp endsystems working under the...">RTPAVProfilePayload32Receiver</a>. </p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a659955ebcef6b036f57a503607e6472f"></a><!-- doxytag: member="RTPAVProfilePayload32Sender::initialize" ref="a659955ebcef6b036f57a503607e6472f" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#a659955ebcef6b036f57a503607e6472f">RTPAVProfilePayload32Sender::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#a659955ebcef6b036f57a503607e6472f">RTPAVProfilePayload32Sender::initialize</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -124,17 +132,16 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initializes the module. It sets the values for clock rate and payload type. </p>
+
+<p>Initializes the module. </p>
+<p>It sets the values for clock rate and payload type. </p>
 
 <p>Reimplemented from <a class="el" href="class_r_t_p_payload_sender.html#a3d89be915b854cf2655a68c68cec0ba1">RTPPayloadSender</a>.</p>
-
-<p>Definition at line <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html#l00034">34</a> of file <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html">RTPAVProfilePayload32Sender.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
+    <a class="code" href="class_r_t_p_a_v_profile_payload32_sender.html#a659955ebcef6b036f57a503607e6472f" title="Initializes the module.">RTPPayloadSender::initialize</a>();
 
-    <a class="code" href="class_r_t_p_a_v_profile_payload32_sender.html#a659955ebcef6b036f57a503607e6472f">RTPPayloadSender::initialize</a>();
-
-    <a class="code" href="class_r_t_p_payload_sender.html#a8674ccb970be216091f20e60c41c9e9f">_clockRate</a> = 90000;
-    <a class="code" href="class_r_t_p_payload_sender.html#a39af1b84253a34a9903f9c718bd66b1c">_payloadType</a> = 32;
+    <a class="code" href="class_r_t_p_payload_sender.html#a8674ccb970be216091f20e60c41c9e9f" title="The clock rate in ticks per second this sender uses.">_clockRate</a> = 90000;
+    <a class="code" href="class_r_t_p_payload_sender.html#a39af1b84253a34a9903f9c718bd66b1c" title="The payload type this sender creates.">_payloadType</a> = 32;
 }
 </pre></div>
 </div>
@@ -144,7 +151,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#a8bbc7ffcabe829c7e29e183d422c50cb">RTPAVProfilePayload32Sender::initializeSenderModule</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#a8bbc7ffcabe829c7e29e183d422c50cb">RTPAVProfilePayload32Sender::initializeSenderModule</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *&#160;</td>
           <td class="paramname"><em>rinpIn</em></td><td>)</td>
@@ -153,44 +160,44 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The main method. This method reads the gdf file header. </p>
+
+<p>The main method. </p>
+<p>This method reads the gdf file header. </p>
 
 <p>Reimplemented from <a class="el" href="class_r_t_p_payload_sender.html#a1f8653338d14096e4296243ab0821ff1">RTPPayloadSender</a>.</p>
-
-<p>Definition at line <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html#l00116">116</a> of file <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html">RTPAVProfilePayload32Sender.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     ev &lt;&lt; <span class="stringliteral">&quot;initializeSenderModule Enter&quot;</span>&lt;&lt;endl;
     <span class="keywordtype">char</span> line[100];
     <span class="keywordtype">char</span> unit[100];
     <span class="keywordtype">char</span> description[100];
 
-    <a class="code" href="class_r_t_p_a_v_profile_payload32_sender.html#a8bbc7ffcabe829c7e29e183d422c50cb">RTPPayloadSender::initializeSenderModule</a>(rinpIn);
+    <a class="code" href="class_r_t_p_a_v_profile_payload32_sender.html#a8bbc7ffcabe829c7e29e183d422c50cb" title="The main method.">RTPPayloadSender::initializeSenderModule</a>(rinpIn);
 
     <span class="comment">// first line: fps unit description</span>
-    <a class="code" href="class_r_t_p_payload_sender.html#aabee3f800e5e676d2b297ff6a571c259">_inputFileStream</a>.get(line, 100, <span class="charliteral">&#39;\n&#39;</span>);
+    <a class="code" href="class_r_t_p_payload_sender.html#aabee3f800e5e676d2b297ff6a571c259" title="The input file stream for the data file.">_inputFileStream</a>.get(line, 100, <span class="charliteral">&#39;\n&#39;</span>);
 
     <span class="keywordtype">float</span> fps;
     sscanf(line, <span class="stringliteral">&quot;%f %s %s&quot;</span>, &amp;fps, unit, description);
-    <a class="code" href="class_r_t_p_a_v_profile_payload32_sender.html#a49e5da6888947911766f3020ea5543ee">_framesPerSecond</a> = fps;
+    <a class="code" href="class_r_t_p_a_v_profile_payload32_sender.html#a49e5da6888947911766f3020ea5543ee" title="The number of frames per second of the mpeg video.">_framesPerSecond</a> = fps;
 
-    <a class="code" href="class_r_t_p_a_v_profile_payload32_sender.html#a526ed5b166373e08b54a4ed468fbed58">_frameNumber</a> = 0;
+    <a class="code" href="class_r_t_p_a_v_profile_payload32_sender.html#a526ed5b166373e08b54a4ed468fbed58" title="The number of the current mpeg frame.">_frameNumber</a> = 0;
 
     <span class="comment">// get new line character</span>
     <span class="keywordtype">char</span> c;
-    <a class="code" href="class_r_t_p_payload_sender.html#aabee3f800e5e676d2b297ff6a571c259">_inputFileStream</a>.get(c);
+    <a class="code" href="class_r_t_p_payload_sender.html#aabee3f800e5e676d2b297ff6a571c259" title="The input file stream for the data file.">_inputFileStream</a>.get(c);
 
     <span class="comment">// second line: initial delay unit description</span>
-    <a class="code" href="class_r_t_p_payload_sender.html#aabee3f800e5e676d2b297ff6a571c259">_inputFileStream</a>.get(line, 100, <span class="charliteral">&#39;\n&#39;</span>);
+    <a class="code" href="class_r_t_p_payload_sender.html#aabee3f800e5e676d2b297ff6a571c259" title="The input file stream for the data file.">_inputFileStream</a>.get(line, 100, <span class="charliteral">&#39;\n&#39;</span>);
 
     <span class="keywordtype">float</span> delay;
     sscanf(line, <span class="stringliteral">&quot;%f %s %s&quot;</span>, &amp;delay, unit, description);
 
-    <a class="code" href="class_r_t_p_a_v_profile_payload32_sender.html#adcc1b6856fa7a157967595db4ed37be2">_initialDelay</a> = delay;
+    <a class="code" href="class_r_t_p_a_v_profile_payload32_sender.html#adcc1b6856fa7a157967595db4ed37be2" title="The initial delay of the mpeg video.">_initialDelay</a> = delay;
 
     <span class="comment">// wait initial delay</span>
     <span class="comment">// cPacket *reminderMessage = new cMessage(&quot;next frame&quot;);</span>
     <span class="comment">// scheduleAt(simTime() + _initialDelay, reminderMessage);</span>
-    ev &lt;&lt; <span class="stringliteral">&quot;initializeSenderModule Exit&quot;</span>&lt;&lt;endl;
+    ev &lt;&lt; <span class="stringliteral">&quot;initializeSenderModule Exit&quot;</span> &lt;&lt; endl;
 }
 </pre></div>
 </div>
@@ -208,11 +215,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This method sends one mpeg frame. It sends one or more rtp data packet. Returns false if there were no more frames. </p>
+
+<p>This method sends one mpeg frame. </p>
+<p>It sends one or more rtp data packet. Returns false if there were no more frames. </p>
 
 <p>Reimplemented from <a class="el" href="class_r_t_p_payload_sender.html#a3738b1a68ff9929c50fd798a74ee8b54">RTPPayloadSender</a>.</p>
-
-<p>Definition at line <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html#l00153">153</a> of file <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html">RTPAVProfilePayload32Sender.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     ev &lt;&lt; <span class="stringliteral">&quot;sendPacket() &quot;</span>&lt;&lt; endl;
     <span class="comment">// read next frame line</span>
@@ -220,40 +227,41 @@ Protected Attributes</h2></td></tr>
     <span class="keywordtype">char</span> unit[100];
     <span class="keywordtype">char</span> description[100];
 
-    <a class="code" href="class_r_t_p_payload_sender.html#aabee3f800e5e676d2b297ff6a571c259">_inputFileStream</a> &gt;&gt; bits;
-    <a class="code" href="class_r_t_p_payload_sender.html#aabee3f800e5e676d2b297ff6a571c259">_inputFileStream</a> &gt;&gt; unit;
-    <a class="code" href="class_r_t_p_payload_sender.html#aabee3f800e5e676d2b297ff6a571c259">_inputFileStream</a>.get(description, 100, <span class="charliteral">&#39;\n&#39;</span>);
+    <a class="code" href="class_r_t_p_payload_sender.html#aabee3f800e5e676d2b297ff6a571c259" title="The input file stream for the data file.">_inputFileStream</a> &gt;&gt; bits;
+    <a class="code" href="class_r_t_p_payload_sender.html#aabee3f800e5e676d2b297ff6a571c259" title="The input file stream for the data file.">_inputFileStream</a> &gt;&gt; unit;
+    <a class="code" href="class_r_t_p_payload_sender.html#aabee3f800e5e676d2b297ff6a571c259" title="The input file stream for the data file.">_inputFileStream</a>.get(description, 100, <span class="charliteral">&#39;\n&#39;</span>);
 
-    <span class="keywordtype">int</span> pictureType = 0;
+    <span class="keywordtype">int</span> pictureType;
+    <span class="keywordtype">char</span> *ptr;
 
-    <span class="keywordflow">if</span> (strchr(description, <span class="charliteral">&#39;I&#39;</span>)) {
-        pictureType = 1;
-    }
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strchr(description, <span class="charliteral">&#39;P&#39;</span>)) {
-        pictureType = 2;
-    }
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strchr(description, <span class="charliteral">&#39;B&#39;</span>)) {
-        pictureType = 3;
-    }
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strchr(description, <span class="charliteral">&#39;D&#39;</span>)) {
-        pictureType = 4;
+    <span class="keywordflow">for</span> (ptr = description; *ptr == <span class="charliteral">&#39; &#39;</span>; ptr++)
+        ;
+    <span class="keywordflow">switch</span> (*ptr)
+    {
+        <span class="keywordflow">case</span> <span class="charliteral">&#39;I&#39;</span>: pictureType = 1; <span class="keywordflow">break</span>;
+        <span class="keywordflow">case</span> <span class="charliteral">&#39;P&#39;</span>: pictureType = 2; <span class="keywordflow">break</span>;
+        <span class="keywordflow">case</span> <span class="charliteral">&#39;B&#39;</span>: pictureType = 3; <span class="keywordflow">break</span>;
+        <span class="keywordflow">case</span> <span class="charliteral">&#39;D&#39;</span>: pictureType = 4; <span class="keywordflow">break</span>;
+        <span class="keywordflow">default</span>: pictureType = 0; <span class="keywordflow">break</span>;
     }
 
     <span class="keywordtype">int</span> bytesRemaining = bits / 8;
 
-    <span class="keywordflow">if</span> (!<a class="code" href="class_r_t_p_payload_sender.html#aabee3f800e5e676d2b297ff6a571c259">_inputFileStream</a>.eof()) {
-        <span class="keywordflow">while</span> (bytesRemaining &gt; 0) {
-            <a class="code" href="class_r_t_p_packet.html">RTPPacket</a> *rtpPacket = <span class="keyword">new</span> <a class="code" href="class_r_t_p_packet.html">RTPPacket</a>(<span class="stringliteral">&quot;RTPPacket&quot;</span>);
-            <a class="code" href="class_r_t_p_mpeg_packet.html">RTPMpegPacket</a> *mpegPacket = <span class="keyword">new</span> <a class="code" href="class_r_t_p_mpeg_packet.html">RTPMpegPacket</a>(<span class="stringliteral">&quot;MpegPacket&quot;</span>);
+    <span class="keywordflow">if</span> (!<a class="code" href="class_r_t_p_payload_sender.html#aabee3f800e5e676d2b297ff6a571c259" title="The input file stream for the data file.">_inputFileStream</a>.eof())
+    {
+        <span class="keywordflow">while</span> (bytesRemaining &gt; 0)
+        {
+            <a class="code" href="class_r_t_p_packet.html" title="This class represents an RTP data packet.">RTPPacket</a> *rtpPacket = <span class="keyword">new</span> <a class="code" href="class_r_t_p_packet.html" title="This class represents an RTP data packet.">RTPPacket</a>(<span class="stringliteral">&quot;RTPPacket&quot;</span>);
+            <a class="code" href="class_r_t_p_mpeg_packet.html" title="Class generated from transport/rtp/profiles/avprofile/RTPMpegPacket.msg by opp_msgc.">RTPMpegPacket</a> *mpegPacket = <span class="keyword">new</span> <a class="code" href="class_r_t_p_mpeg_packet.html" title="Class generated from transport/rtp/profiles/avprofile/RTPMpegPacket.msg by opp_msgc.">RTPMpegPacket</a>(<span class="stringliteral">&quot;MpegPacket&quot;</span>);
 
             <span class="comment">// the only mpeg information we know is the picture type</span>
             mpegPacket-&gt;<a class="code" href="class_r_t_p_mpeg_packet.html#a804025d4b35f2bc85f3a9ea019d3e586">setPictureType</a>(pictureType);
 
             <span class="comment">// the maximum number of real data bytes</span>
-            <span class="keywordtype">int</span> maxDataSize = <a class="code" href="class_r_t_p_payload_sender.html#a32ec374991c6a22751fac7db79a3f465">_mtu</a> - rtpPacket-&gt;getBitLength() - mpegPacket-&gt;getBitLength();
+            <span class="keywordtype">int</span> maxDataSize = <a class="code" href="class_r_t_p_payload_sender.html#a32ec374991c6a22751fac7db79a3f465" title="The maximum size of an RTPPacket.">_mtu</a> - rtpPacket-&gt;getBitLength() - mpegPacket-&gt;getBitLength();
 
-            <span class="keywordflow">if</span> (bytesRemaining &gt; maxDataSize) {
-
+            <span class="keywordflow">if</span> (bytesRemaining &gt; maxDataSize)
+            {
                 <span class="comment">// we do not know where slices in the</span>
                 <span class="comment">// mpeg picture begin</span>
                 <span class="comment">// so we simulate by assuming a slice</span>
@@ -267,40 +275,41 @@ Protected Attributes</h2></td></tr>
 
                 bytesRemaining = bytesRemaining - slicedDataSize;
             }
-            <span class="keywordflow">else</span> {
+            <span class="keywordflow">else</span>
+            {
                 mpegPacket-&gt;addBitLength(bytesRemaining);
                 rtpPacket-&gt;encapsulate(mpegPacket);
                 <span class="comment">// set marker because this is</span>
                 <span class="comment">// the last packet of the frame</span>
-                rtpPacket-&gt;<a class="code" href="class_r_t_p_packet.html#a50cb863f039b03f20556c4547026d3f5">setMarker</a>(1);
+                rtpPacket-&gt;<a class="code" href="class_r_t_p_packet___base.html#a9c7f8c35a64fce0155e3841f97792e83">setMarker</a>(1);
                 bytesRemaining = 0;
             }
 
-            rtpPacket-&gt;<a class="code" href="class_r_t_p_packet.html#a9dff9696f62434e9573f4259f3fb455c">setPayloadType</a>(<a class="code" href="class_r_t_p_payload_sender.html#a39af1b84253a34a9903f9c718bd66b1c">_payloadType</a>);
-            rtpPacket-&gt;<a class="code" href="class_r_t_p_packet.html#ad6df737b4f4666bc30d8a1cde4dea9ef">setSequenceNumber</a>(<a class="code" href="class_r_t_p_payload_sender.html#aa640a9b2867c042f2cc48f0f9489e870">_sequenceNumber</a>);
-            <a class="code" href="class_r_t_p_payload_sender.html#aa640a9b2867c042f2cc48f0f9489e870">_sequenceNumber</a>++;
+            rtpPacket-&gt;<a class="code" href="class_r_t_p_packet___base.html#a72999c8245929e6a7404efefd09c7080">setPayloadType</a>(<a class="code" href="class_r_t_p_payload_sender.html#a39af1b84253a34a9903f9c718bd66b1c" title="The payload type this sender creates.">_payloadType</a>);
+            rtpPacket-&gt;<a class="code" href="class_r_t_p_packet___base.html#a633da8bd87c0b268ca8dc1d2d8f4ae35">setSequenceNumber</a>(<a class="code" href="class_r_t_p_payload_sender.html#aa640a9b2867c042f2cc48f0f9489e870" title="The current sequence number.">_sequenceNumber</a>);
+            <a class="code" href="class_r_t_p_payload_sender.html#aa640a9b2867c042f2cc48f0f9489e870" title="The current sequence number.">_sequenceNumber</a>++;
 
 
-            rtpPacket-&gt;<a class="code" href="class_r_t_p_packet.html#af1936b430834df4b182f1ed3ee75fb81">setTimeStamp</a>(<a class="code" href="class_r_t_p_payload_sender.html#aaa174d6ff76832088142302de2e7deb4">_timeStampBase</a> + (<a class="code" href="class_r_t_p_a_v_profile_payload32_sender.html#adcc1b6856fa7a157967595db4ed37be2">_initialDelay</a> + (1 / <a class="code" href="class_r_t_p_a_v_profile_payload32_sender.html#a49e5da6888947911766f3020ea5543ee">_framesPerSecond</a>) * (<span class="keywordtype">double</span>)<a class="code" href="class_r_t_p_a_v_profile_payload32_sender.html#a526ed5b166373e08b54a4ed468fbed58">_frameNumber</a>) * <a class="code" href="class_r_t_p_payload_sender.html#a8674ccb970be216091f20e60c41c9e9f">_clockRate</a>);
-            rtpPacket-&gt;<a class="code" href="class_r_t_p_packet.html#a3b48defc5a6375f94dcb3ad389ace59c">setSSRC</a>(<a class="code" href="class_r_t_p_payload_sender.html#a98d0eb2439d2eab6606741445590b513">_ssrc</a>);
+            rtpPacket-&gt;<a class="code" href="class_r_t_p_packet___base.html#a4a4fbcd60151b93b3c3463f857c7a4fa">setTimeStamp</a>(<a class="code" href="class_r_t_p_payload_sender.html#aaa174d6ff76832088142302de2e7deb4" title="The first rtp time stamp used for created rtp data packets.">_timeStampBase</a> + (<a class="code" href="class_r_t_p_a_v_profile_payload32_sender.html#adcc1b6856fa7a157967595db4ed37be2" title="The initial delay of the mpeg video.">_initialDelay</a> + (1 / <a class="code" href="class_r_t_p_a_v_profile_payload32_sender.html#a49e5da6888947911766f3020ea5543ee" title="The number of frames per second of the mpeg video.">_framesPerSecond</a>) * (<span class="keywordtype">double</span>)<a class="code" href="class_r_t_p_a_v_profile_payload32_sender.html#a526ed5b166373e08b54a4ed468fbed58" title="The number of the current mpeg frame.">_frameNumber</a>) * <a class="code" href="class_r_t_p_payload_sender.html#a8674ccb970be216091f20e60c41c9e9f" title="The clock rate in ticks per second this sender uses.">_clockRate</a>);
+            rtpPacket-&gt;<a class="code" href="class_r_t_p_packet___base.html#a57daae1bc47169aee4e275a19717eae1">setSsrc</a>(<a class="code" href="class_r_t_p_payload_sender.html#a98d0eb2439d2eab6606741445590b513" title="The ssrc identifier of this sender module.">_ssrc</a>);
 
 
-            <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinpOut = <span class="keyword">new</span> <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>(<span class="stringliteral">&quot;dataOut()&quot;</span>);
+            <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> *rinpOut = <span class="keyword">new</span> <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a>(<span class="stringliteral">&quot;dataOut()&quot;</span>);
 
 
-            rinpOut-&gt;<a class="code" href="class_r_t_p_inner_packet.html#ab9905bd890c4a701cd37534645e67feb">dataOut</a>(rtpPacket);
+            rinpOut-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a13acb51482d7653808694d4403fbc962" title="Capsulates the outgoing RTPPacket into this RTPInnerPacket to transport it within the rtp layer...">setDataOutPkt</a>(rtpPacket);
 
             send(rinpOut, <span class="stringliteral">&quot;profileOut&quot;</span>);
-
         }
         _frameNumber++;
 
-        <a class="code" href="class_r_t_p_payload_sender.html#a7dfada70b7fab61bcf43dcf687e506d4">_reminderMessage</a> = <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;nextFrame&quot;</span>);
-        scheduleAt(simTime() + 1.0 / <a class="code" href="class_r_t_p_a_v_profile_payload32_sender.html#a49e5da6888947911766f3020ea5543ee">_framesPerSecond</a>, <a class="code" href="class_r_t_p_payload_sender.html#a7dfada70b7fab61bcf43dcf687e506d4">_reminderMessage</a>);
+        <a class="code" href="class_r_t_p_payload_sender.html#a7dfada70b7fab61bcf43dcf687e506d4" title="A self message used as timer for the moment the next packet must be sent.">_reminderMessage</a> = <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;nextFrame&quot;</span>);
+        scheduleAt(simTime() + 1.0 / <a class="code" href="class_r_t_p_a_v_profile_payload32_sender.html#a49e5da6888947911766f3020ea5543ee" title="The number of frames per second of the mpeg video.">_framesPerSecond</a>, <a class="code" href="class_r_t_p_payload_sender.html#a7dfada70b7fab61bcf43dcf687e506d4" title="A self message used as timer for the moment the next packet must be sent.">_reminderMessage</a>);
         <span class="keywordflow">return</span> <span class="keyword">true</span>;
     }
-    <span class="keywordflow">else</span> {
-        std::cout &lt;&lt;<span class="stringliteral">&quot;LastSequenceNumber &quot;</span>&lt;&lt; <a class="code" href="class_r_t_p_payload_sender.html#aa640a9b2867c042f2cc48f0f9489e870">_sequenceNumber</a> &lt;&lt; endl;
+    <span class="keywordflow">else</span>
+    {
+        std::cout &lt;&lt;<span class="stringliteral">&quot;LastSequenceNumber &quot;</span>&lt;&lt; <a class="code" href="class_r_t_p_payload_sender.html#aa640a9b2867c042f2cc48f0f9489e870" title="The current sequence number.">_sequenceNumber</a> &lt;&lt; endl;
         <span class="keywordflow">return</span> <span class="keyword">false</span>;
     }
     ev &lt;&lt; <span class="stringliteral">&quot;sendPacket() Exit&quot;</span>&lt;&lt; endl;
@@ -319,11 +328,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The number of the current mpeg frame. Needed for calculating the rtp time stamp in the rtp data packets. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8h_source.html#l00072">72</a> of file <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8h_source.html">RTPAVProfilePayload32Sender.h</a>.</p>
+<p>The number of the current mpeg frame. </p>
+<p>Needed for calculating the rtp time stamp in the rtp data packets. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html#l00116">initializeSenderModule()</a>, and <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html#l00153">sendPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#a8bbc7ffcabe829c7e29e183d422c50cb">initializeSenderModule()</a>, and <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#abcffc8019d25b3a660220c0759747629">sendPacket()</a>.</p>
 
 </div>
 </div>
@@ -337,11 +346,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The number of frames per second of the mpeg video. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8h_source.html#l00066">66</a> of file <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8h_source.html">RTPAVProfilePayload32Sender.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html#l00116">initializeSenderModule()</a>, and <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html#l00153">sendPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#a8bbc7ffcabe829c7e29e183d422c50cb">initializeSenderModule()</a>, and <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#abcffc8019d25b3a660220c0759747629">sendPacket()</a>.</p>
 
 </div>
 </div>
@@ -355,17 +363,16 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The initial delay of the mpeg video. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8h_source.html#l00061">61</a> of file <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8h_source.html">RTPAVProfilePayload32Sender.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html#l00116">initializeSenderModule()</a>, and <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html#l00153">sendPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#a8bbc7ffcabe829c7e29e183d422c50cb">initializeSenderModule()</a>, and <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#abcffc8019d25b3a660220c0759747629">sendPacket()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_r_t_p_a_v_profile_payload32_sender_8h_source.html">RTPAVProfilePayload32Sender.h</a></li>
-<li><a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html">RTPAVProfilePayload32Sender.cc</a></li>
+<li><a class="el" href="_r_t_p_a_v_profile_payload32_sender_8h.html">RTPAVProfilePayload32Sender.h</a></li>
+<li><a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc.html">RTPAVProfilePayload32Sender.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -373,7 +380,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html">RTPAVProfilePayload32Sender</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:52 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:29 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

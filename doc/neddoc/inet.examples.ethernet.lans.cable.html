@@ -5,7 +5,25 @@
    </head>
    <body onload="if (top.frames['componentsframe'] == undefined) { s = window.location.toString(); window.location = 'index.html?p=' + s.substring(s.lastIndexOf('/')+1); }">
 <h2 class="comptitle">Channel <i>cable</i></h2>
-<b>Package:</b> inet.examples.ethernet.lans<br/><b>File: <a href="examples-ethernet-lans-LargeNet.ned.html">examples/ethernet/lans/LargeNet.ned</a></b><br/><p>(no description)</p><h3 class="subtitle">Extends:</h3>
+<b>Package:</b> inet.examples.ethernet.lans<br/><b>File: <a href="examples-ethernet-lans-LargeNet.ned.html">examples/ethernet/lans/LargeNet.ned</a></b><br/>
+<p>A 100Mb/s Ethernet cable. Part of <a href="inet.examples.ethernet.lans.LargeNet.html">LargeNet</a>.</p>
+<img src="inet.examples.ethernet.lans.cable-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.examples.ethernet.lans.cable.html" title="cable" alt="cable" coords="0,30,75,46">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.examples.ethernet.lans.cable-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.examples.ethernet.lans.cable.html" title="Channel cable" alt="" coords="60,83,132,111">
+<area shape="rect" id="node2" href="inet.examples.ethernet.lans.LargeNet.html" title="Network LargeNet" alt="" coords="5,6,80,34">
+<area shape="rect" id="node4" href="inet.examples.ethernet.lans.MediumLAN.html" title="Compound Module MediumLAN" alt="" coords="104,6,197,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.examples.ethernet.lans.cable-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.examples.ethernet.lans.cable.html" title="Channel cable" alt="" coords="29,83,101,111">
+<area shape="rect" id="node2" href="ned.DatarateChannel.html" title="Channel DatarateChannel" alt="" coords="5,6,125,34">
+</map>
+<h3 class="subtitle">Extends:</h3>
 <table class="typestable">
    <tr>
       <th class="name">Name</th>
@@ -33,20 +51,6 @@
    </tr>
 <tr>
    <td>
-<a href="inet.examples.ethernet.lans.LargeLAN.html">LargeLAN</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>Several hosts and an Ethernet hub on a switch. <a href="inet.examples.ansaExamples.switchtest.One.html">One</a> port of the hub
-connect to a 10Base2 segment.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
 <a href="inet.examples.ethernet.lans.MediumLAN.html">MediumLAN</a>
    </td>
    <td>
@@ -54,7 +58,7 @@ connect to a 10Base2 segment.</p>
    </td>
    <td>
 
-<p>Several hosts and an Ethernet hub on a switch</p>
+<p>Several hosts and an Ethernet hub on a switch; part of <a href="inet.examples.ethernet.lans.LargeNet.html">LargeNet</a>.</p>
 
    </td>
 </tr>
@@ -112,7 +116,7 @@ connect to a 10Base2 segment.</p>
    <td>
       <i>double</i>
    </td>
-   <td>0bps</td>
+   <td>100Mbps</td>
    <td>
 <p>bits per second; 0=infinite</p>
    </td>
@@ -237,14 +241,17 @@ int   </i></td>
 </tr>
 </table>
 <h3 class="subtitle">Source code:</h3>
-<pre class="src"><span style="color: #800000; font-weight: bold; ">channel</span><span style="color: #000000; "> </span><span style="color: #000000; ">cable</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">DatarateChannel</span><span style="color: #000000; ">
+<pre class="src"><span style="color: #808080; font-style: italic; ">//
+// A 100Mb/s Ethernet cable. Part of ~LargeNet.
+//
+</span><span style="color: #800000; font-weight: bold; ">channel</span><span style="color: #000000; "> </span><span style="color: #000000; ">cable</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">DatarateChannel</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
         </span><span style="color: #000000; ">delay</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">.</span><span style="color: #008000; ">1</span><span style="color: #000000; ">us</span><span style="color: #000000; ">;
+        </span><span style="color: #000000; ">datarate</span><span style="color: #000000; "> = </span><span style="color: #008000; ">100</span><span style="color: #000000; ">Mbps</span><span style="color: #000000; ">;
 }
 
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

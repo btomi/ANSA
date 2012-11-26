@@ -38,6 +38,19 @@ should be set as message kind on a message sent to the radio module.</p>
 
    </td>
 </tr>
+<tr>
+   <td>
+<a href="PhyIndication.html">PhyIndication</a>
+   </td>
+   <td>
+<i>enum</i>
+   </td>
+   <td>
+
+<p>Sent up from the radio as message kind value</p>
+
+   </td>
+</tr>
 </table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
@@ -67,12 +80,12 @@ should be set as message kind on a message sent to the radio module.</p>
 // Command codes for controlling the physical layer (the radio). These constants
 // should be set as message kind on a message sent to the radio module.
 //
-// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> PhyControlInfo
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~PhyControlInfo
 //
 </span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; "> </span><span style="color: #000000; ">PhyCommandCode</span><span style="color: #000000; ">
 {
-
     </span><span style="color: #000000; ">PHY_C_CONFIGURERADIO</span><span style="color: #000000; "> = </span><span style="color: #008000; ">1</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">PHY_C_CHANGETRANSMITTERPOWER</span><span style="color: #000000; "> = </span><span style="color: #008000; ">2</span><span style="color: #000000; ">;
 }
 
 </span><span style="color: #808080; font-style: italic; ">//
@@ -82,10 +95,20 @@ should be set as message kind on a message sent to the radio module.</p>
 {
     </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">channelNumber</span><span style="color: #000000; "> = -</span><span style="color: #008000; ">1</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// with PHY_C_CONFIGURERADIO: the channel to switch to
 </span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">bitrate</span><span style="color: #000000; "> = -</span><span style="color: #008000; ">1</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// with PHY_C_CONFIGURERADIO: the bitrate to switch to
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">adaptiveSensitivity</span><span style="color: #000000; "> = </span><span style="color: #008000; ">false</span><span style="color: #000000; ">;
+    </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">transmitterPower</span><span style="color: #000000; "> = -</span><span style="color: #008000; ">1</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// With PHY_C_CHANGETRANSMITTERPOWER: the transmission power to swith to
 </span><span style="color: #000000; ">}
 
-
+</span><span style="color: #808080; font-style: italic; ">//
+// Sent up from the radio as message kind value
+//
+// NOTE: make sure it does not conflict with _802_11frameType in Consts80211.h
+//
+</span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; "> </span><span style="color: #000000; ">PhyIndication</span><span style="color: #000000; ">
+{
+    </span><span style="color: #000000; ">BITERROR</span><span style="color: #000000; "> = -</span><span style="color: #008000; ">1</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// the phy has recognized a bit error in the packet
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">COLLISION</span><span style="color: #000000; "> = </span><span style="color: #008000; ">9</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// packet lost due to collision
+</span><span style="color: #000000; ">}
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

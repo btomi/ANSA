@@ -10,6 +10,42 @@
 interface (gates, parameters) is fully compatible with the <a href="inet.nodes.mpls.LDP_LSR.html">LDP_LSR</a> router
 and node failures may thus be simulated by replacing the <a href="inet.nodes.mpls.RSVP_LSR.html">RSVP_LSR</a>
 with LDP_FAILED.</p>
+<img src="inet.nodes.mpls.LDP_FAILED-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.networklayer.extras.Dummy.html" title="Dummy" alt="Dummy" coords="32,77,73,132">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.nodes.mpls.LDP_FAILED-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.nodes.mpls.LDP_FAILED.html" title="Compound Module LDP_FAILED" alt="" coords="5,6,107,34">
+<area shape="rect" id="node2" href="inet.networklayer.extras.Dummy.html" title="Simple Module Dummy" alt="" coords="20,83,92,111">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.nodes.mpls.LDP_FAILED-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.nodes.mpls.LDP_FAILED.html" title="Compound Module LDP_FAILED" alt="" coords="32,83,133,111">
+<area shape="rect" id="node2" href="inet.nodes.mpls.LDP_ROUTER_BASE.html" title="Compound Module LDP_ROUTER_BASE" alt="" coords="5,6,160,34">
+</map>
+<h3 class="subtitle">Extends:</h3>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+<tr>
+   <td>
+<a href="inet.nodes.mpls.LDP_ROUTER_BASE.html">LDP_ROUTER_BASE</a>
+   </td>
+   <td>
+<i>compound&nbsp;module</i>
+   </td>
+   <td>
+
+<p>The Base module for LDP Routers, see <a href="inet.nodes.mpls.LDP_LSR.html">LDP_LSR</a>, <a href="inet.nodes.mpls.LDP_FAILED.html">LDP_FAILED</a></p>
+
+   </td>
+</tr>
+</table>
 <h3 class="subtitle">Parameters:</h3>
 <table class="paramstable">
    <tr>
@@ -18,7 +54,7 @@ with LDP_FAILED.</p>
       <th class="defaultvalue">Default value</th>
       <th class="description">Description</th>
    </tr>
-<tr class="local">
+<tr class="inherited">
    <td>holdTime</td>
    <td>
       <i>double</i>
@@ -26,7 +62,7 @@ with LDP_FAILED.</p>
    <td>15s</td>
    <td>   </td>
 </tr>
-<tr class="local">
+<tr class="inherited">
    <td>helloInterval</td>
    <td>
       <i>double</i>
@@ -34,15 +70,7 @@ with LDP_FAILED.</p>
    <td>5s</td>
    <td>   </td>
 </tr>
-<tr class="local">
-   <td>namid</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>-1</td>
-   <td>   </td>
-</tr>
-<tr class="local">
+<tr class="inherited">
    <td>peers</td>
    <td>
       <i>string</i>
@@ -50,7 +78,7 @@ with LDP_FAILED.</p>
    <td></td>
    <td>   </td>
 </tr>
-<tr class="local">
+<tr class="inherited">
    <td>routerId</td>
    <td>
       <i>string</i>
@@ -58,13 +86,23 @@ with LDP_FAILED.</p>
    <td>"auto"</td>
    <td>   </td>
 </tr>
-<tr class="local">
+<tr class="inherited">
    <td>routingFile</td>
    <td>
       <i>string</i>
    </td>
    <td>""</td>
    <td>   </td>
+</tr>
+<tr class="inherited">
+   <td>tcpType</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>firstAvailable("TCP","TCP_lwIP","TCP_NSC","TCP_None")</td>
+   <td>
+<p>tcp implementation (e.g. <a href="inet.transport.tcp.TCP.html">TCP</a>, <span class="error" title="Unresolved link">TCP_lwIP</span>, <span class="error" title="Unresolved link">TCP_NSC</span>) or <a href="inet.transport.tcp_common.TCPSpoof.html">TCPSpoof</a></p>
+   </td>
 </tr>
 </table>
 <h3 class="subtitle">Properties:</h3>
@@ -74,6 +112,11 @@ with LDP_FAILED.</p>
       <th class="value">Value</th>
       <th class="description">Description</th>
    </tr>
+<tr>
+   <td>node</td>
+   <td><i></i></td>
+   <td></td>
+</tr>
 <tr>
    <td>labels</td>
    <td><i>node</i></td>
@@ -93,7 +136,7 @@ with LDP_FAILED.</p>
       <th class="gatesize">Size</th>
       <th class="description">Description</th>
    </tr>
-<tr class="local">
+<tr class="inherited">
    <td>pppg [ ]</xsl:if></td>
    <td><i>inout</i></td>
    <td></td>   <td></td>
@@ -102,23 +145,15 @@ with LDP_FAILED.</p>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
 // Failed router. Discards all incoming traffic and generates nothing. Its
-// interface (gates, parameters) is fully compatible with the LDP_LSR router
-// and node failures may thus be simulated by replacing the RSVP_LSR
-// with \LDP_FAILED.
+// interface (gates, parameters) is fully compatible with the ~LDP_LSR router
+// and node failures may thus be simulated by replacing the ~RSVP_LSR
+// with LDP_FAILED.
 //
-</span><span style="color: #800000; font-weight: bold; ">module</span><span style="color: #000000; "> </span><span style="color: #000000; ">LDP_FAILED</span><span style="color: #000000; ">
+</span><span style="color: #800000; font-weight: bold; ">module</span><span style="color: #000000; "> </span><span style="color: #000000; ">LDP_FAILED</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">LDP_ROUTER_BASE</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
         </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">node</span><span style="color: #000000; ">);
         </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=abstract/router;i2=status/noentry&quot;</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">holdTime</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;s&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">15</span><span style="color: #000000; ">s</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">helloInterval</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;s&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">5</span><span style="color: #000000; ">s</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">namid</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(-</span><span style="color: #008000; ">1</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">peers</span><span style="color: #000000; ">;
-        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">routerId</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;auto&quot;</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">routingFile</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">);
-    </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
-        </span><span style="color: #000080; font-weight: bold; ">inout</span><span style="color: #000000; "> </span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">[] </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">PPPFrame</span><span style="color: #000000; ">-</span><span style="color: #000000; ">conn</span><span style="color: #000000; ">);
     </span><span style="color: #800000; font-weight: bold; ">submodules</span><span style="color: #000000; ">:
         </span><span style="color: #000000; ">dummy</span><span style="color: #000000; ">: </span><span style="color: #000000; ">Dummy</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
@@ -133,6 +168,5 @@ with LDP_FAILED.</p>
         }
 }
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

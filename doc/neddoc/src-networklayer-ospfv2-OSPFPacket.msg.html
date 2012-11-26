@@ -128,9 +128,7 @@
 <i>class</i>
    </td>
    <td>
-
-<p>class <a href="Link.html">Link</a> extends cObject</p>
-
+<i>(no description)</i>
    </td>
 </tr>
 <tr>
@@ -142,7 +140,7 @@
    </td>
    <td>
 
-<p>Represents an OSPF <a href="inet.nodes.inet.Router.html">Router</a> LSA</p>
+<p>Represents an OSPF Router LSA</p>
 
    </td>
 </tr>
@@ -255,7 +253,7 @@
    </td>
    <td>
 
-<p>Represents an OSPF <a href="Link.html">Link</a> State Request packet</p>
+<p>Represents an OSPF Link State Request packet</p>
 
    </td>
 </tr>
@@ -268,7 +266,7 @@
    </td>
    <td>
 
-<p>Represents an OSPF <a href="Link.html">Link</a> State Update packet</p>
+<p>Represents an OSPF Link State Update packet</p>
 
    </td>
 </tr>
@@ -281,7 +279,7 @@
    </td>
    <td>
 
-<p>Represents an OSPF <a href="Link.html">Link</a> State Acknowledgement packet</p>
+<p>Represents an OSPF Link State Acknowledgement packet</p>
 
    </td>
 </tr>
@@ -305,20 +303,19 @@
 //
 </span><span style="color: #000000; ">
 </span><span style="color: #800000; font-weight: bold; ">cplusplus</span><span style="color: #000000; "> {{
-#</span><span style="color: #000000; ">include</span><span style="color: #000000; "> </span><span style="color: #008000; ">&quot;IPAddress.h&quot;</span><span style="color: #000000; ">
+#</span><span style="color: #000000; ">include</span><span style="color: #000000; "> </span><span style="color: #008000; ">&quot;IPv4Address.h&quot;</span><span style="color: #000000; ">
 }}
 
 
-</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">noncobject</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; ">;
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">noncobject</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; ">;
 
 </span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; "> </span><span style="color: #000000; ">OSPFPacketType</span><span style="color: #000000; ">
 {
-
-    </span><span style="color: #000000; ">HelloPacket</span><span style="color: #000000; "> = </span><span style="color: #008000; ">1</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">DatabaseDescriptionPacket</span><span style="color: #000000; "> = </span><span style="color: #008000; ">2</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">LinkStateRequestPacket</span><span style="color: #000000; "> = </span><span style="color: #008000; ">3</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">LinkStateUpdatePacket</span><span style="color: #000000; "> = </span><span style="color: #008000; ">4</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">LinkStateAcknowledgementPacket</span><span style="color: #000000; "> = </span><span style="color: #008000; ">5</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">HELLO_PACKET</span><span style="color: #000000; "> = </span><span style="color: #008000; ">1</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">DATABASE_DESCRIPTION_PACKET</span><span style="color: #000000; "> = </span><span style="color: #008000; ">2</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">LINKSTATE_REQUEST_PACKET</span><span style="color: #000000; "> = </span><span style="color: #008000; ">3</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">LINKSTATE_UPDATE_PACKET</span><span style="color: #000000; "> = </span><span style="color: #008000; ">4</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">LINKSTATE_ACKNOWLEDGEMENT_PACKET</span><span style="color: #000000; "> = </span><span style="color: #008000; ">5</span><span style="color: #000000; ">;
 }
 
 </span><span style="color: #808080; font-style: italic; ">// should be a byte long bitfield
@@ -340,13 +337,11 @@
 </span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">OSPFPacket</span><span style="color: #000000; ">
 {
     </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #000000; "> </span><span style="color: #000000; ">version</span><span style="color: #000000; "> = </span><span style="color: #008000; ">2</span><span style="color: #000000; ">;
-    </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #000000; "> </span><span style="color: #000000; ">type</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; ">(</span><span style="color: #000000; ">OSPFPacketType</span><span style="color: #000000; ">) = </span><span style="color: #000000; ">HelloPacket</span><span style="color: #000000; ">;
-    </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">packetLength</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;
+    </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #000000; "> </span><span style="color: #000000; ">type</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; ">(</span><span style="color: #000000; ">OSPFPacketType</span><span style="color: #000000; ">) = </span><span style="color: #000000; ">HELLO_PACKET</span><span style="color: #000000; ">;
 
-    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">routerID</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">areaID</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">routerID</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">areaID</span><span style="color: #000000; ">;
 
-    </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">checksum</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">authenticationType</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #000000; "> </span><span style="color: #000000; ">authentication</span><span style="color: #000000; ">[</span><span style="color: #008000; ">8</span><span style="color: #000000; ">];
 }
@@ -356,7 +351,7 @@
 //
 </span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">OSPFHelloPacket</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">OSPFPacket</span><span style="color: #000000; ">
 {
-    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">networkMask</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">networkMask</span><span style="color: #000000; ">;
 
     </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">helloInterval</span><span style="color: #000000; "> = </span><span style="color: #008000; ">5</span><span style="color: #000000; ">;
 
@@ -365,42 +360,38 @@
     </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #000000; "> </span><span style="color: #000000; ">routerPriority</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">long</span><span style="color: #000000; "> </span><span style="color: #000000; ">routerDeadInterval</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;
 
-    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">designatedRouter</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">backupDesignatedRouter</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">neighbor</span><span style="color: #000000; ">[];
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">designatedRouter</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">backupDesignatedRouter</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">neighbor</span><span style="color: #000000; ">[];
 }
 
 
 </span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; "> </span><span style="color: #000000; ">LSAType</span><span style="color: #000000; ">
 {
-
-    </span><span style="color: #000000; ">RouterLSAType</span><span style="color: #000000; "> = </span><span style="color: #008000; ">1</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">NetworkLSAType</span><span style="color: #000000; "> = </span><span style="color: #008000; ">2</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">SummaryLSA_NetworksType</span><span style="color: #000000; "> = </span><span style="color: #008000; ">3</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">SummaryLSA_ASBoundaryRoutersType</span><span style="color: #000000; "> = </span><span style="color: #008000; ">4</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">ASExternalLSAType</span><span style="color: #000000; "> = </span><span style="color: #008000; ">5</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">ROUTERLSA_TYPE</span><span style="color: #000000; "> = </span><span style="color: #008000; ">1</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">NETWORKLSA_TYPE</span><span style="color: #000000; "> = </span><span style="color: #008000; ">2</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">SUMMARYLSA_NETWORKS_TYPE</span><span style="color: #000000; "> = </span><span style="color: #008000; ">3</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">SUMMARYLSA_ASBOUNDARYROUTERS_TYPE</span><span style="color: #000000; "> = </span><span style="color: #008000; ">4</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">AS_EXTERNAL_LSA_TYPE</span><span style="color: #000000; "> = </span><span style="color: #008000; ">5</span><span style="color: #000000; ">;
 }
 
 </span><span style="color: #808080; font-style: italic; ">//
 // Represents an OSPF LSA header
 //
-//class OSPFLSAHeader extends cObject
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">OSPFLSAHeader</span><span style="color: #000000; ">
 {
     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">lsAge</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">OSPFOptions</span><span style="color: #000000; "> </span><span style="color: #000000; ">lsOptions</span><span style="color: #000000; ">;
-    </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #000000; "> </span><span style="color: #000000; ">lsType</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; ">(</span><span style="color: #000000; ">LSAType</span><span style="color: #000000; ">) = </span><span style="color: #000000; ">RouterLSAType</span><span style="color: #000000; ">;
-    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">long</span><span style="color: #000000; "> </span><span style="color: #000000; ">linkStateID</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">advertisingRouter</span><span style="color: #000000; ">;
+    </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #000000; "> </span><span style="color: #000000; ">lsType</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; ">(</span><span style="color: #000000; ">LSAType</span><span style="color: #000000; ">) = </span><span style="color: #000000; ">ROUTERLSA_TYPE</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">linkStateID</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">advertisingRouter</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">long</span><span style="color: #000000; "> </span><span style="color: #000000; ">lsSequenceNumber</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;
-    </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">lsChecksum</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">lsaLength</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;
 }
 
 </span><span style="color: #808080; font-style: italic; ">//
 // common ancestor type for all LSAs
 //
-//class OSPFLSA extends cObject
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">OSPFLSA</span><span style="color: #000000; ">
 {
     </span><span style="color: #000000; ">OSPFLSAHeader</span><span style="color: #000000; "> </span><span style="color: #000000; ">header</span><span style="color: #000000; ">;
@@ -408,11 +399,10 @@
 
 </span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; "> </span><span style="color: #000000; ">LinkType</span><span style="color: #000000; ">
 {
-
-    </span><span style="color: #000000; ">PointToPointLink</span><span style="color: #000000; "> = </span><span style="color: #008000; ">1</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">TransitLink</span><span style="color: #000000; "> = </span><span style="color: #008000; ">2</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">StubLink</span><span style="color: #000000; "> = </span><span style="color: #008000; ">3</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">VirtualLink</span><span style="color: #000000; "> = </span><span style="color: #008000; ">4</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">POINTTOPOINT_LINK</span><span style="color: #000000; "> = </span><span style="color: #008000; ">1</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">TRANSIT_LINK</span><span style="color: #000000; "> = </span><span style="color: #008000; ">2</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">STUB_LINK</span><span style="color: #000000; "> = </span><span style="color: #008000; ">3</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">VIRTUAL_LINK</span><span style="color: #000000; "> = </span><span style="color: #008000; ">4</span><span style="color: #000000; ">;
 }
 
 </span><span style="color: #800000; font-weight: bold; ">struct</span><span style="color: #000000; "> </span><span style="color: #000000; ">TOSData</span><span style="color: #000000; ">
@@ -421,12 +411,11 @@
     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #000000; "> </span><span style="color: #000000; ">tosMetric</span><span style="color: #000000; ">[</span><span style="color: #008000; ">3</span><span style="color: #000000; ">];
 }
 
-</span><span style="color: #808080; font-style: italic; ">//class Link extends cObject
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">Link</span><span style="color: #000000; ">
 {
-    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">linkID</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">linkID</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">long</span><span style="color: #000000; "> </span><span style="color: #000000; ">linkData</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;
-    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #000000; "> </span><span style="color: #000000; ">type</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; ">(</span><span style="color: #000000; ">LinkType</span><span style="color: #000000; ">) = </span><span style="color: #000000; ">PointToPointLink</span><span style="color: #000000; ">;
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #000000; "> </span><span style="color: #000000; ">type</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; ">(</span><span style="color: #000000; ">LinkType</span><span style="color: #000000; ">) = </span><span style="color: #000000; ">POINTTOPOINT_LINK</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #000000; "> </span><span style="color: #000000; ">numberOfTOS</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">long</span><span style="color: #000000; "> </span><span style="color: #000000; ">linkCost</span><span style="color: #000000; "> = </span><span style="color: #008000; ">1</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">TOSData</span><span style="color: #000000; "> </span><span style="color: #000000; ">tosData</span><span style="color: #000000; ">[];
@@ -449,8 +438,8 @@
 //
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">OSPFNetworkLSA</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">OSPFLSA</span><span style="color: #000000; ">
 {
-    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">networkMask</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">attachedRouters</span><span style="color: #000000; ">[];
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">networkMask</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">attachedRouters</span><span style="color: #000000; ">[];
 }
 
 </span><span style="color: #808080; font-style: italic; ">//
@@ -458,7 +447,7 @@
 //
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">OSPFSummaryLSA</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">OSPFLSA</span><span style="color: #000000; ">
 {
-    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">networkMask</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">networkMask</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">long</span><span style="color: #000000; "> </span><span style="color: #000000; ">routeCost</span><span style="color: #000000; "> = </span><span style="color: #008000; ">1</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">TOSData</span><span style="color: #000000; "> </span><span style="color: #000000; ">tosData</span><span style="color: #000000; ">[];
 }
@@ -467,7 +456,7 @@
 {
     </span><span style="color: #000000; ">TOSData</span><span style="color: #000000; "> </span><span style="color: #000000; ">tosData</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">E_ExternalMetricType</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">forwardingAddress</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">forwardingAddress</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">long</span><span style="color: #000000; "> </span><span style="color: #000000; ">externalRouteTag</span><span style="color: #000000; ">;
 }
 
@@ -476,10 +465,10 @@
 //
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">OSPFASExternalLSAContents</span><span style="color: #000000; ">
 {
-    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">networkMask</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">networkMask</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">E_ExternalMetricType</span><span style="color: #000000; "> = </span><span style="color: #008000; ">false</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">long</span><span style="color: #000000; "> </span><span style="color: #000000; ">routeCost</span><span style="color: #000000; "> = </span><span style="color: #008000; ">1</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">forwardingAddress</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">forwardingAddress</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">long</span><span style="color: #000000; "> </span><span style="color: #000000; ">externalRouteTag</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">ExternalTOSInfo</span><span style="color: #000000; "> </span><span style="color: #000000; ">externalTOSInfo</span><span style="color: #000000; ">[];
 }
@@ -521,8 +510,8 @@
 </span><span style="color: #800000; font-weight: bold; ">struct</span><span style="color: #000000; "> </span><span style="color: #000000; ">LSARequest</span><span style="color: #000000; ">
 {
     </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">long</span><span style="color: #000000; "> </span><span style="color: #000000; ">lsType</span><span style="color: #000000; ">;
-    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">long</span><span style="color: #000000; "> </span><span style="color: #000000; ">linkStateID</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">advertisingRouter</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">linkStateID</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">advertisingRouter</span><span style="color: #000000; ">;
 }
 
 </span><span style="color: #808080; font-style: italic; ">//
@@ -553,6 +542,5 @@
     </span><span style="color: #000000; ">OSPFLSAHeader</span><span style="color: #000000; "> </span><span style="color: #000000; ">lsaHeaders</span><span style="color: #000000; ">[];
 }
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

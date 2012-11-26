@@ -76,6 +76,7 @@
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-types">Protected Types</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle">
@@ -83,39 +84,60 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="ICMP" -->
-<p><code>#include &lt;<a class="el" href="_i_c_m_p_8h_source.html">ICMP.h</a>&gt;</code></p>
+<p><a class="el" href="class_i_c_m_p.html" title="ICMP module.">ICMP</a> module.  
+ <a href="class_i_c_m_p.html#details">More...</a></p>
+
+<p><code>#include &lt;ICMP.h&gt;</code></p>
 
 <p><a href="class_i_c_m_p-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#aba71ad81ea6722c162a1d15f90202446">sendErrorMessage</a> (<a class="el" href="class_i_p_datagram.html">IPDatagram</a> *datagram, <a class="el" href="_i_c_m_p_message__m_8h.html#a58484b3a48e17f8f130c3c0f890d21b6">ICMPType</a> type, <a class="el" href="_i_c_m_p_message__m_8h.html#ab8a57059e8c320489b5a3cc7d18ccb8c">ICMPCode</a> code)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#a714ea1c38f64a0a53ae123b2c100df63">sendErrorMessage</a> (cPacket *transportPacket, <a class="el" href="class_i_p_control_info.html">IPControlInfo</a> *ctrl, <a class="el" href="_i_c_m_p_message__m_8h.html#a58484b3a48e17f8f130c3c0f890d21b6">ICMPType</a> type, <a class="el" href="_i_c_m_p_message__m_8h.html#ab8a57059e8c320489b5a3cc7d18ccb8c">ICMPCode</a> code)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#a95961808a9894cb80ff27227e224c5c7">sendErrorMessage</a> (<a class="el" href="class_i_pv4_datagram.html">IPv4Datagram</a> *datagram, <a class="el" href="_i_c_m_p_message__m_8h.html#a58484b3a48e17f8f130c3c0f890d21b6">ICMPType</a> <a class="el" href="dsr_8h.html#a8113b111c9adcbe8245570953727d60a">type</a>, <a class="el" href="_i_c_m_p_message__m_8h.html#ab8a57059e8c320489b5a3cc7d18ccb8c">ICMPCode</a> code)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This method can be called from other modules to send an <a class="el" href="class_i_c_m_p.html" title="ICMP module.">ICMP</a> error packet in response to a received bogus packet.  <a href="#a95961808a9894cb80ff27227e224c5c7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#a5b9aff1b481755d6b3bb01293c098e3d">sendErrorMessage</a> (cPacket *transportPacket, <a class="el" href="class_i_pv4_control_info.html">IPv4ControlInfo</a> *ctrl, <a class="el" href="_i_c_m_p_message__m_8h.html#a58484b3a48e17f8f130c3c0f890d21b6">ICMPType</a> <a class="el" href="dsr_8h.html#a8113b111c9adcbe8245570953727d60a">type</a>, <a class="el" href="_i_c_m_p_message__m_8h.html#ab8a57059e8c320489b5a3cc7d18ccb8c">ICMPCode</a> code)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This method can be called from other modules to send an <a class="el" href="class_i_c_m_p.html" title="ICMP module.">ICMP</a> error packet in response to a received bogus packet from the transport layer (like <a class="el" href="class_u_d_p.html" title="Implements the UDP protocol: encapsulates/decapsulates user data into/from UDP.">UDP</a>).  <a href="#a5b9aff1b481755d6b3bb01293c098e3d"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; long, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#a10abb3edad99017437777dd989ae4f3a">PingMap</a></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#a77db33997979f4905ee57d9e501b798e">processICMPMessage</a> (<a class="el" href="class_i_c_m_p_message.html">ICMPMessage</a> *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#ab103aa9e463f7583dd37f82c55e52b1c">errorOut</a> (<a class="el" href="class_i_c_m_p_message.html">ICMPMessage</a> *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#a629e11d00ac9f4cd014c58bbc8440266">processEchoRequest</a> (<a class="el" href="class_i_c_m_p_message.html">ICMPMessage</a> *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#a715d4731f2e111f653c53e7dcf8d8810">processEchoReply</a> (<a class="el" href="class_i_c_m_p_message.html">ICMPMessage</a> *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#ad56e65b6cbb4ea16ee11b8a5f2328626">sendEchoRequest</a> (cPacket *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#a5007b8ee0752c12784a94f896d09cf4a">sendToIP</a> (<a class="el" href="class_i_c_m_p_message.html">ICMPMessage</a> *, const <a class="el" href="class_i_p_address.html">IPAddress</a> &amp;dest)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#a73387c01edde772eb485e5328646ea40">sendToIP</a> (<a class="el" href="class_i_c_m_p_message.html">ICMPMessage</a> *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#abc34fb76d6e1e6987dc39ca292aa8659">handleMessage</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#a77db33997979f4905ee57d9e501b798e">processICMPMessage</a> (<a class="el" href="class_i_c_m_p_message.html">ICMPMessage</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#ab103aa9e463f7583dd37f82c55e52b1c">errorOut</a> (<a class="el" href="class_i_c_m_p_message.html">ICMPMessage</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#a629e11d00ac9f4cd014c58bbc8440266">processEchoRequest</a> (<a class="el" href="class_i_c_m_p_message.html">ICMPMessage</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#a715d4731f2e111f653c53e7dcf8d8810">processEchoReply</a> (<a class="el" href="class_i_c_m_p_message.html">ICMPMessage</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#a42a10e6629966a343baaa9dc73d3f5b6">sendEchoRequest</a> (<a class="el" href="class_ping_payload.html">PingPayload</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#a080f595f58e015588d4a1b5de613e4d8">sendToIP</a> (<a class="el" href="class_i_c_m_p_message.html">ICMPMessage</a> *, const <a class="el" href="class_i_pv4_address.html">IPv4Address</a> &amp;dest)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#a73387c01edde772eb485e5328646ea40">sendToIP</a> (<a class="el" href="class_i_c_m_p_message.html">ICMPMessage</a> *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#abc34fb76d6e1e6987dc39ca292aa8659">handleMessage</a> (cMessage *msg)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_routing_table_access.html">RoutingTableAccess</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#a292095d944ce5a9313b0acac432f133a">routingTableAccess</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_c_m_p.html#a10abb3edad99017437777dd989ae4f3a">PingMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_c_m_p.html#a3e8be16c02ca6292243bd8ab1b751ac4">pingMap</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_i_c_m_p.html">ICMP</a> module. </p>
+<div class="textblock"><p><a class="el" href="class_i_c_m_p.html" title="ICMP module.">ICMP</a> module. </p>
+</div><hr/><h2>Member Typedef Documentation</h2>
+<a class="anchor" id="a10abb3edad99017437777dd989ae4f3a"></a><!-- doxytag: member="ICMP::PingMap" ref="a10abb3edad99017437777dd989ae4f3a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;long,int&gt; <a class="el" href="class_i_c_m_p.html#a10abb3edad99017437777dd989ae4f3a">ICMP::PingMap</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_c_m_p_8h_source.html#l00035">35</a> of file <a class="el" href="_i_c_m_p_8h_source.html">ICMP.h</a>.</p>
-</div><hr/><h2>Member Function Documentation</h2>
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="ab103aa9e463f7583dd37f82c55e52b1c"></a><!-- doxytag: member="ICMP::errorOut" ref="ab103aa9e463f7583dd37f82c55e52b1c" args="(ICMPMessage *)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_c_m_p.html#ab103aa9e463f7583dd37f82c55e52b1c">ICMP::errorOut</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_c_m_p.html#ab103aa9e463f7583dd37f82c55e52b1c">ICMP::errorOut</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_c_m_p_message.html">ICMPMessage</a> *&#160;</td>
           <td class="paramname"><em>icmpmsg</em></td><td>)</td>
@@ -125,9 +147,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_c_m_p_8cc_source.html#l00167">167</a> of file <a class="el" href="_i_c_m_p_8cc_source.html">ICMP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_c_m_p_8cc_source.html#l00134">processICMPMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_c_m_p.html#a77db33997979f4905ee57d9e501b798e">processICMPMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     send(icmpmsg, <span class="stringliteral">&quot;errorOut&quot;</span>);
 }
@@ -139,7 +159,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_c_m_p.html#abc34fb76d6e1e6987dc39ca292aa8659">ICMP::handleMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_c_m_p.html#abc34fb76d6e1e6987dc39ca292aa8659">ICMP::handleMessage</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -148,8 +168,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_c_m_p_8cc_source.html#l00031">31</a> of file <a class="el" href="_i_c_m_p_8cc_source.html">ICMP.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     cGate *arrivalGate = msg-&gt;getArrivalGate();
 
@@ -163,7 +181,7 @@ Protected Attributes</h2></td></tr>
     <span class="comment">// request from application</span>
     <span class="keywordflow">if</span> (!strcmp(arrivalGate-&gt;getName(), <span class="stringliteral">&quot;pingIn&quot;</span>))
     {
-        <a class="code" href="class_i_c_m_p.html#ad56e65b6cbb4ea16ee11b8a5f2328626">sendEchoRequest</a>(<a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(msg));
+        <a class="code" href="class_i_c_m_p.html#a42a10e6629966a343baaa9dc73d3f5b6">sendEchoRequest</a>(check_and_cast&lt;PingPayload *&gt;(msg));
         <span class="keywordflow">return</span>;
     }
 }
@@ -175,7 +193,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_c_m_p.html#a715d4731f2e111f653c53e7dcf8d8810">ICMP::processEchoReply</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_c_m_p.html#a715d4731f2e111f653c53e7dcf8d8810">ICMP::processEchoReply</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_c_m_p_message.html">ICMPMessage</a> *&#160;</td>
           <td class="paramname"><em>reply</em></td><td>)</td>
@@ -185,15 +203,21 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_c_m_p_8cc_source.html#l00190">190</a> of file <a class="el" href="_i_c_m_p_8cc_source.html">ICMP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_c_m_p_8cc_source.html#l00134">processICMPMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_c_m_p.html#a77db33997979f4905ee57d9e501b798e">processICMPMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_i_p_control_info.html">IPControlInfo</a> *ctrl = check_and_cast&lt;<a class="code" href="class_i_p_control_info.html">IPControlInfo</a>*&gt;(reply-&gt;removeControlInfo());
-    cPacket *payload = reply-&gt;decapsulate();
+    <a class="code" href="class_i_pv4_control_info.html" title="Control information for sending/receiving packets over IPv4.">IPv4ControlInfo</a> *ctrl = check_and_cast&lt;<a class="code" href="class_i_pv4_control_info.html" title="Control information for sending/receiving packets over IPv4.">IPv4ControlInfo</a>*&gt;(reply-&gt;removeControlInfo());
+    <a class="code" href="class_ping_payload.html" title="Class generated from applications/pingapp/PingPayload.msg by opp_msgc.">PingPayload</a> *payload = check_and_cast&lt;<a class="code" href="class_ping_payload.html" title="Class generated from applications/pingapp/PingPayload.msg by opp_msgc.">PingPayload</a> *&gt;(reply-&gt;decapsulate());
     payload-&gt;setControlInfo(ctrl);
     <span class="keyword">delete</span> reply;
-    send(payload, <span class="stringliteral">&quot;pingOut&quot;</span>);
+    <span class="keywordtype">long</span> originatorId = payload-&gt;getOriginatorId();
+    PingMap::iterator i = <a class="code" href="class_i_c_m_p.html#a3e8be16c02ca6292243bd8ab1b751ac4">pingMap</a>.find(originatorId);
+    <span class="keywordflow">if</span> (i != <a class="code" href="class_i_c_m_p.html#a3e8be16c02ca6292243bd8ab1b751ac4">pingMap</a>.end())
+        send(payload, <span class="stringliteral">&quot;pingOut&quot;</span>, i-&gt;second);
+    <span class="keywordflow">else</span>
+    {
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Received ECHO REPLY has an unknown originator ID: &quot;</span> &lt;&lt; originatorId &lt;&lt; <span class="stringliteral">&quot;, packet dropped.&quot;</span> &lt;&lt; endl;
+        <span class="keyword">delete</span> payload;
+    }
 }
 </pre></div>
 </div>
@@ -203,7 +227,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_c_m_p.html#a629e11d00ac9f4cd014c58bbc8440266">ICMP::processEchoRequest</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_c_m_p.html#a629e11d00ac9f4cd014c58bbc8440266">ICMP::processEchoRequest</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_c_m_p_message.html">ICMPMessage</a> *&#160;</td>
           <td class="paramname"><em>request</em></td><td>)</td>
@@ -213,24 +237,24 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_c_m_p_8cc_source.html#l00172">172</a> of file <a class="el" href="_i_c_m_p_8cc_source.html">ICMP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_c_m_p_8cc_source.html#l00134">processICMPMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_c_m_p.html#a77db33997979f4905ee57d9e501b798e">processICMPMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// turn request into a reply</span>
-    <a class="code" href="class_i_c_m_p_message.html">ICMPMessage</a> *reply = request;
+    <a class="code" href="class_i_c_m_p_message.html" title="Class generated from networklayer/ipv4/ICMPMessage.msg by opp_msgc.">ICMPMessage</a> *reply = request;
     reply-&gt;setName((std::string(request-&gt;getName())+<span class="stringliteral">&quot;-reply&quot;</span>).c_str());
     reply-&gt;<a class="code" href="class_i_c_m_p_message.html#a1c604219dd4c9a110bb37ab1ac8ae684">setType</a>(<a class="code" href="_i_c_m_p_message__m_8h.html#a58484b3a48e17f8f130c3c0f890d21b6a040ff029e5746bdc1b9fd08db66b3b47">ICMP_ECHO_REPLY</a>);
 
     <span class="comment">// swap src and dest</span>
     <span class="comment">// TBD check what to do if dest was multicast etc?</span>
-    <a class="code" href="class_i_p_control_info.html">IPControlInfo</a> *ctrl = check_and_cast&lt;<a class="code" href="class_i_p_control_info.html">IPControlInfo</a> *&gt;(reply-&gt;getControlInfo());
-    <a class="code" href="class_i_p_address.html">IPAddress</a> src = ctrl-&gt;<a class="code" href="class_i_p_control_info___base.html#abce308b6991a47be70ecb4aca43acbcf">getSrcAddr</a>();
-    <a class="code" href="class_i_p_address.html">IPAddress</a> dest = ctrl-&gt;<a class="code" href="class_i_p_control_info___base.html#a7bf28cf9cabb8990038a769ed578aa13">getDestAddr</a>();
-    ctrl-&gt;<a class="code" href="class_i_p_control_info___base.html#aa3ab93f45185a2567d84803fc39b5a60">setSrcAddr</a>(dest);
-    ctrl-&gt;<a class="code" href="class_i_p_control_info___base.html#a9966e4ad4c21b7cb8fea36d19752af54">setDestAddr</a>(src);
+    <a class="code" href="class_i_pv4_control_info.html" title="Control information for sending/receiving packets over IPv4.">IPv4ControlInfo</a> *ctrl = check_and_cast&lt;<a class="code" href="class_i_pv4_control_info.html" title="Control information for sending/receiving packets over IPv4.">IPv4ControlInfo</a> *&gt;(reply-&gt;getControlInfo());
+    <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a> src = ctrl-&gt;<a class="code" href="class_i_pv4_control_info___base.html#aebb0c14b75707e7678b4871934b56ee7">getSrcAddr</a>();
+    <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a> dest = ctrl-&gt;<a class="code" href="class_i_pv4_control_info___base.html#ae4a58b74b688001db9cf58f39705102e">getDestAddr</a>();
+    <span class="comment">// A. Ariza Modification 5/1/2011 clean the interface id, this forces the use of routing table in the IPv4 layer</span>
+    ctrl-&gt;<a class="code" href="class_i_pv4_control_info___base.html#acc4f6530ac38f952a5cc518b9bbaefb9">setInterfaceId</a>(-1);
+    ctrl-&gt;<a class="code" href="class_i_pv4_control_info___base.html#a3d6ed870000e7aa80cb24ef2a2cdf34d">setSrcAddr</a>(dest);
+    ctrl-&gt;<a class="code" href="class_i_pv4_control_info___base.html#a51ff5ef6365b560939f817cb9ed22a05">setDestAddr</a>(src);
 
-    <a class="code" href="class_i_c_m_p.html#a5007b8ee0752c12784a94f896d09cf4a">sendToIP</a>(reply);
+    <a class="code" href="class_i_c_m_p.html#a080f595f58e015588d4a1b5de613e4d8">sendToIP</a>(reply);
 }
 </pre></div>
 </div>
@@ -240,7 +264,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_c_m_p.html#a77db33997979f4905ee57d9e501b798e">ICMP::processICMPMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_c_m_p.html#a77db33997979f4905ee57d9e501b798e">ICMP::processICMPMessage</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_c_m_p_message.html">ICMPMessage</a> *&#160;</td>
           <td class="paramname"><em>icmpmsg</em></td><td>)</td>
@@ -250,9 +274,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_c_m_p_8cc_source.html#l00134">134</a> of file <a class="el" href="_i_c_m_p_8cc_source.html">ICMP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_c_m_p_8cc_source.html#l00031">handleMessage()</a>, and <a class="el" href="_i_c_m_p_8cc_source.html#l00051">sendErrorMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_c_m_p.html#abc34fb76d6e1e6987dc39ca292aa8659">handleMessage()</a>, and <a class="el" href="class_i_c_m_p.html#a95961808a9894cb80ff27227e224c5c7">sendErrorMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">switch</span> (icmpmsg-&gt;<a class="code" href="class_i_c_m_p_message.html#a93a1643bfbdfe838cb8b26207b5d7673">getType</a>())
     {
@@ -281,20 +303,20 @@ Protected Attributes</h2></td></tr>
             <a class="code" href="class_i_c_m_p.html#a715d4731f2e111f653c53e7dcf8d8810">processEchoReply</a>(icmpmsg);
             <span class="keywordflow">break</span>;
         <span class="keywordflow">default</span>:
-            opp_error(<span class="stringliteral">&quot;Unknown ICMP type %d&quot;</span>, icmpmsg-&gt;<a class="code" href="class_i_c_m_p_message.html#a93a1643bfbdfe838cb8b26207b5d7673">getType</a>());
+            <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Unknown ICMP type %d&quot;</span>, icmpmsg-&gt;<a class="code" href="class_i_c_m_p_message.html#a93a1643bfbdfe838cb8b26207b5d7673">getType</a>());
     }
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="ad56e65b6cbb4ea16ee11b8a5f2328626"></a><!-- doxytag: member="ICMP::sendEchoRequest" ref="ad56e65b6cbb4ea16ee11b8a5f2328626" args="(cPacket *)" -->
+<a class="anchor" id="a42a10e6629966a343baaa9dc73d3f5b6"></a><!-- doxytag: member="ICMP::sendEchoRequest" ref="a42a10e6629966a343baaa9dc73d3f5b6" args="(PingPayload *)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_c_m_p.html#ad56e65b6cbb4ea16ee11b8a5f2328626">ICMP::sendEchoRequest</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_c_m_p.html#a42a10e6629966a343baaa9dc73d3f5b6">ICMP::sendEchoRequest</a> </td>
           <td>(</td>
-          <td class="paramtype">cPacket *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_ping_payload.html">PingPayload</a> *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
         </tr>
@@ -302,29 +324,31 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_c_m_p_8cc_source.html#l00199">199</a> of file <a class="el" href="_i_c_m_p_8cc_source.html">ICMP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_c_m_p_8cc_source.html#l00031">handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_c_m_p.html#abc34fb76d6e1e6987dc39ca292aa8659">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_i_p_control_info.html">IPControlInfo</a> *ctrl = check_and_cast&lt;<a class="code" href="class_i_p_control_info.html">IPControlInfo</a>*&gt;(msg-&gt;removeControlInfo());
-    ctrl-&gt;<a class="code" href="class_i_p_control_info___base.html#a78e061aecfa0388abb94af81ac6d6db0">setProtocol</a>(<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70ae193d750e5a16d9ab14225311325dd59">IP_PROT_ICMP</a>);
-    <a class="code" href="class_i_c_m_p_message.html">ICMPMessage</a> *request = <span class="keyword">new</span> <a class="code" href="class_i_c_m_p_message.html">ICMPMessage</a>(msg-&gt;getName());
+    cGate *arrivalGate = msg-&gt;getArrivalGate();
+    <span class="keywordtype">int</span> i = arrivalGate-&gt;getIndex();
+    <a class="code" href="class_i_c_m_p.html#a3e8be16c02ca6292243bd8ab1b751ac4">pingMap</a>[msg-&gt;<a class="code" href="class_ping_payload.html#abe1bc827f2853b31074b3f2e572eb47a">getOriginatorId</a>()] = i;
+
+    <a class="code" href="class_i_pv4_control_info.html" title="Control information for sending/receiving packets over IPv4.">IPv4ControlInfo</a> *ctrl = check_and_cast&lt;<a class="code" href="class_i_pv4_control_info.html" title="Control information for sending/receiving packets over IPv4.">IPv4ControlInfo</a>*&gt;(msg-&gt;removeControlInfo());
+    ctrl-&gt;<a class="code" href="class_i_pv4_control_info___base.html#a6ddcce49c451a0fcc1149d8e6511e534">setProtocol</a>(<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70ae193d750e5a16d9ab14225311325dd59">IP_PROT_ICMP</a>);
+    <a class="code" href="class_i_c_m_p_message.html" title="Class generated from networklayer/ipv4/ICMPMessage.msg by opp_msgc.">ICMPMessage</a> *request = <span class="keyword">new</span> <a class="code" href="class_i_c_m_p_message.html" title="Class generated from networklayer/ipv4/ICMPMessage.msg by opp_msgc.">ICMPMessage</a>(msg-&gt;getName());
     request-&gt;<a class="code" href="class_i_c_m_p_message.html#a1c604219dd4c9a110bb37ab1ac8ae684">setType</a>(<a class="code" href="_i_c_m_p_message__m_8h.html#a58484b3a48e17f8f130c3c0f890d21b6a65c0b673722ac5aa7f38ee101a0a2e0a">ICMP_ECHO_REQUEST</a>);
     request-&gt;encapsulate(msg);
     request-&gt;setControlInfo(ctrl);
-    <a class="code" href="class_i_c_m_p.html#a5007b8ee0752c12784a94f896d09cf4a">sendToIP</a>(request);
+    <a class="code" href="class_i_c_m_p.html#a080f595f58e015588d4a1b5de613e4d8">sendToIP</a>(request);
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="aba71ad81ea6722c162a1d15f90202446"></a><!-- doxytag: member="ICMP::sendErrorMessage" ref="aba71ad81ea6722c162a1d15f90202446" args="(IPDatagram *datagram, ICMPType type, ICMPCode code)" -->
+<a class="anchor" id="a95961808a9894cb80ff27227e224c5c7"></a><!-- doxytag: member="ICMP::sendErrorMessage" ref="a95961808a9894cb80ff27227e224c5c7" args="(IPv4Datagram *datagram, ICMPType type, ICMPCode code)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_c_m_p.html#aba71ad81ea6722c162a1d15f90202446">ICMP::sendErrorMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_c_m_p.html#a95961808a9894cb80ff27227e224c5c7">ICMP::sendErrorMessage</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_i_p_datagram.html">IPDatagram</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_i_pv4_datagram.html">IPv4Datagram</a> *&#160;</td>
           <td class="paramname"><em>datagram</em>, </td>
         </tr>
         <tr>
@@ -347,13 +371,12 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This method can be called from other modules to send an <a class="el" href="class_i_c_m_p.html">ICMP</a> error packet in response to a received bogus packet. </p>
 
-<p>Definition at line <a class="el" href="_i_c_m_p_8cc_source.html#l00051">51</a> of file <a class="el" href="_i_c_m_p_8cc_source.html">ICMP.cc</a>.</p>
+<p>This method can be called from other modules to send an <a class="el" href="class_i_c_m_p.html" title="ICMP module.">ICMP</a> error packet in response to a received bogus packet. </p>
 
-<p>Referenced by <a class="el" href="_i_p_8cc_source.html#l00433">IP::fragmentAndSend()</a>, <a class="el" href="_ansa_i_p_8cc_source.html#l00038">AnsaIP::handlePacketFromNetwork()</a>, <a class="el" href="_i_p_8cc_source.html#l00098">IP::handlePacketFromNetwork()</a>, <a class="el" href="_i_p_frag_buf_8cc_source.html#l00102">IPFragBuf::purgeStaleFragments()</a>, <a class="el" href="_i_p_8cc_source.html#l00194">IP::routePacket()</a>, <a class="el" href="_i_p_8cc_source.html#l00560">IP::sendDatagramToOutput()</a>, and <a class="el" href="_i_c_m_p_8cc_source.html#l00123">sendErrorMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv4.html#a3ccbab12b811b30678adb9a2ba0b5f21">IPv4::fragmentAndSend()</a>, <a class="el" href="class_i_pv4.html#a4b8d584070c93264f1b27c71321cd661">IPv4::handlePacketFromNetwork()</a>, <a class="el" href="class_i_pv4_frag_buf.html#ae8a363910878098d0b0488bfe0230a54">IPv4FragBuf::purgeStaleFragments()</a>, <a class="el" href="class_i_pv4.html#a7a942fe999ff9b7ed961d6713215fc1c">IPv4::reassembleAndDeliver()</a>, <a class="el" href="class_i_pv4.html#abc66875e7ed57e0bab495ea533abef88">IPv4::routeUnicastPacket()</a>, <a class="el" href="class_i_c_m_p.html#a5b9aff1b481755d6b3bb01293c098e3d">sendErrorMessage()</a>, and <a class="el" href="class_manet_routing_base.html#a5f276fb1cb5981aad49d264133cd07d6">ManetRoutingBase::sendICMP()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    Enter_Method(<span class="stringliteral">&quot;sendErrorMessage(datagram, type=%d, code=%d)&quot;</span>, type, code);
+    Enter_Method(<span class="stringliteral">&quot;sendErrorMessage(datagram, type=%d, code=%d)&quot;</span>, <a class="code" href="dsr_8h.html#a8113b111c9adcbe8245570953727d60a">type</a>, code);
 
     <span class="comment">// get ownership</span>
     take(origDatagram);
@@ -369,7 +392,7 @@ Protected Attributes</h2></td></tr>
     <span class="comment">// do not reply with error message to error message</span>
     <span class="keywordflow">if</span> (origDatagram-&gt;getTransportProtocol() == <a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70ae193d750e5a16d9ab14225311325dd59">IP_PROT_ICMP</a>)
     {
-        <a class="code" href="class_i_c_m_p_message.html">ICMPMessage</a> *recICMPMsg = check_and_cast&lt;<a class="code" href="class_i_c_m_p_message.html">ICMPMessage</a> *&gt;(origDatagram-&gt;getEncapsulatedPacket());
+        <a class="code" href="class_i_c_m_p_message.html" title="Class generated from networklayer/ipv4/ICMPMessage.msg by opp_msgc.">ICMPMessage</a> *recICMPMsg = check_and_cast&lt;<a class="code" href="class_i_c_m_p_message.html" title="Class generated from networklayer/ipv4/ICMPMessage.msg by opp_msgc.">ICMPMessage</a> *&gt;(origDatagram-&gt;getEncapsulatedPacket());
         <span class="keywordflow">if</span> (recICMPMsg-&gt;<a class="code" href="class_i_c_m_p_message.html#a93a1643bfbdfe838cb8b26207b5d7673">getType</a>()&lt;128)
         {
             <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;ICMP error received -- do not reply to it&quot;</span> &lt;&lt; endl;
@@ -381,14 +404,14 @@ Protected Attributes</h2></td></tr>
     <span class="comment">// assemble a message name</span>
     <span class="keywordtype">char</span> msgname[32];
     <span class="keyword">static</span> <span class="keywordtype">long</span> ctr;
-    sprintf(msgname, <span class="stringliteral">&quot;ICMP-error-#%ld-type%d-code%d&quot;</span>, ++ctr, type, code);
+    sprintf(msgname, <span class="stringliteral">&quot;ICMP-error-#%ld-type%d-code%d&quot;</span>, ++ctr, <a class="code" href="dsr_8h.html#a8113b111c9adcbe8245570953727d60a">type</a>, code);
 
     <span class="comment">// debugging information</span>
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;sending ICMP error &quot;</span> &lt;&lt; msgname &lt;&lt; endl;
 
     <span class="comment">// create and send ICMP packet</span>
-    <a class="code" href="class_i_c_m_p_message.html">ICMPMessage</a> *errorMessage = <span class="keyword">new</span> <a class="code" href="class_i_c_m_p_message.html">ICMPMessage</a>(msgname);
-    errorMessage-&gt;<a class="code" href="class_i_c_m_p_message.html#a1c604219dd4c9a110bb37ab1ac8ae684">setType</a>(type);
+    <a class="code" href="class_i_c_m_p_message.html" title="Class generated from networklayer/ipv4/ICMPMessage.msg by opp_msgc.">ICMPMessage</a> *errorMessage = <span class="keyword">new</span> <a class="code" href="class_i_c_m_p_message.html" title="Class generated from networklayer/ipv4/ICMPMessage.msg by opp_msgc.">ICMPMessage</a>(msgname);
+    errorMessage-&gt;<a class="code" href="class_i_c_m_p_message.html#a1c604219dd4c9a110bb37ab1ac8ae684">setType</a>(<a class="code" href="dsr_8h.html#a8113b111c9adcbe8245570953727d60a">type</a>);
     errorMessage-&gt;<a class="code" href="class_i_c_m_p_message.html#ad5364b209a6ed5f938e0c9ea5f8ec9f7">setCode</a>(code);
     errorMessage-&gt;encapsulate(origDatagram);
 
@@ -408,10 +431,10 @@ Protected Attributes</h2></td></tr>
     <span class="comment">// process the ICMP message locally, right away</span>
     <span class="keywordflow">if</span> (origDatagram-&gt;getSrcAddress().isUnspecified())
     {
-        <span class="comment">// pretend it came from the IP layer</span>
-        <a class="code" href="class_i_p_control_info.html">IPControlInfo</a> *controlInfo = <span class="keyword">new</span> <a class="code" href="class_i_p_control_info.html">IPControlInfo</a>();
-        controlInfo-&gt;<a class="code" href="class_i_p_control_info___base.html#aa3ab93f45185a2567d84803fc39b5a60">setSrcAddr</a>(<a class="code" href="class_i_p_address.html#aee51aae522173d734b951daf03bbb38f" title="127.0.0.1">IPAddress::LOOPBACK_ADDRESS</a>); <span class="comment">// FIXME maybe use configured loopback address</span>
-        controlInfo-&gt;<a class="code" href="class_i_p_control_info___base.html#a78e061aecfa0388abb94af81ac6d6db0">setProtocol</a>(<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70ae193d750e5a16d9ab14225311325dd59">IP_PROT_ICMP</a>);
+        <span class="comment">// pretend it came from the IPv4 layer</span>
+        <a class="code" href="class_i_pv4_control_info.html" title="Control information for sending/receiving packets over IPv4.">IPv4ControlInfo</a> *controlInfo = <span class="keyword">new</span> <a class="code" href="class_i_pv4_control_info.html" title="Control information for sending/receiving packets over IPv4.">IPv4ControlInfo</a>();
+        controlInfo-&gt;<a class="code" href="class_i_pv4_control_info___base.html#a3d6ed870000e7aa80cb24ef2a2cdf34d">setSrcAddr</a>(<a class="code" href="class_i_pv4_address.html#a8baa7f4ed2deb9127cda51b06130276b" title="127.0.0.1">IPv4Address::LOOPBACK_ADDRESS</a>); <span class="comment">// FIXME maybe use configured loopback address</span>
+        controlInfo-&gt;<a class="code" href="class_i_pv4_control_info___base.html#a6ddcce49c451a0fcc1149d8e6511e534">setProtocol</a>(<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70ae193d750e5a16d9ab14225311325dd59">IP_PROT_ICMP</a>);
         errorMessage-&gt;setControlInfo(controlInfo);
 
         <span class="comment">// then process it locally</span>
@@ -419,18 +442,18 @@ Protected Attributes</h2></td></tr>
     }
     <span class="keywordflow">else</span>
     {
-        <a class="code" href="class_i_c_m_p.html#a5007b8ee0752c12784a94f896d09cf4a">sendToIP</a>(errorMessage, origDatagram-&gt;getSrcAddress());
+        <a class="code" href="class_i_c_m_p.html#a080f595f58e015588d4a1b5de613e4d8">sendToIP</a>(errorMessage, origDatagram-&gt;getSrcAddress());
     }
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a714ea1c38f64a0a53ae123b2c100df63"></a><!-- doxytag: member="ICMP::sendErrorMessage" ref="a714ea1c38f64a0a53ae123b2c100df63" args="(cPacket *transportPacket, IPControlInfo *ctrl, ICMPType type, ICMPCode code)" -->
+<a class="anchor" id="a5b9aff1b481755d6b3bb01293c098e3d"></a><!-- doxytag: member="ICMP::sendErrorMessage" ref="a5b9aff1b481755d6b3bb01293c098e3d" args="(cPacket *transportPacket, IPv4ControlInfo *ctrl, ICMPType type, ICMPCode code)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_c_m_p.html#aba71ad81ea6722c162a1d15f90202446">ICMP::sendErrorMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_c_m_p.html#a95961808a9894cb80ff27227e224c5c7">ICMP::sendErrorMessage</a> </td>
           <td>(</td>
           <td class="paramtype">cPacket *&#160;</td>
           <td class="paramname"><em>transportPacket</em>, </td>
@@ -438,7 +461,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_i_p_control_info.html">IPControlInfo</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_i_pv4_control_info.html">IPv4ControlInfo</a> *&#160;</td>
           <td class="paramname"><em>ctrl</em>, </td>
         </tr>
         <tr>
@@ -461,27 +484,27 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This method can be called from other modules to send an <a class="el" href="class_i_c_m_p.html">ICMP</a> error packet in response to a received bogus packet from the transport layer (like <a class="el" href="class_u_d_p.html">UDP</a>). The <a class="el" href="class_i_c_m_p.html">ICMP</a> error packet needs to include (part of) the original <a class="el" href="class_i_p.html">IP</a> datagram, so this function will wrap back the transport packet into the <a class="el" href="class_i_p.html">IP</a> datagram based on its <a class="el" href="class_i_p_control_info.html">IPControlInfo</a>. </p>
 
-<p>Definition at line <a class="el" href="_i_c_m_p_8cc_source.html#l00123">123</a> of file <a class="el" href="_i_c_m_p_8cc_source.html">ICMP.cc</a>.</p>
+<p>This method can be called from other modules to send an <a class="el" href="class_i_c_m_p.html" title="ICMP module.">ICMP</a> error packet in response to a received bogus packet from the transport layer (like <a class="el" href="class_u_d_p.html" title="Implements the UDP protocol: encapsulates/decapsulates user data into/from UDP.">UDP</a>). </p>
+<p>The <a class="el" href="class_i_c_m_p.html" title="ICMP module.">ICMP</a> error packet needs to include (part of) the original <a class="el" href="class_i_pv4.html" title="Implements the IPv4 protocol.">IPv4</a> datagram, so this function will wrap back the transport packet into the <a class="el" href="class_i_pv4.html" title="Implements the IPv4 protocol.">IPv4</a> datagram based on its <a class="el" href="class_i_pv4_control_info.html" title="Control information for sending/receiving packets over IPv4.">IPv4ControlInfo</a>. </p>
 <div class="fragment"><pre class="fragment">{
-    Enter_Method(<span class="stringliteral">&quot;sendErrorMessage(transportPacket, ctrl, type=%d, code=%d)&quot;</span>, type, code);
+    Enter_Method(<span class="stringliteral">&quot;sendErrorMessage(transportPacket, ctrl, type=%d, code=%d)&quot;</span>, <a class="code" href="dsr_8h.html#a8113b111c9adcbe8245570953727d60a">type</a>, code);
 
-    <a class="code" href="class_i_p_datagram.html">IPDatagram</a> *datagram = ctrl-&gt;<a class="code" href="class_i_p_control_info.html#a15838ba067f5c6ffd1e0a67114b4ddf2">removeOrigDatagram</a>();
+    <a class="code" href="class_i_pv4_datagram.html" title="Represents an IPv4 datagram.">IPv4Datagram</a> *datagram = ctrl-&gt;<a class="code" href="class_i_pv4_control_info.html#a5b8fcb377ff601c88c6429fe17cd9b8b">removeOrigDatagram</a>();
     take(transportPacket);
     take(datagram);
     datagram-&gt;encapsulate(transportPacket);
-    <a class="code" href="class_i_c_m_p.html#aba71ad81ea6722c162a1d15f90202446">sendErrorMessage</a>(datagram, type, code);
+    <a class="code" href="class_i_c_m_p.html#a95961808a9894cb80ff27227e224c5c7" title="This method can be called from other modules to send an ICMP error packet in response to a received b...">sendErrorMessage</a>(datagram, <a class="code" href="dsr_8h.html#a8113b111c9adcbe8245570953727d60a">type</a>, code);
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a5007b8ee0752c12784a94f896d09cf4a"></a><!-- doxytag: member="ICMP::sendToIP" ref="a5007b8ee0752c12784a94f896d09cf4a" args="(ICMPMessage *, const IPAddress &amp;dest)" -->
+<a class="anchor" id="a080f595f58e015588d4a1b5de613e4d8"></a><!-- doxytag: member="ICMP::sendToIP" ref="a080f595f58e015588d4a1b5de613e4d8" args="(ICMPMessage *, const IPv4Address &amp;dest)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_c_m_p.html#a5007b8ee0752c12784a94f896d09cf4a">ICMP::sendToIP</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_c_m_p.html#a080f595f58e015588d4a1b5de613e4d8">ICMP::sendToIP</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_c_m_p_message.html">ICMPMessage</a> *&#160;</td>
           <td class="paramname"><em>msg</em>, </td>
@@ -489,7 +512,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="class_i_p_address.html">IPAddress</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_i_pv4_address.html">IPv4Address</a> &amp;&#160;</td>
           <td class="paramname"><em>dest</em>&#160;</td>
         </tr>
         <tr>
@@ -501,13 +524,11 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_c_m_p_8cc_source.html#l00210">210</a> of file <a class="el" href="_i_c_m_p_8cc_source.html">ICMP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_c_m_p_8cc_source.html#l00172">processEchoRequest()</a>, <a class="el" href="_i_c_m_p_8cc_source.html#l00199">sendEchoRequest()</a>, and <a class="el" href="_i_c_m_p_8cc_source.html#l00051">sendErrorMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_c_m_p.html#a629e11d00ac9f4cd014c58bbc8440266">processEchoRequest()</a>, <a class="el" href="class_i_c_m_p.html#a42a10e6629966a343baaa9dc73d3f5b6">sendEchoRequest()</a>, and <a class="el" href="class_i_c_m_p.html#a95961808a9894cb80ff27227e224c5c7">sendErrorMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_i_p_control_info.html">IPControlInfo</a> *controlInfo = <span class="keyword">new</span> <a class="code" href="class_i_p_control_info.html">IPControlInfo</a>();
-    controlInfo-&gt;<a class="code" href="class_i_p_control_info___base.html#a9966e4ad4c21b7cb8fea36d19752af54">setDestAddr</a>(dest);
-    controlInfo-&gt;<a class="code" href="class_i_p_control_info___base.html#a78e061aecfa0388abb94af81ac6d6db0">setProtocol</a>(<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70ae193d750e5a16d9ab14225311325dd59">IP_PROT_ICMP</a>);
+    <a class="code" href="class_i_pv4_control_info.html" title="Control information for sending/receiving packets over IPv4.">IPv4ControlInfo</a> *controlInfo = <span class="keyword">new</span> <a class="code" href="class_i_pv4_control_info.html" title="Control information for sending/receiving packets over IPv4.">IPv4ControlInfo</a>();
+    controlInfo-&gt;<a class="code" href="class_i_pv4_control_info___base.html#a51ff5ef6365b560939f817cb9ed22a05">setDestAddr</a>(dest);
+    controlInfo-&gt;<a class="code" href="class_i_pv4_control_info___base.html#a6ddcce49c451a0fcc1149d8e6511e534">setProtocol</a>(<a class="code" href="_i_p_protocol_id__m_8h.html#a4297c2f400ba53cf6866e6d45bc81b70ae193d750e5a16d9ab14225311325dd59">IP_PROT_ICMP</a>);
     msg-&gt;setControlInfo(controlInfo);
 
     send(msg, <span class="stringliteral">&quot;sendOut&quot;</span>);
@@ -520,7 +541,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_c_m_p.html#a5007b8ee0752c12784a94f896d09cf4a">ICMP::sendToIP</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_c_m_p.html#a080f595f58e015588d4a1b5de613e4d8">ICMP::sendToIP</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_c_m_p_message.html">ICMPMessage</a> *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -529,16 +550,29 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_c_m_p_8cc_source.html#l00220">220</a> of file <a class="el" href="_i_c_m_p_8cc_source.html">ICMP.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="comment">// assumes IPControlInfo is already attached</span>
+    <span class="comment">// assumes IPv4ControlInfo is already attached</span>
     send(msg, <span class="stringliteral">&quot;sendOut&quot;</span>);
 }
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a3e8be16c02ca6292243bd8ab1b751ac4"></a><!-- doxytag: member="ICMP::pingMap" ref="a3e8be16c02ca6292243bd8ab1b751ac4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_c_m_p.html#a10abb3edad99017437777dd989ae4f3a">PingMap</a> <a class="el" href="class_i_c_m_p.html#a3e8be16c02ca6292243bd8ab1b751ac4">ICMP::pingMap</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_i_c_m_p.html#a715d4731f2e111f653c53e7dcf8d8810">processEchoReply()</a>, and <a class="el" href="class_i_c_m_p.html#a42a10e6629966a343baaa9dc73d3f5b6">sendEchoRequest()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a292095d944ce5a9313b0acac432f133a"></a><!-- doxytag: member="ICMP::routingTableAccess" ref="a292095d944ce5a9313b0acac432f133a" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -550,13 +584,11 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_c_m_p_8h_source.html#l00038">38</a> of file <a class="el" href="_i_c_m_p_8h_source.html">ICMP.h</a>.</p>
-
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_i_c_m_p_8h_source.html">ICMP.h</a></li>
-<li><a class="el" href="_i_c_m_p_8cc_source.html">ICMP.cc</a></li>
+<li><a class="el" href="_i_c_m_p_8h.html">ICMP.h</a></li>
+<li><a class="el" href="_i_c_m_p_8cc.html">ICMP.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -564,7 +596,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_i_c_m_p.html">ICMP</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:47 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:24 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

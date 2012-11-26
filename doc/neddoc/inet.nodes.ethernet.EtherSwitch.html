@@ -9,8 +9,38 @@
 <p>Model of an Ethernet switch.</p>
 <p>The duplexChannel attributes of the MACs must be set according to the
 medium connected to the port; if collisions are possible (it's a bus or hub)
-it must be set to false, otherwise it can be set to true.</p>
+it must be set to false, otherwise it can be set to true.
+By default used half duples CSMA/CD mac</p>
 <p>This model does not contain the spanning tree algorithm.</p>
+<img src="inet.nodes.ethernet.EtherSwitch-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.linklayer.IMACRelayUnit.html" title="IMACRelayUnit" alt="IMACRelayUnit" coords="177,70,227,129">
+<area shape="rect" href="inet.linklayer.IEtherMAC.html" title="IEtherMAC" alt="IEtherMAC" coords="22,170,123,229">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.nodes.ethernet.EtherSwitch-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.nodes.ethernet.EtherSwitch.html" title="Compound Module EtherSwitch" alt="" coords="549,83,643,111">
+<area shape="rect" id="node2" href="inet.linklayer.IEtherMAC.html" title="Module Interface IEtherMAC" alt="" coords="492,161,577,189">
+<area shape="rect" id="node4" href="inet.linklayer.IMACRelayUnit.html" title="Module Interface IMACRelayUnit" alt="" coords="601,161,716,189">
+<area shape="rect" id="node6" href="inet.examples.ethernet.arptest.ARPTest.html" title="Network ARPTest" alt="" coords="5,6,80,34">
+<area shape="rect" id="node8" href="inet.examples.bgpv4.BGPCompleteTest.BGPTest.html" title="Network BGPTest" alt="" coords="104,6,179,34">
+<area shape="rect" id="node13" href="inet.examples.diffserv.simple_.DiffservNetwork.html" title="Network DiffservNetwork" alt="" coords="203,6,320,34">
+<area shape="rect" id="node15" href="inet.examples.inet.ipv4largenet.IPv4LargeLAN.html" title="Compound Module IPv4LargeLAN" alt="" coords="344,6,451,34">
+<area shape="rect" id="node17" href="inet.examples.inet.ipv4largenet.IPv4MediumLAN.html" title="Compound Module IPv4MediumLAN" alt="" coords="475,6,595,34">
+<area shape="rect" id="node19" href="inet.examples.ethernet.lans.LargeLAN.html" title="Compound Module LargeLAN" alt="" coords="619,6,699,34">
+<area shape="rect" id="node21" href="inet.examples.ethernet.lans.LargeNet.html" title="Network LargeNet" alt="" coords="723,6,797,34">
+<area shape="rect" id="node23" href="inet.examples.ethernet.lans.MediumLAN.html" title="Compound Module MediumLAN" alt="" coords="821,6,915,34">
+<area shape="rect" id="node25" href="inet.examples.ethernet.lans.MixedLAN.html" title="Network MixedLAN" alt="" coords="939,6,1021,34">
+<area shape="rect" id="node27" href="inet.examples.ethernet.lans.SwitchedLAN.html" title="Network SwitchedLAN" alt="" coords="1045,6,1147,34">
+<area shape="rect" id="node29" href="inet.examples.emulation.traceroute.Traceroute.html" title="Network Traceroute" alt="" coords="1171,6,1253,34">
+<area shape="rect" id="node31" href="inet.examples.inet.broadcast.UDPBroadcastNetwork.html" title="Network UDPBroadcastNetwork" alt="" coords="1277,6,1435,34">
+<area shape="rect" id="node33" href="inet.examples.dhcp.eth.WiredNetWithDHCP.html" title="Network WiredNetWithDHCP" alt="" coords="1459,6,1600,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.nodes.ethernet.EtherSwitch-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.nodes.ethernet.EtherSwitch.html" title="Compound Module EtherSwitch" alt="" coords="5,6,99,34">
+</map>
 <h3 class="subtitle">Used in compound modules:</h3>
 <table class="typestable">
    <tr>
@@ -20,6 +50,33 @@ it must be set to false, otherwise it can be set to true.</p>
    </tr>
 <tr>
    <td>
+<a href="inet.examples.inet.ipv4largenet.IPv4LargeLAN.html">IPv4LargeLAN</a>
+   </td>
+   <td>
+<i>compound&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Several hosts and an Ethernet hub on a switch. One port of the hub
+connect to a 10Base2 segment.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.inet.ipv4largenet.IPv4MediumLAN.html">IPv4MediumLAN</a>
+   </td>
+   <td>
+<i>compound&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Several hosts and a router on an Ethernet hub and a switch</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
 <a href="inet.examples.ethernet.lans.LargeLAN.html">LargeLAN</a>
    </td>
    <td>
@@ -27,8 +84,8 @@ it must be set to false, otherwise it can be set to true.</p>
    </td>
    <td>
 
-<p>Several hosts and an Ethernet hub on a switch. <a href="inet.examples.ansaExamples.switchtest.One.html">One</a> port of the hub
-connect to a 10Base2 segment.</p>
+<p>Several hosts and an Ethernet hub on a switch. One port of the hub
+connect to a 10Base2 segment. Part of <a href="inet.examples.ethernet.lans.LargeNet.html">LargeNet</a>.</p>
 
    </td>
 </tr>
@@ -41,7 +98,7 @@ connect to a 10Base2 segment.</p>
    </td>
    <td>
 
-<p>Several hosts and an Ethernet hub on a switch</p>
+<p>Several hosts and an Ethernet hub on a switch; part of <a href="inet.examples.ethernet.lans.LargeNet.html">LargeNet</a>.</p>
 
    </td>
 </tr>
@@ -66,7 +123,7 @@ connect to a 10Base2 segment.</p>
 </tr>
 <tr>
    <td>
-<a href="inet.examples.ansaExamples.cfg6.cfg6.html">cfg6</a>
+<a href="inet.examples.bgpv4.BGP2RoutersInAS.BGPTest.html">BGPTest</a>
    </td>
    <td>
 <i>network</i>
@@ -77,7 +134,7 @@ connect to a 10Base2 segment.</p>
 </tr>
 <tr>
    <td>
-<a href="inet.examples.ansaExamples.IPv6Ospf.IPv6Ospf.html">IPv6Ospf</a>
+<a href="inet.examples.bgpv4.BGP3Routers.BGPTest.html">BGPTest</a>
    </td>
    <td>
 <i>network</i>
@@ -88,7 +145,7 @@ connect to a 10Base2 segment.</p>
 </tr>
 <tr>
    <td>
-<a href="inet.examples.ansaExamples.IPv6StaticRouting.IPv6StaticRouting.html">IPv6StaticRouting</a>
+<a href="inet.examples.bgpv4.BGPandOSPF.BGPTest.html">BGPTest</a>
    </td>
    <td>
 <i>network</i>
@@ -99,7 +156,7 @@ connect to a 10Base2 segment.</p>
 </tr>
 <tr>
    <td>
-<a href="inet.examples.ansaExamples.ISIS.ISIStest1.html">ISIStest1</a>
+<a href="inet.examples.bgpv4.BGPCompleteTest.BGPTest.html">BGPTest</a>
    </td>
    <td>
 <i>network</i>
@@ -110,13 +167,16 @@ connect to a 10Base2 segment.</p>
 </tr>
 <tr>
    <td>
-<a href="inet.examples.ansaExamples.ISIS2.ISIStest2.html">ISIStest2</a>
+<a href="inet.examples.diffserv.simple_.DiffservNetwork.html">DiffservNetwork</a>
    </td>
    <td>
 <i>network</i>
    </td>
    <td>
-<i>(no description)</i>
+
+<p>This network contains a router with an 10Mbps Ethernet interface,
+and with a 128kbps dialup connection to a server.</p>
+
    </td>
 </tr>
 <tr>
@@ -148,72 +208,6 @@ connect to a 10Base2 segment.</p>
 </tr>
 <tr>
    <td>
-<a href="inet.examples.ansaExamples.routing.ospfAreas.OSPFAreas.html">OSPFAreas</a>
-   </td>
-   <td>
-<i>network</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.examples.ansaExamples.PingDualStack.PingDualStack.html">PingDualStack</a>
-   </td>
-   <td>
-<i>network</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.examples.ansaExamples.routing.redistribution.Redistribution.html">Redistribution</a>
-   </td>
-   <td>
-<i>network</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.examples.ansaExamples.routing.rip.RIP.html">RIP</a>
-   </td>
-   <td>
-<i>network</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.examples.ansaExamples.routing.ripACL.RIPACL.html">RIPACL</a>
-   </td>
-   <td>
-<i>network</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.examples.ansaExamples.routing.ripGen.RIPGEN.html">RIPGEN</a>
-   </td>
-   <td>
-<i>network</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
 <a href="inet.examples.ethernet.lans.SwitchedLAN.html">SwitchedLAN</a>
    </td>
    <td>
@@ -236,6 +230,28 @@ connect to a 10Base2 segment.</p>
 <i>(no description)</i>
    </td>
 </tr>
+<tr>
+   <td>
+<a href="inet.examples.inet.broadcast.UDPBroadcastNetwork.html">UDPBroadcastNetwork</a>
+   </td>
+   <td>
+<i>network</i>
+   </td>
+   <td>
+<i>(no description)</i>
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.dhcp.eth.WiredNetWithDHCP.html">WiredNetWithDHCP</a>
+   </td>
+   <td>
+<i>network</i>
+   </td>
+   <td>
+<i>(no description)</i>
+   </td>
+</tr>
 </table>
 <h3 class="subtitle">Parameters:</h3>
 <table class="paramstable">
@@ -246,14 +262,34 @@ connect to a 10Base2 segment.</p>
       <th class="description">Description</th>
    </tr>
 <tr class="local">
+   <td>csmacdSupport</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>by default use CSMA/CD</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>macType</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>csmacdSupport ? "EtherMAC" : "EtherMACFullDuplex"</td>
+   <td>
+<p><a href="inet.linklayer.ethernet.EtherMAC.html">EtherMAC</a> or <a href="inet.linklayer.ethernet.EtherMACFullDuplex.html">EtherMACFullDuplex</a></p>
+   </td>
+</tr>
+<tr class="local">
    <td>relayUnitType</td>
    <td>
       <i>string</i>
    </td>
    <td>"MACRelayUnitNP"</td>
    <td>
-<p>type of the <a href="inet.linklayer.etherswitch.MACRelayUnit.html">MACRelayUnit</a>; currently possible
-values are <a href="inet.linklayer.etherswitch.MACRelayUnitNP.html">MACRelayUnitNP</a> and <a href="inet.linklayer.etherswitch.MACRelayUnitPP.html">MACRelayUnitPP</a></p>
+<p>type of the <a href="inet.linklayer.IMACRelayUnit.html">IMACRelayUnit</a>; currently possible
+values are <a href="inet.linklayer.ethernet.switch.MACRelayUnitNP.html">MACRelayUnitNP</a> and <a href="inet.linklayer.ethernet.switch.MACRelayUnitPP.html">MACRelayUnitPP</a></p>
    </td>
 </tr>
 </table>
@@ -303,7 +339,7 @@ values are <a href="inet.linklayer.etherswitch.MACRelayUnitNP.html">MACRelayUnit
       <th class="description">Description</th>
    </tr>
 <tr>
-   <td><a href="inet.linklayer.etherswitch.MACRelayUnit.html">relayUnit</a>.addressTableFile</td>
+   <td><a href="inet.linklayer.IMACRelayUnit.html">relayUnit</a>.addressTableFile</td>
    <td>
       <i>string</i>
    </td>
@@ -313,7 +349,7 @@ values are <a href="inet.linklayer.etherswitch.MACRelayUnitNP.html">MACRelayUnit
    </td>
 </tr>
 <tr>
-   <td><a href="inet.linklayer.etherswitch.MACRelayUnit.html">relayUnit</a>.addressTableSize</td>
+   <td><a href="inet.linklayer.IMACRelayUnit.html">relayUnit</a>.addressTableSize</td>
    <td>
       <i>int</i>
    </td>
@@ -323,7 +359,7 @@ values are <a href="inet.linklayer.etherswitch.MACRelayUnitNP.html">MACRelayUnit
    </td>
 </tr>
 <tr>
-   <td><a href="inet.linklayer.etherswitch.MACRelayUnit.html">relayUnit</a>.agingTime</td>
+   <td><a href="inet.linklayer.IMACRelayUnit.html">relayUnit</a>.agingTime</td>
    <td>
       <i>double</i>
    </td>
@@ -334,11 +370,11 @@ values are <a href="inet.linklayer.etherswitch.MACRelayUnitNP.html">MACRelayUnit
    </td>
 </tr>
 <tr>
-   <td><a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
+   <td><a href="inet.linklayer.IEtherMAC.html">mac</a>.address</td>
    <td>
       <i>string</i>
    </td>
-   <td>"auto"</td>
+   <td></td>
    <td>
 <p>MAC address as hex string (12 hex digits), or
 "auto". "auto" values will be replaced by
@@ -346,47 +382,32 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>100Mbps</td>
-   <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.linklayer.IEtherMAC.html">mac</a>.duplexMode</td>
    <td>
       <i>bool</i>
    </td>
-   <td>true</td>
+   <td></td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>selects full-duplex (true) or half-duplex (false) operation</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txQueueLimit</td>
+   <td><a href="inet.linklayer.IEtherMAC.html">mac</a>.txQueueLimit</td>
    <td>
       <i>int</i>
    </td>
-   <td>1000</td>
+   <td></td>
    <td>
 <p>maximum number of frames queued up for transmission;
 additional frames are dropped. Only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
+   <td><a href="inet.linklayer.IEtherMAC.html">mac</a>.mtu</td>
    <td>
       <i>int</i>
    </td>
-   <td>1500</td>
+   <td></td>
    <td>   </td>
 </tr>
 </table>
@@ -397,6 +418,7 @@ additional frames are dropped. Only used if queueModule==""</p>
 // The duplexChannel attributes of the MACs must be set according to the
 // medium connected to the port; if collisions are possible (it's a bus or hub)
 // it must be set to false, otherwise it can be set to true.
+// By default used half duples CSMA/CD mac
 //
 // This model does not contain the spanning tree algorithm.
 //
@@ -406,23 +428,25 @@ additional frames are dropped. Only used if queueModule==""</p>
         </span><span style="color: #000000; font-weight: bold; ">@node</span><span style="color: #000000; ">();
         </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">node</span><span style="color: #000000; ">,</span><span style="color: #000000; ">ethernet</span><span style="color: #000000; ">-</span><span style="color: #000000; ">node</span><span style="color: #000000; ">);
         </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=device/switch&quot;</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">relayUnitType</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;MACRelayUnitNP&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// type of the MACRelayUnit; currently possible
-</span><span style="color: #000000; ">                                                          </span><span style="color: #808080; font-style: italic; ">// values are MACRelayUnitNP and MACRelayUnitPP
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">csmacdSupport</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">true</span><span style="color: #000000; ">);  </span><span style="color: #808080; font-style: italic; ">// by default use CSMA/CD 
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">macType</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #000000; ">csmacdSupport</span><span style="color: #000000; "> ? </span><span style="color: #008000; ">&quot;EtherMAC&quot;</span><span style="color: #000000; "> : </span><span style="color: #008000; ">&quot;EtherMACFullDuplex&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// ~EtherMAC or ~EtherMACFullDuplex
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">relayUnitType</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;MACRelayUnitNP&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// type of the ~IMACRelayUnit; currently possible
+</span><span style="color: #000000; ">                                                          </span><span style="color: #808080; font-style: italic; ">// values are ~MACRelayUnitNP and ~MACRelayUnitPP
 </span><span style="color: #000000; ">    </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">inout</span><span style="color: #000000; "> </span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">[] </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">EtherFrame</span><span style="color: #000000; ">-</span><span style="color: #000000; ">conn</span><span style="color: #000000; ">);
     </span><span style="color: #800000; font-weight: bold; ">submodules</span><span style="color: #000000; ">:
-        </span><span style="color: #000000; ">relayUnit</span><span style="color: #000000; ">: &lt;</span><span style="color: #000000; ">relayUnitType</span><span style="color: #000000; ">&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #000000; "> </span><span style="color: #000000; ">MACRelayUnit</span><span style="color: #000000; "> {
+        </span><span style="color: #000000; ">relayUnit</span><span style="color: #000000; ">: &lt;</span><span style="color: #000000; ">relayUnitType</span><span style="color: #000000; ">&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #000000; "> </span><span style="color: #000000; ">IMACRelayUnit</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
                 </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=200,50&quot;</span><span style="color: #000000; ">);
             </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
                 </span><span style="color: #000000; ">lowerLayerIn</span><span style="color: #000000; ">[</span><span style="color: #800000; font-weight: bold; ">sizeof</span><span style="color: #000000; ">(</span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">)];
                 </span><span style="color: #000000; ">lowerLayerOut</span><span style="color: #000000; ">[</span><span style="color: #800000; font-weight: bold; ">sizeof</span><span style="color: #000000; ">(</span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">)];
         }
-        </span><span style="color: #000000; ">mac</span><span style="color: #000000; ">[</span><span style="color: #800000; font-weight: bold; ">sizeof</span><span style="color: #000000; ">(</span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">)]: </span><span style="color: #000000; ">EtherMAC</span><span style="color: #000000; "> {
+        </span><span style="color: #000000; ">mac</span><span style="color: #000000; ">[</span><span style="color: #800000; font-weight: bold; ">sizeof</span><span style="color: #000000; ">(</span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">)]: &lt;</span><span style="color: #000000; ">macType</span><span style="color: #000000; ">&gt; </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #000000; "> </span><span style="color: #000000; ">IEtherMAC</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
                 </span><span style="color: #000000; ">promiscuous</span><span style="color: #000000; "> = </span><span style="color: #008000; ">true</span><span style="color: #000000; ">;
                 </span><span style="color: #000000; ">queueModule</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">;
-                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=70,150,row;q=queue&quot;</span><span style="color: #000000; ">);
+                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=70,150,row;q=txQueue&quot;</span><span style="color: #000000; ">);
         }
     </span><span style="color: #800000; font-weight: bold; ">connections</span><span style="color: #000000; ">:
         </span><span style="color: #800000; font-weight: bold; ">for</span><span style="color: #000000; "> </span><span style="color: #000000; ">i</span><span style="color: #000000; ">=</span><span style="color: #008000; ">0</span><span style="color: #000000; ">..</span><span style="color: #800000; font-weight: bold; ">sizeof</span><span style="color: #000000; ">(</span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">)-</span><span style="color: #008000; ">1</span><span style="color: #000000; "> {
@@ -431,8 +455,6 @@ additional frames are dropped. Only used if queueModule==""</p>
             </span><span style="color: #000000; ">mac</span><span style="color: #000000; ">[</span><span style="color: #000000; ">i</span><span style="color: #000000; ">].</span><span style="color: #000000; ">phys</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">[</span><span style="color: #000000; ">i</span><span style="color: #000000; ">];
         }
 }
-
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

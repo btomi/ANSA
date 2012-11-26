@@ -83,15 +83,18 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="TelnetApp" --><!-- doxytag: inherits="TCPGenericCliAppBase" -->
-<p><code>#include &lt;<a class="el" href="_telnet_app_8h_source.html">TelnetApp.h</a>&gt;</code></p>
+<p>An example Telnet client application.  
+ <a href="class_telnet_app.html#details">More...</a></p>
+
+<p><code>#include &lt;TelnetApp.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TelnetApp:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_telnet_app.png" usemap="#TelnetApp_map" alt=""/>
   <map id="TelnetApp_map" name="TelnetApp_map">
-<area href="class_t_c_p_generic_cli_app_base.html" alt="TCPGenericCliAppBase" shape="rect" coords="0,56,179,80"/>
-<area href="class_t_c_p_socket_1_1_callback_interface.html" alt="TCPSocket::CallbackInterface" shape="rect" coords="0,0,179,24"/>
+<area href="class_t_c_p_generic_cli_app_base.html" title="Base class for clients app for TCP-based request-reply protocols or apps." alt="TCPGenericCliAppBase" shape="rect" coords="0,56,179,80"/>
+<area href="class_t_c_p_socket_1_1_callback_interface.html" title="Abstract base class for your callback objects." alt="TCPSocket::CallbackInterface" shape="rect" coords="0,0,179,24"/>
 </map>
  </div></div>
 
@@ -103,22 +106,30 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telnet_app.html#a34534b6dda349f7e80f2cf2552d2194d">~TelnetApp</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telnet_app.html#a9aad8abbf28e8d601bcb2d96782734b0">initialize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telnet_app.html#adc72aea793ce93513afef058c4e6471d">handleTimer</a> (cMessage *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telnet_app.html#a1b320cd9262367d60f65bf8067f80076">socketEstablished</a> (int connId, void *yourPtr)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telnet_app.html#aa8970c8031fce975f916df35f8db4ec3">socketDataArrived</a> (int connId, void *yourPtr, cPacket *msg, bool urgent)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telnet_app.html#a6118600399f307b07f13c4b7a35507ba">socketClosed</a> (int connId, void *yourPtr)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telnet_app.html#abc753928be72e7be027401bc74345f9e">socketFailure</a> (int connId, void *yourPtr, int code)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telnet_app.html#aa6435a3f447d7fac579ccf8049728dec">initialize</a> (int stage)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefined <a class="el" href="class_telnet_app.html#aa6435a3f447d7fac579ccf8049728dec" title="Redefined initialize(int stage).">initialize(int stage)</a>.  <a href="#aa6435a3f447d7fac579ccf8049728dec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telnet_app.html#adc72aea793ce93513afef058c4e6471d">handleTimer</a> (cMessage *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefined.  <a href="#adc72aea793ce93513afef058c4e6471d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telnet_app.html#a1b320cd9262367d60f65bf8067f80076">socketEstablished</a> (int connId, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *yourPtr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefined.  <a href="#a1b320cd9262367d60f65bf8067f80076"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telnet_app.html#aa8970c8031fce975f916df35f8db4ec3">socketDataArrived</a> (int connId, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *yourPtr, cPacket *msg, bool urgent)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefined.  <a href="#aa8970c8031fce975f916df35f8db4ec3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telnet_app.html#a6118600399f307b07f13c4b7a35507ba">socketClosed</a> (int connId, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *yourPtr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefined to start another session after a delay.  <a href="#a6118600399f307b07f13c4b7a35507ba"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telnet_app.html#abc753928be72e7be027401bc74345f9e">socketFailure</a> (int connId, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *yourPtr, int code)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefined to reconnect after a delay.  <a href="#abc753928be72e7be027401bc74345f9e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telnet_app.html#a3556544153f208ba5f39923aa5842068">checkedScheduleAt</a> (simtime_t t, cMessage *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">schedules msg only if t &lt; stopTime  <a href="#a3556544153f208ba5f39923aa5842068"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">cMessage *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telnet_app.html#adf9e5e3acba3fe595db116ab2d28e803">numLinesToType</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telnet_app.html#ae1c75eafd550d2a2ca5bf5724f10d47b">numCharsToType</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">simtime_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_telnet_app.html#a360f14bd40e16f6347fe5ed2f8cc762b">stopTime</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>An example Telnet client application. The server app should be <a class="el" href="class_t_c_p_generic_srv_app.html">TCPGenericSrvApp</a>. </p>
-
-<p>Definition at line <a class="el" href="_telnet_app_8h_source.html#l00023">23</a> of file <a class="el" href="_telnet_app_8h_source.html">TelnetApp.h</a>.</p>
+<div class="textblock"><p>An example Telnet client application. </p>
+<p>The server app should be <a class="el" href="class_t_c_p_generic_srv_app.html" title="Generic server application.">TCPGenericSrvApp</a>. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a12ea522a06302cbf7bc1e8a7ee83e5e5"></a><!-- doxytag: member="TelnetApp::TelnetApp" ref="a12ea522a06302cbf7bc1e8a7ee83e5e5" args="()" -->
 <div class="memitem">
@@ -133,10 +144,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_telnet_app_8cc_source.html#l00025">25</a> of file <a class="el" href="_telnet_app_8cc_source.html">TelnetApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a> = NULL;
+    <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
 }
 </pre></div>
 </div>
@@ -154,8 +163,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_telnet_app_8cc_source.html#l00030">30</a> of file <a class="el" href="_telnet_app_8cc_source.html">TelnetApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     cancelAndDelete(<a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a>);
 }
@@ -163,12 +170,48 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a3556544153f208ba5f39923aa5842068"></a><!-- doxytag: member="TelnetApp::checkedScheduleAt" ref="a3556544153f208ba5f39923aa5842068" args="(simtime_t t, cMessage *msg)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="class_telnet_app.html#a3556544153f208ba5f39923aa5842068">TelnetApp::checkedScheduleAt</a> </td>
+          <td>(</td>
+          <td class="paramtype">simtime_t&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cMessage *&#160;</td>
+          <td class="paramname"><em>msg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>schedules msg only if t &lt; stopTime </p>
+
+<p>Referenced by <a class="el" href="class_telnet_app.html#adc72aea793ce93513afef058c4e6471d">handleTimer()</a>, <a class="el" href="class_telnet_app.html#a6118600399f307b07f13c4b7a35507ba">socketClosed()</a>, <a class="el" href="class_telnet_app.html#aa8970c8031fce975f916df35f8db4ec3">socketDataArrived()</a>, <a class="el" href="class_telnet_app.html#a1b320cd9262367d60f65bf8067f80076">socketEstablished()</a>, and <a class="el" href="class_telnet_app.html#abc753928be72e7be027401bc74345f9e">socketFailure()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> (<a class="code" href="class_telnet_app.html#a360f14bd40e16f6347fe5ed2f8cc762b">stopTime</a> == 0 || t &lt; <a class="code" href="class_telnet_app.html#a360f14bd40e16f6347fe5ed2f8cc762b">stopTime</a>)
+        <span class="keywordflow">return</span> scheduleAt(t, msg);
+    <span class="keywordflow">return</span> 0;
+}
+</pre></div>
+</div>
+</div>
 <a class="anchor" id="adc72aea793ce93513afef058c4e6471d"></a><!-- doxytag: member="TelnetApp::handleTimer" ref="adc72aea793ce93513afef058c4e6471d" args="(cMessage *msg)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_telnet_app.html#adc72aea793ce93513afef058c4e6471d">TelnetApp::handleTimer</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_telnet_app.html#adc72aea793ce93513afef058c4e6471d">TelnetApp::handleTimer</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -177,26 +220,25 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Redefined. </p>
 
 <p>Implements <a class="el" href="class_t_c_p_generic_cli_app_base.html#a420e64965be7c708a427de4061a49689">TCPGenericCliAppBase</a>.</p>
-
-<p>Definition at line <a class="el" href="_telnet_app_8cc_source.html#l00049">49</a> of file <a class="el" href="_telnet_app_8cc_source.html">TelnetApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">switch</span> (msg-&gt;getKind())
     {
         <span class="keywordflow">case</span> <a class="code" href="_telnet_app_8cc.html#a1d141ebad9d3bb3992eddbc0f9f3dc56">MSGKIND_CONNECT</a>:
             <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;user fires up telnet program\n&quot;</span>;
-            <a class="code" href="class_t_c_p_generic_cli_app_base.html#a3ec28620ffe01bc3e81af1ae85b3522f">connect</a>();
+            <a class="code" href="class_t_c_p_generic_cli_app_base.html#a3ec28620ffe01bc3e81af1ae85b3522f" title="Issues an active OPEN to the address/port given as module parameters.">connect</a>();
             <span class="keywordflow">break</span>;
 
         <span class="keywordflow">case</span> <a class="code" href="_telnet_app_8cc.html#a1ce396aa5841b902813c437e441f5ca5">MSGKIND_SEND</a>:
-           <span class="keywordflow">if</span> (<a class="code" href="class_telnet_app.html#ae1c75eafd550d2a2ca5bf5724f10d47b">numCharsToType</a>&gt;0)
+           <span class="keywordflow">if</span> (<a class="code" href="class_telnet_app.html#ae1c75eafd550d2a2ca5bf5724f10d47b">numCharsToType</a> &gt; 0)
            {
                <span class="comment">// user types a character and expects it to be echoed</span>
                <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;user types one character, &quot;</span> &lt;&lt; <a class="code" href="class_telnet_app.html#ae1c75eafd550d2a2ca5bf5724f10d47b">numCharsToType</a>-1 &lt;&lt; <span class="stringliteral">&quot; more to go\n&quot;</span>;
-               <a class="code" href="class_t_c_p_generic_cli_app_base.html#a05c8b9e8f46e01eb466e604f8cd47719">sendPacket</a>(1,1);
-               scheduleAt(simTime()+(simtime_t)par(<span class="stringliteral">&quot;keyPressDelay&quot;</span>), <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a>);
+               <a class="code" href="class_t_c_p_generic_cli_app_base.html#a05c8b9e8f46e01eb466e604f8cd47719" title="Sends a GenericAppMsg of the given length.">sendPacket</a>(1, 1);
+               <a class="code" href="class_telnet_app.html#a3556544153f208ba5f39923aa5842068" title="schedules msg only if t &lt; stopTime">checkedScheduleAt</a>(simTime() + (simtime_t)par(<span class="stringliteral">&quot;keyPressDelay&quot;</span>), <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a>);
                numCharsToType--;
            }
            <span class="keywordflow">else</span>
@@ -204,52 +246,60 @@ Protected Attributes</h2></td></tr>
                <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;user hits Enter key\n&quot;</span>;
                <span class="comment">// Note: reply length must be at least 2, otherwise we&#39;ll think</span>
                <span class="comment">// it&#39;s an echo when it comes back!</span>
-               <a class="code" href="class_t_c_p_generic_cli_app_base.html#a05c8b9e8f46e01eb466e604f8cd47719">sendPacket</a>(1, 2+(<span class="keywordtype">long</span>)par(<span class="stringliteral">&quot;commandOutputLength&quot;</span>));
+               <a class="code" href="class_t_c_p_generic_cli_app_base.html#a05c8b9e8f46e01eb466e604f8cd47719" title="Sends a GenericAppMsg of the given length.">sendPacket</a>(1, 2 + (<span class="keywordtype">long</span>)par(<span class="stringliteral">&quot;commandOutputLength&quot;</span>));
                numCharsToType = (long)par(<span class="stringliteral">&quot;commandLength&quot;</span>);
 
-               <span class="comment">// Note: no scheduleAt(), because user only starts typing next command</span>
+               <span class="comment">// Note: no checkedScheduleAt(), because user only starts typing next command</span>
                <span class="comment">// when output from previous one has arrived (see socketDataArrived())</span>
            }
            <span class="keywordflow">break</span>;
 
         <span class="keywordflow">case</span> <a class="code" href="_telnet_app_8cc.html#a62e8b3f5f0a9b0c1a75856c2418c39d2">MSGKIND_CLOSE</a>:
            <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;user exits telnet program\n&quot;</span>;
-           <a class="code" href="class_t_c_p_generic_cli_app_base.html#a8004ebfe48fdf6334d100cd54ecf29fe">close</a>();
+           <a class="code" href="class_t_c_p_generic_cli_app_base.html#a8004ebfe48fdf6334d100cd54ecf29fe" title="Issues CLOSE command.">close</a>();
            <span class="keywordflow">break</span>;
     }
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a9aad8abbf28e8d601bcb2d96782734b0"></a><!-- doxytag: member="TelnetApp::initialize" ref="a9aad8abbf28e8d601bcb2d96782734b0" args="()" -->
+<a class="anchor" id="aa6435a3f447d7fac579ccf8049728dec"></a><!-- doxytag: member="TelnetApp::initialize" ref="aa6435a3f447d7fac579ccf8049728dec" args="(int stage)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_telnet_app.html#a9aad8abbf28e8d601bcb2d96782734b0">TelnetApp::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_telnet_app.html#aa6435a3f447d7fac579ccf8049728dec">TelnetApp::initialize</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>stage</em></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Redefined to schedule a <a class="el" href="class_t_c_p_generic_cli_app_base.html#a3ec28620ffe01bc3e81af1ae85b3522f">connect()</a>. </p>
 
-<p>Reimplemented from <a class="el" href="class_t_c_p_generic_cli_app_base.html#a5c0adab00fc34f4b9ebdda75fea089a9">TCPGenericCliAppBase</a>.</p>
+<p>Redefined <a class="el" href="class_telnet_app.html#aa6435a3f447d7fac579ccf8049728dec" title="Redefined initialize(int stage).">initialize(int stage)</a>. </p>
+<p>Number of stages used from TCPgenericCliAppBase. </p>
 
-<p>Definition at line <a class="el" href="_telnet_app_8cc_source.html#l00035">35</a> of file <a class="el" href="_telnet_app_8cc_source.html">TelnetApp.cc</a>.</p>
+<p>Reimplemented from <a class="el" href="class_t_c_p_generic_cli_app_base.html#ac9a0cc56e4e009b0e6fec8220d223b30">TCPGenericCliAppBase</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_telnet_app.html#a9aad8abbf28e8d601bcb2d96782734b0">TCPGenericCliAppBase::initialize</a>();
+    <a class="code" href="class_telnet_app.html#aa6435a3f447d7fac579ccf8049728dec" title="Redefined initialize(int stage).">TCPGenericCliAppBase::initialize</a>(stage);
+    <span class="keywordflow">if</span> (stage != 3)
+        <span class="keywordflow">return</span>;
 
-    <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a> = <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;timer&quot;</span>);
 
     <a class="code" href="class_telnet_app.html#ae1c75eafd550d2a2ca5bf5724f10d47b">numCharsToType</a> = <a class="code" href="class_telnet_app.html#adf9e5e3acba3fe595db116ab2d28e803">numLinesToType</a> = 0;
     WATCH(<a class="code" href="class_telnet_app.html#ae1c75eafd550d2a2ca5bf5724f10d47b">numCharsToType</a>);
     WATCH(<a class="code" href="class_telnet_app.html#adf9e5e3acba3fe595db116ab2d28e803">numLinesToType</a>);
 
+    simtime_t startTime = par(<span class="stringliteral">&quot;startTime&quot;</span>);
+    <a class="code" href="class_telnet_app.html#a360f14bd40e16f6347fe5ed2f8cc762b">stopTime</a> = par(<span class="stringliteral">&quot;stopTime&quot;</span>);
+    <span class="keywordflow">if</span> (<a class="code" href="class_telnet_app.html#a360f14bd40e16f6347fe5ed2f8cc762b">stopTime</a> != 0 &amp;&amp; <a class="code" href="class_telnet_app.html#a360f14bd40e16f6347fe5ed2f8cc762b">stopTime</a> &lt;= startTime)
+        error(<span class="stringliteral">&quot;Invalid startTime/stopTime parameters&quot;</span>);
+
+    <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a> = <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;timer&quot;</span>);
     <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a>-&gt;setKind(<a class="code" href="_telnet_app_8cc.html#a1d141ebad9d3bb3992eddbc0f9f3dc56">MSGKIND_CONNECT</a>);
-    scheduleAt((simtime_t)par(<span class="stringliteral">&quot;startTime&quot;</span>), <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a>);
+    scheduleAt(startTime, <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a>);
 }
 </pre></div>
 </div>
@@ -259,7 +309,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_telnet_app.html#a6118600399f307b07f13c4b7a35507ba">TelnetApp::socketClosed</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_telnet_app.html#a6118600399f307b07f13c4b7a35507ba">TelnetApp::socketClosed</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>connId</em>, </td>
@@ -267,7 +317,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>yourPtr</em>&#160;</td>
         </tr>
         <tr>
@@ -278,17 +328,16 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Redefined to start another session after a delay. </p>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_generic_cli_app_base.html#a39a1f1131c97aaf61e79cbe01fb5341b">TCPGenericCliAppBase</a>.</p>
-
-<p>Definition at line <a class="el" href="_telnet_app_8cc_source.html#l00132">132</a> of file <a class="el" href="_telnet_app_8cc_source.html">TelnetApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_telnet_app.html#a6118600399f307b07f13c4b7a35507ba">TCPGenericCliAppBase::socketClosed</a>(connId, ptr);
+    <a class="code" href="class_telnet_app.html#a6118600399f307b07f13c4b7a35507ba" title="Redefined to start another session after a delay.">TCPGenericCliAppBase::socketClosed</a>(connId, ptr);
 
     <span class="comment">// start another session after a delay</span>
     <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a>-&gt;setKind(<a class="code" href="_telnet_app_8cc.html#a1d141ebad9d3bb3992eddbc0f9f3dc56">MSGKIND_CONNECT</a>);
-    scheduleAt(simTime()+(simtime_t)par(<span class="stringliteral">&quot;idleInterval&quot;</span>), <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a>);
+    <a class="code" href="class_telnet_app.html#a3556544153f208ba5f39923aa5842068" title="schedules msg only if t &lt; stopTime">checkedScheduleAt</a>(simTime() + (simtime_t)par(<span class="stringliteral">&quot;idleInterval&quot;</span>), <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a>);
 }
 </pre></div>
 </div>
@@ -298,7 +347,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_telnet_app.html#aa8970c8031fce975f916df35f8db4ec3">TelnetApp::socketDataArrived</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_telnet_app.html#aa8970c8031fce975f916df35f8db4ec3">TelnetApp::socketDataArrived</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>connId</em>, </td>
@@ -306,7 +355,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>yourPtr</em>, </td>
         </tr>
         <tr>
@@ -329,16 +378,15 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Redefined. </p>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_generic_cli_app_base.html#a2609e0e2775c805d2c3a3beb06c096cd">TCPGenericCliAppBase</a>.</p>
-
-<p>Definition at line <a class="el" href="_telnet_app_8cc_source.html#l00098">98</a> of file <a class="el" href="_telnet_app_8cc_source.html">TelnetApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordtype">int</span> len = msg-&gt;getByteLength();
-    <a class="code" href="class_telnet_app.html#aa8970c8031fce975f916df35f8db4ec3">TCPGenericCliAppBase::socketDataArrived</a>(connId, ptr, msg, urgent);
+    <span class="keywordtype">int</span> <a class="code" href="_t_c_p___n_s_c_8cc.html#a8aed22e2c7b283705ec82e0120515618">len</a> = msg-&gt;getByteLength();
+    <a class="code" href="class_telnet_app.html#aa8970c8031fce975f916df35f8db4ec3" title="Redefined.">TCPGenericCliAppBase::socketDataArrived</a>(connId, ptr, msg, urgent);
 
-    <span class="keywordflow">if</span> (len==1)
+    <span class="keywordflow">if</span> (len == 1)
     {
         <span class="comment">// this is an echo, ignore</span>
         <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;received echo\n&quot;</span>;
@@ -352,17 +400,17 @@ Protected Attributes</h2></td></tr>
         <span class="comment">// starts typing again after a delay</span>
         <a class="code" href="class_telnet_app.html#adf9e5e3acba3fe595db116ab2d28e803">numLinesToType</a>--;
 
-        <span class="keywordflow">if</span> (<a class="code" href="class_telnet_app.html#adf9e5e3acba3fe595db116ab2d28e803">numLinesToType</a>==0)
+        <span class="keywordflow">if</span> (<a class="code" href="class_telnet_app.html#adf9e5e3acba3fe595db116ab2d28e803">numLinesToType</a> == 0)
         {
             <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;user has no more commands to type\n&quot;</span>;
             <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a>-&gt;setKind(<a class="code" href="_telnet_app_8cc.html#a62e8b3f5f0a9b0c1a75856c2418c39d2">MSGKIND_CLOSE</a>);
-            scheduleAt(simTime()+(simtime_t)par(<span class="stringliteral">&quot;thinkTime&quot;</span>), <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a>);
+            <a class="code" href="class_telnet_app.html#a3556544153f208ba5f39923aa5842068" title="schedules msg only if t &lt; stopTime">checkedScheduleAt</a>(simTime() + (simtime_t)par(<span class="stringliteral">&quot;thinkTime&quot;</span>), <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a>);
         }
         <span class="keywordflow">else</span>
         {
             <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;user looks at output, then starts typing next command\n&quot;</span>;
             <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a>-&gt;setKind(<a class="code" href="_telnet_app_8cc.html#a1ce396aa5841b902813c437e441f5ca5">MSGKIND_SEND</a>);
-            scheduleAt(simTime()+(simtime_t)par(<span class="stringliteral">&quot;thinkTime&quot;</span>), <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a>);
+            <a class="code" href="class_telnet_app.html#a3556544153f208ba5f39923aa5842068" title="schedules msg only if t &lt; stopTime">checkedScheduleAt</a>(simTime() + (simtime_t)par(<span class="stringliteral">&quot;thinkTime&quot;</span>), <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a>);
         }
     }
 }
@@ -374,7 +422,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_telnet_app.html#a1b320cd9262367d60f65bf8067f80076">TelnetApp::socketEstablished</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_telnet_app.html#a1b320cd9262367d60f65bf8067f80076">TelnetApp::socketEstablished</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>connId</em>, </td>
@@ -382,7 +430,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>yourPtr</em>&#160;</td>
         </tr>
         <tr>
@@ -393,19 +441,18 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Redefined. </p>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_generic_cli_app_base.html#aa3e60c557a7af7cfc3b159e690be5a83">TCPGenericCliAppBase</a>.</p>
-
-<p>Definition at line <a class="el" href="_telnet_app_8cc_source.html#l00087">87</a> of file <a class="el" href="_telnet_app_8cc_source.html">TelnetApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_telnet_app.html#a1b320cd9262367d60f65bf8067f80076">TCPGenericCliAppBase::socketEstablished</a>(connId, ptr);
+    <a class="code" href="class_telnet_app.html#a1b320cd9262367d60f65bf8067f80076" title="Redefined.">TCPGenericCliAppBase::socketEstablished</a>(connId, ptr);
 
     <span class="comment">// schedule first sending</span>
     <a class="code" href="class_telnet_app.html#adf9e5e3acba3fe595db116ab2d28e803">numLinesToType</a> = (long) par(<span class="stringliteral">&quot;numCommands&quot;</span>);
     <a class="code" href="class_telnet_app.html#ae1c75eafd550d2a2ca5bf5724f10d47b">numCharsToType</a> = (long) par(<span class="stringliteral">&quot;commandLength&quot;</span>);
-    <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a>-&gt;setKind(<a class="code" href="class_telnet_app.html#adf9e5e3acba3fe595db116ab2d28e803">numLinesToType</a>&gt;0 ? <a class="code" href="_telnet_app_8cc.html#a1ce396aa5841b902813c437e441f5ca5">MSGKIND_SEND</a> : <a class="code" href="_telnet_app_8cc.html#a62e8b3f5f0a9b0c1a75856c2418c39d2">MSGKIND_CLOSE</a>);
-    scheduleAt(simTime()+(simtime_t)par(<span class="stringliteral">&quot;thinkTime&quot;</span>), <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a>);
+    <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a>-&gt;setKind(<a class="code" href="class_telnet_app.html#adf9e5e3acba3fe595db116ab2d28e803">numLinesToType</a> &gt; 0 ? <a class="code" href="_telnet_app_8cc.html#a1ce396aa5841b902813c437e441f5ca5">MSGKIND_SEND</a> : <a class="code" href="_telnet_app_8cc.html#a62e8b3f5f0a9b0c1a75856c2418c39d2">MSGKIND_CLOSE</a>);
+    <a class="code" href="class_telnet_app.html#a3556544153f208ba5f39923aa5842068" title="schedules msg only if t &lt; stopTime">checkedScheduleAt</a>(simTime() + (simtime_t)par(<span class="stringliteral">&quot;thinkTime&quot;</span>), <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a>);
 }
 </pre></div>
 </div>
@@ -415,7 +462,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_telnet_app.html#abc753928be72e7be027401bc74345f9e">TelnetApp::socketFailure</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_telnet_app.html#abc753928be72e7be027401bc74345f9e">TelnetApp::socketFailure</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>connId</em>, </td>
@@ -423,7 +470,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>yourPtr</em>, </td>
         </tr>
         <tr>
@@ -440,17 +487,16 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Redefined to reconnect after a delay. </p>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_generic_cli_app_base.html#a321d7c13c4ebe9a63e2e013895a390d1">TCPGenericCliAppBase</a>.</p>
-
-<p>Definition at line <a class="el" href="_telnet_app_8cc_source.html#l00141">141</a> of file <a class="el" href="_telnet_app_8cc_source.html">TelnetApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_telnet_app.html#abc753928be72e7be027401bc74345f9e">TCPGenericCliAppBase::socketFailure</a>(connId, ptr, code);
+    <a class="code" href="class_telnet_app.html#abc753928be72e7be027401bc74345f9e" title="Redefined to reconnect after a delay.">TCPGenericCliAppBase::socketFailure</a>(connId, ptr, code);
 
     <span class="comment">// reconnect after a delay</span>
     <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a>-&gt;setKind(<a class="code" href="_telnet_app_8cc.html#a1d141ebad9d3bb3992eddbc0f9f3dc56">MSGKIND_CONNECT</a>);
-    scheduleAt(simTime()+(simtime_t)par(<span class="stringliteral">&quot;reconnectInterval&quot;</span>), <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a>);
+    <a class="code" href="class_telnet_app.html#a3556544153f208ba5f39923aa5842068" title="schedules msg only if t &lt; stopTime">checkedScheduleAt</a>(simTime() + (simtime_t)par(<span class="stringliteral">&quot;reconnectInterval&quot;</span>), <a class="code" href="class_telnet_app.html#aafe6f0b26257106a7aca454c2e474830">timeoutMsg</a>);
 }
 </pre></div>
 </div>
@@ -467,9 +513,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_telnet_app_8h_source.html#l00028">28</a> of file <a class="el" href="_telnet_app_8h_source.html">TelnetApp.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_telnet_app_8cc_source.html#l00049">handleTimer()</a>, <a class="el" href="_telnet_app_8cc_source.html#l00035">initialize()</a>, and <a class="el" href="_telnet_app_8cc_source.html#l00087">socketEstablished()</a>.</p>
+<p>Referenced by <a class="el" href="class_telnet_app.html#adc72aea793ce93513afef058c4e6471d">handleTimer()</a>, <a class="el" href="class_telnet_app.html#aa6435a3f447d7fac579ccf8049728dec">initialize()</a>, and <a class="el" href="class_telnet_app.html#a1b320cd9262367d60f65bf8067f80076">socketEstablished()</a>.</p>
 
 </div>
 </div>
@@ -484,9 +528,22 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_telnet_app_8h_source.html#l00027">27</a> of file <a class="el" href="_telnet_app_8h_source.html">TelnetApp.h</a>.</p>
+<p>Referenced by <a class="el" href="class_telnet_app.html#aa6435a3f447d7fac579ccf8049728dec">initialize()</a>, <a class="el" href="class_telnet_app.html#aa8970c8031fce975f916df35f8db4ec3">socketDataArrived()</a>, and <a class="el" href="class_telnet_app.html#a1b320cd9262367d60f65bf8067f80076">socketEstablished()</a>.</p>
 
-<p>Referenced by <a class="el" href="_telnet_app_8cc_source.html#l00035">initialize()</a>, <a class="el" href="_telnet_app_8cc_source.html#l00098">socketDataArrived()</a>, and <a class="el" href="_telnet_app_8cc_source.html#l00087">socketEstablished()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a360f14bd40e16f6347fe5ed2f8cc762b"></a><!-- doxytag: member="TelnetApp::stopTime" ref="a360f14bd40e16f6347fe5ed2f8cc762b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simtime_t <a class="el" href="class_telnet_app.html#a360f14bd40e16f6347fe5ed2f8cc762b">TelnetApp::stopTime</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_telnet_app.html#a3556544153f208ba5f39923aa5842068">checkedScheduleAt()</a>, and <a class="el" href="class_telnet_app.html#aa6435a3f447d7fac579ccf8049728dec">initialize()</a>.</p>
 
 </div>
 </div>
@@ -501,15 +558,13 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_telnet_app_8h_source.html#l00026">26</a> of file <a class="el" href="_telnet_app_8h_source.html">TelnetApp.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_telnet_app_8cc_source.html#l00049">handleTimer()</a>, <a class="el" href="_telnet_app_8cc_source.html#l00035">initialize()</a>, <a class="el" href="_telnet_app_8cc_source.html#l00132">socketClosed()</a>, <a class="el" href="_telnet_app_8cc_source.html#l00098">socketDataArrived()</a>, <a class="el" href="_telnet_app_8cc_source.html#l00087">socketEstablished()</a>, <a class="el" href="_telnet_app_8cc_source.html#l00141">socketFailure()</a>, <a class="el" href="_telnet_app_8cc_source.html#l00025">TelnetApp()</a>, and <a class="el" href="_telnet_app_8cc_source.html#l00030">~TelnetApp()</a>.</p>
+<p>Referenced by <a class="el" href="class_telnet_app.html#adc72aea793ce93513afef058c4e6471d">handleTimer()</a>, <a class="el" href="class_telnet_app.html#aa6435a3f447d7fac579ccf8049728dec">initialize()</a>, <a class="el" href="class_telnet_app.html#a6118600399f307b07f13c4b7a35507ba">socketClosed()</a>, <a class="el" href="class_telnet_app.html#aa8970c8031fce975f916df35f8db4ec3">socketDataArrived()</a>, <a class="el" href="class_telnet_app.html#a1b320cd9262367d60f65bf8067f80076">socketEstablished()</a>, <a class="el" href="class_telnet_app.html#abc753928be72e7be027401bc74345f9e">socketFailure()</a>, <a class="el" href="class_telnet_app.html#a12ea522a06302cbf7bc1e8a7ee83e5e5">TelnetApp()</a>, and <a class="el" href="class_telnet_app.html#a34534b6dda349f7e80f2cf2552d2194d">~TelnetApp()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_telnet_app_8h_source.html">TelnetApp.h</a></li>
-<li><a class="el" href="_telnet_app_8cc_source.html">TelnetApp.cc</a></li>
+<li><a class="el" href="_telnet_app_8h.html">TelnetApp.h</a></li>
+<li><a class="el" href="_telnet_app_8cc.html">TelnetApp.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -517,7 +572,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_telnet_app.html">TelnetApp</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:54 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:31 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

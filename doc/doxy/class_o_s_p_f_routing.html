@@ -84,42 +84,66 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="OSPFRouting" -->
-<p><code>#include &lt;<a class="el" href="_o_s_p_f_routing_8h_source.html">OSPFRouting.h</a>&gt;</code></p>
+<p>OMNeT++ module class acting as a facade for the <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> data structure.  
+ <a href="class_o_s_p_f_routing.html#details">More...</a></p>
+
+<p><code>#include &lt;OSPFRouting.h&gt;</code></p>
 
 <p><a href="class_o_s_p_f_routing-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#a308ea62380bcd522116dda0d58800644">OSPFRouting</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#a457db930e04bfd5be7405113756727e9">~OSPFRouting</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#a538afc8149c55b2409f150d5207412c2">~OSPFRouting</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#a56cf176bc9fa04d309cfd47a512f291f">insertExternalRoute</a> (int ifIndex, const <a class="el" href="struct_o_s_p_f_1_1_i_pv4_address_range.html">OSPF::IPv4AddressRange</a> &amp;netAddr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a route learn by <a class="el" href="namespace_b_g_p.html">BGP</a> in <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> routingTable as an external route.  <a href="#a56cf176bc9fa04d309cfd47a512f291f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#a68ab10ea5288b5f659410267bc1fc261">checkExternalRoute</a> (const <a class="el" href="class_i_pv4_address.html">IPv4Address</a> &amp;route)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if the route is in <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> external LSA Table, false else.  <a href="#a68ab10ea5288b5f659410267bc1fc261"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#af7eb65eaa0b148353d7f4db823d68f4e">numInitStages</a> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#a757ca2b86873671c421c65e092630f42">initialize</a> (int stage)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#acdf1e955f64a259cad0ac496e2c846a2">handleMessage</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#a757ca2b86873671c421c65e092630f42">initialize</a> (int stage)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">OMNeT++ init method.  <a href="#a757ca2b86873671c421c65e092630f42"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#acdf1e955f64a259cad0ac496e2c846a2">handleMessage</a> (cMessage *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Forwards <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> messages to the message handler object of the <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> data structure.  <a href="#acdf1e955f64a259cad0ac496e2c846a2"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#a8d385175d7fb3de98c2f0e1186386ecb">ResolveInterfaceName</a> (const std::string &amp;name) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#af45e8fcdb8a085169c6ebc910778bc40">GetAreaListFromXML</a> (const cXMLElement &amp;routerNode, std::map&lt; std::string, int &gt; &amp;areaList) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#a366e9d2f93bcb10efe24da101a6cf4a8">LoadAreaFromXML</a> (const cXMLElement &amp;asConfig, const std::string &amp;areaID)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#a2f4d972b5e0953bdfa621f22a72b8113">LoadInterfaceParameters</a> (const cXMLElement &amp;ifConfig)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#a2f336ded44b9ee2443da70db19ff34f4">LoadExternalRoute</a> (const cXMLElement &amp;externalRouteConfig)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#aaaa7a0595a166970c8c6238b52dacfff">LoadHostRoute</a> (const cXMLElement &amp;hostRouteConfig)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#adb2da70e8f941e2904279f3d176bf0b5">LoadVirtualLink</a> (const cXMLElement &amp;virtualLinkConfig)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#af1b821a07e9e6aa92b95d8b88c351675">LoadConfigFromXML</a> (const char *filename)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#a1beb573f5f81ab28ca9436ded38ed38d">getIntAttrOrPar</a> (const cXMLElement &amp;ifConfig, const char *<a class="el" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#a4aecc1e656d10335c2fc2d4fb899110d">getBoolAttrOrPar</a> (const cXMLElement &amp;ifConfig, const char *<a class="el" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#a9133e58c17a9a4e875c426d7f1e6757d">getStrAttrOrPar</a> (const cXMLElement &amp;ifConfig, const char *<a class="el" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#a087e1d677036c3700ce55135b387aa76">resolveInterfaceName</a> (const std::string &amp;<a class="el" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Looks up the interface name in <a class="el" href="class_i_interface_table.html" title="A C++ interface to abstract the functionality of InterfaceTable.">IInterfaceTable</a>, and returns interfaceId a.k.a ifIndex.  <a href="#a087e1d677036c3700ce55135b387aa76"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#a8711bff76cce88455c09dc877a84a3b5">getInterfaceByXMLAttributesOf</a> (const cXMLElement &amp;ifConfig)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Search an <a class="el" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> in <a class="el" href="class_i_interface_table.html" title="A C++ interface to abstract the functionality of InterfaceTable.">IInterfaceTable</a> by interface name or toward module name an returns the <a class="el" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> pointer or throws an error.  <a href="#a8711bff76cce88455c09dc877a84a3b5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#a48b405e1c4919a04c7772c870fe0b2c4">getAreaListFromXML</a> (const cXMLElement &amp;routerNode, std::set&lt; <a class="el" href="namespace_o_s_p_f.html#a48c8e4d3af2a46ddb912740d4e2e91b1">OSPF::AreaID</a> &gt; &amp;areaList) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a list of <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> Areas connected to this router from the config XML.  <a href="#a48b405e1c4919a04c7772c870fe0b2c4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#a89163d4bb7adcd8c740903e151904f74">loadAreaFromXML</a> (const cXMLElement &amp;asConfig, <a class="el" href="namespace_o_s_p_f.html#a48c8e4d3af2a46ddb912740d4e2e91b1">OSPF::AreaID</a> areaID)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads basic configuration information for a given area from the config XML.  <a href="#a89163d4bb7adcd8c740903e151904f74"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#a8d626803b3686f86086c4caa83b9e358">loadAuthenticationConfig</a> (<a class="el" href="class_o_s_p_f_1_1_interface.html">OSPF::Interface</a> *intf, const cXMLElement &amp;ifConfig)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads authenticationType and authenticationKey attibutes for a router interface.  <a href="#a8d626803b3686f86086c4caa83b9e358"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#a65f22d4d3ea87506c07667d47f7b2d3b">loadInterfaceParameters</a> (const cXMLElement &amp;ifConfig)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> configuration information for a router interface.  <a href="#a65f22d4d3ea87506c07667d47f7b2d3b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#ac65493078bbeb6c48808d191eda44454">loadExternalRoute</a> (const cXMLElement &amp;externalRouteConfig)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the configuration information of a route outside of the Autonomous System(external route).  <a href="#ac65493078bbeb6c48808d191eda44454"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#abc7bbdfb6fe2ab158c64ec7c3579ccdd">loadHostRoute</a> (const cXMLElement &amp;hostRouteConfig)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the configuration of a host getRoute(a host directly connected to the router).  <a href="#abc7bbdfb6fe2ab158c64ec7c3579ccdd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#a10bcd85d5d26ce4e06c6f2b01bc6f420">loadVirtualLink</a> (const cXMLElement &amp;virtualLinkConfig)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the configuration of an OSPf virtual link(virtual connection between two backbone routers).  <a href="#a10bcd85d5d26ce4e06c6f2b01bc6f420"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#abec8786045419fda13d0ccd094fa917b">loadConfigFromXML</a> (cXMLElement *asConfig)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the configuration of the <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> data structure from the config XML.  <a href="#abec8786045419fda13d0ccd094fa917b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#ab8e6f305b9877b66c7658c4bd94e292d">joinMulticastGroups</a> (int interfaceId)</td></tr>
 <tr><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_interface_table.html">IInterfaceTable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#ad4bdd62bb9e1cdeeb118e986db7faf02">ift</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the interface table.  <a href="#ad4bdd62bb9e1cdeeb118e986db7faf02"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_routing_table.html">IRoutingTable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#ad46d802ce8ea2ea455fa710e963f53c8">rt</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the <a class="el" href="class_i_p.html">IP</a> routing table.  <a href="#ad46d802ce8ea2ea455fa710e963f53c8"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides access to the IP routing table.  <a href="#ad46d802ce8ea2ea455fa710e963f53c8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_o_s_p_f_1_1_router.html">OSPF::Router</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614">ospfRouter</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Root object of the <a class="el" href="namespace_o_s_p_f.html">OSPF</a> datastructure.  <a href="#a690ee8115e4d30c21e8adb5035ca5614"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Root object of the <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> data structure.  <a href="#a690ee8115e4d30c21e8adb5035ca5614"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>OMNeT++ module class acting as a facade for the <a class="el" href="namespace_o_s_p_f.html">OSPF</a> datastructure. Handles the configuration loading and forwards the OMNeT++ messages(OSPF packets). </p>
-
-<p>Definition at line <a class="el" href="_o_s_p_f_routing_8h_source.html#l00032">32</a> of file <a class="el" href="_o_s_p_f_routing_8h_source.html">OSPFRouting.h</a>.</p>
+<div class="textblock"><p>OMNeT++ module class acting as a facade for the <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> data structure. </p>
+<p>Handles the configuration loading and forwards the OMNeT++ messages (<a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> packets). </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a308ea62380bcd522116dda0d58800644"></a><!-- doxytag: member="OSPFRouting::OSPFRouting" ref="a308ea62380bcd522116dda0d58800644" args="()" -->
 <div class="memitem">
@@ -134,44 +158,70 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00037">37</a> of file <a class="el" href="_o_s_p_f_routing_8cc_source.html">OSPFRouting.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF datastructure.">ospfRouter</a> = NULL;
+    <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF data structure.">ospfRouter</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a457db930e04bfd5be7405113756727e9"></a><!-- doxytag: member="OSPFRouting::~OSPFRouting" ref="a457db930e04bfd5be7405113756727e9" args="(void)" -->
+<a class="anchor" id="a538afc8149c55b2409f150d5207412c2"></a><!-- doxytag: member="OSPFRouting::~OSPFRouting" ref="a538afc8149c55b2409f150d5207412c2" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_o_s_p_f_routing.html#a457db930e04bfd5be7405113756727e9">OSPFRouting::~OSPFRouting</a> </td>
+          <td class="memname"><a class="el" href="class_o_s_p_f_routing.html#a538afc8149c55b2409f150d5207412c2">OSPFRouting::~OSPFRouting</a> </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Destructor. Deletes the whole <a class="el" href="namespace_o_s_p_f.html">OSPF</a> datastructure. </p>
-
-<p>Definition at line <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00046">46</a> of file <a class="el" href="_o_s_p_f_routing_8cc_source.html">OSPFRouting.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keyword">delete</span> <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF datastructure.">ospfRouter</a>;
+    <span class="keyword">delete</span> <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF data structure.">ospfRouter</a>;
 }
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="af45e8fcdb8a085169c6ebc910778bc40"></a><!-- doxytag: member="OSPFRouting::GetAreaListFromXML" ref="af45e8fcdb8a085169c6ebc910778bc40" args="(const cXMLElement &amp;routerNode, std::map&lt; std::string, int &gt; &amp;areaList) const " -->
+<a class="anchor" id="a68ab10ea5288b5f659410267bc1fc261"></a><!-- doxytag: member="OSPFRouting::checkExternalRoute" ref="a68ab10ea5288b5f659410267bc1fc261" args="(const IPv4Address &amp;route)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_o_s_p_f_routing.html#af45e8fcdb8a085169c6ebc910778bc40">OSPFRouting::GetAreaListFromXML</a> </td>
+          <td class="memname">bool <a class="el" href="class_o_s_p_f_routing.html#a68ab10ea5288b5f659410267bc1fc261">OSPFRouting::checkExternalRoute</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_i_pv4_address.html">IPv4Address</a> &amp;&#160;</td>
+          <td class="paramname"><em>route</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Return true if the route is in <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> external LSA Table, false else. </p>
+<p>Used by the <a class="el" href="class_b_g_p_routing.html">BGPRouting</a> module. </p>
+
+<p>Referenced by <a class="el" href="class_b_g_p_routing.html#a9e9045a51d6bf9454c46d07a226686c0">BGPRouting::checkExternalRoute()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> i=1; i &lt; <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF data structure.">ospfRouter</a>-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#a83627b1e7011409dd355dfd004a8a3a8">getASExternalLSACount</a>(); i++)
+    {
+        <a class="code" href="class_o_s_p_f_1_1_a_s_external_l_s_a.html">OSPF::ASExternalLSA</a>* externalLSA = <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF data structure.">ospfRouter</a>-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#a6647017c994ddead153bfda8cedc7c5f">getASExternalLSA</a>(i);
+        <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a> externalAddr = externalLSA-&gt;<a class="code" href="class_o_s_p_f_l_s_a.html#a2c9acdc68e5e66deb1826ee41a07b7d1">getHeader</a>().<a class="code" href="class_o_s_p_f_l_s_a_header.html#a5ca4d451e700f5633b917bd547433260">getLinkStateID</a>();
+        <span class="keywordflow">if</span> (externalAddr == route) <span class="comment">//FIXME was this meant???</span>
+            <span class="keywordflow">return</span> <span class="keyword">true</span>;
+    }
+    <span class="keywordflow">return</span> <span class="keyword">false</span>;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a48b405e1c4919a04c7772c870fe0b2c4"></a><!-- doxytag: member="OSPFRouting::getAreaListFromXML" ref="a48b405e1c4919a04c7772c870fe0b2c4" args="(const cXMLElement &amp;routerNode, std::set&lt; OSPF::AreaID &gt; &amp;areaList) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_o_s_p_f_routing.html#a48b405e1c4919a04c7772c870fe0b2c4">OSPFRouting::getAreaListFromXML</a> </td>
           <td>(</td>
           <td class="paramtype">const cXMLElement &amp;&#160;</td>
           <td class="paramname"><em>routerNode</em>, </td>
@@ -179,7 +229,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::map&lt; std::string, int &gt; &amp;&#160;</td>
+          <td class="paramtype">std::set&lt; <a class="el" href="namespace_o_s_p_f.html#a48c8e4d3af2a46ddb912740d4e2e91b1">OSPF::AreaID</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>areaList</em>&#160;</td>
         </tr>
         <tr>
@@ -190,18 +240,17 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Loads a list of <a class="el" href="namespace_o_s_p_f.html">OSPF</a> Areas connected to this router from the config XML. </p>
+
+<p>Loads a list of <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> Areas connected to this router from the config XML. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">routerNode</td><td>[in] XML node describing this router. </td></tr>
-    <tr><td class="paramname">areaList</td><td>[out] A hash of <a class="el" href="namespace_o_s_p_f.html">OSPF</a> Areas connected to this router. The hash key is the Area ID. </td></tr>
+    <tr><td class="paramname">areaList</td><td>[out] A set of <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> Areas connected to this router. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00109">109</a> of file <a class="el" href="_o_s_p_f_routing_8cc_source.html">OSPFRouting.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00464">LoadConfigFromXML()</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_routing.html#abec8786045419fda13d0ccd094fa917b">loadConfigFromXML()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     cXMLElementList routerConfig = routerNode.getChildren();
     <span class="keywordflow">for</span> (cXMLElementList::iterator routerConfigIt = routerConfig.begin(); routerConfigIt != routerConfig.end(); routerConfigIt++) {
@@ -211,12 +260,170 @@ Private Attributes</h2></td></tr>
             (nodeName == <span class="stringliteral">&quot;NBMAInterface&quot;</span>) ||
             (nodeName == <span class="stringliteral">&quot;PointToMultiPointInterface&quot;</span>))
         {
-            std::string areaId = (*routerConfigIt)-&gt;getChildrenByTagName(<span class="stringliteral">&quot;AreaID&quot;</span>)[0]-&gt;getNodeValue();
-            <span class="keywordflow">if</span> (areaList.find(areaId) == areaList.end()) {
-                areaList[areaId] = 1;
-            }
+            <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">OSPF::AreaID</a> areaID = <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a>(<a class="code" href="class_o_s_p_f_routing.html#a9133e58c17a9a4e875c426d7f1e6757d">getStrAttrOrPar</a>(**routerConfigIt, <span class="stringliteral">&quot;areaID&quot;</span>));
+            <span class="keywordflow">if</span> (areaList.find(areaID) == areaList.end())
+                areaList.insert(areaID);
         }
     }
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a4aecc1e656d10335c2fc2d4fb899110d"></a><!-- doxytag: member="OSPFRouting::getBoolAttrOrPar" ref="a4aecc1e656d10335c2fc2d4fb899110d" args="(const cXMLElement &amp;ifConfig, const char *name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_o_s_p_f_routing.html#a4aecc1e656d10335c2fc2d4fb899110d">OSPFRouting::getBoolAttrOrPar</a> </td>
+          <td>(</td>
+          <td class="paramtype">const cXMLElement &amp;&#160;</td>
+          <td class="paramname"><em>ifConfig</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const<code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_o_s_p_f_routing.html#abec8786045419fda13d0ccd094fa917b">loadConfigFromXML()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keyword">const</span> <span class="keywordtype">char</span>* attrStr = ifConfig.getAttribute(<a class="code" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>);
+    <span class="keywordflow">if</span> (attrStr &amp;&amp; *attrStr)
+    {
+        <span class="keywordflow">if</span> (strcmp(attrStr, <span class="stringliteral">&quot;true&quot;</span>) == 0 || strcmp(attrStr, <span class="stringliteral">&quot;1&quot;</span>) == 0)
+            <span class="keywordflow">return</span> <span class="keyword">true</span>;
+        <span class="keywordflow">if</span> (strcmp(attrStr, <span class="stringliteral">&quot;false&quot;</span>) == 0 || strcmp(attrStr, <span class="stringliteral">&quot;0&quot;</span>) == 0)
+            <span class="keywordflow">return</span> <span class="keyword">false</span>;
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Invalid boolean attribute %s = &#39;%s&#39; at %s&quot;</span>, <a class="code" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, attrStr, ifConfig.getSourceLocation());
+    }
+    <span class="keywordflow">return</span> par(<a class="code" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>).boolValue();
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a1beb573f5f81ab28ca9436ded38ed38d"></a><!-- doxytag: member="OSPFRouting::getIntAttrOrPar" ref="a1beb573f5f81ab28ca9436ded38ed38d" args="(const cXMLElement &amp;ifConfig, const char *name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="class_o_s_p_f_routing.html#a1beb573f5f81ab28ca9436ded38ed38d">OSPFRouting::getIntAttrOrPar</a> </td>
+          <td>(</td>
+          <td class="paramtype">const cXMLElement &amp;&#160;</td>
+          <td class="paramname"><em>ifConfig</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const<code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_o_s_p_f_routing.html#ac65493078bbeb6c48808d191eda44454">loadExternalRoute()</a>, <a class="el" href="class_o_s_p_f_routing.html#abc7bbdfb6fe2ab158c64ec7c3579ccdd">loadHostRoute()</a>, <a class="el" href="class_o_s_p_f_routing.html#a65f22d4d3ea87506c07667d47f7b2d3b">loadInterfaceParameters()</a>, and <a class="el" href="class_o_s_p_f_routing.html#a10bcd85d5d26ce4e06c6f2b01bc6f420">loadVirtualLink()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keyword">const</span> <span class="keywordtype">char</span>* attrStr = ifConfig.getAttribute(<a class="code" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>);
+    <span class="keywordflow">if</span> (attrStr &amp;&amp; *attrStr)
+        <span class="keywordflow">return</span> atoi(attrStr);
+    <span class="keywordflow">return</span> par(<a class="code" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>).longValue();
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a8711bff76cce88455c09dc877a84a3b5"></a><!-- doxytag: member="OSPFRouting::getInterfaceByXMLAttributesOf" ref="a8711bff76cce88455c09dc877a84a3b5" args="(const cXMLElement &amp;ifConfig)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_interface_entry.html">InterfaceEntry</a> * <a class="el" href="class_o_s_p_f_routing.html#a8711bff76cce88455c09dc877a84a3b5">OSPFRouting::getInterfaceByXMLAttributesOf</a> </td>
+          <td>(</td>
+          <td class="paramtype">const cXMLElement &amp;&#160;</td>
+          <td class="paramname"><em>ifConfig</em></td><td>)</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Search an <a class="el" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> in <a class="el" href="class_i_interface_table.html" title="A C++ interface to abstract the functionality of InterfaceTable.">IInterfaceTable</a> by interface name or toward module name an returns the <a class="el" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> pointer or throws an error. </p>
+
+<p>Referenced by <a class="el" href="class_o_s_p_f_routing.html#ac65493078bbeb6c48808d191eda44454">loadExternalRoute()</a>, <a class="el" href="class_o_s_p_f_routing.html#abc7bbdfb6fe2ab158c64ec7c3579ccdd">loadHostRoute()</a>, and <a class="el" href="class_o_s_p_f_routing.html#a65f22d4d3ea87506c07667d47f7b2d3b">loadInterfaceParameters()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *ifName = ifConfig.getAttribute(<span class="stringliteral">&quot;ifName&quot;</span>);
+    <span class="keywordflow">if</span> (ifName &amp;&amp; *ifName) {
+        <a class="code" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a>* ie = <a class="code" href="class_o_s_p_f_routing.html#ad4bdd62bb9e1cdeeb118e986db7faf02" title="Provides access to the interface table.">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a8ad86ee823d6200b4f558383b39af658" title="Returns an interface given by its name.">getInterfaceByName</a>(ifName);
+        <span class="keywordflow">if</span> (!ie)
+            <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Error reading XML config: IInterfaceTable contains no interface named &#39;%s&#39; at %s&quot;</span>, ifName, ifConfig.getSourceLocation());
+        <span class="keywordflow">return</span> ie;
+    }
+
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *toward = <a class="code" href="namespace_diffserv_util.html#aa861ed85b25036df9b0b9dbb02c951b8" title="Returns the value of the named attribute of the XML element, or throws an exception if not found...">getRequiredAttribute</a>(ifConfig, <span class="stringliteral">&quot;toward&quot;</span>);
+    cModule *destnode = simulation.getModuleByPath(toward);
+    <span class="keywordflow">if</span> (!destnode)
+        error(<span class="stringliteral">&quot;toward module `%s&#39; not found at %s&quot;</span>, toward, ifConfig.getSourceLocation());
+
+    cModule *host = <a class="code" href="class_o_s_p_f_routing.html#ad4bdd62bb9e1cdeeb118e986db7faf02" title="Provides access to the interface table.">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a2f0c6da3baff7416b8914d8a393bff7f" title="Returns the host or router this interface table lives in.">getHostModule</a>();
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i &lt; <a class="code" href="class_o_s_p_f_routing.html#ad4bdd62bb9e1cdeeb118e986db7faf02" title="Provides access to the interface table.">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a2b0ce46cd92da6f64fc363410dc71904" title="Returns the number of interfaces.">getNumInterfaces</a>(); i++)
+    {
+        <a class="code" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> *ie = <a class="code" href="class_o_s_p_f_routing.html#ad4bdd62bb9e1cdeeb118e986db7faf02" title="Provides access to the interface table.">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a19ce4ca3b47b52b8e2b67c25806c4b49" title="Returns the InterfaceEntry specified by an index 0..numInterfaces-1.">getInterface</a>(i);
+        <span class="keywordflow">if</span> (ie)
+        {
+            <span class="keywordtype">int</span> gateId = ie-&gt;<a class="code" href="class_interface_entry.html#a28c151905c57d6d19ecb026367f93278">getNodeOutputGateId</a>();
+            <span class="keywordflow">if</span> ((gateId != -1) &amp;&amp; (host-&gt;gate(gateId)-&gt;pathContains(destnode)))
+                <span class="keywordflow">return</span> ie;
+        }
+    }
+    <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Error reading XML config: IInterfaceTable contains no interface toward &#39;%s&#39; at %s&quot;</span>, toward, ifConfig.getSourceLocation());
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a9133e58c17a9a4e875c426d7f1e6757d"></a><!-- doxytag: member="OSPFRouting::getStrAttrOrPar" ref="a9133e58c17a9a4e875c426d7f1e6757d" args="(const cXMLElement &amp;ifConfig, const char *name) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * <a class="el" href="class_o_s_p_f_routing.html#a9133e58c17a9a4e875c426d7f1e6757d">OSPFRouting::getStrAttrOrPar</a> </td>
+          <td>(</td>
+          <td class="paramtype">const cXMLElement &amp;&#160;</td>
+          <td class="paramname"><em>ifConfig</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const<code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_o_s_p_f_routing.html#a48b405e1c4919a04c7772c870fe0b2c4">getAreaListFromXML()</a>, <a class="el" href="class_o_s_p_f_routing.html#a8d626803b3686f86086c4caa83b9e358">loadAuthenticationConfig()</a>, <a class="el" href="class_o_s_p_f_routing.html#ac65493078bbeb6c48808d191eda44454">loadExternalRoute()</a>, <a class="el" href="class_o_s_p_f_routing.html#abc7bbdfb6fe2ab158c64ec7c3579ccdd">loadHostRoute()</a>, and <a class="el" href="class_o_s_p_f_routing.html#a65f22d4d3ea87506c07667d47f7b2d3b">loadInterfaceParameters()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keyword">const</span> <span class="keywordtype">char</span>* attrStr = ifConfig.getAttribute(<a class="code" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>);
+    <span class="keywordflow">if</span> (attrStr &amp;&amp; *attrStr)
+        <span class="keywordflow">return</span> attrStr;
+    <span class="keywordflow">return</span> par(<a class="code" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>).stringValue();
 }
 </pre></div>
 </div>
@@ -226,7 +433,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_o_s_p_f_routing.html#acdf1e955f64a259cad0ac496e2c846a2">OSPFRouting::handleMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_o_s_p_f_routing.html#acdf1e955f64a259cad0ac496e2c846a2">OSPFRouting::handleMessage</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -235,20 +442,16 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Forwards <a class="el" href="namespace_o_s_p_f.html">OSPF</a> messages to the message handler object of the <a class="el" href="namespace_o_s_p_f.html">OSPF</a> datastructure. </p>
+
+<p>Forwards <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> messages to the message handler object of the <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> data structure. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">msg</td><td>[in] The <a class="el" href="namespace_o_s_p_f.html">OSPF</a> message. </td></tr>
+    <tr><td class="paramname">msg</td><td>[in] The <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> message. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00085">85</a> of file <a class="el" href="_o_s_p_f_routing_8cc_source.html">OSPFRouting.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-<span class="comment">//    if (simulation.getEventNumber() == 90591) {</span>
-<span class="comment">//        __asm int 3;</span>
-<span class="comment">//    }</span>
-    <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF datastructure.">ospfRouter</a>-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#ab2b6452dadb00d2970e3432b0b29e17f">GetMessageHandler</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_message_handler.html#a7b619e82b4d8755c245f8f2e341297e5">MessageReceived</a>(msg);
+    <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF data structure.">ospfRouter</a>-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#a0142a9cc0f45692f0af116de386f9d6b">getMessageHandler</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_message_handler.html#a40c455a6d4c8d6ec50e498b19bff845c">messageReceived</a>(msg);
 }
 </pre></div>
 </div>
@@ -258,7 +461,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_o_s_p_f_routing.html#a757ca2b86873671c421c65e092630f42">OSPFRouting::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_o_s_p_f_routing.html#a757ca2b86873671c421c65e092630f42">OSPFRouting::initialize</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>stage</em></td><td>)</td>
@@ -267,43 +470,113 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>OMNeT++ init method. Runs at stage 2 after interfaces are registered(stage 0) and the routing table is initialized(stage 1). Loads <a class="el" href="namespace_o_s_p_f.html">OSPF</a> configuration information from the config XML. </p>
+
+<p>OMNeT++ init method. </p>
+<p>Runs at stage 4, after interfaces are registered(stage 0), the routing table is initialized(stage 1), and routerId gets assigned(stage 3). Loads <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> configuration information from the config XML. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">stage</td><td>[in] The initialization stage. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00059">59</a> of file <a class="el" href="_o_s_p_f_routing_8cc_source.html">OSPFRouting.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// we have to wait for stage 2 until interfaces get registered(stage 0)</span>
     <span class="comment">// and routerId gets assigned(stage 3)</span>
     <span class="keywordflow">if</span> (stage == 4)
     {
-        <a class="code" href="class_o_s_p_f_routing.html#ad46d802ce8ea2ea455fa710e963f53c8" title="Provides access to the IP routing table.">rt</a> = <a class="code" href="class_routing_table_access.html">RoutingTableAccess</a>().<a class="code" href="class_module_access.html#a44956ddb52973612afbba0eeecf8bb66">get</a>();
-        <a class="code" href="class_o_s_p_f_routing.html#ad4bdd62bb9e1cdeeb118e986db7faf02" title="Provides access to the interface table.">ift</a> = <a class="code" href="class_interface_table_access.html">InterfaceTableAccess</a>().<a class="code" href="class_module_access.html#a44956ddb52973612afbba0eeecf8bb66">get</a>();
+        <a class="code" href="class_o_s_p_f_routing.html#ad46d802ce8ea2ea455fa710e963f53c8" title="Provides access to the IP routing table.">rt</a> = <a class="code" href="class_routing_table_access.html" title="Gives access to the IRoutingTable.">RoutingTableAccess</a>().<a class="code" href="class_module_access.html#a46a82b1fa0e957eb42d29c8637df1f4f">get</a>();
+        <a class="code" href="class_o_s_p_f_routing.html#ad4bdd62bb9e1cdeeb118e986db7faf02" title="Provides access to the interface table.">ift</a> = <a class="code" href="class_interface_table_access.html" title="Gives access to IInterfaceTable.">InterfaceTableAccess</a>().<a class="code" href="class_module_access.html#a46a82b1fa0e957eb42d29c8637df1f4f">get</a>();
 
         <span class="comment">// Get routerId</span>
-        <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF datastructure.">ospfRouter</a> = <span class="keyword">new</span> <a class="code" href="class_o_s_p_f_1_1_router.html">OSPF::Router</a>(<a class="code" href="class_o_s_p_f_routing.html#ad46d802ce8ea2ea455fa710e963f53c8" title="Provides access to the IP routing table.">rt</a>-&gt;<a class="code" href="class_i_routing_table.html#a64a9a5b1414f4da0b7b0a3e079091f62">getRouterId</a>().<a class="code" href="class_i_p_address.html#a807ca46964a8403cf0c70f0772179524">getInt</a>(), <span class="keyword">this</span>);
+        <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF data structure.">ospfRouter</a> = <span class="keyword">new</span> <a class="code" href="class_o_s_p_f_1_1_router.html" title="Represents the full OSPF data structure as laid out in RFC2328.">OSPF::Router</a>(<a class="code" href="class_o_s_p_f_routing.html#ad46d802ce8ea2ea455fa710e963f53c8" title="Provides access to the IP routing table.">rt</a>-&gt;<a class="code" href="class_i_routing_table.html#a416ced9f21e5e92920c162deeb5d53ca" title="Returns routerId.">getRouterId</a>(), <span class="keyword">this</span>);
 
         <span class="comment">// read the OSPF AS configuration</span>
-        <span class="keyword">const</span> <span class="keywordtype">char</span> *fileName = par(<span class="stringliteral">&quot;ospfConfigFile&quot;</span>);
-        <span class="keywordflow">if</span> (fileName == NULL || (!strcmp(fileName, <span class="stringliteral">&quot;&quot;</span>)) || !<a class="code" href="class_o_s_p_f_routing.html#af1b821a07e9e6aa92b95d8b88c351675">LoadConfigFromXML</a>(fileName))
-            error(<span class="stringliteral">&quot;Error reading AS configuration from file %s&quot;</span>, fileName);
+        cXMLElement *ospfConfig = par(<span class="stringliteral">&quot;ospfConfig&quot;</span>).xmlValue();
+        <span class="keywordflow">if</span> (!<a class="code" href="class_o_s_p_f_routing.html#abec8786045419fda13d0ccd094fa917b" title="Loads the configuration of the OSPF data structure from the config XML.">loadConfigFromXML</a>(ospfConfig))
+            error(<span class="stringliteral">&quot;Error reading AS configuration from %s&quot;</span>, ospfConfig-&gt;getSourceLocation());
 
-        <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF datastructure.">ospfRouter</a>-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#a41c5b61bcaa1c23247f64d5eebba64b3">AddWatches</a>();
+        <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF data structure.">ospfRouter</a>-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#ac1b3c9efa50298911e7548c7cf2b9929" title="Adds OMNeT++ watches for the routerID, the list of Areas and the list of AS External LSAs...">addWatches</a>();
     }
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a366e9d2f93bcb10efe24da101a6cf4a8"></a><!-- doxytag: member="OSPFRouting::LoadAreaFromXML" ref="a366e9d2f93bcb10efe24da101a6cf4a8" args="(const cXMLElement &amp;asConfig, const std::string &amp;areaID)" -->
+<a class="anchor" id="a56cf176bc9fa04d309cfd47a512f291f"></a><!-- doxytag: member="OSPFRouting::insertExternalRoute" ref="a56cf176bc9fa04d309cfd47a512f291f" args="(int ifIndex, const OSPF::IPv4AddressRange &amp;netAddr)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_o_s_p_f_routing.html#a366e9d2f93bcb10efe24da101a6cf4a8">OSPFRouting::LoadAreaFromXML</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_o_s_p_f_routing.html#a56cf176bc9fa04d309cfd47a512f291f">OSPFRouting::insertExternalRoute</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ifIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_o_s_p_f_1_1_i_pv4_address_range.html">OSPF::IPv4AddressRange</a> &amp;&#160;</td>
+          <td class="paramname"><em>netAddr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Insert a route learn by <a class="el" href="namespace_b_g_p.html">BGP</a> in <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> routingTable as an external route. </p>
+<p>Used by the <a class="el" href="class_b_g_p_routing.html">BGPRouting</a> module. : interface ID </p>
+
+<p>Referenced by <a class="el" href="class_b_g_p_routing.html#a3e94228cf527d4717433a6bd97c65cdc">BGPRouting::decisionProcess()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    simulation.setContext(<span class="keyword">this</span>);
+    <a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html" title="Class generated from networklayer/ospfv2/OSPFPacket.msg by opp_msgc.">OSPFASExternalLSAContents</a> newExternalContents;
+    newExternalContents.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#ad819b28488dacdd94cfefe67b630a568">setRouteCost</a>(<a class="code" href="_o_s_p_fcommon_8h.html#a284b2eb3a644cfe22d046c1abab9f5ee">OSPF_BGP_DEFAULT_COST</a>);
+    newExternalContents.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#ad3db488266a56c0ff4d685a6e8c75e8a">setExternalRouteTag</a>(<a class="code" href="_o_s_p_fcommon_8h.html#a5750852a20adb974368ba6bf97b72430">OSPF_EXTERNAL_ROUTES_LEARNED_BY_BGP</a>);
+    <span class="keyword">const</span> <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a> netmask = netAddr.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a452878c3f507f27d1de9c5b7cda2ae70">mask</a>;
+    newExternalContents.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#ae9b2067a5b9cebec2cde01fe67303d5d">setNetworkMask</a>(netmask);
+    <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF data structure.">ospfRouter</a>-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#a542dd39f87a1f348d9f555b9823c9a07" title="Stores information on an AS External Route in externalRoutes and intalls(or updates) a new ASExternal...">updateExternalRoute</a>(netAddr.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a74993d6571119644535ac918c4240722">address</a>, newExternalContents, ifIndex);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ab8e6f305b9877b66c7658c4bd94e292d"></a><!-- doxytag: member="OSPFRouting::joinMulticastGroups" ref="ab8e6f305b9877b66c7658c4bd94e292d" args="(int interfaceId)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_o_s_p_f_routing.html#ab8e6f305b9877b66c7658c4bd94e292d">OSPFRouting::joinMulticastGroups</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>interfaceId</em></td><td>)</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_o_s_p_f_routing.html#ac65493078bbeb6c48808d191eda44454">loadExternalRoute()</a>, <a class="el" href="class_o_s_p_f_routing.html#abc7bbdfb6fe2ab158c64ec7c3579ccdd">loadHostRoute()</a>, and <a class="el" href="class_o_s_p_f_routing.html#a65f22d4d3ea87506c07667d47f7b2d3b">loadInterfaceParameters()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <a class="code" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> *ie = <a class="code" href="class_o_s_p_f_routing.html#ad4bdd62bb9e1cdeeb118e986db7faf02" title="Provides access to the interface table.">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a92764d620c345b7261de20e9ee5247d7" title="Returns an interface by its Id.">getInterfaceById</a>(interfaceId);
+    <span class="keywordflow">if</span> (!ie)
+        error(<span class="stringliteral">&quot;Interface id=%d does not exist&quot;</span>, interfaceId);
+    <a class="code" href="class_i_pv4_interface_data.html" title="IPv4-specific data in an InterfaceEntry.">IPv4InterfaceData</a> *ipv4Data = ie-&gt;<a class="code" href="class_interface_entry.html#a4f52f31546a140edf6979882492e1a0b">ipv4Data</a>();
+    <span class="keywordflow">if</span> (!ipv4Data)
+        error(<span class="stringliteral">&quot;Interface %s (id=%d) does not have IPv4 data&quot;</span>, ie-&gt;getName(), interfaceId);
+    ipv4Data-&gt;<a class="code" href="class_i_pv4_interface_data.html#a0ced2d5b5dfaa92205e1a0de34d9f0b3">joinMulticastGroup</a>(<a class="code" href="class_i_pv4_address.html#a77ed6f2a43dda6acc0456331738b6f76" title="224.0.0.5 All OSPF routers (DR Others)">IPv4Address::ALL_OSPF_ROUTERS_MCAST</a>);
+    ipv4Data-&gt;<a class="code" href="class_i_pv4_interface_data.html#a0ced2d5b5dfaa92205e1a0de34d9f0b3">joinMulticastGroup</a>(<a class="code" href="class_i_pv4_address.html#a5a294d7462519b9d11452a242ea8af92" title="224.0.0.6 All OSPF Designated Routers">IPv4Address::ALL_OSPF_DESIGNATED_ROUTERS_MCAST</a>);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a89163d4bb7adcd8c740903e151904f74"></a><!-- doxytag: member="OSPFRouting::loadAreaFromXML" ref="a89163d4bb7adcd8c740903e151904f74" args="(const cXMLElement &amp;asConfig, OSPF::AreaID areaID)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_o_s_p_f_routing.html#a89163d4bb7adcd8c740903e151904f74">OSPFRouting::loadAreaFromXML</a> </td>
           <td>(</td>
           <td class="paramtype">const cXMLElement &amp;&#160;</td>
           <td class="paramname"><em>asConfig</em>, </td>
@@ -311,7 +584,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_o_s_p_f.html#a48c8e4d3af2a46ddb912740d4e2e91b1">OSPF::AreaID</a>&#160;</td>
           <td class="paramname"><em>areaID</em>&#160;</td>
         </tr>
         <tr>
@@ -322,72 +595,128 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Loads basic configuration information for a given area from the config XML. Reads the configured address ranges, and whether this Area should be handled as a stub Area. </p>
+
+<p>Loads basic configuration information for a given area from the config XML. </p>
+<p>Reads the configured address ranges, and whether this Area should be handled as a stub Area. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">asConfig</td><td>[in] XML node describing the configuration of the whole Autonomous System. </td></tr>
-    <tr><td class="paramname">areaID</td><td>[in] The Area to be added to the <a class="el" href="namespace_o_s_p_f.html">OSPF</a> datastructure. </td></tr>
+    <tr><td class="paramname">areaID</td><td>[in] The Area to be added to the <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> data structure. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00134">134</a> of file <a class="el" href="_o_s_p_f_routing_8cc_source.html">OSPFRouting.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00464">LoadConfigFromXML()</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_routing.html#abec8786045419fda13d0ccd094fa917b">loadConfigFromXML()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     std::string areaXPath(<span class="stringliteral">&quot;Area[@id=&#39;&quot;</span>);
-    areaXPath += areaID;
+    areaXPath += areaID.<a class="code" href="class_i_pv4_address.html#ac6c9eedd7d88e27a22d620c023a2c309" title="Returns the string representation of the address (e.g.">str</a>(<span class="keyword">false</span>);
     areaXPath += <span class="stringliteral">&quot;&#39;]&quot;</span>;
 
     cXMLElement* areaConfig = asConfig.getElementByPath(areaXPath.c_str());
-    <span class="keywordflow">if</span> (areaConfig == NULL) {
-        error(<span class="stringliteral">&quot;No configuration for Area ID: %s&quot;</span>, areaID.c_str());
+    <span class="keywordflow">if</span> (areaConfig == <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {
+        error(<span class="stringliteral">&quot;No configuration for Area ID: %s at %s&quot;</span>, areaID.<a class="code" href="class_i_pv4_address.html#ac6c9eedd7d88e27a22d620c023a2c309" title="Returns the string representation of the address (e.g.">str</a>(<span class="keyword">false</span>).c_str(), asConfig.getSourceLocation());
     }
     <span class="keywordflow">else</span> {
-        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;    loading info for Area id = &quot;</span> &lt;&lt; areaID &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;    loading info for Area id = &quot;</span> &lt;&lt; areaID.<a class="code" href="class_i_pv4_address.html#ac6c9eedd7d88e27a22d620c023a2c309" title="Returns the string representation of the address (e.g.">str</a>(<span class="keyword">false</span>) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
     }
 
-    <a class="code" href="class_o_s_p_f_1_1_area.html">OSPF::Area</a>* area = <span class="keyword">new</span> <a class="code" href="class_o_s_p_f_1_1_area.html">OSPF::Area</a>(<a class="code" href="_ansa_o_s_p_fcommon_8h.html#a4f2f8ba751b645157dacc7b6a57f4157">ULongFromAddressString</a>(areaID.c_str()));
+    <a class="code" href="class_o_s_p_f_1_1_area.html">OSPF::Area</a>* area = <span class="keyword">new</span> <a class="code" href="class_o_s_p_f_1_1_area.html">OSPF::Area</a>(areaID);
     cXMLElementList areaDetails = areaConfig-&gt;getChildren();
     <span class="keywordflow">for</span> (cXMLElementList::iterator arIt = areaDetails.begin(); arIt != areaDetails.end(); arIt++) {
         std::string nodeName = (*arIt)-&gt;getTagName();
         <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;AddressRange&quot;</span>) {
             <a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html">OSPF::IPv4AddressRange</a> addressRange;
-            addressRange.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a74993d6571119644535ac918c4240722">address</a> = <a class="code" href="_ansa_o_s_p_fcommon_8h.html#ad23a93ae8dbc9a767ec279d6840100b6">IPv4AddressFromAddressString</a>((*arIt)-&gt;getChildrenByTagName(<span class="stringliteral">&quot;Address&quot;</span>)[0]-&gt;getNodeValue());
-            addressRange.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a452878c3f507f27d1de9c5b7cda2ae70">mask</a> = <a class="code" href="_ansa_o_s_p_fcommon_8h.html#ad23a93ae8dbc9a767ec279d6840100b6">IPv4AddressFromAddressString</a>((*arIt)-&gt;getChildrenByTagName(<span class="stringliteral">&quot;Mask&quot;</span>)[0]-&gt;getNodeValue());
-            std::string status = (*arIt)-&gt;getChildrenByTagName(<span class="stringliteral">&quot;Status&quot;</span>)[0]-&gt;getNodeValue();
-            <span class="keywordflow">if</span> (status == <span class="stringliteral">&quot;Advertise&quot;</span>) {
-                area-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a0e17e1016c0431e17ed1dec9e42eddcf">AddAddressRange</a>(addressRange, <span class="keyword">true</span>);
-            } <span class="keywordflow">else</span> {
-                area-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a0e17e1016c0431e17ed1dec9e42eddcf">AddAddressRange</a>(addressRange, <span class="keyword">false</span>);
-            }
+            addressRange.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a74993d6571119644535ac918c4240722">address</a> = <a class="code" href="_o_s_p_fcommon_8h.html#aeac91d9e14bec1c80f39e1774539e625">ipv4AddressFromAddressString</a>(<a class="code" href="namespace_diffserv_util.html#aa861ed85b25036df9b0b9dbb02c951b8" title="Returns the value of the named attribute of the XML element, or throws an exception if not found...">getRequiredAttribute</a>(**arIt, <span class="stringliteral">&quot;address&quot;</span>));
+            addressRange.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a452878c3f507f27d1de9c5b7cda2ae70">mask</a> = <a class="code" href="_o_s_p_fcommon_8h.html#af9fbd9d01fc6ea15828bc84678bdcb80">ipv4NetmaskFromAddressString</a>(<a class="code" href="namespace_diffserv_util.html#aa861ed85b25036df9b0b9dbb02c951b8" title="Returns the value of the named attribute of the XML element, or throws an exception if not found...">getRequiredAttribute</a>(**arIt, <span class="stringliteral">&quot;mask&quot;</span>));
+            addressRange.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a74993d6571119644535ac918c4240722">address</a> = addressRange.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a74993d6571119644535ac918c4240722">address</a> &amp; addressRange.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a452878c3f507f27d1de9c5b7cda2ae70">mask</a>;
+            std::string status = <a class="code" href="namespace_diffserv_util.html#aa861ed85b25036df9b0b9dbb02c951b8" title="Returns the value of the named attribute of the XML element, or throws an exception if not found...">getRequiredAttribute</a>(**arIt, <span class="stringliteral">&quot;status&quot;</span>);
+            area-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#aca41f74120f927bf0f9f34a0d491649d">addAddressRange</a>(addressRange, status == <span class="stringliteral">&quot;Advertise&quot;</span>);
         }
-        <span class="keywordflow">if</span> ((nodeName == <span class="stringliteral">&quot;Stub&quot;</span>) &amp;&amp; (areaID != <span class="stringliteral">&quot;0.0.0.0&quot;</span>)) {    <span class="comment">// the backbone cannot be configured as a stub</span>
-            area-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a5060a99bf739416c16e7a595b3baa66a">SetExternalRoutingCapability</a>(<span class="keyword">false</span>);
-            area-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a5155ce525d9b42cee7be815bd6019868">SetStubDefaultCost</a>(atoi((*arIt)-&gt;getChildrenByTagName(<span class="stringliteral">&quot;DefaultCost&quot;</span>)[0]-&gt;getNodeValue()));
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;Stub&quot;</span>) {
+            <span class="keywordflow">if</span> (areaID == <a class="code" href="namespace_o_s_p_f.html#a291fdf79093588fa8aeb40e22fdbbfc7">OSPF::BACKBONE_AREAID</a>)
+                error(<span class="stringliteral">&quot;The backbone cannot be configured as a stub at %s&quot;</span>, (*arIt)-&gt;getSourceLocation());
+            area-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a381cfd4d3aa439c860b63323649a26f0">setExternalRoutingCapability</a>(<span class="keyword">false</span>);
+            area-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a4afa88f386c2c91cb7d3d1995a4af4ac">setStubDefaultCost</a>(atoi(<a class="code" href="namespace_diffserv_util.html#aa861ed85b25036df9b0b9dbb02c951b8" title="Returns the value of the named attribute of the XML element, or throws an exception if not found...">getRequiredAttribute</a>(**arIt, <span class="stringliteral">&quot;defaultCost&quot;</span>)));
         }
+        <span class="keywordflow">else</span>
+            error(<span class="stringliteral">&quot;Invalid node &#39;%s&#39; at %s&quot;</span>, nodeName.c_str(), (*arIt)-&gt;getSourceLocation());
     }
     <span class="comment">// Add the Area to the router</span>
-    <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF datastructure.">ospfRouter</a>-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#aeb3b4bfce0df4171c50b5d174112b130">AddArea</a>(area);
+    <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF data structure.">ospfRouter</a>-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#af76d3ec7f1fee3f8e499b28c6fea1fa3" title="Adds a new Area to the Area list.">addArea</a>(area);
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="af1b821a07e9e6aa92b95d8b88c351675"></a><!-- doxytag: member="OSPFRouting::LoadConfigFromXML" ref="af1b821a07e9e6aa92b95d8b88c351675" args="(const char *filename)" -->
+<a class="anchor" id="a8d626803b3686f86086c4caa83b9e358"></a><!-- doxytag: member="OSPFRouting::loadAuthenticationConfig" ref="a8d626803b3686f86086c4caa83b9e358" args="(OSPF::Interface *intf, const cXMLElement &amp;ifConfig)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="class_o_s_p_f_routing.html#af1b821a07e9e6aa92b95d8b88c351675">OSPFRouting::LoadConfigFromXML</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_o_s_p_f_routing.html#a8d626803b3686f86086c4caa83b9e358">OSPFRouting::loadAuthenticationConfig</a> </td>
           <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_o_s_p_f_1_1_interface.html">OSPF::Interface</a> *&#160;</td>
+          <td class="paramname"><em>intf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cXMLElement &amp;&#160;</td>
+          <td class="paramname"><em>ifConfig</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Loads authenticationType and authenticationKey attibutes for a router interface. </p>
+
+<p>Referenced by <a class="el" href="class_o_s_p_f_routing.html#a65f22d4d3ea87506c07667d47f7b2d3b">loadInterfaceParameters()</a>, and <a class="el" href="class_o_s_p_f_routing.html#a10bcd85d5d26ce4e06c6f2b01bc6f420">loadVirtualLink()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    std::string authenticationType = <a class="code" href="class_o_s_p_f_routing.html#a9133e58c17a9a4e875c426d7f1e6757d">getStrAttrOrPar</a>(ifConfig, <span class="stringliteral">&quot;authenticationType&quot;</span>);
+    <span class="keywordflow">if</span> (authenticationType == <span class="stringliteral">&quot;SimplePasswordType&quot;</span>) {
+        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a31bcee1e7e0bd4edf63e8d09b72f5c3a">setAuthenticationType</a>(<a class="code" href="namespace_o_s_p_f.html#a2e0cad18e6b80ee3a427a65a0b395aafa224c35cc32e652bd4a5ef8d5f38dfa03">OSPF::SIMPLE_PASSWORD_TYPE</a>);
+    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (authenticationType == <span class="stringliteral">&quot;CrytographicType&quot;</span>) {
+        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a31bcee1e7e0bd4edf63e8d09b72f5c3a">setAuthenticationType</a>(<a class="code" href="namespace_o_s_p_f.html#a2e0cad18e6b80ee3a427a65a0b395aafabff67e7b5457f7f2bf0d85097346f2af">OSPF::CRYTOGRAPHIC_TYPE</a>);
+    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (authenticationType == <span class="stringliteral">&quot;NullType&quot;</span>) {
+        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a31bcee1e7e0bd4edf63e8d09b72f5c3a">setAuthenticationType</a>(<a class="code" href="namespace_o_s_p_f.html#a2e0cad18e6b80ee3a427a65a0b395aafa6672db07b1afd0cf044e3f1a16fc0eaf">OSPF::NULL_TYPE</a>);
+    } <span class="keywordflow">else</span> {
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Invalid AuthenticationType &#39;%s&#39; at %s&quot;</span>, authenticationType.c_str(), ifConfig.getSourceLocation());
+    }
+
+    std::string key = <a class="code" href="class_o_s_p_f_routing.html#a9133e58c17a9a4e875c426d7f1e6757d">getStrAttrOrPar</a>(ifConfig, <span class="stringliteral">&quot;authenticationKey&quot;</span>);
+    <a class="code" href="struct_o_s_p_f_1_1_authentication_key_type.html">OSPF::AuthenticationKeyType</a> keyValue;
+    memset(keyValue.<a class="code" href="struct_o_s_p_f_1_1_authentication_key_type.html#a09102c74d106ef556c423ea0438aed4a">bytes</a>, 0, 8 * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>));
+    <span class="keywordtype">int</span> keyLength = key.length();
+    <span class="keywordflow">if</span> ((keyLength &gt; 4) &amp;&amp; (keyLength &lt;= 18) &amp;&amp; (keyLength % 2 == 0) &amp;&amp; (key[0] == <span class="charliteral">&#39;0&#39;</span>) &amp;&amp; (key[1] == <span class="charliteral">&#39;x&#39;</span>)) {
+        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = keyLength; (i &gt; 2); i -= 2) {
+            keyValue.<a class="code" href="struct_o_s_p_f_1_1_authentication_key_type.html#a09102c74d106ef556c423ea0438aed4a">bytes</a>[(i - 2) / 2] = <a class="code" href="_o_s_p_fcommon_8h.html#a40d204b2903ab06cf47213423c3784a1">hexPairToByte</a>(key[i - 1], key[i]);
+        }
+    }
+    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#ab52cd93b030b1d8d3b5f363240e29483">setAuthenticationKey</a>(keyValue);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="abec8786045419fda13d0ccd094fa917b"></a><!-- doxytag: member="OSPFRouting::loadConfigFromXML" ref="abec8786045419fda13d0ccd094fa917b" args="(cXMLElement *asConfig)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_o_s_p_f_routing.html#abec8786045419fda13d0ccd094fa917b">OSPFRouting::loadConfigFromXML</a> </td>
+          <td>(</td>
+          <td class="paramtype">cXMLElement *&#160;</td>
+          <td class="paramname"><em>asConfig</em></td><td>)</td>
           <td><code> [private]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Loads the configuration of the <a class="el" href="namespace_o_s_p_f.html">OSPF</a> datastructure from the config XML. </p>
+
+<p>Loads the configuration of the <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> data structure from the config XML. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>[in] The path of the XML config file. </td></tr>
@@ -402,43 +731,48 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00464">464</a> of file <a class="el" href="_o_s_p_f_routing_8cc_source.html">OSPFRouting.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00059">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_routing.html#a757ca2b86873671c421c65e092630f42">initialize()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    cXMLElement* asConfig = ev.getXMLDocument(filename);
-    <span class="keywordflow">if</span> (asConfig == NULL) {
-        error(<span class="stringliteral">&quot;Cannot read AS configuration from file: %s&quot;</span>, filename);
-    }
+    <span class="keywordflow">if</span> (strcmp(asConfig-&gt;getTagName(), <span class="stringliteral">&quot;OSPFASConfig&quot;</span>))
+        error(<span class="stringliteral">&quot;Cannot read OSPF configuration, unaccepted &#39;%s&#39; note at %s&quot;</span>, asConfig-&gt;getTagName(), asConfig-&gt;getSourceLocation());
+
+    cModule *myNode = <a class="code" href="_module_access_8cc.html#a05eb8740c0b600bfb259b3bc7806ac9c" title="Find the node containing the given module.">findContainingNode</a>(<span class="keyword">this</span>);
+
+    ASSERT(myNode);
+    std::string nodeFullPath = myNode-&gt;getFullPath();
+    std::string nodeShortenedFullPath = nodeFullPath.substr(nodeFullPath.find(<span class="charliteral">&#39;.&#39;</span>) + 1);
 
     <span class="comment">// load information on this router</span>
-    std::string routerXPath(<span class="stringliteral">&quot;Router[@id=&#39;&quot;</span>);
-    <a class="code" href="class_i_p_address.html">IPAddress</a> routerId(<a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF datastructure.">ospfRouter</a>-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#a12b09f4263d005f7b0cd808502c1de48">GetRouterID</a>());
-    routerXPath += routerId.<a class="code" href="class_i_p_address.html#a50f58febbf2ded78b9f6e32e579f5d2b">str</a>();
-    routerXPath += <span class="stringliteral">&quot;&#39;]&quot;</span>;
-
-    cXMLElement* routerNode = asConfig-&gt;getElementByPath(routerXPath.c_str());
-    <span class="keywordflow">if</span> (routerNode == NULL) {
-        error(<span class="stringliteral">&quot;No configuration for Router ID: %s&quot;</span>, routerId.str().c_str());
+    cXMLElementList routers = asConfig-&gt;getElementsByTagName(<span class="stringliteral">&quot;Router&quot;</span>);
+    cXMLElement* routerNode = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+    <span class="keywordflow">for</span> (cXMLElementList::iterator routerIt = routers.begin(); routerIt != routers.end(); routerIt++) {
+        <span class="keyword">const</span> <span class="keywordtype">char</span>* nodeName = <a class="code" href="namespace_diffserv_util.html#aa861ed85b25036df9b0b9dbb02c951b8" title="Returns the value of the named attribute of the XML element, or throws an exception if not found...">getRequiredAttribute</a>(*(*routerIt), <span class="stringliteral">&quot;name&quot;</span>);
+        <a class="code" href="classinet_1_1_pattern_matcher.html" title="Glob-style pattern matching class, adopted to special OMNeT++ requirements.">inet::PatternMatcher</a> pattern(nodeName, <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">true</span>);
+        <span class="keywordflow">if</span> (pattern.matches(nodeFullPath.c_str()) || pattern.matches(nodeShortenedFullPath.c_str()))   <span class="comment">// match Router@name and fullpath of my node</span>
+        {
+            routerNode = *routerIt;
+            <span class="keywordflow">break</span>;
+        }
     }
-    <span class="keywordflow">else</span> {
-        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;OSPFRouting: Loading info for Router id = &quot;</span> &lt;&lt; routerId.str() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
-    }
-
-    <span class="keywordflow">if</span> (routerNode-&gt;getChildrenByTagName(<span class="stringliteral">&quot;RFC1583Compatible&quot;</span>).size() &gt; 0) {
-        <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF datastructure.">ospfRouter</a>-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#ae27ea511ced12487b158e87d4582ea21">SetRFC1583Compatibility</a>(<span class="keyword">true</span>);
+    <span class="keywordflow">if</span> (routerNode == <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {
+        error(<span class="stringliteral">&quot;No configuration for Router &#39;%s&#39; at &#39;%s&#39;&quot;</span>, nodeFullPath.c_str(), asConfig-&gt;getSourceLocation());
     }
 
-    std::map&lt;std::string, int&gt; areaList;
-    <a class="code" href="class_o_s_p_f_routing.html#af45e8fcdb8a085169c6ebc910778bc40">GetAreaListFromXML</a>(*routerNode, areaList);
+    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;OSPFRouting: Loading info for Router &quot;</span> &lt;&lt; nodeFullPath &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
 
-    <span class="comment">// load area information</span>
-    <span class="keywordflow">for</span> (std::map&lt;std::string, int&gt;::iterator areaIt = areaList.begin(); areaIt != areaList.end(); areaIt++) {
-        <a class="code" href="class_o_s_p_f_routing.html#a366e9d2f93bcb10efe24da101a6cf4a8">LoadAreaFromXML</a>(*asConfig, areaIt-&gt;first);
-    }
+    <span class="keywordtype">bool</span> rfc1583Compatible = <a class="code" href="class_o_s_p_f_routing.html#a4aecc1e656d10335c2fc2d4fb899110d">getBoolAttrOrPar</a>(*routerNode, <span class="stringliteral">&quot;RFC1583Compatible&quot;</span>);
+    <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF data structure.">ospfRouter</a>-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#a16b7ec42a0a4072d0299fddaa5ae57bc">setRFC1583Compatibility</a>(rfc1583Compatible);
+
+    std::set&lt;OSPF::AreaID&gt; areaList;
+    <a class="code" href="class_o_s_p_f_routing.html#a48b405e1c4919a04c7772c870fe0b2c4" title="Loads a list of OSPF Areas connected to this router from the config XML.">getAreaListFromXML</a>(*routerNode, areaList);
+
     <span class="comment">// if the router is an area border router then it MUST be part of the backbone(area 0)</span>
-    <span class="keywordflow">if</span> ((areaList.size() &gt; 1) &amp;&amp; (areaList.find(<span class="stringliteral">&quot;0.0.0.0&quot;</span>) == areaList.end())) {
-        <a class="code" href="class_o_s_p_f_routing.html#a366e9d2f93bcb10efe24da101a6cf4a8">LoadAreaFromXML</a>(*asConfig, <span class="stringliteral">&quot;0.0.0.0&quot;</span>);
+    <span class="keywordflow">if</span> ((areaList.size() &gt; 1) &amp;&amp; (areaList.find(<a class="code" href="namespace_o_s_p_f.html#a291fdf79093588fa8aeb40e22fdbbfc7">OSPF::BACKBONE_AREAID</a>) == areaList.end())) {
+        areaList.insert(<a class="code" href="namespace_o_s_p_f.html#a291fdf79093588fa8aeb40e22fdbbfc7">OSPF::BACKBONE_AREAID</a>);
+    }
+    <span class="comment">// load area information</span>
+    <span class="keywordflow">for</span> (std::set&lt;OSPF::AreaID&gt;::iterator areaIt = areaList.begin(); areaIt != areaList.end(); areaIt++) {
+        <a class="code" href="class_o_s_p_f_routing.html#a89163d4bb7adcd8c740903e151904f74" title="Loads basic configuration information for a given area from the config XML.">loadAreaFromXML</a>(*asConfig, *areaIt);
     }
 
     <span class="comment">// load interface information</span>
@@ -450,29 +784,33 @@ Private Attributes</h2></td></tr>
             (nodeName == <span class="stringliteral">&quot;NBMAInterface&quot;</span>) ||
             (nodeName == <span class="stringliteral">&quot;PointToMultiPointInterface&quot;</span>))
         {
-            <a class="code" href="class_o_s_p_f_routing.html#a2f4d972b5e0953bdfa621f22a72b8113">LoadInterfaceParameters</a>(*(*routerConfigIt));
+            <a class="code" href="class_o_s_p_f_routing.html#a65f22d4d3ea87506c07667d47f7b2d3b" title="Loads OSPF configuration information for a router interface.">loadInterfaceParameters</a>(*(*routerConfigIt));
         }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;ExternalInterface&quot;</span>) {
-            <a class="code" href="class_o_s_p_f_routing.html#a2f336ded44b9ee2443da70db19ff34f4">LoadExternalRoute</a>(*(*routerConfigIt));
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;ExternalInterface&quot;</span>) {
+            <a class="code" href="class_o_s_p_f_routing.html#ac65493078bbeb6c48808d191eda44454" title="Loads the configuration information of a route outside of the Autonomous System(external route)...">loadExternalRoute</a>(*(*routerConfigIt));
         }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;HostInterface&quot;</span>) {
-            <a class="code" href="class_o_s_p_f_routing.html#aaaa7a0595a166970c8c6238b52dacfff">LoadHostRoute</a>(*(*routerConfigIt));
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;HostInterface&quot;</span>) {
+            <a class="code" href="class_o_s_p_f_routing.html#abc7bbdfb6fe2ab158c64ec7c3579ccdd" title="Loads the configuration of a host getRoute(a host directly connected to the router).">loadHostRoute</a>(*(*routerConfigIt));
         }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;VirtualLink&quot;</span>) {
-            <a class="code" href="class_o_s_p_f_routing.html#adb2da70e8f941e2904279f3d176bf0b5">LoadVirtualLink</a>(*(*routerConfigIt));
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;VirtualLink&quot;</span>) {
+            <a class="code" href="class_o_s_p_f_routing.html#a10bcd85d5d26ce4e06c6f2b01bc6f420" title="Loads the configuration of an OSPf virtual link(virtual connection between two backbone routers)...">loadVirtualLink</a>(*(*routerConfigIt));
+        } <span class="keywordflow">else</span> {
+            <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Invalid &#39;%s&#39; node in Router &#39;%s&#39; at %s&quot;</span>,
+                    nodeName.c_str(), nodeFullPath.c_str(), (*routerConfigIt)-&gt;getSourceLocation());
         }
+
     }
     <span class="keywordflow">return</span> <span class="keyword">true</span>;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a2f336ded44b9ee2443da70db19ff34f4"></a><!-- doxytag: member="OSPFRouting::LoadExternalRoute" ref="a2f336ded44b9ee2443da70db19ff34f4" args="(const cXMLElement &amp;externalRouteConfig)" -->
+<a class="anchor" id="ac65493078bbeb6c48808d191eda44454"></a><!-- doxytag: member="OSPFRouting::loadExternalRoute" ref="ac65493078bbeb6c48808d191eda44454" args="(const cXMLElement &amp;externalRouteConfig)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_o_s_p_f_routing.html#a2f336ded44b9ee2443da70db19ff34f4">OSPFRouting::LoadExternalRoute</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_o_s_p_f_routing.html#ac65493078bbeb6c48808d191eda44454">OSPFRouting::loadExternalRoute</a> </td>
           <td>(</td>
           <td class="paramtype">const cXMLElement &amp;&#160;</td>
           <td class="paramname"><em>externalRouteConfig</em></td><td>)</td>
@@ -481,6 +819,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Loads the configuration information of a route outside of the Autonomous System(external route). </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -489,70 +828,65 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00294">294</a> of file <a class="el" href="_o_s_p_f_routing_8cc_source.html">OSPFRouting.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00464">LoadConfigFromXML()</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_routing.html#abec8786045419fda13d0ccd094fa917b">loadConfigFromXML()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    std::string               ifName  = externalRouteConfig.getAttribute(<span class="stringliteral">&quot;ifName&quot;</span>);
-    <span class="keywordtype">int</span>                       ifIndex = <a class="code" href="class_o_s_p_f_routing.html#a8d385175d7fb3de98c2f0e1186386ecb">ResolveInterfaceName</a>(ifName);
-    <a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html">OSPFASExternalLSAContents</a> asExternalRoute;
-    <a class="code" href="class_o_s_p_f_1_1_routing_table_entry.html">OSPF::RoutingTableEntry</a>   externalRoutingEntry; <span class="comment">// only used here to keep the path cost calculation in one place</span>
-    <a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html">OSPF::IPv4AddressRange</a>    networkAddress;
+    <a class="code" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> *ie = <a class="code" href="class_o_s_p_f_routing.html#a8711bff76cce88455c09dc877a84a3b5" title="Search an InterfaceEntry in IInterfaceTable by interface name or toward module name an returns the In...">getInterfaceByXMLAttributesOf</a>(externalRouteConfig);
+    <span class="keywordtype">int</span> ifIndex = ie-&gt;<a class="code" href="class_interface_entry.html#adc901fa42c37ce16b5c0785da81106ce">getInterfaceId</a>();
 
-    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;        loading ExternalInterface &quot;</span> &lt;&lt; ifName &lt;&lt; <span class="stringliteral">&quot; ifIndex[&quot;</span> &lt;&lt; ifIndex &lt;&lt; <span class="stringliteral">&quot;]\n&quot;</span>;
+    <a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html" title="Class generated from networklayer/ospfv2/OSPFPacket.msg by opp_msgc.">OSPFASExternalLSAContents</a> asExternalRoute;
+    <a class="code" href="class_o_s_p_f_1_1_routing_table_entry.html">OSPF::RoutingTableEntry</a> externalRoutingEntry; <span class="comment">// only used here to keep the path cost calculation in one place</span>
+    <a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html">OSPF::IPv4AddressRange</a> networkAddress;
 
-    cXMLElementList ifDetails = externalRouteConfig.getChildren();
-    <span class="keywordflow">for</span> (cXMLElementList::iterator exElemIt = ifDetails.begin(); exElemIt != ifDetails.end(); exElemIt++) {
-        std::string nodeName = (*exElemIt)-&gt;getTagName();
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;AdvertisedExternalNetwork&quot;</span>) {
-            networkAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a74993d6571119644535ac918c4240722">address</a> = <a class="code" href="_ansa_o_s_p_fcommon_8h.html#ad23a93ae8dbc9a767ec279d6840100b6">IPv4AddressFromAddressString</a>((*exElemIt)-&gt;getChildrenByTagName(<span class="stringliteral">&quot;Address&quot;</span>)[0]-&gt;getNodeValue());
-            networkAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a452878c3f507f27d1de9c5b7cda2ae70">mask</a>    = <a class="code" href="_ansa_o_s_p_fcommon_8h.html#ad23a93ae8dbc9a767ec279d6840100b6">IPv4AddressFromAddressString</a>((*exElemIt)-&gt;getChildrenByTagName(<span class="stringliteral">&quot;Mask&quot;</span>)[0]-&gt;getNodeValue());
-            asExternalRoute.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#a92f8c7490b57fd22c74f073f7e134504">setNetworkMask</a>(<a class="code" href="_ansa_o_s_p_fcommon_8h.html#a44aadec2c89ea0ba372ac4ea3025ab52">ULongFromIPv4Address</a>(networkAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a452878c3f507f27d1de9c5b7cda2ae70">mask</a>));
-        }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;ExternalInterfaceOutputParameters&quot;</span>) {
-            std::string metricType = (*exElemIt)-&gt;getChildrenByTagName(<span class="stringliteral">&quot;ExternalInterfaceOutputType&quot;</span>)[0]-&gt;getNodeValue();
-            <span class="keywordtype">int</span>         routeCost  = atoi((*exElemIt)-&gt;getChildrenByTagName(<span class="stringliteral">&quot;ExternalInterfaceOutputCost&quot;</span>)[0]-&gt;getNodeValue());
+    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;        loading ExternalInterface &quot;</span> &lt;&lt; ie-&gt;getName() &lt;&lt; <span class="stringliteral">&quot; ifIndex[&quot;</span> &lt;&lt; ifIndex &lt;&lt; <span class="stringliteral">&quot;]\n&quot;</span>;
 
-            asExternalRoute.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#ad819b28488dacdd94cfefe67b630a568">setRouteCost</a>(routeCost);
-            <span class="keywordflow">if</span> (metricType == <span class="stringliteral">&quot;Type2&quot;</span>) {
-                asExternalRoute.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#acec64ce77d6c3bd9cac67bf136b1abfd">setE_ExternalMetricType</a>(<span class="keyword">true</span>);
-                externalRoutingEntry.<a class="code" href="class_o_s_p_f_1_1_routing_table_entry.html#a06e98e3f9b93ec4c977298a484a107f9">SetType2Cost</a>(routeCost);
-                externalRoutingEntry.<a class="code" href="class_o_s_p_f_1_1_routing_table_entry.html#a7ca15b35b5d0c9d2818ba07ef50b7419">SetPathType</a>(<a class="code" href="class_o_s_p_f_1_1_routing_table_entry.html#a32d865d25745b844bcc6100e11dfd254aa63a69910a414a0c0b98c96f51395766">OSPF::RoutingTableEntry::Type2External</a>);
-            } <span class="keywordflow">else</span> {
-                asExternalRoute.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#acec64ce77d6c3bd9cac67bf136b1abfd">setE_ExternalMetricType</a>(<span class="keyword">false</span>);
-                externalRoutingEntry.<a class="code" href="class_o_s_p_f_1_1_routing_table_entry.html#a6e9bfa59d5a79d87894d26e48f08043d">SetCost</a>(routeCost);
-                externalRoutingEntry.<a class="code" href="class_o_s_p_f_1_1_routing_table_entry.html#a7ca15b35b5d0c9d2818ba07ef50b7419">SetPathType</a>(<a class="code" href="class_o_s_p_f_1_1_routing_table_entry.html#a32d865d25745b844bcc6100e11dfd254aa222aff0a2b4a30f1a3f2020b697e558">OSPF::RoutingTableEntry::Type1External</a>);
-            }
-        }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;ForwardingAddress&quot;</span>) {
-            asExternalRoute.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#a4fcb86f502a97a622915e274223f97c2">setForwardingAddress</a>(<a class="code" href="_ansa_o_s_p_fcommon_8h.html#a4f2f8ba751b645157dacc7b6a57f4157">ULongFromAddressString</a>((*exElemIt)-&gt;getNodeValue()));
-        }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;ExternalRouteTag&quot;</span>) {
-            std::string externalRouteTag = (*exElemIt)-&gt;getNodeValue();
-            <span class="keywordtype">char</span>        externalRouteTagValue[4];
+    <a class="code" href="class_o_s_p_f_routing.html#ab8e6f305b9877b66c7658c4bd94e292d">joinMulticastGroups</a>(ifIndex);
 
-            memset(externalRouteTagValue, 0, 4 * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>));
-            <span class="keywordtype">int</span> externalRouteTagLength = externalRouteTag.length();
-            <span class="keywordflow">if</span> ((externalRouteTagLength &gt; 4) &amp;&amp; (externalRouteTagLength &lt;= 10) &amp;&amp; (externalRouteTagLength % 2 == 0) &amp;&amp; (externalRouteTag[0] == <span class="charliteral">&#39;0&#39;</span>) &amp;&amp; (externalRouteTag[1] == <span class="charliteral">&#39;x&#39;</span>)) {
-                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = externalRouteTagLength; (<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> &gt; 2); <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> -= 2) {
-                    externalRouteTagValue[(<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> - 2) / 2] = <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a889a6de7cccb5c78d5bf654ce2351f9f">HexPairToByte</a>(externalRouteTag[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> - 1], externalRouteTag[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>]);
-                }
-            }
-            asExternalRoute.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#ad3db488266a56c0ff4d685a6e8c75e8a">setExternalRouteTag</a>((externalRouteTagValue[0] &lt;&lt; 24) + (externalRouteTagValue[1] &lt;&lt; 16) + (externalRouteTagValue[2] &lt;&lt; 8) + externalRouteTagValue[3]);
-        }
+    networkAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a74993d6571119644535ac918c4240722">address</a> = <a class="code" href="_o_s_p_fcommon_8h.html#aeac91d9e14bec1c80f39e1774539e625">ipv4AddressFromAddressString</a>(<a class="code" href="namespace_diffserv_util.html#aa861ed85b25036df9b0b9dbb02c951b8" title="Returns the value of the named attribute of the XML element, or throws an exception if not found...">getRequiredAttribute</a>(externalRouteConfig, <span class="stringliteral">&quot;advertisedExternalNetworkAddress&quot;</span>));
+    networkAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a452878c3f507f27d1de9c5b7cda2ae70">mask</a> = <a class="code" href="_o_s_p_fcommon_8h.html#af9fbd9d01fc6ea15828bc84678bdcb80">ipv4NetmaskFromAddressString</a>(<a class="code" href="namespace_diffserv_util.html#aa861ed85b25036df9b0b9dbb02c951b8" title="Returns the value of the named attribute of the XML element, or throws an exception if not found...">getRequiredAttribute</a>(externalRouteConfig, <span class="stringliteral">&quot;advertisedExternalNetworkMask&quot;</span>));
+    networkAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a74993d6571119644535ac918c4240722">address</a> = networkAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a74993d6571119644535ac918c4240722">address</a> &amp; networkAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a452878c3f507f27d1de9c5b7cda2ae70">mask</a>;
+    asExternalRoute.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#ae9b2067a5b9cebec2cde01fe67303d5d">setNetworkMask</a>(networkAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a452878c3f507f27d1de9c5b7cda2ae70">mask</a>);
+
+    <span class="keywordtype">int</span> routeCost = <a class="code" href="class_o_s_p_f_routing.html#a1beb573f5f81ab28ca9436ded38ed38d">getIntAttrOrPar</a>(externalRouteConfig, <span class="stringliteral">&quot;externalInterfaceOutputCost&quot;</span>);
+    asExternalRoute.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#ad819b28488dacdd94cfefe67b630a568">setRouteCost</a>(routeCost);
+
+    std::string metricType = <a class="code" href="class_o_s_p_f_routing.html#a9133e58c17a9a4e875c426d7f1e6757d">getStrAttrOrPar</a>(externalRouteConfig, <span class="stringliteral">&quot;externalInterfaceOutputType&quot;</span>);
+    <span class="keywordflow">if</span> (metricType == <span class="stringliteral">&quot;Type2&quot;</span>) {
+        asExternalRoute.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#acec64ce77d6c3bd9cac67bf136b1abfd">setE_ExternalMetricType</a>(<span class="keyword">true</span>);
+        externalRoutingEntry.<a class="code" href="class_o_s_p_f_1_1_routing_table_entry.html#a85ff4d8d73e389b820d8fe19fcaef75c">setType2Cost</a>(routeCost);
+        externalRoutingEntry.<a class="code" href="class_o_s_p_f_1_1_routing_table_entry.html#a56347be9b6f6283980d3ab0e78bc7cfe">setPathType</a>(<a class="code" href="class_o_s_p_f_1_1_routing_table_entry.html#a32d865d25745b844bcc6100e11dfd254ab4a383f4abb1e72764d48d0a2c2bce8f">OSPF::RoutingTableEntry::TYPE2_EXTERNAL</a>);
+    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (metricType == <span class="stringliteral">&quot;Type1&quot;</span>) {
+        asExternalRoute.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#acec64ce77d6c3bd9cac67bf136b1abfd">setE_ExternalMetricType</a>(<span class="keyword">false</span>);
+        externalRoutingEntry.<a class="code" href="class_o_s_p_f_1_1_routing_table_entry.html#a21508655875b4163673c01d801ed2d36">setCost</a>(routeCost);
+        externalRoutingEntry.<a class="code" href="class_o_s_p_f_1_1_routing_table_entry.html#a56347be9b6f6283980d3ab0e78bc7cfe">setPathType</a>(<a class="code" href="class_o_s_p_f_1_1_routing_table_entry.html#a32d865d25745b844bcc6100e11dfd254a68a12b5f95e47208b17658ba176402fa">OSPF::RoutingTableEntry::TYPE1_EXTERNAL</a>);
+    } <span class="keywordflow">else</span> {
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Invalid &#39;externalInterfaceOutputType&#39; at interface &#39;%s&#39; at &quot;</span>, ie-&gt;getName(), externalRouteConfig.getSourceLocation());
     }
-    <span class="comment">// add the external route to the OSPF datastructure</span>
-    <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF datastructure.">ospfRouter</a>-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#aed64d2915aba911a976c06f053ecf19f">UpdateExternalRoute</a>(networkAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a74993d6571119644535ac918c4240722">address</a>, asExternalRoute, ifIndex);
+
+    asExternalRoute.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#a4c08e9d5cc570995b3f7320b70707766">setForwardingAddress</a>(<a class="code" href="_o_s_p_fcommon_8h.html#aeac91d9e14bec1c80f39e1774539e625">ipv4AddressFromAddressString</a>(<a class="code" href="namespace_diffserv_util.html#aa861ed85b25036df9b0b9dbb02c951b8" title="Returns the value of the named attribute of the XML element, or throws an exception if not found...">getRequiredAttribute</a>(externalRouteConfig, <span class="stringliteral">&quot;forwardingAddress&quot;</span>)));
+
+    <span class="keywordtype">long</span> externalRouteTagVal = 0;   <span class="comment">// default value</span>
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *externalRouteTag = externalRouteConfig.getAttribute(<span class="stringliteral">&quot;externalRouteTag&quot;</span>);
+    <span class="keywordflow">if</span> (externalRouteTag &amp;&amp; *externalRouteTag)
+    {
+        <span class="keywordtype">char</span> *endp = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+        externalRouteTagVal = strtol(externalRouteTag, &amp;endp, 0);
+        <span class="keywordflow">if</span>(*endp)
+            <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Invalid externalRouteTag=&#39;%s&#39; at %s&quot;</span>, externalRouteTag, externalRouteConfig.getSourceLocation());
+    }
+    asExternalRoute.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#ad3db488266a56c0ff4d685a6e8c75e8a">setExternalRouteTag</a>(externalRouteTagVal);
+
+    <span class="comment">// add the external route to the OSPF data structure</span>
+    <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF data structure.">ospfRouter</a>-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#a542dd39f87a1f348d9f555b9823c9a07" title="Stores information on an AS External Route in externalRoutes and intalls(or updates) a new ASExternal...">updateExternalRoute</a>(networkAddress.<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a74993d6571119644535ac918c4240722">address</a>, asExternalRoute, ifIndex);
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="aaaa7a0595a166970c8c6238b52dacfff"></a><!-- doxytag: member="OSPFRouting::LoadHostRoute" ref="aaaa7a0595a166970c8c6238b52dacfff" args="(const cXMLElement &amp;hostRouteConfig)" -->
+<a class="anchor" id="abc7bbdfb6fe2ab158c64ec7c3579ccdd"></a><!-- doxytag: member="OSPFRouting::loadHostRoute" ref="abc7bbdfb6fe2ab158c64ec7c3579ccdd" args="(const cXMLElement &amp;hostRouteConfig)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_o_s_p_f_routing.html#aaaa7a0595a166970c8c6238b52dacfff">OSPFRouting::LoadHostRoute</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_o_s_p_f_routing.html#abc7bbdfb6fe2ab158c64ec7c3579ccdd">OSPFRouting::loadHostRoute</a> </td>
           <td>(</td>
           <td class="paramtype">const cXMLElement &amp;&#160;</td>
           <td class="paramname"><em>hostRouteConfig</em></td><td>)</td>
@@ -561,6 +895,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Loads the configuration of a host getRoute(a host directly connected to the router). </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -569,49 +904,41 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00353">353</a> of file <a class="el" href="_o_s_p_f_routing_8cc_source.html">OSPFRouting.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00464">LoadConfigFromXML()</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_routing.html#abec8786045419fda13d0ccd094fa917b">loadConfigFromXML()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="struct_o_s_p_f_1_1_host_route_parameters.html">OSPF::HostRouteParameters</a> hostParameters;
-    <a class="code" href="namespace_o_s_p_f.html#a8d10c460f2da4aae5dd61d2a082dfc56">OSPF::AreaID</a>              hostArea;
+    <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">OSPF::AreaID</a> hostArea;
 
-    std::string ifName = hostRouteConfig.getAttribute(<span class="stringliteral">&quot;ifName&quot;</span>);
-    hostParameters.<a class="code" href="struct_o_s_p_f_1_1_host_route_parameters.html#ad87d530d4294ea13f03264b82df05baf">ifIndex</a> = <a class="code" href="class_o_s_p_f_routing.html#a8d385175d7fb3de98c2f0e1186386ecb">ResolveInterfaceName</a>(ifName);
+    <a class="code" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> *ie = <a class="code" href="class_o_s_p_f_routing.html#a8711bff76cce88455c09dc877a84a3b5" title="Search an InterfaceEntry in IInterfaceTable by interface name or toward module name an returns the In...">getInterfaceByXMLAttributesOf</a>(hostRouteConfig);
+    <span class="keywordtype">int</span> ifIndex = ie-&gt;<a class="code" href="class_interface_entry.html#adc901fa42c37ce16b5c0785da81106ce">getInterfaceId</a>();
 
-    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;        loading HostInterface &quot;</span> &lt;&lt; ifName &lt;&lt; <span class="stringliteral">&quot; ifIndex[&quot;</span> &lt;&lt; <span class="keyword">static_cast&lt;</span><span class="keywordtype">short</span><span class="keyword">&gt;</span> (hostParameters.<a class="code" href="struct_o_s_p_f_1_1_host_route_parameters.html#ad87d530d4294ea13f03264b82df05baf">ifIndex</a>) &lt;&lt; <span class="stringliteral">&quot;]\n&quot;</span>;
+    hostParameters.<a class="code" href="struct_o_s_p_f_1_1_host_route_parameters.html#ad87d530d4294ea13f03264b82df05baf">ifIndex</a> = ifIndex;
 
-    cXMLElementList ifDetails = hostRouteConfig.getChildren();
-    <span class="keywordflow">for</span> (cXMLElementList::iterator hostElemIt = ifDetails.begin(); hostElemIt != ifDetails.end(); hostElemIt++) {
-        std::string nodeName = (*hostElemIt)-&gt;getTagName();
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;AreaID&quot;</span>) {
-            hostArea = <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a4f2f8ba751b645157dacc7b6a57f4157">ULongFromAddressString</a>((*hostElemIt)-&gt;getNodeValue());
-        }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;AttachedHost&quot;</span>) {
-            hostParameters.<a class="code" href="struct_o_s_p_f_1_1_host_route_parameters.html#aa5fed9620e06e6ae079b51bc5aca8e40">address</a> = <a class="code" href="_ansa_o_s_p_fcommon_8h.html#ad23a93ae8dbc9a767ec279d6840100b6">IPv4AddressFromAddressString</a>((*hostElemIt)-&gt;getNodeValue());
-        }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;LinkCost&quot;</span>) {
-            hostParameters.<a class="code" href="struct_o_s_p_f_1_1_host_route_parameters.html#aa9a4eb549077183bf19aff1f5672255e">linkCost</a> = atoi((*hostElemIt)-&gt;getNodeValue());
-        }
-    }
-    <span class="comment">// add the host route to the OSPF datastructure.</span>
-    <a class="code" href="class_o_s_p_f_1_1_area.html">OSPF::Area</a>* area = <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF datastructure.">ospfRouter</a>-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#af1593be786d4bdd63bb6805d5bdefb50">GetArea</a>(hostArea);
-    <span class="keywordflow">if</span> (area != NULL) {
-        area-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#aadd71837885c90c5bd658f577464383e">AddHostRoute</a>(hostParameters);
+    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;        loading HostInterface &quot;</span> &lt;&lt; ie-&gt;getName() &lt;&lt; <span class="stringliteral">&quot; ifIndex[&quot;</span> &lt;&lt; ifIndex &lt;&lt; <span class="stringliteral">&quot;]\n&quot;</span>;
 
+    <a class="code" href="class_o_s_p_f_routing.html#ab8e6f305b9877b66c7658c4bd94e292d">joinMulticastGroups</a>(hostParameters.<a class="code" href="struct_o_s_p_f_1_1_host_route_parameters.html#ad87d530d4294ea13f03264b82df05baf">ifIndex</a>);
+
+    hostArea = <a class="code" href="_o_s_p_fcommon_8h.html#aeac91d9e14bec1c80f39e1774539e625">ipv4AddressFromAddressString</a>(<a class="code" href="class_o_s_p_f_routing.html#a9133e58c17a9a4e875c426d7f1e6757d">getStrAttrOrPar</a>(hostRouteConfig, <span class="stringliteral">&quot;areaID&quot;</span>));
+    hostParameters.<a class="code" href="struct_o_s_p_f_1_1_host_route_parameters.html#aa5fed9620e06e6ae079b51bc5aca8e40">address</a> = <a class="code" href="_o_s_p_fcommon_8h.html#aeac91d9e14bec1c80f39e1774539e625">ipv4AddressFromAddressString</a>(<a class="code" href="namespace_diffserv_util.html#aa861ed85b25036df9b0b9dbb02c951b8" title="Returns the value of the named attribute of the XML element, or throws an exception if not found...">getRequiredAttribute</a>(hostRouteConfig, <span class="stringliteral">&quot;attachedHost&quot;</span>));
+    hostParameters.<a class="code" href="struct_o_s_p_f_1_1_host_route_parameters.html#aa9a4eb549077183bf19aff1f5672255e">linkCost</a> = <a class="code" href="class_o_s_p_f_routing.html#a1beb573f5f81ab28ca9436ded38ed38d">getIntAttrOrPar</a>(hostRouteConfig, <span class="stringliteral">&quot;linkCost&quot;</span>);
+
+    <span class="comment">// add the host route to the OSPF data structure.</span>
+    <a class="code" href="class_o_s_p_f_1_1_area.html">OSPF::Area</a>* area = <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF data structure.">ospfRouter</a>-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#abd611ae0dce1b3006eab26dd5b02a5af" title="Returns the pointer to the Area identified by the input areaID, if it&#39;s on the Area list...">getAreaByID</a>(hostArea);
+    <span class="keywordflow">if</span> (area != <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {
+        area-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a7578f777362487d2804466f79b02b4b6">addHostRoute</a>(hostParameters);
     } <span class="keywordflow">else</span> {
-        error(<span class="stringliteral">&quot;Loading HostInterface ifIndex[%d] in Area %d aborted&quot;</span>, hostParameters.<a class="code" href="struct_o_s_p_f_1_1_host_route_parameters.html#ad87d530d4294ea13f03264b82df05baf">ifIndex</a>, hostArea);
+        error(<span class="stringliteral">&quot;Loading HostInterface &#39;%s&#39; aborted, unknown area %s at %s&quot;</span>, ie-&gt;getName(), hostArea.<a class="code" href="class_i_pv4_address.html#ac6c9eedd7d88e27a22d620c023a2c309" title="Returns the string representation of the address (e.g.">str</a>(<span class="keyword">false</span>).c_str(), hostRouteConfig.getSourceLocation());
     }
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a2f4d972b5e0953bdfa621f22a72b8113"></a><!-- doxytag: member="OSPFRouting::LoadInterfaceParameters" ref="a2f4d972b5e0953bdfa621f22a72b8113" args="(const cXMLElement &amp;ifConfig)" -->
+<a class="anchor" id="a65f22d4d3ea87506c07667d47f7b2d3b"></a><!-- doxytag: member="OSPFRouting::loadInterfaceParameters" ref="a65f22d4d3ea87506c07667d47f7b2d3b" args="(const cXMLElement &amp;ifConfig)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_o_s_p_f_routing.html#a2f4d972b5e0953bdfa621f22a72b8113">OSPFRouting::LoadInterfaceParameters</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_o_s_p_f_routing.html#a65f22d4d3ea87506c07667d47f7b2d3b">OSPFRouting::loadInterfaceParameters</a> </td>
           <td>(</td>
           <td class="paramtype">const cXMLElement &amp;&#160;</td>
           <td class="paramname"><em>ifConfig</em></td><td>)</td>
@@ -620,100 +947,77 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Loads <a class="el" href="namespace_o_s_p_f.html">OSPF</a> configuration information for a router interface. Handles PointToPoint, Broadcast, NBMA and PointToMultiPoint interfaces. </p>
+
+<p>Loads <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> configuration information for a router interface. </p>
+<p>Handles POINTTOPOINT, BROADCAST, NBMA and POINTTOMULTIPOINT interfaces. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">ifConfig</td><td>[in] XML node describing the configuration of an <a class="el" href="namespace_o_s_p_f.html">OSPF</a> interface. </td></tr>
+    <tr><td class="paramname">ifConfig</td><td>[in] XML node describing the configuration of an <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> interface. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00178">178</a> of file <a class="el" href="_o_s_p_f_routing_8cc_source.html">OSPFRouting.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00464">LoadConfigFromXML()</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_routing.html#abec8786045419fda13d0ccd094fa917b">loadConfigFromXML()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_o_s_p_f_1_1_interface.html">OSPF::Interface</a>* intf          = <span class="keyword">new</span> <a class="code" href="class_o_s_p_f_1_1_interface.html">OSPF::Interface</a>;
-    std::string      ifName        = ifConfig.getAttribute(<span class="stringliteral">&quot;ifName&quot;</span>);
-    <span class="keywordtype">int</span>              ifIndex       = <a class="code" href="class_o_s_p_f_routing.html#a8d385175d7fb3de98c2f0e1186386ecb">ResolveInterfaceName</a>(ifName);
-    std::string      interfaceType = ifConfig.getTagName();
+    <a class="code" href="class_o_s_p_f_1_1_interface.html">OSPF::Interface</a>* intf = <span class="keyword">new</span> <a class="code" href="class_o_s_p_f_1_1_interface.html">OSPF::Interface</a>;
+    <a class="code" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> *ie = <a class="code" href="class_o_s_p_f_routing.html#a8711bff76cce88455c09dc877a84a3b5" title="Search an InterfaceEntry in IInterfaceTable by interface name or toward module name an returns the In...">getInterfaceByXMLAttributesOf</a>(ifConfig);
+    <span class="keywordtype">int</span> ifIndex = ie-&gt;<a class="code" href="class_interface_entry.html#adc901fa42c37ce16b5c0785da81106ce">getInterfaceId</a>();
 
-    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;        loading &quot;</span> &lt;&lt; interfaceType &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; ifName &lt;&lt; <span class="stringliteral">&quot; ifIndex[&quot;</span> &lt;&lt; ifIndex &lt;&lt; <span class="stringliteral">&quot;]\n&quot;</span>;
+    std::string interfaceType = ifConfig.getTagName();
 
-    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a7c4201bb2f873917dd32fc330daef413">SetIfIndex</a>(ifIndex);
+    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;        loading &quot;</span> &lt;&lt; interfaceType &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; ie-&gt;getName() &lt;&lt; <span class="stringliteral">&quot; (ifIndex=&quot;</span> &lt;&lt; ifIndex &lt;&lt; <span class="stringliteral">&quot;)\n&quot;</span>;
+
+    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#aeac76fcabdad445ce6a1829cbfc58aab">setIfIndex</a>(ifIndex);
     <span class="keywordflow">if</span> (interfaceType == <span class="stringliteral">&quot;PointToPointInterface&quot;</span>) {
-        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#adcd4b8414def2afd4eee3af284da430d">SetType</a>(<a class="code" href="class_o_s_p_f_1_1_interface.html#a558b3988a38b079460b57f092eacf4aca4dac0c4eca27454daabf38ea32f47775">OSPF::Interface::PointToPoint</a>);
+        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a13ae7ca60c4d7517ccb5f0c9afb13039">setType</a>(<a class="code" href="class_o_s_p_f_1_1_interface.html#a558b3988a38b079460b57f092eacf4acaa57573e6fff63738e0f342ee1d5d760f">OSPF::Interface::POINTTOPOINT</a>);
     } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (interfaceType == <span class="stringliteral">&quot;BroadcastInterface&quot;</span>) {
-        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#adcd4b8414def2afd4eee3af284da430d">SetType</a>(<a class="code" href="class_o_s_p_f_1_1_interface.html#a558b3988a38b079460b57f092eacf4aca15decf080ad941585245418cfb9458c9">OSPF::Interface::Broadcast</a>);
+        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a13ae7ca60c4d7517ccb5f0c9afb13039">setType</a>(<a class="code" href="class_o_s_p_f_1_1_interface.html#a558b3988a38b079460b57f092eacf4aca237bd0e7c65b27bf1d75ddeccf7f67f9">OSPF::Interface::BROADCAST</a>);
     } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (interfaceType == <span class="stringliteral">&quot;NBMAInterface&quot;</span>) {
-        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#adcd4b8414def2afd4eee3af284da430d">SetType</a>(<a class="code" href="class_o_s_p_f_1_1_interface.html#a558b3988a38b079460b57f092eacf4acae26d6f3ee5ee0f7c1ed2f2196c1dfe07">OSPF::Interface::NBMA</a>);
+        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a13ae7ca60c4d7517ccb5f0c9afb13039">setType</a>(<a class="code" href="class_o_s_p_f_1_1_interface.html#a558b3988a38b079460b57f092eacf4acae26d6f3ee5ee0f7c1ed2f2196c1dfe07">OSPF::Interface::NBMA</a>);
     } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (interfaceType == <span class="stringliteral">&quot;PointToMultiPointInterface&quot;</span>) {
-        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#adcd4b8414def2afd4eee3af284da430d">SetType</a>(<a class="code" href="class_o_s_p_f_1_1_interface.html#a558b3988a38b079460b57f092eacf4aca661d5c29aedcfc3f712b4084e12d51ae">OSPF::Interface::PointToMultiPoint</a>);
+        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a13ae7ca60c4d7517ccb5f0c9afb13039">setType</a>(<a class="code" href="class_o_s_p_f_1_1_interface.html#a558b3988a38b079460b57f092eacf4aca048ea4668fa4b417298ee23a29475233">OSPF::Interface::POINTTOMULTIPOINT</a>);
     } <span class="keywordflow">else</span> {
         <span class="keyword">delete</span> intf;
-        error(<span class="stringliteral">&quot;Loading %s ifIndex[%d] aborted&quot;</span>, interfaceType.c_str(), ifIndex);
+        error(<span class="stringliteral">&quot;Unknown interface type &#39;%s&#39; for interface %s (ifIndex=%d) at %s&quot;</span>,
+                interfaceType.c_str(), ie-&gt;getName(), ifIndex, ifConfig.getSourceLocation());
     }
 
-    <a class="code" href="namespace_o_s_p_f.html#a8d10c460f2da4aae5dd61d2a082dfc56">OSPF::AreaID</a>    areaID    = 0;
+    <a class="code" href="class_o_s_p_f_routing.html#ab8e6f305b9877b66c7658c4bd94e292d">joinMulticastGroups</a>(ifIndex);
+
+    <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">OSPF::AreaID</a> areaID = <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a>(<a class="code" href="class_o_s_p_f_routing.html#a9133e58c17a9a4e875c426d7f1e6757d">getStrAttrOrPar</a>(ifConfig, <span class="stringliteral">&quot;areaID&quot;</span>));
+    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#ae3a8a2c1ab59c735dbdc3be29d8e0957">setAreaID</a>(areaID);
+
+    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a322201a809f92e08a64e6463426325d4">setOutputCost</a>(<a class="code" href="class_o_s_p_f_routing.html#a1beb573f5f81ab28ca9436ded38ed38d">getIntAttrOrPar</a>(ifConfig, <span class="stringliteral">&quot;interfaceOutputCost&quot;</span>));
+
+    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a067aa1993f04962e64d696be68d62188">setRetransmissionInterval</a>(<a class="code" href="class_o_s_p_f_routing.html#a1beb573f5f81ab28ca9436ded38ed38d">getIntAttrOrPar</a>(ifConfig, <span class="stringliteral">&quot;retransmissionInterval&quot;</span>));
+
+    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a69a73e436d2b6d5be41a6e40800f0b9c">setTransmissionDelay</a>(<a class="code" href="class_o_s_p_f_routing.html#a1beb573f5f81ab28ca9436ded38ed38d">getIntAttrOrPar</a>(ifConfig, <span class="stringliteral">&quot;interfaceTransmissionDelay&quot;</span>));
+
+    <span class="keywordflow">if</span> (interfaceType == <span class="stringliteral">&quot;BroadcastInterface&quot;</span> || interfaceType == <span class="stringliteral">&quot;NBMAInterface&quot;</span>)
+        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a0f4aa6c4711e13154ef12ff6eb528731">setRouterPriority</a>(<a class="code" href="class_o_s_p_f_routing.html#a1beb573f5f81ab28ca9436ded38ed38d">getIntAttrOrPar</a>(ifConfig, <span class="stringliteral">&quot;routerPriority&quot;</span>));
+
+    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a4d540428940060eb706bb68356ca741c">setHelloInterval</a>(<a class="code" href="class_o_s_p_f_routing.html#a1beb573f5f81ab28ca9436ded38ed38d">getIntAttrOrPar</a>(ifConfig, <span class="stringliteral">&quot;helloInterval&quot;</span>));
+
+    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a1c300e61c5318dbf3663d0fe8f150804">setRouterDeadInterval</a>(<a class="code" href="class_o_s_p_f_routing.html#a1beb573f5f81ab28ca9436ded38ed38d">getIntAttrOrPar</a>(ifConfig, <span class="stringliteral">&quot;routerDeadInterval&quot;</span>));
+
+    <a class="code" href="class_o_s_p_f_routing.html#a8d626803b3686f86086c4caa83b9e358" title="Loads authenticationType and authenticationKey attibutes for a router interface.">loadAuthenticationConfig</a>(intf, ifConfig);
+
+    <span class="keywordflow">if</span> (interfaceType == <span class="stringliteral">&quot;NBMAInterface&quot;</span>)
+        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#aceec489f57630645345102a59d464cee">setPollInterval</a>(<a class="code" href="class_o_s_p_f_routing.html#a1beb573f5f81ab28ca9436ded38ed38d">getIntAttrOrPar</a>(ifConfig, <span class="stringliteral">&quot;pollInterval&quot;</span>));
+
     cXMLElementList ifDetails = ifConfig.getChildren();
 
     <span class="keywordflow">for</span> (cXMLElementList::iterator ifElemIt = ifDetails.begin(); ifElemIt != ifDetails.end(); ifElemIt++) {
         std::string nodeName = (*ifElemIt)-&gt;getTagName();
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;AreaID&quot;</span>) {
-            areaID = <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a4f2f8ba751b645157dacc7b6a57f4157">ULongFromAddressString</a>((*ifElemIt)-&gt;getNodeValue());
-            intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#ae0216e64c1bce8a8fdfa68165cb73ae5">SetAreaID</a>(areaID);
-        }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;InterfaceOutputCost&quot;</span>) {
-            intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a5deaa4e5d2b7e75d934c79e3b727e954">SetOutputCost</a>(atoi((*ifElemIt)-&gt;getNodeValue()));
-        }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;RetransmissionInterval&quot;</span>) {
-            intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a21654ec08c047a82e4f9ada4253334e3">SetRetransmissionInterval</a>(atoi((*ifElemIt)-&gt;getNodeValue()));
-        }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;InterfaceTransmissionDelay&quot;</span>) {
-            intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a5071ff810d8d1698334c3cedaecb95e2">SetTransmissionDelay</a>(atoi((*ifElemIt)-&gt;getNodeValue()));
-        }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;RouterPriority&quot;</span>) {
-            intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#ad2b8d0dc855d09bdbd2115a6db6cf00e">SetRouterPriority</a>(atoi((*ifElemIt)-&gt;getNodeValue()));
-        }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;HelloInterval&quot;</span>) {
-            intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a293d869360c0365c5975a84e585233aa">SetHelloInterval</a>(atoi((*ifElemIt)-&gt;getNodeValue()));
-        }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;RouterDeadInterval&quot;</span>) {
-            intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a689a2f9ca652351f3404c25a8e2acd8f">SetRouterDeadInterval</a>(atoi((*ifElemIt)-&gt;getNodeValue()));
-        }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;AuthenticationType&quot;</span>) {
-            std::string authenticationType = (*ifElemIt)-&gt;getNodeValue();
-            <span class="keywordflow">if</span> (authenticationType == <span class="stringliteral">&quot;SimplePasswordType&quot;</span>) {
-                intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a35a3101643696ffe3576162b69bf2bc5">SetAuthenticationType</a>(<a class="code" href="namespace_o_s_p_f.html#a2e0cad18e6b80ee3a427a65a0b395aafa13c53535f35435755bfb2dcf2d709076">OSPF::SimplePasswordType</a>);
-            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (authenticationType == <span class="stringliteral">&quot;CrytographicType&quot;</span>) {
-                intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a35a3101643696ffe3576162b69bf2bc5">SetAuthenticationType</a>(<a class="code" href="namespace_o_s_p_f.html#a2e0cad18e6b80ee3a427a65a0b395aafa2f33878554866e1aa7ef58a8df3d320e">OSPF::CrytographicType</a>);
-            } <span class="keywordflow">else</span> {
-                intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a35a3101643696ffe3576162b69bf2bc5">SetAuthenticationType</a>(<a class="code" href="namespace_o_s_p_f.html#a2e0cad18e6b80ee3a427a65a0b395aafaa912eb1946419ebf910b2b8322788ca9">OSPF::NullType</a>);
-            }
-        }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;AuthenticationKey&quot;</span>) {
-            std::string key = (*ifElemIt)-&gt;getNodeValue();
-            <a class="code" href="struct_o_s_p_f_1_1_authentication_key_type.html">OSPF::AuthenticationKeyType</a> keyValue;
-            memset(keyValue.<a class="code" href="struct_o_s_p_f_1_1_authentication_key_type.html#a09102c74d106ef556c423ea0438aed4a">bytes</a>, 0, 8 * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>));
-            <span class="keywordtype">int</span> keyLength = key.length();
-            <span class="keywordflow">if</span> ((keyLength &gt; 4) &amp;&amp; (keyLength &lt;= 18) &amp;&amp; (keyLength % 2 == 0) &amp;&amp; (key[0] == <span class="charliteral">&#39;0&#39;</span>) &amp;&amp; (key[1] == <span class="charliteral">&#39;x&#39;</span>)) {
-                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = keyLength; (<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> &gt; 2); <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> -= 2) {
-                    keyValue.<a class="code" href="struct_o_s_p_f_1_1_authentication_key_type.html#a09102c74d106ef556c423ea0438aed4a">bytes</a>[(<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> - 2) / 2] = <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a889a6de7cccb5c78d5bf654ce2351f9f">HexPairToByte</a>(key[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> - 1], key[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>]);
-                }
-            }
-            intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a5b1fafec8e83e59b39e7ec17c162c9cb">SetAuthenticationKey</a>(keyValue);
-        }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;PollInterval&quot;</span>) {
-            intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a39ab8d1060b5e7eeff0b5bd1e50c1d6a">SetPollInterval</a>(atoi((*ifElemIt)-&gt;getNodeValue()));
-        }
         <span class="keywordflow">if</span> ((interfaceType == <span class="stringliteral">&quot;NBMAInterface&quot;</span>) &amp;&amp; (nodeName == <span class="stringliteral">&quot;NBMANeighborList&quot;</span>)) {
             cXMLElementList neighborList = (*ifElemIt)-&gt;getChildren();
             <span class="keywordflow">for</span> (cXMLElementList::iterator neighborIt = neighborList.begin(); neighborIt != neighborList.end(); neighborIt++) {
                 std::string neighborNodeName = (*neighborIt)-&gt;getTagName();
                 <span class="keywordflow">if</span> (neighborNodeName == <span class="stringliteral">&quot;NBMANeighbor&quot;</span>) {
-                    <a class="code" href="class_o_s_p_f_1_1_neighbor.html">OSPF::Neighbor</a>* neighbor = <span class="keyword">new</span> <a class="code" href="class_o_s_p_f_1_1_neighbor.html">OSPF::Neighbor</a>;
-                    neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a4fa4de2681d4abe417553d7883869529">SetAddress</a>(<a class="code" href="_ansa_o_s_p_fcommon_8h.html#ad23a93ae8dbc9a767ec279d6840100b6">IPv4AddressFromAddressString</a>((*neighborIt)-&gt;getChildrenByTagName(<span class="stringliteral">&quot;NetworkInterfaceAddress&quot;</span>)[0]-&gt;getNodeValue()));
-                    neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a870a8aa258b8d1250b5e13c67688898b">SetPriority</a>(atoi((*neighborIt)-&gt;getChildrenByTagName(<span class="stringliteral">&quot;NeighborPriority&quot;</span>)[0]-&gt;getNodeValue()));
-                    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a906b7bb39eaf75d7ccc6e7aaa710c724">AddNeighbor</a>(neighbor);
+                    <a class="code" href="class_o_s_p_f_1_1_neighbor.html">OSPF::Neighbor</a>* <a class="code" href="structneighbor.html">neighbor</a> = <span class="keyword">new</span> <a class="code" href="class_o_s_p_f_1_1_neighbor.html">OSPF::Neighbor</a>;
+                    neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a25f7b5f1a65145419b4dc87e1c3e6044">setAddress</a>(<a class="code" href="_o_s_p_fcommon_8h.html#aeac91d9e14bec1c80f39e1774539e625">ipv4AddressFromAddressString</a>(<a class="code" href="namespace_diffserv_util.html#aa861ed85b25036df9b0b9dbb02c951b8" title="Returns the value of the named attribute of the XML element, or throws an exception if not found...">getRequiredAttribute</a>(**neighborIt, <span class="stringliteral">&quot;networkInterfaceAddress&quot;</span>)));
+                    neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#af53ea0a4871ade5481b2861146ef3cd9">setPriority</a>(atoi(<a class="code" href="namespace_diffserv_util.html#aa861ed85b25036df9b0b9dbb02c951b8" title="Returns the value of the named attribute of the XML element, or throws an exception if not found...">getRequiredAttribute</a>(**neighborIt, <span class="stringliteral">&quot;neighborPriority&quot;</span>)));
+                    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a9b23637a8bdf545da35bfdd620b3106a">addNeighbor</a>(neighbor);
                 }
             }
         }
@@ -723,32 +1027,31 @@ Private Attributes</h2></td></tr>
                 std::string neighborNodeName = (*neighborIt)-&gt;getTagName();
                 <span class="keywordflow">if</span> (neighborNodeName == <span class="stringliteral">&quot;PointToMultiPointNeighbor&quot;</span>) {
                     <a class="code" href="class_o_s_p_f_1_1_neighbor.html">OSPF::Neighbor</a>* neighbor = <span class="keyword">new</span> <a class="code" href="class_o_s_p_f_1_1_neighbor.html">OSPF::Neighbor</a>;
-                    neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a4fa4de2681d4abe417553d7883869529">SetAddress</a>(<a class="code" href="_ansa_o_s_p_fcommon_8h.html#ad23a93ae8dbc9a767ec279d6840100b6">IPv4AddressFromAddressString</a>((*neighborIt)-&gt;getNodeValue()));
-                    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a906b7bb39eaf75d7ccc6e7aaa710c724">AddNeighbor</a>(neighbor);
+                    neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a25f7b5f1a65145419b4dc87e1c3e6044">setAddress</a>(<a class="code" href="_o_s_p_fcommon_8h.html#aeac91d9e14bec1c80f39e1774539e625">ipv4AddressFromAddressString</a>((*neighborIt)-&gt;getNodeValue()));
+                    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a9b23637a8bdf545da35bfdd620b3106a">addNeighbor</a>(neighbor);
                 }
             }
         }
-
     }
     <span class="comment">// add the interface to it&#39;s Area</span>
-    <a class="code" href="class_o_s_p_f_1_1_area.html">OSPF::Area</a>* area = <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF datastructure.">ospfRouter</a>-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#af1593be786d4bdd63bb6805d5bdefb50">GetArea</a>(areaID);
-    <span class="keywordflow">if</span> (area != NULL) {
-        area-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#af8d0698ec928feab6f61f1f48f800d93">AddInterface</a>(intf);
-        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a7efb487b2f5c22c8734c71535f05edb7">ProcessEvent</a>(<a class="code" href="class_o_s_p_f_1_1_interface.html#ae0aca9ab8ca338c25d9afa6e65fc8824a6a25beadf72c89b1677a33bad09e09f1">OSPF::Interface::InterfaceUp</a>); <span class="comment">// notification should come from the blackboard...</span>
+    <a class="code" href="class_o_s_p_f_1_1_area.html">OSPF::Area</a>* area = <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF data structure.">ospfRouter</a>-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#abd611ae0dce1b3006eab26dd5b02a5af" title="Returns the pointer to the Area identified by the input areaID, if it&#39;s on the Area list...">getAreaByID</a>(areaID);
+    <span class="keywordflow">if</span> (area != <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {
+        area-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a9a9b2c8a9eb45f7f89f445207e6abfc9">addInterface</a>(intf);
+        intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a6aa505b94c5dd62793403d02a78a3604">processEvent</a>(<a class="code" href="class_o_s_p_f_1_1_interface.html#ae0aca9ab8ca338c25d9afa6e65fc8824a07defb05a67f123aa15927b01242aeaf">OSPF::Interface::INTERFACE_UP</a>); <span class="comment">// notification should come from the blackboard...</span>
     } <span class="keywordflow">else</span> {
         <span class="keyword">delete</span> intf;
-        error(<span class="stringliteral">&quot;Loading %s ifIndex[%d] in Area %d aborted&quot;</span>, interfaceType.c_str(), ifIndex, areaID);
+        error(<span class="stringliteral">&quot;Loading %s ifIndex[%d] in Area %s aborted at %s&quot;</span>, interfaceType.c_str(), ifIndex, areaID.<a class="code" href="class_i_pv4_address.html#ac6c9eedd7d88e27a22d620c023a2c309" title="Returns the string representation of the address (e.g.">str</a>(<span class="keyword">false</span>).c_str(), ifConfig.getSourceLocation());
     }
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="adb2da70e8f941e2904279f3d176bf0b5"></a><!-- doxytag: member="OSPFRouting::LoadVirtualLink" ref="adb2da70e8f941e2904279f3d176bf0b5" args="(const cXMLElement &amp;virtualLinkConfig)" -->
+<a class="anchor" id="a10bcd85d5d26ce4e06c6f2b01bc6f420"></a><!-- doxytag: member="OSPFRouting::loadVirtualLink" ref="a10bcd85d5d26ce4e06c6f2b01bc6f420" args="(const cXMLElement &amp;virtualLinkConfig)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_o_s_p_f_routing.html#adb2da70e8f941e2904279f3d176bf0b5">OSPFRouting::LoadVirtualLink</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_o_s_p_f_routing.html#a10bcd85d5d26ce4e06c6f2b01bc6f420">OSPFRouting::loadVirtualLink</a> </td>
           <td>(</td>
           <td class="paramtype">const cXMLElement &amp;&#160;</td>
           <td class="paramname"><em>virtualLinkConfig</em></td><td>)</td>
@@ -757,6 +1060,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Loads the configuration of an OSPf virtual link(virtual connection between two backbone routers). </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -765,71 +1069,39 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00391">391</a> of file <a class="el" href="_o_s_p_f_routing_8cc_source.html">OSPFRouting.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00464">LoadConfigFromXML()</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_routing.html#abec8786045419fda13d0ccd094fa917b">loadConfigFromXML()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_o_s_p_f_1_1_interface.html">OSPF::Interface</a>* intf     = <span class="keyword">new</span> <a class="code" href="class_o_s_p_f_1_1_interface.html">OSPF::Interface</a>;
-    std::string      endPoint = virtualLinkConfig.getAttribute(<span class="stringliteral">&quot;endPointRouterID&quot;</span>);
-    <a class="code" href="class_o_s_p_f_1_1_neighbor.html">OSPF::Neighbor</a>*  neighbor = <span class="keyword">new</span> <a class="code" href="class_o_s_p_f_1_1_neighbor.html">OSPF::Neighbor</a>;
+    <a class="code" href="class_o_s_p_f_1_1_interface.html">OSPF::Interface</a>* intf = <span class="keyword">new</span> <a class="code" href="class_o_s_p_f_1_1_interface.html">OSPF::Interface</a>;
+    std::string endPoint = <a class="code" href="namespace_diffserv_util.html#aa861ed85b25036df9b0b9dbb02c951b8" title="Returns the value of the named attribute of the XML element, or throws an exception if not found...">getRequiredAttribute</a>(virtualLinkConfig, <span class="stringliteral">&quot;endPointRouterID&quot;</span>);
+    <a class="code" href="class_o_s_p_f_1_1_neighbor.html">OSPF::Neighbor</a>* <a class="code" href="structneighbor.html">neighbor</a> = <span class="keyword">new</span> <a class="code" href="class_o_s_p_f_1_1_neighbor.html">OSPF::Neighbor</a>;
 
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;        loading VirtualLink to &quot;</span> &lt;&lt; endPoint &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
 
-    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#adcd4b8414def2afd4eee3af284da430d">SetType</a>(<a class="code" href="class_o_s_p_f_1_1_interface.html#a558b3988a38b079460b57f092eacf4acaf27b340cd6ffc282630c03185294088b">OSPF::Interface::Virtual</a>);
-    neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#ad91998f47a8916d1000fec1c77befa9d">SetNeighborID</a>(<a class="code" href="_ansa_o_s_p_fcommon_8h.html#a4f2f8ba751b645157dacc7b6a57f4157">ULongFromAddressString</a>(endPoint.c_str()));
-    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a906b7bb39eaf75d7ccc6e7aaa710c724">AddNeighbor</a>(neighbor);
+    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a13ae7ca60c4d7517ccb5f0c9afb13039">setType</a>(<a class="code" href="class_o_s_p_f_1_1_interface.html#a558b3988a38b079460b57f092eacf4aca5ea9dce97089a750f8ad3c1ec49fa389">OSPF::Interface::VIRTUAL</a>);
+    neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a4dc2e6e989efcc4f36134cf416dc3895">setNeighborID</a>(<a class="code" href="_o_s_p_fcommon_8h.html#aeac91d9e14bec1c80f39e1774539e625">ipv4AddressFromAddressString</a>(endPoint.c_str()));
+    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a9b23637a8bdf545da35bfdd620b3106a">addNeighbor</a>(neighbor);
 
-    cXMLElementList ifDetails = virtualLinkConfig.getChildren();
-    <span class="keywordflow">for</span> (cXMLElementList::iterator ifElemIt = ifDetails.begin(); ifElemIt != ifDetails.end(); ifElemIt++) {
-        std::string nodeName = (*ifElemIt)-&gt;getTagName();
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;TransitAreaID&quot;</span>) {
-            intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#ad8a79f289516209fb374cdbe61447a0b">SetTransitAreaID</a>(<a class="code" href="_ansa_o_s_p_fcommon_8h.html#a4f2f8ba751b645157dacc7b6a57f4157">ULongFromAddressString</a>((*ifElemIt)-&gt;getNodeValue()));
-        }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;RetransmissionInterval&quot;</span>) {
-            intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a21654ec08c047a82e4f9ada4253334e3">SetRetransmissionInterval</a>(atoi((*ifElemIt)-&gt;getNodeValue()));
-        }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;InterfaceTransmissionDelay&quot;</span>) {
-            intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a5071ff810d8d1698334c3cedaecb95e2">SetTransmissionDelay</a>(atoi((*ifElemIt)-&gt;getNodeValue()));
-        }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;HelloInterval&quot;</span>) {
-            intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a293d869360c0365c5975a84e585233aa">SetHelloInterval</a>(atoi((*ifElemIt)-&gt;getNodeValue()));
-        }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;RouterDeadInterval&quot;</span>) {
-            intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a689a2f9ca652351f3404c25a8e2acd8f">SetRouterDeadInterval</a>(atoi((*ifElemIt)-&gt;getNodeValue()));
-        }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;AuthenticationType&quot;</span>) {
-            std::string authenticationType = (*ifElemIt)-&gt;getNodeValue();
-            <span class="keywordflow">if</span> (authenticationType == <span class="stringliteral">&quot;SimplePasswordType&quot;</span>) {
-                intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a35a3101643696ffe3576162b69bf2bc5">SetAuthenticationType</a>(<a class="code" href="namespace_o_s_p_f.html#a2e0cad18e6b80ee3a427a65a0b395aafa13c53535f35435755bfb2dcf2d709076">OSPF::SimplePasswordType</a>);
-            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (authenticationType == <span class="stringliteral">&quot;CrytographicType&quot;</span>) {
-                intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a35a3101643696ffe3576162b69bf2bc5">SetAuthenticationType</a>(<a class="code" href="namespace_o_s_p_f.html#a2e0cad18e6b80ee3a427a65a0b395aafa2f33878554866e1aa7ef58a8df3d320e">OSPF::CrytographicType</a>);
-            } <span class="keywordflow">else</span> {
-                intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a35a3101643696ffe3576162b69bf2bc5">SetAuthenticationType</a>(<a class="code" href="namespace_o_s_p_f.html#a2e0cad18e6b80ee3a427a65a0b395aafaa912eb1946419ebf910b2b8322788ca9">OSPF::NullType</a>);
-            }
-        }
-        <span class="keywordflow">if</span> (nodeName == <span class="stringliteral">&quot;AuthenticationKey&quot;</span>) {
-            std::string key = (*ifElemIt)-&gt;getNodeValue();
-            <a class="code" href="struct_o_s_p_f_1_1_authentication_key_type.html">OSPF::AuthenticationKeyType</a> keyValue;
-            memset(keyValue.<a class="code" href="struct_o_s_p_f_1_1_authentication_key_type.html#a09102c74d106ef556c423ea0438aed4a">bytes</a>, 0, 8 * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>));
-            <span class="keywordtype">int</span> keyLength = key.length();
-            <span class="keywordflow">if</span> ((keyLength &gt; 4) &amp;&amp; (keyLength &lt;= 18) &amp;&amp; (keyLength % 2 == 0) &amp;&amp; (key[0] == <span class="charliteral">&#39;0&#39;</span>) &amp;&amp; (key[1] == <span class="charliteral">&#39;x&#39;</span>)) {
-                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = keyLength; (<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> &gt; 2); <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> -= 2) {
-                    keyValue.<a class="code" href="struct_o_s_p_f_1_1_authentication_key_type.html#a09102c74d106ef556c423ea0438aed4a">bytes</a>[(<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> - 2) / 2] = <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a889a6de7cccb5c78d5bf654ce2351f9f">HexPairToByte</a>(key[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> - 1], key[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>]);
-                }
-            }
-            intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a5b1fafec8e83e59b39e7ec17c162c9cb">SetAuthenticationKey</a>(keyValue);
-        }
-    }
+    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#ace66adc5f47704b3cd18a36f60b3ff28">setTransitAreaID</a>(<a class="code" href="_o_s_p_fcommon_8h.html#aeac91d9e14bec1c80f39e1774539e625">ipv4AddressFromAddressString</a>(<a class="code" href="namespace_diffserv_util.html#aa861ed85b25036df9b0b9dbb02c951b8" title="Returns the value of the named attribute of the XML element, or throws an exception if not found...">getRequiredAttribute</a>(virtualLinkConfig, <span class="stringliteral">&quot;transitAreaID&quot;</span>)));
 
-    <span class="comment">// add the virtual link to the OSPF datastructure.</span>
-    <a class="code" href="class_o_s_p_f_1_1_area.html">OSPF::Area</a>* transitArea = <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF datastructure.">ospfRouter</a>-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#af1593be786d4bdd63bb6805d5bdefb50">GetArea</a>(intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#ad5f88b646ecd75f2e99b64513a9ba454">GetAreaID</a>());
-    <a class="code" href="class_o_s_p_f_1_1_area.html">OSPF::Area</a>* backbone    = <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF datastructure.">ospfRouter</a>-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#af1593be786d4bdd63bb6805d5bdefb50">GetArea</a>(<a class="code" href="namespace_o_s_p_f.html#adb591659bd229b640cdc32ebaef95222">OSPF::BackboneAreaID</a>);
+    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a067aa1993f04962e64d696be68d62188">setRetransmissionInterval</a>(<a class="code" href="class_o_s_p_f_routing.html#a1beb573f5f81ab28ca9436ded38ed38d">getIntAttrOrPar</a>(virtualLinkConfig, <span class="stringliteral">&quot;retransmissionInterval&quot;</span>));
 
-    <span class="keywordflow">if</span> ((backbone != NULL) &amp;&amp; (transitArea != NULL) &amp;&amp; (transitArea-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#aab71c3614910d8eacb48abd45ef8bff7">GetExternalRoutingCapability</a>())) {
-        backbone-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#af8d0698ec928feab6f61f1f48f800d93">AddInterface</a>(intf);
+    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a69a73e436d2b6d5be41a6e40800f0b9c">setTransmissionDelay</a>(<a class="code" href="class_o_s_p_f_routing.html#a1beb573f5f81ab28ca9436ded38ed38d">getIntAttrOrPar</a>(virtualLinkConfig, <span class="stringliteral">&quot;interfaceTransmissionDelay&quot;</span>));
+
+    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a4d540428940060eb706bb68356ca741c">setHelloInterval</a>(<a class="code" href="class_o_s_p_f_routing.html#a1beb573f5f81ab28ca9436ded38ed38d">getIntAttrOrPar</a>(virtualLinkConfig, <span class="stringliteral">&quot;helloInterval&quot;</span>));
+
+    intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a1c300e61c5318dbf3663d0fe8f150804">setRouterDeadInterval</a>(<a class="code" href="class_o_s_p_f_routing.html#a1beb573f5f81ab28ca9436ded38ed38d">getIntAttrOrPar</a>(virtualLinkConfig, <span class="stringliteral">&quot;routerDeadInterval&quot;</span>));
+
+    <a class="code" href="class_o_s_p_f_routing.html#a8d626803b3686f86086c4caa83b9e358" title="Loads authenticationType and authenticationKey attibutes for a router interface.">loadAuthenticationConfig</a>(intf, virtualLinkConfig);
+
+    <span class="comment">// add the virtual link to the OSPF data structure.</span>
+    <a class="code" href="class_o_s_p_f_1_1_area.html">OSPF::Area</a>* transitArea = <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF data structure.">ospfRouter</a>-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#abd611ae0dce1b3006eab26dd5b02a5af" title="Returns the pointer to the Area identified by the input areaID, if it&#39;s on the Area list...">getAreaByID</a>(intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a921c0551079c46582036660f08047d38">getAreaID</a>());
+    <a class="code" href="class_o_s_p_f_1_1_area.html">OSPF::Area</a>* backbone = <a class="code" href="class_o_s_p_f_routing.html#a690ee8115e4d30c21e8adb5035ca5614" title="Root object of the OSPF data structure.">ospfRouter</a>-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#abd611ae0dce1b3006eab26dd5b02a5af" title="Returns the pointer to the Area identified by the input areaID, if it&#39;s on the Area list...">getAreaByID</a>(<a class="code" href="namespace_o_s_p_f.html#a291fdf79093588fa8aeb40e22fdbbfc7">OSPF::BACKBONE_AREAID</a>);
+
+    <span class="keywordflow">if</span> ((backbone != <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) &amp;&amp; (transitArea != <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) &amp;&amp; (transitArea-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a9cc104b841d5013f399a8228953b2c7a">getExternalRoutingCapability</a>())) {
+        backbone-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a9a9b2c8a9eb45f7f89f445207e6abfc9">addInterface</a>(intf);
     } <span class="keywordflow">else</span> {
+        error(<span class="stringliteral">&quot;Loading VirtualLink to %s through Area %s aborted at &quot;</span>, endPoint.c_str(), intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a921c0551079c46582036660f08047d38">getAreaID</a>().<a class="code" href="class_i_pv4_address.html#ac6c9eedd7d88e27a22d620c023a2c309" title="Returns the string representation of the address (e.g.">str</a>(<span class="keyword">false</span>).c_str(), virtualLinkConfig.getSourceLocation());
         <span class="keyword">delete</span> intf;
-        error(<span class="stringliteral">&quot;Loading VirtualLink to %s through Area %d aborted&quot;</span>, endPoint.c_str(), intf-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#ad5f88b646ecd75f2e99b64513a9ba454">GetAreaID</a>());
     }
 }
 </pre></div>
@@ -848,18 +1120,16 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_o_s_p_f_routing_8h_source.html#l00054">54</a> of file <a class="el" href="_o_s_p_f_routing_8h_source.html">OSPFRouting.h</a>.</p>
 <div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> 5;}
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a8d385175d7fb3de98c2f0e1186386ecb"></a><!-- doxytag: member="OSPFRouting::ResolveInterfaceName" ref="a8d385175d7fb3de98c2f0e1186386ecb" args="(const std::string &amp;name) const " -->
+<a class="anchor" id="a087e1d677036c3700ce55135b387aa76"></a><!-- doxytag: member="OSPFRouting::resolveInterfaceName" ref="a087e1d677036c3700ce55135b387aa76" args="(const std::string &amp;name) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="class_o_s_p_f_routing.html#a8d385175d7fb3de98c2f0e1186386ecb">OSPFRouting::ResolveInterfaceName</a> </td>
+          <td class="memname">int <a class="el" href="class_o_s_p_f_routing.html#a087e1d677036c3700ce55135b387aa76">OSPFRouting::resolveInterfaceName</a> </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -868,15 +1138,13 @@ Private Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Looks up the interface name in <a class="el" href="class_i_interface_table.html">IInterfaceTable</a>, and returns interfaceId a.k.a ifIndex. </p>
 
-<p>Definition at line <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00096">96</a> of file <a class="el" href="_o_s_p_f_routing_8cc_source.html">OSPFRouting.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00294">LoadExternalRoute()</a>, <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00353">LoadHostRoute()</a>, and <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00178">LoadInterfaceParameters()</a>.</p>
+<p>Looks up the interface name in <a class="el" href="class_i_interface_table.html" title="A C++ interface to abstract the functionality of InterfaceTable.">IInterfaceTable</a>, and returns interfaceId a.k.a ifIndex. </p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_interface_entry.html">InterfaceEntry</a>* ie = <a class="code" href="class_o_s_p_f_routing.html#ad4bdd62bb9e1cdeeb118e986db7faf02" title="Provides access to the interface table.">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a8ad86ee823d6200b4f558383b39af658">getInterfaceByName</a>(name.c_str());
+    <a class="code" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a>* ie = <a class="code" href="class_o_s_p_f_routing.html#ad4bdd62bb9e1cdeeb118e986db7faf02" title="Provides access to the interface table.">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a8ad86ee823d6200b4f558383b39af658" title="Returns an interface given by its name.">getInterfaceByName</a>(<a class="code" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>.c_str());
     <span class="keywordflow">if</span> (!ie)
-        opp_error(<span class="stringliteral">&quot;error reading XML config: IInterfaceTable contains no interface named &#39;%s&#39;&quot;</span>, name.c_str());
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Error reading XML config: IInterfaceTable contains no interface named &#39;%s&#39;&quot;</span>, <a class="code" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>.c_str());
+
     <span class="keywordflow">return</span> ie-&gt;<a class="code" href="class_interface_entry.html#adc901fa42c37ce16b5c0785da81106ce">getInterfaceId</a>();
 }
 </pre></div>
@@ -896,9 +1164,7 @@ Private Attributes</h2></td></tr>
 
 <p>Provides access to the interface table. </p>
 
-<p>Definition at line <a class="el" href="_o_s_p_f_routing_8h_source.html#l00035">35</a> of file <a class="el" href="_o_s_p_f_routing_8h_source.html">OSPFRouting.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00059">initialize()</a>, and <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00096">ResolveInterfaceName()</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_routing.html#a8711bff76cce88455c09dc877a84a3b5">getInterfaceByXMLAttributesOf()</a>, <a class="el" href="class_o_s_p_f_routing.html#a757ca2b86873671c421c65e092630f42">initialize()</a>, <a class="el" href="class_o_s_p_f_routing.html#ab8e6f305b9877b66c7658c4bd94e292d">joinMulticastGroups()</a>, and <a class="el" href="class_o_s_p_f_routing.html#a087e1d677036c3700ce55135b387aa76">resolveInterfaceName()</a>.</p>
 
 </div>
 </div>
@@ -913,11 +1179,9 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Root object of the <a class="el" href="namespace_o_s_p_f.html">OSPF</a> datastructure. </p>
+<p>Root object of the <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> data structure. </p>
 
-<p>Definition at line <a class="el" href="_o_s_p_f_routing_8h_source.html#l00037">37</a> of file <a class="el" href="_o_s_p_f_routing_8h_source.html">OSPFRouting.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00085">handleMessage()</a>, <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00059">initialize()</a>, <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00134">LoadAreaFromXML()</a>, <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00464">LoadConfigFromXML()</a>, <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00294">LoadExternalRoute()</a>, <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00353">LoadHostRoute()</a>, <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00178">LoadInterfaceParameters()</a>, <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00391">LoadVirtualLink()</a>, <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00037">OSPFRouting()</a>, and <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00046">~OSPFRouting()</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_routing.html#a68ab10ea5288b5f659410267bc1fc261">checkExternalRoute()</a>, <a class="el" href="class_o_s_p_f_routing.html#acdf1e955f64a259cad0ac496e2c846a2">handleMessage()</a>, <a class="el" href="class_o_s_p_f_routing.html#a757ca2b86873671c421c65e092630f42">initialize()</a>, <a class="el" href="class_o_s_p_f_routing.html#a56cf176bc9fa04d309cfd47a512f291f">insertExternalRoute()</a>, <a class="el" href="class_o_s_p_f_routing.html#a89163d4bb7adcd8c740903e151904f74">loadAreaFromXML()</a>, <a class="el" href="class_o_s_p_f_routing.html#abec8786045419fda13d0ccd094fa917b">loadConfigFromXML()</a>, <a class="el" href="class_o_s_p_f_routing.html#ac65493078bbeb6c48808d191eda44454">loadExternalRoute()</a>, <a class="el" href="class_o_s_p_f_routing.html#abc7bbdfb6fe2ab158c64ec7c3579ccdd">loadHostRoute()</a>, <a class="el" href="class_o_s_p_f_routing.html#a65f22d4d3ea87506c07667d47f7b2d3b">loadInterfaceParameters()</a>, <a class="el" href="class_o_s_p_f_routing.html#a10bcd85d5d26ce4e06c6f2b01bc6f420">loadVirtualLink()</a>, <a class="el" href="class_o_s_p_f_routing.html#a308ea62380bcd522116dda0d58800644">OSPFRouting()</a>, and <a class="el" href="class_o_s_p_f_routing.html#a538afc8149c55b2409f150d5207412c2">~OSPFRouting()</a>.</p>
 
 </div>
 </div>
@@ -932,17 +1196,15 @@ Private Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Provides access to the <a class="el" href="class_i_p.html">IP</a> routing table. </p>
+<p>Provides access to the IP routing table. </p>
 
-<p>Definition at line <a class="el" href="_o_s_p_f_routing_8h_source.html#l00036">36</a> of file <a class="el" href="_o_s_p_f_routing_8h_source.html">OSPFRouting.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_o_s_p_f_routing_8cc_source.html#l00059">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_routing.html#a757ca2b86873671c421c65e092630f42">initialize()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_o_s_p_f_routing_8h_source.html">OSPFRouting.h</a></li>
-<li><a class="el" href="_o_s_p_f_routing_8cc_source.html">OSPFRouting.cc</a></li>
+<li><a class="el" href="_o_s_p_f_routing_8h.html">OSPFRouting.h</a></li>
+<li><a class="el" href="_o_s_p_f_routing_8cc.html">OSPFRouting.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -950,7 +1212,7 @@ Private Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_o_s_p_f_routing.html">OSPFRouting</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:51 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:28 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

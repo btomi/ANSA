@@ -83,19 +83,29 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="TCPSocketMap" -->
-<p><code>#include &lt;<a class="el" href="_t_c_p_socket_map_8h_source.html">TCPSocketMap.h</a>&gt;</code></p>
+<p>Small utility class for managing a large number of <a class="el" href="class_t_c_p_socket.html" title="TCPSocket is a convenience class, to make it easier to manage TCP connections from your application m...">TCPSocket</a> objects.  
+ <a href="class_t_c_p_socket_map.html#details">More...</a></p>
+
+<p><code>#include &lt;TCPSocketMap.h&gt;</code></p>
 
 <p><a href="class_t_c_p_socket_map-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_map.html#ad3b464e887d1fabfcaa339fa123a7164">TCPSocketMap</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#ad3b464e887d1fabfcaa339fa123a7164"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_map.html#a04020edfc732d2d624f84969f5582d96">~TCPSocketMap</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a04020edfc732d2d624f84969f5582d96"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_c_p_socket.html">TCPSocket</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_map.html#ad96c686c0e0536b8b8e279728a53b17e">findSocketFor</a> (cMessage *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_map.html#ac19937a0e8bd2dfcda6e7f831b835fd8">addSocket</a> (<a class="el" href="class_t_c_p_socket.html">TCPSocket</a> *socket)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the socket (by connId) for the given message.  <a href="#ad96c686c0e0536b8b8e279728a53b17e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_map.html#ac19937a0e8bd2dfcda6e7f831b835fd8">addSocket</a> (<a class="el" href="class_t_c_p_socket.html">TCPSocket</a> *socket)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers the given socket.  <a href="#ac19937a0e8bd2dfcda6e7f831b835fd8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_c_p_socket.html">TCPSocket</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_map.html#a0f564f7476d55d899fe236852e6baa49">removeSocket</a> (<a class="el" href="class_t_c_p_socket.html">TCPSocket</a> *socket)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the given socket from the data structure.  <a href="#a0f564f7476d55d899fe236852e6baa49"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_map.html#aba507c7eed348ab84b8db8eff54feda7">size</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_map.html#a599a1adc3e290473676194faf139a5a1">deleteSockets</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of sockets stored.  <a href="#aba507c7eed348ab84b8db8eff54feda7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_map.html#a599a1adc3e290473676194faf139a5a1">deleteSockets</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the socket objects.  <a href="#a599a1adc3e290473676194faf139a5a1"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-types"></a>
 Protected Types</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; int, <br class="typebreak"/>
@@ -105,9 +115,7 @@ Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_c_p_socket_map.html#ae1a4841f279c74f284d17b636a75577c">SocketMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_map.html#ac03a97d8dc4fedd6a2dcf4fa9caa3823">socketMap</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Small utility class for managing a large number of <a class="el" href="class_t_c_p_socket.html">TCPSocket</a> objects. </p>
-
-<p>Definition at line <a class="el" href="_t_c_p_socket_map_8h_source.html#l00032">32</a> of file <a class="el" href="_t_c_p_socket_map_8h_source.html">TCPSocketMap.h</a>.</p>
+<div class="textblock"><p>Small utility class for managing a large number of <a class="el" href="class_t_c_p_socket.html" title="TCPSocket is a convenience class, to make it easier to manage TCP connections from your application m...">TCPSocket</a> objects. </p>
 </div><hr/><h2>Member Typedef Documentation</h2>
 <a class="anchor" id="ae1a4841f279c74f284d17b636a75577c"></a><!-- doxytag: member="TCPSocketMap::SocketMap" ref="ae1a4841f279c74f284d17b636a75577c" args="" -->
 <div class="memitem">
@@ -119,8 +127,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_socket_map_8h_source.html#l00035">35</a> of file <a class="el" href="_t_c_p_socket_map_8h_source.html">TCPSocketMap.h</a>.</p>
 
 </div>
 </div>
@@ -138,9 +144,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Constructor. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_socket_map_8h_source.html#l00041">41</a> of file <a class="el" href="_t_c_p_socket_map_8h_source.html">TCPSocketMap.h</a>.</p>
+<p>Constructor. </p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
@@ -158,9 +163,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Destructor. Does NOT delete the <a class="el" href="class_t_c_p_socket.html">TCPSocket</a> objects. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_socket_map_8h_source.html#l00046">46</a> of file <a class="el" href="_t_c_p_socket_map_8h_source.html">TCPSocketMap.h</a>.</p>
+<p>Destructor. </p>
+<p>Does NOT delete the <a class="el" href="class_t_c_p_socket.html" title="TCPSocket is a convenience class, to make it easier to manage TCP connections from your application m...">TCPSocket</a> objects. </p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
@@ -171,7 +176,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_socket_map.html#ac19937a0e8bd2dfcda6e7f831b835fd8">TCPSocketMap::addSocket</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_socket_map.html#ac19937a0e8bd2dfcda6e7f831b835fd8">TCPSocketMap::addSocket</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_t_c_p_socket.html">TCPSocket</a> *&#160;</td>
           <td class="paramname"><em>socket</em></td><td>)</td>
@@ -180,14 +185,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Registers the given socket. Should not be called multiple times for one socket object. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_socket_map_8cc_source.html#l00033">33</a> of file <a class="el" href="_t_c_p_socket_map_8cc_source.html">TCPSocketMap.cc</a>.</p>
+<p>Registers the given socket. </p>
+<p>Should not be called multiple times for one socket object. </p>
 
-<p>Referenced by <a class="el" href="_t_c_p_srv_host_app_8cc_source.html#l00040">TCPSrvHostApp::handleMessage()</a>, <a class="el" href="_l_d_p_8cc_source.html#l00544">LDP::openTCPConnectionToPeer()</a>, and <a class="el" href="_l_d_p_8cc_source.html#l00556">LDP::processMessageFromTCP()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_srv_host_app.html#a63785a7d60da44c89b2a97d36069b51e">TCPSrvHostApp::handleMessage()</a>, <a class="el" href="class_http_server.html#a53eb2bd914988fae8cf678933adef9f3">HttpServer::handleMessage()</a>, <a class="el" href="class_b_g_p_routing.html#abef4b540d6bfebbf2642a65b4545d639">BGPRouting::openTCPConnectionToPeer()</a>, <a class="el" href="class_l_d_p.html#a3a85856691c0af7af8d927f80a4e3eca">LDP::openTCPConnectionToPeer()</a>, <a class="el" href="class_b_g_p_routing.html#abb3867fa5a842d4a93918ae436184ab9">BGPRouting::processMessageFromTCP()</a>, <a class="el" href="class_l_d_p.html#ae2a3dbb01c3f0c5b317271bb50abd98f">LDP::processMessageFromTCP()</a>, and <a class="el" href="class_http_browser.html#a60952b8a5ad761e14234e54784d33a38">HttpBrowser::submitToSocket()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    ASSERT(<a class="code" href="class_t_c_p_socket_map.html#ac03a97d8dc4fedd6a2dcf4fa9caa3823">socketMap</a>.find(socket-&gt;<a class="code" href="class_t_c_p_socket.html#a947e26ea729845fb38d328a4f24587f8">getConnectionId</a>())==<a class="code" href="class_t_c_p_socket_map.html#ac03a97d8dc4fedd6a2dcf4fa9caa3823">socketMap</a>.end());
-    <a class="code" href="class_t_c_p_socket_map.html#ac03a97d8dc4fedd6a2dcf4fa9caa3823">socketMap</a>[socket-&gt;<a class="code" href="class_t_c_p_socket.html#a947e26ea729845fb38d328a4f24587f8">getConnectionId</a>()] = socket;
+    ASSERT(<a class="code" href="class_t_c_p_socket_map.html#ac03a97d8dc4fedd6a2dcf4fa9caa3823">socketMap</a>.find(socket-&gt;<a class="code" href="class_t_c_p_socket.html#a947e26ea729845fb38d328a4f24587f8" title="Returns the internal connection Id.">getConnectionId</a>())==<a class="code" href="class_t_c_p_socket_map.html#ac03a97d8dc4fedd6a2dcf4fa9caa3823">socketMap</a>.end());
+    <a class="code" href="class_t_c_p_socket_map.html#ac03a97d8dc4fedd6a2dcf4fa9caa3823">socketMap</a>[socket-&gt;<a class="code" href="class_t_c_p_socket.html#a947e26ea729845fb38d328a4f24587f8" title="Returns the internal connection Id.">getConnectionId</a>()] = socket;
 }
 </pre></div>
 </div>
@@ -197,7 +202,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_socket_map.html#a599a1adc3e290473676194faf139a5a1">TCPSocketMap::deleteSockets</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_socket_map.html#a599a1adc3e290473676194faf139a5a1">TCPSocketMap::deleteSockets</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -205,12 +210,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Deletes the socket objects. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_socket_map_8cc_source.html#l00047">47</a> of file <a class="el" href="_t_c_p_socket_map_8cc_source.html">TCPSocketMap.cc</a>.</p>
+<p>Referenced by <a class="el" href="class_http_server.html#ae99133acdc4291080948eca10754e8f2">HttpServer::finish()</a>, and <a class="el" href="class_http_browser.html#a0a2e4032571df47347a46fc62fdc7f6a">HttpBrowser::finish()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">for</span> (SocketMap::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>=<a class="code" href="class_t_c_p_socket_map.html#ac03a97d8dc4fedd6a2dcf4fa9caa3823">socketMap</a>.begin(); <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>!=<a class="code" href="class_t_c_p_socket_map.html#ac03a97d8dc4fedd6a2dcf4fa9caa3823">socketMap</a>.end(); ++<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>)
-       <span class="keyword">delete</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>-&gt;second;
+    <span class="keywordflow">for</span> (SocketMap::iterator i=<a class="code" href="class_t_c_p_socket_map.html#ac03a97d8dc4fedd6a2dcf4fa9caa3823">socketMap</a>.begin(); i!=<a class="code" href="class_t_c_p_socket_map.html#ac03a97d8dc4fedd6a2dcf4fa9caa3823">socketMap</a>.end(); ++i)
+       <span class="keyword">delete</span> i-&gt;second;
+    <a class="code" href="class_t_c_p_socket_map.html#ac03a97d8dc4fedd6a2dcf4fa9caa3823">socketMap</a>.clear();
 }
 </pre></div>
 </div>
@@ -229,19 +236,20 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Finds the socket (by connId) for the given message. The message must have arrived from <a class="el" href="class_t_c_p.html">TCP</a>, and must contain a <a class="el" href="class_t_c_p_command.html">TCPCommand</a> control info object. The method returns NULL if the socket was not found, and throws an error if the message doesn't contain a <a class="el" href="class_t_c_p_command.html">TCPCommand</a>. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_socket_map_8cc_source.html#l00022">22</a> of file <a class="el" href="_t_c_p_socket_map_8cc_source.html">TCPSocketMap.cc</a>.</p>
+<p>Finds the socket (by connId) for the given message. </p>
+<p>The message must have arrived from <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a>, and must contain a <a class="el" href="class_t_c_p_command.html" title="Class generated from transport/contract/TCPCommand.msg by opp_msgc.">TCPCommand</a> control info object. The method returns NULL if the socket was not found, and throws an error if the message doesn't contain a <a class="el" href="class_t_c_p_command.html" title="Class generated from transport/contract/TCPCommand.msg by opp_msgc.">TCPCommand</a>. </p>
 
-<p>Referenced by <a class="el" href="_t_c_p_srv_host_app_8cc_source.html#l00040">TCPSrvHostApp::handleMessage()</a>, and <a class="el" href="_l_d_p_8cc_source.html#l00556">LDP::processMessageFromTCP()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_srv_host_app.html#a63785a7d60da44c89b2a97d36069b51e">TCPSrvHostApp::handleMessage()</a>, <a class="el" href="class_http_server.html#a53eb2bd914988fae8cf678933adef9f3">HttpServer::handleMessage()</a>, <a class="el" href="class_http_browser.html#a13ea3d33d11389ebd747583753623c81">HttpBrowser::handleMessage()</a>, <a class="el" href="class_b_g_p_routing.html#abb3867fa5a842d4a93918ae436184ab9">BGPRouting::processMessageFromTCP()</a>, and <a class="el" href="class_l_d_p.html#ae2a3dbb01c3f0c5b317271bb50abd98f">LDP::processMessageFromTCP()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_t_c_p_command.html">TCPCommand</a> *ind = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_t_c_p_command.html">TCPCommand</a> *<span class="keyword">&gt;</span>(msg-&gt;getControlInfo());
+    <a class="code" href="class_t_c_p_command.html" title="Class generated from transport/contract/TCPCommand.msg by opp_msgc.">TCPCommand</a> *ind = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_t_c_p_command.html" title="Class generated from transport/contract/TCPCommand.msg by opp_msgc.">TCPCommand</a> *<span class="keyword">&gt;</span>(msg-&gt;getControlInfo());
     <span class="keywordflow">if</span> (!ind)
-        opp_error(<span class="stringliteral">&quot;TCPSocketMap: findSocketFor(): no TCPCommand control info in message (not from TCP?)&quot;</span>);
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;TCPSocketMap: findSocketFor(): no TCPCommand control info in message (not from TCP?)&quot;</span>);
+
     <span class="keywordtype">int</span> connId = ind-&gt;<a class="code" href="class_t_c_p_command.html#a8bd2f6a8d698df01266e6a598355287a">getConnId</a>();
-    SocketMap::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_t_c_p_socket_map.html#ac03a97d8dc4fedd6a2dcf4fa9caa3823">socketMap</a>.find(connId);
+    SocketMap::iterator i = <a class="code" href="class_t_c_p_socket_map.html#ac03a97d8dc4fedd6a2dcf4fa9caa3823">socketMap</a>.find(connId);
     ASSERT(i==<a class="code" href="class_t_c_p_socket_map.html#ac03a97d8dc4fedd6a2dcf4fa9caa3823">socketMap</a>.end() || i-&gt;first==i-&gt;second-&gt;getConnectionId());
-    <span class="keywordflow">return</span> (i==<a class="code" href="class_t_c_p_socket_map.html#ac03a97d8dc4fedd6a2dcf4fa9caa3823">socketMap</a>.end()) ? NULL : i-&gt;second;
+    <span class="keywordflow">return</span> (i==<a class="code" href="class_t_c_p_socket_map.html#ac03a97d8dc4fedd6a2dcf4fa9caa3823">socketMap</a>.end()) ? <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> : i-&gt;second;
 }
 </pre></div>
 </div>
@@ -260,13 +268,12 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Removes the given socket from the data structure. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_socket_map_8cc_source.html#l00039">39</a> of file <a class="el" href="_t_c_p_socket_map_8cc_source.html">TCPSocketMap.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_srv_host_app_8cc_source.html#l00074">TCPSrvHostApp::removeThread()</a>.</p>
+<p>Referenced by <a class="el" href="class_b_g_p_routing.html#a2bbfe35695ebea6422b0820fb1fe1e50">BGPRouting::listenConnectionFromPeer()</a>, <a class="el" href="class_b_g_p_routing.html#abef4b540d6bfebbf2642a65b4545d639">BGPRouting::openTCPConnectionToPeer()</a>, <a class="el" href="class_t_c_p_srv_host_app.html#a41fcfed2e806e0cba1660fe6792e64a9">TCPSrvHostApp::removeThread()</a>, <a class="el" href="class_http_server.html#a6ec6a87d6ab2fa35d99a80dedd19eb0d">HttpServer::socketClosed()</a>, <a class="el" href="class_http_browser.html#a6d6d9614384c69bed5e32e2e64ef49f1">HttpBrowser::socketClosed()</a>, <a class="el" href="class_http_server.html#a867ec256512849c4226a846326852f16">HttpServer::socketFailure()</a>, and <a class="el" href="class_http_browser.html#a6d83892e89eca7440a253ad0ecfb4f8a">HttpBrowser::socketFailure()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    SocketMap::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_t_c_p_socket_map.html#ac03a97d8dc4fedd6a2dcf4fa9caa3823">socketMap</a>.find(socket-&gt;<a class="code" href="class_t_c_p_socket.html#a947e26ea729845fb38d328a4f24587f8">getConnectionId</a>());
+    SocketMap::iterator i = <a class="code" href="class_t_c_p_socket_map.html#ac03a97d8dc4fedd6a2dcf4fa9caa3823">socketMap</a>.find(socket-&gt;<a class="code" href="class_t_c_p_socket.html#a947e26ea729845fb38d328a4f24587f8" title="Returns the internal connection Id.">getConnectionId</a>());
     <span class="keywordflow">if</span> (i!=<a class="code" href="class_t_c_p_socket_map.html#ac03a97d8dc4fedd6a2dcf4fa9caa3823">socketMap</a>.end())
         <a class="code" href="class_t_c_p_socket_map.html#ac03a97d8dc4fedd6a2dcf4fa9caa3823">socketMap</a>.erase(i);
     <span class="keywordflow">return</span> socket;
@@ -287,11 +294,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Returns the number of sockets stored. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_socket_map_8h_source.html#l00071">71</a> of file <a class="el" href="_t_c_p_socket_map_8h_source.html">TCPSocketMap.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_srv_host_app_8cc_source.html#l00031">TCPSrvHostApp::updateDisplay()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_srv_host_app.html#a26210421b7fa06fa329ae86a550d1244">TCPSrvHostApp::updateDisplay()</a>.</p>
 <div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_t_c_p_socket_map.html#ac03a97d8dc4fedd6a2dcf4fa9caa3823">socketMap</a>.size();}
 </pre></div>
 </div>
@@ -308,15 +314,13 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_socket_map_8h_source.html#l00036">36</a> of file <a class="el" href="_t_c_p_socket_map_8h_source.html">TCPSocketMap.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_socket_map_8cc_source.html#l00033">addSocket()</a>, <a class="el" href="_t_c_p_socket_map_8cc_source.html#l00047">deleteSockets()</a>, <a class="el" href="_t_c_p_socket_map_8cc_source.html#l00022">findSocketFor()</a>, and <a class="el" href="_t_c_p_socket_map_8cc_source.html#l00039">removeSocket()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_socket_map.html#ac19937a0e8bd2dfcda6e7f831b835fd8">addSocket()</a>, <a class="el" href="class_t_c_p_socket_map.html#a599a1adc3e290473676194faf139a5a1">deleteSockets()</a>, <a class="el" href="class_t_c_p_socket_map.html#ad96c686c0e0536b8b8e279728a53b17e">findSocketFor()</a>, and <a class="el" href="class_t_c_p_socket_map.html#a0f564f7476d55d899fe236852e6baa49">removeSocket()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_t_c_p_socket_map_8h_source.html">TCPSocketMap.h</a></li>
-<li><a class="el" href="_t_c_p_socket_map_8cc_source.html">TCPSocketMap.cc</a></li>
+<li><a class="el" href="_t_c_p_socket_map_8h.html">TCPSocketMap.h</a></li>
+<li><a class="el" href="_t_c_p_socket_map_8cc.html">TCPSocketMap.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -324,7 +328,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_t_c_p_socket_map.html">TCPSocketMap</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:54 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:31 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

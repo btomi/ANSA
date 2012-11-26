@@ -10,17 +10,17 @@
 in their role (ad-hoc station, infrastructure mode station, or
 access point) and their level of detail:</p>
   <ul><li><a href="inet.linklayer.ieee80211.Ieee80211Nic.html">Ieee80211Nic</a>: a generic (configurable) NIC</li>
-  <li><a href="inet.linklayer.ieee80211.Ieee80211NicAdhoc.html">Ieee80211NicAdhoc</a>: for ad-hoc mode</li>
-  <li><a href="inet.linklayer.ieee80211.Ieee80211NicAP.html">Ieee80211NicAP</a>, <a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">Ieee80211NicAPSimplified</a>: for use in an access point</li>
-  <li><a href="inet.linklayer.ieee80211.Ieee80211NicSTA.html">Ieee80211NicSTA</a>, <a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">Ieee80211NicSTASimplified</a>: for use in an
+  <li><a href="inet.linklayer.ieee80211.Ieee80211Nic.html">Ieee80211Nic</a> with mgmtType = <a href="inet.linklayer.ieee80211.mgmt.Ieee80211MgmtAdhoc.html">Ieee80211MgmtAdhoc</a>: for ad-hoc mode</li>
+  <li><a href="inet.linklayer.ieee80211.Ieee80211Nic.html">Ieee80211Nic</a> with mgmtType = <a href="inet.linklayer.ieee80211.mgmt.Ieee80211MgmtAP.html">Ieee80211MgmtAP</a> or <a href="inet.linklayer.ieee80211.mgmt.Ieee80211MgmtAPSimplified.html">Ieee80211MgmtAPSimplified</a>: for use in an access point</li>
+  <li><a href="inet.linklayer.ieee80211.Ieee80211Nic.html">Ieee80211Nic</a> with mgmtType = <a href="inet.linklayer.ieee80211.mgmt.Ieee80211MgmtSTA.html">Ieee80211MgmtSTA</a>, <a href="inet.linklayer.ieee80211.mgmt.Ieee80211MgmtSTASimplified.html">Ieee80211MgmtSTASimplified</a>: for use in an
    infrastructure-mode station</li></ul>
 <p>NICs consist of four layers, which are the following (in top-down order):</p>
   <ol><li>agent</li>
   <li>management</li>
   <li>MAC</li>
   <li>physical layer (radio)</li></ol>
-<p><i>The physical layer</i> modules (<a href="inet.linklayer.radio.Ieee80211Radio.html">Ieee80211Radio</a>; with some limitations,
-<a href="inet.linklayer.mf80211.phyLayer.snrEval.SnrEval80211.html">SnrEval80211</a>, <a href="inet.linklayer.mf80211.phyLayer.decider.Decider80211.html">Decider80211</a> can also be used) deal with modelling
+<p><i>The physical layer</i> modules (<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">Ieee80211Radio</a>; with some limitations,
+<span class="error" title="Unresolved link">SnrEval80211</span>, <span class="error" title="Unresolved link">Decider80211</span> can also be used) deal with modelling
 transmission and reception of frames. They model the characteristics of
 the radio channel, and determine if a frame was received correctly
 (that is, it did not suffer bit errors due to low signal power or
@@ -48,11 +48,12 @@ so they cannot be used in experiments involving handover.</p>
 scanning, authentication and association. The management layer itself
 just carries out these commands by performing the scanning, authentication
 and association procedures, and reports back the results to the agent.</p>
-<p>The agent layer is currenly only present in the <a href="inet.linklayer.ieee80211.Ieee80211NicSTA.html">Ieee80211NicSTA</a> NIC module,
+<p>The agent layer is currenly only present in the <a href="inet.linklayer.ieee80211.Ieee80211Nic.html">Ieee80211Nic</a> with
+mgmtType = <a href="inet.linklayer.ieee80211.mgmt.Ieee80211MgmtSTA.html">Ieee80211MgmtSTA</a> NIC module,
 as an <a href="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA.html">Ieee80211AgentSTA</a> module. The managament entities in other NIC
 variants do not have as much freedom as to need an agent to control them.</p>
 <p>By modifying or replacing the agent, one can alter the dynamic behaviour
-of STAs in the network, for example(<a href="inet.examples.ansaExamples.PDS_project.example.html">1</a>,<a href="inet.examples.ansaExamples.switchtest.example.html">2</a>) implement different handover strategies.</p>
+of STAs in the network, for example implement different handover strategies.</p>
 <p><b>Limitations</b></p>
 <p>See the documentation of <a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">Ieee80211Mac</a> for features unsupported by this
 model.</p>
@@ -60,6 +61,5 @@ model.</p>
 <p>If you are new to 802.11, reading an
 <a href="http://www.wi-fiplanet.com/tutorials/article.php/1216351" target="_blank">introductory material</a>
 before the IEEE standard can help.</p>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

@@ -7,7 +7,7 @@
 <h2 class="comptitle">Simple Module <i>TCPSrvHostApp</i></h2>
 <b>Package:</b> inet.applications.tcpapp<br/><b>File: <a href="src-applications-tcpapp-TCPSrvHostApp.ned.html">src/applications/tcpapp/TCPSrvHostApp.ned</a></b><br/><p><a href="../doxy/class_t_c_p_srv_host_app.html" target="mainframe"><b>C++ definition</b></a></p>
 
-<p>This module hosts <a href="inet.transport.tcp.TCP.html">TCP</a>-based server applications. It dynamically creates
+<p>This module hosts TCP-based server applications. It dynamically creates
 and launches a new "thread" object for each incoming connection.</p>
 <p>Server threads should be subclassed from the TCPServerThreadBase
 C++ class, registered in the C++ code using the Register_Class() macro,
@@ -22,7 +22,42 @@ In most cases, <a href="inet.applications.tcpapp.TCPGenericSrvApp.html">TCPGener
 enough, and they are a lot easier to handle. You'll want to subclass your
 client from TCPGenericCliAppBase then; check <a href="inet.applications.tcpapp.TelnetApp.html">TelnetApp</a> and <a href="inet.applications.tcpapp.TCPBasicClientApp.html">TCPBasicClientApp</a>
 for examples.</p>
-<p>Compatible with both IPv4 and <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a>.</p>
+<p><b>Configuring App</b></p>
+<p>The module parameter dataTransferMode should be set the transfer mode in TCP layer.
+Currently you have three choices:</p>
+  <ol><li>set them to "bytecount".
+     This mode manages "virtual bytes", that is, only byte counts are
+     transmitted over the TCP connection and no actual data. cMessage
+     contents, and even message boundaries are not preserved with these
+     classes: for example, if the client sends a single cMessage with
+     length = 1 megabyte over TCP, the receiver-side client will see a
+     sequence of MSS-sized messages.</li>
+  <li>use "object", which transmits
+     cMessage objects (and subclasses) over a TCP connection. The same
+     message object sequence that was sent by the client to the
+     sender-side TCP entity will be reproduced on the receiver side.
+     If a client sends a cMessage with length = 1 megabyte, the
+     receiver-side client will receive the same message object (or a clone)
+     after the TCP entities have completed simulating the transmission
+     of 1 megabyte over the connection. This is a different behaviour
+     from TCPVirtualDataSendQueue/RcvQueue.
+     This mode is not implemented in <span class="error" title="Unresolved link">TCP_NSC</span> yet.</li>
+  <li>use "bytestream", which transmits real bytes of messages.</li></ol>
+<p>Compatible with both <a href="inet.networklayer.ipv4.IPv4.html">IPv4</a> and <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a>.</p>
+<img src="inet.applications.tcpapp.TCPSrvHostApp-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.applications.tcpapp.TCPSrvHostApp.html" title="TCPSrvHostApp" alt="TCPSrvHostApp" coords="0,30,130,70">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.applications.tcpapp.TCPSrvHostApp-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.applications.tcpapp.TCPSrvHostApp.html" title="Simple Module TCPSrvHostApp" alt="" coords="5,6,125,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.applications.tcpapp.TCPSrvHostApp-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.applications.tcpapp.TCPSrvHostApp.html" title="Simple Module TCPSrvHostApp" alt="" coords="5,83,125,111">
+<area shape="rect" id="node2" href="inet.applications.ITCPApp.html" title="Module Interface ITCPApp" alt="" coords="28,6,103,34">
+</map>
 <h3 class="subtitle">Parameters:</h3>
 <table class="paramstable">
    <tr>
@@ -32,7 +67,7 @@ for examples.</p>
       <th class="description">Description</th>
    </tr>
 <tr class="local">
-   <td>address</td>
+   <td>localAddress</td>
    <td>
       <i>string</i>
    </td>
@@ -42,7 +77,7 @@ for examples.</p>
    </td>
 </tr>
 <tr class="local">
-   <td>port</td>
+   <td>localPort</td>
    <td>
       <i>int</i>
    </td>
@@ -60,6 +95,14 @@ for examples.</p>
    <td>
 <p>class name of "thread" objects to launch on incoming connections</p>
    </td>
+</tr>
+<tr class="local">
+   <td>dataTransferMode</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"bytecount"</td>
+   <td>   </td>
 </tr>
 </table>
 <h3 class="subtitle">Properties:</h3>
@@ -102,7 +145,7 @@ for examples.</p>
 // Server threads should be subclassed from the TCPServerThreadBase
 // C++ class, registered in the C++ code using the Register_Class() macro,
 // and the class name should be specified in the serverThreadClass
-// parameter of TCPSrvHostApp. The thread object will receive events
+// parameter of ~TCPSrvHostApp. The thread object will receive events
 // via a callback interface (methods like established(), dataArrived(),
 // peerClosed(), timerExpired()), and can send packets via TCPSocket's send()
 // method.
@@ -110,26 +153,52 @@ for examples.</p>
 // Example server thread class: TCPGenericSrvThread (in the C++ documentation only).
 //
 // IMPORTANT: Before you try to use this module, make sure you actually need it!
-// In most cases, TCPGenericSrvApp and GenericAppMsg will be completely
+// In most cases, ~TCPGenericSrvApp and ~GenericAppMsg will be completely
 // enough, and they are a lot easier to handle. You'll want to subclass your
-// client from TCPGenericCliAppBase then; check TelnetApp and TCPBasicClientApp
+// client from TCPGenericCliAppBase then; check ~TelnetApp and ~TCPBasicClientApp
 // for examples.
 //
-// Compatible with both IPv4 and IPv6.
+// </span><span style="color: #800000; ">&lt;b&gt;</span><span style="color: #808080; font-style: italic; ">Configuring App</span><span style="color: #800000; ">&lt;/b&gt;</span><span style="color: #808080; font-style: italic; ">
 //
-</span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">TCPSrvHostApp</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #000000; "> </span><span style="color: #000000; ">TCPApp</span><span style="color: #000000; ">
+// The module parameter dataTransferMode should be set the transfer mode in TCP layer.
+// Currently you have three choices:
+//
+//   -# set them to &quot;bytecount&quot;.
+//      This mode manages &quot;virtual bytes&quot;, that is, only byte counts are
+//      transmitted over the TCP connection and no actual data. cMessage
+//      contents, and even message boundaries are not preserved with these
+//      classes: for example, if the client sends a single cMessage with
+//      length = 1 megabyte over TCP, the receiver-side client will see a
+//      sequence of MSS-sized messages.
+//
+//   -# use &quot;object&quot;, which transmits
+//      cMessage objects (and subclasses) over a TCP connection. The same
+//      message object sequence that was sent by the client to the
+//      sender-side TCP entity will be reproduced on the receiver side.
+//      If a client sends a cMessage with length = 1 megabyte, the
+//      receiver-side client will receive the same message object (or a clone)
+//      after the TCP entities have completed simulating the transmission
+//      of 1 megabyte over the connection. This is a different behaviour
+//      from TCPVirtualDataSendQueue/RcvQueue.
+//      This mode is not implemented in ~TCP_NSC yet.
+//
+//   -# use &quot;bytestream&quot;, which transmits real bytes of messages.
+//
+// Compatible with both ~IPv4 and ~IPv6.
+//
+</span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">TCPSrvHostApp</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #000000; "> </span><span style="color: #000000; ">ITCPApp</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">address</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// may be left empty (&quot;&quot;)
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">port</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">1000</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// port number to listen on
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">localAddress</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// may be left empty (&quot;&quot;)
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">localPort</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">1000</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// port number to listen on
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">serverThreadClass</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// class name of &quot;thread&quot; objects to launch on incoming connections
-</span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/app&quot;</span><span style="color: #000000; ">);
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">dataTransferMode</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@enum</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;bytecount&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;object&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;bytestream&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;bytecount&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/app&quot;</span><span style="color: #000000; ">);
     </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">tcpIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">TCPCommand</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">);
         </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">tcpOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">TCPCommand</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);
 }
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

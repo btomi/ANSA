@@ -5,7 +5,29 @@
    </head>
    <body onload="if (top.frames['componentsframe'] == undefined) { s = window.location.toString(); window.location = 'index.html?p=' + s.substring(s.lastIndexOf('/')+1); }">
 <h2 class="comptitle">Network <i>RTPMulticast1</i></h2>
-<b>Package:</b> inet.examples.rtp.multicast1<br/><b>File: <a href="examples-rtp-multicast1-multicast1.ned.html">examples/rtp/multicast1/multicast1.ned</a></b><br/><p>(no description)</p><h3 class="subtitle">Properties:</h3>
+<b>Package:</b> inet.examples.rtp.multicast1<br/><b>File: <a href="examples-rtp-multicast1-multicast1.ned.html">examples/rtp/multicast1/multicast1.ned</a></b><br/><p>(no description)</p><img src="inet.examples.rtp.multicast1.RTPMulticast1-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.transport.rtp.RTPHost.html" title="RTPHost" alt="RTPHost" coords="132,88,176,147">
+<area shape="rect" href="inet.transport.rtp.RTPHost.html" title="RTPHost" alt="RTPHost" coords="232,188,276,247">
+<area shape="rect" href="inet.transport.rtp.RTPHost.html" title="RTPHost" alt="RTPHost" coords="132,288,176,347">
+<area shape="rect" href="inet.transport.rtp.RTPHost.html" title="RTPHost" alt="RTPHost" coords="32,188,76,247">
+<area shape="rect" href="inet.nodes.inet.Router.html" title="Router" alt="Router" coords="130,192,176,243">
+<area shape="rect" href="inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator.html" title="IPv4NetworkConfigurator" alt="IPv4NetworkConfigurator" coords="721,153,793,192">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.examples.rtp.multicast1.RTPMulticast1-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.examples.rtp.multicast1.RTPMulticast1.html" title="Network RTPMulticast1" alt="" coords="231,6,340,34">
+<area shape="rect" id="node2" href="inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator.html" title="Simple Module IPv4NetworkConfigurator" alt="" coords="5,83,173,111">
+<area shape="rect" id="node4" href="inet.transport.rtp.RTPHost.html" title="Compound Module RTPHost" alt="" coords="197,83,275,111">
+<area shape="rect" id="node6" href="inet.examples.rtp.multicast1.RTPMulticast1.ethernet.html" title="Channel ethernet" alt="" coords="299,83,371,111">
+<area shape="rect" id="node8" href="inet.nodes.inet.Router.html" title="Compound Module Router" alt="" coords="395,83,467,111">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.examples.rtp.multicast1.RTPMulticast1-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.examples.rtp.multicast1.RTPMulticast1.html" title="Network RTPMulticast1" alt="" coords="5,6,115,34">
+</map>
+<h3 class="subtitle">Properties:</h3>
 <table class="propertiestable">
    <tr>
       <th class="name">Name</th>
@@ -27,12 +49,34 @@
       <th class="description">Description</th>
    </tr>
 <tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host1</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>whether to display IP addresses on links</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host1</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.forwardMulticast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>turns multicast forwarding on/off</p>
+   </td>
+</tr>
+<tr>
    <td><a href="inet.transport.rtp.RTPHost.html">host1</a>.<a href="inet.applications.rtpapp.RTPApplication.html">application</a>.commonName</td>
    <td>
       <i>string</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>the common name (CNAME) of this host</p>
+   </td>
 </tr>
 <tr>
    <td><a href="inet.transport.rtp.RTPHost.html">host1</a>.<a href="inet.applications.rtpapp.RTPApplication.html">application</a>.sessionEnterDelay</td>
@@ -40,7 +84,9 @@
       <i>double</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>delay before starts a new session</p>
+   </td>
 </tr>
 <tr>
    <td><a href="inet.transport.rtp.RTPHost.html">host1</a>.<a href="inet.applications.rtpapp.RTPApplication.html">application</a>.transmissionStartDelay</td>
@@ -48,7 +94,9 @@
       <i>double</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>delay before start transmission (related to "sender module created")</p>
+   </td>
 </tr>
 <tr>
    <td><a href="inet.transport.rtp.RTPHost.html">host1</a>.<a href="inet.applications.rtpapp.RTPApplication.html">application</a>.transmissionStopDelay</td>
@@ -56,7 +104,9 @@
       <i>double</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>delay before stops transmission (related to "start transmission")</p>
+   </td>
 </tr>
 <tr>
    <td><a href="inet.transport.rtp.RTPHost.html">host1</a>.<a href="inet.applications.rtpapp.RTPApplication.html">application</a>.sessionLeaveDelay</td>
@@ -65,14 +115,47 @@
    </td>
    <td></td>
    <td>
+<p>delay before leave session (related to "file transmission finished/stopped" or "session entered" when fileName is "")</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.transport.rtp.RTPHost.html">host1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
+   <td><a href="inet.transport.rtp.RTPHost.html">host1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
    <td>
       <i>double</i>
    </td>
    <td>0s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>60s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
    <td>   </td>
 </tr>
 <tr>
@@ -82,7 +165,7 @@
    </td>
    <td>1s</td>
    <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -92,7 +175,7 @@
    </td>
    <td>3</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -106,12 +189,32 @@
    </td>
 </tr>
 <tr>
-   <td><a href="inet.transport.rtp.RTPHost.html">host1</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
+   <td><a href="inet.transport.rtp.RTPHost.html">host1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
-      <i>int</i>
+      <i>bool</i>
    </td>
-   <td>4470</td>
+   <td>false</td>
    <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host2</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>whether to display IP addresses on links</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host2</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.forwardMulticast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>turns multicast forwarding on/off</p>
+   </td>
 </tr>
 <tr>
    <td><a href="inet.transport.rtp.RTPHost.html">host2</a>.<a href="inet.applications.rtpapp.RTPApplication.html">application</a>.commonName</td>
@@ -119,7 +222,9 @@
       <i>string</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>the common name (CNAME) of this host</p>
+   </td>
 </tr>
 <tr>
    <td><a href="inet.transport.rtp.RTPHost.html">host2</a>.<a href="inet.applications.rtpapp.RTPApplication.html">application</a>.sessionEnterDelay</td>
@@ -127,7 +232,9 @@
       <i>double</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>delay before starts a new session</p>
+   </td>
 </tr>
 <tr>
    <td><a href="inet.transport.rtp.RTPHost.html">host2</a>.<a href="inet.applications.rtpapp.RTPApplication.html">application</a>.transmissionStartDelay</td>
@@ -135,7 +242,9 @@
       <i>double</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>delay before start transmission (related to "sender module created")</p>
+   </td>
 </tr>
 <tr>
    <td><a href="inet.transport.rtp.RTPHost.html">host2</a>.<a href="inet.applications.rtpapp.RTPApplication.html">application</a>.transmissionStopDelay</td>
@@ -143,7 +252,9 @@
       <i>double</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>delay before stops transmission (related to "start transmission")</p>
+   </td>
 </tr>
 <tr>
    <td><a href="inet.transport.rtp.RTPHost.html">host2</a>.<a href="inet.applications.rtpapp.RTPApplication.html">application</a>.sessionLeaveDelay</td>
@@ -152,14 +263,47 @@
    </td>
    <td></td>
    <td>
+<p>delay before leave session (related to "file transmission finished/stopped" or "session entered" when fileName is "")</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.transport.rtp.RTPHost.html">host2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
+   <td><a href="inet.transport.rtp.RTPHost.html">host2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
    <td>
       <i>double</i>
    </td>
    <td>0s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>60s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
    <td>   </td>
 </tr>
 <tr>
@@ -169,7 +313,7 @@
    </td>
    <td>1s</td>
    <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -179,7 +323,7 @@
    </td>
    <td>3</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -193,12 +337,32 @@
    </td>
 </tr>
 <tr>
-   <td><a href="inet.transport.rtp.RTPHost.html">host2</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
+   <td><a href="inet.transport.rtp.RTPHost.html">host2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
-      <i>int</i>
+      <i>bool</i>
    </td>
-   <td>4470</td>
+   <td>false</td>
    <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host3</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>whether to display IP addresses on links</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host3</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.forwardMulticast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>turns multicast forwarding on/off</p>
+   </td>
 </tr>
 <tr>
    <td><a href="inet.transport.rtp.RTPHost.html">host3</a>.<a href="inet.applications.rtpapp.RTPApplication.html">application</a>.commonName</td>
@@ -206,7 +370,9 @@
       <i>string</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>the common name (CNAME) of this host</p>
+   </td>
 </tr>
 <tr>
    <td><a href="inet.transport.rtp.RTPHost.html">host3</a>.<a href="inet.applications.rtpapp.RTPApplication.html">application</a>.sessionEnterDelay</td>
@@ -214,7 +380,9 @@
       <i>double</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>delay before starts a new session</p>
+   </td>
 </tr>
 <tr>
    <td><a href="inet.transport.rtp.RTPHost.html">host3</a>.<a href="inet.applications.rtpapp.RTPApplication.html">application</a>.transmissionStartDelay</td>
@@ -222,7 +390,9 @@
       <i>double</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>delay before start transmission (related to "sender module created")</p>
+   </td>
 </tr>
 <tr>
    <td><a href="inet.transport.rtp.RTPHost.html">host3</a>.<a href="inet.applications.rtpapp.RTPApplication.html">application</a>.transmissionStopDelay</td>
@@ -230,7 +400,9 @@
       <i>double</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>delay before stops transmission (related to "start transmission")</p>
+   </td>
 </tr>
 <tr>
    <td><a href="inet.transport.rtp.RTPHost.html">host3</a>.<a href="inet.applications.rtpapp.RTPApplication.html">application</a>.sessionLeaveDelay</td>
@@ -239,14 +411,47 @@
    </td>
    <td></td>
    <td>
+<p>delay before leave session (related to "file transmission finished/stopped" or "session entered" when fileName is "")</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.transport.rtp.RTPHost.html">host3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
+   <td><a href="inet.transport.rtp.RTPHost.html">host3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
    <td>
       <i>double</i>
    </td>
    <td>0s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>60s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
    <td>   </td>
 </tr>
 <tr>
@@ -256,7 +461,7 @@
    </td>
    <td>1s</td>
    <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -266,7 +471,7 @@
    </td>
    <td>3</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -280,12 +485,32 @@
    </td>
 </tr>
 <tr>
-   <td><a href="inet.transport.rtp.RTPHost.html">host3</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
+   <td><a href="inet.transport.rtp.RTPHost.html">host3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
-      <i>int</i>
+      <i>bool</i>
    </td>
-   <td>4470</td>
+   <td>false</td>
    <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host4</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>whether to display IP addresses on links</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host4</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.forwardMulticast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>turns multicast forwarding on/off</p>
+   </td>
 </tr>
 <tr>
    <td><a href="inet.transport.rtp.RTPHost.html">host4</a>.<a href="inet.applications.rtpapp.RTPApplication.html">application</a>.commonName</td>
@@ -293,7 +518,9 @@
       <i>string</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>the common name (CNAME) of this host</p>
+   </td>
 </tr>
 <tr>
    <td><a href="inet.transport.rtp.RTPHost.html">host4</a>.<a href="inet.applications.rtpapp.RTPApplication.html">application</a>.sessionEnterDelay</td>
@@ -301,7 +528,9 @@
       <i>double</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>delay before starts a new session</p>
+   </td>
 </tr>
 <tr>
    <td><a href="inet.transport.rtp.RTPHost.html">host4</a>.<a href="inet.applications.rtpapp.RTPApplication.html">application</a>.transmissionStartDelay</td>
@@ -309,7 +538,9 @@
       <i>double</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>delay before start transmission (related to "sender module created")</p>
+   </td>
 </tr>
 <tr>
    <td><a href="inet.transport.rtp.RTPHost.html">host4</a>.<a href="inet.applications.rtpapp.RTPApplication.html">application</a>.transmissionStopDelay</td>
@@ -317,7 +548,9 @@
       <i>double</i>
    </td>
    <td></td>
-   <td>   </td>
+   <td>
+<p>delay before stops transmission (related to "start transmission")</p>
+   </td>
 </tr>
 <tr>
    <td><a href="inet.transport.rtp.RTPHost.html">host4</a>.<a href="inet.applications.rtpapp.RTPApplication.html">application</a>.sessionLeaveDelay</td>
@@ -326,14 +559,47 @@
    </td>
    <td></td>
    <td>
+<p>delay before leave session (related to "file transmission finished/stopped" or "session entered" when fileName is "")</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.transport.rtp.RTPHost.html">host4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
+   <td><a href="inet.transport.rtp.RTPHost.html">host4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
    <td>
       <i>double</i>
    </td>
    <td>0s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>60s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.transport.rtp.RTPHost.html">host4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
    <td>   </td>
 </tr>
 <tr>
@@ -343,7 +609,7 @@
    </td>
    <td>1s</td>
    <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -353,7 +619,7 @@
    </td>
    <td>3</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -367,19 +633,51 @@
    </td>
 </tr>
 <tr>
-   <td><a href="inet.transport.rtp.RTPHost.html">host4</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
+   <td><a href="inet.transport.rtp.RTPHost.html">host4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
-      <i>int</i>
+      <i>bool</i>
    </td>
-   <td>4470</td>
+   <td>false</td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.Router.html">router1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
+   <td><a href="inet.nodes.inet.Router.html">router1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
    <td>
       <i>double</i>
    </td>
    <td>0s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.Router.html">router1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.Router.html">router1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.Router.html">router1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>60s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.Router.html">router1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
    <td>   </td>
 </tr>
 <tr>
@@ -389,7 +687,7 @@
    </td>
    <td>1s</td>
    <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -399,7 +697,7 @@
    </td>
    <td>3</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -413,68 +711,204 @@
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.Router.html">router1</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.Router.html">router1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
+   <td><a href="inet.nodes.inet.Router.html">router1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
+   <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.Router.html">router1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
+   <td><a href="inet.nodes.inet.Router.html">router1</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.routerId</td>
    <td>
       <i>string</i>
    </td>
    <td>"auto"</td>
    <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
+<p>for routers, the router id using IPv4 address dotted
+notation; specify "auto" to select the highest
+interface address; should be left empty ("") for hosts</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.Router.html">router1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>100Mbps</td>
-   <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.Router.html">router1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.nodes.inet.Router.html">router1</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.Router.html">router1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
+   <td><a href="inet.nodes.inet.Router.html">router1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.verbose</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>whether to log packets on the module output</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.Router.html">router1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.pcapFile</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>the PCAP file to be written</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.Router.html">router1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.snaplen</td>
    <td>
       <i>int</i>
    </td>
-   <td>1500</td>
-   <td>   </td>
+   <td>65535</td>
+   <td>
+<p>maximum number of bytes to record per packet</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.Router.html">router1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.dumpBadFrames</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>enable dump of frames with hasBitError</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.Router.html">router1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.moduleNamePatterns</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"wlan[*] eth[*] ppp[*]"</td>
+   <td>
+<p>space-separated list of sibling module names to listen on</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.Router.html">router1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.sendingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetSentToLower"</td>
+   <td>
+<p>space-separated list of outbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.Router.html">router1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.receivingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetReceivedFromLower"</td>
+   <td>
+<p>space-separated list of inbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator.html">configurator</a>.assignAddresses</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>assign IP addresses to all interfaces in the network</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator.html">configurator</a>.assignDisjunctSubnetAddresses</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>avoid using the same address prefix and netmask on different links when assigning IP addresses to interfaces</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator.html">configurator</a>.addStaticRoutes</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>add static routes to the routing tables of all nodes to route to all destination interfaces (only where applicable; turn off when config file contains manual routes)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator.html">configurator</a>.addDefaultRoutes</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>add default routes if all routes from a source node go through the same gateway (used only if addStaticRoutes is true)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator.html">configurator</a>.addSubnetRoutes</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>add subnet routes instead of destination interface routes (only where applicable; used only if addStaticRoutes is true)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator.html">configurator</a>.optimizeRoutes</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>optimize routing tables by merging routes, the resulting routing table might route more packets than the original (used only if addStaticRoutes is true)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator.html">configurator</a>.dumpTopology</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>print extracted network topology to the module output</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator.html">configurator</a>.dumpAddresses</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>print assigned IP addresses for all interfaces to the module output</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator.html">configurator</a>.dumpRoutes</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>print configured and optimized routing tables for all nodes to the module output</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator.html">configurator</a>.dumpConfig</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>write configuration into the given config file that can be fed back to speed up subsequent runs (network configurations)</p>
+   </td>
 </tr>
 </table>
 <h3 class="subtitle">Source code:</h3>
@@ -489,57 +923,61 @@ possible with DTE-to-DTE connection).</p>
     </span><span style="color: #800000; font-weight: bold; ">submodules</span><span style="color: #000000; ">:
         </span><span style="color: #000000; ">host1</span><span style="color: #000000; ">: </span><span style="color: #000000; ">RTPHost</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; ">profileName</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;RTPAVProfile&quot;</span><span style="color: #000000; ">;
+                </span><span style="color: #000000; ">IPForward</span><span style="color: #000000; "> = </span><span style="color: #008000; ">false</span><span style="color: #000000; ">;
+                </span><span style="color: #000000; ">profileName</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;inet.transport.rtp.RTPAVProfile&quot;</span><span style="color: #000000; ">;
                 </span><span style="color: #000000; ">destinationAddress</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;225.0.0.1&quot;</span><span style="color: #000000; ">;
                 </span><span style="color: #000000; ">portNumber</span><span style="color: #000000; "> = </span><span style="color: #008000; ">5004</span><span style="color: #000000; ">;
                 </span><span style="color: #000000; ">bandwidth</span><span style="color: #000000; "> = </span><span style="color: #008000; ">8000</span><span style="color: #000000; ">;
-                </span><span style="color: #000000; ">routingFile</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;host1.mrt&quot;</span><span style="color: #000000; ">;
                 </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=150,50&quot;</span><span style="color: #000000; ">);
         }
         </span><span style="color: #000000; ">host2</span><span style="color: #000000; ">: </span><span style="color: #000000; ">RTPHost</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; ">profileName</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;RTPAVProfile&quot;</span><span style="color: #000000; ">;
+                </span><span style="color: #000000; ">IPForward</span><span style="color: #000000; "> = </span><span style="color: #008000; ">false</span><span style="color: #000000; ">;
+                </span><span style="color: #000000; ">profileName</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;inet.transport.rtp.RTPAVProfile&quot;</span><span style="color: #000000; ">;
                 </span><span style="color: #000000; ">destinationAddress</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;225.0.0.1&quot;</span><span style="color: #000000; ">;
                 </span><span style="color: #000000; ">portNumber</span><span style="color: #000000; "> = </span><span style="color: #008000; ">5004</span><span style="color: #000000; ">;
                 </span><span style="color: #000000; ">bandwidth</span><span style="color: #000000; "> = </span><span style="color: #008000; ">8000</span><span style="color: #000000; ">;
-                </span><span style="color: #000000; ">routingFile</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;host2.mrt&quot;</span><span style="color: #000000; ">;
                 </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=250,150&quot;</span><span style="color: #000000; ">);
         }
         </span><span style="color: #000000; ">host3</span><span style="color: #000000; ">: </span><span style="color: #000000; ">RTPHost</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; ">profileName</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;RTPAVProfile&quot;</span><span style="color: #000000; ">;
+                </span><span style="color: #000000; ">IPForward</span><span style="color: #000000; "> = </span><span style="color: #008000; ">false</span><span style="color: #000000; ">;
+                </span><span style="color: #000000; ">profileName</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;inet.transport.rtp.RTPAVProfile&quot;</span><span style="color: #000000; ">;
                 </span><span style="color: #000000; ">destinationAddress</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;225.0.0.1&quot;</span><span style="color: #000000; ">;
                 </span><span style="color: #000000; ">portNumber</span><span style="color: #000000; "> = </span><span style="color: #008000; ">5004</span><span style="color: #000000; ">;
                 </span><span style="color: #000000; ">bandwidth</span><span style="color: #000000; "> = </span><span style="color: #008000; ">8000</span><span style="color: #000000; ">;
-                </span><span style="color: #000000; ">routingFile</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;host3.mrt&quot;</span><span style="color: #000000; ">;
                 </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=150,250&quot;</span><span style="color: #000000; ">);
         }
         </span><span style="color: #000000; ">host4</span><span style="color: #000000; ">: </span><span style="color: #000000; ">RTPHost</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; ">profileName</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;RTPAVProfile&quot;</span><span style="color: #000000; ">;
+                </span><span style="color: #000000; ">IPForward</span><span style="color: #000000; "> = </span><span style="color: #008000; ">false</span><span style="color: #000000; ">;
+                </span><span style="color: #000000; ">profileName</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;inet.transport.rtp.RTPAVProfile&quot;</span><span style="color: #000000; ">;
                 </span><span style="color: #000000; ">destinationAddress</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;225.0.0.1&quot;</span><span style="color: #000000; ">;
                 </span><span style="color: #000000; ">portNumber</span><span style="color: #000000; "> = </span><span style="color: #008000; ">5004</span><span style="color: #000000; ">;
                 </span><span style="color: #000000; ">bandwidth</span><span style="color: #000000; "> = </span><span style="color: #008000; ">8000</span><span style="color: #000000; ">;
-                </span><span style="color: #000000; ">routingFile</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;host4.mrt&quot;</span><span style="color: #000000; ">;
                 </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=50,150&quot;</span><span style="color: #000000; ">);
         }
         </span><span style="color: #000000; ">router1</span><span style="color: #000000; ">: </span><span style="color: #000000; ">Router</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; ">routingFile</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;router1.mrt&quot;</span><span style="color: #000000; ">;
+                </span><span style="color: #000000; ">forwardMulticast</span><span style="color: #000000; "> = </span><span style="color: #008000; ">true</span><span style="color: #000000; ">;
                 </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=150,150&quot;</span><span style="color: #000000; ">);
             </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">[</span><span style="color: #008000; ">4</span><span style="color: #000000; ">];
+                </span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">[];
 
         }
+        </span><span style="color: #000000; ">configurator</span><span style="color: #000000; ">: </span><span style="color: #000000; ">IPv4NetworkConfigurator</span><span style="color: #000000; "> {
+            </span><span style="color: #000000; ">config</span><span style="color: #000000; "> = </span><span style="color: #000080; font-weight: bold; ">xml</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&lt;config&gt;&quot;</span><span style="color: #000000; ">
+                +</span><span style="color: #008000; ">&quot;&lt;interface hosts='**' address='10.x.x.x' netmask='255.x.x.x'/&gt;&quot;</span><span style="color: #000000; ">
+                +</span><span style="color: #008000; ">&quot;&lt;multicast-group hosts='**' address='225.0.0.1'/&gt;&quot;</span><span style="color: #000000; ">
+                +</span><span style="color: #008000; ">&quot;&lt;multicast-route hosts='router1' groups='225.0.0.1' children='ppp*'/&gt;&quot;</span><span style="color: #000000; ">
+                +</span><span style="color: #008000; ">&quot;&lt;/config&gt;&quot;</span><span style="color: #000000; ">);
+        }
     </span><span style="color: #800000; font-weight: bold; ">connections</span><span style="color: #000000; ">:
-        </span><span style="color: #000000; ">host1</span><span style="color: #000000; ">.</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">[</span><span style="color: #008000; ">0</span><span style="color: #000000; ">] </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">ethernet</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">router1</span><span style="color: #000000; ">.</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">[</span><span style="color: #008000; ">0</span><span style="color: #000000; ">];
-        </span><span style="color: #000000; ">host2</span><span style="color: #000000; ">.</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">[</span><span style="color: #008000; ">0</span><span style="color: #000000; ">] </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">ethernet</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">router1</span><span style="color: #000000; ">.</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">[</span><span style="color: #008000; ">1</span><span style="color: #000000; ">];
-        </span><span style="color: #000000; ">host3</span><span style="color: #000000; ">.</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">[</span><span style="color: #008000; ">0</span><span style="color: #000000; ">] </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">ethernet</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">router1</span><span style="color: #000000; ">.</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">[</span><span style="color: #008000; ">2</span><span style="color: #000000; ">];
-        </span><span style="color: #000000; ">host4</span><span style="color: #000000; ">.</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">[</span><span style="color: #008000; ">0</span><span style="color: #000000; ">] </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">ethernet</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">router1</span><span style="color: #000000; ">.</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">[</span><span style="color: #008000; ">3</span><span style="color: #000000; ">];
-
+        </span><span style="color: #000000; ">host1</span><span style="color: #000000; ">.</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">ethernet</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">router1</span><span style="color: #000000; ">.</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">++;
+        </span><span style="color: #000000; ">host2</span><span style="color: #000000; ">.</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">ethernet</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">router1</span><span style="color: #000000; ">.</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">++;
+        </span><span style="color: #000000; ">host3</span><span style="color: #000000; ">.</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">ethernet</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">router1</span><span style="color: #000000; ">.</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">++;
+        </span><span style="color: #000000; ">host4</span><span style="color: #000000; ">.</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">ethernet</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">router1</span><span style="color: #000000; ">.</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">++;
 }
-
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

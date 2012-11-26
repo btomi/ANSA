@@ -76,22 +76,24 @@
 <div class="header">
   <div class="summary">
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">WirelessMacBase Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="WirelessMacBase" -->
-<p><code>#include &lt;<a class="el" href="_wireless_mac_base_8h_source.html">WirelessMacBase.h</a>&gt;</code></p>
+<p>Base class for wireless MAC protocols that use MF's physical layer.  
+ <a href="class_wireless_mac_base.html#details">More...</a></p>
+
+<p><code>#include &lt;WirelessMacBase.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for WirelessMacBase:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_wireless_mac_base.png" usemap="#WirelessMacBase_map" alt=""/>
   <map id="WirelessMacBase_map" name="WirelessMacBase_map">
-<area href="class_c_s_m_a_mac_layer.html" title="MAC module which provides non-persistent CSMA." alt="CSMAMacLayer" shape="rect" coords="0,56,113,80"/>
-<area href="class_ieee80211_mac.html" alt="Ieee80211Mac" shape="rect" coords="123,56,236,80"/>
-<area href="class_mac80211.html" title="An implementation of the 802.11b MAC." alt="Mac80211" shape="rect" coords="246,56,359,80"/>
+<area href="class_ieee80211_mac.html" title="IEEE 802.11g with e Media Access Control Layer." alt="Ieee80211Mac" shape="rect" coords="0,56,113,80"/>
 </map>
  </div></div>
 
@@ -99,51 +101,55 @@ Inheritance diagram for WirelessMacBase:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#a74866aacf342c21cd220d959698d87af">initialize</a> (int)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#a74866aacf342c21cd220d959698d87af">initialize</a> (int)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization of the module and some variables.  <a href="#a74866aacf342c21cd220d959698d87af"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#aa0117d9f5b465c487b6b4e7bd78eeab6">handleMessage</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#aa0117d9f5b465c487b6b4e7bd78eeab6">handleMessage</a> (cMessage *msg)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called every time a message arrives.  <a href="#aa0117d9f5b465c487b6b4e7bd78eeab6"></a><br/></td></tr>
 <tr><td colspan="2"><div class="groupHeader">Handle Messages</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>Functions to redefine by the programmer </p>
 </div></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#a1c7f3c2581f66d7de17af4a730ae0c4d">handleSelfMsg</a> (cMessage *msg)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#a1c7f3c2581f66d7de17af4a730ae0c4d">handleSelfMsg</a> (cMessage *msg)=0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle self messages such as timers.  <a href="#a1c7f3c2581f66d7de17af4a730ae0c4d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#ab44661d865472b3799cbe4b086e131b9">handleUpperMsg</a> (cPacket *msg)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#ab44661d865472b3799cbe4b086e131b9">handleUpperMsg</a> (cPacket *msg)=0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle packets from upper layer.  <a href="#ab44661d865472b3799cbe4b086e131b9"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#a2a5fd20a6064b4754954638bc93f8d8d">handleCommand</a> (cMessage *msg)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#a2a5fd20a6064b4754954638bc93f8d8d">handleCommand</a> (cMessage *msg)=0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle commands from upper layer.  <a href="#a2a5fd20a6064b4754954638bc93f8d8d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#ab1db1fa4fd9ecec9d8fa1a38a9a365e1">handleLowerMsg</a> (cPacket *msg)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#ab1db1fa4fd9ecec9d8fa1a38a9a365e1">handleLowerMsg</a> (cPacket *msg)=0</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle packets from lower layer.  <a href="#ab1db1fa4fd9ecec9d8fa1a38a9a365e1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#a86b406729713114bdceb21e07bcefd12">isUpperMsg</a> (cMessage *msg)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#af982fd8985b1ceca8771b43908a027c5">isLowerMsg</a> (cMessage *msg)</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Convenience Functions</div></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#a97af424876ed4fc77702d183f38dc83c">sendDown</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#a97af424876ed4fc77702d183f38dc83c">sendDown</a> (cMessage *msg)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message to the lower layer.  <a href="#a97af424876ed4fc77702d183f38dc83c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#a5454ec5040663e5af4ddb00f525a3caf">sendUp</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#a5454ec5040663e5af4ddb00f525a3caf">sendUp</a> (cMessage *msg)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message to the upper layer.  <a href="#a5454ec5040663e5af4ddb00f525a3caf"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_notification_board.html">NotificationBoard</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#a779ea8a0af7e4ef85c5faa85d6a281ed">nb</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Cached pointer to the <a class="el" href="class_notification_board.html">NotificationBoard</a> module.  <a href="#a779ea8a0af7e4ef85c5faa85d6a281ed"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Cached pointer to the <a class="el" href="class_notification_board.html" title="Acts as a intermediary between module where state changes can occur and modules which are interested ...">NotificationBoard</a> module.  <a href="#a779ea8a0af7e4ef85c5faa85d6a281ed"></a><br/></td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#a39e646fa2c0a9318a99fbe31e7f5aea5">uppergateIn</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gate id  <a href="#a39e646fa2c0a9318a99fbe31e7f5aea5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#a6c6bcf9c82a4695a5aef1dc6c325b86e">uppergateOut</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#a853dbb7a3e6a4afb665c6c407d9e4b03">lowergateIn</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#a87ed2e8f34b1a0dc6c02d532f808fff8">lowergateOut</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#ad034aebb2159f48ac47ddfcf5d64438b">upperLayerIn</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">gate id  <a href="#ad034aebb2159f48ac47ddfcf5d64438b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#af309baf8f7434f21abe268d40586ebae">upperLayerOut</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#a2ea40bb762043b3be538cc8d7e80b048">lowerLayerIn</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#a2eff5524c00d09cc44850c94e637d418">lowerLayerOut</a></td></tr>
+<tr><td colspan="2"><h2><a name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#a6b00fb779a922fe7a840a8e1b43c7991">packetSentToLowerSignal</a> = SIMSIGNAL_NULL</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#af010f856ed43a7818b58e09e831ab69c">packetReceivedFromLowerSignal</a> = SIMSIGNAL_NULL</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#a75aa076aa6adadd213b40472844ab752">packetSentToUpperSignal</a> = SIMSIGNAL_NULL</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wireless_mac_base.html#a95a864ad4cd6934f0c1d696d762d04b6">packetReceivedFromUpperSignal</a> = SIMSIGNAL_NULL</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Base class for wireless MAC protocols that use MF's physical layer.</p>
+<div class="textblock"><p>Base class for wireless MAC protocols that use MF's physical layer. </p>
 <dl class="author"><dt><b>Author:</b></dt><dd>Daniel Willkomm, Andras Varga </dd></dl>
-
-<p>Definition at line <a class="el" href="_wireless_mac_base_8h_source.html#l00038">38</a> of file <a class="el" href="_wireless_mac_base_8h_source.html">WirelessMacBase.h</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a2a5fd20a6064b4754954638bc93f8d8d"></a><!-- doxytag: member="WirelessMacBase::handleCommand" ref="a2a5fd20a6064b4754954638bc93f8d8d" args="(cMessage *msg)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_wireless_mac_base.html#a2a5fd20a6064b4754954638bc93f8d8d">WirelessMacBase::handleCommand</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_wireless_mac_base.html#a2a5fd20a6064b4754954638bc93f8d8d">WirelessMacBase::handleCommand</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -155,9 +161,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Handle commands from upper layer. </p>
 
-<p>Implemented in <a class="el" href="class_ieee80211_mac.html#aedaaf3e337f2d4a0790dbe392ac9f481">Ieee80211Mac</a>, <a class="el" href="class_c_s_m_a_mac_layer.html#ad4e68633095418d62399d0eaa8a4b0ce">CSMAMacLayer</a>, and <a class="el" href="class_mac80211.html#aa2fe838bd226e9efb04477d87d3fbfab">Mac80211</a>.</p>
+<p>Implemented in <a class="el" href="class_ieee80211_mac.html#aedaaf3e337f2d4a0790dbe392ac9f481">Ieee80211Mac</a>.</p>
 
-<p>Referenced by <a class="el" href="_wireless_mac_base_8cc_source.html#l00043">handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_wireless_mac_base.html#aa0117d9f5b465c487b6b4e7bd78eeab6">handleMessage()</a>.</p>
 
 </div>
 </div>
@@ -166,7 +172,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_wireless_mac_base.html#ab1db1fa4fd9ecec9d8fa1a38a9a365e1">WirelessMacBase::handleLowerMsg</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_wireless_mac_base.html#ab1db1fa4fd9ecec9d8fa1a38a9a365e1">WirelessMacBase::handleLowerMsg</a> </td>
           <td>(</td>
           <td class="paramtype">cPacket *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -178,9 +184,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Handle packets from lower layer. </p>
 
-<p>Implemented in <a class="el" href="class_ieee80211_mac.html#af163e249ed0577fb5027e3e9cf54d6a5">Ieee80211Mac</a>, <a class="el" href="class_mac80211.html#aba69300333bac6d93a3a28224037aade">Mac80211</a>, and <a class="el" href="class_c_s_m_a_mac_layer.html#a131f9fa39f15a2e1a995a5581ba05fb1">CSMAMacLayer</a>.</p>
+<p>Implemented in <a class="el" href="class_ieee80211_mac.html#af163e249ed0577fb5027e3e9cf54d6a5">Ieee80211Mac</a>.</p>
 
-<p>Referenced by <a class="el" href="_wireless_mac_base_8cc_source.html#l00043">handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_wireless_mac_base.html#aa0117d9f5b465c487b6b4e7bd78eeab6">handleMessage()</a>.</p>
 
 </div>
 </div>
@@ -189,7 +195,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_wireless_mac_base.html#aa0117d9f5b465c487b6b4e7bd78eeab6">WirelessMacBase::handleMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_wireless_mac_base.html#aa0117d9f5b465c487b6b4e7bd78eeab6">WirelessMacBase::handleMessage</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -200,17 +206,21 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Called every time a message arrives. </p>
-
-<p>Definition at line <a class="el" href="_wireless_mac_base_8cc_source.html#l00043">43</a> of file <a class="el" href="_wireless_mac_base_8cc_source.html">WirelessMacBase.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span> (msg-&gt;isSelfMessage())
         <a class="code" href="class_wireless_mac_base.html#a1c7f3c2581f66d7de17af4a730ae0c4d" title="Handle self messages such as timers.">handleSelfMsg</a>(msg);
     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!msg-&gt;isPacket())
         <a class="code" href="class_wireless_mac_base.html#a2a5fd20a6064b4754954638bc93f8d8d" title="Handle commands from upper layer.">handleCommand</a>(msg);
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg-&gt;getArrivalGateId()==<a class="code" href="class_wireless_mac_base.html#a39e646fa2c0a9318a99fbe31e7f5aea5" title="gate id">uppergateIn</a>)
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg-&gt;getArrivalGateId()==<a class="code" href="class_wireless_mac_base.html#ad034aebb2159f48ac47ddfcf5d64438b" title="gate id">upperLayerIn</a>)
+    {
+        emit(<a class="code" href="class_wireless_mac_base.html#a95a864ad4cd6934f0c1d696d762d04b6">packetReceivedFromUpperSignal</a>, msg);
         <a class="code" href="class_wireless_mac_base.html#ab44661d865472b3799cbe4b086e131b9" title="Handle packets from upper layer.">handleUpperMsg</a>(<a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(msg));
+    }
     <span class="keywordflow">else</span>
+    {
+        emit(<a class="code" href="class_wireless_mac_base.html#af010f856ed43a7818b58e09e831ab69c">packetReceivedFromLowerSignal</a>, msg);
         <a class="code" href="class_wireless_mac_base.html#ab1db1fa4fd9ecec9d8fa1a38a9a365e1" title="Handle packets from lower layer.">handleLowerMsg</a>(<a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(msg));
+    }
 }
 </pre></div>
 </div>
@@ -220,7 +230,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_wireless_mac_base.html#a1c7f3c2581f66d7de17af4a730ae0c4d">WirelessMacBase::handleSelfMsg</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_wireless_mac_base.html#a1c7f3c2581f66d7de17af4a730ae0c4d">WirelessMacBase::handleSelfMsg</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -232,9 +242,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Handle self messages such as timers. </p>
 
-<p>Implemented in <a class="el" href="class_ieee80211_mac.html#a9c4e21cc98783e53810b622e0c6deda2">Ieee80211Mac</a>, <a class="el" href="class_c_s_m_a_mac_layer.html#a254a29c1cc1f0292039d57c1d189cda3">CSMAMacLayer</a>, and <a class="el" href="class_mac80211.html#a990af33f857669759da0cbeebd1c2431">Mac80211</a>.</p>
+<p>Implemented in <a class="el" href="class_ieee80211_mac.html#a9c4e21cc98783e53810b622e0c6deda2">Ieee80211Mac</a>.</p>
 
-<p>Referenced by <a class="el" href="_wireless_mac_base_8cc_source.html#l00043">handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_wireless_mac_base.html#aa0117d9f5b465c487b6b4e7bd78eeab6">handleMessage()</a>.</p>
 
 </div>
 </div>
@@ -243,7 +253,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_wireless_mac_base.html#ab44661d865472b3799cbe4b086e131b9">WirelessMacBase::handleUpperMsg</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_wireless_mac_base.html#ab44661d865472b3799cbe4b086e131b9">WirelessMacBase::handleUpperMsg</a> </td>
           <td>(</td>
           <td class="paramtype">cPacket *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -255,9 +265,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Handle packets from upper layer. </p>
 
-<p>Implemented in <a class="el" href="class_ieee80211_mac.html#a3c78df80f39331fe0c35a19b2a991714">Ieee80211Mac</a>, <a class="el" href="class_c_s_m_a_mac_layer.html#a6df436f9290586658dc48738d7cd2160">CSMAMacLayer</a>, and <a class="el" href="class_mac80211.html#ad7bce39f2c4cc648b6571ae5bc622103">Mac80211</a>.</p>
+<p>Implemented in <a class="el" href="class_ieee80211_mac.html#a3c78df80f39331fe0c35a19b2a991714">Ieee80211Mac</a>.</p>
 
-<p>Referenced by <a class="el" href="_wireless_mac_base_8cc_source.html#l00043">handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_wireless_mac_base.html#aa0117d9f5b465c487b6b4e7bd78eeab6">handleMessage()</a>.</p>
 
 </div>
 </div>
@@ -266,7 +276,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_wireless_mac_base.html#a74866aacf342c21cd220d959698d87af">WirelessMacBase::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_wireless_mac_base.html#a74866aacf342c21cd220d959698d87af">WirelessMacBase::initialize</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>stage</em></td><td>)</td>
@@ -278,19 +288,22 @@ Protected Attributes</h2></td></tr>
 
 <p>Initialization of the module and some variables. </p>
 
-<p>Reimplemented in <a class="el" href="class_ieee80211_mac.html#acc89ca1fc93ad17f2a78a01bd474f058">Ieee80211Mac</a>, <a class="el" href="class_c_s_m_a_mac_layer.html#af0b2c470ab7f10fe061cf2daf9907e39">CSMAMacLayer</a>, and <a class="el" href="class_mac80211.html#ab81dae24d79c2ef010301e2c219966c1">Mac80211</a>.</p>
-
-<p>Definition at line <a class="el" href="_wireless_mac_base_8cc_source.html#l00028">28</a> of file <a class="el" href="_wireless_mac_base_8cc_source.html">WirelessMacBase.cc</a>.</p>
+<p>Reimplemented in <a class="el" href="class_ieee80211_mac.html#acc89ca1fc93ad17f2a78a01bd474f058">Ieee80211Mac</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span> (stage==0)
     {
-        <a class="code" href="class_wireless_mac_base.html#a39e646fa2c0a9318a99fbe31e7f5aea5" title="gate id">uppergateIn</a>  = findGate(<span class="stringliteral">&quot;uppergateIn&quot;</span>);
-        <a class="code" href="class_wireless_mac_base.html#a6c6bcf9c82a4695a5aef1dc6c325b86e">uppergateOut</a> = findGate(<span class="stringliteral">&quot;uppergateOut&quot;</span>);
-        <a class="code" href="class_wireless_mac_base.html#a853dbb7a3e6a4afb665c6c407d9e4b03">lowergateIn</a>  = findGate(<span class="stringliteral">&quot;lowergateIn&quot;</span>);
-        <a class="code" href="class_wireless_mac_base.html#a87ed2e8f34b1a0dc6c02d532f808fff8">lowergateOut</a> = findGate(<span class="stringliteral">&quot;lowergateOut&quot;</span>);
+        <a class="code" href="class_wireless_mac_base.html#ad034aebb2159f48ac47ddfcf5d64438b" title="gate id">upperLayerIn</a> = findGate(<span class="stringliteral">&quot;upperLayerIn&quot;</span>);
+        <a class="code" href="class_wireless_mac_base.html#af309baf8f7434f21abe268d40586ebae">upperLayerOut</a> = findGate(<span class="stringliteral">&quot;upperLayerOut&quot;</span>);
+        <a class="code" href="class_wireless_mac_base.html#a2ea40bb762043b3be538cc8d7e80b048">lowerLayerIn</a> = findGate(<span class="stringliteral">&quot;lowerLayerIn&quot;</span>);
+        <a class="code" href="class_wireless_mac_base.html#a2eff5524c00d09cc44850c94e637d418">lowerLayerOut</a> = findGate(<span class="stringliteral">&quot;lowerLayerOut&quot;</span>);
 
         <span class="comment">// get a pointer to the NotificationBoard module</span>
-        <a class="code" href="class_wireless_mac_base.html#a779ea8a0af7e4ef85c5faa85d6a281ed" title="Cached pointer to the NotificationBoard module.">nb</a> = <a class="code" href="class_notification_board_access.html">NotificationBoardAccess</a>().<a class="code" href="class_module_access.html#a44956ddb52973612afbba0eeecf8bb66">get</a>();
+        <a class="code" href="structnb.html">nb</a> = <a class="code" href="class_notification_board_access.html" title="Gives access to the NotificationBoard instance within the host/router.">NotificationBoardAccess</a>().<a class="code" href="class_module_access.html#a46a82b1fa0e957eb42d29c8637df1f4f">get</a>();
+
+        <a class="code" href="class_wireless_mac_base.html#a6b00fb779a922fe7a840a8e1b43c7991">packetSentToLowerSignal</a> = registerSignal(<span class="stringliteral">&quot;packetSentToLower&quot;</span>);
+        <a class="code" href="class_wireless_mac_base.html#af010f856ed43a7818b58e09e831ab69c">packetReceivedFromLowerSignal</a> = registerSignal(<span class="stringliteral">&quot;packetReceivedFromLower&quot;</span>);
+        <a class="code" href="class_wireless_mac_base.html#a75aa076aa6adadd213b40472844ab752">packetSentToUpperSignal</a> = registerSignal(<span class="stringliteral">&quot;packetSentToUpper&quot;</span>);
+        <a class="code" href="class_wireless_mac_base.html#a95a864ad4cd6934f0c1d696d762d04b6">packetReceivedFromUpperSignal</a> = registerSignal(<span class="stringliteral">&quot;packetReceivedFromUpper&quot;</span>);
     }
 }
 </pre></div>
@@ -311,11 +324,9 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_wireless_mac_base_8cc_source.html#l00060">60</a> of file <a class="el" href="_wireless_mac_base_8cc_source.html">WirelessMacBase.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_ieee80211_mac_8cc_source.html#l00346">Ieee80211Mac::handleWithFSM()</a>.</p>
+<p>Referenced by <a class="el" href="class_ieee80211_mac.html#aa95e52e25b2792fb62dd4d758cac72a2">Ieee80211Mac::handleWithFSM()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> msg-&gt;getArrivalGateId()==<a class="code" href="class_wireless_mac_base.html#a853dbb7a3e6a4afb665c6c407d9e4b03">lowergateIn</a>;
+    <span class="keywordflow">return</span> msg-&gt;getArrivalGateId()==<a class="code" href="class_wireless_mac_base.html#a2ea40bb762043b3be538cc8d7e80b048">lowerLayerIn</a>;
 }
 </pre></div>
 </div>
@@ -335,11 +346,9 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_wireless_mac_base_8cc_source.html#l00055">55</a> of file <a class="el" href="_wireless_mac_base_8cc_source.html">WirelessMacBase.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_ieee80211_mac_8cc_source.html#l00346">Ieee80211Mac::handleWithFSM()</a>.</p>
+<p>Referenced by <a class="el" href="class_ieee80211_mac.html#aa95e52e25b2792fb62dd4d758cac72a2">Ieee80211Mac::handleWithFSM()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> msg-&gt;getArrivalGateId()==<a class="code" href="class_wireless_mac_base.html#a39e646fa2c0a9318a99fbe31e7f5aea5" title="gate id">uppergateIn</a>;
+    <span class="keywordflow">return</span> msg-&gt;getArrivalGateId()==<a class="code" href="class_wireless_mac_base.html#ad034aebb2159f48ac47ddfcf5d64438b" title="gate id">upperLayerIn</a>;
 }
 </pre></div>
 </div>
@@ -349,7 +358,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_wireless_mac_base.html#a97af424876ed4fc77702d183f38dc83c">WirelessMacBase::sendDown</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_wireless_mac_base.html#a97af424876ed4fc77702d183f38dc83c">WirelessMacBase::sendDown</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -361,12 +370,14 @@ Protected Attributes</h2></td></tr>
 
 <p>Sends a message to the lower layer. </p>
 
-<p>Definition at line <a class="el" href="_wireless_mac_base_8cc_source.html#l00065">65</a> of file <a class="el" href="_wireless_mac_base_8cc_source.html">WirelessMacBase.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_ieee80211_mac_8cc_source.html#l00266">Ieee80211Mac::handleCommand()</a>, <a class="el" href="_c_s_m_a_mac_layer_8cc_source.html#l00132">CSMAMacLayer::handleUpperMsg()</a>, <a class="el" href="_mac80211_8cc_source.html#l00641">Mac80211::sendACKframe()</a>, <a class="el" href="_ieee80211_mac_8cc_source.html#l00781">Ieee80211Mac::sendACKFrame()</a>, <a class="el" href="_mac80211_8cc_source.html#l00693">Mac80211::sendBROADCASTframe()</a>, <a class="el" href="_ieee80211_mac_8cc_source.html#l00801">Ieee80211Mac::sendBroadcastFrame()</a>, <a class="el" href="_mac80211_8cc_source.html#l00678">Mac80211::sendCTSframe()</a>, <a class="el" href="_ieee80211_mac_8cc_source.html#l00821">Ieee80211Mac::sendCTSFrame()</a>, <a class="el" href="_mac80211_8cc_source.html#l00619">Mac80211::sendDATAframe()</a>, <a class="el" href="_ieee80211_mac_8cc_source.html#l00795">Ieee80211Mac::sendDataFrame()</a>, <a class="el" href="_ieee80211_mac_8cc_source.html#l00926">Ieee80211Mac::sendDownPendingRadioConfigMsg()</a>, <a class="el" href="_mac80211_8cc_source.html#l00659">Mac80211::sendRTSframe()</a>, and <a class="el" href="_ieee80211_mac_8cc_source.html#l00807">Ieee80211Mac::sendRTSFrame()</a>.</p>
+<p>Referenced by <a class="el" href="class_ieee80211_mac.html#aedaaf3e337f2d4a0790dbe392ac9f481">Ieee80211Mac::handleCommand()</a>, <a class="el" href="class_ieee80211_mac.html#a0afcec3ebbe4fac7c63ac32937604540">Ieee80211Mac::sendACKFrame()</a>, <a class="el" href="class_ieee80211_mac.html#a910622485a5816a5a5475858871bbbdc">Ieee80211Mac::sendCTSFrame()</a>, <a class="el" href="class_ieee80211_mac.html#a3283d9bfc1d01d05dc65887e6f0e8518">Ieee80211Mac::sendDataFrame()</a>, <a class="el" href="class_ieee80211_mac.html#af24a75754986f091cf9b5e6987bb7bf3">Ieee80211Mac::sendDownPendingRadioConfigMsg()</a>, <a class="el" href="class_ieee80211_mac.html#a3975bf98c4714a9346df65866521a479">Ieee80211Mac::sendMulticastFrame()</a>, and <a class="el" href="class_ieee80211_mac.html#abe3eb2e0a57570ce0f786da221090924">Ieee80211Mac::sendRTSFrame()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;sending down &quot;</span> &lt;&lt; msg &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
-    send(msg, <a class="code" href="class_wireless_mac_base.html#a87ed2e8f34b1a0dc6c02d532f808fff8">lowergateOut</a>);
+
+    <span class="keywordflow">if</span> (msg-&gt;isPacket())
+        emit(<a class="code" href="class_wireless_mac_base.html#a6b00fb779a922fe7a840a8e1b43c7991">packetSentToLowerSignal</a>, msg);
+
+    send(msg, <a class="code" href="class_wireless_mac_base.html#a2eff5524c00d09cc44850c94e637d418">lowerLayerOut</a>);
 }
 </pre></div>
 </div>
@@ -376,7 +387,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_wireless_mac_base.html#a5454ec5040663e5af4ddb00f525a3caf">WirelessMacBase::sendUp</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_wireless_mac_base.html#a5454ec5040663e5af4ddb00f525a3caf">WirelessMacBase::sendUp</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -388,48 +399,46 @@ Protected Attributes</h2></td></tr>
 
 <p>Sends a message to the upper layer. </p>
 
-<p>Definition at line <a class="el" href="_wireless_mac_base_8cc_source.html#l00071">71</a> of file <a class="el" href="_wireless_mac_base_8cc_source.html">WirelessMacBase.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_mac80211_8cc_source.html#l00194">Mac80211::decapsulateAndSendUp()</a>, <a class="el" href="_c_s_m_a_mac_layer_8cc_source.html#l00213">CSMAMacLayer::handleLowerMsg()</a>, and <a class="el" href="_ieee80211_mac_8cc_source.html#l00346">Ieee80211Mac::handleWithFSM()</a>.</p>
+<p>Reimplemented in <a class="el" href="class_ieee80211_mac.html#aee23d91230a4003a7e8f642f7e8f3f3f">Ieee80211Mac</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;sending up &quot;</span> &lt;&lt; msg &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
-    send(msg, <a class="code" href="class_wireless_mac_base.html#a6c6bcf9c82a4695a5aef1dc6c325b86e">uppergateOut</a>);
+
+    <span class="keywordflow">if</span> (msg-&gt;isPacket())
+        emit(<a class="code" href="class_wireless_mac_base.html#a75aa076aa6adadd213b40472844ab752">packetSentToUpperSignal</a>, msg);
+
+    send(msg, <a class="code" href="class_wireless_mac_base.html#af309baf8f7434f21abe268d40586ebae">upperLayerOut</a>);
 }
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="a853dbb7a3e6a4afb665c6c407d9e4b03"></a><!-- doxytag: member="WirelessMacBase::lowergateIn" ref="a853dbb7a3e6a4afb665c6c407d9e4b03" args="" -->
+<a class="anchor" id="a2ea40bb762043b3be538cc8d7e80b048"></a><!-- doxytag: member="WirelessMacBase::lowerLayerIn" ref="a2ea40bb762043b3be538cc8d7e80b048" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="class_wireless_mac_base.html#a853dbb7a3e6a4afb665c6c407d9e4b03">WirelessMacBase::lowergateIn</a><code> [protected]</code></td>
+          <td class="memname">int <a class="el" href="class_wireless_mac_base.html#a2ea40bb762043b3be538cc8d7e80b048">WirelessMacBase::lowerLayerIn</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_wireless_mac_base_8h_source.html#l00045">45</a> of file <a class="el" href="_wireless_mac_base_8h_source.html">WirelessMacBase.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_wireless_mac_base_8cc_source.html#l00028">initialize()</a>, and <a class="el" href="_wireless_mac_base_8cc_source.html#l00060">isLowerMsg()</a>.</p>
+<p>Referenced by <a class="el" href="class_wireless_mac_base.html#a74866aacf342c21cd220d959698d87af">initialize()</a>, and <a class="el" href="class_wireless_mac_base.html#af982fd8985b1ceca8771b43908a027c5">isLowerMsg()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a87ed2e8f34b1a0dc6c02d532f808fff8"></a><!-- doxytag: member="WirelessMacBase::lowergateOut" ref="a87ed2e8f34b1a0dc6c02d532f808fff8" args="" -->
+<a class="anchor" id="a2eff5524c00d09cc44850c94e637d418"></a><!-- doxytag: member="WirelessMacBase::lowerLayerOut" ref="a2eff5524c00d09cc44850c94e637d418" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="class_wireless_mac_base.html#a87ed2e8f34b1a0dc6c02d532f808fff8">WirelessMacBase::lowergateOut</a><code> [protected]</code></td>
+          <td class="memname">int <a class="el" href="class_wireless_mac_base.html#a2eff5524c00d09cc44850c94e637d418">WirelessMacBase::lowerLayerOut</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_wireless_mac_base_8h_source.html#l00046">46</a> of file <a class="el" href="_wireless_mac_base_8h_source.html">WirelessMacBase.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_wireless_mac_base_8cc_source.html#l00028">initialize()</a>, and <a class="el" href="_wireless_mac_base_8cc_source.html#l00065">sendDown()</a>.</p>
+<p>Referenced by <a class="el" href="class_wireless_mac_base.html#a74866aacf342c21cd220d959698d87af">initialize()</a>, and <a class="el" href="class_wireless_mac_base.html#a97af424876ed4fc77702d183f38dc83c">sendDown()</a>.</p>
 
 </div>
 </div>
@@ -444,20 +453,76 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Cached pointer to the <a class="el" href="class_notification_board.html">NotificationBoard</a> module. </p>
-
-<p>Definition at line <a class="el" href="_wireless_mac_base_8h_source.html#l00050">50</a> of file <a class="el" href="_wireless_mac_base_8h_source.html">WirelessMacBase.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_wireless_mac_base_8cc_source.html#l00028">initialize()</a>, <a class="el" href="_mac80211_8cc_source.html#l00045">Mac80211::initialize()</a>, <a class="el" href="_c_s_m_a_mac_layer_8cc_source.html#l00040">CSMAMacLayer::initialize()</a>, and <a class="el" href="_ieee80211_mac_8cc_source.html#l00076">Ieee80211Mac::initialize()</a>.</p>
+<p>Cached pointer to the <a class="el" href="class_notification_board.html" title="Acts as a intermediary between module where state changes can occur and modules which are interested ...">NotificationBoard</a> module. </p>
 
 </div>
 </div>
-<a class="anchor" id="a39e646fa2c0a9318a99fbe31e7f5aea5"></a><!-- doxytag: member="WirelessMacBase::uppergateIn" ref="a39e646fa2c0a9318a99fbe31e7f5aea5" args="" -->
+<a class="anchor" id="af010f856ed43a7818b58e09e831ab69c"></a><!-- doxytag: member="WirelessMacBase::packetReceivedFromLowerSignal" ref="af010f856ed43a7818b58e09e831ab69c" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="class_wireless_mac_base.html#a39e646fa2c0a9318a99fbe31e7f5aea5">WirelessMacBase::uppergateIn</a><code> [protected]</code></td>
+          <td class="memname">simsignal_t <a class="el" href="class_wireless_mac_base.html#af010f856ed43a7818b58e09e831ab69c">WirelessMacBase::packetReceivedFromLowerSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_wireless_mac_base.html#aa0117d9f5b465c487b6b4e7bd78eeab6">handleMessage()</a>, and <a class="el" href="class_wireless_mac_base.html#a74866aacf342c21cd220d959698d87af">initialize()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a95a864ad4cd6934f0c1d696d762d04b6"></a><!-- doxytag: member="WirelessMacBase::packetReceivedFromUpperSignal" ref="a95a864ad4cd6934f0c1d696d762d04b6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_wireless_mac_base.html#a95a864ad4cd6934f0c1d696d762d04b6">WirelessMacBase::packetReceivedFromUpperSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_wireless_mac_base.html#aa0117d9f5b465c487b6b4e7bd78eeab6">handleMessage()</a>, and <a class="el" href="class_wireless_mac_base.html#a74866aacf342c21cd220d959698d87af">initialize()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6b00fb779a922fe7a840a8e1b43c7991"></a><!-- doxytag: member="WirelessMacBase::packetSentToLowerSignal" ref="a6b00fb779a922fe7a840a8e1b43c7991" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_wireless_mac_base.html#a6b00fb779a922fe7a840a8e1b43c7991">WirelessMacBase::packetSentToLowerSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_wireless_mac_base.html#a74866aacf342c21cd220d959698d87af">initialize()</a>, and <a class="el" href="class_wireless_mac_base.html#a97af424876ed4fc77702d183f38dc83c">sendDown()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a75aa076aa6adadd213b40472844ab752"></a><!-- doxytag: member="WirelessMacBase::packetSentToUpperSignal" ref="a75aa076aa6adadd213b40472844ab752" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_wireless_mac_base.html#a75aa076aa6adadd213b40472844ab752">WirelessMacBase::packetSentToUpperSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_wireless_mac_base.html#a74866aacf342c21cd220d959698d87af">initialize()</a>, <a class="el" href="class_wireless_mac_base.html#a5454ec5040663e5af4ddb00f525a3caf">sendUp()</a>, and <a class="el" href="class_ieee80211_mac.html#aee23d91230a4003a7e8f642f7e8f3f3f">Ieee80211Mac::sendUp()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad034aebb2159f48ac47ddfcf5d64438b"></a><!-- doxytag: member="WirelessMacBase::upperLayerIn" ref="ad034aebb2159f48ac47ddfcf5d64438b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="class_wireless_mac_base.html#ad034aebb2159f48ac47ddfcf5d64438b">WirelessMacBase::upperLayerIn</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
@@ -465,32 +530,28 @@ Protected Attributes</h2></td></tr>
 
 <p>gate id </p>
 
-<p>Definition at line <a class="el" href="_wireless_mac_base_8h_source.html#l00043">43</a> of file <a class="el" href="_wireless_mac_base_8h_source.html">WirelessMacBase.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_wireless_mac_base_8cc_source.html#l00043">handleMessage()</a>, <a class="el" href="_wireless_mac_base_8cc_source.html#l00028">initialize()</a>, and <a class="el" href="_wireless_mac_base_8cc_source.html#l00055">isUpperMsg()</a>.</p>
+<p>Referenced by <a class="el" href="class_wireless_mac_base.html#aa0117d9f5b465c487b6b4e7bd78eeab6">handleMessage()</a>, <a class="el" href="class_wireless_mac_base.html#a74866aacf342c21cd220d959698d87af">initialize()</a>, and <a class="el" href="class_wireless_mac_base.html#a86b406729713114bdceb21e07bcefd12">isUpperMsg()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a6c6bcf9c82a4695a5aef1dc6c325b86e"></a><!-- doxytag: member="WirelessMacBase::uppergateOut" ref="a6c6bcf9c82a4695a5aef1dc6c325b86e" args="" -->
+<a class="anchor" id="af309baf8f7434f21abe268d40586ebae"></a><!-- doxytag: member="WirelessMacBase::upperLayerOut" ref="af309baf8f7434f21abe268d40586ebae" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="class_wireless_mac_base.html#a6c6bcf9c82a4695a5aef1dc6c325b86e">WirelessMacBase::uppergateOut</a><code> [protected]</code></td>
+          <td class="memname">int <a class="el" href="class_wireless_mac_base.html#af309baf8f7434f21abe268d40586ebae">WirelessMacBase::upperLayerOut</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_wireless_mac_base_8h_source.html#l00044">44</a> of file <a class="el" href="_wireless_mac_base_8h_source.html">WirelessMacBase.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_wireless_mac_base_8cc_source.html#l00028">initialize()</a>, and <a class="el" href="_wireless_mac_base_8cc_source.html#l00071">sendUp()</a>.</p>
+<p>Referenced by <a class="el" href="class_wireless_mac_base.html#a74866aacf342c21cd220d959698d87af">initialize()</a>, <a class="el" href="class_wireless_mac_base.html#a5454ec5040663e5af4ddb00f525a3caf">sendUp()</a>, and <a class="el" href="class_ieee80211_mac.html#aee23d91230a4003a7e8f642f7e8f3f3f">Ieee80211Mac::sendUp()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_wireless_mac_base_8h_source.html">WirelessMacBase.h</a></li>
-<li><a class="el" href="_wireless_mac_base_8cc_source.html">WirelessMacBase.cc</a></li>
+<li><a class="el" href="_wireless_mac_base_8h.html">WirelessMacBase.h</a></li>
+<li><a class="el" href="_wireless_mac_base_8cc.html">WirelessMacBase.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -498,7 +559,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_wireless_mac_base.html">WirelessMacBase</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:54 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:32 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -85,14 +85,20 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="IPv6NeighbourCache" -->
-<p><code>#include &lt;<a class="el" href="_i_pv6_neighbour_cache_8h_source.html">IPv6NeighbourCache.h</a>&gt;</code></p>
+<p>Copyright (C) 2005 Andras Varga Copyright (C) 2005 Wei Yang, Ng.  
+ <a href="class_i_pv6_neighbour_cache.html#details">More...</a></p>
+
+<p><code>#include &lt;IPv6NeighbourCache.h&gt;</code></p>
 
 <p><a href="class_i_pv6_neighbour_cache-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache_1_1_default_router_list.html">DefaultRouterList</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_i_pv6_neighbour_cache_1_1_key.html">Key</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_i_pv6_neighbour_cache_1_1_key.html" title="Key into neighbour cache.">Key</a> into neighbour cache.  <a href="struct_i_pv6_neighbour_cache_1_1_key.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_i_pv6_neighbour_cache_1_1_neighbour.html">Neighbour</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores a neighbour (or router) entry.  <a href="struct_i_pv6_neighbour_cache_1_1_neighbour.html#details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#ae3981577e32da8a5d021f5440573a2a1">ReachabilityState</a> { <br/>
@@ -104,39 +110,55 @@ Public Types</h2></td></tr>
 &#160;&#160;<a class="el" href="class_i_pv6_neighbour_cache.html#ae3981577e32da8a5d021f5440573a2a1a8fdd2d1853264aa8f5479ebfa6502054">PROBE</a>
 <br/>
  }</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_i_pv6_neighbour_cache_1_1_neighbour.html" title="Stores a neighbour (or router) entry.">Neighbour</a>'s reachability state.  <a href="class_i_pv6_neighbour_cache.html#ae3981577e32da8a5d021f5440573a2a1">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; cMessage * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#aa30dee396d7870c179503c85b3a1bfc1">MsgPtrVector</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; <a class="el" href="struct_i_pv6_neighbour_cache_1_1_key.html">Key</a>, <a class="el" href="struct_i_pv6_neighbour_cache_1_1_neighbour.html">Neighbour</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#abf885cc0639c2328134f0f54b2b11b8b">NeighbourMap</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The std::map underlying the <a class="el" href="struct_i_pv6_neighbour_cache_1_1_neighbour.html" title="Stores a neighbour (or router) entry.">Neighbour</a> Cache data structure.  <a href="#abf885cc0639c2328134f0f54b2b11b8b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef NeighbourMap::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#ab1cc9b2e581aa3e334f0c38874505f44">iterator</a></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#acb722f249c66333d11a01ed5e6adbf80">IPv6NeighbourCache</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#ad49f4e0325136fc36333fae9a539afb4">IPv6NeighbourCache</a> (cSimpleModule &amp;<a class="el" href="class_i_pv6_neighbour_cache.html#a35d2fb290cdf9a408a9cbf7866bd0ae2">neighbourDiscovery</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#ac6b776151b885f7510efceb087502490">~IPv6NeighbourCache</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="struct_i_pv6_neighbour_cache_1_1_neighbour.html">Neighbour</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#af88ebc30d5f18f0a628ead79f1fc3cb9">lookup</a> (const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;addr, int interfaceID)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a neighbour entry, or NULL.  <a href="#af88ebc30d5f18f0a628ead79f1fc3cb9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="struct_i_pv6_neighbour_cache_1_1_key.html">Key</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#aa4dfbe1efd18d170311a52b91284f4ca">lookupKeyAddr</a> (<a class="el" href="struct_i_pv6_neighbour_cache_1_1_key.html">Key</a> &amp;key)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Experimental code.  <a href="#aa4dfbe1efd18d170311a52b91284f4ca"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv6_neighbour_cache_1_1_default_router_list.html">DefaultRouterList</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#a949aafe89b2ced9a3cba25ec476473a3">getDefaultRouterList</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv6_neighbour_cache.html#ab1cc9b2e581aa3e334f0c38874505f44">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#aba15c06ac0746775e6740c727033f37b">begin</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">For iteration on the internal std::map.  <a href="#aba15c06ac0746775e6740c727033f37b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv6_neighbour_cache.html#ab1cc9b2e581aa3e334f0c38874505f44">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#a4dc511141fb8fa7cab64d60fc8ee7ab5">end</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">For iteration on the internal std::map.  <a href="#a4dc511141fb8fa7cab64d60fc8ee7ab5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="struct_i_pv6_neighbour_cache_1_1_neighbour.html">Neighbour</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#ab0751209af2b66c4171f92ba6ed7eee1">addNeighbour</a> (const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;addr, int interfaceID)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and initializes a neighbour entry with isRouter=false, state=INCOMPLETE.  <a href="#ab0751209af2b66c4171f92ba6ed7eee1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="struct_i_pv6_neighbour_cache_1_1_neighbour.html">Neighbour</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#ac9a032698bb687e8d5fec8a05aed0f77">addNeighbour</a> (const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;addr, int interfaceID, <a class="el" href="class_m_a_c_address.html">MACAddress</a> macAddress)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="struct_i_pv6_neighbour_cache_1_1_neighbour.html">Neighbour</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#a13016f349669033902152b07d1e466aa">addRouter</a> (const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;addr, int interfaceID, simtime_t expiryTime)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="struct_i_pv6_neighbour_cache_1_1_neighbour.html">Neighbour</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#ac21a58d5e6d5fd6b4d0e84eaf427022c">addRouter</a> (const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;addr, int interfaceID, <a class="el" href="class_m_a_c_address.html">MACAddress</a> macAddress, simtime_t expiryTime)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#a877bc367ca422baabc22199c5036df83">remove</a> (const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;addr, int interfaceID)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#ab717015df164ed4fc3a07441229c80b6">remove</a> (NeighbourMap::iterator it)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and initializes a neighbour entry with isRouter=false, MAC address and state=STALE.  <a href="#ac9a032698bb687e8d5fec8a05aed0f77"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="struct_i_pv6_neighbour_cache_1_1_neighbour.html">Neighbour</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#a7ff5ebbb09aa68832cf6e1260fadfbcf">addRouter</a> (const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;addr, int interfaceID, <a class="el" href="class_m_a_c_address.html">MACAddress</a> macAddress, simtime_t expiryTime, bool isHomeAgent=false)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and initializes a router entry (isRouter=isDefaultRouter=true), MAC address and state=STALE.  <a href="#a7ff5ebbb09aa68832cf6e1260fadfbcf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#a877bc367ca422baabc22199c5036df83">remove</a> (const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;addr, int interfaceID)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the given neighbour from the cache.  <a href="#a877bc367ca422baabc22199c5036df83"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#a022fe935168fa011e54cd2bc98f6677f">invalidateEntriesForInterfaceID</a> (int interfaceID)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set status of all neighbours on given interface to state PROBE.  <a href="#a022fe935168fa011e54cd2bc98f6677f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#a3127f4348c48110a01920507be503c27">invalidateAllEntries</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set status of all neighbours to state PROBE.  <a href="#a3127f4348c48110a01920507be503c27"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#ab717015df164ed4fc3a07441229c80b6">remove</a> (NeighbourMap::iterator it)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the given neighbour from the cache.  <a href="#ab717015df164ed4fc3a07441229c80b6"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#a8fdb7fe401256bb765860586e1952c67">stateName</a> (<a class="el" href="class_i_pv6_neighbour_cache.html#ae3981577e32da8a5d021f5440573a2a1">ReachabilityState</a> state)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name of the given state as string.  <a href="#a8fdb7fe401256bb765860586e1952c67"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cSimpleModule &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#a35d2fb290cdf9a408a9cbf7866bd0ae2">neighbourDiscovery</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv6_neighbour_cache.html#abf885cc0639c2328134f0f54b2b11b8b">NeighbourMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_pv6_neighbour_cache_1_1_default_router_list.html">DefaultRouterList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_pv6_neighbour_cache.html#ad5b2668bcdd6698da29534936f1a5d9a">defaultRouterList</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Copyright (C) 2005 Andras Varga Copyright (C) 2005 Wei Yang, Ng</p>
+<div class="textblock"><p>Copyright (C) 2005 Andras Varga Copyright (C) 2005 Wei Yang, Ng. </p>
 <p>This program is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.</p>
 <p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</p>
-<p>You should have received a copy of the GNU Lesser General Public License along with this program; if not, see &lt;<a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;. <a class="el" href="class_i_pv6.html">IPv6</a> <a class="el" href="struct_i_pv6_neighbour_cache_1_1_neighbour.html">Neighbour</a> Cache (RFC 2461 Neighbor Discovery for <a class="el" href="class_i_pv6.html">IPv6</a>). Used internally by the <a class="el" href="class_i_pv6_neighbour_discovery.html">IPv6NeighbourDiscovery</a> simple module.</p>
-<p>This is just a plain container class -- the <a class="el" href="class_i_pv6_neighbour_discovery.html">IPv6NeighbourDiscovery</a> module is free to manipulate the contents of the <a class="el" href="struct_i_pv6_neighbour_cache_1_1_neighbour.html">Neighbour</a> entries as it pleases.</p>
-<p>NOTE: we don't keep a separate Default Router List, the <a class="el" href="struct_i_pv6_neighbour_cache_1_1_neighbour.html">Neighbour</a> Cache serves that purpose too. Removing an entry from the Default Router List in our case is done by setting the isDefaultRouter flag of the entry to false. </p>
-
-<p>Definition at line <a class="el" href="_i_pv6_neighbour_cache_8h_source.html#l00042">42</a> of file <a class="el" href="_i_pv6_neighbour_cache_8h_source.html">IPv6NeighbourCache.h</a>.</p>
+<p>You should have received a copy of the GNU Lesser General Public License along with this program; if not, see &lt;<a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;. <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> <a class="el" href="struct_i_pv6_neighbour_cache_1_1_neighbour.html" title="Stores a neighbour (or router) entry.">Neighbour</a> Cache (RFC 2461 Neighbor Discovery for <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a>). Used internally by the <a class="el" href="class_i_pv6_neighbour_discovery.html" title="Implements RFC 2461 Neighbor Discovery for IPv6.">IPv6NeighbourDiscovery</a> simple module.</p>
+<p>This is just a plain container class -- the <a class="el" href="class_i_pv6_neighbour_discovery.html" title="Implements RFC 2461 Neighbor Discovery for IPv6.">IPv6NeighbourDiscovery</a> module is free to manipulate the contents of the <a class="el" href="struct_i_pv6_neighbour_cache_1_1_neighbour.html" title="Stores a neighbour (or router) entry.">Neighbour</a> entries as it pleases.</p>
+<p>NOTE: <a class="el" href="class_i_pv6_neighbour_cache.html" title="Copyright (C) 2005 Andras Varga Copyright (C) 2005 Wei Yang, Ng.">IPv6NeighbourCache</a> also stores the Default Router List. A router becomes a default router by calling <a class="el" href="class_i_pv6_neighbour_cache.html#a949aafe89b2ced9a3cba25ec476473a3">getDefaultRouterList()</a>.add(router) and stops to be a default router after <a class="el" href="class_i_pv6_neighbour_cache.html#a949aafe89b2ced9a3cba25ec476473a3">getDefaultRouterList()</a>.remove(router) has been called. References to default routers are stored in a circular list to ease round-robin selection. </p>
 </div><hr/><h2>Member Typedef Documentation</h2>
 <a class="anchor" id="ab1cc9b2e581aa3e334f0c38874505f44"></a><!-- doxytag: member="IPv6NeighbourCache::iterator" ref="ab1cc9b2e581aa3e334f0c38874505f44" args="" -->
 <div class="memitem">
@@ -148,8 +170,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_pv6_neighbour_cache_8h_source.html#l00108">108</a> of file <a class="el" href="_i_pv6_neighbour_cache_8h_source.html">IPv6NeighbourCache.h</a>.</p>
 
 </div>
 </div>
@@ -164,8 +184,6 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_neighbour_cache_8h_source.html#l00045">45</a> of file <a class="el" href="_i_pv6_neighbour_cache_8h_source.html">IPv6NeighbourCache.h</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="abf885cc0639c2328134f0f54b2b11b8b"></a><!-- doxytag: member="IPv6NeighbourCache::NeighbourMap" ref="abf885cc0639c2328134f0f54b2b11b8b" args="" -->
@@ -178,9 +196,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The std::map underlying the <a class="el" href="struct_i_pv6_neighbour_cache_1_1_neighbour.html">Neighbour</a> Cache data structure </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_neighbour_cache_8h_source.html#l00107">107</a> of file <a class="el" href="_i_pv6_neighbour_cache_8h_source.html">IPv6NeighbourCache.h</a>.</p>
+<p>The std::map underlying the <a class="el" href="struct_i_pv6_neighbour_cache_1_1_neighbour.html" title="Stores a neighbour (or router) entry.">Neighbour</a> Cache data structure. </p>
 
 </div>
 </div>
@@ -195,7 +212,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p><a class="el" href="struct_i_pv6_neighbour_cache_1_1_neighbour.html">Neighbour</a>'s reachability state </p>
+
+<p><a class="el" href="struct_i_pv6_neighbour_cache_1_1_neighbour.html" title="Stores a neighbour (or router) entry.">Neighbour</a>'s reachability state. </p>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="ae3981577e32da8a5d021f5440573a2a1ac2cfd6c9d21c7d34d2f6f53d6cfe6638"></a><!-- doxytag: member="INCOMPLETE" ref="ae3981577e32da8a5d021f5440573a2a1ac2cfd6c9d21c7d34d2f6f53d6cfe6638" args="" -->INCOMPLETE</em>&nbsp;</td><td>
 </td></tr>
@@ -210,29 +228,27 @@ Protected Attributes</h2></td></tr>
 </table>
 </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="_i_pv6_neighbour_cache_8h_source.html#l00048">48</a> of file <a class="el" href="_i_pv6_neighbour_cache_8h_source.html">IPv6NeighbourCache.h</a>.</p>
 <div class="fragment"><pre class="fragment">{<a class="code" href="class_i_pv6_neighbour_cache.html#ae3981577e32da8a5d021f5440573a2a1ac2cfd6c9d21c7d34d2f6f53d6cfe6638">INCOMPLETE</a>, <a class="code" href="class_i_pv6_neighbour_cache.html#ae3981577e32da8a5d021f5440573a2a1a537cfe5cd6d576deab91b256b6da873a">REACHABLE</a>, <a class="code" href="class_i_pv6_neighbour_cache.html#ae3981577e32da8a5d021f5440573a2a1a115199155dd43585124db1d8f471025b">STALE</a>, <a class="code" href="class_i_pv6_neighbour_cache.html#ae3981577e32da8a5d021f5440573a2a1a815cc3dd5d8b220495a69641b00f5bdb">DELAY</a>, <a class="code" href="class_i_pv6_neighbour_cache.html#ae3981577e32da8a5d021f5440573a2a1a8fdd2d1853264aa8f5479ebfa6502054">PROBE</a>};
 </pre></div>
 </div>
 </div>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="acb722f249c66333d11a01ed5e6adbf80"></a><!-- doxytag: member="IPv6NeighbourCache::IPv6NeighbourCache" ref="acb722f249c66333d11a01ed5e6adbf80" args="()" -->
+<a class="anchor" id="ad49f4e0325136fc36333fae9a539afb4"></a><!-- doxytag: member="IPv6NeighbourCache::IPv6NeighbourCache" ref="ad49f4e0325136fc36333fae9a539afb4" args="(cSimpleModule &amp;neighbourDiscovery)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_i_pv6_neighbour_cache.html#acb722f249c66333d11a01ed5e6adbf80">IPv6NeighbourCache::IPv6NeighbourCache</a> </td>
+          <td class="memname"><a class="el" href="class_i_pv6_neighbour_cache.html#ad49f4e0325136fc36333fae9a539afb4">IPv6NeighbourCache::IPv6NeighbourCache</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">cSimpleModule &amp;&#160;</td>
+          <td class="paramname"><em>neighbourDiscovery</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html#l00040">40</a> of file <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html">IPv6NeighbourCache.cc</a>.</p>
-<div class="fragment"><pre class="fragment">{
+<div class="fragment"><pre class="fragment">    : <a class="code" href="class_i_pv6_neighbour_cache.html#a35d2fb290cdf9a408a9cbf7866bd0ae2">neighbourDiscovery</a>(<a class="code" href="class_i_pv6_neighbour_cache.html#a35d2fb290cdf9a408a9cbf7866bd0ae2">neighbourDiscovery</a>)
+{
     WATCH_MAP(<a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>);
 }
 </pre></div>
@@ -251,8 +267,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_i_pv6_neighbour_cache_8h_source.html#l00115">115</a> of file <a class="el" href="_i_pv6_neighbour_cache_8h_source.html">IPv6NeighbourCache.h</a>.</p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
@@ -282,25 +296,19 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Creates and initializes a neighbour entry with isRouter=false, state=INCOMPLETE. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html#l00058">58</a> of file <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html">IPv6NeighbourCache.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00185">IPv6NeighbourDiscovery::processIPv6Datagram()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01720">IPv6NeighbourDiscovery::processNSWithSpecifiedSrcAddr()</a>, and <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01153">IPv6NeighbourDiscovery::processRAForRouterUpdates()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_neighbour_discovery.html#ade69131623bc5b13205ced3ff54a16d3">IPv6NeighbourDiscovery::processIPv6Datagram()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#a8106a5866c58a9c6372c741a15ce943b">IPv6NeighbourDiscovery::processNSWithSpecifiedSrcAddr()</a>, and <a class="el" href="class_i_pv6_neighbour_discovery.html#a41da6658d387e46e3e656d4704bf908f">IPv6NeighbourDiscovery::processRAForRouterUpdates()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    Key key(addr, interfaceID);
-    ASSERT(<a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.find(key)==<a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.end()); <span class="comment">// entry must not exist yet</span>
+    <a class="code" href="namespace_macho.html#a0fa83256dd70bddc3c97b796db55755e">Key</a> key(addr, interfaceID);
+    ASSERT(<a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.find(key) == <a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.end()); <span class="comment">// entry must not exist yet</span>
     Neighbour&amp; nbor = <a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>[key];
 
-    nbor.nceKey = <a class="code" href="class_i_pv6_neighbour_cache.html#aa4dfbe1efd18d170311a52b91284f4ca">lookupKeyAddr</a>(key);<span class="comment">//a ptr that links to the key.-WEI for convenience.</span>
+    nbor.nceKey = <a class="code" href="class_i_pv6_neighbour_cache.html#aa4dfbe1efd18d170311a52b91284f4ca" title="Experimental code.">lookupKeyAddr</a>(key);
     nbor.isRouter = <span class="keyword">false</span>;
-    nbor.isDefaultRouter = <span class="keyword">false</span>;
+    nbor.isHomeAgent = <span class="keyword">false</span>;
     nbor.reachabilityState = <a class="code" href="class_i_pv6_neighbour_cache.html#ae3981577e32da8a5d021f5440573a2a1ac2cfd6c9d21c7d34d2f6f53d6cfe6638">INCOMPLETE</a>;
-    nbor.reachabilityExpires = 0;
-    nbor.numProbesSent = 0;
-    nbor.nudTimeoutEvent = NULL;
-    nbor.numOfARNSSent = 0;
-    nbor.routerExpiryTime = 0;
     <span class="keywordflow">return</span> &amp;nbor;
 }
 </pre></div>
@@ -336,87 +344,29 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Creates and initializes a neighbour entry with isRouter=false, MAC address and state=STALE. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html#l00076">76</a> of file <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html">IPv6NeighbourCache.cc</a>.</p>
+<p>Creates and initializes a neighbour entry with isRouter=false, MAC address and state=STALE. </p>
 <div class="fragment"><pre class="fragment">{
-    Key key(addr, interfaceID);
-    ASSERT(<a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.find(key)==<a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.end()); <span class="comment">// entry must not exist yet</span>
+    <a class="code" href="namespace_macho.html#a0fa83256dd70bddc3c97b796db55755e">Key</a> key(addr, interfaceID);
+    ASSERT(<a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.find(key) == <a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.end()); <span class="comment">// entry must not exist yet</span>
     Neighbour&amp; nbor = <a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>[key];
 
-    nbor.nceKey = <a class="code" href="class_i_pv6_neighbour_cache.html#aa4dfbe1efd18d170311a52b91284f4ca">lookupKeyAddr</a>(key);<span class="comment">//a ptr that links to the key.-WEI for convenience.</span>
+    nbor.nceKey = <a class="code" href="class_i_pv6_neighbour_cache.html#aa4dfbe1efd18d170311a52b91284f4ca" title="Experimental code.">lookupKeyAddr</a>(key);
     nbor.macAddress = macAddress;
     nbor.isRouter = <span class="keyword">false</span>;
-    nbor.isDefaultRouter = <span class="keyword">false</span>;
+    nbor.isHomeAgent = <span class="keyword">false</span>;
     nbor.reachabilityState = <a class="code" href="class_i_pv6_neighbour_cache.html#ae3981577e32da8a5d021f5440573a2a1a115199155dd43585124db1d8f471025b">STALE</a>;
-    nbor.reachabilityExpires = 0;
-    nbor.numProbesSent = 0;
-    nbor.nudTimeoutEvent = NULL;
-    nbor.routerExpiryTime = 0;
     <span class="keywordflow">return</span> &amp;nbor;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a13016f349669033902152b07d1e466aa"></a><!-- doxytag: member="IPv6NeighbourCache::addRouter" ref="a13016f349669033902152b07d1e466aa" args="(const IPv6Address &amp;addr, int interfaceID, simtime_t expiryTime)" -->
+<a class="anchor" id="a7ff5ebbb09aa68832cf6e1260fadfbcf"></a><!-- doxytag: member="IPv6NeighbourCache::addRouter" ref="a7ff5ebbb09aa68832cf6e1260fadfbcf" args="(const IPv6Address &amp;addr, int interfaceID, MACAddress macAddress, simtime_t expiryTime, bool isHomeAgent=false)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_i_pv6_neighbour_cache_1_1_neighbour.html">IPv6NeighbourCache::Neighbour</a> * <a class="el" href="class_i_pv6_neighbour_cache.html#a13016f349669033902152b07d1e466aa">IPv6NeighbourCache::addRouter</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;&#160;</td>
-          <td class="paramname"><em>addr</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>interfaceID</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">simtime_t&#160;</td>
-          <td class="paramname"><em>expiryTime</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Creates and initializes a router entry (isRouter=isDefaultRouter=true), state=INCOMPLETE. </p>
-
-<p>Definition at line <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html#l00095">95</a> of file <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html">IPv6NeighbourCache.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01153">IPv6NeighbourDiscovery::processRAForRouterUpdates()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    Key key(addr, interfaceID);
-    ASSERT(<a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.find(key)==<a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.end()); <span class="comment">// entry must not exist yet</span>
-    Neighbour&amp; nbor = <a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>[key];
-
-    nbor.nceKey = <a class="code" href="class_i_pv6_neighbour_cache.html#aa4dfbe1efd18d170311a52b91284f4ca">lookupKeyAddr</a>(key);<span class="comment">//a ptr that links to the key.-WEI for convenience.</span>
-    nbor.isRouter = <span class="keyword">true</span>;
-    nbor.isDefaultRouter = <span class="keyword">true</span>;<span class="comment">//FIXME: a router may advertise itself it self as a router but not as a default one.-WEI</span>
-    nbor.reachabilityState = <a class="code" href="class_i_pv6_neighbour_cache.html#ae3981577e32da8a5d021f5440573a2a1ac2cfd6c9d21c7d34d2f6f53d6cfe6638">INCOMPLETE</a>;
-    nbor.reachabilityExpires = 0;
-    nbor.numProbesSent = 0;
-    nbor.nudTimeoutEvent = NULL;
-    nbor.routerExpiryTime = expiryTime;
-    <span class="keywordflow">return</span> &amp;nbor;
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="ac21a58d5e6d5fd6b4d0e84eaf427022c"></a><!-- doxytag: member="IPv6NeighbourCache::addRouter" ref="ac21a58d5e6d5fd6b4d0e84eaf427022c" args="(const IPv6Address &amp;addr, int interfaceID, MACAddress macAddress, simtime_t expiryTime)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct_i_pv6_neighbour_cache_1_1_neighbour.html">IPv6NeighbourCache::Neighbour</a> * <a class="el" href="class_i_pv6_neighbour_cache.html#a13016f349669033902152b07d1e466aa">IPv6NeighbourCache::addRouter</a> </td>
+          <td class="memname"><a class="el" href="struct_i_pv6_neighbour_cache_1_1_neighbour.html">IPv6NeighbourCache::Neighbour</a> * <a class="el" href="class_i_pv6_neighbour_cache.html#a7ff5ebbb09aa68832cf6e1260fadfbcf">IPv6NeighbourCache::addRouter</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;&#160;</td>
           <td class="paramname"><em>addr</em>, </td>
@@ -437,7 +387,13 @@ Protected Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">simtime_t&#160;</td>
-          <td class="paramname"><em>expiryTime</em>&#160;</td>
+          <td class="paramname"><em>expiryTime</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isHomeAgent</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -447,24 +403,25 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Creates and initializes a router entry (isRouter=isDefaultRouter=true), MAC address and state=STALE. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html#l00113">113</a> of file <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html">IPv6NeighbourCache.cc</a>.</p>
+<p>Creates and initializes a router entry (isRouter=isDefaultRouter=true), MAC address and state=STALE. </p>
+<p>Update by CB: Added an optional parameter which is false by default. Specifies whether a router is also a home agent. </p>
+
+<p>Referenced by <a class="el" href="class_i_pv6_neighbour_discovery.html#a41da6658d387e46e3e656d4704bf908f">IPv6NeighbourDiscovery::processRAForRouterUpdates()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    Key key(addr, interfaceID);
-    ASSERT(<a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.find(key)==<a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.end()); <span class="comment">// entry must not exist yet</span>
+    <a class="code" href="namespace_macho.html#a0fa83256dd70bddc3c97b796db55755e">Key</a> key(addr, interfaceID);
+    ASSERT(<a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.find(key) == <a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.end()); <span class="comment">// entry must not exist yet</span>
     Neighbour&amp; nbor = <a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>[key];
 
-    nbor.nceKey = <a class="code" href="class_i_pv6_neighbour_cache.html#aa4dfbe1efd18d170311a52b91284f4ca">lookupKeyAddr</a>(key);<span class="comment">//a ptr that links to the key.-WEI for convenience.</span>
+    nbor.nceKey = <a class="code" href="class_i_pv6_neighbour_cache.html#aa4dfbe1efd18d170311a52b91284f4ca" title="Experimental code.">lookupKeyAddr</a>(key);
     nbor.macAddress = macAddress;
     nbor.isRouter = <span class="keyword">true</span>;
-    nbor.isDefaultRouter = <span class="keyword">true</span>;
+    nbor.isHomeAgent = isHomeAgent;
     nbor.reachabilityState = <a class="code" href="class_i_pv6_neighbour_cache.html#ae3981577e32da8a5d021f5440573a2a1a115199155dd43585124db1d8f471025b">STALE</a>;
-    nbor.reachabilityExpires = 0;
-    nbor.numProbesSent = 0;
-    nbor.nudTimeoutEvent = NULL;
-
     nbor.routerExpiryTime = expiryTime;
+
+    <a class="code" href="class_i_pv6_neighbour_cache.html#ad5b2668bcdd6698da29534936f1a5d9a">defaultRouterList</a>.<a class="code" href="class_i_pv6_neighbour_cache_1_1_default_router_list.html#adbb150f5e73c1f288cdd28c611411e51" title="Copyright (C) 2005 Andras Varga Copyright (C) 2005 Wei Yang, Ng.">add</a>(nbor);
+
     <span class="keywordflow">return</span> &amp;nbor;
 }
 </pre></div>
@@ -483,11 +440,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>For iteration on the internal std::map </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_neighbour_cache_8h_source.html#l00124">124</a> of file <a class="el" href="_i_pv6_neighbour_cache_8h_source.html">IPv6NeighbourCache.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00491">IPv6NeighbourDiscovery::selectDefaultRouter()</a>.</p>
+<p>For iteration on the internal std::map. </p>
 <div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.begin();}
 </pre></div>
 </div>
@@ -505,12 +459,93 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>For iteration on the internal std::map </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_neighbour_cache_8h_source.html#l00127">127</a> of file <a class="el" href="_i_pv6_neighbour_cache_8h_source.html">IPv6NeighbourCache.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00491">IPv6NeighbourDiscovery::selectDefaultRouter()</a>.</p>
+<p>For iteration on the internal std::map. </p>
 <div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.end();}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a949aafe89b2ced9a3cba25ec476473a3"></a><!-- doxytag: member="IPv6NeighbourCache::getDefaultRouterList" ref="a949aafe89b2ced9a3cba25ec476473a3" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_pv6_neighbour_cache_1_1_default_router_list.html">DefaultRouterList</a>&amp; <a class="el" href="class_i_pv6_neighbour_cache.html#a949aafe89b2ced9a3cba25ec476473a3">IPv6NeighbourCache::getDefaultRouterList</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_i_pv6_neighbour_discovery.html#a093219842e9055dc413f8f6d401001ee">IPv6NeighbourDiscovery::processNAForIncompleteNCEState()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#a58a8a7aaf00643c4eb0044cc1380413b">IPv6NeighbourDiscovery::processNAForOtherNCEStates()</a>, and <a class="el" href="class_i_pv6_neighbour_discovery.html#a9f6c83de24b3e270c3843cc213b5250a">IPv6NeighbourDiscovery::selectDefaultRouter()</a>.</p>
+<div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> <a class="code" href="class_i_pv6_neighbour_cache.html#ad5b2668bcdd6698da29534936f1a5d9a">defaultRouterList</a>; }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a3127f4348c48110a01920507be503c27"></a><!-- doxytag: member="IPv6NeighbourCache::invalidateAllEntries" ref="a3127f4348c48110a01920507be503c27" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6_neighbour_cache.html#a3127f4348c48110a01920507be503c27">IPv6NeighbourCache::invalidateAllEntries</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set status of all neighbours to state PROBE. </p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">while</span> (!<a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.empty())
+    {
+        NeighbourMap::iterator it = <a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.begin();
+        <span class="keyword">remove</span>(it);
+    }
+    <a class="code" href="class_i_pv6_neighbour_cache.html#ad5b2668bcdd6698da29534936f1a5d9a">defaultRouterList</a>.<a class="code" href="class_i_pv6_neighbour_cache_1_1_default_router_list.html#a748a3f8bbbf471dffad437f475034754">clear</a>();
+
+    <span class="comment">/*</span>
+<span class="comment">    int size = neighbourMap.size();</span>
+<span class="comment">    EV &lt;&lt; &quot;size: &quot; &lt;&lt; size &lt;&lt; endl;</span>
+<span class="comment">    for (NeighbourMap::iterator it = neighbourMap.begin(); it != neighbourMap.end(); it++)</span>
+<span class="comment">    {</span>
+<span class="comment">        it-&gt;second.reachabilityState = PROBE; // we make sure this neighbour is not used anymore in the future, unless reachability can be confirmed</span>
+<span class="comment">    }</span>
+<span class="comment">    */</span>
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a022fe935168fa011e54cd2bc98f6677f"></a><!-- doxytag: member="IPv6NeighbourCache::invalidateEntriesForInterfaceID" ref="a022fe935168fa011e54cd2bc98f6677f" args="(int interfaceID)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6_neighbour_cache.html#a022fe935168fa011e54cd2bc98f6677f">IPv6NeighbourCache::invalidateEntriesForInterfaceID</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>interfaceID</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set status of all neighbours on given interface to state PROBE. </p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">for</span> (NeighbourMap::iterator it = <a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.begin(); it != <a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.end(); it++)
+    {
+        <span class="keywordflow">if</span> (it-&gt;first.interfaceID == interfaceID)
+        {
+            it-&gt;second.reachabilityState = <a class="code" href="class_i_pv6_neighbour_cache.html#ae3981577e32da8a5d021f5440573a2a1a8fdd2d1853264aa8f5479ebfa6502054">PROBE</a>; <span class="comment">// we make sure this neighbour is not used anymore in the future, unless reachability can be confirmed</span>
+            <a class="code" href="class_i_pv6_neighbour_cache.html#a35d2fb290cdf9a408a9cbf7866bd0ae2">neighbourDiscovery</a>.cancelAndDelete(it-&gt;second.nudTimeoutEvent); <span class="comment">// 20.9.07 - CB</span>
+            it-&gt;second.nudTimeoutEvent = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+        }
+    }
+}
 </pre></div>
 </div>
 </div>
@@ -538,15 +573,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Returns a neighbour entry, or NULL. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html#l00045">45</a> of file <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html">IPv6NeighbourCache.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00185">IPv6NeighbourDiscovery::processIPv6Datagram()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01891">IPv6NeighbourDiscovery::processNAPacket()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01720">IPv6NeighbourDiscovery::processNSWithSpecifiedSrcAddr()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l01153">IPv6NeighbourDiscovery::processRAForRouterUpdates()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00314">IPv6NeighbourDiscovery::reachabilityConfirmed()</a>, and <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00286">IPv6NeighbourDiscovery::resolveNeighbour()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_neighbour_discovery.html#ade69131623bc5b13205ced3ff54a16d3">IPv6NeighbourDiscovery::processIPv6Datagram()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#a348ba5dd9e93f4640d465a74b8a73d53">IPv6NeighbourDiscovery::processNAPacket()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#a8106a5866c58a9c6372c741a15ce943b">IPv6NeighbourDiscovery::processNSWithSpecifiedSrcAddr()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#a41da6658d387e46e3e656d4704bf908f">IPv6NeighbourDiscovery::processRAForRouterUpdates()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#abcd9999f935e23b593499f8d23a970bf">IPv6NeighbourDiscovery::reachabilityConfirmed()</a>, and <a class="el" href="class_i_pv6_neighbour_discovery.html#a567588762bff7af739e72916df55aebc">IPv6NeighbourDiscovery::resolveNeighbour()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    Key key(addr, interfaceID);
-    NeighbourMap::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.find(key);
-    <span class="keywordflow">return</span> i==<a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.end() ? NULL : &amp;(i-&gt;second);
+    <a class="code" href="namespace_macho.html#a0fa83256dd70bddc3c97b796db55755e">Key</a> key(addr, interfaceID);
+    NeighbourMap::iterator i = <a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.find(key);
+    <span class="keywordflow">return</span> i==<a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.end() ? <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> : &amp;(i-&gt;second);
 }
 </pre></div>
 </div>
@@ -565,13 +599,12 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Experimental code. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html#l00052">52</a> of file <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html">IPv6NeighbourCache.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html#l00058">addNeighbour()</a>, and <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html#l00095">addRouter()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_neighbour_cache.html#ab0751209af2b66c4171f92ba6ed7eee1">addNeighbour()</a>, and <a class="el" href="class_i_pv6_neighbour_cache.html#a7ff5ebbb09aa68832cf6e1260fadfbcf">addRouter()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    NeighbourMap::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.find(key);
+    NeighbourMap::iterator i = <a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.find(key);
     <span class="keywordflow">return</span> &amp;(i-&gt;first);
 }
 </pre></div>
@@ -582,7 +615,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_pv6_neighbour_cache.html#a877bc367ca422baabc22199c5036df83">IPv6NeighbourCache::remove</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6_neighbour_cache.html#a877bc367ca422baabc22199c5036df83">IPv6NeighbourCache::remove</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_i_pv6_address.html">IPv6Address</a> &amp;&#160;</td>
           <td class="paramname"><em>addr</em>, </td>
@@ -601,17 +634,20 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Deletes the given neighbour from the cache. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html#l00132">132</a> of file <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html">IPv6NeighbourCache.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00670">IPv6NeighbourDiscovery::dropQueuedPacketsAwaitingAR()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00449">IPv6NeighbourDiscovery::processNUDTimeout()</a>, <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00491">IPv6NeighbourDiscovery::selectDefaultRouter()</a>, and <a class="el" href="_i_pv6_neighbour_discovery_8cc_source.html#l00578">IPv6NeighbourDiscovery::timeoutDefaultRouter()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_neighbour_discovery.html#a888724269369dc1aa87aa73586216b8c">IPv6NeighbourDiscovery::dropQueuedPacketsAwaitingAR()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#a623b4069795d46d2b421d5aee4f1eb59">IPv6NeighbourDiscovery::processNUDTimeout()</a>, <a class="el" href="class_i_pv6_neighbour_discovery.html#a9f6c83de24b3e270c3843cc213b5250a">IPv6NeighbourDiscovery::selectDefaultRouter()</a>, and <a class="el" href="class_i_pv6_neighbour_discovery.html#a303391440ad2004ff69cfc5e4cf7504a">IPv6NeighbourDiscovery::timeoutDefaultRouter()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    Key key(addr, interfaceID);
+    <a class="code" href="namespace_macho.html#a0fa83256dd70bddc3c97b796db55755e">Key</a> key(addr, interfaceID);
     NeighbourMap::iterator it = <a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.find(key);
     ASSERT(it!=<a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.end()); <span class="comment">// entry must exist</span>
-    <span class="keyword">delete</span> it-&gt;second.nudTimeoutEvent;
+    <a class="code" href="class_i_pv6_neighbour_cache.html#a35d2fb290cdf9a408a9cbf7866bd0ae2">neighbourDiscovery</a>.cancelAndDelete(it-&gt;second.nudTimeoutEvent);
+    it-&gt;second.nudTimeoutEvent = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+    <span class="keywordflow">if</span> (it-&gt;second.isDefaultRouter())
+        <a class="code" href="class_i_pv6_neighbour_cache.html#ad5b2668bcdd6698da29534936f1a5d9a">defaultRouterList</a>.<a class="code" href="class_i_pv6_neighbour_cache_1_1_default_router_list.html#adce978a2f79872422a2116018a254e44">remove</a>(it-&gt;second);
     <a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.erase(it);
+
 }
 </pre></div>
 </div>
@@ -621,7 +657,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_i_pv6_neighbour_cache.html#a877bc367ca422baabc22199c5036df83">IPv6NeighbourCache::remove</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_i_pv6_neighbour_cache.html#a877bc367ca422baabc22199c5036df83">IPv6NeighbourCache::remove</a> </td>
           <td>(</td>
           <td class="paramtype">NeighbourMap::iterator&#160;</td>
           <td class="paramname"><em>it</em></td><td>)</td>
@@ -630,11 +666,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Deletes the given neighbour from the cache. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html#l00141">141</a> of file <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html">IPv6NeighbourCache.cc</a>.</p>
+<p>Deletes the given neighbour from the cache. </p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keyword">delete</span> it-&gt;second.nudTimeoutEvent;
+    <span class="comment">//delete it-&gt;second.nudTimeoutEvent;</span>
+    <a class="code" href="class_i_pv6_neighbour_cache.html#a35d2fb290cdf9a408a9cbf7866bd0ae2">neighbourDiscovery</a>.cancelAndDelete(it-&gt;second.nudTimeoutEvent); <span class="comment">// 20.9.07 - CB</span>
+    it-&gt;second.nudTimeoutEvent = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+    <span class="keywordflow">if</span> (it-&gt;second.isDefaultRouter())
+        <a class="code" href="class_i_pv6_neighbour_cache.html#ad5b2668bcdd6698da29534936f1a5d9a">defaultRouterList</a>.<a class="code" href="class_i_pv6_neighbour_cache_1_1_default_router_list.html#adce978a2f79872422a2116018a254e44">remove</a>(it-&gt;second);
     <a class="code" href="class_i_pv6_neighbour_cache.html#a559e914b0ec8aaa691d6dd02a55141e9">neighbourMap</a>.erase(it);
 }
 </pre></div>
@@ -654,11 +693,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns the name of the given state as string </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html#l00147">147</a> of file <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html">IPv6NeighbourCache.cc</a>.</p>
+<p>Returns the name of the given state as string. </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html#l00028">operator&lt;&lt;()</a>.</p>
+<p>Referenced by <a class="el" href="_i_pv6_neighbour_cache_8cc.html#a58ad1ea97d75a618d6e2fcc8a803c599">operator&lt;&lt;()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">switch</span> (state)
     {
@@ -674,6 +712,36 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="ad5b2668bcdd6698da29534936f1a5d9a"></a><!-- doxytag: member="IPv6NeighbourCache::defaultRouterList" ref="ad5b2668bcdd6698da29534936f1a5d9a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_pv6_neighbour_cache_1_1_default_router_list.html">DefaultRouterList</a> <a class="el" href="class_i_pv6_neighbour_cache.html#ad5b2668bcdd6698da29534936f1a5d9a">IPv6NeighbourCache::defaultRouterList</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_i_pv6_neighbour_cache.html#a7ff5ebbb09aa68832cf6e1260fadfbcf">addRouter()</a>, <a class="el" href="class_i_pv6_neighbour_cache.html#a3127f4348c48110a01920507be503c27">invalidateAllEntries()</a>, and <a class="el" href="class_i_pv6_neighbour_cache.html#a877bc367ca422baabc22199c5036df83">remove()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a35d2fb290cdf9a408a9cbf7866bd0ae2"></a><!-- doxytag: member="IPv6NeighbourCache::neighbourDiscovery" ref="a35d2fb290cdf9a408a9cbf7866bd0ae2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cSimpleModule&amp; <a class="el" href="class_i_pv6_neighbour_cache.html#a35d2fb290cdf9a408a9cbf7866bd0ae2">IPv6NeighbourCache::neighbourDiscovery</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_i_pv6_neighbour_cache.html#a022fe935168fa011e54cd2bc98f6677f">invalidateEntriesForInterfaceID()</a>, and <a class="el" href="class_i_pv6_neighbour_cache.html#a877bc367ca422baabc22199c5036df83">remove()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a559e914b0ec8aaa691d6dd02a55141e9"></a><!-- doxytag: member="IPv6NeighbourCache::neighbourMap" ref="a559e914b0ec8aaa691d6dd02a55141e9" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -685,15 +753,13 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_i_pv6_neighbour_cache_8h_source.html#l00111">111</a> of file <a class="el" href="_i_pv6_neighbour_cache_8h_source.html">IPv6NeighbourCache.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html#l00058">addNeighbour()</a>, <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html#l00095">addRouter()</a>, <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html#l00040">IPv6NeighbourCache()</a>, <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html#l00045">lookup()</a>, <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html#l00052">lookupKeyAddr()</a>, and <a class="el" href="_i_pv6_neighbour_cache_8cc_source.html#l00132">remove()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_neighbour_cache.html#ab0751209af2b66c4171f92ba6ed7eee1">addNeighbour()</a>, <a class="el" href="class_i_pv6_neighbour_cache.html#a7ff5ebbb09aa68832cf6e1260fadfbcf">addRouter()</a>, <a class="el" href="class_i_pv6_neighbour_cache.html#a3127f4348c48110a01920507be503c27">invalidateAllEntries()</a>, <a class="el" href="class_i_pv6_neighbour_cache.html#a022fe935168fa011e54cd2bc98f6677f">invalidateEntriesForInterfaceID()</a>, <a class="el" href="class_i_pv6_neighbour_cache.html#ad49f4e0325136fc36333fae9a539afb4">IPv6NeighbourCache()</a>, <a class="el" href="class_i_pv6_neighbour_cache.html#af88ebc30d5f18f0a628ead79f1fc3cb9">lookup()</a>, <a class="el" href="class_i_pv6_neighbour_cache.html#aa4dfbe1efd18d170311a52b91284f4ca">lookupKeyAddr()</a>, and <a class="el" href="class_i_pv6_neighbour_cache.html#a877bc367ca422baabc22199c5036df83">remove()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_i_pv6_neighbour_cache_8h_source.html">IPv6NeighbourCache.h</a></li>
-<li><a class="el" href="_i_pv6_neighbour_cache_8cc_source.html">IPv6NeighbourCache.cc</a></li>
+<li><a class="el" href="_i_pv6_neighbour_cache_8h.html">IPv6NeighbourCache.h</a></li>
+<li><a class="el" href="_i_pv6_neighbour_cache_8cc.html">IPv6NeighbourCache.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -701,7 +767,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_i_pv6_neighbour_cache.html">IPv6NeighbourCache</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:49 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:27 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

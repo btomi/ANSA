@@ -76,45 +76,63 @@
 <div class="header">
   <div class="summary">
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">UDPSink Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="UDPSink" --><!-- doxytag: inherits="UDPAppBase" -->
-<p><code>#include &lt;<a class="el" href="_u_d_p_sink_8h_source.html">UDPSink.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for UDPSink:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="class_u_d_p_sink.png" usemap="#UDPSink_map" alt=""/>
-  <map id="UDPSink_map" name="UDPSink_map">
-<area href="class_u_d_p_app_base.html" alt="UDPAppBase" shape="rect" coords="0,0,88,24"/>
-</map>
- </div></div>
+<!-- doxytag: class="UDPSink" -->
+<p>Consumes and prints packets received from the <a class="el" href="class_u_d_p.html" title="Implements the UDP protocol: encapsulates/decapsulates user data into/from UDP.">UDP</a> module.  
+ <a href="class_u_d_p_sink.html#details">More...</a></p>
+
+<p><code>#include &lt;UDPSink.h&gt;</code></p>
 
 <p><a href="class_u_d_p_sink-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_sink.html#a7c7d52ad303da4756d655ddb074334e0">processPacket</a> (cPacket *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_sink.html#a9ee39dcab80abb5a1e61c8acb36e4bea">initialize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_sink.html#a663406e0103df924b10a1aa2c833c59d">handleMessage</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_sink.html#a7c7d52ad303da4756d655ddb074334e0">processPacket</a> (cPacket *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_sink.html#a26331bcc51fea6b480d6eb5439276cbf">numInitStages</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_sink.html#a40019517b6cba1eed2f5c24799ea59b3">initialize</a> (int stage)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_sink.html#a663406e0103df924b10a1aa2c833c59d">handleMessage</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_sink.html#ace27145cbd60f32b89b70111eb946eb3">finish</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_u_d_p_socket.html">UDPSocket</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_sink.html#a47267d72899b5e98dbb8ccffe51be5b3">socket</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_sink.html#ab2308365fd164a370697626c737e3b07">numReceived</a></td></tr>
+<tr><td colspan="2"><h2><a name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_sink.html#a007cb4e00ba74ced4e5c83a658dc1f86">rcvdPkSignal</a> = SIMSIGNAL_NULL</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Consumes and prints packets received from the <a class="el" href="class_u_d_p.html">UDP</a> module. See NED for more info. </p>
-
-<p>Definition at line <a class="el" href="_u_d_p_sink_8h_source.html#l00030">30</a> of file <a class="el" href="_u_d_p_sink_8h_source.html">UDPSink.h</a>.</p>
+<div class="textblock"><p>Consumes and prints packets received from the <a class="el" href="class_u_d_p.html" title="Implements the UDP protocol: encapsulates/decapsulates user data into/from UDP.">UDP</a> module. </p>
+<p>See NED for more info. </p>
 </div><hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ace27145cbd60f32b89b70111eb946eb3"></a><!-- doxytag: member="UDPSink::finish" ref="ace27145cbd60f32b89b70111eb946eb3" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p_sink.html#ace27145cbd60f32b89b70111eb946eb3">UDPSink::finish</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+}
+</pre></div>
+</div>
+</div>
 <a class="anchor" id="a663406e0103df924b10a1aa2c833c59d"></a><!-- doxytag: member="UDPSink::handleMessage" ref="a663406e0103df924b10a1aa2c833c59d" args="(cMessage *msg)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p_sink.html#a663406e0103df924b10a1aa2c833c59d">UDPSink::handleMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p_sink.html#a663406e0103df924b10a1aa2c833c59d">UDPSink::handleMessage</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -123,45 +141,80 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_u_d_p_sink_8cc_source.html#l00038">38</a> of file <a class="el" href="_u_d_p_sink_8cc_source.html">UDPSink.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_u_d_p_sink.html#a7c7d52ad303da4756d655ddb074334e0">processPacket</a>(<a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(msg));
+    <span class="keywordflow">if</span> (msg-&gt;getKind() == <a class="code" href="_u_d_p_control_info__m_8h.html#a0cb49935325d643afaee9208fcb27733a53bfdb70d4246591854611edf4815f89">UDP_I_DATA</a>)
+    {
+        <span class="comment">// process incoming packet</span>
+        <a class="code" href="class_u_d_p_sink.html#a7c7d52ad303da4756d655ddb074334e0">processPacket</a>(<a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(msg));
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg-&gt;getKind() == <a class="code" href="_u_d_p_control_info__m_8h.html#a0cb49935325d643afaee9208fcb27733a484b0da8b16fcb50610630a68c1bf8d7">UDP_I_ERROR</a>)
+    {
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Ignoring UDP error report\n&quot;</span>;
+        <span class="keyword">delete</span> msg;
+    }
+    <span class="keywordflow">else</span>
+    {
+        error(<span class="stringliteral">&quot;Unrecognized message (%s)%s&quot;</span>, msg-&gt;getClassName(), msg-&gt;getName());
+    }
 
     <span class="keywordflow">if</span> (ev.isGUI())
     {
         <span class="keywordtype">char</span> buf[32];
         sprintf(buf, <span class="stringliteral">&quot;rcvd: %d pks&quot;</span>, <a class="code" href="class_u_d_p_sink.html#ab2308365fd164a370697626c737e3b07">numReceived</a>);
-        getDisplayString().setTagArg(<span class="stringliteral">&quot;t&quot;</span>,0,buf);
+        getDisplayString().setTagArg(<span class="stringliteral">&quot;t&quot;</span>, 0, buf);
     }
-
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a9ee39dcab80abb5a1e61c8acb36e4bea"></a><!-- doxytag: member="UDPSink::initialize" ref="a9ee39dcab80abb5a1e61c8acb36e4bea" args="()" -->
+<a class="anchor" id="a40019517b6cba1eed2f5c24799ea59b3"></a><!-- doxytag: member="UDPSink::initialize" ref="a40019517b6cba1eed2f5c24799ea59b3" args="(int stage)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p_sink.html#a9ee39dcab80abb5a1e61c8acb36e4bea">UDPSink::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p_sink.html#a40019517b6cba1eed2f5c24799ea59b3">UDPSink::initialize</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>stage</em></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_u_d_p_sink_8cc_source.html#l00028">28</a> of file <a class="el" href="_u_d_p_sink_8cc_source.html">UDPSink.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_u_d_p_sink.html#ab2308365fd164a370697626c737e3b07">numReceived</a> = 0;
-    WATCH(<a class="code" href="class_u_d_p_sink.html#ab2308365fd164a370697626c737e3b07">numReceived</a>);
+    <span class="keywordflow">if</span> (stage == 0)
+    {
+        <a class="code" href="class_u_d_p_sink.html#ab2308365fd164a370697626c737e3b07">numReceived</a> = 0;
+        WATCH(<a class="code" href="class_u_d_p_sink.html#ab2308365fd164a370697626c737e3b07">numReceived</a>);
+        <a class="code" href="class_u_d_p_sink.html#a007cb4e00ba74ced4e5c83a658dc1f86">rcvdPkSignal</a> = registerSignal(<span class="stringliteral">&quot;rcvdPk&quot;</span>);
 
-    <span class="keywordtype">int</span> port = par(<span class="stringliteral">&quot;localPort&quot;</span>);
-    <span class="keywordflow">if</span> (port!=-1)
-        <a class="code" href="class_u_d_p_app_base.html#a3f670cbeb07cba7840c4434ac9720208">bindToPort</a>(port);
+        <a class="code" href="class_u_d_p_sink.html#a47267d72899b5e98dbb8ccffe51be5b3">socket</a>.<a class="code" href="class_u_d_p_socket.html#a606e9a6e14bcd2e68bb2906b0dc5a6b7" title="Sets the gate on which to send to UDP.">setOutputGate</a>(gate(<span class="stringliteral">&quot;udpOut&quot;</span>));
+
+        <span class="keywordtype">int</span> localPort = par(<span class="stringliteral">&quot;localPort&quot;</span>);
+        <a class="code" href="class_u_d_p_sink.html#a47267d72899b5e98dbb8ccffe51be5b3">socket</a>.<a class="code" href="class_u_d_p_socket.html#a4f85cea0efe5b7963fbc4103bad665c3" title="Bind the socket to a local port number.">bind</a>(localPort);
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stage == 3)
+    {
+        <a class="code" href="class_u_d_p_sink.html#a47267d72899b5e98dbb8ccffe51be5b3">socket</a>.<a class="code" href="class_u_d_p_socket.html#a43f5a3fde0f3ef5834e8dab1ceaf80a3" title="Joins the socket to each multicast group that are registered with any of the interfaces.">joinLocalMulticastGroups</a>();
+    }
 }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a26331bcc51fea6b480d6eb5439276cbf"></a><!-- doxytag: member="UDPSink::numInitStages" ref="a26331bcc51fea6b480d6eb5439276cbf" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_u_d_p_sink.html#a26331bcc51fea6b480d6eb5439276cbf">UDPSink::numInitStages</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline, protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> 4;}
 </pre></div>
 </div>
 </div>
@@ -170,7 +223,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p_sink.html#a7c7d52ad303da4756d655ddb074334e0">UDPSink::processPacket</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p_sink.html#a7c7d52ad303da4756d655ddb074334e0">UDPSink::processPacket</a> </td>
           <td>(</td>
           <td class="paramtype">cPacket *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -180,13 +233,11 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_sink_8cc_source.html#l00051">51</a> of file <a class="el" href="_u_d_p_sink_8cc_source.html">UDPSink.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_u_d_p_sink_8cc_source.html#l00038">handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p_sink.html#a663406e0103df924b10a1aa2c833c59d">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Received packet: &quot;</span>;
-    <a class="code" href="class_u_d_p_app_base.html#aed3a561c1e404da6f017b2df213c7672">printPacket</a>(msg);
-    <span class="keyword">delete</span> msg;
+    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Received packet: &quot;</span> &lt;&lt; <a class="code" href="class_u_d_p_socket.html#a6b598dfdfd9903adb0f50f281fa752be" title="Utility function: returns a line of information about a packet received via UDP.">UDPSocket::getReceivedPacketInfo</a>(pk) &lt;&lt; endl;
+    emit(<a class="code" href="class_u_d_p_sink.html#a007cb4e00ba74ced4e5c83a658dc1f86">rcvdPkSignal</a>, pk);
+    <span class="keyword">delete</span> pk;
 
     <a class="code" href="class_u_d_p_sink.html#ab2308365fd164a370697626c737e3b07">numReceived</a>++;
 }
@@ -205,15 +256,43 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_u_d_p_sink_8h_source.html#l00033">33</a> of file <a class="el" href="_u_d_p_sink_8h_source.html">UDPSink.h</a>.</p>
+<p>Referenced by <a class="el" href="class_u_d_p_sink.html#a663406e0103df924b10a1aa2c833c59d">handleMessage()</a>, <a class="el" href="class_u_d_p_sink.html#a40019517b6cba1eed2f5c24799ea59b3">initialize()</a>, and <a class="el" href="class_u_d_p_sink.html#a7c7d52ad303da4756d655ddb074334e0">processPacket()</a>.</p>
 
-<p>Referenced by <a class="el" href="_u_d_p_sink_8cc_source.html#l00038">handleMessage()</a>, <a class="el" href="_u_d_p_sink_8cc_source.html#l00028">initialize()</a>, and <a class="el" href="_u_d_p_sink_8cc_source.html#l00051">processPacket()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a007cb4e00ba74ced4e5c83a658dc1f86"></a><!-- doxytag: member="UDPSink::rcvdPkSignal" ref="a007cb4e00ba74ced4e5c83a658dc1f86" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_u_d_p_sink.html#a007cb4e00ba74ced4e5c83a658dc1f86">UDPSink::rcvdPkSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_u_d_p_sink.html#a40019517b6cba1eed2f5c24799ea59b3">initialize()</a>, and <a class="el" href="class_u_d_p_sink.html#a7c7d52ad303da4756d655ddb074334e0">processPacket()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a47267d72899b5e98dbb8ccffe51be5b3"></a><!-- doxytag: member="UDPSink::socket" ref="a47267d72899b5e98dbb8ccffe51be5b3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_u_d_p_socket.html">UDPSocket</a> <a class="el" href="class_u_d_p_sink.html#a47267d72899b5e98dbb8ccffe51be5b3">UDPSink::socket</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_u_d_p_sink.html#a40019517b6cba1eed2f5c24799ea59b3">initialize()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_u_d_p_sink_8h_source.html">UDPSink.h</a></li>
-<li><a class="el" href="_u_d_p_sink_8cc_source.html">UDPSink.cc</a></li>
+<li><a class="el" href="_u_d_p_sink_8h.html">UDPSink.h</a></li>
+<li><a class="el" href="_u_d_p_sink_8cc.html">UDPSink.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -221,7 +300,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_u_d_p_sink.html">UDPSink</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:54 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:32 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

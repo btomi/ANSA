@@ -20,7 +20,7 @@
    </td>
    <td>
 
-<p>Performs Ethernet II encapsulation/decapsulation.</p>
+<p>Performs Ethernet II or Ethernet with SNAP encapsulation/decapsulation.</p>
 
    </td>
 </tr>
@@ -46,36 +46,43 @@
 </span><span style="color: #800000; font-weight: bold; ">package</span><span style="color: #000000; "> </span><span style="color: #000000; ">inet</span><span style="color: #000000; ">.</span><span style="color: #000000; ">linklayer</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ethernet</span><span style="color: #000000; ">;
 
 </span><span style="color: #808080; font-style: italic; ">//
-// Performs Ethernet II encapsulation/decapsulation.
+// Performs Ethernet II or Ethernet with SNAP encapsulation/decapsulation.
 //
 // Expected environment:
-// - lowerLayerIn, lowerLayerOut gates should be connected to Ethernet EtherMAC
+// - lowerLayerIn, lowerLayerOut gates should be connected to an ~EtherMAC
 // - upperLayerIn, upperLayerOut gates should be connected to higher layer
 //   protocol or application
 //
 // Functionality:
-// - packets coming from upper layers will be encapsulated in EthernetIIFrame
-//   and sent to MAC. EtherType is taken from the Ieee802Ctrl structure attached
-//   to the message as control info (see setControlInfo(), controlInfo()
-//   methods). Src address will be filled in by EtherMAC.
+// - packets coming from upper layers will be encapsulated in ~EthernetIIFrame
+//   or ~EtherFrameWithSNAP (depending on the useSNAP module parameter),
+//   and sent to MAC. ~EtherType is taken from the ~Ieee802Ctrl structure
+//   attached to the message as control info (see setControlInfo(),
+//   controlInfo() methods). The source address will be filled in by ~EtherMAC.
 // - also accepts SENDPAUSE command (message kind=IEEE802CTRL_SENDPAUSE) from
-//   higher layer: send PAUSE frame, as described in
+//   higher layer: it will send a PAUSE frame, as described in
 //   </span><span style="color: #800000; ">&lt;a href=&quot;ether-pause.html&quot;&gt;</span><span style="color: #808080; font-style: italic; ">PAUSE frames</span><span style="color: #800000; ">&lt;/a&gt;</span><span style="color: #808080; font-style: italic; ">.
 // - Ethernet frames arriving from MAC will be decapsulated, and sent up to the
-//   higher layers. Accepts EtherFrameWithLLC and EtherFrameWithSNAP too.
+//   higher layers. Accepts ~EtherFrameWithLLC and ~EtherFrameWithSNAP too.
 //
 </span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">EtherEncap</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/square&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">useSNAP</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">false</span><span style="color: #000000; ">);  </span><span style="color: #808080; font-style: italic; ">// create EtherFrameWithSNAP frames instead of EthernetIIFrame
+</span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/square&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">encapPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">cPacket</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">decapPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">cPacket</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">pauseSent</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">long</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// pause units
+</span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">encapPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;packets encapsulated&quot;</span><span style="color: #000000; ">;</span><span style="color: #000000; ">source</span><span style="color: #000000; ">=</span><span style="color: #000000; ">encapPk</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;sum(packetBytes)&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;vector(packetBytes)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">decapPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;packets decapsulated&quot;</span><span style="color: #000000; ">;</span><span style="color: #000000; ">source</span><span style="color: #000000; ">=</span><span style="color: #000000; ">decapPk</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;sum(packetBytes)&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;vector(packetBytes)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">pauseSent</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;pause sent&quot;</span><span style="color: #000000; ">;</span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #000000; ">sum</span><span style="color: #000000; ">,</span><span style="color: #000000; ">vector</span><span style="color: #000000; ">);
     </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
-        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">upperLayerIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">Ieee802Ctrl</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);   </span><span style="color: #808080; font-style: italic; ">// higher layer
+        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">upperLayerIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">Ieee802Ctrl</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// higher layer
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">upperLayerOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">Ieee802Ctrl</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// higher layer
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">lowerLayerIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">EtherFrame</span><span style="color: #000000; ">);   </span><span style="color: #808080; font-style: italic; ">// to Ethernet MAC
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">lowerLayerOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">EtherFrame</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// to Ethernet MAC
 </span><span style="color: #000000; ">}
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

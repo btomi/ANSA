@@ -7,11 +7,21 @@
 <h2 class="comptitle">Packet <i>IPv6Datagram</i></h2>
 <b>File: <a href="src-networklayer-ipv6-IPv6Datagram.msg.html">src/networklayer/ipv6/IPv6Datagram.msg</a></b><br/><p><a href="../doxy/class_i_pv6_datagram.html" target="mainframe"><b>C++ definition</b></a></p>
 
-<p><a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> datagram. RFC 2460 Section 3.</p>
+<p>IPv6 datagram. RFC 2460 Section 3.</p>
 <p>Header fields not explicitly modelled:</p>
   <ul><ul><li>version (=6): represented by the class name itself</li>
   <li>payload length: will be calculated from encapsulated message length
      and extension headers' length</li></ul></ul>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="IPv6Datagram-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="IPv6Datagram.html" title="Packet IPv6Datagram" alt="" coords="5,6,112,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="IPv6Datagram-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="IPv6Datagram.html" title="Packet IPv6Datagram" alt="" coords="5,6,112,34">
+</map>
 <h3 class="subtitle">Fields:</h3>
 <table class="fieldstable">
    <tr>
@@ -39,9 +49,29 @@ IPv6Address</i>
    <td>trafficClass</td>
    <td>
       <i>
-unsigned int</i>
+unsigned char</i>
    </td>
    <td></td>
+</tr>
+<tr class="local">
+   <td>diffServCodePoint</td>
+   <td>
+      <i>
+int</i>
+   </td>
+   <td>
+<p>maps to bits 0-5 of trafficClass</p>
+</td>
+</tr>
+<tr class="local">
+   <td>explicitCongestionNotification</td>
+   <td>
+      <i>
+int</i>
+   </td>
+   <td>
+<p>maps to bits 6-7 of trafficClass</p>
+</td>
 </tr>
 <tr class="local">
    <td>flowLabel</td>
@@ -94,16 +124,17 @@ IPv6ExtensionHeaderPtr[]</i>
 
     </span><span style="color: #000000; ">IPv6Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">srcAddress</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">IPv6Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">destAddress</span><span style="color: #000000; ">;
-    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">trafficClass</span><span style="color: #000000; ">;
-    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">flowLabel</span><span style="color: #000000; ">;
+    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">char</span><span style="color: #000000; "> </span><span style="color: #000000; ">trafficClass</span><span style="color: #000000; ">;
+    </span><span style="color: #000080; font-weight: bold; ">abstract</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">diffServCodePoint</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// maps to bits 0-5 of trafficClass
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">abstract</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">explicitCongestionNotification</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// maps to bits 6-7 of trafficClass
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">unsigned</span><span style="color: #000000; "> </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">flowLabel</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">hopLimit</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">transportProtocol</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@enum</span><span style="color: #000000; ">(</span><span style="color: #000000; ">IPProtocolId</span><span style="color: #000000; ">);
 
-    </span><span style="color: #000000; ">IPv6ExtensionHeaderPtr</span><span style="color: #000000; "> </span><span style="color: #000000; ">extensionHeader</span><span style="color: #000000; ">[]; </span><span style="color: #808080; font-style: italic; ">// array of extension headers, subclassed from IPv6ExtensionHeader
+    </span><span style="color: #000080; font-weight: bold; ">abstract</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv6ExtensionHeaderPtr</span><span style="color: #000000; "> </span><span style="color: #000000; ">extensionHeader</span><span style="color: #000000; ">[]; </span><span style="color: #808080; font-style: italic; ">// array of extension headers, subclassed from ~IPv6ExtensionHeader
 </span><span style="color: #000000; ">}
 
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

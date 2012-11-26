@@ -10,7 +10,7 @@
 <p>Stores the routing table. (Per-interface configuration is stored in
 <a href="inet.networklayer.common.InterfaceTable.html">InterfaceTable</a>.)</p>
 <p>For hosts, the routerId module parameter should be empty (""),
-in which case the loopback <a href="inet.networklayer.ipv4.IP.html">IP</a> address will be set to 127.0.0.1/8.
+in which case the loopback IPv4 address will be set to 127.0.0.1/8.
 For routers which have a routerId set, the loopback address will be set to
 routerId. (See also RFC 2072 "Router Renumbering Guide".)</p>
 <p>RouterId may also be set to the string <tt>"auto"</tt>, in which case the
@@ -26,6 +26,27 @@ functions of the C++ module class. For detailed info, please see the C++
 documentation of the class (Doxygen).</p>
 <p><b>See also:</b> <a href="inet.networklayer.common.InterfaceTable.html">InterfaceTable</a></p>
 <p><b>Author:</b>: Jochen Reber, Andras Varga</p>
+<img src="inet.networklayer.ipv4.RoutingTable-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.networklayer.ipv4.RoutingTable.html" title="RoutingTable" alt="RoutingTable" coords="0,30,118,70">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.networklayer.ipv4.RoutingTable-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.networklayer.ipv4.RoutingTable.html" title="Simple Module RoutingTable" alt="" coords="360,83,459,111">
+<area shape="rect" id="node2" href="inet.examples.bgpv4.BGPUpdate.BGPRouter.html" title="Compound Module BGPRouter" alt="" coords="5,6,93,34">
+<area shape="rect" id="node4" href="inet.examples.bgpv4.BGPOpen.BGPRouterSimple.html" title="Compound Module BGPRouterSimple" alt="" coords="117,6,245,34">
+<area shape="rect" id="node6" href="inet.examples.inet.routerperf.BurstHost.html" title="Compound Module BurstHost" alt="" coords="269,6,349,34">
+<area shape="rect" id="node8" href="inet.examples.traci_launchd.Car.html" title="Compound Module Car" alt="" coords="373,6,445,34">
+<area shape="rect" id="node11" href="inet.nodes.mpls.LDP_LSR.html" title="Compound Module LDP_LSR" alt="" coords="469,6,549,34">
+<area shape="rect" id="node13" href="inet.nodes.inet.NodeBase.html" title="Compound Module NodeBase" alt="" coords="573,6,656,34">
+<area shape="rect" id="node15" href="inet.nodes.mpls.RSVP_LSR.html" title="Compound Module RSVP_LSR" alt="" coords="680,6,771,34">
+<area shape="rect" id="node17" href="inet.transport.rtp.RTPHost.html" title="Compound Module RTPHost" alt="" coords="795,6,872,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.networklayer.ipv4.RoutingTable-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.networklayer.ipv4.RoutingTable.html" title="Simple Module RoutingTable" alt="" coords="5,6,104,34">
+</map>
 <h3 class="subtitle">Used in compound modules:</h3>
 <table class="typestable">
    <tr>
@@ -35,7 +56,47 @@ documentation of the class (Doxygen).</p>
    </tr>
 <tr>
    <td>
-<a href="inet.ansa.AnsaDualStackHost.html">AnsaDualStackHost</a>
+<a href="inet.examples.bgpv4.BGPUpdate.BGPRouter.html">BGPRouter</a>
+   </td>
+   <td>
+<i>compound&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Example IP router with BGPv4 and OSPFv4 support.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.bgpv4.BGPOpen.BGPRouterSimple.html">BGPRouterSimple</a>
+   </td>
+   <td>
+<i>compound&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Example IPv4 router with BGPv4 support.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.inet.routerperf.BurstHost.html">BurstHost</a>
+   </td>
+   <td>
+<i>compound&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Definition of an IP node with a transport generator that connects
+to IP directly, without TCP or UDP.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.traci.Car.html">Car</a>
    </td>
    <td>
 <i>compound&nbsp;module</i>
@@ -46,68 +107,13 @@ documentation of the class (Doxygen).</p>
 </tr>
 <tr>
    <td>
-<a href="inet.ansa.ANSATrafGenHost.html">ANSATrafGenHost</a>
+<a href="inet.examples.traci_launchd.Car.html">Car</a>
    </td>
    <td>
 <i>compound&nbsp;module</i>
    </td>
    <td>
-
-<p>IP Traffic generator</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.ansa.nodes.ARouter.html">ARouter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP router.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.ansa.nodes.AStandardHost.html">AStandardHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.BurstHost.html">BurstHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>Definition of an <a href="inet.networklayer.ipv4.IP.html">IP</a> node with a transport generator that connects
-to <a href="inet.networklayer.ipv4.IP.html">IP</a> directly, without <a href="inet.transport.tcp.TCP.html">TCP</a> or <a href="inet.transport.udp.UDP.html">UDP</a>.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.ExtRouter.html">ExtRouter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>External router.</p>
-
+<i>(no description)</i>
    </td>
 </tr>
 <tr>
@@ -119,104 +125,21 @@ to <a href="inet.networklayer.ipv4.IP.html">IP</a> directly, without <a href="in
    </td>
    <td>
 
-<p>An <a href="inet.networklayer.ldp.LDP.html">LDP</a>-capable router.</p>
+<p>An LDP-capable router.</p>
 
    </td>
 </tr>
 <tr>
    <td>
-<a href="inet.nodes.adhoc.MFMobileHost.html">MFMobileHost</a>
+<a href="inet.nodes.inet.NodeBase.html">NodeBase</a>
    </td>
    <td>
 <i>compound&nbsp;module</i>
    </td>
    <td>
 
-<p>Models a mobile host with a wireless (802.11b) card in ad-hoc mode.
-This model contains the Mobility Framework's 802.11 implementation, <a href="inet.linklayer.mf80211.Nic80211.html">Nic80211</a>,
-and <a href="inet.networklayer.ipv4.IP.html">IP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a> and <a href="inet.transport.udp.UDP.html">UDP</a> protocols. The mobility model can be dynamically
-specified with the mobilityType parameter.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.adhoc.MobileHost.html">MobileHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>Models a mobile host with a wireless (802.11b) card in ad-hoc mode.
-This model contains the new IEEE 802.11 implementation, <a href="inet.linklayer.ieee80211.Ieee80211Nic.html">Ieee80211Nic</a>,
-and <a href="inet.networklayer.ipv4.IP.html">IP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a> and <a href="inet.transport.udp.UDP.html">UDP</a> protocols. The mobility model can be
-dynamically specified with the mobilityType parameter.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.OSPFRouter.html">OSPFRouter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>An OSPFv2 router.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.ansa.rip.RedistrRouter.html">RedistrRouter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP router.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.ansa.rip.RIPGenRouter.html">RIPGenRouter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP router.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.ansa.rip.RIPRouter.html">RIPRouter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP router.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.Router.html">Router</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP router.</p>
+<p>Contains the common lower layers (linklayer and networklayer)
+of Router, StandardHost, WirelessHost etc. </p>
 
    </td>
 </tr>
@@ -244,117 +167,6 @@ dynamically specified with the mobilityType parameter.</p>
 <i>(no description)</i>
    </td>
 </tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.StandardHost.html">StandardHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.sctp.SCTP.html">SCTP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.StandardHostWithDLDuplicatesGenerator.html">StandardHostWithDLDuplicatesGenerator</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.sctp.SCTP.html">SCTP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications AND <a href="inet.linklayer.ppp.PPPInterfaceWithDLDuplicatesGenerator.html">PPPInterfaceWithDLDuplicatesGenerator</a>.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.StandardHostWithDLThruputMeter.html">StandardHostWithDLThruputMeter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.sctp.SCTP.html">SCTP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications AND <a href="inet.linklayer.ppp.PPPInterfaceWithDLThruputMeter.html">PPPInterfaceWithDLThruputMeter</a>.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.StandardHostWithULDropsGenerator.html">StandardHostWithULDropsGenerator</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.sctp.SCTP.html">SCTP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications AND <a href="inet.linklayer.ppp.PPPInterfaceWithULDropsGenerator.html">PPPInterfaceWithULDropsGenerator</a>.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.StandardHostWithULThruputMeter.html">StandardHostWithULThruputMeter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.sctp.SCTP.html">SCTP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications AND <a href="inet.linklayer.ppp.PPPInterfaceWithULThruputMeter.html">PPPInterfaceWithULThruputMeter</a>.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.TCPSpoofingHost.html">TCPSpoofingHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.applications.tcpapp.TCPSpoof.html">TCPSpoof</a> in the application layer.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.wireless.WirelessHost.html">WirelessHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>Models a host with one wireless (802.11b) card in infrastructure mode.
-This module is basically a <a href="inet.nodes.inet.StandardHost.html">StandardHost</a> with an <a href="inet.linklayer.ieee80211.Ieee80211NicSTA.html">Ieee80211NicSTA</a> added.
-It should be used in conjunction with <a href="inet.nodes.wireless.WirelessAP.html">WirelessAP</a>, or any other AP model
-which contains <a href="inet.linklayer.ieee80211.Ieee80211NicAP.html">Ieee80211NicAP</a>.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.wireless.WirelessHostSimplified.html">WirelessHostSimplified</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>Models a host with one wireless (802.11b) card in infrastructure mode,
-but using a simplified NIC that does not support handovers.
-This module is basically a <a href="inet.nodes.inet.StandardHost.html">StandardHost</a> with an <a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">Ieee80211NicSTASimplified</a>
-added. It should be used in conjunction with <a href="inet.nodes.wireless.WirelessAPSimplified.html">WirelessAPSimplified</a>,
-or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">Ieee80211NicAPSimplified</a>.</p>
-
-   </td>
-</tr>
 </table>
 <h3 class="subtitle">Parameters:</h3>
 <table class="paramstable">
@@ -371,7 +183,7 @@ or any other AP model which contains <a href="inet.linklayer.ieee80211.Ieee80211
    </td>
    <td>"auto"</td>
    <td>
-<p>for routers, the router id using <a href="inet.networklayer.ipv4.IP.html">IP</a> address dotted
+<p>for routers, the router id using IPv4 address dotted
 notation; specify "auto" to select the highest
 interface address; should be left empty ("") for hosts</p>
    </td>
@@ -383,7 +195,17 @@ interface address; should be left empty ("") for hosts</p>
    </td>
    <td>true</td>
    <td>
-<p>turns <a href="inet.networklayer.ipv4.IP.html">IP</a> forwarding on/off</p>
+<p>turns IP forwarding on/off</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>forwardMulticast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>turns multicast forwarding on/off</p>
    </td>
 </tr>
 <tr class="local">
@@ -413,12 +235,12 @@ interface address; should be left empty ("") for hosts</p>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
 // Stores the routing table. (Per-interface configuration is stored in
-// InterfaceTable.)
+// ~InterfaceTable.)
 //
 // For hosts, the routerId module parameter should be empty (&quot;&quot;),
-// in which case the loopback IP address will be set to 127.0.0.1/8.
+// in which case the loopback IPv4 address will be set to 127.0.0.1/8.
 // For routers which have a routerId set, the loopback address will be set to
-// routerId. (See also RFC 2072 &quot;\Router Renumbering Guide&quot;.)
+// routerId. (See also RFC 2072 &quot;Router Renumbering Guide&quot;.)
 //
 // RouterId may also be set to the string </span><span style="color: #800000; ">&lt;tt&gt;</span><span style="color: #808080; font-style: italic; ">&quot;auto&quot;</span><span style="color: #800000; ">&lt;/tt&gt;</span><span style="color: #808080; font-style: italic; ">, in which case the
 // highest interface address will be chosen as routerId; the loopback address
@@ -435,21 +257,21 @@ interface address; should be left empty ("") for hosts</p>
 // functions of the C++ module class. For detailed info, please see the C++
 // documentation of the class (Doxygen).
 //
-// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> InterfaceTable
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~InterfaceTable
 // </span><span style="color: #000080; ">@author</span><span style="color: #808080; font-style: italic; ">: Jochen Reber, Andras Varga
 //
 </span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">RoutingTable</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">routerId</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;auto&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// for routers, the router id using IP address dotted
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">routerId</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;auto&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// for routers, the router id using IPv4 address dotted
 </span><span style="color: #000000; ">                          </span><span style="color: #808080; font-style: italic; ">// notation; specify &quot;auto&quot; to select the highest
 </span><span style="color: #000000; ">                          </span><span style="color: #808080; font-style: italic; ">// interface address; should be left empty (&quot;&quot;) for hosts
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPForward</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">true</span><span style="color: #000000; ">);  </span><span style="color: #808080; font-style: italic; ">// turns IP forwarding on/off
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">forwardMulticast</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">false</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// turns multicast forwarding on/off
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">routingFile</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">);  </span><span style="color: #808080; font-style: italic; ">// routing table file name
 </span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/table&quot;</span><span style="color: #000000; ">);
 }
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

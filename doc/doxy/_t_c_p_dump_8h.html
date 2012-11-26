@@ -74,74 +74,27 @@
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#define-members">Defines</a>  </div>
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle">
 <div class="title">TCPDump.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;omnetpp.h&gt;</code><br/>
-<code>#include &lt;assert.h&gt;</code><br/>
-<code>#include &quot;<a class="el" href="_i_p_address_8h_source.html">IPAddress.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_i_p_datagram_8h_source.html">IPDatagram.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_s_c_t_p_message_8h_source.html">SCTPMessage.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_t_c_p_segment_8h_source.html">TCPSegment.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_i_pv6_datagram__m_8h_source.html">IPv6Datagram_m.h</a>&quot;</code><br/>
-</div>
-<p><a href="_t_c_p_dump_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<div class="textblock"><code>#include &quot;<a class="el" href="_i_n_e_t_defs_8h.html">INETDefs.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_pcap_dump_8h.html">PcapDump.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_packet_dump_8h.html">PacketDump.h</a>&quot;</code><br/>
+</div><table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcap__hdr.html">pcap_hdr</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpcaprec__hdr.html">pcaprec_hdr</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhdr__ethernet__t.html">hdr_ethernet_t</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_dumper.html">TCPDumper</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_dump.html">TCPDump</a></td></tr>
-<tr><td colspan="2"><h2><a name="define-members"></a>
-Defines</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p_dump_8h.html#a36af2678484f810a739596f617f9d8fc">PCAP_MAGIC</a>&#160;&#160;&#160;0xa1b2c3d4</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p_dump_8h.html#a4668e81a1ed62f082533889edeb96e23">RBUFFER_SIZE</a>&#160;&#160;&#160;65535</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Dumps every packet using the <a class="el" href="class_pcap_dump.html" title="Dumps packets into a PCAP file; see the &quot;pcap-savefile&quot; man page or http://www.tcpdump.org/ for details on the file format.">PcapDump</a> class and the <a class="el" href="class_packet_dump.html" title="Utility class that provides tcpdump-like functionality.">PacketDump</a> class.  <a href="class_t_c_p_dump.html#details">More...</a><br/></td></tr>
 </table>
-<hr/><h2>Define Documentation</h2>
-<a class="anchor" id="a36af2678484f810a739596f617f9d8fc"></a><!-- doxytag: member="TCPDump.h::PCAP_MAGIC" ref="a36af2678484f810a739596f617f9d8fc" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="_t_c_p_dump_8h.html#a36af2678484f810a739596f617f9d8fc">PCAP_MAGIC</a>&#160;&#160;&#160;0xa1b2c3d4</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_dump_8h_source.html#l00032">32</a> of file <a class="el" href="_t_c_p_dump_8h_source.html">TCPDump.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_dump_8cc_source.html#l00520">TCPDump::initialize()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a4668e81a1ed62f082533889edeb96e23"></a><!-- doxytag: member="TCPDump.h::RBUFFER_SIZE" ref="a4668e81a1ed62f082533889edeb96e23" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="_t_c_p_dump_8h.html#a4668e81a1ed62f082533889edeb96e23">RBUFFER_SIZE</a>&#160;&#160;&#160;65535</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_dump_8h_source.html#l00033">33</a> of file <a class="el" href="_t_c_p_dump_8h_source.html">TCPDump.h</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_t_c_p_dump_8h.html">TCPDump.h</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:46 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:22 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

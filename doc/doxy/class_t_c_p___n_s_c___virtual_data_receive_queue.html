@@ -82,7 +82,10 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="TCP_NSC_VirtualDataReceiveQueue" --><!-- doxytag: inherits="TCP_NSC_ReceiveQueue" -->
-<p><code>#include &lt;<a class="el" href="_t_c_p___n_s_c___virtual_data_queues_8h_source.html">TCP_NSC_VirtualDataQueues.h</a>&gt;</code></p>
+<p>Send/Receive queue that manages "virtual bytes", that is, byte counts only.  
+ <a href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#details">More...</a></p>
+
+<p><code>#include &lt;TCP_NSC_VirtualDataQueues.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TCP_NSC_VirtualDataReceiveQueue:</div>
 <div class="dyncontent">
@@ -98,22 +101,31 @@ Inheritance diagram for TCP_NSC_VirtualDataReceiveQueue:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a60b7f04972d351f3b5b3164a95b87d24">TCP_NSC_VirtualDataReceiveQueue</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#ababb1de828a513716d759aeb0db5efeb">~TCP_NSC_VirtualDataReceiveQueue</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a8bb8c560a8847b3591732a836ce27c66">setConnection</a> (<a class="el" href="class_t_c_p___n_s_c___connection.html">TCP_NSC_Connection</a> *connP)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#ac4511ebcb5688e54b34a14ec8be2100f">insertBytesFromSegment</a> (const <a class="el" href="class_t_c_p_segment.html">TCPSegment</a> *tcpsegP, void *bufferP, size_t bufferLengthP)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#ac6fab39dc7a879df0cc2b7dae082bad0">enqueueNscData</a> (void *dataP, int dataLengthP)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual cPacket *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#af70ebad855e072ef9df455467fd21191">extractBytesUpTo</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a6b700bddf9f8544e8e28b3902675a8aa">getAmountOfBufferedBytes</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a781d9a28e32be334622a26a17f86cc03">getQueueLength</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a57739e827a01facf9cfc4894d4277e9d">getQueueStatus</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a8ca37b414c7960ce0bb05a10b7e0b94c">notifyAboutSending</a> (const <a class="el" href="class_t_c_p_segment.html">TCPSegment</a> *tcpsegP)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ctor.  <a href="#a60b7f04972d351f3b5b3164a95b87d24"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#ae39fb3e54aac26c6be5d848923bff76c">~TCP_NSC_VirtualDataReceiveQueue</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual dtor.  <a href="#ae39fb3e54aac26c6be5d848923bff76c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a11fe0194f5ae58a86ccc0e939758451c">setConnection</a> (<a class="el" href="class_t_c_p___n_s_c___connection.html">TCP_NSC_Connection</a> *connP)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a connection queue.  <a href="#a11fe0194f5ae58a86ccc0e939758451c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#aec825ff372b09f432792d49c9c2bedb8">notifyAboutIncomingSegmentProcessing</a> (<a class="el" href="class_t_c_p_segment.html">TCPSegment</a> *tcpsegP)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when a <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> segment arrives.  <a href="#aec825ff372b09f432792d49c9c2bedb8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#af525e655e1bfda2c210780251be7d785">enqueueNscData</a> (<a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *dataP, int dataLengthP)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The method called when data received from NSC The method should set status of the data in queue to received called after socket-&gt;read_data() successfull.  <a href="#af525e655e1bfda2c210780251be7d785"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual cPacket *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#ae07597f3fc1a49f572596761e791c40d">extractBytesUpTo</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Should create a packet to be passed up to the app, up to (but NOT including) the given sequence no (usually rcv_nxt).  <a href="#ae07597f3fc1a49f572596761e791c40d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#af03708e5eb20e52666d125a9981a2333">getAmountOfBufferedBytes</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of bytes (out-of-order-segments) currently buffered in queue.  <a href="#af03708e5eb20e52666d125a9981a2333"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a66ff0066491fc8e58566fa2325875ee0">getQueueLength</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of blocks currently buffered in queue.  <a href="#a66ff0066491fc8e58566fa2325875ee0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a618e25608b2eeefc29df51ced3bfce80">getQueueStatus</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Shows current queue status.  <a href="#a618e25608b2eeefc29df51ced3bfce80"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#ad9ac2ccbb7ecadd5bef891594be133d8">notifyAboutSending</a> (const <a class="el" href="class_t_c_p_segment.html">TCPSegment</a> *tcpsegP)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">notify the queue about output messages  <a href="#ad9ac2ccbb7ecadd5bef891594be133d8"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a2b87269bfbad41dbd8de530cc9a4d200">bytesInQueueM</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_t_c_p___n_s_c___virtual_data_queues_8h_source.html#l00103">103</a> of file <a class="el" href="_t_c_p___n_s_c___virtual_data_queues_8h_source.html">TCP_NSC_VirtualDataQueues.h</a>.</p>
+<div class="textblock"><p>Send/Receive queue that manages "virtual bytes", that is, byte counts only. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a60b7f04972d351f3b5b3164a95b87d24"></a><!-- doxytag: member="TCP_NSC_VirtualDataReceiveQueue::TCP_NSC_VirtualDataReceiveQueue" ref="a60b7f04972d351f3b5b3164a95b87d24" args="()" -->
 <div class="memitem">
@@ -128,16 +140,21 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Ctor. </p>
 
+<p>Ctor. </p>
+<div class="fragment"><pre class="fragment">    :
+    <a class="code" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a2b87269bfbad41dbd8de530cc9a4d200">bytesInQueueM</a>(0)
+{
+}
+</pre></div>
 </div>
 </div>
-<a class="anchor" id="ababb1de828a513716d759aeb0db5efeb"></a><!-- doxytag: member="TCP_NSC_VirtualDataReceiveQueue::~TCP_NSC_VirtualDataReceiveQueue" ref="ababb1de828a513716d759aeb0db5efeb" args="()" -->
+<a class="anchor" id="ae39fb3e54aac26c6be5d848923bff76c"></a><!-- doxytag: member="TCP_NSC_VirtualDataReceiveQueue::~TCP_NSC_VirtualDataReceiveQueue" ref="ae39fb3e54aac26c6be5d848923bff76c" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#ababb1de828a513716d759aeb0db5efeb">TCP_NSC_VirtualDataReceiveQueue::~TCP_NSC_VirtualDataReceiveQueue</a> </td>
+          <td class="memname"><a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#ae39fb3e54aac26c6be5d848923bff76c">TCP_NSC_VirtualDataReceiveQueue::~TCP_NSC_VirtualDataReceiveQueue</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [virtual]</code></td>
@@ -145,19 +162,23 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Virtual dtor. </p>
 
+<p>Virtual dtor. </p>
+<div class="fragment"><pre class="fragment">{
+    <span class="comment">// nothing to do here</span>
+}
+</pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="ac6fab39dc7a879df0cc2b7dae082bad0"></a><!-- doxytag: member="TCP_NSC_VirtualDataReceiveQueue::enqueueNscData" ref="ac6fab39dc7a879df0cc2b7dae082bad0" args="(void *dataP, int dataLengthP)" -->
+<a class="anchor" id="af525e655e1bfda2c210780251be7d785"></a><!-- doxytag: member="TCP_NSC_VirtualDataReceiveQueue::enqueueNscData" ref="af525e655e1bfda2c210780251be7d785" args="(void *dataP, int dataLengthP)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#ac6fab39dc7a879df0cc2b7dae082bad0">TCP_NSC_VirtualDataReceiveQueue::enqueueNscData</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#af525e655e1bfda2c210780251be7d785">TCP_NSC_VirtualDataReceiveQueue::enqueueNscData</a> </td>
           <td>(</td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>dataP</em>, </td>
         </tr>
         <tr>
@@ -174,18 +195,22 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The method called when data received from NSC The method should set status of the data in queue to received called after socket-&gt;read_data() successfull </p>
+
+<p>The method called when data received from NSC The method should set status of the data in queue to received called after socket-&gt;read_data() successfull. </p>
 
 <p>Implements <a class="el" href="class_t_c_p___n_s_c___receive_queue.html#a46f03c5e1726f2149404cca60e97bbac">TCP_NSC_ReceiveQueue</a>.</p>
-
+<div class="fragment"><pre class="fragment">{
+    <a class="code" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a2b87269bfbad41dbd8de530cc9a4d200">bytesInQueueM</a> += dataLengthP;
+}
+</pre></div>
 </div>
 </div>
-<a class="anchor" id="af70ebad855e072ef9df455467fd21191"></a><!-- doxytag: member="TCP_NSC_VirtualDataReceiveQueue::extractBytesUpTo" ref="af70ebad855e072ef9df455467fd21191" args="()" -->
+<a class="anchor" id="ae07597f3fc1a49f572596761e791c40d"></a><!-- doxytag: member="TCP_NSC_VirtualDataReceiveQueue::extractBytesUpTo" ref="ae07597f3fc1a49f572596761e791c40d" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual cPacket* <a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#af70ebad855e072ef9df455467fd21191">TCP_NSC_VirtualDataReceiveQueue::extractBytesUpTo</a> </td>
+          <td class="memname">cPacket * <a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#ae07597f3fc1a49f572596761e791c40d">TCP_NSC_VirtualDataReceiveQueue::extractBytesUpTo</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [virtual]</code></td>
@@ -193,115 +218,132 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Should create a packet to be passed up to the app, up to (but NOT including) the given sequence no (usually rcv_nxt). It should return NULL if there's no more data to be passed up -- this method is called several times until it returns NULL.</p>
+
+<p>Should create a packet to be passed up to the app, up to (but NOT including) the given sequence no (usually rcv_nxt). </p>
+<p>It should return NULL if there's no more data to be passed up -- this method is called several times until it returns NULL.</p>
 <p>called after socket-&gt;read_data() successfull </p>
 
 <p>Implements <a class="el" href="class_t_c_p___n_s_c___receive_queue.html#a20aeabe1c060d3d36a12ab5bb70fdf8c">TCP_NSC_ReceiveQueue</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    ASSERT(<a class="code" href="class_t_c_p___n_s_c___receive_queue.html#a9b263febc7f2c5e2a211f8ab96857a52">connM</a>);
 
+    cPacket *dataMsg = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+
+    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a2b87269bfbad41dbd8de530cc9a4d200">bytesInQueueM</a>)
+    {
+        dataMsg = <span class="keyword">new</span> cPacket(<span class="stringliteral">&quot;DATA&quot;</span>);
+        dataMsg-&gt;setKind(<a class="code" href="_t_c_p_command__m_8h.html#a68611fc79dbc74e8744d74b746cd956ba78bce3d41e158816c5212ed2fc959b06">TCP_I_DATA</a>);
+        dataMsg-&gt;setByteLength(<a class="code" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a2b87269bfbad41dbd8de530cc9a4d200">bytesInQueueM</a>);
+        <a class="code" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a2b87269bfbad41dbd8de530cc9a4d200">bytesInQueueM</a> -= dataMsg-&gt;getByteLength();
+    }
+
+    <span class="keywordflow">return</span> dataMsg;
+}
+</pre></div>
 </div>
 </div>
-<a class="anchor" id="a6b700bddf9f8544e8e28b3902675a8aa"></a><!-- doxytag: member="TCP_NSC_VirtualDataReceiveQueue::getAmountOfBufferedBytes" ref="a6b700bddf9f8544e8e28b3902675a8aa" args="()" -->
+<a class="anchor" id="af03708e5eb20e52666d125a9981a2333"></a><!-- doxytag: member="TCP_NSC_VirtualDataReceiveQueue::getAmountOfBufferedBytes" ref="af03708e5eb20e52666d125a9981a2333" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual uint32 <a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a6b700bddf9f8544e8e28b3902675a8aa">TCP_NSC_VirtualDataReceiveQueue::getAmountOfBufferedBytes</a> </td>
+          <td class="memname">uint32 <a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#af03708e5eb20e52666d125a9981a2333">TCP_NSC_VirtualDataReceiveQueue::getAmountOfBufferedBytes</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Returns the number of bytes (out-of-order-segments) currently buffered in queue. </p>
 
-<p>Implements <a class="el" href="class_t_c_p___n_s_c___receive_queue.html#a6936c21c6dff45aa26215a9d0b92ac01">TCP_NSC_ReceiveQueue</a>.</p>
-
+<p>Implements <a class="el" href="class_t_c_p___n_s_c___receive_queue.html#a49925a6be16ed86c94409fd03f204043">TCP_NSC_ReceiveQueue</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">return</span> <a class="code" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a2b87269bfbad41dbd8de530cc9a4d200">bytesInQueueM</a>;
+}
+</pre></div>
 </div>
 </div>
-<a class="anchor" id="a781d9a28e32be334622a26a17f86cc03"></a><!-- doxytag: member="TCP_NSC_VirtualDataReceiveQueue::getQueueLength" ref="a781d9a28e32be334622a26a17f86cc03" args="()" -->
+<a class="anchor" id="a66ff0066491fc8e58566fa2325875ee0"></a><!-- doxytag: member="TCP_NSC_VirtualDataReceiveQueue::getQueueLength" ref="a66ff0066491fc8e58566fa2325875ee0" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual uint32 <a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a781d9a28e32be334622a26a17f86cc03">TCP_NSC_VirtualDataReceiveQueue::getQueueLength</a> </td>
+          <td class="memname">uint32 <a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a66ff0066491fc8e58566fa2325875ee0">TCP_NSC_VirtualDataReceiveQueue::getQueueLength</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Returns the number of blocks currently buffered in queue. </p>
 
-<p>Implements <a class="el" href="class_t_c_p___n_s_c___receive_queue.html#a538e550d9028375f4c4832a7bb5e466b">TCP_NSC_ReceiveQueue</a>.</p>
-
+<p>Implements <a class="el" href="class_t_c_p___n_s_c___receive_queue.html#a8c4ffc05de61da88cf5cd1ad8be80c6f">TCP_NSC_ReceiveQueue</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">return</span> <a class="code" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a2b87269bfbad41dbd8de530cc9a4d200">bytesInQueueM</a> ? 1 : 0;
+}
+</pre></div>
 </div>
 </div>
-<a class="anchor" id="a57739e827a01facf9cfc4894d4277e9d"></a><!-- doxytag: member="TCP_NSC_VirtualDataReceiveQueue::getQueueStatus" ref="a57739e827a01facf9cfc4894d4277e9d" args="()" -->
+<a class="anchor" id="a618e25608b2eeefc29df51ced3bfce80"></a><!-- doxytag: member="TCP_NSC_VirtualDataReceiveQueue::getQueueStatus" ref="a618e25608b2eeefc29df51ced3bfce80" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a57739e827a01facf9cfc4894d4277e9d">TCP_NSC_VirtualDataReceiveQueue::getQueueStatus</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a618e25608b2eeefc29df51ced3bfce80">TCP_NSC_VirtualDataReceiveQueue::getQueueStatus</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
+          <td> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Shows current queue status. </p>
+
+<p>Implements <a class="el" href="class_t_c_p___n_s_c___receive_queue.html#af23900048df788246d09a71118006933">TCP_NSC_ReceiveQueue</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="comment">// TODO</span>
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="aec825ff372b09f432792d49c9c2bedb8"></a><!-- doxytag: member="TCP_NSC_VirtualDataReceiveQueue::notifyAboutIncomingSegmentProcessing" ref="aec825ff372b09f432792d49c9c2bedb8" args="(TCPSegment *tcpsegP)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#aec825ff372b09f432792d49c9c2bedb8">TCP_NSC_VirtualDataReceiveQueue::notifyAboutIncomingSegmentProcessing</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_t_c_p_segment.html">TCPSegment</a> *&#160;</td>
+          <td class="paramname"><em>tcpsegP</em></td><td>)</td>
           <td><code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Shows current queue status. </p>
 
-<p>Implements <a class="el" href="class_t_c_p___n_s_c___receive_queue.html#aae7be5382cc580f693a73f85e944d15e">TCP_NSC_ReceiveQueue</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ac4511ebcb5688e54b34a14ec8be2100f"></a><!-- doxytag: member="TCP_NSC_VirtualDataReceiveQueue::insertBytesFromSegment" ref="ac4511ebcb5688e54b34a14ec8be2100f" args="(const TCPSegment *tcpsegP, void *bufferP, size_t bufferLengthP)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual uint32 <a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#ac4511ebcb5688e54b34a14ec8be2100f">TCP_NSC_VirtualDataReceiveQueue::insertBytesFromSegment</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_t_c_p_segment.html">TCPSegment</a> *&#160;</td>
-          <td class="paramname"><em>tcpsegP</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>bufferP</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>bufferLengthP</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Called when a <a class="el" href="class_t_c_p.html">TCP</a> segment arrives, it should extract the payload from the segment and store it in the receive queue. The segment object should be deleted by queue.</p>
-<p>The method should return the number of bytes to copied to buffer.</p>
-<p>The method should fill the bufferP for data sending to NSC stack</p>
+<p>Called when a <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> segment arrives. </p>
+<p>The segment object should *not* be deleted.</p>
+<p>For remove and store payload messages if need.</p>
 <p>called before nsc_stack-&gt;if_receive_packet() called </p>
 
-<p>Implements <a class="el" href="class_t_c_p___n_s_c___receive_queue.html#aa31cf46254779db3a02164d22ac71a90">TCP_NSC_ReceiveQueue</a>.</p>
-
+<p>Implements <a class="el" href="class_t_c_p___n_s_c___receive_queue.html#aee990e6432a840ab8b7d435376a3dd42">TCP_NSC_ReceiveQueue</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    ASSERT(tcpsegP);
+}
+</pre></div>
 </div>
 </div>
-<a class="anchor" id="a8ca37b414c7960ce0bb05a10b7e0b94c"></a><!-- doxytag: member="TCP_NSC_VirtualDataReceiveQueue::notifyAboutSending" ref="a8ca37b414c7960ce0bb05a10b7e0b94c" args="(const TCPSegment *tcpsegP)" -->
+<a class="anchor" id="ad9ac2ccbb7ecadd5bef891594be133d8"></a><!-- doxytag: member="TCP_NSC_VirtualDataReceiveQueue::notifyAboutSending" ref="ad9ac2ccbb7ecadd5bef891594be133d8" args="(const TCPSegment *tcpsegP)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a8ca37b414c7960ce0bb05a10b7e0b94c">TCP_NSC_VirtualDataReceiveQueue::notifyAboutSending</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#ad9ac2ccbb7ecadd5bef891594be133d8">TCP_NSC_VirtualDataReceiveQueue::notifyAboutSending</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_t_c_p_segment.html">TCPSegment</a> *&#160;</td>
           <td class="paramname"><em>tcpsegP</em></td><td>)</td>
@@ -310,19 +352,23 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>notify the queue about output messages</p>
+
+<p>notify the queue about output messages </p>
 <p>called when connM send out a packet. for read AckNo, if have </p>
 
 <p>Implements <a class="el" href="class_t_c_p___n_s_c___receive_queue.html#a1a0e793a69e8ac17181cbc611c688f8b">TCP_NSC_ReceiveQueue</a>.</p>
-
+<div class="fragment"><pre class="fragment">{
+    <span class="comment">// nothing to do</span>
+}
+</pre></div>
 </div>
 </div>
-<a class="anchor" id="a8bb8c560a8847b3591732a836ce27c66"></a><!-- doxytag: member="TCP_NSC_VirtualDataReceiveQueue::setConnection" ref="a8bb8c560a8847b3591732a836ce27c66" args="(TCP_NSC_Connection *connP)" -->
+<a class="anchor" id="a11fe0194f5ae58a86ccc0e939758451c"></a><!-- doxytag: member="TCP_NSC_VirtualDataReceiveQueue::setConnection" ref="a11fe0194f5ae58a86ccc0e939758451c" args="(TCP_NSC_Connection *connP)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a8bb8c560a8847b3591732a836ce27c66">TCP_NSC_VirtualDataReceiveQueue::setConnection</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a11fe0194f5ae58a86ccc0e939758451c">TCP_NSC_VirtualDataReceiveQueue::setConnection</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_t_c_p___n_s_c___connection.html">TCP_NSC_Connection</a> *&#160;</td>
           <td class="paramname"><em>connP</em></td><td>)</td>
@@ -331,10 +377,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set the connection. </p>
+
+<p>Add a connection queue. </p>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p___n_s_c___receive_queue.html#a8626fba0d2e427126e27ee420ae034ef">TCP_NSC_ReceiveQueue</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    ASSERT(connP);
 
+    <a class="code" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a2b87269bfbad41dbd8de530cc9a4d200">bytesInQueueM</a> = 0;
+    <a class="code" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a11fe0194f5ae58a86ccc0e939758451c" title="Add a connection queue.">TCP_NSC_ReceiveQueue::setConnection</a>(connP);
+}
+</pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
@@ -349,12 +402,13 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p___n_s_c___virtual_data_queues_8h_source.html#l00175">175</a> of file <a class="el" href="_t_c_p___n_s_c___virtual_data_queues_8h_source.html">TCP_NSC_VirtualDataQueues.h</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#af525e655e1bfda2c210780251be7d785">enqueueNscData()</a>, <a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#ae07597f3fc1a49f572596761e791c40d">extractBytesUpTo()</a>, <a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#af03708e5eb20e52666d125a9981a2333">getAmountOfBufferedBytes()</a>, <a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a66ff0066491fc8e58566fa2325875ee0">getQueueLength()</a>, and <a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html#a11fe0194f5ae58a86ccc0e939758451c">setConnection()</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="_t_c_p___n_s_c___virtual_data_queues_8h_source.html">TCP_NSC_VirtualDataQueues.h</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li><a class="el" href="_t_c_p___n_s_c___virtual_data_queues_8h.html">TCP_NSC_VirtualDataQueues.h</a></li>
+<li><a class="el" href="_t_c_p___n_s_c___virtual_data_queues_8cc.html">TCP_NSC_VirtualDataQueues.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -362,7 +416,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_t_c_p___n_s_c___virtual_data_receive_queue.html">TCP_NSC_VirtualDataReceiveQueue</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:53 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:31 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

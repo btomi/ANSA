@@ -20,7 +20,7 @@
    </td>
    <td>
 
-<p>The list of practically important <a href="inet.networklayer.arp.ARP.html">ARP</a> opcodes</p>
+<p>The list of practically important ARP opcodes</p>
 
    </td>
 </tr>
@@ -33,9 +33,9 @@
    </td>
    <td>
 
-<p><a href="inet.networklayer.arp.ARP.html">ARP</a> packet. This is a specialized version: prepared for IEEE 802 hardware
+<p>ARP packet. This is a specialized version: prepared for IEEE 802 hardware
 addresses and IPv4. Packet fields are therefore represented by C++ classes
-MACAddress and IPAddress. Also, some <a href="inet.networklayer.arp.ARP.html">ARP</a> protocol header fields are
+MACAddress and IPv4Address. Also, some ARP protocol header fields are
 not modelled explicitly (their values are implied):</p>
 
    </td>
@@ -60,12 +60,12 @@ not modelled explicitly (their values are implied):</p>
 //
 </span><span style="color: #000000; ">
 
-</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">noncobject</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; ">;
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">noncobject</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; ">;
 
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">noncobject</span><span style="color: #000000; "> </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; ">;
 
 </span><span style="color: #800000; font-weight: bold; ">cplusplus</span><span style="color: #000000; "> {{
-#</span><span style="color: #000000; ">include</span><span style="color: #000000; "> </span><span style="color: #008000; ">&quot;IPAddress.h&quot;</span><span style="color: #000000; ">
+#</span><span style="color: #000000; ">include</span><span style="color: #000000; "> </span><span style="color: #008000; ">&quot;IPv4Address.h&quot;</span><span style="color: #000000; ">
 #</span><span style="color: #000000; ">include</span><span style="color: #000000; "> </span><span style="color: #008000; ">&quot;MACAddress.h&quot;</span><span style="color: #000000; ">
 
 </span><span style="color: #808080; font-style: italic; ">// ARP header length for IPv4 (4-byte addresses) and 802 LANs (6-byte MAC addrs)
@@ -90,7 +90,7 @@ not modelled explicitly (their values are implied):</p>
 </span><span style="color: #808080; font-style: italic; ">//
 // ARP packet. This is a specialized version: prepared for IEEE 802 hardware
 // addresses and IPv4. Packet fields are therefore represented by C++ classes
-// MACAddress and IPAddress. Also, some ARP protocol header fields are
+// MACAddress and IPv4Address. Also, some ARP protocol header fields are
 // not modelled explicitly (their values are implied):
 //   - hardwareType (not needed for modelling);
 //   - protocol type (0x800 IPv4)
@@ -102,12 +102,11 @@ not modelled explicitly (their values are implied):</p>
     </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">opcode</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; ">(</span><span style="color: #000000; ">ARPOpcode</span><span style="color: #000000; ">);
     </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">srcMACAddress</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">destMACAddress</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">srcIPAddress</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">destIPAddress</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">srcIPAddress</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">destIPAddress</span><span style="color: #000000; ">;
 }
 
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

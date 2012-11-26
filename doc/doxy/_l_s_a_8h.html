@@ -81,13 +81,11 @@
 <div class="title">LSA.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_o_s_p_f_packet__m_8h_source.html">OSPFPacket_m.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_o_s_p_fcommon_8h_source.html">OSPFcommon.h</a>&quot;</code><br/>
+<div class="textblock"><code>#include &lt;math.h&gt;</code><br/>
 <code>#include &lt;vector&gt;</code><br/>
-<code>#include &lt;math.h&gt;</code><br/>
-</div>
-<p><a href="_l_s_a_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<code>#include &quot;<a class="el" href="_o_s_p_fcommon_8h.html">OSPFcommon.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_o_s_p_f_packet__m_8h.html">OSPFPacket_m.h</a>&quot;</code><br/>
+</div><table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_o_s_p_f_1_1_next_hop.html">OSPF::NextHop</a></td></tr>
@@ -100,45 +98,56 @@ Classes</h2></td></tr>
 <tr><td colspan="2"><h2><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_o_s_p_f.html">OSPF</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight"><p>All <a class="el" href="namespace_o_s_p_f.html" title="All OSPF classes are in this namespace.">OSPF</a> classes are in this namespace. </p>
+<br/></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#af5197092e66fe113405b42c74a4f4cb6">operator&lt;</a> (const <a class="el" href="class_o_s_p_f_l_s_a_header.html">OSPFLSAHeader</a> &amp;leftLSA, const <a class="el" href="class_o_s_p_f_l_s_a_header.html">OSPFLSAHeader</a> &amp;rightLSA)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if leftLSA is older than rightLSA.  <a href="#af5197092e66fe113405b42c74a4f4cb6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#a82cd98536c189265d8f588ef72d93f7c">operator==</a> (const <a class="el" href="class_o_s_p_f_l_s_a_header.html">OSPFLSAHeader</a> &amp;leftLSA, const <a class="el" href="class_o_s_p_f_l_s_a_header.html">OSPFLSAHeader</a> &amp;rightLSA)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if leftLSA is the same age as rightLSA.  <a href="#a82cd98536c189265d8f588ef72d93f7c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#a44abec2b0949bf0f34c3e9e2ed80f6dd">operator==</a> (const <a class="el" href="struct_o_s_p_f_options.html">OSPFOptions</a> &amp;leftOptions, const <a class="el" href="struct_o_s_p_f_options.html">OSPFOptions</a> &amp;rightOptions)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#a5fecc7b74773ae79cdf272243506fa98">operator!=</a> (const <a class="el" href="struct_o_s_p_f_options.html">OSPFOptions</a> &amp;leftOptions, const <a class="el" href="struct_o_s_p_f_options.html">OSPFOptions</a> &amp;rightOptions)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#a47b0106995ad304a4b44d98b7039790f">operator==</a> (const <a class="el" href="struct_o_s_p_f_1_1_next_hop.html">OSPF::NextHop</a> &amp;leftHop, const <a class="el" href="struct_o_s_p_f_1_1_next_hop.html">OSPF::NextHop</a> &amp;rightHop)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#a6c00540d33e1e66db478f90e8d332698">operator!=</a> (const <a class="el" href="struct_o_s_p_f_1_1_next_hop.html">OSPF::NextHop</a> &amp;leftHop, const <a class="el" href="struct_o_s_p_f_1_1_next_hop.html">OSPF::NextHop</a> &amp;rightHop)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#ad62b97c7d9425ef443cdf7766a31c6b8">CalculateLSASize</a> (const <a class="el" href="class_o_s_p_f_router_l_s_a.html">OSPFRouterLSA</a> *routerLSA)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#ab410b2694141a256a74d9e4a1f1fd90f">CalculateLSASize</a> (const <a class="el" href="class_o_s_p_f_network_l_s_a.html">OSPFNetworkLSA</a> *networkLSA)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#ad65bef78d66d2961e5849a72dfbc2e3e">CalculateLSASize</a> (const <a class="el" href="class_o_s_p_f_summary_l_s_a.html">OSPFSummaryLSA</a> *summaryLSA)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#a68f6c7b674bc04f6c6c93be0d6440f09">CalculateLSASize</a> (const <a class="el" href="class_o_s_p_f_a_s_external_l_s_a.html">OSPFASExternalLSA</a> *asExternalLSA)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#a44d2835f9421021b7eee669af9c4cb98">PrintLSAHeader</a> (const <a class="el" href="class_o_s_p_f_l_s_a_header.html">OSPFLSAHeader</a> &amp;lsaHeader, std::ostream &amp;output)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#a64deb2407c19596487a4193af4082231">operator&lt;&lt;</a> (std::ostream &amp;ostr, <a class="el" href="class_o_s_p_f_l_s_a.html">OSPFLSA</a> &amp;lsa)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#a25dc3aadca4bc5b00d42c6e6a3b7975c">calculateLSASize</a> (const <a class="el" href="class_o_s_p_f_router_l_s_a.html">OSPFRouterLSA</a> *routerLSA)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#a64d537bc9c05370e480bfca248044267">calculateLSASize</a> (const <a class="el" href="class_o_s_p_f_network_l_s_a.html">OSPFNetworkLSA</a> *networkLSA)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#a9157aac9fd76d5aad002eb0fe87573f1">calculateLSASize</a> (const <a class="el" href="class_o_s_p_f_summary_l_s_a.html">OSPFSummaryLSA</a> *summaryLSA)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#a9710f7389998a80f1d84d85edeab5446">calculateLSASize</a> (const <a class="el" href="class_o_s_p_f_a_s_external_l_s_a.html">OSPFASExternalLSA</a> *asExternalLSA)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#ae1f066afa14cb1ebfdf1f7370b5ee8dd">printLSAHeader</a> (const <a class="el" href="class_o_s_p_f_l_s_a_header.html">OSPFLSAHeader</a> &amp;lsaHeader, std::ostream &amp;output)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#a9dfa83836efe6cd0af771a3966b40783">operator&lt;&lt;</a> (std::ostream &amp;ostr, const <a class="el" href="class_o_s_p_f_l_s_a.html">OSPFLSA</a> &amp;lsa)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#a29615eed24c608b40f5c0316348e591b">operator&lt;&lt;</a> (std::ostream &amp;ostr, const <a class="el" href="class_o_s_p_f_network_l_s_a.html">OSPFNetworkLSA</a> &amp;lsa)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#a961e7adb70547323879e084603c25cda">operator&lt;&lt;</a> (std::ostream &amp;ostr, const <a class="el" href="struct_t_o_s_data.html">TOSData</a> &amp;<a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a3bdbe295d838b7f44e47ad5f4c3fac27">tos</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#a58097472ae354745307f0ec315f2c132">operator&lt;&lt;</a> (std::ostream &amp;ostr, const <a class="el" href="class_link.html">Link</a> &amp;link)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#ac373467bd1c319f168ee021d957da487">operator&lt;&lt;</a> (std::ostream &amp;ostr, const <a class="el" href="class_o_s_p_f_router_l_s_a.html">OSPFRouterLSA</a> &amp;lsa)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#a460635a7fa3ff4cfb1787de1bd9e6e6f">operator&lt;&lt;</a> (std::ostream &amp;ostr, const <a class="el" href="class_o_s_p_f_summary_l_s_a.html">OSPFSummaryLSA</a> &amp;lsa)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#a14f6564b912a7f27087d955bcb3a4827">operator&lt;&lt;</a> (std::ostream &amp;ostr, const <a class="el" href="struct_external_t_o_s_info.html">ExternalTOSInfo</a> &amp;<a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a3bdbe295d838b7f44e47ad5f4c3fac27">tos</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_s_a_8h.html#a0e391065cf7dca6764dccde0af33f5e2">operator&lt;&lt;</a> (std::ostream &amp;ostr, const <a class="el" href="class_o_s_p_f_a_s_external_l_s_a.html">OSPFASExternalLSA</a> &amp;lsa)</td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="ad62b97c7d9425ef443cdf7766a31c6b8"></a><!-- doxytag: member="LSA.h::CalculateLSASize" ref="ad62b97c7d9425ef443cdf7766a31c6b8" args="(const OSPFRouterLSA *routerLSA)" -->
+<a class="anchor" id="a25dc3aadca4bc5b00d42c6e6a3b7975c"></a><!-- doxytag: member="LSA.h::calculateLSASize" ref="a25dc3aadca4bc5b00d42c6e6a3b7975c" args="(const OSPFRouterLSA *routerLSA)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int <a class="el" href="_l_s_a_8h.html#a68f6c7b674bc04f6c6c93be0d6440f09">CalculateLSASize</a> </td>
+          <td class="memname">unsigned int <a class="el" href="_l_s_a_8h.html#a9710f7389998a80f1d84d85edeab5446">calculateLSASize</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_o_s_p_f_router_l_s_a.html">OSPFRouterLSA</a> *&#160;</td>
           <td class="paramname"><em>routerLSA</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_l_s_a_8h_source.html#l00241">241</a> of file <a class="el" href="_l_s_a_8h_source.html">LSA.h</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_1_1_interface.html#a1ab8bc7bfe66c16401bfb4d4d9a08db7">OSPF::Interface::createUpdatePacket()</a>, and <a class="el" href="class_o_s_p_f_1_1_neighbor.html#aeba1f1b1f949be42ad14dbb1ef78b534">OSPF::Neighbor::retransmitUpdatePacket()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>   lsaLength = <a class="code" href="_ansa_o_s_p_fcommon_8h.html#addec1389ab60c9ffd1fb82b2af2a013e">OSPF_LSA_HEADER_LENGTH</a> + <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a671d94f589156a5e36aa9a605e4de2a5">OSPF_ROUTERLSA_HEADER_LENGTH</a>;
+    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>   lsaLength = <a class="code" href="_o_s_p_fcommon_8h.html#addec1389ab60c9ffd1fb82b2af2a013e">OSPF_LSA_HEADER_LENGTH</a> + <a class="code" href="_o_s_p_fcommon_8h.html#a671d94f589156a5e36aa9a605e4de2a5">OSPF_ROUTERLSA_HEADER_LENGTH</a>;
     <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> linkCount = routerLSA-&gt;<a class="code" href="class_o_s_p_f_router_l_s_a.html#a65d69daaf585899cc5b125c057e1eb97">getLinksArraySize</a>();
 
-    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = 0; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> &lt; linkCount; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++) {
-        <span class="keyword">const</span> <a class="code" href="class_link.html">Link</a>&amp; link = routerLSA-&gt;<a class="code" href="class_o_s_p_f_router_l_s_a.html#a8efa6eb271aaf62a4062a16156819db5">getLinks</a>(<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>);
-        lsaLength += <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a3da55b328071f524da93701178860732">OSPF_LINK_HEADER_LENGTH</a> + (link.<a class="code" href="class_link.html#acba4593e39ddf1deef479469b0ac54d4">getTosDataArraySize</a>() * <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a3c024852944f890aaed1f2a6e2fe5fc0">OSPF_TOS_LENGTH</a>);
+    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> i = 0; i &lt; linkCount; i++) {
+        <span class="keyword">const</span> <a class="code" href="class_link.html" title="Class generated from networklayer/ospfv2/OSPFPacket.msg by opp_msgc.">Link</a>&amp; link = routerLSA-&gt;<a class="code" href="class_o_s_p_f_router_l_s_a.html#a8efa6eb271aaf62a4062a16156819db5">getLinks</a>(i);
+        lsaLength += <a class="code" href="_o_s_p_fcommon_8h.html#a3da55b328071f524da93701178860732">OSPF_LINK_HEADER_LENGTH</a> + (link.<a class="code" href="class_link.html#acba4593e39ddf1deef479469b0ac54d4">getTosDataArraySize</a>() * <a class="code" href="_o_s_p_fcommon_8h.html#a3c024852944f890aaed1f2a6e2fe5fc0">OSPF_TOS_LENGTH</a>);
     }
 
     <span class="keywordflow">return</span> lsaLength;
@@ -146,71 +155,65 @@ Functions</h2></td></tr>
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="ab410b2694141a256a74d9e4a1f1fd90f"></a><!-- doxytag: member="LSA.h::CalculateLSASize" ref="ab410b2694141a256a74d9e4a1f1fd90f" args="(const OSPFNetworkLSA *networkLSA)" -->
+<a class="anchor" id="a64d537bc9c05370e480bfca248044267"></a><!-- doxytag: member="LSA.h::calculateLSASize" ref="a64d537bc9c05370e480bfca248044267" args="(const OSPFNetworkLSA *networkLSA)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int <a class="el" href="_l_s_a_8h.html#a68f6c7b674bc04f6c6c93be0d6440f09">CalculateLSASize</a> </td>
+          <td class="memname">unsigned int <a class="el" href="_l_s_a_8h.html#a9710f7389998a80f1d84d85edeab5446">calculateLSASize</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_o_s_p_f_network_l_s_a.html">OSPFNetworkLSA</a> *&#160;</td>
           <td class="paramname"><em>networkLSA</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_l_s_a_8h_source.html#l00254">254</a> of file <a class="el" href="_l_s_a_8h_source.html">LSA.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> (<a class="code" href="_ansa_o_s_p_fcommon_8h.html#addec1389ab60c9ffd1fb82b2af2a013e">OSPF_LSA_HEADER_LENGTH</a> + <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a17a658144b93c96a1534a408ceae4650">OSPF_NETWORKLSA_MASK_LENGTH</a> +
-            (networkLSA-&gt;<a class="code" href="class_o_s_p_f_network_l_s_a.html#a50154f7e76b77b626d057dc52b819bb0">getAttachedRoutersArraySize</a>() * <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a7d912a2d5df5fa8835d2681a94971401">OSPF_NETWORKLSA_ADDRESS_LENGTH</a>));
+    <span class="keywordflow">return</span> (<a class="code" href="_o_s_p_fcommon_8h.html#addec1389ab60c9ffd1fb82b2af2a013e">OSPF_LSA_HEADER_LENGTH</a> + <a class="code" href="_o_s_p_fcommon_8h.html#a17a658144b93c96a1534a408ceae4650">OSPF_NETWORKLSA_MASK_LENGTH</a> +
+            (networkLSA-&gt;<a class="code" href="class_o_s_p_f_network_l_s_a.html#a50154f7e76b77b626d057dc52b819bb0">getAttachedRoutersArraySize</a>() * <a class="code" href="_o_s_p_fcommon_8h.html#a7d912a2d5df5fa8835d2681a94971401">OSPF_NETWORKLSA_ADDRESS_LENGTH</a>));
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="ad65bef78d66d2961e5849a72dfbc2e3e"></a><!-- doxytag: member="LSA.h::CalculateLSASize" ref="ad65bef78d66d2961e5849a72dfbc2e3e" args="(const OSPFSummaryLSA *summaryLSA)" -->
+<a class="anchor" id="a9157aac9fd76d5aad002eb0fe87573f1"></a><!-- doxytag: member="LSA.h::calculateLSASize" ref="a9157aac9fd76d5aad002eb0fe87573f1" args="(const OSPFSummaryLSA *summaryLSA)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int <a class="el" href="_l_s_a_8h.html#a68f6c7b674bc04f6c6c93be0d6440f09">CalculateLSASize</a> </td>
+          <td class="memname">unsigned int <a class="el" href="_l_s_a_8h.html#a9710f7389998a80f1d84d85edeab5446">calculateLSASize</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_o_s_p_f_summary_l_s_a.html">OSPFSummaryLSA</a> *&#160;</td>
           <td class="paramname"><em>summaryLSA</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_l_s_a_8h_source.html#l00260">260</a> of file <a class="el" href="_l_s_a_8h_source.html">LSA.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> (<a class="code" href="_ansa_o_s_p_fcommon_8h.html#addec1389ab60c9ffd1fb82b2af2a013e">OSPF_LSA_HEADER_LENGTH</a> + <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a1cf3a5729799225a342d6003d42968b0">OSPF_SUMMARYLSA_HEADER_LENGTH</a> +
-            (summaryLSA-&gt;<a class="code" href="class_o_s_p_f_summary_l_s_a.html#acc47f20ed9828b2b92cfb9f6710f4e34">getTosDataArraySize</a>() * <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a3c024852944f890aaed1f2a6e2fe5fc0">OSPF_TOS_LENGTH</a>));
+    <span class="keywordflow">return</span> (<a class="code" href="_o_s_p_fcommon_8h.html#addec1389ab60c9ffd1fb82b2af2a013e">OSPF_LSA_HEADER_LENGTH</a> + <a class="code" href="_o_s_p_fcommon_8h.html#a1cf3a5729799225a342d6003d42968b0">OSPF_SUMMARYLSA_HEADER_LENGTH</a> +
+            (summaryLSA-&gt;<a class="code" href="class_o_s_p_f_summary_l_s_a.html#acc47f20ed9828b2b92cfb9f6710f4e34">getTosDataArraySize</a>() * <a class="code" href="_o_s_p_fcommon_8h.html#a3c024852944f890aaed1f2a6e2fe5fc0">OSPF_TOS_LENGTH</a>));
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a68f6c7b674bc04f6c6c93be0d6440f09"></a><!-- doxytag: member="LSA.h::CalculateLSASize" ref="a68f6c7b674bc04f6c6c93be0d6440f09" args="(const OSPFASExternalLSA *asExternalLSA)" -->
+<a class="anchor" id="a9710f7389998a80f1d84d85edeab5446"></a><!-- doxytag: member="LSA.h::calculateLSASize" ref="a9710f7389998a80f1d84d85edeab5446" args="(const OSPFASExternalLSA *asExternalLSA)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int <a class="el" href="_l_s_a_8h.html#a68f6c7b674bc04f6c6c93be0d6440f09">CalculateLSASize</a> </td>
+          <td class="memname">unsigned int <a class="el" href="_l_s_a_8h.html#a9710f7389998a80f1d84d85edeab5446">calculateLSASize</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_o_s_p_f_a_s_external_l_s_a.html">OSPFASExternalLSA</a> *&#160;</td>
           <td class="paramname"><em>asExternalLSA</em></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_l_s_a_8h_source.html#l00266">266</a> of file <a class="el" href="_l_s_a_8h_source.html">LSA.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> (<a class="code" href="_ansa_o_s_p_fcommon_8h.html#addec1389ab60c9ffd1fb82b2af2a013e">OSPF_LSA_HEADER_LENGTH</a> + <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a3bfd52c6e5450a2d6470c454d13ce652">OSPF_ASEXTERNALLSA_HEADER_LENGTH</a> +
-            (asExternalLSA-&gt;<a class="code" href="class_o_s_p_f_a_s_external_l_s_a.html#a34f5913c38930cb4098b1b5b2ceca1bb">getContents</a>().<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#a407f4083d2a244a845b23b5e9f8d5aa1">getExternalTOSInfoArraySize</a>() * <a class="code" href="_ansa_o_s_p_fcommon_8h.html#afc6c43974744735f549c9a67f59f517a">OSPF_ASEXTERNALLSA_TOS_INFO_LENGTH</a>));
+    <span class="keywordflow">return</span> (<a class="code" href="_o_s_p_fcommon_8h.html#addec1389ab60c9ffd1fb82b2af2a013e">OSPF_LSA_HEADER_LENGTH</a> + <a class="code" href="_o_s_p_fcommon_8h.html#a3bfd52c6e5450a2d6470c454d13ce652">OSPF_ASEXTERNALLSA_HEADER_LENGTH</a> +
+            (asExternalLSA-&gt;<a class="code" href="class_o_s_p_f_a_s_external_l_s_a.html#a34f5913c38930cb4098b1b5b2ceca1bb">getContents</a>().<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#a407f4083d2a244a845b23b5e9f8d5aa1">getExternalTOSInfoArraySize</a>() * <a class="code" href="_o_s_p_fcommon_8h.html#afc6c43974744735f549c9a67f59f517a">OSPF_ASEXTERNALLSA_TOS_INFO_LENGTH</a>));
 }
 </pre></div>
 </div>
@@ -239,8 +242,6 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_l_s_a_8h_source.html#l00224">224</a> of file <a class="el" href="_l_s_a_8h_source.html">LSA.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">return</span> (!(leftOptions == rightOptions));
 }
@@ -271,8 +272,6 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_l_s_a_8h_source.html#l00236">236</a> of file <a class="el" href="_l_s_a_8h_source.html">LSA.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">return</span> (!(leftHop == rightHop));
 }
@@ -298,38 +297,32 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [inline]</code></td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns true if leftLSA is older than rightLSA. </p>
 
-<p>Definition at line <a class="el" href="_l_s_a_8h_source.html#l00160">160</a> of file <a class="el" href="_l_s_a_8h_source.html">LSA.h</a>.</p>
+<p>Returns true if leftLSA is older than rightLSA. </p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordtype">long</span> leftSequenceNumber  = leftLSA.<a class="code" href="class_o_s_p_f_l_s_a_header.html#aa1fa1df57d84e20fef93e765a587ff1c">getLsSequenceNumber</a>();
+    <span class="keywordtype">long</span> leftSequenceNumber = leftLSA.<a class="code" href="class_o_s_p_f_l_s_a_header.html#aa1fa1df57d84e20fef93e765a587ff1c">getLsSequenceNumber</a>();
     <span class="keywordtype">long</span> rightSequenceNumber = rightLSA.<a class="code" href="class_o_s_p_f_l_s_a_header.html#aa1fa1df57d84e20fef93e765a587ff1c">getLsSequenceNumber</a>();
 
     <span class="keywordflow">if</span> (leftSequenceNumber &lt; rightSequenceNumber) {
         <span class="keywordflow">return</span> <span class="keyword">true</span>;
     }
     <span class="keywordflow">if</span> (leftSequenceNumber == rightSequenceNumber) {
-        <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> leftChecksum  = leftLSA.<a class="code" href="class_o_s_p_f_l_s_a_header.html#a4ca8e821a78288c99c30ea91932b41d7">getLsChecksum</a>();
-        <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> rightChecksum = rightLSA.<a class="code" href="class_o_s_p_f_l_s_a_header.html#a4ca8e821a78288c99c30ea91932b41d7">getLsChecksum</a>();
+        <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> leftAge = leftLSA.<a class="code" href="class_o_s_p_f_l_s_a_header.html#abfa986a01e651197c287f6ee1898e1a5">getLsAge</a>();
+        <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> rightAge = rightLSA.<a class="code" href="class_o_s_p_f_l_s_a_header.html#abfa986a01e651197c287f6ee1898e1a5">getLsAge</a>();
 
-        <span class="keywordflow">if</span> (leftChecksum &lt; rightChecksum) {
+        <span class="keywordflow">if</span> ((leftAge != <a class="code" href="_o_s_p_fcommon_8h.html#a22c87c874ff5382c5d082b860110e363">MAX_AGE</a>) &amp;&amp; (rightAge == <a class="code" href="_o_s_p_fcommon_8h.html#a22c87c874ff5382c5d082b860110e363">MAX_AGE</a>)) {
             <span class="keywordflow">return</span> <span class="keyword">true</span>;
         }
-        <span class="keywordflow">if</span> (leftChecksum == rightChecksum) {
-            <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> leftAge  = leftLSA.<a class="code" href="class_o_s_p_f_l_s_a_header.html#abfa986a01e651197c287f6ee1898e1a5">getLsAge</a>();
-            <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> rightAge = rightLSA.<a class="code" href="class_o_s_p_f_l_s_a_header.html#abfa986a01e651197c287f6ee1898e1a5">getLsAge</a>();
-
-            <span class="keywordflow">if</span> ((leftAge != <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a22c87c874ff5382c5d082b860110e363">MAX_AGE</a>) &amp;&amp; (rightAge == <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a22c87c874ff5382c5d082b860110e363">MAX_AGE</a>)) {
-                <span class="keywordflow">return</span> <span class="keyword">true</span>;
-            }
-            <span class="keywordflow">if</span> ((abs(leftAge - rightAge) &gt; <a class="code" href="_ansa_o_s_p_fcommon_8h.html#af887400b0d563a9bc5b4e9345bba8879">MAX_AGE_DIFF</a>) &amp;&amp; (leftAge &gt; rightAge)) {
-                <span class="keywordflow">return</span> <span class="keyword">true</span>;
-            }
+        <span class="keywordflow">if</span> ((leftAge == <a class="code" href="_o_s_p_fcommon_8h.html#a22c87c874ff5382c5d082b860110e363">MAX_AGE</a>) &amp;&amp; (rightAge != <a class="code" href="_o_s_p_fcommon_8h.html#a22c87c874ff5382c5d082b860110e363">MAX_AGE</a>)) {
+            <span class="keywordflow">return</span> <span class="keyword">false</span>;
+        }
+        <span class="keywordflow">if</span> ((abs(leftAge - rightAge) &gt; <a class="code" href="_o_s_p_fcommon_8h.html#af887400b0d563a9bc5b4e9345bba8879">MAX_AGE_DIFF</a>) &amp;&amp; (leftAge &gt; rightAge)) {
+            <span class="keywordflow">return</span> <span class="keyword">true</span>;
         }
     }
     <span class="keywordflow">return</span> <span class="keyword">false</span>;
@@ -337,7 +330,7 @@ Functions</h2></td></tr>
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a64deb2407c19596487a4193af4082231"></a><!-- doxytag: member="LSA.h::operator&lt;&lt;" ref="a64deb2407c19596487a4193af4082231" args="(std::ostream &amp;ostr, OSPFLSA &amp;lsa)" -->
+<a class="anchor" id="a9dfa83836efe6cd0af771a3966b40783"></a><!-- doxytag: member="LSA.h::operator&lt;&lt;" ref="a9dfa83836efe6cd0af771a3966b40783" args="(std::ostream &amp;ostr, const OSPFLSA &amp;lsa)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -350,7 +343,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_o_s_p_f_l_s_a.html">OSPFLSA</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_o_s_p_f_l_s_a.html">OSPFLSA</a> &amp;&#160;</td>
           <td class="paramname"><em>lsa</em>&#160;</td>
         </tr>
         <tr>
@@ -361,10 +354,292 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_l_s_a_8h_source.html#l00294">294</a> of file <a class="el" href="_l_s_a_8h_source.html">LSA.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="_ansa_l_s_a_8h.html#a44d2835f9421021b7eee669af9c4cb98">PrintLSAHeader</a>(lsa.<a class="code" href="class_o_s_p_f_l_s_a.html#a2c9acdc68e5e66deb1826ee41a07b7d1">getHeader</a>(), ostr);
+    <a class="code" href="_l_s_a_8cc.html#ae1f066afa14cb1ebfdf1f7370b5ee8dd">printLSAHeader</a>(lsa.<a class="code" href="class_o_s_p_f_l_s_a.html#a2c9acdc68e5e66deb1826ee41a07b7d1">getHeader</a>(), ostr);
+    <span class="keywordflow">return</span> ostr;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a29615eed24c608b40f5c0316348e591b"></a><!-- doxytag: member="LSA.h::operator&lt;&lt;" ref="a29615eed24c608b40f5c0316348e591b" args="(std::ostream &amp;ostr, const OSPFNetworkLSA &amp;lsa)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>ostr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_o_s_p_f_network_l_s_a.html">OSPFNetworkLSA</a> &amp;&#160;</td>
+          <td class="paramname"><em>lsa</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+    ostr &lt;&lt; <span class="stringliteral">&quot;Mask: &quot;</span> &lt;&lt; lsa.<a class="code" href="class_o_s_p_f_network_l_s_a.html#a435561dcb45638c0afe85450ff762a1c">getNetworkMask</a>();
+    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> cnt = lsa.<a class="code" href="class_o_s_p_f_network_l_s_a.html#a50154f7e76b77b626d057dc52b819bb0">getAttachedRoutersArraySize</a>();
+    <span class="keywordflow">if</span> (cnt) {
+        ostr &lt;&lt; <span class="stringliteral">&quot;, Attached routers:&quot;</span>;
+        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; cnt; i++) {
+            ostr &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; lsa.<a class="code" href="class_o_s_p_f_network_l_s_a.html#a756b8271b5b5d08a1ad60eebadffff82">getAttachedRouters</a>(i);
+        }
+    }
+    ostr &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;
+    <a class="code" href="_l_s_a_8cc.html#ae1f066afa14cb1ebfdf1f7370b5ee8dd">printLSAHeader</a>(lsa.<a class="code" href="class_o_s_p_f_l_s_a.html#a2c9acdc68e5e66deb1826ee41a07b7d1">getHeader</a>(), ostr);
+    <span class="keywordflow">return</span> ostr;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a961e7adb70547323879e084603c25cda"></a><!-- doxytag: member="LSA.h::operator&lt;&lt;" ref="a961e7adb70547323879e084603c25cda" args="(std::ostream &amp;ostr, const TOSData &amp;tos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>ostr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_t_o_s_data.html">TOSData</a> &amp;&#160;</td>
+          <td class="paramname"><em>tos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+    ostr &lt;&lt; <span class="stringliteral">&quot;tos: &quot;</span> &lt;&lt; (int) tos.<a class="code" href="struct_t_o_s_data.html#ab4c8735860c5405b84f24f1ebe2cdeb7">tos</a>
+         &lt;&lt; <span class="stringliteral">&quot;metric:&quot;</span>;
+    for (<span class="keywordtype">int</span> i=0; i&lt;3; i++) ostr &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; (<span class="keywordtype">int</span>)tos.<a class="code" href="struct_t_o_s_data.html#afef7e9672f68fbd7bf8d4e63f01efc3c">tosMetric</a>[i];
+    <span class="keywordflow">return</span> ostr;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a58097472ae354745307f0ec315f2c132"></a><!-- doxytag: member="LSA.h::operator&lt;&lt;" ref="a58097472ae354745307f0ec315f2c132" args="(std::ostream &amp;ostr, const Link &amp;link)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>ostr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_link.html">Link</a> &amp;&#160;</td>
+          <td class="paramname"><em>link</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+    ostr &lt;&lt; <span class="stringliteral">&quot;ID: &quot;</span> &lt;&lt; link.<a class="code" href="class_link.html#a75f03603367491f1b196f12bf48ae632">getLinkID</a>().<a class="code" href="class_i_pv4_address.html#ac6c9eedd7d88e27a22d620c023a2c309" title="Returns the string representation of the address (e.g.">str</a>(<span class="keyword">false</span>)
+         &lt;&lt; <span class="stringliteral">&quot;, data: &quot;</span>;
+    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> data = link.<a class="code" href="class_link.html#a12a8fd313e13f9bcdd588b1992b0c08a">getLinkData</a>();
+    <span class="keywordflow">if</span> ((data &amp; 0xFF000000) != 0)
+        ostr &lt;&lt; <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a>(data).<a class="code" href="class_i_pv4_address.html#ac6c9eedd7d88e27a22d620c023a2c309" title="Returns the string representation of the address (e.g.">str</a>(<span class="keyword">false</span>);
+    <span class="keywordflow">else</span>
+        ostr &lt;&lt; data;
+    ostr &lt;&lt; <span class="stringliteral">&quot;, cost: &quot;</span> &lt;&lt; link.<a class="code" href="class_link.html#a2805093b3a4c1122c97de738811ee76c">getLinkCost</a>();
+    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> cnt = link.<a class="code" href="class_link.html#acba4593e39ddf1deef479469b0ac54d4">getTosDataArraySize</a>();
+    <span class="keywordflow">if</span> (cnt)
+    {
+        ostr &lt;&lt; <span class="stringliteral">&quot;, tos: {&quot;</span>;
+        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; cnt; i++) {
+            ostr &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; link.<a class="code" href="class_link.html#a0be1dcf9558b224370ab2653583770e9">getTosData</a>(i);
+        }
+        ostr &lt;&lt; <span class="stringliteral">&quot;}&quot;</span>;
+    }
+    <span class="keywordflow">return</span> ostr;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ac373467bd1c319f168ee021d957da487"></a><!-- doxytag: member="LSA.h::operator&lt;&lt;" ref="ac373467bd1c319f168ee021d957da487" args="(std::ostream &amp;ostr, const OSPFRouterLSA &amp;lsa)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>ostr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_o_s_p_f_router_l_s_a.html">OSPFRouterLSA</a> &amp;&#160;</td>
+          <td class="paramname"><em>lsa</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> (lsa.<a class="code" href="class_o_s_p_f_router_l_s_a.html#a74770ef3b0c2678ccb33a236cedcfcc3">getV_VirtualLinkEndpoint</a>()) ostr &lt;&lt; <span class="stringliteral">&quot;V, &quot;</span>;
+    <span class="keywordflow">if</span> (lsa.<a class="code" href="class_o_s_p_f_router_l_s_a.html#a22400cd3947a21b087fdbd0fecc5b3ce">getE_ASBoundaryRouter</a>()) ostr &lt;&lt; <span class="stringliteral">&quot;E, &quot;</span>;
+    <span class="keywordflow">if</span> (lsa.<a class="code" href="class_o_s_p_f_router_l_s_a.html#aa77e2d2e1392414b8bd5a15d0450952f">getB_AreaBorderRouter</a>()) ostr &lt;&lt; <span class="stringliteral">&quot;B, &quot;</span>;
+    ostr &lt;&lt; <span class="stringliteral">&quot;numberOfLinks: &quot;</span> &lt;&lt; lsa.<a class="code" href="class_o_s_p_f_router_l_s_a.html#a0d1e50fe0f51e4d2b6e0044b4bbc5ee3">getNumberOfLinks</a>() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;
+    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> cnt = lsa.<a class="code" href="class_o_s_p_f_router_l_s_a.html#a65d69daaf585899cc5b125c057e1eb97">getLinksArraySize</a>();
+    <span class="keywordflow">if</span> (cnt) {
+        ostr &lt;&lt; <span class="stringliteral">&quot;Links: {&quot;</span>;
+        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; cnt; i++){
+            ostr &lt;&lt; <span class="stringliteral">&quot; {&quot;</span> &lt;&lt; lsa.<a class="code" href="class_o_s_p_f_router_l_s_a.html#a8efa6eb271aaf62a4062a16156819db5">getLinks</a>(i) &lt;&lt; <span class="stringliteral">&quot;}&quot;</span>;
+        }
+        ostr &lt;&lt; <span class="stringliteral">&quot;}, &quot;</span>;
+    }
+    <a class="code" href="_l_s_a_8cc.html#ae1f066afa14cb1ebfdf1f7370b5ee8dd">printLSAHeader</a>(lsa.<a class="code" href="class_o_s_p_f_l_s_a.html#a2c9acdc68e5e66deb1826ee41a07b7d1">getHeader</a>(), ostr);
+    <span class="keywordflow">return</span> ostr;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a460635a7fa3ff4cfb1787de1bd9e6e6f"></a><!-- doxytag: member="LSA.h::operator&lt;&lt;" ref="a460635a7fa3ff4cfb1787de1bd9e6e6f" args="(std::ostream &amp;ostr, const OSPFSummaryLSA &amp;lsa)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>ostr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_o_s_p_f_summary_l_s_a.html">OSPFSummaryLSA</a> &amp;&#160;</td>
+          <td class="paramname"><em>lsa</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+    ostr &lt;&lt; <span class="stringliteral">&quot;Mask: &quot;</span> &lt;&lt; lsa.<a class="code" href="class_o_s_p_f_summary_l_s_a.html#a98fe2d75fb7cbb6b0c048bb87407eaf7">getNetworkMask</a>()
+         &lt;&lt; <span class="stringliteral">&quot;, Cost: &quot;</span> &lt;&lt; lsa.<a class="code" href="class_o_s_p_f_summary_l_s_a.html#a35b052e8b5bab0e322903740f2aad05e">getRouteCost</a>() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;
+    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> cnt = lsa.<a class="code" href="class_o_s_p_f_summary_l_s_a.html#acc47f20ed9828b2b92cfb9f6710f4e34">getTosDataArraySize</a>();
+    <span class="keywordflow">if</span> (cnt) {
+        ostr &lt;&lt; <span class="stringliteral">&quot;, tosData: {&quot;</span>;
+        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; cnt; i++) {
+            ostr &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; lsa.<a class="code" href="class_o_s_p_f_summary_l_s_a.html#a5c42b54450fd4e5b52058454938b6c8c">getTosData</a>(i);
+        }
+        ostr &lt;&lt; <span class="stringliteral">&quot;}, &quot;</span>;
+    }
+    <a class="code" href="_l_s_a_8cc.html#ae1f066afa14cb1ebfdf1f7370b5ee8dd">printLSAHeader</a>(lsa.<a class="code" href="class_o_s_p_f_l_s_a.html#a2c9acdc68e5e66deb1826ee41a07b7d1">getHeader</a>(), ostr);
+    <span class="keywordflow">return</span> ostr;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a14f6564b912a7f27087d955bcb3a4827"></a><!-- doxytag: member="LSA.h::operator&lt;&lt;" ref="a14f6564b912a7f27087d955bcb3a4827" args="(std::ostream &amp;ostr, const ExternalTOSInfo &amp;tos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>ostr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_external_t_o_s_info.html">ExternalTOSInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>tos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+    ostr &lt;&lt; <span class="stringliteral">&quot;TOSData: {&quot;</span> &lt;&lt; tos.<a class="code" href="struct_external_t_o_s_info.html#ac5a584db6debc7a7a5410e4717223a19">tosData</a>
+         &lt;&lt; <span class="stringliteral">&quot;}, MetricType: &quot;</span> &lt;&lt; tos.<a class="code" href="struct_external_t_o_s_info.html#ade5932ffc98c64f15c05c682a10eb512">E_ExternalMetricType</a>
+         &lt;&lt; <span class="stringliteral">&quot;, fwAddr: &quot;</span> &lt;&lt; tos.<a class="code" href="struct_external_t_o_s_info.html#a4617a0118f3874347dd792ee9565599e">forwardingAddress</a>
+         &lt;&lt; <span class="stringliteral">&quot;, extRouteTag: &quot;</span> &lt;&lt; tos.<a class="code" href="struct_external_t_o_s_info.html#a3015056f29cc931af8759413d5ae76ab">externalRouteTag</a>;
+    <span class="keywordflow">return</span> ostr;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a0e391065cf7dca6764dccde0af33f5e2"></a><!-- doxytag: member="LSA.h::operator&lt;&lt;" ref="a0e391065cf7dca6764dccde0af33f5e2" args="(std::ostream &amp;ostr, const OSPFASExternalLSA &amp;lsa)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>ostr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_o_s_p_f_a_s_external_l_s_a.html">OSPFASExternalLSA</a> &amp;&#160;</td>
+          <td class="paramname"><em>lsa</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+    <span class="keyword">const</span> <a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html" title="Class generated from networklayer/ospfv2/OSPFPacket.msg by opp_msgc.">OSPFASExternalLSAContents</a>&amp; contents = lsa.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a.html#a34f5913c38930cb4098b1b5b2ceca1bb">getContents</a>();
+    ostr &lt;&lt; <span class="stringliteral">&quot;Mask: &quot;</span> &lt;&lt; contents.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#a6a0d7bdb279abb7fa1a3d44622c0ff60">getNetworkMask</a>()
+         &lt;&lt; <span class="stringliteral">&quot;, Cost: &quot;</span> &lt;&lt; contents.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#a9158b3adccf5864d8806813976f44b38">getRouteCost</a>()
+         &lt;&lt; <span class="stringliteral">&quot;, MetricType: &quot;</span> &lt;&lt; contents.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#a516562d1adb3fa4b65131d826a93de4c">getE_ExternalMetricType</a>()
+         &lt;&lt; <span class="stringliteral">&quot;, Forward: &quot;</span> &lt;&lt; contents.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#abaad1cfc2a0d75cd20c7bb449c999b87">getForwardingAddress</a>()
+         &lt;&lt; <span class="stringliteral">&quot;, ExtRouteTag: &quot;</span> &lt;&lt; contents.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#ad63c56a13aea3fa510bf3f7e3e30b796">getExternalRouteTag</a>()
+         &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;
+    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> cnt = contents.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#a407f4083d2a244a845b23b5e9f8d5aa1">getExternalTOSInfoArraySize</a>();
+    <span class="keywordflow">if</span> (cnt) {
+        ostr &lt;&lt; <span class="stringliteral">&quot;, tosData: {&quot;</span>;
+        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0; i &lt; cnt; i++) {
+            ostr &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; contents.<a class="code" href="class_o_s_p_f_a_s_external_l_s_a_contents.html#ac97f3e477e572231949e4bf0115b9502">getExternalTOSInfo</a>(i);
+        }
+        ostr &lt;&lt; <span class="stringliteral">&quot;}, &quot;</span>;
+    }
+    <a class="code" href="_l_s_a_8cc.html#ae1f066afa14cb1ebfdf1f7370b5ee8dd">printLSAHeader</a>(lsa.<a class="code" href="class_o_s_p_f_l_s_a.html#a2c9acdc68e5e66deb1826ee41a07b7d1">getHeader</a>(), ostr);
     <span class="keywordflow">return</span> ostr;
 }
 </pre></div>
@@ -389,27 +664,23 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [inline]</code></td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns true if leftLSA is the same age as rightLSA. </p>
 
-<p>Definition at line <a class="el" href="_l_s_a_8h_source.html#l00193">193</a> of file <a class="el" href="_l_s_a_8h_source.html">LSA.h</a>.</p>
+<p>Returns true if leftLSA is the same age as rightLSA. </p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordtype">long</span>           leftSequenceNumber  = leftLSA.<a class="code" href="class_o_s_p_f_l_s_a_header.html#aa1fa1df57d84e20fef93e765a587ff1c">getLsSequenceNumber</a>();
+    <span class="keywordtype">long</span>           leftSequenceNumber = leftLSA.<a class="code" href="class_o_s_p_f_l_s_a_header.html#aa1fa1df57d84e20fef93e765a587ff1c">getLsSequenceNumber</a>();
     <span class="keywordtype">long</span>           rightSequenceNumber = rightLSA.<a class="code" href="class_o_s_p_f_l_s_a_header.html#aa1fa1df57d84e20fef93e765a587ff1c">getLsSequenceNumber</a>();
-    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> leftChecksum        = leftLSA.<a class="code" href="class_o_s_p_f_l_s_a_header.html#a4ca8e821a78288c99c30ea91932b41d7">getLsChecksum</a>();
-    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> rightChecksum       = rightLSA.<a class="code" href="class_o_s_p_f_l_s_a_header.html#a4ca8e821a78288c99c30ea91932b41d7">getLsChecksum</a>();
-    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> leftAge             = leftLSA.<a class="code" href="class_o_s_p_f_l_s_a_header.html#abfa986a01e651197c287f6ee1898e1a5">getLsAge</a>();
-    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> rightAge            = rightLSA.<a class="code" href="class_o_s_p_f_l_s_a_header.html#abfa986a01e651197c287f6ee1898e1a5">getLsAge</a>();
+    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> leftAge = leftLSA.<a class="code" href="class_o_s_p_f_l_s_a_header.html#abfa986a01e651197c287f6ee1898e1a5">getLsAge</a>();
+    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> rightAge = rightLSA.<a class="code" href="class_o_s_p_f_l_s_a_header.html#abfa986a01e651197c287f6ee1898e1a5">getLsAge</a>();
 
     <span class="keywordflow">if</span> ((leftSequenceNumber == rightSequenceNumber) &amp;&amp;
-        (leftChecksum == rightChecksum) &amp;&amp;
-        (((leftAge == <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a22c87c874ff5382c5d082b860110e363">MAX_AGE</a>) &amp;&amp; (rightAge == <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a22c87c874ff5382c5d082b860110e363">MAX_AGE</a>)) ||
-         (((leftAge != <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a22c87c874ff5382c5d082b860110e363">MAX_AGE</a>) &amp;&amp; (rightAge != <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a22c87c874ff5382c5d082b860110e363">MAX_AGE</a>)) &amp;&amp;
-          (abs(leftAge - rightAge) &lt;= <a class="code" href="_ansa_o_s_p_fcommon_8h.html#af887400b0d563a9bc5b4e9345bba8879">MAX_AGE_DIFF</a>))))
+        (((leftAge == <a class="code" href="_o_s_p_fcommon_8h.html#a22c87c874ff5382c5d082b860110e363">MAX_AGE</a>) &amp;&amp; (rightAge == <a class="code" href="_o_s_p_fcommon_8h.html#a22c87c874ff5382c5d082b860110e363">MAX_AGE</a>)) ||
+         (((leftAge != <a class="code" href="_o_s_p_fcommon_8h.html#a22c87c874ff5382c5d082b860110e363">MAX_AGE</a>) &amp;&amp; (rightAge != <a class="code" href="_o_s_p_fcommon_8h.html#a22c87c874ff5382c5d082b860110e363">MAX_AGE</a>)) &amp;&amp;
+          (abs(leftAge - rightAge) &lt;= <a class="code" href="_o_s_p_fcommon_8h.html#af887400b0d563a9bc5b4e9345bba8879">MAX_AGE_DIFF</a>))))
     {
         <span class="keywordflow">return</span> <span class="keyword">true</span>;
     }
@@ -439,19 +710,17 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [inline]</code></td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_l_s_a_8h_source.html#l00215">215</a> of file <a class="el" href="_l_s_a_8h_source.html">LSA.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">return</span> ((leftOptions.<a class="code" href="struct_o_s_p_f_options.html#ae52711a2db18ba8c2c34ffbb9ac162e9">E_ExternalRoutingCapability</a> == rightOptions.<a class="code" href="struct_o_s_p_f_options.html#ae52711a2db18ba8c2c34ffbb9ac162e9">E_ExternalRoutingCapability</a>) &amp;&amp;
-            (leftOptions.<a class="code" href="struct_o_s_p_f_options.html#a45e089e5fc5f4a6b0a45a05e1b28f5b4">MC_MulticastForwarding</a>      == rightOptions.<a class="code" href="struct_o_s_p_f_options.html#a45e089e5fc5f4a6b0a45a05e1b28f5b4">MC_MulticastForwarding</a>) &amp;&amp;
-            (leftOptions.<a class="code" href="struct_o_s_p_f_options.html#a0e0ef0d09962db76af0d7b9b27ad8aeb">NP_Type7LSA</a>                 == rightOptions.<a class="code" href="struct_o_s_p_f_options.html#a0e0ef0d09962db76af0d7b9b27ad8aeb">NP_Type7LSA</a>) &amp;&amp;
-            (leftOptions.<a class="code" href="struct_o_s_p_f_options.html#aeba376f1712dbc675521892970764cb6">EA_ForwardExternalLSAs</a>      == rightOptions.<a class="code" href="struct_o_s_p_f_options.html#aeba376f1712dbc675521892970764cb6">EA_ForwardExternalLSAs</a>) &amp;&amp;
-            (leftOptions.<a class="code" href="struct_o_s_p_f_options.html#a6cd37e8fea12205fa42876add94af33c">DC_DemandCircuits</a>           == rightOptions.<a class="code" href="struct_o_s_p_f_options.html#a6cd37e8fea12205fa42876add94af33c">DC_DemandCircuits</a>));
+            (leftOptions.<a class="code" href="struct_o_s_p_f_options.html#a45e089e5fc5f4a6b0a45a05e1b28f5b4">MC_MulticastForwarding</a> == rightOptions.<a class="code" href="struct_o_s_p_f_options.html#a45e089e5fc5f4a6b0a45a05e1b28f5b4">MC_MulticastForwarding</a>) &amp;&amp;
+            (leftOptions.<a class="code" href="struct_o_s_p_f_options.html#a0e0ef0d09962db76af0d7b9b27ad8aeb">NP_Type7LSA</a> == rightOptions.<a class="code" href="struct_o_s_p_f_options.html#a0e0ef0d09962db76af0d7b9b27ad8aeb">NP_Type7LSA</a>) &amp;&amp;
+            (leftOptions.<a class="code" href="struct_o_s_p_f_options.html#aeba376f1712dbc675521892970764cb6">EA_ForwardExternalLSAs</a> == rightOptions.<a class="code" href="struct_o_s_p_f_options.html#aeba376f1712dbc675521892970764cb6">EA_ForwardExternalLSAs</a>) &amp;&amp;
+            (leftOptions.<a class="code" href="struct_o_s_p_f_options.html#a6cd37e8fea12205fa42876add94af33c">DC_DemandCircuits</a> == rightOptions.<a class="code" href="struct_o_s_p_f_options.html#a6cd37e8fea12205fa42876add94af33c">DC_DemandCircuits</a>));
 }
 </pre></div>
 </div>
@@ -480,22 +749,20 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_l_s_a_8h_source.html#l00229">229</a> of file <a class="el" href="_l_s_a_8h_source.html">LSA.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> ((leftHop.<a class="code" href="struct_o_s_p_f_1_1_next_hop.html#a39285f02ad3dc64d7b4869d3d07dafd7">ifIndex</a>           == rightHop.<a class="code" href="struct_o_s_p_f_1_1_next_hop.html#a39285f02ad3dc64d7b4869d3d07dafd7">ifIndex</a>) &amp;&amp;
-            (leftHop.<a class="code" href="struct_o_s_p_f_1_1_next_hop.html#ad93bc896458c9a36a7a2510ed44a0356">hopAddress</a>        == rightHop.<a class="code" href="struct_o_s_p_f_1_1_next_hop.html#ad93bc896458c9a36a7a2510ed44a0356">hopAddress</a>) &amp;&amp;
+    <span class="keywordflow">return</span> ((leftHop.<a class="code" href="struct_o_s_p_f_1_1_next_hop.html#ac6ca6194f51dfb70544a3c51c25690e0">ifIndex</a> == rightHop.<a class="code" href="struct_o_s_p_f_1_1_next_hop.html#ac6ca6194f51dfb70544a3c51c25690e0">ifIndex</a>) &amp;&amp;
+            (leftHop.<a class="code" href="struct_o_s_p_f_1_1_next_hop.html#ad93bc896458c9a36a7a2510ed44a0356">hopAddress</a> == rightHop.<a class="code" href="struct_o_s_p_f_1_1_next_hop.html#ad93bc896458c9a36a7a2510ed44a0356">hopAddress</a>) &amp;&amp;
             (leftHop.<a class="code" href="struct_o_s_p_f_1_1_next_hop.html#a8129ab4ea58affbb888039901cd7b311">advertisingRouter</a> == rightHop.<a class="code" href="struct_o_s_p_f_1_1_next_hop.html#a8129ab4ea58affbb888039901cd7b311">advertisingRouter</a>));
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a44d2835f9421021b7eee669af9c4cb98"></a><!-- doxytag: member="LSA.h::PrintLSAHeader" ref="a44d2835f9421021b7eee669af9c4cb98" args="(const OSPFLSAHeader &amp;lsaHeader, std::ostream &amp;output)" -->
+<a class="anchor" id="ae1f066afa14cb1ebfdf1f7370b5ee8dd"></a><!-- doxytag: member="LSA.h::printLSAHeader" ref="ae1f066afa14cb1ebfdf1f7370b5ee8dd" args="(const OSPFLSAHeader &amp;lsaHeader, std::ostream &amp;output)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="_l_s_a_8h.html#a44d2835f9421021b7eee669af9c4cb98">PrintLSAHeader</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="_l_s_a_8h.html#ae1f066afa14cb1ebfdf1f7370b5ee8dd">printLSAHeader</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_o_s_p_f_l_s_a_header.html">OSPFLSAHeader</a> &amp;&#160;</td>
           <td class="paramname"><em>lsaHeader</em>, </td>
@@ -509,32 +776,27 @@ Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td><code> [inline]</code></td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_l_s_a_8h_source.html#l00272">272</a> of file <a class="el" href="_l_s_a_8h_source.html">LSA.h</a>.</p>
-<div class="fragment"><pre class="fragment">                                                                               {
-    <span class="keywordtype">char</span> addressString[16];
-    output &lt;&lt; <span class="stringliteral">&quot;LSAHeader: age=&quot;</span>
-           &lt;&lt; lsaHeader.<a class="code" href="class_o_s_p_f_l_s_a_header.html#abfa986a01e651197c287f6ee1898e1a5">getLsAge</a>()
+<p>Referenced by <a class="el" href="_l_s_a_8h.html#a29615eed24c608b40f5c0316348e591b">operator&lt;&lt;()</a>, <a class="el" href="class_o_s_p_f_1_1_message_handler.html#a721567b90fb1b083b4972c628b43abc8">OSPF::MessageHandler::printDatabaseDescriptionPacket()</a>, <a class="el" href="class_o_s_p_f_1_1_message_handler.html#a4e222a812448aaf6bb5992208fe2bb6d">OSPF::MessageHandler::printLinkStateAcknowledgementPacket()</a>, <a class="el" href="class_o_s_p_f_1_1_message_handler.html#a7e2eb4d927d3307e07f5bea9a5076f4a">OSPF::MessageHandler::printLinkStateUpdatePacket()</a>, <a class="el" href="class_o_s_p_f_1_1_database_description_handler.html#afea4258f973f96c387fe54d10b2af52b">OSPF::DatabaseDescriptionHandler::processDDPacket()</a>, <a class="el" href="class_o_s_p_f_1_1_link_state_acknowledgement_handler.html#ae20b3c96ccfc2816c04a64433f22927d">OSPF::LinkStateAcknowledgementHandler::processPacket()</a>, and <a class="el" href="class_o_s_p_f_1_1_link_state_update_handler.html#a6f286c4986b918d12fd620a422e471aa">OSPF::LinkStateUpdateHandler::processPacket()</a>.</p>
+<div class="fragment"><pre class="fragment">                                                                        {
+    output &lt;&lt; <span class="stringliteral">&quot;LSAHeader: age=&quot;</span> &lt;&lt; lsaHeader.<a class="code" href="class_o_s_p_f_l_s_a_header.html#abfa986a01e651197c287f6ee1898e1a5">getLsAge</a>()
            &lt;&lt; <span class="stringliteral">&quot;, type=&quot;</span>;
     <span class="keywordflow">switch</span> (lsaHeader.<a class="code" href="class_o_s_p_f_l_s_a_header.html#a5ec5eaa7d91ea4e1447766fe076d7207">getLsType</a>()) {
-        <span class="keywordflow">case</span> <a class="code" href="_o_s_p_f_packet__m_8h.html#a13a450dbb578c4bd7714af8581c4f89baf0d156f2d439c02650ae0bb67f9385d9">RouterLSAType</a>:                     output &lt;&lt; <span class="stringliteral">&quot;RouterLSA&quot;</span>;                     <span class="keywordflow">break</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_o_s_p_f_packet__m_8h.html#a13a450dbb578c4bd7714af8581c4f89ba872178b0c61ee0bd5c16db015e98b396">NetworkLSAType</a>:                    output &lt;&lt; <span class="stringliteral">&quot;NetworkLSA&quot;</span>;                    <span class="keywordflow">break</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_o_s_p_f_packet__m_8h.html#a13a450dbb578c4bd7714af8581c4f89ba2c45e949f7ba6ed95c10beb07aa3f4a8">SummaryLSA_NetworksType</a>:           output &lt;&lt; <span class="stringliteral">&quot;SummaryLSA_Networks&quot;</span>;           <span class="keywordflow">break</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_o_s_p_f_packet__m_8h.html#a13a450dbb578c4bd7714af8581c4f89ba44e2dd86881d83d6655cc876460308cd">SummaryLSA_ASBoundaryRoutersType</a>:  output &lt;&lt; <span class="stringliteral">&quot;SummaryLSA_ASBoundaryRouters&quot;</span>;  <span class="keywordflow">break</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_o_s_p_f_packet__m_8h.html#a13a450dbb578c4bd7714af8581c4f89ba4c38291b3c8571803e6cd756f84d0c85">ASExternalLSAType</a>:                 output &lt;&lt; <span class="stringliteral">&quot;ASExternalLSA&quot;</span>;                 <span class="keywordflow">break</span>;
-        <span class="keywordflow">default</span>:                                output &lt;&lt; <span class="stringliteral">&quot;Unknown&quot;</span>;                       <span class="keywordflow">break</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_o_s_p_f_packet__m_8h.html#a13a450dbb578c4bd7714af8581c4f89ba364c69f32e2869591f3c446a7bd206c7">ROUTERLSA_TYPE</a>:                     output &lt;&lt; <span class="stringliteral">&quot;RouterLSA&quot;</span>;                     <span class="keywordflow">break</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_o_s_p_f_packet__m_8h.html#a13a450dbb578c4bd7714af8581c4f89ba2fedfd48d61b390a26c947aebdc25b8d">NETWORKLSA_TYPE</a>:                    output &lt;&lt; <span class="stringliteral">&quot;NetworkLSA&quot;</span>;                    <span class="keywordflow">break</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_o_s_p_f_packet__m_8h.html#a13a450dbb578c4bd7714af8581c4f89baa03619205be9ea7ba0299296dbe8fa38">SUMMARYLSA_NETWORKS_TYPE</a>:           output &lt;&lt; <span class="stringliteral">&quot;SummaryLSA_Networks&quot;</span>;           <span class="keywordflow">break</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_o_s_p_f_packet__m_8h.html#a13a450dbb578c4bd7714af8581c4f89bad7e81ed4e05f467b7ca88c98f487662a">SUMMARYLSA_ASBOUNDARYROUTERS_TYPE</a>:  output &lt;&lt; <span class="stringliteral">&quot;SummaryLSA_ASBoundaryRouters&quot;</span>;  <span class="keywordflow">break</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_o_s_p_f_packet__m_8h.html#a13a450dbb578c4bd7714af8581c4f89ba5a085d8393eb69080f4819ea84627021">AS_EXTERNAL_LSA_TYPE</a>:               output &lt;&lt; <span class="stringliteral">&quot;ASExternalLSA&quot;</span>;                 <span class="keywordflow">break</span>;
+        <span class="keywordflow">default</span>:                                 output &lt;&lt; <span class="stringliteral">&quot;Unknown&quot;</span>;                       <span class="keywordflow">break</span>;
     }
-    output &lt;&lt; <span class="stringliteral">&quot;, LSID=&quot;</span>
-           &lt;&lt; <a class="code" href="_ansa_o_s_p_fcommon_8h.html#ab7c5bad44da217d3e0c37b75dfb08f98">AddressStringFromULong</a>(addressString, <span class="keyword">sizeof</span>(addressString), lsaHeader.<a class="code" href="class_o_s_p_f_l_s_a_header.html#a2f146ccaa3d51bae77fd76f429b52abe">getLinkStateID</a>());
-    output &lt;&lt; <span class="stringliteral">&quot;, advertisingRouter=&quot;</span>
-           &lt;&lt; <a class="code" href="_ansa_o_s_p_fcommon_8h.html#ab7c5bad44da217d3e0c37b75dfb08f98">AddressStringFromULong</a>(addressString, <span class="keyword">sizeof</span>(addressString), lsaHeader.<a class="code" href="class_o_s_p_f_l_s_a_header.html#a85083aabf7994ed37c3458e06337d183">getAdvertisingRouter</a>().<a class="code" href="class_i_p_address.html#a807ca46964a8403cf0c70f0772179524">getInt</a>())
-           &lt;&lt; <span class="stringliteral">&quot;, seqNumber=&quot;</span>
-           &lt;&lt; lsaHeader.<a class="code" href="class_o_s_p_f_l_s_a_header.html#aa1fa1df57d84e20fef93e765a587ff1c">getLsSequenceNumber</a>();
+    output &lt;&lt; <span class="stringliteral">&quot;, LSID=&quot;</span> &lt;&lt; lsaHeader.<a class="code" href="class_o_s_p_f_l_s_a_header.html#a5ca4d451e700f5633b917bd547433260">getLinkStateID</a>().<a class="code" href="class_i_pv4_address.html#ac6c9eedd7d88e27a22d620c023a2c309" title="Returns the string representation of the address (e.g.">str</a>(<span class="keyword">false</span>)
+           &lt;&lt; <span class="stringliteral">&quot;, advertisingRouter=&quot;</span> &lt;&lt; lsaHeader.<a class="code" href="class_o_s_p_f_l_s_a_header.html#afdeb8080774e4879f5c761fdbb1757fc">getAdvertisingRouter</a>().<a class="code" href="class_i_pv4_address.html#ac6c9eedd7d88e27a22d620c023a2c309" title="Returns the string representation of the address (e.g.">str</a>(<span class="keyword">false</span>)
+           &lt;&lt; <span class="stringliteral">&quot;, seqNumber=&quot;</span> &lt;&lt; lsaHeader.<a class="code" href="class_o_s_p_f_l_s_a_header.html#aa1fa1df57d84e20fef93e765a587ff1c">getLsSequenceNumber</a>();
     output &lt;&lt; endl;
 }
 </pre></div>
@@ -546,7 +808,7 @@ Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="_l_s_a_8h.html">LSA.h</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:46 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:21 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

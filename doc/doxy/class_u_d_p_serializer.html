@@ -81,7 +81,10 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="UDPSerializer" -->
-<p><code>#include &lt;<a class="el" href="_u_d_p_serializer_8h_source.html">UDPSerializer.h</a>&gt;</code></p>
+<p>Converts between <a class="el" href="class_u_d_p_packet.html" title="Class generated from transport/udp/UDPPacket.msg by opp_msgc.">UDPPacket</a> and binary (network byte order) <a class="el" href="class_u_d_p.html" title="Implements the UDP protocol: encapsulates/decapsulates user data into/from UDP.">UDP</a> header.  
+ <a href="class_u_d_p_serializer.html#details">More...</a></p>
+
+<p><code>#include &lt;UDPSerializer.h&gt;</code></p>
 
 <p><a href="class_u_d_p_serializer-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -89,12 +92,12 @@
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_serializer.html#aceb678993f057d550163c108da36927d">UDPSerializer</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_serializer.html#af442bc00006930edf772c9edbd3fcbc3">serialize</a> (const <a class="el" href="class_u_d_p_packet.html">UDPPacket</a> *pkt, unsigned char *buf, unsigned int bufsize)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_serializer.html#a33ac27c3de4d8176edc2ce5e0c4b087c">parse</a> (const unsigned char *buf, unsigned int bufsize, <a class="el" href="class_u_d_p_packet.html">UDPPacket</a> *pkt)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes an <a class="el" href="class_u_d_p_packet.html" title="Class generated from transport/udp/UDPPacket.msg by opp_msgc.">UDPPacket</a> for transmission on the wire.  <a href="#af442bc00006930edf772c9edbd3fcbc3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_u_d_p_serializer.html#a33ac27c3de4d8176edc2ce5e0c4b087c">parse</a> (const unsigned char *buf, unsigned int bufsize, <a class="el" href="class_u_d_p_packet.html">UDPPacket</a> *pkt)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a packet sniffed from the wire into an <a class="el" href="class_u_d_p_packet.html" title="Class generated from transport/udp/UDPPacket.msg by opp_msgc.">UDPPacket</a>.  <a href="#a33ac27c3de4d8176edc2ce5e0c4b087c"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Converts between <a class="el" href="class_u_d_p_packet.html">UDPPacket</a> and binary (network byte order) <a class="el" href="class_u_d_p.html">UDP</a> header. </p>
-
-<p>Definition at line <a class="el" href="_u_d_p_serializer_8h_source.html#l00028">28</a> of file <a class="el" href="_u_d_p_serializer_8h_source.html">UDPSerializer.h</a>.</p>
+<div class="textblock"><p>Converts between <a class="el" href="class_u_d_p_packet.html" title="Class generated from transport/udp/UDPPacket.msg by opp_msgc.">UDPPacket</a> and binary (network byte order) <a class="el" href="class_u_d_p.html" title="Implements the UDP protocol: encapsulates/decapsulates user data into/from UDP.">UDP</a> header. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aceb678993f057d550163c108da36927d"></a><!-- doxytag: member="UDPSerializer::UDPSerializer" ref="aceb678993f057d550163c108da36927d" args="()" -->
 <div class="memitem">
@@ -109,8 +112,6 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_u_d_p_serializer_8h_source.html#l00031">31</a> of file <a class="el" href="_u_d_p_serializer_8h_source.html">UDPSerializer.h</a>.</p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
@@ -121,7 +122,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_u_d_p_serializer.html#a33ac27c3de4d8176edc2ce5e0c4b087c">UDPSerializer::parse</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_u_d_p_serializer.html#a33ac27c3de4d8176edc2ce5e0c4b087c">UDPSerializer::parse</a> </td>
           <td>(</td>
           <td class="paramtype">const unsigned char *&#160;</td>
           <td class="paramname"><em>buf</em>, </td>
@@ -146,20 +147,17 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Puts a packet sniffed from the wire into an <a class="el" href="class_u_d_p_packet.html">UDPPacket</a>. </p>
 
-<p>Definition at line <a class="el" href="_u_d_p_serializer_8cc_source.html#l00053">53</a> of file <a class="el" href="_u_d_p_serializer_8cc_source.html">UDPSerializer.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_p_serializer_8cc_source.html#l00107">IPSerializer::parse()</a>.</p>
+<p>Puts a packet sniffed from the wire into an <a class="el" href="class_u_d_p_packet.html" title="Class generated from transport/udp/UDPPacket.msg by opp_msgc.">UDPPacket</a>. </p>
 <div class="fragment"><pre class="fragment">{
 
     <span class="keyword">struct </span><a class="code" href="struct_i_n_e_t_fw_1_1udphdr.html">udphdr</a> *<a class="code" href="struct_i_n_e_t_fw_1_1udphdr.html">udphdr</a> = (<span class="keyword">struct </span>udphdr*) buf;
 
-    dest-&gt;setSourcePort(ntohs(udphdr-&gt;<a class="code" href="struct_i_n_e_t_fw_1_1udphdr.html#ab8bbf67c9a04ceefd4980db520b7a822">uh_sport</a>));
-    dest-&gt;setDestinationPort(ntohs(udphdr-&gt;<a class="code" href="struct_i_n_e_t_fw_1_1udphdr.html#a79560505dfa185351e697b1578916d28">uh_dport</a>));
+    dest-&gt;setSourcePort(<a class="code" href="aodv__uu__omnet_8h.html#ada37feda716b4ba89cf9dba34288141d">ntohs</a>(udphdr-&gt;<a class="code" href="struct_i_n_e_t_fw_1_1udphdr.html#ab8bbf67c9a04ceefd4980db520b7a822">uh_sport</a>));
+    dest-&gt;setDestinationPort(<a class="code" href="aodv__uu__omnet_8h.html#ada37feda716b4ba89cf9dba34288141d">ntohs</a>(udphdr-&gt;<a class="code" href="struct_i_n_e_t_fw_1_1udphdr.html#a79560505dfa185351e697b1578916d28">uh_dport</a>));
     dest-&gt;setByteLength(8);
     cPacket *encapPacket = <span class="keyword">new</span> cPacket(<span class="stringliteral">&quot;Payload-from-wire&quot;</span>);
-    encapPacket-&gt;setByteLength(ntohs(udphdr-&gt;<a class="code" href="struct_i_n_e_t_fw_1_1udphdr.html#a3cd66635449a8a7acff3cc62e2613151">uh_ulen</a>) - <span class="keyword">sizeof</span>(<span class="keyword">struct</span> udphdr));
+    encapPacket-&gt;setByteLength(<a class="code" href="aodv__uu__omnet_8h.html#ada37feda716b4ba89cf9dba34288141d">ntohs</a>(udphdr-&gt;<a class="code" href="struct_i_n_e_t_fw_1_1udphdr.html#a3cd66635449a8a7acff3cc62e2613151">uh_ulen</a>) - <span class="keyword">sizeof</span>(<span class="keyword">struct</span> udphdr));
     dest-&gt;encapsulate(encapPacket);
     dest-&gt;setName(encapPacket-&gt;getName());
 }
@@ -196,28 +194,26 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Serializes an <a class="el" href="class_u_d_p_packet.html">UDPPacket</a> for transmission on the wire. Returns the length of data written into buffer. </p>
 
-<p>Definition at line <a class="el" href="_u_d_p_serializer_8cc_source.html#l00040">40</a> of file <a class="el" href="_u_d_p_serializer_8cc_source.html">UDPSerializer.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_p_serializer_8cc_source.html#l00057">IPSerializer::serialize()</a>.</p>
+<p>Serializes an <a class="el" href="class_u_d_p_packet.html" title="Class generated from transport/udp/UDPPacket.msg by opp_msgc.">UDPPacket</a> for transmission on the wire. </p>
+<p>Returns the length of data written into buffer. </p>
 <div class="fragment"><pre class="fragment">{
     <span class="keyword">struct </span><a class="code" href="struct_i_n_e_t_fw_1_1udphdr.html">udphdr</a> *<a class="code" href="struct_i_n_e_t_fw_1_1udphdr.html">udphdr</a> = (<span class="keyword">struct </span>udphdr *) (buf);
     <span class="keywordtype">int</span> packetLength;
 
     packetLength = pkt-&gt;getByteLength();
-    udphdr-&gt;<a class="code" href="struct_i_n_e_t_fw_1_1udphdr.html#ab8bbf67c9a04ceefd4980db520b7a822">uh_sport</a> = htons(pkt-&gt;<a class="code" href="class_u_d_p_packet.html#a1e3c1f0aef8672ba75277dc6733962e0">getSourcePort</a>());
-    udphdr-&gt;<a class="code" href="struct_i_n_e_t_fw_1_1udphdr.html#a79560505dfa185351e697b1578916d28">uh_dport</a> = htons(pkt-&gt;<a class="code" href="class_u_d_p_packet.html#a6bdf0821eb52e39c4e44ab619226645d">getDestinationPort</a>());
-    udphdr-&gt;<a class="code" href="struct_i_n_e_t_fw_1_1udphdr.html#a3cd66635449a8a7acff3cc62e2613151">uh_ulen</a>  = htons(packetLength);
-    udphdr-&gt;<a class="code" href="struct_i_n_e_t_fw_1_1udphdr.html#a8afa08cfb47f6f71fab36638c50fde28">uh_sum</a>   = <a class="code" href="class_t_c_p_i_pchecksum.html#af66eba27e438ce5dc9dd1dc26f6c828f">TCPIPchecksum::checksum</a>(buf, packetLength);
+    udphdr-&gt;<a class="code" href="struct_i_n_e_t_fw_1_1udphdr.html#ab8bbf67c9a04ceefd4980db520b7a822">uh_sport</a> = <a class="code" href="aodv__uu__omnet_8h.html#a51799f5ebb4c7228ef7e95c247030f42">htons</a>(pkt-&gt;<a class="code" href="class_u_d_p_packet.html#a1e3c1f0aef8672ba75277dc6733962e0">getSourcePort</a>());
+    udphdr-&gt;<a class="code" href="struct_i_n_e_t_fw_1_1udphdr.html#a79560505dfa185351e697b1578916d28">uh_dport</a> = <a class="code" href="aodv__uu__omnet_8h.html#a51799f5ebb4c7228ef7e95c247030f42">htons</a>(pkt-&gt;<a class="code" href="class_u_d_p_packet.html#a6bdf0821eb52e39c4e44ab619226645d">getDestinationPort</a>());
+    udphdr-&gt;<a class="code" href="struct_i_n_e_t_fw_1_1udphdr.html#a3cd66635449a8a7acff3cc62e2613151">uh_ulen</a> = <a class="code" href="aodv__uu__omnet_8h.html#a51799f5ebb4c7228ef7e95c247030f42">htons</a>(packetLength);
+    udphdr-&gt;<a class="code" href="struct_i_n_e_t_fw_1_1udphdr.html#a8afa08cfb47f6f71fab36638c50fde28">uh_sum</a> = <a class="code" href="class_t_c_p_i_pchecksum.html#af66eba27e438ce5dc9dd1dc26f6c828f">TCPIPchecksum::checksum</a>(buf, packetLength);
     <span class="keywordflow">return</span> packetLength;
 }
 </pre></div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_u_d_p_serializer_8h_source.html">UDPSerializer.h</a></li>
-<li><a class="el" href="_u_d_p_serializer_8cc_source.html">UDPSerializer.cc</a></li>
+<li><a class="el" href="_u_d_p_serializer_8h.html">UDPSerializer.h</a></li>
+<li><a class="el" href="_u_d_p_serializer_8cc.html">UDPSerializer.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -225,7 +221,7 @@ Public Member Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_u_d_p_serializer.html">UDPSerializer</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:54 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:32 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

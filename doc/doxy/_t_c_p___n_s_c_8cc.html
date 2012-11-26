@@ -73,19 +73,348 @@
 </script>
 <div id="doc-content">
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#define-members">Defines</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">TCP_NSC.cc File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_t_c_p___n_s_c_8h.html">TCP_NSC.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="defs_8h.html">headers/defs.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_i_pv4_control_info_8h.html">IPv4ControlInfo.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_i_pv6_control_info_8h.html">IPv6ControlInfo.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="util_2headerserializers_2tcp_2headers_2tcp_8h.html">headers/tcp.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_t_c_p_command__m_8h.html">TCPCommand_m.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_t_c_p_i_pchecksum_8h.html">TCPIPchecksum.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_t_c_p___n_s_c___queues_8h.html">TCP_NSC_Queues.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_t_c_p_segment_8h.html">TCPSegment.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_t_c_p_serializer_8h.html">TCPSerializer.h</a>&quot;</code><br/>
+<code>#include &lt;assert.h&gt;</code><br/>
+<code>#include &lt;dlfcn.h&gt;</code><br/>
+<code>#include &lt;netinet/in.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="_t_c_p___n_s_c___virtual_data_queues_8h.html">TCP_NSC_VirtualDataQueues.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_t_c_p___n_s_c___byte_stream_queues_8h.html">TCP_NSC_ByteStreamQueues.h</a>&quot;</code><br/>
+</div><table class="memberdecls">
+<tr><td colspan="2"><h2><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsc__iphdr.html">nsc_iphdr</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnsc__ipv6hdr.html">nsc_ipv6hdr</a></td></tr>
+<tr><td colspan="2"><h2><a name="define-members"></a>
+Defines</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c_8cc.html#a601325e92d65fe658c80eab711e12304">tcpEV</a>&#160;&#160;&#160;((ev.isDisabled()) || (<a class="el" href="class_t_c_p___n_s_c.html#ad3ea3b2335440046cae00957f67706a8">TCP_NSC::testingS</a>)) ? ev : ev</td></tr>
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c_8cc.html#a2c3d62356e8ec75640895b7ad2585b86">Define_Module</a> (<a class="el" href="class_t_c_p___n_s_c.html">TCP_NSC</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structnsc__iphdr.html">nsc_iphdr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c_8cc.html#a1f2005e701bf1c6386ff1d58f6cca7e3">__attribute__</a> ((packed))</td></tr>
+<tr><td colspan="2"><h2><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c_8cc.html#a6b000e4871078da77b2555e67f117cc5">ihl</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c_8cc.html#acd99bb05ca015e7d74448acb1deba7ca">version</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c_8cc.html#a3bdbe295d838b7f44e47ad5f4c3fac27">tos</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c_8cc.html#a65b0163ced0d7ce7af900910efff2898">tot_len</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c_8cc.html#a4fc3a0c58dfbd1e68224521185cb9384">id</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c_8cc.html#a98bed353dfaa38f10185538436fb1a21">frag_off</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c_8cc.html#a4d402503271315376ddf4e47674d4965">ttl</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c_8cc.html#ad124d3d2e02c729afa303c775295278e">protocol</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c_8cc.html#a0d7f4dec78a9c4400cd80618a0416c01">check</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c_8cc.html#abf10c772acb08ceb96c6432c47395562">saddr</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c_8cc.html#ac9fb74acda6412a6c8cf19bdf3c5a947">daddr</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c_8cc.html#aac56e9237129b6983e0b05acfee544fa">flow</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c_8cc.html#a6fe20edd854a1a653ae71ccf541a6b8b">ds</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c_8cc.html#a8aed22e2c7b283705ec82e0120515618">len</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c_8cc.html#a045daeeb2d6d7b5c4706eb5ca627e84c">next_header</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_t_c_p___n_s_c_8cc.html#ae967bb206e3e6ddfcde10d130338a101">hop_limit</a></td></tr>
+</table>
+<hr/><h2>Define Documentation</h2>
+<a class="anchor" id="a601325e92d65fe658c80eab711e12304"></a><!-- doxytag: member="TCP_NSC.cc::tcpEV" ref="a601325e92d65fe658c80eab711e12304" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a601325e92d65fe658c80eab711e12304">tcpEV</a>&#160;&#160;&#160;((ev.isDisabled()) || (<a class="el" href="class_t_c_p___n_s_c.html#ad3ea3b2335440046cae00957f67706a8">TCP_NSC::testingS</a>)) ? ev : ev</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
-<p><a href="_t_c_p___n_s_c_8cc_source.html">Go to the source code of this file.</a></p>
+<p>Referenced by <a class="el" href="class_t_c_p___n_s_c.html#a6ee2d00754b122f1f5fb96de86706c99">TCP_NSC::changeAddresses()</a>, <a class="el" href="class_t_c_p___n_s_c.html#aa78a2f126d46a8c89dff1638b422341e">TCP_NSC::gettime()</a>, <a class="el" href="class_t_c_p___n_s_c.html#a271ad2328a421bed7b485f5de7bc0b67">TCP_NSC::handleAppMessage()</a>, <a class="el" href="class_t_c_p___n_s_c.html#ac6f917f4260a5caca56692640438b86f">TCP_NSC::handleIpInputMessage()</a>, <a class="el" href="class_t_c_p___n_s_c.html#a90d66a5c32ae0c01b4846284c4c0fa84">TCP_NSC::handleMessage()</a>, <a class="el" href="class_t_c_p___n_s_c.html#a868350c3825eb859269f7e37242497b8">TCP_NSC::initialize()</a>, <a class="el" href="class_t_c_p___n_s_c.html#a075c5ce907fe0ed0ad33978faac8d130">TCP_NSC::loadStack()</a>, <a class="el" href="class_t_c_p___n_s_c.html#a52646ca133abd280a08fd512b4f58285">TCP_NSC::printConnBrief()</a>, <a class="el" href="class_t_c_p___n_s_c.html#a170b19a246e3a73811f5fe229d0195e8">TCP_NSC::process_ABORT()</a>, <a class="el" href="class_t_c_p___n_s_c.html#a0678225786e01923db1055f865e3edbb">TCP_NSC::process_CLOSE()</a>, <a class="el" href="class_t_c_p___n_s_c.html#adf0a1b7347ed79f572fbdb1efb4f95af">TCP_NSC::process_OPEN_ACTIVE()</a>, <a class="el" href="class_t_c_p___n_s_c.html#adb36ad0b7ab3bbcf962002e097fad318">TCP_NSC::process_OPEN_PASSIVE()</a>, <a class="el" href="class_t_c_p___n_s_c.html#a4dd3cdf4c1144ddf096004b969b24652">TCP_NSC::send_callback()</a>, <a class="el" href="class_t_c_p___n_s_c.html#ab95f395174d072737b9f1a3e978fba51">TCP_NSC::sendToIP()</a>, <a class="el" href="class_t_c_p___n_s_c.html#af20c41fdfde8337324ef6e155982c3ff">TCP_NSC::wakeup()</a>, and <a class="el" href="class_t_c_p___n_s_c.html#ad00fed74358f52fc7e0f0f787d4ea19e">TCP_NSC::~TCP_NSC()</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="a1f2005e701bf1c6386ff1d58f6cca7e3"></a><!-- doxytag: member="TCP_NSC.cc::__attribute__" ref="a1f2005e701bf1c6386ff1d58f6cca7e3" args="((packed))" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structnsc__iphdr.html">nsc_iphdr</a> <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a1f2005e701bf1c6386ff1d58f6cca7e3">__attribute__</a> </td>
+          <td>(</td>
+          <td class="paramtype">(packed)&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2c3d62356e8ec75640895b7ad2585b86"></a><!-- doxytag: member="TCP_NSC.cc::Define_Module" ref="a2c3d62356e8ec75640895b7ad2585b86" args="(TCP_NSC)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_tra_c_i_scenario_manager_launchd_8cc.html#ab47833220949e4c37ffcd53166723208">Define_Module</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_t_c_p___n_s_c.html">TCP_NSC</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<hr/><h2>Variable Documentation</h2>
+<a class="anchor" id="a0d7f4dec78a9c4400cd80618a0416c01"></a><!-- doxytag: member="TCP_NSC.cc::check" ref="a0d7f4dec78a9c4400cd80618a0416c01" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a0d7f4dec78a9c4400cd80618a0416c01">check</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ac9fb74acda6412a6c8cf19bdf3c5a947"></a><!-- doxytag: member="TCP_NSC.cc::daddr" ref="ac9fb74acda6412a6c8cf19bdf3c5a947" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#ac9fb74acda6412a6c8cf19bdf3c5a947">daddr</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6fe20edd854a1a653ae71ccf541a6b8b"></a><!-- doxytag: member="TCP_NSC.cc::ds" ref="a6fe20edd854a1a653ae71ccf541a6b8b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t <a class="el" href="_t_c_p___n_s_c_8cc.html#a6fe20edd854a1a653ae71ccf541a6b8b">ds</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_int128.html#ad83e2ae7c4d74b074e9a79befd7f4af1">Int128::div()</a>, <a class="el" href="class_uint128.html#a54b477f7690fce2d5f9541fbc31c06ee">Uint128::div()</a>, and <a class="el" href="class_net_anim_trace.html#a2bf10b6ac78fa6298d79245f82db5160">NetAnimTrace::resolveNodeCoordinates()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aac56e9237129b6983e0b05acfee544fa"></a><!-- doxytag: member="TCP_NSC.cc::flow" ref="aac56e9237129b6983e0b05acfee544fa" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t <a class="el" href="_t_c_p___n_s_c_8cc.html#aac56e9237129b6983e0b05acfee544fa">flow</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_r_s_v_p.html#af34403ca300fb9425d67e609c7bbf9a3">RSVP::createEgressRSB()</a>, <a class="el" href="class_r_s_v_p.html#ad53a7a49e12f3cc0ff339e20624406fe">RSVP::createRSB()</a>, <a class="el" href="class_r_s_v_p.html#a979b30a733d23eb33a1791d0de5d8722">RSVP::refreshResv()</a>, and <a class="el" href="class_r_s_v_p.html#a2d374e27ad177a0e0e0500deaf1affb7">RSVP::updateRSB()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a98bed353dfaa38f10185538436fb1a21"></a><!-- doxytag: member="TCP_NSC.cc::frag_off" ref="a98bed353dfaa38f10185538436fb1a21" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a98bed353dfaa38f10185538436fb1a21">frag_off</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ae967bb206e3e6ddfcde10d130338a101"></a><!-- doxytag: member="TCP_NSC.cc::hop_limit" ref="ae967bb206e3e6ddfcde10d130338a101" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t <a class="el" href="_t_c_p___n_s_c_8cc.html#ae967bb206e3e6ddfcde10d130338a101">hop_limit</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4fc3a0c58dfbd1e68224521185cb9384"></a><!-- doxytag: member="TCP_NSC.cc::id" ref="a4fc3a0c58dfbd1e68224521185cb9384" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a4fc3a0c58dfbd1e68224521185cb9384">id</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="dsr-ack_8h.html#a830f55e4bdb404837ef1d363bc813edc">dsr_ack_opt_recv()</a>, <a class="el" href="dsr-ack_8h.html#adbbdc10c94867be8969e1a408a71ad94">dsr_ack_req_opt_recv()</a>, <a class="el" href="dsr-rreq_8h.html#a501ad130feace9e28fcfa6b95391f75d">dsr_rreq_duplicate()</a>, <a class="el" href="class_tra_c_i_scenario_manager.html#a95d642465a07207304a6044cb3576dda">TraCIScenarioManager::genericGetStringList()</a>, <a class="el" href="class_macho_1_1___machine_base.html#a9cdf3cd95ada9725ecd4f058b3570e4d">Macho::_MachineBase::getInstance()</a>, <a class="el" href="class_t_c_p_dump.html#a6c6aae2b0258f57b57eef0ad10df6f5d">TCPDump::handleMessage()</a>, <a class="el" href="class_s_c_t_p_server.html#a6dbf9b85ee7abab61ac8b4bbd6cc74b6">SCTPServer::handleMessage()</a>, <a class="el" href="class_s_c_t_p_server.html#a093fe8eef5ec0367decd9a8a4a7d743b">SCTPServer::handleTimer()</a>, <a class="el" href="class_s_c_t_p_peer.html#a30ade515ec405006da67dbab04b1b127">SCTPPeer::handleTimer()</a>, <a class="el" href="maint-buf_8h.html#a28dff4b22d1e7166c227a77a926e3d67">maint_buf_del_all_id()</a>, <a class="el" href="struct_ether_m_a_c_1_1_pk_id_rx_time.html#a1a78a3bdebf5be39f395ea61d60b7cb7">EtherMAC::PkIdRxTime::PkIdRxTime()</a>, <a class="el" href="class_mo_b_a_n_coordinator.html#a31810405333b184c9db891fa9bd8a12a">MoBANCoordinator::readMobilityPatternFile()</a>, <a class="el" href="class_inet_simple_battery.html#a1953b326ef093c6e0933f335aec07c5d">InetSimpleBattery::registerDevice()</a>, <a class="el" href="dsr-rreq_8h.html#a46c732f309a815f3f430fcf29cb94118">rreq_tbl_add_id()</a>, <a class="el" href="class_s_c_t_p_send_stream.html#a85662e226d46b1d3d690fe521cfc7573">SCTPSendStream::SCTPSendStream()</a>, <a class="el" href="class_interface_entry.html#a7dd74863d391501ca83301e1f82111a6">InterfaceEntry::setInterfaceId()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor.html#a4dc2e6e989efcc4f36134cf416dc3895">OSPF::Neighbor::setNeighborID()</a>, <a class="el" href="class_o_s_p_f_1_1_router.html#ab997cc64af49534585ce56de7ba27349">OSPF::Router::setRouterID()</a>, <a class="el" href="class_s_c_t_p_receive_stream.html#aee666080c3b845aee5f48240d8a166d8">SCTPReceiveStream::setStreamId()</a>, and <a class="el" href="class_s_c_t_p_send_stream.html#a5f711176e3de3acd57f0aa3a6052f8e7">SCTPSendStream::setStreamId()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6b000e4871078da77b2555e67f117cc5"></a><!-- doxytag: member="TCP_NSC.cc::ihl" ref="a6b000e4871078da77b2555e67f117cc5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a6b000e4871078da77b2555e67f117cc5">ihl</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8aed22e2c7b283705ec82e0120515618"></a><!-- doxytag: member="TCP_NSC.cc::len" ref="a8aed22e2c7b283705ec82e0120515618" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t <a class="el" href="_t_c_p___n_s_c_8cc.html#a8aed22e2c7b283705ec82e0120515618">len</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="nl_8c.html#aacc890fa963f7431b6cdeceaa6587e63">addattr()</a>, <a class="el" href="struct_a_o_d_v__msg.html#ab57b47ad54eb09ebcf92abd0b9e39da8">AODV_msg::addExtension()</a>, <a class="el" href="class_d_s_r_pkt_ext.html#aeca8e0795ba5d2cd69196b28aa4cf2e8">DSRPktExt::addExtension()</a>, <a class="el" href="debug__aodv_8h.html#a78eb6c20ec8f9c3c56c78eeb3df953f2">alog()</a>, <a class="el" href="aodv__socket_8h.html#a16fb4b683d69829242c45cad4530a00a">aodv_socket_send()</a>, <a class="el" href="class_i_pv6_datagram.html#ab30eb43a737b716e2356548538f20f02">IPv6Datagram::calculateFragmentLength()</a>, <a class="el" href="class_i_pv6_datagram.html#a7c12eea2642c4f2530778573b7e5068f">IPv6Datagram::calculateHeaderByteLength()</a>, <a class="el" href="class_i_pv6_datagram.html#aef1757a3cc2ef5de253e8a15c9f1c774">IPv6Datagram::calculateUnfragmentableHeaderByteLength()</a>, <a class="el" href="class_s_c_t_p_serializer.html#afc95affdb742652c06ca52fdd86da488">SCTPSerializer::checksum()</a>, <a class="el" href="class_vo_i_p_sink_app.html#aa9187a142be9b79a8d7b5db86a10e75d">VoIPSinkApp::decodePacket()</a>, <a class="el" href="class_d_s_r_pkt_ext.html#aa2cd3b3f5bdba8e4a46cc3fb9f6ae5f0">DSRPktExt::delExtension()</a>, <a class="el" href="debug__dsr_8c.html#a18cea0792152f7a3bfe4b229c747688d">do_dbglog()</a>, <a class="el" href="classinet_1_1_pattern_matcher.html#a60916b1d377ddb6ff74f88af09aa6f1b">inet::PatternMatcher::doMatch()</a>, <a class="el" href="dsr-ack_8h.html#adf4da462deaa6f911e484e7e59a371e7">dsr_ack_send()</a>, <a class="el" href="dsr-dev_8h.html#aedf162d83ded757e99f2a28583728c4c">dsr_dev_deliver()</a>, <a class="el" href="dsr-dev_8h.html#a127629b51d0f33427349165f992a99b6">dsr_dev_xmit()</a>, <a class="el" href="dsr-opt_8h.html#ab988ee947f7227cf207cee994483f0f4">dsr_opt_remove()</a>, <a class="el" href="dsr-pkt_8h.html#a6cfe250849438bbeaa535eb465c4c8bf">dsr_pkt_alloc_opts()</a>, <a class="el" href="dsr-pkt_8h.html#aa7db3987e65694b60eae6e70b28f453f">dsr_pkt_alloc_opts_expand()</a>, <a class="el" href="dsr-pkt_8h.html#a86ed920e25f68ca4d477bc6d2b687500">dsr_pkt_free_opts()</a>, <a class="el" href="dsr-rerr_8h.html#a788cf6774ec85b5bb8e098466dbdd689">dsr_rerr_send()</a>, <a class="el" href="dsr-rrep_8h.html#af35fe82e48b9a823fd1da1790504fbe2">dsr_rrep_send()</a>, <a class="el" href="dsr-srt_8h.html#aef2841f6a1b578f8fb562ac897a2575d">dsr_srt_add()</a>, <a class="el" href="dymo__socket_8h.html#ad9c920a387422efb74a3d61e4606fc98">dymo_socket_send()</a>, <a class="el" href="class_algorithmic_dropper_base.html#a69940b565a3b97e593bfc62e18cdef0c">AlgorithmicDropperBase::getByteLength()</a>, <a class="el" href="class_algorithmic_dropper_base.html#ad7f08938bcf82ce1881f0db237b00880">AlgorithmicDropperBase::getLength()</a>, <a class="el" href="class_s_c_t_p_association.html#a52141caf8994688922c957e8ddee864f">SCTPAssociation::getOutboundDataChunk()</a>, <a class="el" href="icmp__socket_8h.html#a6afa14aeb3a61cf0cdf37467e48a4e55">in_cksum()</a>, <a class="el" href="class_interface_token.html#a6b1fc3ab7dc16086965a68804e94b6c4">InterfaceToken::InterfaceToken()</a>, <a class="el" href="class_t_c_p_connection.html#af874301a7ed71e199ba29dd22003c704">TCPConnection::isSegmentAcceptable()</a>, <a class="el" href="class_tra_c_i_scenario_manager.html#ac3cf13edebe1c7da058a6ca242b7b227">TraCIScenarioManager::makeTraCICommand()</a>, <a class="el" href="pbuf_8h.html#a949a13a7cfdf9241c9e7b859af1bd15c">pbuf_clen()</a>, <a class="el" href="pbuf_8h.html#aee9cfb728d91302f068b5c6bd581e3e5">pbuf_copy()</a>, <a class="el" href="pbuf_8h.html#a4f7fb6169de237ba20576c8b6fdbc1e8">pbuf_copy_partial()</a>, <a class="el" href="pbuf_8h.html#aaa17c1951cf2d207b6adfd3947d91f00">pbuf_header()</a>, <a class="el" href="pbuf_8h.html#ad1e31e370271335b197272af2724ca85">pbuf_take()</a>, <a class="el" href="aodv__uu__omnet_8cc.html#a8cb8c2e2b22e66445f91073114decaf8">recvAODVUUPacket()</a>, <a class="el" href="aodv__rrep_8h.html#ac53a5527fd35248e7c8a42216c64b152">rrep_add_ext()</a>, <a class="el" href="debug__aodv_8cc.html#a9b56fc84e8c724e031a9e6f8137dc25b">rrep_flags_to_str()</a>, <a class="el" href="aodv__rreq_8cc.html#a0769cdfc66c520aac03d0862f8e10720">rreq_add_ext()</a>, <a class="el" href="debug__aodv_8cc.html#ab9005287fdea32df32084d025a891d0c">rreq_flags_to_str()</a>, <a class="el" href="debug__aodv_8cc.html#a77da703803b32d6c76cc7117ba48194d">rt_flags_to_str()</a>, <a class="el" href="class_ether_traf_gen.html#a7e0451760a7f73fec7eca2bd0d387e31">EtherTrafGen::sendBurstPackets()</a>, <a class="el" href="class_s_c_t_p_association.html#a3ef5a4494cd7b59c44f44d6ed385e9de">SCTPAssociation::sendCookieEcho()</a>, <a class="el" href="class_s_c_t_p_association.html#a4693aa8d9ce24d9bf798cb7feefd1085">SCTPAssociation::sendHeartbeatAck()</a>, <a class="el" href="class_ether_app_cli.html#a8de4dd5cd41193949b363fad483b90f8">EtherAppCli::sendPacket()</a>, and <a class="el" href="class_telnet_app.html#aa8970c8031fce975f916df35f8db4ec3">TelnetApp::socketDataArrived()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a045daeeb2d6d7b5c4706eb5ca627e84c"></a><!-- doxytag: member="TCP_NSC.cc::next_header" ref="a045daeeb2d6d7b5c4706eb5ca627e84c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t <a class="el" href="_t_c_p___n_s_c_8cc.html#a045daeeb2d6d7b5c4706eb5ca627e84c">next_header</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad124d3d2e02c729afa303c775295278e"></a><!-- doxytag: member="TCP_NSC.cc::protocol" ref="ad124d3d2e02c729afa303c775295278e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#ad124d3d2e02c729afa303c775295278e">protocol</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_d_s_r_u_u.html#a0c0775701ed3855299bb5b2f4cc1e4cf">DSRUU::defaultProcess()</a>, <a class="el" href="class_d_s_r_u_u.html#a5e3bc69dc0c6d38eacc4110a1f920a23">DSRUU::dsr_build_ip()</a>, <a class="el" href="dsr-opt_8h.html#abc6e167a57376edd3163eeb09ddd28fc">dsr_opt_hdr_add()</a>, <a class="el" href="class_i_pv4.html#a4b8d584070c93264f1b27c71321cd661">IPv4::handlePacketFromNetwork()</a>, <a class="el" href="class_i_pv6.html#a8cc520cdb18b01334b04f2cd1268e370">IPv6::handleReceivedICMP()</a>, <a class="el" href="class_i_pv4.html#a7e71e5d57e53ac809e748b683837078f">IPv4::handleReceivedICMP()</a>, <a class="el" href="class_i_pv6.html#af5841104d472f7c33a27b5fa53171c40">IPv6::localDeliver()</a>, <a class="el" href="class_l_d_p.html#afdfb80634fed9930abc62ab5733d49fa">LDP::lookupLabel()</a>, <a class="el" href="class_i_pv_x_traf_sink.html#a8e0b6967617cbe2950ec2d8c398151d5">IPvXTrafSink::printPacket()</a>, <a class="el" href="class_i_pv4.html#a7a942fe999ff9b7ed961d6713215fc1c">IPv4::reassembleAndDeliver()</a>, and <a class="el" href="class_i_pv_x_address_resolver.html#a90f669580bc130d3dabf37b06fdda536">IPvXAddressResolver::tryResolve()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abf10c772acb08ceb96c6432c47395562"></a><!-- doxytag: member="TCP_NSC.cc::saddr" ref="abf10c772acb08ceb96c6432c47395562" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#abf10c772acb08ceb96c6432c47395562">saddr</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_tra_c_i_scenario_manager.html#ab6819b20f42105a8983029d9a37e1751">TraCIScenarioManager::connect()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3bdbe295d838b7f44e47ad5f4c3fac27"></a><!-- doxytag: member="TCP_NSC.cc::tos" ref="a3bdbe295d838b7f44e47ad5f4c3fac27" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a3bdbe295d838b7f44e47ad5f4c3fac27">tos</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="aodv__socket_8h.html#a54db369051b8492768e1e931a400f0cc">aodv_socket_init()</a>, <a class="el" href="class_o_s_p_f_1_1_summary_l_s_a.html#a1bbf381dcda6af5e782b96b71dfb493e">OSPF::SummaryLSA::differsFrom()</a>, <a class="el" href="dymo__socket_8h.html#a2900fe3817510efdab28c1947fdc4d25">dymo_socket_init()</a>, <a class="el" href="class_u_d_p_socket.html#a6b598dfdfd9903adb0f50f281fa752be">UDPSocket::getReceivedPacketInfo()</a>, <a class="el" href="icmp__socket_8h.html#a4485f4e02453ede23f7d5593c3bd2310">icmp_socket_init()</a>, and <a class="el" href="class_u_d_p.html#a333fddcf308d3c6348c9cc5e6bfa796d">UDP::processUDPPacket()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a65b0163ced0d7ce7af900910efff2898"></a><!-- doxytag: member="TCP_NSC.cc::tot_len" ref="a65b0163ced0d7ce7af900910efff2898" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a65b0163ced0d7ce7af900910efff2898">tot_len</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="dsr-ack_8h.html#a963f5f16a2e668cbde3aa3afe2e08985">dsr_ack_req_opt_add()</a>, <a class="el" href="dsr-dev_8c.html#aad0cb6fc6fdbe010d8194c901f88ccd9">dsr_skb_create()</a>, and <a class="el" href="dsr-srt_8h.html#aef2841f6a1b578f8fb562ac897a2575d">dsr_srt_add()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4d402503271315376ddf4e47674d4965"></a><!-- doxytag: member="TCP_NSC.cc::ttl" ref="a4d402503271315376ddf4e47674d4965" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a4d402503271315376ddf4e47674d4965">ttl</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_o_s_p_f_1_1_link_state_update_handler.html#ad219c826caa44b2c4645ba1b7ca53a61">OSPF::LinkStateUpdateHandler::acknowledgeLSA()</a>, <a class="el" href="aodv__socket_8h.html#a16fb4b683d69829242c45cad4530a00a">aodv_socket_send()</a>, <a class="el" href="dsr-ack_8h.html#a963f5f16a2e668cbde3aa3afe2e08985">dsr_ack_req_opt_add()</a>, <a class="el" href="dsr-opt_8h.html#ab988ee947f7227cf207cee994483f0f4">dsr_opt_remove()</a>, <a class="el" href="dsr-rrep_8h.html#af35fe82e48b9a823fd1da1790504fbe2">dsr_rrep_send()</a>, <a class="el" href="dsr-rreq_8h.html#af86f44e309a885dcf376d6feb493d6a6">dsr_rreq_route_discovery()</a>, <a class="el" href="dsr-srt_8h.html#aef2841f6a1b578f8fb562ac897a2575d">dsr_srt_add()</a>, <a class="el" href="dymo__socket_8h.html#ad9c920a387422efb74a3d61e4606fc98">dymo_socket_send()</a>, <a class="el" href="class_i_pv4.html#aab72f223f6a17bf8d071574e36205a10">IPv4::encapsulate()</a>, <a class="el" href="class_o_s_p_f_1_1_interface.html#a3817a838c0eceda3d1947df0cb0b8f96">OSPF::Interface::floodLSA()</a>, <a class="el" href="class_u_d_p_socket.html#a6b598dfdfd9903adb0f50f281fa752be">UDPSocket::getReceivedPacketInfo()</a>, <a class="el" href="icmp__socket_8h.html#ae04cb82077d89a1d3887ac7772a93755">icmp_reply_send()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_down.html#adbe22f81a055c5b3cb08105e71725e0e">OSPF::NeighborStateDown::processEvent()</a>, <a class="el" href="class_o_s_p_f_1_1_interface_state_backup.html#a59ab622efe7e53d1679397906685e632">OSPF::InterfaceStateBackup::processEvent()</a>, <a class="el" href="class_o_s_p_f_1_1_interface_state_designated_router.html#a438e79d72ff2fcde354fdfe8283aa71f">OSPF::InterfaceStateDesignatedRouter::processEvent()</a>, <a class="el" href="class_o_s_p_f_1_1_interface_state_waiting.html#a70f72d26276984f9fc7b039364b9e8e1">OSPF::InterfaceStateWaiting::processEvent()</a>, <a class="el" href="class_o_s_p_f_1_1_link_state_request_handler.html#a523ca80639d942223ed598df83dd98cc">OSPF::LinkStateRequestHandler::processPacket()</a>, <a class="el" href="class_o_s_p_f_1_1_link_state_update_handler.html#a6f286c4986b918d12fd620a422e471aa">OSPF::LinkStateUpdateHandler::processPacket()</a>, <a class="el" href="class_u_d_p.html#a333fddcf308d3c6348c9cc5e6bfa796d">UDP::processUDPPacket()</a>, <a class="el" href="dymo__re_8h.html#aee066a9dd12c7347bb0b8df712462106">re_create_rrep()</a>, <a class="el" href="dymo__re_8h.html#a78ee347f4fe22f17c60ad7265928f5d6">re_create_rreq()</a>, <a class="el" href="aodv__uu__omnet_8cc.html#a8cb8c2e2b22e66445f91073114decaf8">recvAODVUUPacket()</a>, <a class="el" href="dymo__rerr_8h.html#a8a054c6eb54a80473b9c8555eacf739b">rerr_create()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor.html#a24aa3029fa59b332626b97157968430d">OSPF::Neighbor::retransmitDatabaseDescriptionPacket()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor.html#aeba1f1b1f949be42ad14dbb1ef78b534">OSPF::Neighbor::retransmitUpdatePacket()</a>, <a class="el" href="aodv__rrep_8h.html#a32af3b731e49b51aaa94642a239fda8c">rrep_forward()</a>, <a class="el" href="aodv__rreq_8h.html#a04c174a4a6ee340f5c46056912f150ae">rreq_forward()</a>, <a class="el" href="aodv__rreq_8h.html#a4f8377877f7465bf09d86a1856abf4dc">rreq_local_repair()</a>, <a class="el" href="aodv__rreq_8h.html#a9ca9c8b1462c06a7b9d4d1e5fba844bd">rreq_route_discovery()</a>, <a class="el" href="aodv__rreq_8h.html#a97bfe3209cdc72356521354c5c8c14da">rreq_send()</a>, <a class="el" href="seek__list_8h.html#a3994048a25f95ac01d38e0102e96ae6a">seek_list_insert()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor.html#a98ae9d66d6317b1b9c46610db164b6a7">OSPF::Neighbor::sendDatabaseDescriptionPacket()</a>, <a class="el" href="class_o_s_p_f_1_1_interface.html#a7cdaa81ff7bc0b1d9ec3bd39aa7a1dfd">OSPF::Interface::sendDelayedAcknowledgements()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor.html#a5be9443a4841f61bba2211abd64b627a">OSPF::Neighbor::sendLinkStateRequestPacket()</a>, <a class="el" href="class_o_s_p_f_1_1_interface.html#aba011f70a7d227e0380a6f91e19d6dd6">OSPF::Interface::sendLSAcknowledgement()</a>, <a class="el" href="class_u_d_p.html#ad09b530cd871cfb3a1defe37b57066c1">UDP::setTimeToLive()</a>, and <a class="el" href="dymo__uerr_8h.html#abf8db988d8d27409742c841ab7d2f6e3">uerr_create()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acd99bb05ca015e7d74448acb1deba7ca"></a><!-- doxytag: member="TCP_NSC.cc::version" ref="acd99bb05ca015e7d74448acb1deba7ca" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t <a class="el" href="_t_c_p___n_s_c___connection_8cc.html#a5408ac5df4c170828874e1b10b4c35a0">version</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_tra_c_i_scenario_manager_launchd.html#a4c5b4cac20e03a2e333fd3e49a6a7e0e">TraCIScenarioManagerLaunchd::init_traci()</a>, and <a class="el" href="class_tra_c_i_scenario_manager.html#a5389f3fc889b1fe3fd126c33a7d9ae36">TraCIScenarioManager::init_traci()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="_t_c_p___n_s_c_8cc.html">TCP_NSC.cc</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:46 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:22 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

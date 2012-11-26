@@ -83,28 +83,22 @@
 <div class="title">SCTPAssociation.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;omnetpp.h&gt;</code><br/>
-<code>#include &quot;<a class="el" href="_i_pv_x_address_8h_source.html">IPvXAddress.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_i_p_address_8h_source.html">IPAddress.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_s_c_t_p_8h_source.html">SCTP.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_routing_table_8h_source.html">RoutingTable.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_routing_table_access_8h_source.html">RoutingTableAccess.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_interface_table_8h_source.html">InterfaceTable.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_interface_table_access_8h_source.html">InterfaceTableAccess.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_s_c_t_p_queue_8h_source.html">SCTPQueue.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_s_c_t_p_send_stream_8h_source.html">SCTPSendStream.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_s_c_t_p_receive_stream_8h_source.html">SCTPReceiveStream.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_s_c_t_p_message_8h_source.html">SCTPMessage.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="_i_p_control_info_8h_source.html">IPControlInfo.h</a>&quot;</code><br/>
+<div class="textblock"><code>#include &quot;<a class="el" href="_i_n_e_t_defs_8h.html">INETDefs.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_i_pv_x_address_8h.html">IPvXAddress.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_i_pv4_address_8h.html">IPv4Address.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_s_c_t_p_8h.html">SCTP.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_interface_table_8h.html">InterfaceTable.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_interface_table_access_8h.html">InterfaceTableAccess.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_s_c_t_p_queue_8h.html">SCTPQueue.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_s_c_t_p_send_stream_8h.html">SCTPSendStream.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_s_c_t_p_receive_stream_8h.html">SCTPReceiveStream.h</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="_s_c_t_p_message_8h.html">SCTPMessage.h</a>&quot;</code><br/>
 <code>#include &lt;list&gt;</code><br/>
 <code>#include &lt;iostream&gt;</code><br/>
 <code>#include &lt;errno.h&gt;</code><br/>
 <code>#include &lt;math.h&gt;</code><br/>
 <code>#include &lt;platdep/intxtypes.h&gt;</code><br/>
-<code>#include &quot;<a class="el" href="common_8h_source.html">common.h</a>&quot;</code><br/>
-</div>
-<p><a href="_s_c_t_p_association_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+</div><table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_c_t_p_path_variables.html">SCTPPathVariables</a></td></tr>
@@ -227,9 +221,6 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="_s_c_t_p_association_8h.html#a8886377ab3f4b4ef217558f2b83b7b12a1ac9ae29771c5095efe16ce822d561d7">SHUTDOWN_COMPLETE</a> =  14
 <br/>
  }</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_c_t_p_association_8h.html#a6f5cc3c80258127f32f9afd435791f1f">SCTPFlags</a> { <a class="el" href="_s_c_t_p_association_8h.html#a6f5cc3c80258127f32f9afd435791f1fa624a2bc1f97816d9d48c796f8ddab573">COMPLETE_MESG_UNORDERED</a> =  1, 
-<a class="el" href="_s_c_t_p_association_8h.html#a6f5cc3c80258127f32f9afd435791f1fa58b47731ff085e85a7462873e1284441">COMPLETE_MESG_ORDERED</a> =  0
- }</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_c_t_p_association_8h.html#a8d59686e974f326f12076166b80dcad1">SCTPParameterTypes</a> { <a class="el" href="_s_c_t_p_association_8h.html#a8d59686e974f326f12076166b80dcad1a84eff3c1951655fd6a05c80649382f6b">UNRECOGNIZED_PARAMETER</a> =  8, 
 <a class="el" href="_s_c_t_p_association_8h.html#a8d59686e974f326f12076166b80dcad1af17cc3bab233e3bca306ffc579984acc">SUPPORTED_ADDRESS_TYPES</a> =  12
  }</td></tr>
@@ -240,7 +231,9 @@ Enumerations</h2></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_c_t_p_association_8h.html#ad61931b1ae6b8e5bb714e2e6744f4470">min</a> (const double a, const double b)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the minimum of a and b.  <a href="#ad61931b1ae6b8e5bb714e2e6744f4470"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_s_c_t_p_association_8h.html#afdb84bd44c7cbd3fc9cbe1e3bf07d948">max</a> (const double a, const double b)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum of a and b.  <a href="#afdb84bd44c7cbd3fc9cbe1e3bf07d948"></a><br/></td></tr>
 </table>
 <hr/><h2>Define Documentation</h2>
 <a class="anchor" id="a34c6101299ca6658c48834e679883867"></a><!-- doxytag: member="SCTPAssociation.h::ADD_PADDING" ref="a34c6101299ca6658c48834e679883867" args="(x)" -->
@@ -258,9 +251,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00186">186</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_message_8cc_source.html#l00074">SCTPMessage::addChunk()</a>, <a class="el" href="_s_c_t_p_message_8cc_source.html#l00169">SCTPErrorChunk::addParameters()</a>, <a class="el" href="_s_c_t_p_association_rcv_message_8cc_source.html#l00032">SCTPAssociation::decreaseOutstandingBytes()</a>, <a class="el" href="_s_c_t_p_association_rcv_message_8cc_source.html#l01151">SCTPAssociation::dequeueAckedChunks()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l01646">SCTPAssociation::dequeueOutboundDataMsg()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l01552">SCTPAssociation::getOutboundDataChunk()</a>, <a class="el" href="_s_c_t_p_association_rcv_message_8cc_source.html#l01011">SCTPAssociation::handleChunkReportedAsAcked()</a>, <a class="el" href="_s_c_t_p_association_rcv_message_8cc_source.html#l01056">SCTPAssociation::handleChunkReportedAsMissing()</a>, <a class="el" href="_s_c_t_p_association_send_all_8cc_source.html#l00028">SCTPAssociation::increaseOutstandingBytes()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l01205">SCTPAssociation::makeRoomForTsn()</a>, <a class="el" href="_s_c_t_p_association_rcv_message_8cc_source.html#l01687">SCTPAssociation::moveChunkToOtherPath()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l01825">SCTPAssociation::nextChunkFitsIntoPacket()</a>, <a class="el" href="_s_c_t_p_serializer_8cc_source.html#l00525">SCTPSerializer::parse()</a>, <a class="el" href="_s_c_t_p_association_event_proc_8cc_source.html#l00112">SCTPAssociation::process_SEND()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l01051">SCTPAssociation::pushUlp()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l01009">SCTPAssociation::putInDeliveryQ()</a>, <a class="el" href="_s_c_t_p_message_8cc_source.html#l00088">SCTPMessage::removeChunk()</a>, <a class="el" href="_s_c_t_p_message_8cc_source.html#l00100">SCTPMessage::removeLastChunk()</a>, <a class="el" href="_s_c_t_p_message_8cc_source.html#l00177">SCTPErrorChunk::removeParameter()</a>, and <a class="el" href="_s_c_t_p_association_rcv_message_8cc_source.html#l00666">SCTPAssociation::tsnWasReneged()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_message.html#a46c6cc49994da66b04d2ab9eadc564b7">SCTPMessage::addChunk()</a>, <a class="el" href="class_s_c_t_p_error_chunk.html#a442eb4938403317231dcbe1a50b4184d">SCTPErrorChunk::addParameters()</a>, <a class="el" href="class_s_c_t_p_association.html#a2178e3130838480b58adc77639d7862c">SCTPAssociation::decreaseOutstandingBytes()</a>, <a class="el" href="class_s_c_t_p_association.html#a8bc32c70b39e641735ba4f73c00480ae">SCTPAssociation::dequeueAckedChunks()</a>, <a class="el" href="class_s_c_t_p_association.html#a5bccfb8217d1cbb22a629856f96755ad">SCTPAssociation::dequeueOutboundDataMsg()</a>, <a class="el" href="class_s_c_t_p_association.html#a52141caf8994688922c957e8ddee864f">SCTPAssociation::getOutboundDataChunk()</a>, <a class="el" href="class_s_c_t_p_association.html#a297f87caf9d5e3b6cf596a5e44381061">SCTPAssociation::handleChunkReportedAsAcked()</a>, <a class="el" href="class_s_c_t_p_association.html#a01a9c50a325baf1ebf3d25972a776393">SCTPAssociation::handleChunkReportedAsMissing()</a>, <a class="el" href="class_s_c_t_p_association.html#aaf93ca861bf56525302bb2b661bdd4df">SCTPAssociation::increaseOutstandingBytes()</a>, <a class="el" href="class_s_c_t_p_association.html#a45de5f3a74bba48af92b248edd9c9312">SCTPAssociation::makeRoomForTsn()</a>, <a class="el" href="class_s_c_t_p_association.html#aded774353d79ba7bdf53651ddc178609">SCTPAssociation::moveChunkToOtherPath()</a>, <a class="el" href="class_s_c_t_p_association.html#afcdda96737a59959b556a07031d9ad98">SCTPAssociation::nextChunkFitsIntoPacket()</a>, <a class="el" href="class_s_c_t_p_serializer.html#a6f98120b3c9485fab42e24b9ab455b88">SCTPSerializer::parse()</a>, <a class="el" href="class_s_c_t_p_association.html#a7eb1c9af2610929a04cb744b97af93c8">SCTPAssociation::process_SEND()</a>, <a class="el" href="class_s_c_t_p_association.html#a34812ad20b498c0275019ef3e97cec71">SCTPAssociation::pushUlp()</a>, <a class="el" href="class_s_c_t_p_association.html#a64c5bcff1fa7a6f01d7e969d21b70dd5">SCTPAssociation::putInDeliveryQ()</a>, <a class="el" href="class_s_c_t_p_message.html#aa0f9b611f85c4e718a400e9f7379f4b8">SCTPMessage::removeChunk()</a>, <a class="el" href="class_s_c_t_p_message.html#a8bbf837e88246119125610642df53b82">SCTPMessage::removeLastChunk()</a>, <a class="el" href="class_s_c_t_p_error_chunk.html#aeda477504868f96c3d3adcb088e7beef">SCTPErrorChunk::removeParameter()</a>, and <a class="el" href="class_s_c_t_p_association.html#ab70d01d19820a5a16547e439b142d5fe">SCTPAssociation::tsnWasReneged()</a>.</p>
 
 </div>
 </div>
@@ -275,8 +266,6 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00188">188</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a366af39e5075b50554c8db59b05bdc86"></a><!-- doxytag: member="SCTPAssociation.h::DEFAULT_MAX_RECVQUEUE" ref="a366af39e5075b50554c8db59b05bdc86" args="" -->
@@ -289,8 +278,6 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00178">178</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
 
 </div>
 </div>
@@ -305,8 +292,6 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00177">177</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a7a7650e106bfeeba73c2c572138644df"></a><!-- doxytag: member="SCTPAssociation.h::HB_INTERVAL" ref="a7a7650e106bfeeba73c2c572138644df" args="" -->
@@ -320,9 +305,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00166">166</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_association_base_8cc_source.html#l00033">SCTPPathVariables::SCTPPathVariables()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_path_variables.html#ad374aa007507de709b8467da3cda8a48">SCTPPathVariables::SCTPPathVariables()</a>.</p>
 
 </div>
 </div>
@@ -337,9 +320,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00160">160</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l01646">SCTPAssociation::dequeueOutboundDataMsg()</a>, and <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l01825">SCTPAssociation::nextChunkFitsIntoPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_association.html#a5bccfb8217d1cbb22a629856f96755ad">SCTPAssociation::dequeueOutboundDataMsg()</a>, and <a class="el" href="class_s_c_t_p_association.html#afcdda96737a59959b556a07031d9ad98">SCTPAssociation::nextChunkFitsIntoPacket()</a>.</p>
 
 </div>
 </div>
@@ -354,8 +335,6 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00175">175</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a6a9a4ba63e3955e0d9db42f4d496ad72"></a><!-- doxytag: member="SCTPAssociation.h::MAX_ASSOCS" ref="a6a9a4ba63e3955e0d9db42f4d496ad72" args="" -->
@@ -368,8 +347,6 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00180">180</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
 
 </div>
 </div>
@@ -384,9 +361,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00184">184</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l01292">SCTPAssociation::removeFromGapList()</a>, <a class="el" href="_s_c_t_p_association_base_8cc_source.html#l00187">SCTPStateVariables::SCTPStateVariables()</a>, and <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l01354">SCTPAssociation::updateGapList()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_association.html#a6d86b97308eef3f43f93ca939a3d1a52">SCTPAssociation::removeFromGapList()</a>, <a class="el" href="class_s_c_t_p_state_variables.html#a052d86410c436923db0a38b80c6b5087">SCTPStateVariables::SCTPStateVariables()</a>, and <a class="el" href="class_s_c_t_p_association.html#a99fbda3fe957b452899203d4e0f151a0">SCTPAssociation::updateGapList()</a>.</p>
 
 </div>
 </div>
@@ -401,8 +376,6 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00185">185</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="aa6f5df5823e404f2ed03ef4d28f64bbd"></a><!-- doxytag: member="SCTPAssociation.h::PATH_MAX_RETRANS" ref="aa6f5df5823e404f2ed03ef4d28f64bbd" args="" -->
@@ -416,9 +389,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00167">167</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_association_base_8cc_source.html#l00033">SCTPPathVariables::SCTPPathVariables()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_path_variables.html#ad374aa007507de709b8467da3cda8a48">SCTPPathVariables::SCTPPathVariables()</a>.</p>
 
 </div>
 </div>
@@ -433,8 +404,6 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00173">173</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a661ab206915575cc0769722ba181238e"></a><!-- doxytag: member="SCTPAssociation.h::RTO_BETA" ref="a661ab206915575cc0769722ba181238e" args="" -->
@@ -447,8 +416,6 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00172">172</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
 
 </div>
 </div>
@@ -463,8 +430,6 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00174">174</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="a5f8211f50dea40fa08f410e3631eb1fe"></a><!-- doxytag: member="SCTPAssociation.h::SACK_DELAY" ref="a5f8211f50dea40fa08f410e3631eb1fe" args="" -->
@@ -478,9 +443,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00171">171</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_association_base_8cc_source.html#l00276">SCTPAssociation::SCTPAssociation()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_association.html#ad1984a2e17a73629a51334904745086f">SCTPAssociation::SCTPAssociation()</a>.</p>
 
 </div>
 </div>
@@ -495,9 +458,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00154">154</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00780">SCTPAssociation::sendAbort()</a>, and <a class="el" href="_s_c_t_p_8cc_source.html#l00320">SCTP::sendAbortFromMain()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_association.html#a0c2b31f00e428a2c8c5fe8aa5f3430fe">SCTPAssociation::sendAbort()</a>, and <a class="el" href="class_s_c_t_p.html#a8a189047a5fbd254dcd9d9283ba08836">SCTP::sendAbortFromMain()</a>.</p>
 
 </div>
 </div>
@@ -512,9 +473,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00149">149</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l01646">SCTPAssociation::dequeueOutboundDataMsg()</a>, <a class="el" href="_s_c_t_p_8cc_source.html#l00135">SCTP::handleMessage()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l01825">SCTPAssociation::nextChunkFitsIntoPacket()</a>, <a class="el" href="_s_c_t_p_message_8cc_source.html#l00026">SCTPMessage::operator=()</a>, <a class="el" href="_s_c_t_p_serializer_8cc_source.html#l00525">SCTPSerializer::parse()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00660">SCTPAssociation::retransmitCookieEcho()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00471">SCTPAssociation::retransmitInit()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00824">SCTPAssociation::retransmitShutdown()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00837">SCTPAssociation::retransmitShutdownAck()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00780">SCTPAssociation::sendAbort()</a>, <a class="el" href="_s_c_t_p_8cc_source.html#l00320">SCTP::sendAbortFromMain()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00719">SCTPAssociation::sendCookieAck()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00615">SCTPAssociation::sendCookieEcho()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00676">SCTPAssociation::sendHeartbeat()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00693">SCTPAssociation::sendHeartbeatAck()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00339">SCTPAssociation::sendInit()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00487">SCTPAssociation::sendInitAck()</a>, <a class="el" href="_s_c_t_p_association_send_all_8cc_source.html#l00305">SCTPAssociation::sendOnPath()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00973">SCTPAssociation::sendSack()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00797">SCTPAssociation::sendShutdown()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00735">SCTPAssociation::sendShutdownAck()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00762">SCTPAssociation::sendShutdownComplete()</a>, and <a class="el" href="_s_c_t_p_8cc_source.html#l00368">SCTP::sendShutdownCompleteFromMain()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_association.html#a5bccfb8217d1cbb22a629856f96755ad">SCTPAssociation::dequeueOutboundDataMsg()</a>, <a class="el" href="class_s_c_t_p.html#a305de6ada20d2db21ddd19ad19cac3a1">SCTP::handleMessage()</a>, <a class="el" href="class_s_c_t_p_association.html#afcdda96737a59959b556a07031d9ad98">SCTPAssociation::nextChunkFitsIntoPacket()</a>, <a class="el" href="class_s_c_t_p_serializer.html#a6f98120b3c9485fab42e24b9ab455b88">SCTPSerializer::parse()</a>, <a class="el" href="class_s_c_t_p_association.html#ae9ffc855fcb6cfd50fb34a03beaa2d39">SCTPAssociation::retransmitCookieEcho()</a>, <a class="el" href="class_s_c_t_p_association.html#aec407e9c2c1b4d0c604d8d65e78706e8">SCTPAssociation::retransmitInit()</a>, <a class="el" href="class_s_c_t_p_association.html#aa28d6c19ab622ed5564596c7f300aea4">SCTPAssociation::retransmitShutdown()</a>, <a class="el" href="class_s_c_t_p_association.html#a0c70dd4b41af917ecbaebd2850a808e0">SCTPAssociation::retransmitShutdownAck()</a>, <a class="el" href="class_s_c_t_p_association.html#a0c2b31f00e428a2c8c5fe8aa5f3430fe">SCTPAssociation::sendAbort()</a>, <a class="el" href="class_s_c_t_p.html#a8a189047a5fbd254dcd9d9283ba08836">SCTP::sendAbortFromMain()</a>, <a class="el" href="class_s_c_t_p_association.html#ad277c3986a8173ffe41289f72765ceba">SCTPAssociation::sendCookieAck()</a>, <a class="el" href="class_s_c_t_p_association.html#a3ef5a4494cd7b59c44f44d6ed385e9de">SCTPAssociation::sendCookieEcho()</a>, <a class="el" href="class_s_c_t_p_association.html#afc5f06d167b937c0d1267047960bc354">SCTPAssociation::sendHeartbeat()</a>, <a class="el" href="class_s_c_t_p_association.html#a4693aa8d9ce24d9bf798cb7feefd1085">SCTPAssociation::sendHeartbeatAck()</a>, <a class="el" href="class_s_c_t_p_association.html#afc1d3dc0cb62842b7d83998facfbfd06">SCTPAssociation::sendInit()</a>, <a class="el" href="class_s_c_t_p_association.html#ac40f2aff108134cbfcea6cb06e25fdb1">SCTPAssociation::sendInitAck()</a>, <a class="el" href="class_s_c_t_p_association.html#aa7cf5e2c2c169ce78e856025bb181116">SCTPAssociation::sendOnPath()</a>, <a class="el" href="class_s_c_t_p_association.html#a8ceae356355ca537907cabf469c813af">SCTPAssociation::sendSack()</a>, <a class="el" href="class_s_c_t_p_association.html#a76fce22241a52542859d1dcddac4651a">SCTPAssociation::sendShutdown()</a>, <a class="el" href="class_s_c_t_p_association.html#a588cedb27c104ca159fce93dfd53e4c7">SCTPAssociation::sendShutdownAck()</a>, <a class="el" href="class_s_c_t_p_association.html#a30c6da407b37844471cbd5c69918ae52">SCTPAssociation::sendShutdownComplete()</a>, and <a class="el" href="class_s_c_t_p.html#aa184b3126dcf702901f1c1f0bc3529f4">SCTP::sendShutdownCompleteFromMain()</a>.</p>
 
 </div>
 </div>
@@ -529,9 +488,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00155">155</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00719">SCTPAssociation::sendCookieAck()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00615">SCTPAssociation::sendCookieEcho()</a>, and <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00735">SCTPAssociation::sendShutdownAck()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_association.html#ad277c3986a8173ffe41289f72765ceba">SCTPAssociation::sendCookieAck()</a>, <a class="el" href="class_s_c_t_p_association.html#a3ef5a4494cd7b59c44f44d6ed385e9de">SCTPAssociation::sendCookieEcho()</a>, and <a class="el" href="class_s_c_t_p_association.html#a588cedb27c104ca159fce93dfd53e4c7">SCTPAssociation::sendShutdownAck()</a>.</p>
 
 </div>
 </div>
@@ -546,9 +503,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00165">165</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_serializer_8cc_source.html#l00525">SCTPSerializer::parse()</a>, and <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00487">SCTPAssociation::sendInitAck()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_serializer.html#a6f98120b3c9485fab42e24b9ab455b88">SCTPSerializer::parse()</a>, and <a class="el" href="class_s_c_t_p_association.html#ac40f2aff108134cbfcea6cb06e25fdb1">SCTPAssociation::sendInitAck()</a>.</p>
 
 </div>
 </div>
@@ -563,9 +518,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00151">151</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_association_send_all_8cc_source.html#l00038">SCTPAssociation::calculateBytesToSendOnPath()</a>, <a class="el" href="_s_c_t_p_association_rcv_message_8cc_source.html#l00032">SCTPAssociation::decreaseOutstandingBytes()</a>, <a class="el" href="_s_c_t_p_association_rcv_message_8cc_source.html#l01151">SCTPAssociation::dequeueAckedChunks()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l01646">SCTPAssociation::dequeueOutboundDataMsg()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l01552">SCTPAssociation::getOutboundDataChunk()</a>, <a class="el" href="_s_c_t_p_association_rcv_message_8cc_source.html#l01011">SCTPAssociation::handleChunkReportedAsAcked()</a>, <a class="el" href="_s_c_t_p_association_rcv_message_8cc_source.html#l01056">SCTPAssociation::handleChunkReportedAsMissing()</a>, <a class="el" href="_s_c_t_p_association_send_all_8cc_source.html#l00028">SCTPAssociation::increaseOutstandingBytes()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l01205">SCTPAssociation::makeRoomForTsn()</a>, <a class="el" href="_s_c_t_p_association_rcv_message_8cc_source.html#l01687">SCTPAssociation::moveChunkToOtherPath()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l01825">SCTPAssociation::nextChunkFitsIntoPacket()</a>, <a class="el" href="_s_c_t_p_serializer_8cc_source.html#l00525">SCTPSerializer::parse()</a>, <a class="el" href="_s_c_t_p_association_event_proc_8cc_source.html#l00112">SCTPAssociation::process_SEND()</a>, <a class="el" href="_s_c_t_p_association_rcv_message_8cc_source.html#l01242">SCTPAssociation::processDataArrived()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l01051">SCTPAssociation::pushUlp()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l01009">SCTPAssociation::putInDeliveryQ()</a>, <a class="el" href="_s_c_t_p_association_send_all_8cc_source.html#l00060">SCTPAssociation::storePacket()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l01129">SCTPAssociation::transformDataChunk()</a>, and <a class="el" href="_s_c_t_p_association_rcv_message_8cc_source.html#l00666">SCTPAssociation::tsnWasReneged()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_association.html#acfd176cf104a2ded703649339cf4a9bb">SCTPAssociation::calculateBytesToSendOnPath()</a>, <a class="el" href="class_s_c_t_p_association.html#a2178e3130838480b58adc77639d7862c">SCTPAssociation::decreaseOutstandingBytes()</a>, <a class="el" href="class_s_c_t_p_association.html#a8bc32c70b39e641735ba4f73c00480ae">SCTPAssociation::dequeueAckedChunks()</a>, <a class="el" href="class_s_c_t_p_association.html#a5bccfb8217d1cbb22a629856f96755ad">SCTPAssociation::dequeueOutboundDataMsg()</a>, <a class="el" href="class_s_c_t_p_association.html#a52141caf8994688922c957e8ddee864f">SCTPAssociation::getOutboundDataChunk()</a>, <a class="el" href="class_s_c_t_p_association.html#a297f87caf9d5e3b6cf596a5e44381061">SCTPAssociation::handleChunkReportedAsAcked()</a>, <a class="el" href="class_s_c_t_p_association.html#a01a9c50a325baf1ebf3d25972a776393">SCTPAssociation::handleChunkReportedAsMissing()</a>, <a class="el" href="class_s_c_t_p_association.html#aaf93ca861bf56525302bb2b661bdd4df">SCTPAssociation::increaseOutstandingBytes()</a>, <a class="el" href="class_s_c_t_p_association.html#a45de5f3a74bba48af92b248edd9c9312">SCTPAssociation::makeRoomForTsn()</a>, <a class="el" href="class_s_c_t_p_association.html#aded774353d79ba7bdf53651ddc178609">SCTPAssociation::moveChunkToOtherPath()</a>, <a class="el" href="class_s_c_t_p_association.html#afcdda96737a59959b556a07031d9ad98">SCTPAssociation::nextChunkFitsIntoPacket()</a>, <a class="el" href="class_s_c_t_p_serializer.html#a6f98120b3c9485fab42e24b9ab455b88">SCTPSerializer::parse()</a>, <a class="el" href="class_s_c_t_p_association.html#a7eb1c9af2610929a04cb744b97af93c8">SCTPAssociation::process_SEND()</a>, <a class="el" href="class_s_c_t_p_association.html#a4a28f10181c8a7af088e504c76242b7c">SCTPAssociation::processDataArrived()</a>, <a class="el" href="class_s_c_t_p_association.html#a34812ad20b498c0275019ef3e97cec71">SCTPAssociation::pushUlp()</a>, <a class="el" href="class_s_c_t_p_association.html#a64c5bcff1fa7a6f01d7e969d21b70dd5">SCTPAssociation::putInDeliveryQ()</a>, <a class="el" href="class_s_c_t_p_serializer.html#ab955e6ade690a1a3332ec8827af55ddf">SCTPSerializer::serialize()</a>, <a class="el" href="class_s_c_t_p_association.html#a3f5a43f961e2cc691da4546762e28498">SCTPAssociation::storePacket()</a>, <a class="el" href="class_s_c_t_p_association.html#a30445facc61cdf6ef4362b02a244eb2c">SCTPAssociation::transformDataChunk()</a>, and <a class="el" href="class_s_c_t_p_association.html#ab70d01d19820a5a16547e439b142d5fe">SCTPAssociation::tsnWasReneged()</a>.</p>
 
 </div>
 </div>
@@ -580,9 +533,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00161">161</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_association_base_8cc_source.html#l00187">SCTPStateVariables::SCTPStateVariables()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_state_variables.html#a052d86410c436923db0a38b80c6b5087">SCTPStateVariables::SCTPStateVariables()</a>.</p>
 
 </div>
 </div>
@@ -597,9 +548,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00162">162</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_association_base_8cc_source.html#l00276">SCTPAssociation::SCTPAssociation()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_association.html#ad1984a2e17a73629a51334904745086f">SCTPAssociation::SCTPAssociation()</a>.</p>
 
 </div>
 </div>
@@ -614,9 +563,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00163">163</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_association_base_8cc_source.html#l00276">SCTPAssociation::SCTPAssociation()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_association.html#ad1984a2e17a73629a51334904745086f">SCTPAssociation::SCTPAssociation()</a>.</p>
 
 </div>
 </div>
@@ -631,9 +578,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00159">159</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_serializer_8cc_source.html#l00525">SCTPSerializer::parse()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_serializer.html#a6f98120b3c9485fab42e24b9ab455b88">SCTPSerializer::parse()</a>.</p>
 
 </div>
 </div>
@@ -648,8 +593,6 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00156">156</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="adf7452edbaf15112920d12e92d14dfd9"></a><!-- doxytag: member="SCTPAssociation.h::SCTP_HEARTBEAT_CHUNK_LENGTH" ref="adf7452edbaf15112920d12e92d14dfd9" args="" -->
@@ -663,9 +606,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00153">153</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00676">SCTPAssociation::sendHeartbeat()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_association.html#afc5f06d167b937c0d1267047960bc354">SCTPAssociation::sendHeartbeat()</a>.</p>
 
 </div>
 </div>
@@ -680,9 +621,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00150">150</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_serializer_8cc_source.html#l00525">SCTPSerializer::parse()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00339">SCTPAssociation::sendInit()</a>, and <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00487">SCTPAssociation::sendInitAck()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_serializer.html#a6f98120b3c9485fab42e24b9ab455b88">SCTPSerializer::parse()</a>, <a class="el" href="class_s_c_t_p_association.html#afc1d3dc0cb62842b7d83998facfbfd06">SCTPAssociation::sendInit()</a>, and <a class="el" href="class_s_c_t_p_association.html#ac40f2aff108134cbfcea6cb06e25fdb1">SCTPAssociation::sendInitAck()</a>.</p>
 
 </div>
 </div>
@@ -697,8 +636,6 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00182">182</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
 </div>
 </div>
 <a class="anchor" id="ad4c0ed05112e2eae28cc210916cd3fdd"></a><!-- doxytag: member="SCTPAssociation.h::SCTP_SACK_CHUNK_LENGTH" ref="ad4c0ed05112e2eae28cc210916cd3fdd" args="" -->
@@ -712,9 +649,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00152">152</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00881">SCTPAssociation::createSack()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_association.html#a0054d12cb552f7417b97c7e671231905">SCTPAssociation::createSack()</a>.</p>
 
 </div>
 </div>
@@ -729,9 +664,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00158">158</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00762">SCTPAssociation::sendShutdownComplete()</a>, and <a class="el" href="_s_c_t_p_8cc_source.html#l00368">SCTP::sendShutdownCompleteFromMain()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_association.html#a30c6da407b37844471cbd5c69918ae52">SCTPAssociation::sendShutdownComplete()</a>, and <a class="el" href="class_s_c_t_p.html#aa184b3126dcf702901f1c1f0bc3529f4">SCTP::sendShutdownCompleteFromMain()</a>.</p>
 
 </div>
 </div>
@@ -746,9 +679,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00157">157</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00797">SCTPAssociation::sendShutdown()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_association.html#a76fce22241a52542859d1dcddac4651a">SCTPAssociation::sendShutdown()</a>.</p>
 
 </div>
 </div>
@@ -763,9 +694,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00169">169</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_association_rcv_message_8cc_source.html#l00492">SCTPAssociation::processInitAckArrived()</a>, <a class="el" href="_s_c_t_p_association_base_8cc_source.html#l00187">SCTPStateVariables::SCTPStateVariables()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00797">SCTPAssociation::sendShutdown()</a>, and <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00735">SCTPAssociation::sendShutdownAck()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_association.html#aa72dc267f9e5e18957f7e1c0d942195f">SCTPAssociation::processInitAckArrived()</a>, <a class="el" href="class_s_c_t_p_state_variables.html#a052d86410c436923db0a38b80c6b5087">SCTPStateVariables::SCTPStateVariables()</a>, <a class="el" href="class_s_c_t_p_association.html#a76fce22241a52542859d1dcddac4651a">SCTPAssociation::sendShutdown()</a>, and <a class="el" href="class_s_c_t_p_association.html#a588cedb27c104ca159fce93dfd53e4c7">SCTPAssociation::sendShutdownAck()</a>.</p>
 
 </div>
 </div>
@@ -780,9 +709,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00170">170</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_association_rcv_message_8cc_source.html#l01395">SCTPAssociation::process_TIMEOUT_INIT_REXMIT()</a>, and <a class="el" href="_s_c_t_p_association_rcv_message_8cc_source.html#l01418">SCTPAssociation::process_TIMEOUT_SHUTDOWN()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_association.html#ae94a9d41597adc5806db8c60f27ab45d">SCTPAssociation::process_TIMEOUT_INIT_REXMIT()</a>, and <a class="el" href="class_s_c_t_p_association.html#a6866e326d923a8915cdbb3d80802c527">SCTPAssociation::process_TIMEOUT_SHUTDOWN()</a>.</p>
 
 </div>
 </div>
@@ -797,9 +724,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00190">190</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00797">SCTPAssociation::sendShutdown()</a>, and <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00735">SCTPAssociation::sendShutdownAck()</a>.</p>
+<p>Referenced by <a class="el" href="class_s_c_t_p_association.html#a76fce22241a52542859d1dcddac4651a">SCTPAssociation::sendShutdown()</a>, and <a class="el" href="class_s_c_t_p_association.html#a588cedb27c104ca159fce93dfd53e4c7">SCTPAssociation::sendShutdownAck()</a>.</p>
 
 </div>
 </div>
@@ -814,8 +739,6 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00164">164</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
 </div>
 </div>
 <hr/><h2>Typedef Documentation</h2>
@@ -824,13 +747,11 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::vector&lt;<a class="el" href="class_i_pv_x_address.html">IPvXAddress</a>&gt; <a class="el" href="_s_c_t_p_association_8h.html#a83ecc618606af11f87a228a6ab74049b">AddressVector</a></td>
+          <td class="memname">typedef std::vector&lt;<a class="el" href="class_i_pv_x_address.html">IPvXAddress</a>&gt; <a class="el" href="_s_c_t_p_command__m_8h.html#a83ecc618606af11f87a228a6ab74049b">AddressVector</a></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00049">49</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
 
 </div>
 </div>
@@ -851,8 +772,6 @@ Functions</h2></td></tr>
 </table>
 </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00138">138</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="_s_c_t_p_association_8h.html#ad9a9cbc92cb49e36c2bd8f1de35aa477aa38b2d1ce0f55ed0b36414423acf41b1">RFC4960</a> = 0
 };
@@ -899,10 +818,8 @@ Functions</h2></td></tr>
 </table>
 </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00103">103</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="_consts80211_8h.html#ad70ed57eb996b190fc586f309107250ea9d7d6f31868d66330397c967c4afd2d2">DATA</a>                = 0,
+    <a class="code" href="_s_c_t_p_association_8h.html#a8886377ab3f4b4ef217558f2b83b7b12a9d7d6f31868d66330397c967c4afd2d2">DATA</a>                = 0,
     <a class="code" href="_s_c_t_p_association_8h.html#a8886377ab3f4b4ef217558f2b83b7b12a0cb1b2c6a7db1f1084886c98909a3f36">INIT</a>                = 1,
     <a class="code" href="_s_c_t_p_association_8h.html#a8886377ab3f4b4ef217558f2b83b7b12abb473557985d30fdf16d2525388e3a22">INIT_ACK</a>            = 2,
     <a class="code" href="_s_c_t_p_association_8h.html#a8886377ab3f4b4ef217558f2b83b7b12a689bf9c7470080fd0180eb7f5c293bd4">SACK</a>                = 3,
@@ -992,8 +909,6 @@ Functions</h2></td></tr>
 </table>
 </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00070">70</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="_s_c_t_p_association_8h.html#a78805c92dea64dcc0102898a18b6a7ddab1a4ad21616e72e2d7c4bef4b392d674">SCTP_E_ASSOCIATE</a>,
     <a class="code" href="_s_c_t_p_association_8h.html#a78805c92dea64dcc0102898a18b6a7dda9f1fd7fc777cc9fcb87a49cd64412c70">SCTP_E_OPEN_PASSIVE</a>,
@@ -1028,33 +943,6 @@ Functions</h2></td></tr>
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a6f5cc3c80258127f32f9afd435791f1f"></a><!-- doxytag: member="SCTPAssociation.h::SCTPFlags" ref="a6f5cc3c80258127f32f9afd435791f1f" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_s_c_t_p_association_8h.html#a6f5cc3c80258127f32f9afd435791f1f">SCTPFlags</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="a6f5cc3c80258127f32f9afd435791f1fa624a2bc1f97816d9d48c796f8ddab573"></a><!-- doxytag: member="COMPLETE_MESG_UNORDERED" ref="a6f5cc3c80258127f32f9afd435791f1fa624a2bc1f97816d9d48c796f8ddab573" args="" -->COMPLETE_MESG_UNORDERED</em>&nbsp;</td><td>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="a6f5cc3c80258127f32f9afd435791f1fa58b47731ff085e85a7462873e1284441"></a><!-- doxytag: member="COMPLETE_MESG_ORDERED" ref="a6f5cc3c80258127f32f9afd435791f1fa58b47731ff085e85a7462873e1284441" args="" -->COMPLETE_MESG_ORDERED</em>&nbsp;</td><td>
-</td></tr>
-</table>
-</dd>
-</dl>
-
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00122">122</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="_s_c_t_p_association_8h.html#a6f5cc3c80258127f32f9afd435791f1fa624a2bc1f97816d9d48c796f8ddab573">COMPLETE_MESG_UNORDERED</a> = 1,
-    <a class="code" href="_s_c_t_p_association_8h.html#a6f5cc3c80258127f32f9afd435791f1fa58b47731ff085e85a7462873e1284441">COMPLETE_MESG_ORDERED</a>   = 0
-};
-</pre></div>
-</div>
-</div>
 <a class="anchor" id="a8d59686e974f326f12076166b80dcad1"></a><!-- doxytag: member="SCTPAssociation.h::SCTPParameterTypes" ref="a8d59686e974f326f12076166b80dcad1" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -1073,8 +961,6 @@ Functions</h2></td></tr>
 </table>
 </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00129">129</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="_s_c_t_p_association_8h.html#a8d59686e974f326f12076166b80dcad1a84eff3c1951655fd6a05c80649382f6b">UNRECOGNIZED_PARAMETER</a>          = 8,
     <a class="code" href="_s_c_t_p_association_8h.html#a8d59686e974f326f12076166b80dcad1af17cc3bab233e3bca306ffc579984acc">SUPPORTED_ADDRESS_TYPES</a>         = 12,
@@ -1112,8 +998,6 @@ Functions</h2></td></tr>
 </table>
 </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00053">53</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="_s_c_t_p_association_8h.html#a2b3e573af74940c5a6c008b1cd0e3be8a7fefd7c6e51ba43b6c9d834b372da21e">SCTP_S_CLOSED</a>                = 0,
     <a class="code" href="_s_c_t_p_association_8h.html#a2b3e573af74940c5a6c008b1cd0e3be8af21d78f3ce1dc469572320cb1e192cc3">SCTP_S_COOKIE_WAIT</a>           = FSM_Steady(1),
@@ -1143,8 +1027,6 @@ Functions</h2></td></tr>
 </table>
 </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00143">143</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="_s_c_t_p_association_8h.html#a75eb0a6ff44280b6261fbc9a3b0cee9ca9e805af736d9be20caf33f5ec0dc1d47">ROUND_ROBIN</a>             = 0
 };
@@ -1176,11 +1058,10 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Returns the maximum of a and b. </p>
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00200">200</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_line_segments_mobility_base_8cc_source.html#l00039">LineSegmentsMobilityBase::beginNextMove()</a>, <a class="el" href="_s_c_t_p_association_send_all_8cc_source.html#l00158">SCTPAssociation::choosePathForRetransmission()</a>, <a class="el" href="_s_c_t_p_c_c_functions_8cc_source.html#l00272">SCTPAssociation::cwndUpdateAfterCwndTimeout()</a>, <a class="el" href="_s_c_t_p_c_c_functions_8cc_source.html#l00236">SCTPAssociation::cwndUpdateAfterRtxTimeout()</a>, <a class="el" href="_s_c_t_p_c_c_functions_8cc_source.html#l00050">SCTPAssociation::cwndUpdateAfterSack()</a>, <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00148">TCPBaseAlg::established()</a>, <a class="el" href="_s_c_t_p_c_c_functions_8cc_source.html#l00039">SCTPAssociation::initCCParameters()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l02037">SCTPAssociation::pmRttMeasurement()</a>, <a class="el" href="_r_i_p_routing_8cc_source.html#l00691">RIPRouting::processPacket()</a>, <a class="el" href="_r_i_p_routing_8cc_source.html#l00533">RIPRouting::processResponse()</a>, <a class="el" href="flavours_2_t_c_p_reno_8cc_source.html#l00032">TCPReno::recalculateSlowStartThreshold()</a>, <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00031">TCPNewReno::recalculateSlowStartThreshold()</a>, <a class="el" href="old_2flavours_2_t_c_p_reno_8cc_source.html#l00032">tcp_old::TCPReno::recalculateSlowStartThreshold()</a>, <a class="el" href="flavours_2_t_c_p_tahoe_8cc_source.html#l00031">TCPTahoe::recalculateSlowStartThreshold()</a>, <a class="el" href="old_2flavours_2_t_c_p_tahoe_8cc_source.html#l00032">tcp_old::TCPTahoe::recalculateSlowStartThreshold()</a>, <a class="el" href="_ieee80211_mac_8cc_source.html#l00701">Ieee80211Mac::scheduleReservePeriod()</a>, and <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00413">TCPBaseAlg::sendData()</a>.</p>
+<p>Referenced by <a class="el" href="class_obstacle_control.html#a206a6e9155d1b201841d0718e65ed30f">ObstacleControl::add()</a>, <a class="el" href="class_obstacle_control.html#a4d7fa738ad26c6d2d4ef494b60fe8b1f">ObstacleControl::calculateReceivedPower()</a>, <a class="el" href="class_vo_i_p_source_app.html#abc58a8237b0a6310065da29fdfd8cd45">VoIPSourceApp::checkSilence()</a>, <a class="el" href="class_s_c_t_p_association.html#a8b00fc2f2bcb1cb805a62316a15db984">SCTPAssociation::choosePathForRetransmission()</a>, <a class="el" href="class_s_c_t_p_association.html#a9a5de305f7873c84ef644dce513964cd">SCTPAssociation::cwndUpdateAfterCwndTimeout()</a>, <a class="el" href="class_s_c_t_p_association.html#a53665e3333a5e7b2aae79a65b9a1482b">SCTPAssociation::cwndUpdateAfterRtxTimeout()</a>, <a class="el" href="class_s_c_t_p_association.html#ade798497e9cb468bf8f4759e9b8e9840">SCTPAssociation::cwndUpdateAfterSack()</a>, <a class="el" href="class_t_c_p_base_alg.html#a2cbb83fb79f28eaea3d33acb13526e11">TCPBaseAlg::established()</a>, <a class="el" href="class_vo_i_p_source_app.html#af8ecdf3d2ff2972798a15e9abf48c384">VoIPSourceApp::generatePacket()</a>, <a class="el" href="class_s_c_t_p_association.html#a27ab7a3f0d7e82a5b48f47e39e53dd23">SCTPAssociation::initCCParameters()</a>, <a class="el" href="memp_8h.html#a9693e5b1ac2c6b9c0e7870522d45efa2">memp_init()</a>, <a class="el" href="class_tra_c_i_demo.html#a4f925d2b383b4275b4ff2f1e4510b2d9">TraCIDemo::numInitStages()</a>, <a class="el" href="class_tra_c_i_test_app.html#aadc67690745d7f0b089e9783451350c3">TraCITestApp::numInitStages()</a>, <a class="el" href="class_tra_c_i_scenario_manager_launchd.html#a2058d9cf065687302f4dfb4a060976af">TraCIScenarioManagerLaunchd::numInitStages()</a>, <a class="el" href="class_tra_c_i_scenario_manager.html#a3f5530c293e8d7f24f641910d7a170b2">TraCIScenarioManager::numInitStages()</a>, <a class="el" href="class_o_l_s_r___e_t_x.html#a7f145664995accb95015116f34f8b288">OLSR_ETX::olsr_r1_mpr_computation()</a>, <a class="el" href="class_o_l_s_r___e_t_x.html#a92c08d28cf1b207489523b4c74d7d196">OLSR_ETX::olsr_r2_mpr_computation()</a>, <a class="el" href="class_s_c_t_p_association.html#a02104ef95fcdab0f90cc9b03da82a675">SCTPAssociation::pmRttMeasurement()</a>, <a class="el" href="class_o_l_s_r___e_t_x.html#aac3722c00fef8422e132efa57589f506">OLSR_ETX::qolsr_mpr_computation()</a>, <a class="el" href="class_t_c_p_new_reno.html#aeb6719d2c5df3c9ed30361f0a7b9e5f7">TCPNewReno::recalculateSlowStartThreshold()</a>, <a class="el" href="class_t_c_p_reno.html#a400250f807397650fa3c83c0c46dfd0f">TCPReno::recalculateSlowStartThreshold()</a>, <a class="el" href="class_t_c_p_tahoe.html#a2bcfd7100334e5ee3df7a4df4eefae28">TCPTahoe::recalculateSlowStartThreshold()</a>, <a class="el" href="class_ieee80211_mac.html#a6b11301b46f8e34c5c9aecd8c3645ec3">Ieee80211Mac::reportRecoveryFailure()</a>, <a class="el" href="class_i_pv4_network_configurator.html#a7925b9016bbd7bd82165153abecfa40b">IPv4NetworkConfigurator::routesCanBeNeighbors()</a>, <a class="el" href="aodv__rreq_8h.html#a4f8377877f7465bf09d86a1856abf4dc">rreq_local_repair()</a>, <a class="el" href="class_ieee80211_mac.html#a21662171dd8c6356df3c8b050d7c9414">Ieee80211Mac::scheduleReservePeriod()</a>, <a class="el" href="class_t_c_p_base_alg.html#a28c072f575629d0c5ec6478edd3bb7e5">TCPBaseAlg::sendData()</a>, <a class="el" href="classrd_exponential.html#aeda9b5c2866d36a5880dfabc82b8ff80">rdExponential::setMaxLimit()</a>, <a class="el" href="class_posture.html#a8517a4c793e02f5f4cbf4cd589c2bf39">Posture::setPostureSpeed()</a>, and <a class="el" href="class_obstacle.html#a805aed4d3b239e0163f06aa70bfb0b73">Obstacle::setShape()</a>.</p>
 <div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> (a &lt; b) ? b : a; }
 </pre></div>
 </div>
@@ -1209,11 +1090,10 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Returns the minimum of a and b. </p>
 
-<p>Definition at line <a class="el" href="_s_c_t_p_association_8h_source.html#l00195">195</a> of file <a class="el" href="_s_c_t_p_association_8h_source.html">SCTPAssociation.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01325">TCPConnection::addSacks()</a>, <a class="el" href="_s_c_t_p_c_c_functions_8cc_source.html#l00272">SCTPAssociation::cwndUpdateAfterCwndTimeout()</a>, <a class="el" href="_s_c_t_p_c_c_functions_8cc_source.html#l00130">SCTPAssociation::cwndUpdateBytesAcked()</a>, <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00148">TCPBaseAlg::established()</a>, <a class="el" href="_basic_decider_8cc_source.html#l00113">BasicDecider::handleLowerMsg()</a>, <a class="el" href="_s_c_t_p_c_c_functions_8cc_source.html#l00039">SCTPAssociation::initCCParameters()</a>, <a class="el" href="_i_p_serializer_8cc_source.html#l00107">IPSerializer::parse()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l02037">SCTPAssociation::pmRttMeasurement()</a>, <a class="el" href="_s_c_t_p_association_rcv_message_8cc_source.html#l01464">SCTPAssociation::process_TIMEOUT_HEARTBEAT()</a>, <a class="el" href="_s_c_t_p_association_rcv_message_8cc_source.html#l01588">SCTPAssociation::process_TIMEOUT_RTX()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l00864">TCPConnection::processMSSOption()</a>, <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00031">TCPNewReno::recalculateSlowStartThreshold()</a>, <a class="el" href="flavours_2_t_c_p_reno_8cc_source.html#l00032">TCPReno::recalculateSlowStartThreshold()</a>, <a class="el" href="old_2flavours_2_t_c_p_reno_8cc_source.html#l00032">tcp_old::TCPReno::recalculateSlowStartThreshold()</a>, <a class="el" href="flavours_2_t_c_p_tahoe_8cc_source.html#l00031">TCPTahoe::recalculateSlowStartThreshold()</a>, <a class="el" href="old_2flavours_2_t_c_p_tahoe_8cc_source.html#l00032">tcp_old::TCPTahoe::recalculateSlowStartThreshold()</a>, <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00093">TCPNewReno::receivedDataAck()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l01292">SCTPAssociation::removeFromGapList()</a>, <a class="el" href="old_2_t_c_p_connection_util_8cc_source.html#l00623">tcp_old::TCPConnection::retransmitData()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l00796">TCPConnection::retransmitData()</a>, <a class="el" href="old_2_t_c_p_connection_util_8cc_source.html#l00602">tcp_old::TCPConnection::retransmitOneSegment()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l00747">TCPConnection::retransmitOneSegment()</a>, <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00413">TCPBaseAlg::sendData()</a>, <a class="el" href="old_2_t_c_p_connection_util_8cc_source.html#l00480">tcp_old::TCPConnection::sendData()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l00610">TCPConnection::sendData()</a>, <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l00487">SCTPAssociation::sendInitAck()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01986">TCPConnection::sendOneNewSegment()</a>, <a class="el" href="_t_c_p_serializer_8cc_source.html#l00043">TCPSerializer::serialize()</a>, and <a class="el" href="_s_c_t_p_association_util_8cc_source.html#l01354">SCTPAssociation::updateGapList()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv4_network_configurator.html#a0154b854c3fc0072ac7bd07ad72df050">IPv4NetworkConfigurator::assignAddresses()</a>, <a class="el" href="class_obstacle_control.html#a4d7fa738ad26c6d2d4ef494b60fe8b1f">ObstacleControl::calculateReceivedPower()</a>, <a class="el" href="class_d_y_m_o___token_bucket.html#a7662e4119107e1abecbebfb5ca833da1">DYMO_TokenBucket::consumeTokens()</a>, <a class="el" href="class_s_c_t_p_association.html#a9a5de305f7873c84ef644dce513964cd">SCTPAssociation::cwndUpdateAfterCwndTimeout()</a>, <a class="el" href="class_s_c_t_p_association.html#a356510e0d2cfb8c6770c72f29634cb93">SCTPAssociation::cwndUpdateBytesAcked()</a>, <a class="el" href="class_t_c_p_base_alg.html#a2cbb83fb79f28eaea3d33acb13526e11">TCPBaseAlg::established()</a>, <a class="el" href="class_vo_i_p_source_app.html#af8ecdf3d2ff2972798a15e9abf48c384">VoIPSourceApp::generatePacket()</a>, <a class="el" href="class_nist_error_rate_model.html#a5259cf4108cc3e15057c1120824f2e09">NistErrorRateModel::GetFec16QamBer()</a>, <a class="el" href="class_nist_error_rate_model.html#ad48b1b2d733b5e6415d4194362aacd0a">NistErrorRateModel::GetFec64QamBer()</a>, <a class="el" href="class_nist_error_rate_model.html#a0ab4d9e1a003e706f655f8577bc79019">NistErrorRateModel::GetFecBpskBer()</a>, <a class="el" href="class_yans_error_rate_model.html#a7a8cb32f8a76f1998d48f1c7fe5e6513">YansErrorRateModel::GetFecBpskBer()</a>, <a class="el" href="class_yans_error_rate_model.html#a6ca4e4d03d31f305c84d5e7f4b0ef288">YansErrorRateModel::GetFecQamBer()</a>, <a class="el" href="class_nist_error_rate_model.html#a56381201bc77d66bc58e00edf1c5e7a0">NistErrorRateModel::GetFecQpskBer()</a>, <a class="el" href="class_s_c_t_p_association.html#a27ab7a3f0d7e82a5b48f47e39e53dd23">SCTPAssociation::initCCParameters()</a>, <a class="el" href="class_s_c_t_p_association.html#a02104ef95fcdab0f90cc9b03da82a675">SCTPAssociation::pmRttMeasurement()</a>, <a class="el" href="class_s_c_t_p_association.html#acb89ca4bcc84239541171327977762e9">SCTPAssociation::process_TIMEOUT_HEARTBEAT()</a>, <a class="el" href="class_s_c_t_p_association.html#ab0e373e70c4541d7f64666e98e99e7d3">SCTPAssociation::process_TIMEOUT_RTX()</a>, <a class="el" href="class_t_c_p_connection.html#a632302213a1f4344d908bdfd1509323d">TCPConnection::processMSSOption()</a>, <a class="el" href="class_t_c_p_reno.html#a400250f807397650fa3c83c0c46dfd0f">TCPReno::recalculateSlowStartThreshold()</a>, <a class="el" href="class_t_c_p_new_reno.html#aeb6719d2c5df3c9ed30361f0a7b9e5f7">TCPNewReno::recalculateSlowStartThreshold()</a>, <a class="el" href="class_t_c_p_tahoe.html#a2bcfd7100334e5ee3df7a4df4eefae28">TCPTahoe::recalculateSlowStartThreshold()</a>, <a class="el" href="class_t_c_p_new_reno.html#a634da20c5ad064882d2c87f6f5ff1301">TCPNewReno::receivedDataAck()</a>, <a class="el" href="class_s_c_t_p_association.html#a6d86b97308eef3f43f93ca939a3d1a52">SCTPAssociation::removeFromGapList()</a>, <a class="el" href="class_ieee80211_mac.html#a6b11301b46f8e34c5c9aecd8c3645ec3">Ieee80211Mac::reportRecoveryFailure()</a>, <a class="el" href="class_t_c_p_connection.html#ab2c57b0ff79eb111ca6840b8d7003b04">TCPConnection::retransmitData()</a>, <a class="el" href="class_t_c_p_connection.html#a8ae68910942bd1ea6558ae7849ae22ea">TCPConnection::retransmitOneSegment()</a>, <a class="el" href="class_i_pv4_network_configurator.html#a7925b9016bbd7bd82165153abecfa40b">IPv4NetworkConfigurator::routesCanBeNeighbors()</a>, <a class="el" href="class_t_c_p_base_alg.html#a28c072f575629d0c5ec6478edd3bb7e5">TCPBaseAlg::sendData()</a>, <a class="el" href="class_t_c_p_connection.html#a0238c323366884c6598d7d92d21f69ab">TCPConnection::sendData()</a>, <a class="el" href="class_s_c_t_p_association.html#ac40f2aff108134cbfcea6cb06e25fdb1">SCTPAssociation::sendInitAck()</a>, <a class="el" href="class_t_c_p_connection.html#a35768c6517e5f25424a13d1e80892b32">TCPConnection::sendOneNewSegment()</a>, <a class="el" href="class_t_c_p_serializer.html#a72028a325c7858bfe5f563de21e7ad67">TCPSerializer::serialize()</a>, <a class="el" href="classrd_normal.html#a386ebecb1aefe86fe0d2e3d4b088fc6e">rdNormal::setMinLimit()</a>, <a class="el" href="classrd_exponential.html#ae8ca4a03aa6bc0f0a396e678b7253208">rdExponential::setMinLimit()</a>, <a class="el" href="class_posture.html#a8517a4c793e02f5f4cbf4cd589c2bf39">Posture::setPostureSpeed()</a>, <a class="el" href="class_obstacle.html#a805aed4d3b239e0163f06aa70bfb0b73">Obstacle::setShape()</a>, and <a class="el" href="class_s_c_t_p_association.html#a99fbda3fe957b452899203d4e0f151a0">SCTPAssociation::updateGapList()</a>.</p>
 <div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> (a &lt; b) ? a : b; }
 </pre></div>
 </div>
@@ -1224,7 +1104,7 @@ Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="_s_c_t_p_association_8h.html">SCTPAssociation.h</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:46 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:22 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

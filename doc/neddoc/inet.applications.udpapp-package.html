@@ -13,20 +13,6 @@
    </tr>
 <tr>
    <td>
-<a href="inet.applications.udpapp.UDPApp.html">UDPApp</a>
-   </td>
-   <td>
-<i>module&nbsp;interface</i>
-   </td>
-   <td>
-
-<p>Template for <a href="inet.transport.udp.UDP.html">UDP</a> applications. It shows what gates a <a href="inet.transport.udp.UDP.html">UDP</a> app
-needs, to be able to be used in <a href="inet.nodes.inet.StandardHost.html">StandardHost</a> etc.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
 <a href="inet.applications.udpapp.UDPBasicApp.html">UDPBasicApp</a>
    </td>
    <td>
@@ -35,7 +21,21 @@ needs, to be able to be used in <a href="inet.nodes.inet.StandardHost.html">Stan
    <td>
 
 <p>Sends UDP packets to the given IP address at the given interval.
-Compatible with both IPv4 and <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a>.</p>
+Compatible with both <a href="inet.networklayer.ipv4.IPv4.html">IPv4</a> and <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a>.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.applications.udpapp.UDPBasicBurst.html">UDPBasicBurst</a>
+   </td>
+   <td>
+<i>simple&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Sends UDP packets to the given IP address(es) in bursts, or acts as a
+packet sink. Compatible with both IPv4 and IPv6.</p>
 
    </td>
 </tr>
@@ -48,7 +48,9 @@ Compatible with both IPv4 and <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a
    </td>
    <td>
 
-<p>Similar to <a href="inet.applications.udpapp.UDPBasicApp.html">UDPBasicApp</a>, but it sends back the packet after reception.</p>
+<p>Listens on an UDP port, and sends back each received packet to its sender.
+Note: when used together with <a href="inet.applications.udpapp.UDPBasicApp.html">UDPBasicApp</a>, <a href="inet.applications.udpapp.UDPBasicApp.html">UDPBasicApp</a>'s "received packet
+lifetime" statistic will record round-trip times.</p>
 
    </td>
 </tr>
@@ -92,6 +94,5 @@ Compatible with both IPv4 and <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a
    </td>
 </tr>
 </table>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

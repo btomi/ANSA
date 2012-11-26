@@ -6,7 +6,21 @@
    <body onload="if (top.frames['componentsframe'] == undefined) { s = window.location.toString(); window.location = 'index.html?p=' + s.substring(s.lastIndexOf('/')+1); }">
 <h2 class="comptitle">Simple Module <i>RTPPayloadReceiver</i></h2>
 <b>Package:</b> inet.transport.rtp<br/><b>File: <a href="src-transport-rtp-RTPPayloadReceiver.ned.html">src/transport/rtp/RTPPayloadReceiver.ned</a></b><br/><p><a href="../doxy/class_r_t_p_payload_receiver.html" target="mainframe"><b>C++ definition</b></a></p>
-<p>(no description)</p><h3 class="subtitle">Parameters:</h3>
+<p>(no description)</p><img src="inet.transport.rtp.RTPPayloadReceiver-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.transport.rtp.RTPPayloadReceiver.html" title="RTPPayloadReceiver" alt="RTPPayloadReceiver" coords="0,90,156,130">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.transport.rtp.RTPPayloadReceiver-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.transport.rtp.RTPPayloadReceiver.html" title="Simple Module RTPPayloadReceiver" alt="" coords="5,6,152,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.transport.rtp.RTPPayloadReceiver-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.transport.rtp.RTPPayloadReceiver.html" title="Simple Module RTPPayloadReceiver" alt="" coords="8,83,155,111">
+<area shape="rect" id="node2" href="inet.transport.rtp.IRTPPayloadReceiver.html" title="Module Interface IRTPPayloadReceiver" alt="" coords="5,6,157,34">
+</map>
+<h3 class="subtitle">Parameters:</h3>
 <table class="paramstable">
    <tr>
       <th class="name">Name</th>
@@ -20,9 +34,24 @@
       <i>string</i>
    </td>
    <td></td>
-   <td>
-   </td>
+   <td>   </td>
 </tr>
+<tr class="local">
+   <td>outputLogFileName</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"outputLogLoss%d.log"</td>
+   <td>   </td>
+</tr>
+</table>
+<h3 class="subtitle">Properties:</h3>
+<table class="propertiestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="value">Value</th>
+      <th class="description">Description</th>
+   </tr>
 </table>
 <h3 class="subtitle">Gates:</h3>
 <table class="gatestable">
@@ -43,11 +72,47 @@
    <td></td>   <td></td>
 </tr>
 </table>
+<h3 class="subtitle">Signals:</h3>
+<table class="signalstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="unit">Unit</th>
+   </tr>
+<tr class="local">
+   <td>rcvdPkRtpTimestamp</td>
+   <td><i>
+simtime_t   </i></td>
+   <td>s</td>
+</tr>
+</table>
+<h3 class="subtitle">Statistics:</h3>
+<table class="statisticstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="title">Title</th>
+      <th class="source">Source</th>
+      <th class="record">Record</th>
+      <th class="unit">Unit</th>
+      <th class="interpolationmode">Interpolation Mode</th>
+   </tr>
+<tr class="local">
+   <td>rcvdPkRtpTimestamp</td>
+   <td>received packet RTP timestamp</td>
+   <td></td>
+   <td>vector</td>
+   <td></td>
+   <td></td>
+</tr>
+</table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">RTPPayloadReceiver</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #000000; "> </span><span style="color: #000000; ">IRTPPayloadReceiver</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">outputFileName</span><span style="color: #000000; ">;
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">outputLogFileName</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;outputLogLoss%d.log&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">rcvdPkRtpTimestamp</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">simtime_t</span><span style="color: #000000; ">; </span><span style="color: #000000; ">unit</span><span style="color: #000000; ">=</span><span style="color: #000000; ">s</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">rcvdPkRtpTimestamp</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;received packet RTP timestamp&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">vector</span><span style="color: #000000; ">);
 
     </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">profileIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">RTPInnerPacket</span><span style="color: #000000; ">);
@@ -55,6 +120,5 @@
 }
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

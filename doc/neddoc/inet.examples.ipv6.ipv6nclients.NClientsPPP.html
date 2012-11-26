@@ -5,7 +5,29 @@
    </head>
    <body onload="if (top.frames['componentsframe'] == undefined) { s = window.location.toString(); window.location = 'index.html?p=' + s.substring(s.lastIndexOf('/')+1); }">
 <h2 class="comptitle">Network <i>NClientsPPP</i></h2>
-<b>Package:</b> inet.examples.ipv6.ipv6nclients<br/><b>File: <a href="examples-ipv6-ipv6nclients-NClientsPPP.ned.html">examples/ipv6/ipv6nclients/NClientsPPP.ned</a></b><br/><p>(no description)</p><h3 class="subtitle">Parameters:</h3>
+<b>Package:</b> inet.examples.ipv6.ipv6nclients<br/><b>File: <a href="examples-ipv6-ipv6nclients-NClientsPPP.ned.html">examples/ipv6/ipv6nclients/NClientsPPP.ned</a></b><br/><p>(no description)</p><img src="inet.examples.ipv6.ipv6nclients.NClientsPPP-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.networklayer.autorouting.ipv6.FlatNetworkConfigurator6.html" title="FlatNetworkConfigurator6" alt="FlatNetworkConfigurator6" coords="29,110,101,169">
+<area shape="rect" href="inet.nodes.ipv6.Router6.html" title="Router6" alt="Router6" coords="201,287,245,338">
+<area shape="rect" href="inet.nodes.ipv6.Router6.html" title="Router6" alt="Router6" coords="318,220,362,271">
+<area shape="rect" href="inet.nodes.ipv6.Router6.html" title="Router6" alt="Router6" coords="440,149,484,200">
+<area shape="rect" href="inet.nodes.ipv6.StandardHost6.html" title="StandardHost6" alt="StandardHost6" coords="45,372,89,431">
+<area shape="rect" href="inet.nodes.ipv6.StandardHost6.html" title="StandardHost6" alt="StandardHost6" coords="558,84,602,143">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.examples.ipv6.ipv6nclients.NClientsPPP-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.examples.ipv6.ipv6nclients.NClientsPPP.html" title="Network NClientsPPP" alt="" coords="263,6,361,34">
+<area shape="rect" id="node2" href="inet.networklayer.autorouting.ipv6.FlatNetworkConfigurator6.html" title="Simple Module FlatNetworkConfigurator6" alt="" coords="5,83,176,111">
+<area shape="rect" id="node4" href="inet.nodes.ipv6.StandardHost6.html" title="Compound Module StandardHost6" alt="" coords="200,83,309,111">
+<area shape="rect" id="node6" href="inet.examples.ipv6.ipv6nclients.NClientsPPP.fiberline.html" title="Channel fiberline" alt="" coords="333,83,405,111">
+<area shape="rect" id="node8" href="inet.nodes.ipv6.Router6.html" title="Compound Module Router6" alt="" coords="429,83,501,111">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.examples.ipv6.ipv6nclients.NClientsPPP-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.examples.ipv6.ipv6nclients.NClientsPPP.html" title="Network NClientsPPP" alt="" coords="5,6,104,34">
+</map>
+<h3 class="subtitle">Parameters:</h3>
 <table class="paramstable">
    <tr>
       <th class="name">Name</th>
@@ -34,6 +56,11 @@
    <td><i></i></td>
    <td></td>
 </tr>
+<tr>
+   <td>display</td>
+   <td><i>bgb=628,413</i></td>
+   <td></td>
+</tr>
 </table>
 <h3 class="subtitle">Unassigned submodule parameters:</h3>
 <table class="deepparamstable">
@@ -44,14 +71,6 @@
       <th class="description">Description</th>
    </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">r1</a>.<a href="inet.networklayer.ipv6.RoutingTable6.html">routingTable6</a>.routingTableFile</td>
-   <td>
-      <i>xml</i>
-   </td>
-   <td></td>
-   <td>   </td>
-</tr>
-<tr>
    <td><a href="inet.nodes.ipv6.Router6.html">r1</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.ipv6.IPv6.html">ipv6</a>.procDelay</td>
    <td>
       <i>double</i>
@@ -60,76 +79,50 @@
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">r1</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">r1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">r1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"auto"</td>
-   <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">r1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
+   <td><a href="inet.nodes.ipv6.Router6.html">r1</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">neighbourDiscovery</a>.minIntervalBetweenRAs</td>
    <td>
       <i>double</i>
    </td>
-   <td>100Mbps</td>
+   <td>30ms</td>
    <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
+<p>minRtrAdvInterval:  0.03 sec for MIPv6 , declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">r1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.nodes.ipv6.Router6.html">r1</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">neighbourDiscovery</a>.maxIntervalBetweenRAs</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>70ms</td>
+   <td>
+<p>MaxrtrAdvInterval: 0.07 sec for MIPv6, declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ipv6.Router6.html">r1</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.IxMIPv6Support.html">mipv6support</a>.isHomeAgent</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td></td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ipv6.Router6.html">r1</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.IxMIPv6Support.html">mipv6support</a>.isMobileNode</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td></td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ipv6.Router6.html">r1</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>whether to display IP addresses on links</p>
    </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">r1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">r2</a>.<a href="inet.networklayer.ipv6.RoutingTable6.html">routingTable6</a>.routingTableFile</td>
-   <td>
-      <i>xml</i>
-   </td>
-   <td></td>
-   <td>   </td>
 </tr>
 <tr>
    <td><a href="inet.nodes.ipv6.Router6.html">r2</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.ipv6.IPv6.html">ipv6</a>.procDelay</td>
@@ -140,76 +133,50 @@ possible with DTE-to-DTE connection).</p>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">r2</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">r2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">r2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"auto"</td>
-   <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">r2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
+   <td><a href="inet.nodes.ipv6.Router6.html">r2</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">neighbourDiscovery</a>.minIntervalBetweenRAs</td>
    <td>
       <i>double</i>
    </td>
-   <td>100Mbps</td>
+   <td>30ms</td>
    <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
+<p>minRtrAdvInterval:  0.03 sec for MIPv6 , declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">r2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.nodes.ipv6.Router6.html">r2</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">neighbourDiscovery</a>.maxIntervalBetweenRAs</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>70ms</td>
+   <td>
+<p>MaxrtrAdvInterval: 0.07 sec for MIPv6, declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ipv6.Router6.html">r2</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.IxMIPv6Support.html">mipv6support</a>.isHomeAgent</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td></td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ipv6.Router6.html">r2</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.IxMIPv6Support.html">mipv6support</a>.isMobileNode</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td></td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ipv6.Router6.html">r2</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>whether to display IP addresses on links</p>
    </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">r2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">r3</a>.<a href="inet.networklayer.ipv6.RoutingTable6.html">routingTable6</a>.routingTableFile</td>
-   <td>
-      <i>xml</i>
-   </td>
-   <td></td>
-   <td>   </td>
 </tr>
 <tr>
    <td><a href="inet.nodes.ipv6.Router6.html">r3</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.ipv6.IPv6.html">ipv6</a>.procDelay</td>
@@ -220,165 +187,49 @@ possible with DTE-to-DTE connection).</p>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">r3</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">r3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">r3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"auto"</td>
-   <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">r3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
+   <td><a href="inet.nodes.ipv6.Router6.html">r3</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">neighbourDiscovery</a>.minIntervalBetweenRAs</td>
    <td>
       <i>double</i>
    </td>
-   <td>100Mbps</td>
+   <td>30ms</td>
    <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
+<p>minRtrAdvInterval:  0.03 sec for MIPv6 , declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">r3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.nodes.ipv6.Router6.html">r3</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">neighbourDiscovery</a>.maxIntervalBetweenRAs</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>70ms</td>
+   <td>
+<p>MaxrtrAdvInterval: 0.07 sec for MIPv6, declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ipv6.Router6.html">r3</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.IxMIPv6Support.html">mipv6support</a>.isHomeAgent</td>
    <td>
       <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.Router6.html">r3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">cli</a>.<a href="inet.networklayer.ipv6.RoutingTable6.html">routingTable6</a>.routingTableFile</td>
-   <td>
-      <i>xml</i>
    </td>
    <td></td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">cli</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.destAddr</td>
+   <td><a href="inet.nodes.ipv6.Router6.html">r3</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.IxMIPv6Support.html">mipv6support</a>.isMobileNode</td>
    <td>
-      <i>string</i>
+      <i>bool</i>
    </td>
-   <td>""</td>
-   <td>
-<p>destination <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address</p>
-   </td>
+   <td></td>
+   <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">cli</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.srcAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>source <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address (useful with <a href="inet.examples.sctp.multihomed.multi.html">multi</a>-homing)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">cli</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.packetSize</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>56B</td>
-   <td>
-<p>of ping payload, in bytes</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">cli</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.interval</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>1s</td>
-   <td>
-<p>time to wait between pings (can be random)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">cli</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.hopLimit</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>32</td>
-   <td>
-<p>TTL or hopLimit for <a href="inet.networklayer.ipv4.IP.html">IP</a> packets</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">cli</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.count</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>stop after count ping requests, 0 means continuously</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">cli</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.startTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>uniform(0s,this.interval)</td>
-   <td>
-<p>send first ping at startTime</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">cli</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.stopTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
-   <td>
-<p>send no pings after stopTime, 0 means forever</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">cli</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.printPing</td>
+   <td><a href="inet.nodes.ipv6.Router6.html">r3</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>dump on stdout</p>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
@@ -390,165 +241,49 @@ possible with DTE-to-DTE connection).</p>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">cli</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">cli</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">cli</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"auto"</td>
-   <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">cli</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">cli</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">neighbourDiscovery</a>.minIntervalBetweenRAs</td>
    <td>
       <i>double</i>
    </td>
-   <td>100Mbps</td>
+   <td>30ms</td>
    <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
+<p>minRtrAdvInterval:  0.03 sec for MIPv6 , declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">cli</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">cli</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">neighbourDiscovery</a>.maxIntervalBetweenRAs</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>70ms</td>
+   <td>
+<p>MaxrtrAdvInterval: 0.07 sec for MIPv6, declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">cli</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.IxMIPv6Support.html">mipv6support</a>.isHomeAgent</td>
    <td>
       <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">cli</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">srv</a>.<a href="inet.networklayer.ipv6.RoutingTable6.html">routingTable6</a>.routingTableFile</td>
-   <td>
-      <i>xml</i>
    </td>
    <td></td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">srv</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.destAddr</td>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">cli</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.IxMIPv6Support.html">mipv6support</a>.isMobileNode</td>
    <td>
-      <i>string</i>
+      <i>bool</i>
    </td>
-   <td>""</td>
-   <td>
-<p>destination <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address</p>
-   </td>
+   <td></td>
+   <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">srv</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.srcAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>source <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address (useful with <a href="inet.examples.sctp.multihomed.multi.html">multi</a>-homing)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">srv</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.packetSize</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>56B</td>
-   <td>
-<p>of ping payload, in bytes</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">srv</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.interval</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>1s</td>
-   <td>
-<p>time to wait between pings (can be random)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">srv</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.hopLimit</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>32</td>
-   <td>
-<p>TTL or hopLimit for <a href="inet.networklayer.ipv4.IP.html">IP</a> packets</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">srv</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.count</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>stop after count ping requests, 0 means continuously</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">srv</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.startTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>uniform(0s,this.interval)</td>
-   <td>
-<p>send first ping at startTime</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">srv</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.stopTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
-   <td>
-<p>send no pings after stopTime, 0 means forever</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">srv</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.printPing</td>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">cli</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>dump on stdout</p>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
@@ -560,68 +295,50 @@ possible with DTE-to-DTE connection).</p>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">srv</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">srv</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">srv</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"auto"</td>
-   <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">srv</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">srv</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">neighbourDiscovery</a>.minIntervalBetweenRAs</td>
    <td>
       <i>double</i>
    </td>
-   <td>100Mbps</td>
+   <td>30ms</td>
    <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
+<p>minRtrAdvInterval:  0.03 sec for MIPv6 , declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">srv</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">srv</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html">neighbourDiscovery</a>.maxIntervalBetweenRAs</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>70ms</td>
+   <td>
+<p>MaxrtrAdvInterval: 0.07 sec for MIPv6, declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">srv</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.IxMIPv6Support.html">mipv6support</a>.isHomeAgent</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td></td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">srv</a>.<a href="inet.nodes.ipv6.NetworkLayer6.html">networkLayer</a>.<a href="inet.networklayer.IxMIPv6Support.html">mipv6support</a>.isMobileNode</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td></td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.ipv6.StandardHost6.html">srv</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>whether to display IP addresses on links</p>
    </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.ipv6.StandardHost6.html">srv</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
 </tr>
 </table>
 <h3 class="subtitle">Source code:</h3>
@@ -629,6 +346,7 @@ possible with DTE-to-DTE connection).</p>
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">n</span><span style="color: #000000; ">;
+        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;bgb=628,413&quot;</span><span style="color: #000000; ">);
     </span><span style="color: #800000; font-weight: bold; ">types</span><span style="color: #000000; ">:
         </span><span style="color: #800000; font-weight: bold; ">channel</span><span style="color: #000000; "> </span><span style="color: #000000; ">fiberline</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">DatarateChannel</span><span style="color: #000000; ">
         {
@@ -636,12 +354,24 @@ possible with DTE-to-DTE connection).</p>
             </span><span style="color: #000000; ">datarate</span><span style="color: #000000; "> = </span><span style="color: #008000; ">512</span><span style="color: #000000; ">Mbps</span><span style="color: #000000; ">;
         }
     </span><span style="color: #800000; font-weight: bold; ">submodules</span><span style="color: #000000; ">:
-        </span><span style="color: #000000; ">configurator</span><span style="color: #000000; ">: </span><span style="color: #000000; ">FlatNetworkConfigurator6</span><span style="color: #000000; ">;
-        </span><span style="color: #000000; ">r1</span><span style="color: #000000; ">: </span><span style="color: #000000; ">Router6</span><span style="color: #000000; ">;
-        </span><span style="color: #000000; ">r2</span><span style="color: #000000; ">: </span><span style="color: #000000; ">Router6</span><span style="color: #000000; ">;
-        </span><span style="color: #000000; ">r3</span><span style="color: #000000; ">: </span><span style="color: #000000; ">Router6</span><span style="color: #000000; ">;
-        </span><span style="color: #000000; ">cli</span><span style="color: #000000; ">[</span><span style="color: #000000; ">n</span><span style="color: #000000; ">]: </span><span style="color: #000000; ">StandardHost6</span><span style="color: #000000; ">;
-        </span><span style="color: #000000; ">srv</span><span style="color: #000000; ">: </span><span style="color: #000000; ">StandardHost6</span><span style="color: #000000; ">;
+        </span><span style="color: #000000; ">configurator</span><span style="color: #000000; ">: </span><span style="color: #000000; ">FlatNetworkConfigurator6</span><span style="color: #000000; "> {
+            </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=63,72&quot;</span><span style="color: #000000; ">);
+        }
+        </span><span style="color: #000000; ">r1</span><span style="color: #000000; ">: </span><span style="color: #000000; ">Router6</span><span style="color: #000000; "> {
+            </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=219,245&quot;</span><span style="color: #000000; ">);
+        }
+        </span><span style="color: #000000; ">r2</span><span style="color: #000000; ">: </span><span style="color: #000000; ">Router6</span><span style="color: #000000; "> {
+            </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=336,178&quot;</span><span style="color: #000000; ">);
+        }
+        </span><span style="color: #000000; ">r3</span><span style="color: #000000; ">: </span><span style="color: #000000; ">Router6</span><span style="color: #000000; "> {
+            </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=458,107&quot;</span><span style="color: #000000; ">);
+        }
+        </span><span style="color: #000000; ">cli</span><span style="color: #000000; ">[</span><span style="color: #000000; ">n</span><span style="color: #000000; ">]: </span><span style="color: #000000; ">StandardHost6</span><span style="color: #000000; "> {
+            </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=63,334&quot;</span><span style="color: #000000; ">);
+        }
+        </span><span style="color: #000000; ">srv</span><span style="color: #000000; ">: </span><span style="color: #000000; ">StandardHost6</span><span style="color: #000000; "> {
+            </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=576,46&quot;</span><span style="color: #000000; ">);
+        }
     </span><span style="color: #800000; font-weight: bold; ">connections</span><span style="color: #000000; ">:
         </span><span style="color: #800000; font-weight: bold; ">for</span><span style="color: #000000; "> </span><span style="color: #000000; ">i</span><span style="color: #000000; ">=</span><span style="color: #008000; ">0</span><span style="color: #000000; ">..</span><span style="color: #000000; ">n</span><span style="color: #000000; ">-</span><span style="color: #008000; ">1</span><span style="color: #000000; "> {
             </span><span style="color: #000000; ">cli</span><span style="color: #000000; ">[</span><span style="color: #000000; ">i</span><span style="color: #000000; ">].</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">++ </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">fiberline</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">r1</span><span style="color: #000000; ">.</span><span style="color: #000000; ">pppg</span><span style="color: #000000; ">++;
@@ -652,6 +382,5 @@ possible with DTE-to-DTE connection).</p>
 }
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

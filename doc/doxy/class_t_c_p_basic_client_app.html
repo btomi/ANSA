@@ -83,15 +83,18 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="TCPBasicClientApp" --><!-- doxytag: inherits="TCPGenericCliAppBase" -->
-<p><code>#include &lt;<a class="el" href="_t_c_p_basic_client_app_8h_source.html">TCPBasicClientApp.h</a>&gt;</code></p>
+<p>An example request-reply based client application.  
+ <a href="class_t_c_p_basic_client_app.html#details">More...</a></p>
+
+<p><code>#include &lt;TCPBasicClientApp.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TCPBasicClientApp:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_t_c_p_basic_client_app.png" usemap="#TCPBasicClientApp_map" alt=""/>
   <map id="TCPBasicClientApp_map" name="TCPBasicClientApp_map">
-<area href="class_t_c_p_generic_cli_app_base.html" alt="TCPGenericCliAppBase" shape="rect" coords="0,56,179,80"/>
-<area href="class_t_c_p_socket_1_1_callback_interface.html" alt="TCPSocket::CallbackInterface" shape="rect" coords="0,0,179,24"/>
+<area href="class_t_c_p_generic_cli_app_base.html" title="Base class for clients app for TCP-based request-reply protocols or apps." alt="TCPGenericCliAppBase" shape="rect" coords="0,56,179,80"/>
+<area href="class_t_c_p_socket_1_1_callback_interface.html" title="Abstract base class for your callback objects." alt="TCPSocket::CallbackInterface" shape="rect" coords="0,0,179,24"/>
 </map>
  </div></div>
 
@@ -103,23 +106,29 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_basic_client_app.html#ad2617d88c45905b6ef801bf0b7722cbb">~TCPBasicClientApp</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_basic_client_app.html#a849fb799548b3a34e6e7bd33710c3767">sendRequest</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_basic_client_app.html#adb40b8b6e29c1bc1a4271cde8b5a8e31">initialize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_basic_client_app.html#abc31a208d90a81379a973ab984b6f74b">handleTimer</a> (cMessage *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_basic_client_app.html#aa374c69359d25b804c258195843fa533">socketEstablished</a> (int connId, void *yourPtr)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_basic_client_app.html#a476dab358954ae599966f7b6d20e60b8">socketDataArrived</a> (int connId, void *yourPtr, cPacket *msg, bool urgent)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_basic_client_app.html#a37368450e37da097e428fea9365cef1d">socketClosed</a> (int connId, void *yourPtr)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_basic_client_app.html#a31d6d5cc0924ddd764e8793a840d5b8b">socketFailure</a> (int connId, void *yourPtr, int code)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_basic_client_app.html#a849fb799548b3a34e6e7bd33710c3767">sendRequest</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility: sends a request to the server.  <a href="#a849fb799548b3a34e6e7bd33710c3767"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_basic_client_app.html#afe569a7e980e8719d7f9af9ed9ce9138">initialize</a> (int stage)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefined .  <a href="#afe569a7e980e8719d7f9af9ed9ce9138"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_basic_client_app.html#abc31a208d90a81379a973ab984b6f74b">handleTimer</a> (cMessage *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefined.  <a href="#abc31a208d90a81379a973ab984b6f74b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_basic_client_app.html#aa374c69359d25b804c258195843fa533">socketEstablished</a> (int connId, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *yourPtr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefined.  <a href="#aa374c69359d25b804c258195843fa533"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_basic_client_app.html#a476dab358954ae599966f7b6d20e60b8">socketDataArrived</a> (int connId, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *yourPtr, cPacket *msg, bool urgent)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefined.  <a href="#a476dab358954ae599966f7b6d20e60b8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_basic_client_app.html#a37368450e37da097e428fea9365cef1d">socketClosed</a> (int connId, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *yourPtr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefined to start another session after a delay.  <a href="#a37368450e37da097e428fea9365cef1d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_basic_client_app.html#a31d6d5cc0924ddd764e8793a840d5b8b">socketFailure</a> (int connId, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *yourPtr, int code)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefined to reconnect after a delay.  <a href="#a31d6d5cc0924ddd764e8793a840d5b8b"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">cMessage *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_basic_client_app.html#a5c5756829161ad542bc04165002e77b7">earlySend</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_basic_client_app.html#a6a440f2922d7aa4539a82bef1c6431b5">numRequestsToSend</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">simtime_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_basic_client_app.html#afc3c2294e2bf7f47eb761ad6b18d2f80">stopTime</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>An example request-reply based client application. </p>
-
-<p>Definition at line <a class="el" href="_t_c_p_basic_client_app_8h_source.html#l00024">24</a> of file <a class="el" href="_t_c_p_basic_client_app_8h_source.html">TCPBasicClientApp.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a9fca2dcb091ef5cb3576e6d96df5522c"></a><!-- doxytag: member="TCPBasicClientApp::TCPBasicClientApp" ref="a9fca2dcb091ef5cb3576e6d96df5522c" args="()" -->
 <div class="memitem">
@@ -134,10 +143,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00028">28</a> of file <a class="el" href="_t_c_p_basic_client_app_8cc_source.html">TCPBasicClientApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a> = NULL;
+    <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
 }
 </pre></div>
 </div>
@@ -155,8 +162,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00033">33</a> of file <a class="el" href="_t_c_p_basic_client_app_8cc_source.html">TCPBasicClientApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     cancelAndDelete(<a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>);
 }
@@ -169,7 +174,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_basic_client_app.html#abc31a208d90a81379a973ab984b6f74b">TCPBasicClientApp::handleTimer</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_basic_client_app.html#abc31a208d90a81379a973ab984b6f74b">TCPBasicClientApp::handleTimer</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -178,66 +183,74 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Redefined. </p>
 
 <p>Implements <a class="el" href="class_t_c_p_generic_cli_app_base.html#a420e64965be7c708a427de4061a49689">TCPGenericCliAppBase</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00065">65</a> of file <a class="el" href="_t_c_p_basic_client_app_8cc_source.html">TCPBasicClientApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">switch</span> (msg-&gt;getKind())
     {
         <span class="keywordflow">case</span> <a class="code" href="_t_c_p_basic_client_app_8cc.html#a1d141ebad9d3bb3992eddbc0f9f3dc56">MSGKIND_CONNECT</a>:
             <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;starting session\n&quot;</span>;
-            <a class="code" href="class_t_c_p_generic_cli_app_base.html#a3ec28620ffe01bc3e81af1ae85b3522f">connect</a>(); <span class="comment">// active OPEN</span>
+            <a class="code" href="class_t_c_p_generic_cli_app_base.html#a3ec28620ffe01bc3e81af1ae85b3522f" title="Issues an active OPEN to the address/port given as module parameters.">connect</a>(); <span class="comment">// active OPEN</span>
 
             <span class="comment">// significance of earlySend: if true, data will be sent already</span>
             <span class="comment">// in the ACK of SYN, otherwise only in a separate packet (but still</span>
             <span class="comment">// immediately)</span>
             <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_basic_client_app.html#a5c5756829161ad542bc04165002e77b7">earlySend</a>)
-                <a class="code" href="class_t_c_p_basic_client_app.html#a849fb799548b3a34e6e7bd33710c3767">sendRequest</a>();
+                <a class="code" href="class_t_c_p_basic_client_app.html#a849fb799548b3a34e6e7bd33710c3767" title="Utility: sends a request to the server.">sendRequest</a>();
             <span class="keywordflow">break</span>;
 
         <span class="keywordflow">case</span> <a class="code" href="_t_c_p_basic_client_app_8cc.html#a1ce396aa5841b902813c437e441f5ca5">MSGKIND_SEND</a>:
-           <a class="code" href="class_t_c_p_basic_client_app.html#a849fb799548b3a34e6e7bd33710c3767">sendRequest</a>();
+           <a class="code" href="class_t_c_p_basic_client_app.html#a849fb799548b3a34e6e7bd33710c3767" title="Utility: sends a request to the server.">sendRequest</a>();
            <a class="code" href="class_t_c_p_basic_client_app.html#a6a440f2922d7aa4539a82bef1c6431b5">numRequestsToSend</a>--;
            <span class="comment">// no scheduleAt(): next request will be sent when reply to this one</span>
            <span class="comment">// arrives (see socketDataArrived())</span>
            <span class="keywordflow">break</span>;
+
+        <span class="keywordflow">default</span>:
+            <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Invalid timer msg: kind=%d&quot;</span>, msg-&gt;getKind());
     }
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="adb40b8b6e29c1bc1a4271cde8b5a8e31"></a><!-- doxytag: member="TCPBasicClientApp::initialize" ref="adb40b8b6e29c1bc1a4271cde8b5a8e31" args="()" -->
+<a class="anchor" id="afe569a7e980e8719d7f9af9ed9ce9138"></a><!-- doxytag: member="TCPBasicClientApp::initialize" ref="afe569a7e980e8719d7f9af9ed9ce9138" args="(int stage)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_basic_client_app.html#adb40b8b6e29c1bc1a4271cde8b5a8e31">TCPBasicClientApp::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_basic_client_app.html#afe569a7e980e8719d7f9af9ed9ce9138">TCPBasicClientApp::initialize</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>stage</em></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Redefined to schedule a <a class="el" href="class_t_c_p_generic_cli_app_base.html#a3ec28620ffe01bc3e81af1ae85b3522f">connect()</a>. </p>
 
-<p>Reimplemented from <a class="el" href="class_t_c_p_generic_cli_app_base.html#a5c0adab00fc34f4b9ebdda75fea089a9">TCPGenericCliAppBase</a>.</p>
+<p>Redefined . </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00038">38</a> of file <a class="el" href="_t_c_p_basic_client_app_8cc_source.html">TCPBasicClientApp.cc</a>.</p>
+<p>Reimplemented from <a class="el" href="class_t_c_p_generic_cli_app_base.html#ac9a0cc56e4e009b0e6fec8220d223b30">TCPGenericCliAppBase</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_t_c_p_basic_client_app.html#adb40b8b6e29c1bc1a4271cde8b5a8e31">TCPGenericCliAppBase::initialize</a>();
-
-    <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a> = <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;timer&quot;</span>);
+    <a class="code" href="class_t_c_p_basic_client_app.html#afe569a7e980e8719d7f9af9ed9ce9138" title="Redefined .">TCPGenericCliAppBase::initialize</a>(stage);
+    <span class="keywordflow">if</span> (stage != 3)
+        <span class="keywordflow">return</span>;
 
     <a class="code" href="class_t_c_p_basic_client_app.html#a6a440f2922d7aa4539a82bef1c6431b5">numRequestsToSend</a> = 0;
     <a class="code" href="class_t_c_p_basic_client_app.html#a5c5756829161ad542bc04165002e77b7">earlySend</a> = <span class="keyword">false</span>;  <span class="comment">// TBD make it parameter</span>
     WATCH(<a class="code" href="class_t_c_p_basic_client_app.html#a6a440f2922d7aa4539a82bef1c6431b5">numRequestsToSend</a>);
     WATCH(<a class="code" href="class_t_c_p_basic_client_app.html#a5c5756829161ad542bc04165002e77b7">earlySend</a>);
 
+    simtime_t startTime = par(<span class="stringliteral">&quot;startTime&quot;</span>);
+    <a class="code" href="class_t_c_p_basic_client_app.html#afc3c2294e2bf7f47eb761ad6b18d2f80">stopTime</a> = par(<span class="stringliteral">&quot;stopTime&quot;</span>);
+    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_basic_client_app.html#afc3c2294e2bf7f47eb761ad6b18d2f80">stopTime</a> != 0 &amp;&amp; <a class="code" href="class_t_c_p_basic_client_app.html#afc3c2294e2bf7f47eb761ad6b18d2f80">stopTime</a> &lt;= startTime)
+        error(<span class="stringliteral">&quot;Invalid startTime/stopTime parameters&quot;</span>);
+
+    <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a> = <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;timer&quot;</span>);
     <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>-&gt;setKind(<a class="code" href="_t_c_p_basic_client_app_8cc.html#a1d141ebad9d3bb3992eddbc0f9f3dc56">MSGKIND_CONNECT</a>);
-    scheduleAt((simtime_t)par(<span class="stringliteral">&quot;startTime&quot;</span>), <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>);
+    scheduleAt(startTime, <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>);
 }
 </pre></div>
 </div>
@@ -247,7 +260,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_basic_client_app.html#a849fb799548b3a34e6e7bd33710c3767">TCPBasicClientApp::sendRequest</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_basic_client_app.html#a849fb799548b3a34e6e7bd33710c3767">TCPBasicClientApp::sendRequest</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -255,20 +268,21 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Utility: sends a request to the server </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00053">53</a> of file <a class="el" href="_t_c_p_basic_client_app_8cc_source.html">TCPBasicClientApp.cc</a>.</p>
+<p>Utility: sends a request to the server. </p>
 
-<p>Referenced by <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00065">handleTimer()</a>, and <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00089">socketEstablished()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_basic_client_app.html#abc31a208d90a81379a973ab984b6f74b">handleTimer()</a>, and <a class="el" href="class_t_c_p_basic_client_app.html#aa374c69359d25b804c258195843fa533">socketEstablished()</a>.</p>
 <div class="fragment"><pre class="fragment">{
      <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;sending request, &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_basic_client_app.html#a6a440f2922d7aa4539a82bef1c6431b5">numRequestsToSend</a>-1 &lt;&lt; <span class="stringliteral">&quot; more to go\n&quot;</span>;
 
      <span class="keywordtype">long</span> requestLength = par(<span class="stringliteral">&quot;requestLength&quot;</span>);
      <span class="keywordtype">long</span> replyLength = par(<span class="stringliteral">&quot;replyLength&quot;</span>);
-     <span class="keywordflow">if</span> (requestLength&lt;1) requestLength=1;
-     <span class="keywordflow">if</span> (replyLength&lt;1) replyLength=1;
+     <span class="keywordflow">if</span> (requestLength &lt; 1)
+         requestLength = 1;
+     <span class="keywordflow">if</span> (replyLength &lt; 1)
+         replyLength = 1;
 
-     <a class="code" href="class_t_c_p_generic_cli_app_base.html#a05c8b9e8f46e01eb466e604f8cd47719">sendPacket</a>(requestLength, replyLength);
+     <a class="code" href="class_t_c_p_generic_cli_app_base.html#a05c8b9e8f46e01eb466e604f8cd47719" title="Sends a GenericAppMsg of the given length.">sendPacket</a>(requestLength, replyLength);
 }
 </pre></div>
 </div>
@@ -278,7 +292,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_basic_client_app.html#a37368450e37da097e428fea9365cef1d">TCPBasicClientApp::socketClosed</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_basic_client_app.html#a37368450e37da097e428fea9365cef1d">TCPBasicClientApp::socketClosed</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>connId</em>, </td>
@@ -286,7 +300,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>yourPtr</em>&#160;</td>
         </tr>
         <tr>
@@ -297,17 +311,30 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Redefined to start another session after a delay. </p>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_generic_cli_app_base.html#a39a1f1131c97aaf61e79cbe01fb5341b">TCPGenericCliAppBase</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00120">120</a> of file <a class="el" href="_t_c_p_basic_client_app_8cc_source.html">TCPBasicClientApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_t_c_p_basic_client_app.html#a37368450e37da097e428fea9365cef1d">TCPGenericCliAppBase::socketClosed</a>(connId, ptr);
+    <a class="code" href="class_t_c_p_basic_client_app.html#a37368450e37da097e428fea9365cef1d" title="Redefined to start another session after a delay.">TCPGenericCliAppBase::socketClosed</a>(connId, ptr);
 
     <span class="comment">// start another session after a delay</span>
-    <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>-&gt;setKind(<a class="code" href="_t_c_p_basic_client_app_8cc.html#a1d141ebad9d3bb3992eddbc0f9f3dc56">MSGKIND_CONNECT</a>);
-    scheduleAt(simTime()+(simtime_t)par(<span class="stringliteral">&quot;idleInterval&quot;</span>), <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>);
+    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>)
+    {
+        ASSERT(!<a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>-&gt;isScheduled());
+
+        simtime_t d = simTime() + (simtime_t) par(<span class="stringliteral">&quot;idleInterval&quot;</span>);
+        <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_basic_client_app.html#afc3c2294e2bf7f47eb761ad6b18d2f80">stopTime</a> == 0 || <a class="code" href="class_t_c_p_basic_client_app.html#afc3c2294e2bf7f47eb761ad6b18d2f80">stopTime</a> &gt; d)
+        {
+            <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>-&gt;setKind(<a class="code" href="_t_c_p_basic_client_app_8cc.html#a1d141ebad9d3bb3992eddbc0f9f3dc56">MSGKIND_CONNECT</a>);
+            scheduleAt(d, <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>);
+        }
+        <span class="keywordflow">else</span>
+        {
+            <span class="keyword">delete</span> <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>;
+            <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+        }
+    }
 }
 </pre></div>
 </div>
@@ -317,7 +344,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_basic_client_app.html#a476dab358954ae599966f7b6d20e60b8">TCPBasicClientApp::socketDataArrived</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_basic_client_app.html#a476dab358954ae599966f7b6d20e60b8">TCPBasicClientApp::socketDataArrived</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>connId</em>, </td>
@@ -325,7 +352,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>yourPtr</em>, </td>
         </tr>
         <tr>
@@ -348,24 +375,38 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Redefined. </p>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_generic_cli_app_base.html#a2609e0e2775c805d2c3a3beb06c096cd">TCPGenericCliAppBase</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00103">103</a> of file <a class="el" href="_t_c_p_basic_client_app_8cc_source.html">TCPBasicClientApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_t_c_p_basic_client_app.html#a476dab358954ae599966f7b6d20e60b8">TCPGenericCliAppBase::socketDataArrived</a>(connId, ptr, msg, urgent);
+    <a class="code" href="class_t_c_p_basic_client_app.html#a476dab358954ae599966f7b6d20e60b8" title="Redefined.">TCPGenericCliAppBase::socketDataArrived</a>(connId, ptr, msg, urgent);
 
-    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_basic_client_app.html#a6a440f2922d7aa4539a82bef1c6431b5">numRequestsToSend</a>&gt;0)
+    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_basic_client_app.html#a6a440f2922d7aa4539a82bef1c6431b5">numRequestsToSend</a> &gt; 0)
     {
         <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;reply arrived\n&quot;</span>;
-        <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>-&gt;setKind(<a class="code" href="_t_c_p_basic_client_app_8cc.html#a1ce396aa5841b902813c437e441f5ca5">MSGKIND_SEND</a>);
-        scheduleAt(simTime()+(simtime_t)par(<span class="stringliteral">&quot;thinkTime&quot;</span>), <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>);
+
+        <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>)
+        {
+            ASSERT(<a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>-&gt;isScheduled());
+
+            simtime_t d = simTime() + (simtime_t) par(<span class="stringliteral">&quot;thinkTime&quot;</span>);
+            <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_basic_client_app.html#afc3c2294e2bf7f47eb761ad6b18d2f80">stopTime</a> == 0 || <a class="code" href="class_t_c_p_basic_client_app.html#afc3c2294e2bf7f47eb761ad6b18d2f80">stopTime</a> &gt; d)
+            {
+                <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>-&gt;setKind(<a class="code" href="_t_c_p_basic_client_app_8cc.html#a1ce396aa5841b902813c437e441f5ca5">MSGKIND_SEND</a>);
+                scheduleAt(d, <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>);
+            }
+            <span class="keywordflow">else</span>
+            {
+                <span class="keyword">delete</span> <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>;
+                <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+            }
+        }
     }
     <span class="keywordflow">else</span>
     {
         <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;reply to last request arrived, closing session\n&quot;</span>;
-        <a class="code" href="class_t_c_p_generic_cli_app_base.html#a8004ebfe48fdf6334d100cd54ecf29fe">close</a>();
+        <a class="code" href="class_t_c_p_generic_cli_app_base.html#a8004ebfe48fdf6334d100cd54ecf29fe" title="Issues CLOSE command.">close</a>();
     }
 }
 </pre></div>
@@ -376,7 +417,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_basic_client_app.html#aa374c69359d25b804c258195843fa533">TCPBasicClientApp::socketEstablished</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_basic_client_app.html#aa374c69359d25b804c258195843fa533">TCPBasicClientApp::socketEstablished</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>connId</em>, </td>
@@ -384,7 +425,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>yourPtr</em>&#160;</td>
         </tr>
         <tr>
@@ -395,21 +436,22 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Redefined. </p>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_generic_cli_app_base.html#aa3e60c557a7af7cfc3b159e690be5a83">TCPGenericCliAppBase</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00089">89</a> of file <a class="el" href="_t_c_p_basic_client_app_8cc_source.html">TCPBasicClientApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_t_c_p_basic_client_app.html#aa374c69359d25b804c258195843fa533">TCPGenericCliAppBase::socketEstablished</a>(connId, ptr);
+    <a class="code" href="class_t_c_p_basic_client_app.html#aa374c69359d25b804c258195843fa533" title="Redefined.">TCPGenericCliAppBase::socketEstablished</a>(connId, ptr);
 
     <span class="comment">// determine number of requests in this session</span>
     <a class="code" href="class_t_c_p_basic_client_app.html#a6a440f2922d7aa4539a82bef1c6431b5">numRequestsToSend</a> = (long) par(<span class="stringliteral">&quot;numRequestsPerSession&quot;</span>);
-    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_basic_client_app.html#a6a440f2922d7aa4539a82bef1c6431b5">numRequestsToSend</a>&lt;1) <a class="code" href="class_t_c_p_basic_client_app.html#a6a440f2922d7aa4539a82bef1c6431b5">numRequestsToSend</a>=1;
+    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_basic_client_app.html#a6a440f2922d7aa4539a82bef1c6431b5">numRequestsToSend</a> &lt; 1)
+        <a class="code" href="class_t_c_p_basic_client_app.html#a6a440f2922d7aa4539a82bef1c6431b5">numRequestsToSend</a> = 1;
 
     <span class="comment">// perform first request if not already done (next one will be sent when reply arrives)</span>
     <span class="keywordflow">if</span> (!<a class="code" href="class_t_c_p_basic_client_app.html#a5c5756829161ad542bc04165002e77b7">earlySend</a>)
-        <a class="code" href="class_t_c_p_basic_client_app.html#a849fb799548b3a34e6e7bd33710c3767">sendRequest</a>();
+        <a class="code" href="class_t_c_p_basic_client_app.html#a849fb799548b3a34e6e7bd33710c3767" title="Utility: sends a request to the server.">sendRequest</a>();
+
     <a class="code" href="class_t_c_p_basic_client_app.html#a6a440f2922d7aa4539a82bef1c6431b5">numRequestsToSend</a>--;
 }
 </pre></div>
@@ -420,7 +462,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_basic_client_app.html#a31d6d5cc0924ddd764e8793a840d5b8b">TCPBasicClientApp::socketFailure</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_basic_client_app.html#a31d6d5cc0924ddd764e8793a840d5b8b">TCPBasicClientApp::socketFailure</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>connId</em>, </td>
@@ -428,7 +470,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>yourPtr</em>, </td>
         </tr>
         <tr>
@@ -445,17 +487,30 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Redefined to reconnect after a delay. </p>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_generic_cli_app_base.html#a321d7c13c4ebe9a63e2e013895a390d1">TCPGenericCliAppBase</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00129">129</a> of file <a class="el" href="_t_c_p_basic_client_app_8cc_source.html">TCPBasicClientApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_t_c_p_basic_client_app.html#a31d6d5cc0924ddd764e8793a840d5b8b">TCPGenericCliAppBase::socketFailure</a>(connId, ptr, code);
+    <a class="code" href="class_t_c_p_basic_client_app.html#a31d6d5cc0924ddd764e8793a840d5b8b" title="Redefined to reconnect after a delay.">TCPGenericCliAppBase::socketFailure</a>(connId, ptr, code);
 
     <span class="comment">// reconnect after a delay</span>
-    <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>-&gt;setKind(<a class="code" href="_t_c_p_basic_client_app_8cc.html#a1d141ebad9d3bb3992eddbc0f9f3dc56">MSGKIND_CONNECT</a>);
-    scheduleAt(simTime()+(simtime_t)par(<span class="stringliteral">&quot;reconnectInterval&quot;</span>), <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>);
+    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>)
+    {
+        ASSERT(<a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>-&gt;isScheduled());
+
+        simtime_t d = simTime() + (simtime_t) par(<span class="stringliteral">&quot;reconnectInterval&quot;</span>);
+        <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_basic_client_app.html#afc3c2294e2bf7f47eb761ad6b18d2f80">stopTime</a> == 0 || <a class="code" href="class_t_c_p_basic_client_app.html#afc3c2294e2bf7f47eb761ad6b18d2f80">stopTime</a> &gt; d)
+        {
+            <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>-&gt;setKind(<a class="code" href="_t_c_p_basic_client_app_8cc.html#a1d141ebad9d3bb3992eddbc0f9f3dc56">MSGKIND_CONNECT</a>);
+            scheduleAt(d, <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>);
+        }
+        <span class="keywordflow">else</span>
+        {
+            <span class="keyword">delete</span> <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a>;
+            <a class="code" href="class_t_c_p_basic_client_app.html#a79d3317fbfa613c64f746cb84708f451">timeoutMsg</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+        }
+    }
 }
 </pre></div>
 </div>
@@ -472,9 +527,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_basic_client_app_8h_source.html#l00028">28</a> of file <a class="el" href="_t_c_p_basic_client_app_8h_source.html">TCPBasicClientApp.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00065">handleTimer()</a>, <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00038">initialize()</a>, and <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00089">socketEstablished()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_basic_client_app.html#abc31a208d90a81379a973ab984b6f74b">handleTimer()</a>, <a class="el" href="class_t_c_p_basic_client_app.html#afe569a7e980e8719d7f9af9ed9ce9138">initialize()</a>, and <a class="el" href="class_t_c_p_basic_client_app.html#aa374c69359d25b804c258195843fa533">socketEstablished()</a>.</p>
 
 </div>
 </div>
@@ -489,9 +542,22 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_basic_client_app_8h_source.html#l00029">29</a> of file <a class="el" href="_t_c_p_basic_client_app_8h_source.html">TCPBasicClientApp.h</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_basic_client_app.html#abc31a208d90a81379a973ab984b6f74b">handleTimer()</a>, <a class="el" href="class_t_c_p_basic_client_app.html#afe569a7e980e8719d7f9af9ed9ce9138">initialize()</a>, <a class="el" href="class_t_c_p_basic_client_app.html#a849fb799548b3a34e6e7bd33710c3767">sendRequest()</a>, <a class="el" href="class_t_c_p_basic_client_app.html#a476dab358954ae599966f7b6d20e60b8">socketDataArrived()</a>, and <a class="el" href="class_t_c_p_basic_client_app.html#aa374c69359d25b804c258195843fa533">socketEstablished()</a>.</p>
 
-<p>Referenced by <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00065">handleTimer()</a>, <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00038">initialize()</a>, <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00053">sendRequest()</a>, <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00103">socketDataArrived()</a>, and <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00089">socketEstablished()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="afc3c2294e2bf7f47eb761ad6b18d2f80"></a><!-- doxytag: member="TCPBasicClientApp::stopTime" ref="afc3c2294e2bf7f47eb761ad6b18d2f80" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simtime_t <a class="el" href="class_t_c_p_basic_client_app.html#afc3c2294e2bf7f47eb761ad6b18d2f80">TCPBasicClientApp::stopTime</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_t_c_p_basic_client_app.html#afe569a7e980e8719d7f9af9ed9ce9138">initialize()</a>, <a class="el" href="class_t_c_p_basic_client_app.html#a37368450e37da097e428fea9365cef1d">socketClosed()</a>, <a class="el" href="class_t_c_p_basic_client_app.html#a476dab358954ae599966f7b6d20e60b8">socketDataArrived()</a>, and <a class="el" href="class_t_c_p_basic_client_app.html#a31d6d5cc0924ddd764e8793a840d5b8b">socketFailure()</a>.</p>
 
 </div>
 </div>
@@ -506,15 +572,13 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_basic_client_app_8h_source.html#l00027">27</a> of file <a class="el" href="_t_c_p_basic_client_app_8h_source.html">TCPBasicClientApp.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00038">initialize()</a>, <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00120">socketClosed()</a>, <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00103">socketDataArrived()</a>, <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00129">socketFailure()</a>, <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00028">TCPBasicClientApp()</a>, and <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00033">~TCPBasicClientApp()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_basic_client_app.html#afe569a7e980e8719d7f9af9ed9ce9138">initialize()</a>, <a class="el" href="class_t_c_p_basic_client_app.html#a37368450e37da097e428fea9365cef1d">socketClosed()</a>, <a class="el" href="class_t_c_p_basic_client_app.html#a476dab358954ae599966f7b6d20e60b8">socketDataArrived()</a>, <a class="el" href="class_t_c_p_basic_client_app.html#a31d6d5cc0924ddd764e8793a840d5b8b">socketFailure()</a>, <a class="el" href="class_t_c_p_basic_client_app.html#a9fca2dcb091ef5cb3576e6d96df5522c">TCPBasicClientApp()</a>, and <a class="el" href="class_t_c_p_basic_client_app.html#ad2617d88c45905b6ef801bf0b7722cbb">~TCPBasicClientApp()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_t_c_p_basic_client_app_8h_source.html">TCPBasicClientApp.h</a></li>
-<li><a class="el" href="_t_c_p_basic_client_app_8cc_source.html">TCPBasicClientApp.cc</a></li>
+<li><a class="el" href="_t_c_p_basic_client_app_8h.html">TCPBasicClientApp.h</a></li>
+<li><a class="el" href="_t_c_p_basic_client_app_8cc.html">TCPBasicClientApp.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -522,7 +586,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_t_c_p_basic_client_app.html">TCPBasicClientApp</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:53 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:31 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

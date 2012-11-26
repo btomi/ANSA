@@ -75,8 +75,11 @@
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">ChannelAccess Class Reference</div>  </div>
 </div><!--header-->
@@ -85,72 +88,183 @@
 <p>Basic class for all physical layers, please don't touch!!  
  <a href="class_channel_access.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_channel_access_8h_source.html">ChannelAccess.h</a>&gt;</code></p>
+<p><code>#include &lt;ChannelAccess.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ChannelAccess:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_channel_access.png" usemap="#ChannelAccess_map" alt=""/>
   <map id="ChannelAccess_map" name="ChannelAccess_map">
-<area href="class_basic_module.html" title="Base class for all simple modules of a host that want to have access to the NotificationBoard module..." alt="BasicModule" shape="rect" coords="141,56,244,80"/>
-<area href="class_i_notifiable.html" alt="INotifiable" shape="rect" coords="141,0,244,24"/>
-<area href="class_abstract_radio.html" alt="AbstractRadio" shape="rect" coords="56,168,159,192"/>
-<area href="class_basic_snr_eval.html" title="The basic class for all snrEval modules." alt="BasicSnrEval" shape="rect" coords="226,168,329,192"/>
-<area href="class_generic_radio.html" alt="GenericRadio" shape="rect" coords="0,224,103,248"/>
-<area href="class_ieee80211_radio.html" alt="Ieee80211Radio" shape="rect" coords="113,224,216,248"/>
-<area href="class_snr_eval.html" title="Keeps track of the different snir levels when receiving a packet." alt="SnrEval" shape="rect" coords="226,224,329,248"/>
-<area href="class_gilbert_elliot_snr.html" title="Keeps track of the different snir levels when receiving a packet and switches between states GOOD and..." alt="GilbertElliotSnr" shape="rect" coords="169,280,272,304"/>
-<area href="class_snr_eval80211.html" title="A SnrEval for the 802.11b protocol." alt="SnrEval80211" shape="rect" coords="282,280,385,304"/>
+<area href="class_basic_module.html" title="Base class for all simple modules of a host that want to have access to the NotificationBoard module..." alt="BasicModule" shape="rect" coords="0,56,101,80"/>
+<area href="class_i_notifiable.html" title="Clients can receive change notifications from the NotificationBoard via this interface." alt="INotifiable" shape="rect" coords="0,0,101,24"/>
+<area href="class_radio.html" title="Abstract base class for radio modules." alt="Radio" shape="rect" coords="0,168,101,192"/>
 </map>
  </div></div>
 
 <p><a href="class_channel_access-members.html">List of all members.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_access.html#a8497e9a8b5b6ef100d38c840e10724d0">ChannelAccess</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_access.html#acb48b4e1852d5f17c8fda08a14f275bc">~ChannelAccess</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_access.html#ad7c56c9ed2db85ecba91900c35e795a0">receiveSignal</a> (cComponent *source, simsignal_t signalID, cObject *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by the signalling mechanism to inform of changes.  <a href="#ad7c56c9ed2db85ecba91900c35e795a0"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_i_channel_control.html">IChannelControl</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_access.html#a1ee327af403bce9012f959e15e84f3e7">getChannelControl</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the channelControl module in the network.  <a href="#a1ee327af403bce9012f959e15e84f3e7"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_access.html#a562995b3d9c5b279ed8a55c5221dd7b7">sendToChannel</a> (<a class="el" href="class_air_frame.html">AirFrame</a> *msg)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message to all hosts in range.  <a href="#a562995b3d9c5b279ed8a55c5221dd7b7"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_coord.html">Coord</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_access.html#a9e51969a624ff64101cf808514d50d4f">getMyPosition</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the host's position.  <a href="#a9e51969a624ff64101cf808514d50d4f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_access.html#af4c4d6652f6e3d4846cb3d2e826f4bed">initialize</a> (int stage)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Register with <a class="el" href="class_channel_control.html" title="Monitors which hosts are &quot;in range&quot;. Supports multiple channels.">ChannelControl</a> and subscribe to hostPos.  <a href="#af4c4d6652f6e3d4846cb3d2e826f4bed"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_access.html#a562995b3d9c5b279ed8a55c5221dd7b7">sendToChannel</a> (<a class="el" href="class_air_frame.html">AirFrame</a> *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message to all radios in range.  <a href="#a562995b3d9c5b279ed8a55c5221dd7b7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual cPar &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_access.html#a8e88e5aa91464bc153d044a2195c8c66">getChannelControlPar</a> (const char *parName)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_coord.html">Coord</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_access.html#a19024814d60cab281aaac5726ad5f63d">getRadioPosition</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cModule *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_access.html#a429b78c934b24efc617ebe08488229b4">getHostModule</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_access.html#af4c4d6652f6e3d4846cb3d2e826f4bed">initialize</a> (int stage)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Register with <a class="el" href="class_channel_control.html" title="Monitors which radios are &quot;in range&quot;.">ChannelControl</a> and subscribe to hostPos.  <a href="#af4c4d6652f6e3d4846cb3d2e826f4bed"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_access.html#aa371b9090b1ab4d731c2ad5d24c00f4b">numInitStages</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide initialization into two stages.  <a href="#aa371b9090b1ab4d731c2ad5d24c00f4b"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_channel_control.html">ChannelControl</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_access.html#a0f42b731ff69be4b1193929356e75aff">cc</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the <a class="el" href="class_channel_control.html" title="Monitors which hosts are &quot;in range&quot;. Supports multiple channels.">ChannelControl</a> module.  <a href="#a0f42b731ff69be4b1193929356e75aff"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_channel_control.html#ac8ae1ed4e75e8037a4aaa2c4e2e3623f">ChannelControl::HostRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_access.html#aff3d33ee8db5a945fff05fe4305ccf2e">myHostRef</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifies this host in the <a class="el" href="class_channel_control.html" title="Monitors which hosts are &quot;in range&quot;. Supports multiple channels.">ChannelControl</a> module.  <a href="#aff3d33ee8db5a945fff05fe4305ccf2e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_notification_board.html">NotificationBoard</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_access.html#a56634b54acd291671ba524d91557d0bb">nb</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_channel_control.html">IChannelControl</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_access.html#a2432d37a236bbb025192fc2f3343e1ed">cc</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_channel_control.html#a1c9f2b913e37e547852e89490cc3915a">IChannelControl::RadioRef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_access.html#ad6f8724138896359669de342acc4e8e6">myRadioRef</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cModule *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_access.html#a64f25025ecf739724c7063b334203a6a">hostModule</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_coord.html">Coord</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_access.html#a1aff5b427940b32b8fb3500c411f9db2">radioPos</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_access.html#a3c7761e80dc4d710f95bbb7e82be85d0">positionUpdateArrived</a></td></tr>
+<tr><td colspan="2"><h2><a name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_channel_access.html#a4e8303259d7589db8f608da82fbc83c5">mobilityStateChangedSignal</a> = SIMSIGNAL_NULL</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Basic class for all physical layers, please don't touch!! </p>
-<p>This class is not supposed to work on its own, but it contains functions and lists that cooperate with <a class="el" href="class_channel_control.html" title="Monitors which hosts are &quot;in range&quot;. Supports multiple channels.">ChannelControl</a> to handle the dynamically created gates. This means EVERY <a class="el" href="class_snr_eval.html" title="Keeps track of the different snir levels when receiving a packet.">SnrEval</a> (the lowest layer in a host) has to be derived from this class!!!! And please follow the instructions on how to declare a physical layer in a .ned file in "The Design of a Mobility Framework in OMNeT++" paper.</p>
+<p>This class is not supposed to work on its own, but it contains functions and lists that cooperate with <a class="el" href="class_channel_control.html" title="Monitors which radios are &quot;in range&quot;.">ChannelControl</a> to handle the dynamically created gates. This means EVERY SnrEval (the lowest layer in a host) has to be derived from this class!!!! And please follow the instructions on how to declare a physical layer in a .ned file in "The Design of a Mobility Framework in OMNeT++" paper.</p>
 <p>Please don't touch this class.</p>
-<dl class="author"><dt><b>Author:</b></dt><dd>Marc L�bbers </dd></dl>
-
-<p>Definition at line <a class="el" href="_channel_access_8h_source.html#l00047">47</a> of file <a class="el" href="_channel_access_8h_source.html">ChannelAccess.h</a>.</p>
-</div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a9e51969a624ff64101cf808514d50d4f"></a><!-- doxytag: member="ChannelAccess::getMyPosition" ref="a9e51969a624ff64101cf808514d50d4f" args="()" -->
+<dl class="author"><dt><b>Author:</b></dt><dd>Marc Loebbers </dd></dl>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a8497e9a8b5b6ef100d38c840e10724d0"></a><!-- doxytag: member="ChannelAccess::ChannelAccess" ref="a8497e9a8b5b6ef100d38c840e10724d0" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="class_coord.html">Coord</a>&amp; <a class="el" href="class_channel_access.html#a9e51969a624ff64101cf808514d50d4f">ChannelAccess::getMyPosition</a> </td>
+          <td class="memname"><a class="el" href="class_channel_access.html#a8497e9a8b5b6ef100d38c840e10724d0">ChannelAccess::ChannelAccess</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline, protected]</code></td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">: <a class="code" href="class_channel_access.html#a2432d37a236bbb025192fc2f3343e1ed">cc</a>(<a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>), <a class="code" href="class_channel_access.html#ad6f8724138896359669de342acc4e8e6">myRadioRef</a>(<a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>), <a class="code" href="class_channel_access.html#a64f25025ecf739724c7063b334203a6a">hostModule</a>(<a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="acb48b4e1852d5f17c8fda08a14f275bc"></a><!-- doxytag: member="ChannelAccess::~ChannelAccess" ref="acb48b4e1852d5f17c8fda08a14f275bc" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_channel_access.html#acb48b4e1852d5f17c8fda08a14f275bc">ChannelAccess::~ChannelAccess</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> (<a class="code" href="class_channel_access.html#a2432d37a236bbb025192fc2f3343e1ed">cc</a> &amp;&amp; <a class="code" href="class_channel_access.html#ad6f8724138896359669de342acc4e8e6">myRadioRef</a>)
+    {
+        <span class="comment">// check if channel control exist</span>
+        <a class="code" href="class_i_channel_control.html" title="Interface to implement for a module that controls radio frequency channel access.">IChannelControl</a> *<a class="code" href="class_channel_access.html#a2432d37a236bbb025192fc2f3343e1ed">cc</a> = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_i_channel_control.html" title="Interface to implement for a module that controls radio frequency channel access.">IChannelControl</a> *<span class="keyword">&gt;</span>(simulation.getModuleByPath(<span class="stringliteral">&quot;channelControl&quot;</span>));
+        <span class="keywordflow">if</span> (cc)
+             cc-&gt;<a class="code" href="class_i_channel_control.html#aba2fab7a99a42c9a5d1a7417a4e53e35" title="Unregisters the given radio.">unregisterRadio</a>(<a class="code" href="class_channel_access.html#ad6f8724138896359669de342acc4e8e6">myRadioRef</a>);
+        <a class="code" href="class_channel_access.html#ad6f8724138896359669de342acc4e8e6">myRadioRef</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+    }
+}
+</pre></div>
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a1ee327af403bce9012f959e15e84f3e7"></a><!-- doxytag: member="ChannelAccess::getChannelControl" ref="a1ee327af403bce9012f959e15e84f3e7" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_channel_control.html">IChannelControl</a> * <a class="el" href="class_channel_access.html#a1ee327af403bce9012f959e15e84f3e7">ChannelAccess::getChannelControl</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [static]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Returns the host's position. </p>
+<p>Finds the channelControl module in the network. </p>
 
-<p>Definition at line <a class="el" href="_channel_access_8h_source.html#l00061">61</a> of file <a class="el" href="_channel_access_8h_source.html">ChannelAccess.h</a>.</p>
+<p>Referenced by <a class="el" href="class_channel_access.html#af4c4d6652f6e3d4846cb3d2e826f4bed">initialize()</a>, <a class="el" href="class_ieee80211_mgmt_s_t_a.html#a27356f93e2e47c3942dca0e194585a3b">Ieee80211MgmtSTA::initialize()</a>, and <a class="el" href="class_free_space_model.html#a3d6e573a345f41ba4a5a0a39d88e06fb">FreeSpaceModel::initializeFreeSpace()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <a class="code" href="class_i_channel_control.html" title="Interface to implement for a module that controls radio frequency channel access.">IChannelControl</a> *<a class="code" href="class_channel_access.html#a2432d37a236bbb025192fc2f3343e1ed">cc</a> = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_i_channel_control.html" title="Interface to implement for a module that controls radio frequency channel access.">IChannelControl</a> *<span class="keyword">&gt;</span>(simulation.getModuleByPath(<span class="stringliteral">&quot;channelControl&quot;</span>));
+    <span class="keywordflow">if</span> (!cc)
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Could not find ChannelControl module with name &#39;channelControl&#39; in the toplevel network.&quot;</span>);
+    <span class="keywordflow">return</span> <a class="code" href="class_channel_access.html#a2432d37a236bbb025192fc2f3343e1ed">cc</a>;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a8e88e5aa91464bc153d044a2195c8c66"></a><!-- doxytag: member="ChannelAccess::getChannelControlPar" ref="a8e88e5aa91464bc153d044a2195c8c66" args="(const char *parName)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual cPar&amp; <a class="el" href="class_channel_access.html#a8e88e5aa91464bc153d044a2195c8c66">ChannelAccess::getChannelControlPar</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>parName</em></td><td>)</td>
+          <td><code> [inline, protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
-<p>Referenced by <a class="el" href="_basic_snr_eval_8cc_source.html#l00138">BasicSnrEval::encapsMsg()</a>, <a class="el" href="_abstract_radio_8cc_source.html#l00186">AbstractRadio::encapsulatePacket()</a>, <a class="el" href="_gilbert_elliot_snr_8cc_source.html#l00135">GilbertElliotSnr::handleLowerMsgStart()</a>, <a class="el" href="_abstract_radio_8cc_source.html#l00391">AbstractRadio::handleLowerMsgStart()</a>, and <a class="el" href="_snr_eval_8cc_source.html#l00269">SnrEval::handleLowerMsgStart()</a>.</p>
-<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_channel_access.html#a0f42b731ff69be4b1193929356e75aff" title="Pointer to the ChannelControl module.">cc</a>-&gt;<a class="code" href="class_channel_control.html#a38a14f5c2513e87e8bcce1bb38dad71d" title="Returns the host&#39;s position.">getHostPosition</a>(<a class="code" href="class_channel_access.html#aff3d33ee8db5a945fff05fe4305ccf2e" title="Identifies this host in the ChannelControl module.">myHostRef</a>);}
+<p>Referenced by <a class="el" href="class_radio.html#a10bfc702be43d595b336128536b73d5d">Radio::calcDistFreeSpace()</a>, <a class="el" href="class_radio.html#a340f75f04e66fa51035e3f547ddd6758">Radio::handleCommand()</a>, and <a class="el" href="class_radio.html#afccd94dfecf0ed8f29cfa8cd80255de5">Radio::initialize()</a>.</p>
+<div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span>cModule *<span class="keyword">&gt;</span>(<a class="code" href="class_channel_access.html#a2432d37a236bbb025192fc2f3343e1ed">cc</a>)-&gt;par(parName); }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a429b78c934b24efc617ebe08488229b4"></a><!-- doxytag: member="ChannelAccess::getHostModule" ref="a429b78c934b24efc617ebe08488229b4" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cModule* <a class="el" href="class_channel_access.html#a429b78c934b24efc617ebe08488229b4">ChannelAccess::getHostModule</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> <a class="code" href="class_channel_access.html#a64f25025ecf739724c7063b334203a6a">hostModule</a>; }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a19024814d60cab281aaac5726ad5f63d"></a><!-- doxytag: member="ChannelAccess::getRadioPosition" ref="a19024814d60cab281aaac5726ad5f63d" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_coord.html">Coord</a>&amp; <a class="el" href="class_channel_access.html#a19024814d60cab281aaac5726ad5f63d">ChannelAccess::getRadioPosition</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_radio.html#af76144a54967847fb927be752e698f02">Radio::changeChannel()</a>, <a class="el" href="class_radio.html#a68ed01f9cb677f910a43d7174d982be9">Radio::connectReceiver()</a>, <a class="el" href="class_radio.html#a0ec87649c6c0c5a7932ed1d2d2932e3c">Radio::encapsulatePacket()</a>, and <a class="el" href="class_radio.html#abca1bc386b44ad57cc1f7e9d8eaf7d4f">Radio::handleLowerMsgStart()</a>.</p>
+<div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> <a class="code" href="class_channel_access.html#a1aff5b427940b32b8fb3500c411f9db2">radioPos</a>; }
 </pre></div>
 </div>
 </div>
@@ -159,7 +273,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_channel_access.html#af4c4d6652f6e3d4846cb3d2e826f4bed">ChannelAccess::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_channel_access.html#af4c4d6652f6e3d4846cb3d2e826f4bed">ChannelAccess::initialize</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>stage</em></td><td>)</td>
@@ -169,31 +283,48 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Register with <a class="el" href="class_channel_control.html" title="Monitors which hosts are &quot;in range&quot;. Supports multiple channels.">ChannelControl</a> and subscribe to hostPos. </p>
-<p>Upon initialization <a class="el" href="class_channel_access.html" title="Basic class for all physical layers, please don&#39;t touch!!">ChannelAccess</a> registers the nic parent module to have all its connections handled by <a class="el" href="class_channel_control.html" title="Monitors which hosts are &quot;in range&quot;. Supports multiple channels.">ChannelControl</a> </p>
+<p>Register with <a class="el" href="class_channel_control.html" title="Monitors which radios are &quot;in range&quot;.">ChannelControl</a> and subscribe to hostPos. </p>
+<p>Upon initialization <a class="el" href="class_channel_access.html" title="Basic class for all physical layers, please don&#39;t touch!!">ChannelAccess</a> registers the nic parent module to have all its connections handled by <a class="el" href="class_channel_control.html" title="Monitors which radios are &quot;in range&quot;.">ChannelControl</a>. </p>
 
 <p>Reimplemented from <a class="el" href="class_basic_module.html#ae0497ccac7ad62630013847a8985dd4e">BasicModule</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_basic_snr_eval.html#a89445ede6f19960b30f74d17335ee30f">BasicSnrEval</a>, <a class="el" href="class_snr_eval.html#a10f81696b873c5acf9b65f04592c9918">SnrEval</a>, <a class="el" href="class_abstract_radio.html#ad646c42cb1ee4b8fa5d0bf555a6ef0fe">AbstractRadio</a>, <a class="el" href="class_gilbert_elliot_snr.html#a0886205c3ab74194fb14ccd7495498df">GilbertElliotSnr</a>, and <a class="el" href="class_snr_eval80211.html#a0ebbde9edf4489102ea539ba04c13a3e">SnrEval80211</a>.</p>
-
-<p>Definition at line <a class="el" href="_channel_access_8cc_source.html#l00030">30</a> of file <a class="el" href="_channel_access_8cc_source.html">ChannelAccess.cc</a>.</p>
+<p>Reimplemented in <a class="el" href="class_radio.html#afccd94dfecf0ed8f29cfa8cd80255de5">Radio</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="class_channel_access.html#af4c4d6652f6e3d4846cb3d2e826f4bed" title="Register with ChannelControl and subscribe to hostPos.">BasicModule::initialize</a>(stage);
 
     <span class="keywordflow">if</span> (stage == 0)
     {
-        <a class="code" href="class_channel_access.html#a0f42b731ff69be4b1193929356e75aff" title="Pointer to the ChannelControl module.">cc</a> = <a class="code" href="class_channel_control.html#a7795c55b6091bedac1ddfec4265d8926" title="Finds the channelControl module in the network.">ChannelControl::get</a>();
+        <a class="code" href="class_channel_access.html#a2432d37a236bbb025192fc2f3343e1ed">cc</a> = <a class="code" href="class_channel_access.html#a1ee327af403bce9012f959e15e84f3e7" title="Finds the channelControl module in the network.">getChannelControl</a>();
+        <a class="code" href="structnb.html">nb</a> = <a class="code" href="class_notification_board_access.html" title="Gives access to the NotificationBoard instance within the host/router.">NotificationBoardAccess</a>().<a class="code" href="class_module_access.html#a46a82b1fa0e957eb42d29c8637df1f4f">get</a>();
+        <a class="code" href="class_channel_access.html#a64f25025ecf739724c7063b334203a6a">hostModule</a> = <a class="code" href="class_basic_module.html#aa05d2372f6004febdbcb02175f218369" title="Function to get a pointer to the host module.">findHost</a>();
 
+        <a class="code" href="class_channel_access.html#a3c7761e80dc4d710f95bbb7e82be85d0">positionUpdateArrived</a> = <span class="keyword">false</span>;
         <span class="comment">// register to get a notification when position changes</span>
-        <a class="code" href="class_basic_module.html#addff3486601f037d673200507e1fbf12" title="Cached pointer to the NotificationBoard module.">nb</a>-&gt;<a class="code" href="class_notification_board.html#aeb02a282e6c807c1cb064a28e8409ff2">subscribe</a>(<span class="keyword">this</span>, <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba1fe7bf361b8f93dc3a927e710bfa54c4">NF_HOSTPOSITION_UPDATED</a>);
+        <a class="code" href="class_channel_access.html#a4e8303259d7589db8f608da82fbc83c5">mobilityStateChangedSignal</a> = registerSignal(<span class="stringliteral">&quot;mobilityStateChanged&quot;</span>);
+        <a class="code" href="class_channel_access.html#a64f25025ecf739724c7063b334203a6a">hostModule</a>-&gt;subscribe(<a class="code" href="class_channel_access.html#a4e8303259d7589db8f608da82fbc83c5">mobilityStateChangedSignal</a>, <span class="keyword">this</span>);
     }
     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (stage == 2)
     {
-        cModule *hostModule = <a class="code" href="class_basic_module.html#a8188a32c320b4632bdd2c0e7241d06f8" title="Function to get a pointer to the host module.">findHost</a>();
-        <a class="code" href="class_channel_access.html#aff3d33ee8db5a945fff05fe4305ccf2e" title="Identifies this host in the ChannelControl module.">myHostRef</a> = <a class="code" href="class_channel_access.html#a0f42b731ff69be4b1193929356e75aff" title="Pointer to the ChannelControl module.">cc</a>-&gt;<a class="code" href="class_channel_control.html#ab4684fa0b1eac2a58e10fa8b88b90636" title="Returns the &quot;handle&quot; of a previously registered host.">lookupHost</a>(hostModule);
-        <span class="keywordflow">if</span> (<a class="code" href="class_channel_access.html#aff3d33ee8db5a945fff05fe4305ccf2e" title="Identifies this host in the ChannelControl module.">myHostRef</a>==0)
-            error(<span class="stringliteral">&quot;host not registered yet in ChannelControl (this should be done by &quot;</span>
-                  <span class="stringliteral">&quot;the Mobility module -- maybe this host doesn&#39;t have one?)&quot;</span>);
+        <span class="keywordflow">if</span> (!<a class="code" href="class_channel_access.html#a3c7761e80dc4d710f95bbb7e82be85d0">positionUpdateArrived</a>)
+        {
+            <a class="code" href="class_channel_access.html#a1aff5b427940b32b8fb3500c411f9db2">radioPos</a>.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a> = parseInt(<a class="code" href="class_channel_access.html#a64f25025ecf739724c7063b334203a6a">hostModule</a>-&gt;getDisplayString().getTagArg(<span class="stringliteral">&quot;p&quot;</span>, 0), -1);
+            <a class="code" href="class_channel_access.html#a1aff5b427940b32b8fb3500c411f9db2">radioPos</a>.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> = parseInt(<a class="code" href="class_channel_access.html#a64f25025ecf739724c7063b334203a6a">hostModule</a>-&gt;getDisplayString().getTagArg(<span class="stringliteral">&quot;p&quot;</span>, 1), -1);
+
+            <span class="keywordflow">if</span> (<a class="code" href="class_channel_access.html#a1aff5b427940b32b8fb3500c411f9db2">radioPos</a>.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a> == -1 || <a class="code" href="class_channel_access.html#a1aff5b427940b32b8fb3500c411f9db2">radioPos</a>.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> == -1)
+                error(<span class="stringliteral">&quot;The coordinates of &#39;%s&#39; host are invalid. Please set coordinates in &quot;</span>
+                        <span class="stringliteral">&quot;&#39;@display&#39; attribute, or configure Mobility for this host.&quot;</span>,
+                        <a class="code" href="class_channel_access.html#a64f25025ecf739724c7063b334203a6a">hostModule</a>-&gt;getFullPath().c_str());
+
+            <span class="keyword">const</span> <span class="keywordtype">char</span> *s = <a class="code" href="class_channel_access.html#a64f25025ecf739724c7063b334203a6a">hostModule</a>-&gt;getDisplayString().getTagArg(<span class="stringliteral">&quot;p&quot;</span>, 2);
+            <span class="keywordflow">if</span> (s &amp;&amp; *s)
+                error(<span class="stringliteral">&quot;The coordinates of &#39;%s&#39; host are invalid. Please remove automatic arrangement&quot;</span>
+                        <span class="stringliteral">&quot; (3rd argument of &#39;p&#39; tag)&quot;</span>
+                        <span class="stringliteral">&quot; from &#39;@display&#39; attribute, or configure Mobility for this host.&quot;</span>,
+                        <a class="code" href="class_channel_access.html#a64f25025ecf739724c7063b334203a6a">hostModule</a>-&gt;getFullPath().c_str());
+        }
+
+        <a class="code" href="class_channel_access.html#ad6f8724138896359669de342acc4e8e6">myRadioRef</a> = <a class="code" href="class_channel_access.html#a2432d37a236bbb025192fc2f3343e1ed">cc</a>-&gt;<a class="code" href="class_i_channel_control.html#abb919255aecbe52c43fa81bfe662ea8d" title="Registers the given radio.">registerRadio</a>(<span class="keyword">this</span>);
+        <a class="code" href="class_channel_access.html#a2432d37a236bbb025192fc2f3343e1ed">cc</a>-&gt;<a class="code" href="class_i_channel_control.html#a7466904b7644860dfa25feaa0c974085" title="To be called when the host moved; updates proximity info.">setRadioPosition</a>(<a class="code" href="class_channel_access.html#ad6f8724138896359669de342acc4e8e6">myRadioRef</a>, <a class="code" href="class_channel_access.html#a1aff5b427940b32b8fb3500c411f9db2">radioPos</a>);
     }
 }
 </pre></div>
@@ -214,12 +345,59 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Divide initialization into two stages. </p>
-<p>In the first stage (stage==0), modules subscribe to notification categories at <a class="el" href="class_notification_board.html">NotificationBoard</a>. The first notifications (e.g. about the initial values of some variables such as <a class="el" href="class_radio_state.html">RadioState</a>) should take place earliest in the second stage (stage==1), when everyone interested in them has already subscribed. </p>
+<p>In the first stage (stage==0), modules subscribe to notification categories at <a class="el" href="class_notification_board.html" title="Acts as a intermediary between module where state changes can occur and modules which are interested ...">NotificationBoard</a>. The first notifications (e.g. about the initial values of some variables such as <a class="el" href="class_radio_state.html" title="Holds the current state and other properties of the radio.">RadioState</a>) should take place earliest in the second stage (stage==1), when everyone interested in them has already subscribed. </p>
 
 <p>Reimplemented from <a class="el" href="class_basic_module.html#a970d6ae46715ef49ca54b79efcf8df7a">BasicModule</a>.</p>
+<div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> 3; }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ad7c56c9ed2db85ecba91900c35e795a0"></a><!-- doxytag: member="ChannelAccess::receiveSignal" ref="ad7c56c9ed2db85ecba91900c35e795a0" args="(cComponent *source, simsignal_t signalID, cObject *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_channel_access.html#ad7c56c9ed2db85ecba91900c35e795a0">ChannelAccess::receiveSignal</a> </td>
+          <td>(</td>
+          <td class="paramtype">cComponent *&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">simsignal_t&#160;</td>
+          <td class="paramname"><em>signalID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cObject *&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
-<p>Definition at line <a class="el" href="_channel_access_8h_source.html#l00067">67</a> of file <a class="el" href="_channel_access_8h_source.html">ChannelAccess.h</a>.</p>
-<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> 3;}
+<p>Called by the signalling mechanism to inform of changes. </p>
+<p><a class="el" href="class_channel_access.html" title="Basic class for all physical layers, please don&#39;t touch!!">ChannelAccess</a> is subscribed to position changes. </p>
+
+<p>Reimplemented in <a class="el" href="class_radio.html#a6b7b7dda76d5fe3313108faa606f6376">Radio</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> (signalID == <a class="code" href="class_channel_access.html#a4e8303259d7589db8f608da82fbc83c5">mobilityStateChangedSignal</a>)
+    {
+        <a class="code" href="class_i_mobility.html" title="Abstract base class defining the public interface that must be provided by all mobility modules...">IMobility</a> *mobility = check_and_cast&lt;<a class="code" href="class_i_mobility.html" title="Abstract base class defining the public interface that must be provided by all mobility modules...">IMobility</a>*&gt;(obj);
+        <a class="code" href="class_channel_access.html#a1aff5b427940b32b8fb3500c411f9db2">radioPos</a> = mobility-&gt;<a class="code" href="class_i_mobility.html#abbf2edff2f9570cada67952fc1eb886d" title="Returns the current position at the current simulation time.">getCurrentPosition</a>();
+        <a class="code" href="class_channel_access.html#a3c7761e80dc4d710f95bbb7e82be85d0">positionUpdateArrived</a> = <span class="keyword">true</span>;
+
+        <span class="keywordflow">if</span> (<a class="code" href="class_channel_access.html#ad6f8724138896359669de342acc4e8e6">myRadioRef</a>)
+            <a class="code" href="class_channel_access.html#a2432d37a236bbb025192fc2f3343e1ed">cc</a>-&gt;<a class="code" href="class_i_channel_control.html#a7466904b7644860dfa25feaa0c974085" title="To be called when the host moved; updates proximity info.">setRadioPosition</a>(<a class="code" href="class_channel_access.html#ad6f8724138896359669de342acc4e8e6">myRadioRef</a>, radioPos);
+    }
+}
 </pre></div>
 </div>
 </div>
@@ -228,7 +406,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_channel_access.html#a562995b3d9c5b279ed8a55c5221dd7b7">ChannelAccess::sendToChannel</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_channel_access.html#a562995b3d9c5b279ed8a55c5221dd7b7">ChannelAccess::sendToChannel</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_air_frame.html">AirFrame</a> *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -238,64 +416,127 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Sends a message to all hosts in range. </p>
+<p>Sends a message to all radios in range. </p>
 <p>This function has to be called whenever a packet is supposed to be sent to the channel.</p>
 <p>This function really sends the message away, so if you still want to work with it you should send a duplicate! </p>
 
-<p>Definition at line <a class="el" href="_channel_access_8cc_source.html#l00059">59</a> of file <a class="el" href="_channel_access_8cc_source.html">ChannelAccess.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_abstract_radio_8cc_source.html#l00215">AbstractRadio::sendDown()</a>, and <a class="el" href="_basic_snr_eval_8cc_source.html#l00192">BasicSnrEval::sendDown()</a>.</p>
+<p>Referenced by <a class="el" href="class_radio.html#af38899a0dc9c01a1496c7512fa8a6ea6">Radio::sendDown()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="_channel_access_8cc.html#a27f667d27591f62ecf86a99a79ea8f42">coreEV</a> &lt;&lt; <span class="stringliteral">&quot;sendToChannel: sending to gates\n&quot;</span>;
 
     <span class="comment">// delegate it to ChannelControl</span>
-    <a class="code" href="class_channel_access.html#a0f42b731ff69be4b1193929356e75aff" title="Pointer to the ChannelControl module.">cc</a>-&gt;<a class="code" href="class_channel_control.html#a25429ad8b7385979a4024d4d375fc6c4" title="Called from ChannelAccess, to transmit a frame to the hosts in range, on the frame&#39;s channel...">sendToChannel</a>(<span class="keyword">this</span>, <a class="code" href="class_channel_access.html#aff3d33ee8db5a945fff05fe4305ccf2e" title="Identifies this host in the ChannelControl module.">myHostRef</a>, msg);
+    <a class="code" href="class_channel_access.html#a2432d37a236bbb025192fc2f3343e1ed">cc</a>-&gt;<a class="code" href="class_i_channel_control.html#aff664f9ff52d00a78e97e7dd5fa8c8e8" title="Called from ChannelAccess, to transmit a frame to the radios in range, on the frame&#39;s channel...">sendToChannel</a>(<a class="code" href="class_channel_access.html#ad6f8724138896359669de342acc4e8e6">myRadioRef</a>, msg);
 }
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="a0f42b731ff69be4b1193929356e75aff"></a><!-- doxytag: member="ChannelAccess::cc" ref="a0f42b731ff69be4b1193929356e75aff" args="" -->
+<a class="anchor" id="a2432d37a236bbb025192fc2f3343e1ed"></a><!-- doxytag: member="ChannelAccess::cc" ref="a2432d37a236bbb025192fc2f3343e1ed" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_channel_control.html">ChannelControl</a>* <a class="el" href="class_channel_access.html#a0f42b731ff69be4b1193929356e75aff">ChannelAccess::cc</a><code> [protected]</code></td>
+          <td class="memname"><a class="el" href="class_i_channel_control.html">IChannelControl</a>* <a class="el" href="class_channel_access.html#a2432d37a236bbb025192fc2f3343e1ed">ChannelAccess::cc</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Pointer to the <a class="el" href="class_channel_control.html" title="Monitors which hosts are &quot;in range&quot;. Supports multiple channels.">ChannelControl</a> module. </p>
-
-<p>Definition at line <a class="el" href="_channel_access_8h_source.html#l00051">51</a> of file <a class="el" href="_channel_access_8h_source.html">ChannelAccess.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_snr_eval_8cc_source.html#l00430">SnrEval::changeChannel()</a>, <a class="el" href="_abstract_radio_8cc_source.html#l00538">AbstractRadio::changeChannel()</a>, <a class="el" href="_abstract_radio_8cc_source.html#l00036">AbstractRadio::initialize()</a>, <a class="el" href="_channel_access_8cc_source.html#l00030">initialize()</a>, <a class="el" href="_snr_eval_8cc_source.html#l00033">SnrEval::initialize()</a>, <a class="el" href="_basic_snr_eval_8cc_source.html#l00040">BasicSnrEval::initialize()</a>, and <a class="el" href="_channel_access_8cc_source.html#l00059">sendToChannel()</a>.</p>
+<p>Referenced by <a class="el" href="class_radio.html#af76144a54967847fb927be752e698f02">Radio::changeChannel()</a>, <a class="el" href="class_radio.html#a68ed01f9cb677f910a43d7174d982be9">Radio::connectReceiver()</a>, <a class="el" href="class_radio.html#aff130b3d9dfbb88e889496be48cc1489">Radio::disconnectReceiver()</a>, <a class="el" href="class_channel_access.html#a1ee327af403bce9012f959e15e84f3e7">getChannelControl()</a>, <a class="el" href="class_radio.html#afccd94dfecf0ed8f29cfa8cd80255de5">Radio::initialize()</a>, <a class="el" href="class_channel_access.html#af4c4d6652f6e3d4846cb3d2e826f4bed">initialize()</a>, <a class="el" href="class_channel_access.html#ad7c56c9ed2db85ecba91900c35e795a0">receiveSignal()</a>, <a class="el" href="class_channel_access.html#a562995b3d9c5b279ed8a55c5221dd7b7">sendToChannel()</a>, <a class="el" href="class_radio.html#a841d7330b496a30d66ccf3eb4ce7df4e">Radio::updateDisplayString()</a>, and <a class="el" href="class_channel_access.html#acb48b4e1852d5f17c8fda08a14f275bc">~ChannelAccess()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aff3d33ee8db5a945fff05fe4305ccf2e"></a><!-- doxytag: member="ChannelAccess::myHostRef" ref="aff3d33ee8db5a945fff05fe4305ccf2e" args="" -->
+<a class="anchor" id="a64f25025ecf739724c7063b334203a6a"></a><!-- doxytag: member="ChannelAccess::hostModule" ref="a64f25025ecf739724c7063b334203a6a" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_channel_control.html#ac8ae1ed4e75e8037a4aaa2c4e2e3623f">ChannelControl::HostRef</a> <a class="el" href="class_channel_access.html#aff3d33ee8db5a945fff05fe4305ccf2e">ChannelAccess::myHostRef</a><code> [protected]</code></td>
+          <td class="memname">cModule* <a class="el" href="class_channel_access.html#a64f25025ecf739724c7063b334203a6a">ChannelAccess::hostModule</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Identifies this host in the <a class="el" href="class_channel_control.html" title="Monitors which hosts are &quot;in range&quot;. Supports multiple channels.">ChannelControl</a> module. </p>
+<p>Referenced by <a class="el" href="class_channel_access.html#af4c4d6652f6e3d4846cb3d2e826f4bed">initialize()</a>, and <a class="el" href="class_radio.html#a841d7330b496a30d66ccf3eb4ce7df4e">Radio::updateDisplayString()</a>.</p>
 
-<p>Definition at line <a class="el" href="_channel_access_8h_source.html#l00054">54</a> of file <a class="el" href="_channel_access_8h_source.html">ChannelAccess.h</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a4e8303259d7589db8f608da82fbc83c5"></a><!-- doxytag: member="ChannelAccess::mobilityStateChangedSignal" ref="a4e8303259d7589db8f608da82fbc83c5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_channel_access.html#a4e8303259d7589db8f608da82fbc83c5">ChannelAccess::mobilityStateChangedSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
-<p>Referenced by <a class="el" href="_snr_eval_8cc_source.html#l00430">SnrEval::changeChannel()</a>, <a class="el" href="_abstract_radio_8cc_source.html#l00538">AbstractRadio::changeChannel()</a>, <a class="el" href="_abstract_radio_8cc_source.html#l00036">AbstractRadio::initialize()</a>, <a class="el" href="_channel_access_8cc_source.html#l00030">initialize()</a>, <a class="el" href="_snr_eval_8cc_source.html#l00033">SnrEval::initialize()</a>, and <a class="el" href="_channel_access_8cc_source.html#l00059">sendToChannel()</a>.</p>
+<p>Referenced by <a class="el" href="class_channel_access.html#af4c4d6652f6e3d4846cb3d2e826f4bed">initialize()</a>, and <a class="el" href="class_channel_access.html#ad7c56c9ed2db85ecba91900c35e795a0">receiveSignal()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad6f8724138896359669de342acc4e8e6"></a><!-- doxytag: member="ChannelAccess::myRadioRef" ref="ad6f8724138896359669de342acc4e8e6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_channel_control.html#a1c9f2b913e37e547852e89490cc3915a">IChannelControl::RadioRef</a> <a class="el" href="class_channel_access.html#ad6f8724138896359669de342acc4e8e6">ChannelAccess::myRadioRef</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_radio.html#af76144a54967847fb927be752e698f02">Radio::changeChannel()</a>, <a class="el" href="class_radio.html#a68ed01f9cb677f910a43d7174d982be9">Radio::connectReceiver()</a>, <a class="el" href="class_radio.html#aff130b3d9dfbb88e889496be48cc1489">Radio::disconnectReceiver()</a>, <a class="el" href="class_radio.html#afccd94dfecf0ed8f29cfa8cd80255de5">Radio::initialize()</a>, <a class="el" href="class_channel_access.html#af4c4d6652f6e3d4846cb3d2e826f4bed">initialize()</a>, <a class="el" href="class_channel_access.html#ad7c56c9ed2db85ecba91900c35e795a0">receiveSignal()</a>, <a class="el" href="class_channel_access.html#a562995b3d9c5b279ed8a55c5221dd7b7">sendToChannel()</a>, <a class="el" href="class_radio.html#a841d7330b496a30d66ccf3eb4ce7df4e">Radio::updateDisplayString()</a>, and <a class="el" href="class_channel_access.html#acb48b4e1852d5f17c8fda08a14f275bc">~ChannelAccess()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a56634b54acd291671ba524d91557d0bb"></a><!-- doxytag: member="ChannelAccess::nb" ref="a56634b54acd291671ba524d91557d0bb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_notification_board.html">NotificationBoard</a>* <a class="el" href="class_channel_access.html#a56634b54acd291671ba524d91557d0bb">ChannelAccess::nb</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3c7761e80dc4d710f95bbb7e82be85d0"></a><!-- doxytag: member="ChannelAccess::positionUpdateArrived" ref="a3c7761e80dc4d710f95bbb7e82be85d0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_channel_access.html#a3c7761e80dc4d710f95bbb7e82be85d0">ChannelAccess::positionUpdateArrived</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_channel_access.html#af4c4d6652f6e3d4846cb3d2e826f4bed">initialize()</a>, and <a class="el" href="class_channel_access.html#ad7c56c9ed2db85ecba91900c35e795a0">receiveSignal()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1aff5b427940b32b8fb3500c411f9db2"></a><!-- doxytag: member="ChannelAccess::radioPos" ref="a1aff5b427940b32b8fb3500c411f9db2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_coord.html">Coord</a> <a class="el" href="class_channel_access.html#a1aff5b427940b32b8fb3500c411f9db2">ChannelAccess::radioPos</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_channel_access.html#af4c4d6652f6e3d4846cb3d2e826f4bed">initialize()</a>, and <a class="el" href="class_channel_access.html#ad7c56c9ed2db85ecba91900c35e795a0">receiveSignal()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_channel_access_8h_source.html">ChannelAccess.h</a></li>
-<li><a class="el" href="_channel_access_8cc_source.html">ChannelAccess.cc</a></li>
+<li><a class="el" href="_channel_access_8h.html">ChannelAccess.h</a></li>
+<li><a class="el" href="_channel_access_8cc.html">ChannelAccess.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -303,7 +544,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_channel_access.html">ChannelAccess</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:47 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:23 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

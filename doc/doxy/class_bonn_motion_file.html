@@ -85,7 +85,10 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="BonnMotionFile" -->
-<p><code>#include &lt;<a class="el" href="_bonn_motion_file_cache_8h_source.html">BonnMotionFileCache.h</a>&gt;</code></p>
+<p>Represents a BonnMotion file's contents.  
+ <a href="class_bonn_motion_file.html#details">More...</a></p>
+
+<p><code>#include &lt;BonnMotionFileCache.h&gt;</code></p>
 
 <p><a href="class_bonn_motion_file-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -107,9 +110,7 @@ Friends</h2></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Represents a BonnMotion file's contents. </p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_bonn_motion_file_cache.html">BonnMotionFileCache</a>, <a class="el" href="class_bonn_motion_mobility.html" title="Uses the BonnMotion native file format. See NED file for more info.">BonnMotionMobility</a> </dd></dl>
-
-<p>Definition at line <a class="el" href="_bonn_motion_file_cache_8h_source.html#l00032">32</a> of file <a class="el" href="_bonn_motion_file_cache_8h_source.html">BonnMotionFileCache.h</a>.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_bonn_motion_file_cache.html" title="Singleton object to read and store BonnMotion files.">BonnMotionFileCache</a>, <a class="el" href="class_bonn_motion_mobility.html" title="Uses the BonnMotion native file format.">BonnMotionMobility</a> </dd></dl>
 </div><hr/><h2>Member Typedef Documentation</h2>
 <a class="anchor" id="a8d0cd61f5b1284cbffd827c179d60ec7"></a><!-- doxytag: member="BonnMotionFile::Line" ref="a8d0cd61f5b1284cbffd827c179d60ec7" args="" -->
 <div class="memitem">
@@ -121,8 +122,6 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_bonn_motion_file_cache_8h_source.html#l00035">35</a> of file <a class="el" href="_bonn_motion_file_cache_8h_source.html">BonnMotionFileCache.h</a>.</p>
 
 </div>
 </div>
@@ -136,8 +135,6 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_bonn_motion_file_cache_8h_source.html#l00038">38</a> of file <a class="el" href="_bonn_motion_file_cache_8h_source.html">BonnMotionFileCache.h</a>.</p>
 
 </div>
 </div>
@@ -157,13 +154,11 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_bonn_motion_file_cache_8cc_source.html#l00023">23</a> of file <a class="el" href="_bonn_motion_file_cache_8cc_source.html">BonnMotionFileCache.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_bonn_motion_mobility_8cc_source.html#l00026">BonnMotionMobility::initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_bonn_motion_mobility.html#aefa1902bb0eb0797092868ed523c1327">BonnMotionMobility::initialize()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     LineList::const_iterator it = <a class="code" href="class_bonn_motion_file.html#a64119f4470afc52e4d8ccb74d96e2023">lines</a>.begin();
-    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>=0; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>&lt;nodeId &amp;&amp; it!=<a class="code" href="class_bonn_motion_file.html#a64119f4470afc52e4d8ccb74d96e2023">lines</a>.end(); <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++) it++;
-    <span class="keywordflow">return</span> (it==<a class="code" href="class_bonn_motion_file.html#a64119f4470afc52e4d8ccb74d96e2023">lines</a>.end()) ? NULL : &amp;(*it);
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;nodeId &amp;&amp; it!=<a class="code" href="class_bonn_motion_file.html#a64119f4470afc52e4d8ccb74d96e2023">lines</a>.end(); i++) it++;
+    <span class="keywordflow">return</span> (it==<a class="code" href="class_bonn_motion_file.html#a64119f4470afc52e4d8ccb74d96e2023">lines</a>.end()) ? <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> : &amp;(*it);
 }
 </pre></div>
 </div>
@@ -180,8 +175,6 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_bonn_motion_file_cache_8h_source.html#l00037">37</a> of file <a class="el" href="_bonn_motion_file_cache_8h_source.html">BonnMotionFileCache.h</a>.</p>
-
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
@@ -196,15 +189,13 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_bonn_motion_file_cache_8h_source.html#l00039">39</a> of file <a class="el" href="_bonn_motion_file_cache_8h_source.html">BonnMotionFileCache.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_bonn_motion_file_cache_8cc_source.html#l00023">getLine()</a>, and <a class="el" href="_bonn_motion_file_cache_8cc_source.html#l00062">BonnMotionFileCache::parseFile()</a>.</p>
+<p>Referenced by <a class="el" href="class_bonn_motion_file.html#a53dd2337b7b1809751fca2a828a11665">getLine()</a>, and <a class="el" href="class_bonn_motion_file_cache.html#a419bd9e8bbf1b82de00d37f69d289257">BonnMotionFileCache::parseFile()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_bonn_motion_file_cache_8h_source.html">BonnMotionFileCache.h</a></li>
-<li><a class="el" href="_bonn_motion_file_cache_8cc_source.html">BonnMotionFileCache.cc</a></li>
+<li><a class="el" href="_bonn_motion_file_cache_8h.html">BonnMotionFileCache.h</a></li>
+<li><a class="el" href="_bonn_motion_file_cache_8cc.html">BonnMotionFileCache.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -212,7 +203,7 @@ Friends</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_bonn_motion_file.html">BonnMotionFile</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:47 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:23 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

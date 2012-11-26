@@ -83,14 +83,17 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="QueueWithQoS" --><!-- doxytag: inherits="AbstractQueue" -->
-<p><code>#include &lt;<a class="el" href="_queue_with_qo_s_8h_source.html">QueueWithQoS.h</a>&gt;</code></p>
+<p>Queue with constant processing time, with integrated QoS behaviour.  
+ <a href="class_queue_with_qo_s.html#details">More...</a></p>
+
+<p><code>#include &lt;QueueWithQoS.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for QueueWithQoS:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_queue_with_qo_s.png" usemap="#QueueWithQoS_map" alt=""/>
   <map id="QueueWithQoS_map" name="QueueWithQoS_map">
-<area href="class_abstract_queue.html" alt="AbstractQueue" shape="rect" coords="0,0,99,24"/>
+<area href="class_abstract_queue.html" title="Abstract base class for single-server queues." alt="AbstractQueue" shape="rect" coords="0,0,99,24"/>
 </map>
  </div></div>
 
@@ -101,20 +104,22 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_queue_with_qo_s.html#aeabdafa3a3c1be931b313420e4c65bde">QueueWithQoS</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_queue_with_qo_s.html#a5bef8ae95596e6ba9cb5eabb6c8ac9e4">initialize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_queue_with_qo_s.html#af753c5123a157f249c448ab06a19ec3a">arrival</a> (cPacket *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_queue_with_qo_s.html#a5bef8ae95596e6ba9cb5eabb6c8ac9e4">initialize</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_queue_with_qo_s.html#af753c5123a157f249c448ab06a19ec3a">arrival</a> (cPacket *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Functions to (re)define behaviour.  <a href="#af753c5123a157f249c448ab06a19ec3a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual cPacket *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_queue_with_qo_s.html#adda34a30cf2740c6ef0e68f2e3dfdda7">arrivalWhenIdle</a> (cPacket *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when a message arrives at the module when the queue is empty.  <a href="#adda34a30cf2740c6ef0e68f2e3dfdda7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual simtime_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_queue_with_qo_s.html#a1940615e60cab7a91f0f5531d0bd4192">startService</a> (cPacket *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when a message starts service, and should return the service time.  <a href="#a1940615e60cab7a91f0f5531d0bd4192"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">simtime_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_queue_with_qo_s.html#a04b6596303d68a6d35c5b8f6a406ed0d">delay</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_enqueue_hook.html">EnqueueHook</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_queue_with_qo_s.html#ac9479f34ed15854bf0c03105d0526990">qosHook</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Queue with constant processing time, with integrated QoS behaviour. Processing time is taken from the "procDelay" module parameter, and QoS class from the "qosBehaviourClass" module parameter.</p>
-<p>Leaves the endService(cMessage *msg) method of <a class="el" href="class_abstract_queue.html">AbstractQueue</a> undefined. </p>
-
-<p>Definition at line <a class="el" href="_queue_with_qo_s_8h_source.html#l00035">35</a> of file <a class="el" href="_queue_with_qo_s_8h_source.html">QueueWithQoS.h</a>.</p>
+<div class="textblock"><p>Queue with constant processing time, with integrated QoS behaviour. </p>
+<p>Processing time is taken from the "procDelay" module parameter, and QoS class from the "qosBehaviourClass" module parameter.</p>
+<p>Leaves the endService(cMessage *msg) method of <a class="el" href="class_abstract_queue.html" title="Abstract base class for single-server queues.">AbstractQueue</a> undefined. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aeabdafa3a3c1be931b313420e4c65bde"></a><!-- doxytag: member="QueueWithQoS::QueueWithQoS" ref="aeabdafa3a3c1be931b313420e4c65bde" args="()" -->
 <div class="memitem">
@@ -129,8 +134,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_queue_with_qo_s_8h_source.html#l00042">42</a> of file <a class="el" href="_queue_with_qo_s_8h_source.html">QueueWithQoS.h</a>.</p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
@@ -141,7 +144,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_queue_with_qo_s.html#af753c5123a157f249c448ab06a19ec3a">QueueWithQoS::arrival</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_queue_with_qo_s.html#af753c5123a157f249c448ab06a19ec3a">QueueWithQoS::arrival</a> </td>
           <td>(</td>
           <td class="paramtype">cPacket *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -150,14 +153,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Functions to (re)define behaviour Called when a message arrives at the module. The method should either enqueue this message (usual behaviour), or discard it. It may also wrap the it into another message, and insert that one in the queue.</p>
+
+<p>Functions to (re)define behaviour. </p>
+<p>Called when a message arrives at the module. The method should either enqueue this message (usual behaviour), or discard it. It may also wrap the it into another message, and insert that one in the queue.</p>
 <p>Most straightforward implementation: <code>queue.insert(msg);</code> </p>
 
 <p>Implements <a class="el" href="class_abstract_queue.html#a88f00baa496f742cd32012d26bd27591">AbstractQueue</a>.</p>
-
-<p>Definition at line <a class="el" href="_queue_with_qo_s_8cc_source.html#l00032">32</a> of file <a class="el" href="_queue_with_qo_s_8cc_source.html">QueueWithQoS.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_queue_with_qo_s.html#ac9479f34ed15854bf0c03105d0526990">qosHook</a>-&gt;<a class="code" href="class_enqueue_hook.html#a73b45d9498136e8bb157702428e8469e">enqueue</a>(msg, <a class="code" href="class_abstract_queue.html#aec57a7fb0af43102a17433e2b7ddd339">queue</a>);
+    <a class="code" href="class_queue_with_qo_s.html#ac9479f34ed15854bf0c03105d0526990">qosHook</a>-&gt;<a class="code" href="class_enqueue_hook.html#a73b45d9498136e8bb157702428e8469e" title="Called when a packet arrives and the queue is not empty.">enqueue</a>(msg, <a class="code" href="class_abstract_queue.html#aec57a7fb0af43102a17433e2b7ddd339" title="The queue.">queue</a>);
 }
 </pre></div>
 </div>
@@ -176,7 +179,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called when a message arrives at the module when the queue is empty. The message doesn't need to be enqueued in this case, it can start service immmediately. This method may:</p>
+
+<p>Called when a message arrives at the module when the queue is empty. </p>
+<p>The message doesn't need to be enqueued in this case, it can start service immmediately. This method may:</p>
 <ol type="1">
 <li>simply return the the same pointer (usual behaviour), or</li>
 <li>discard the message and return NULL pointer (the effect being this message being ignored)</li>
@@ -185,10 +190,8 @@ Protected Attributes</h2></td></tr>
 <p>Most straightforward implementation: <code>return msg;</code> </p>
 
 <p>Implements <a class="el" href="class_abstract_queue.html#af48e3dfda519333e9a5b3cd2ed71c073">AbstractQueue</a>.</p>
-
-<p>Definition at line <a class="el" href="_queue_with_qo_s_8cc_source.html#l00037">37</a> of file <a class="el" href="_queue_with_qo_s_8cc_source.html">QueueWithQoS.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(<a class="code" href="class_queue_with_qo_s.html#ac9479f34ed15854bf0c03105d0526990">qosHook</a>-&gt;<a class="code" href="class_enqueue_hook.html#aed3fcf4692ae5effbe2f72ec6cad8400">dropIfNotNeeded</a>(msg));
+    <span class="keywordflow">return</span> <a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(<a class="code" href="class_queue_with_qo_s.html#ac9479f34ed15854bf0c03105d0526990">qosHook</a>-&gt;<a class="code" href="class_enqueue_hook.html#aed3fcf4692ae5effbe2f72ec6cad8400" title="Called when a packet arrives and the queue is empty.">dropIfNotNeeded</a>(msg));
 }
 </pre></div>
 </div>
@@ -198,7 +201,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_queue_with_qo_s.html#a5bef8ae95596e6ba9cb5eabb6c8ac9e4">QueueWithQoS::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_queue_with_qo_s.html#a5bef8ae95596e6ba9cb5eabb6c8ac9e4">QueueWithQoS::initialize</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -208,14 +211,12 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="class_abstract_queue.html#ab8c3f35bb3d85ca4c7706a79e6bcd384">AbstractQueue</a>.</p>
-
-<p>Definition at line <a class="el" href="_queue_with_qo_s_8cc_source.html#l00022">22</a> of file <a class="el" href="_queue_with_qo_s_8cc_source.html">QueueWithQoS.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="class_queue_with_qo_s.html#a5bef8ae95596e6ba9cb5eabb6c8ac9e4">AbstractQueue::initialize</a>();
 
     <a class="code" href="class_queue_with_qo_s.html#a04b6596303d68a6d35c5b8f6a406ed0d">delay</a> = par(<span class="stringliteral">&quot;procDelay&quot;</span>);
-    <a class="code" href="class_queue_with_qo_s.html#ac9479f34ed15854bf0c03105d0526990">qosHook</a> = check_and_cast&lt;<a class="code" href="class_enqueue_hook.html">EnqueueHook</a> *&gt;(createOne(par(<span class="stringliteral">&quot;qosBehaviorClass&quot;</span>)));
-    <a class="code" href="class_queue_with_qo_s.html#ac9479f34ed15854bf0c03105d0526990">qosHook</a>-&gt;<a class="code" href="class_enqueue_hook.html#ae3cdb7098b0fd7038cc2830f8967323e">setModule</a>(<span class="keyword">this</span>);
+    <a class="code" href="class_queue_with_qo_s.html#ac9479f34ed15854bf0c03105d0526990">qosHook</a> = check_and_cast&lt;<a class="code" href="class_enqueue_hook.html" title="Abstract base class for enqueue hooks.">EnqueueHook</a> *&gt;(createOne(par(<span class="stringliteral">&quot;qosBehaviorClass&quot;</span>)));
+    <a class="code" href="class_queue_with_qo_s.html#ac9479f34ed15854bf0c03105d0526990">qosHook</a>-&gt;<a class="code" href="class_enqueue_hook.html#ae3cdb7098b0fd7038cc2830f8967323e" title="Called with the &quot;this&quot; pointer from the module which installs this object.">setModule</a>(<span class="keyword">this</span>);
 }
 </pre></div>
 </div>
@@ -234,12 +235,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called when a message starts service, and should return the service time.</p>
+
+<p>Called when a message starts service, and should return the service time. </p>
 <p>Example implementation: <code>return 1.0;</code> </p>
 
 <p>Implements <a class="el" href="class_abstract_queue.html#ad70e97c327a93a2c31fba8da0fb5c63d">AbstractQueue</a>.</p>
-
-<p>Definition at line <a class="el" href="_queue_with_qo_s_8cc_source.html#l00042">42</a> of file <a class="el" href="_queue_with_qo_s_8cc_source.html">QueueWithQoS.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">return</span> <a class="code" href="class_queue_with_qo_s.html#a04b6596303d68a6d35c5b8f6a406ed0d">delay</a>;
 }
@@ -258,9 +258,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_queue_with_qo_s_8h_source.html#l00038">38</a> of file <a class="el" href="_queue_with_qo_s_8h_source.html">QueueWithQoS.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_queue_with_qo_s_8cc_source.html#l00022">initialize()</a>, and <a class="el" href="_queue_with_qo_s_8cc_source.html#l00042">startService()</a>.</p>
+<p>Referenced by <a class="el" href="class_queue_with_qo_s.html#a5bef8ae95596e6ba9cb5eabb6c8ac9e4">initialize()</a>, and <a class="el" href="class_queue_with_qo_s.html#a1940615e60cab7a91f0f5531d0bd4192">startService()</a>.</p>
 
 </div>
 </div>
@@ -275,15 +273,13 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_queue_with_qo_s_8h_source.html#l00039">39</a> of file <a class="el" href="_queue_with_qo_s_8h_source.html">QueueWithQoS.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_queue_with_qo_s_8cc_source.html#l00032">arrival()</a>, <a class="el" href="_queue_with_qo_s_8cc_source.html#l00037">arrivalWhenIdle()</a>, and <a class="el" href="_queue_with_qo_s_8cc_source.html#l00022">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_queue_with_qo_s.html#af753c5123a157f249c448ab06a19ec3a">arrival()</a>, <a class="el" href="class_queue_with_qo_s.html#adda34a30cf2740c6ef0e68f2e3dfdda7">arrivalWhenIdle()</a>, and <a class="el" href="class_queue_with_qo_s.html#a5bef8ae95596e6ba9cb5eabb6c8ac9e4">initialize()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_queue_with_qo_s_8h_source.html">QueueWithQoS.h</a></li>
-<li><a class="el" href="_queue_with_qo_s_8cc_source.html">QueueWithQoS.cc</a></li>
+<li><a class="el" href="_queue_with_qo_s_8h.html">QueueWithQoS.h</a></li>
+<li><a class="el" href="_queue_with_qo_s_8cc.html">QueueWithQoS.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -291,7 +287,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_queue_with_qo_s.html">QueueWithQoS</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:51 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:28 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

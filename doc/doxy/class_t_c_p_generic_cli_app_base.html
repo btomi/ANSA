@@ -76,22 +76,26 @@
 <div class="header">
   <div class="summary">
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">TCPGenericCliAppBase Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="TCPGenericCliAppBase" --><!-- doxytag: inherits="TCPSocket::CallbackInterface" -->
-<p><code>#include &lt;<a class="el" href="_t_c_p_generic_cli_app_base_8h_source.html">TCPGenericCliAppBase.h</a>&gt;</code></p>
+<p>Base class for clients app for TCP-based request-reply protocols or apps.  
+ <a href="class_t_c_p_generic_cli_app_base.html#details">More...</a></p>
+
+<p><code>#include &lt;TCPGenericCliAppBase.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TCPGenericCliAppBase:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_t_c_p_generic_cli_app_base.png" usemap="#TCPGenericCliAppBase_map" alt=""/>
   <map id="TCPGenericCliAppBase_map" name="TCPGenericCliAppBase_map">
-<area href="class_t_c_p_socket_1_1_callback_interface.html" alt="TCPSocket::CallbackInterface" shape="rect" coords="94,0,273,24"/>
-<area href="class_t_c_p_basic_client_app.html" alt="TCPBasicClientApp" shape="rect" coords="0,112,179,136"/>
-<area href="class_telnet_app.html" alt="TelnetApp" shape="rect" coords="189,112,368,136"/>
+<area href="class_t_c_p_socket_1_1_callback_interface.html" title="Abstract base class for your callback objects." alt="TCPSocket::CallbackInterface" shape="rect" coords="94,0,273,24"/>
+<area href="class_t_c_p_basic_client_app.html" title="An example request-reply based client application." alt="TCPBasicClientApp" shape="rect" coords="0,112,179,136"/>
+<area href="class_telnet_app.html" title="An example Telnet client application." alt="TelnetApp" shape="rect" coords="189,112,368,136"/>
 </map>
  </div></div>
 
@@ -99,22 +103,37 @@ Inheritance diagram for TCPGenericCliAppBase:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a5c0adab00fc34f4b9ebdda75fea089a9">initialize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a7080cfc8f011b9c57b74c38382774969">handleMessage</a> (cMessage *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a1caaf9a47b1c1db2b89f9a4d13f346f0">finish</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a420e64965be7c708a427de4061a49689">handleTimer</a> (cMessage *msg)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#ac9a0cc56e4e009b0e6fec8220d223b30">initialize</a> (int stage)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization.  <a href="#ac9a0cc56e4e009b0e6fec8220d223b30"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#acdf2dc06c0c99756ec22f678a29d9afb">numInitStages</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a7080cfc8f011b9c57b74c38382774969">handleMessage</a> (cMessage *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">For self-messages it invokes <a class="el" href="class_t_c_p_generic_cli_app_base.html#a420e64965be7c708a427de4061a49689" title="Invoked from handleMessage().">handleTimer()</a>; messages arriving from <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> will get dispatched to the socketXXX() functions.  <a href="#a7080cfc8f011b9c57b74c38382774969"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a1caaf9a47b1c1db2b89f9a4d13f346f0">finish</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Records basic statistics: numSessions, packetsSent, packetsRcvd, bytesSent, bytesRcvd.  <a href="#a1caaf9a47b1c1db2b89f9a4d13f346f0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a420e64965be7c708a427de4061a49689">handleTimer</a> (cMessage *msg)=0</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Invoked from <a class="el" href="class_t_c_p_generic_cli_app_base.html#a7080cfc8f011b9c57b74c38382774969" title="For self-messages it invokes handleTimer(); messages arriving from TCP will get dispatched to the soc...">handleMessage()</a>.  <a href="#a420e64965be7c708a427de4061a49689"></a><br/></td></tr>
 <tr><td colspan="2"><div class="groupHeader">Utility functions</div></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a3ec28620ffe01bc3e81af1ae85b3522f">connect</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a8004ebfe48fdf6334d100cd54ecf29fe">close</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a05c8b9e8f46e01eb466e604f8cd47719">sendPacket</a> (int numBytes, int expectedReplyBytes, bool serverClose=false)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a904f867771672d8d989a87873fb51ad9">setStatusString</a> (const char *s)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a3ec28620ffe01bc3e81af1ae85b3522f">connect</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Issues an active OPEN to the address/port given as module parameters.  <a href="#a3ec28620ffe01bc3e81af1ae85b3522f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a8004ebfe48fdf6334d100cd54ecf29fe">close</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Issues CLOSE command.  <a href="#a8004ebfe48fdf6334d100cd54ecf29fe"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a05c8b9e8f46e01eb466e604f8cd47719">sendPacket</a> (int numBytes, int expectedReplyBytes, bool serverClose=false)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a <a class="el" href="class_generic_app_msg.html" title="Class generated from applications/tcpapp/GenericAppMsg.msg by opp_msgc.">GenericAppMsg</a> of the given length.  <a href="#a05c8b9e8f46e01eb466e604f8cd47719"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a904f867771672d8d989a87873fb51ad9">setStatusString</a> (const char *s)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">When running under GUI, it displays the given string next to the icon.  <a href="#a904f867771672d8d989a87873fb51ad9"></a><br/></td></tr>
 <tr><td colspan="2"><div class="groupHeader">TCPSocket::CallbackInterface callback methods</div></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#aa3e60c557a7af7cfc3b159e690be5a83">socketEstablished</a> (int connId, void *yourPtr)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a2609e0e2775c805d2c3a3beb06c096cd">socketDataArrived</a> (int connId, void *yourPtr, cPacket *msg, bool urgent)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a9ec5b3744ba9da37e0c1acad20c3ae08">socketPeerClosed</a> (int connId, void *yourPtr)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a39a1f1131c97aaf61e79cbe01fb5341b">socketClosed</a> (int connId, void *yourPtr)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a321d7c13c4ebe9a63e2e013895a390d1">socketFailure</a> (int connId, void *yourPtr, int code)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#aacd013bdf693db9511c3cd9854330169">socketStatusArrived</a> (int connId, void *yourPtr, <a class="el" href="class_t_c_p_status_info.html">TCPStatusInfo</a> *status)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#aa3e60c557a7af7cfc3b159e690be5a83">socketEstablished</a> (int connId, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *yourPtr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Does nothing but update statistics/status.  <a href="#aa3e60c557a7af7cfc3b159e690be5a83"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a2609e0e2775c805d2c3a3beb06c096cd">socketDataArrived</a> (int connId, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *yourPtr, cPacket *msg, bool urgent)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Does nothing but update statistics/status.  <a href="#a2609e0e2775c805d2c3a3beb06c096cd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a9ec5b3744ba9da37e0c1acad20c3ae08">socketPeerClosed</a> (int connId, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *yourPtr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Since remote <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> closed, invokes <a class="el" href="class_t_c_p_generic_cli_app_base.html#a8004ebfe48fdf6334d100cd54ecf29fe" title="Issues CLOSE command.">close()</a>.  <a href="#a9ec5b3744ba9da37e0c1acad20c3ae08"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a39a1f1131c97aaf61e79cbe01fb5341b">socketClosed</a> (int connId, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *yourPtr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Does nothing but update statistics/status.  <a href="#a39a1f1131c97aaf61e79cbe01fb5341b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a321d7c13c4ebe9a63e2e013895a390d1">socketFailure</a> (int connId, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *yourPtr, int code)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Does nothing but update statistics/status.  <a href="#a321d7c13c4ebe9a63e2e013895a390d1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#aacd013bdf693db9511c3cd9854330169">socketStatusArrived</a> (int connId, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *yourPtr, <a class="el" href="class_t_c_p_status_info.html">TCPStatusInfo</a> *status)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefine to handle incoming <a class="el" href="class_t_c_p_status_info.html" title="Class generated from transport/contract/TCPCommand.msg by opp_msgc.">TCPStatusInfo</a>.  <a href="#aacd013bdf693db9511c3cd9854330169"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_c_p_socket.html">TCPSocket</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a03677edd0d173c3fe05bc765c4a136aa">socket</a></td></tr>
@@ -124,20 +143,24 @@ Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a15ed77652265025c9ee8e6edcbe4f0e3">packetsRcvd</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#ae9509939b0d3fadf855e039a4685e98b">bytesSent</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a613c366ad99e9037fb2d7b68272eabf1">bytesRcvd</a></td></tr>
+<tr><td colspan="2"><h2><a name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a5be8688e3cafe85267e4282cd79bd4ee">connectSignal</a> = SIMSIGNAL_NULL</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#a7c7e77d4597e1133d75263920a1fbd02">rcvdPkSignal</a> = SIMSIGNAL_NULL</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_generic_cli_app_base.html#aa80eed93e8350130fef90a8c8ffe4780">sentPkSignal</a> = SIMSIGNAL_NULL</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Base class for clients app for TCP-based request-reply protocols or apps. Handles a single session (and <a class="el" href="class_t_c_p.html">TCP</a> connection) at a time.</p>
-<p>It needs the following NED parameters: address, port, connectAddress, connectPort.</p>
-<p>Generally used together with <a class="el" href="class_generic_app_msg.html">GenericAppMsg</a> and <a class="el" href="class_t_c_p_generic_srv_app.html">TCPGenericSrvApp</a>. </p>
-
-<p>Definition at line <a class="el" href="_t_c_p_generic_cli_app_base_8h_source.html#l00029">29</a> of file <a class="el" href="_t_c_p_generic_cli_app_base_8h_source.html">TCPGenericCliAppBase.h</a>.</p>
+<div class="textblock"><p>Base class for clients app for TCP-based request-reply protocols or apps. </p>
+<p>Handles a single session (and <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> connection) at a time.</p>
+<p>It needs the following NED parameters: localAddress, localPort, connectAddress, connectPort.</p>
+<p>Generally used together with <a class="el" href="class_generic_app_msg.html" title="Class generated from applications/tcpapp/GenericAppMsg.msg by opp_msgc.">GenericAppMsg</a> and <a class="el" href="class_t_c_p_generic_srv_app.html" title="Generic server application.">TCPGenericSrvApp</a>. </p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a8004ebfe48fdf6334d100cd54ecf29fe"></a><!-- doxytag: member="TCPGenericCliAppBase::close" ref="a8004ebfe48fdf6334d100cd54ecf29fe" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_generic_cli_app_base.html#a8004ebfe48fdf6334d100cd54ecf29fe">TCPGenericCliAppBase::close</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_generic_cli_app_base.html#a8004ebfe48fdf6334d100cd54ecf29fe">TCPGenericCliAppBase::close</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -145,15 +168,15 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Issues CLOSE command </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00067">67</a> of file <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html">TCPGenericCliAppBase.cc</a>.</p>
+<p>Issues CLOSE command. </p>
 
-<p>Referenced by <a class="el" href="_telnet_app_8cc_source.html#l00049">TelnetApp::handleTimer()</a>, <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00103">TCPBasicClientApp::socketDataArrived()</a>, and <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00110">socketPeerClosed()</a>.</p>
+<p>Referenced by <a class="el" href="class_telnet_app.html#adc72aea793ce93513afef058c4e6471d">TelnetApp::handleTimer()</a>, <a class="el" href="class_t_c_p_basic_client_app.html#a476dab358954ae599966f7b6d20e60b8">TCPBasicClientApp::socketDataArrived()</a>, and <a class="el" href="class_t_c_p_generic_cli_app_base.html#a9ec5b3744ba9da37e0c1acad20c3ae08">socketPeerClosed()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a904f867771672d8d989a87873fb51ad9">setStatusString</a>(<span class="stringliteral">&quot;closing&quot;</span>);
+    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a904f867771672d8d989a87873fb51ad9" title="When running under GUI, it displays the given string next to the icon.">setStatusString</a>(<span class="stringliteral">&quot;closing&quot;</span>);
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;issuing CLOSE command\n&quot;</span>;
-    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a03677edd0d173c3fe05bc765c4a136aa">socket</a>.<a class="code" href="class_t_c_p_socket.html#ae64f7db5484a7f057446ac3c906629c0">close</a>();
+    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a03677edd0d173c3fe05bc765c4a136aa">socket</a>.<a class="code" href="class_t_c_p_socket.html#ae64f7db5484a7f057446ac3c906629c0" title="Closes the local end of the connection.">close</a>();
+    emit(<a class="code" href="class_t_c_p_generic_cli_app_base.html#a5be8688e3cafe85267e4282cd79bd4ee">connectSignal</a>, -1L);
 }
 </pre></div>
 </div>
@@ -163,7 +186,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_generic_cli_app_base.html#a3ec28620ffe01bc3e81af1ae85b3522f">TCPGenericCliAppBase::connect</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_generic_cli_app_base.html#a3ec28620ffe01bc3e81af1ae85b3522f">TCPGenericCliAppBase::connect</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -171,25 +194,25 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Issues an active OPEN to the address/port given as module parameters </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00050">50</a> of file <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html">TCPGenericCliAppBase.cc</a>.</p>
+<p>Issues an active OPEN to the address/port given as module parameters. </p>
 
-<p>Referenced by <a class="el" href="_telnet_app_8cc_source.html#l00049">TelnetApp::handleTimer()</a>, and <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00065">TCPBasicClientApp::handleTimer()</a>.</p>
+<p>Referenced by <a class="el" href="class_telnet_app.html#adc72aea793ce93513afef058c4e6471d">TelnetApp::handleTimer()</a>, and <a class="el" href="class_t_c_p_basic_client_app.html#abc31a208d90a81379a973ab984b6f74b">TCPBasicClientApp::handleTimer()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// we need a new connId if this is not the first connection</span>
-    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a03677edd0d173c3fe05bc765c4a136aa">socket</a>.<a class="code" href="class_t_c_p_socket.html#a6502c2db688d81049c67c0a028197929">renewSocket</a>();
+    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a03677edd0d173c3fe05bc765c4a136aa">socket</a>.<a class="code" href="class_t_c_p_socket.html#a6502c2db688d81049c67c0a028197929" title="Required to re-connect with a &quot;used&quot; TCPSocket object.">renewSocket</a>();
 
     <span class="comment">// connect</span>
     <span class="keyword">const</span> <span class="keywordtype">char</span> *connectAddress = par(<span class="stringliteral">&quot;connectAddress&quot;</span>);
     <span class="keywordtype">int</span> connectPort = par(<span class="stringliteral">&quot;connectPort&quot;</span>);
 
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;issuing OPEN command\n&quot;</span>;
-    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a904f867771672d8d989a87873fb51ad9">setStatusString</a>(<span class="stringliteral">&quot;connecting&quot;</span>);
+    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a904f867771672d8d989a87873fb51ad9" title="When running under GUI, it displays the given string next to the icon.">setStatusString</a>(<span class="stringliteral">&quot;connecting&quot;</span>);
 
-    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a03677edd0d173c3fe05bc765c4a136aa">socket</a>.<a class="code" href="class_t_c_p_socket.html#a7223e3a9189b0b156516d84c188cea6d">connect</a>(<a class="code" href="class_i_p_address_resolver.html">IPAddressResolver</a>().resolve(connectAddress), connectPort);
+    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a03677edd0d173c3fe05bc765c4a136aa">socket</a>.<a class="code" href="class_t_c_p_socket.html#a7223e3a9189b0b156516d84c188cea6d" title="Active OPEN to the given remote socket.">connect</a>(<a class="code" href="class_i_pv_x_address_resolver.html" title="Utility class for finding IPv4 or IPv6 address of a host or router.">IPvXAddressResolver</a>().resolve(connectAddress), connectPort);
 
     <a class="code" href="class_t_c_p_generic_cli_app_base.html#a108bbf188f8ff892d667b5668a2abf6c">numSessions</a>++;
+    emit(<a class="code" href="class_t_c_p_generic_cli_app_base.html#a5be8688e3cafe85267e4282cd79bd4ee">connectSignal</a>, 1L);
 }
 </pre></div>
 </div>
@@ -199,7 +222,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_generic_cli_app_base.html#a1caaf9a47b1c1db2b89f9a4d13f346f0">TCPGenericCliAppBase::finish</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_generic_cli_app_base.html#a1caaf9a47b1c1db2b89f9a4d13f346f0">TCPGenericCliAppBase::finish</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -207,19 +230,15 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Records basic statistics: numSessions, packetsSent, packetsRcvd, bytesSent, bytesRcvd. Redefine to record different or more statistics at the end of the simulation. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00136">136</a> of file <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html">TCPGenericCliAppBase.cc</a>.</p>
+<p>Records basic statistics: numSessions, packetsSent, packetsRcvd, bytesSent, bytesRcvd. </p>
+<p>Redefine to record different or more statistics at the end of the simulation. </p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; getFullPath() &lt;&lt; <span class="stringliteral">&quot;: opened &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_generic_cli_app_base.html#a108bbf188f8ff892d667b5668a2abf6c">numSessions</a> &lt;&lt; <span class="stringliteral">&quot; sessions\n&quot;</span>;
-    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; getFullPath() &lt;&lt; <span class="stringliteral">&quot;: sent &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_generic_cli_app_base.html#ae9509939b0d3fadf855e039a4685e98b">bytesSent</a> &lt;&lt; <span class="stringliteral">&quot; bytes in &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_generic_cli_app_base.html#a968af0a42e12593dbfe5452dad5c1925">packetsSent</a> &lt;&lt; <span class="stringliteral">&quot; packets\n&quot;</span>;
-    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; getFullPath() &lt;&lt; <span class="stringliteral">&quot;: received &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_generic_cli_app_base.html#a613c366ad99e9037fb2d7b68272eabf1">bytesRcvd</a> &lt;&lt; <span class="stringliteral">&quot; bytes in &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_generic_cli_app_base.html#a15ed77652265025c9ee8e6edcbe4f0e3">packetsRcvd</a> &lt;&lt; <span class="stringliteral">&quot; packets\n&quot;</span>;
+    std::string modulePath = getFullPath();
 
-    recordScalar(<span class="stringliteral">&quot;number of sessions&quot;</span>, numSessions);
-    recordScalar(<span class="stringliteral">&quot;packets sent&quot;</span>, packetsSent);
-    recordScalar(<span class="stringliteral">&quot;packets rcvd&quot;</span>, packetsRcvd);
-    recordScalar(<span class="stringliteral">&quot;bytes sent&quot;</span>, <a class="code" href="class_t_c_p_generic_cli_app_base.html#ae9509939b0d3fadf855e039a4685e98b">bytesSent</a>);
-    recordScalar(<span class="stringliteral">&quot;bytes rcvd&quot;</span>, <a class="code" href="class_t_c_p_generic_cli_app_base.html#a613c366ad99e9037fb2d7b68272eabf1">bytesRcvd</a>);
+    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; modulePath &lt;&lt; <span class="stringliteral">&quot;: opened &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_generic_cli_app_base.html#a108bbf188f8ff892d667b5668a2abf6c">numSessions</a> &lt;&lt; <span class="stringliteral">&quot; sessions\n&quot;</span>;
+    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; modulePath &lt;&lt; <span class="stringliteral">&quot;: sent &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_generic_cli_app_base.html#ae9509939b0d3fadf855e039a4685e98b">bytesSent</a> &lt;&lt; <span class="stringliteral">&quot; bytes in &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_generic_cli_app_base.html#a968af0a42e12593dbfe5452dad5c1925">packetsSent</a> &lt;&lt; <span class="stringliteral">&quot; packets\n&quot;</span>;
+    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; modulePath &lt;&lt; <span class="stringliteral">&quot;: received &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_generic_cli_app_base.html#a613c366ad99e9037fb2d7b68272eabf1">bytesRcvd</a> &lt;&lt; <span class="stringliteral">&quot; bytes in &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_generic_cli_app_base.html#a15ed77652265025c9ee8e6edcbe4f0e3">packetsRcvd</a> &lt;&lt; <span class="stringliteral">&quot; packets\n&quot;</span>;
 }
 </pre></div>
 </div>
@@ -229,7 +248,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_generic_cli_app_base.html#a7080cfc8f011b9c57b74c38382774969">TCPGenericCliAppBase::handleMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_generic_cli_app_base.html#a7080cfc8f011b9c57b74c38382774969">TCPGenericCliAppBase::handleMessage</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -238,14 +257,13 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>For self-messages it invokes <a class="el" href="class_t_c_p_generic_cli_app_base.html#a420e64965be7c708a427de4061a49689">handleTimer()</a>; messages arriving from <a class="el" href="class_t_c_p.html">TCP</a> will get dispatched to the socketXXX() functions. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00042">42</a> of file <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html">TCPGenericCliAppBase.cc</a>.</p>
+<p>For self-messages it invokes <a class="el" href="class_t_c_p_generic_cli_app_base.html#a420e64965be7c708a427de4061a49689" title="Invoked from handleMessage().">handleTimer()</a>; messages arriving from <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> will get dispatched to the socketXXX() functions. </p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span> (msg-&gt;isSelfMessage())
-        <a class="code" href="class_t_c_p_generic_cli_app_base.html#a420e64965be7c708a427de4061a49689">handleTimer</a>(msg);
+        <a class="code" href="class_t_c_p_generic_cli_app_base.html#a420e64965be7c708a427de4061a49689" title="Invoked from handleMessage().">handleTimer</a>(msg);
     <span class="keywordflow">else</span>
-        <a class="code" href="class_t_c_p_generic_cli_app_base.html#a03677edd0d173c3fe05bc765c4a136aa">socket</a>.<a class="code" href="class_t_c_p_socket.html#a5a4c2dd02c72e3cb0115a0490f408f07">processMessage</a>(msg);
+        <a class="code" href="class_t_c_p_generic_cli_app_base.html#a03677edd0d173c3fe05bc765c4a136aa">socket</a>.<a class="code" href="class_t_c_p_socket.html#a5a4c2dd02c72e3cb0115a0490f408f07" title="Examines the message (which should have arrived from TCP), updates socket state, and if there is a ca...">processMessage</a>(msg);
 }
 </pre></div>
 </div>
@@ -255,7 +273,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_generic_cli_app_base.html#a420e64965be7c708a427de4061a49689">TCPGenericCliAppBase::handleTimer</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_generic_cli_app_base.html#a420e64965be7c708a427de4061a49689">TCPGenericCliAppBase::handleTimer</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -264,34 +282,47 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Invoked from <a class="el" href="class_t_c_p_generic_cli_app_base.html#a7080cfc8f011b9c57b74c38382774969">handleMessage()</a>. Should be redefined to handle self-messages. </p>
+
+<p>Invoked from <a class="el" href="class_t_c_p_generic_cli_app_base.html#a7080cfc8f011b9c57b74c38382774969" title="For self-messages it invokes handleTimer(); messages arriving from TCP will get dispatched to the soc...">handleMessage()</a>. </p>
+<p>Should be redefined to handle self-messages. </p>
 
 <p>Implemented in <a class="el" href="class_t_c_p_basic_client_app.html#abc31a208d90a81379a973ab984b6f74b">TCPBasicClientApp</a>, and <a class="el" href="class_telnet_app.html#adc72aea793ce93513afef058c4e6471d">TelnetApp</a>.</p>
 
-<p>Referenced by <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00042">handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_generic_cli_app_base.html#a7080cfc8f011b9c57b74c38382774969">handleMessage()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a5c0adab00fc34f4b9ebdda75fea089a9"></a><!-- doxytag: member="TCPGenericCliAppBase::initialize" ref="a5c0adab00fc34f4b9ebdda75fea089a9" args="()" -->
+<a class="anchor" id="ac9a0cc56e4e009b0e6fec8220d223b30"></a><!-- doxytag: member="TCPGenericCliAppBase::initialize" ref="ac9a0cc56e4e009b0e6fec8220d223b30" args="(int stage)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_generic_cli_app_base.html#a5c0adab00fc34f4b9ebdda75fea089a9">TCPGenericCliAppBase::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_generic_cli_app_base.html#ac9a0cc56e4e009b0e6fec8220d223b30">TCPGenericCliAppBase::initialize</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>stage</em></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialization. Should be redefined to perform or schedule a <a class="el" href="class_t_c_p_generic_cli_app_base.html#a3ec28620ffe01bc3e81af1ae85b3522f">connect()</a>. </p>
 
-<p>Reimplemented in <a class="el" href="class_t_c_p_basic_client_app.html#adb40b8b6e29c1bc1a4271cde8b5a8e31">TCPBasicClientApp</a>, and <a class="el" href="class_telnet_app.html#a9aad8abbf28e8d601bcb2d96782734b0">TelnetApp</a>.</p>
+<p>Initialization. </p>
+<p>Should be redefined to perform or schedule a <a class="el" href="class_t_c_p_generic_cli_app_base.html#a3ec28620ffe01bc3e81af1ae85b3522f" title="Issues an active OPEN to the address/port given as module parameters.">connect()</a>. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00021">21</a> of file <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html">TCPGenericCliAppBase.cc</a>.</p>
+<p>Reimplemented in <a class="el" href="class_t_c_p_basic_client_app.html#afe569a7e980e8719d7f9af9ed9ce9138">TCPBasicClientApp</a>, and <a class="el" href="class_telnet_app.html#aa6435a3f447d7fac579ccf8049728dec">TelnetApp</a>.</p>
 <div class="fragment"><pre class="fragment">{
+    <a class="code" href="class_t_c_p_generic_cli_app_base.html#ac9a0cc56e4e009b0e6fec8220d223b30" title="Initialization.">cSimpleModule::initialize</a>(stage);
+    <span class="keywordflow">if</span> (stage != 3)
+        <span class="keywordflow">return</span>;
+
     <a class="code" href="class_t_c_p_generic_cli_app_base.html#a108bbf188f8ff892d667b5668a2abf6c">numSessions</a> = <a class="code" href="class_t_c_p_generic_cli_app_base.html#aedfb65334489e61b8e5776c08331786b">numBroken</a> = <a class="code" href="class_t_c_p_generic_cli_app_base.html#a968af0a42e12593dbfe5452dad5c1925">packetsSent</a> = <a class="code" href="class_t_c_p_generic_cli_app_base.html#a15ed77652265025c9ee8e6edcbe4f0e3">packetsRcvd</a> = <a class="code" href="class_t_c_p_generic_cli_app_base.html#ae9509939b0d3fadf855e039a4685e98b">bytesSent</a> = <a class="code" href="class_t_c_p_generic_cli_app_base.html#a613c366ad99e9037fb2d7b68272eabf1">bytesRcvd</a> = 0;
+
+    <span class="comment">//statistics</span>
+    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a5be8688e3cafe85267e4282cd79bd4ee">connectSignal</a> = registerSignal(<span class="stringliteral">&quot;connect&quot;</span>);
+    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a7c7e77d4597e1133d75263920a1fbd02">rcvdPkSignal</a> = registerSignal(<span class="stringliteral">&quot;rcvdPk&quot;</span>);
+    <a class="code" href="class_t_c_p_generic_cli_app_base.html#aa80eed93e8350130fef90a8c8ffe4780">sentPkSignal</a> = registerSignal(<span class="stringliteral">&quot;sentPk&quot;</span>);
+
     WATCH(<a class="code" href="class_t_c_p_generic_cli_app_base.html#a108bbf188f8ff892d667b5668a2abf6c">numSessions</a>);
     WATCH(<a class="code" href="class_t_c_p_generic_cli_app_base.html#aedfb65334489e61b8e5776c08331786b">numBroken</a>);
     WATCH(<a class="code" href="class_t_c_p_generic_cli_app_base.html#a968af0a42e12593dbfe5452dad5c1925">packetsSent</a>);
@@ -300,15 +331,33 @@ Protected Attributes</h2></td></tr>
     WATCH(<a class="code" href="class_t_c_p_generic_cli_app_base.html#a613c366ad99e9037fb2d7b68272eabf1">bytesRcvd</a>);
 
     <span class="comment">// parameters</span>
-    <span class="keyword">const</span> <span class="keywordtype">char</span> *address = par(<span class="stringliteral">&quot;address&quot;</span>);
-    <span class="keywordtype">int</span> port = par(<span class="stringliteral">&quot;port&quot;</span>);
-    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a03677edd0d173c3fe05bc765c4a136aa">socket</a>.<a class="code" href="class_t_c_p_socket.html#a2c4f6131103b0c9773728d706140aa0d">bind</a>(*address ? <a class="code" href="class_i_pv_x_address.html">IPvXAddress</a>(address) : <a class="code" href="class_i_pv_x_address.html">IPvXAddress</a>(), port);
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *localAddress = par(<span class="stringliteral">&quot;localAddress&quot;</span>);
+    <span class="keywordtype">int</span> localPort = par(<span class="stringliteral">&quot;localPort&quot;</span>);
+    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a03677edd0d173c3fe05bc765c4a136aa">socket</a>.<a class="code" href="class_t_c_p_socket.html#aaa0a60b46635abaf60045716a1e8b1ca" title="Read &quot;dataTransferMode&quot; parameter from ini/ned, and set dataTransferMode member value.">readDataTransferModePar</a>(*<span class="keyword">this</span>);
+    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a03677edd0d173c3fe05bc765c4a136aa">socket</a>.<a class="code" href="class_t_c_p_socket.html#a2c4f6131103b0c9773728d706140aa0d" title="Bind the socket to a local port number.">bind</a>(*localAddress ? <a class="code" href="class_i_pv_x_address_resolver.html" title="Utility class for finding IPv4 or IPv6 address of a host or router.">IPvXAddressResolver</a>().resolve(localAddress) : <a class="code" href="class_i_pv_x_address.html" title="Stores an IPv4 or an IPv6 address.">IPvXAddress</a>(), localPort);
 
-    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a03677edd0d173c3fe05bc765c4a136aa">socket</a>.<a class="code" href="class_t_c_p_socket.html#a5aa6b7b21ebe1f98801eade44e0de8eb">setCallbackObject</a>(<span class="keyword">this</span>);
-    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a03677edd0d173c3fe05bc765c4a136aa">socket</a>.<a class="code" href="class_t_c_p_socket.html#ab6563d5ef32687b2072e5c08317ba519">setOutputGate</a>(gate(<span class="stringliteral">&quot;tcpOut&quot;</span>));
+    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a03677edd0d173c3fe05bc765c4a136aa">socket</a>.<a class="code" href="class_t_c_p_socket.html#a5aa6b7b21ebe1f98801eade44e0de8eb" title="Sets a callback object, to be used with processMessage().">setCallbackObject</a>(<span class="keyword">this</span>);
+    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a03677edd0d173c3fe05bc765c4a136aa">socket</a>.<a class="code" href="class_t_c_p_socket.html#ab6563d5ef32687b2072e5c08317ba519" title="Sets the gate on which to send to TCP.">setOutputGate</a>(gate(<span class="stringliteral">&quot;tcpOut&quot;</span>));
 
-    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a904f867771672d8d989a87873fb51ad9">setStatusString</a>(<span class="stringliteral">&quot;waiting&quot;</span>);
+    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a904f867771672d8d989a87873fb51ad9" title="When running under GUI, it displays the given string next to the icon.">setStatusString</a>(<span class="stringliteral">&quot;waiting&quot;</span>);
 }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="acdf2dc06c0c99756ec22f678a29d9afb"></a><!-- doxytag: member="TCPGenericCliAppBase::numInitStages" ref="acdf2dc06c0c99756ec22f678a29d9afb" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_t_c_p_generic_cli_app_base.html#acdf2dc06c0c99756ec22f678a29d9afb">TCPGenericCliAppBase::numInitStages</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline, protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> 4; }
 </pre></div>
 </div>
 </div>
@@ -317,7 +366,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_generic_cli_app_base.html#a05c8b9e8f46e01eb466e604f8cd47719">TCPGenericCliAppBase::sendPacket</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_generic_cli_app_base.html#a05c8b9e8f46e01eb466e604f8cd47719">TCPGenericCliAppBase::sendPacket</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>numBytes</em>, </td>
@@ -342,23 +391,24 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Sends a <a class="el" href="class_generic_app_msg.html">GenericAppMsg</a> of the given length </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00074">74</a> of file <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html">TCPGenericCliAppBase.cc</a>.</p>
+<p>Sends a <a class="el" href="class_generic_app_msg.html" title="Class generated from applications/tcpapp/GenericAppMsg.msg by opp_msgc.">GenericAppMsg</a> of the given length. </p>
 
-<p>Referenced by <a class="el" href="_telnet_app_8cc_source.html#l00049">TelnetApp::handleTimer()</a>, and <a class="el" href="_t_c_p_basic_client_app_8cc_source.html#l00053">TCPBasicClientApp::sendRequest()</a>.</p>
+<p>Referenced by <a class="el" href="class_telnet_app.html#adc72aea793ce93513afef058c4e6471d">TelnetApp::handleTimer()</a>, and <a class="el" href="class_t_c_p_basic_client_app.html#a849fb799548b3a34e6e7bd33710c3767">TCPBasicClientApp::sendRequest()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;sending &quot;</span> &lt;&lt; numBytes &lt;&lt; <span class="stringliteral">&quot; bytes, expecting &quot;</span> &lt;&lt; expectedReplyBytes &lt;&lt; (serverClose ? <span class="stringliteral">&quot;, and server should close afterwards\n&quot;</span> : <span class="stringliteral">&quot;\n&quot;</span>);
+    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;sending &quot;</span> &lt;&lt; numBytes &lt;&lt; <span class="stringliteral">&quot; bytes, expecting &quot;</span> &lt;&lt; expectedReplyBytes
+       &lt;&lt; (serverClose ? <span class="stringliteral">&quot;, and server should close afterwards\n&quot;</span> : <span class="stringliteral">&quot;\n&quot;</span>);
 
-    <a class="code" href="class_generic_app_msg.html">GenericAppMsg</a> *msg = <span class="keyword">new</span> <a class="code" href="class_generic_app_msg.html">GenericAppMsg</a>(<span class="stringliteral">&quot;data&quot;</span>);
+    <a class="code" href="class_generic_app_msg.html" title="Class generated from applications/tcpapp/GenericAppMsg.msg by opp_msgc.">GenericAppMsg</a> *msg = <span class="keyword">new</span> <a class="code" href="class_generic_app_msg.html" title="Class generated from applications/tcpapp/GenericAppMsg.msg by opp_msgc.">GenericAppMsg</a>(<span class="stringliteral">&quot;data&quot;</span>);
     msg-&gt;setByteLength(numBytes);
     msg-&gt;setExpectedReplyLength(expectedReplyBytes);
     msg-&gt;setServerClose(serverClose);
 
-    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a03677edd0d173c3fe05bc765c4a136aa">socket</a>.<a class="code" href="class_t_c_p_socket.html#a5bd53af740d4cde0d5460fdf481e7a7a">send</a>(msg);
+    emit(<a class="code" href="class_t_c_p_generic_cli_app_base.html#aa80eed93e8350130fef90a8c8ffe4780">sentPkSignal</a>, msg);
+    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a03677edd0d173c3fe05bc765c4a136aa">socket</a>.<a class="code" href="class_t_c_p_socket.html#a5bd53af740d4cde0d5460fdf481e7a7a" title="Sends data packet.">send</a>(msg);
 
     <a class="code" href="class_t_c_p_generic_cli_app_base.html#a968af0a42e12593dbfe5452dad5c1925">packetsSent</a>++;
-    <a class="code" href="class_t_c_p_generic_cli_app_base.html#ae9509939b0d3fadf855e039a4685e98b">bytesSent</a>+=numBytes;
+    <a class="code" href="class_t_c_p_generic_cli_app_base.html#ae9509939b0d3fadf855e039a4685e98b">bytesSent</a> += numBytes;
 }
 </pre></div>
 </div>
@@ -368,7 +418,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_generic_cli_app_base.html#a904f867771672d8d989a87873fb51ad9">TCPGenericCliAppBase::setStatusString</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_generic_cli_app_base.html#a904f867771672d8d989a87873fb51ad9">TCPGenericCliAppBase::setStatusString</a> </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>s</em></td><td>)</td>
@@ -377,13 +427,13 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>When running under GUI, it displays the given string next to the icon </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00089">89</a> of file <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html">TCPGenericCliAppBase.cc</a>.</p>
+<p>When running under GUI, it displays the given string next to the icon. </p>
 
-<p>Referenced by <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00067">close()</a>, <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00050">connect()</a>, <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00021">initialize()</a>, <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00120">socketClosed()</a>, <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00094">socketEstablished()</a>, and <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00127">socketFailure()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_generic_cli_app_base.html#a8004ebfe48fdf6334d100cd54ecf29fe">close()</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#a3ec28620ffe01bc3e81af1ae85b3522f">connect()</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#ac9a0cc56e4e009b0e6fec8220d223b30">initialize()</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#a39a1f1131c97aaf61e79cbe01fb5341b">socketClosed()</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#aa3e60c557a7af7cfc3b159e690be5a83">socketEstablished()</a>, and <a class="el" href="class_t_c_p_generic_cli_app_base.html#a321d7c13c4ebe9a63e2e013895a390d1">socketFailure()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (ev.isGUI()) getDisplayString().setTagArg(<span class="stringliteral">&quot;t&quot;</span>, 0, s);
+    <span class="keywordflow">if</span> (ev.isGUI())
+        getDisplayString().setTagArg(<span class="stringliteral">&quot;t&quot;</span>, 0, s);
 }
 </pre></div>
 </div>
@@ -393,7 +443,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_generic_cli_app_base.html#a39a1f1131c97aaf61e79cbe01fb5341b">TCPGenericCliAppBase::socketClosed</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_generic_cli_app_base.html#a39a1f1131c97aaf61e79cbe01fb5341b">TCPGenericCliAppBase::socketClosed</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>connId</em>, </td>
@@ -401,7 +451,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>yourPtr</em>&#160;</td>
         </tr>
         <tr>
@@ -412,17 +462,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Does nothing but update statistics/status. Redefine if you want to do something else, such as opening a new connection. </p>
+
+<p>Does nothing but update statistics/status. </p>
+<p>Redefine if you want to do something else, such as opening a new connection. </p>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a9a4049a13ace6e455d62c744ec7bf35e">TCPSocket::CallbackInterface</a>.</p>
 
 <p>Reimplemented in <a class="el" href="class_t_c_p_basic_client_app.html#a37368450e37da097e428fea9365cef1d">TCPBasicClientApp</a>, and <a class="el" href="class_telnet_app.html#a6118600399f307b07f13c4b7a35507ba">TelnetApp</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00120">120</a> of file <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html">TCPGenericCliAppBase.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// *redefine* to start another session etc.</span>
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;connection closed\n&quot;</span>;
-    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a904f867771672d8d989a87873fb51ad9">setStatusString</a>(<span class="stringliteral">&quot;closed&quot;</span>);
+    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a904f867771672d8d989a87873fb51ad9" title="When running under GUI, it displays the given string next to the icon.">setStatusString</a>(<span class="stringliteral">&quot;closed&quot;</span>);
 }
 </pre></div>
 </div>
@@ -432,7 +482,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_generic_cli_app_base.html#a2609e0e2775c805d2c3a3beb06c096cd">TCPGenericCliAppBase::socketDataArrived</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_generic_cli_app_base.html#a2609e0e2775c805d2c3a3beb06c096cd">TCPGenericCliAppBase::socketDataArrived</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>connId</em>, </td>
@@ -440,7 +490,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>yourPtr</em>, </td>
         </tr>
         <tr>
@@ -463,18 +513,18 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Does nothing but update statistics/status. Redefine to perform or schedule next sending. Beware: this funcion deletes the incoming message, which might not be what you want. </p>
+
+<p>Does nothing but update statistics/status. </p>
+<p>Redefine to perform or schedule next sending. Beware: this funcion deletes the incoming message, which might not be what you want. </p>
 
 <p>Implements <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#ae4fe36908e06127f0fe32454e63287f9">TCPSocket::CallbackInterface</a>.</p>
 
 <p>Reimplemented in <a class="el" href="class_t_c_p_basic_client_app.html#a476dab358954ae599966f7b6d20e60b8">TCPBasicClientApp</a>, and <a class="el" href="class_telnet_app.html#aa8970c8031fce975f916df35f8db4ec3">TelnetApp</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00101">101</a> of file <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html">TCPGenericCliAppBase.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// *redefine* to perform or schedule next sending</span>
     <a class="code" href="class_t_c_p_generic_cli_app_base.html#a15ed77652265025c9ee8e6edcbe4f0e3">packetsRcvd</a>++;
-    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a613c366ad99e9037fb2d7b68272eabf1">bytesRcvd</a>+=msg-&gt;getByteLength();
-
+    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a613c366ad99e9037fb2d7b68272eabf1">bytesRcvd</a> += msg-&gt;getByteLength();
+    emit(<a class="code" href="class_t_c_p_generic_cli_app_base.html#a7c7e77d4597e1133d75263920a1fbd02">rcvdPkSignal</a>, msg);
     <span class="keyword">delete</span> msg;
 }
 </pre></div>
@@ -485,7 +535,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_generic_cli_app_base.html#aa3e60c557a7af7cfc3b159e690be5a83">TCPGenericCliAppBase::socketEstablished</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_generic_cli_app_base.html#aa3e60c557a7af7cfc3b159e690be5a83">TCPGenericCliAppBase::socketEstablished</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>connId</em>, </td>
@@ -493,7 +543,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>yourPtr</em>&#160;</td>
         </tr>
         <tr>
@@ -504,17 +554,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Does nothing but update statistics/status. Redefine to perform or schedule first sending. </p>
+
+<p>Does nothing but update statistics/status. </p>
+<p>Redefine to perform or schedule first sending. </p>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a9465870ddf580bea5b18c069d609fec2">TCPSocket::CallbackInterface</a>.</p>
 
 <p>Reimplemented in <a class="el" href="class_t_c_p_basic_client_app.html#aa374c69359d25b804c258195843fa533">TCPBasicClientApp</a>, and <a class="el" href="class_telnet_app.html#a1b320cd9262367d60f65bf8067f80076">TelnetApp</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00094">94</a> of file <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html">TCPGenericCliAppBase.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// *redefine* to perform or schedule first sending</span>
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;connected\n&quot;</span>;
-    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a904f867771672d8d989a87873fb51ad9">setStatusString</a>(<span class="stringliteral">&quot;connected&quot;</span>);
+    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a904f867771672d8d989a87873fb51ad9" title="When running under GUI, it displays the given string next to the icon.">setStatusString</a>(<span class="stringliteral">&quot;connected&quot;</span>);
 }
 </pre></div>
 </div>
@@ -524,7 +574,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_generic_cli_app_base.html#a321d7c13c4ebe9a63e2e013895a390d1">TCPGenericCliAppBase::socketFailure</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_generic_cli_app_base.html#a321d7c13c4ebe9a63e2e013895a390d1">TCPGenericCliAppBase::socketFailure</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>connId</em>, </td>
@@ -532,7 +582,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>yourPtr</em>, </td>
         </tr>
         <tr>
@@ -549,17 +599,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Does nothing but update statistics/status. Redefine if you want to try reconnecting after a delay. </p>
+
+<p>Does nothing but update statistics/status. </p>
+<p>Redefine if you want to try reconnecting after a delay. </p>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#af4fc128f905d181c511114849d0b8da1">TCPSocket::CallbackInterface</a>.</p>
 
 <p>Reimplemented in <a class="el" href="class_t_c_p_basic_client_app.html#a31d6d5cc0924ddd764e8793a840d5b8b">TCPBasicClientApp</a>, and <a class="el" href="class_telnet_app.html#abc753928be72e7be027401bc74345f9e">TelnetApp</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00127">127</a> of file <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html">TCPGenericCliAppBase.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// subclasses may override this function, and add code try to reconnect after a delay.</span>
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;connection broken\n&quot;</span>;
-    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a904f867771672d8d989a87873fb51ad9">setStatusString</a>(<span class="stringliteral">&quot;broken&quot;</span>);
+    <a class="code" href="class_t_c_p_generic_cli_app_base.html#a904f867771672d8d989a87873fb51ad9" title="When running under GUI, it displays the given string next to the icon.">setStatusString</a>(<span class="stringliteral">&quot;broken&quot;</span>);
 
     <a class="code" href="class_t_c_p_generic_cli_app_base.html#aedfb65334489e61b8e5776c08331786b">numBroken</a>++;
 }
@@ -571,7 +621,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_generic_cli_app_base.html#a9ec5b3744ba9da37e0c1acad20c3ae08">TCPGenericCliAppBase::socketPeerClosed</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_generic_cli_app_base.html#a9ec5b3744ba9da37e0c1acad20c3ae08">TCPGenericCliAppBase::socketPeerClosed</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>connId</em>, </td>
@@ -579,7 +629,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>yourPtr</em>&#160;</td>
         </tr>
         <tr>
@@ -590,17 +640,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Since remote <a class="el" href="class_t_c_p.html">TCP</a> closed, invokes <a class="el" href="class_t_c_p_generic_cli_app_base.html#a8004ebfe48fdf6334d100cd54ecf29fe">close()</a>. Redefine if you want to do something else. </p>
+
+<p>Since remote <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> closed, invokes <a class="el" href="class_t_c_p_generic_cli_app_base.html#a8004ebfe48fdf6334d100cd54ecf29fe" title="Issues CLOSE command.">close()</a>. </p>
+<p>Redefine if you want to do something else. </p>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a77899a66e256304949deb2bfd7d820c7">TCPSocket::CallbackInterface</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00110">110</a> of file <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html">TCPGenericCliAppBase.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// close the connection (if not already closed)</span>
-    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_generic_cli_app_base.html#a03677edd0d173c3fe05bc765c4a136aa">socket</a>.<a class="code" href="class_t_c_p_socket.html#a30566319602bc7f14e3a47c85f344864">getState</a>()==<a class="code" href="class_t_c_p_socket.html#a67a345df44f8b47c59c59cca81c9f7f9ad5e99eaf13de06d20604328336e8cff4">TCPSocket::PEER_CLOSED</a>)
+    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_generic_cli_app_base.html#a03677edd0d173c3fe05bc765c4a136aa">socket</a>.<a class="code" href="class_t_c_p_socket.html#a30566319602bc7f14e3a47c85f344864" title="Returns the socket state, one of NOT_BOUND, CLOSED, LISTENING, CONNECTING, CONNECTED, etc.">getState</a>() == <a class="code" href="class_t_c_p_socket.html#a67a345df44f8b47c59c59cca81c9f7f9ad5e99eaf13de06d20604328336e8cff4">TCPSocket::PEER_CLOSED</a>)
     {
         <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;remote TCP closed, closing here as well\n&quot;</span>;
-        <a class="code" href="class_t_c_p_generic_cli_app_base.html#a8004ebfe48fdf6334d100cd54ecf29fe">close</a>();
+        <a class="code" href="class_t_c_p_generic_cli_app_base.html#a8004ebfe48fdf6334d100cd54ecf29fe" title="Issues CLOSE command.">close</a>();
     }
 }
 </pre></div>
@@ -611,7 +661,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_generic_cli_app_base.html#aacd013bdf693db9511c3cd9854330169">TCPGenericCliAppBase::socketStatusArrived</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_generic_cli_app_base.html#aacd013bdf693db9511c3cd9854330169">TCPGenericCliAppBase::socketStatusArrived</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>connId</em>, </td>
@@ -619,7 +669,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>yourPtr</em>, </td>
         </tr>
         <tr>
@@ -636,11 +686,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Redefine to handle incoming <a class="el" href="class_t_c_p_status_info.html">TCPStatusInfo</a>. </p>
+
+<p>Redefine to handle incoming <a class="el" href="class_t_c_p_status_info.html" title="Class generated from transport/contract/TCPCommand.msg by opp_msgc.">TCPStatusInfo</a>. </p>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a8299015159dbe4f70075d1a2e4ed2407">TCPSocket::CallbackInterface</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_generic_cli_app_base_8h_source.html#l00100">100</a> of file <a class="el" href="_t_c_p_generic_cli_app_base_8h_source.html">TCPGenericCliAppBase.h</a>.</p>
 <div class="fragment"><pre class="fragment">{<span class="keyword">delete</span> status;}
 </pre></div>
 </div>
@@ -657,9 +706,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_generic_cli_app_base_8h_source.html#l00040">40</a> of file <a class="el" href="_t_c_p_generic_cli_app_base_8h_source.html">TCPGenericCliAppBase.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00136">finish()</a>, <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00021">initialize()</a>, and <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00101">socketDataArrived()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_generic_cli_app_base.html#a1caaf9a47b1c1db2b89f9a4d13f346f0">finish()</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#ac9a0cc56e4e009b0e6fec8220d223b30">initialize()</a>, and <a class="el" href="class_t_c_p_generic_cli_app_base.html#a2609e0e2775c805d2c3a3beb06c096cd">socketDataArrived()</a>.</p>
 
 </div>
 </div>
@@ -674,9 +721,22 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_generic_cli_app_base_8h_source.html#l00039">39</a> of file <a class="el" href="_t_c_p_generic_cli_app_base_8h_source.html">TCPGenericCliAppBase.h</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_generic_cli_app_base.html#a1caaf9a47b1c1db2b89f9a4d13f346f0">finish()</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#ac9a0cc56e4e009b0e6fec8220d223b30">initialize()</a>, and <a class="el" href="class_t_c_p_generic_cli_app_base.html#a05c8b9e8f46e01eb466e604f8cd47719">sendPacket()</a>.</p>
 
-<p>Referenced by <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00136">finish()</a>, <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00021">initialize()</a>, and <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00074">sendPacket()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a5be8688e3cafe85267e4282cd79bd4ee"></a><!-- doxytag: member="TCPGenericCliAppBase::connectSignal" ref="a5be8688e3cafe85267e4282cd79bd4ee" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_t_c_p_generic_cli_app_base.html#a5be8688e3cafe85267e4282cd79bd4ee">TCPGenericCliAppBase::connectSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_t_c_p_generic_cli_app_base.html#a8004ebfe48fdf6334d100cd54ecf29fe">close()</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#a3ec28620ffe01bc3e81af1ae85b3522f">connect()</a>, and <a class="el" href="class_t_c_p_generic_cli_app_base.html#ac9a0cc56e4e009b0e6fec8220d223b30">initialize()</a>.</p>
 
 </div>
 </div>
@@ -691,9 +751,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_generic_cli_app_base_8h_source.html#l00036">36</a> of file <a class="el" href="_t_c_p_generic_cli_app_base_8h_source.html">TCPGenericCliAppBase.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00021">initialize()</a>, and <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00127">socketFailure()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_generic_cli_app_base.html#ac9a0cc56e4e009b0e6fec8220d223b30">initialize()</a>, and <a class="el" href="class_t_c_p_generic_cli_app_base.html#a321d7c13c4ebe9a63e2e013895a390d1">socketFailure()</a>.</p>
 
 </div>
 </div>
@@ -708,9 +766,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_generic_cli_app_base_8h_source.html#l00035">35</a> of file <a class="el" href="_t_c_p_generic_cli_app_base_8h_source.html">TCPGenericCliAppBase.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00050">connect()</a>, <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00136">finish()</a>, and <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00021">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_generic_cli_app_base.html#a3ec28620ffe01bc3e81af1ae85b3522f">connect()</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#a1caaf9a47b1c1db2b89f9a4d13f346f0">finish()</a>, and <a class="el" href="class_t_c_p_generic_cli_app_base.html#ac9a0cc56e4e009b0e6fec8220d223b30">initialize()</a>.</p>
 
 </div>
 </div>
@@ -725,9 +781,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_generic_cli_app_base_8h_source.html#l00038">38</a> of file <a class="el" href="_t_c_p_generic_cli_app_base_8h_source.html">TCPGenericCliAppBase.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00136">finish()</a>, <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00021">initialize()</a>, and <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00101">socketDataArrived()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_generic_cli_app_base.html#a1caaf9a47b1c1db2b89f9a4d13f346f0">finish()</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#ac9a0cc56e4e009b0e6fec8220d223b30">initialize()</a>, and <a class="el" href="class_t_c_p_generic_cli_app_base.html#a2609e0e2775c805d2c3a3beb06c096cd">socketDataArrived()</a>.</p>
 
 </div>
 </div>
@@ -742,9 +796,37 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_generic_cli_app_base_8h_source.html#l00037">37</a> of file <a class="el" href="_t_c_p_generic_cli_app_base_8h_source.html">TCPGenericCliAppBase.h</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_generic_cli_app_base.html#a1caaf9a47b1c1db2b89f9a4d13f346f0">finish()</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#ac9a0cc56e4e009b0e6fec8220d223b30">initialize()</a>, and <a class="el" href="class_t_c_p_generic_cli_app_base.html#a05c8b9e8f46e01eb466e604f8cd47719">sendPacket()</a>.</p>
 
-<p>Referenced by <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00136">finish()</a>, <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00021">initialize()</a>, and <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00074">sendPacket()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a7c7e77d4597e1133d75263920a1fbd02"></a><!-- doxytag: member="TCPGenericCliAppBase::rcvdPkSignal" ref="a7c7e77d4597e1133d75263920a1fbd02" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_t_c_p_generic_cli_app_base.html#a7c7e77d4597e1133d75263920a1fbd02">TCPGenericCliAppBase::rcvdPkSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_t_c_p_generic_cli_app_base.html#ac9a0cc56e4e009b0e6fec8220d223b30">initialize()</a>, and <a class="el" href="class_t_c_p_generic_cli_app_base.html#a2609e0e2775c805d2c3a3beb06c096cd">socketDataArrived()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa80eed93e8350130fef90a8c8ffe4780"></a><!-- doxytag: member="TCPGenericCliAppBase::sentPkSignal" ref="aa80eed93e8350130fef90a8c8ffe4780" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_t_c_p_generic_cli_app_base.html#aa80eed93e8350130fef90a8c8ffe4780">TCPGenericCliAppBase::sentPkSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_t_c_p_generic_cli_app_base.html#ac9a0cc56e4e009b0e6fec8220d223b30">initialize()</a>, and <a class="el" href="class_t_c_p_generic_cli_app_base.html#a05c8b9e8f46e01eb466e604f8cd47719">sendPacket()</a>.</p>
 
 </div>
 </div>
@@ -759,15 +841,13 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_generic_cli_app_base_8h_source.html#l00032">32</a> of file <a class="el" href="_t_c_p_generic_cli_app_base_8h_source.html">TCPGenericCliAppBase.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00067">close()</a>, <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00050">connect()</a>, <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00042">handleMessage()</a>, <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00021">initialize()</a>, <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00074">sendPacket()</a>, and <a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html#l00110">socketPeerClosed()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_generic_cli_app_base.html#a8004ebfe48fdf6334d100cd54ecf29fe">close()</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#a3ec28620ffe01bc3e81af1ae85b3522f">connect()</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#a7080cfc8f011b9c57b74c38382774969">handleMessage()</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#ac9a0cc56e4e009b0e6fec8220d223b30">initialize()</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#a05c8b9e8f46e01eb466e604f8cd47719">sendPacket()</a>, and <a class="el" href="class_t_c_p_generic_cli_app_base.html#a9ec5b3744ba9da37e0c1acad20c3ae08">socketPeerClosed()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_t_c_p_generic_cli_app_base_8h_source.html">TCPGenericCliAppBase.h</a></li>
-<li><a class="el" href="_t_c_p_generic_cli_app_base_8cc_source.html">TCPGenericCliAppBase.cc</a></li>
+<li><a class="el" href="_t_c_p_generic_cli_app_base_8h.html">TCPGenericCliAppBase.h</a></li>
+<li><a class="el" href="_t_c_p_generic_cli_app_base_8cc.html">TCPGenericCliAppBase.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -775,7 +855,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_t_c_p_generic_cli_app_base.html">TCPGenericCliAppBase</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:53 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:31 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

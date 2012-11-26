@@ -80,14 +80,14 @@
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br/>
-<code>#include &quot;<a class="el" href="_notifier_consts_8h_source.html">NotifierConsts.h</a>&quot;</code><br/>
-</div>
-<p><a href="_notifier_consts_8cc_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+<code>#include &quot;<a class="el" href="_notifier_consts_8h.html">NotifierConsts.h</a>&quot;</code><br/>
+</div><table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_notifier_consts_8cc.html#a6808a262fcec2a310a9e7ed7d75c029f">notificationCategoryName</a> (int category)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_notifier_consts_8cc.html#a68fd4b933fae636048bb9ee52fd922e5">printNotificationBanner</a> (int category, const cPolymorphic *details)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility function.  <a href="#a6808a262fcec2a310a9e7ed7d75c029f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_notifier_consts_8cc.html#a97f9fe597921659345dbf486bc49069c">printNotificationBanner</a> (int category, const cObject *details)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility function.  <a href="#a97f9fe597921659345dbf486bc49069c"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="a6808a262fcec2a310a9e7ed7d75c029f"></a><!-- doxytag: member="NotifierConsts.cc::notificationCategoryName" ref="a6808a262fcec2a310a9e7ed7d75c029f" args="(int category)" -->
@@ -104,63 +104,66 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Utility function </p>
 
-<p>Definition at line <a class="el" href="_notifier_consts_8cc_source.html#l00022">22</a> of file <a class="el" href="_notifier_consts_8cc_source.html">NotifierConsts.cc</a>.</p>
+<p>Utility function. </p>
 
-<p>Referenced by <a class="el" href="_notification_board_8cc_source.html#l00096">NotificationBoard::fireChangeNotification()</a>, <a class="el" href="_notifier_consts_8cc_source.html#l00067">printNotificationBanner()</a>, <a class="el" href="_mac80211_8cc_source.html#l00914">Mac80211::receiveChangeNotification()</a>, <a class="el" href="_c_s_m_a_mac_layer_8cc_source.html#l00266">CSMAMacLayer::receiveChangeNotification()</a>, <a class="el" href="_notification_board_8cc_source.html#l00061">NotificationBoard::subscribe()</a>, and <a class="el" href="_notification_board_8cc_source.html#l00075">NotificationBoard::unsubscribe()</a>.</p>
+<p>Referenced by <a class="el" href="class_notification_board.html#a903a21cc32b9b3c8589765b86a767f8e">NotificationBoard::fireChangeNotification()</a>, <a class="el" href="_notifier_consts_8h.html#a97f9fe597921659345dbf486bc49069c">printNotificationBanner()</a>, <a class="el" href="class_notification_board.html#aeb02a282e6c807c1cb064a28e8409ff2">NotificationBoard::subscribe()</a>, and <a class="el" href="class_notification_board.html#a618069a9c5e40e5adc663def23325035">NotificationBoard::unsubscribe()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keyword">const</span> <span class="keywordtype">char</span> *s;
     <span class="keyword">static</span> <span class="keywordtype">char</span> buf[8];
     <span class="keywordflow">switch</span> (category)
     {
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba77cc5f821ad6531a4a0545490a9f24bb">NF_SUBSCRIBERLIST_CHANGED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;SUBSCRIBERS&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a77cc5f821ad6531a4a0545490a9f24bb">NF_SUBSCRIBERLIST_CHANGED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;SUBSCRIBERS&quot;</span>;
 
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba1fe7bf361b8f93dc3a927e710bfa54c4">NF_HOSTPOSITION_UPDATED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;POS&quot;</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55bae0063c4a74bab199079a3ff291a0bb42">NF_NODE_FAILURE</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;FAILURE&quot;</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba95a9f1f7e23636c5b3ccf1ba8cdf011a">NF_NODE_RECOVERY</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;RECOVERY&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7ae0063c4a74bab199079a3ff291a0bb42">NF_NODE_FAILURE</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;FAILURE&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a95a9f1f7e23636c5b3ccf1ba8cdf011a">NF_NODE_RECOVERY</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;RECOVERY&quot;</span>;
 
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55baa6e69ccdaad903262ac00b89b6208a69">NF_RADIOSTATE_CHANGED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;RADIO-STATE&quot;</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55baf3cbaad9c60e34c5cd7ca3da116fa468">NF_RADIO_CHANNEL_CHANGED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;RADIO-CHANNEL&quot;</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba3fc715010607b5a5d604735808bcd508">NF_PP_TX_BEGIN</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;TX-BEG&quot;</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba56008b8da6a282b976bc88936bf4af10">NF_PP_TX_END</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;TX-END&quot;</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55bac5728eed9d45bec1189b26d79aeff5b8">NF_PP_RX_END</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;RX-END&quot;</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba53fa4604bf2e03acd9598b0db09e8e11">NF_L2_Q_DROP</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;DROP&quot;</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55bab4693e8a734f7d2e40aebf6b601d3fbb">NF_MAC_BECAME_IDLE</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;MAC-IDLE&quot;</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba6913bf066e69a7aa27d379c72986162f">NF_L2_BEACON_LOST</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;BEACON-LOST&quot;</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba863048a1ec905c5b2197d7ed7f63134b">NF_L2_ASSOCIATED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;ASSOCIATED&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7aa6e69ccdaad903262ac00b89b6208a69">NF_RADIOSTATE_CHANGED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;RADIO-STATE&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7af3cbaad9c60e34c5cd7ca3da116fa468">NF_RADIO_CHANNEL_CHANGED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;RADIO-CHANNEL&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a3fc715010607b5a5d604735808bcd508">NF_PP_TX_BEGIN</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;TX-BEG&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a56008b8da6a282b976bc88936bf4af10">NF_PP_TX_END</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;TX-END&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7ac5728eed9d45bec1189b26d79aeff5b8">NF_PP_RX_END</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;RX-END&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a53fa4604bf2e03acd9598b0db09e8e11">NF_L2_Q_DROP</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;DROP&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7ab4693e8a734f7d2e40aebf6b601d3fbb">NF_MAC_BECAME_IDLE</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;MAC-IDLE&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a6913bf066e69a7aa27d379c72986162f">NF_L2_BEACON_LOST</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;BEACON-LOST&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a863048a1ec905c5b2197d7ed7f63134b">NF_L2_ASSOCIATED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;ASSOCIATED&quot;</span>;
 
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55baea2d4297f1e519520524d4bd8ff865b4">NF_INTERFACE_CREATED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IF-CREATED&quot;</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba4f8e57f4754cbf2e6ba92a7079b483e4">NF_INTERFACE_DELETED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IF-DELETED&quot;</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba5ed0701efe7413c8f98fd0ba7fa9947d">NF_INTERFACE_STATE_CHANGED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IF-STATE&quot;</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba3a1d2cac1cec476f84c60030a70ef902">NF_INTERFACE_CONFIG_CHANGED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IF-CFG&quot;</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba320671db29f38850c262680b6400b8bf">NF_INTERFACE_IPv4CONFIG_CHANGED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IPv4-CFG&quot;</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba7ce81127c07e25b007f9ec96f3643d52">NF_INTERFACE_IPv6CONFIG_CHANGED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IPv6-CFG&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7aea2d4297f1e519520524d4bd8ff865b4">NF_INTERFACE_CREATED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IF-CREATED&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a4f8e57f4754cbf2e6ba92a7079b483e4">NF_INTERFACE_DELETED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IF-DELETED&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a5ed0701efe7413c8f98fd0ba7fa9947d">NF_INTERFACE_STATE_CHANGED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IF-STATE&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a3a1d2cac1cec476f84c60030a70ef902">NF_INTERFACE_CONFIG_CHANGED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IF-CFG&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a320671db29f38850c262680b6400b8bf">NF_INTERFACE_IPv4CONFIG_CHANGED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IPv4-CFG&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a7ce81127c07e25b007f9ec96f3643d52">NF_INTERFACE_IPv6CONFIG_CHANGED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IPv6-CFG&quot;</span>;
 
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba38a4632902da5c126d1b1bc992799303">NF_IPv4_ROUTE_ADDED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IPv4-ROUTE-ADD&quot;</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba250243f132a5001e082e2c58b25eb0f1">NF_IPv4_ROUTE_DELETED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IPv4-ROUTE-DEL&quot;</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55baa58d74dc8cd5ab0b63267030da712cc1">NF_IPv6_ROUTE_ADDED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IPv6-ROUTE-ADD&quot;</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba6c8f0e68e262e322d82609fae7425c5f">NF_IPv6_ROUTE_DELETED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IPv6-ROUTE-DEL&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a38a4632902da5c126d1b1bc992799303">NF_IPv4_ROUTE_ADDED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IPv4-ROUTE-ADD&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a250243f132a5001e082e2c58b25eb0f1">NF_IPv4_ROUTE_DELETED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IPv4-ROUTE-DEL&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a0ca1de8c431a3b60b99a0e5744792a42">NF_IPv4_ROUTE_CHANGED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IPv4-ROUTE-CHG&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7aa58d74dc8cd5ab0b63267030da712cc1">NF_IPv6_ROUTE_ADDED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IPv6-ROUTE-ADD&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a6c8f0e68e262e322d82609fae7425c5f">NF_IPv6_ROUTE_DELETED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IPv6-ROUTE-DEL&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7adbb85532c3d8806d356c97579b6c3ab8">NF_IPv6_ROUTE_CHANGED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IPv6-ROUTE-CHG&quot;</span>;
 
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55bab28e9eca0087f18518f71f5fd91e3487">NF_IPv6_HANDOVER_OCCURRED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IPv6-HANDOVER&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7ab28e9eca0087f18518f71f5fd91e3487">NF_IPv6_HANDOVER_OCCURRED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;IPv6-HANDOVER&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a6ddd795ebbcbd65df96f8018820a5b65">NF_MIPv6_RO_COMPLETED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;MIPv6 RO COMPLETED&quot;</span>;
 
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55badffdf6241f78214ab8d4193cbe607feb">NF_OVERLAY_TRANSPORTADDRESS_CHANGED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;OVERLAY-TRANSPORTADDESS&quot;</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba4847bec1f5c063505cb92a0e50296f32">NF_OVERLAY_NODE_LEAVE</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;OVERLAY-NODE-LEAVE&quot;</span>;
-        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#a06fc87d81c62e9abb8790b6e5713c55ba36a01f86d18ac7a43e83a82c43d017c3">NF_OVERLAY_NODE_GRACEFUL_LEAVE</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;NODE-GRACEFUL-LEAVE&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7adffdf6241f78214ab8d4193cbe607feb">NF_OVERLAY_TRANSPORTADDRESS_CHANGED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;OVERLAY-TRANSPORTADDESS&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a4847bec1f5c063505cb92a0e50296f32">NF_OVERLAY_NODE_LEAVE</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;OVERLAY-NODE-LEAVE&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a36a01f86d18ac7a43e83a82c43d017c3">NF_OVERLAY_NODE_GRACEFUL_LEAVE</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;NODE-GRACEFUL-LEAVE&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a718f61e314669b4ce590aa49d4c82355">NF_BATTERY_CHANGED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;NF_BATTERY_CHANGED&quot;</span>;
+        <span class="keywordflow">case</span> <a class="code" href="_notifier_consts_8h.html#adf764cbdea00d65edcd07bb9953ad2b7a784d8d2a5781d88f45b7041203e46d5a">NF_BATTERY_CPUTIME_CONSUMED</a>: <span class="keywordflow">return</span> <span class="stringliteral">&quot;NF_BATTERY_CPUTIME_CONSUMED&quot;</span>;
 
-        <span class="keywordflow">default</span>: sprintf(buf, <span class="stringliteral">&quot;%d&quot;</span>, category); s = buf;
+        <span class="keywordflow">default</span>: sprintf(buf, <span class="stringliteral">&quot;%d&quot;</span>, category); s = buf; <span class="keywordflow">break</span>;
     }
     <span class="keywordflow">return</span> s;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a68fd4b933fae636048bb9ee52fd922e5"></a><!-- doxytag: member="NotifierConsts.cc::printNotificationBanner" ref="a68fd4b933fae636048bb9ee52fd922e5" args="(int category, const cPolymorphic *details)" -->
+<a class="anchor" id="a97f9fe597921659345dbf486bc49069c"></a><!-- doxytag: member="NotifierConsts.cc::printNotificationBanner" ref="a97f9fe597921659345dbf486bc49069c" args="(int category, const cObject *details)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="_notifier_consts_8h.html#a68fd4b933fae636048bb9ee52fd922e5">printNotificationBanner</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="_notifier_consts_8h.html#a97f9fe597921659345dbf486bc49069c">printNotificationBanner</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>category</em>, </td>
@@ -168,7 +171,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const cPolymorphic *&#160;</td>
+          <td class="paramtype">const cObject *&#160;</td>
           <td class="paramname"><em>details</em>&#160;</td>
         </tr>
         <tr>
@@ -179,15 +182,14 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Utility function </p>
 
-<p>Definition at line <a class="el" href="_notifier_consts_8cc_source.html#l00067">67</a> of file <a class="el" href="_notifier_consts_8cc_source.html">NotifierConsts.cc</a>.</p>
+<p>Utility function. </p>
 
-<p>Referenced by <a class="el" href="_ieee80211_mgmt_a_p_simplified_8cc_source.html#l00051">Ieee80211MgmtAPSimplified::receiveChangeNotification()</a>, <a class="el" href="_ieee80211_mgmt_adhoc_8cc_source.html#l00060">Ieee80211MgmtAdhoc::receiveChangeNotification()</a>, <a class="el" href="_n_a_m_trace_writer_8cc_source.html#l00109">NAMTraceWriter::receiveChangeNotification()</a>, <a class="el" href="_ieee80211_mgmt_s_t_a_simplified_8cc_source.html#l00072">Ieee80211MgmtSTASimplified::receiveChangeNotification()</a>, <a class="el" href="_ieee80211_agent_s_t_a_8cc_source.html#l00097">Ieee80211AgentSTA::receiveChangeNotification()</a>, <a class="el" href="ansa_ospf_routing6_8cc_source.html#l00214">AnsaOspfRouting6::receiveChangeNotification()</a>, <a class="el" href="_link_state_routing_8cc_source.html#l00090">LinkStateRouting::receiveChangeNotification()</a>, <a class="el" href="_mac80211_8cc_source.html#l00914">Mac80211::receiveChangeNotification()</a>, <a class="el" href="_ansa_o_s_p_f_routing_8cc_source.html#l00116">AnsaOSPFRouting::receiveChangeNotification()</a>, <a class="el" href="_ieee80211_mgmt_a_p_8cc_source.html#l00103">Ieee80211MgmtAP::receiveChangeNotification()</a>, <a class="el" href="_c_s_m_a_mac_layer_8cc_source.html#l00266">CSMAMacLayer::receiveChangeNotification()</a>, <a class="el" href="_interface_table_8cc_source.html#l00090">InterfaceTable::receiveChangeNotification()</a>, <a class="el" href="_ansa_interface_table_8cc_source.html#l00087">AnsaInterfaceTable::receiveChangeNotification()</a>, <a class="el" href="_r_i_p_routing_8cc_source.html#l00988">RIPRouting::receiveChangeNotification()</a>, <a class="el" href="_routing_table_8cc_source.html#l00166">RoutingTable::receiveChangeNotification()</a>, <a class="el" href="_ansa_routing_table_8cc_source.html#l00176">AnsaRoutingTable::receiveChangeNotification()</a>, <a class="el" href="_routing_table6_8cc_source.html#l00185">RoutingTable6::receiveChangeNotification()</a>, <a class="el" href="_ieee80211_mgmt_s_t_a_8cc_source.html#l00320">Ieee80211MgmtSTA::receiveChangeNotification()</a>, <a class="el" href="_l_d_p_8cc_source.html#l01235">LDP::receiveChangeNotification()</a>, and <a class="el" href="_ieee80211_mac_8cc_source.html#l00324">Ieee80211Mac::receiveChangeNotification()</a>.</p>
+<p>Referenced by <a class="el" href="class_ieee80211_mgmt_a_p_simplified.html#a63704ba6eff1d526a5cfce61deeedb16">Ieee80211MgmtAPSimplified::receiveChangeNotification()</a>, <a class="el" href="class_ieee80211_mgmt_adhoc.html#ad8c9b6014b53cd6dd40ad111b6cb92d5">Ieee80211MgmtAdhoc::receiveChangeNotification()</a>, <a class="el" href="class_ieee80211_mgmt_s_t_a_simplified.html#a46c48d1124e9fcafb2c5f69e18996977">Ieee80211MgmtSTASimplified::receiveChangeNotification()</a>, <a class="el" href="class_ieee80211_agent_s_t_a.html#aaf4edccd056b828d2c06f726dbd9938b">Ieee80211AgentSTA::receiveChangeNotification()</a>, <a class="el" href="class_link_state_routing.html#a33c0d9a56684d301eba185ebbdc7a5ee">LinkStateRouting::receiveChangeNotification()</a>, <a class="el" href="class_d_h_c_p_client.html#a73743174adc0db5ae82c5781fbb5e784">DHCPClient::receiveChangeNotification()</a>, <a class="el" href="class_ieee80211_mgmt_a_p.html#a708bb3000c9ceff479704228d4b7820e">Ieee80211MgmtAP::receiveChangeNotification()</a>, <a class="el" href="class_interface_table.html#a70303b94020a300c74222695a2cfa261">InterfaceTable::receiveChangeNotification()</a>, <a class="el" href="class_routing_table.html#a79264e2505b8a9de5693d9a9ae1e1b42">RoutingTable::receiveChangeNotification()</a>, <a class="el" href="class_ieee80211_mgmt_s_t_a.html#ab2e0e12092348b8ef2d8b2b0867b6a71">Ieee80211MgmtSTA::receiveChangeNotification()</a>, <a class="el" href="class_routing_table6.html#a6d1b8498895ed9efdefd0227219a9f85">RoutingTable6::receiveChangeNotification()</a>, <a class="el" href="class_l_d_p.html#acbab0e39b8b8d4925411bb6e10f02a62">LDP::receiveChangeNotification()</a>, and <a class="el" href="class_ieee80211_mac.html#a6844cdfc80c0c0f6b2faadff8a9abef9">Ieee80211Mac::receiveChangeNotification()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;** Notification at T=&quot;</span> &lt;&lt; simTime()
        &lt;&lt; <span class="stringliteral">&quot; to &quot;</span> &lt;&lt; simulation.getContextModule()-&gt;getFullPath() &lt;&lt; <span class="stringliteral">&quot;: &quot;</span>
-       &lt;&lt; <a class="code" href="_notifier_consts_8cc.html#a6808a262fcec2a310a9e7ed7d75c029f">notificationCategoryName</a>(category) &lt;&lt; <span class="stringliteral">&quot; &quot;</span>
+       &lt;&lt; <a class="code" href="_notifier_consts_8cc.html#a6808a262fcec2a310a9e7ed7d75c029f" title="Utility function.">notificationCategoryName</a>(category) &lt;&lt; <span class="stringliteral">&quot; &quot;</span>
        &lt;&lt; (details ? details-&gt;info() : <span class="stringliteral">&quot;&quot;</span>) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
 }
 </pre></div>
@@ -199,7 +201,7 @@ Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="_notifier_consts_8cc.html">NotifierConsts.cc</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:46 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:22 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -84,15 +84,18 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="InterfaceProtocolData" -->
-<p><code>#include &lt;<a class="el" href="_interface_entry_8h_source.html">InterfaceEntry.h</a>&gt;</code></p>
+<p>Base class for protocol-specific data on an interface.  
+ <a href="class_interface_protocol_data.html#details">More...</a></p>
+
+<p><code>#include &lt;InterfaceEntry.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for InterfaceProtocolData:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_interface_protocol_data.png" usemap="#InterfaceProtocolData_map" alt=""/>
   <map id="InterfaceProtocolData_map" name="InterfaceProtocolData_map">
-<area href="class_i_pv4_interface_data.html" alt="IPv4InterfaceData" shape="rect" coords="0,56,135,80"/>
-<area href="class_i_pv6_interface_data.html" alt="IPv6InterfaceData" shape="rect" coords="145,56,280,80"/>
+<area href="class_i_pv4_interface_data.html" title="IPv4-specific data in an InterfaceEntry." alt="IPv4InterfaceData" shape="rect" coords="0,56,135,80"/>
+<area href="class_i_pv6_interface_data.html" title="IPv6-specific data for InterfaceEntry." alt="IPv6InterfaceData" shape="rect" coords="145,56,280,80"/>
 </map>
  </div></div>
 
@@ -102,9 +105,10 @@ Inheritance diagram for InterfaceProtocolData:</div>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_protocol_data.html#ab6febaeabba6e3f7ed92da228d8a036c">InterfaceProtocolData</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_protocol_data.html#abdbf6a78e60579afda4a33ee6dff9c2e">getInterfaceEntry</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> that contains this data object, or NULL.  <a href="#abdbf6a78e60579afda4a33ee6dff9c2e"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_protocol_data.html#ab816750e6501a173b9142125eb2e5cba">changed</a> (int category)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_protocol_data.html#ab816750e6501a173b9142125eb2e5cba">changed</a> (int category)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_protocol_data.html#a612e477f2f733a5c4903572d7449913f">ownerp</a></td></tr>
@@ -113,9 +117,8 @@ Friends</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface_protocol_data.html#a927bba568218c52cc2ec3574098d91c2">InterfaceEntry</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Base class for protocol-specific data on an interface. Notable subclasses are <a class="el" href="class_i_pv4_interface_data.html">IPv4InterfaceData</a> and <a class="el" href="class_i_pv6_interface_data.html">IPv6InterfaceData</a>. </p>
-
-<p>Definition at line <a class="el" href="_interface_entry_8h_source.html#l00041">41</a> of file <a class="el" href="_interface_entry_8h_source.html">InterfaceEntry.h</a>.</p>
+<div class="textblock"><p>Base class for protocol-specific data on an interface. </p>
+<p>Notable subclasses are <a class="el" href="class_i_pv4_interface_data.html" title="IPv4-specific data in an InterfaceEntry.">IPv4InterfaceData</a> and <a class="el" href="class_i_pv6_interface_data.html" title="IPv6-specific data for InterfaceEntry.">IPv6InterfaceData</a>. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ab6febaeabba6e3f7ed92da228d8a036c"></a><!-- doxytag: member="InterfaceProtocolData::InterfaceProtocolData" ref="ab6febaeabba6e3f7ed92da228d8a036c" args="()" -->
 <div class="memitem">
@@ -130,9 +133,7 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_interface_entry_8h_source.html#l00053">53</a> of file <a class="el" href="_interface_entry_8h_source.html">InterfaceEntry.h</a>.</p>
-<div class="fragment"><pre class="fragment">{<a class="code" href="class_interface_protocol_data.html#a612e477f2f733a5c4903572d7449913f">ownerp</a> = NULL;}
+<div class="fragment"><pre class="fragment">{<a class="code" href="class_interface_protocol_data.html#a612e477f2f733a5c4903572d7449913f">ownerp</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;}
 </pre></div>
 </div>
 </div>
@@ -142,7 +143,7 @@ Friends</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_interface_protocol_data.html#ab816750e6501a173b9142125eb2e5cba">InterfaceProtocolData::changed</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_interface_protocol_data.html#ab816750e6501a173b9142125eb2e5cba">InterfaceProtocolData::changed</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>category</em></td><td>)</td>
@@ -152,9 +153,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_interface_entry_8cc_source.html#l00038">38</a> of file <a class="el" href="_interface_entry_8cc_source.html">InterfaceEntry.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_i_pv4_interface_data_8h_source.html#l00051">IPv4InterfaceData::changed1()</a>, <a class="el" href="_i_pv6_interface_data_8h_source.html#l00306">IPv6InterfaceData::changed1()</a>, <a class="el" href="_interface_entry_8h_source.html#l00099">InterfaceEntry::configChanged()</a>, and <a class="el" href="_interface_entry_8h_source.html#l00100">InterfaceEntry::stateChanged()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv4_interface_data.html#a35cd1557f7ae356c474c13b9cc9411f1">IPv4InterfaceData::changed1()</a>, <a class="el" href="class_i_pv6_interface_data.html#a1a7aa1636c3ea81966921fbbc89a2b4a">IPv6InterfaceData::changed1()</a>, <a class="el" href="class_interface_entry.html#a6a27dc382d42ec003395be35cfa06f6e">InterfaceEntry::configChanged()</a>, and <a class="el" href="class_interface_entry.html#a7725dc2b018b0abb88869bbcc6d6a122">InterfaceEntry::stateChanged()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// notify the containing InterfaceEntry that something changed</span>
     <span class="keywordflow">if</span> (<a class="code" href="class_interface_protocol_data.html#a612e477f2f733a5c4903572d7449913f">ownerp</a>)
@@ -176,9 +175,8 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns the <a class="el" href="class_interface_entry.html">InterfaceEntry</a> that contains this data object, or NULL </p>
 
-<p>Definition at line <a class="el" href="_interface_entry_8h_source.html#l00058">58</a> of file <a class="el" href="_interface_entry_8h_source.html">InterfaceEntry.h</a>.</p>
+<p>Returns the <a class="el" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> that contains this data object, or NULL. </p>
 <div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_interface_protocol_data.html#a612e477f2f733a5c4903572d7449913f">ownerp</a>;}
 </pre></div>
 </div>
@@ -195,8 +193,6 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_interface_entry_8h_source.html#l00043">43</a> of file <a class="el" href="_interface_entry_8h_source.html">InterfaceEntry.h</a>.</p>
-
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
@@ -211,15 +207,13 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_interface_entry_8h_source.html#l00046">46</a> of file <a class="el" href="_interface_entry_8h_source.html">InterfaceEntry.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_interface_entry_8cc_source.html#l00038">changed()</a>, <a class="el" href="_interface_entry_8h_source.html#l00117">InterfaceEntry::getInterfaceTable()</a>, <a class="el" href="_interface_entry_8h_source.html#l00105">InterfaceEntry::setInterfaceTable()</a>, <a class="el" href="_interface_entry_8cc_source.html#l00140">InterfaceEntry::setIPv4Data()</a>, and <a class="el" href="_interface_entry_8cc_source.html#l00151">InterfaceEntry::setIPv6Data()</a>.</p>
+<p>Referenced by <a class="el" href="class_interface_protocol_data.html#ab816750e6501a173b9142125eb2e5cba">changed()</a>, <a class="el" href="class_interface_entry.html#a33a11be3f630c1c014de8899d1e7d328">InterfaceEntry::getInterfaceTable()</a>, <a class="el" href="class_i_pv4_interface_data.html#a0ced2d5b5dfaa92205e1a0de34d9f0b3">IPv4InterfaceData::joinMulticastGroup()</a>, <a class="el" href="class_i_pv4_interface_data.html#a0cab70333c52e0d9c307b73c6155e232">IPv4InterfaceData::leaveMulticastGroup()</a>, <a class="el" href="class_interface_entry.html#a533ed5c9d20dfcc39c2ce7d3355c35d0">InterfaceEntry::setInterfaceTable()</a>, <a class="el" href="class_interface_entry.html#a7b2e8a8e6ee3bab717b90a2068f550f1">InterfaceEntry::setIPv4Data()</a>, and <a class="el" href="class_interface_entry.html#a1a2550df394a766847d0ad89aa1a9349">InterfaceEntry::setIPv6Data()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_interface_entry_8h_source.html">InterfaceEntry.h</a></li>
-<li><a class="el" href="_interface_entry_8cc_source.html">InterfaceEntry.cc</a></li>
+<li><a class="el" href="_interface_entry_8h.html">InterfaceEntry.h</a></li>
+<li><a class="el" href="_interface_entry_8cc.html">InterfaceEntry.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -227,7 +221,7 @@ Friends</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_interface_protocol_data.html">InterfaceProtocolData</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:49 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:26 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

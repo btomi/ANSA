@@ -8,6 +8,37 @@
 <b>Package:</b> inet.examples.mpls.testte_routing<br/><b>File: <a href="examples-mpls-testte_routing-RSVPTE4.ned.html">examples/mpls/testte_routing/RSVPTE4.ned</a></b><br/>
 <p>Example network to demonstrate RSVP-TE.</p>
 <p>See the README file in the model directory for scenario description.</p>
+<img src="inet.examples.mpls.testte_routing.RSVPTE4-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.nodes.mpls.RSVP_LSR.html" title="RSVP_LSR" alt="RSVP_LSR" coords="142,191,186,242">
+<area shape="rect" href="inet.nodes.mpls.RSVP_LSR.html" title="RSVP_LSR" alt="RSVP_LSR" coords="236,279,280,330">
+<area shape="rect" href="inet.nodes.mpls.RSVP_LSR.html" title="RSVP_LSR" alt="RSVP_LSR" coords="235,102,279,153">
+<area shape="rect" href="inet.nodes.mpls.RSVP_LSR.html" title="RSVP_LSR" alt="RSVP_LSR" coords="340,191,384,242">
+<area shape="rect" href="inet.nodes.mpls.RSVP_LSR.html" title="RSVP_LSR" alt="RSVP_LSR" coords="442,191,486,242">
+<area shape="rect" href="inet.nodes.mpls.RSVP_LSR.html" title="RSVP_LSR" alt="RSVP_LSR" coords="382,324,426,375">
+<area shape="rect" href="inet.nodes.mpls.RSVP_LSR.html" title="RSVP_LSR" alt="RSVP_LSR" coords="382,74,426,125">
+<area shape="rect" href="inet.nodes.inet.StandardHost.html" title="StandardHost" alt="StandardHost" coords="53,100,97,159">
+<area shape="rect" href="inet.nodes.inet.StandardHost.html" title="StandardHost" alt="StandardHost" coords="54,173,98,232">
+<area shape="rect" href="inet.nodes.inet.StandardHost.html" title="StandardHost" alt="StandardHost" coords="556,109,591,166">
+<area shape="rect" href="inet.nodes.inet.StandardHost.html" title="StandardHost" alt="StandardHost" coords="548,277,583,334">
+<area shape="rect" href="inet.nodes.inet.StandardHost.html" title="StandardHost" alt="StandardHost" coords="55,253,99,312">
+<area shape="rect" href="inet.world.scenario.ScenarioManager.html" title="ScenarioManager" alt="ScenarioManager" coords="104,78,201,121">
+<area shape="rect" href="inet.networklayer.extras.FailureManager.html" title="FailureManager" alt="FailureManager" coords="460,78,545,121">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.examples.mpls.testte_routing.RSVPTE4-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.examples.mpls.testte_routing.RSVPTE4.html" title="Network RSVPTE4" alt="" coords="273,6,356,34">
+<area shape="rect" id="node2" href="inet.networklayer.extras.FailureManager.html" title="Simple Module FailureManager" alt="" coords="5,83,115,111">
+<area shape="rect" id="node4" href="inet.nodes.mpls.RSVP_LSR.html" title="Compound Module RSVP_LSR" alt="" coords="139,83,229,111">
+<area shape="rect" id="node6" href="inet.world.scenario.ScenarioManager.html" title="Simple Module ScenarioManager" alt="" coords="253,83,376,111">
+<area shape="rect" id="node8" href="ned.DatarateChannel.html" title="Channel DatarateChannel" alt="" coords="400,83,520,111">
+<area shape="rect" id="node10" href="inet.nodes.inet.StandardHost.html" title="Compound Module StandardHost" alt="" coords="544,83,645,111">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.examples.mpls.testte_routing.RSVPTE4-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.examples.mpls.testte_routing.RSVPTE4.html" title="Network RSVPTE4" alt="" coords="5,6,88,34">
+</map>
 <h3 class="subtitle">Properties:</h3>
 <table class="propertiestable">
    <tr>
@@ -30,22 +61,24 @@
       <th class="description">Description</th>
    </tr>
 <tr>
-   <td><a href="inet.world.NAMTrace.html">nam</a>.logfile</td>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR1</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.forwardMulticast</td>
    <td>
-      <i>string</i>
+      <i>bool</i>
    </td>
-   <td>""</td>
+   <td>false</td>
    <td>
-<p>the name of the logfile ("trace.nam")</p>
+<p>turns multicast forwarding on/off</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.world.NAMTrace.html">nam</a>.prolog</td>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR1</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
-      <i>string</i>
+      <i>bool</i>
    </td>
-   <td>""</td>
-   <td>   </td>
+   <td>true</td>
+   <td>
+<p>whether to display IP addresses on links</p>
+   </td>
 </tr>
 <tr>
    <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR1</a>.<a href="inet.networklayer.rsvp_te.RSVP.html">rsvp</a>.traffic</td>
@@ -82,11 +115,43 @@
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
    <td>
       <i>double</i>
    </td>
    <td>0s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>60s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
    <td>   </td>
 </tr>
 <tr>
@@ -96,7 +161,7 @@
    </td>
    <td>1s</td>
    <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -106,7 +171,7 @@
    </td>
    <td>3</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -120,11 +185,11 @@
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR1</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
-      <i>int</i>
+      <i>bool</i>
    </td>
-   <td>4470</td>
+   <td>false</td>
    <td>   </td>
 </tr>
 <tr>
@@ -135,6 +200,26 @@
    <td></td>
    <td>
 <p>table contents to be loaded on startup</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR2</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.forwardMulticast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>turns multicast forwarding on/off</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR2</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
@@ -172,11 +257,43 @@
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
    <td>
       <i>double</i>
    </td>
    <td>0s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>60s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
    <td>   </td>
 </tr>
 <tr>
@@ -186,7 +303,7 @@
    </td>
    <td>1s</td>
    <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -196,7 +313,7 @@
    </td>
    <td>3</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -210,11 +327,11 @@
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR2</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
-      <i>int</i>
+      <i>bool</i>
    </td>
-   <td>4470</td>
+   <td>false</td>
    <td>   </td>
 </tr>
 <tr>
@@ -225,6 +342,26 @@
    <td></td>
    <td>
 <p>table contents to be loaded on startup</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR3</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.forwardMulticast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>turns multicast forwarding on/off</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR3</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
@@ -262,11 +399,43 @@
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
    <td>
       <i>double</i>
    </td>
    <td>0s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>60s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
    <td>   </td>
 </tr>
 <tr>
@@ -276,7 +445,7 @@
    </td>
    <td>1s</td>
    <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -286,7 +455,7 @@
    </td>
    <td>3</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -300,11 +469,11 @@
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR3</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
-      <i>int</i>
+      <i>bool</i>
    </td>
-   <td>4470</td>
+   <td>false</td>
    <td>   </td>
 </tr>
 <tr>
@@ -315,6 +484,26 @@
    <td></td>
    <td>
 <p>table contents to be loaded on startup</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR4</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.forwardMulticast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>turns multicast forwarding on/off</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR4</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
@@ -352,11 +541,43 @@
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
    <td>
       <i>double</i>
    </td>
    <td>0s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>60s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
    <td>   </td>
 </tr>
 <tr>
@@ -366,7 +587,7 @@
    </td>
    <td>1s</td>
    <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -376,7 +597,7 @@
    </td>
    <td>3</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -390,11 +611,11 @@
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR4</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
-      <i>int</i>
+      <i>bool</i>
    </td>
-   <td>4470</td>
+   <td>false</td>
    <td>   </td>
 </tr>
 <tr>
@@ -405,6 +626,26 @@
    <td></td>
    <td>
 <p>table contents to be loaded on startup</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR5</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.forwardMulticast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>turns multicast forwarding on/off</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR5</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
@@ -442,11 +683,43 @@
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
    <td>
       <i>double</i>
    </td>
    <td>0s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>60s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
    <td>   </td>
 </tr>
 <tr>
@@ -456,7 +729,7 @@
    </td>
    <td>1s</td>
    <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -466,7 +739,7 @@
    </td>
    <td>3</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -480,11 +753,11 @@
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR5</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
-      <i>int</i>
+      <i>bool</i>
    </td>
-   <td>4470</td>
+   <td>false</td>
    <td>   </td>
 </tr>
 <tr>
@@ -495,6 +768,26 @@
    <td></td>
    <td>
 <p>table contents to be loaded on startup</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR6</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.forwardMulticast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>turns multicast forwarding on/off</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR6</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
@@ -532,11 +825,43 @@
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR6</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR6</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
    <td>
       <i>double</i>
    </td>
    <td>0s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR6</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR6</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR6</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>60s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR6</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
    <td>   </td>
 </tr>
 <tr>
@@ -546,7 +871,7 @@
    </td>
    <td>1s</td>
    <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -556,7 +881,7 @@
    </td>
    <td>3</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -570,11 +895,11 @@
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR6</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR6</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
-      <i>int</i>
+      <i>bool</i>
    </td>
-   <td>4470</td>
+   <td>false</td>
    <td>   </td>
 </tr>
 <tr>
@@ -585,6 +910,26 @@
    <td></td>
    <td>
 <p>table contents to be loaded on startup</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR7</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.forwardMulticast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>turns multicast forwarding on/off</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR7</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
@@ -622,11 +967,43 @@
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR7</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR7</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
    <td>
       <i>double</i>
    </td>
    <td>0s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR7</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR7</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR7</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>60s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR7</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
    <td>   </td>
 </tr>
 <tr>
@@ -636,7 +1013,7 @@
    </td>
    <td>1s</td>
    <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -646,7 +1023,7 @@
    </td>
    <td>3</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -660,11 +1037,11 @@
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR7</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
+   <td><a href="inet.nodes.mpls.RSVP_LSR.html">LSR7</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
-      <i>int</i>
+      <i>bool</i>
    </td>
-   <td>4470</td>
+   <td>false</td>
    <td>   </td>
 </tr>
 <tr>
@@ -678,33 +1055,31 @@
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.numGapReports</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
    <td>
       <i>int</i>
    </td>
-   <td>3</td>
-   <td>
-<p>====== <a href="inet.transport.sctp.SCTP.html">SCTP</a> Association Parameters =================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoInitial</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>3s</td>
+   <td>32</td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoMin</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
    <td>
-      <i>double</i>
+      <i>int</i>
    </td>
-   <td>1s</td>
+   <td>32</td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoMax</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
    <td>
       <i>double</i>
    </td>
@@ -712,294 +1087,11 @@
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoAlpha</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0.125</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoBeta</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0.250</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.maxBurst</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.assocMaxRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>10</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.pathMaxRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>5</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.maxInitRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>8</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sackPeriod</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>200ms</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sackFrequency</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>2</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.reactivatePrimaryPath</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sendQueueLimit</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.validCookieLifetime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>10s</td>
-   <td>
-<p>====== Testing =====================================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.enableHeartbeats</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Heartbeats ==================================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.hbInterval</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>30s</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.nagleEnabled</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Nagle Algorithm =============================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.naglePoint</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1468</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.fastRecoverySupported</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Congestion Control ==========================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sctpAlgorithmClass</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"SCTPAlg"</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.ccModule</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>RFC4960=0</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.ssModule</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>ROUND_ROBIN=0</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.arwnd</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>65535</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.swsLimit</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>3000</td>
-   <td>
-<p>Limit for SWS</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.udpEncapsEnabled</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>false</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.destAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>destination <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.srcAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>source <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address (useful with <a href="inet.examples.sctp.multihomed.multi.html">multi</a>-homing)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.packetSize</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>56B</td>
-   <td>
-<p>of ping payload, in bytes</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.interval</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>1s</td>
-   <td>
-<p>time to wait between pings (can be random)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.hopLimit</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>32</td>
-   <td>
-<p>TTL or hopLimit for <a href="inet.networklayer.ipv4.IP.html">IP</a> packets</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.count</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>stop after count ping requests, 0 means continuously</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.startTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>uniform(0s,this.interval)</td>
-   <td>
-<p>send first ping at startTime</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.stopTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
-   <td>
-<p>send no pings after stopTime, 0 means forever</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.printPing</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>dump on stdout</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
    <td>   </td>
 </tr>
 <tr>
@@ -1009,7 +1101,7 @@
    </td>
    <td>1s</td>
    <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -1019,7 +1111,7 @@
    </td>
    <td>3</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -1033,153 +1125,131 @@
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
+   <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.routerId</td>
    <td>
       <i>string</i>
    </td>
    <td>"auto"</td>
    <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
+<p>for routers, the router id using IPv4 address dotted
+notation; specify "auto" to select the highest
+interface address; should be left empty ("") for hosts</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>100Mbps</td>
-   <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.filterString</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td></td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.device</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td></td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.dumpFile</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.threadEnable</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.verbose</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>   </td>
+   <td>
+<p>whether to log packets on the module output</p>
+   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.snaplen</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.pcapFile</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>the PCAP file to be written</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.snaplen</td>
    <td>
       <i>int</i>
    </td>
    <td>65535</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.verbosity</td>
    <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.numGapReports</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>3</td>
-   <td>
-<p>====== <a href="inet.transport.sctp.SCTP.html">SCTP</a> Association Parameters =================================</p>
+<p>maximum number of bytes to record per packet</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoInitial</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.dumpBadFrames</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>enable dump of frames with hasBitError</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.moduleNamePatterns</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"wlan[*] eth[*] ppp[*]"</td>
+   <td>
+<p>space-separated list of sibling module names to listen on</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.sendingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetSentToLower"</td>
+   <td>
+<p>space-separated list of outbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.receivingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetReceivedFromLower"</td>
+   <td>
+<p>space-separated list of inbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
    <td>
       <i>double</i>
    </td>
-   <td>3s</td>
+   <td>0s</td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoMin</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
    <td>
-      <i>double</i>
+      <i>int</i>
    </td>
-   <td>1s</td>
+   <td>32</td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoMax</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
    <td>
       <i>double</i>
    </td>
@@ -1187,294 +1257,11 @@ possible with DTE-to-DTE connection).</p>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoAlpha</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0.125</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoBeta</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0.250</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.maxBurst</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.assocMaxRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>10</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.pathMaxRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>5</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.maxInitRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>8</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sackPeriod</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>200ms</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sackFrequency</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>2</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.reactivatePrimaryPath</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sendQueueLimit</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.validCookieLifetime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>10s</td>
-   <td>
-<p>====== Testing =====================================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.enableHeartbeats</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Heartbeats ==================================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.hbInterval</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>30s</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.nagleEnabled</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Nagle Algorithm =============================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.naglePoint</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1468</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.fastRecoverySupported</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Congestion Control ==========================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sctpAlgorithmClass</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"SCTPAlg"</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.ccModule</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>RFC4960=0</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.ssModule</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>ROUND_ROBIN=0</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.arwnd</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>65535</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.swsLimit</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>3000</td>
-   <td>
-<p>Limit for SWS</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.udpEncapsEnabled</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>false</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.destAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>destination <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.srcAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>source <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address (useful with <a href="inet.examples.sctp.multihomed.multi.html">multi</a>-homing)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.packetSize</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>56B</td>
-   <td>
-<p>of ping payload, in bytes</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.interval</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>1s</td>
-   <td>
-<p>time to wait between pings (can be random)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.hopLimit</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>32</td>
-   <td>
-<p>TTL or hopLimit for <a href="inet.networklayer.ipv4.IP.html">IP</a> packets</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.count</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>stop after count ping requests, 0 means continuously</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.startTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>uniform(0s,this.interval)</td>
-   <td>
-<p>send first ping at startTime</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.stopTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
-   <td>
-<p>send no pings after stopTime, 0 means forever</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.printPing</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>dump on stdout</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
    <td>   </td>
 </tr>
 <tr>
@@ -1484,7 +1271,7 @@ possible with DTE-to-DTE connection).</p>
    </td>
    <td>1s</td>
    <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -1494,7 +1281,7 @@ possible with DTE-to-DTE connection).</p>
    </td>
    <td>3</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -1508,153 +1295,131 @@ possible with DTE-to-DTE connection).</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
+   <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.routerId</td>
    <td>
       <i>string</i>
    </td>
    <td>"auto"</td>
    <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
+<p>for routers, the router id using IPv4 address dotted
+notation; specify "auto" to select the highest
+interface address; should be left empty ("") for hosts</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>100Mbps</td>
-   <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.filterString</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td></td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.device</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td></td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.dumpFile</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.threadEnable</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.verbose</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>   </td>
+   <td>
+<p>whether to log packets on the module output</p>
+   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.snaplen</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.pcapFile</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>the PCAP file to be written</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.snaplen</td>
    <td>
       <i>int</i>
    </td>
    <td>65535</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.verbosity</td>
    <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.numGapReports</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>3</td>
-   <td>
-<p>====== <a href="inet.transport.sctp.SCTP.html">SCTP</a> Association Parameters =================================</p>
+<p>maximum number of bytes to record per packet</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoInitial</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.dumpBadFrames</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>enable dump of frames with hasBitError</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.moduleNamePatterns</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"wlan[*] eth[*] ppp[*]"</td>
+   <td>
+<p>space-separated list of sibling module names to listen on</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.sendingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetSentToLower"</td>
+   <td>
+<p>space-separated list of outbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host2</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.receivingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetReceivedFromLower"</td>
+   <td>
+<p>space-separated list of inbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
    <td>
       <i>double</i>
    </td>
-   <td>3s</td>
+   <td>0s</td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoMin</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
    <td>
-      <i>double</i>
+      <i>int</i>
    </td>
-   <td>1s</td>
+   <td>32</td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoMax</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
    <td>
       <i>double</i>
    </td>
@@ -1662,294 +1427,11 @@ possible with DTE-to-DTE connection).</p>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoAlpha</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0.125</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoBeta</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0.250</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.maxBurst</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.assocMaxRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>10</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.pathMaxRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>5</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.maxInitRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>8</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sackPeriod</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>200ms</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sackFrequency</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>2</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.reactivatePrimaryPath</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sendQueueLimit</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.validCookieLifetime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>10s</td>
-   <td>
-<p>====== Testing =====================================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.enableHeartbeats</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Heartbeats ==================================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.hbInterval</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>30s</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.nagleEnabled</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Nagle Algorithm =============================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.naglePoint</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1468</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.fastRecoverySupported</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Congestion Control ==========================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sctpAlgorithmClass</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"SCTPAlg"</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.ccModule</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>RFC4960=0</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.ssModule</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>ROUND_ROBIN=0</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.arwnd</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>65535</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.swsLimit</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>3000</td>
-   <td>
-<p>Limit for SWS</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.udpEncapsEnabled</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>false</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.destAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>destination <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.srcAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>source <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address (useful with <a href="inet.examples.sctp.multihomed.multi.html">multi</a>-homing)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.packetSize</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>56B</td>
-   <td>
-<p>of ping payload, in bytes</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.interval</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>1s</td>
-   <td>
-<p>time to wait between pings (can be random)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.hopLimit</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>32</td>
-   <td>
-<p>TTL or hopLimit for <a href="inet.networklayer.ipv4.IP.html">IP</a> packets</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.count</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>stop after count ping requests, 0 means continuously</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.startTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>uniform(0s,this.interval)</td>
-   <td>
-<p>send first ping at startTime</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.stopTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
-   <td>
-<p>send no pings after stopTime, 0 means forever</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.printPing</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>dump on stdout</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
    <td>   </td>
 </tr>
 <tr>
@@ -1959,7 +1441,7 @@ possible with DTE-to-DTE connection).</p>
    </td>
    <td>1s</td>
    <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -1969,7 +1451,7 @@ possible with DTE-to-DTE connection).</p>
    </td>
    <td>3</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -1983,153 +1465,131 @@ possible with DTE-to-DTE connection).</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
+   <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.routerId</td>
    <td>
       <i>string</i>
    </td>
    <td>"auto"</td>
    <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
+<p>for routers, the router id using IPv4 address dotted
+notation; specify "auto" to select the highest
+interface address; should be left empty ("") for hosts</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>100Mbps</td>
-   <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.filterString</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td></td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.device</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td></td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.dumpFile</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.threadEnable</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.verbose</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>   </td>
+   <td>
+<p>whether to log packets on the module output</p>
+   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.snaplen</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.pcapFile</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>the PCAP file to be written</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.snaplen</td>
    <td>
       <i>int</i>
    </td>
    <td>65535</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.verbosity</td>
    <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.numGapReports</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>3</td>
-   <td>
-<p>====== <a href="inet.transport.sctp.SCTP.html">SCTP</a> Association Parameters =================================</p>
+<p>maximum number of bytes to record per packet</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoInitial</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.dumpBadFrames</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>enable dump of frames with hasBitError</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.moduleNamePatterns</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"wlan[*] eth[*] ppp[*]"</td>
+   <td>
+<p>space-separated list of sibling module names to listen on</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.sendingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetSentToLower"</td>
+   <td>
+<p>space-separated list of outbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host3</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.receivingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetReceivedFromLower"</td>
+   <td>
+<p>space-separated list of inbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
    <td>
       <i>double</i>
    </td>
-   <td>3s</td>
+   <td>0s</td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoMin</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
    <td>
-      <i>double</i>
+      <i>int</i>
    </td>
-   <td>1s</td>
+   <td>32</td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoMax</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
    <td>
       <i>double</i>
    </td>
@@ -2137,294 +1597,11 @@ possible with DTE-to-DTE connection).</p>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoAlpha</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0.125</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoBeta</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0.250</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.maxBurst</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.assocMaxRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>10</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.pathMaxRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>5</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.maxInitRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>8</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sackPeriod</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>200ms</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sackFrequency</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>2</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.reactivatePrimaryPath</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sendQueueLimit</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.validCookieLifetime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>10s</td>
-   <td>
-<p>====== Testing =====================================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.enableHeartbeats</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Heartbeats ==================================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.hbInterval</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>30s</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.nagleEnabled</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Nagle Algorithm =============================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.naglePoint</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1468</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.fastRecoverySupported</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Congestion Control ==========================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sctpAlgorithmClass</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"SCTPAlg"</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.ccModule</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>RFC4960=0</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.ssModule</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>ROUND_ROBIN=0</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.arwnd</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>65535</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.swsLimit</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>3000</td>
-   <td>
-<p>Limit for SWS</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.udpEncapsEnabled</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>false</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.destAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>destination <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.srcAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>source <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address (useful with <a href="inet.examples.sctp.multihomed.multi.html">multi</a>-homing)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.packetSize</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>56B</td>
-   <td>
-<p>of ping payload, in bytes</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.interval</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>1s</td>
-   <td>
-<p>time to wait between pings (can be random)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.hopLimit</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>32</td>
-   <td>
-<p>TTL or hopLimit for <a href="inet.networklayer.ipv4.IP.html">IP</a> packets</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.count</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>stop after count ping requests, 0 means continuously</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.startTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>uniform(0s,this.interval)</td>
-   <td>
-<p>send first ping at startTime</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.stopTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
-   <td>
-<p>send no pings after stopTime, 0 means forever</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.printPing</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>dump on stdout</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
    <td>   </td>
 </tr>
 <tr>
@@ -2434,7 +1611,7 @@ possible with DTE-to-DTE connection).</p>
    </td>
    <td>1s</td>
    <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -2444,7 +1621,7 @@ possible with DTE-to-DTE connection).</p>
    </td>
    <td>3</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -2458,153 +1635,131 @@ possible with DTE-to-DTE connection).</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
+   <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.routerId</td>
    <td>
       <i>string</i>
    </td>
    <td>"auto"</td>
    <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
+<p>for routers, the router id using IPv4 address dotted
+notation; specify "auto" to select the highest
+interface address; should be left empty ("") for hosts</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>100Mbps</td>
-   <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.filterString</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td></td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.device</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td></td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.dumpFile</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.threadEnable</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.verbose</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>   </td>
+   <td>
+<p>whether to log packets on the module output</p>
+   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.snaplen</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.pcapFile</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>the PCAP file to be written</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.snaplen</td>
    <td>
       <i>int</i>
    </td>
    <td>65535</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.verbosity</td>
    <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.numGapReports</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>3</td>
-   <td>
-<p>====== <a href="inet.transport.sctp.SCTP.html">SCTP</a> Association Parameters =================================</p>
+<p>maximum number of bytes to record per packet</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoInitial</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.dumpBadFrames</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>enable dump of frames with hasBitError</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.moduleNamePatterns</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"wlan[*] eth[*] ppp[*]"</td>
+   <td>
+<p>space-separated list of sibling module names to listen on</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.sendingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetSentToLower"</td>
+   <td>
+<p>space-separated list of outbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host4</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.receivingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetReceivedFromLower"</td>
+   <td>
+<p>space-separated list of inbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
    <td>
       <i>double</i>
    </td>
-   <td>3s</td>
+   <td>0s</td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoMin</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
    <td>
-      <i>double</i>
+      <i>int</i>
    </td>
-   <td>1s</td>
+   <td>32</td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoMax</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
    <td>
       <i>double</i>
    </td>
@@ -2612,294 +1767,11 @@ possible with DTE-to-DTE connection).</p>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoAlpha</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0.125</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoBeta</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0.250</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.maxBurst</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.assocMaxRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>10</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.pathMaxRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>5</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.maxInitRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>8</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sackPeriod</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>200ms</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sackFrequency</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>2</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.reactivatePrimaryPath</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sendQueueLimit</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.validCookieLifetime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>10s</td>
-   <td>
-<p>====== Testing =====================================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.enableHeartbeats</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Heartbeats ==================================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.hbInterval</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>30s</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.nagleEnabled</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Nagle Algorithm =============================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.naglePoint</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1468</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.fastRecoverySupported</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Congestion Control ==========================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sctpAlgorithmClass</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"SCTPAlg"</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.ccModule</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>RFC4960=0</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.ssModule</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>ROUND_ROBIN=0</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.arwnd</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>65535</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.swsLimit</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>3000</td>
-   <td>
-<p>Limit for SWS</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.udpEncapsEnabled</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>false</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.destAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>destination <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.srcAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>source <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address (useful with <a href="inet.examples.sctp.multihomed.multi.html">multi</a>-homing)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.packetSize</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>56B</td>
-   <td>
-<p>of ping payload, in bytes</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.interval</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>1s</td>
-   <td>
-<p>time to wait between pings (can be random)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.hopLimit</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>32</td>
-   <td>
-<p>TTL or hopLimit for <a href="inet.networklayer.ipv4.IP.html">IP</a> packets</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.count</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>stop after count ping requests, 0 means continuously</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.startTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>uniform(0s,this.interval)</td>
-   <td>
-<p>send first ping at startTime</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.stopTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
-   <td>
-<p>send no pings after stopTime, 0 means forever</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.printPing</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>dump on stdout</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
    <td>   </td>
 </tr>
 <tr>
@@ -2909,7 +1781,7 @@ possible with DTE-to-DTE connection).</p>
    </td>
    <td>1s</td>
    <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -2919,7 +1791,7 @@ possible with DTE-to-DTE connection).</p>
    </td>
    <td>3</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -2933,127 +1805,107 @@ possible with DTE-to-DTE connection).</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
+   <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.routerId</td>
    <td>
       <i>string</i>
    </td>
    <td>"auto"</td>
    <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
+<p>for routers, the router id using IPv4 address dotted
+notation; specify "auto" to select the highest
+interface address; should be left empty ("") for hosts</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>100Mbps</td>
-   <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.filterString</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td></td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.device</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td></td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.dumpFile</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.threadEnable</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.verbose</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>   </td>
+   <td>
+<p>whether to log packets on the module output</p>
+   </td>
 </tr>
 <tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.snaplen</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.pcapFile</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>the PCAP file to be written</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.snaplen</td>
    <td>
       <i>int</i>
    </td>
    <td>65535</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.verbosity</td>
    <td>
-      <i>int</i>
+<p>maximum number of bytes to record per packet</p>
    </td>
-   <td>0</td>
-   <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.world.ScenarioManager.html">scenarioManager</a>.script</td>
+   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.dumpBadFrames</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>enable dump of frames with hasBitError</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.moduleNamePatterns</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"wlan[*] eth[*] ppp[*]"</td>
+   <td>
+<p>space-separated list of sibling module names to listen on</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.sendingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetSentToLower"</td>
+   <td>
+<p>space-separated list of outbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.nodes.inet.StandardHost.html">host5</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.receivingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetReceivedFromLower"</td>
+   <td>
+<p>space-separated list of inbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.world.scenario.ScenarioManager.html">scenarioManager</a>.script</td>
    <td>
       <i>xml</i>
    </td>
@@ -3063,18 +1915,13 @@ possible with DTE-to-DTE connection).</p>
 </table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
-// Example network to demonstrate \RSVP-TE.
+// Example network to demonstrate RSVP-TE.
 //
 // See the README file in the model directory for scenario description.
 //
 </span><span style="color: #800000; font-weight: bold; ">network</span><span style="color: #000000; "> </span><span style="color: #000000; ">RSVPTE4</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">submodules</span><span style="color: #000000; ">:
-        </span><span style="color: #000000; ">nam</span><span style="color: #000000; ">: </span><span style="color: #000000; ">NAMTrace</span><span style="color: #000000; "> {
-            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=152,280&quot;</span><span style="color: #000000; ">);
-
-        }
         </span><span style="color: #000000; ">LSR1</span><span style="color: #000000; ">: </span><span style="color: #000000; ">RSVP_LSR</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
                 </span><span style="color: #000000; ">peers</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;ppp0 ppp1&quot;</span><span style="color: #000000; ">;
@@ -3170,6 +2017,5 @@ possible with DTE-to-DTE connection).</p>
 }
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

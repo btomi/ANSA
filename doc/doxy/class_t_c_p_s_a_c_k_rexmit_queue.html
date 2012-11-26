@@ -78,13 +78,17 @@
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a>  </div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">TCPSACKRexmitQueue Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="TCPSACKRexmitQueue" -->
-<p><code>#include &lt;<a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8h_source.html">TCPSACKRexmitQueue.h</a>&gt;</code></p>
+<p>Retransmission data for SACK.  
+ <a href="class_t_c_p_s_a_c_k_rexmit_queue.html#details">More...</a></p>
+
+<p><code>#include &lt;TCPSACKRexmitQueue.h&gt;</code></p>
 
 <p><a href="class_t_c_p_s_a_c_k_rexmit_queue-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -97,37 +101,60 @@ Public Types</h2></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a0bf1372385f41f2546fccab62c7f9a2d">TCPSACKRexmitQueue</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ctor.  <a href="#a0bf1372385f41f2546fccab62c7f9a2d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a2d307d6697c2059f8e31638254cc6b1c">~TCPSACKRexmitQueue</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a76c212912f59518e0b05a79c494ac0e2">setConnection</a> (<a class="el" href="class_t_c_p_connection.html">TCPConnection</a> *_conn)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a342033845eaaf7a565c82fb70718ca0e">init</a> (uint32 seqNum)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual dtor.  <a href="#a2d307d6697c2059f8e31638254cc6b1c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a76c212912f59518e0b05a79c494ac0e2">setConnection</a> (<a class="el" href="class_t_c_p_connection.html">TCPConnection</a> *_conn)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the connection that owns this queue.  <a href="#a76c212912f59518e0b05a79c494ac0e2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a342033845eaaf7a565c82fb70718ca0e">init</a> (uint32 seqNum)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the object.  <a href="#a342033845eaaf7a565c82fb70718ca0e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ad2f55eea975ad487c30ce421de967424">str</a> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#af2d58fd127e40c421dde848d242f9e39">info</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a70457a2096dfd6e0f6dcf172bd9488cd">getBufferStartSeq</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#aab51c929cca62ab481aebf24ecaff747">getBufferEndSeq</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a07b77209c59eb50fce9751418039ed64">discardUpTo</a> (uint32 seqNum)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a6eb4b2c4417dfff97a1734c9a43fca76">enqueueSentData</a> (uint32 fromSeqNum, uint32 toSeqNum)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#abd0309b9f592a452399c73174bbd94cf">setSackedBit</a> (uint32 fromSeqNum, uint32 toSeqNum)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#af9d8cbda22d7ae05a8d367d69ec23127">getSackedBit</a> (uint32 seqNum)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ab06b7b8f9c9084d258bc14375a2f3b39">getQueueLength</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a56303d12ec8a593e9f4f58dabbb79d8d">getHighestSackedSeqNum</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a375f04cfa1ff9d8f044864332cc2fbaf">getHighestRexmittedSeqNum</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a8c83d42828fe0c5477981025d6d105fb">checkRexmitQueueForSackedOrRexmittedSegments</a> (uint32 fromSeq)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#adfa5c6f04f91b16f9c98258f6ede0052">resetSackedBit</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#afe96b5040346953484decf38ab2644e5">resetRexmittedBit</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a9e3ff65826298ce1b2000bbd0bc04957">getTotalAmountOfSackedBytes</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ab41d57345e37e6db6d9e7a0db5ae0580">getAmountOfSackedBytes</a> (uint32 seqNum)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a54be5e710f72ed92239d5e20b0729b97">getNumOfDiscontiguousSacks</a> (uint32 seqNum)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string for debug purposes.  <a href="#ad2f55eea975ad487c30ce421de967424"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#af1fcbc54e21c9db7317dafd138b7e499">info</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the current rexmitQueue status for debug purposes.  <a href="#af1fcbc54e21c9db7317dafd138b7e499"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ad32e5fce3da709a034d6ac78f9646eec">getBufferStartSeq</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sequence number of the first byte stored in the buffer.  <a href="#ad32e5fce3da709a034d6ac78f9646eec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a36e9a6a93aa8207424ff6c894406223f">getBufferEndSeq</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sequence number of the last byte stored in the buffer plus one.  <a href="#a36e9a6a93aa8207424ff6c894406223f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a07b77209c59eb50fce9751418039ed64">discardUpTo</a> (uint32 seqNum)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells the queue that bytes up to (but NOT including) seqNum have been transmitted and ACKed, so they can be removed from the queue.  <a href="#a07b77209c59eb50fce9751418039ed64"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a6eb4b2c4417dfff97a1734c9a43fca76">enqueueSentData</a> (uint32 fromSeqNum, uint32 toSeqNum)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts sent data to the rexmit queue.  <a href="#a6eb4b2c4417dfff97a1734c9a43fca76"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#abd0309b9f592a452399c73174bbd94cf">setSackedBit</a> (uint32 fromSeqNum, uint32 toSeqNum)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when data sender received selective acknowledgments.  <a href="#abd0309b9f592a452399c73174bbd94cf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ae3ba28b3cdeb478d907aa51c45df8d1b">getSackedBit</a> (uint32 seqNum) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns SackedBit value of seqNum.  <a href="#ae3ba28b3cdeb478d907aa51c45df8d1b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a13e0fd5875e30a010ee2506f1fbb2084">getQueueLength</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of blocks currently buffered in queue.  <a href="#a13e0fd5875e30a010ee2506f1fbb2084"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a2bca523e196eb6d9b93f2121e57ca6b9">getHighestSackedSeqNum</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the highest sequence number sacked by data receiver.  <a href="#a2bca523e196eb6d9b93f2121e57ca6b9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a44481176a9952c466276425ff1d75774">getHighestRexmittedSeqNum</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the highest sequence number rexmitted by data sender.  <a href="#a44481176a9952c466276425ff1d75774"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac333baf3a22543d7b735e6cfb062064b">checkRexmitQueueForSackedOrRexmittedSegments</a> (uint32 fromSeq) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks rexmit queue for sacked of rexmitted segments and returns a certain offset (contiguous sacked or rexmitted region) to forward snd-&gt;nxt.  <a href="#ac333baf3a22543d7b735e6cfb062064b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#adfa5c6f04f91b16f9c98258f6ede0052">resetSackedBit</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when REXMIT timer expired.  <a href="#adfa5c6f04f91b16f9c98258f6ede0052"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#afe96b5040346953484decf38ab2644e5">resetRexmittedBit</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when REXMIT timer expired.  <a href="#afe96b5040346953484decf38ab2644e5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a60e7e977540922a02005d18caf4d1977">getTotalAmountOfSackedBytes</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns total amount of sacked bytes.  <a href="#a60e7e977540922a02005d18caf4d1977"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#aa92dd63421bbe8138b0f3b0142869b77">getAmountOfSackedBytes</a> (uint32 seqNum) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns amount of sacked bytes above seqNum.  <a href="#aa92dd63421bbe8138b0f3b0142869b77"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a3dec5371cb3b7f6cf6b5774721345247">getNumOfDiscontiguousSacks</a> (uint32 seqNum) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of discontiguous sacked regions (SACKed sequences) above seqNum.  <a href="#a3dec5371cb3b7f6cf6b5774721345247"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5a7dac957ccc34be496a2d46bd47b2cc">checkSackBlock</a> (uint32 seqNum, uint32 &amp;length, bool &amp;sacked, bool &amp;rexmitted) const </td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_c_p_connection.html">TCPConnection</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a0dcb9791b18a4c26ed38ad6593c2d470">conn</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a781aa79dc8c63e63e3c63862acc2a2e7">RexmitQueue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a></td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#aa100fadcb88c39d36cc9c45dc7f51f27">checkQueue</a> () const </td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Retransmission data for SACK. </p>
-
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8h_source.html#l00029">29</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8h_source.html">TCPSACKRexmitQueue.h</a>.</p>
 </div><hr/><h2>Member Typedef Documentation</h2>
 <a class="anchor" id="a781aa79dc8c63e63e3c63862acc2a2e7"></a><!-- doxytag: member="TCPSACKRexmitQueue::RexmitQueue" ref="a781aa79dc8c63e63e3c63862acc2a2e7" args="" -->
 <div class="memitem">
@@ -139,8 +166,6 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8h_source.html#l00041">41</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8h_source.html">TCPSACKRexmitQueue.h</a>.</p>
 
 </div>
 </div>
@@ -158,11 +183,10 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Ctor </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00022">22</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html">TCPSACKRexmitQueue.cc</a>.</p>
+<p>Ctor. </p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a0dcb9791b18a4c26ed38ad6593c2d470">conn</a> = NULL;
+    <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a0dcb9791b18a4c26ed38ad6593c2d470">conn</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
     <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a> = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a> = 0;
 }
 </pre></div>
@@ -181,9 +205,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Virtual dtor. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00028">28</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html">TCPSACKRexmitQueue.cc</a>.</p>
+<p>Virtual dtor. </p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">while</span> (!<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.empty())
         <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.pop_front();
@@ -192,58 +215,142 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a8c83d42828fe0c5477981025d6d105fb"></a><!-- doxytag: member="TCPSACKRexmitQueue::checkRexmitQueueForSackedOrRexmittedSegments" ref="a8c83d42828fe0c5477981025d6d105fb" args="(uint32 fromSeq)" -->
+<a class="anchor" id="aa100fadcb88c39d36cc9c45dc7f51f27"></a><!-- doxytag: member="TCPSACKRexmitQueue::checkQueue" ref="aa100fadcb88c39d36cc9c45dc7f51f27" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32 <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a8c83d42828fe0c5477981025d6d105fb">TCPSACKRexmitQueue::checkRexmitQueueForSackedOrRexmittedSegments</a> </td>
+          <td class="memname">bool <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#aa100fadcb88c39d36cc9c45dc7f51f27">TCPSACKRexmitQueue::checkQueue</a> </td>
           <td>(</td>
-          <td class="paramtype">uint32&#160;</td>
-          <td class="paramname"><em>fromSeq</em></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Checks rexmit queue for sacked of rexmitted segments and returns a certain offset (contiguous sacked or rexmitted region) to forward snd-&gt;nxt. It is called before retransmitting data. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00225">225</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html">TCPSACKRexmitQueue.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_connection_util_8cc_source.html#l00547">TCPConnection::sendSegment()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a07b77209c59eb50fce9751418039ed64">discardUpTo()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a6eb4b2c4417dfff97a1734c9a43fca76">enqueueSentData()</a>, and <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#abd0309b9f592a452399c73174bbd94cf">setSackedBit()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    uint32 counter = 0;
+    uint32 b = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a>;
+    <span class="keywordtype">bool</span> f = <span class="keyword">true</span>;
 
-    <span class="keywordflow">if</span> (fromSeqNum==0 || <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.empty() || !(<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a>,fromSeqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(fromSeqNum,<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a>)))
-        <span class="keywordflow">return</span> counter;
-
-    RexmitQueue::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin();
-    <span class="keywordflow">while</span> (i!=<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end())
+    <span class="keywordflow">for</span> (RexmitQueue::const_iterator i = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin(); i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end(); i++)
     {
-        <span class="comment">// search for fromSeqNum (snd_nxt)</span>
-        <span class="keywordflow">if</span> (i-&gt;beginSeqNum == fromSeqNum)
-            <span class="keywordflow">break</span>;
-        <span class="keywordflow">else</span>
-            i++;
+        f = f &amp;&amp; (b == i-&gt;beginSeqNum);
+        f = f &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(i-&gt;beginSeqNum, i-&gt;endSeqNum);
+        b = i-&gt;endSeqNum;
     }
 
-    <span class="comment">// search for adjacent sacked/rexmitted regions</span>
-    <span class="keywordflow">while</span> (i!=<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end())
-    {
-        <span class="keywordflow">if</span> (i-&gt;sacked || i-&gt;rexmitted)
-        {
-            counter = counter + (i-&gt;endSeqNum - i-&gt;beginSeqNum);
+    f = f &amp;&amp; (b == <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a>);
 
-            <span class="comment">// adjacent regions?</span>
-            uint32 tmp = i-&gt;endSeqNum;
-            i++;
-            <span class="keywordflow">if</span> (i-&gt;beginSeqNum != tmp)
-                <span class="keywordflow">break</span>;
-        }
-        <span class="keywordflow">else</span>
-            <span class="keywordflow">break</span>;
+    <span class="keywordflow">if</span> (!f)
+    {
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Invalid Queue\nThe Queue is:\n&quot;</span>;
+        <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#af1fcbc54e21c9db7317dafd138b7e499" title="Prints the current rexmitQueue status for debug purposes.">info</a>();
     }
-    <span class="keywordflow">return</span> counter;
+
+    <span class="keywordflow">return</span> f;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ac333baf3a22543d7b735e6cfb062064b"></a><!-- doxytag: member="TCPSACKRexmitQueue::checkRexmitQueueForSackedOrRexmittedSegments" ref="ac333baf3a22543d7b735e6cfb062064b" args="(uint32 fromSeq) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32 <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac333baf3a22543d7b735e6cfb062064b">TCPSACKRexmitQueue::checkRexmitQueueForSackedOrRexmittedSegments</a> </td>
+          <td>(</td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>fromSeq</em></td><td>)</td>
+          <td> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Checks rexmit queue for sacked of rexmitted segments and returns a certain offset (contiguous sacked or rexmitted region) to forward snd-&gt;nxt. </p>
+<p>It is called before retransmitting data. </p>
+
+<p>Referenced by <a class="el" href="class_t_c_p_connection.html#af71155c4fad49ea52907d840463a06d5">TCPConnection::sendSegment()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    ASSERT(<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a>, fromSeqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(fromSeqNum, <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a>));
+
+    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.empty() || (<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a> == fromSeqNum))
+        <span class="keywordflow">return</span> 0;
+
+    RexmitQueue::const_iterator i = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin();
+    uint32 bytes = 0;
+
+    <span class="keywordflow">while</span> (i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end() &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(i-&gt;endSeqNum, fromSeqNum))
+        i++;
+
+    <span class="keywordflow">while</span> (i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end() &amp;&amp; ((i-&gt;sacked || i-&gt;rexmitted)))
+    {
+        ASSERT(<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(i-&gt;beginSeqNum, fromSeqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(fromSeqNum, i-&gt;endSeqNum));
+
+        bytes += (i-&gt;endSeqNum - fromSeqNum);
+        fromSeqNum = i-&gt;endSeqNum;
+        i++;
+    }
+
+    <span class="keywordflow">return</span> bytes;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a5a7dac957ccc34be496a2d46bd47b2cc"></a><!-- doxytag: member="TCPSACKRexmitQueue::checkSackBlock" ref="a5a7dac957ccc34be496a2d46bd47b2cc" args="(uint32 seqNum, uint32 &amp;length, bool &amp;sacked, bool &amp;rexmitted) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5a7dac957ccc34be496a2d46bd47b2cc">TCPSACKRexmitQueue::checkSackBlock</a> </td>
+          <td>(</td>
+          <td class="paramtype">uint32&#160;</td>
+          <td class="paramname"><em>seqNum</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32 &amp;&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>sacked</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>rexmitted</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_t_c_p_connection.html#afc5b102866d3f7a5f84e2df46c43dcd3">TCPConnection::nextSeg()</a>, and <a class="el" href="class_t_c_p_connection.html#a728bea28fa24566bb22935f0de7c4655">TCPConnection::setPipe()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    ASSERT(<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a>, fromSeqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(fromSeqNum, <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a>));
+
+    RexmitQueue::const_iterator i = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin();
+
+    <span class="keywordflow">while</span> (i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end() &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(i-&gt;endSeqNum, fromSeqNum)) <span class="comment">// search for seqNum</span>
+        i++;
+
+    ASSERT(i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end());
+    ASSERT(<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(i-&gt;beginSeqNum, fromSeqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(fromSeqNum, i-&gt;endSeqNum));
+
+    length = (i-&gt;endSeqNum - fromSeqNum);
+    sacked = i-&gt;sacked;
+    rexmitted = i-&gt;rexmitted;
 }
 </pre></div>
 </div>
@@ -253,7 +360,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a07b77209c59eb50fce9751418039ed64">TCPSACKRexmitQueue::discardUpTo</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a07b77209c59eb50fce9751418039ed64">TCPSACKRexmitQueue::discardUpTo</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>seqNum</em></td><td>)</td>
@@ -262,37 +369,31 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Tells the queue that bytes up to (but NOT including) seqNum have been transmitted and ACKed, so they can be removed from the queue. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00070">70</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html">TCPSACKRexmitQueue.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_connection_rcv_segment_8cc_source.html#l01104">TCPConnection::processAckInEstabEtc()</a>, <a class="el" href="_t_c_p_connection_rcv_segment_8cc_source.html#l01073">TCPConnection::processRstInSynReceived()</a>, and <a class="el" href="_t_c_p_connection_rcv_segment_8cc_source.html#l00869">TCPConnection::processSegmentInSynSent()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_connection.html#ac1144f5ca6e960176d6e623998cb7456">TCPConnection::processAckInEstabEtc()</a>, <a class="el" href="class_t_c_p_connection.html#a4d240ca8f36aa37a29b8bcc44ec052cd">TCPConnection::processRstInSynReceived()</a>, and <a class="el" href="class_t_c_p_connection.html#a12b903f9e148f5c26f926dcdc8107c86">TCPConnection::processSegmentInSynSent()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.empty())
-        <span class="keywordflow">return</span>;
+    ASSERT(<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a>, seqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(seqNum, <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a>));
 
-    ASSERT(<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a>,seqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(seqNum,<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a>));
+    <span class="keywordflow">if</span> (!<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.empty())
+    {
+        RexmitQueue::iterator i = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin();
+
+        <span class="keywordflow">while</span> ((i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end()) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(i-&gt;endSeqNum, seqNum)) <span class="comment">// discard/delete regions from rexmit queue, which have been acked</span>
+            i = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.erase(i);
+
+        <span class="keywordflow">if</span> (i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end())
+        {
+            ASSERT(<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(i-&gt;beginSeqNum, seqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(seqNum, i-&gt;endSeqNum));
+            i-&gt;beginSeqNum = seqNum;
+        }
+    }
+
     <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a> = seqNum;
 
-    RexmitQueue::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin();
-    <span class="keywordflow">while</span> (i!=<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end()) <span class="comment">// discard/delete regions from rexmit queue, which have been acked</span>
-    {
-        <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(i-&gt;beginSeqNum,<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a>))
-            i = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.erase(i);
-        <span class="keywordflow">else</span>
-            i++;
-    }
-
-    <span class="comment">// update begin and end of rexmit queue</span>
-    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.empty())
-        <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a> = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a> = 0;
-    <span class="keywordflow">else</span>
-    {
-        i = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin();
-        <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a> = i-&gt;beginSeqNum;
-        i = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end();
-        <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a> = i-&gt;endSeqNum;
-    }
+    <span class="comment">// TESTING queue:</span>
+    ASSERT(<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#aa100fadcb88c39d36cc9c45dc7f51f27">checkQueue</a>());
 }
 </pre></div>
 </div>
@@ -302,7 +403,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a6eb4b2c4417dfff97a1734c9a43fca76">TCPSACKRexmitQueue::enqueueSentData</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a6eb4b2c4417dfff97a1734c9a43fca76">TCPSACKRexmitQueue::enqueueSentData</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>fromSeqNum</em>, </td>
@@ -321,400 +422,396 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Inserts sent data to the rexmit queue. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00099">99</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html">TCPSACKRexmitQueue.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_connection_util_8cc_source.html#l00547">TCPConnection::sendSegment()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_connection.html#af71155c4fad49ea52907d840463a06d5">TCPConnection::sendSegment()</a>.</p>
 <div class="fragment"><pre class="fragment">{
+    ASSERT(<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a>, fromSeqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(fromSeqNum, <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a>));
+
     <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;
-
-    <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;rexmitQ: &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ad2f55eea975ad487c30ce421de967424">str</a>() &lt;&lt; <span class="stringliteral">&quot; enqueueSentData [&quot;</span> &lt;&lt; fromSeqNum &lt;&lt; <span class="stringliteral">&quot;..&quot;</span> &lt;&lt; toSeqNum &lt;&lt; <span class="stringliteral">&quot;)\n&quot;</span>;
-
     Region region;
-    region.beginSeqNum = fromSeqNum;
-    region.endSeqNum = toSeqNum;
-    region.sacked = <span class="keyword">false</span>;
-    region.rexmitted = <span class="keyword">false</span>;
 
-    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ab06b7b8f9c9084d258bc14375a2f3b39">getQueueLength</a>()==0)
+    <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;rexmitQ: &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ad2f55eea975ad487c30ce421de967424" title="Returns a string for debug purposes.">str</a>() &lt;&lt; <span class="stringliteral">&quot; enqueueSentData [&quot;</span> &lt;&lt; fromSeqNum &lt;&lt; <span class="stringliteral">&quot;..&quot;</span> &lt;&lt; toSeqNum &lt;&lt; <span class="stringliteral">&quot;)\n&quot;</span>;
+
+    ASSERT(<a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(fromSeqNum, toSeqNum));
+
+    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.empty() || (<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a> == fromSeqNum))
     {
-        <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a> = fromSeqNum;
-        <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a> = toSeqNum;
+        region.beginSeqNum = fromSeqNum;
+        region.endSeqNum = toSeqNum;
+        region.sacked = <span class="keyword">false</span>;
+        region.rexmitted = <span class="keyword">false</span>;
         <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.push_back(region);
-<span class="comment">//        tcpEV &lt;&lt; &quot;rexmitQ: rexmitQLength=&quot; &lt;&lt; getQueueLength() &lt;&lt; &quot;\n&quot;;</span>
-        <span class="keywordflow">return</span>;
+        found = <span class="keyword">true</span>;
+        fromSeqNum = toSeqNum;
     }
-
-    <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a>,fromSeqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(toSeqNum,<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a>))
+    <span class="keywordflow">else</span>
     {
-        <span class="comment">// Search for region in queue!</span>
-        RexmitQueue::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin();
-        <span class="keywordflow">while</span> (i!=<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end())
-        {
-            <span class="keywordflow">if</span> (i-&gt;beginSeqNum == fromSeqNum &amp;&amp; i-&gt;endSeqNum == toSeqNum)
-            {
-                i-&gt;rexmitted = <span class="keyword">true</span>; <span class="comment">// set rexmitted bit</span>
-                found = <span class="keyword">true</span>;
-            }
+        RexmitQueue::iterator i = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin();
+
+        <span class="keywordflow">while</span> (i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end() &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(i-&gt;endSeqNum, fromSeqNum))
             i++;
+
+        ASSERT(i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end());
+        ASSERT(<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(i-&gt;beginSeqNum, fromSeqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(fromSeqNum, i-&gt;endSeqNum));
+
+        <span class="keywordflow">if</span> (i-&gt;beginSeqNum != fromSeqNum)
+        {
+            <span class="comment">// chunk item</span>
+            region = *i;
+            region.endSeqNum = fromSeqNum;
+            <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.insert(i, region);
+            i-&gt;beginSeqNum = fromSeqNum;
+        }
+
+        <span class="keywordflow">while</span> (i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end() &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(i-&gt;endSeqNum, toSeqNum))
+        {
+            i-&gt;rexmitted = <span class="keyword">true</span>;
+            fromSeqNum = i-&gt;endSeqNum;
+            found = <span class="keyword">true</span>;
+            i++;
+        }
+
+        <span class="keywordflow">if</span> (fromSeqNum != toSeqNum)
+        {
+            <span class="keywordtype">bool</span> beforeEnd = (i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end());
+
+            ASSERT(i == <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end() || <a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(i-&gt;beginSeqNum, toSeqNum));
+
+            region.beginSeqNum = fromSeqNum;
+            region.endSeqNum = toSeqNum;
+            region.sacked = beforeEnd ? i-&gt;sacked : <span class="keyword">false</span>;
+            region.rexmitted = beforeEnd;
+            <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.insert(i, region);
+            found = <span class="keyword">true</span>;
+            fromSeqNum = toSeqNum;
+
+            <span class="keywordflow">if</span> (beforeEnd)
+                i-&gt;beginSeqNum = toSeqNum;
         }
     }
 
+    ASSERT(fromSeqNum == toSeqNum);
+
     <span class="keywordflow">if</span> (!found)
     {
-        <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a> = toSeqNum;
-        <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.push_back(region);
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Not found enqueueSentData(&quot;</span> &lt;&lt; fromSeqNum &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; toSeqNum &lt;&lt; <span class="stringliteral">&quot;)\nThe Queue is:\n&quot;</span>;
+        <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#af1fcbc54e21c9db7317dafd138b7e499" title="Prints the current rexmitQueue status for debug purposes.">info</a>();
     }
-<span class="comment">//    tcpEV &lt;&lt; &quot;rexmitQ: rexmitQLength=&quot; &lt;&lt; getQueueLength() &lt;&lt; &quot;\n&quot;;</span>
+
+    ASSERT(found);
+
+    <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a> = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.front().beginSeqNum;
+    <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a> = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.back().endSeqNum;
+
+    <span class="comment">// TESTING queue:</span>
+    ASSERT(<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#aa100fadcb88c39d36cc9c45dc7f51f27">checkQueue</a>());
+
+    <span class="comment">// tcpEV &lt;&lt; &quot;rexmitQ: rexmitQLength=&quot; &lt;&lt; getQueueLength() &lt;&lt; &quot;\n&quot;;</span>
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="ab41d57345e37e6db6d9e7a0db5ae0580"></a><!-- doxytag: member="TCPSACKRexmitQueue::getAmountOfSackedBytes" ref="ab41d57345e37e6db6d9e7a0db5ae0580" args="(uint32 seqNum)" -->
+<a class="anchor" id="aa92dd63421bbe8138b0f3b0142869b77"></a><!-- doxytag: member="TCPSACKRexmitQueue::getAmountOfSackedBytes" ref="aa92dd63421bbe8138b0f3b0142869b77" args="(uint32 seqNum) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32 <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ab41d57345e37e6db6d9e7a0db5ae0580">TCPSACKRexmitQueue::getAmountOfSackedBytes</a> </td>
+          <td class="memname">uint32 <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#aa92dd63421bbe8138b0f3b0142869b77">TCPSACKRexmitQueue::getAmountOfSackedBytes</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>seqNum</em></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Returns amount of sacked bytes above seqNum. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00299">299</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html">TCPSACKRexmitQueue.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01685">TCPConnection::isLost()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_connection.html#a261dc1ebd41e03d655b112f2b82b3f08">TCPConnection::isLost()</a>.</p>
 <div class="fragment"><pre class="fragment">{
+    ASSERT(<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a>, fromSeqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(fromSeqNum, <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a>));
+
     uint32 bytes = 0;
-    uint32 counter = 0;
+    RexmitQueue::const_reverse_iterator i = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.rbegin();
 
-    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.empty() || <a class="code" href="_t_c_p_segment_8h.html#af4745b9cf95eb5b78d8ae6c3c8429cfc">seqGE</a>(seqNum,<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a>))
-        <span class="keywordflow">return</span> counter;
-
-    RexmitQueue::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin();
-    <span class="keywordflow">while</span> (i!=<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end() &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(i-&gt;beginSeqNum, seqNum)) <span class="comment">// search for seqNum</span>
-    {
-        i++;
-        <span class="keywordflow">if</span> (i-&gt;beginSeqNum == seqNum)
-            <span class="keywordflow">break</span>;
-    }
-
-    ASSERT(<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(seqNum,i-&gt;beginSeqNum) || <a class="code" href="_t_c_p_segment_8h.html#af4745b9cf95eb5b78d8ae6c3c8429cfc">seqGE</a>(seqNum,--i-&gt;endSeqNum));
-
-    <span class="keywordflow">while</span> (i!=<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end())
+    <span class="keywordflow">for</span> (; i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.rend() &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(fromSeqNum, i-&gt;beginSeqNum); i++)
     {
         <span class="keywordflow">if</span> (i-&gt;sacked)
-        {
-            counter++;
-            bytes = bytes + (i-&gt;endSeqNum - i-&gt;beginSeqNum);
-        }
-        i++;
+            bytes += (i-&gt;endSeqNum - i-&gt;beginSeqNum);
     }
+
+    <span class="keywordflow">if</span> ( i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.rend()
+            &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(i-&gt;beginSeqNum, fromSeqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(fromSeqNum, i-&gt;endSeqNum) &amp;&amp; i-&gt;sacked)
+    {
+        bytes += (i-&gt;endSeqNum - fromSeqNum);
+    }
+
     <span class="keywordflow">return</span> bytes;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="aab51c929cca62ab481aebf24ecaff747"></a><!-- doxytag: member="TCPSACKRexmitQueue::getBufferEndSeq" ref="aab51c929cca62ab481aebf24ecaff747" args="()" -->
+<a class="anchor" id="a36e9a6a93aa8207424ff6c894406223f"></a><!-- doxytag: member="TCPSACKRexmitQueue::getBufferEndSeq" ref="a36e9a6a93aa8207424ff6c894406223f" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32 <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#aab51c929cca62ab481aebf24ecaff747">TCPSACKRexmitQueue::getBufferEndSeq</a> </td>
+          <td class="memname">virtual uint32 <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a36e9a6a93aa8207424ff6c894406223f">TCPSACKRexmitQueue::getBufferEndSeq</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns the sequence number of the last byte stored in the buffer plus one. (The first byte of the next send operation would get this sequence number.) </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00065">65</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html">TCPSACKRexmitQueue.cc</a>.</p>
+<p>Returns the sequence number of the last byte stored in the buffer plus one. </p>
+<p>(The first byte of the next send operation would get this sequence number.) </p>
 
-<p>Referenced by <a class="el" href="_t_c_p_connection_rcv_segment_8cc_source.html#l01073">TCPConnection::processRstInSynReceived()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a>;
-}
+<p>Referenced by <a class="el" href="class_t_c_p_connection.html#a4d240ca8f36aa37a29b8bcc44ec052cd">TCPConnection::processRstInSynReceived()</a>.</p>
+<div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a>; }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a70457a2096dfd6e0f6dcf172bd9488cd"></a><!-- doxytag: member="TCPSACKRexmitQueue::getBufferStartSeq" ref="a70457a2096dfd6e0f6dcf172bd9488cd" args="()" -->
+<a class="anchor" id="ad32e5fce3da709a034d6ac78f9646eec"></a><!-- doxytag: member="TCPSACKRexmitQueue::getBufferStartSeq" ref="ad32e5fce3da709a034d6ac78f9646eec" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32 <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a70457a2096dfd6e0f6dcf172bd9488cd">TCPSACKRexmitQueue::getBufferStartSeq</a> </td>
+          <td class="memname">virtual uint32 <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ad32e5fce3da709a034d6ac78f9646eec">TCPSACKRexmitQueue::getBufferStartSeq</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns the sequence number of the first byte stored in the buffer. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00060">60</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html">TCPSACKRexmitQueue.cc</a>.</p>
+<p>Returns the sequence number of the first byte stored in the buffer. </p>
+<div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a>; }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a44481176a9952c466276425ff1d75774"></a><!-- doxytag: member="TCPSACKRexmitQueue::getHighestRexmittedSeqNum" ref="a44481176a9952c466276425ff1d75774" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32 <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a44481176a9952c466276425ff1d75774">TCPSACKRexmitQueue::getHighestRexmittedSeqNum</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the highest sequence number rexmitted by data sender. </p>
+
+<p>Referenced by <a class="el" href="class_t_c_p_connection.html#afc5b102866d3f7a5f84e2df46c43dcd3">TCPConnection::nextSeg()</a>, <a class="el" href="class_t_c_p_connection.html#a8ae68910942bd1ea6558ae7849ae22ea">TCPConnection::retransmitOneSegment()</a>, <a class="el" href="class_t_c_p_connection.html#a0238c323366884c6598d7d92d21f69ab">TCPConnection::sendData()</a>, <a class="el" href="class_t_c_p_connection.html#ac922b39992f510ef7803067e675d80f1">TCPConnection::sendSegmentDuringLossRecoveryPhase()</a>, and <a class="el" href="class_t_c_p_connection.html#a728bea28fa24566bb22935f0de7c4655">TCPConnection::setPipe()</a>.</p>
 <div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">for</span> (RexmitQueue::const_reverse_iterator i = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.rbegin(); i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.rend(); i++)
+    {
+        <span class="keywordflow">if</span> (i-&gt;rexmitted)
+            <span class="keywordflow">return</span> i-&gt;endSeqNum;
+    }
+
     <span class="keywordflow">return</span> <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a>;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a375f04cfa1ff9d8f044864332cc2fbaf"></a><!-- doxytag: member="TCPSACKRexmitQueue::getHighestRexmittedSeqNum" ref="a375f04cfa1ff9d8f044864332cc2fbaf" args="()" -->
+<a class="anchor" id="a2bca523e196eb6d9b93f2121e57ca6b9"></a><!-- doxytag: member="TCPSACKRexmitQueue::getHighestSackedSeqNum" ref="a2bca523e196eb6d9b93f2121e57ca6b9" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32 <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a375f04cfa1ff9d8f044864332cc2fbaf">TCPSACKRexmitQueue::getHighestRexmittedSeqNum</a> </td>
+          <td class="memname">uint32 <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a2bca523e196eb6d9b93f2121e57ca6b9">TCPSACKRexmitQueue::getHighestSackedSeqNum</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns the highest sequence number rexmitted by data sender. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00211">211</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html">TCPSACKRexmitQueue.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01776">TCPConnection::nextSeg()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l00747">TCPConnection::retransmitOneSegment()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l00610">TCPConnection::sendData()</a>, <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01922">TCPConnection::sendSegmentDuringLossRecoveryPhase()</a>, and <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01707">TCPConnection::setPipe()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    uint32 tmp_highest_rexmitted = 0;
-
-    RexmitQueue::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin();
-    <span class="keywordflow">while</span> (i!=<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end())
-    {
-        <span class="keywordflow">if</span> (i-&gt;rexmitted)
-            tmp_highest_rexmitted = i-&gt;endSeqNum;
-        i++;
-    }
-    <span class="keywordflow">return</span> tmp_highest_rexmitted;
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a56303d12ec8a593e9f4f58dabbb79d8d"></a><!-- doxytag: member="TCPSACKRexmitQueue::getHighestSackedSeqNum" ref="a56303d12ec8a593e9f4f58dabbb79d8d" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32 <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a56303d12ec8a593e9f4f58dabbb79d8d">TCPSACKRexmitQueue::getHighestSackedSeqNum</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
 <p>Returns the highest sequence number sacked by data receiver. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00197">197</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html">TCPSACKRexmitQueue.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01776">TCPConnection::nextSeg()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_connection.html#afc5b102866d3f7a5f84e2df46c43dcd3">TCPConnection::nextSeg()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    uint32 tmp_highest_sacked = 0;
-
-    RexmitQueue::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin();
-    <span class="keywordflow">while</span> (i!=<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end())
+    <span class="keywordflow">for</span> (RexmitQueue::const_reverse_iterator i = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.rbegin(); i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.rend(); i++)
     {
         <span class="keywordflow">if</span> (i-&gt;sacked)
-            tmp_highest_sacked = i-&gt;endSeqNum;
-        i++;
+            <span class="keywordflow">return</span> i-&gt;endSeqNum;
     }
-    <span class="keywordflow">return</span> tmp_highest_sacked;
+
+    <span class="keywordflow">return</span> <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a>;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a54be5e710f72ed92239d5e20b0729b97"></a><!-- doxytag: member="TCPSACKRexmitQueue::getNumOfDiscontiguousSacks" ref="a54be5e710f72ed92239d5e20b0729b97" args="(uint32 seqNum)" -->
+<a class="anchor" id="a3dec5371cb3b7f6cf6b5774721345247"></a><!-- doxytag: member="TCPSACKRexmitQueue::getNumOfDiscontiguousSacks" ref="a3dec5371cb3b7f6cf6b5774721345247" args="(uint32 seqNum) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32 <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a54be5e710f72ed92239d5e20b0729b97">TCPSACKRexmitQueue::getNumOfDiscontiguousSacks</a> </td>
+          <td class="memname">uint32 <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a3dec5371cb3b7f6cf6b5774721345247">TCPSACKRexmitQueue::getNumOfDiscontiguousSacks</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>seqNum</em></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Returns the number of discontiguous sacked regions (SACKed sequences) above seqNum. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00330">330</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html">TCPSACKRexmitQueue.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01685">TCPConnection::isLost()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_connection.html#a261dc1ebd41e03d655b112f2b82b3f08">TCPConnection::isLost()</a>.</p>
 <div class="fragment"><pre class="fragment">{
+    ASSERT(<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a>, fromSeqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(fromSeqNum, <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a>));
+
+    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.empty() || (fromSeqNum == <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a>))
+        <span class="keywordflow">return</span> 0;
+
+    RexmitQueue::const_iterator i = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin();
     uint32 counter = 0;
 
-    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.empty() || <a class="code" href="_t_c_p_segment_8h.html#af4745b9cf95eb5b78d8ae6c3c8429cfc">seqGE</a>(seqNum,<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a>))
-        <span class="keywordflow">return</span> counter;
-
-    RexmitQueue::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin();
-    <span class="keywordflow">while</span> (i!=<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end() &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(i-&gt;beginSeqNum, seqNum)) <span class="comment">// search for seqNum</span>
-    {
+    <span class="keywordflow">while</span> (i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end() &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(i-&gt;endSeqNum, fromSeqNum)) <span class="comment">// search for seqNum</span>
         i++;
-        <span class="keywordflow">if</span> (i-&gt;beginSeqNum == seqNum)
-            <span class="keywordflow">break</span>;
-    }
-
-    ASSERT(<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(seqNum,i-&gt;beginSeqNum) || <a class="code" href="_t_c_p_segment_8h.html#af4745b9cf95eb5b78d8ae6c3c8429cfc">seqGE</a>(seqNum,--i-&gt;endSeqNum));
 
     <span class="comment">// search for discontiguous sacked regions</span>
-    <span class="keywordflow">while</span> (i!=<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end())
+    <span class="keywordtype">bool</span> prevSacked = <span class="keyword">false</span>;
+
+    <span class="keywordflow">while</span> (i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end())
     {
-        <span class="keywordflow">if</span> (i-&gt;sacked)
-        {
+        <span class="keywordflow">if</span> (i-&gt;sacked &amp;&amp; !prevSacked)
             counter++;
-            uint32 tmp = i-&gt;endSeqNum;
-            i++;
-            <span class="keywordflow">while</span> (i-&gt;sacked &amp;&amp; i-&gt;beginSeqNum == tmp &amp;&amp; i!=<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end()) <span class="comment">// adjacent sacked regions?</span>
-            {
-                tmp = i-&gt;endSeqNum;
-                i++;
-            }
-        }
-        <span class="keywordflow">else</span>
-            i++;
+
+        prevSacked = i-&gt;sacked;
+        i++;
     }
+
     <span class="keywordflow">return</span> counter;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="ab06b7b8f9c9084d258bc14375a2f3b39"></a><!-- doxytag: member="TCPSACKRexmitQueue::getQueueLength" ref="ab06b7b8f9c9084d258bc14375a2f3b39" args="()" -->
+<a class="anchor" id="a13e0fd5875e30a010ee2506f1fbb2084"></a><!-- doxytag: member="TCPSACKRexmitQueue::getQueueLength" ref="a13e0fd5875e30a010ee2506f1fbb2084" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32 <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ab06b7b8f9c9084d258bc14375a2f3b39">TCPSACKRexmitQueue::getQueueLength</a> </td>
+          <td class="memname">virtual uint32 <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a13e0fd5875e30a010ee2506f1fbb2084">TCPSACKRexmitQueue::getQueueLength</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [inline, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Returns the number of blocks currently buffered in queue. </p>
-
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00192">192</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html">TCPSACKRexmitQueue.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00099">enqueueSentData()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.size();
-}
+<div class="fragment"><pre class="fragment">{ <span class="keywordflow">return</span> <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.size(); }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="af9d8cbda22d7ae05a8d367d69ec23127"></a><!-- doxytag: member="TCPSACKRexmitQueue::getSackedBit" ref="af9d8cbda22d7ae05a8d367d69ec23127" args="(uint32 seqNum)" -->
+<a class="anchor" id="ae3ba28b3cdeb478d907aa51c45df8d1b"></a><!-- doxytag: member="TCPSACKRexmitQueue::getSackedBit" ref="ae3ba28b3cdeb478d907aa51c45df8d1b" args="(uint32 seqNum) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#af9d8cbda22d7ae05a8d367d69ec23127">TCPSACKRexmitQueue::getSackedBit</a> </td>
+          <td class="memname">bool <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ae3ba28b3cdeb478d907aa51c45df8d1b">TCPSACKRexmitQueue::getSackedBit</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>seqNum</em></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Returns SackedBit value of seqNum. </p>
-
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00172">172</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html">TCPSACKRexmitQueue.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01776">TCPConnection::nextSeg()</a>, and <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01707">TCPConnection::setPipe()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;
+    ASSERT(<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a>, seqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(seqNum, <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a>));
 
-    <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a>,seqNum))
-    {
-        RexmitQueue::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin();
-        <span class="keywordflow">while</span> (i!=<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end())
-        {
-            <span class="keywordflow">if</span> (i-&gt;beginSeqNum == seqNum) <span class="comment">// Search for region in queue!</span>
-            {
-                found = i-&gt;sacked;
-                <span class="keywordflow">break</span>;
-            }
-            i++;
-        }
-    }
-    <span class="keywordflow">return</span> found;
+    RexmitQueue::const_iterator i = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin();
+
+    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a> == seqNum)
+        <span class="keywordflow">return</span> <span class="keyword">false</span>;
+
+    <span class="keywordflow">while</span> (i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end() &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(i-&gt;endSeqNum, seqNum))
+        i++;
+
+    ASSERT((i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end()) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(i-&gt;beginSeqNum, seqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(seqNum, i-&gt;endSeqNum));
+
+    <span class="keywordflow">return</span> i-&gt;sacked;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a9e3ff65826298ce1b2000bbd0bc04957"></a><!-- doxytag: member="TCPSACKRexmitQueue::getTotalAmountOfSackedBytes" ref="a9e3ff65826298ce1b2000bbd0bc04957" args="()" -->
+<a class="anchor" id="a60e7e977540922a02005d18caf4d1977"></a><!-- doxytag: member="TCPSACKRexmitQueue::getTotalAmountOfSackedBytes" ref="a60e7e977540922a02005d18caf4d1977" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32 <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a9e3ff65826298ce1b2000bbd0bc04957">TCPSACKRexmitQueue::getTotalAmountOfSackedBytes</a> </td>
+          <td class="memname">uint32 <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a60e7e977540922a02005d18caf4d1977">TCPSACKRexmitQueue::getTotalAmountOfSackedBytes</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns total amount of sacked bytes. Corresponds to update() function from RFC 3517. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00281">281</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html">TCPSACKRexmitQueue.cc</a>.</p>
+<p>Returns total amount of sacked bytes. </p>
+<p>Corresponds to update() function from RFC 3517. </p>
 
-<p>Referenced by <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01017">TCPConnection::processSACKOption()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_connection.html#a33b50078727564bd2c4e7e906e2f1648">TCPConnection::processSACKOption()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     uint32 bytes = 0;
-    uint32 counter = 0;
 
-    RexmitQueue::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin();
-    <span class="keywordflow">while</span> (i!=<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end())
+    <span class="keywordflow">for</span> (RexmitQueue::const_iterator i = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin(); i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end(); i++)
     {
         <span class="keywordflow">if</span> (i-&gt;sacked)
-        {
-            counter++;
-            bytes = bytes + (i-&gt;endSeqNum - i-&gt;beginSeqNum);
-        }
-        i++;
+            bytes += (i-&gt;endSeqNum - i-&gt;beginSeqNum);
     }
+
     <span class="keywordflow">return</span> bytes;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="af2d58fd127e40c421dde848d242f9e39"></a><!-- doxytag: member="TCPSACKRexmitQueue::info" ref="af2d58fd127e40c421dde848d242f9e39" args="()" -->
+<a class="anchor" id="af1fcbc54e21c9db7317dafd138b7e499"></a><!-- doxytag: member="TCPSACKRexmitQueue::info" ref="af1fcbc54e21c9db7317dafd138b7e499" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#af2d58fd127e40c421dde848d242f9e39">TCPSACKRexmitQueue::info</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#af1fcbc54e21c9db7317dafd138b7e499">TCPSACKRexmitQueue::info</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td> const<code> [virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Prints the current rexmitQueue status for debug purposes. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00047">47</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html">TCPSACKRexmitQueue.cc</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#aa100fadcb88c39d36cc9c45dc7f51f27">checkQueue()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a6eb4b2c4417dfff97a1734c9a43fca76">enqueueSentData()</a>, and <a class="el" href="class_t_c_p_connection.html#af71155c4fad49ea52907d840463a06d5">TCPConnection::sendSegment()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ad2f55eea975ad487c30ce421de967424">str</a>();
-    RexmitQueue::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin();
+    <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ad2f55eea975ad487c30ce421de967424" title="Returns a string for debug purposes.">str</a>() &lt;&lt; endl;
+
     <a class="code" href="_i_n_e_t_defs_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a> j = 1;
-    <span class="keywordflow">while</span> (i!=<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end())
+
+    <span class="keywordflow">for</span> (RexmitQueue::const_iterator i = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin(); i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end(); i++)
     {
-        <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; j &lt;&lt; <span class="stringliteral">&quot;. region: [&quot;</span> &lt;&lt; i-&gt;beginSeqNum &lt;&lt; <span class="stringliteral">&quot;..&quot;</span> &lt;&lt; i-&gt;endSeqNum &lt;&lt; <span class="stringliteral">&quot;) \t sacked=&quot;</span> &lt;&lt; i-&gt;sacked &lt;&lt; <span class="stringliteral">&quot;\t rexmitted=&quot;</span> &lt;&lt; i-&gt;rexmitted &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
-        i++;
+        <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; j &lt;&lt; <span class="stringliteral">&quot;. region: [&quot;</span> &lt;&lt; i-&gt;beginSeqNum &lt;&lt; <span class="stringliteral">&quot;..&quot;</span> &lt;&lt; i-&gt;endSeqNum
+              &lt;&lt; <span class="stringliteral">&quot;) \t sacked=&quot;</span> &lt;&lt; i-&gt;sacked &lt;&lt; <span class="stringliteral">&quot;\t rexmitted=&quot;</span> &lt;&lt; i-&gt;rexmitted
+              &lt;&lt; endl;
         j++;
     }
 }
@@ -726,7 +823,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a342033845eaaf7a565c82fb70718ca0e">TCPSACKRexmitQueue::init</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a342033845eaaf7a565c82fb70718ca0e">TCPSACKRexmitQueue::init</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>seqNum</em></td><td>)</td>
@@ -735,12 +832,12 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initialize the object. The startSeq parameter tells what sequence number the first byte of app data should get. This is usually ISS+1 because SYN consumes one byte in the sequence number space.</p>
-<p><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a342033845eaaf7a565c82fb70718ca0e">init()</a> may be called more than once; every call flushes the existing contents of the queue. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00034">34</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html">TCPSACKRexmitQueue.cc</a>.</p>
+<p>Initialize the object. </p>
+<p>The startSeq parameter tells what sequence number the first byte of app data should get. This is usually ISS + 1 because SYN consumes one byte in the sequence number space.</p>
+<p><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a342033845eaaf7a565c82fb70718ca0e" title="Initialize the object.">init()</a> may be called more than once; every call flushes the existing contents of the queue. </p>
 
-<p>Referenced by <a class="el" href="_t_c_p_connection_util_8cc_source.html#l00382">TCPConnection::selectInitialSeqNum()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_connection.html#a585bbcdd70565eb01b6bfe17a1487c78">TCPConnection::selectInitialSeqNum()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a> = seqNum;
     <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a> = seqNum;
@@ -753,7 +850,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#afe96b5040346953484decf38ab2644e5">TCPSACKRexmitQueue::resetRexmittedBit</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#afe96b5040346953484decf38ab2644e5">TCPSACKRexmitQueue::resetRexmittedBit</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [virtual]</code></td>
@@ -761,18 +858,14 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called when REXMIT timer expired. Resets rexmitted bit of all segments in rexmit queue. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00271">271</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html">TCPSACKRexmitQueue.cc</a>.</p>
+<p>Called when REXMIT timer expired. </p>
+<p>Resets rexmitted bit of all segments in rexmit queue. </p>
 
-<p>Referenced by <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00227">TCPBaseAlg::processRexmitTimer()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_base_alg.html#ac8a305a437d4eafd1689204e50af8870">TCPBaseAlg::processRexmitTimer()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    RexmitQueue::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin();
-    <span class="keywordflow">while</span> (i!=<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end())
-    {
+    <span class="keywordflow">for</span> (RexmitQueue::iterator i = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin(); i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end(); i++)
         i-&gt;rexmitted = <span class="keyword">false</span>; <span class="comment">// reset rexmitted bit</span>
-        i++;
-    }
 }
 </pre></div>
 </div>
@@ -782,7 +875,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#adfa5c6f04f91b16f9c98258f6ede0052">TCPSACKRexmitQueue::resetSackedBit</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#adfa5c6f04f91b16f9c98258f6ede0052">TCPSACKRexmitQueue::resetSackedBit</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [virtual]</code></td>
@@ -790,18 +883,14 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called when REXMIT timer expired. Resets sacked bit of all segments in rexmit queue. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00261">261</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html">TCPSACKRexmitQueue.cc</a>.</p>
+<p>Called when REXMIT timer expired. </p>
+<p>Resets sacked bit of all segments in rexmit queue. </p>
 
-<p>Referenced by <a class="el" href="flavours_2_t_c_p_base_alg_8cc_source.html#l00227">TCPBaseAlg::processRexmitTimer()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_base_alg.html#ac8a305a437d4eafd1689204e50af8870">TCPBaseAlg::processRexmitTimer()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    RexmitQueue::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin();
-    <span class="keywordflow">while</span> (i!=<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end())
-    {
+    <span class="keywordflow">for</span> (RexmitQueue::iterator i = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin(); i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end(); i++)
         i-&gt;sacked = <span class="keyword">false</span>; <span class="comment">// reset sacked bit</span>
-        i++;
-    }
 }
 </pre></div>
 </div>
@@ -811,7 +900,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a76c212912f59518e0b05a79c494ac0e2">TCPSACKRexmitQueue::setConnection</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a76c212912f59518e0b05a79c494ac0e2">TCPSACKRexmitQueue::setConnection</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_t_c_p_connection.html">TCPConnection</a> *&#160;</td>
           <td class="paramname"><em>_conn</em></td><td>)</td>
@@ -820,11 +909,10 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Set the connection that owns this queue. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8h_source.html#l00061">61</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8h_source.html">TCPSACKRexmitQueue.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_connection_util_8cc_source.html#l00164">TCPConnection::cloneListeningConnection()</a>, and <a class="el" href="_t_c_p_connection_util_8cc_source.html#l00316">TCPConnection::initConnection()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_connection.html#a1d5624dcbc77e79d142f6a886b3e788d">TCPConnection::cloneListeningConnection()</a>, and <a class="el" href="class_t_c_p_connection.html#a69caa8ea0ffbe8d9f73f935aac1b29d9">TCPConnection::initConnection()</a>.</p>
 <div class="fragment"><pre class="fragment">{<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a0dcb9791b18a4c26ed38ad6593c2d470">conn</a> = _conn;}
 </pre></div>
 </div>
@@ -834,7 +922,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#abd0309b9f592a452399c73174bbd94cf">TCPSACKRexmitQueue::setSackedBit</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#abd0309b9f592a452399c73174bbd94cf">TCPSACKRexmitQueue::setSackedBit</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>fromSeqNum</em>, </td>
@@ -853,37 +941,65 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called when data sender received selective acknowledgments. Tells the queue which bytes have been transmitted and SACKed, so they can be skipped if retransmitting segments as long as REXMIT timer did not expired. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00143">143</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html">TCPSACKRexmitQueue.cc</a>.</p>
+<p>Called when data sender received selective acknowledgments. </p>
+<p>Tells the queue which bytes have been transmitted and SACKed, so they can be skipped if retransmitting segments as long as REXMIT timer did not expired. </p>
 
-<p>Referenced by <a class="el" href="_t_c_p_connection_util_8cc_source.html#l01017">TCPConnection::processSACKOption()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_connection.html#a33b50078727564bd2c4e7e906e2f1648">TCPConnection::processSACKOption()</a>.</p>
 <div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(fromSeqNum, <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a>))
+        fromSeqNum = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a>;
+
+    ASSERT(<a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(fromSeqNum, <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a>));
+    ASSERT(<a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a>, toSeqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(toSeqNum, <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a>));
+    ASSERT(<a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(fromSeqNum, toSeqNum));
+
     <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;
 
-    <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(toSeqNum,<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a>))
+    <span class="keywordflow">if</span> (!<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.empty())
     {
-        RexmitQueue::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin();
-        <span class="keywordflow">while</span> (i!=<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end())
+        RexmitQueue::iterator i = <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.begin();
+
+        <span class="keywordflow">while</span> (i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end() &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(i-&gt;endSeqNum, fromSeqNum))
+            i++;
+
+        ASSERT(i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end() &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(i-&gt;beginSeqNum, fromSeqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(fromSeqNum, i-&gt;endSeqNum));
+
+        <span class="keywordflow">if</span> (i-&gt;beginSeqNum != fromSeqNum)
         {
-            <span class="keywordflow">if</span> (i-&gt;beginSeqNum == fromSeqNum &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#af4745b9cf95eb5b78d8ae6c3c8429cfc">seqGE</a>(toSeqNum, i-&gt;endSeqNum)) <span class="comment">// Search for LE of region in queue!</span>
+            Region region = *i;
+
+            region.endSeqNum = fromSeqNum;
+            <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.insert(i, region);
+            i-&gt;beginSeqNum = fromSeqNum;
+        }
+
+        <span class="keywordflow">while</span> (i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end() &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(i-&gt;endSeqNum, toSeqNum))
+        {
+            <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#af4745b9cf95eb5b78d8ae6c3c8429cfc">seqGE</a>(i-&gt;beginSeqNum, fromSeqNum)) <span class="comment">// Search region in queue!</span>
             {
-                i-&gt;sacked = <span class="keyword">true</span>; <span class="comment">// set sacked bit</span>
                 found = <span class="keyword">true</span>;
-                i++;
-                <span class="keywordflow">while</span> (<a class="code" href="_t_c_p_segment_8h.html#af4745b9cf95eb5b78d8ae6c3c8429cfc">seqGE</a>(toSeqNum, i-&gt;endSeqNum) &amp;&amp; i!=<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end()) <span class="comment">// Search for RE of region in queue!</span>
-                {
-                    i-&gt;sacked = <span class="keyword">true</span>; <span class="comment">// set sacked bit</span>
-                    i++;
-                }
+                i-&gt;sacked = <span class="keyword">true</span>; <span class="comment">// set sacked bit</span>
             }
-            <span class="keywordflow">else</span>
-                i++;
+
+            i++;
+        }
+
+        <span class="keywordflow">if</span> (i != <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.end() &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(i-&gt;beginSeqNum, toSeqNum) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(toSeqNum, i-&gt;endSeqNum))
+        {
+            Region region = *i;
+
+            region.endSeqNum = toSeqNum;
+            region.sacked = <span class="keyword">true</span>;
+            <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5cc1ca7db78dbb6e1454a87ba62bdd8e">rexmitQueue</a>.insert(i, region);
+            i-&gt;beginSeqNum = toSeqNum;
         }
     }
 
     <span class="keywordflow">if</span> (!found)
         <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;FAILED to set sacked bit for region: [&quot;</span> &lt;&lt; fromSeqNum &lt;&lt; <span class="stringliteral">&quot;..&quot;</span> &lt;&lt; toSeqNum &lt;&lt; <span class="stringliteral">&quot;). Not found in retransmission queue.\n&quot;</span>;
+
+    ASSERT(<a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#aa100fadcb88c39d36cc9c45dc7f51f27">checkQueue</a>());
 }
 </pre></div>
 </div>
@@ -901,13 +1017,13 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Returns a string for debug purposes. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00040">40</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html">TCPSACKRexmitQueue.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00099">enqueueSentData()</a>, and <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00047">info()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a6eb4b2c4417dfff97a1734c9a43fca76">enqueueSentData()</a>, and <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#af1fcbc54e21c9db7317dafd138b7e499">info()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     std::stringstream out;
+
     out &lt;&lt; <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a30eef9065593a675b29a696fa7ca3ae4">begin</a> &lt;&lt; <span class="stringliteral">&quot;..&quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac55cc23bb0a9903e374fd66794317ca6">end</a> &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;
     <span class="keywordflow">return</span> out.str();
 }
@@ -926,9 +1042,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8h_source.html#l00044">44</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8h_source.html">TCPSACKRexmitQueue.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00225">checkRexmitQueueForSackedOrRexmittedSegments()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00070">discardUpTo()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00099">enqueueSentData()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00060">getBufferStartSeq()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00172">getSackedBit()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00034">init()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00040">str()</a>, and <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00022">TCPSACKRexmitQueue()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#aa100fadcb88c39d36cc9c45dc7f51f27">checkQueue()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac333baf3a22543d7b735e6cfb062064b">checkRexmitQueueForSackedOrRexmittedSegments()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5a7dac957ccc34be496a2d46bd47b2cc">checkSackBlock()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a07b77209c59eb50fce9751418039ed64">discardUpTo()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a6eb4b2c4417dfff97a1734c9a43fca76">enqueueSentData()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#aa92dd63421bbe8138b0f3b0142869b77">getAmountOfSackedBytes()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a44481176a9952c466276425ff1d75774">getHighestRexmittedSeqNum()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a2bca523e196eb6d9b93f2121e57ca6b9">getHighestSackedSeqNum()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a3dec5371cb3b7f6cf6b5774721345247">getNumOfDiscontiguousSacks()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ae3ba28b3cdeb478d907aa51c45df8d1b">getSackedBit()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a342033845eaaf7a565c82fb70718ca0e">init()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#abd0309b9f592a452399c73174bbd94cf">setSackedBit()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ad2f55eea975ad487c30ce421de967424">str()</a>, and <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a0bf1372385f41f2546fccab62c7f9a2d">TCPSACKRexmitQueue()</a>.</p>
 
 </div>
 </div>
@@ -943,9 +1057,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8h_source.html#l00032">32</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8h_source.html">TCPSACKRexmitQueue.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00022">TCPSACKRexmitQueue()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a0bf1372385f41f2546fccab62c7f9a2d">TCPSACKRexmitQueue()</a>.</p>
 
 </div>
 </div>
@@ -960,9 +1072,7 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8h_source.html#l00045">45</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8h_source.html">TCPSACKRexmitQueue.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00225">checkRexmitQueueForSackedOrRexmittedSegments()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00070">discardUpTo()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00099">enqueueSentData()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00299">getAmountOfSackedBytes()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00065">getBufferEndSeq()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00330">getNumOfDiscontiguousSacks()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00034">init()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00143">setSackedBit()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00040">str()</a>, and <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00022">TCPSACKRexmitQueue()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#aa100fadcb88c39d36cc9c45dc7f51f27">checkQueue()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac333baf3a22543d7b735e6cfb062064b">checkRexmitQueueForSackedOrRexmittedSegments()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5a7dac957ccc34be496a2d46bd47b2cc">checkSackBlock()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a07b77209c59eb50fce9751418039ed64">discardUpTo()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a6eb4b2c4417dfff97a1734c9a43fca76">enqueueSentData()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#aa92dd63421bbe8138b0f3b0142869b77">getAmountOfSackedBytes()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a3dec5371cb3b7f6cf6b5774721345247">getNumOfDiscontiguousSacks()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ae3ba28b3cdeb478d907aa51c45df8d1b">getSackedBit()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a342033845eaaf7a565c82fb70718ca0e">init()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#abd0309b9f592a452399c73174bbd94cf">setSackedBit()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ad2f55eea975ad487c30ce421de967424">str()</a>, and <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a0bf1372385f41f2546fccab62c7f9a2d">TCPSACKRexmitQueue()</a>.</p>
 
 </div>
 </div>
@@ -977,15 +1087,13 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8h_source.html#l00042">42</a> of file <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8h_source.html">TCPSACKRexmitQueue.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00225">checkRexmitQueueForSackedOrRexmittedSegments()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00070">discardUpTo()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00099">enqueueSentData()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00299">getAmountOfSackedBytes()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00211">getHighestRexmittedSeqNum()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00197">getHighestSackedSeqNum()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00330">getNumOfDiscontiguousSacks()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00192">getQueueLength()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00172">getSackedBit()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00281">getTotalAmountOfSackedBytes()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00047">info()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00271">resetRexmittedBit()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00261">resetSackedBit()</a>, <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00143">setSackedBit()</a>, and <a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html#l00028">~TCPSACKRexmitQueue()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#aa100fadcb88c39d36cc9c45dc7f51f27">checkQueue()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ac333baf3a22543d7b735e6cfb062064b">checkRexmitQueueForSackedOrRexmittedSegments()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a5a7dac957ccc34be496a2d46bd47b2cc">checkSackBlock()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a07b77209c59eb50fce9751418039ed64">discardUpTo()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a6eb4b2c4417dfff97a1734c9a43fca76">enqueueSentData()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#aa92dd63421bbe8138b0f3b0142869b77">getAmountOfSackedBytes()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a44481176a9952c466276425ff1d75774">getHighestRexmittedSeqNum()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a2bca523e196eb6d9b93f2121e57ca6b9">getHighestSackedSeqNum()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a3dec5371cb3b7f6cf6b5774721345247">getNumOfDiscontiguousSacks()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#ae3ba28b3cdeb478d907aa51c45df8d1b">getSackedBit()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a60e7e977540922a02005d18caf4d1977">getTotalAmountOfSackedBytes()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#af1fcbc54e21c9db7317dafd138b7e499">info()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#afe96b5040346953484decf38ab2644e5">resetRexmittedBit()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#adfa5c6f04f91b16f9c98258f6ede0052">resetSackedBit()</a>, <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#abd0309b9f592a452399c73174bbd94cf">setSackedBit()</a>, and <a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html#a2d307d6697c2059f8e31638254cc6b1c">~TCPSACKRexmitQueue()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8h_source.html">TCPSACKRexmitQueue.h</a></li>
-<li><a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc_source.html">TCPSACKRexmitQueue.cc</a></li>
+<li><a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8h.html">TCPSACKRexmitQueue.h</a></li>
+<li><a class="el" href="_t_c_p_s_a_c_k_rexmit_queue_8cc.html">TCPSACKRexmitQueue.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -993,7 +1101,7 @@ Public Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_t_c_p_s_a_c_k_rexmit_queue.html">TCPSACKRexmitQueue</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:53 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:31 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

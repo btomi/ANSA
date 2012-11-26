@@ -77,6 +77,7 @@
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-types">Protected Types</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle">
@@ -84,14 +85,17 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="RTPProfile" -->
-<p><code>#include &lt;<a class="el" href="_r_t_p_profile_8h_source.html">RTPProfile.h</a>&gt;</code></p>
+<p>The class <a class="el" href="class_r_t_p_profile.html" title="The class RTPProfile is a module which handles RTPPayloadSender and RTPPayloadReceiver modules...">RTPProfile</a> is a module which handles <a class="el" href="class_r_t_p_payload_sender.html" title="The class RTPPayloadSender is the base class for all modules creating RTP data packets.">RTPPayloadSender</a> and <a class="el" href="class_r_t_p_payload_receiver.html" title="The class RTPPayloadReceiver acts as a base class for modules processing incoming RTP data packets...">RTPPayloadReceiver</a> modules.  
+ <a href="class_r_t_p_profile.html#details">More...</a></p>
+
+<p><code>#include &lt;RTPProfile.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for RTPProfile:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_r_t_p_profile.png" usemap="#RTPProfile_map" alt=""/>
   <map id="RTPProfile_map" name="RTPProfile_map">
-<area href="class_r_t_p_a_v_profile.html" alt="RTPAVProfile" shape="rect" coords="0,56,90,80"/>
+<area href="class_r_t_p_a_v_profile.html" title="The class RTPAVProfile is a subclass of RTPProfile." alt="RTPAVProfile" shape="rect" coords="0,56,90,80"/>
 </map>
  </div></div>
 
@@ -103,41 +107,84 @@ Classes</h2></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#ac6cbc428dfd87cac4fb500947367c79f">RTPProfile</a> ()</td></tr>
+<tr><td colspan="2"><h2><a name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; uint32, <br class="typebreak"/>
+<a class="el" href="class_r_t_p_profile_1_1_s_s_r_c_gate.html">SSRCGate</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a0bebc72145916901af9939f2a5e1d930">SSRCGateMap</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores information to which gate rtp data packets from a ssrc must be forwarded.  <a href="#a0bebc72145916901af9939f2a5e1d930"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#ad1dcdc538ffd41da0fb583493d053563">initialize</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#ad1dcdc538ffd41da0fb583493d053563">initialize</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes variables.  <a href="#ad1dcdc538ffd41da0fb583493d053563"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a3ea355737d0c82566d64aa56e5d10ac4">~RTPProfile</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a366a2775e806806662a9fc3e7f6760ce">handleMessage</a> (cMessage *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#af98f35598d60a25ae9706a851b2ea20b">handleMessageFromRTP</a> (cMessage *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a722e66b0071b4e615d6833d93fb16dcd">handleMessageFromPayloadSender</a> (cMessage *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a6a7e9dd452d86298016515aff8ce4de3">handleMessageFromPayloadReceiver</a> (cMessage *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a26fe2d5ac389602484360c4ae5a62fb8">initializeProfile</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinp)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#ac55a295bec1621301238be1257e43069">createSenderModule</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinp)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#ab343e6cb950fcef8427e81e2ddcdcebe">deleteSenderModule</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinp)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#adfa52a4657ddc268ea7d46699376a60c">senderModuleControl</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinp)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a4e6ede77fe9cfd2f2f4b041069a05b72">dataIn</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinp)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a66a640c0dc518fb4f8ecc20d78e4af79">senderModuleInitialized</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinp)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#acdd41de37ebd65413b9bc7ecdd77bdb7">senderModuleStatus</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinp)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#ace677238b86673b1b08cc0f581dbf359">dataOut</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinp)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#ac2f7ba01a34531a27874f1d5c170de0b">processIncomingPacket</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinp)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a5e1b10a46dfde95414f58bd61a6ddc92">processOutgoingPacket</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinp)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a366a2775e806806662a9fc3e7f6760ce">handleMessage</a> (cMessage *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and removes payload sender and receiver modules on demand.  <a href="#a366a2775e806806662a9fc3e7f6760ce"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#af98f35598d60a25ae9706a851b2ea20b">handleMessageFromRTP</a> (cMessage *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles messages received from the rtp module.  <a href="#af98f35598d60a25ae9706a851b2ea20b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a722e66b0071b4e615d6833d93fb16dcd">handleMessageFromPayloadSender</a> (cMessage *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles messages coming from the sender module.  <a href="#a722e66b0071b4e615d6833d93fb16dcd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a6a7e9dd452d86298016515aff8ce4de3">handleMessageFromPayloadReceiver</a> (cMessage *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles messages coming from a receiver module.  <a href="#a6a7e9dd452d86298016515aff8ce4de3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a26fe2d5ac389602484360c4ae5a62fb8">initializeProfile</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinp)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization message received from rtp module.  <a href="#a26fe2d5ac389602484360c4ae5a62fb8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#ac55a295bec1621301238be1257e43069">createSenderModule</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinp)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called when the application issued the creation of an rtp payload sender module to transmit data.  <a href="#ac55a295bec1621301238be1257e43069"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#ab343e6cb950fcef8427e81e2ddcdcebe">deleteSenderModule</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinp)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">When a sender module is no longer needed it can be deleted by the profile module.  <a href="#ab343e6cb950fcef8427e81e2ddcdcebe"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#adfa52a4657ddc268ea7d46699376a60c">senderModuleControl</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinp)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The profile module forwards sender control messages to the sender module.  <a href="#adfa52a4657ddc268ea7d46699376a60c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a4e6ede77fe9cfd2f2f4b041069a05b72">dataIn</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinp)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles incoming data packets: If there isn't a receiver module for this sender it creates one.  <a href="#a4e6ede77fe9cfd2f2f4b041069a05b72"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a66a640c0dc518fb4f8ecc20d78e4af79">senderModuleInitialized</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinp)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The sender module returns a senderModuleInitialized message after being initialized.  <a href="#a66a640c0dc518fb4f8ecc20d78e4af79"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#acdd41de37ebd65413b9bc7ecdd77bdb7">senderModuleStatus</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinp)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">After having received a sender module control message the sender module returns a sender status message to inform the application what it's doing at the moment.  <a href="#acdd41de37ebd65413b9bc7ecdd77bdb7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#ace677238b86673b1b08cc0f581dbf359">dataOut</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinp)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles outgoing data packets: Calls processOutgoingPacket and forwards the packet to the rtp module.  <a href="#ace677238b86673b1b08cc0f581dbf359"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#ac2f7ba01a34531a27874f1d5c170de0b">processIncomingPacket</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinp)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Every time a rtp packet is received it it pre-processed by this method to remove profile specific extension which are not handled by the payload receiver module.  <a href="#ac2f7ba01a34531a27874f1d5c170de0b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a5e1b10a46dfde95414f58bd61a6ddc92">processOutgoingPacket</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinp)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Simular to the procedure for incoming packets, this adds profile specific extensions to outgoing rtp packets.  <a href="#a5e1b10a46dfde95414f58bd61a6ddc92"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_r_t_p_profile_1_1_s_s_r_c_gate.html">SSRCGate</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a742cb3fdb249d0b664cdf3fffed12f01">findSSRCGate</a> (uint32 ssrc)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the gate of the receiver module for rtp data packets from this ssrc.  <a href="#a742cb3fdb249d0b664cdf3fffed12f01"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_r_t_p_profile_1_1_s_s_r_c_gate.html">SSRCGate</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a2ad378749c1f5cf96a982b3601e5c565">newSSRCGate</a> (uint32 ssrc)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new association ssrc/gateId for this ssrc.  <a href="#a2ad378749c1f5cf96a982b3601e5c565"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#aaeb4283e0309c0b6c9957476c9f895a0">_profileName</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of this profile.  <a href="#aaeb4283e0309c0b6c9957476c9f895a0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a2191aad02f7be47356d96645088a4746">_maxReceivers</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">cArray *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#abef1ddbd1d8b483d960a181d0c739fb4">_ssrcGates</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum number of incoming data streams this profile module can handle.  <a href="#a2191aad02f7be47356d96645088a4746"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_r_t_p_profile.html#a0bebc72145916901af9939f2a5e1d930">SSRCGateMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a36c9b3c18e585919d79988f62feea1b2">_ssrcGates</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a854c83b19a9e3f26c524de8bef675f91">_rtcpPercentage</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The percentage of the available bandwidth to be used for rtcp.  <a href="#a854c83b19a9e3f26c524de8bef675f91"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a5bffaf52b0530f4f830914d7880c7690">_preferredPort</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The rtp port this profile uses if no port is given.  <a href="#a5bffaf52b0530f4f830914d7880c7690"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a6b28967e71f14e75f5f3d75510e4b88e">_mtu</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum size an <a class="el" href="class_r_t_p_packet.html" title="This class represents an RTP data packet.">RTPPacket</a> can have.  <a href="#a6b28967e71f14e75f5f3d75510e4b88e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_profile.html#a75f9767778cecdca9352a1ede4d0263e">_autoOutputFileNames</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">If this is set true the <a class="el" href="class_r_t_p_profile.html" title="The class RTPProfile is a module which handles RTPPayloadSender and RTPPayloadReceiver modules...">RTPProfile</a> automatically sets the output file name for payload receiver modules so the user is not bothered to set them manually during simulation runtime.  <a href="#a75f9767778cecdca9352a1ede4d0263e"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>The class <a class="el" href="class_r_t_p_profile.html">RTPProfile</a> is a module which handles <a class="el" href="class_r_t_p_payload_sender.html">RTPPayloadSender</a> and <a class="el" href="class_r_t_p_payload_receiver.html">RTPPayloadReceiver</a> modules. It creates them dynamically on demand. This class offers all functionality for the above tasks, subclasses just need to set variables like profile name, rtcp percentage and preferred port in their <a class="el" href="class_r_t_p_profile.html#ad1dcdc538ffd41da0fb583493d053563">initialize()</a> method. The dynamically created sender and receiver modules must have have following class names: RTP&lt;profileName&gt;Payload&lt;payloadType&gt;Sender RTP&lt;profileName&gt;Payload&lt;payloadType&gt;Receiver </p>
+<div class="textblock"><p>The class <a class="el" href="class_r_t_p_profile.html" title="The class RTPProfile is a module which handles RTPPayloadSender and RTPPayloadReceiver modules...">RTPProfile</a> is a module which handles <a class="el" href="class_r_t_p_payload_sender.html" title="The class RTPPayloadSender is the base class for all modules creating RTP data packets.">RTPPayloadSender</a> and <a class="el" href="class_r_t_p_payload_receiver.html" title="The class RTPPayloadReceiver acts as a base class for modules processing incoming RTP data packets...">RTPPayloadReceiver</a> modules. </p>
+<p>It creates them dynamically on demand. This class offers all functionality for the above tasks, subclasses just need to set variables like profile name, rtcp percentage and preferred port in their <a class="el" href="class_r_t_p_profile.html#ad1dcdc538ffd41da0fb583493d053563" title="Initializes variables.">initialize()</a> method. The dynamically created sender and receiver modules must have have following class names: RTP&lt;profileName&gt;Payload&lt;payloadType&gt;Sender RTP&lt;profileName&gt;Payload&lt;payloadType&gt;Receiver </p>
+</div><hr/><h2>Member Typedef Documentation</h2>
+<a class="anchor" id="a0bebc72145916901af9939f2a5e1d930"></a><!-- doxytag: member="RTPProfile::SSRCGateMap" ref="a0bebc72145916901af9939f2a5e1d930" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;uint32, <a class="el" href="class_r_t_p_profile_1_1_s_s_r_c_gate.html">SSRCGate</a> *&gt; <a class="el" href="class_r_t_p_profile.html#a0bebc72145916901af9939f2a5e1d930">RTPProfile::SSRCGateMap</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8h_source.html#l00040">40</a> of file <a class="el" href="_r_t_p_profile_8h_source.html">RTPProfile.h</a>.</p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<p>Stores information to which gate rtp data packets from a ssrc must be forwarded. </p>
+
+</div>
+</div>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ac6cbc428dfd87cac4fb500947367c79f"></a><!-- doxytag: member="RTPProfile::RTPProfile" ref="ac6cbc428dfd87cac4fb500947367c79f" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -151,10 +198,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_r_t_p_profile_8cc_source.html#l00032">32</a> of file <a class="el" href="_r_t_p_profile_8cc_source.html">RTPProfile.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_profile.html#abef1ddbd1d8b483d960a181d0c739fb4">_ssrcGates</a> = NULL;
 }
 </pre></div>
 </div>
@@ -172,10 +216,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_r_t_p_profile_8cc_source.html#l00051">51</a> of file <a class="el" href="_r_t_p_profile_8cc_source.html">RTPProfile.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keyword">delete</span> <a class="code" href="class_r_t_p_profile.html#abef1ddbd1d8b483d960a181d0c739fb4">_ssrcGates</a>;
+    SSRCGateMap::iterator i;
+    <span class="keywordflow">for</span> (i = <a class="code" href="class_r_t_p_profile.html#a36c9b3c18e585919d79988f62feea1b2">_ssrcGates</a>.begin(); i != <a class="code" href="class_r_t_p_profile.html#a36c9b3c18e585919d79988f62feea1b2">_ssrcGates</a>.end(); i++)
+        <span class="keyword">delete</span> i-&gt;second;
 }
 </pre></div>
 </div>
@@ -186,7 +230,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_profile.html#ac55a295bec1621301238be1257e43069">RTPProfile::createSenderModule</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_profile.html#ac55a295bec1621301238be1257e43069">RTPProfile::createSenderModule</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *&#160;</td>
           <td class="paramname"><em>rinp</em></td><td>)</td>
@@ -195,40 +239,40 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This method is called when the application issued the creation of an rtp payload sender module to transmit data. It creates a new sender module and connects it. The profile module informs the rtp module of having finished this task. Then it initializes the newly create sender module with a inititalizeSenderModule message. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8cc_source.html#l00147">147</a> of file <a class="el" href="_r_t_p_profile_8cc_source.html">RTPProfile.cc</a>.</p>
+<p>This method is called when the application issued the creation of an rtp payload sender module to transmit data. </p>
+<p>It creates a new sender module and connects it. The profile module informs the rtp module of having finished this task. Then it initializes the newly create sender module with a inititalizeSenderModule message. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00078">handleMessageFromRTP()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#af98f35598d60a25ae9706a851b2ea20b">handleMessageFromRTP()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     ev &lt;&lt; <span class="stringliteral">&quot;createSenderModule Enter&quot;</span>&lt;&lt;endl;
-    <span class="keywordtype">int</span> ssrc = rinp-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a0b2377650bf813c8e0a0bf8bd8711505">getSSRC</a>();
-    <span class="keywordtype">int</span> payloadType = rinp-&gt;<a class="code" href="class_r_t_p_inner_packet.html#ad4097a184e31330e823a97d346221754">getPayloadType</a>();
+    <span class="keywordtype">int</span> ssrc = rinp-&gt;<a class="code" href="class_r_t_p_inner_packet___base.html#a47f3455c44c7916843582f510f8ae02e">getSsrc</a>();
+    <span class="keywordtype">int</span> payloadType = rinp-&gt;<a class="code" href="class_r_t_p_inner_packet___base.html#a0e1821baf39f2928e36c18d09106e7ea">getPayloadType</a>();
     <span class="keywordtype">char</span> moduleName[100];
 
-    ev &lt;&lt; <span class="stringliteral">&quot;ProfileName: &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_profile.html#aaeb4283e0309c0b6c9957476c9f895a0">_profileName</a> &lt;&lt; <span class="stringliteral">&quot; payloadType: &quot;</span> &lt;&lt; payloadType&lt;&lt;endl;
+    ev &lt;&lt; <span class="stringliteral">&quot;ProfileName: &quot;</span> &lt;&lt; <a class="code" href="class_r_t_p_profile.html#aaeb4283e0309c0b6c9957476c9f895a0" title="The name of this profile.">_profileName</a> &lt;&lt; <span class="stringliteral">&quot; payloadType: &quot;</span> &lt;&lt; payloadType&lt;&lt;endl;
     <span class="keyword">const</span> <span class="keywordtype">char</span> *pkgPrefix = <span class="stringliteral">&quot;inet.transport.rtp.&quot;</span>; <span class="comment">//FIXME hardcoded string</span>
-    sprintf(moduleName, <span class="stringliteral">&quot;%sRTP%sPayload%iSender&quot;</span>, pkgPrefix, <a class="code" href="class_r_t_p_profile.html#aaeb4283e0309c0b6c9957476c9f895a0">_profileName</a>, payloadType);
+    sprintf(moduleName, <span class="stringliteral">&quot;%sRTP%sPayload%iSender&quot;</span>, pkgPrefix, <a class="code" href="class_r_t_p_profile.html#aaeb4283e0309c0b6c9957476c9f895a0" title="The name of this profile.">_profileName</a>, payloadType);
 
-    cModuleType *moduleType = <a class="code" href="_utils_8cc.html#a33bdc8b2583dcc9d2a8bfe1ec578352d">cModuleType::find</a>(moduleName);
-    <span class="keywordflow">if</span> (moduleType == NULL)
-        opp_error(<span class="stringliteral">&quot;RTPProfile: payload sender module &#39;%s&#39; not found&quot;</span>, moduleName);
+    cModuleType *moduleType = <a class="code" href="_utils_8cc.html#af9d5523fc1489796aef3d897862ef06c" title="TODO documentation.">cModuleType::find</a>(moduleName);
+    <span class="keywordflow">if</span> (moduleType == <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;RTPProfile: payload sender module &#39;%s&#39; not found&quot;</span>, moduleName);
 
-    <a class="code" href="class_r_t_p_payload_sender.html">RTPPayloadSender</a> *rtpPayloadSender = (<a class="code" href="class_r_t_p_payload_sender.html">RTPPayloadSender</a> *)(moduleType-&gt;create(moduleName, <span class="keyword">this</span>));
+    <a class="code" href="class_r_t_p_payload_sender.html" title="The class RTPPayloadSender is the base class for all modules creating RTP data packets.">RTPPayloadSender</a> *rtpPayloadSender = (<a class="code" href="class_r_t_p_payload_sender.html" title="The class RTPPayloadSender is the base class for all modules creating RTP data packets.">RTPPayloadSender</a> *)(moduleType-&gt;create(moduleName, <span class="keyword">this</span>));
     rtpPayloadSender-&gt;finalizeParameters();
 
     gate(<span class="stringliteral">&quot;payloadSenderOut&quot;</span>)-&gt;connectTo(rtpPayloadSender-&gt;gate(<span class="stringliteral">&quot;profileIn&quot;</span>));
     rtpPayloadSender-&gt;gate(<span class="stringliteral">&quot;profileOut&quot;</span>)-&gt;connectTo(gate(<span class="stringliteral">&quot;payloadSenderIn&quot;</span>));
 
-    rtpPayloadSender-&gt;<a class="code" href="class_r_t_p_payload_sender.html#a3d89be915b854cf2655a68c68cec0ba1">initialize</a>();
+    rtpPayloadSender-&gt;callInitialize();
     rtpPayloadSender-&gt;scheduleStart(simTime());
 
-    <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinpOut1 = <span class="keyword">new</span> <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>(<span class="stringliteral">&quot;senderModuleCreated()&quot;</span>);
-    rinpOut1-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a81a31575c8ee1363c0a01e4532d0ba13">senderModuleCreated</a>(ssrc);
+    <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> *rinpOut1 = <span class="keyword">new</span> <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a>(<span class="stringliteral">&quot;senderModuleCreated()&quot;</span>);
+    rinpOut1-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a69331b93d77d49a9131bfc9421045108">setSenderModuleCreatedPkt</a>(ssrc);
     send(rinpOut1, <span class="stringliteral">&quot;rtpOut&quot;</span>);
 
-    <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinpOut2 = <span class="keyword">new</span> <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>(<span class="stringliteral">&quot;initializeSenderModule()&quot;</span>);
-    rinpOut2-&gt;<a class="code" href="class_r_t_p_inner_packet.html#aba76bd359381ad3f68bc002ca208e1c1">initializeSenderModule</a>(ssrc, rinp-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a04a6281b1735bf22e9a5dff46681c124">getFileName</a>(), <a class="code" href="class_r_t_p_profile.html#a6b28967e71f14e75f5f3d75510e4b88e">_mtu</a>);
+    <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> *rinpOut2 = <span class="keyword">new</span> <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a>(<span class="stringliteral">&quot;initializeSenderModule()&quot;</span>);
+    rinpOut2-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a1e3b1697e7bd092be59648c7db418853">setInitializeSenderModulePkt</a>(ssrc, rinp-&gt;<a class="code" href="class_r_t_p_inner_packet___base.html#a61b275d8d12013bd28bd6a30e6b42180">getFileName</a>(), <a class="code" href="class_r_t_p_profile.html#a6b28967e71f14e75f5f3d75510e4b88e" title="The maximum size an RTPPacket can have.">_mtu</a>);
     send(rinpOut2, <span class="stringliteral">&quot;payloadSenderOut&quot;</span>);
 
     <span class="keyword">delete</span> rinp;
@@ -242,7 +286,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_profile.html#a4e6ede77fe9cfd2f2f4b041069a05b72">RTPProfile::dataIn</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_profile.html#a4e6ede77fe9cfd2f2f4b041069a05b72">RTPProfile::dataIn</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *&#160;</td>
           <td class="paramname"><em>rinp</em></td><td>)</td>
@@ -251,34 +295,38 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Handles incoming data packets: If there isn't a receiver module for this sender it creates one. The data packet is forwarded to the receiver module after calling processIncomingPacket. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8cc_source.html#l00203">203</a> of file <a class="el" href="_r_t_p_profile_8cc_source.html">RTPProfile.cc</a>.</p>
+<p>Handles incoming data packets: If there isn't a receiver module for this sender it creates one. </p>
+<p>The data packet is forwarded to the receiver module after calling processIncomingPacket. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00078">handleMessageFromRTP()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#af98f35598d60a25ae9706a851b2ea20b">handleMessageFromRTP()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     ev &lt;&lt; <span class="stringliteral">&quot;dataIn(RTPInnerPacket *rinp) Enter&quot;</span>&lt;&lt;endl;
-    <a class="code" href="class_r_t_p_profile.html#ac2f7ba01a34531a27874f1d5c170de0b">processIncomingPacket</a>(rinp);
+    <a class="code" href="class_r_t_p_profile.html#ac2f7ba01a34531a27874f1d5c170de0b" title="Every time a rtp packet is received it it pre-processed by this method to remove profile specific ext...">processIncomingPacket</a>(rinp);
 
-    <a class="code" href="class_r_t_p_packet.html">RTPPacket</a> *packet = check_and_cast&lt;<a class="code" href="class_r_t_p_packet.html">RTPPacket</a> *&gt;(rinp-&gt;getEncapsulatedPacket());
+    <a class="code" href="class_r_t_p_packet.html" title="This class represents an RTP data packet.">RTPPacket</a> *packet = check_and_cast&lt;<a class="code" href="class_r_t_p_packet.html" title="This class represents an RTP data packet.">RTPPacket</a> *&gt;(rinp-&gt;getEncapsulatedPacket());
 
-    uint32 ssrc = packet-&gt;<a class="code" href="class_r_t_p_packet.html#a3f12154608f2c3d1a94b3153da23ffd2">getSSRC</a>();
+    uint32 ssrc = packet-&gt;<a class="code" href="class_r_t_p_packet___base.html#ab0aca5ac91581571d2fec63c2cf6cfd1">getSsrc</a>();
 
-    SSRCGate *ssrcGate = <a class="code" href="class_r_t_p_profile.html#a742cb3fdb249d0b664cdf3fffed12f01">findSSRCGate</a>(ssrc);
+    SSRCGate *ssrcGate = <a class="code" href="class_r_t_p_profile.html#a742cb3fdb249d0b664cdf3fffed12f01" title="Finds the gate of the receiver module for rtp data packets from this ssrc.">findSSRCGate</a>(ssrc);
 
-    <span class="keywordflow">if</span> (!ssrcGate) {
-        ssrcGate = <a class="code" href="class_r_t_p_profile.html#a2ad378749c1f5cf96a982b3601e5c565">newSSRCGate</a>(ssrc);
+    <span class="keywordflow">if</span> (!ssrcGate)
+    {
+        ssrcGate = <a class="code" href="class_r_t_p_profile.html#a2ad378749c1f5cf96a982b3601e5c565" title="Creates a new association ssrc/gateId for this ssrc.">newSSRCGate</a>(ssrc);
         <span class="keywordtype">char</span> payloadReceiverName[100];
         <span class="keyword">const</span> <span class="keywordtype">char</span> *pkgPrefix = <span class="stringliteral">&quot;inet.transport.rtp.&quot;</span>; <span class="comment">//FIXME hardcoded string</span>
-        sprintf(payloadReceiverName, <span class="stringliteral">&quot;%sRTP%sPayload%iReceiver&quot;</span>, pkgPrefix, <a class="code" href="class_r_t_p_profile.html#aaeb4283e0309c0b6c9957476c9f895a0">_profileName</a>, packet-&gt;<a class="code" href="class_r_t_p_packet.html#a71ea538cc47182b3a1b0e7a55ece94bb">getPayloadType</a>());
+        sprintf(payloadReceiverName, <span class="stringliteral">&quot;%sRTP%sPayload%iReceiver&quot;</span>,
+                pkgPrefix, <a class="code" href="class_r_t_p_profile.html#aaeb4283e0309c0b6c9957476c9f895a0" title="The name of this profile.">_profileName</a>, packet-&gt;<a class="code" href="class_r_t_p_packet___base.html#a867563a948e415d496e6971e2d63a8f2">getPayloadType</a>());
 
-        cModuleType *moduleType = <a class="code" href="_utils_8cc.html#a33bdc8b2583dcc9d2a8bfe1ec578352d">cModuleType::find</a>(payloadReceiverName);
-        <span class="keywordflow">if</span> (moduleType == NULL)
-            opp_error(<span class="stringliteral">&quot;Receiver module type %s not found&quot;</span>, payloadReceiverName);
-
-        <span class="keywordflow">else</span> {
-            <a class="code" href="class_r_t_p_payload_receiver.html">RTPPayloadReceiver</a> *receiverModule = (<a class="code" href="class_r_t_p_payload_receiver.html">RTPPayloadReceiver</a> *)(moduleType-&gt;create(payloadReceiverName, <span class="keyword">this</span>));
-            <span class="keywordflow">if</span> (<a class="code" href="class_r_t_p_profile.html#a75f9767778cecdca9352a1ede4d0263e">_autoOutputFileNames</a>) {
+        cModuleType *moduleType = <a class="code" href="_utils_8cc.html#af9d5523fc1489796aef3d897862ef06c" title="TODO documentation.">cModuleType::find</a>(payloadReceiverName);
+        <span class="keywordflow">if</span> (moduleType == <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)
+            <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Receiver module type %s not found&quot;</span>, payloadReceiverName);
+        <span class="keywordflow">else</span>
+        {
+            <a class="code" href="class_r_t_p_payload_receiver.html" title="The class RTPPayloadReceiver acts as a base class for modules processing incoming RTP data packets...">RTPPayloadReceiver</a> *receiverModule =
+                    (<a class="code" href="class_r_t_p_payload_receiver.html" title="The class RTPPayloadReceiver acts as a base class for modules processing incoming RTP data packets...">RTPPayloadReceiver</a> *)(moduleType-&gt;create(payloadReceiverName, <span class="keyword">this</span>));
+            <span class="keywordflow">if</span> (<a class="code" href="class_r_t_p_profile.html#a75f9767778cecdca9352a1ede4d0263e" title="If this is set true the RTPProfile automatically sets the output file name for payload receiver modul...">_autoOutputFileNames</a>)
+            {
                 <span class="keywordtype">char</span> outputFileName[100];
                 sprintf(outputFileName, <span class="stringliteral">&quot;id%i.sim&quot;</span>, receiverModule-&gt;getId());
                 receiverModule-&gt;par(<span class="stringliteral">&quot;outputFileName&quot;</span>) = outputFileName;
@@ -286,9 +334,12 @@ Protected Attributes</h2></td></tr>
             receiverModule-&gt;finalizeParameters();
 
             this-&gt;gate(ssrcGate-&gt;getGateId())-&gt;connectTo(receiverModule-&gt;gate(<span class="stringliteral">&quot;profileIn&quot;</span>));
-            receiverModule-&gt;gate(<span class="stringliteral">&quot;profileOut&quot;</span>)-&gt;connectTo(this-&gt;gate(ssrcGate-&gt;getGateId() - findGate(<span class="stringliteral">&quot;payloadReceiverOut&quot;</span>,0) + findGate(<span class="stringliteral">&quot;payloadReceiverIn&quot;</span>,0)));
+            receiverModule-&gt;gate(<span class="stringliteral">&quot;profileOut&quot;</span>)-&gt;connectTo(this-&gt;gate(ssrcGate-&gt;getGateId() -
+                    findGate(<span class="stringliteral">&quot;payloadReceiverOut&quot;</span>, 0) + findGate(<span class="stringliteral">&quot;payloadReceiverIn&quot;</span>, 0)));
 
-            receiverModule-&gt;callInitialize(0);
+            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; receiverModule-&gt;callInitialize(i); i++)
+                ;
+
             receiverModule-&gt;scheduleStart(simTime());
         }
     }
@@ -304,7 +355,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_profile.html#ace677238b86673b1b08cc0f581dbf359">RTPProfile::dataOut</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_profile.html#ace677238b86673b1b08cc0f581dbf359">RTPProfile::dataOut</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *&#160;</td>
           <td class="paramname"><em>rinp</em></td><td>)</td>
@@ -313,13 +364,12 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Handles outgoing data packets: Calls processOutgoingPacket and forwards the packet to the rtp module. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8cc_source.html#l00246">246</a> of file <a class="el" href="_r_t_p_profile_8cc_source.html">RTPProfile.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00107">handleMessageFromPayloadSender()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#a722e66b0071b4e615d6833d93fb16dcd">handleMessageFromPayloadSender()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_profile.html#a5e1b10a46dfde95414f58bd61a6ddc92">processOutgoingPacket</a>(rinp);
+    <a class="code" href="class_r_t_p_profile.html#a5e1b10a46dfde95414f58bd61a6ddc92" title="Simular to the procedure for incoming packets, this adds profile specific extensions to outgoing rtp ...">processOutgoingPacket</a>(rinp);
     send(rinp, <span class="stringliteral">&quot;rtpOut&quot;</span>);
 }
 </pre></div>
@@ -330,7 +380,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_profile.html#ab343e6cb950fcef8427e81e2ddcdcebe">RTPProfile::deleteSenderModule</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_profile.html#ab343e6cb950fcef8427e81e2ddcdcebe">RTPProfile::deleteSenderModule</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *&#160;</td>
           <td class="paramname"><em>rinp</em></td><td>)</td>
@@ -339,17 +389,16 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>When a sender module is no longer needed it can be deleted by the profile module. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8cc_source.html#l00184">184</a> of file <a class="el" href="_r_t_p_profile_8cc_source.html">RTPProfile.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00078">handleMessageFromRTP()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#af98f35598d60a25ae9706a851b2ea20b">handleMessageFromRTP()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     cModule *senderModule = gate(<span class="stringliteral">&quot;payloadSenderOut&quot;</span>)-&gt;getNextGate()-&gt;getOwnerModule();
     senderModule-&gt;deleteModule();
 
-    <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinpOut = <span class="keyword">new</span> <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>(<span class="stringliteral">&quot;senderModuleDeleted()&quot;</span>);
-    rinpOut-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a552ea3d0e5e2ae274eece44cd28ab12a">senderModuleDeleted</a>(rinpIn-&gt;getSSRC());
+    <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> *rinpOut = <span class="keyword">new</span> <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a>(<span class="stringliteral">&quot;senderModuleDeleted()&quot;</span>);
+    rinpOut-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a5ac0bba1d5187c998e2cd513424a67f9">setSenderModuleDeletedPkt</a>(rinpIn-&gt;getSsrc());
     <span class="keyword">delete</span> rinpIn;
 
     send(rinpOut, <span class="stringliteral">&quot;rtpOut&quot;</span>);
@@ -371,21 +420,15 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Finds the gate of the receiver module for rtp data packets from this ssrc. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8cc_source.html#l00279">279</a> of file <a class="el" href="_r_t_p_profile_8cc_source.html">RTPProfile.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00203">dataIn()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#a4e6ede77fe9cfd2f2f4b041069a05b72">dataIn()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keyword">const</span> <span class="keywordtype">char</span> *name = <a class="code" href="class_r_t_p_participant_info.html#aadc8ba99aff7c392738703dc4a8c4797">RTPParticipantInfo::ssrcToName</a>(ssrc);
-    <span class="keywordtype">int</span> objectIndex = <a class="code" href="class_r_t_p_profile.html#abef1ddbd1d8b483d960a181d0c739fb4">_ssrcGates</a>-&gt;find(name);
-    <span class="keywordflow">if</span> (objectIndex == -1) {
-        <span class="keywordflow">return</span> NULL;
-    }
-    <span class="keywordflow">else</span> {
-        cObject *co = (<a class="code" href="class_r_t_p_profile.html#abef1ddbd1d8b483d960a181d0c739fb4">_ssrcGates</a>-&gt;get(objectIndex));
-        <span class="keywordflow">return</span> (SSRCGate *)co;
-    }
+    SSRCGateMap::iterator objectIndex = <a class="code" href="class_r_t_p_profile.html#a36c9b3c18e585919d79988f62feea1b2">_ssrcGates</a>.find(ssrc);
+    <span class="keywordflow">if</span> (objectIndex == <a class="code" href="class_r_t_p_profile.html#a36c9b3c18e585919d79988f62feea1b2">_ssrcGates</a>.end())
+        <span class="keywordflow">return</span> <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+    <span class="keywordflow">return</span> objectIndex-&gt;second;
 }
 </pre></div>
 </div>
@@ -395,7 +438,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_profile.html#a366a2775e806806662a9fc3e7f6760ce">RTPProfile::handleMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_profile.html#a366a2775e806806662a9fc3e7f6760ce">RTPProfile::handleMessage</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -404,26 +447,26 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Creates and removes payload sender and receiver modules on demand. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_profile_8cc_source.html#l00057">57</a> of file <a class="el" href="_r_t_p_profile_8cc_source.html">RTPProfile.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (msg-&gt;getArrivalGateId() == findGate(<span class="stringliteral">&quot;rtpIn&quot;</span>)) {
-        <a class="code" href="class_r_t_p_profile.html#af98f35598d60a25ae9706a851b2ea20b">handleMessageFromRTP</a>(msg);
+    <span class="keywordflow">if</span> (msg-&gt;getArrivalGateId() == findGate(<span class="stringliteral">&quot;rtpIn&quot;</span>))
+    {
+        <a class="code" href="class_r_t_p_profile.html#af98f35598d60a25ae9706a851b2ea20b" title="Handles messages received from the rtp module.">handleMessageFromRTP</a>(msg);
     }
-
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg-&gt;getArrivalGateId() == findGate(<span class="stringliteral">&quot;payloadSenderIn&quot;</span>)) {
-        <a class="code" href="class_r_t_p_profile.html#a722e66b0071b4e615d6833d93fb16dcd">handleMessageFromPayloadSender</a>(msg);
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg-&gt;getArrivalGateId() == findGate(<span class="stringliteral">&quot;payloadSenderIn&quot;</span>))
+    {
+        <a class="code" href="class_r_t_p_profile.html#a722e66b0071b4e615d6833d93fb16dcd" title="Handles messages coming from the sender module.">handleMessageFromPayloadSender</a>(msg);
     }
-
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg-&gt;getArrivalGateId() &gt;= findGate(<span class="stringliteral">&quot;payloadReceiverIn&quot;</span>) &amp;&amp; msg-&gt;getArrivalGateId() &lt; findGate(<span class="stringliteral">&quot;payloadReceiverIn&quot;</span>) + <a class="code" href="class_r_t_p_profile.html#a2191aad02f7be47356d96645088a4746">_maxReceivers</a>) {
-        <a class="code" href="class_r_t_p_profile.html#a6a7e9dd452d86298016515aff8ce4de3">handleMessageFromPayloadReceiver</a>(msg);
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg-&gt;getArrivalGateId() &gt;= findGate(<span class="stringliteral">&quot;payloadReceiverIn&quot;</span>)
+            &amp;&amp; msg-&gt;getArrivalGateId() &lt; findGate(<span class="stringliteral">&quot;payloadReceiverIn&quot;</span>) + <a class="code" href="class_r_t_p_profile.html#a2191aad02f7be47356d96645088a4746" title="The maximum number of incoming data streams this profile module can handle.">_maxReceivers</a>)
+    {
+        <a class="code" href="class_r_t_p_profile.html#a6a7e9dd452d86298016515aff8ce4de3" title="Handles messages coming from a receiver module.">handleMessageFromPayloadReceiver</a>(msg);
     }
-
-    <span class="keywordflow">else</span> {
+    <span class="keywordflow">else</span>
+    {
         error(<span class="stringliteral">&quot;message coming from unknown gate&quot;</span>);
     }
-
 }
 </pre></div>
 </div>
@@ -433,7 +476,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_profile.html#a6a7e9dd452d86298016515aff8ce4de3">RTPProfile::handleMessageFromPayloadReceiver</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_profile.html#a6a7e9dd452d86298016515aff8ce4de3">RTPProfile::handleMessageFromPayloadReceiver</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -442,11 +485,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Handles messages coming from a receiver module. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8cc_source.html#l00128">128</a> of file <a class="el" href="_r_t_p_profile_8cc_source.html">RTPProfile.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00057">handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#a366a2775e806806662a9fc3e7f6760ce">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// currently payload receiver modules don&#39;t send messages</span>
     <span class="keyword">delete</span> msg;
@@ -459,7 +501,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_profile.html#a722e66b0071b4e615d6833d93fb16dcd">RTPProfile::handleMessageFromPayloadSender</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_profile.html#a722e66b0071b4e615d6833d93fb16dcd">RTPProfile::handleMessageFromPayloadSender</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -468,28 +510,31 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Handles messages coming from the sender module. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8cc_source.html#l00107">107</a> of file <a class="el" href="_r_t_p_profile_8cc_source.html">RTPProfile.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00057">handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#a366a2775e806806662a9fc3e7f6760ce">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
+    <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> *rinpIn = check_and_cast&lt;<a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> *&gt;(msg);
 
-    <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinpIn = check_and_cast&lt;<a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *&gt;(msg);
+    <span class="keywordflow">switch</span> (rinpIn-&gt;<a class="code" href="class_r_t_p_inner_packet___base.html#a0c366129da19a99eecf1acf4c2c69199">getType</a>())
+    {
+    <span class="keywordflow">case</span> <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606a0869f370426757c839ece5ce05a9ed4d">RTP_INP_DATA_OUT</a>:
+        <a class="code" href="class_r_t_p_profile.html#ace677238b86673b1b08cc0f581dbf359" title="Handles outgoing data packets: Calls processOutgoingPacket and forwards the packet to the rtp module...">dataOut</a>(rinpIn);
+        <span class="keywordflow">break</span>;
 
-    <span class="keywordflow">if</span> (rinpIn-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a8de46bdf80e04331223d83af5f507d80">getType</a>() == <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888ad9e60ccc5022412d2cbbcc82bf78ba67">RTPInnerPacket::RTP_INP_DATA_OUT</a>) {
-        <a class="code" href="class_r_t_p_profile.html#ace677238b86673b1b08cc0f581dbf359">dataOut</a>(rinpIn);
-    }
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (rinpIn-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a8de46bdf80e04331223d83af5f507d80">getType</a>() == <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888aa7cdbe45405af9b4532642c98bc45358">RTPInnerPacket::RTP_INP_SENDER_MODULE_INITIALIZED</a>) {
-        <a class="code" href="class_r_t_p_profile.html#a66a640c0dc518fb4f8ecc20d78e4af79">senderModuleInitialized</a>(rinpIn);
-    }
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (rinpIn-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a8de46bdf80e04331223d83af5f507d80">getType</a>() == <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888acc1668bccb57b68572a99406553db514">RTPInnerPacket::RTP_INP_SENDER_MODULE_STATUS</a>) {
-        <a class="code" href="class_r_t_p_profile.html#acdd41de37ebd65413b9bc7ecdd77bdb7">senderModuleStatus</a>(rinpIn);
-    }
-    <span class="keywordflow">else</span> {
-        error(<span class="stringliteral">&quot;Profile received RTPInnerPacket from sender module with wrong type&quot;</span>);
-    }
+    <span class="keywordflow">case</span> <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606a8ba4b0d836e0e21255d9e60e072c2ade">RTP_INP_SENDER_MODULE_INITIALIZED</a>:
+        <a class="code" href="class_r_t_p_profile.html#a66a640c0dc518fb4f8ecc20d78e4af79" title="The sender module returns a senderModuleInitialized message after being initialized.">senderModuleInitialized</a>(rinpIn);
+        <span class="keywordflow">break</span>;
 
+    <span class="keywordflow">case</span> <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606a5f5ba3115fec14d66b157a59c6eafe1f">RTP_INP_SENDER_MODULE_STATUS</a>:
+        <a class="code" href="class_r_t_p_profile.html#acdd41de37ebd65413b9bc7ecdd77bdb7" title="After having received a sender module control message the sender module returns a sender status messa...">senderModuleStatus</a>(rinpIn);
+        <span class="keywordflow">break</span>;
+
+    <span class="keywordflow">default</span>:
+        error(<span class="stringliteral">&quot;Profile received RTPInnerPacket from sender module with wrong type: %d&quot;</span>, rinpIn-&gt;<a class="code" href="class_r_t_p_inner_packet___base.html#a0c366129da19a99eecf1acf4c2c69199">getType</a>());
+        <span class="keywordflow">break</span>;
+    }
 }
 </pre></div>
 </div>
@@ -499,7 +544,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_profile.html#af98f35598d60a25ae9706a851b2ea20b">RTPProfile::handleMessageFromRTP</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_profile.html#af98f35598d60a25ae9706a851b2ea20b">RTPProfile::handleMessageFromRTP</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -508,33 +553,40 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Handles messages received from the rtp module. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8cc_source.html#l00078">78</a> of file <a class="el" href="_r_t_p_profile_8cc_source.html">RTPProfile.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00057">handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#a366a2775e806806662a9fc3e7f6760ce">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     ev &lt;&lt; <span class="stringliteral">&quot;handleMessageFromRTP Enter &quot;</span>&lt;&lt;endl;
 
-    <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinpIn = check_and_cast&lt;<a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *&gt;(msg);
+    <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> *rinpIn = check_and_cast&lt;<a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> *&gt;(msg);
 
-    <span class="keywordflow">if</span> (rinpIn-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a8de46bdf80e04331223d83af5f507d80">getType</a>() == <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888aa7f58779082aabfcb98201975f253e23">RTPInnerPacket::RTP_INP_INITIALIZE_PROFILE</a>) {
-        <a class="code" href="class_r_t_p_profile.html#a26fe2d5ac389602484360c4ae5a62fb8">initializeProfile</a>(rinpIn);
-    }
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (rinpIn-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a8de46bdf80e04331223d83af5f507d80">getType</a>() == <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888a39dd32720d5af4d58276b3a596c676e8">RTPInnerPacket::RTP_INP_CREATE_SENDER_MODULE</a>) {
-        <a class="code" href="class_r_t_p_profile.html#ac55a295bec1621301238be1257e43069">createSenderModule</a>(rinpIn);
-    }
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (rinpIn-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a8de46bdf80e04331223d83af5f507d80">getType</a>() == <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888ac2a8241cd4562aaed682eb52d34fa90e">RTPInnerPacket::RTP_INP_DELETE_SENDER_MODULE</a>) {
-        <a class="code" href="class_r_t_p_profile.html#ab343e6cb950fcef8427e81e2ddcdcebe">deleteSenderModule</a>(rinpIn);
-    }
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (rinpIn-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a8de46bdf80e04331223d83af5f507d80">getType</a>() == <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888afef73ca182e050207a0384b9684dbe3d">RTPInnerPacket::RTP_INP_SENDER_MODULE_CONTROL</a>) {
-        <a class="code" href="class_r_t_p_profile.html#adfa52a4657ddc268ea7d46699376a60c">senderModuleControl</a>(rinpIn);
-    }
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (rinpIn-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a8de46bdf80e04331223d83af5f507d80">getType</a>() == <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888afd9da6decfe75fcbfcfacfc57143adcf">RTPInnerPacket::RTP_INP_DATA_IN</a>) {
-        <a class="code" href="class_r_t_p_profile.html#a4e6ede77fe9cfd2f2f4b041069a05b72">dataIn</a>(rinpIn);
-    }
-    <span class="keywordflow">else</span> {
-        error(<span class="stringliteral">&quot;RTPInnerPacket from RTPModule has wrong type&quot;</span>);
+    <span class="keywordflow">switch</span> (rinpIn-&gt;<a class="code" href="class_r_t_p_inner_packet___base.html#a0c366129da19a99eecf1acf4c2c69199">getType</a>())
+    {
+    <span class="keywordflow">case</span> <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606ad37197b83dc1139b38e10e7d78768e03">RTP_INP_INITIALIZE_PROFILE</a>:
+        <a class="code" href="class_r_t_p_profile.html#a26fe2d5ac389602484360c4ae5a62fb8" title="Initialization message received from rtp module.">initializeProfile</a>(rinpIn);
+        <span class="keywordflow">break</span>;
+
+    <span class="keywordflow">case</span> <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606a77ba1b83fe4ed29aafc4d5113dda16d0">RTP_INP_CREATE_SENDER_MODULE</a>:
+        <a class="code" href="class_r_t_p_profile.html#ac55a295bec1621301238be1257e43069" title="This method is called when the application issued the creation of an rtp payload sender module to tra...">createSenderModule</a>(rinpIn);
+        <span class="keywordflow">break</span>;
+
+    <span class="keywordflow">case</span> <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606a196b8aaa940c24b8cb25d33ca2a9dd6f">RTP_INP_DELETE_SENDER_MODULE</a>:
+        <a class="code" href="class_r_t_p_profile.html#ab343e6cb950fcef8427e81e2ddcdcebe" title="When a sender module is no longer needed it can be deleted by the profile module.">deleteSenderModule</a>(rinpIn);
+        <span class="keywordflow">break</span>;
+
+    <span class="keywordflow">case</span> <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606a8becb1a296ed84253ff0a772922d9f4d">RTP_INP_SENDER_MODULE_CONTROL</a>:
+        <a class="code" href="class_r_t_p_profile.html#adfa52a4657ddc268ea7d46699376a60c" title="The profile module forwards sender control messages to the sender module.">senderModuleControl</a>(rinpIn);
+        <span class="keywordflow">break</span>;
+
+    <span class="keywordflow">case</span> <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606abe27912797e277aa831f59cf26840fbe">RTP_INP_DATA_IN</a>:
+        <a class="code" href="class_r_t_p_profile.html#a4e6ede77fe9cfd2f2f4b041069a05b72" title="Handles incoming data packets: If there isn&#39;t a receiver module for this sender it creates one...">dataIn</a>(rinpIn);
+        <span class="keywordflow">break</span>;
+
+   <span class="keywordflow">default</span>:
+        error(<span class="stringliteral">&quot;RTPInnerPacket from RTPModule has wrong type: %d&quot;</span>, rinpIn-&gt;<a class="code" href="class_r_t_p_inner_packet___base.html#a0c366129da19a99eecf1acf4c2c69199">getType</a>());
+        <span class="keywordflow">break</span>;
     }
 
     ev &lt;&lt; <span class="stringliteral">&quot;handleMessageFromRTP Exit &quot;</span>&lt;&lt;endl;
@@ -547,7 +599,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_profile.html#ad1dcdc538ffd41da0fb583493d053563">RTPProfile::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_profile.html#ad1dcdc538ffd41da0fb583493d053563">RTPProfile::initialize</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -555,21 +607,21 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initializes variables. Must be overwritten by subclasses. </p>
+
+<p>Initializes variables. </p>
+<p>Must be overwritten by subclasses. </p>
 
 <p>Reimplemented in <a class="el" href="class_r_t_p_a_v_profile.html#a284860e49a143a8013aa767e05603754">RTPAVProfile</a>.</p>
-
-<p>Definition at line <a class="el" href="_r_t_p_profile_8cc_source.html#l00037">37</a> of file <a class="el" href="_r_t_p_profile_8cc_source.html">RTPProfile.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     ev &lt;&lt; <span class="stringliteral">&quot;initialize() Enter&quot;</span>&lt;&lt;endl;
-    <a class="code" href="class_r_t_p_profile.html#aaeb4283e0309c0b6c9957476c9f895a0">_profileName</a> = <span class="stringliteral">&quot;Profile&quot;</span>;
-    <a class="code" href="class_r_t_p_profile.html#a854c83b19a9e3f26c524de8bef675f91">_rtcpPercentage</a> = 5;
-    <a class="code" href="class_r_t_p_profile.html#a5bffaf52b0530f4f830914d7880c7690">_preferredPort</a> = <a class="code" href="_i_p_address_8h.html#af1fbd9b1c7fd9da1fdebcf3afd0d111c">PORT_UNDEF</a>;
+    <a class="code" href="class_r_t_p_profile.html#aaeb4283e0309c0b6c9957476c9f895a0" title="The name of this profile.">_profileName</a> = <span class="stringliteral">&quot;Profile&quot;</span>;
+    <a class="code" href="class_r_t_p_profile.html#a854c83b19a9e3f26c524de8bef675f91" title="The percentage of the available bandwidth to be used for rtcp.">_rtcpPercentage</a> = 5;
+    <a class="code" href="class_r_t_p_profile.html#a5bffaf52b0530f4f830914d7880c7690" title="The rtp port this profile uses if no port is given.">_preferredPort</a> = <a class="code" href="_i_pv4_address_8h.html#af1fbd9b1c7fd9da1fdebcf3afd0d111c" title="TCP/UDP port numbers.">PORT_UNDEF</a>;
 
     <span class="comment">// how many gates to payload receivers do we have</span>
-    <a class="code" href="class_r_t_p_profile.html#a2191aad02f7be47356d96645088a4746">_maxReceivers</a> = gateSize(<span class="stringliteral">&quot;payloadReceiverOut&quot;</span>);
-    <a class="code" href="class_r_t_p_profile.html#abef1ddbd1d8b483d960a181d0c739fb4">_ssrcGates</a> = <span class="keyword">new</span> cArray(<span class="stringliteral">&quot;SSRCGates&quot;</span>);
-    <a class="code" href="class_r_t_p_profile.html#a75f9767778cecdca9352a1ede4d0263e">_autoOutputFileNames</a> = par(<span class="stringliteral">&quot;autoOutputFileNames&quot;</span>).boolValue();
+    <a class="code" href="class_r_t_p_profile.html#a2191aad02f7be47356d96645088a4746" title="The maximum number of incoming data streams this profile module can handle.">_maxReceivers</a> = gateSize(<span class="stringliteral">&quot;payloadReceiverOut&quot;</span>);
+    <a class="code" href="class_r_t_p_profile.html#a36c9b3c18e585919d79988f62feea1b2">_ssrcGates</a>.clear();
+    <a class="code" href="class_r_t_p_profile.html#a75f9767778cecdca9352a1ede4d0263e" title="If this is set true the RTPProfile automatically sets the output file name for payload receiver modul...">_autoOutputFileNames</a> = par(<span class="stringliteral">&quot;autoOutputFileNames&quot;</span>).boolValue();
     ev &lt;&lt; <span class="stringliteral">&quot;initialize() Exit&quot;</span>&lt;&lt;endl;
 }
 </pre></div>
@@ -580,7 +632,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_profile.html#a26fe2d5ac389602484360c4ae5a62fb8">RTPProfile::initializeProfile</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_profile.html#a26fe2d5ac389602484360c4ae5a62fb8">RTPProfile::initializeProfile</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *&#160;</td>
           <td class="paramname"><em>rinp</em></td><td>)</td>
@@ -589,17 +641,16 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Initialization message received from rtp module. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8cc_source.html#l00135">135</a> of file <a class="el" href="_r_t_p_profile_8cc_source.html">RTPProfile.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00078">handleMessageFromRTP()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#af98f35598d60a25ae9706a851b2ea20b">handleMessageFromRTP()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     ev &lt;&lt; <span class="stringliteral">&quot;initializeProfile Enter&quot;</span>&lt;&lt;endl;
-    <a class="code" href="class_r_t_p_profile.html#a6b28967e71f14e75f5f3d75510e4b88e">_mtu</a> = rinp-&gt;<a class="code" href="class_r_t_p_inner_packet.html#af622535a6cc9b941389bf20845b23290">getMTU</a>();
+    <a class="code" href="class_r_t_p_profile.html#a6b28967e71f14e75f5f3d75510e4b88e" title="The maximum size an RTPPacket can have.">_mtu</a> = rinp-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a28d94da5ec40d0498b8b25fde0d20067" title="Returns the maximum transmission unit stored in this RTPInnerPacket.">getMTU</a>();
     <span class="keyword">delete</span> rinp;
-    <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinpOut = <span class="keyword">new</span> <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>(<span class="stringliteral">&quot;profileInitialized()&quot;</span>);
-    rinpOut-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a7b3b519afcc4207f39d354a009393938">profileInitialized</a>(<a class="code" href="class_r_t_p_profile.html#a854c83b19a9e3f26c524de8bef675f91">_rtcpPercentage</a>, <a class="code" href="class_r_t_p_profile.html#a5bffaf52b0530f4f830914d7880c7690">_preferredPort</a>);
+    <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> *rinpOut = <span class="keyword">new</span> <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a>(<span class="stringliteral">&quot;profileInitialized()&quot;</span>);
+    rinpOut-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a9c95ab7be146d697a70ffff43a047923" title="Called by the profile module after it has received the initializeProfile() message.">setProfileInitializedPkt</a>(<a class="code" href="class_r_t_p_profile.html#a854c83b19a9e3f26c524de8bef675f91" title="The percentage of the available bandwidth to be used for rtcp.">_rtcpPercentage</a>, <a class="code" href="class_r_t_p_profile.html#a5bffaf52b0530f4f830914d7880c7690" title="The rtp port this profile uses if no port is given.">_preferredPort</a>);
     send(rinpOut, <span class="stringliteral">&quot;rtpOut&quot;</span>);
     ev &lt;&lt; <span class="stringliteral">&quot;initializeProfile Exit&quot;</span>&lt;&lt;endl;
 }
@@ -620,26 +671,27 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Creates a new association ssrc/gateId for this ssrc. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8cc_source.html#l00293">293</a> of file <a class="el" href="_r_t_p_profile_8cc_source.html">RTPProfile.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00203">dataIn()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#a4e6ede77fe9cfd2f2f4b041069a05b72">dataIn()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     SSRCGate *ssrcGate = <span class="keyword">new</span> SSRCGate(ssrc);
     <span class="keywordtype">bool</span> assigned = <span class="keyword">false</span>;
-    <span class="keywordtype">int</span> receiverGateId = findGate(<span class="stringliteral">&quot;payloadReceiverOut&quot;</span>,0);
-    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = receiverGateId; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> &lt; receiverGateId + <a class="code" href="class_r_t_p_profile.html#a2191aad02f7be47356d96645088a4746">_maxReceivers</a> &amp;&amp; !assigned; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++) {
-        <span class="keywordflow">if</span> (!gate(<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>)-&gt;isConnected()) {
-            ssrcGate-&gt;setGateId(<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>);
+    <span class="keywordtype">int</span> receiverGateId = findGate(<span class="stringliteral">&quot;payloadReceiverOut&quot;</span>, 0);
+    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = receiverGateId; i &lt; receiverGateId + <a class="code" href="class_r_t_p_profile.html#a2191aad02f7be47356d96645088a4746" title="The maximum number of incoming data streams this profile module can handle.">_maxReceivers</a> &amp;&amp; !assigned; i++)
+    {
+        <span class="keywordflow">if</span> (!gate(i)-&gt;isConnected())
+        {
+            ssrcGate-&gt;setGateId(i);
             assigned = <span class="keyword">true</span>;
         }
     }
 
     <span class="keywordflow">if</span> (!assigned)
-        opp_error(<span class="stringliteral">&quot;Can&#39;t manage more senders&quot;</span>);
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Can&#39;t manage more senders&quot;</span>);
 
-    <a class="code" href="class_r_t_p_profile.html#abef1ddbd1d8b483d960a181d0c739fb4">_ssrcGates</a>-&gt;add(ssrcGate);
+    <a class="code" href="class_r_t_p_profile.html#a36c9b3c18e585919d79988f62feea1b2">_ssrcGates</a>[ssrc] = ssrcGate;
     <span class="keywordflow">return</span> ssrcGate;
 }
 </pre></div>
@@ -650,7 +702,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_profile.html#ac2f7ba01a34531a27874f1d5c170de0b">RTPProfile::processIncomingPacket</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_profile.html#ac2f7ba01a34531a27874f1d5c170de0b">RTPProfile::processIncomingPacket</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *&#160;</td>
           <td class="paramname"><em>rinp</em></td><td>)</td>
@@ -659,11 +711,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Every time a rtp packet is received it it pre-processed by this method to remove profile specific extension which are not handled by the payload receiver module. In this implementation the packet isn't changed. Important: This method works with <a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>. So the rtp packet must be decapsulated, changed and encapsulated again. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8cc_source.html#l00267">267</a> of file <a class="el" href="_r_t_p_profile_8cc_source.html">RTPProfile.cc</a>.</p>
+<p>Every time a rtp packet is received it it pre-processed by this method to remove profile specific extension which are not handled by the payload receiver module. </p>
+<p>In this implementation the packet isn't changed. Important: This method works with <a class="el" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a>. So the rtp packet must be decapsulated, changed and encapsulated again. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00203">dataIn()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#a4e6ede77fe9cfd2f2f4b041069a05b72">dataIn()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// do nothing with the packet</span>
 }
@@ -675,7 +727,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_profile.html#a5e1b10a46dfde95414f58bd61a6ddc92">RTPProfile::processOutgoingPacket</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_profile.html#a5e1b10a46dfde95414f58bd61a6ddc92">RTPProfile::processOutgoingPacket</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *&#160;</td>
           <td class="paramname"><em>rinp</em></td><td>)</td>
@@ -684,11 +736,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Simular to the procedure for incoming packets, this adds profile specific extensions to outgoing rtp packets. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8cc_source.html#l00273">273</a> of file <a class="el" href="_r_t_p_profile_8cc_source.html">RTPProfile.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00246">dataOut()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#ace677238b86673b1b08cc0f581dbf359">dataOut()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// do nothing with the packet</span>
 }
@@ -700,7 +751,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_profile.html#adfa52a4657ddc268ea7d46699376a60c">RTPProfile::senderModuleControl</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_profile.html#adfa52a4657ddc268ea7d46699376a60c">RTPProfile::senderModuleControl</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *&#160;</td>
           <td class="paramname"><em>rinp</em></td><td>)</td>
@@ -709,11 +760,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The profile module forwards sender control messages to the sender module. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8cc_source.html#l00197">197</a> of file <a class="el" href="_r_t_p_profile_8cc_source.html">RTPProfile.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00078">handleMessageFromRTP()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#af98f35598d60a25ae9706a851b2ea20b">handleMessageFromRTP()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     send(rinp, <span class="stringliteral">&quot;payloadSenderOut&quot;</span>);
 }
@@ -725,7 +775,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_profile.html#a66a640c0dc518fb4f8ecc20d78e4af79">RTPProfile::senderModuleInitialized</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_profile.html#a66a640c0dc518fb4f8ecc20d78e4af79">RTPProfile::senderModuleInitialized</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *&#160;</td>
           <td class="paramname"><em>rinp</em></td><td>)</td>
@@ -734,11 +784,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The sender module returns a senderModuleInitialized message after being initialized. The profile module forwards this message to the rtp module which delivers it to its destination, the rtcp module. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8cc_source.html#l00253">253</a> of file <a class="el" href="_r_t_p_profile_8cc_source.html">RTPProfile.cc</a>.</p>
+<p>The sender module returns a senderModuleInitialized message after being initialized. </p>
+<p>The profile module forwards this message to the rtp module which delivers it to its destination, the rtcp module. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00107">handleMessageFromPayloadSender()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#a722e66b0071b4e615d6833d93fb16dcd">handleMessageFromPayloadSender()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     ev &lt;&lt; <span class="stringliteral">&quot;senderModuleInitialized&quot;</span>&lt;&lt;endl;
     send(rinp, <span class="stringliteral">&quot;rtpOut&quot;</span>);
@@ -751,7 +801,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_profile.html#acdd41de37ebd65413b9bc7ecdd77bdb7">RTPProfile::senderModuleStatus</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_profile.html#acdd41de37ebd65413b9bc7ecdd77bdb7">RTPProfile::senderModuleStatus</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *&#160;</td>
           <td class="paramname"><em>rinp</em></td><td>)</td>
@@ -760,11 +810,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>After having received a sender module control message the sender module returns a sender status message to inform the application what it's doing at the moment. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8cc_source.html#l00260">260</a> of file <a class="el" href="_r_t_p_profile_8cc_source.html">RTPProfile.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00107">handleMessageFromPayloadSender()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#a722e66b0071b4e615d6833d93fb16dcd">handleMessageFromPayloadSender()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     ev &lt;&lt; <span class="stringliteral">&quot;senderModuleStatus&quot;</span>&lt;&lt;endl;
     send(rinp, <span class="stringliteral">&quot;rtpOut&quot;</span>);
@@ -783,11 +832,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>If this is set true the <a class="el" href="class_r_t_p_profile.html">RTPProfile</a> automatically sets the output file name for payload receiver modules so the user is not bothered to set them manually during simulation runtime. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8h_source.html#l00212">212</a> of file <a class="el" href="_r_t_p_profile_8h_source.html">RTPProfile.h</a>.</p>
+<p>If this is set true the <a class="el" href="class_r_t_p_profile.html" title="The class RTPProfile is a module which handles RTPPayloadSender and RTPPayloadReceiver modules...">RTPProfile</a> automatically sets the output file name for payload receiver modules so the user is not bothered to set them manually during simulation runtime. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00203">dataIn()</a>, and <a class="el" href="_r_t_p_profile_8cc_source.html#l00037">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#a4e6ede77fe9cfd2f2f4b041069a05b72">dataIn()</a>, and <a class="el" href="class_r_t_p_profile.html#ad1dcdc538ffd41da0fb583493d053563">initialize()</a>.</p>
 
 </div>
 </div>
@@ -801,11 +849,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The maximum number of incoming data streams this profile module can handle. It is set to the gate size of "payloadReceiverOut", "payloadReceiverIn". </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8h_source.html#l00184">184</a> of file <a class="el" href="_r_t_p_profile_8h_source.html">RTPProfile.h</a>.</p>
+<p>The maximum number of incoming data streams this profile module can handle. </p>
+<p>It is set to the gate size of "payloadReceiverOut", "payloadReceiverIn". </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00057">handleMessage()</a>, <a class="el" href="_r_t_p_profile_8cc_source.html#l00037">initialize()</a>, and <a class="el" href="_r_t_p_profile_8cc_source.html#l00293">newSSRCGate()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#a366a2775e806806662a9fc3e7f6760ce">handleMessage()</a>, <a class="el" href="class_r_t_p_profile.html#ad1dcdc538ffd41da0fb583493d053563">initialize()</a>, and <a class="el" href="class_r_t_p_profile.html#a2ad378749c1f5cf96a982b3601e5c565">newSSRCGate()</a>.</p>
 
 </div>
 </div>
@@ -819,11 +867,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The maximum size an <a class="el" href="class_r_t_p_packet.html">RTPPacket</a> can have. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8h_source.html#l00205">205</a> of file <a class="el" href="_r_t_p_profile_8h_source.html">RTPProfile.h</a>.</p>
+<p>The maximum size an <a class="el" href="class_r_t_p_packet.html" title="This class represents an RTP data packet.">RTPPacket</a> can have. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00147">createSenderModule()</a>, and <a class="el" href="_r_t_p_profile_8cc_source.html#l00135">initializeProfile()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#ac55a295bec1621301238be1257e43069">createSenderModule()</a>, and <a class="el" href="class_r_t_p_profile.html#a26fe2d5ac389602484360c4ae5a62fb8">initializeProfile()</a>.</p>
 
 </div>
 </div>
@@ -837,11 +884,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The rtp port this profile uses if no port is given. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8h_source.html#l00200">200</a> of file <a class="el" href="_r_t_p_profile_8h_source.html">RTPProfile.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_a_v_profile_8cc_source.html#l00027">RTPAVProfile::initialize()</a>, <a class="el" href="_r_t_p_profile_8cc_source.html#l00037">initialize()</a>, and <a class="el" href="_r_t_p_profile_8cc_source.html#l00135">initializeProfile()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_a_v_profile.html#a284860e49a143a8013aa767e05603754">RTPAVProfile::initialize()</a>, <a class="el" href="class_r_t_p_profile.html#ad1dcdc538ffd41da0fb583493d053563">initialize()</a>, and <a class="el" href="class_r_t_p_profile.html#a26fe2d5ac389602484360c4ae5a62fb8">initializeProfile()</a>.</p>
 
 </div>
 </div>
@@ -855,11 +901,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The name of this profile. Needed for dynamic creating of sender and receiver modules. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8h_source.html#l00177">177</a> of file <a class="el" href="_r_t_p_profile_8h_source.html">RTPProfile.h</a>.</p>
+<p>The name of this profile. </p>
+<p>Needed for dynamic creating of sender and receiver modules. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00147">createSenderModule()</a>, <a class="el" href="_r_t_p_profile_8cc_source.html#l00203">dataIn()</a>, <a class="el" href="_r_t_p_a_v_profile_8cc_source.html#l00027">RTPAVProfile::initialize()</a>, and <a class="el" href="_r_t_p_profile_8cc_source.html#l00037">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#ac55a295bec1621301238be1257e43069">createSenderModule()</a>, <a class="el" href="class_r_t_p_profile.html#a4e6ede77fe9cfd2f2f4b041069a05b72">dataIn()</a>, <a class="el" href="class_r_t_p_a_v_profile.html#a284860e49a143a8013aa767e05603754">RTPAVProfile::initialize()</a>, and <a class="el" href="class_r_t_p_profile.html#ad1dcdc538ffd41da0fb583493d053563">initialize()</a>.</p>
 
 </div>
 </div>
@@ -873,35 +919,31 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The percentage of the available bandwidth to be used for rtcp. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8h_source.html#l00195">195</a> of file <a class="el" href="_r_t_p_profile_8h_source.html">RTPProfile.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_a_v_profile_8cc_source.html#l00027">RTPAVProfile::initialize()</a>, <a class="el" href="_r_t_p_profile_8cc_source.html#l00037">initialize()</a>, and <a class="el" href="_r_t_p_profile_8cc_source.html#l00135">initializeProfile()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_a_v_profile.html#a284860e49a143a8013aa767e05603754">RTPAVProfile::initialize()</a>, <a class="el" href="class_r_t_p_profile.html#ad1dcdc538ffd41da0fb583493d053563">initialize()</a>, and <a class="el" href="class_r_t_p_profile.html#a26fe2d5ac389602484360c4ae5a62fb8">initializeProfile()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="abef1ddbd1d8b483d960a181d0c739fb4"></a><!-- doxytag: member="RTPProfile::_ssrcGates" ref="abef1ddbd1d8b483d960a181d0c739fb4" args="" -->
+<a class="anchor" id="a36c9b3c18e585919d79988f62feea1b2"></a><!-- doxytag: member="RTPProfile::_ssrcGates" ref="a36c9b3c18e585919d79988f62feea1b2" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">cArray* <a class="el" href="class_r_t_p_profile.html#abef1ddbd1d8b483d960a181d0c739fb4">RTPProfile::_ssrcGates</a><code> [protected]</code></td>
+          <td class="memname"><a class="el" href="class_r_t_p_profile.html#a0bebc72145916901af9939f2a5e1d930">SSRCGateMap</a> <a class="el" href="class_r_t_p_profile.html#a36c9b3c18e585919d79988f62feea1b2">RTPProfile::_ssrcGates</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Stores information to which gate rtp data packets from a ssrc must be forwarded. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_profile_8h_source.html#l00190">190</a> of file <a class="el" href="_r_t_p_profile_8h_source.html">RTPProfile.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00279">findSSRCGate()</a>, <a class="el" href="_r_t_p_profile_8cc_source.html#l00037">initialize()</a>, <a class="el" href="_r_t_p_profile_8cc_source.html#l00293">newSSRCGate()</a>, <a class="el" href="_r_t_p_profile_8cc_source.html#l00032">RTPProfile()</a>, and <a class="el" href="_r_t_p_profile_8cc_source.html#l00051">~RTPProfile()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_profile.html#a742cb3fdb249d0b664cdf3fffed12f01">findSSRCGate()</a>, <a class="el" href="class_r_t_p_profile.html#ad1dcdc538ffd41da0fb583493d053563">initialize()</a>, <a class="el" href="class_r_t_p_profile.html#a2ad378749c1f5cf96a982b3601e5c565">newSSRCGate()</a>, and <a class="el" href="class_r_t_p_profile.html#a3ea355737d0c82566d64aa56e5d10ac4">~RTPProfile()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_r_t_p_profile_8h_source.html">RTPProfile.h</a></li>
-<li><a class="el" href="_r_t_p_profile_8cc_source.html">RTPProfile.cc</a></li>
+<li><a class="el" href="_r_t_p_profile_8h.html">RTPProfile.h</a></li>
+<li><a class="el" href="_r_t_p_profile_8cc.html">RTPProfile.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -909,7 +951,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_r_t_p_profile.html">RTPProfile</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:52 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:30 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

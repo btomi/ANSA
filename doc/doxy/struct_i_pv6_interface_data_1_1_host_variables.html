@@ -81,22 +81,24 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="IPv6InterfaceData::HostVariables" -->
-<p><code>#include &lt;<a class="el" href="_i_pv6_interface_data_8h_source.html">IPv6InterfaceData.h</a>&gt;</code></p>
+<p><code>#include &lt;IPv6InterfaceData.h&gt;</code></p>
 
 <p><a href="struct_i_pv6_interface_data_1_1_host_variables-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_i_n_e_t_defs_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_i_pv6_interface_data_1_1_host_variables.html#aef57f26d1a998ce69fd079a5e9c10418">linkMTU</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The MTU of the link.  <a href="#aef57f26d1a998ce69fd079a5e9c10418"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_i_pv6_interface_data_1_1_host_variables.html#abf74228e3e07ad759fb432d82c7f5686">curHopLimit</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The default hop limit to be used when sending (unicast) IP packets.  <a href="#abf74228e3e07ad759fb432d82c7f5686"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_i_n_e_t_defs_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_i_pv6_interface_data_1_1_host_variables.html#ac7d027da3efe4e6c3b46c6118054674a">baseReachableTime</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A base value used for computing the random ReachableTime value.  <a href="#ac7d027da3efe4e6c3b46c6118054674a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">simtime_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_i_pv6_interface_data_1_1_host_variables.html#a0b000870b19d2fbf5f2954e8076e54aa">reachableTime</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The time a neighbor is considered reachable after receiving a reachability confirmation.  <a href="#a0b000870b19d2fbf5f2954e8076e54aa"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_i_n_e_t_defs_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_i_pv6_interface_data_1_1_host_variables.html#a26b5114e9941885ee48b53d25f817eb6">retransTimer</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The time between retransmissions of Neighbor Solicitation messages to a neighbor when resolving the address or when probing the reachability of a neighbor.  <a href="#a26b5114e9941885ee48b53d25f817eb6"></a><br/></td></tr>
 </table>
-<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_i_pv6_interface_data_8h_source.html#l00170">170</a> of file <a class="el" href="_i_pv6_interface_data_8h_source.html">IPv6InterfaceData.h</a>.</p>
-</div><hr/><h2>Member Data Documentation</h2>
+<hr/><h2>Member Data Documentation</h2>
 <a class="anchor" id="ac7d027da3efe4e6c3b46c6118054674a"></a><!-- doxytag: member="IPv6InterfaceData::HostVariables::baseReachableTime" ref="ac7d027da3efe4e6c3b46c6118054674a" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -107,11 +109,11 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>A base value used for computing the random ReachableTime value. Default: REACHABLE_TIME milliseconds. &gt; protocol constants </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_interface_data_8h_source.html#l00188">188</a> of file <a class="el" href="_i_pv6_interface_data_8h_source.html">IPv6InterfaceData.h</a>.</p>
+<p>A base value used for computing the random ReachableTime value. </p>
+<p>Default: REACHABLE_TIME milliseconds. &gt; protocol constants </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_interface_data_8cc_source.html#l00026">IPv6InterfaceData::IPv6InterfaceData()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_interface_data.html#a7b9f9cf5fe2617add34e1406f171e1c3">IPv6InterfaceData::IPv6InterfaceData()</a>.</p>
 
 </div>
 </div>
@@ -125,11 +127,11 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The default hop limit to be used when sending (unicast) <a class="el" href="class_i_p.html">IP</a> packets. Default: The value specified in the "Assigned Numbers" RFC [ASSIGNED] that was in effect at the time of implementation. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_interface_data_8h_source.html#l00183">183</a> of file <a class="el" href="_i_pv6_interface_data_8h_source.html">IPv6InterfaceData.h</a>.</p>
+<p>The default hop limit to be used when sending (unicast) IP packets. </p>
+<p>Default: The value specified in the "Assigned Numbers" RFC [ASSIGNED] that was in effect at the time of implementation. </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_interface_data_8cc_source.html#l00026">IPv6InterfaceData::IPv6InterfaceData()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_interface_data.html#a7b9f9cf5fe2617add34e1406f171e1c3">IPv6InterfaceData::IPv6InterfaceData()</a>.</p>
 
 </div>
 </div>
@@ -143,11 +145,11 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The MTU of the link. Default: The valued defined in the specific document that describes how <a class="el" href="class_i_pv6.html">IPv6</a> operates over the particular link layer (e.g., [IPv6-ETHER]). </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_interface_data_8h_source.html#l00177">177</a> of file <a class="el" href="_i_pv6_interface_data_8h_source.html">IPv6InterfaceData.h</a>.</p>
+<p>The MTU of the link. </p>
+<p>Default: The valued defined in the specific document that describes how <a class="el" href="class_i_pv6.html" title="IPv6 implementation.">IPv6</a> operates over the particular link layer (e.g., [IPv6-ETHER]). </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_interface_data_8cc_source.html#l00026">IPv6InterfaceData::IPv6InterfaceData()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_interface_data.html#a7b9f9cf5fe2617add34e1406f171e1c3">IPv6InterfaceData::IPv6InterfaceData()</a>.</p>
 
 </div>
 </div>
@@ -161,11 +163,11 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The time a neighbor is considered reachable after receiving a reachability confirmation. reachableTime = uniform(MIN_RANDOM_FACTOR, MAX_RANDOM_FACTOR) * baseReachableTime New value should be calculated when baseReachableTime changes or at least every few hours even if no Router Advertisements are received. </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_interface_data_8h_source.html#l00197">197</a> of file <a class="el" href="_i_pv6_interface_data_8h_source.html">IPv6InterfaceData.h</a>.</p>
+<p>The time a neighbor is considered reachable after receiving a reachability confirmation. </p>
+<p>reachableTime = uniform(MIN_RANDOM_FACTOR, MAX_RANDOM_FACTOR) * baseReachableTime New value should be calculated when baseReachableTime changes or at least every few hours even if no Router Advertisements are received. </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_interface_data_8cc_source.html#l00075">IPv6InterfaceData::info()</a>, and <a class="el" href="_i_pv6_interface_data_8cc_source.html#l00026">IPv6InterfaceData::IPv6InterfaceData()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_interface_data.html#a62ef23ac89f9dad49b264162d4490d2f">IPv6InterfaceData::info()</a>, and <a class="el" href="class_i_pv6_interface_data.html#a7b9f9cf5fe2617add34e1406f171e1c3">IPv6InterfaceData::IPv6InterfaceData()</a>.</p>
 
 </div>
 </div>
@@ -179,16 +181,16 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The time between retransmissions of Neighbor Solicitation messages to a neighbor when resolving the address or when probing the reachability of a neighbor. Default: RETRANS_TIMER milliseconds </p>
 
-<p>Definition at line <a class="el" href="_i_pv6_interface_data_8h_source.html#l00204">204</a> of file <a class="el" href="_i_pv6_interface_data_8h_source.html">IPv6InterfaceData.h</a>.</p>
+<p>The time between retransmissions of Neighbor Solicitation messages to a neighbor when resolving the address or when probing the reachability of a neighbor. </p>
+<p>Default: RETRANS_TIMER milliseconds </p>
 
-<p>Referenced by <a class="el" href="_i_pv6_interface_data_8cc_source.html#l00026">IPv6InterfaceData::IPv6InterfaceData()</a>.</p>
+<p>Referenced by <a class="el" href="class_i_pv6_interface_data.html#a7b9f9cf5fe2617add34e1406f171e1c3">IPv6InterfaceData::IPv6InterfaceData()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li><a class="el" href="_i_pv6_interface_data_8h_source.html">IPv6InterfaceData.h</a></li>
+<li><a class="el" href="_i_pv6_interface_data_8h.html">IPv6InterfaceData.h</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -197,7 +199,7 @@ Public Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="class_i_pv6_interface_data.html">IPv6InterfaceData</a>      </li>
       <li class="navelem"><a class="el" href="struct_i_pv6_interface_data_1_1_host_variables.html">HostVariables</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:49 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:26 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

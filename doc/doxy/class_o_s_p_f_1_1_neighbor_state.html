@@ -82,7 +82,7 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="OSPF::NeighborState" -->
-<p><code>#include &lt;<a class="el" href="_o_s_p_f_neighbor_state_8h_source.html">OSPFNeighborState.h</a>&gt;</code></p>
+<p><code>#include &lt;OSPFNeighborState.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for OSPF::NeighborState:</div>
 <div class="dyncontent">
@@ -105,16 +105,13 @@ Inheritance diagram for OSPF::NeighborState:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_1_1_neighbor_state.html#aec2c368d1d597979bd23912205199c9c">~NeighborState</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_1_1_neighbor_state.html#a57af8f9fedef48be652d77ff9c8be26e">ProcessEvent</a> (<a class="el" href="class_o_s_p_f_1_1_neighbor.html">Neighbor</a> *neighbor, <a class="el" href="class_o_s_p_f_1_1_neighbor.html#aa11c941b2bc4a36c36fba1cb453a4172">Neighbor::NeighborEventType</a> event)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_o_s_p_f_1_1_neighbor.html#abe30518a64009a9ae44944c1036a4c0a">Neighbor::NeighborStateType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_1_1_neighbor_state.html#ade7322e8c3e8379d99b85b9ff5ca925e">GetState</a> (void) const =0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_1_1_neighbor_state.html#a0ff78bb508713692cbde28c392649830">processEvent</a> (<a class="el" href="class_o_s_p_f_1_1_neighbor.html">Neighbor</a> *<a class="el" href="structneighbor.html">neighbor</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor.html#aa11c941b2bc4a36c36fba1cb453a4172">Neighbor::NeighborEventType</a> event)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_o_s_p_f_1_1_neighbor.html#abe30518a64009a9ae44944c1036a4c0a">Neighbor::NeighborStateType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_1_1_neighbor_state.html#a1d40f84c5dc33874b6292bdc3d92777b">getState</a> () const =0</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_1_1_neighbor_state.html#a2aaa9b77d04ee05f86463f5f468080d9">ChangeState</a> (<a class="el" href="class_o_s_p_f_1_1_neighbor.html">Neighbor</a> *neighbor, <a class="el" href="class_o_s_p_f_1_1_neighbor_state.html">NeighborState</a> *newState, <a class="el" href="class_o_s_p_f_1_1_neighbor_state.html">NeighborState</a> *currentState)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_o_s_p_f_1_1_neighbor_state.html#a04b28a8b954660937a38409ecb7127e1">changeState</a> (<a class="el" href="class_o_s_p_f_1_1_neighbor.html">Neighbor</a> *<a class="el" href="structneighbor.html">neighbor</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state.html">NeighborState</a> *newState, <a class="el" href="class_o_s_p_f_1_1_neighbor_state.html">NeighborState</a> *currentState)</td></tr>
 </table>
-<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_o_s_p_f_neighbor_state_8h_source.html#l00025">25</a> of file <a class="el" href="_o_s_p_f_neighbor_state_8h_source.html">OSPFNeighborState.h</a>.</p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aec2c368d1d597979bd23912205199c9c"></a><!-- doxytag: member="OSPF::NeighborState::~NeighborState" ref="aec2c368d1d597979bd23912205199c9c" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -128,19 +125,17 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_o_s_p_f_neighbor_state_8h_source.html#l00030">30</a> of file <a class="el" href="_o_s_p_f_neighbor_state_8h_source.html">OSPFNeighborState.h</a>.</p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a2aaa9b77d04ee05f86463f5f468080d9"></a><!-- doxytag: member="OSPF::NeighborState::ChangeState" ref="a2aaa9b77d04ee05f86463f5f468080d9" args="(Neighbor *neighbor, NeighborState *newState, NeighborState *currentState)" -->
+<a class="anchor" id="a04b28a8b954660937a38409ecb7127e1"></a><!-- doxytag: member="OSPF::NeighborState::changeState" ref="a04b28a8b954660937a38409ecb7127e1" args="(Neighbor *neighbor, NeighborState *newState, NeighborState *currentState)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_o_s_p_f_1_1_neighbor_state.html#a2aaa9b77d04ee05f86463f5f468080d9">OSPF::NeighborState::ChangeState</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_o_s_p_f_1_1_neighbor_state.html#a04b28a8b954660937a38409ecb7127e1">OSPF::NeighborState::changeState</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_o_s_p_f_1_1_neighbor.html">OSPF::Neighbor</a> *&#160;</td>
           <td class="paramname"><em>neighbor</em>, </td>
@@ -166,82 +161,77 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_o_s_p_f_neighbor_state_8cc_source.html#l00023">23</a> of file <a class="el" href="_o_s_p_f_neighbor_state_8cc_source.html">OSPFNeighborState.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_o_s_p_f_neighbor_state_attempt_8cc_source.html#l00026">OSPF::NeighborStateAttempt::ProcessEvent()</a>, <a class="el" href="_o_s_p_f_neighbor_state_two_way_8cc_source.html#l00027">OSPF::NeighborStateTwoWay::ProcessEvent()</a>, <a class="el" href="_o_s_p_f_neighbor_state_loading_8cc_source.html#l00029">OSPF::NeighborStateLoading::ProcessEvent()</a>, <a class="el" href="_o_s_p_f_neighbor_state_init_8cc_source.html#l00027">OSPF::NeighborStateInit::ProcessEvent()</a>, <a class="el" href="_o_s_p_f_neighbor_state_full_8cc_source.html#l00028">OSPF::NeighborStateFull::ProcessEvent()</a>, <a class="el" href="_o_s_p_f_neighbor_state_exchange_start_8cc_source.html#l00028">OSPF::NeighborStateExchangeStart::ProcessEvent()</a>, <a class="el" href="_o_s_p_f_neighbor_state_exchange_8cc_source.html#l00030">OSPF::NeighborStateExchange::ProcessEvent()</a>, and <a class="el" href="_o_s_p_f_neighbor_state_down_8cc_source.html#l00026">OSPF::NeighborStateDown::ProcessEvent()</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_1_1_neighbor_state_attempt.html#a7fdf9398c7aa4c3c9e62a07b5ec6d813">OSPF::NeighborStateAttempt::processEvent()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_two_way.html#a8a85fa068ab56b77f9e3dc8b992471c1">OSPF::NeighborStateTwoWay::processEvent()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_loading.html#a185dc004e5606b64e54b42d4c6d2b298">OSPF::NeighborStateLoading::processEvent()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_init.html#a743dc982745295e45c1cbeae415589a2">OSPF::NeighborStateInit::processEvent()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_full.html#a199b180197f62552c5183f856351b9be">OSPF::NeighborStateFull::processEvent()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_exchange_start.html#a00866a3515e614b6163541ebab346abe">OSPF::NeighborStateExchangeStart::processEvent()</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_exchange.html#a84c85ba179d1549b335fdcc4326efa84">OSPF::NeighborStateExchange::processEvent()</a>, and <a class="el" href="class_o_s_p_f_1_1_neighbor_state_down.html#adbe22f81a055c5b3cb08105e71725e0e">OSPF::NeighborStateDown::processEvent()</a>.</p>
 <div class="fragment"><pre class="fragment">{
 
-    <a class="code" href="class_o_s_p_f_1_1_neighbor.html#abe30518a64009a9ae44944c1036a4c0a">OSPF::Neighbor::NeighborStateType</a>   oldState            = currentState-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor_state.html#ade7322e8c3e8379d99b85b9ff5ca925e">GetState</a>();
-    <a class="code" href="class_o_s_p_f_1_1_neighbor.html#abe30518a64009a9ae44944c1036a4c0a">OSPF::Neighbor::NeighborStateType</a>   nextState           = newState-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor_state.html#ade7322e8c3e8379d99b85b9ff5ca925e">GetState</a>();
-    <span class="keywordtype">bool</span>                                rebuildRoutingTable = <span class="keyword">false</span>;
+    <a class="code" href="class_o_s_p_f_1_1_neighbor.html#abe30518a64009a9ae44944c1036a4c0a">OSPF::Neighbor::NeighborStateType</a> oldState = currentState-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor_state.html#a1d40f84c5dc33874b6292bdc3d92777b">getState</a>();
+    <a class="code" href="class_o_s_p_f_1_1_neighbor.html#abe30518a64009a9ae44944c1036a4c0a">OSPF::Neighbor::NeighborStateType</a> nextState = newState-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor_state.html#a1d40f84c5dc33874b6292bdc3d92777b">getState</a>();
+    <span class="keywordtype">bool</span> shouldRebuildRoutingTable = <span class="keyword">false</span>;
 
-    neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a6140003d6b9f16a9143c23828c0f0a3a">ChangeState</a>(newState, currentState);
+    neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a3cf9aa7c8b0c11496195541e92c65a70">changeState</a>(newState, currentState);
 
-    <span class="keywordflow">if</span> ((oldState == <a class="code" href="class_o_s_p_f_1_1_neighbor.html#abe30518a64009a9ae44944c1036a4c0aa040ad05c4a2d67aa2a167e45d4b74788">OSPF::Neighbor::FullState</a>) || (nextState == <a class="code" href="class_o_s_p_f_1_1_neighbor.html#abe30518a64009a9ae44944c1036a4c0aa040ad05c4a2d67aa2a167e45d4b74788">OSPF::Neighbor::FullState</a>)) {
-        <a class="code" href="namespace_o_s_p_f.html#ad64f22839cca7ec05fee5b7596411197">OSPF::RouterID</a>   routerID  = neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a834d76cc1498ba625bdf8b4dde71579e">GetInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a353330e70282153a34fcf9d4ee276acc">GetArea</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a6aee4ce011dc75bc4c42269d90b71192">GetRouter</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#a12b09f4263d005f7b0cd808502c1de48">GetRouterID</a>();
-        <a class="code" href="class_o_s_p_f_1_1_router_l_s_a.html">OSPF::RouterLSA</a>* routerLSA = neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a834d76cc1498ba625bdf8b4dde71579e">GetInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a353330e70282153a34fcf9d4ee276acc">GetArea</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#af1e1cc1b23a4bef7324631f7b6806dba">FindRouterLSA</a>(routerID);
+    <span class="keywordflow">if</span> ((oldState == <a class="code" href="class_o_s_p_f_1_1_neighbor.html#abe30518a64009a9ae44944c1036a4c0aa5a11a4afcf7487dae9dbcba44b8577d2">OSPF::Neighbor::FULL_STATE</a>) || (nextState == <a class="code" href="class_o_s_p_f_1_1_neighbor.html#abe30518a64009a9ae44944c1036a4c0aa5a11a4afcf7487dae9dbcba44b8577d2">OSPF::Neighbor::FULL_STATE</a>)) {
+        <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">OSPF::RouterID</a> routerID = neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a3721e3e077b15b0b96f68db213e3d59f">getInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a42decc255df2e2adb5619f0d1cd52bc0">getArea</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a040af0c880f8a8bcc0e09b1ade647be1">getRouter</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#abf4855bc5ad7dfb4a47d1aae3b003751">getRouterID</a>();
+        <a class="code" href="class_o_s_p_f_1_1_router_l_s_a.html">OSPF::RouterLSA</a>* routerLSA = neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a3721e3e077b15b0b96f68db213e3d59f">getInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a42decc255df2e2adb5619f0d1cd52bc0">getArea</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#adec82108c63b9b87d47d4ad3ccb0bfb0">findRouterLSA</a>(routerID);
 
-        <span class="keywordflow">if</span> (routerLSA != NULL) {
+        <span class="keywordflow">if</span> (routerLSA != <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {
             <span class="keywordtype">long</span> sequenceNumber = routerLSA-&gt;<a class="code" href="class_o_s_p_f_l_s_a.html#a2c9acdc68e5e66deb1826ee41a07b7d1">getHeader</a>().<a class="code" href="class_o_s_p_f_l_s_a_header.html#aa1fa1df57d84e20fef93e765a587ff1c">getLsSequenceNumber</a>();
-            <span class="keywordflow">if</span> (sequenceNumber == <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a35f49b34e56993fe20d3a21d144c16d3">MAX_SEQUENCE_NUMBER</a>) {
-                routerLSA-&gt;<a class="code" href="class_o_s_p_f_l_s_a.html#a2c9acdc68e5e66deb1826ee41a07b7d1">getHeader</a>().<a class="code" href="class_o_s_p_f_l_s_a_header.html#a9851dc72d585835bfcffa08412c33f99">setLsAge</a>(<a class="code" href="_ansa_o_s_p_fcommon_8h.html#a22c87c874ff5382c5d082b860110e363">MAX_AGE</a>);
-                neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a834d76cc1498ba625bdf8b4dde71579e">GetInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a353330e70282153a34fcf9d4ee276acc">GetArea</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a9a8c725b4e795a67374c2b358ba4f00b">FloodLSA</a>(routerLSA);
-                routerLSA-&gt;<a class="code" href="class_o_s_p_f_1_1_l_s_a_tracking_info.html#abf7755405bc9db270e9d3db6beb9f13d">IncrementInstallTime</a>();
+            <span class="keywordflow">if</span> (sequenceNumber == <a class="code" href="_o_s_p_fcommon_8h.html#a35f49b34e56993fe20d3a21d144c16d3">MAX_SEQUENCE_NUMBER</a>) {
+                routerLSA-&gt;<a class="code" href="class_o_s_p_f_l_s_a.html#a2c9acdc68e5e66deb1826ee41a07b7d1">getHeader</a>().<a class="code" href="class_o_s_p_f_l_s_a_header.html#a9851dc72d585835bfcffa08412c33f99">setLsAge</a>(<a class="code" href="_o_s_p_fcommon_8h.html#a22c87c874ff5382c5d082b860110e363">MAX_AGE</a>);
+                neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a3721e3e077b15b0b96f68db213e3d59f">getInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a42decc255df2e2adb5619f0d1cd52bc0">getArea</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#ad734e45bd64c8095f971c777005f28bb">floodLSA</a>(routerLSA);
+                routerLSA-&gt;<a class="code" href="class_o_s_p_f_1_1_l_s_a_tracking_info.html#a2a9bb2304005f0e95c44dfa3472efe48">incrementInstallTime</a>();
             } <span class="keywordflow">else</span> {
-                <a class="code" href="class_o_s_p_f_1_1_router_l_s_a.html">OSPF::RouterLSA</a>* newLSA = neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a834d76cc1498ba625bdf8b4dde71579e">GetInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a353330e70282153a34fcf9d4ee276acc">GetArea</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#ae5c00fa88fd4354c68b53c332520b794">OriginateRouterLSA</a>();
+                <a class="code" href="class_o_s_p_f_1_1_router_l_s_a.html">OSPF::RouterLSA</a>* newLSA = neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a3721e3e077b15b0b96f68db213e3d59f">getInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a42decc255df2e2adb5619f0d1cd52bc0">getArea</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#af1287abae6d4623984fe95892c3dc514">originateRouterLSA</a>();
 
                 newLSA-&gt;<a class="code" href="class_o_s_p_f_l_s_a.html#a2c9acdc68e5e66deb1826ee41a07b7d1">getHeader</a>().<a class="code" href="class_o_s_p_f_l_s_a_header.html#ad1dd1ce9ff9b1c59f8638cdbb26b2d57">setLsSequenceNumber</a>(sequenceNumber + 1);
-                newLSA-&gt;<a class="code" href="class_o_s_p_f_l_s_a.html#a2c9acdc68e5e66deb1826ee41a07b7d1">getHeader</a>().<a class="code" href="class_o_s_p_f_l_s_a_header.html#a199109163f5a237396afca707b9bf6b7">setLsChecksum</a>(0);    <span class="comment">// TODO: calculate correct LS checksum</span>
-                rebuildRoutingTable |= routerLSA-&gt;<a class="code" href="class_o_s_p_f_1_1_router_l_s_a.html#ab15ecd9bdfdb616aeacf47a4e8a7c313">Update</a>(newLSA);
+                shouldRebuildRoutingTable |= routerLSA-&gt;<a class="code" href="class_o_s_p_f_1_1_router_l_s_a.html#a9ccbb9b6cb8f662db04d38e8154f3cf3">update</a>(newLSA);
                 <span class="keyword">delete</span> newLSA;
 
-                neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a834d76cc1498ba625bdf8b4dde71579e">GetInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a353330e70282153a34fcf9d4ee276acc">GetArea</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a9a8c725b4e795a67374c2b358ba4f00b">FloodLSA</a>(routerLSA);
+                neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a3721e3e077b15b0b96f68db213e3d59f">getInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a42decc255df2e2adb5619f0d1cd52bc0">getArea</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#ad734e45bd64c8095f971c777005f28bb">floodLSA</a>(routerLSA);
             }
         }
 
-        <span class="keywordflow">if</span> (neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a834d76cc1498ba625bdf8b4dde71579e">GetInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a93b0578a717b1d7ed98780108305c9d5">GetState</a>() == <a class="code" href="class_o_s_p_f_1_1_interface.html#a68805ad1115c7149d5f8a139437e6249a39fb4e003926b18827b15d54a71a3ce2">OSPF::Interface::DesignatedRouterState</a>) {
-            <a class="code" href="class_o_s_p_f_1_1_network_l_s_a.html">OSPF::NetworkLSA</a>* networkLSA = neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a834d76cc1498ba625bdf8b4dde71579e">GetInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a353330e70282153a34fcf9d4ee276acc">GetArea</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a39ce9a6b66354f420682a42ae0c9038b">FindNetworkLSA</a>(<a class="code" href="_ansa_o_s_p_fcommon_8h.html#a44aadec2c89ea0ba372ac4ea3025ab52">ULongFromIPv4Address</a>(neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a834d76cc1498ba625bdf8b4dde71579e">GetInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a13403146ed20a460dc19fc9089e55c90">GetAddressRange</a>().<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a74993d6571119644535ac918c4240722">address</a>));
+        <span class="keywordflow">if</span> (neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a3721e3e077b15b0b96f68db213e3d59f">getInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#ad414101ce155a1956a4fe8a22be6d69f">getState</a>() == <a class="code" href="class_o_s_p_f_1_1_interface.html#a68805ad1115c7149d5f8a139437e6249a95589231f8e97343f94c3bd98dca00f4">OSPF::Interface::DESIGNATED_ROUTER_STATE</a>) {
+            <a class="code" href="class_o_s_p_f_1_1_network_l_s_a.html">OSPF::NetworkLSA</a>* networkLSA = neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a3721e3e077b15b0b96f68db213e3d59f">getInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a42decc255df2e2adb5619f0d1cd52bc0">getArea</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a11dd2dff6df4544dae82ea03100f12e5">findNetworkLSA</a>(neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a3721e3e077b15b0b96f68db213e3d59f">getInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a19ed3a9f8223ee7339bf3cef15c16b61">getAddressRange</a>().<a class="code" href="struct_o_s_p_f_1_1_i_pv4_address_range.html#a74993d6571119644535ac918c4240722">address</a>);
 
-            <span class="keywordflow">if</span> (networkLSA != NULL) {
+            <span class="keywordflow">if</span> (networkLSA != <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {
                 <span class="keywordtype">long</span> sequenceNumber = networkLSA-&gt;<a class="code" href="class_o_s_p_f_l_s_a.html#a2c9acdc68e5e66deb1826ee41a07b7d1">getHeader</a>().<a class="code" href="class_o_s_p_f_l_s_a_header.html#aa1fa1df57d84e20fef93e765a587ff1c">getLsSequenceNumber</a>();
-                <span class="keywordflow">if</span> (sequenceNumber == <a class="code" href="_ansa_o_s_p_fcommon_8h.html#a35f49b34e56993fe20d3a21d144c16d3">MAX_SEQUENCE_NUMBER</a>) {
-                    networkLSA-&gt;<a class="code" href="class_o_s_p_f_l_s_a.html#a2c9acdc68e5e66deb1826ee41a07b7d1">getHeader</a>().<a class="code" href="class_o_s_p_f_l_s_a_header.html#a9851dc72d585835bfcffa08412c33f99">setLsAge</a>(<a class="code" href="_ansa_o_s_p_fcommon_8h.html#a22c87c874ff5382c5d082b860110e363">MAX_AGE</a>);
-                    neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a834d76cc1498ba625bdf8b4dde71579e">GetInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a353330e70282153a34fcf9d4ee276acc">GetArea</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a9a8c725b4e795a67374c2b358ba4f00b">FloodLSA</a>(networkLSA);
-                    networkLSA-&gt;<a class="code" href="class_o_s_p_f_1_1_l_s_a_tracking_info.html#abf7755405bc9db270e9d3db6beb9f13d">IncrementInstallTime</a>();
+                <span class="keywordflow">if</span> (sequenceNumber == <a class="code" href="_o_s_p_fcommon_8h.html#a35f49b34e56993fe20d3a21d144c16d3">MAX_SEQUENCE_NUMBER</a>) {
+                    networkLSA-&gt;<a class="code" href="class_o_s_p_f_l_s_a.html#a2c9acdc68e5e66deb1826ee41a07b7d1">getHeader</a>().<a class="code" href="class_o_s_p_f_l_s_a_header.html#a9851dc72d585835bfcffa08412c33f99">setLsAge</a>(<a class="code" href="_o_s_p_fcommon_8h.html#a22c87c874ff5382c5d082b860110e363">MAX_AGE</a>);
+                    neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a3721e3e077b15b0b96f68db213e3d59f">getInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a42decc255df2e2adb5619f0d1cd52bc0">getArea</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#ad734e45bd64c8095f971c777005f28bb">floodLSA</a>(networkLSA);
+                    networkLSA-&gt;<a class="code" href="class_o_s_p_f_1_1_l_s_a_tracking_info.html#a2a9bb2304005f0e95c44dfa3472efe48">incrementInstallTime</a>();
                 } <span class="keywordflow">else</span> {
-                    <a class="code" href="class_o_s_p_f_1_1_network_l_s_a.html">OSPF::NetworkLSA</a>* newLSA = neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a834d76cc1498ba625bdf8b4dde71579e">GetInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a353330e70282153a34fcf9d4ee276acc">GetArea</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a6618d36cce9a113c6de92c593128cc24">OriginateNetworkLSA</a>(neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a834d76cc1498ba625bdf8b4dde71579e">GetInterface</a>());
+                    <a class="code" href="class_o_s_p_f_1_1_network_l_s_a.html">OSPF::NetworkLSA</a>* newLSA = neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a3721e3e077b15b0b96f68db213e3d59f">getInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a42decc255df2e2adb5619f0d1cd52bc0">getArea</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#af5d1d8065403a2359f3ce59b49759766">originateNetworkLSA</a>(neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a3721e3e077b15b0b96f68db213e3d59f">getInterface</a>());
 
-                    <span class="keywordflow">if</span> (newLSA != NULL) {
+                    <span class="keywordflow">if</span> (newLSA != <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {
                         newLSA-&gt;<a class="code" href="class_o_s_p_f_l_s_a.html#a2c9acdc68e5e66deb1826ee41a07b7d1">getHeader</a>().<a class="code" href="class_o_s_p_f_l_s_a_header.html#ad1dd1ce9ff9b1c59f8638cdbb26b2d57">setLsSequenceNumber</a>(sequenceNumber + 1);
-                        newLSA-&gt;<a class="code" href="class_o_s_p_f_l_s_a.html#a2c9acdc68e5e66deb1826ee41a07b7d1">getHeader</a>().<a class="code" href="class_o_s_p_f_l_s_a_header.html#a199109163f5a237396afca707b9bf6b7">setLsChecksum</a>(0);    <span class="comment">// TODO: calculate correct LS checksum</span>
-                        rebuildRoutingTable |= networkLSA-&gt;<a class="code" href="class_o_s_p_f_1_1_network_l_s_a.html#a9b94613fc2d18148c66e7aa4e67591e8">Update</a>(newLSA);
+                        shouldRebuildRoutingTable |= networkLSA-&gt;<a class="code" href="class_o_s_p_f_1_1_network_l_s_a.html#a863f872f1774d7f651c69dbd1dc511c4">update</a>(newLSA);
                         <span class="keyword">delete</span> newLSA;
                     } <span class="keywordflow">else</span> {    <span class="comment">// no neighbors on the network -&gt; old NetworkLSA must be flushed</span>
-                        networkLSA-&gt;<a class="code" href="class_o_s_p_f_l_s_a.html#a2c9acdc68e5e66deb1826ee41a07b7d1">getHeader</a>().<a class="code" href="class_o_s_p_f_l_s_a_header.html#a9851dc72d585835bfcffa08412c33f99">setLsAge</a>(<a class="code" href="_ansa_o_s_p_fcommon_8h.html#a22c87c874ff5382c5d082b860110e363">MAX_AGE</a>);
-                        networkLSA-&gt;<a class="code" href="class_o_s_p_f_1_1_l_s_a_tracking_info.html#abf7755405bc9db270e9d3db6beb9f13d">IncrementInstallTime</a>();
+                        networkLSA-&gt;<a class="code" href="class_o_s_p_f_l_s_a.html#a2c9acdc68e5e66deb1826ee41a07b7d1">getHeader</a>().<a class="code" href="class_o_s_p_f_l_s_a_header.html#a9851dc72d585835bfcffa08412c33f99">setLsAge</a>(<a class="code" href="_o_s_p_fcommon_8h.html#a22c87c874ff5382c5d082b860110e363">MAX_AGE</a>);
+                        networkLSA-&gt;<a class="code" href="class_o_s_p_f_1_1_l_s_a_tracking_info.html#a2a9bb2304005f0e95c44dfa3472efe48">incrementInstallTime</a>();
                     }
 
-                    neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a834d76cc1498ba625bdf8b4dde71579e">GetInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a353330e70282153a34fcf9d4ee276acc">GetArea</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a9a8c725b4e795a67374c2b358ba4f00b">FloodLSA</a>(networkLSA);
+                    neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a3721e3e077b15b0b96f68db213e3d59f">getInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a42decc255df2e2adb5619f0d1cd52bc0">getArea</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#ad734e45bd64c8095f971c777005f28bb">floodLSA</a>(networkLSA);
                 }
             }
         }
     }
 
-    <span class="keywordflow">if</span> (rebuildRoutingTable) {
-        neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a834d76cc1498ba625bdf8b4dde71579e">GetInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a353330e70282153a34fcf9d4ee276acc">GetArea</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a6aee4ce011dc75bc4c42269d90b71192">GetRouter</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#a184025a0ac2c61dc9c580b2321a9c9a1">RebuildRoutingTable</a>();
+    <span class="keywordflow">if</span> (shouldRebuildRoutingTable) {
+        neighbor-&gt;<a class="code" href="class_o_s_p_f_1_1_neighbor.html#a3721e3e077b15b0b96f68db213e3d59f">getInterface</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_interface.html#a42decc255df2e2adb5619f0d1cd52bc0">getArea</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_area.html#a040af0c880f8a8bcc0e09b1ade647be1">getRouter</a>()-&gt;<a class="code" href="class_o_s_p_f_1_1_router.html#af849f36506ebf49917f4a7f4ebdbcf53" title="Rebuilds the routing table from scratch(based on the LSA database).">rebuildRoutingTable</a>();
     }
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="ade7322e8c3e8379d99b85b9ff5ca925e"></a><!-- doxytag: member="OSPF::NeighborState::GetState" ref="ade7322e8c3e8379d99b85b9ff5ca925e" args="(void) const =0" -->
+<a class="anchor" id="a1d40f84c5dc33874b6292bdc3d92777b"></a><!-- doxytag: member="OSPF::NeighborState::getState" ref="a1d40f84c5dc33874b6292bdc3d92777b" args="() const =0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="class_o_s_p_f_1_1_neighbor.html#abe30518a64009a9ae44944c1036a4c0a">Neighbor::NeighborStateType</a> <a class="el" href="class_o_s_p_f_1_1_neighbor_state.html#ade7322e8c3e8379d99b85b9ff5ca925e">OSPF::NeighborState::GetState</a> </td>
+          <td class="memname">virtual <a class="el" href="class_o_s_p_f_1_1_neighbor.html#abe30518a64009a9ae44944c1036a4c0a">Neighbor::NeighborStateType</a> <a class="el" href="class_o_s_p_f_1_1_neighbor_state.html#a1d40f84c5dc33874b6292bdc3d92777b">OSPF::NeighborState::getState</a> </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td> const<code> [pure virtual]</code></td>
         </tr>
@@ -249,18 +239,18 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_o_s_p_f_1_1_neighbor_state_attempt.html#a4447683c66bbfb70a19b41d7be429cc5">OSPF::NeighborStateAttempt</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_down.html#a047cf95bbe95a2cc4381c1aa3792571f">OSPF::NeighborStateDown</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_exchange.html#a41f16dee8ded589fdb614ceebe3bf054">OSPF::NeighborStateExchange</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_exchange_start.html#aced841c99d6badd0f265a0940efea008">OSPF::NeighborStateExchangeStart</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_full.html#a88c9eee3bbe331e23a8ee59985dc35c6">OSPF::NeighborStateFull</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_init.html#a20344000c7e42c2339ab40655043f748">OSPF::NeighborStateInit</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_loading.html#ac72aac0ad15099438213493d56849d2a">OSPF::NeighborStateLoading</a>, and <a class="el" href="class_o_s_p_f_1_1_neighbor_state_two_way.html#adc6be1a2e6db9efe5ec5424d249c4802">OSPF::NeighborStateTwoWay</a>.</p>
+<p>Implemented in <a class="el" href="class_o_s_p_f_1_1_neighbor_state_attempt.html#a8ac48fb74bd0c1fe56792f8afd3c9468">OSPF::NeighborStateAttempt</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_down.html#ab66013f08bf539a29ddf9e28a376c5ae">OSPF::NeighborStateDown</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_exchange.html#a61985ef6fbdb78ed49179554559fe0da">OSPF::NeighborStateExchange</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_exchange_start.html#a00b80e11a8e7ebe475b96a75e7219d8d">OSPF::NeighborStateExchangeStart</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_full.html#aa2a16d005d699e861c1af6f63cd53ad7">OSPF::NeighborStateFull</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_init.html#ac030a58b5a64317a47e905867475d97b">OSPF::NeighborStateInit</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_loading.html#a25eb46d3f28e7c0bf71ad543ae2fcd5b">OSPF::NeighborStateLoading</a>, and <a class="el" href="class_o_s_p_f_1_1_neighbor_state_two_way.html#a8a30b084a7eb638ead4af1d3d054c952">OSPF::NeighborStateTwoWay</a>.</p>
 
-<p>Referenced by <a class="el" href="_o_s_p_f_neighbor_state_8cc_source.html#l00023">ChangeState()</a>.</p>
+<p>Referenced by <a class="el" href="class_o_s_p_f_1_1_neighbor_state.html#a04b28a8b954660937a38409ecb7127e1">changeState()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a57af8f9fedef48be652d77ff9c8be26e"></a><!-- doxytag: member="OSPF::NeighborState::ProcessEvent" ref="a57af8f9fedef48be652d77ff9c8be26e" args="(Neighbor *neighbor, Neighbor::NeighborEventType event)=0" -->
+<a class="anchor" id="a0ff78bb508713692cbde28c392649830"></a><!-- doxytag: member="OSPF::NeighborState::processEvent" ref="a0ff78bb508713692cbde28c392649830" args="(Neighbor *neighbor, Neighbor::NeighborEventType event)=0" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_o_s_p_f_1_1_neighbor_state.html#a57af8f9fedef48be652d77ff9c8be26e">OSPF::NeighborState::ProcessEvent</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_o_s_p_f_1_1_neighbor_state.html#a0ff78bb508713692cbde28c392649830">OSPF::NeighborState::processEvent</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_o_s_p_f_1_1_neighbor.html">Neighbor</a> *&#160;</td>
           <td class="paramname"><em>neighbor</em>, </td>
@@ -280,13 +270,13 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_o_s_p_f_1_1_neighbor_state_attempt.html#adc63475f921161565800b1c33e78f814">OSPF::NeighborStateAttempt</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_down.html#a16ce80eb3f947c2adb62b2d885e835fd">OSPF::NeighborStateDown</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_exchange.html#a3b983ffc2fdb9213d062f34e0fb18f00">OSPF::NeighborStateExchange</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_exchange_start.html#ab759e2911bdf00193e6695400828978b">OSPF::NeighborStateExchangeStart</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_full.html#a12f0324da877b3cac8b5afbd509df0ae">OSPF::NeighborStateFull</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_init.html#a17087f77a78bfd579667580af4314bd5">OSPF::NeighborStateInit</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_loading.html#ae2fb7a1b73472a27b95b7fd370595a9c">OSPF::NeighborStateLoading</a>, and <a class="el" href="class_o_s_p_f_1_1_neighbor_state_two_way.html#a3088a5eaa889a2f1394fd891e74648a1">OSPF::NeighborStateTwoWay</a>.</p>
+<p>Implemented in <a class="el" href="class_o_s_p_f_1_1_neighbor_state_attempt.html#a7fdf9398c7aa4c3c9e62a07b5ec6d813">OSPF::NeighborStateAttempt</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_down.html#adbe22f81a055c5b3cb08105e71725e0e">OSPF::NeighborStateDown</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_exchange.html#a84c85ba179d1549b335fdcc4326efa84">OSPF::NeighborStateExchange</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_exchange_start.html#a00866a3515e614b6163541ebab346abe">OSPF::NeighborStateExchangeStart</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_full.html#a199b180197f62552c5183f856351b9be">OSPF::NeighborStateFull</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_init.html#a743dc982745295e45c1cbeae415589a2">OSPF::NeighborStateInit</a>, <a class="el" href="class_o_s_p_f_1_1_neighbor_state_loading.html#a185dc004e5606b64e54b42d4c6d2b298">OSPF::NeighborStateLoading</a>, and <a class="el" href="class_o_s_p_f_1_1_neighbor_state_two_way.html#a8a85fa068ab56b77f9e3dc8b992471c1">OSPF::NeighborStateTwoWay</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_o_s_p_f_neighbor_state_8h_source.html">OSPFNeighborState.h</a></li>
-<li><a class="el" href="_o_s_p_f_neighbor_state_8cc_source.html">OSPFNeighborState.cc</a></li>
+<li><a class="el" href="_o_s_p_f_neighbor_state_8h.html">OSPFNeighborState.h</a></li>
+<li><a class="el" href="_o_s_p_f_neighbor_state_8cc.html">OSPFNeighborState.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -295,7 +285,7 @@ Protected Member Functions</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_o_s_p_f.html">OSPF</a>      </li>
       <li class="navelem"><a class="el" href="class_o_s_p_f_1_1_neighbor_state.html">NeighborState</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:56 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:33 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

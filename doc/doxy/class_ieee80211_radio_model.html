@@ -83,14 +83,17 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="Ieee80211RadioModel" --><!-- doxytag: inherits="IRadioModel" -->
-<p><code>#include &lt;<a class="el" href="_ieee80211_radio_model_8h_source.html">Ieee80211RadioModel.h</a>&gt;</code></p>
+<p><a class="el" href="class_radio.html" title="Abstract base class for radio modules.">Radio</a> model for IEEE 802.11.  
+ <a href="class_ieee80211_radio_model.html#details">More...</a></p>
+
+<p><code>#include &lt;Ieee80211RadioModel.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Ieee80211RadioModel:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_ieee80211_radio_model.png" usemap="#Ieee80211RadioModel_map" alt=""/>
   <map id="Ieee80211RadioModel_map" name="Ieee80211RadioModel_map">
-<area href="class_i_radio_model.html" alt="IRadioModel" shape="rect" coords="0,0,138,24"/>
+<area href="class_i_radio_model.html" title="Abstract class to encapsulate the calculation of received power of a radio transmission." alt="IRadioModel" shape="rect" coords="0,0,138,24"/>
 </map>
  </div></div>
 
@@ -98,9 +101,17 @@ Inheritance diagram for Ieee80211RadioModel:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_radio_model.html#a51982beedcc8e5d8cd468000a0edb56e">initializeFrom</a> (cModule *radioModule)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_radio_model.html#a51982beedcc8e5d8cd468000a0edb56e">initializeFrom</a> (cModule *radioModule)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows parameters to be read from the module parameters of a module that contains this object.  <a href="#a51982beedcc8e5d8cd468000a0edb56e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_radio_model.html#a705603deb14546aa86d80290642365c3">calculateDuration</a> (<a class="el" href="class_air_frame.html">AirFrame</a> *airframe)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Should be defined to calculate the duration of the <a class="el" href="class_air_frame.html" title="Class generated from linklayer/radio/AirFrame.msg by opp_msgc.">AirFrame</a>.  <a href="#a705603deb14546aa86d80290642365c3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_radio_model.html#a4c204e1ee87745839618b0ba19bff53f">isReceivedCorrectly</a> (<a class="el" href="class_air_frame.html">AirFrame</a> *airframe, const <a class="el" href="_snr_list_8h.html#a241b5e7c9575e932988a55f7a5012a61">SnrList</a> &amp;receivedList)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Should be defined to calculate whether the frame has been received correctly.  <a href="#a4c204e1ee87745839618b0ba19bff53f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_radio_model.html#ad50196ca217d1540b0f51a6f121d256c">~Ieee80211RadioModel</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_radio_model.html#a922fafef7d31f6a3458db8056209d0e6">haveTestFrame</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_radio_model.html#ace3e477a57c05de5a634dd9f0093fb01">calculateDurationTestFrame</a> (<a class="el" href="class_air_frame.html">AirFrame</a> *airframe)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_radio_model.html#a85e63b4f9074906dae2685ecbc15cda4">getTestFrameError</a> (double snirMin, double bitrate)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_radio_model.html#ad662408f067a4a205467559ebd159f2a">getTestFrameSize</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_radio_model.html#a2edd0475f3223e179478abd46ae98a66">isPacketOK</a> (double snirMin, int lengthMPDU, double bitrate)</td></tr>
@@ -108,12 +119,44 @@ Protected Member Functions</h2></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_radio_model.html#a978435d160d6381c1f2295681e673d30">snirThreshold</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">cOutVector&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_radio_model.html#a2be923b56e3d1bf7fe114eb3419d28f7">snirVector</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_radio_model.html#ad18f45bb9d6243a33be35b318acb22f9">i</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_ber_parse_file.html">BerParseFile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_radio_model.html#a3f6c33708afa7744321c2d277abc481f">parseTable</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_radio_model.html#ab3001f155ff6779d26ab78807b0da3d7">fileBer</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_radio_model.html#ab4a047d445c9eaaf6762bdbd699ffe4a">PHY_HEADER_LENGTH</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_error_model.html">IErrorModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_radio_model.html#a19a0c4ffdda16ac53f4cea1010dc0100">errorModel</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_wifi_preamble_type_8h.html#acc4e3ae44dc0fb54b8cb90d72b096887">WifiPreamble</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_radio_model.html#ae0287a9b7bcffc349a0bb0aba1105481">wifiPreamble</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_radio_model.html#af9d5654f47505ecefa7b97bbeaaa0eeb">autoHeaderSize</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_radio_model.html#a7cf814f2807a2efb2faf0ce4803a45bc">btSize</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ieee80211_radio_model.html#af695bececa88dee3914765a1a8772943">useTestFrame</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Radio model for IEEE 802.11. The implementation is largely based on the Mobility Framework's <a class="el" href="class_snr_eval80211.html" title="A SnrEval for the 802.11b protocol.">SnrEval80211</a> and <a class="el" href="class_decider80211.html" title="Decider for the 802.11 modules.">Decider80211</a> modules. See the NED file for more info. </p>
-
-<p>Definition at line <a class="el" href="_ieee80211_radio_model_8h_source.html#l00029">29</a> of file <a class="el" href="_ieee80211_radio_model_8h_source.html">Ieee80211RadioModel.h</a>.</p>
-</div><hr/><h2>Member Function Documentation</h2>
+<div class="textblock"><p><a class="el" href="class_radio.html" title="Abstract base class for radio modules.">Radio</a> model for IEEE 802.11. </p>
+<p>The implementation is largely based on the Mobility Framework's SnrEval80211 and Decider80211 modules. See the NED file for more info. </p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ad50196ca217d1540b0f51a6f121d256c"></a><!-- doxytag: member="Ieee80211RadioModel::~Ieee80211RadioModel" ref="ad50196ca217d1540b0f51a6f121d256c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ieee80211_radio_model.html#ad50196ca217d1540b0f51a6f121d256c">Ieee80211RadioModel::~Ieee80211RadioModel</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a3f6c33708afa7744321c2d277abc481f">parseTable</a>)
+        <span class="keyword">delete</span> <a class="code" href="class_ieee80211_radio_model.html#a3f6c33708afa7744321c2d277abc481f">parseTable</a>;
+    <span class="keyword">delete</span> <a class="code" href="class_ieee80211_radio_model.html#a19a0c4ffdda16ac53f4cea1010dc0100">errorModel</a>;
+}
+</pre></div>
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a705603deb14546aa86d80290642365c3"></a><!-- doxytag: member="Ieee80211RadioModel::calculateDuration" ref="a705603deb14546aa86d80290642365c3" args="(AirFrame *airframe)" -->
 <div class="memitem">
 <div class="memproto">
@@ -128,14 +171,109 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Should be defined to calculate the duration of the <a class="el" href="class_air_frame.html">AirFrame</a>. Usually the duration is just the frame length divided by the bitrate. However, in some cases, notably IEEE 802.11, the header has a different modulation (and thus a different bitrate) than the rest of the message. </p>
+
+<p>Should be defined to calculate the duration of the <a class="el" href="class_air_frame.html" title="Class generated from linklayer/radio/AirFrame.msg by opp_msgc.">AirFrame</a>. </p>
+<p>Usually the duration is just the frame length divided by the bitrate. However, in some cases, notably IEEE 802.11, the header has a different modulation (and thus a different bitrate) than the rest of the message. </p>
 
 <p>Implements <a class="el" href="class_i_radio_model.html#af8aff6a5a5c7b81321818141c7d97b95">IRadioModel</a>.</p>
-
-<p>Definition at line <a class="el" href="_ieee80211_radio_model_8cc_source.html#l00033">33</a> of file <a class="el" href="_ieee80211_radio_model_8cc_source.html">Ieee80211RadioModel.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="comment">// The physical layer header is sent with 1Mbit/s and the rest with the frame&#39;s bitrate</span>
-    <span class="keywordflow">return</span> airframe-&gt;getBitLength()/airframe-&gt;getBitrate() + <a class="code" href="_ieee80211_consts_8h.html#a0ecba1599d2ee7a3f33cf1970abdb90a">PHY_HEADER_LENGTH</a>/<a class="code" href="_ieee80211_consts_8h.html#a0454abde1a622bc79c2528d728e466ef">BITRATE_HEADER</a>;
+    <span class="keywordtype">double</span> duration;
+<span class="preprocessor">#ifndef NS3CALMODE</span>
+<span class="preprocessor"></span>    <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a>==<span class="charliteral">&#39;g&#39;</span>)
+        duration = 4*ceil((16+airframe-&gt;getBitLength()+6)/(airframe-&gt;getBitrate()/1e6*4))*1e-6 + <a class="code" href="class_ieee80211_radio_model.html#ab4a047d445c9eaaf6762bdbd699ffe4a">PHY_HEADER_LENGTH</a>;
+    <span class="keywordflow">else</span>
+        <span class="comment">// The physical layer header is sent with 1Mbit/s and the rest with the frame&#39;s bitrate</span>
+        duration = airframe-&gt;getBitLength()/airframe-&gt;getBitrate() + 192/<a class="code" href="_ieee80211_consts_8h.html#a0454abde1a622bc79c2528d728e466ef">BITRATE_HEADER</a>;
+<span class="preprocessor">#else</span>
+<span class="preprocessor"></span>    <a class="code" href="class_modulation_type.html" title="represent a single transmission mode">ModulationType</a> modeBody;
+    <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a>==<span class="charliteral">&#39;g&#39;</span>)
+    {
+        modeBody = <a class="code" href="class_wifi_modulation_type.html#a858c98cd637c56ab55fe1cddba298f7c">WifiModulationType::getMode80211g</a>(airframe-&gt;getBitrate());
+        duration = SIMTIME_DBL(<a class="code" href="class_wifi_modulation_type.html#a94fdef72e7064d34a0879b61e43d6077">WifiModulationType::calculateTxDuration</a>(airframe-&gt;getBitLength(), modeBody, <a class="code" href="class_ieee80211_radio_model.html#ae0287a9b7bcffc349a0bb0aba1105481">wifiPreamble</a>));
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a>==<span class="charliteral">&#39;b&#39;</span>)
+    {
+        <span class="comment">// The physical layer header is sent with 1Mbit/s and the rest with the frame&#39;s bitrate</span>
+        modeBody = <a class="code" href="class_wifi_modulation_type.html#aa15d36cf39a2b2a6206ed7fc8a4bd4b6">WifiModulationType::getMode80211b</a>(airframe-&gt;getBitrate());
+        duration = SIMTIME_DBL(<a class="code" href="class_wifi_modulation_type.html#a94fdef72e7064d34a0879b61e43d6077">WifiModulationType::calculateTxDuration</a>(airframe-&gt;getBitLength(), modeBody, <a class="code" href="class_ieee80211_radio_model.html#ae0287a9b7bcffc349a0bb0aba1105481">wifiPreamble</a>));
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a>==<span class="charliteral">&#39;a&#39;</span>)
+    {
+        <span class="comment">// The physical layer header is sent with 1Mbit/s and the rest with the frame&#39;s bitrate</span>
+        modeBody = <a class="code" href="class_wifi_modulation_type.html#afd79b3878ac41e168e9d9a78a56a633d">WifiModulationType::getMode80211a</a>(airframe-&gt;getBitrate());
+        duration = SIMTIME_DBL(<a class="code" href="class_wifi_modulation_type.html#a94fdef72e7064d34a0879b61e43d6077">WifiModulationType::calculateTxDuration</a>(airframe-&gt;getBitLength(), modeBody, <a class="code" href="class_ieee80211_radio_model.html#ae0287a9b7bcffc349a0bb0aba1105481">wifiPreamble</a>));
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a>==<span class="charliteral">&#39;p&#39;</span>)
+    {
+        <span class="comment">// The physical layer header is sent with 1Mbit/s and the rest with the frame&#39;s bitrate</span>
+        modeBody = <a class="code" href="class_wifi_modulation_type.html#a5eefbb523ffdccff54ec23e46e50dac3">WifiModulationType::getMode80211p</a>(airframe-&gt;getBitrate());
+        duration = SIMTIME_DBL(<a class="code" href="class_wifi_modulation_type.html#a94fdef72e7064d34a0879b61e43d6077">WifiModulationType::calculateTxDuration</a>(airframe-&gt;getBitLength(), modeBody, <a class="code" href="class_ieee80211_radio_model.html#ae0287a9b7bcffc349a0bb0aba1105481">wifiPreamble</a>));
+    }
+    <span class="keywordflow">else</span>
+        opp_error(<span class="stringliteral">&quot;Radio model not supported yet, must be a,b,g or p&quot;</span>);
+
+     airframe-&gt;setModulationType(modeBody);
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a>&lt;&lt;<span class="stringliteral">&quot;Radio:frameDuration=&quot;</span>&lt;&lt;duration*1e6&lt;&lt;<span class="stringliteral">&quot;us(&quot;</span>&lt;&lt;airframe-&gt;getBitLength()&lt;&lt;<span class="stringliteral">&quot;bits)&quot;</span>&lt;&lt;endl;
+    <span class="keywordflow">return</span> duration;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ace3e477a57c05de5a634dd9f0093fb01"></a><!-- doxytag: member="Ieee80211RadioModel::calculateDurationTestFrame" ref="ace3e477a57c05de5a634dd9f0093fb01" args="(AirFrame *airframe)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="class_ieee80211_radio_model.html#ace3e477a57c05de5a634dd9f0093fb01">Ieee80211RadioModel::calculateDurationTestFrame</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_air_frame.html">AirFrame</a> *&#160;</td>
+          <td class="paramname"><em>airframe</em></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="class_i_radio_model.html#a09839ec150413ee074b009b971c881dd">IRadioModel</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordtype">double</span> duration;
+<span class="preprocessor">#ifndef NS3CALMODE</span>
+<span class="preprocessor"></span>    <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a>==<span class="charliteral">&#39;g&#39;</span>)
+        duration=4*ceil((16+<a class="code" href="class_ieee80211_radio_model.html#a7cf814f2807a2efb2faf0ce4803a45bc">btSize</a>+6)/(airframe-&gt;<a class="code" href="class_air_frame.html#ade6ec20d4ff28dd42bbf137f564934a3">getBitrate</a>()/1e6*4))*1e-6 + <a class="code" href="class_ieee80211_radio_model.html#ab4a047d445c9eaaf6762bdbd699ffe4a">PHY_HEADER_LENGTH</a>;
+    <span class="keywordflow">else</span>
+        <span class="comment">// The physical layer header is sent with 1Mbit/s and the rest with the frame&#39;s bitrate</span>
+        duration=<a class="code" href="class_ieee80211_radio_model.html#a7cf814f2807a2efb2faf0ce4803a45bc">btSize</a>/airframe-&gt;<a class="code" href="class_air_frame.html#ade6ec20d4ff28dd42bbf137f564934a3">getBitrate</a>() + 192/<a class="code" href="_ieee80211_consts_8h.html#a0454abde1a622bc79c2528d728e466ef">BITRATE_HEADER</a>;
+<span class="preprocessor">#else</span>
+<span class="preprocessor"></span>    <a class="code" href="class_modulation_type.html" title="represent a single transmission mode">ModulationType</a> modeBody;
+    <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a> == <span class="charliteral">&#39;g&#39;</span>)
+    {
+        modeBody = <a class="code" href="class_wifi_modulation_type.html#a858c98cd637c56ab55fe1cddba298f7c">WifiModulationType::getMode80211g</a>(airframe-&gt;<a class="code" href="class_air_frame.html#ade6ec20d4ff28dd42bbf137f564934a3">getBitrate</a>());
+        duration = SIMTIME_DBL(<a class="code" href="class_wifi_modulation_type.html#a94fdef72e7064d34a0879b61e43d6077">WifiModulationType::calculateTxDuration</a>(<a class="code" href="class_ieee80211_radio_model.html#a7cf814f2807a2efb2faf0ce4803a45bc">btSize</a>, modeBody, <a class="code" href="class_ieee80211_radio_model.html#ae0287a9b7bcffc349a0bb0aba1105481">wifiPreamble</a>));
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a> == <span class="charliteral">&#39;b&#39;</span>)
+    {
+        <span class="comment">// The physical layer header is sent with 1Mbit/s and the rest with the frame&#39;s bitrate</span>
+        modeBody = <a class="code" href="class_wifi_modulation_type.html#aa15d36cf39a2b2a6206ed7fc8a4bd4b6">WifiModulationType::getMode80211b</a>(airframe-&gt;<a class="code" href="class_air_frame.html#ade6ec20d4ff28dd42bbf137f564934a3">getBitrate</a>());
+        duration = SIMTIME_DBL(<a class="code" href="class_wifi_modulation_type.html#a94fdef72e7064d34a0879b61e43d6077">WifiModulationType::calculateTxDuration</a>(<a class="code" href="class_ieee80211_radio_model.html#a7cf814f2807a2efb2faf0ce4803a45bc">btSize</a>, modeBody, <a class="code" href="class_ieee80211_radio_model.html#ae0287a9b7bcffc349a0bb0aba1105481">wifiPreamble</a>));
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a> == <span class="charliteral">&#39;a&#39;</span>)
+    {
+        <span class="comment">// The physical layer header is sent with 1Mbit/s and the rest with the frame&#39;s bitrate</span>
+        modeBody = <a class="code" href="class_wifi_modulation_type.html#afd79b3878ac41e168e9d9a78a56a633d">WifiModulationType::getMode80211a</a>(airframe-&gt;<a class="code" href="class_air_frame.html#ade6ec20d4ff28dd42bbf137f564934a3">getBitrate</a>());
+        duration = SIMTIME_DBL(<a class="code" href="class_wifi_modulation_type.html#a94fdef72e7064d34a0879b61e43d6077">WifiModulationType::calculateTxDuration</a>(<a class="code" href="class_ieee80211_radio_model.html#a7cf814f2807a2efb2faf0ce4803a45bc">btSize</a>, modeBody, <a class="code" href="class_ieee80211_radio_model.html#ae0287a9b7bcffc349a0bb0aba1105481">wifiPreamble</a>));
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a> == <span class="charliteral">&#39;p&#39;</span>)
+    {
+        <span class="comment">// The physical layer header is sent with 1Mbit/s and the rest with the frame&#39;s bitrate</span>
+        modeBody = <a class="code" href="class_wifi_modulation_type.html#a5eefbb523ffdccff54ec23e46e50dac3">WifiModulationType::getMode80211p</a>(airframe-&gt;<a class="code" href="class_air_frame.html#ade6ec20d4ff28dd42bbf137f564934a3">getBitrate</a>());
+        duration = SIMTIME_DBL(<a class="code" href="class_wifi_modulation_type.html#a94fdef72e7064d34a0879b61e43d6077">WifiModulationType::calculateTxDuration</a>(<a class="code" href="class_ieee80211_radio_model.html#a7cf814f2807a2efb2faf0ce4803a45bc">btSize</a>, modeBody, <a class="code" href="class_ieee80211_radio_model.html#ae0287a9b7bcffc349a0bb0aba1105481">wifiPreamble</a>));
+    }
+    <span class="keywordflow">else</span>
+        opp_error(<span class="stringliteral">&quot;Radio model not supported yet, must be a,b,g or p&quot;</span>);
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Radio:Test frameDuration=&quot;</span> &lt;&lt; duration * 1e6 &lt;&lt; <span class="stringliteral">&quot;us(&quot;</span> &lt;&lt; <a class="code" href="class_ieee80211_radio_model.html#a7cf814f2807a2efb2faf0ce4803a45bc">btSize</a> &lt;&lt; <span class="stringliteral">&quot;bits)&quot;</span> &lt;&lt; endl;
+    <span class="keywordflow">return</span> duration;
 }
 </pre></div>
 </div>
@@ -155,12 +293,145 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_ieee80211_radio_model_8cc_source.html#l00101">101</a> of file <a class="el" href="_ieee80211_radio_model_8cc_source.html">Ieee80211RadioModel.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_ieee80211_radio_model_8cc_source.html#l00028">initializeFrom()</a>.</p>
+<p>Referenced by <a class="el" href="class_ieee80211_radio_model.html#a51982beedcc8e5d8cd468000a0edb56e">initializeFrom()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">return</span> pow(10.0, (dB / 10));
 }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a85e63b4f9074906dae2685ecbc15cda4"></a><!-- doxytag: member="Ieee80211RadioModel::getTestFrameError" ref="a85e63b4f9074906dae2685ecbc15cda4" args="(double snirMin, double bitrate)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="class_ieee80211_radio_model.html#a85e63b4f9074906dae2685ecbc15cda4">Ieee80211RadioModel::getTestFrameError</a> </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>snirMin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>bitrate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="class_i_radio_model.html#a2b9d022e59b5040a263ac76c04db28aa">IRadioModel</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <a class="code" href="class_modulation_type.html" title="represent a single transmission mode">ModulationType</a> modeBody;
+    <a class="code" href="class_modulation_type.html" title="represent a single transmission mode">ModulationType</a> modeHeader;
+
+    <a class="code" href="_wifi_preamble_type_8h.html#acc4e3ae44dc0fb54b8cb90d72b096887">WifiPreamble</a> preambleUsed = <a class="code" href="class_ieee80211_radio_model.html#ae0287a9b7bcffc349a0bb0aba1105481">wifiPreamble</a>;
+    <span class="keywordtype">double</span> headerNoError;
+    uint32_t headerSize;
+    <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a> == <span class="charliteral">&#39;b&#39;</span>)
+        headerSize = <a class="code" href="_ieee80211_consts_8h.html#a28c69472ed4119dd2d98ca00d7f11ae3">HEADER_WITHOUT_PREAMBLE</a>;
+    <span class="keywordflow">else</span>
+        headerSize = 24;
+
+    <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a> == <span class="charliteral">&#39;g&#39;</span>)
+    {
+        modeBody = <a class="code" href="class_wifi_modulation_type.html#a858c98cd637c56ab55fe1cddba298f7c">WifiModulationType::getMode80211g</a>(bitrate);
+        modeHeader = <a class="code" href="class_wifi_modulation_type.html#a7a3f7b49a94129f223125fee59fb7e00">WifiModulationType::getPlcpHeaderMode</a>(modeBody, preambleUsed);
+        <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#af9d5654f47505ecefa7b97bbeaaa0eeb">autoHeaderSize</a>)
+        {
+            <a class="code" href="class_modulation_type.html" title="represent a single transmission mode">ModulationType</a> modeBodyA = <a class="code" href="class_wifi_modulation_type.html#afd79b3878ac41e168e9d9a78a56a633d">WifiModulationType::getMode80211a</a>(bitrate);
+            headerSize = ceil(
+                    SIMTIME_DBL(<a class="code" href="class_wifi_modulation_type.html#a3ab6ae5ee3c38f8a6079cad69faece18">WifiModulationType::getPlcpHeaderDuration</a> (modeBodyA, preambleUsed))
+                            * modeHeader.<a class="code" href="class_modulation_type.html#ad6663947275e1ad366f3a377332e6815">getDataRate</a>());
+        }
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a> == <span class="charliteral">&#39;b&#39;</span>)
+    {
+        modeBody = <a class="code" href="class_wifi_modulation_type.html#aa15d36cf39a2b2a6206ed7fc8a4bd4b6">WifiModulationType::getMode80211b</a>(bitrate);
+        modeHeader = <a class="code" href="class_wifi_modulation_type.html#a7a3f7b49a94129f223125fee59fb7e00">WifiModulationType::getPlcpHeaderMode</a>(modeBody, preambleUsed);
+        <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#af9d5654f47505ecefa7b97bbeaaa0eeb">autoHeaderSize</a>)
+            headerSize = ceil(
+                    SIMTIME_DBL(<a class="code" href="class_wifi_modulation_type.html#a3ab6ae5ee3c38f8a6079cad69faece18">WifiModulationType::getPlcpHeaderDuration</a> (modeBody, preambleUsed))
+                            * modeHeader.<a class="code" href="class_modulation_type.html#ad6663947275e1ad366f3a377332e6815">getDataRate</a>());
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a> == <span class="charliteral">&#39;a&#39;</span>)
+    {
+        modeBody = <a class="code" href="class_wifi_modulation_type.html#afd79b3878ac41e168e9d9a78a56a633d">WifiModulationType::getMode80211a</a>(bitrate);
+        modeHeader = <a class="code" href="class_wifi_modulation_type.html#a7a3f7b49a94129f223125fee59fb7e00">WifiModulationType::getPlcpHeaderMode</a>(modeBody, preambleUsed);
+        <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#af9d5654f47505ecefa7b97bbeaaa0eeb">autoHeaderSize</a>)
+            headerSize = ceil(
+                    SIMTIME_DBL(<a class="code" href="class_wifi_modulation_type.html#a3ab6ae5ee3c38f8a6079cad69faece18">WifiModulationType::getPlcpHeaderDuration</a> (modeBody, preambleUsed))
+                            * modeHeader.<a class="code" href="class_modulation_type.html#ad6663947275e1ad366f3a377332e6815">getDataRate</a>());
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a> == <span class="charliteral">&#39;p&#39;</span>)
+    {
+        modeBody = <a class="code" href="class_wifi_modulation_type.html#a5eefbb523ffdccff54ec23e46e50dac3">WifiModulationType::getMode80211p</a>(bitrate);
+        modeHeader = <a class="code" href="class_wifi_modulation_type.html#a7a3f7b49a94129f223125fee59fb7e00">WifiModulationType::getPlcpHeaderMode</a>(modeBody, preambleUsed);
+        <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#af9d5654f47505ecefa7b97bbeaaa0eeb">autoHeaderSize</a>)
+            headerSize = ceil(
+                    SIMTIME_DBL(<a class="code" href="class_wifi_modulation_type.html#a3ab6ae5ee3c38f8a6079cad69faece18">WifiModulationType::getPlcpHeaderDuration</a> (modeBody, preambleUsed))
+                            * modeHeader.<a class="code" href="class_modulation_type.html#ad6663947275e1ad366f3a377332e6815">getDataRate</a>());
+    }
+    <span class="keywordflow">else</span>
+    {
+        opp_error(<span class="stringliteral">&quot;Radio model not supported yet, must be a,b,g or p&quot;</span>);
+    }
+
+    headerNoError = <a class="code" href="class_ieee80211_radio_model.html#a19a0c4ffdda16ac53f4cea1010dc0100">errorModel</a>-&gt;<a class="code" href="class_i_error_model.html#a25778e29cb5c90d3bac4627870d91766">GetChunkSuccessRate</a>(modeHeader, snirMin, headerSize);
+    <span class="comment">// probability of no bit error in the MPDU</span>
+    <span class="keywordtype">double</span> MpduNoError;
+    <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#ab3001f155ff6779d26ab78807b0da3d7">fileBer</a>)
+        MpduNoError = 1 - <a class="code" href="class_ieee80211_radio_model.html#a3f6c33708afa7744321c2d277abc481f">parseTable</a>-&gt;<a class="code" href="class_ber_parse_file.html#a161f201f9474e3243bcb7b5279358618">getPer</a>(bitrate, snirMin, <a class="code" href="class_ieee80211_radio_model.html#a7cf814f2807a2efb2faf0ce4803a45bc">btSize</a> / 8);
+    <span class="keywordflow">else</span>
+        MpduNoError = <a class="code" href="class_ieee80211_radio_model.html#a19a0c4ffdda16ac53f4cea1010dc0100">errorModel</a>-&gt;<a class="code" href="class_i_error_model.html#a25778e29cb5c90d3bac4627870d91766">GetChunkSuccessRate</a>(modeHeader, snirMin, <a class="code" href="class_ieee80211_radio_model.html#a7cf814f2807a2efb2faf0ce4803a45bc">btSize</a>);
+    <span class="keywordflow">return</span> (1 - (headerNoError * MpduNoError));
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ad662408f067a4a205467559ebd159f2a"></a><!-- doxytag: member="Ieee80211RadioModel::getTestFrameSize" ref="ad662408f067a4a205467559ebd159f2a" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_ieee80211_radio_model.html#ad662408f067a4a205467559ebd159f2a">Ieee80211RadioModel::getTestFrameSize</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="class_i_radio_model.html#aa96f4e38c90522742171fd2c1f1a2ee9">IRadioModel</a>.</p>
+<div class="fragment"><pre class="fragment">                {
+                     <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#af695bececa88dee3914765a1a8772943">useTestFrame</a>) <span class="keywordflow">return</span> <a class="code" href="class_ieee80211_radio_model.html#a7cf814f2807a2efb2faf0ce4803a45bc">btSize</a>;
+                     <span class="keywordflow">else</span> <span class="keywordflow">return</span> -1;
+                }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a922fafef7d31f6a3458db8056209d0e6"></a><!-- doxytag: member="Ieee80211RadioModel::haveTestFrame" ref="a922fafef7d31f6a3458db8056209d0e6" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="class_ieee80211_radio_model.html#a922fafef7d31f6a3458db8056209d0e6">Ieee80211RadioModel::haveTestFrame</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="class_i_radio_model.html#ac6822e571dc7ddff25561a6b3b1a56da">IRadioModel</a>.</p>
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <a class="code" href="class_ieee80211_radio_model.html#af695bececa88dee3914765a1a8772943">useTestFrame</a>;}
 </pre></div>
 </div>
 </div>
@@ -169,7 +440,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_ieee80211_radio_model.html#a51982beedcc8e5d8cd468000a0edb56e">Ieee80211RadioModel::initializeFrom</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_ieee80211_radio_model.html#a51982beedcc8e5d8cd468000a0edb56e">Ieee80211RadioModel::initializeFrom</a> </td>
           <td>(</td>
           <td class="paramtype">cModule *&#160;</td>
           <td class="paramname"><em>radioModule</em></td><td>)</td>
@@ -178,13 +449,60 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Allows parameters to be read from the module parameters of a module that contains this object. </p>
 
 <p>Implements <a class="el" href="class_i_radio_model.html#a77a41286d82a93c67d1b834e4236f0d3">IRadioModel</a>.</p>
-
-<p>Definition at line <a class="el" href="_ieee80211_radio_model_8cc_source.html#l00028">28</a> of file <a class="el" href="_ieee80211_radio_model_8cc_source.html">Ieee80211RadioModel.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_ieee80211_radio_model.html#a978435d160d6381c1f2295681e673d30">snirThreshold</a> = <a class="code" href="class_ieee80211_radio_model.html#ab14f527710231f7e560b6d5f371e1170">dB2fraction</a>(radioModule-&gt;par(<span class="stringliteral">&quot;snirThreshold&quot;</span>));
+    <a class="code" href="class_ieee80211_radio_model.html#a978435d160d6381c1f2295681e673d30">snirThreshold</a> = <a class="code" href="class_ieee80211_radio_model.html#ab14f527710231f7e560b6d5f371e1170">dB2fraction</a>(radioModule-&gt;par(<span class="stringliteral">&quot;snirThreshold&quot;</span>).doubleValue());
+
+
+    <span class="keywordflow">if</span> (strcmp(<span class="stringliteral">&quot;SHORT&quot;</span>, radioModule-&gt;par(<span class="stringliteral">&quot;wifiPreambleMode&quot;</span>).stringValue())==0)
+        <a class="code" href="class_ieee80211_radio_model.html#ae0287a9b7bcffc349a0bb0aba1105481">wifiPreamble</a> = <a class="code" href="_wifi_preamble_type_8h.html#acc4e3ae44dc0fb54b8cb90d72b096887a0ed47ea121f7e6711fe0fc8fc3f4d4e1">WIFI_PREAMBLE_SHORT</a>;
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(<span class="stringliteral">&quot;LONG&quot;</span>, radioModule-&gt;par(<span class="stringliteral">&quot;wifiPreambleMode&quot;</span>).stringValue())==0)
+        <a class="code" href="class_ieee80211_radio_model.html#ae0287a9b7bcffc349a0bb0aba1105481">wifiPreamble</a> = <a class="code" href="_wifi_preamble_type_8h.html#acc4e3ae44dc0fb54b8cb90d72b096887ac1e601a7325262aabe389377de08a274">WIFI_PREAMBLE_LONG</a>;
+    <span class="keywordflow">else</span>
+        <a class="code" href="class_ieee80211_radio_model.html#ae0287a9b7bcffc349a0bb0aba1105481">wifiPreamble</a> = <a class="code" href="_wifi_preamble_type_8h.html#acc4e3ae44dc0fb54b8cb90d72b096887ac1e601a7325262aabe389377de08a274">WIFI_PREAMBLE_LONG</a>;
+
+    <span class="keywordflow">if</span> (strcmp(<span class="stringliteral">&quot;b&quot;</span>, radioModule-&gt;par(<span class="stringliteral">&quot;phyOpMode&quot;</span>).stringValue())==0)
+        <a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a> = <span class="charliteral">&#39;b&#39;</span>;
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(<span class="stringliteral">&quot;g&quot;</span>, radioModule-&gt;par(<span class="stringliteral">&quot;phyOpMode&quot;</span>).stringValue())==0)
+        <a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a> = <span class="charliteral">&#39;g&#39;</span>;
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(<span class="stringliteral">&quot;a&quot;</span>, radioModule-&gt;par(<span class="stringliteral">&quot;phyOpMode&quot;</span>).stringValue())==0)
+        <a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a> = <span class="charliteral">&#39;a&#39;</span>;
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(<span class="stringliteral">&quot;p&quot;</span>, radioModule-&gt;par(<span class="stringliteral">&quot;phyOpMode&quot;</span>).stringValue())==0)
+        <a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a> = <span class="charliteral">&#39;p&#39;</span>;
+    <span class="keywordflow">else</span>
+        <a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a> = <span class="charliteral">&#39;g&#39;</span>;
+
+    <span class="keywordflow">if</span> (strcmp(<span class="stringliteral">&quot;YansModel&quot;</span>, radioModule-&gt;par(<span class="stringliteral">&quot;errorModel&quot;</span>).stringValue())==0)
+        <a class="code" href="class_ieee80211_radio_model.html#a19a0c4ffdda16ac53f4cea1010dc0100">errorModel</a> = <span class="keyword">new</span> <a class="code" href="class_yans_error_rate_model.html" title="Model the error rate for different modulations.">YansErrorRateModel</a>();
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(<span class="stringliteral">&quot;NistModel&quot;</span>, radioModule-&gt;par(<span class="stringliteral">&quot;errorModel&quot;</span>).stringValue())==0)
+        <a class="code" href="class_ieee80211_radio_model.html#a19a0c4ffdda16ac53f4cea1010dc0100">errorModel</a> = <span class="keyword">new</span> <a class="code" href="class_nist_error_rate_model.html" title="A model for the error rate for different modulations.">NistErrorRateModel</a>();
+    <span class="keywordflow">else</span>
+        opp_error(<span class="stringliteral">&quot;Error %s model is not valid&quot;</span>,radioModule-&gt;par(<span class="stringliteral">&quot;errorModel&quot;</span>).stringValue());
+
+
+    <a class="code" href="class_ieee80211_radio_model.html#a7cf814f2807a2efb2faf0ce4803a45bc">btSize</a> = radioModule-&gt;par(<span class="stringliteral">&quot;btSize&quot;</span>).longValue();
+    <a class="code" href="class_ieee80211_radio_model.html#af9d5654f47505ecefa7b97bbeaaa0eeb">autoHeaderSize</a> = radioModule-&gt;par(<span class="stringliteral">&quot;AutoHeaderSize&quot;</span>);
+
+    <a class="code" href="class_ieee80211_radio_model.html#af695bececa88dee3914765a1a8772943">useTestFrame</a> = radioModule-&gt;par(<span class="stringliteral">&quot;airtimeLinkComputation&quot;</span>).boolValue();
+
+    <a class="code" href="class_ieee80211_radio_model.html#a3f6c33708afa7744321c2d277abc481f">parseTable</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+    <a class="code" href="class_ieee80211_radio_model.html#ab4a047d445c9eaaf6762bdbd699ffe4a">PHY_HEADER_LENGTH</a> = 26e-6;
+
+    <a class="code" href="class_ieee80211_radio_model.html#a2be923b56e3d1bf7fe114eb3419d28f7">snirVector</a>.setName(<span class="stringliteral">&quot;snirVector&quot;</span>);
+    <a class="code" href="class_ieee80211_radio_model.html#ad18f45bb9d6243a33be35b318acb22f9">i</a> = 0;
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *fname = radioModule-&gt;par(<span class="stringliteral">&quot;berTableFile&quot;</span>);
+    std::string <a class="code" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>(fname);
+    <span class="keywordflow">if</span> (!<a class="code" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>.empty())
+    {
+        <a class="code" href="class_ieee80211_radio_model.html#a3f6c33708afa7744321c2d277abc481f">parseTable</a> = <span class="keyword">new</span> <a class="code" href="class_ber_parse_file.html" title="Radio model for IEEE 802.11.">BerParseFile</a>(<a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a>);
+        <a class="code" href="class_ieee80211_radio_model.html#a3f6c33708afa7744321c2d277abc481f">parseTable</a>-&gt;<a class="code" href="class_ber_parse_file.html#a89a4fed726eeca66ce74aee261f69409">parseFile</a>(fname);
+        <a class="code" href="class_ieee80211_radio_model.html#ab3001f155ff6779d26ab78807b0da3d7">fileBer</a> = <span class="keyword">true</span>;
+    }
+    <span class="keywordflow">else</span>
+        <a class="code" href="class_ieee80211_radio_model.html#ab3001f155ff6779d26ab78807b0da3d7">fileBer</a> = <span class="keyword">false</span>;
 }
 </pre></div>
 </div>
@@ -220,29 +538,67 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_ieee80211_radio_model_8cc_source.html#l00070">70</a> of file <a class="el" href="_ieee80211_radio_model_8cc_source.html">Ieee80211RadioModel.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_ieee80211_radio_model_8cc_source.html#l00040">isReceivedCorrectly()</a>.</p>
+<p>Referenced by <a class="el" href="class_ieee80211_radio_model.html#a4c204e1ee87745839618b0ba19bff53f">isReceivedCorrectly()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordtype">double</span> berHeader, berMPDU;
+    <a class="code" href="class_modulation_type.html" title="represent a single transmission mode">ModulationType</a> modeBody;
+    <a class="code" href="class_modulation_type.html" title="represent a single transmission mode">ModulationType</a> modeHeader;
 
-    berHeader = 0.5 * exp(-snirMin * <a class="code" href="_ieee80211_consts_8h.html#a007aaecac439a0b64fa29eef0da1d9b6">BANDWIDTH</a> / <a class="code" href="_ieee80211_consts_8h.html#a0454abde1a622bc79c2528d728e466ef">BITRATE_HEADER</a>);
+    <a class="code" href="_wifi_preamble_type_8h.html#acc4e3ae44dc0fb54b8cb90d72b096887">WifiPreamble</a> preambleUsed = <a class="code" href="class_ieee80211_radio_model.html#ae0287a9b7bcffc349a0bb0aba1105481">wifiPreamble</a>;
+    <span class="keywordtype">double</span> headerNoError;
+    uint32_t headerSize;
+    <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a>==<span class="charliteral">&#39;b&#39;</span>)
+        headerSize = <a class="code" href="_ieee80211_consts_8h.html#a28c69472ed4119dd2d98ca00d7f11ae3">HEADER_WITHOUT_PREAMBLE</a>;
+    <span class="keywordflow">else</span>
+        headerSize = 24;
 
-    <span class="comment">// if PSK modulation</span>
-    <span class="keywordflow">if</span> (bitrate == 1E+6 || bitrate == 2E+6)
-        berMPDU = 0.5 * exp(-snirMin * <a class="code" href="_ieee80211_consts_8h.html#a007aaecac439a0b64fa29eef0da1d9b6">BANDWIDTH</a> / bitrate);
-    <span class="comment">// if CCK modulation (modeled with 16-QAM)</span>
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (bitrate == 5.5E+6)
-        berMPDU = 0.5 * (1 - 1 / sqrt(pow(2.0, 4))) * erfc(snirMin * <a class="code" href="_ieee80211_consts_8h.html#a007aaecac439a0b64fa29eef0da1d9b6">BANDWIDTH</a> / bitrate);
-    <span class="keywordflow">else</span>                        <span class="comment">// CCK, modelled with 256-QAM</span>
-        berMPDU = 0.25 * (1 - 1 / sqrt(pow(2.0, 8))) * erfc(snirMin * <a class="code" href="_ieee80211_consts_8h.html#a007aaecac439a0b64fa29eef0da1d9b6">BANDWIDTH</a> / bitrate);
+    <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a>==<span class="charliteral">&#39;g&#39;</span>)
+    {
+        modeBody = <a class="code" href="class_wifi_modulation_type.html#a858c98cd637c56ab55fe1cddba298f7c">WifiModulationType::getMode80211g</a>(bitrate);
+        modeHeader = <a class="code" href="class_wifi_modulation_type.html#a7a3f7b49a94129f223125fee59fb7e00">WifiModulationType::getPlcpHeaderMode</a>(modeBody, preambleUsed);
+        <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#af9d5654f47505ecefa7b97bbeaaa0eeb">autoHeaderSize</a>)
+        {
+           <a class="code" href="class_modulation_type.html" title="represent a single transmission mode">ModulationType</a> modeBodyA = <a class="code" href="class_wifi_modulation_type.html#afd79b3878ac41e168e9d9a78a56a633d">WifiModulationType::getMode80211a</a>(bitrate);
+           headerSize = ceil(SIMTIME_DBL(<a class="code" href="class_wifi_modulation_type.html#a3ab6ae5ee3c38f8a6079cad69faece18">WifiModulationType::getPlcpHeaderDuration</a>(modeBodyA, preambleUsed))*modeHeader.<a class="code" href="class_modulation_type.html#ad6663947275e1ad366f3a377332e6815">getDataRate</a>());
+        }
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a>==<span class="charliteral">&#39;b&#39;</span>)
+    {
+        modeBody = <a class="code" href="class_wifi_modulation_type.html#aa15d36cf39a2b2a6206ed7fc8a4bd4b6">WifiModulationType::getMode80211b</a>(bitrate);
+        modeHeader = <a class="code" href="class_wifi_modulation_type.html#a7a3f7b49a94129f223125fee59fb7e00">WifiModulationType::getPlcpHeaderMode</a>(modeBody, preambleUsed);
+        <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#af9d5654f47505ecefa7b97bbeaaa0eeb">autoHeaderSize</a>)
+            headerSize = ceil(SIMTIME_DBL(<a class="code" href="class_wifi_modulation_type.html#a3ab6ae5ee3c38f8a6079cad69faece18">WifiModulationType::getPlcpHeaderDuration</a>(modeBody, preambleUsed))*modeHeader.<a class="code" href="class_modulation_type.html#ad6663947275e1ad366f3a377332e6815">getDataRate</a>());
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a>==<span class="charliteral">&#39;a&#39;</span>)
+    {
+        modeBody = <a class="code" href="class_wifi_modulation_type.html#afd79b3878ac41e168e9d9a78a56a633d">WifiModulationType::getMode80211a</a>(bitrate);
+        modeHeader = <a class="code" href="class_wifi_modulation_type.html#a7a3f7b49a94129f223125fee59fb7e00">WifiModulationType::getPlcpHeaderMode</a>(modeBody, preambleUsed);
+        <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#af9d5654f47505ecefa7b97bbeaaa0eeb">autoHeaderSize</a>)
+             headerSize = ceil(SIMTIME_DBL(<a class="code" href="class_wifi_modulation_type.html#a3ab6ae5ee3c38f8a6079cad69faece18">WifiModulationType::getPlcpHeaderDuration</a>(modeBody, preambleUsed))*modeHeader.<a class="code" href="class_modulation_type.html#ad6663947275e1ad366f3a377332e6815">getDataRate</a>());
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">phyOpMode</a>==<span class="charliteral">&#39;p&#39;</span>)
+    {
+        modeBody = <a class="code" href="class_wifi_modulation_type.html#a5eefbb523ffdccff54ec23e46e50dac3">WifiModulationType::getMode80211p</a>(bitrate);
+        modeHeader = <a class="code" href="class_wifi_modulation_type.html#a7a3f7b49a94129f223125fee59fb7e00">WifiModulationType::getPlcpHeaderMode</a>(modeBody, preambleUsed);
+        <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#af9d5654f47505ecefa7b97bbeaaa0eeb">autoHeaderSize</a>)
+             headerSize = ceil(SIMTIME_DBL(<a class="code" href="class_wifi_modulation_type.html#a3ab6ae5ee3c38f8a6079cad69faece18">WifiModulationType::getPlcpHeaderDuration</a>(modeBody, preambleUsed))*modeHeader.<a class="code" href="class_modulation_type.html#ad6663947275e1ad366f3a377332e6815">getDataRate</a>());
+    }
+    <span class="keywordflow">else</span>
+    {
+        opp_error(<span class="stringliteral">&quot;Radio model not supported yet, must be a,b,g or p&quot;</span>);
+    }
 
-    <span class="comment">// probability of no bit error in the PLCP header</span>
-    <span class="keywordtype">double</span> headerNoError = pow(1.0 - berHeader, <a class="code" href="_ieee80211_consts_8h.html#a28c69472ed4119dd2d98ca00d7f11ae3">HEADER_WITHOUT_PREAMBLE</a>);
-
+    headerNoError = <a class="code" href="class_ieee80211_radio_model.html#a19a0c4ffdda16ac53f4cea1010dc0100">errorModel</a>-&gt;<a class="code" href="class_i_error_model.html#a25778e29cb5c90d3bac4627870d91766">GetChunkSuccessRate</a>(modeHeader, snirMin, headerSize);
     <span class="comment">// probability of no bit error in the MPDU</span>
-    <span class="keywordtype">double</span> MpduNoError = pow(1.0 - berMPDU, lengthMPDU);
-    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;berHeader: &quot;</span> &lt;&lt; berHeader &lt;&lt; <span class="stringliteral">&quot; berMPDU: &quot;</span> &lt;&lt; berMPDU &lt;&lt; endl;
+    <span class="keywordtype">double</span> MpduNoError;
+    <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#ab3001f155ff6779d26ab78807b0da3d7">fileBer</a>)
+        MpduNoError = 1-<a class="code" href="class_ieee80211_radio_model.html#a3f6c33708afa7744321c2d277abc481f">parseTable</a>-&gt;<a class="code" href="class_ber_parse_file.html#a161f201f9474e3243bcb7b5279358618">getPer</a>(bitrate, snirMin, lengthMPDU/8);
+    <span class="keywordflow">else</span>
+        MpduNoError = <a class="code" href="class_ieee80211_radio_model.html#a19a0c4ffdda16ac53f4cea1010dc0100">errorModel</a>-&gt;<a class="code" href="class_i_error_model.html#a25778e29cb5c90d3bac4627870d91766">GetChunkSuccessRate</a>(modeBody, snirMin, lengthMPDU);
+
+    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;berHeader: &quot;</span> &lt;&lt; berHeader &lt;&lt; <span class="stringliteral">&quot; berMPDU: &quot;</span> &lt;&lt;berMPDU &lt;&lt;<span class="stringliteral">&quot; lengthMPDU: &quot;</span>&lt;&lt;lengthMPDU&lt;&lt;<span class="stringliteral">&quot; PER: &quot;</span>&lt;&lt;1-MpduNoError&lt;&lt;endl;
+    <span class="keywordflow">if</span> (MpduNoError&gt;=1 &amp;&amp; headerNoError&gt;=1)
+        <span class="keywordflow">return</span> <span class="keyword">true</span>;
     <span class="keywordtype">double</span> rand = dblrand();
 
     <span class="keywordflow">if</span> (rand &gt; headerNoError)
@@ -279,11 +635,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Should be defined to calculate whether the frame has been received correctly. Input is the signal-noise ratio over the duration of the frame. The calculation may take into account the modulation scheme, possible error correction code, etc. </p>
+
+<p>Should be defined to calculate whether the frame has been received correctly. </p>
+<p>Input is the signal-noise ratio over the duration of the frame. The calculation may take into account the modulation scheme, possible error correction code, etc. </p>
 
 <p>Implements <a class="el" href="class_i_radio_model.html#a107eaa67a662f3dce05eb691dae90f84">IRadioModel</a>.</p>
-
-<p>Definition at line <a class="el" href="_ieee80211_radio_model_8cc_source.html#l00040">40</a> of file <a class="el" href="_ieee80211_radio_model_8cc_source.html">Ieee80211RadioModel.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// calculate snirMin</span>
     <span class="keywordtype">double</span> snirMin = receivedList.begin()-&gt;snr;
@@ -294,13 +650,20 @@ Protected Attributes</h2></td></tr>
     cPacket *frame = airframe-&gt;getEncapsulatedPacket();
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;packet (&quot;</span> &lt;&lt; frame-&gt;getClassName() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span> &lt;&lt; frame-&gt;getName() &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; frame-&gt;info() &lt;&lt; <span class="stringliteral">&quot;) snrMin=&quot;</span> &lt;&lt; snirMin &lt;&lt; endl;
 
+    <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#ad18f45bb9d6243a33be35b318acb22f9">i</a>%1000==0)
+    {
+        <a class="code" href="class_ieee80211_radio_model.html#a2be923b56e3d1bf7fe114eb3419d28f7">snirVector</a>.record(10*log10(snirMin));
+        <a class="code" href="class_ieee80211_radio_model.html#ad18f45bb9d6243a33be35b318acb22f9">i</a> = 0;
+    }
+    <a class="code" href="class_ieee80211_radio_model.html#ad18f45bb9d6243a33be35b318acb22f9">i</a>++;
+
     <span class="keywordflow">if</span> (snirMin &lt;= <a class="code" href="class_ieee80211_radio_model.html#a978435d160d6381c1f2295681e673d30">snirThreshold</a>)
     {
         <span class="comment">// if snir is too low for the packet to be recognized</span>
-        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;COLLISION! Packet got lost\n&quot;</span>;
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;COLLISION! Packet got lost. Noise only\n&quot;</span>;
         <span class="keywordflow">return</span> <span class="keyword">false</span>;
     }
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a2edd0475f3223e179478abd46ae98a66">isPacketOK</a>(snirMin, airframe-&gt;getEncapsulatedPacket()-&gt;getBitLength(), airframe-&gt;<a class="code" href="class_air_frame.html#ade6ec20d4ff28dd42bbf137f564934a3">getBitrate</a>()))
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_ieee80211_radio_model.html#a2edd0475f3223e179478abd46ae98a66">isPacketOK</a>(snirMin, frame-&gt;getBitLength(), airframe-&gt;<a class="code" href="class_air_frame.html#ade6ec20d4ff28dd42bbf137f564934a3">getBitrate</a>()))
     {
         <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;packet was received correctly, it is now handed to upper layer...\n&quot;</span>;
         <span class="keywordflow">return</span> <span class="keyword">true</span>;
@@ -315,6 +678,126 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="af9d5654f47505ecefa7b97bbeaaa0eeb"></a><!-- doxytag: member="Ieee80211RadioModel::autoHeaderSize" ref="af9d5654f47505ecefa7b97bbeaaa0eeb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_ieee80211_radio_model.html#af9d5654f47505ecefa7b97bbeaaa0eeb">Ieee80211RadioModel::autoHeaderSize</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_ieee80211_radio_model.html#a85e63b4f9074906dae2685ecbc15cda4">getTestFrameError()</a>, <a class="el" href="class_ieee80211_radio_model.html#a51982beedcc8e5d8cd468000a0edb56e">initializeFrom()</a>, and <a class="el" href="class_ieee80211_radio_model.html#a2edd0475f3223e179478abd46ae98a66">isPacketOK()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7cf814f2807a2efb2faf0ce4803a45bc"></a><!-- doxytag: member="Ieee80211RadioModel::btSize" ref="a7cf814f2807a2efb2faf0ce4803a45bc" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="class_ieee80211_radio_model.html#a7cf814f2807a2efb2faf0ce4803a45bc">Ieee80211RadioModel::btSize</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_ieee80211_radio_model.html#ace3e477a57c05de5a634dd9f0093fb01">calculateDurationTestFrame()</a>, <a class="el" href="class_ieee80211_radio_model.html#a85e63b4f9074906dae2685ecbc15cda4">getTestFrameError()</a>, and <a class="el" href="class_ieee80211_radio_model.html#a51982beedcc8e5d8cd468000a0edb56e">initializeFrom()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a19a0c4ffdda16ac53f4cea1010dc0100"></a><!-- doxytag: member="Ieee80211RadioModel::errorModel" ref="a19a0c4ffdda16ac53f4cea1010dc0100" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_i_error_model.html">IErrorModel</a>* <a class="el" href="class_ieee80211_radio_model.html#a19a0c4ffdda16ac53f4cea1010dc0100">Ieee80211RadioModel::errorModel</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_ieee80211_radio_model.html#a85e63b4f9074906dae2685ecbc15cda4">getTestFrameError()</a>, <a class="el" href="class_ieee80211_radio_model.html#a51982beedcc8e5d8cd468000a0edb56e">initializeFrom()</a>, <a class="el" href="class_ieee80211_radio_model.html#a2edd0475f3223e179478abd46ae98a66">isPacketOK()</a>, and <a class="el" href="class_ieee80211_radio_model.html#ad50196ca217d1540b0f51a6f121d256c">~Ieee80211RadioModel()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab3001f155ff6779d26ab78807b0da3d7"></a><!-- doxytag: member="Ieee80211RadioModel::fileBer" ref="ab3001f155ff6779d26ab78807b0da3d7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_ieee80211_radio_model.html#ab3001f155ff6779d26ab78807b0da3d7">Ieee80211RadioModel::fileBer</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_ieee80211_radio_model.html#a85e63b4f9074906dae2685ecbc15cda4">getTestFrameError()</a>, <a class="el" href="class_ieee80211_radio_model.html#a51982beedcc8e5d8cd468000a0edb56e">initializeFrom()</a>, and <a class="el" href="class_ieee80211_radio_model.html#a2edd0475f3223e179478abd46ae98a66">isPacketOK()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad18f45bb9d6243a33be35b318acb22f9"></a><!-- doxytag: member="Ieee80211RadioModel::i" ref="ad18f45bb9d6243a33be35b318acb22f9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="class_ieee80211_radio_model.html#ad18f45bb9d6243a33be35b318acb22f9">Ieee80211RadioModel::i</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_ieee80211_radio_model.html#a51982beedcc8e5d8cd468000a0edb56e">initializeFrom()</a>, and <a class="el" href="class_ieee80211_radio_model.html#a4c204e1ee87745839618b0ba19bff53f">isReceivedCorrectly()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3f6c33708afa7744321c2d277abc481f"></a><!-- doxytag: member="Ieee80211RadioModel::parseTable" ref="a3f6c33708afa7744321c2d277abc481f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_ber_parse_file.html">BerParseFile</a>* <a class="el" href="class_ieee80211_radio_model.html#a3f6c33708afa7744321c2d277abc481f">Ieee80211RadioModel::parseTable</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_ieee80211_radio_model.html#a85e63b4f9074906dae2685ecbc15cda4">getTestFrameError()</a>, <a class="el" href="class_ieee80211_radio_model.html#a51982beedcc8e5d8cd468000a0edb56e">initializeFrom()</a>, <a class="el" href="class_ieee80211_radio_model.html#a2edd0475f3223e179478abd46ae98a66">isPacketOK()</a>, and <a class="el" href="class_ieee80211_radio_model.html#ad50196ca217d1540b0f51a6f121d256c">~Ieee80211RadioModel()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab4a047d445c9eaaf6762bdbd699ffe4a"></a><!-- doxytag: member="Ieee80211RadioModel::PHY_HEADER_LENGTH" ref="ab4a047d445c9eaaf6762bdbd699ffe4a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="class_ieee80211_radio_model.html#ab4a047d445c9eaaf6762bdbd699ffe4a">Ieee80211RadioModel::PHY_HEADER_LENGTH</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_ieee80211_radio_model.html#a705603deb14546aa86d80290642365c3">calculateDuration()</a>, <a class="el" href="class_ieee80211_radio_model.html#ace3e477a57c05de5a634dd9f0093fb01">calculateDurationTestFrame()</a>, and <a class="el" href="class_ieee80211_radio_model.html#a51982beedcc8e5d8cd468000a0edb56e">initializeFrom()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6226021e937c3cf42d939ac68e30ec69"></a><!-- doxytag: member="Ieee80211RadioModel::phyOpMode" ref="a6226021e937c3cf42d939ac68e30ec69" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char <a class="el" href="class_ieee80211_radio_model.html#a6226021e937c3cf42d939ac68e30ec69">Ieee80211RadioModel::phyOpMode</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_ieee80211_radio_model.html#a705603deb14546aa86d80290642365c3">calculateDuration()</a>, <a class="el" href="class_ieee80211_radio_model.html#ace3e477a57c05de5a634dd9f0093fb01">calculateDurationTestFrame()</a>, <a class="el" href="class_ieee80211_radio_model.html#a85e63b4f9074906dae2685ecbc15cda4">getTestFrameError()</a>, <a class="el" href="class_ieee80211_radio_model.html#a51982beedcc8e5d8cd468000a0edb56e">initializeFrom()</a>, and <a class="el" href="class_ieee80211_radio_model.html#a2edd0475f3223e179478abd46ae98a66">isPacketOK()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a978435d160d6381c1f2295681e673d30"></a><!-- doxytag: member="Ieee80211RadioModel::snirThreshold" ref="a978435d160d6381c1f2295681e673d30" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -326,15 +809,58 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_ieee80211_radio_model_8h_source.html#l00032">32</a> of file <a class="el" href="_ieee80211_radio_model_8h_source.html">Ieee80211RadioModel.h</a>.</p>
+<p>Referenced by <a class="el" href="class_ieee80211_radio_model.html#a51982beedcc8e5d8cd468000a0edb56e">initializeFrom()</a>, and <a class="el" href="class_ieee80211_radio_model.html#a4c204e1ee87745839618b0ba19bff53f">isReceivedCorrectly()</a>.</p>
 
-<p>Referenced by <a class="el" href="_ieee80211_radio_model_8cc_source.html#l00028">initializeFrom()</a>, and <a class="el" href="_ieee80211_radio_model_8cc_source.html#l00040">isReceivedCorrectly()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a2be923b56e3d1bf7fe114eb3419d28f7"></a><!-- doxytag: member="Ieee80211RadioModel::snirVector" ref="a2be923b56e3d1bf7fe114eb3419d28f7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cOutVector <a class="el" href="class_ieee80211_radio_model.html#a2be923b56e3d1bf7fe114eb3419d28f7">Ieee80211RadioModel::snirVector</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_ieee80211_radio_model.html#a51982beedcc8e5d8cd468000a0edb56e">initializeFrom()</a>, and <a class="el" href="class_ieee80211_radio_model.html#a4c204e1ee87745839618b0ba19bff53f">isReceivedCorrectly()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af695bececa88dee3914765a1a8772943"></a><!-- doxytag: member="Ieee80211RadioModel::useTestFrame" ref="af695bececa88dee3914765a1a8772943" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_ieee80211_radio_model.html#af695bececa88dee3914765a1a8772943">Ieee80211RadioModel::useTestFrame</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_ieee80211_radio_model.html#a51982beedcc8e5d8cd468000a0edb56e">initializeFrom()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae0287a9b7bcffc349a0bb0aba1105481"></a><!-- doxytag: member="Ieee80211RadioModel::wifiPreamble" ref="ae0287a9b7bcffc349a0bb0aba1105481" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_wifi_preamble_type_8h.html#acc4e3ae44dc0fb54b8cb90d72b096887">WifiPreamble</a> <a class="el" href="class_ieee80211_radio_model.html#ae0287a9b7bcffc349a0bb0aba1105481">Ieee80211RadioModel::wifiPreamble</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_ieee80211_radio_model.html#a705603deb14546aa86d80290642365c3">calculateDuration()</a>, <a class="el" href="class_ieee80211_radio_model.html#ace3e477a57c05de5a634dd9f0093fb01">calculateDurationTestFrame()</a>, <a class="el" href="class_ieee80211_radio_model.html#a85e63b4f9074906dae2685ecbc15cda4">getTestFrameError()</a>, <a class="el" href="class_ieee80211_radio_model.html#a51982beedcc8e5d8cd468000a0edb56e">initializeFrom()</a>, and <a class="el" href="class_ieee80211_radio_model.html#a2edd0475f3223e179478abd46ae98a66">isPacketOK()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_ieee80211_radio_model_8h_source.html">Ieee80211RadioModel.h</a></li>
-<li><a class="el" href="_ieee80211_radio_model_8cc_source.html">Ieee80211RadioModel.cc</a></li>
+<li><a class="el" href="_ieee80211_radio_model_8h.html">Ieee80211RadioModel.h</a></li>
+<li><a class="el" href="_ieee80211_radio_model_8cc.html">Ieee80211RadioModel.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -342,7 +868,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_ieee80211_radio_model.html">Ieee80211RadioModel</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:48 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:25 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -14,6 +14,16 @@ bytes the client wants the server to send back as reply.</p>
 e.g. HTTP, SMB, database protocol) needs only to be present in
 the client, and the server model can be kept simple and dumb.</p>
 <p><b>See also:</b> <a href="inet.applications.tcpapp.TCPGenericSrvApp.html">TCPGenericSrvApp</a>, TCPGenericCliAppBase (C++ only)</p>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="GenericAppMsg-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="GenericAppMsg.html" title="Packet GenericAppMsg" alt="" coords="5,6,120,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="GenericAppMsg-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="GenericAppMsg.html" title="Packet GenericAppMsg" alt="" coords="5,6,120,34">
+</map>
 <h3 class="subtitle">Fields:</h3>
 <table class="fieldstable">
    <tr>
@@ -48,7 +58,7 @@ double</i>
 bool</i>
    </td>
    <td>
-<p>with <a href="inet.transport.tcp.TCP.html">TCP</a>: if true, server should close the
+<p>with TCP: if true, server should close the
 connection after sending the reply</p>
 </td>
 </tr>
@@ -56,14 +66,14 @@ connection after sending the reply</p>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
 // Message class for generic request-reply style applications.
-// The client sends a GenericAppMsg which contains the number of
+// The client sends a ~GenericAppMsg which contains the number of
 // bytes the client wants the server to send back as reply.
 //
 // This way intelligence (behaviour specific to the modelled application,
 // e.g. HTTP, SMB, database protocol) needs only to be present in
 // the client, and the server model can be kept simple and dumb.
 //
-// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> TCPGenericSrvApp, TCPGenericCliAppBase (C++ only)
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~TCPGenericSrvApp, TCPGenericCliAppBase (C++ only)
 //
 </span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">GenericAppMsg</span><span style="color: #000000; ">
 {
@@ -76,6 +86,5 @@ connection after sending the reply</p>
 
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

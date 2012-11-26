@@ -83,16 +83,19 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="TCPNewReno" --><!-- doxytag: inherits="TCPTahoeRenoFamily" -->
-<p><code>#include &lt;<a class="el" href="_t_c_p_new_reno_8h_source.html">TCPNewReno.h</a>&gt;</code></p>
+<p>Implements <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> NewReno.  
+ <a href="class_t_c_p_new_reno.html#details">More...</a></p>
+
+<p><code>#include &lt;TCPNewReno.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TCPNewReno:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_t_c_p_new_reno.png" usemap="#TCPNewReno_map" alt=""/>
   <map id="TCPNewReno_map" name="TCPNewReno_map">
-<area href="class_t_c_p_tahoe_reno_family.html" alt="TCPTahoeRenoFamily" shape="rect" coords="0,112,137,136"/>
-<area href="class_t_c_p_base_alg.html" alt="TCPBaseAlg" shape="rect" coords="0,56,137,80"/>
-<area href="class_t_c_p_algorithm.html" alt="TCPAlgorithm" shape="rect" coords="0,0,137,24"/>
+<area href="class_t_c_p_tahoe_reno_family.html" title="Provides utility functions to implement TCPTahoe, TCPReno and TCPNewReno." alt="TCPTahoeRenoFamily" shape="rect" coords="0,112,137,136"/>
+<area href="class_t_c_p_base_alg.html" title="Includes basic TCP algorithms: adaptive retransmission, PERSIST timer, keep-alive, delayed acks -- EXCLUDING congestion control." alt="TCPBaseAlg" shape="rect" coords="0,56,137,80"/>
+<area href="class_t_c_p_algorithm.html" title="Abstract base class for TCP algorithms which encapsulate all behaviour during data transfer state: fl..." alt="TCPAlgorithm" shape="rect" coords="0,0,137,24"/>
 </map>
  </div></div>
 
@@ -101,21 +104,25 @@ Inheritance diagram for TCPNewReno:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_new_reno.html#acb23ae4ab3711afc51e54b3b0417419d">TCPNewReno</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_new_reno.html#a634da20c5ad064882d2c87f6f5ff1301">receivedDataAck</a> (uint32 firstSeqAcked)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_new_reno.html#a6ce5b0435826f11b9a459b66d7e8aee8">receivedDuplicateAck</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ctor.  <a href="#acb23ae4ab3711afc51e54b3b0417419d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_new_reno.html#a634da20c5ad064882d2c87f6f5ff1301">receivedDataAck</a> (uint32 firstSeqAcked)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefine what should happen when data got acked, to add congestion window management.  <a href="#a634da20c5ad064882d2c87f6f5ff1301"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_new_reno.html#a6ce5b0435826f11b9a459b66d7e8aee8">receivedDuplicateAck</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefine what should happen when dupAck was received, to add congestion window management.  <a href="#a6ce5b0435826f11b9a459b66d7e8aee8"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_t_c_p_state_variables.html">TCPStateVariables</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_new_reno.html#a75193f4210b82bf2dbfd060f5a5011a1">createStateVariables</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_new_reno.html#aeb6719d2c5df3c9ed30361f0a7b9e5f7">recalculateSlowStartThreshold</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_new_reno.html#a0ccc1ba18d31b873fab51b8e429aaae1">processRexmitTimer</a> (<a class="el" href="_t_c_p_connection_8h.html#a9187fb8d597fec5e53124ffe46c7e85e">TCPEventCode</a> &amp;event)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and return a TCPNewRenoStateVariables object.  <a href="#a75193f4210b82bf2dbfd060f5a5011a1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_new_reno.html#aeb6719d2c5df3c9ed30361f0a7b9e5f7">recalculateSlowStartThreshold</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility function to recalculate ssthresh.  <a href="#aeb6719d2c5df3c9ed30361f0a7b9e5f7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_new_reno.html#a0ccc1ba18d31b873fab51b8e429aaae1">processRexmitTimer</a> (<a class="el" href="_t_c_p_connection_8h.html#a9187fb8d597fec5e53124ffe46c7e85e">TCPEventCode</a> &amp;event)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefine what should happen on retransmission.  <a href="#a0ccc1ba18d31b873fab51b8e429aaae1"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="_t_c_p_new_reno_8h.html#a425f4bd2c589a835de167786c64c48e7">TCPNewRenoStateVariables</a> *&amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Implements <a class="el" href="class_t_c_p.html">TCP</a> NewReno. </p>
-
-<p>Definition at line <a class="el" href="_t_c_p_new_reno_8h_source.html#l00034">34</a> of file <a class="el" href="_t_c_p_new_reno_8h_source.html">TCPNewReno.h</a>.</p>
+<div class="textblock"><p>Implements <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> NewReno. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="acb23ae4ab3711afc51e54b3b0417419d"></a><!-- doxytag: member="TCPNewReno::TCPNewReno" ref="acb23ae4ab3711afc51e54b3b0417419d" args="()" -->
 <div class="memitem">
@@ -130,11 +137,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Ctor </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00026">26</a> of file <a class="el" href="_t_c_p_new_reno_8cc_source.html">TCPNewReno.cc</a>.</p>
-<div class="fragment"><pre class="fragment">                       : <a class="code" href="class_t_c_p_tahoe_reno_family.html#a6f9f3227fcc7e429f8b206e93f6e908c">TCPTahoeRenoFamily</a>(),
-  <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>((<a class="code" href="class_t_c_p_tahoe_reno_family_state_variables.html">TCPNewRenoStateVariables</a> *&amp;)<a class="code" href="class_t_c_p_algorithm.html#add50c340ebfd641323eb3cdee685885c">TCPAlgorithm::state</a>)
+<p>Ctor. </p>
+<div class="fragment"><pre class="fragment">                       : <a class="code" href="class_t_c_p_tahoe_reno_family.html#a6f9f3227fcc7e429f8b206e93f6e908c" title="Ctor.">TCPTahoeRenoFamily</a>(),
+  <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>((<a class="code" href="class_t_c_p_tahoe_reno_family_state_variables.html" title="State variables for TCPTahoeRenoFamily.">TCPNewRenoStateVariables</a> *&amp;)<a class="code" href="class_t_c_p_algorithm.html#add50c340ebfd641323eb3cdee685885c">TCPAlgorithm::state</a>)
 {
 }
 </pre></div>
@@ -154,13 +160,12 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Create and return a TCPNewRenoStateVariables object. </p>
 
 <p>Implements <a class="el" href="class_t_c_p_algorithm.html#a07ec2c74836af2485af586023ca9c915">TCPAlgorithm</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_new_reno_8h_source.html#l00040">40</a> of file <a class="el" href="_t_c_p_new_reno_8h_source.html">TCPNewReno.h</a>.</p>
 <div class="fragment"><pre class="fragment">                                                      {
-        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="_t_c_p_new_reno_8h.html#a425f4bd2c589a835de167786c64c48e7">TCPNewRenoStateVariables</a>();
+        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="_t_c_p_new_reno_8h.html#a425f4bd2c589a835de167786c64c48e7" title="State variables for TCPNewReno.">TCPNewRenoStateVariables</a>();
     }
 </pre></div>
 </div>
@@ -170,7 +175,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_new_reno.html#a0ccc1ba18d31b873fab51b8e429aaae1">TCPNewReno::processRexmitTimer</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_new_reno.html#a0ccc1ba18d31b873fab51b8e429aaae1">TCPNewReno::processRexmitTimer</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="_t_c_p_connection_8h.html#a9187fb8d597fec5e53124ffe46c7e85e">TCPEventCode</a> &amp;&#160;</td>
           <td class="paramname"><em>event</em></td><td>)</td>
@@ -179,14 +184,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Redefine what should happen on retransmission </p>
+
+<p>Redefine what should happen on retransmission. </p>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_base_alg.html#ac8a305a437d4eafd1689204e50af8870">TCPBaseAlg</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00051">51</a> of file <a class="el" href="_t_c_p_new_reno_8cc_source.html">TCPNewReno.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_t_c_p_new_reno.html#a0ccc1ba18d31b873fab51b8e429aaae1">TCPTahoeRenoFamily::processRexmitTimer</a>(<a class="code" href="namespacecesnet.html#a56e29c69128db750fc49a508a16cf7ba">event</a>);
-    <span class="keywordflow">if</span> (<a class="code" href="namespacecesnet.html#a56e29c69128db750fc49a508a16cf7ba">event</a>==<a class="code" href="_t_c_p_connection_8h.html#a9187fb8d597fec5e53124ffe46c7e85ea2cc18190ce98d4997975fa624a8e147d">TCP_E_ABORT</a>)
+    <a class="code" href="class_t_c_p_new_reno.html#a0ccc1ba18d31b873fab51b8e429aaae1" title="Redefine what should happen on retransmission.">TCPTahoeRenoFamily::processRexmitTimer</a>(event);
+
+    <span class="keywordflow">if</span> (event == <a class="code" href="_t_c_p_connection_8h.html#a9187fb8d597fec5e53124ffe46c7e85ea2cc18190ce98d4997975fa624a8e147d">TCP_E_ABORT</a>)
         <span class="keywordflow">return</span>;
 
     <span class="comment">// RFC 3782, page 6:</span>
@@ -214,15 +219,16 @@ Protected Attributes</h2></td></tr>
     <span class="comment">// point congestion avoidance again takes over.&quot;</span>
 
     <span class="comment">// begin Slow Start (RFC 2581)</span>
-    <a class="code" href="class_t_c_p_new_reno.html#aeb6719d2c5df3c9ed30361f0a7b9e5f7">recalculateSlowStartThreshold</a>();
+    <a class="code" href="class_t_c_p_new_reno.html#aeb6719d2c5df3c9ed30361f0a7b9e5f7" title="Utility function to recalculate ssthresh.">recalculateSlowStartThreshold</a>();
     <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a> = <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a2d9952d560079e7a0cf44f2308ac564f">snd_mss</a>;
-    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>) <a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>-&gt;record(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a>);
+
+    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>)
+        <a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>-&gt;record(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a>);
+
     <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;Begin Slow Start: resetting cwnd to &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a>
           &lt;&lt; <span class="stringliteral">&quot;, ssthresh=&quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_tahoe_reno_family_state_variables.html#ae2250c3174db96489f30be8acabd0e9d" title="slow start threshold">ssthresh</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
-
     <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#abff94bf9ec66bdbde487a74849de721e">afterRto</a> = <span class="keyword">true</span>;
-
-    <a class="code" href="class_t_c_p_algorithm.html#a20273a398c4165b45243d9c125c2637b">conn</a>-&gt;<a class="code" href="class_t_c_p_connection.html#a8ae68910942bd1ea6558ae7849ae22ea">retransmitOneSegment</a>(<span class="keyword">true</span>);
+    <a class="code" href="class_t_c_p_algorithm.html#a20273a398c4165b45243d9c125c2637b">conn</a>-&gt;<a class="code" href="class_t_c_p_connection.html#a8ae68910942bd1ea6558ae7849ae22ea" title="Utility: retransmit one segment from snd_una.">retransmitOneSegment</a>(<span class="keyword">true</span>);
 }
 </pre></div>
 </div>
@@ -232,7 +238,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_new_reno.html#aeb6719d2c5df3c9ed30361f0a7b9e5f7">TCPNewReno::recalculateSlowStartThreshold</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_new_reno.html#aeb6719d2c5df3c9ed30361f0a7b9e5f7">TCPNewReno::recalculateSlowStartThreshold</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -240,11 +246,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Utility function to recalculate ssthresh </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00031">31</a> of file <a class="el" href="_t_c_p_new_reno_8cc_source.html">TCPNewReno.cc</a>.</p>
+<p>Utility function to recalculate ssthresh. </p>
 
-<p>Referenced by <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00051">processRexmitTimer()</a>, and <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00257">receivedDuplicateAck()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_new_reno.html#a0ccc1ba18d31b873fab51b8e429aaae1">processRexmitTimer()</a>, and <a class="el" href="class_t_c_p_new_reno.html#a6ce5b0435826f11b9a459b66d7e8aee8">receivedDuplicateAck()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// RFC 2581, page 4:</span>
     <span class="comment">// &quot;When a TCP sender detects segment loss using the retransmission</span>
@@ -256,12 +261,14 @@ Protected Attributes</h2></td></tr>
     <span class="comment">// As discussed above, FlightSize is the amount of outstanding data in</span>
     <span class="comment">// the network.&quot;</span>
 
-    <span class="comment">// set ssthresh to flight size/2, but at least 2 SMSS</span>
-    <span class="comment">// (the formula below practically amounts to ssthresh=cwnd/2 most of the time)</span>
-    uint32 flight_size = <a class="code" href="_s_c_t_p_association_8h.html#ad61931b1ae6b8e5bb714e2e6744f4470">std::min</a>(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a>, <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#aef29087f473f09bfb53eca0f652386d4">snd_wnd</a>); <span class="comment">// FIXME TODO - Does this formula computes the amount of outstanding data?</span>
+    <span class="comment">// set ssthresh to flight size / 2, but at least 2 SMSS</span>
+    <span class="comment">// (the formula below practically amounts to ssthresh = cwnd / 2 most of the time)</span>
+    uint32 flight_size = <a class="code" href="_s_c_t_p_association_8h.html#ad61931b1ae6b8e5bb714e2e6744f4470" title="Returns the minimum of a and b.">std::min</a>(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a>, <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#aef29087f473f09bfb53eca0f652386d4">snd_wnd</a>); <span class="comment">// FIXME TODO - Does this formula computes the amount of outstanding data?</span>
     <span class="comment">// uint32 flight_size = state-&gt;snd_max - state-&gt;snd_una;</span>
-    <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_tahoe_reno_family_state_variables.html#ae2250c3174db96489f30be8acabd0e9d" title="slow start threshold">ssthresh</a> = <a class="code" href="_s_c_t_p_association_8h.html#afdb84bd44c7cbd3fc9cbe1e3bf07d948">std::max</a>(flight_size/2, 2*<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a2d9952d560079e7a0cf44f2308ac564f">snd_mss</a>);
-    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_base_alg.html#adcb49cda42179c795cf3c12ed42b3f31">ssthreshVector</a>) <a class="code" href="class_t_c_p_base_alg.html#adcb49cda42179c795cf3c12ed42b3f31">ssthreshVector</a>-&gt;record(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_tahoe_reno_family_state_variables.html#ae2250c3174db96489f30be8acabd0e9d" title="slow start threshold">ssthresh</a>);
+    <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_tahoe_reno_family_state_variables.html#ae2250c3174db96489f30be8acabd0e9d" title="slow start threshold">ssthresh</a> = <a class="code" href="_s_c_t_p_association_8h.html#afdb84bd44c7cbd3fc9cbe1e3bf07d948" title="Returns the maximum of a and b.">std::max</a>(flight_size / 2, 2 * <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a2d9952d560079e7a0cf44f2308ac564f">snd_mss</a>);
+
+    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_base_alg.html#adcb49cda42179c795cf3c12ed42b3f31">ssthreshVector</a>)
+        <a class="code" href="class_t_c_p_base_alg.html#adcb49cda42179c795cf3c12ed42b3f31">ssthreshVector</a>-&gt;record(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_tahoe_reno_family_state_variables.html#ae2250c3174db96489f30be8acabd0e9d" title="slow start threshold">ssthresh</a>);
 }
 </pre></div>
 </div>
@@ -271,7 +278,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_new_reno.html#a634da20c5ad064882d2c87f6f5ff1301">TCPNewReno::receivedDataAck</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_new_reno.html#a634da20c5ad064882d2c87f6f5ff1301">TCPNewReno::receivedDataAck</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>firstSeqAcked</em></td><td>)</td>
@@ -280,13 +287,12 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Redefine what should happen when data got acked, to add congestion window management </p>
+
+<p>Redefine what should happen when data got acked, to add congestion window management. </p>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_base_alg.html#a55a32a0e93c6417adb091ee162f225e2">TCPBaseAlg</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00093">93</a> of file <a class="el" href="_t_c_p_new_reno_8cc_source.html">TCPNewReno.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_t_c_p_new_reno.html#a634da20c5ad064882d2c87f6f5ff1301">TCPTahoeRenoFamily::receivedDataAck</a>(firstSeqAcked);
+    <a class="code" href="class_t_c_p_new_reno.html#a634da20c5ad064882d2c87f6f5ff1301" title="Redefine what should happen when data got acked, to add congestion window management.">TCPTahoeRenoFamily::receivedDataAck</a>(firstSeqAcked);
 
     <span class="comment">// RFC 3782, page 5:</span>
     <span class="comment">// &quot;5) When an ACK arrives that acknowledges new data, this ACK could be</span>
@@ -313,19 +319,20 @@ Protected Attributes</h2></td></tr>
     <span class="comment">// simulator.  Exit the Fast Recovery procedure.&quot;</span>
     <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a69fd5385780f1352abd11bbbc2c2c2ef">lossRecovery</a>)
     {
-        <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#af4745b9cf95eb5b78d8ae6c3c8429cfc">seqGE</a>(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a3a8a7f455c793cf894e22d4d72dbdc93">snd_una</a>-1, <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a477d88f791789bf08bb670ee9663e71b" title="RFC 3782 variables.">recover</a>))
+        <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#af4745b9cf95eb5b78d8ae6c3c8429cfc">seqGE</a>(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a3a8a7f455c793cf894e22d4d72dbdc93">snd_una</a> - 1, <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a477d88f791789bf08bb670ee9663e71b" title="RFC 3782 variables.">recover</a>))
         {
             <span class="comment">// Exit Fast Recovery: deflating cwnd</span>
             <span class="comment">//</span>
             <span class="comment">// option (1): set cwnd to min (ssthresh, FlightSize + SMSS)</span>
             uint32 flight_size = <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a220683addcd800e00fc59f348b40cff2">snd_max</a> - <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a3a8a7f455c793cf894e22d4d72dbdc93">snd_una</a>;
-            <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a> = <a class="code" href="_s_c_t_p_association_8h.html#ad61931b1ae6b8e5bb714e2e6744f4470">std::min</a> (<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_tahoe_reno_family_state_variables.html#ae2250c3174db96489f30be8acabd0e9d" title="slow start threshold">ssthresh</a>, flight_size + <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a2d9952d560079e7a0cf44f2308ac564f">snd_mss</a>);
+            <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a> = <a class="code" href="_s_c_t_p_association_8h.html#ad61931b1ae6b8e5bb714e2e6744f4470" title="Returns the minimum of a and b.">std::min</a>(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_tahoe_reno_family_state_variables.html#ae2250c3174db96489f30be8acabd0e9d" title="slow start threshold">ssthresh</a>, flight_size + <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a2d9952d560079e7a0cf44f2308ac564f">snd_mss</a>);
             <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;Fast Recovery - Full ACK received: Exit Fast Recovery, setting cwnd to &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
             <span class="comment">// option (2): set cwnd to ssthresh</span>
             <span class="comment">// state-&gt;snd_cwnd = state-&gt;ssthresh;</span>
             <span class="comment">// tcpEV &lt;&lt; &quot;Fast Recovery - Full ACK received: Exit Fast Recovery, setting cwnd to ssthresh=&quot; &lt;&lt; state-&gt;ssthresh &lt;&lt; &quot;\n&quot;;</span>
             <span class="comment">// TODO - If the second option (2) is selected, take measures to avoid a possible burst of data (maxburst)!</span>
-            <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>) <a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>-&gt;record(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a>);
+            <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>)
+                <a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>-&gt;record(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a>);
 
             <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a69fd5385780f1352abd11bbbc2c2c2ef">lossRecovery</a> = <span class="keyword">false</span>;
             <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#ad3611be625a0816f866ff25e67095bae" title="first partial acknowledgement (RFC 3782)">firstPartialACK</a> = <span class="keyword">false</span>;
@@ -357,23 +364,29 @@ Protected Attributes</h2></td></tr>
 
             <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;Fast Recovery - Partial ACK received: retransmitting the first unacknowledged segment\n&quot;</span>;
             <span class="comment">// retransmit first unacknowledged segment</span>
-            <a class="code" href="class_t_c_p_algorithm.html#a20273a398c4165b45243d9c125c2637b">conn</a>-&gt;<a class="code" href="class_t_c_p_connection.html#a8ae68910942bd1ea6558ae7849ae22ea">retransmitOneSegment</a>(<span class="keyword">false</span>);
+            <a class="code" href="class_t_c_p_algorithm.html#a20273a398c4165b45243d9c125c2637b">conn</a>-&gt;<a class="code" href="class_t_c_p_connection.html#a8ae68910942bd1ea6558ae7849ae22ea" title="Utility: retransmit one segment from snd_una.">retransmitOneSegment</a>(<span class="keyword">false</span>);
 
             <span class="comment">// deflate cwnd by amount of new data acknowledged by cumulative acknowledgement field</span>
             <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a> -= <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a3a8a7f455c793cf894e22d4d72dbdc93">snd_una</a> - firstSeqAcked;
-            <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>) <a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>-&gt;record(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a>);
+
+            <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>)
+                <a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>-&gt;record(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a>);
+
             <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;Fast Recovery: deflating cwnd by amount of new data acknowledged, new cwnd=&quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
 
             <span class="comment">// if the partial ACK acknowledges at least one SMSS of new data, then add back SMSS bytes to the cwnd</span>
             <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a3a8a7f455c793cf894e22d4d72dbdc93">snd_una</a> - firstSeqAcked &gt;= <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a2d9952d560079e7a0cf44f2308ac564f">snd_mss</a>)
             {
                 <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a> += <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a2d9952d560079e7a0cf44f2308ac564f">snd_mss</a>;
-                <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>) <a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>-&gt;record(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a>);
+
+                <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>)
+                    <a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>-&gt;record(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a>);
+
                 <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;Fast Recovery: inflating cwnd by SMSS, new cwnd=&quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
             }
 
             <span class="comment">// try to send a new segment if permitted by the new value of cwnd</span>
-            <a class="code" href="class_t_c_p_base_alg.html#a28c072f575629d0c5ec6478edd3bb7e5">sendData</a>();
+            <a class="code" href="class_t_c_p_base_alg.html#a28c072f575629d0c5ec6478edd3bb7e5" title="Send data, observing Nagle&#39;s algorithm and congestion window.">sendData</a>();
 
             <span class="comment">// reset REXMIT timer for the first partial ACK that arrives during Fast Recovery</span>
             <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a69fd5385780f1352abd11bbbc2c2c2ef">lossRecovery</a>)
@@ -382,7 +395,7 @@ Protected Attributes</h2></td></tr>
                 {
                     <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#ad3611be625a0816f866ff25e67095bae" title="first partial acknowledgement (RFC 3782)">firstPartialACK</a> = <span class="keyword">true</span>;
                     <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;First partial ACK arrived during recovery, restarting REXMIT timer.\n&quot;</span>;
-                    <a class="code" href="class_t_c_p_base_alg.html#aa781a26258eb0504bfff79468079e1b8">restartRexmitTimer</a>();
+                    <a class="code" href="class_t_c_p_base_alg.html#aa781a26258eb0504bfff79468079e1b8" title="Restart REXMIT timer.">restartRexmitTimer</a>();
                 }
             }
         }
@@ -394,7 +407,7 @@ Protected Attributes</h2></td></tr>
         <span class="comment">//</span>
         <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a> &lt; <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_tahoe_reno_family_state_variables.html#ae2250c3174db96489f30be8acabd0e9d" title="slow start threshold">ssthresh</a>)
         {
-            <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;cwnd&lt;=ssthresh: Slow Start: increasing cwnd by SMSS bytes to &quot;</span>;
+            <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;cwnd &lt;= ssthresh: Slow Start: increasing cwnd by SMSS bytes to &quot;</span>;
 
             <span class="comment">// perform Slow Start. RFC 2581: &quot;During slow start, a TCP increments cwnd</span>
             <span class="comment">// by at most SMSS bytes for each ACK received that acknowledges new data.&quot;</span>
@@ -409,9 +422,10 @@ Protected Attributes</h2></td></tr>
             <span class="comment">// two lines below.</span>
             <span class="comment">//</span>
             <span class="comment">// int bytesAcked = state-&gt;snd_una - firstSeqAcked;</span>
-            <span class="comment">// state-&gt;snd_cwnd += bytesAcked*state-&gt;snd_mss;</span>
+            <span class="comment">// state-&gt;snd_cwnd += bytesAcked * state-&gt;snd_mss;</span>
 
-            <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>) <a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>-&gt;record(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a>);
+            <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>)
+                <a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>-&gt;record(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a>);
 
             <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;cwnd=&quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
         }
@@ -419,20 +433,24 @@ Protected Attributes</h2></td></tr>
         {
             <span class="comment">// perform Congestion Avoidance (RFC 2581)</span>
             uint32 incr = <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a2d9952d560079e7a0cf44f2308ac564f">snd_mss</a> * <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a2d9952d560079e7a0cf44f2308ac564f">snd_mss</a> / <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a>;
-            <span class="keywordflow">if</span> (incr==0)
+
+            <span class="keywordflow">if</span> (incr == 0)
                 incr = 1;
+
             <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a> += incr;
-            <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>) <a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>-&gt;record(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a>);
+
+            <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>)
+                <a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>-&gt;record(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a>);
 
             <span class="comment">//</span>
-            <span class="comment">// Note: some implementations use extra additive constant mss/8 here</span>
+            <span class="comment">// Note: some implementations use extra additive constant mss / 8 here</span>
             <span class="comment">// which is known to be incorrect (RFC 2581 p5)</span>
             <span class="comment">//</span>
             <span class="comment">// Note 2: RFC 3465 (experimental) &quot;Appropriate Byte Counting&quot; (ABC)</span>
             <span class="comment">// would require maintaining a bytes_acked variable here which we don&#39;t do</span>
             <span class="comment">//</span>
 
-            <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;cwnd&gt;ssthresh: Congestion Avoidance: increasing cwnd linearly, to &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+            <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;cwnd &gt; ssthresh: Congestion Avoidance: increasing cwnd linearly, to &quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
         }
 
         <span class="comment">// RFC 3782, page 13:</span>
@@ -445,7 +463,7 @@ Protected Attributes</h2></td></tr>
         <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a477d88f791789bf08bb670ee9663e71b" title="RFC 3782 variables.">recover</a> = (<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a3a8a7f455c793cf894e22d4d72dbdc93">snd_una</a> - 2);
     }
 
-    <a class="code" href="class_t_c_p_base_alg.html#a28c072f575629d0c5ec6478edd3bb7e5">sendData</a>();
+    <a class="code" href="class_t_c_p_base_alg.html#a28c072f575629d0c5ec6478edd3bb7e5" title="Send data, observing Nagle&#39;s algorithm and congestion window.">sendData</a>();
 }
 </pre></div>
 </div>
@@ -455,7 +473,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_new_reno.html#a6ce5b0435826f11b9a459b66d7e8aee8">TCPNewReno::receivedDuplicateAck</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_new_reno.html#a6ce5b0435826f11b9a459b66d7e8aee8">TCPNewReno::receivedDuplicateAck</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [virtual]</code></td>
@@ -463,15 +481,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Redefine what should happen when dupAck was received, to add congestion window management </p>
+
+<p>Redefine what should happen when dupAck was received, to add congestion window management. </p>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_base_alg.html#ad198abc5a259c9b1660ec149aae3b11d">TCPBaseAlg</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00257">257</a> of file <a class="el" href="_t_c_p_new_reno_8cc_source.html">TCPNewReno.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_t_c_p_new_reno.html#a6ce5b0435826f11b9a459b66d7e8aee8">TCPTahoeRenoFamily::receivedDuplicateAck</a>();
+    <a class="code" href="class_t_c_p_new_reno.html#a6ce5b0435826f11b9a459b66d7e8aee8" title="Redefine what should happen when dupAck was received, to add congestion window management.">TCPTahoeRenoFamily::receivedDuplicateAck</a>();
 
-    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#ae3ddd98e68751df8e6a8f4c0c7081f28">dupacks</a>==<a class="code" href="_t_c_p_connection_8h.html#a6d22725191167fb4feaacff2c1291afd">DUPTHRESH</a>) <span class="comment">// DUPTHRESH = 3</span>
+    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#ae3ddd98e68751df8e6a8f4c0c7081f28">dupacks</a> == <a class="code" href="_t_c_p_connection_8h.html#a6d22725191167fb4feaacff2c1291afd">DUPTHRESH</a>) <span class="comment">// DUPTHRESH = 3</span>
     {
         <span class="keywordflow">if</span> (!<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a69fd5385780f1352abd11bbbc2c2c2ef">lossRecovery</a>)
         {
@@ -490,7 +507,7 @@ Protected Attributes</h2></td></tr>
             <span class="comment">//      ack_number - 1 &gt; recover;&quot;</span>
             <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a3a8a7f455c793cf894e22d4d72dbdc93">snd_una</a> - 1 &gt; <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a477d88f791789bf08bb670ee9663e71b" title="RFC 3782 variables.">recover</a>)
             {
-                <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;NewReno on dupAck=DUPTHRESH(=3): perform Fast Retransmit, and enter Fast Recovery:&quot;</span>;
+                <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;NewReno on dupAcks == DUPTHRESH(=3): perform Fast Retransmit, and enter Fast Recovery:&quot;</span>;
 
                 <span class="comment">// RFC 3782, page 4:</span>
                 <span class="comment">// &quot;1A) Invoking Fast Retransmit:</span>
@@ -499,7 +516,7 @@ Protected Attributes</h2></td></tr>
                 <span class="comment">//      ssthresh = max (FlightSize / 2, 2*SMSS)           (1)</span>
                 <span class="comment">// In addition, record the highest sequence number transmitted in</span>
                 <span class="comment">// the variable &quot;recover&quot;, and go to Step 2.&quot;</span>
-                <a class="code" href="class_t_c_p_new_reno.html#aeb6719d2c5df3c9ed30361f0a7b9e5f7">recalculateSlowStartThreshold</a>();
+                <a class="code" href="class_t_c_p_new_reno.html#aeb6719d2c5df3c9ed30361f0a7b9e5f7" title="Utility function to recalculate ssthresh.">recalculateSlowStartThreshold</a>();
                 <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a477d88f791789bf08bb670ee9663e71b" title="RFC 3782 variables.">recover</a> = (<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a220683addcd800e00fc59f348b40cff2">snd_max</a> - 1);
                 <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#ad3611be625a0816f866ff25e67095bae" title="first partial acknowledgement (RFC 3782)">firstPartialACK</a> = <span class="keyword">false</span>;
                 <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a69fd5385780f1352abd11bbbc2c2c2ef">lossRecovery</a> = <span class="keyword">true</span>;
@@ -507,24 +524,27 @@ Protected Attributes</h2></td></tr>
 
                 <span class="comment">// RFC 3782, page 4:</span>
                 <span class="comment">// &quot;2) Entering Fast Retransmit:</span>
-                <span class="comment">// Retransmit the lost segment and set cwnd to ssthresh plus 3*SMSS.</span>
+                <span class="comment">// Retransmit the lost segment and set cwnd to ssthresh plus 3 * SMSS.</span>
                 <span class="comment">// This artificially &quot;inflates&quot; the congestion window by the number</span>
                 <span class="comment">// of segments (three) that have left the network and the receiver</span>
                 <span class="comment">// has buffered.&quot;</span>
-                <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a> = <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_tahoe_reno_family_state_variables.html#ae2250c3174db96489f30be8acabd0e9d" title="slow start threshold">ssthresh</a> + 3*<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a2d9952d560079e7a0cf44f2308ac564f">snd_mss</a>;
-                <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>) <a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>-&gt;record(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a>);
+                <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a> = <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_tahoe_reno_family_state_variables.html#ae2250c3174db96489f30be8acabd0e9d" title="slow start threshold">ssthresh</a> + 3 * <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a2d9952d560079e7a0cf44f2308ac564f">snd_mss</a>;
+
+                <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>)
+                    <a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>-&gt;record(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a>);
+
                 <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot; , cwnd=&quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a> &lt;&lt; <span class="stringliteral">&quot;, ssthresh=&quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_tahoe_reno_family_state_variables.html#ae2250c3174db96489f30be8acabd0e9d" title="slow start threshold">ssthresh</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
-                <a class="code" href="class_t_c_p_algorithm.html#a20273a398c4165b45243d9c125c2637b">conn</a>-&gt;<a class="code" href="class_t_c_p_connection.html#a8ae68910942bd1ea6558ae7849ae22ea">retransmitOneSegment</a>(<span class="keyword">false</span>);
+                <a class="code" href="class_t_c_p_algorithm.html#a20273a398c4165b45243d9c125c2637b">conn</a>-&gt;<a class="code" href="class_t_c_p_connection.html#a8ae68910942bd1ea6558ae7849ae22ea" title="Utility: retransmit one segment from snd_una.">retransmitOneSegment</a>(<span class="keyword">false</span>);
 
                 <span class="comment">// RFC 3782, page 5:</span>
                 <span class="comment">// &quot;4) Fast Recovery, continued:</span>
                 <span class="comment">// Transmit a segment, if allowed by the new value of cwnd and the</span>
                 <span class="comment">// receiver&#39;s advertised window.&quot;</span>
-                <a class="code" href="class_t_c_p_base_alg.html#a28c072f575629d0c5ec6478edd3bb7e5">sendData</a>();
+                <a class="code" href="class_t_c_p_base_alg.html#a28c072f575629d0c5ec6478edd3bb7e5" title="Send data, observing Nagle&#39;s algorithm and congestion window.">sendData</a>();
             }
             <span class="keywordflow">else</span>
             {
-                <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;NewReno on dupAck=DUPTHRESH(=3): not invoking Fast Retransmit and Fast Recovery\n&quot;</span>;
+                <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;NewReno on dupAcks == DUPTHRESH(=3): not invoking Fast Retransmit and Fast Recovery\n&quot;</span>;
 
                 <span class="comment">// RFC 3782, page 4:</span>
                 <span class="comment">// &quot;1B) Not invoking Fast Retransmit:</span>
@@ -534,7 +554,7 @@ Protected Attributes</h2></td></tr>
                 <span class="comment">// subsequent duplicate ACKs.&quot;</span>
             }
         }
-        <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;NewReno on dupAck=DUPTHRESH(=3): TCP is already in Fast Recovery procedure\n&quot;</span>;
+        <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;NewReno on dupAcks == DUPTHRESH(=3): TCP is already in Fast Recovery procedure\n&quot;</span>;
     }
     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#ae3ddd98e68751df8e6a8f4c0c7081f28">dupacks</a> &gt; <a class="code" href="_t_c_p_connection_8h.html#a6d22725191167fb4feaacff2c1291afd">DUPTHRESH</a>) <span class="comment">// DUPTHRESH = 3</span>
     {
@@ -547,14 +567,17 @@ Protected Attributes</h2></td></tr>
             <span class="comment">// congestion window in order to reflect the additional segment that</span>
             <span class="comment">// has left the network.&quot;</span>
             <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a> += <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_state_variables.html#a2d9952d560079e7a0cf44f2308ac564f">snd_mss</a>;
-            <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>) <a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>-&gt;record(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a>);
-            <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;NewReno on dupAck&gt;DUPTHRESH(=3): Fast Recovery: inflating cwnd by SMSS, new cwnd=&quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+
+            <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>)
+                <a class="code" href="class_t_c_p_base_alg.html#a9e6f430f3a5463137d416627f4282d64">cwndVector</a>-&gt;record(<a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a>);
+
+            <a class="code" href="_t_c_p_8h.html#a601325e92d65fe658c80eab711e12304">tcpEV</a> &lt;&lt; <span class="stringliteral">&quot;NewReno on dupAcks &gt; DUPTHRESH(=3): Fast Recovery: inflating cwnd by SMSS, new cwnd=&quot;</span> &lt;&lt; <a class="code" href="class_t_c_p_new_reno.html#ab57dadc3ba2512c9f42123392fa9346e">state</a>-&gt;<a class="code" href="class_t_c_p_base_alg_state_variables.html#a36b9d4c46519bcd7a094462c68881ce9">snd_cwnd</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
 
             <span class="comment">// RFC 3782, page 5:</span>
             <span class="comment">// &quot;4) Fast Recovery, continued:</span>
             <span class="comment">// Transmit a segment, if allowed by the new value of cwnd and the</span>
             <span class="comment">// receiver&#39;s advertised window.&quot;</span>
-            <a class="code" href="class_t_c_p_base_alg.html#a28c072f575629d0c5ec6478edd3bb7e5">sendData</a>();
+            <a class="code" href="class_t_c_p_base_alg.html#a28c072f575629d0c5ec6478edd3bb7e5" title="Send data, observing Nagle&#39;s algorithm and congestion window.">sendData</a>();
         }
     }
 }
@@ -575,15 +598,13 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_tahoe_reno_family.html#a55124a30f4315fd87a0fba1ff2d87a1f">TCPTahoeRenoFamily</a>.</p>
 
-<p>Definition at line <a class="el" href="_t_c_p_new_reno_8h_source.html#l00037">37</a> of file <a class="el" href="_t_c_p_new_reno_8h_source.html">TCPNewReno.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00051">processRexmitTimer()</a>, <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00031">recalculateSlowStartThreshold()</a>, <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00093">receivedDataAck()</a>, and <a class="el" href="_t_c_p_new_reno_8cc_source.html#l00257">receivedDuplicateAck()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_new_reno.html#a0ccc1ba18d31b873fab51b8e429aaae1">processRexmitTimer()</a>, <a class="el" href="class_t_c_p_new_reno.html#aeb6719d2c5df3c9ed30361f0a7b9e5f7">recalculateSlowStartThreshold()</a>, <a class="el" href="class_t_c_p_new_reno.html#a634da20c5ad064882d2c87f6f5ff1301">receivedDataAck()</a>, and <a class="el" href="class_t_c_p_new_reno.html#a6ce5b0435826f11b9a459b66d7e8aee8">receivedDuplicateAck()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_t_c_p_new_reno_8h_source.html">TCPNewReno.h</a></li>
-<li><a class="el" href="_t_c_p_new_reno_8cc_source.html">TCPNewReno.cc</a></li>
+<li><a class="el" href="_t_c_p_new_reno_8h.html">TCPNewReno.h</a></li>
+<li><a class="el" href="_t_c_p_new_reno_8cc.html">TCPNewReno.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -591,7 +612,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_t_c_p_new_reno.html">TCPNewReno</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:53 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:31 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

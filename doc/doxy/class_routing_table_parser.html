@@ -84,25 +84,32 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="RoutingTableParser" -->
-<p><code>#include &lt;<a class="el" href="_routing_table_parser_8h_source.html">RoutingTableParser.h</a>&gt;</code></p>
+<p>Parses a routing table file into a routing table.  
+ <a href="class_routing_table_parser.html#details">More...</a></p>
+
+<p><code>#include &lt;RoutingTableParser.h&gt;</code></p>
 
 <p><a href="class_routing_table_parser-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_routing_table_parser.html#a385f6182b0a515a0868ed50b63ccf890">RoutingTableParser</a> (<a class="el" href="class_i_interface_table.html">IInterfaceTable</a> *<a class="el" href="class_routing_table_parser.html#adbb5e5022b661cb806384ec284d185aa">ift</a>, <a class="el" href="class_i_routing_table.html">IRoutingTable</a> *<a class="el" href="class_routing_table_parser.html#af194cf273b281b3d99ed7470f7b8e879">rt</a>)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a385f6182b0a515a0868ed50b63ccf890"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_routing_table_parser.html#ab8bbf20c1d87825d03bcf6544f4a27fb">~RoutingTableParser</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#ab8bbf20c1d87825d03bcf6544f4a27fb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_routing_table_parser.html#a43af098582f95f56435bb5715c158291">readRoutingTableFromFile</a> (const char *filename)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Read Routing Table file; return 0 on success, -1 on error.  <a href="#a43af098582f95f56435bb5715c158291"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_routing_table_parser.html#afb9b9e857d1c52f82377456d3b3f2d37">createFilteredFile</a> (char *file, int &amp;charpointer, const char *endtoken)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_routing_table_parser.html#a85c2cfab7a9bad4cd89a663dd7d24a5d">parseInterfaces</a> (char *ifconfigFile)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_routing_table_parser.html#a0eaa1e4e4bd652ef046eb6cb9be8b7b9">parseRouting</a> (char *routeFile)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_routing_table_parser.html#a85c2cfab7a9bad4cd89a663dd7d24a5d">parseInterfaces</a> (char *ifconfigFile)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_routing_table_parser.html#a0eaa1e4e4bd652ef046eb6cb9be8b7b9">parseRouting</a> (char *routeFile)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_routing_table_parser.html#a6c02a30412513997b52c0c486b0906fa">parseEntry</a> (char *ifconfigFile, const char *tokenStr, int &amp;charpointer, char *destStr)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_routing_table_parser.html#abdb8ce749a563c8612464082c0cbe1e5">parseMulticastGroups</a> (char *groupStr, <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_routing_table_parser.html#abdb8ce749a563c8612464082c0cbe1e5">parseMulticastGroups</a> (char *groupStr, <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_routing_table_parser.html#a04b2f70cae210d148f1b3e7a7efd434e">streq</a> (const char *str1, const char *str2)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_routing_table_parser.html#a8176bab695ff724220e1f2566641a7b2">skipBlanks</a> (char *str, int &amp;charptr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_routing_table_parser.html#a8176bab695ff724220e1f2566641a7b2">skipBlanks</a> (char *str, int &amp;charptr)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_routing_table_parser.html#ace62d5256f3e8e16ae42f236e5be2758">strcpyword</a> (char *dest, const char *src)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -111,8 +118,6 @@ Protected Attributes</h2></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Parses a routing table file into a routing table. </p>
-
-<p>Definition at line <a class="el" href="_routing_table_parser_8h_source.html#l00039">39</a> of file <a class="el" href="_routing_table_parser_8h_source.html">RoutingTableParser.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a385f6182b0a515a0868ed50b63ccf890"></a><!-- doxytag: member="RoutingTableParser::RoutingTableParser" ref="a385f6182b0a515a0868ed50b63ccf890" args="(IInterfaceTable *ift, IRoutingTable *rt)" -->
 <div class="memitem">
@@ -138,13 +143,31 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Constructor </p>
 
-<p>Definition at line <a class="el" href="_routing_table_parser_8cc_source.html#l00044">44</a> of file <a class="el" href="_routing_table_parser_8cc_source.html">RoutingTableParser.cc</a>.</p>
+<p>Constructor. </p>
 <div class="fragment"><pre class="fragment">{
-    ift = <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>;
+    ift = i;
     rt = r;
 }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ab8bbf20c1d87825d03bcf6544f4a27fb"></a><!-- doxytag: member="RoutingTableParser::~RoutingTableParser" ref="ab8bbf20c1d87825d03bcf6544f4a27fb" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_routing_table_parser.html#ab8bbf20c1d87825d03bcf6544f4a27fb">RoutingTableParser::~RoutingTableParser</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Destructor. </p>
+<div class="fragment"><pre class="fragment">{};
 </pre></div>
 </div>
 </div>
@@ -180,28 +203,26 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_routing_table_parser_8cc_source.html#l00136">136</a> of file <a class="el" href="_routing_table_parser_8cc_source.html">RoutingTableParser.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_routing_table_parser_8cc_source.html#l00072">readRoutingTableFromFile()</a>.</p>
+<p>Referenced by <a class="el" href="class_routing_table_parser.html#a43af098582f95f56435bb5715c158291">readRoutingTableFromFile()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = 0;
+    <span class="keywordtype">int</span> i = 0;
     <span class="keywordtype">char</span> *filterFile = <span class="keyword">new</span> <span class="keywordtype">char</span>[<a class="code" href="_routing_table_parser_8cc.html#abd4f060c8c54335ad11d6d552c7dbe93">MAX_FILESIZE</a>];
     filterFile[0] = <span class="charliteral">&#39;\0&#39;</span>;
 
-    <span class="keywordflow">while</span>(<span class="keyword">true</span>) {
+    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {
         <span class="comment">// skip blank lines and comments</span>
         <span class="keywordflow">while</span> ( !isalnum(file[charpointer]) &amp;&amp; !isspace(file[charpointer]) ) {
-            <span class="keywordflow">while</span> (file[charpointer++] != <span class="charliteral">&#39;\n&#39;</span>) ;
+            <span class="keywordflow">while</span> (file[charpointer++] != <span class="charliteral">&#39;\n&#39;</span>);
         }
 
         <span class="comment">// check for endtoken:</span>
         <span class="keywordflow">if</span> (<a class="code" href="class_routing_table_parser.html#a04b2f70cae210d148f1b3e7a7efd434e">streq</a>(file + charpointer, endtoken)) {
-            filterFile[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>] = <span class="charliteral">&#39;\0&#39;</span>;
+            filterFile[i] = <span class="charliteral">&#39;\0&#39;</span>;
             <span class="keywordflow">break</span>;
         }
 
         <span class="comment">// copy whole line to filterFile</span>
-        <span class="keywordflow">while</span> ((filterFile[i++] = file[charpointer++]) != <span class="charliteral">&#39;\n&#39;</span>) ;
+        <span class="keywordflow">while</span> ((filterFile[i++] = file[charpointer++]) != <span class="charliteral">&#39;\n&#39;</span>);
     }
 
     <span class="keywordflow">return</span> filterFile;
@@ -246,9 +267,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_routing_table_parser_8cc_source.html#l00263">263</a> of file <a class="el" href="_routing_table_parser_8cc_source.html">RoutingTableParser.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_routing_table_parser_8cc_source.html#l00162">parseInterfaces()</a>.</p>
+<p>Referenced by <a class="el" href="class_routing_table_parser.html#a85c2cfab7a9bad4cd89a663dd7d24a5d">parseInterfaces()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordtype">int</span> temp = 0;
 
@@ -269,7 +288,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_routing_table_parser.html#a85c2cfab7a9bad4cd89a663dd7d24a5d">RoutingTableParser::parseInterfaces</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_routing_table_parser.html#a85c2cfab7a9bad4cd89a663dd7d24a5d">RoutingTableParser::parseInterfaces</a> </td>
           <td>(</td>
           <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>ifconfigFile</em></td><td>)</td>
@@ -279,24 +298,23 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_routing_table_parser_8cc_source.html#l00162">162</a> of file <a class="el" href="_routing_table_parser_8cc_source.html">RoutingTableParser.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_routing_table_parser_8cc_source.html#l00072">readRoutingTableFromFile()</a>.</p>
+<p>Referenced by <a class="el" href="class_routing_table_parser.html#a43af098582f95f56435bb5715c158291">readRoutingTableFromFile()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordtype">char</span> buf[<a class="code" href="_routing_table_parser_8cc.html#ae114222c8797981a036fce19311ec051">MAX_ENTRY_STRING_SIZE</a>];
     <span class="keywordtype">int</span> charpointer = 0;
-    <a class="code" href="class_interface_entry.html">InterfaceEntry</a> *ie;
+    <a class="code" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> *ie;
 
     <span class="comment">// parsing of entries in interface definition</span>
-    <span class="keywordflow">while</span>(ifconfigFile[charpointer] != <span class="charliteral">&#39;\0&#39;</span>)
+    <span class="keywordflow">while</span> (ifconfigFile[charpointer] != <span class="charliteral">&#39;\0&#39;</span>)
     {
         <span class="comment">// name entry</span>
         <span class="keywordflow">if</span> (<a class="code" href="class_routing_table_parser.html#a04b2f70cae210d148f1b3e7a7efd434e">streq</a>(ifconfigFile + charpointer, <span class="stringliteral">&quot;name:&quot;</span>)) {
             <span class="comment">// find existing interface with this name</span>
-            <span class="keywordtype">char</span> *name = <a class="code" href="class_routing_table_parser.html#a6c02a30412513997b52c0c486b0906fa">parseEntry</a>(ifconfigFile, <span class="stringliteral">&quot;name:&quot;</span>, charpointer,buf);
-            ie = <a class="code" href="class_routing_table_parser.html#adbb5e5022b661cb806384ec284d185aa">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a8ad86ee823d6200b4f558383b39af658">getInterfaceByName</a>(name);
+            <span class="keywordtype">char</span> *<a class="code" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a> = <a class="code" href="class_routing_table_parser.html#a6c02a30412513997b52c0c486b0906fa">parseEntry</a>(ifconfigFile, <span class="stringliteral">&quot;name:&quot;</span>, charpointer, buf);
+            ie = <a class="code" href="class_routing_table_parser.html#adbb5e5022b661cb806384ec284d185aa">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a8ad86ee823d6200b4f558383b39af658" title="Returns an interface given by its name.">getInterfaceByName</a>(name);
             <span class="keywordflow">if</span> (!ie)
-                opp_error(<span class="stringliteral">&quot;Error in routing file: interface name `%s&#39; not registered by any L2 module&quot;</span>, name);
+                <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Error in routing file: interface name `%s&#39; not registered by any L2 module&quot;</span>, name);
+
             <span class="keywordflow">continue</span>;
         }
 
@@ -316,7 +334,7 @@ Protected Attributes</h2></td></tr>
 
         <span class="comment">// inet_addr entry</span>
         <span class="keywordflow">if</span> (<a class="code" href="class_routing_table_parser.html#a04b2f70cae210d148f1b3e7a7efd434e">streq</a>(ifconfigFile + charpointer, <span class="stringliteral">&quot;inet_addr:&quot;</span>)) {
-            ie-&gt;<a class="code" href="class_interface_entry.html#ad47857e772397cc2d00de3a8cf464993">ipv4Data</a>()-&gt;<a class="code" href="class_i_pv4_interface_data.html#a01673d0a7c6f0a3a3daddc83eb4c8aaa">setIPAddress</a>(<a class="code" href="class_i_p_address.html">IPAddress</a>(<a class="code" href="class_routing_table_parser.html#a6c02a30412513997b52c0c486b0906fa">parseEntry</a>(ifconfigFile, <span class="stringliteral">&quot;inet_addr:&quot;</span>, charpointer,buf)));
+            ie-&gt;<a class="code" href="class_interface_entry.html#a4f52f31546a140edf6979882492e1a0b">ipv4Data</a>()-&gt;<a class="code" href="class_i_pv4_interface_data.html#a42fff801962e93d13f453f3b57528d93">setIPAddress</a>(<a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a>(<a class="code" href="class_routing_table_parser.html#a6c02a30412513997b52c0c486b0906fa">parseEntry</a>(ifconfigFile, <span class="stringliteral">&quot;inet_addr:&quot;</span>, charpointer, buf)));
             <span class="keywordflow">continue</span>;
         }
 
@@ -329,7 +347,7 @@ Protected Attributes</h2></td></tr>
 
         <span class="comment">// Mask entry</span>
         <span class="keywordflow">if</span> (<a class="code" href="class_routing_table_parser.html#a04b2f70cae210d148f1b3e7a7efd434e">streq</a>(ifconfigFile + charpointer, <span class="stringliteral">&quot;Mask:&quot;</span>)) {
-            ie-&gt;<a class="code" href="class_interface_entry.html#ad47857e772397cc2d00de3a8cf464993">ipv4Data</a>()-&gt;<a class="code" href="class_i_pv4_interface_data.html#a70c7c157df5ca84e6dd72fd38d630a95">setNetmask</a>(<a class="code" href="class_i_p_address.html">IPAddress</a>(<a class="code" href="class_routing_table_parser.html#a6c02a30412513997b52c0c486b0906fa">parseEntry</a>(ifconfigFile, <span class="stringliteral">&quot;Mask:&quot;</span>, charpointer,buf)));
+            ie-&gt;<a class="code" href="class_interface_entry.html#a4f52f31546a140edf6979882492e1a0b">ipv4Data</a>()-&gt;<a class="code" href="class_i_pv4_interface_data.html#a216f0208506bb50e20dad0e18a037e84">setNetmask</a>(<a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a>(<a class="code" href="class_routing_table_parser.html#a6c02a30412513997b52c0c486b0906fa">parseEntry</a>(ifconfigFile, <span class="stringliteral">&quot;Mask:&quot;</span>, charpointer, buf)));
             <span class="keywordflow">continue</span>;
         }
 
@@ -342,13 +360,13 @@ Protected Attributes</h2></td></tr>
 
         <span class="comment">// MTU entry</span>
         <span class="keywordflow">if</span> (<a class="code" href="class_routing_table_parser.html#a04b2f70cae210d148f1b3e7a7efd434e">streq</a>(ifconfigFile + charpointer, <span class="stringliteral">&quot;MTU:&quot;</span>)) {
-            ie-&gt;<a class="code" href="class_interface_entry.html#aaebcf5970e29877b0a4b68ddaaaf540f">setMtu</a>(atoi(<a class="code" href="class_routing_table_parser.html#a6c02a30412513997b52c0c486b0906fa">parseEntry</a>(ifconfigFile, <span class="stringliteral">&quot;MTU:&quot;</span>, charpointer,buf)));
+            ie-&gt;<a class="code" href="class_interface_entry.html#aaebcf5970e29877b0a4b68ddaaaf540f">setMtu</a>(atoi(<a class="code" href="class_routing_table_parser.html#a6c02a30412513997b52c0c486b0906fa">parseEntry</a>(ifconfigFile, <span class="stringliteral">&quot;MTU:&quot;</span>, charpointer, buf)));
             <span class="keywordflow">continue</span>;
         }
 
         <span class="comment">// Metric entry</span>
         <span class="keywordflow">if</span> (<a class="code" href="class_routing_table_parser.html#a04b2f70cae210d148f1b3e7a7efd434e">streq</a>(ifconfigFile + charpointer, <span class="stringliteral">&quot;Metric:&quot;</span>)) {
-            ie-&gt;<a class="code" href="class_interface_entry.html#ad47857e772397cc2d00de3a8cf464993">ipv4Data</a>()-&gt;<a class="code" href="class_i_pv4_interface_data.html#a05354e589ed8f221d74f81f276fb158e">setMetric</a>(atoi(<a class="code" href="class_routing_table_parser.html#a6c02a30412513997b52c0c486b0906fa">parseEntry</a>(ifconfigFile, <span class="stringliteral">&quot;Metric:&quot;</span>, charpointer,buf)));
+            ie-&gt;<a class="code" href="class_interface_entry.html#a4f52f31546a140edf6979882492e1a0b">ipv4Data</a>()-&gt;<a class="code" href="class_i_pv4_interface_data.html#a05354e589ed8f221d74f81f276fb158e">setMetric</a>(atoi(<a class="code" href="class_routing_table_parser.html#a6c02a30412513997b52c0c486b0906fa">parseEntry</a>(ifconfigFile, <span class="stringliteral">&quot;Metric:&quot;</span>, charpointer, buf)));
             <span class="keywordflow">continue</span>;
         }
 
@@ -388,7 +406,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_routing_table_parser.html#abdb8ce749a563c8612464082c0cbe1e5">RoutingTableParser::parseMulticastGroups</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_routing_table_parser.html#abdb8ce749a563c8612464082c0cbe1e5">RoutingTableParser::parseMulticastGroups</a> </td>
           <td>(</td>
           <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>groupStr</em>, </td>
@@ -408,26 +426,13 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_routing_table_parser_8cc_source.html#l00279">279</a> of file <a class="el" href="_routing_table_parser_8cc_source.html">RoutingTableParser.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_routing_table_parser_8cc_source.html#l00162">parseInterfaces()</a>.</p>
+<p>Referenced by <a class="el" href="class_routing_table_parser.html#a85c2cfab7a9bad4cd89a663dd7d24a5d">parseInterfaces()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_i_pv4_interface_data.html#a9de10f3747920bc1c859f11e46a40aab">IPv4InterfaceData::IPAddressVector</a> mcg = itf-&gt;<a class="code" href="class_interface_entry.html#ad47857e772397cc2d00de3a8cf464993">ipv4Data</a>()-&gt;<a class="code" href="class_i_pv4_interface_data.html#acd5bb7625e8978e62244d39d5d03f1cd">getMulticastGroups</a>();
-
-    <span class="comment">// add &quot;224.0.0.1&quot; automatically</span>
-    mcg.push_back(<a class="code" href="class_i_p_address.html#a8721eeb0c6197516faa3f0b267664985" title="224.0.0.1 All hosts on a subnet">IPAddress::ALL_HOSTS_MCAST</a>);
-
-    <span class="comment">// add 224.0.0.2&quot; only if Router (IP forwarding enabled)</span>
-    <span class="keywordflow">if</span> (<a class="code" href="class_routing_table_parser.html#af194cf273b281b3d99ed7470f7b8e879">rt</a>-&gt;<a class="code" href="class_i_routing_table.html#a0f834149cc44f331983bcfc31e35cbf7">isIPForwardingEnabled</a>())
-        mcg.push_back(<a class="code" href="class_i_p_address.html#a06a37c2c04f547c86017875d353ea3eb" title="224.0.0.2 All routers on a subnet">IPAddress::ALL_ROUTERS_MCAST</a>);
-
-    <span class="comment">// Parse string (IP addresses separated by colons)</span>
-    cStringTokenizer tokenizer(groupStr,<span class="stringliteral">&quot;:&quot;</span>);
+    <span class="comment">// Parse string (IPv4 addresses separated by colons)</span>
+    cStringTokenizer tokenizer(groupStr, <span class="stringliteral">&quot;:&quot;</span>);
     <span class="keyword">const</span> <span class="keywordtype">char</span> *token;
-    <span class="keywordflow">while</span> ((token = tokenizer.nextToken())!=NULL)
-        mcg.push_back(<a class="code" href="class_i_p_address.html">IPAddress</a>(token));
-
-    itf-&gt;<a class="code" href="class_interface_entry.html#ad47857e772397cc2d00de3a8cf464993">ipv4Data</a>()-&gt;<a class="code" href="class_i_pv4_interface_data.html#af15165ccca3e66009644651a1ddd5c3e">setMulticastGroups</a>(mcg);
+    <span class="keywordflow">while</span> ((token = tokenizer.nextToken())!=<a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)
+        itf-&gt;<a class="code" href="class_interface_entry.html#a4f52f31546a140edf6979882492e1a0b">ipv4Data</a>()-&gt;<a class="code" href="class_i_pv4_interface_data.html#a0ced2d5b5dfaa92205e1a0de34d9f0b3">joinMulticastGroup</a>(<a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a>(token));
 }
 </pre></div>
 </div>
@@ -437,7 +442,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_routing_table_parser.html#a0eaa1e4e4bd652ef046eb6cb9be8b7b9">RoutingTableParser::parseRouting</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_routing_table_parser.html#a0eaa1e4e4bd652ef046eb6cb9be8b7b9">RoutingTableParser::parseRouting</a> </td>
           <td>(</td>
           <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>routeFile</em></td><td>)</td>
@@ -447,9 +452,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_routing_table_parser_8cc_source.html#l00299">299</a> of file <a class="el" href="_routing_table_parser_8cc_source.html">RoutingTableParser.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_routing_table_parser_8cc_source.html#l00072">readRoutingTableFromFile()</a>.</p>
+<p>Referenced by <a class="el" href="class_routing_table_parser.html#a43af098582f95f56435bb5715c158291">readRoutingTableFromFile()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordtype">char</span> *str = <span class="keyword">new</span> <span class="keywordtype">char</span>[<a class="code" href="_routing_table_parser_8cc.html#ae114222c8797981a036fce19311ec051">MAX_ENTRY_STRING_SIZE</a>];
 
@@ -460,13 +463,14 @@ Protected Attributes</h2></td></tr>
         <span class="comment">// 1st entry: Host</span>
         pos += <a class="code" href="class_routing_table_parser.html#ace62d5256f3e8e16ae42f236e5be2758">strcpyword</a>(str, routeFile + pos);
         <a class="code" href="class_routing_table_parser.html#a8176bab695ff724220e1f2566641a7b2">skipBlanks</a>(routeFile, pos);
-        <a class="code" href="class_i_p_route.html">IPRoute</a> *e = <span class="keyword">new</span> <a class="code" href="class_i_p_route.html">IPRoute</a>();
+        <a class="code" href="class_i_pv4_route.html" title="IPv4 unicast route in IRoutingTable.">IPv4Route</a> *e = <span class="keyword">new</span> <a class="code" href="class_i_pv4_route.html" title="IPv4 unicast route in IRoutingTable.">IPv4Route</a>();
         <span class="keywordflow">if</span> (strcmp(str, <span class="stringliteral">&quot;default:&quot;</span>))
         {
             <span class="comment">// if entry is not the default entry</span>
-            <span class="keywordflow">if</span> (!<a class="code" href="class_i_p_address.html#aef98cde22c954db3cd6ff62cd0d878bc">IPAddress::isWellFormed</a>(str))
-                opp_error(<span class="stringliteral">&quot;Syntax error in routing file: `%s&#39; on 1st column should be `default:&#39; or a valid IP address&quot;</span>, str);
-            e-&gt;<a class="code" href="class_i_p_route.html#af706d909f82600db0ff2191540131b91">setHost</a>(<a class="code" href="class_i_p_address.html">IPAddress</a>(str));
+            <span class="keywordflow">if</span> (!<a class="code" href="class_i_pv4_address.html#a06e8ded9a4b243efe0b98cd2ca82e471" title="Returns true if the format of the string corresponds to an IPv4 address with the dotted notation (&quot;19...">IPv4Address::isWellFormed</a>(str))
+                <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Syntax error in routing file: `%s&#39; on 1st column should be `default:&#39; or a valid IPv4 address&quot;</span>, str);
+
+            e-&gt;<a class="code" href="class_i_pv4_route.html#a75d1011d4002c8a9503f3a42aff66c70">setDestination</a>(<a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a>(str));
         }
 
         <span class="comment">// 2nd entry: Gateway</span>
@@ -474,34 +478,36 @@ Protected Attributes</h2></td></tr>
         <a class="code" href="class_routing_table_parser.html#a8176bab695ff724220e1f2566641a7b2">skipBlanks</a>(routeFile, pos);
         <span class="keywordflow">if</span> (!strcmp(str, <span class="stringliteral">&quot;*&quot;</span>) || !strcmp(str, <span class="stringliteral">&quot;0.0.0.0&quot;</span>))
         {
-            e-&gt;<a class="code" href="class_i_p_route.html#aae76b34aab79a69caca7e19ad8f39f3f">setGateway</a>(<a class="code" href="class_i_p_address.html#adf0c14fe4820be16bec3929a9c019648" title="0.0.0.0">IPAddress::UNSPECIFIED_ADDRESS</a>);
+            e-&gt;<a class="code" href="class_i_pv4_route.html#ac48404c53a5e8d505d54238541b74b7b">setGateway</a>(<a class="code" href="class_i_pv4_address.html#afe9ea306a56ce55f08c24b87ec5c33cd" title="0.0.0.0">IPv4Address::UNSPECIFIED_ADDRESS</a>);
         }
         <span class="keywordflow">else</span>
         {
-            <span class="keywordflow">if</span> (!<a class="code" href="class_i_p_address.html#aef98cde22c954db3cd6ff62cd0d878bc">IPAddress::isWellFormed</a>(str))
-                opp_error(<span class="stringliteral">&quot;Syntax error in routing file: `%s&#39; on 2nd column should be `*&#39; or a valid IP address&quot;</span>, str);
-            e-&gt;<a class="code" href="class_i_p_route.html#aae76b34aab79a69caca7e19ad8f39f3f">setGateway</a>(<a class="code" href="class_i_p_address.html">IPAddress</a>(str));
+            <span class="keywordflow">if</span> (!<a class="code" href="class_i_pv4_address.html#a06e8ded9a4b243efe0b98cd2ca82e471" title="Returns true if the format of the string corresponds to an IPv4 address with the dotted notation (&quot;19...">IPv4Address::isWellFormed</a>(str))
+                <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Syntax error in routing file: `%s&#39; on 2nd column should be `*&#39; or a valid IPv4 address&quot;</span>, str);
+
+            e-&gt;<a class="code" href="class_i_pv4_route.html#ac48404c53a5e8d505d54238541b74b7b">setGateway</a>(<a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a>(str));
         }
 
         <span class="comment">// 3rd entry: Netmask</span>
         pos += <a class="code" href="class_routing_table_parser.html#ace62d5256f3e8e16ae42f236e5be2758">strcpyword</a>(str, routeFile + pos);
         <a class="code" href="class_routing_table_parser.html#a8176bab695ff724220e1f2566641a7b2">skipBlanks</a>(routeFile, pos);
-        <span class="keywordflow">if</span> (!<a class="code" href="class_i_p_address.html#aef98cde22c954db3cd6ff62cd0d878bc">IPAddress::isWellFormed</a>(str))
-            opp_error(<span class="stringliteral">&quot;Syntax error in routing file: `%s&#39; on 3rd column should be a valid IP address&quot;</span>, str);
-        e-&gt;<a class="code" href="class_i_p_route.html#a8fd0ecc3020120431bae84d2eae7cc6a">setNetmask</a>(<a class="code" href="class_i_p_address.html">IPAddress</a>(str));
+        <span class="keywordflow">if</span> (!<a class="code" href="class_i_pv4_address.html#a06e8ded9a4b243efe0b98cd2ca82e471" title="Returns true if the format of the string corresponds to an IPv4 address with the dotted notation (&quot;19...">IPv4Address::isWellFormed</a>(str))
+            <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Syntax error in routing file: `%s&#39; on 3rd column should be a valid IPv4 address&quot;</span>, str);
+
+        e-&gt;<a class="code" href="class_i_pv4_route.html#a625acf9119fbc2bd5255c56096a36d38">setNetmask</a>(<a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a>(str));
 
         <span class="comment">// 4th entry: flags</span>
         pos += <a class="code" href="class_routing_table_parser.html#ace62d5256f3e8e16ae42f236e5be2758">strcpyword</a>(str, routeFile + pos);
         <a class="code" href="class_routing_table_parser.html#a8176bab695ff724220e1f2566641a7b2">skipBlanks</a>(routeFile, pos);
         <span class="comment">// parse flag-String to set flags</span>
-        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = 0; str[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>]; <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>++)
+        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; str[i]; i++)
         {
-            <span class="keywordflow">if</span> (str[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>] == <span class="charliteral">&#39;H&#39;</span>) {
-                e-&gt;<a class="code" href="class_i_p_route.html#a545b92b4bd15e1dad59afba65344c6f1">setType</a>(<a class="code" href="class_i_p_route.html#affdd22b24049e9d8d991b955a973d32eab46216a10952298ab9565997122d7225" title="Directly attached to the router.">IPRoute::DIRECT</a>);
-            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (str[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>] == <span class="charliteral">&#39;G&#39;</span>) {
-                e-&gt;<a class="code" href="class_i_p_route.html#a545b92b4bd15e1dad59afba65344c6f1">setType</a>(<a class="code" href="class_i_p_route.html#affdd22b24049e9d8d991b955a973d32ea7e558ac291a7e5173702d655d80e627c" title="Reached through another router.">IPRoute::REMOTE</a>);
+            <span class="keywordflow">if</span> (str[i] == <span class="charliteral">&#39;H&#39;</span>) {
+                <span class="comment">// e-&gt;setType(IPv4Route::DIRECT);</span>
+            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (str[i] == <span class="charliteral">&#39;G&#39;</span>) {
+                <span class="comment">// e-&gt;setType(IPv4Route::REMOTE);</span>
             } <span class="keywordflow">else</span> {
-                opp_error(<span class="stringliteral">&quot;Syntax error in routing file: 4th column should be `G&#39; or `H&#39; not `%s&#39;&quot;</span>, str);
+                <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Syntax error in routing file: 4th column should be `G&#39; or `H&#39; not `%s&#39;&quot;</span>, str);
             }
         }
 
@@ -510,21 +516,23 @@ Protected Attributes</h2></td></tr>
         <a class="code" href="class_routing_table_parser.html#a8176bab695ff724220e1f2566641a7b2">skipBlanks</a>(routeFile, pos);
         <span class="keywordtype">int</span> metric = atoi(str);
         <span class="keywordflow">if</span> (metric==0 &amp;&amp; str[0]!=<span class="charliteral">&#39;0&#39;</span>)
-            opp_error(<span class="stringliteral">&quot;Syntax error in routing file: 5th column should be numeric not `%s&#39;&quot;</span>, str);
-        e-&gt;<a class="code" href="class_i_p_route.html#ae0d4294f3ad0d91b283f5da2b183335f">setMetric</a>(metric);
+            <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Syntax error in routing file: 5th column should be numeric not `%s&#39;&quot;</span>, str);
+
+        e-&gt;<a class="code" href="class_i_pv4_route.html#a835720d0f2b89896063b1296d85c57cc">setMetric</a>(metric);
 
         <span class="comment">// 6th entry: interface</span>
         opp_string interfaceName;
         interfaceName.reserve(<a class="code" href="_routing_table_parser_8cc.html#ae114222c8797981a036fce19311ec051">MAX_ENTRY_STRING_SIZE</a>);
         pos += <a class="code" href="class_routing_table_parser.html#ace62d5256f3e8e16ae42f236e5be2758">strcpyword</a>(interfaceName.buffer(), routeFile + pos);
         <a class="code" href="class_routing_table_parser.html#a8176bab695ff724220e1f2566641a7b2">skipBlanks</a>(routeFile, pos);
-        <a class="code" href="class_interface_entry.html">InterfaceEntry</a> *ie = <a class="code" href="class_routing_table_parser.html#adbb5e5022b661cb806384ec284d185aa">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a8ad86ee823d6200b4f558383b39af658">getInterfaceByName</a>(interfaceName.c_str());
+        <a class="code" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> *ie = <a class="code" href="class_routing_table_parser.html#adbb5e5022b661cb806384ec284d185aa">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a8ad86ee823d6200b4f558383b39af658" title="Returns an interface given by its name.">getInterfaceByName</a>(interfaceName.c_str());
         <span class="keywordflow">if</span> (!ie)
-            opp_error(<span class="stringliteral">&quot;Syntax error in routing file: 6th column: `%s&#39; is not an existing interface&quot;</span>, interfaceName.c_str());
-        e-&gt;<a class="code" href="class_i_p_route.html#a5111618dad4786d4fda4f770aacc5e41">setInterface</a>(ie);
+            <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Syntax error in routing file: 6th column: `%s&#39; is not an existing interface&quot;</span>, interfaceName.c_str());
+
+        e-&gt;<a class="code" href="class_i_pv4_route.html#af7fc0b9d45d7fcbe603b679993e38ee5">setInterface</a>(ie);
 
         <span class="comment">// add entry</span>
-        <a class="code" href="class_routing_table_parser.html#af194cf273b281b3d99ed7470f7b8e879">rt</a>-&gt;<a class="code" href="class_i_routing_table.html#af423d065165da4a55e86385efe1f69d1">addRoute</a>(e);
+        <a class="code" href="class_routing_table_parser.html#af194cf273b281b3d99ed7470f7b8e879">rt</a>-&gt;<a class="code" href="class_i_routing_table.html#ad7be1ebe567f40bca667ba0f33a2ca8d" title="Adds a route to the routing table.">addRoute</a>(e);
     }
 }
 </pre></div>
@@ -544,26 +552,25 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Read Routing Table file; return 0 on success, -1 on error </p>
 
-<p>Definition at line <a class="el" href="_routing_table_parser_8cc_source.html#l00072">72</a> of file <a class="el" href="_routing_table_parser_8cc_source.html">RoutingTableParser.cc</a>.</p>
+<p>Read Routing Table file; return 0 on success, -1 on error. </p>
 
-<p>Referenced by <a class="el" href="_routing_table_8cc_source.html#l00059">RoutingTable::initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_routing_table.html#a0f8b6dd1c9a692ca1eba05d35bcc78ed">RoutingTable::initialize()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     FILE *fp;
     <span class="keywordtype">int</span> charpointer;
     <span class="keywordtype">char</span> *file = <span class="keyword">new</span> <span class="keywordtype">char</span>[<a class="code" href="_routing_table_parser_8cc.html#abd4f060c8c54335ad11d6d552c7dbe93">MAX_FILESIZE</a>];
-    <span class="keywordtype">char</span> *ifconfigFile = NULL;
-    <span class="keywordtype">char</span> *routeFile = NULL;
+    <span class="keywordtype">char</span> *ifconfigFile = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+    <span class="keywordtype">char</span> *routeFile = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
 
     fp = fopen(filename, <span class="stringliteral">&quot;r&quot;</span>);
-    <span class="keywordflow">if</span> (fp == NULL)
-        opp_error(<span class="stringliteral">&quot;Error opening routing table file `%s&#39;&quot;</span>, filename);
+    <span class="keywordflow">if</span> (fp == <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Error opening routing table file `%s&#39;&quot;</span>, filename);
 
     <span class="comment">// read the whole into the file[] char-array</span>
     <span class="keywordflow">for</span> (charpointer = 0;
          (file[charpointer] = getc(fp)) != EOF;
-         charpointer++) ;
+         charpointer++);
 
     charpointer++;
     <span class="keywordflow">for</span> (; charpointer &lt; <a class="code" href="_routing_table_parser_8cc.html#abd4f060c8c54335ad11d6d552c7dbe93">MAX_FILESIZE</a>; charpointer++)
@@ -597,7 +604,7 @@ Protected Attributes</h2></td></tr>
         }
     }
 
-    <span class="keyword">delete</span> file;
+    <span class="keyword">delete</span> [] file;
 
     <span class="comment">// parse filtered files</span>
     <span class="keywordflow">if</span> (ifconfigFile)
@@ -605,8 +612,8 @@ Protected Attributes</h2></td></tr>
     <span class="keywordflow">if</span> (routeFile)
         <a class="code" href="class_routing_table_parser.html#a0eaa1e4e4bd652ef046eb6cb9be8b7b9">parseRouting</a>(routeFile);
 
-    <span class="keyword">delete</span> ifconfigFile;
-    <span class="keyword">delete</span> routeFile;
+    <span class="keyword">delete</span> [] ifconfigFile;
+    <span class="keyword">delete</span> [] routeFile;
 
     <span class="keywordflow">return</span> 0;
 
@@ -619,7 +626,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_routing_table_parser.html#a8176bab695ff724220e1f2566641a7b2">RoutingTableParser::skipBlanks</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_routing_table_parser.html#a8176bab695ff724220e1f2566641a7b2">RoutingTableParser::skipBlanks</a> </td>
           <td>(</td>
           <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>str</em>, </td>
@@ -639,11 +646,9 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_routing_table_parser_8cc_source.html#l00066">66</a> of file <a class="el" href="_routing_table_parser_8cc_source.html">RoutingTableParser.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_routing_table_parser_8cc_source.html#l00263">parseEntry()</a>, <a class="el" href="_routing_table_parser_8cc_source.html#l00162">parseInterfaces()</a>, and <a class="el" href="_routing_table_parser_8cc_source.html#l00299">parseRouting()</a>.</p>
+<p>Referenced by <a class="el" href="class_routing_table_parser.html#a6c02a30412513997b52c0c486b0906fa">parseEntry()</a>, <a class="el" href="class_routing_table_parser.html#a85c2cfab7a9bad4cd89a663dd7d24a5d">parseInterfaces()</a>, and <a class="el" href="class_routing_table_parser.html#a0eaa1e4e4bd652ef046eb6cb9be8b7b9">parseRouting()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">for</span> (;isspace(str[charptr]); charptr++) ;
+    <span class="keywordflow">for</span> (; isspace(str[charptr]); charptr++);
 }
 </pre></div>
 </div>
@@ -673,14 +678,12 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_routing_table_parser_8cc_source.html#l00057">57</a> of file <a class="el" href="_routing_table_parser_8cc_source.html">RoutingTableParser.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_routing_table_parser_8cc_source.html#l00263">parseEntry()</a>, and <a class="el" href="_routing_table_parser_8cc_source.html#l00299">parseRouting()</a>.</p>
+<p>Referenced by <a class="el" href="class_routing_table_parser.html#a6c02a30412513997b52c0c486b0906fa">parseEntry()</a>, and <a class="el" href="class_routing_table_parser.html#a0eaa1e4e4bd652ef046eb6cb9be8b7b9">parseRouting()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordtype">int</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>;
-    <span class="keywordflow">for</span> (i = 0; !isspace(dest[i] = src[i]); i++) ;
-    dest[<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>] = <span class="charliteral">&#39;\0&#39;</span>;
-    <span class="keywordflow">return</span> <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>;
+    <span class="keywordtype">int</span> i;
+    <span class="keywordflow">for</span> (i = 0; !isspace(dest[i] = src[i]); i++);
+    dest[i] = <span class="charliteral">&#39;\0&#39;</span>;
+    <span class="keywordflow">return</span> i;
 }
 </pre></div>
 </div>
@@ -710,9 +713,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_routing_table_parser_8cc_source.html#l00051">51</a> of file <a class="el" href="_routing_table_parser_8cc_source.html">RoutingTableParser.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_routing_table_parser_8cc_source.html#l00136">createFilteredFile()</a>, <a class="el" href="_routing_table_parser_8cc_source.html#l00162">parseInterfaces()</a>, and <a class="el" href="_routing_table_parser_8cc_source.html#l00072">readRoutingTableFromFile()</a>.</p>
+<p>Referenced by <a class="el" href="class_routing_table_parser.html#afb9b9e857d1c52f82377456d3b3f2d37">createFilteredFile()</a>, <a class="el" href="class_routing_table_parser.html#a85c2cfab7a9bad4cd89a663dd7d24a5d">parseInterfaces()</a>, and <a class="el" href="class_routing_table_parser.html#a43af098582f95f56435bb5715c158291">readRoutingTableFromFile()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">return</span> (strncmp(str1, str2, strlen(str2)) == 0);
 }
@@ -731,9 +732,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_routing_table_parser_8h_source.html#l00042">42</a> of file <a class="el" href="_routing_table_parser_8h_source.html">RoutingTableParser.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_routing_table_parser_8cc_source.html#l00162">parseInterfaces()</a>, <a class="el" href="_routing_table_parser_8cc_source.html#l00299">parseRouting()</a>, and <a class="el" href="_routing_table_parser_8cc_source.html#l00044">RoutingTableParser()</a>.</p>
+<p>Referenced by <a class="el" href="class_routing_table_parser.html#a85c2cfab7a9bad4cd89a663dd7d24a5d">parseInterfaces()</a>, <a class="el" href="class_routing_table_parser.html#a0eaa1e4e4bd652ef046eb6cb9be8b7b9">parseRouting()</a>, and <a class="el" href="class_routing_table_parser.html#a385f6182b0a515a0868ed50b63ccf890">RoutingTableParser()</a>.</p>
 
 </div>
 </div>
@@ -748,15 +747,13 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_routing_table_parser_8h_source.html#l00043">43</a> of file <a class="el" href="_routing_table_parser_8h_source.html">RoutingTableParser.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_routing_table_parser_8cc_source.html#l00279">parseMulticastGroups()</a>, <a class="el" href="_routing_table_parser_8cc_source.html#l00299">parseRouting()</a>, and <a class="el" href="_routing_table_parser_8cc_source.html#l00044">RoutingTableParser()</a>.</p>
+<p>Referenced by <a class="el" href="class_routing_table_parser.html#a0eaa1e4e4bd652ef046eb6cb9be8b7b9">parseRouting()</a>, and <a class="el" href="class_routing_table_parser.html#a385f6182b0a515a0868ed50b63ccf890">RoutingTableParser()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_routing_table_parser_8h_source.html">RoutingTableParser.h</a></li>
-<li><a class="el" href="_routing_table_parser_8cc_source.html">RoutingTableParser.cc</a></li>
+<li><a class="el" href="_routing_table_parser_8h.html">RoutingTableParser.h</a></li>
+<li><a class="el" href="_routing_table_parser_8cc.html">RoutingTableParser.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -764,7 +761,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_routing_table_parser.html">RoutingTableParser</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:51 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:29 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

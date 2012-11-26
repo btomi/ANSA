@@ -7,13 +7,137 @@
 <h2 class="comptitle">Class <i>UDPControlInfo</i></h2>
 <b>File: <a href="src-transport-contract-UDPControlInfo.msg.html">src/transport/contract/UDPControlInfo.msg</a></b><br/><p><a href="../doxy/class_u_d_p_control_info.html" target="mainframe"><b>C++ definition</b></a></p>
 
-<p>Control info for sending/receiving data via UDP. Travels between
-application and the <a href="inet.transport.udp.UDP.html">UDP</a> module.</p>
-<p>The most convenient way to handle <a href="inet.transport.udp.UDP.html">UDP</a> is the UDPSocket class, which hides
-<a href="UDPControlInfo.html">UDPControlInfo</a> completely from you. But even if you manage talking
-to <a href="inet.transport.udp.UDP.html">UDP</a> yourself without help from UDPSocket, sockId must be obtained
-from UDPSocket::generateSocketId().</p>
+<p>Base class for UDP control info classes. The most convenient way to handle
+<a href="inet.transport.udp.UDP.html">UDP</a> is the UDPSocket class, which hides control info from you.</p>
+<p>sockId must uniquely identify the socket in the <a href="inet.transport.udp.UDP.html">UDP</a> module; the best way
+to achieve that is to obtain the value from UDPSocket::generateSocketId().</p>
 <p><b>See also:</b> <a href="UDPCommandCode.html">UDPCommandCode</a></p>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="UDPControlInfo-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="UDPControlInfo.html" title="Class UDPControlInfo" alt="" coords="5,6,120,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="UDPControlInfo-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="UDPControlInfo.html" title="Class UDPControlInfo" alt="" coords="527,6,641,34">
+<area shape="rect" id="node2" href="UDPBindCommand.html" title="Class UDPBindCommand" alt="" coords="5,83,141,111">
+<area shape="rect" id="node4" href="UDPCloseCommand.html" title="Class UDPCloseCommand" alt="" coords="165,83,309,111">
+<area shape="rect" id="node6" href="UDPConnectCommand.html" title="Class UDPConnectCommand" alt="" coords="333,83,493,111">
+<area shape="rect" id="node8" href="UDPDataIndication.html" title="Class UDPDataIndication" alt="" coords="517,83,651,111">
+<area shape="rect" id="node10" href="UDPErrorIndication.html" title="Class UDPErrorIndication" alt="" coords="675,83,808,111">
+<area shape="rect" id="node12" href="UDPSendCommand.html" title="Class UDPSendCommand" alt="" coords="832,83,973,111">
+<area shape="rect" id="node14" href="UDPSetOptionCommand.html" title="Class UDPSetOptionCommand" alt="" coords="997,83,1165,111">
+</map>
+<h3 class="subtitle">Known subclasses:</h3>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+<tr>
+   <td>
+<a href="UDPBindCommand.html">UDPBindCommand</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>Control info for binding an UDP socket. To create and bind a socket,
+send a message to the <a href="inet.transport.udp.UDP.html">UDP</a> module with kind=UDP_C_BIND and an
+<a href="UDPBindCommand.html">UDPBindCommand</a> attached.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="UDPCloseCommand.html">UDPCloseCommand</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>Control info for closing an UDP socket. To close a socket, send a message
+to the <a href="inet.transport.udp.UDP.html">UDP</a> module with kind=UDP_C_CLOSE and an <a href="UDPCloseCommand.html">UDPCloseCommand</a> attached.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="UDPConnectCommand.html">UDPConnectCommand</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>Control info for connecting an UDP socket. To connect a socket,
+send a message to the <a href="inet.transport.udp.UDP.html">UDP</a> module with kind=UDP_C_CONNECT and an
+<a href="UDPConnectCommand.html">UDPConnectCommand</a> attached. If the socket does not exist,
+it will be created.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="UDPDataIndication.html">UDPDataIndication</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>Control info that is attached to received data packets, sent up from the
+<a href="inet.transport.udp.UDP.html">UDP</a> module to the application with UDP_I_DATA as message kind.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="UDPErrorIndication.html">UDPErrorIndication</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>Control info that is sent up from the <a href="inet.transport.udp.UDP.html">UDP</a> module to the application with
+UDP_I_ERROR as message kind when <a href="inet.transport.udp.UDP.html">UDP</a> receives an ICMP error for a packet
+previously sent from the socket.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="UDPSendCommand.html">UDPSendCommand</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>Control info for sending data via UDP. To send a packet, send it to
+the <a href="inet.transport.udp.UDP.html">UDP</a> module with kind=UDP_C_SEND and an <a href="UDPSendCommand.html">UDPSendCommand</a> attached.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="UDPSetOptionCommand.html">UDPSetOptionCommand</a>
+   </td>
+   <td>
+<i>class</i>
+   </td>
+   <td>
+
+<p>Base class for UDP socket option control info classes.</p>
+
+   </td>
+</tr>
+</table>
 <h3 class="subtitle">Fields:</h3>
 <table class="fieldstable">
    <tr>
@@ -28,96 +152,25 @@ from UDPSocket::generateSocketId().</p>
 int</i>
    </td>
    <td>
-<p>uniquely identifies the UDP socket</p>
-</td>
-</tr>
-<tr class="local">
-   <td>userId</td>
-   <td>
-      <i>
-int</i>
-   </td>
-   <td>
-<p>id than can be freely used by the app</p>
-</td>
-</tr>
-<tr class="local">
-   <td>srcAddr</td>
-   <td>
-      <i>
-IPvXAddress</i>
-   </td>
-   <td>
-<p>source IP or IPv6 address, or local address with BIND</p>
-</td>
-</tr>
-<tr class="local">
-   <td>destAddr</td>
-   <td>
-      <i>
-IPvXAddress</i>
-   </td>
-   <td>
-<p>destination IP or IPv6 address</p>
-</td>
-</tr>
-<tr class="local">
-   <td>srcPort</td>
-   <td>
-      <i>
-int</i>
-   </td>
-   <td>
-<p>UDP source port in packet, or local port with BIND</p>
-</td>
-</tr>
-<tr class="local">
-   <td>destPort</td>
-   <td>
-      <i>
-int</i>
-   </td>
-   <td>
-<p>UDP destination port in packet</p>
-</td>
-</tr>
-<tr class="local">
-   <td>interfaceId</td>
-   <td>
-      <i>
-int</i>
-   </td>
-   <td>
-<p>interface on which pk was received/should be sent (see <a href="inet.networklayer.common.InterfaceTable.html">InterfaceTable</a>)</p>
+<p>must uniquely identify the socket in the <a href="inet.transport.udp.UDP.html">UDP</a> module</p>
 </td>
 </tr>
 </table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
-// Control info for sending/receiving data via \UDP. Travels between
-// application and the UDP module.
+// Base class for UDP control info classes. The most convenient way to handle
+// ~UDP is the UDPSocket class, which hides control info from you.
 //
-// The most convenient way to handle UDP is the UDPSocket class, which hides
-// UDPControlInfo completely from you. But even if you manage talking
-// to UDP yourself without help from UDPSocket, sockId must be obtained
-// from UDPSocket::generateSocketId().
+// sockId must uniquely identify the socket in the ~UDP module; the best way
+// to achieve that is to obtain the value from UDPSocket::generateSocketId().
 //
-</span><span style="color: #0000ff; font-style: italic; ">//# </span><span style="color: #000080; ">TODO</span><span style="color: #0000ff; font-style: italic; "> explain userId, sockId, etc.
-</span><span style="color: #808080; font-style: italic; ">//
-// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> UDPCommandCode
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~UDPCommandCode
 //
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">UDPControlInfo</span><span style="color: #000000; ">
 {
-    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">sockId</span><span style="color: #000000; "> = -</span><span style="color: #008000; ">1</span><span style="color: #000000; ">;   </span><span style="color: #808080; font-style: italic; ">// uniquely identifies the \UDP socket
-</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">userId</span><span style="color: #000000; "> = -</span><span style="color: #008000; ">1</span><span style="color: #000000; ">;   </span><span style="color: #808080; font-style: italic; ">// id than can be freely used by the app
-</span><span style="color: #000000; ">    </span><span style="color: #000000; ">IPvXAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">srcAddr</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// source \IP or \IPv6 address, or local address with BIND
-</span><span style="color: #000000; ">    </span><span style="color: #000000; ">IPvXAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">destAddr</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// destination \IP or \IPv6 address
-</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">srcPort</span><span style="color: #000000; ">;   </span><span style="color: #808080; font-style: italic; ">// \UDP source port in packet, or local port with BIND
-</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">destPort</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// \UDP destination port in packet
-</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">interfaceId</span><span style="color: #000000; "> = -</span><span style="color: #008000; ">1</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// interface on which pk was received/should be sent (see InterfaceTable)
+    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">sockId</span><span style="color: #000000; "> = -</span><span style="color: #008000; ">1</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// must uniquely identify the socket in the ~UDP module
 </span><span style="color: #000000; ">}
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

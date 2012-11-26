@@ -5,7 +5,30 @@
    </head>
    <body onload="if (top.frames['componentsframe'] == undefined) { s = window.location.toString(); window.location = 'index.html?p=' + s.substring(s.lastIndexOf('/')+1); }">
 <h2 class="comptitle">Channel <i>DatarateChannel</i></h2>
-<b>Package:</b> ned<br/><b>Built-in type</b><br/><p>(no description)</p><h3 class="subtitle">Known subclasses:</h3>
+<b>Package:</b> ned<br/><b>Built-in type</b><br/><p>(no description)</p><h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="ned.DatarateChannel-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="ned.DatarateChannel.html" title="Channel DatarateChannel" alt="" coords="392,83,512,111">
+<area shape="rect" id="node2" href="inet.examples.inet.ber.ber.html" title="Network ber" alt="" coords="5,6,77,34">
+<area shape="rect" id="node4" href="inet.examples.ethernet.lans.HubLAN.html" title="Network HubLAN" alt="" coords="101,6,173,34">
+<area shape="rect" id="node6" href="inet.examples.ethernet.lans.MixedLAN.html" title="Network MixedLAN" alt="" coords="197,6,280,34">
+<area shape="rect" id="node8" href="inet.examples.wireless.multiradio.MultiRadio.html" title="Network MultiRadio" alt="" coords="304,6,387,34">
+<area shape="rect" id="node10" href="inet.examples.mpls.testte_tunnel.RSVPTE4.html" title="Network RSVPTE4" alt="" coords="411,6,493,34">
+<area shape="rect" id="node16" href="inet.examples.ethernet.lans.TwoHosts.html" title="Network TwoHosts" alt="" coords="517,6,600,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="ned.DatarateChannel-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="ned.DatarateChannel.html" title="Channel DatarateChannel" alt="" coords="239,6,359,34">
+<area shape="rect" id="node2" href="inet.examples.x.cable.html" title="Channel cable" alt="" coords="5,83,77,111">
+<area shape="rect" id="node6" href="inet.nodes.ethernet.EtherLink.html" title="Channel EtherLink" alt="" coords="101,83,179,111">
+<area shape="rect" id="node8" href="inet.examples.mobileipv6.ethernetline.html" title="Channel ethernetline" alt="" coords="203,83,291,111">
+<area shape="rect" id="node11" href="inet.examples.mobileipv6.fiberline.html" title="Channel fiberline" alt="" coords="315,83,387,111">
+<area shape="rect" id="node13" href="inet.examples.inet.tcpwindowscale.LFNPath.html" title="Channel LFNPath" alt="" coords="411,83,485,111">
+<area shape="rect" id="node15" href="inet.examples.inet.tcptimestamps.NormalPath.html" title="Channel NormalPath" alt="" coords="509,83,600,111">
+<area shape="rect" id="node19" href="inet.util.ThruputMeteringChannel.html" title="Channel ThruputMeteringChannel" alt="" coords="624,83,787,111">
+</map>
+<h3 class="subtitle">Known subclasses:</h3>
 <table class="typestable">
    <tr>
       <th class="name">Name</th>
@@ -20,12 +43,74 @@
 <i>channel</i>
    </td>
    <td>
+
+<p>A 100Mb/s Ethernet cable. Part of <a href="inet.examples.ethernet.lans.LargeNet.html">LargeNet</a>.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.inet.ipv4largenet.cable.html">cable</a>
+   </td>
+   <td>
+<i>channel</i>
+   </td>
+   <td>
+
+<p>A 100Mb/s Ethernet cable. Part of <a href="inet.examples.inet.ipv4largenet.IPv4LargeNet.html">IPv4LargeNet</a>.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.x.cable.html">cable</a>
+   </td>
+   <td>
+<i>channel</i>
+   </td>
+   <td>
 <i>(no description)</i>
    </td>
 </tr>
 <tr>
    <td>
-<a href="inet.examples.ethernet.lans.ethernetline.html">ethernetline</a>
+<a href="inet.nodes.ethernet.EtherLink.html">EtherLink</a>
+   </td>
+   <td>
+<i>channel</i>
+   </td>
+   <td>
+
+<p>Base for Ethernet link types. Propagation delay can be specified with the
+length of the cable, i.e. in meters instead of nanoseconds or microseconds.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.httptools.socket.tenserverssocket.ethernetline.html">ethernetline</a>
+   </td>
+   <td>
+<i>channel</i>
+   </td>
+   <td>
+<i>(no description)</i>
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.mobileipv6.ethernetline.html">ethernetline</a>
+   </td>
+   <td>
+<i>channel</i>
+   </td>
+   <td>
+<i>(no description)</i>
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.mobileipv6.fiberline.html">fiberline</a>
    </td>
    <td>
 <i>channel</i>
@@ -80,13 +165,18 @@
 </tr>
 <tr>
    <td>
-<a href="inet.examples.emulation.traceroute.pppline.html">pppline</a>
+<a href="inet.util.ThruputMeteringChannel.html">ThruputMeteringChannel</a>
    </td>
    <td>
 <i>channel</i>
    </td>
    <td>
-<i>(no description)</i>
+
+<p>This channels adds suport for thruput meternig to the datarate channel
+A cDatarateChannel extended with throughput calculation. Values
+get displayed on the link, using the connection's "t=" display
+string tag.</p>
+
    </td>
 </tr>
 </table>
@@ -110,95 +200,33 @@
 </tr>
 <tr>
    <td>
-<a href="inet.examples.ansaExamples.MyQosCaseStudy.CaseStudyNetwork.html">CaseStudyNetwork</a>
+<a href="inet.examples.ethernet.lans.HubLAN.html">HubLAN</a>
    </td>
    <td>
 <i>network</i>
    </td>
    <td>
-<i>(no description)</i>
+
+<p>Sample Ethernet LAN: four hosts connected by a hub.</p>
+
    </td>
 </tr>
 <tr>
    <td>
-<a href="inet.examples.ansaExamples.cesnet.rip.MyNetwork.html">MyNetwork</a>
+<a href="inet.examples.ethernet.lans.MixedLAN.html">MixedLAN</a>
    </td>
    <td>
 <i>network</i>
    </td>
    <td>
-<i>(no description)</i>
+
+<p>Sample Ethernet LAN containing eight hosts, a switch and a bus.</p>
+
    </td>
 </tr>
 <tr>
    <td>
-<a href="inet.examples.ansaExamples.cesnet.ospf.Network_E0.html">Network_E0</a>
-   </td>
-   <td>
-<i>network</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.examples.ansaExamples.cesnet.ospf.Network_E02.html">Network_E02</a>
-   </td>
-   <td>
-<i>network</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.examples.ansaExamples.cesnet.ospf.Network_E05.html">Network_E05</a>
-   </td>
-   <td>
-<i>network</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.examples.ansaExamples.cesnet.ospf.Network_E10.html">Network_E10</a>
-   </td>
-   <td>
-<i>network</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.examples.inet.redtest.REDTest.html">REDTest</a>
-   </td>
-   <td>
-<i>network</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.examples.inet.redtest.REDTestDebug.html">REDTestDebug</a>
-   </td>
-   <td>
-<i>network</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.examples.inet.redtest.REDTestTh.html">REDTestTh</a>
+<a href="inet.examples.wireless.multiradio.MultiRadio.html">MultiRadio</a>
    </td>
    <td>
 <i>network</i>
@@ -274,46 +302,16 @@
 </tr>
 <tr>
    <td>
-<a href="inet.examples.ansaExamples.QosSimpleTest.SimpleTest.html">SimpleTest</a>
+<a href="inet.examples.ethernet.lans.TwoHosts.html">TwoHosts</a>
    </td>
    <td>
 <i>network</i>
    </td>
    <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.examples.ansaExamples.QosTest1.SimpleTest.html">SimpleTest</a>
-   </td>
-   <td>
-<i>network</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.examples.ansaExamples.QosTest2.SimpleTest.html">SimpleTest</a>
-   </td>
-   <td>
-<i>network</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.examples.ansaExamples.TrafGenSimpleTest.SimpleTest.html">SimpleTest</a>
-   </td>
-   <td>
-<i>network</i>
-   </td>
-   <td>
-<i>(no description)</i>
+
+<p>Sample Ethernet LAN: two hosts directly connected to each other
+via twisted pair.</p>
+
    </td>
 </tr>
 </table>
@@ -493,6 +491,5 @@ int   </i></td>
 </span><span style="color: #000000; ">}
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

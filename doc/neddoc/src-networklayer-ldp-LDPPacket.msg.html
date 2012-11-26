@@ -20,7 +20,7 @@
    </td>
    <td>
 
-<p><a href="inet.networklayer.ldp.LDP.html">LDP</a> message types</p>
+<p>LDP message types</p>
 
    </td>
 </tr>
@@ -55,7 +55,7 @@
    </td>
    <td>
 
-<p>Base class for <a href="inet.networklayer.ldp.LDP.html">LDP</a> packets</p>
+<p>Base class for LDP packets</p>
 
    </td>
 </tr>
@@ -68,7 +68,7 @@
    </td>
    <td>
 
-<p><a href="inet.networklayer.ldp.LDP.html">LDP</a> Label Mapping Message</p>
+<p>LDP Label Mapping Message</p>
 
    </td>
 </tr>
@@ -81,7 +81,7 @@
    </td>
    <td>
 
-<p><a href="inet.networklayer.ldp.LDP.html">LDP</a> Label Request Message</p>
+<p>LDP Label Request Message</p>
 
    </td>
 </tr>
@@ -94,7 +94,7 @@
    </td>
    <td>
 
-<p><a href="inet.networklayer.ldp.LDP.html">LDP</a> Hello Message</p>
+<p>LDP Hello Message</p>
 
    </td>
 </tr>
@@ -107,7 +107,7 @@
    </td>
    <td>
 
-<p><a href="inet.networklayer.ldp.LDP.html">LDP</a> notification message</p>
+<p>LDP notification message</p>
 
    </td>
 </tr>
@@ -120,7 +120,7 @@
    </td>
    <td>
 
-<p><a href="inet.networklayer.ldp.LDP.html">LDP</a> Ini Message</p>
+<p>LDP Ini Message</p>
 
    </td>
 </tr>
@@ -133,7 +133,7 @@
    </td>
    <td>
 
-<p><a href="inet.networklayer.ldp.LDP.html">LDP</a> Address Message</p>
+<p>LDP Address Message</p>
 
    </td>
 </tr>
@@ -153,7 +153,7 @@
 </span><span style="color: #000000; ">
 
 </span><span style="color: #800000; font-weight: bold; ">cplusplus</span><span style="color: #000000; "> {{
-#</span><span style="color: #000000; ">include</span><span style="color: #000000; "> </span><span style="color: #008000; ">&quot;IPAddress.h&quot;</span><span style="color: #000000; ">
+#</span><span style="color: #000000; ">include</span><span style="color: #000000; "> </span><span style="color: #008000; ">&quot;IPv4Address.h&quot;</span><span style="color: #000000; ">
 
 </span><span style="color: #808080; font-style: italic; ">// base header: version, length, LSR ID, Label space
 </span><span style="color: #000000; ">#</span><span style="color: #000000; ">define</span><span style="color: #000000; "> </span><span style="color: #000000; ">LDP_BASEHEADER_BYTES</span><span style="color: #000000; ">  </span><span style="color: #008000; ">10</span><span style="color: #000000; ">
@@ -164,7 +164,7 @@
 }}
 
 
-</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">noncobject</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; ">;
+</span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">noncobject</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; ">;
 
 </span><span style="color: #808080; font-style: italic; ">//
 // LDP message types
@@ -193,7 +193,7 @@
 
 </span><span style="color: #800000; font-weight: bold; ">struct</span><span style="color: #000000; "> </span><span style="color: #000000; ">FEC_TLV</span><span style="color: #000000; ">
 {
-    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">addr</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">addr</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">length</span><span style="color: #000000; ">;
 }
 
@@ -203,8 +203,8 @@
 </span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">LDPPacket</span><span style="color: #000000; ">
 {
     </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">type</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">senderAddress</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">IPAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">receiverAddress</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">senderAddress</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">IPv4Address</span><span style="color: #000000; "> </span><span style="color: #000000; ">receiverAddress</span><span style="color: #000000; ">;
 }
 
 
@@ -272,6 +272,5 @@
 
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

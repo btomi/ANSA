@@ -5,7 +5,25 @@
    </head>
    <body onload="if (top.frames['componentsframe'] == undefined) { s = window.location.toString(); window.location = 'index.html?p=' + s.substring(s.lastIndexOf('/')+1); }">
 <h2 class="comptitle">Network <i>Throughput</i></h2>
-<b>Package:</b> inet.examples.wireless.throughput<br/><b>File: <a href="examples-wireless-throughput-Throughput.ned.html">examples/wireless/throughput/Throughput.ned</a></b><br/><p>(no description)</p><h3 class="subtitle">Parameters:</h3>
+<b>Package:</b> inet.examples.wireless.throughput<br/><b>File: <a href="examples-wireless-throughput-Throughput.ned.html">examples/wireless/throughput/Throughput.ned</a></b><br/><p>(no description)</p><img src="inet.examples.wireless.throughput.Throughput-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.examples.wireless.throughput.ThroughputClient.html" title="ThroughputClient" alt="ThroughputClient" coords="714,130,801,179">
+<area shape="rect" href="inet.examples.wireless.throughput.WirelessAPWithSink.html" title="WirelessAPWithSink" alt="WirelessAPWithSink" coords="182,225,226,275">
+<area shape="rect" href="inet.world.radio.ChannelControl.html" title="ChannelControl" alt="ChannelControl" coords="20,70,107,122">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.examples.wireless.throughput.Throughput-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.examples.wireless.throughput.Throughput.html" title="Network Throughput" alt="" coords="171,6,256,34">
+<area shape="rect" id="node2" href="inet.world.radio.ChannelControl.html" title="Simple Module ChannelControl" alt="" coords="5,83,117,111">
+<area shape="rect" id="node4" href="inet.examples.wireless.throughput.WirelessAPWithSink.html" title="Compound Module WirelessAPWithSink" alt="" coords="141,83,285,111">
+<area shape="rect" id="node6" href="inet.examples.wireless.throughput.ThroughputClient.html" title="Compound Module ThroughputClient" alt="" coords="309,83,429,111">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.examples.wireless.throughput.Throughput-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.examples.wireless.throughput.Throughput.html" title="Network Throughput" alt="" coords="5,6,91,34">
+</map>
+<h3 class="subtitle">Parameters:</h3>
 <table class="paramstable">
    <tr>
       <th class="name">Name</th>
@@ -17,22 +35,6 @@
    <td>numCli</td>
    <td>
       <i>int</i>
-   </td>
-   <td></td>
-   <td>   </td>
-</tr>
-<tr class="local">
-   <td>playgroundSizeX</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td></td>
-   <td>   </td>
-</tr>
-<tr class="local">
-   <td>playgroundSizeY</td>
-   <td>
-      <i>double</i>
    </td>
    <td></td>
    <td>   </td>
@@ -79,13 +81,23 @@
    <td>
       <i>double</i>
    </td>
-   <td>this.waitTime</td>
+   <td>this.sendInterval</td>
    <td>
 <p>time of sending the first request</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.waitTime</td>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.stopTime</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0</td>
+   <td>
+<p>time of finish sending, 0 means forever</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.applications.ethernet.EtherAppCli.html">cli</a>.sendInterval</td>
    <td>
       <i>double</i>
    </td>
@@ -115,211 +127,97 @@
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">wlan</a>.<a href="inet.linklayer.ieee80211.mgmt.Ieee80211MgmtSTASimplified.html">mgmt</a>.accessPointAddress</td>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA.html">agent</a>.activeScan</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>selects between active and passive scanning</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA.html">agent</a>.channelsToScan</td>
    <td>
       <i>string</i>
    </td>
-   <td></td>
+   <td>""</td>
    <td>
-<p>MAC address of associate AP</p>
+<p>list of channel numbers to scan (space delimited); empty means all channels</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">wlan</a>.<a href="inet.linklayer.ieee80211.mgmt.Ieee80211MgmtSTASimplified.html">mgmt</a>.frameCapacity</td>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA.html">agent</a>.probeDelay</td>
    <td>
-      <i>int</i>
+      <i>double</i>
    </td>
-   <td>100</td>
-   <td>   </td>
+   <td>100ms</td>
+   <td>
+<p>delay before sending a probe request during active scanning</p>
+   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.address</td>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA.html">agent</a>.minChannelTime</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>150ms</td>
+   <td>
+<p>min interval to spend on a channel during active scanning</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA.html">agent</a>.maxChannelTime</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>300ms</td>
+   <td>
+<p>channel time for passive scanning, and max channel time for active scanning</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA.html">agent</a>.authenticationTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>5s</td>
+   <td>
+<p>timeout for the authentication procedure</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA.html">agent</a>.associationTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>5s</td>
+   <td>
+<p>timeout for the association procedure</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA.html">agent</a>.startingTime</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1s</td>
+   <td>
+<p>agent starting time.</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA.html">agent</a>.default_ssid</td>
    <td>
       <i>string</i>
    </td>
-   <td>"auto"</td>
+   <td>""</td>
    <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
+<p>default ssid</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.maxQueueSize</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td></td>
-   <td>
-<p>max queue length in frames; only used if queueModule==""</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.bitrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td></td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.rtsThresholdBytes</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>2346B</td>
-   <td>
-<p>longer messages will be sent using RTS/CTS</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.retryLimit</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>-1</td>
-   <td>
-<p>maximum number of retries per message, -1 means default</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.cwMinData</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>-1</td>
-   <td>
-<p>contention window for normal data frames, -1 means default</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.cwMinBroadcast</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>-1</td>
-   <td>
-<p>contention window for broadcast messages, -1 means default</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">wlan</a>.<a href="inet.linklayer.radio.Ieee80211Radio.html">radio</a>.channelNumber</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>channel identifier</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">wlan</a>.<a href="inet.linklayer.radio.Ieee80211Radio.html">radio</a>.transmitterPower</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>20mW</td>
-   <td>
-<p>power used for transmission of messages (in mW)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">wlan</a>.<a href="inet.linklayer.radio.Ieee80211Radio.html">radio</a>.bitrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td></td>
-   <td>
-<p>(in bits/s)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">wlan</a>.<a href="inet.linklayer.radio.Ieee80211Radio.html">radio</a>.thermalNoise</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>-110dBm</td>
-   <td>
-<p>base noise level (dBm)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">wlan</a>.<a href="inet.linklayer.radio.Ieee80211Radio.html">radio</a>.pathLossAlpha</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>2</td>
-   <td>
-<p>used by the path loss calculation</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">wlan</a>.<a href="inet.linklayer.radio.Ieee80211Radio.html">radio</a>.shadowingDeviation</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0dB</td>
-   <td>
-<p>used by the shadowing model calculation</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">wlan</a>.<a href="inet.linklayer.radio.Ieee80211Radio.html">radio</a>.snirThreshold</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>4dB</td>
-   <td>
-<p>if signal-noise ratio is below this threshold, frame is considered noise (in dB)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicSTASimplified.html">wlan</a>.<a href="inet.linklayer.radio.Ieee80211Radio.html">radio</a>.sensitivity</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td></td>
-   <td>
-<p>received signals with power below sensitivity are ignored</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.mobility.NullMobility.html">mobility</a>.x</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>-1</td>
-   <td>
-<p>start x coordinate (-1 = display string position, or random if it's missing)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.mobility.NullMobility.html">mobility</a>.y</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>-1</td>
-   <td>
-<p>start y coordinate (-1 = display string position, or random if it's missing)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">wlan</a>.<a href="inet.linklayer.ieee80211.mgmt.Ieee80211MgmtAPSimplified.html">mgmt</a>.frameCapacity</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>100</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.address</td>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.address</td>
    <td>
       <i>string</i>
    </td>
@@ -331,25 +229,183 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.maxQueueSize</td>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.maxQueueSize</td>
    <td>
       <i>int</i>
    </td>
-   <td></td>
+   <td>50</td>
    <td>
 <p>max queue length in frames; only used if queueModule==""</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.bitrate</td>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.EDCA</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>enable Enhanced Distributed Channel Access (802.11e)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.classifier</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"Ieee80211eClassifier"</td>
+   <td>
+<p>parameters for EDCA = true</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.defaultAC</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>0</td>
+   <td>
+<p>the default AC category for frames that cannot be classified</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.AIFSN0</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>7</td>
+   <td>
+<p>AIFSN for background</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.AIFSN1</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>3</td>
+   <td>
+<p>AIFSN for best effort</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.AIFSN2</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>2</td>
+   <td>
+<p>AIFSN for video</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.AIFSN3</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>2</td>
+   <td>
+<p>AIFSN for voice</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.TXOP0</td>
    <td>
       <i>double</i>
    </td>
-   <td></td>
+   <td>0s</td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.rtsThresholdBytes</td>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.TXOP1</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.TXOP2</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>3.008ms</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.TXOP3</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1.504ms</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.AIFSN</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>2</td>
+   <td>
+<p>parameters for EDCA = false</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.useModulationParameters</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>if true, slot time, DIFS, and ACK timeout (aPHY-RX-START-Delay) are function of modulation time (2007 standard)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.prioritizeMulticast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>if true, prioritize multicast frames (9.3.2.1 Fundamental access)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.wifiPreambleMode</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"LONG"</td>
+   <td>
+<p>preamble mode; see IEEE 2007, 19.3.2</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.basicBitrate</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>2e6bps</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.mtu</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1500B</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.slotTime</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>9us</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.rtsThresholdBytes</td>
    <td>
       <i>int</i>
    </td>
@@ -359,7 +415,7 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.retryLimit</td>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.retryLimit</td>
    <td>
       <i>int</i>
    </td>
@@ -369,7 +425,7 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.cwMinData</td>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.cwMinData</td>
    <td>
       <i>int</i>
    </td>
@@ -379,7 +435,17 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.cwMinBroadcast</td>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.cwMaxData</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>-1</td>
+   <td>
+<p>contention window for normal data frames, -1 means default</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.cwMinMulticast</td>
    <td>
       <i>int</i>
    </td>
@@ -389,25 +455,172 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.mtu</td>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.fixFSM</td>
    <td>
-      <i>int</i>
+      <i>bool</i>
    </td>
-   <td>1500</td>
-   <td>   </td>
+   <td>true</td>
+   <td>
+   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">wlan</a>.<a href="inet.linklayer.radio.Ieee80211Radio.html">radio</a>.channelNumber</td>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.phyHeaderLength</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1</td>
+   <td>
+<p>if -1, the MAC will compute it in function of the modulation type</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.forceBitRate</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>if true, the MAC will force the bitrate to the physical layer</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.autoBitrate</td>
    <td>
       <i>int</i>
    </td>
    <td>0</td>
    <td>
-<p>channel identifier</p>
+<p>0 = constant bit rate (autobitrate algorithm disabled), 1 = ARF Rate, 2 = AARF Rate</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">wlan</a>.<a href="inet.linklayer.radio.Ieee80211Radio.html">radio</a>.transmitterPower</td>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.minTimerTimeout</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>15</td>
+   <td>
+<p>parameters used by the autobitrate</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.timerTimeout</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>minTimerTimeout</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.minSuccessThreshold</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>10</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.successThreshold</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>minSuccessThreshold</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.maxSuccessThreshold</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>60</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.successCoeff</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>2.0</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.timerCoeff</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>2.0</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.duplicateDetectionFilter</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>duplicate detection</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.purgeOldTuples</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>delete old tuples in the duplicate list</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.duplicateTimeOut</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>20s</td>
+   <td>
+<p>timeout for the duplicate detection</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.throughputTimePeriod</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0</td>
+   <td>
+<p>statistics</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.multiMac</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>allows multiples mac interfaces in the same link layer</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.channelNumber</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>0</td>
+   <td>
+<p>channel identifier this radio listens. Works only with simlified management module. Otherwise it scans all the channels as specified in ieee 80211</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.carrierFrequency</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>2.4GHz</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.transmitterPower</td>
    <td>
       <i>double</i>
    </td>
@@ -417,17 +630,7 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">wlan</a>.<a href="inet.linklayer.radio.Ieee80211Radio.html">radio</a>.bitrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td></td>
-   <td>
-<p>(in bits/s)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">wlan</a>.<a href="inet.linklayer.radio.Ieee80211Radio.html">radio</a>.thermalNoise</td>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.thermalNoise</td>
    <td>
       <i>double</i>
    </td>
@@ -437,27 +640,184 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">wlan</a>.<a href="inet.linklayer.radio.Ieee80211Radio.html">radio</a>.pathLossAlpha</td>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.sensitivity</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-85dBm</td>
+   <td>
+<p>received signals with power below sensitivity are ignored</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.NoiseGenerator</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.pathLossAlpha</td>
    <td>
       <i>double</i>
    </td>
    <td>2</td>
    <td>
-<p>used by the path loss calculation</p>
+<p>generic FreeSpace model parameters</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">wlan</a>.<a href="inet.linklayer.radio.Ieee80211Radio.html">radio</a>.shadowingDeviation</td>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.TransmissionAntennaGainIndB</td>
    <td>
       <i>double</i>
    </td>
    <td>0dB</td>
    <td>
-<p>used by the shadowing model calculation</p>
+<p>Transmission Antenna Gain</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">wlan</a>.<a href="inet.linklayer.radio.Ieee80211Radio.html">radio</a>.snirThreshold</td>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.ReceiveAntennaGainIndB</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0dB</td>
+   <td>
+<p>Receive Antenna Gain</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.SystemLossFactor</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0dB</td>
+   <td>
+<p>System Loss of Hardware</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.TransmiterAntennaHigh</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1m</td>
+   <td>
+<p>two ray model paramaeters</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.ReceiverAntennaHigh</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1m</td>
+   <td>
+<p>Receiver Antenna High</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.sigma</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1</td>
+   <td>
+<p>LogNormalShadowingModel</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.nak_m</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1</td>
+   <td>
+<p>NakagamiModel</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.K</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>8dB</td>
+   <td>
+<p>RiceModel</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.usage_radio_idle</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1mA</td>
+   <td>
+<p>battery module parameters (if any of them is negative, the battery module is disabled)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.usage_radio_recv</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1mA</td>
+   <td>
+<p>disable battery registration</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.usage_radio_sleep</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1mA</td>
+   <td>
+<p>disable battery registration</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.usage_radio_send</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1mA</td>
+   <td>
+<p>disable battery registration</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.drawCoverage</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>misc</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.refreshCoverageInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>0s</td>
+   <td>
+<p>update period in simulation time for coverage redraw</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.SensitivityTable</td>
+   <td>
+      <i>xml</i>
+   </td>
+   <td>xml("<NoSensitivityTable> </NoSensitivityTable>")</td>
+   <td>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.snirThreshold</td>
    <td>
       <i>double</i>
    </td>
@@ -467,37 +827,1017 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211NicAPSimplified.html">wlan</a>.<a href="inet.linklayer.radio.Ieee80211Radio.html">radio</a>.sensitivity</td>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.berTableFile</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.wifiPreambleMode</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"LONG"</td>
+   <td>
+<p>Wifi preambre mode Ieee 2007, 19.3.2</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.errorModel</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"NistModel"</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.btSize</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>8192b</td>
+   <td>
+<p>test size frame for Airtime Link Metric</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.airtimeLinkComputation</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.AutoHeaderSize</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>in the receiver the radio model compute the header size in function of timers and bitrate</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.mobility.models.StationaryMobility.html">mobility</a>.debug</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.mobility.models.StationaryMobility.html">mobility</a>.constraintAreaMinX</td>
    <td>
       <i>double</i>
    </td>
-   <td></td>
+   <td>-1m/0</td>
+   <td>
+<p>min x position of the constraint area, unconstrained by default (negative infinity)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.mobility.models.StationaryMobility.html">mobility</a>.constraintAreaMinY</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1m/0</td>
+   <td>
+<p>min y position of the constraint area, unconstrained by default (negative infinity)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.mobility.models.StationaryMobility.html">mobility</a>.constraintAreaMinZ</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1m/0</td>
+   <td>
+<p>min z position of the constraint area, unconstrained by default (negative infinity)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.mobility.models.StationaryMobility.html">mobility</a>.constraintAreaMaxX</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1m/0</td>
+   <td>
+<p>max x position of the constraint area, unconstrained by default (positive infinity)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.mobility.models.StationaryMobility.html">mobility</a>.constraintAreaMaxY</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1m/0</td>
+   <td>
+<p>max y position of the constraint area, unconstrained by default (positive infinity)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.mobility.models.StationaryMobility.html">mobility</a>.constraintAreaMaxZ</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1m/0</td>
+   <td>
+<p>max z position of the constraint area, unconstrained by default (positive infinity)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.mobility.models.StationaryMobility.html">mobility</a>.initialX</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>uniform(this.constraintAreaMinX, this.constraintAreaMaxX)</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.mobility.models.StationaryMobility.html">mobility</a>.initialY</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>uniform(this.constraintAreaMinY, this.constraintAreaMaxY)</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.mobility.models.StationaryMobility.html">mobility</a>.initialZ</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>uniform(this.constraintAreaMinZ, this.constraintAreaMaxZ)</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.ThroughputClient.html">cliHost</a>.<a href="inet.mobility.models.StationaryMobility.html">mobility</a>.initFromDisplayString</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA.html">agent</a>.activeScan</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>selects between active and passive scanning</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA.html">agent</a>.channelsToScan</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>list of channel numbers to scan (space delimited); empty means all channels</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA.html">agent</a>.probeDelay</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>100ms</td>
+   <td>
+<p>delay before sending a probe request during active scanning</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA.html">agent</a>.minChannelTime</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>150ms</td>
+   <td>
+<p>min interval to spend on a channel during active scanning</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA.html">agent</a>.maxChannelTime</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>300ms</td>
+   <td>
+<p>channel time for passive scanning, and max channel time for active scanning</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA.html">agent</a>.authenticationTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>5s</td>
+   <td>
+<p>timeout for the authentication procedure</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA.html">agent</a>.associationTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>5s</td>
+   <td>
+<p>timeout for the association procedure</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA.html">agent</a>.startingTime</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1s</td>
+   <td>
+<p>agent starting time.</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mgmt.Ieee80211AgentSTA.html">agent</a>.default_ssid</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>default ssid</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.address</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"auto"</td>
+   <td>
+<p>MAC address as hex string (12 hex digits), or
+"auto". "auto" values will be replaced by
+a generated MAC address in init stage 0.</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.maxQueueSize</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>50</td>
+   <td>
+<p>max queue length in frames; only used if queueModule==""</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.EDCA</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>enable Enhanced Distributed Channel Access (802.11e)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.classifier</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"Ieee80211eClassifier"</td>
+   <td>
+<p>parameters for EDCA = true</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.defaultAC</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>0</td>
+   <td>
+<p>the default AC category for frames that cannot be classified</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.AIFSN0</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>7</td>
+   <td>
+<p>AIFSN for background</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.AIFSN1</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>3</td>
+   <td>
+<p>AIFSN for best effort</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.AIFSN2</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>2</td>
+   <td>
+<p>AIFSN for video</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.AIFSN3</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>2</td>
+   <td>
+<p>AIFSN for voice</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.TXOP0</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.TXOP1</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.TXOP2</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>3.008ms</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.TXOP3</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1.504ms</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.AIFSN</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>2</td>
+   <td>
+<p>parameters for EDCA = false</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.useModulationParameters</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>if true, slot time, DIFS, and ACK timeout (aPHY-RX-START-Delay) are function of modulation time (2007 standard)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.prioritizeMulticast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>if true, prioritize multicast frames (9.3.2.1 Fundamental access)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.wifiPreambleMode</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"LONG"</td>
+   <td>
+<p>preamble mode; see IEEE 2007, 19.3.2</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.basicBitrate</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>2e6bps</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.mtu</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1500B</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.slotTime</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>9us</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.rtsThresholdBytes</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>2346B</td>
+   <td>
+<p>longer messages will be sent using RTS/CTS</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.retryLimit</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>-1</td>
+   <td>
+<p>maximum number of retries per message, -1 means default</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.cwMinData</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>-1</td>
+   <td>
+<p>contention window for normal data frames, -1 means default</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.cwMaxData</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>-1</td>
+   <td>
+<p>contention window for normal data frames, -1 means default</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.cwMinMulticast</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>-1</td>
+   <td>
+<p>contention window for broadcast messages, -1 means default</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.fixFSM</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.phyHeaderLength</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1</td>
+   <td>
+<p>if -1, the MAC will compute it in function of the modulation type</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.forceBitRate</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>if true, the MAC will force the bitrate to the physical layer</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.autoBitrate</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>0</td>
+   <td>
+<p>0 = constant bit rate (autobitrate algorithm disabled), 1 = ARF Rate, 2 = AARF Rate</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.minTimerTimeout</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>15</td>
+   <td>
+<p>parameters used by the autobitrate</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.timerTimeout</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>minTimerTimeout</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.minSuccessThreshold</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>10</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.successThreshold</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>minSuccessThreshold</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.maxSuccessThreshold</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>60</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.successCoeff</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>2.0</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.timerCoeff</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>2.0</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.duplicateDetectionFilter</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>duplicate detection</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.purgeOldTuples</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>delete old tuples in the duplicate list</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.duplicateTimeOut</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>20s</td>
+   <td>
+<p>timeout for the duplicate detection</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.throughputTimePeriod</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0</td>
+   <td>
+<p>statistics</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.mac.Ieee80211Mac.html">mac</a>.multiMac</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>allows multiples mac interfaces in the same link layer</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.channelNumber</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>0</td>
+   <td>
+<p>channel identifier this radio listens. Works only with simlified management module. Otherwise it scans all the channels as specified in ieee 80211</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.carrierFrequency</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>2.4GHz</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.transmitterPower</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>20mW</td>
+   <td>
+<p>power used for transmission of messages (in mW)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.thermalNoise</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-110dBm</td>
+   <td>
+<p>base noise level (dBm)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.sensitivity</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-85dBm</td>
    <td>
 <p>received signals with power below sensitivity are ignored</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.mobility.NullMobility.html">mobility</a>.x</td>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.NoiseGenerator</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.pathLossAlpha</td>
    <td>
       <i>double</i>
    </td>
-   <td>-1</td>
+   <td>2</td>
    <td>
-<p>start x coordinate (-1 = display string position, or random if it's missing)</p>
+<p>generic FreeSpace model parameters</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.mobility.NullMobility.html">mobility</a>.y</td>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.TransmissionAntennaGainIndB</td>
    <td>
       <i>double</i>
    </td>
-   <td>-1</td>
+   <td>0dB</td>
    <td>
-<p>start y coordinate (-1 = display string position, or random if it's missing)</p>
+<p>Transmission Antenna Gain</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.world.ChannelControl.html">channelcontrol</a>.coreDebug</td>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.ReceiveAntennaGainIndB</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0dB</td>
+   <td>
+<p>Receive Antenna Gain</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.SystemLossFactor</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0dB</td>
+   <td>
+<p>System Loss of Hardware</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.TransmiterAntennaHigh</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1m</td>
+   <td>
+<p>two ray model paramaeters</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.ReceiverAntennaHigh</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1m</td>
+   <td>
+<p>Receiver Antenna High</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.sigma</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1</td>
+   <td>
+<p>LogNormalShadowingModel</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.nak_m</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1</td>
+   <td>
+<p>NakagamiModel</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.K</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>8dB</td>
+   <td>
+<p>RiceModel</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.usage_radio_idle</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1mA</td>
+   <td>
+<p>battery module parameters (if any of them is negative, the battery module is disabled)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.usage_radio_recv</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1mA</td>
+   <td>
+<p>disable battery registration</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.usage_radio_sleep</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1mA</td>
+   <td>
+<p>disable battery registration</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.usage_radio_send</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1mA</td>
+   <td>
+<p>disable battery registration</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.drawCoverage</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>misc</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.refreshCoverageInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>0s</td>
+   <td>
+<p>update period in simulation time for coverage redraw</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.SensitivityTable</td>
+   <td>
+      <i>xml</i>
+   </td>
+   <td>xml("<NoSensitivityTable> </NoSensitivityTable>")</td>
+   <td>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.snirThreshold</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>4dB</td>
+   <td>
+<p>if signal-noise ratio is below this threshold, frame is considered noise (in dB)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.berTableFile</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.wifiPreambleMode</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"LONG"</td>
+   <td>
+<p>Wifi preambre mode Ieee 2007, 19.3.2</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.errorModel</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"NistModel"</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.btSize</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>8192b</td>
+   <td>
+<p>test size frame for Airtime Link Metric</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.airtimeLinkComputation</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.linklayer.ieee80211.Ieee80211Nic.html">wlan</a>.<a href="inet.linklayer.ieee80211.radio.Ieee80211Radio.html">radio</a>.AutoHeaderSize</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>in the receiver the radio model compute the header size in function of timers and bitrate</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.mobility.models.StationaryMobility.html">mobility</a>.debug</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.mobility.models.StationaryMobility.html">mobility</a>.constraintAreaMinX</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1m/0</td>
+   <td>
+<p>min x position of the constraint area, unconstrained by default (negative infinity)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.mobility.models.StationaryMobility.html">mobility</a>.constraintAreaMinY</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1m/0</td>
+   <td>
+<p>min y position of the constraint area, unconstrained by default (negative infinity)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.mobility.models.StationaryMobility.html">mobility</a>.constraintAreaMinZ</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1m/0</td>
+   <td>
+<p>min z position of the constraint area, unconstrained by default (negative infinity)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.mobility.models.StationaryMobility.html">mobility</a>.constraintAreaMaxX</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1m/0</td>
+   <td>
+<p>max x position of the constraint area, unconstrained by default (positive infinity)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.mobility.models.StationaryMobility.html">mobility</a>.constraintAreaMaxY</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1m/0</td>
+   <td>
+<p>max y position of the constraint area, unconstrained by default (positive infinity)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.mobility.models.StationaryMobility.html">mobility</a>.constraintAreaMaxZ</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1m/0</td>
+   <td>
+<p>max z position of the constraint area, unconstrained by default (positive infinity)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.mobility.models.StationaryMobility.html">mobility</a>.initialX</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>uniform(this.constraintAreaMinX, this.constraintAreaMaxX)</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.mobility.models.StationaryMobility.html">mobility</a>.initialY</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>uniform(this.constraintAreaMinY, this.constraintAreaMaxY)</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.mobility.models.StationaryMobility.html">mobility</a>.initialZ</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>uniform(this.constraintAreaMinZ, this.constraintAreaMaxZ)</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">ap</a>.<a href="inet.mobility.models.StationaryMobility.html">mobility</a>.initFromDisplayString</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.world.radio.ChannelControl.html">channelControl</a>.coreDebug</td>
    <td>
       <i>bool</i>
    </td>
@@ -507,7 +1847,7 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.world.ChannelControl.html">channelcontrol</a>.pMax</td>
+   <td><a href="inet.world.radio.ChannelControl.html">channelControl</a>.pMax</td>
    <td>
       <i>double</i>
    </td>
@@ -517,7 +1857,7 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.world.ChannelControl.html">channelcontrol</a>.sat</td>
+   <td><a href="inet.world.radio.ChannelControl.html">channelControl</a>.sat</td>
    <td>
       <i>double</i>
    </td>
@@ -527,7 +1867,7 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.world.ChannelControl.html">channelcontrol</a>.alpha</td>
+   <td><a href="inet.world.radio.ChannelControl.html">channelControl</a>.alpha</td>
    <td>
       <i>double</i>
    </td>
@@ -537,17 +1877,17 @@ a generated MAC address in init stage 0.</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.world.ChannelControl.html">channelcontrol</a>.carrierFrequency</td>
+   <td><a href="inet.world.radio.ChannelControl.html">channelControl</a>.carrierFrequency</td>
    <td>
       <i>double</i>
    </td>
    <td>2.4GHz</td>
    <td>
-<p>carrier frequency of the channel (in Hz)</p>
+<p>base carrier frequency of all the channels (in Hz)</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.world.ChannelControl.html">channelcontrol</a>.numChannels</td>
+   <td><a href="inet.world.radio.ChannelControl.html">channelControl</a>.numChannels</td>
    <td>
       <i>int</i>
    </td>
@@ -556,14 +1896,20 @@ a generated MAC address in init stage 0.</p>
 <p>number of radio channels (frequencies)</p>
    </td>
 </tr>
+<tr>
+   <td><a href="inet.world.radio.ChannelControl.html">channelControl</a>.propagationModel</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"FreeSpaceModel"</td>
+   <td>   </td>
+</tr>
 </table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #800000; font-weight: bold; ">network</span><span style="color: #000000; "> </span><span style="color: #000000; ">Throughput</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">numCli</span><span style="color: #000000; ">;
-        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">playgroundSizeX</span><span style="color: #000000; ">;
-        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">playgroundSizeY</span><span style="color: #000000; ">;
         </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;b=297,203&quot;</span><span style="color: #000000; ">);
     </span><span style="color: #800000; font-weight: bold; ">submodules</span><span style="color: #000000; ">:
         </span><span style="color: #000000; ">cliHost</span><span style="color: #000000; ">[</span><span style="color: #000000; ">numCli</span><span style="color: #000000; ">]: </span><span style="color: #000000; ">ThroughputClient</span><span style="color: #000000; "> {
@@ -574,15 +1920,12 @@ a generated MAC address in init stage 0.</p>
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
                 </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=200,200;r=,,#707070&quot;</span><span style="color: #000000; ">);
         }
-        </span><span style="color: #000000; ">channelcontrol</span><span style="color: #000000; ">: </span><span style="color: #000000; ">ChannelControl</span><span style="color: #000000; "> {
+        </span><span style="color: #000000; ">channelControl</span><span style="color: #000000; ">: </span><span style="color: #000000; ">ChannelControl</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; ">playgroundSizeX</span><span style="color: #000000; "> = </span><span style="color: #000000; ">playgroundSizeX</span><span style="color: #000000; ">;
-                </span><span style="color: #000000; ">playgroundSizeY</span><span style="color: #000000; "> = </span><span style="color: #000000; ">playgroundSizeY</span><span style="color: #000000; ">;
                 </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=61,46&quot;</span><span style="color: #000000; ">);
         }
 }
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

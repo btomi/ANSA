@@ -5,7 +5,26 @@
    </head>
    <body onload="if (top.frames['componentsframe'] == undefined) { s = window.location.toString(); window.location = 'index.html?p=' + s.substring(s.lastIndexOf('/')+1); }">
 <h2 class="comptitle">Network <i>OSPF_AreaTest</i></h2>
-<b>Package:</b> inet.examples.ospfv2.areas<br/><b>File: <a href="examples-ospfv2-areas-Areas.ned.html">examples/ospfv2/areas/Areas.ned</a></b><br/><p>(no description)</p><h3 class="subtitle">Properties:</h3>
+<b>Package:</b> inet.examples.ospfv2.areas<br/><b>File: <a href="examples-ospfv2-areas-Areas.ned.html">examples/ospfv2/areas/Areas.ned</a></b><br/><p>(no description)</p><img src="inet.examples.ospfv2.areas.OSPF_AreaTest-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.examples.ospfv2.areas.TwoNetsArea.html" title="TwoNetsArea" alt="TwoNetsArea" coords="42,124,182,271">
+<area shape="rect" href="inet.examples.ospfv2.areas.OneNetArea.html" title="OneNetArea" alt="OneNetArea" coords="256,124,396,271">
+<area shape="rect" href="inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator.html" title="IPv4NetworkConfigurator" alt="IPv4NetworkConfigurator" coords="41,71,113,114">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.examples.ospfv2.areas.OSPF_AreaTest-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.examples.ospfv2.areas.OSPF_AreaTest.html" title="Network OSPF_AreaTest" alt="" coords="249,6,367,34">
+<area shape="rect" id="node2" href="inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator.html" title="Simple Module IPv4NetworkConfigurator" alt="" coords="5,83,173,111">
+<area shape="rect" id="node4" href="inet.examples.ospfv2.areas.TwoNetsArea.html" title="Compound Module TwoNetsArea" alt="" coords="197,83,299,111">
+<area shape="rect" id="node6" href="inet.examples.ospfv2.areas.OneNetArea.html" title="Compound Module OneNetArea" alt="" coords="323,83,416,111">
+<area shape="rect" id="node8" href="inet.util.ThruputMeteringChannel.html" title="Channel ThruputMeteringChannel" alt="" coords="440,83,603,111">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.examples.ospfv2.areas.OSPF_AreaTest-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.examples.ospfv2.areas.OSPF_AreaTest.html" title="Network OSPF_AreaTest" alt="" coords="5,6,123,34">
+</map>
+<h3 class="subtitle">Properties:</h3>
 <table class="propertiestable">
    <tr>
       <th class="name">Name</th>
@@ -27,17 +46,7 @@
       <th class="description">Description</th>
    </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R1</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.ospfConfigFile</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td></td>
-   <td>
-<p>xml file containing the full OSPF AS configuration</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
    <td>
       <i>double</i>
    </td>
@@ -45,239 +54,23 @@
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.retryTimeout</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>1s</td>
-   <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.retryCount</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
    <td>
       <i>int</i>
    </td>
-   <td>3</td>
-   <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
-   </td>
+   <td>32</td>
+   <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.cacheTimeout</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>120s</td>
-   <td>
-<p>number seconds unused entries in the cache will time out</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R1</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
    <td>
       <i>int</i>
    </td>
-   <td>4470</td>
+   <td>32</td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"auto"</td>
-   <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>100Mbps</td>
-   <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R3</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.ospfConfigFile</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td></td>
-   <td>
-<p>xml file containing the full OSPF AS configuration</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.retryTimeout</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>1s</td>
-   <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.retryCount</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>3</td>
-   <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.cacheTimeout</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>120s</td>
-   <td>
-<p>number seconds unused entries in the cache will time out</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R3</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"auto"</td>
-   <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>100Mbps</td>
-   <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.numGapReports</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>3</td>
-   <td>
-<p>====== <a href="inet.transport.sctp.SCTP.html">SCTP</a> Association Parameters =================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoInitial</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>3s</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoMin</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>1s</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoMax</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
    <td>
       <i>double</i>
    </td>
@@ -285,71 +78,7 @@ possible with DTE-to-DTE connection).</p>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoAlpha</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0.125</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoBeta</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0.250</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.maxBurst</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.assocMaxRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>10</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.pathMaxRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>5</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.maxInitRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>8</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sackPeriod</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>200ms</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sackFrequency</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>2</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.reactivatePrimaryPath</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
    <td>
       <i>bool</i>
    </td>
@@ -357,222 +86,605 @@ possible with DTE-to-DTE connection).</p>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sendQueueLimit</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.validCookieLifetime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>10s</td>
-   <td>
-<p>====== Testing =====================================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.enableHeartbeats</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Heartbeats ==================================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.hbInterval</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>30s</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.nagleEnabled</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Nagle Algorithm =============================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.naglePoint</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1468</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.fastRecoverySupported</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Congestion Control ==========================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sctpAlgorithmClass</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"SCTPAlg"</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.ccModule</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>RFC4960=0</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.ssModule</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>ROUND_ROBIN=0</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.arwnd</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>65535</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.swsLimit</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>3000</td>
-   <td>
-<p>Limit for SWS</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.udpEncapsEnabled</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>false</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.destAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>destination <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.srcAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>source <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address (useful with <a href="inet.examples.sctp.multihomed.multi.html">multi</a>-homing)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.packetSize</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>56B</td>
-   <td>
-<p>of ping payload, in bytes</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.interval</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.retryTimeout</td>
    <td>
       <i>double</i>
    </td>
    <td>1s</td>
    <td>
-<p>time to wait between pings (can be random)</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.hopLimit</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.retryCount</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>3</td>
+   <td>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.cacheTimeout</td>
    <td>
       <i>double</i>
    </td>
-   <td>32</td>
+   <td>120s</td>
    <td>
-<p>TTL or hopLimit for <a href="inet.networklayer.ipv4.IP.html">IP</a> packets</p>
+<p>number seconds unused entries in the cache will time out</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.count</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
-      <i>double</i>
+      <i>bool</i>
    </td>
-   <td>0</td>
+   <td>false</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.routerId</td>
    <td>
-<p>stop after count ping requests, 0 means continuously</p>
+      <i>string</i>
+   </td>
+   <td>"auto"</td>
+   <td>
+<p>for routers, the router id using IPv4 address dotted
+notation; specify "auto" to select the highest
+interface address; should be left empty ("") for hosts</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.startTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>uniform(0s,this.interval)</td>
-   <td>
-<p>send first ping at startTime</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.stopTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
-   <td>
-<p>send no pings after stopTime, 0 means forever</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.printPing</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>dump on stdout</p>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.verbose</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>whether to log packets on the module output</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.pcapFile</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>the PCAP file to be written</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.snaplen</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>65535</td>
+   <td>
+<p>maximum number of bytes to record per packet</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.dumpBadFrames</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>enable dump of frames with hasBitError</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.moduleNamePatterns</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"wlan[*] eth[*] ppp[*]"</td>
+   <td>
+<p>space-separated list of sibling module names to listen on</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.sendingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetSentToLower"</td>
+   <td>
+<p>space-separated list of outbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.receivingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetReceivedFromLower"</td>
+   <td>
+<p>space-separated list of inbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.ospfConfig</td>
+   <td>
+      <i>xml</i>
+   </td>
+   <td></td>
+   <td>
+<p>xml containing the full OSPF AS configuration</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.helloInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>10s</td>
+   <td>
+<p>default values for attributes of interface xml entries:</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.pollInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>120s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.routerDeadInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>40s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.retransmissionInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>5s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.interfaceOutputCost</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.interfaceTransmissionDelay</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.routerPriority</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.authenticationType</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"NullType"</td>
+   <td>
+<p>SimplePasswordType|CrytographicType|NullType</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.authenticationKey</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"0x00"</td>
+   <td>
+<p>0xnn..nn</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.linkCost</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.RFC1583Compatible</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.areaID</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.externalInterfaceOutputCost</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R1</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.externalInterfaceOutputType</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>Type1|Type2</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
    <td>
       <i>double</i>
    </td>
    <td>0s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>60s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.retryTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1s</td>
+   <td>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.retryCount</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>3</td>
+   <td>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.cacheTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>120s</td>
+   <td>
+<p>number seconds unused entries in the cache will time out</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.routerId</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"auto"</td>
+   <td>
+<p>for routers, the router id using IPv4 address dotted
+notation; specify "auto" to select the highest
+interface address; should be left empty ("") for hosts</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>whether to display IP addresses on links</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.verbose</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>whether to log packets on the module output</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.pcapFile</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>the PCAP file to be written</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.snaplen</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>65535</td>
+   <td>
+<p>maximum number of bytes to record per packet</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.dumpBadFrames</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>enable dump of frames with hasBitError</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.moduleNamePatterns</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"wlan[*] eth[*] ppp[*]"</td>
+   <td>
+<p>space-separated list of sibling module names to listen on</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.sendingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetSentToLower"</td>
+   <td>
+<p>space-separated list of outbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.receivingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetReceivedFromLower"</td>
+   <td>
+<p>space-separated list of inbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.ospfConfig</td>
+   <td>
+      <i>xml</i>
+   </td>
+   <td></td>
+   <td>
+<p>xml containing the full OSPF AS configuration</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.helloInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>10s</td>
+   <td>
+<p>default values for attributes of interface xml entries:</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.pollInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>120s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.routerDeadInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>40s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.retransmissionInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>5s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.interfaceOutputCost</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.interfaceTransmissionDelay</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.routerPriority</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.authenticationType</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"NullType"</td>
+   <td>
+<p>SimplePasswordType|CrytographicType|NullType</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.authenticationKey</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"0x00"</td>
+   <td>
+<p>0xnn..nn</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.linkCost</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.RFC1583Compatible</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.areaID</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.externalInterfaceOutputCost</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R3</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.externalInterfaceOutputType</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>Type1|Type2</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>60s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
    <td>   </td>
 </tr>
 <tr>
@@ -582,7 +694,7 @@ possible with DTE-to-DTE connection).</p>
    </td>
    <td>1s</td>
    <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -592,7 +704,7 @@ possible with DTE-to-DTE connection).</p>
    </td>
    <td>3</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -606,153 +718,131 @@ possible with DTE-to-DTE connection).</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
+   <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.routerId</td>
    <td>
       <i>string</i>
    </td>
    <td>"auto"</td>
    <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
+<p>for routers, the router id using IPv4 address dotted
+notation; specify "auto" to select the highest
+interface address; should be left empty ("") for hosts</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>100Mbps</td>
-   <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.filterString</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td></td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.device</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td></td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.dumpFile</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.threadEnable</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.verbose</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>   </td>
+   <td>
+<p>whether to log packets on the module output</p>
+   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.snaplen</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.pcapFile</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>the PCAP file to be written</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.snaplen</td>
    <td>
       <i>int</i>
    </td>
    <td>65535</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.verbosity</td>
    <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.numGapReports</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>3</td>
-   <td>
-<p>====== <a href="inet.transport.sctp.SCTP.html">SCTP</a> Association Parameters =================================</p>
+<p>maximum number of bytes to record per packet</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoInitial</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.dumpBadFrames</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>enable dump of frames with hasBitError</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.moduleNamePatterns</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"wlan[*] eth[*] ppp[*]"</td>
+   <td>
+<p>space-separated list of sibling module names to listen on</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.sendingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetSentToLower"</td>
+   <td>
+<p>space-separated list of outbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H1</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.receivingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetReceivedFromLower"</td>
+   <td>
+<p>space-separated list of inbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
    <td>
       <i>double</i>
    </td>
-   <td>3s</td>
+   <td>0s</td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoMin</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
    <td>
-      <i>double</i>
+      <i>int</i>
    </td>
-   <td>1s</td>
+   <td>32</td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoMax</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
    <td>
       <i>double</i>
    </td>
@@ -760,294 +850,11 @@ possible with DTE-to-DTE connection).</p>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoAlpha</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0.125</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoBeta</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0.250</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.maxBurst</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.assocMaxRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>10</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.pathMaxRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>5</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.maxInitRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>8</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sackPeriod</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>200ms</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sackFrequency</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>2</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.reactivatePrimaryPath</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sendQueueLimit</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.validCookieLifetime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>10s</td>
-   <td>
-<p>====== Testing =====================================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.enableHeartbeats</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Heartbeats ==================================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.hbInterval</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>30s</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.nagleEnabled</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Nagle Algorithm =============================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.naglePoint</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1468</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.fastRecoverySupported</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Congestion Control ==========================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sctpAlgorithmClass</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"SCTPAlg"</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.ccModule</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>RFC4960=0</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.ssModule</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>ROUND_ROBIN=0</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.arwnd</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>65535</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.swsLimit</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>3000</td>
-   <td>
-<p>Limit for SWS</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.udpEncapsEnabled</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>false</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.destAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>destination <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.srcAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>source <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address (useful with <a href="inet.examples.sctp.multihomed.multi.html">multi</a>-homing)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.packetSize</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>56B</td>
-   <td>
-<p>of ping payload, in bytes</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.interval</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>1s</td>
-   <td>
-<p>time to wait between pings (can be random)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.hopLimit</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>32</td>
-   <td>
-<p>TTL or hopLimit for <a href="inet.networklayer.ipv4.IP.html">IP</a> packets</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.count</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>stop after count ping requests, 0 means continuously</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.startTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>uniform(0s,this.interval)</td>
-   <td>
-<p>send first ping at startTime</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.stopTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
-   <td>
-<p>send no pings after stopTime, 0 means forever</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.printPing</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>dump on stdout</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
    <td>   </td>
 </tr>
 <tr>
@@ -1057,7 +864,7 @@ possible with DTE-to-DTE connection).</p>
    </td>
    <td>1s</td>
    <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -1067,7 +874,7 @@ possible with DTE-to-DTE connection).</p>
    </td>
    <td>3</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -1081,137 +888,107 @@ possible with DTE-to-DTE connection).</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
+   <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.routerId</td>
    <td>
       <i>string</i>
    </td>
    <td>"auto"</td>
    <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
+<p>for routers, the router id using IPv4 address dotted
+notation; specify "auto" to select the highest
+interface address; should be left empty ("") for hosts</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>100Mbps</td>
-   <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.filterString</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td></td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.device</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td></td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.dumpFile</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.threadEnable</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.verbose</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>   </td>
+   <td>
+<p>whether to log packets on the module output</p>
+   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.snaplen</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.pcapFile</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>the PCAP file to be written</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.snaplen</td>
    <td>
       <i>int</i>
    </td>
    <td>65535</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.verbosity</td>
    <td>
-      <i>int</i>
+<p>maximum number of bytes to record per packet</p>
    </td>
-   <td>0</td>
-   <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R2</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.ospfConfigFile</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.dumpBadFrames</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>enable dump of frames with hasBitError</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.moduleNamePatterns</td>
    <td>
       <i>string</i>
    </td>
-   <td></td>
+   <td>"wlan[*] eth[*] ppp[*]"</td>
    <td>
-<p>xml file containing the full OSPF AS configuration</p>
+<p>space-separated list of sibling module names to listen on</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.sendingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetSentToLower"</td>
+   <td>
+<p>space-separated list of outbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.StandardHost.html">H2</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.receivingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetReceivedFromLower"</td>
+   <td>
+<p>space-separated list of inbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
    <td>
       <i>double</i>
    </td>
@@ -1219,27 +996,59 @@ possible with DTE-to-DTE connection).</p>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.retryTimeout</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>60s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.retryTimeout</td>
    <td>
       <i>double</i>
    </td>
    <td>1s</td>
    <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.retryCount</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.retryCount</td>
    <td>
       <i>int</i>
    </td>
    <td>3</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.cacheTimeout</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.cacheTimeout</td>
    <td>
       <i>double</i>
    </td>
@@ -1249,97 +1058,262 @@ possible with DTE-to-DTE connection).</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R2</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
+   <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.routerId</td>
    <td>
       <i>string</i>
    </td>
    <td>"auto"</td>
    <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
+<p>for routers, the router id using IPv4 address dotted
+notation; specify "auto" to select the highest
+interface address; should be left empty ("") for hosts</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>100Mbps</td>
-   <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.inet.OSPFRouter.html">R2</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.verbose</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>whether to log packets on the module output</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.pcapFile</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>the PCAP file to be written</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.snaplen</td>
    <td>
       <i>int</i>
    </td>
-   <td>1500</td>
-   <td>   </td>
+   <td>65535</td>
+   <td>
+<p>maximum number of bytes to record per packet</p>
+   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.numGapReports</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.dumpBadFrames</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>enable dump of frames with hasBitError</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.moduleNamePatterns</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"wlan[*] eth[*] ppp[*]"</td>
+   <td>
+<p>space-separated list of sibling module names to listen on</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.sendingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetSentToLower"</td>
+   <td>
+<p>space-separated list of outbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.receivingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetReceivedFromLower"</td>
+   <td>
+<p>space-separated list of inbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.ospfConfig</td>
+   <td>
+      <i>xml</i>
+   </td>
+   <td></td>
+   <td>
+<p>xml containing the full OSPF AS configuration</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.helloInterval</td>
    <td>
       <i>int</i>
    </td>
-   <td>3</td>
+   <td>10s</td>
    <td>
-<p>====== <a href="inet.transport.sctp.SCTP.html">SCTP</a> Association Parameters =================================</p>
+<p>default values for attributes of interface xml entries:</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoInitial</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.pollInterval</td>
    <td>
-      <i>double</i>
+      <i>int</i>
    </td>
-   <td>3s</td>
+   <td>120s</td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoMin</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.routerDeadInterval</td>
    <td>
-      <i>double</i>
+      <i>int</i>
    </td>
-   <td>1s</td>
+   <td>40s</td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoMax</td>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.retransmissionInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>5s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.interfaceOutputCost</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.interfaceTransmissionDelay</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.routerPriority</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.authenticationType</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"NullType"</td>
+   <td>
+<p>SimplePasswordType|CrytographicType|NullType</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.authenticationKey</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"0x00"</td>
+   <td>
+<p>0xnn..nn</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.linkCost</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.RFC1583Compatible</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.areaID</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.externalInterfaceOutputCost</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.TwoNetsArea.html">Area1</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R2</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.externalInterfaceOutputType</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>Type1|Type2</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
    <td>
       <i>double</i>
    </td>
@@ -1347,294 +1321,11 @@ possible with DTE-to-DTE connection).</p>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoAlpha</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0.125</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.rtoBeta</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0.250</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.maxBurst</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.assocMaxRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>10</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.pathMaxRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>5</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.maxInitRetrans</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>8</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sackPeriod</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>200ms</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sackFrequency</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>2</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.reactivatePrimaryPath</td>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sendQueueLimit</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.validCookieLifetime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>10s</td>
-   <td>
-<p>====== Testing =====================================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.enableHeartbeats</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Heartbeats ==================================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.hbInterval</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>30s</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.nagleEnabled</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Nagle Algorithm =============================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.naglePoint</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1468</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.fastRecoverySupported</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>====== Congestion Control ==========================================</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.sctpAlgorithmClass</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"SCTPAlg"</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.ccModule</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>RFC4960=0</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.ssModule</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>ROUND_ROBIN=0</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.arwnd</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>65535</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.swsLimit</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>3000</td>
-   <td>
-<p>Limit for SWS</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.transport.sctp.SCTP.html">sctp</a>.udpEncapsEnabled</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>false</td>
-   <td>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.destAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>destination <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.srcAddr</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>""</td>
-   <td>
-<p>source <a href="inet.networklayer.ipv4.IP.html">IP</a> or <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> address (useful with <a href="inet.examples.sctp.multihomed.multi.html">multi</a>-homing)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.packetSize</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>56B</td>
-   <td>
-<p>of ping payload, in bytes</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.interval</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>1s</td>
-   <td>
-<p>time to wait between pings (can be random)</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.hopLimit</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>32</td>
-   <td>
-<p>TTL or hopLimit for <a href="inet.networklayer.ipv4.IP.html">IP</a> packets</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.count</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0</td>
-   <td>
-<p>stop after count ping requests, 0 means continuously</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.startTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>uniform(0s,this.interval)</td>
-   <td>
-<p>send first ping at startTime</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.stopTime</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
-   <td>
-<p>send no pings after stopTime, 0 means forever</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.applications.pingapp.PingApp.html">pingApp</a>.printPing</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>true</td>
-   <td>
-<p>dump on stdout</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
    <td>   </td>
 </tr>
 <tr>
@@ -1644,7 +1335,7 @@ possible with DTE-to-DTE connection).</p>
    </td>
    <td>1s</td>
    <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -1654,7 +1345,7 @@ possible with DTE-to-DTE connection).</p>
    </td>
    <td>3</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
    </td>
 </tr>
 <tr>
@@ -1668,95 +1359,382 @@ possible with DTE-to-DTE connection).</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
+   <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.routerId</td>
    <td>
       <i>string</i>
    </td>
    <td>"auto"</td>
    <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
+<p>for routers, the router id using IPv4 address dotted
+notation; specify "auto" to select the highest
+interface address; should be left empty ("") for hosts</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>100Mbps</td>
-   <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>whether to display IP addresses on links</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.verbose</td>
    <td>
-      <i>int</i>
+      <i>bool</i>
    </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.filterString</td>
+   <td>false</td>
    <td>
-      <i>string</i>
+<p>whether to log packets on the module output</p>
    </td>
-   <td></td>
-   <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.device</td>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.pcapFile</td>
    <td>
       <i>string</i>
    </td>
-   <td></td>
-   <td>   </td>
+   <td>""</td>
+   <td>
+<p>the PCAP file to be written</p>
+   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.linklayer.ext.ExtInterface.html">ext</a>.mtu</td>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.snaplen</td>
    <td>
       <i>int</i>
    </td>
-   <td>1500</td>
+   <td>65535</td>
+   <td>
+<p>maximum number of bytes to record per packet</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.dumpBadFrames</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>enable dump of frames with hasBitError</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.moduleNamePatterns</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"wlan[*] eth[*] ppp[*]"</td>
+   <td>
+<p>space-separated list of sibling module names to listen on</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.sendingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetSentToLower"</td>
+   <td>
+<p>space-separated list of outbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.receivingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetReceivedFromLower"</td>
+   <td>
+<p>space-separated list of inbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0s</td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.dumpFile</td>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>60s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.retryTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1s</td>
+   <td>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.retryCount</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>3</td>
+   <td>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.cacheTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>120s</td>
+   <td>
+<p>number seconds unused entries in the cache will time out</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.routerId</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"auto"</td>
+   <td>
+<p>for routers, the router id using IPv4 address dotted
+notation; specify "auto" to select the highest
+interface address; should be left empty ("") for hosts</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>whether to display IP addresses on links</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.verbose</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>whether to log packets on the module output</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.pcapFile</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>the PCAP file to be written</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.snaplen</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>65535</td>
+   <td>
+<p>maximum number of bytes to record per packet</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.dumpBadFrames</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>enable dump of frames with hasBitError</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.moduleNamePatterns</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"wlan[*] eth[*] ppp[*]"</td>
+   <td>
+<p>space-separated list of sibling module names to listen on</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.sendingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetSentToLower"</td>
+   <td>
+<p>space-separated list of outbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.receivingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetReceivedFromLower"</td>
+   <td>
+<p>space-separated list of inbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.ospfConfig</td>
+   <td>
+      <i>xml</i>
+   </td>
+   <td></td>
+   <td>
+<p>xml containing the full OSPF AS configuration</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.helloInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>10s</td>
+   <td>
+<p>default values for attributes of interface xml entries:</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.pollInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>120s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.routerDeadInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>40s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.retransmissionInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>5s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.interfaceOutputCost</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.interfaceTransmissionDelay</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.routerPriority</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.authenticationType</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"NullType"</td>
+   <td>
+<p>SimplePasswordType|CrytographicType|NullType</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.authenticationKey</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"0x00"</td>
+   <td>
+<p>0xnn..nn</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.linkCost</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.RFC1583Compatible</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.areaID</td>
    <td>
       <i>string</i>
    </td>
@@ -1764,7 +1742,57 @@ possible with DTE-to-DTE connection).</p>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.threadEnable</td>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.externalInterfaceOutputCost</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R5</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.externalInterfaceOutputType</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>Type1|Type2</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.procDelay</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.timeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.multicastTimeToLive</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>32</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.fragmentTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>60s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IPv4.html">ip</a>.forceBroadcast</td>
    <td>
       <i>bool</i>
    </td>
@@ -1772,273 +1800,374 @@ possible with DTE-to-DTE connection).</p>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.snaplen</td>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.retryTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1s</td>
+   <td>
+<p>number seconds ARP waits between retries to resolve an IPv4 address</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.retryCount</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>3</td>
+   <td>
+<p>number of times ARP will attempt to resolve an IPv4 address</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.cacheTimeout</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>120s</td>
+   <td>
+<p>number seconds unused entries in the cache will time out</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.globalARP</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.networklayer.ipv4.RoutingTable.html">routingTable</a>.routerId</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"auto"</td>
+   <td>
+<p>for routers, the router id using IPv4 address dotted
+notation; specify "auto" to select the highest
+interface address; should be left empty ("") for hosts</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.networklayer.common.InterfaceTable.html">interfaceTable</a>.displayAddresses</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>whether to display IP addresses on links</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.verbose</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>whether to log packets on the module output</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.pcapFile</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>the PCAP file to be written</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.snaplen</td>
    <td>
       <i>int</i>
    </td>
    <td>65535</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.StandardHost.html">H3</a>.<a href="inet.util.TCPDump.html">tcpdump</a>.verbosity</td>
    <td>
-      <i>int</i>
-   </td>
-   <td>0</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.OSPFRouter.html">R5</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.ospfConfigFile</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td></td>
-   <td>
-<p>xml file containing the full OSPF AS configuration</p>
+<p>maximum number of bytes to record per packet</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.OSPFRouter.html">R5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.OSPFRouter.html">R5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.retryTimeout</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>1s</td>
-   <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.OSPFRouter.html">R5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.retryCount</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>3</td>
-   <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.OSPFRouter.html">R5</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.cacheTimeout</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>120s</td>
-   <td>
-<p>number seconds unused entries in the cache will time out</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.OSPFRouter.html">R5</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.OSPFRouter.html">R5</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>false</td>
-   <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.OSPFRouter.html">R5</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
-   <td>
-      <i>string</i>
-   </td>
-   <td>"auto"</td>
-   <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.OSPFRouter.html">R5</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>100Mbps</td>
-   <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.OSPFRouter.html">R5</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.dumpBadFrames</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>enable dump of frames with hasBitError</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.OSPFRouter.html">R5</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>1500</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.OSPFRouter.html">R4</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.ospfConfigFile</td>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.moduleNamePatterns</td>
    <td>
       <i>string</i>
    </td>
+   <td>"wlan[*] eth[*] ppp[*]"</td>
+   <td>
+<p>space-separated list of sibling module names to listen on</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.sendingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetSentToLower"</td>
+   <td>
+<p>space-separated list of outbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.util.PcapRecorder.html">pcapRecorder</a>.receivingSignalNames</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"packetReceivedFromLower"</td>
+   <td>
+<p>space-separated list of inbound packet signals to subscribe to</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.ospfConfig</td>
+   <td>
+      <i>xml</i>
+   </td>
    <td></td>
    <td>
-<p>xml file containing the full OSPF AS configuration</p>
+<p>xml containing the full OSPF AS configuration</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.OSPFRouter.html">R4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.ipv4.IP.html">ip</a>.procDelay</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>0s</td>
-   <td>   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.OSPFRouter.html">R4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.retryTimeout</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>1s</td>
-   <td>
-<p>number seconds <a href="inet.networklayer.arp.ARP.html">ARP</a> waits between retries to resolve an IP address</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.OSPFRouter.html">R4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.retryCount</td>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.helloInterval</td>
    <td>
       <i>int</i>
    </td>
-   <td>3</td>
+   <td>10s</td>
    <td>
-<p>number of times <a href="inet.networklayer.arp.ARP.html">ARP</a> will attempt to resolve an IP address</p>
+<p>default values for attributes of interface xml entries:</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.OSPFRouter.html">R4</a>.<a href="inet.nodes.inet.NetworkLayer.html">networkLayer</a>.<a href="inet.networklayer.arp.ARP.html">arp</a>.cacheTimeout</td>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.pollInterval</td>
    <td>
-      <i>double</i>
+      <i>int</i>
    </td>
    <td>120s</td>
-   <td>
-<p>number seconds unused entries in the cache will time out</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.OSPFRouter.html">R4</a>.<a href="inet.linklayer.ppp.PPPInterface.html">ppp</a>.<a href="inet.linklayer.ppp.PPP.html">ppp</a>.mtu</td>
-   <td>
-      <i>int</i>
-   </td>
-   <td>4470</td>
    <td>   </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.OSPFRouter.html">R4</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.promiscuous</td>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.routerDeadInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>40s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.retransmissionInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>5s</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.interfaceOutputCost</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.interfaceTransmissionDelay</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.routerPriority</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.authenticationType</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"NullType"</td>
+   <td>
+<p>SimplePasswordType|CrytographicType|NullType</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.authenticationKey</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"0x00"</td>
+   <td>
+<p>0xnn..nn</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.linkCost</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.RFC1583Compatible</td>
    <td>
       <i>bool</i>
    </td>
    <td>false</td>
    <td>
-<p>if true, all packets are received, otherwise only the
-ones with matching destination MAC address</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.OSPFRouter.html">R4</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.address</td>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.areaID</td>
    <td>
       <i>string</i>
    </td>
-   <td>"auto"</td>
+   <td>""</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.externalInterfaceOutputCost</td>
    <td>
-<p>MAC address as hex string (12 hex digits), or
-"auto". "auto" values will be replaced by
-a generated MAC address in init stage 0.</p>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr>
+   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.ospfv2.OSPFRouter.html">R4</a>.<a href="inet.networklayer.ospfv2.OSPFRouting.html">ospf</a>.externalInterfaceOutputType</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>Type1|Type2</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.OSPFRouter.html">R4</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.txrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>100Mbps</td>
-   <td>
-<p>maximum data rate supported by this station (bit/s);
-actually chosen speed may be lower due to auto-
-configuration. 0 means fully auto-configured.</p>
-   </td>
-</tr>
-<tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.OSPFRouter.html">R4</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.duplexEnabled</td>
+   <td><a href="inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator.html">configurator</a>.assignAddresses</td>
    <td>
       <i>bool</i>
    </td>
    <td>true</td>
    <td>
-<p>whether duplex mode can be enabled or not; whether
-MAC will actually use duplex mode depends on the result
-of the auto-configuration process (duplex is only
-possible with DTE-to-DTE connection).</p>
+<p>assign IP addresses to all interfaces in the network</p>
    </td>
 </tr>
 <tr>
-   <td><a href="inet.examples.ospfv2.areas.OneNetArea.html">Area2</a>.<a href="inet.nodes.inet.OSPFRouter.html">R4</a>.<a href="inet.linklayer.ethernet.EthernetInterface.html">eth</a>.<a href="inet.linklayer.ethernet.EtherMAC.html">mac</a>.mtu</td>
+   <td><a href="inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator.html">configurator</a>.addSubnetRoutes</td>
    <td>
-      <i>int</i>
+      <i>bool</i>
    </td>
-   <td>1500</td>
-   <td>   </td>
+   <td>true</td>
+   <td>
+<p>add subnet routes instead of destination interface routes (only where applicable; used only if addStaticRoutes is true)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator.html">configurator</a>.optimizeRoutes</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>optimize routing tables by merging routes, the resulting routing table might route more packets than the original (used only if addStaticRoutes is true)</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator.html">configurator</a>.dumpTopology</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>print extracted network topology to the module output</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator.html">configurator</a>.dumpAddresses</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>print assigned IP addresses for all interfaces to the module output</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator.html">configurator</a>.dumpRoutes</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>print configured and optimized routing tables for all nodes to the module output</p>
+   </td>
+</tr>
+<tr>
+   <td><a href="inet.networklayer.autorouting.ipv4.IPv4NetworkConfigurator.html">configurator</a>.dumpConfig</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>write configuration into the given config file that can be fed back to speed up subsequent runs (network configurations)</p>
+   </td>
 </tr>
 </table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #800000; font-weight: bold; ">network</span><span style="color: #000000; "> </span><span style="color: #000000; ">OSPF_AreaTest</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">submodules</span><span style="color: #000000; ">:
-        </span><span style="color: #000000; ">channelInstaller</span><span style="color: #000000; ">: </span><span style="color: #000000; ">ChannelInstaller</span><span style="color: #000000; "> {
-            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; ">channelClass</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;ThruputMeteringChannel&quot;</span><span style="color: #000000; ">;
-                </span><span style="color: #000000; ">channelAttrs</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;format=#N&quot;</span><span style="color: #000000; ">;
-                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=456,36&quot;</span><span style="color: #000000; ">);
-        }
         </span><span style="color: #000000; ">Area1</span><span style="color: #000000; ">: </span><span style="color: #000000; ">TwoNetsArea</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=108,112;b=136,128&quot;</span><span style="color: #000000; ">);
+                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=108,148;b=136,128&quot;</span><span style="color: #000000; ">);
             </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
                 </span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">[</span><span style="color: #008000; ">1</span><span style="color: #000000; ">];
         }
         </span><span style="color: #000000; ">Area2</span><span style="color: #000000; ">: </span><span style="color: #000000; ">OneNetArea</span><span style="color: #000000; "> {
             </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=324,112;b=136,128&quot;</span><span style="color: #000000; ">);
+                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=322,148;b=136,128&quot;</span><span style="color: #000000; ">);
             </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
                 </span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">[</span><span style="color: #008000; ">1</span><span style="color: #000000; ">];
         }
+        </span><span style="color: #000000; ">configurator</span><span style="color: #000000; ">: </span><span style="color: #000000; ">IPv4NetworkConfigurator</span><span style="color: #000000; "> {
+            </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
+                </span><span style="color: #000000; ">config</span><span style="color: #000000; "> = </span><span style="color: #000080; font-weight: bold; ">xml</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&lt;config&gt;&quot;</span><span style="color: #000000; ">+
+                            </span><span style="color: #008000; ">&quot;&lt;interface among='Area1.*' address='192.168.11.x' netmask='255.255.255.x' /&gt;&quot;</span><span style="color: #000000; ">+
+
+                            </span><span style="color: #008000; ">&quot;&lt;interface among='Area2.*' address='192.168.22.x' netmask='255.255.255.x' /&gt;&quot;</span><span style="color: #000000; ">+
+
+                            </span><span style="color: #008000; ">&quot;&lt;interface hosts='Area1.*' towards='Area2.*' address='192.168.0.x' netmask='255.255.255.x' /&gt;&quot;</span><span style="color: #000000; ">+
+                            </span><span style="color: #008000; ">&quot;&lt;interface hosts='Area2.*' towards='Area1.*' address='192.168.0.x' netmask='255.255.255.x' /&gt;&quot;</span><span style="color: #000000; ">+
+
+                            </span><span style="color: #008000; ">&quot;&lt;route hosts='Area*.H*' destination='*' netmask='0.0.0.0' interface='eth0' /&gt;&quot;</span><span style="color: #000000; ">+
+                            </span><span style="color: #008000; ">&quot;&lt;/config&gt;&quot;</span><span style="color: #000000; ">);
+                </span><span style="color: #000000; ">addStaticRoutes</span><span style="color: #000000; "> = </span><span style="color: #008000; ">false</span><span style="color: #000000; ">;
+                </span><span style="color: #000000; ">addDefaultRoutes</span><span style="color: #000000; "> = </span><span style="color: #008000; ">false</span><span style="color: #000000; ">;
+                </span><span style="color: #000000; ">assignDisjunctSubnetAddresses</span><span style="color: #000000; "> = </span><span style="color: #008000; ">false</span><span style="color: #000000; ">;
+                </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;p=75,43&quot;</span><span style="color: #000000; ">);
+        }
     </span><span style="color: #800000; font-weight: bold; ">connections</span><span style="color: #000000; ">:
-        </span><span style="color: #000000; ">Area1</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">[</span><span style="color: #008000; ">0</span><span style="color: #000000; ">] </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> {  </span><span style="color: #000000; ">delay</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">.</span><span style="color: #008000; ">1</span><span style="color: #000000; ">us</span><span style="color: #000000; ">; } </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">Area2</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">[</span><span style="color: #008000; ">0</span><span style="color: #000000; ">];
+        </span><span style="color: #000000; ">Area1</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">[</span><span style="color: #008000; ">0</span><span style="color: #000000; ">] </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">ThruputMeteringChannel</span><span style="color: #000000; "> {  </span><span style="color: #000000; ">delay</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">.</span><span style="color: #008000; ">1</span><span style="color: #000000; ">us</span><span style="color: #000000; ">; </span><span style="color: #000000; ">datarate</span><span style="color: #000000; "> = </span><span style="color: #008000; ">100</span><span style="color: #000000; "> </span><span style="color: #000000; ">Mbps</span><span style="color: #000000; ">; </span><span style="color: #000000; ">thruputDisplayFormat</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;#N&quot;</span><span style="color: #000000; ">; } </span><span style="color: #800000; font-weight: bold; ">&lt;--&gt;</span><span style="color: #000000; "> </span><span style="color: #000000; ">Area2</span><span style="color: #000000; ">.</span><span style="color: #000000; ">ethg</span><span style="color: #000000; ">[</span><span style="color: #008000; ">0</span><span style="color: #000000; ">];
 }
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

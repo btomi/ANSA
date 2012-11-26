@@ -79,13 +79,17 @@
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">ARP Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="ARP" -->
-<p><code>#include &lt;<a class="el" href="_a_r_p_8h_source.html">ARP.h</a>&gt;</code></p>
+<p><a class="el" href="class_a_r_p.html" title="ARP implementation.">ARP</a> implementation.  
+ <a href="class_a_r_p.html#details">More...</a></p>
+
+<p><code>#include &lt;ARP.h&gt;</code></p>
 
 <p><a href="class_a_r_p-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -94,61 +98,71 @@ Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_a_r_p_1_1_a_r_p_cache_entry.html">ARPCacheEntry</a></td></tr>
 <tr><td colspan="2"><h2><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; <a class="el" href="class_i_p_address.html">IPAddress</a>, <br class="typebreak"/>
-<a class="el" href="struct_a_r_p_1_1_a_r_p_cache_entry.html">ARPCacheEntry</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a1743e83e60fcd1b655b45674c84aa632">ARPCache</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; <a class="el" href="class_i_pv4_address.html">IPv4Address</a>, <br class="typebreak"/>
+<a class="el" href="struct_a_r_p_1_1_a_r_p_cache_entry.html">ARPCacheEntry</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#aadaae0b7a5ec5ed9f0fdd9d4493026ab">ARPCache</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; cMessage * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#ae27a4597c212a8f6837039ce85d8653f">MsgPtrVector</a></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#ad6269a6243141b8b2abee6f89f29d76a">ARP</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#aca6b074fd7f8370879f6d11ec3f3f827">~ARP</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a3b3cc1c01eb6373805227d2e57586f35">numInitStages</a> () const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_m_a_c_address.html">MACAddress</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a1484d11563ac7ea0d81a2036364b3070">getDirectAddressResolution</a> (const <a class="el" href="class_i_pv4_address.html">IPv4Address</a> &amp;) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a09716187ffa1b37822431df191a7f9f5">getInverseAddressResolution</a> (const <a class="el" href="class_m_a_c_address.html">MACAddress</a> &amp;) const </td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#aaecfe26d854443cb91da80669af85928">setChangeAddress</a> (const <a class="el" href="class_i_pv4_address.html">IPv4Address</a> &amp;)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a5071bf2c124d92df782267a3eb3611d3">initialize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a729b4d6391b1e2d3b4743f7918ab879e">handleMessage</a> (cMessage *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a69c8708abbc87f92fb73f461bafae18b">finish</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#ad6458365e00f833f9a2145325e19843d">processOutboundPacket</a> (cMessage *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a25c895b799516c89d74f3f48a533366a">sendPacketToNIC</a> (cMessage *msg, <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *ie, const <a class="el" href="class_m_a_c_address.html">MACAddress</a> &amp;macAddress)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#afb8883b1120bb6f4ac30813649d739de">initiateARPResolution</a> (<a class="el" href="struct_a_r_p_1_1_a_r_p_cache_entry.html">ARPCacheEntry</a> *entry)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#affe53baeba58d8dd825d29101dd13381">sendARPRequest</a> (<a class="el" href="class_interface_entry.html">InterfaceEntry</a> *ie, <a class="el" href="class_i_p_address.html">IPAddress</a> ipAddress)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#aa3340435405d27f330d2813acb3ae473">requestTimedOut</a> (cMessage *selfmsg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a2d7ce12d375f9d13ebaa212889e887db">addressRecognized</a> (<a class="el" href="class_i_p_address.html">IPAddress</a> destAddr, <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *ie)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a18fd3027c04e06eab2f201434a4ef6d6">processARPPacket</a> (<a class="el" href="class_a_r_p_packet.html">ARPPacket</a> *arp)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a6d8b15097a3d45f15b886649ad95ac23">updateARPCache</a> (<a class="el" href="struct_a_r_p_1_1_a_r_p_cache_entry.html">ARPCacheEntry</a> *entry, const <a class="el" href="class_m_a_c_address.html">MACAddress</a> &amp;macAddress)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#ae9bbd334ff93beab6f657a2dafdc1dca">dumpARPPacket</a> (<a class="el" href="class_a_r_p_packet.html">ARPPacket</a> *arp)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#aa15536a8294f9cedcdc7e3951bd0c447">updateDisplayString</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_m_a_c_address.html">MACAddress</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a72f72260fe0e6afe4c92eeff61466fef">mapMulticastAddress</a> (<a class="el" href="class_i_pv4_address.html">IPv4Address</a> addr)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a81584e9eee9ce531d8af95599e18f996">initialize</a> (int stage)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a729b4d6391b1e2d3b4743f7918ab879e">handleMessage</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a69c8708abbc87f92fb73f461bafae18b">finish</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#ad6458365e00f833f9a2145325e19843d">processOutboundPacket</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#aa34968302d8f2c113ad7684024f274de">sendPacketToNIC</a> (cMessage *msg, <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *ie, const <a class="el" href="class_m_a_c_address.html">MACAddress</a> &amp;macAddress, int etherType)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#afb8883b1120bb6f4ac30813649d739de">initiateARPResolution</a> (<a class="el" href="struct_a_r_p_1_1_a_r_p_cache_entry.html">ARPCacheEntry</a> *entry)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a9a8dcdd8abbadf1a14c87120e2b49e08">sendARPRequest</a> (<a class="el" href="class_interface_entry.html">InterfaceEntry</a> *ie, <a class="el" href="class_i_pv4_address.html">IPv4Address</a> ipAddress)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#aa3340435405d27f330d2813acb3ae473">requestTimedOut</a> (cMessage *selfmsg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#aeb453ea8ed8a5d92e0c839dc61408723">addressRecognized</a> (<a class="el" href="class_i_pv4_address.html">IPv4Address</a> destAddr, <a class="el" href="class_interface_entry.html">InterfaceEntry</a> *ie)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a18fd3027c04e06eab2f201434a4ef6d6">processARPPacket</a> (<a class="el" href="class_a_r_p_packet.html">ARPPacket</a> *arp)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a6d8b15097a3d45f15b886649ad95ac23">updateARPCache</a> (<a class="el" href="struct_a_r_p_1_1_a_r_p_cache_entry.html">ARPCacheEntry</a> *entry, const <a class="el" href="class_m_a_c_address.html">MACAddress</a> &amp;macAddress)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#ae9bbd334ff93beab6f657a2dafdc1dca">dumpARPPacket</a> (<a class="el" href="class_a_r_p_packet.html">ARPPacket</a> *arp)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#aa15536a8294f9cedcdc7e3951bd0c447">updateDisplayString</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">simtime_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#af8acfc0671e9b49fdb9758ca0ee5bfc1">retryTimeout</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#ab3c12470dabeadd4ccef62cec1abd68c">retryCount</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">simtime_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#afb5797aabe9d5753db94c32f3c72ebd2">cacheTimeout</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a5dcbbdd0ebda691a11e7700f767be861">doProxyARP</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#abe27b98bb95609b9ee229382b5aedffb">globalARP</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a02400692b64d721999809e9c91bd07ae">numResolutions</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#aefe4a5386cc690ff31427347c31beecc">numFailedResolutions</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a76c6dc1129f43da4ca9f5f659e3b4e30">numRequestsSent</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a290e24615b0ff5f7c612b79dd1f73379">numRepliesSent</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_r_p.html#a1743e83e60fcd1b655b45674c84aa632">ARPCache</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_r_p.html#aadaae0b7a5ec5ed9f0fdd9d4493026ab">ARPCache</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">cQueue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a103eb6a9d5bfc22f869a36f0a2b87066">pendingQueue</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#ac6de460de9c0953ebe248e5b221b6cdc">nicOutBaseGateId</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_interface_table.html">IInterfaceTable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a667cacb2b5a0435f9a72f892aa1c74fb">ift</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_routing_table.html">IRoutingTable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#acb769850ffc36f2c99c60e52bbaa354f">rt</a></td></tr>
+<tr><td colspan="2"><h2><a name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#abc07b0e76d768b6d2797add514d747b9">sentReqSignal</a> = SIMSIGNAL_NULL</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a2b2d6ddf595295919f2fb816c5bb6ce8">sentReplySignal</a> = SIMSIGNAL_NULL</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a5e711f45f1d4076c552654e9dcecba7a">failedResolutionSignal</a> = SIMSIGNAL_NULL</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a6a00c098c524729bf93d0898c0fb844d">initiatedResolutionSignal</a> = SIMSIGNAL_NULL</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_a_r_p.html#aadaae0b7a5ec5ed9f0fdd9d4493026ab">ARPCache</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#aea4b99384414bcbb7fd32d8c93227e71">globalArpCache</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_r_p.html#a1e46a1a377ab095b4180a5de176eeac2">globalArpCacheRefCnt</a> = 0</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_a_r_p.html">ARP</a> implementation. </p>
-
-<p>Definition at line <a class="el" href="_a_r_p_8h_source.html#l00040">40</a> of file <a class="el" href="_a_r_p_8h_source.html">ARP.h</a>.</p>
+<div class="textblock"><p><a class="el" href="class_a_r_p.html" title="ARP implementation.">ARP</a> implementation. </p>
 </div><hr/><h2>Member Typedef Documentation</h2>
-<a class="anchor" id="a1743e83e60fcd1b655b45674c84aa632"></a><!-- doxytag: member="ARP::ARPCache" ref="a1743e83e60fcd1b655b45674c84aa632" args="" -->
+<a class="anchor" id="aadaae0b7a5ec5ed9f0fdd9d4493026ab"></a><!-- doxytag: member="ARP::ARPCache" ref="aadaae0b7a5ec5ed9f0fdd9d4493026ab" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::map&lt;<a class="el" href="class_i_p_address.html">IPAddress</a>, <a class="el" href="struct_a_r_p_1_1_a_r_p_cache_entry.html">ARPCacheEntry</a>*&gt; <a class="el" href="class_a_r_p.html#a1743e83e60fcd1b655b45674c84aa632">ARP::ARPCache</a></td>
+          <td class="memname">typedef std::map&lt;<a class="el" href="class_i_pv4_address.html">IPv4Address</a>, <a class="el" href="struct_a_r_p_1_1_a_r_p_cache_entry.html">ARPCacheEntry</a>*&gt; <a class="el" href="class_a_r_p.html#aadaae0b7a5ec5ed9f0fdd9d4493026ab">ARP::ARPCache</a></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_r_p_8h_source.html#l00043">43</a> of file <a class="el" href="_a_r_p_8h_source.html">ARP.h</a>.</p>
 
 </div>
 </div>
@@ -163,8 +177,6 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8h_source.html#l00045">45</a> of file <a class="el" href="_a_r_p_8h_source.html">ARP.h</a>.</p>
-
 </div>
 </div>
 <hr/><h2>Constructor &amp; Destructor Documentation</h2>
@@ -176,14 +188,21 @@ Protected Attributes</h2></td></tr>
           <td class="memname"><a class="el" href="class_a_r_p.html#ad6269a6243141b8b2abee6f89f29d76a">ARP::ARP</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> (++<a class="code" href="class_a_r_p.html#a1e46a1a377ab095b4180a5de176eeac2">globalArpCacheRefCnt</a> == 1)
+    {
+        <span class="keywordflow">if</span> (!<a class="code" href="class_a_r_p.html#aea4b99384414bcbb7fd32d8c93227e71">globalArpCache</a>.empty())
+            <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Global ARP cache not empty, model error in previous run?&quot;</span>);
+    }
 
-<p>Definition at line <a class="el" href="_a_r_p_8h_source.html#l00082">82</a> of file <a class="el" href="_a_r_p_8h_source.html">ARP.h</a>.</p>
-<div class="fragment"><pre class="fragment">{}
+    <a class="code" href="class_a_r_p.html#a667cacb2b5a0435f9a72f892aa1c74fb">ift</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+    <a class="code" href="class_a_r_p.html#acb769850ffc36f2c99c60e52bbaa354f">rt</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+}
 </pre></div>
 </div>
 </div>
@@ -200,28 +219,36 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_r_p_8cc_source.html#l00075">75</a> of file <a class="el" href="_a_r_p_8cc_source.html">ARP.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">while</span> (!<a class="code" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a>.empty())
     {
-        ARPCache::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a>.begin();
+        ARPCache::iterator i = <a class="code" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a>.begin();
         <span class="keyword">delete</span> (*i).second;
         <a class="code" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a>.erase(i);
+    }
+
+    <span class="keywordflow">if</span> (--<a class="code" href="class_a_r_p.html#a1e46a1a377ab095b4180a5de176eeac2">globalArpCacheRefCnt</a> != 0)
+        <span class="keywordflow">return</span>;
+
+    <span class="keywordflow">while</span> (!<a class="code" href="class_a_r_p.html#aea4b99384414bcbb7fd32d8c93227e71">globalArpCache</a>.empty())
+    {
+        ARPCache::iterator i = <a class="code" href="class_a_r_p.html#aea4b99384414bcbb7fd32d8c93227e71">globalArpCache</a>.begin();
+        <span class="keyword">delete</span> (*i).second;
+        <a class="code" href="class_a_r_p.html#aea4b99384414bcbb7fd32d8c93227e71">globalArpCache</a>.erase(i);
     }
 }
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a2d7ce12d375f9d13ebaa212889e887db"></a><!-- doxytag: member="ARP::addressRecognized" ref="a2d7ce12d375f9d13ebaa212889e887db" args="(IPAddress destAddr, InterfaceEntry *ie)" -->
+<a class="anchor" id="aeb453ea8ed8a5d92e0c839dc61408723"></a><!-- doxytag: member="ARP::addressRecognized" ref="aeb453ea8ed8a5d92e0c839dc61408723" args="(IPv4Address destAddr, InterfaceEntry *ie)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="class_a_r_p.html#a2d7ce12d375f9d13ebaa212889e887db">ARP::addressRecognized</a> </td>
+          <td class="memname">bool <a class="el" href="class_a_r_p.html#aeb453ea8ed8a5d92e0c839dc61408723">ARP::addressRecognized</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_i_p_address.html">IPAddress</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td>
           <td class="paramname"><em>destAddr</em>, </td>
         </tr>
         <tr>
@@ -239,19 +266,17 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8cc_source.html#l00308">308</a> of file <a class="el" href="_a_r_p_8cc_source.html">ARP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00329">processARPPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#a18fd3027c04e06eab2f201434a4ef6d6">processARPPacket()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (<a class="code" href="class_a_r_p.html#acb769850ffc36f2c99c60e52bbaa354f">rt</a>-&gt;<a class="code" href="class_i_routing_table.html#a3dad8d703bfa05731c44b3b2f0bb4ae5">isLocalAddress</a>(destAddr))
+    <span class="keywordflow">if</span> (<a class="code" href="class_a_r_p.html#acb769850ffc36f2c99c60e52bbaa354f">rt</a>-&gt;<a class="code" href="class_i_routing_table.html#a2db544d01dd255f4d069c02f2975e683" title="Checks if the address is a local one, i.e.">isLocalAddress</a>(destAddr))
         <span class="keywordflow">return</span> <span class="keyword">true</span>;
 
     <span class="comment">// respond to Proxy ARP request: if we can route this packet (and the</span>
     <span class="comment">// output port is different from this one), say yes</span>
     <span class="keywordflow">if</span> (!<a class="code" href="class_a_r_p.html#a5dcbbdd0ebda691a11e7700f767be861">doProxyARP</a>)
         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-    <a class="code" href="class_interface_entry.html">InterfaceEntry</a> *rtie = <a class="code" href="class_a_r_p.html#acb769850ffc36f2c99c60e52bbaa354f">rt</a>-&gt;<a class="code" href="class_i_routing_table.html#a0dda4a87779a949284ccead75001fa30">getInterfaceForDestAddr</a>(destAddr);
-    <span class="keywordflow">return</span> rtie!=NULL &amp;&amp; rtie!=ie;
+    <a class="code" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> *rtie = <a class="code" href="class_a_r_p.html#acb769850ffc36f2c99c60e52bbaa354f">rt</a>-&gt;<a class="code" href="class_i_routing_table.html#ac3c88f1aefd1add9888a0bc4c87fc1c4" title="Convenience function based on findBestMatchingRoute().">getInterfaceForDestAddr</a>(destAddr);
+    <span class="keywordflow">return</span> rtie!=<a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> &amp;&amp; rtie!=ie;
 }
 </pre></div>
 </div>
@@ -261,7 +286,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_a_r_p.html#ae9bbd334ff93beab6f657a2dafdc1dca">ARP::dumpARPPacket</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_a_r_p.html#ae9bbd334ff93beab6f657a2dafdc1dca">ARP::dumpARPPacket</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_a_r_p_packet.html">ARPPacket</a> *&#160;</td>
           <td class="paramname"><em>arp</em></td><td>)</td>
@@ -271,13 +296,11 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8cc_source.html#l00321">321</a> of file <a class="el" href="_a_r_p_8cc_source.html">ARP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00329">processARPPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#a18fd3027c04e06eab2f201434a4ef6d6">processARPPacket()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; (arp-&gt;<a class="code" href="class_a_r_p_packet.html#ac4fd8dfc44b300c12335e227fc360ae2">getOpcode</a>()==<a class="code" href="_a_r_p_packet__m_8h.html#af8a3b5bb320ff19f496b22c85bc69e10afb58ccf8b7b11505ff2117a10bf6ff61">ARP_REQUEST</a> ? <span class="stringliteral">&quot;ARP_REQ&quot;</span> : arp-&gt;<a class="code" href="class_a_r_p_packet.html#ac4fd8dfc44b300c12335e227fc360ae2">getOpcode</a>()==<a class="code" href="_a_r_p_packet__m_8h.html#af8a3b5bb320ff19f496b22c85bc69e10a8bb24a026264a5b22435864179f874d9">ARP_REPLY</a> ? <span class="stringliteral">&quot;ARP_REPLY&quot;</span> : <span class="stringliteral">&quot;unknown type&quot;</span>)
-       &lt;&lt; <span class="stringliteral">&quot;  src=&quot;</span> &lt;&lt; arp-&gt;<a class="code" href="class_a_r_p_packet.html#aa5182becd45ebac8f8c7461a4f240638">getSrcIPAddress</a>() &lt;&lt; <span class="stringliteral">&quot; / &quot;</span> &lt;&lt; arp-&gt;<a class="code" href="class_a_r_p_packet.html#a00e51f3f258546540f033a9f07ea8532">getSrcMACAddress</a>()
-       &lt;&lt; <span class="stringliteral">&quot;  dest=&quot;</span> &lt;&lt; arp-&gt;<a class="code" href="class_a_r_p_packet.html#a9a2dbbf5996b9894e60b7d96c0600456">getDestIPAddress</a>() &lt;&lt; <span class="stringliteral">&quot; / &quot;</span> &lt;&lt; arp-&gt;<a class="code" href="class_a_r_p_packet.html#ad62324430a0f1af369069c71184ea68d">getDestMACAddress</a>() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+       &lt;&lt; <span class="stringliteral">&quot;  src=&quot;</span> &lt;&lt; arp-&gt;<a class="code" href="class_a_r_p_packet.html#abaaca54ee447e9659ca2770d445b0b3e">getSrcIPAddress</a>() &lt;&lt; <span class="stringliteral">&quot; / &quot;</span> &lt;&lt; arp-&gt;<a class="code" href="class_a_r_p_packet.html#a00e51f3f258546540f033a9f07ea8532">getSrcMACAddress</a>()
+       &lt;&lt; <span class="stringliteral">&quot;  dest=&quot;</span> &lt;&lt; arp-&gt;<a class="code" href="class_a_r_p_packet.html#a432a70c9d18586a1b81fabaf7c13b0c8">getDestIPAddress</a>() &lt;&lt; <span class="stringliteral">&quot; / &quot;</span> &lt;&lt; arp-&gt;<a class="code" href="class_a_r_p_packet.html#ad62324430a0f1af369069c71184ea68d">getDestMACAddress</a>() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
 }
 </pre></div>
 </div>
@@ -287,7 +310,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_a_r_p.html#a69c8708abbc87f92fb73f461bafae18b">ARP::finish</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_a_r_p.html#a69c8708abbc87f92fb73f461bafae18b">ARP::finish</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -295,13 +318,83 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_r_p_8cc_source.html#l00067">67</a> of file <a class="el" href="_a_r_p_8cc_source.html">ARP.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    recordScalar(<span class="stringliteral">&quot;ARP requests sent&quot;</span>, <a class="code" href="class_a_r_p.html#a76c6dc1129f43da4ca9f5f659e3b4e30">numRequestsSent</a>);
-    recordScalar(<span class="stringliteral">&quot;ARP replies sent&quot;</span>, <a class="code" href="class_a_r_p.html#a290e24615b0ff5f7c612b79dd1f73379">numRepliesSent</a>);
-    recordScalar(<span class="stringliteral">&quot;ARP resolutions&quot;</span>, <a class="code" href="class_a_r_p.html#a02400692b64d721999809e9c91bd07ae">numResolutions</a>);
-    recordScalar(<span class="stringliteral">&quot;failed ARP resolutions&quot;</span>, <a class="code" href="class_a_r_p.html#aefe4a5386cc690ff31427347c31beecc">numFailedResolutions</a>);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a1484d11563ac7ea0d81a2036364b3070"></a><!-- doxytag: member="ARP::getDirectAddressResolution" ref="a1484d11563ac7ea0d81a2036364b3070" args="(const IPv4Address &amp;) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_m_a_c_address.html">MACAddress</a> <a class="el" href="class_a_r_p.html#a1484d11563ac7ea0d81a2036364b3070">ARP::getDirectAddressResolution</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_i_pv4_address.html">IPv4Address</a> &amp;&#160;</td>
+          <td class="paramname"><em>add</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+    ARPCache::const_iterator it;
+    <a class="code" href="class_m_a_c_address.html" title="Stores an IEEE 802 MAC address (6 octets = 48 bits).">MACAddress</a> address = <a class="code" href="class_m_a_c_address.html#a9083fdb636ab09f77e7af806f2d471b6" title="The unspecified MAC address, 00:00:00:00:00:00.">MACAddress::UNSPECIFIED_ADDRESS</a>;
+    <span class="keywordflow">if</span> (<a class="code" href="class_a_r_p.html#abe27b98bb95609b9ee229382b5aedffb">globalARP</a>)
+    {
+        it = <a class="code" href="class_a_r_p.html#aea4b99384414bcbb7fd32d8c93227e71">globalArpCache</a>.find(add);
+        <span class="keywordflow">if</span> (it!=<a class="code" href="class_a_r_p.html#aea4b99384414bcbb7fd32d8c93227e71">globalArpCache</a>.end())
+            address = (*it).second-&gt;macAddress;
+    }
+    <span class="keywordflow">else</span>
+    {
+        it = <a class="code" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a>.find(add);
+        <span class="keywordflow">if</span> (it!=<a class="code" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a>.end())
+            address = (*it).second-&gt;macAddress;
+    }
+    <span class="keywordflow">return</span> address;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a09716187ffa1b37822431df191a7f9f5"></a><!-- doxytag: member="ARP::getInverseAddressResolution" ref="a09716187ffa1b37822431df191a7f9f5" args="(const MACAddress &amp;) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_i_pv4_address.html">IPv4Address</a> <a class="el" href="class_a_r_p.html#a09716187ffa1b37822431df191a7f9f5">ARP::getInverseAddressResolution</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_m_a_c_address.html">MACAddress</a> &amp;&#160;</td>
+          <td class="paramname"><em>add</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_manet_routing_base.html#a7c608030a2bc2ee37c0576e0f0ae6ed8">ManetRoutingBase::receiveChangeNotification()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a> address;
+    ARPCache::const_iterator it;
+    <span class="keywordflow">if</span> (<a class="code" href="class_a_r_p.html#abe27b98bb95609b9ee229382b5aedffb">globalARP</a>)
+    {
+        <span class="keywordflow">for</span> (it = <a class="code" href="class_a_r_p.html#aea4b99384414bcbb7fd32d8c93227e71">globalArpCache</a>.begin(); it!=<a class="code" href="class_a_r_p.html#aea4b99384414bcbb7fd32d8c93227e71">globalArpCache</a>.end(); it++)
+            <span class="keywordflow">if</span> ((*it).second-&gt;macAddress==add)
+            {
+                address = (*it).first;
+                <span class="keywordflow">return</span> address;
+            }
+    }
+    <span class="keywordflow">else</span>
+    {
+        <span class="keywordflow">for</span> (it = <a class="code" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a>.begin(); it!=<a class="code" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a>.end(); it++)
+            <span class="keywordflow">if</span> ((*it).second-&gt;macAddress==add)
+            {
+                address = (*it).first;
+                <span class="keywordflow">return</span> address;
+            }
+    }
+    <span class="keywordflow">return</span> address;
 }
 </pre></div>
 </div>
@@ -311,7 +404,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_a_r_p.html#a729b4d6391b1e2d3b4743f7918ab879e">ARP::handleMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_a_r_p.html#a729b4d6391b1e2d3b4743f7918ab879e">ARP::handleMessage</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -320,8 +413,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_r_p_8cc_source.html#l00085">85</a> of file <a class="el" href="_a_r_p_8cc_source.html">ARP.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span> (msg-&gt;isSelfMessage())
     {
@@ -329,7 +420,7 @@ Protected Attributes</h2></td></tr>
     }
     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dynamic_cast&lt;ARPPacket *&gt;(msg))
     {
-        <a class="code" href="class_a_r_p_packet.html">ARPPacket</a> *arp = (<a class="code" href="class_a_r_p_packet.html">ARPPacket</a> *)msg;
+        <a class="code" href="class_a_r_p_packet.html" title="Class generated from networklayer/arp/ARPPacket.msg by opp_msgc.">ARPPacket</a> *arp = (<a class="code" href="class_a_r_p_packet.html" title="Class generated from networklayer/arp/ARPPacket.msg by opp_msgc.">ARPPacket</a> *)msg;
         <a class="code" href="class_a_r_p.html#a18fd3027c04e06eab2f201434a4ef6d6">processARPPacket</a>(arp);
     }
     <span class="keywordflow">else</span> <span class="comment">// not ARP</span>
@@ -342,43 +433,72 @@ Protected Attributes</h2></td></tr>
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a5071bf2c124d92df782267a3eb3611d3"></a><!-- doxytag: member="ARP::initialize" ref="a5071bf2c124d92df782267a3eb3611d3" args="()" -->
+<a class="anchor" id="a81584e9eee9ce531d8af95599e18f996"></a><!-- doxytag: member="ARP::initialize" ref="a81584e9eee9ce531d8af95599e18f996" args="(int stage)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_a_r_p.html#a5071bf2c124d92df782267a3eb3611d3">ARP::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_a_r_p.html#a81584e9eee9ce531d8af95599e18f996">ARP::initialize</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>stage</em></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_a_r_p_8cc_source.html#l00042">42</a> of file <a class="el" href="_a_r_p_8cc_source.html">ARP.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_a_r_p.html#a667cacb2b5a0435f9a72f892aa1c74fb">ift</a> = <a class="code" href="class_interface_table_access.html">InterfaceTableAccess</a>().<a class="code" href="class_module_access.html#a44956ddb52973612afbba0eeecf8bb66">get</a>();
-    <a class="code" href="class_a_r_p.html#acb769850ffc36f2c99c60e52bbaa354f">rt</a> = <a class="code" href="class_routing_table_access.html">RoutingTableAccess</a>().<a class="code" href="class_module_access.html#a44956ddb52973612afbba0eeecf8bb66">get</a>();
+    <span class="keywordflow">if</span> (stage==0)
+    {
+        <a class="code" href="class_a_r_p.html#abc07b0e76d768b6d2797add514d747b9">sentReqSignal</a> = registerSignal(<span class="stringliteral">&quot;sentReq&quot;</span>);
+        <a class="code" href="class_a_r_p.html#a2b2d6ddf595295919f2fb816c5bb6ce8">sentReplySignal</a> = registerSignal(<span class="stringliteral">&quot;sentReply&quot;</span>);
+        <a class="code" href="class_a_r_p.html#a6a00c098c524729bf93d0898c0fb844d">initiatedResolutionSignal</a> = registerSignal(<span class="stringliteral">&quot;initiatedResolution&quot;</span>);
+        <a class="code" href="class_a_r_p.html#a5e711f45f1d4076c552654e9dcecba7a">failedResolutionSignal</a> = registerSignal(<span class="stringliteral">&quot;failedResolution&quot;</span>);
+    }
 
-    <a class="code" href="class_a_r_p.html#ac6de460de9c0953ebe248e5b221b6cdc">nicOutBaseGateId</a> = gateSize(<span class="stringliteral">&quot;nicOut&quot;</span>)==0 ? -1 : gate(<span class="stringliteral">&quot;nicOut&quot;</span>,0)-&gt;getId();
+    <span class="keywordflow">if</span> (stage==4)
+    {
+        <a class="code" href="class_a_r_p.html#a667cacb2b5a0435f9a72f892aa1c74fb">ift</a> = <a class="code" href="class_interface_table_access.html" title="Gives access to IInterfaceTable.">InterfaceTableAccess</a>().<a class="code" href="class_module_access.html#a46a82b1fa0e957eb42d29c8637df1f4f">get</a>();
+        <a class="code" href="class_a_r_p.html#acb769850ffc36f2c99c60e52bbaa354f">rt</a> = <a class="code" href="class_routing_table_access.html" title="Gives access to the IRoutingTable.">RoutingTableAccess</a>().<a class="code" href="class_module_access.html#a46a82b1fa0e957eb42d29c8637df1f4f">get</a>();
 
-    <a class="code" href="class_a_r_p.html#af8acfc0671e9b49fdb9758ca0ee5bfc1">retryTimeout</a> = par(<span class="stringliteral">&quot;retryTimeout&quot;</span>);
-    <a class="code" href="class_a_r_p.html#ab3c12470dabeadd4ccef62cec1abd68c">retryCount</a> = par(<span class="stringliteral">&quot;retryCount&quot;</span>);
-    <a class="code" href="class_a_r_p.html#afb5797aabe9d5753db94c32f3c72ebd2">cacheTimeout</a> = par(<span class="stringliteral">&quot;cacheTimeout&quot;</span>);
-    <a class="code" href="class_a_r_p.html#a5dcbbdd0ebda691a11e7700f767be861">doProxyARP</a> = par(<span class="stringliteral">&quot;proxyARP&quot;</span>);
+        <a class="code" href="class_a_r_p.html#ac6de460de9c0953ebe248e5b221b6cdc">nicOutBaseGateId</a> = gateSize(<span class="stringliteral">&quot;nicOut&quot;</span>)==0 ? -1 : gate(<span class="stringliteral">&quot;nicOut&quot;</span>, 0)-&gt;getId();
 
-    <a class="code" href="class_a_r_p.html#a103eb6a9d5bfc22f869a36f0a2b87066">pendingQueue</a>.setName(<span class="stringliteral">&quot;pendingQueue&quot;</span>);
+        <a class="code" href="class_a_r_p.html#af8acfc0671e9b49fdb9758ca0ee5bfc1">retryTimeout</a> = par(<span class="stringliteral">&quot;retryTimeout&quot;</span>);
+        <a class="code" href="class_a_r_p.html#ab3c12470dabeadd4ccef62cec1abd68c">retryCount</a> = par(<span class="stringliteral">&quot;retryCount&quot;</span>);
+        <a class="code" href="class_a_r_p.html#afb5797aabe9d5753db94c32f3c72ebd2">cacheTimeout</a> = par(<span class="stringliteral">&quot;cacheTimeout&quot;</span>);
+        <a class="code" href="class_a_r_p.html#a5dcbbdd0ebda691a11e7700f767be861">doProxyARP</a> = par(<span class="stringliteral">&quot;proxyARP&quot;</span>);
+        <a class="code" href="class_a_r_p.html#abe27b98bb95609b9ee229382b5aedffb">globalARP</a> = par(<span class="stringliteral">&quot;globalARP&quot;</span>);
 
-    <span class="comment">// init statistics</span>
-    <a class="code" href="class_a_r_p.html#a76c6dc1129f43da4ca9f5f659e3b4e30">numRequestsSent</a> = <a class="code" href="class_a_r_p.html#a290e24615b0ff5f7c612b79dd1f73379">numRepliesSent</a> = 0;
-    <a class="code" href="class_a_r_p.html#a02400692b64d721999809e9c91bd07ae">numResolutions</a> = <a class="code" href="class_a_r_p.html#aefe4a5386cc690ff31427347c31beecc">numFailedResolutions</a> = 0;
-    WATCH(<a class="code" href="class_a_r_p.html#a76c6dc1129f43da4ca9f5f659e3b4e30">numRequestsSent</a>);
-    WATCH(<a class="code" href="class_a_r_p.html#a290e24615b0ff5f7c612b79dd1f73379">numRepliesSent</a>);
-    WATCH(<a class="code" href="class_a_r_p.html#a02400692b64d721999809e9c91bd07ae">numResolutions</a>);
-    WATCH(<a class="code" href="class_a_r_p.html#aefe4a5386cc690ff31427347c31beecc">numFailedResolutions</a>);
+        <a class="code" href="class_a_r_p.html#a103eb6a9d5bfc22f869a36f0a2b87066">pendingQueue</a>.setName(<span class="stringliteral">&quot;pendingQueue&quot;</span>);
 
-    WATCH_PTRMAP(<a class="code" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a>);
+        <span class="comment">// init statistics</span>
+        <a class="code" href="class_a_r_p.html#a76c6dc1129f43da4ca9f5f659e3b4e30">numRequestsSent</a> = <a class="code" href="class_a_r_p.html#a290e24615b0ff5f7c612b79dd1f73379">numRepliesSent</a> = 0;
+        <a class="code" href="class_a_r_p.html#a02400692b64d721999809e9c91bd07ae">numResolutions</a> = <a class="code" href="class_a_r_p.html#aefe4a5386cc690ff31427347c31beecc">numFailedResolutions</a> = 0;
+        WATCH(<a class="code" href="class_a_r_p.html#a76c6dc1129f43da4ca9f5f659e3b4e30">numRequestsSent</a>);
+        WATCH(<a class="code" href="class_a_r_p.html#a290e24615b0ff5f7c612b79dd1f73379">numRepliesSent</a>);
+        WATCH(<a class="code" href="class_a_r_p.html#a02400692b64d721999809e9c91bd07ae">numResolutions</a>);
+        WATCH(<a class="code" href="class_a_r_p.html#aefe4a5386cc690ff31427347c31beecc">numFailedResolutions</a>);
+
+        WATCH_PTRMAP(<a class="code" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a>);
+        WATCH_PTRMAP(<a class="code" href="class_a_r_p.html#aea4b99384414bcbb7fd32d8c93227e71">globalArpCache</a>);
+
+        <span class="comment">// initialize global cache</span>
+        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;<a class="code" href="class_a_r_p.html#a667cacb2b5a0435f9a72f892aa1c74fb">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a2b0ce46cd92da6f64fc363410dc71904" title="Returns the number of interfaces.">getNumInterfaces</a>(); i++)
+        {
+            <a class="code" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> *ie = <a class="code" href="class_a_r_p.html#a667cacb2b5a0435f9a72f892aa1c74fb">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a19ce4ca3b47b52b8e2b67c25806c4b49" title="Returns the InterfaceEntry specified by an index 0..numInterfaces-1.">getInterface</a>(i);
+            <span class="keywordflow">if</span> (ie-&gt;<a class="code" href="class_interface_entry.html#a0ee93e88273f61390d1293dae55004d1">isLoopback</a>())
+                <span class="keywordflow">continue</span>;
+            ARPCacheEntry *entry = <span class="keyword">new</span> ARPCacheEntry();
+            entry-&gt;ie = ie;
+            entry-&gt;pending = <span class="keyword">false</span>;
+            entry-&gt;timer = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+            entry-&gt;numRetries = 0;
+            entry-&gt;macAddress = ie-&gt;<a class="code" href="class_interface_entry.html#af8004a12e9aac171699ff1f7f08ee4c4">getMacAddress</a>();
+            <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a> nextHopAddr = ie-&gt;<a class="code" href="class_interface_entry.html#a4f52f31546a140edf6979882492e1a0b">ipv4Data</a>()-&gt;<a class="code" href="class_i_pv4_interface_data.html#afab661980ddb8db4adc9ba5e9fc1f346">getIPAddress</a>();
+            ARPCache::iterator where = <a class="code" href="class_a_r_p.html#aea4b99384414bcbb7fd32d8c93227e71">globalArpCache</a>.insert(<a class="code" href="class_a_r_p.html#aea4b99384414bcbb7fd32d8c93227e71">globalArpCache</a>.begin(), std::make_pair(nextHopAddr, entry));
+            entry-&gt;myIter = where; <span class="comment">// note: &quot;inserting a new element into a map does not invalidate iterators that point to existing elements&quot;</span>
+        }
+    }
 }
 </pre></div>
 </div>
@@ -388,7 +508,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_a_r_p.html#afb8883b1120bb6f4ac30813649d739de">ARP::initiateARPResolution</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_a_r_p.html#afb8883b1120bb6f4ac30813649d739de">ARP::initiateARPResolution</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct_a_r_p_1_1_a_r_p_cache_entry.html">ARPCacheEntry</a> *&#160;</td>
           <td class="paramname"><em>entry</em></td><td>)</td>
@@ -398,15 +518,13 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8cc_source.html#l00223">223</a> of file <a class="el" href="_a_r_p_8cc_source.html">ARP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00113">processOutboundPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#ad6458365e00f833f9a2145325e19843d">processOutboundPacket()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_i_p_address.html">IPAddress</a> nextHopAddr = entry-&gt;myIter-&gt;first;
+    <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a> nextHopAddr = entry-&gt;myIter-&gt;first;
     entry-&gt;pending = <span class="keyword">true</span>;
     entry-&gt;numRetries = 0;
     entry-&gt;lastUpdate = 0;
-    <a class="code" href="class_a_r_p.html#affe53baeba58d8dd825d29101dd13381">sendARPRequest</a>(entry-&gt;ie, nextHopAddr);
+    <a class="code" href="class_a_r_p.html#a9a8dcdd8abbadf1a14c87120e2b49e08">sendARPRequest</a>(entry-&gt;ie, nextHopAddr);
 
     <span class="comment">// start timer</span>
     cMessage *msg = entry-&gt;timer = <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;ARP timeout&quot;</span>);
@@ -414,7 +532,56 @@ Protected Attributes</h2></td></tr>
     scheduleAt(simTime()+<a class="code" href="class_a_r_p.html#af8acfc0671e9b49fdb9758ca0ee5bfc1">retryTimeout</a>, msg);
 
     <a class="code" href="class_a_r_p.html#a02400692b64d721999809e9c91bd07ae">numResolutions</a>++;
+    emit(<a class="code" href="class_a_r_p.html#a6a00c098c524729bf93d0898c0fb844d">initiatedResolutionSignal</a>, 1L);
 }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a72f72260fe0e6afe4c92eeff61466fef"></a><!-- doxytag: member="ARP::mapMulticastAddress" ref="a72f72260fe0e6afe4c92eeff61466fef" args="(IPv4Address addr)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_m_a_c_address.html">MACAddress</a> <a class="el" href="class_a_r_p.html#a72f72260fe0e6afe4c92eeff61466fef">ARP::mapMulticastAddress</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td>
+          <td class="paramname"><em>addr</em></td><td>)</td>
+          <td><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_a_r_p.html#ad6458365e00f833f9a2145325e19843d">processOutboundPacket()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    ASSERT(addr.<a class="code" href="class_i_pv4_address.html#ab8ffdff7f4dc2ff8f2d6a0eed468b476" title="Returns true if this address is in the multicast address range, 224.0.0.0 thru 239.255.255.255, that is, it&#39;s a class D address.">isMulticast</a>());
+
+    <a class="code" href="class_m_a_c_address.html" title="Stores an IEEE 802 MAC address (6 octets = 48 bits).">MACAddress</a> macAddr;
+    macAddr.<a class="code" href="class_m_a_c_address.html#a58b9995961b675dc92e06e769c01565c" title="Sets the kth byte of the address.">setAddressByte</a>(0, 0x01);
+    macAddr.setAddressByte(1, 0x00);
+    macAddr.setAddressByte(2, 0x5e);
+    macAddr.setAddressByte(3, addr.<a class="code" href="class_i_pv4_address.html#a70cb48eb76f46544accae0999642f0fa" title="Returns the corresponding part of the address specified by the index (&quot;[0].[1].[2].[3]&quot;)">getDByte</a>(1) &amp; 0x7f);
+    macAddr.setAddressByte(4, addr.<a class="code" href="class_i_pv4_address.html#a70cb48eb76f46544accae0999642f0fa" title="Returns the corresponding part of the address specified by the index (&quot;[0].[1].[2].[3]&quot;)">getDByte</a>(2));
+    macAddr.setAddressByte(5, addr.<a class="code" href="class_i_pv4_address.html#a70cb48eb76f46544accae0999642f0fa" title="Returns the corresponding part of the address specified by the index (&quot;[0].[1].[2].[3]&quot;)">getDByte</a>(3));
+    <span class="keywordflow">return</span> macAddr;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a3b3cc1c01eb6373805227d2e57586f35"></a><!-- doxytag: member="ARP::numInitStages" ref="a3b3cc1c01eb6373805227d2e57586f35" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="class_a_r_p.html#a3b3cc1c01eb6373805227d2e57586f35">ARP::numInitStages</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> 5;}
 </pre></div>
 </div>
 </div>
@@ -423,7 +590,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_a_r_p.html#a18fd3027c04e06eab2f201434a4ef6d6">ARP::processARPPacket</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_a_r_p.html#a18fd3027c04e06eab2f201434a4ef6d6">ARP::processARPPacket</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_a_r_p_packet.html">ARPPacket</a> *&#160;</td>
           <td class="paramname"><em>arp</em></td><td>)</td>
@@ -433,16 +600,14 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8cc_source.html#l00329">329</a> of file <a class="el" href="_a_r_p_8cc_source.html">ARP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00085">handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#a729b4d6391b1e2d3b4743f7918ab879e">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;ARP packet &quot;</span> &lt;&lt; arp &lt;&lt; <span class="stringliteral">&quot; arrived:\n&quot;</span>;
     <a class="code" href="class_a_r_p.html#ae9bbd334ff93beab6f657a2dafdc1dca">dumpARPPacket</a>(arp);
 
     <span class="comment">// extract input port</span>
-    <a class="code" href="class_i_p_routing_decision.html">IPRoutingDecision</a> *controlInfo = check_and_cast&lt;<a class="code" href="class_i_p_routing_decision.html">IPRoutingDecision</a>*&gt;(arp-&gt;removeControlInfo());
-    <a class="code" href="class_interface_entry.html">InterfaceEntry</a> *ie = <a class="code" href="class_a_r_p.html#a667cacb2b5a0435f9a72f892aa1c74fb">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a92764d620c345b7261de20e9ee5247d7">getInterfaceById</a>(controlInfo-&gt;<a class="code" href="class_i_p_routing_decision.html#a93d56054398ef2c4b5499a3b2ba81287">getInterfaceId</a>());
+    <a class="code" href="class_i_pv4_routing_decision.html" title="Class generated from networklayer/contract/IPv4ControlInfo.msg by opp_msgc.">IPv4RoutingDecision</a> *controlInfo = check_and_cast&lt;<a class="code" href="class_i_pv4_routing_decision.html" title="Class generated from networklayer/contract/IPv4ControlInfo.msg by opp_msgc.">IPv4RoutingDecision</a>*&gt;(arp-&gt;removeControlInfo());
+    <a class="code" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> *ie = <a class="code" href="class_a_r_p.html#a667cacb2b5a0435f9a72f892aa1c74fb">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a92764d620c345b7261de20e9ee5247d7" title="Returns an interface by its Id.">getInterfaceById</a>(controlInfo-&gt;<a class="code" href="class_i_pv4_routing_decision.html#ab76a45e997078444e24a783a61a2ce82">getInterfaceId</a>());
     <span class="keyword">delete</span> controlInfo;
 
     <span class="comment">//</span>
@@ -473,13 +638,13 @@ Protected Attributes</h2></td></tr>
     <span class="comment">//             the same hardware on which the request was received.</span>
     <span class="comment">//</span>
 
-    <a class="code" href="class_m_a_c_address.html">MACAddress</a> srcMACAddress = arp-&gt;getSrcMACAddress();
-    <a class="code" href="class_i_p_address.html">IPAddress</a> srcIPAddress = arp-&gt;getSrcIPAddress();
+    <a class="code" href="class_m_a_c_address.html" title="Stores an IEEE 802 MAC address (6 octets = 48 bits).">MACAddress</a> srcMACAddress = arp-&gt;getSrcMACAddress();
+    <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a> srcIPAddress = arp-&gt;getSrcIPAddress();
 
-    <span class="keywordflow">if</span> (srcMACAddress.<a class="code" href="class_m_a_c_address.html#ae41af013d782b46483e7d0c84f0ed107">isUnspecified</a>())
+    <span class="keywordflow">if</span> (srcMACAddress.<a class="code" href="class_m_a_c_address.html#ae41af013d782b46483e7d0c84f0ed107" title="Returns true if all address bytes are zero.">isUnspecified</a>())
         error(<span class="stringliteral">&quot;wrong ARP packet: source MAC address is empty&quot;</span>);
-    <span class="keywordflow">if</span> (srcIPAddress.<a class="code" href="class_i_p_address.html#a7fb3c274d7a8600be890f83c028d5f96">isUnspecified</a>())
-        error(<span class="stringliteral">&quot;wrong ARP packet: source IP address is empty&quot;</span>);
+    <span class="keywordflow">if</span> (srcIPAddress.<a class="code" href="class_i_pv4_address.html#a76dbddd2575a9e91412b998512b45a2d" title="True if all four address bytes are zero.">isUnspecified</a>())
+        error(<span class="stringliteral">&quot;wrong ARP packet: source IPv4 address is empty&quot;</span>);
 
     <span class="keywordtype">bool</span> mergeFlag = <span class="keyword">false</span>;
     <span class="comment">// &quot;If ... sender protocol address is already in my translation table&quot;</span>
@@ -493,8 +658,8 @@ Protected Attributes</h2></td></tr>
     }
 
     <span class="comment">// &quot;?Am I the target protocol address?&quot;</span>
-    <span class="comment">// if Proxy ARP is enabled, we also have to reply if we&#39;re a router to the dest IP address</span>
-    <span class="keywordflow">if</span> (<a class="code" href="class_a_r_p.html#a2d7ce12d375f9d13ebaa212889e887db">addressRecognized</a>(arp-&gt;getDestIPAddress(), ie))
+    <span class="comment">// if Proxy ARP is enabled, we also have to reply if we&#39;re a router to the dest IPv4 address</span>
+    <span class="keywordflow">if</span> (<a class="code" href="class_a_r_p.html#aeb453ea8ed8a5d92e0c839dc61408723">addressRecognized</a>(arp-&gt;getDestIPAddress(), ie))
     {
         <span class="comment">// &quot;If Merge_flag is false, add the triplet protocol type, sender</span>
         <span class="comment">// protocol address, sender hardware address to the translation table&quot;</span>
@@ -508,12 +673,12 @@ Protected Attributes</h2></td></tr>
             <span class="keywordflow">else</span>
             {
                 entry = <span class="keyword">new</span> ARPCacheEntry();
-                ARPCache::iterator where = <a class="code" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a>.insert(<a class="code" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a>.begin(), std::make_pair(srcIPAddress,entry));
+                ARPCache::iterator where = <a class="code" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a>.insert(<a class="code" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a>.begin(), std::make_pair(srcIPAddress, entry));
                 entry-&gt;myIter = where;
                 entry-&gt;ie = ie;
 
                 entry-&gt;pending = <span class="keyword">false</span>;
-                entry-&gt;timer = NULL;
+                entry-&gt;timer = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
                 entry-&gt;numRetries = 0;
             }
             <a class="code" href="class_a_r_p.html#a6d8b15097a3d45f15b886649ad95ac23">updateARPCache</a>(entry, srcMACAddress);
@@ -526,21 +691,22 @@ Protected Attributes</h2></td></tr>
             {
                 <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Packet was ARP REQUEST, sending REPLY\n&quot;</span>;
 
-                <span class="comment">// find our own IP address and MAC address on the given interface</span>
-                <a class="code" href="class_m_a_c_address.html">MACAddress</a> myMACAddress = ie-&gt;getMacAddress();
-                <a class="code" href="class_i_p_address.html">IPAddress</a> myIPAddress = ie-&gt;ipv4Data()-&gt;getIPAddress();
+                <span class="comment">// find our own IPv4 address and MAC address on the given interface</span>
+                <a class="code" href="class_m_a_c_address.html" title="Stores an IEEE 802 MAC address (6 octets = 48 bits).">MACAddress</a> myMACAddress = ie-&gt;getMacAddress();
+                <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a> myIPAddress = ie-&gt;ipv4Data()-&gt;getIPAddress();
 
                 <span class="comment">// &quot;Swap hardware and protocol fields&quot;, etc.</span>
                 arp-&gt;setName(<span class="stringliteral">&quot;arpREPLY&quot;</span>);
-                <a class="code" href="class_i_p_address.html">IPAddress</a> origDestAddress = arp-&gt;getDestIPAddress();
+                <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a> origDestAddress = arp-&gt;getDestIPAddress();
                 arp-&gt;setDestIPAddress(srcIPAddress);
                 arp-&gt;setDestMACAddress(srcMACAddress);
                 arp-&gt;setSrcIPAddress(origDestAddress);
                 arp-&gt;setSrcMACAddress(myMACAddress);
                 arp-&gt;setOpcode(<a class="code" href="_a_r_p_packet__m_8h.html#af8a3b5bb320ff19f496b22c85bc69e10a8bb24a026264a5b22435864179f874d9">ARP_REPLY</a>);
                 <span class="keyword">delete</span> arp-&gt;removeControlInfo();
-                <a class="code" href="class_a_r_p.html#a25c895b799516c89d74f3f48a533366a">sendPacketToNIC</a>(arp, ie, srcMACAddress);
+                <a class="code" href="class_a_r_p.html#aa34968302d8f2c113ad7684024f274de">sendPacketToNIC</a>(arp, ie, srcMACAddress, <a class="code" href="_ieee802_ctrl__m_8h.html#a0786b7c38992d7a0faa09df8fe644fe6ab78454b9340abb34bd92a17f01a8060d">ETHERTYPE_ARP</a>);
                 <a class="code" href="class_a_r_p.html#a290e24615b0ff5f7c612b79dd1f73379">numRepliesSent</a>++;
+                emit(<a class="code" href="class_a_r_p.html#a2b2d6ddf595295919f2fb816c5bb6ce8">sentReplySignal</a>, 1L);
                 <span class="keywordflow">break</span>;
             }
             <span class="keywordflow">case</span> <a class="code" href="_a_r_p_packet__m_8h.html#af8a3b5bb320ff19f496b22c85bc69e10a8bb24a026264a5b22435864179f874d9">ARP_REPLY</a>:
@@ -549,15 +715,15 @@ Protected Attributes</h2></td></tr>
                 <span class="keyword">delete</span> arp;
                 <span class="keywordflow">break</span>;
             }
-            <span class="keywordflow">case</span> <a class="code" href="_a_r_p_packet__m_8h.html#af8a3b5bb320ff19f496b22c85bc69e10a5c3f9a85dd0adaabbb911a85bb9a4855">ARP_RARP_REQUEST</a>: error(<span class="stringliteral">&quot;RARP request received: RARP is not supported&quot;</span>);
-            <span class="keywordflow">case</span> <a class="code" href="_a_r_p_packet__m_8h.html#af8a3b5bb320ff19f496b22c85bc69e10ad874c2c91081ae9c0627e5f267609ec0">ARP_RARP_REPLY</a>: error(<span class="stringliteral">&quot;RARP reply received: RARP is not supported&quot;</span>);
-            <span class="keywordflow">default</span>: error(<span class="stringliteral">&quot;Unsupported opcode %d in received ARP packet&quot;</span>,arp-&gt;getOpcode());
+            <span class="keywordflow">case</span> <a class="code" href="_a_r_p_packet__m_8h.html#af8a3b5bb320ff19f496b22c85bc69e10a5c3f9a85dd0adaabbb911a85bb9a4855">ARP_RARP_REQUEST</a>: <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;RARP request received: RARP is not supported&quot;</span>);
+            <span class="keywordflow">case</span> <a class="code" href="_a_r_p_packet__m_8h.html#af8a3b5bb320ff19f496b22c85bc69e10ad874c2c91081ae9c0627e5f267609ec0">ARP_RARP_REPLY</a>: <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;RARP reply received: RARP is not supported&quot;</span>);
+            <span class="keywordflow">default</span>: <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Unsupported opcode %d in received ARP packet&quot;</span>, arp-&gt;getOpcode());
         }
     }
     <span class="keywordflow">else</span>
     {
         <span class="comment">// address not recognized</span>
-        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;IP address &quot;</span> &lt;&lt; arp-&gt;getDestIPAddress() &lt;&lt; <span class="stringliteral">&quot; not recognized, dropping ARP packet\n&quot;</span>;
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;IPv4 address &quot;</span> &lt;&lt; arp-&gt;getDestIPAddress() &lt;&lt; <span class="stringliteral">&quot; not recognized, dropping ARP packet\n&quot;</span>;
         <span class="keyword">delete</span> arp;
     }
 }
@@ -569,7 +735,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_a_r_p.html#ad6458365e00f833f9a2145325e19843d">ARP::processOutboundPacket</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_a_r_p.html#ad6458365e00f833f9a2145325e19843d">ARP::processOutboundPacket</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -579,16 +745,14 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8cc_source.html#l00113">113</a> of file <a class="el" href="_a_r_p_8cc_source.html">ARP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00085">handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#a729b4d6391b1e2d3b4743f7918ab879e">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Packet &quot;</span> &lt;&lt; msg &lt;&lt; <span class="stringliteral">&quot; arrived from higher layer, &quot;</span>;
 
     <span class="comment">// get next hop address from control info in packet</span>
-    <a class="code" href="class_i_p_routing_decision.html">IPRoutingDecision</a> *controlInfo = check_and_cast&lt;<a class="code" href="class_i_p_routing_decision.html">IPRoutingDecision</a>*&gt;(msg-&gt;removeControlInfo());
-    <a class="code" href="class_i_p_address.html">IPAddress</a> nextHopAddr = controlInfo-&gt;<a class="code" href="class_i_p_routing_decision.html#ac5772176ce5eff94bcbbdd70822a8985">getNextHopAddr</a>();
-    <a class="code" href="class_interface_entry.html">InterfaceEntry</a> *ie = <a class="code" href="class_a_r_p.html#a667cacb2b5a0435f9a72f892aa1c74fb">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a92764d620c345b7261de20e9ee5247d7">getInterfaceById</a>(controlInfo-&gt;<a class="code" href="class_i_p_routing_decision.html#a93d56054398ef2c4b5499a3b2ba81287">getInterfaceId</a>());
+    <a class="code" href="class_i_pv4_routing_decision.html" title="Class generated from networklayer/contract/IPv4ControlInfo.msg by opp_msgc.">IPv4RoutingDecision</a> *controlInfo = check_and_cast&lt;<a class="code" href="class_i_pv4_routing_decision.html" title="Class generated from networklayer/contract/IPv4ControlInfo.msg by opp_msgc.">IPv4RoutingDecision</a>*&gt;(msg-&gt;removeControlInfo());
+    <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a> nextHopAddr = controlInfo-&gt;<a class="code" href="class_i_pv4_routing_decision.html#a1a59967639ae6249308f352634a8f15d">getNextHopAddr</a>();
+    <a class="code" href="class_interface_entry.html" title="Interface entry for the interface table in IInterfaceTable.">InterfaceEntry</a> *ie = <a class="code" href="class_a_r_p.html#a667cacb2b5a0435f9a72f892aa1c74fb">ift</a>-&gt;<a class="code" href="class_i_interface_table.html#a92764d620c345b7261de20e9ee5247d7" title="Returns an interface by its Id.">getInterfaceById</a>(controlInfo-&gt;<a class="code" href="class_i_pv4_routing_decision.html#ab76a45e997078444e24a783a61a2ce82">getInterfaceId</a>());
     <span class="keyword">delete</span> controlInfo;
 
     <span class="comment">// if output interface is not broadcast, don&#39;t bother with ARP</span>
@@ -607,43 +771,35 @@ Protected Attributes</h2></td></tr>
     <span class="keywordflow">else</span>
     {
         <span class="comment">// try proxy ARP</span>
-        <a class="code" href="class_i_p_datagram.html">IPDatagram</a> *datagram = check_and_cast&lt;<a class="code" href="class_i_p_datagram.html">IPDatagram</a> *&gt;(msg);
-        nextHopAddr = datagram-&gt;<a class="code" href="class_i_p_datagram.html#afe5a14d5aefc5cc9e0ffeedb31a62d1c">getDestAddress</a>();
+        <a class="code" href="class_i_pv4_datagram.html" title="Represents an IPv4 datagram.">IPv4Datagram</a> *datagram = check_and_cast&lt;<a class="code" href="class_i_pv4_datagram.html" title="Represents an IPv4 datagram.">IPv4Datagram</a> *&gt;(msg);
+        nextHopAddr = datagram-&gt;<a class="code" href="class_i_pv4_datagram___base.html#ab1eb910524b107db870c18d8004e7ed7">getDestAddress</a>();
         <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;no next-hop address, using destination address &quot;</span> &lt;&lt; nextHopAddr &lt;&lt; <span class="stringliteral">&quot; (proxy ARP)\n&quot;</span>;
     }
 
-    <span class="comment">//</span>
-    <span class="comment">// Handle multicast IP addresses. RFC 1112, section 6.4 says:</span>
-    <span class="comment">// &quot;An IP host group address is mapped to an Ethernet multicast address</span>
-    <span class="comment">// by placing the low-order 23 bits of the IP address into the low-order</span>
-    <span class="comment">// 23 bits of the Ethernet multicast address 01-00-5E-00-00-00 (hex).</span>
-    <span class="comment">// Because there are 28 significant bits in an IP host group address,</span>
-    <span class="comment">// more than one host group address may map to the same Ethernet multicast</span>
-    <span class="comment">// address.&quot;</span>
-    <span class="comment">//</span>
+    <span class="keywordflow">if</span> (nextHopAddr.isLimitedBroadcastAddress() ||
+            nextHopAddr == ie-&gt;<a class="code" href="class_interface_entry.html#a4f52f31546a140edf6979882492e1a0b">ipv4Data</a>()-&gt;<a class="code" href="class_i_pv4_interface_data.html#afab661980ddb8db4adc9ba5e9fc1f346">getIPAddress</a>().<a class="code" href="class_i_pv4_address.html#abaed6078220ce34ed5407d5c0b73015f" title="Returns the broadcast address for the given netmask.">getBroadcastAddress</a>(ie-&gt;<a class="code" href="class_interface_entry.html#a4f52f31546a140edf6979882492e1a0b">ipv4Data</a>()-&gt;<a class="code" href="class_i_pv4_interface_data.html#a7bd9bc7a6caff7bc7ff9e6448db0e394">getNetmask</a>())) <span class="comment">// also include the network broadcast</span>
+    {
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;destination address is broadcast, sending packet to broadcast MAC address\n&quot;</span>;
+        <a class="code" href="class_a_r_p.html#aa34968302d8f2c113ad7684024f274de">sendPacketToNIC</a>(msg, ie, <a class="code" href="class_m_a_c_address.html#a64288e3935e32fec17884c040cf2d2e9" title="The broadcast MAC address, ff:ff:ff:ff:ff:ff.">MACAddress::BROADCAST_ADDRESS</a>, <a class="code" href="_ieee802_ctrl__m_8h.html#a0786b7c38992d7a0faa09df8fe644fe6ab2b889adbcd85458d549249e8f1d3bcd">ETHERTYPE_IPv4</a>);
+        <span class="keywordflow">return</span>;
+    }
+
     <span class="keywordflow">if</span> (nextHopAddr.isMulticast())
     {
-        <span class="comment">// FIXME: we do a simpler solution right now: send to the Broadcast MAC address</span>
-        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;destination address is multicast, sending packet to broadcast MAC address\n&quot;</span>;
-        <span class="keyword">static</span> <a class="code" href="class_m_a_c_address.html">MACAddress</a> broadcastAddr(<span class="stringliteral">&quot;FF:FF:FF:FF:FF:FF&quot;</span>);
-        <a class="code" href="class_a_r_p.html#a25c895b799516c89d74f3f48a533366a">sendPacketToNIC</a>(msg, ie, broadcastAddr);
+        <a class="code" href="class_m_a_c_address.html" title="Stores an IEEE 802 MAC address (6 octets = 48 bits).">MACAddress</a> macAddr = <a class="code" href="class_a_r_p.html#a72f72260fe0e6afe4c92eeff61466fef">mapMulticastAddress</a>(nextHopAddr);
+        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;destination address is multicast, sending packet to MAC address &quot;</span> &lt;&lt; macAddr &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+        <a class="code" href="class_a_r_p.html#aa34968302d8f2c113ad7684024f274de">sendPacketToNIC</a>(msg, ie, macAddr, <a class="code" href="_ieee802_ctrl__m_8h.html#a0786b7c38992d7a0faa09df8fe644fe6ab2b889adbcd85458d549249e8f1d3bcd">ETHERTYPE_IPv4</a>);
         <span class="keywordflow">return</span>;
-<span class="preprocessor">#if 0</span>
-<span class="preprocessor"></span>        <span class="comment">// experimental RFC 1112 code</span>
-        <span class="comment">// TBD needs counterpart to be implemented in EtherMAC processReceivedDataFrame().</span>
-        <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> macBytes[6];
-        macBytes[0] = 0x01;
-        macBytes[1] = 0x00;
-        macBytes[2] = 0x5e;
-        macBytes[3] = nextHopAddr.getDByte(1) &amp; 0x7f;
-        macBytes[4] = nextHopAddr.getDByte(2);
-        macBytes[5] = nextHopAddr.getDByte(3);
-        <a class="code" href="class_m_a_c_address.html">MACAddress</a> multicastMacAddr;
-        multicastMacAddr.<a class="code" href="class_m_a_c_address.html#a6804ca5591fc6eeb256cc487805a0927">setAddressBytes</a>(bytes);
-        <a class="code" href="class_a_r_p.html#a25c895b799516c89d74f3f48a533366a">sendPacketToNIC</a>(msg, ie, multicastMacAddr);
+    }
+
+    <span class="keywordflow">if</span> (<a class="code" href="class_a_r_p.html#abe27b98bb95609b9ee229382b5aedffb">globalARP</a>)
+    {
+        ARPCache::iterator it = <a class="code" href="class_a_r_p.html#aea4b99384414bcbb7fd32d8c93227e71">globalArpCache</a>.find(nextHopAddr);
+        <span class="keywordflow">if</span> (it==<a class="code" href="class_a_r_p.html#aea4b99384414bcbb7fd32d8c93227e71">globalArpCache</a>.end())
+            <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Address not found in global ARP cache: %s&quot;</span>, nextHopAddr.str().c_str());
+        <a class="code" href="class_a_r_p.html#aa34968302d8f2c113ad7684024f274de">sendPacketToNIC</a>(msg, ie, (*it).second-&gt;macAddress, <a class="code" href="_ieee802_ctrl__m_8h.html#a0786b7c38992d7a0faa09df8fe644fe6ab2b889adbcd85458d549249e8f1d3bcd">ETHERTYPE_IPv4</a>);
         <span class="keywordflow">return</span>;
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>    }
+    }
 
     <span class="comment">// try look up</span>
     ARPCache::iterator it = <a class="code" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a>.find(nextHopAddr);
@@ -652,7 +808,7 @@ Protected Attributes</h2></td></tr>
     {
         <span class="comment">// no cache entry: launch ARP request</span>
         ARPCacheEntry *entry = <span class="keyword">new</span> ARPCacheEntry();
-        ARPCache::iterator where = <a class="code" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a>.insert(<a class="code" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a>.begin(), std::make_pair(nextHopAddr,entry));
+        ARPCache::iterator where = <a class="code" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a>.insert(<a class="code" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a>.begin(), std::make_pair(nextHopAddr, entry));
         entry-&gt;myIter = where; <span class="comment">// note: &quot;inserting a new element into a map does not invalidate iterators that point to existing elements&quot;</span>
         entry-&gt;ie = ie;
 
@@ -687,7 +843,7 @@ Protected Attributes</h2></td></tr>
     {
         <span class="comment">// valid ARP cache entry found, flag msg with MAC address and send it out</span>
         <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;ARP cache hit, MAC address for &quot;</span> &lt;&lt; nextHopAddr &lt;&lt; <span class="stringliteral">&quot; is &quot;</span> &lt;&lt; (*it).second-&gt;macAddress &lt;&lt; <span class="stringliteral">&quot;, sending packet down\n&quot;</span>;
-        <a class="code" href="class_a_r_p.html#a25c895b799516c89d74f3f48a533366a">sendPacketToNIC</a>(msg, ie, (*it).second-&gt;macAddress);
+        <a class="code" href="class_a_r_p.html#aa34968302d8f2c113ad7684024f274de">sendPacketToNIC</a>(msg, ie, (*it).second-&gt;macAddress, <a class="code" href="_ieee802_ctrl__m_8h.html#a0786b7c38992d7a0faa09df8fe644fe6ab2b889adbcd85458d549249e8f1d3bcd">ETHERTYPE_IPv4</a>);
     }
 }
 </pre></div>
@@ -698,7 +854,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_a_r_p.html#aa3340435405d27f330d2813acb3ae473">ARP::requestTimedOut</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_a_r_p.html#aa3340435405d27f330d2813acb3ae473">ARP::requestTimedOut</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>selfmsg</em></td><td>)</td>
@@ -708,18 +864,16 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8cc_source.html#l00273">273</a> of file <a class="el" href="_a_r_p_8cc_source.html">ARP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00085">handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#a729b4d6391b1e2d3b4743f7918ab879e">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     ARPCacheEntry *entry = (ARPCacheEntry *)selfmsg-&gt;getContextPointer();
     entry-&gt;numRetries++;
     <span class="keywordflow">if</span> (entry-&gt;numRetries &lt; <a class="code" href="class_a_r_p.html#ab3c12470dabeadd4ccef62cec1abd68c">retryCount</a>)
     {
         <span class="comment">// retry</span>
-        <a class="code" href="class_i_p_address.html">IPAddress</a> nextHopAddr = entry-&gt;myIter-&gt;first;
+        <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a> nextHopAddr = entry-&gt;myIter-&gt;first;
         <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;ARP request for &quot;</span> &lt;&lt; nextHopAddr &lt;&lt; <span class="stringliteral">&quot; timed out, resending\n&quot;</span>;
-        <a class="code" href="class_a_r_p.html#affe53baeba58d8dd825d29101dd13381">sendARPRequest</a>(entry-&gt;ie, nextHopAddr);
+        <a class="code" href="class_a_r_p.html#a9a8dcdd8abbadf1a14c87120e2b49e08">sendARPRequest</a>(entry-&gt;ie, nextHopAddr);
         scheduleAt(simTime()+<a class="code" href="class_a_r_p.html#af8acfc0671e9b49fdb9758ca0ee5bfc1">retryTimeout</a>, selfmsg);
         <span class="keywordflow">return</span>;
     }
@@ -732,7 +886,7 @@ Protected Attributes</h2></td></tr>
        &lt;&lt; <span class="stringliteral">&quot; waiting packets from the queue\n&quot;</span>;
     <span class="keywordflow">while</span> (!pendingPackets.empty())
     {
-        MsgPtrVector::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = pendingPackets.begin();
+        MsgPtrVector::iterator i = pendingPackets.begin();
         cMessage *msg = (*i);
         pendingPackets.erase(i);
         <a class="code" href="class_a_r_p.html#a103eb6a9d5bfc22f869a36f0a2b87066">pendingQueue</a>.remove(msg);
@@ -742,16 +896,17 @@ Protected Attributes</h2></td></tr>
     <a class="code" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a>.erase(entry-&gt;myIter);
     <span class="keyword">delete</span> entry;
     <a class="code" href="class_a_r_p.html#aefe4a5386cc690ff31427347c31beecc">numFailedResolutions</a>++;
+    emit(<a class="code" href="class_a_r_p.html#a5e711f45f1d4076c552654e9dcecba7a">failedResolutionSignal</a>, 1L);
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="affe53baeba58d8dd825d29101dd13381"></a><!-- doxytag: member="ARP::sendARPRequest" ref="affe53baeba58d8dd825d29101dd13381" args="(InterfaceEntry *ie, IPAddress ipAddress)" -->
+<a class="anchor" id="a9a8dcdd8abbadf1a14c87120e2b49e08"></a><!-- doxytag: member="ARP::sendARPRequest" ref="a9a8dcdd8abbadf1a14c87120e2b49e08" args="(InterfaceEntry *ie, IPv4Address ipAddress)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_a_r_p.html#affe53baeba58d8dd825d29101dd13381">ARP::sendARPRequest</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_a_r_p.html#a9a8dcdd8abbadf1a14c87120e2b49e08">ARP::sendARPRequest</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_interface_entry.html">InterfaceEntry</a> *&#160;</td>
           <td class="paramname"><em>ie</em>, </td>
@@ -759,7 +914,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_i_p_address.html">IPAddress</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_i_pv4_address.html">IPv4Address</a>&#160;</td>
           <td class="paramname"><em>ipAddress</em>&#160;</td>
         </tr>
         <tr>
@@ -771,39 +926,38 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8cc_source.html#l00250">250</a> of file <a class="el" href="_a_r_p_8cc_source.html">ARP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00223">initiateARPResolution()</a>, and <a class="el" href="_a_r_p_8cc_source.html#l00273">requestTimedOut()</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#afb8883b1120bb6f4ac30813649d739de">initiateARPResolution()</a>, and <a class="el" href="class_a_r_p.html#aa3340435405d27f330d2813acb3ae473">requestTimedOut()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="comment">// find our own IP address and MAC address on the given interface</span>
-    <a class="code" href="class_m_a_c_address.html">MACAddress</a> myMACAddress = ie-&gt;<a class="code" href="class_interface_entry.html#af8004a12e9aac171699ff1f7f08ee4c4">getMacAddress</a>();
-    <a class="code" href="class_i_p_address.html">IPAddress</a> myIPAddress = ie-&gt;<a class="code" href="class_interface_entry.html#ad47857e772397cc2d00de3a8cf464993">ipv4Data</a>()-&gt;<a class="code" href="class_i_pv4_interface_data.html#aec8ebefd03acad479ac89d31d7228331">getIPAddress</a>();
+    <span class="comment">// find our own IPv4 address and MAC address on the given interface</span>
+    <a class="code" href="class_m_a_c_address.html" title="Stores an IEEE 802 MAC address (6 octets = 48 bits).">MACAddress</a> myMACAddress = ie-&gt;<a class="code" href="class_interface_entry.html#af8004a12e9aac171699ff1f7f08ee4c4">getMacAddress</a>();
+    <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a> myIPAddress = ie-&gt;<a class="code" href="class_interface_entry.html#a4f52f31546a140edf6979882492e1a0b">ipv4Data</a>()-&gt;<a class="code" href="class_i_pv4_interface_data.html#afab661980ddb8db4adc9ba5e9fc1f346">getIPAddress</a>();
 
     <span class="comment">// both must be set</span>
-    ASSERT(!myMACAddress.<a class="code" href="class_m_a_c_address.html#ae41af013d782b46483e7d0c84f0ed107">isUnspecified</a>());
-    ASSERT(!myIPAddress.<a class="code" href="class_i_p_address.html#a7fb3c274d7a8600be890f83c028d5f96">isUnspecified</a>());
+    ASSERT(!myMACAddress.<a class="code" href="class_m_a_c_address.html#ae41af013d782b46483e7d0c84f0ed107" title="Returns true if all address bytes are zero.">isUnspecified</a>());
+    ASSERT(!myIPAddress.<a class="code" href="class_i_pv4_address.html#a76dbddd2575a9e91412b998512b45a2d" title="True if all four address bytes are zero.">isUnspecified</a>());
 
     <span class="comment">// fill out everything in ARP Request packet except dest MAC address</span>
-    <a class="code" href="class_a_r_p_packet.html">ARPPacket</a> *arp = <span class="keyword">new</span> <a class="code" href="class_a_r_p_packet.html">ARPPacket</a>(<span class="stringliteral">&quot;arpREQ&quot;</span>);
+    <a class="code" href="class_a_r_p_packet.html" title="Class generated from networklayer/arp/ARPPacket.msg by opp_msgc.">ARPPacket</a> *arp = <span class="keyword">new</span> <a class="code" href="class_a_r_p_packet.html" title="Class generated from networklayer/arp/ARPPacket.msg by opp_msgc.">ARPPacket</a>(<span class="stringliteral">&quot;arpREQ&quot;</span>);
     arp-&gt;setByteLength(<a class="code" href="_a_r_p_packet__m_8h.html#a95eebb7ce34185c7fc05723b2fcb8231">ARP_HEADER_BYTES</a>);
     arp-&gt;setOpcode(<a class="code" href="_a_r_p_packet__m_8h.html#af8a3b5bb320ff19f496b22c85bc69e10afb58ccf8b7b11505ff2117a10bf6ff61">ARP_REQUEST</a>);
     arp-&gt;setSrcMACAddress(myMACAddress);
     arp-&gt;setSrcIPAddress(myIPAddress);
     arp-&gt;setDestIPAddress(ipAddress);
 
-    <span class="keyword">static</span> <a class="code" href="class_m_a_c_address.html">MACAddress</a> broadcastAddress(<span class="stringliteral">&quot;ff:ff:ff:ff:ff:ff&quot;</span>);
-    <a class="code" href="class_a_r_p.html#a25c895b799516c89d74f3f48a533366a">sendPacketToNIC</a>(arp, ie, broadcastAddress);
+    <span class="keyword">static</span> <a class="code" href="class_m_a_c_address.html" title="Stores an IEEE 802 MAC address (6 octets = 48 bits).">MACAddress</a> broadcastAddress(<span class="stringliteral">&quot;ff:ff:ff:ff:ff:ff&quot;</span>);
+    <a class="code" href="class_a_r_p.html#aa34968302d8f2c113ad7684024f274de">sendPacketToNIC</a>(arp, ie, broadcastAddress, <a class="code" href="_ieee802_ctrl__m_8h.html#a0786b7c38992d7a0faa09df8fe644fe6ab78454b9340abb34bd92a17f01a8060d">ETHERTYPE_ARP</a>);
     <a class="code" href="class_a_r_p.html#a76c6dc1129f43da4ca9f5f659e3b4e30">numRequestsSent</a>++;
+    emit(<a class="code" href="class_a_r_p.html#abc07b0e76d768b6d2797add514d747b9">sentReqSignal</a>, 1L);
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a25c895b799516c89d74f3f48a533366a"></a><!-- doxytag: member="ARP::sendPacketToNIC" ref="a25c895b799516c89d74f3f48a533366a" args="(cMessage *msg, InterfaceEntry *ie, const MACAddress &amp;macAddress)" -->
+<a class="anchor" id="aa34968302d8f2c113ad7684024f274de"></a><!-- doxytag: member="ARP::sendPacketToNIC" ref="aa34968302d8f2c113ad7684024f274de" args="(cMessage *msg, InterfaceEntry *ie, const MACAddress &amp;macAddress, int etherType)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_a_r_p.html#a25c895b799516c89d74f3f48a533366a">ARP::sendPacketToNIC</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_a_r_p.html#aa34968302d8f2c113ad7684024f274de">ARP::sendPacketToNIC</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em>, </td>
@@ -818,7 +972,13 @@ Protected Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="class_m_a_c_address.html">MACAddress</a> &amp;&#160;</td>
-          <td class="paramname"><em>macAddress</em>&#160;</td>
+          <td class="paramname"><em>macAddress</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>etherType</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -829,17 +989,52 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8cc_source.html#l00239">239</a> of file <a class="el" href="_a_r_p_8cc_source.html">ARP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00329">processARPPacket()</a>, <a class="el" href="_a_r_p_8cc_source.html#l00113">processOutboundPacket()</a>, <a class="el" href="_a_r_p_8cc_source.html#l00250">sendARPRequest()</a>, and <a class="el" href="_a_r_p_8cc_source.html#l00456">updateARPCache()</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#a18fd3027c04e06eab2f201434a4ef6d6">processARPPacket()</a>, <a class="el" href="class_a_r_p.html#ad6458365e00f833f9a2145325e19843d">processOutboundPacket()</a>, <a class="el" href="class_a_r_p.html#a9a8dcdd8abbadf1a14c87120e2b49e08">sendARPRequest()</a>, and <a class="el" href="class_a_r_p.html#a6d8b15097a3d45f15b886649ad95ac23">updateARPCache()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// add control info with MAC address</span>
-    <a class="code" href="class_ieee802_ctrl.html">Ieee802Ctrl</a> *controlInfo = <span class="keyword">new</span> <a class="code" href="class_ieee802_ctrl.html">Ieee802Ctrl</a>();
+    <a class="code" href="class_ieee802_ctrl.html" title="Class generated from linklayer/contract/Ieee802Ctrl.msg by opp_msgc.">Ieee802Ctrl</a> *controlInfo = <span class="keyword">new</span> <a class="code" href="class_ieee802_ctrl.html" title="Class generated from linklayer/contract/Ieee802Ctrl.msg by opp_msgc.">Ieee802Ctrl</a>();
     controlInfo-&gt;<a class="code" href="class_ieee802_ctrl.html#a1292986e26f8b3b242dc9765cc560588">setDest</a>(macAddress);
+    controlInfo-&gt;<a class="code" href="class_ieee802_ctrl.html#a00ac46d99fdc8f1ded8a63baeef0d895">setEtherType</a>(etherType);
     msg-&gt;setControlInfo(controlInfo);
 
     <span class="comment">// send out</span>
     send(msg, <a class="code" href="class_a_r_p.html#ac6de460de9c0953ebe248e5b221b6cdc">nicOutBaseGateId</a> + ie-&gt;<a class="code" href="class_interface_entry.html#a315657b6b5281241a69bed8e1171ef6f">getNetworkLayerGateIndex</a>());
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="aaecfe26d854443cb91da80669af85928"></a><!-- doxytag: member="ARP::setChangeAddress" ref="aaecfe26d854443cb91da80669af85928" args="(const IPv4Address &amp;)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_a_r_p.html#aaecfe26d854443cb91da80669af85928">ARP::setChangeAddress</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_i_pv4_address.html">IPv4Address</a> &amp;&#160;</td>
+          <td class="paramname"><em>oldAddress</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+    Enter_Method_Silent();
+    ARPCache::iterator it;
+    <span class="keywordflow">if</span> (<a class="code" href="class_a_r_p.html#abe27b98bb95609b9ee229382b5aedffb">globalARP</a>)
+    {
+        it = <a class="code" href="class_a_r_p.html#aea4b99384414bcbb7fd32d8c93227e71">globalArpCache</a>.find(oldAddress);
+        <span class="keywordflow">if</span> (it!=<a class="code" href="class_a_r_p.html#aea4b99384414bcbb7fd32d8c93227e71">globalArpCache</a>.end())
+        {
+            ARPCacheEntry *entry = (*it).second;
+            <a class="code" href="class_a_r_p.html#aea4b99384414bcbb7fd32d8c93227e71">globalArpCache</a>.erase(it);
+            entry-&gt;pending = <span class="keyword">false</span>;
+            entry-&gt;timer = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+            entry-&gt;numRetries = 0;
+            <a class="code" href="class_i_pv4_address.html" title="IPv4 address.">IPv4Address</a> nextHopAddr = entry-&gt;ie-&gt;ipv4Data()-&gt;getIPAddress();
+            ARPCache::iterator where = <a class="code" href="class_a_r_p.html#aea4b99384414bcbb7fd32d8c93227e71">globalArpCache</a>.insert(<a class="code" href="class_a_r_p.html#aea4b99384414bcbb7fd32d8c93227e71">globalArpCache</a>.begin(), std::make_pair(nextHopAddr, entry));
+            entry-&gt;myIter = where; <span class="comment">// note: &quot;inserting a new element into a map does not invalidate iterators that point to existing elements&quot;</span>
+        }
+    }
 }
 </pre></div>
 </div>
@@ -849,7 +1044,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_a_r_p.html#a6d8b15097a3d45f15b886649ad95ac23">ARP::updateARPCache</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_a_r_p.html#a6d8b15097a3d45f15b886649ad95ac23">ARP::updateARPCache</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="struct_a_r_p_1_1_a_r_p_cache_entry.html">ARPCacheEntry</a> *&#160;</td>
           <td class="paramname"><em>entry</em>, </td>
@@ -869,9 +1064,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8cc_source.html#l00456">456</a> of file <a class="el" href="_a_r_p_8cc_source.html">ARP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00329">processARPPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#a18fd3027c04e06eab2f201434a4ef6d6">processARPPacket()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Updating ARP cache entry: &quot;</span> &lt;&lt; entry-&gt;myIter-&gt;first &lt;&lt; <span class="stringliteral">&quot; &lt;--&gt; &quot;</span> &lt;&lt; macAddress &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
 
@@ -880,7 +1073,7 @@ Protected Attributes</h2></td></tr>
     {
         entry-&gt;pending = <span class="keyword">false</span>;
         <span class="keyword">delete</span> cancelEvent(entry-&gt;timer);
-        entry-&gt;timer = NULL;
+        entry-&gt;timer = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
         entry-&gt;numRetries = 0;
     }
     entry-&gt;macAddress = macAddress;
@@ -890,12 +1083,12 @@ Protected Attributes</h2></td></tr>
     <a class="code" href="class_a_r_p.html#ae27a4597c212a8f6837039ce85d8653f">MsgPtrVector</a>&amp; pendingPackets = entry-&gt;pendingPackets;
     <span class="keywordflow">while</span> (!pendingPackets.empty())
     {
-        MsgPtrVector::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = pendingPackets.begin();
+        MsgPtrVector::iterator i = pendingPackets.begin();
         cMessage *msg = (*i);
         pendingPackets.erase(i);
         <a class="code" href="class_a_r_p.html#a103eb6a9d5bfc22f869a36f0a2b87066">pendingQueue</a>.remove(msg);
         <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;Sending out queued packet &quot;</span> &lt;&lt; msg &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
-        <a class="code" href="class_a_r_p.html#a25c895b799516c89d74f3f48a533366a">sendPacketToNIC</a>(msg, entry-&gt;ie, macAddress);
+        <a class="code" href="class_a_r_p.html#aa34968302d8f2c113ad7684024f274de">sendPacketToNIC</a>(msg, entry-&gt;ie, macAddress, <a class="code" href="_ieee802_ctrl__m_8h.html#a0786b7c38992d7a0faa09df8fe644fe6ab2b889adbcd85458d549249e8f1d3bcd">ETHERTYPE_IPv4</a>);
     }
 }
 </pre></div>
@@ -906,7 +1099,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_a_r_p.html#aa15536a8294f9cedcdc7e3951bd0c447">ARP::updateDisplayString</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_a_r_p.html#aa15536a8294f9cedcdc7e3951bd0c447">ARP::updateDisplayString</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -915,14 +1108,13 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8cc_source.html#l00104">104</a> of file <a class="el" href="_a_r_p_8cc_source.html">ARP.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00085">handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#a729b4d6391b1e2d3b4743f7918ab879e">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     std::stringstream os;
 
     os &lt;&lt; <a class="code" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">arpCache</a>.size() &lt;&lt; <span class="stringliteral">&quot; cache entries\nsent req:&quot;</span> &lt;&lt; <a class="code" href="class_a_r_p.html#a76c6dc1129f43da4ca9f5f659e3b4e30">numRequestsSent</a>
             &lt;&lt; <span class="stringliteral">&quot; repl:&quot;</span> &lt;&lt; <a class="code" href="class_a_r_p.html#a290e24615b0ff5f7c612b79dd1f73379">numRepliesSent</a> &lt;&lt; <span class="stringliteral">&quot; fail:&quot;</span> &lt;&lt; <a class="code" href="class_a_r_p.html#aefe4a5386cc690ff31427347c31beecc">numFailedResolutions</a>;
+
     getDisplayString().setTagArg(<span class="stringliteral">&quot;t&quot;</span>, 0, os.str().c_str());
 }
 </pre></div>
@@ -934,15 +1126,13 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_a_r_p.html#a1743e83e60fcd1b655b45674c84aa632">ARPCache</a> <a class="el" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">ARP::arpCache</a><code> [protected]</code></td>
+          <td class="memname"><a class="el" href="class_a_r_p.html#aadaae0b7a5ec5ed9f0fdd9d4493026ab">ARPCache</a> <a class="el" href="class_a_r_p.html#a59d39887e51925477192853a2a0e5421">ARP::arpCache</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8h_source.html#l00073">73</a> of file <a class="el" href="_a_r_p_8h_source.html">ARP.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00042">initialize()</a>, <a class="el" href="_a_r_p_8cc_source.html#l00329">processARPPacket()</a>, <a class="el" href="_a_r_p_8cc_source.html#l00113">processOutboundPacket()</a>, <a class="el" href="_a_r_p_8cc_source.html#l00273">requestTimedOut()</a>, <a class="el" href="_a_r_p_8cc_source.html#l00104">updateDisplayString()</a>, and <a class="el" href="_a_r_p_8cc_source.html#l00075">~ARP()</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#a1484d11563ac7ea0d81a2036364b3070">getDirectAddressResolution()</a>, <a class="el" href="class_a_r_p.html#a09716187ffa1b37822431df191a7f9f5">getInverseAddressResolution()</a>, <a class="el" href="class_a_r_p.html#a81584e9eee9ce531d8af95599e18f996">initialize()</a>, <a class="el" href="class_a_r_p.html#a18fd3027c04e06eab2f201434a4ef6d6">processARPPacket()</a>, <a class="el" href="class_a_r_p.html#ad6458365e00f833f9a2145325e19843d">processOutboundPacket()</a>, <a class="el" href="class_a_r_p.html#aa3340435405d27f330d2813acb3ae473">requestTimedOut()</a>, <a class="el" href="class_a_r_p.html#aa15536a8294f9cedcdc7e3951bd0c447">updateDisplayString()</a>, and <a class="el" href="class_a_r_p.html#aca6b074fd7f8370879f6d11ec3f3f827">~ARP()</a>.</p>
 
 </div>
 </div>
@@ -957,9 +1147,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8h_source.html#l00065">65</a> of file <a class="el" href="_a_r_p_8h_source.html">ARP.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00042">initialize()</a>, and <a class="el" href="_a_r_p_8cc_source.html#l00113">processOutboundPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#a81584e9eee9ce531d8af95599e18f996">initialize()</a>, and <a class="el" href="class_a_r_p.html#ad6458365e00f833f9a2145325e19843d">processOutboundPacket()</a>.</p>
 
 </div>
 </div>
@@ -974,9 +1162,67 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8h_source.html#l00066">66</a> of file <a class="el" href="_a_r_p_8h_source.html">ARP.h</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#aeb453ea8ed8a5d92e0c839dc61408723">addressRecognized()</a>, and <a class="el" href="class_a_r_p.html#a81584e9eee9ce531d8af95599e18f996">initialize()</a>.</p>
 
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00308">addressRecognized()</a>, and <a class="el" href="_a_r_p_8cc_source.html#l00042">initialize()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a5e711f45f1d4076c552654e9dcecba7a"></a><!-- doxytag: member="ARP::failedResolutionSignal" ref="a5e711f45f1d4076c552654e9dcecba7a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_a_r_p.html#a5e711f45f1d4076c552654e9dcecba7a">ARP::failedResolutionSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_a_r_p.html#a81584e9eee9ce531d8af95599e18f996">initialize()</a>, and <a class="el" href="class_a_r_p.html#aa3340435405d27f330d2813acb3ae473">requestTimedOut()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abe27b98bb95609b9ee229382b5aedffb"></a><!-- doxytag: member="ARP::globalARP" ref="abe27b98bb95609b9ee229382b5aedffb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_a_r_p.html#abe27b98bb95609b9ee229382b5aedffb">ARP::globalARP</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_a_r_p.html#a1484d11563ac7ea0d81a2036364b3070">getDirectAddressResolution()</a>, <a class="el" href="class_a_r_p.html#a09716187ffa1b37822431df191a7f9f5">getInverseAddressResolution()</a>, <a class="el" href="class_a_r_p.html#a81584e9eee9ce531d8af95599e18f996">initialize()</a>, <a class="el" href="class_a_r_p.html#ad6458365e00f833f9a2145325e19843d">processOutboundPacket()</a>, and <a class="el" href="class_a_r_p.html#aaecfe26d854443cb91da80669af85928">setChangeAddress()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aea4b99384414bcbb7fd32d8c93227e71"></a><!-- doxytag: member="ARP::globalArpCache" ref="aea4b99384414bcbb7fd32d8c93227e71" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_a_r_p.html#aadaae0b7a5ec5ed9f0fdd9d4493026ab">ARP::ARPCache</a> <a class="el" href="class_a_r_p.html#aea4b99384414bcbb7fd32d8c93227e71">ARP::globalArpCache</a><code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_a_r_p.html#ad6269a6243141b8b2abee6f89f29d76a">ARP()</a>, <a class="el" href="class_a_r_p.html#a1484d11563ac7ea0d81a2036364b3070">getDirectAddressResolution()</a>, <a class="el" href="class_a_r_p.html#a09716187ffa1b37822431df191a7f9f5">getInverseAddressResolution()</a>, <a class="el" href="class_a_r_p.html#a81584e9eee9ce531d8af95599e18f996">initialize()</a>, <a class="el" href="class_a_r_p.html#ad6458365e00f833f9a2145325e19843d">processOutboundPacket()</a>, <a class="el" href="class_a_r_p.html#aaecfe26d854443cb91da80669af85928">setChangeAddress()</a>, and <a class="el" href="class_a_r_p.html#aca6b074fd7f8370879f6d11ec3f3f827">~ARP()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1e46a1a377ab095b4180a5de176eeac2"></a><!-- doxytag: member="ARP::globalArpCacheRefCnt" ref="a1e46a1a377ab095b4180a5de176eeac2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="class_a_r_p.html#a1e46a1a377ab095b4180a5de176eeac2">ARP::globalArpCacheRefCnt</a> = 0<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_a_r_p.html#ad6269a6243141b8b2abee6f89f29d76a">ARP()</a>, and <a class="el" href="class_a_r_p.html#aca6b074fd7f8370879f6d11ec3f3f827">~ARP()</a>.</p>
 
 </div>
 </div>
@@ -991,9 +1237,22 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8h_source.html#l00078">78</a> of file <a class="el" href="_a_r_p_8h_source.html">ARP.h</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#ad6269a6243141b8b2abee6f89f29d76a">ARP()</a>, <a class="el" href="class_a_r_p.html#a81584e9eee9ce531d8af95599e18f996">initialize()</a>, <a class="el" href="class_a_r_p.html#a18fd3027c04e06eab2f201434a4ef6d6">processARPPacket()</a>, and <a class="el" href="class_a_r_p.html#ad6458365e00f833f9a2145325e19843d">processOutboundPacket()</a>.</p>
 
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00042">initialize()</a>, <a class="el" href="_a_r_p_8cc_source.html#l00329">processARPPacket()</a>, and <a class="el" href="_a_r_p_8cc_source.html#l00113">processOutboundPacket()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a6a00c098c524729bf93d0898c0fb844d"></a><!-- doxytag: member="ARP::initiatedResolutionSignal" ref="a6a00c098c524729bf93d0898c0fb844d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_a_r_p.html#a6a00c098c524729bf93d0898c0fb844d">ARP::initiatedResolutionSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_a_r_p.html#a81584e9eee9ce531d8af95599e18f996">initialize()</a>, and <a class="el" href="class_a_r_p.html#afb8883b1120bb6f4ac30813649d739de">initiateARPResolution()</a>.</p>
 
 </div>
 </div>
@@ -1008,9 +1267,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8h_source.html#l00076">76</a> of file <a class="el" href="_a_r_p_8h_source.html">ARP.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00042">initialize()</a>, <a class="el" href="_a_r_p_8cc_source.html#l00113">processOutboundPacket()</a>, and <a class="el" href="_a_r_p_8cc_source.html#l00239">sendPacketToNIC()</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#a81584e9eee9ce531d8af95599e18f996">initialize()</a>, <a class="el" href="class_a_r_p.html#ad6458365e00f833f9a2145325e19843d">processOutboundPacket()</a>, and <a class="el" href="class_a_r_p.html#aa34968302d8f2c113ad7684024f274de">sendPacketToNIC()</a>.</p>
 
 </div>
 </div>
@@ -1025,9 +1282,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8h_source.html#l00069">69</a> of file <a class="el" href="_a_r_p_8h_source.html">ARP.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00067">finish()</a>, <a class="el" href="_a_r_p_8cc_source.html#l00042">initialize()</a>, <a class="el" href="_a_r_p_8cc_source.html#l00273">requestTimedOut()</a>, and <a class="el" href="_a_r_p_8cc_source.html#l00104">updateDisplayString()</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#a81584e9eee9ce531d8af95599e18f996">initialize()</a>, <a class="el" href="class_a_r_p.html#aa3340435405d27f330d2813acb3ae473">requestTimedOut()</a>, and <a class="el" href="class_a_r_p.html#aa15536a8294f9cedcdc7e3951bd0c447">updateDisplayString()</a>.</p>
 
 </div>
 </div>
@@ -1042,9 +1297,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8h_source.html#l00071">71</a> of file <a class="el" href="_a_r_p_8h_source.html">ARP.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00067">finish()</a>, <a class="el" href="_a_r_p_8cc_source.html#l00042">initialize()</a>, <a class="el" href="_a_r_p_8cc_source.html#l00329">processARPPacket()</a>, and <a class="el" href="_a_r_p_8cc_source.html#l00104">updateDisplayString()</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#a81584e9eee9ce531d8af95599e18f996">initialize()</a>, <a class="el" href="class_a_r_p.html#a18fd3027c04e06eab2f201434a4ef6d6">processARPPacket()</a>, and <a class="el" href="class_a_r_p.html#aa15536a8294f9cedcdc7e3951bd0c447">updateDisplayString()</a>.</p>
 
 </div>
 </div>
@@ -1059,9 +1312,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8h_source.html#l00070">70</a> of file <a class="el" href="_a_r_p_8h_source.html">ARP.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00067">finish()</a>, <a class="el" href="_a_r_p_8cc_source.html#l00042">initialize()</a>, <a class="el" href="_a_r_p_8cc_source.html#l00250">sendARPRequest()</a>, and <a class="el" href="_a_r_p_8cc_source.html#l00104">updateDisplayString()</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#a81584e9eee9ce531d8af95599e18f996">initialize()</a>, <a class="el" href="class_a_r_p.html#a9a8dcdd8abbadf1a14c87120e2b49e08">sendARPRequest()</a>, and <a class="el" href="class_a_r_p.html#aa15536a8294f9cedcdc7e3951bd0c447">updateDisplayString()</a>.</p>
 
 </div>
 </div>
@@ -1076,9 +1327,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8h_source.html#l00068">68</a> of file <a class="el" href="_a_r_p_8h_source.html">ARP.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00067">finish()</a>, <a class="el" href="_a_r_p_8cc_source.html#l00042">initialize()</a>, and <a class="el" href="_a_r_p_8cc_source.html#l00223">initiateARPResolution()</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#a81584e9eee9ce531d8af95599e18f996">initialize()</a>, and <a class="el" href="class_a_r_p.html#afb8883b1120bb6f4ac30813649d739de">initiateARPResolution()</a>.</p>
 
 </div>
 </div>
@@ -1093,9 +1342,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8h_source.html#l00075">75</a> of file <a class="el" href="_a_r_p_8h_source.html">ARP.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00042">initialize()</a>, <a class="el" href="_a_r_p_8cc_source.html#l00113">processOutboundPacket()</a>, <a class="el" href="_a_r_p_8cc_source.html#l00273">requestTimedOut()</a>, and <a class="el" href="_a_r_p_8cc_source.html#l00456">updateARPCache()</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#a81584e9eee9ce531d8af95599e18f996">initialize()</a>, <a class="el" href="class_a_r_p.html#ad6458365e00f833f9a2145325e19843d">processOutboundPacket()</a>, <a class="el" href="class_a_r_p.html#aa3340435405d27f330d2813acb3ae473">requestTimedOut()</a>, and <a class="el" href="class_a_r_p.html#a6d8b15097a3d45f15b886649ad95ac23">updateARPCache()</a>.</p>
 
 </div>
 </div>
@@ -1110,9 +1357,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8h_source.html#l00064">64</a> of file <a class="el" href="_a_r_p_8h_source.html">ARP.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00042">initialize()</a>, and <a class="el" href="_a_r_p_8cc_source.html#l00273">requestTimedOut()</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#a81584e9eee9ce531d8af95599e18f996">initialize()</a>, and <a class="el" href="class_a_r_p.html#aa3340435405d27f330d2813acb3ae473">requestTimedOut()</a>.</p>
 
 </div>
 </div>
@@ -1127,9 +1372,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8h_source.html#l00063">63</a> of file <a class="el" href="_a_r_p_8h_source.html">ARP.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00042">initialize()</a>, <a class="el" href="_a_r_p_8cc_source.html#l00223">initiateARPResolution()</a>, and <a class="el" href="_a_r_p_8cc_source.html#l00273">requestTimedOut()</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#a81584e9eee9ce531d8af95599e18f996">initialize()</a>, <a class="el" href="class_a_r_p.html#afb8883b1120bb6f4ac30813649d739de">initiateARPResolution()</a>, and <a class="el" href="class_a_r_p.html#aa3340435405d27f330d2813acb3ae473">requestTimedOut()</a>.</p>
 
 </div>
 </div>
@@ -1144,15 +1387,43 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_a_r_p_8h_source.html#l00079">79</a> of file <a class="el" href="_a_r_p_8h_source.html">ARP.h</a>.</p>
+<p>Referenced by <a class="el" href="class_a_r_p.html#aeb453ea8ed8a5d92e0c839dc61408723">addressRecognized()</a>, <a class="el" href="class_a_r_p.html#ad6269a6243141b8b2abee6f89f29d76a">ARP()</a>, and <a class="el" href="class_a_r_p.html#a81584e9eee9ce531d8af95599e18f996">initialize()</a>.</p>
 
-<p>Referenced by <a class="el" href="_a_r_p_8cc_source.html#l00308">addressRecognized()</a>, and <a class="el" href="_a_r_p_8cc_source.html#l00042">initialize()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="a2b2d6ddf595295919f2fb816c5bb6ce8"></a><!-- doxytag: member="ARP::sentReplySignal" ref="a2b2d6ddf595295919f2fb816c5bb6ce8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_a_r_p.html#a2b2d6ddf595295919f2fb816c5bb6ce8">ARP::sentReplySignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_a_r_p.html#a81584e9eee9ce531d8af95599e18f996">initialize()</a>, and <a class="el" href="class_a_r_p.html#a18fd3027c04e06eab2f201434a4ef6d6">processARPPacket()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abc07b0e76d768b6d2797add514d747b9"></a><!-- doxytag: member="ARP::sentReqSignal" ref="abc07b0e76d768b6d2797add514d747b9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_a_r_p.html#abc07b0e76d768b6d2797add514d747b9">ARP::sentReqSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_a_r_p.html#a81584e9eee9ce531d8af95599e18f996">initialize()</a>, and <a class="el" href="class_a_r_p.html#a9a8dcdd8abbadf1a14c87120e2b49e08">sendARPRequest()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_a_r_p_8h_source.html">ARP.h</a></li>
-<li><a class="el" href="_a_r_p_8cc_source.html">ARP.cc</a></li>
+<li><a class="el" href="_a_r_p_8h.html">ARP.h</a></li>
+<li><a class="el" href="_a_r_p_8cc.html">ARP.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -1160,7 +1431,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_a_r_p.html">ARP</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:46 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:22 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

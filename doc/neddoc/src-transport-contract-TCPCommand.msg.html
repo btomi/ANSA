@@ -20,8 +20,8 @@
    </td>
    <td>
 
-<p>TCP command codes, sent by the application to <a href="inet.transport.tcp.TCP.html">TCP</a>. These constants
-should be set as message kind on a message sent to the <a href="inet.transport.tcp.TCP.html">TCP</a> entity.</p>
+<p>TCP command codes, sent by the application to TCP. These constants
+should be set as message kind on a message sent to the TCP entity.</p>
 
    </td>
 </tr>
@@ -34,7 +34,7 @@ should be set as message kind on a message sent to the <a href="inet.transport.t
    </td>
    <td>
 
-<p>TCP indications, sent by <a href="inet.transport.tcp.TCP.html">TCP</a> to the application. <a href="inet.transport.tcp.TCP.html">TCP</a> will set these
+<p>TCP indications, sent by TCP to the application. TCP will set these
 constants as message kind on messages it sends to the application.</p>
 
    </td>
@@ -62,7 +62,7 @@ constants as message kind on messages it sends to the application.</p>
    <td>
 
 <p>Control info for TCP connections. This class is to be set as control info
-(see cMessage::setControlInfo()) on all messages exchanged between <a href="inet.transport.tcp.TCP.html">TCP</a> and
+(see cMessage::setControlInfo()) on all messages exchanged between TCP and
 application, in both directions. Some commands and indications
 (TCP_C_OPEN_xxx, TCP_I_STATUS) use subclasses.</p>
 
@@ -83,6 +83,19 @@ application, in both directions. Some commands and indications
 </tr>
 <tr>
    <td>
+<a href="TCPDataTransferMode.html">TCPDataTransferMode</a>
+   </td>
+   <td>
+<i>enum</i>
+   </td>
+   <td>
+
+<p>Defines what to transmit as payload in TCP segments</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
 <a href="TCPOpenCommand.html">TCPOpenCommand</a>
    </td>
    <td>
@@ -90,7 +103,7 @@ application, in both directions. Some commands and indications
    </td>
    <td>
 
-<p>Control info to be used for active or passive <a href="inet.transport.tcp.TCP.html">TCP</a> open.</p>
+<p>Control info to be used for active or passive TCP open.</p>
 
    </td>
 </tr>
@@ -117,7 +130,7 @@ application, in both directions. Some commands and indications
    <td>
 
 <p>Sent with message kind TCP_I_ESTABLISHED, to let the app know
-about the local and remote <a href="inet.networklayer.ipv4.IP.html">IP</a> address and port.</p>
+about the local and remote IP address and port.</p>
 
    </td>
 </tr>
@@ -164,16 +177,15 @@ TCPConnection.h.</p>
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">noncobject</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPvXAddress</span><span style="color: #000000; ">;
 
 </span><span style="color: #808080; font-style: italic; ">//
-// \TCP command codes, sent by the application to TCP. These constants
+// TCP command codes, sent by the application to TCP. These constants
 // should be set as message kind on a message sent to the TCP entity.
 //
-// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> TCPCommand, TCPOpenCommand, TCP
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~TCPCommand, ~TCPOpenCommand, ~ITCP
 //
 </span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; "> </span><span style="color: #000000; ">TcpCommandCode</span><span style="color: #000000; ">
 {
-
-    </span><span style="color: #000000; ">TCP_C_OPEN_ACTIVE</span><span style="color: #000000; "> = </span><span style="color: #008000; ">1</span><span style="color: #000000; ">;   </span><span style="color: #808080; font-style: italic; ">// active open (must carry TCPOpenCommand)
-</span><span style="color: #000000; ">    </span><span style="color: #000000; ">TCP_C_OPEN_PASSIVE</span><span style="color: #000000; "> = </span><span style="color: #008000; ">2</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// passive open (must carry TCPOpenCommand)
+    </span><span style="color: #000000; ">TCP_C_OPEN_ACTIVE</span><span style="color: #000000; "> = </span><span style="color: #008000; ">1</span><span style="color: #000000; ">;   </span><span style="color: #808080; font-style: italic; ">// active open (must carry ~TCPOpenCommand)
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">TCP_C_OPEN_PASSIVE</span><span style="color: #000000; "> = </span><span style="color: #008000; ">2</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// passive open (must carry ~TCPOpenCommand)
 </span><span style="color: #000000; ">    </span><span style="color: #000000; ">TCP_C_SEND</span><span style="color: #000000; "> = </span><span style="color: #008000; ">3</span><span style="color: #000000; ">;          </span><span style="color: #808080; font-style: italic; ">// send data (set on data packet)
 </span><span style="color: #000000; ">    </span><span style="color: #000000; ">TCP_C_CLOSE</span><span style="color: #000000; "> = </span><span style="color: #008000; ">5</span><span style="color: #000000; ">;         </span><span style="color: #808080; font-style: italic; ">// &quot;I have no more data to send&quot;
 </span><span style="color: #000000; ">    </span><span style="color: #000000; ">TCP_C_ABORT</span><span style="color: #000000; "> = </span><span style="color: #008000; ">6</span><span style="color: #000000; ">;         </span><span style="color: #808080; font-style: italic; ">// abort connection
@@ -182,14 +194,13 @@ TCPConnection.h.</p>
 
 
 </span><span style="color: #808080; font-style: italic; ">//
-// \TCP indications, sent by TCP to the application. TCP will set these
+// TCP indications, sent by TCP to the application. TCP will set these
 // constants as message kind on messages it sends to the application.
 //
-// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> TCPCommand, TCPStatusInfo, TCP
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~TCPCommand, ~TCPStatusInfo, ~ITCP
 //
 </span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; "> </span><span style="color: #000000; ">TcpStatusInd</span><span style="color: #000000; ">
 {
-
     </span><span style="color: #000000; ">TCP_I_DATA</span><span style="color: #000000; "> = </span><span style="color: #008000; ">1</span><span style="color: #000000; ">;              </span><span style="color: #808080; font-style: italic; ">// data packet (set on data packet)
 </span><span style="color: #000000; ">    </span><span style="color: #000000; ">TCP_I_URGENT_DATA</span><span style="color: #000000; "> = </span><span style="color: #008000; ">2</span><span style="color: #000000; ">;       </span><span style="color: #808080; font-style: italic; ">// urgent data (set on data packet)
 </span><span style="color: #000000; ">    </span><span style="color: #000000; ">TCP_I_ESTABLISHED</span><span style="color: #000000; "> = </span><span style="color: #008000; ">3</span><span style="color: #000000; ">;       </span><span style="color: #808080; font-style: italic; ">// connection established
@@ -198,7 +209,7 @@ TCPConnection.h.</p>
 </span><span style="color: #000000; ">    </span><span style="color: #000000; ">TCP_I_CONNECTION_REFUSED</span><span style="color: #000000; "> = </span><span style="color: #008000; ">6</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// connection refused
 </span><span style="color: #000000; ">    </span><span style="color: #000000; ">TCP_I_CONNECTION_RESET</span><span style="color: #000000; "> = </span><span style="color: #008000; ">7</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// connection reset
 </span><span style="color: #000000; ">    </span><span style="color: #000000; ">TCP_I_TIMED_OUT</span><span style="color: #000000; "> = </span><span style="color: #008000; ">8</span><span style="color: #000000; ">;         </span><span style="color: #808080; font-style: italic; ">// conn-estab timer went off, or max retransm. count reached
-</span><span style="color: #000000; ">    </span><span style="color: #000000; ">TCP_I_STATUS</span><span style="color: #000000; "> = </span><span style="color: #008000; ">9</span><span style="color: #000000; ">;            </span><span style="color: #808080; font-style: italic; ">// status info (will carry TCPStatusInfo)
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">TCP_I_STATUS</span><span style="color: #000000; "> = </span><span style="color: #008000; ">9</span><span style="color: #000000; ">;            </span><span style="color: #808080; font-style: italic; ">// status info (will carry ~TCPStatusInfo)
 </span><span style="color: #000000; ">}
 
 
@@ -207,12 +218,11 @@ TCPConnection.h.</p>
 //
 </span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; "> </span><span style="color: #000000; ">TCPErrorCode</span><span style="color: #000000; ">
 {
-
 }
 
 
 </span><span style="color: #808080; font-style: italic; ">//
-// Control info for \TCP connections. This class is to be set as control info
+// Control info for TCP connections. This class is to be set as control info
 // (see cMessage::setControlInfo()) on all messages exchanged between TCP and
 // application, in both directions. Some commands and indications
 // (TCP_C_OPEN_xxx, TCP_I_STATUS) use subclasses.
@@ -223,7 +233,7 @@ TCPConnection.h.</p>
 //
 </span><span style="color: #0000ff; font-style: italic; ">//# </span><span style="color: #000080; ">TODO</span><span style="color: #0000ff; font-style: italic; "> explain userId
 </span><span style="color: #808080; font-style: italic; ">//
-// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> TcpCommandCode, TcpStatusInd, TCPOpenCommand, TCPStatusInfo, TCP
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~TcpCommandCode, ~TcpStatusInd, ~TCPOpenCommand, ~TCPStatusInfo, ~ITCP
 //
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">TCPCommand</span><span style="color: #000000; ">
 {
@@ -241,6 +251,26 @@ TCPConnection.h.</p>
     </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">messageText</span><span style="color: #000000; ">;
 }
 
+</span><span style="color: #808080; font-style: italic; ">//
+// Defines what to transmit as payload in TCP segments
+//
+// Currently you have the following choices:
+//   - TCP_TRANSFER_BYTECOUNT:
+//      TCP layer will transmit byte counts only.
+//   - TCP_TRANSFER_OBJECT:
+//      TCP layer will transmit the copy of application packet C++ objects
+//   - TCP_TRANSFER_BYTESTREAM:
+//      TCP layer will transmit bytes of the application packet.
+//
+// See ~ITCP (the TCP layer interface) for details.
+//
+</span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; "> </span><span style="color: #000000; ">TCPDataTransferMode</span><span style="color: #000000; ">
+{
+    </span><span style="color: #000000; ">TCP_TRANSFER_UNDEFINED</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">;         </span><span style="color: #808080; font-style: italic; ">// Invalid value
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">TCP_TRANSFER_BYTECOUNT</span><span style="color: #000000; "> = </span><span style="color: #008000; ">1</span><span style="color: #000000; ">;         </span><span style="color: #808080; font-style: italic; ">// Transmit byte counts only
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">TCP_TRANSFER_OBJECT</span><span style="color: #000000; "> = </span><span style="color: #008000; ">2</span><span style="color: #000000; ">;            </span><span style="color: #808080; font-style: italic; ">// Transmit the application packet C++ objects
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">TCP_TRANSFER_BYTESTREAM</span><span style="color: #000000; "> = </span><span style="color: #008000; ">3</span><span style="color: #000000; ">;        </span><span style="color: #808080; font-style: italic; ">// Transmit raw bytes
+</span><span style="color: #000000; ">}
 
 </span><span style="color: #808080; font-style: italic; ">//
 // Control info to be used for active or passive TCP open.
@@ -250,22 +280,23 @@ TCPConnection.h.</p>
 // is received from the peer; localPort is optional because TCP supports
 // ephemeral ports.
 //
-// The sendQueueClass, receiveQueueClass and tcpAlgorithmClass fields
-// allow per-connection TCP configuration. These fields may contain
-// names of classes subclassed from TCPSendQueue, TCPReceiveQueue
-// and TCPAlgorithm, respectively. If not set, module parameters with
-// similar names are used.
-//
 // The fork parameter is used with passive open, and controls what happens
 // when an incoming connection is received. With fork=true, it emulates
 // the Unix accept(2) syscall semantics: a new connection structure
-// is created for the connection (with a new connId, see in TCPCommand),
+// is created for the connection (with a new connId, see in ~TCPCommand),
 // and the connection structure with the old connId remains listening.
 // With fork=false, all the above does not happen: the first connection
 // is accepted (with the original connId), and further incoming connections
 // will be refused by TCP by sending an RST segment.
 //
-// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> TcpCommandCode, TCP
+// The dataTransferMode and tcpAlgorithmClass fields
+// allow per-connection TCP configuration.
+// The dataTransferMode field set the 
+// The tcpAlgorithmClass field may contain name of class subclassed from
+// TCPAlgorithm, respectively.
+// If not set, module parameters with similar names are used.
+//
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~TcpCommandCode, ~ITCP
 //
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">TCPOpenCommand</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">TCPCommand</span><span style="color: #000000; ">
 {
@@ -274,16 +305,15 @@ TCPConnection.h.</p>
 </span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">localPort</span><span style="color: #000000; "> = -</span><span style="color: #008000; ">1</span><span style="color: #000000; ">;       </span><span style="color: #808080; font-style: italic; ">// required for passive open
 </span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">remotePort</span><span style="color: #000000; "> = -</span><span style="color: #008000; ">1</span><span style="color: #000000; ">;      </span><span style="color: #808080; font-style: italic; ">// required for active open
 </span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">fork</span><span style="color: #000000; "> = </span><span style="color: #008000; ">false</span><span style="color: #000000; ">;        </span><span style="color: #808080; font-style: italic; ">// used only for passive open
-</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">sendQueueClass</span><span style="color: #000000; ">;    </span><span style="color: #808080; font-style: italic; ">// may be left empty
-</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">receiveQueueClass</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// may be left empty
-</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">tcpAlgorithmClass</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// may be left empty
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">dataTransferMode</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; ">(</span><span style="color: #000000; ">TCPDataTransferMode</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// whether to transmit C++ objects, real bytes or just byte counts. See ~TCPDataTransferMode.
+</span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">tcpAlgorithmClass</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// TCP congestion control algorithm; leave empty for default
 </span><span style="color: #000000; ">}
 
 
 </span><span style="color: #808080; font-style: italic; ">//
 // Control info to be used with the SEND command.
 //
-// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> TcpCommandCode, TCP
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~TcpCommandCode, ~ITCP
 //
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">TCPSendCommand</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">TCPCommand</span><span style="color: #000000; ">
 {
@@ -294,7 +324,7 @@ TCPConnection.h.</p>
 // Sent with message kind TCP_I_ESTABLISHED, to let the app know
 // about the local and remote IP address and port.
 //
-// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> TcpCommandCode, TCP
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~TcpCommandCode, ~ITCP
 //
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">TCPConnectInfo</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">TCPCommand</span><span style="color: #000000; ">
 {
@@ -310,7 +340,7 @@ TCPConnection.h.</p>
 // For explanation of variables, see RFC 793 or TCPStateVariables in
 // TCPConnection.h.
 //
-// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> TcpStatusInd, TcpCommandCode, TCP
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~TcpStatusInd, ~TcpCommandCode, ~ITCP
 //
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #000000; ">TCPStatusInfo</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">TCPCommand</span><span style="color: #000000; ">
 {
@@ -342,6 +372,5 @@ TCPConnection.h.</p>
 }
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

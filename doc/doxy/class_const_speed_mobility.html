@@ -75,104 +75,80 @@
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">ConstSpeedMobility Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="ConstSpeedMobility" --><!-- doxytag: inherits="BasicMobility" -->
-<p>Controls all movement related things of a host.  
+<!-- doxytag: class="ConstSpeedMobility" --><!-- doxytag: inherits="LineSegmentsMobilityBase" -->
+<p>Moves along a line with constant speed to a randomly chosen target.  
  <a href="class_const_speed_mobility.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_const_speed_mobility_8h_source.html">ConstSpeedMobility.h</a>&gt;</code></p>
+<p><code>#include &lt;ConstSpeedMobility.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ConstSpeedMobility:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_const_speed_mobility.png" usemap="#ConstSpeedMobility_map" alt=""/>
   <map id="ConstSpeedMobility_map" name="ConstSpeedMobility_map">
-<area href="class_basic_mobility.html" title="Abstract base class for all mobility modules." alt="BasicMobility" shape="rect" coords="0,112,124,136"/>
-<area href="class_basic_module.html" title="Base class for all simple modules of a host that want to have access to the NotificationBoard module..." alt="BasicModule" shape="rect" coords="0,56,124,80"/>
-<area href="class_i_notifiable.html" alt="INotifiable" shape="rect" coords="0,0,124,24"/>
+<area href="class_line_segments_mobility_base.html" title="Base class for mobility models where movement consists of a sequence of linear movements of constant ..." alt="LineSegmentsMobilityBase" shape="rect" coords="86,224,248,248"/>
+<area href="class_moving_mobility_base.html" title="Base class for moving mobility modules." alt="MovingMobilityBase" shape="rect" coords="86,168,248,192"/>
+<area href="class_mobility_base.html" title="Abstract base class for mobility modules." alt="MobilityBase" shape="rect" coords="86,112,248,136"/>
+<area href="class_basic_module.html" title="Base class for all simple modules of a host that want to have access to the NotificationBoard module..." alt="BasicModule" shape="rect" coords="0,56,162,80"/>
+<area href="class_i_mobility.html" title="Abstract base class defining the public interface that must be provided by all mobility modules..." alt="IMobility" shape="rect" coords="172,56,334,80"/>
+<area href="class_i_notifiable.html" title="Clients can receive change notifications from the NotificationBoard via this interface." alt="INotifiable" shape="rect" coords="0,0,162,24"/>
 </map>
  </div></div>
 
 <p><a href="class_const_speed_mobility-members.html">List of all members.</a></p>
 <table class="memberdecls">
+<tr><td colspan="2"><h2><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_const_speed_mobility.html#ac32270e9651e6912ee68531f8775f6a4">ConstSpeedMobility</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_const_speed_mobility.html#a3fbcc5d086c9dfb8c3ac6d80ccbb9625">initialize</a> (int)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes mobility model parameters.  <a href="#a3fbcc5d086c9dfb8c3ac6d80ccbb9625"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_const_speed_mobility.html#af6e485c840b0ec8f0f3a2a925e177e6b">handleSelfMsg</a> (cMessage *msg)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called upon arrival of a self messages.  <a href="#af6e485c840b0ec8f0f3a2a925e177e6b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_const_speed_mobility.html#ae1e2838d4bae6d0821054a5e6c2abb4a">setTargetPosition</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the target position to move to.  <a href="#ae1e2838d4bae6d0821054a5e6c2abb4a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_const_speed_mobility.html#a9162fa1437cf6599ca371aef33edad0b">move</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the host.  <a href="#a9162fa1437cf6599ca371aef33edad0b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_const_speed_mobility.html#a526493cba2a06a0c1df36bc1f190ac1c">initialize</a> (int stage)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes mobility model parameters.  <a href="#a526493cba2a06a0c1df36bc1f190ac1c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_const_speed_mobility.html#ae1e2838d4bae6d0821054a5e6c2abb4a">setTargetPosition</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate a new target position to move to.  <a href="#ae1e2838d4bae6d0821054a5e6c2abb4a"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_const_speed_mobility.html#aaf81c558c4b1774cc167b211052604ec">vHost</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Velocity of the host.  <a href="#aaf81c558c4b1774cc167b211052604ec"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_const_speed_mobility.html#ab5cfb1be4445cfc95ff47222221291bd">updateInterval</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Time interval to update the hosts position.  <a href="#ab5cfb1be4445cfc95ff47222221291bd"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_const_speed_mobility.html#ab35182d4c6b7493c8c5032c7212c164c">stationary</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">If true, the host doesn't move.  <a href="#ab35182d4c6b7493c8c5032c7212c164c"></a><br/></td></tr>
-<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_coord.html">Coord</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_const_speed_mobility.html#af59b8e8b1693f2f8e81d015f96be790e">targetPos</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">parameters to handle the movement of the host  <a href="#af59b8e8b1693f2f8e81d015f96be790e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_coord.html">Coord</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_const_speed_mobility.html#ac5b6bb8b47caff5f6d946d6db14bbc0f">stepSize</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_const_speed_mobility.html#acba4123279b0c3ee840dcc02b20ed785">numSteps</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_const_speed_mobility.html#ae69b84a8287a321ebaed05d92b9811f9">step</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_const_speed_mobility.html#ac5095e1248f9a11346940ce957c0b401">speed</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Speed parameter.  <a href="#ac5095e1248f9a11346940ce957c0b401"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Controls all movement related things of a host. </p>
-<p>Parameters to be specified in omnetpp.ini</p>
-<ul>
-<li>vHost : Speed of a host [m/s]</li>
-<li>updateInterval : Time interval to update the hosts position</li>
-<li>x, y : Starting position of the host, -1 = random</li>
-</ul>
+<div class="textblock"><p>Moves along a line with constant speed to a randomly chosen target. </p>
+<p>When the target is reached it selects randomly a new one.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>Steffen Sroka, Marc Loebbers, Daniel Willkomm </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="class_channel_control.html" title="Monitors which hosts are &quot;in range&quot;. Supports multiple channels.">ChannelControl</a> </dd></dl>
-
-<p>Definition at line <a class="el" href="_const_speed_mobility_8h_source.html#l00041">41</a> of file <a class="el" href="_const_speed_mobility_8h_source.html">ConstSpeedMobility.h</a>.</p>
-</div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="af6e485c840b0ec8f0f3a2a925e177e6b"></a><!-- doxytag: member="ConstSpeedMobility::handleSelfMsg" ref="af6e485c840b0ec8f0f3a2a925e177e6b" args="(cMessage *msg)" -->
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ac32270e9651e6912ee68531f8775f6a4"></a><!-- doxytag: member="ConstSpeedMobility::ConstSpeedMobility" ref="ac32270e9651e6912ee68531f8775f6a4" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_const_speed_mobility.html#af6e485c840b0ec8f0f3a2a925e177e6b">ConstSpeedMobility::handleSelfMsg</a> </td>
+          <td class="memname"><a class="el" href="class_const_speed_mobility.html#ac32270e9651e6912ee68531f8775f6a4">ConstSpeedMobility::ConstSpeedMobility</a> </td>
           <td>(</td>
-          <td class="paramtype">cMessage *&#160;</td>
-          <td class="paramname"><em>msg</em></td><td>)</td>
-          <td><code> [protected, virtual]</code></td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Called upon arrival of a self messages. </p>
-<p>The only self message possible is to indicate a new movement. If host is stationary this function is never called. </p>
-
-<p>Implements <a class="el" href="class_basic_mobility.html#a4441e2aad4569312460b6e2c195e0c49">BasicMobility</a>.</p>
-
-<p>Definition at line <a class="el" href="_const_speed_mobility_8cc_source.html#l00064">64</a> of file <a class="el" href="_const_speed_mobility_8cc_source.html">ConstSpeedMobility.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_const_speed_mobility.html#a9162fa1437cf6599ca371aef33edad0b" title="Move the host.">move</a>();
-    <a class="code" href="class_basic_mobility.html#aeca7c4a0105ebf716bcfb1bb285b5cf3" title="Update the position information for this node.">updatePosition</a>();
-    scheduleAt(simTime() + <a class="code" href="class_const_speed_mobility.html#ab5cfb1be4445cfc95ff47222221291bd" title="Time interval to update the hosts position.">updateInterval</a>, msg);
+    <a class="code" href="class_const_speed_mobility.html#ac5095e1248f9a11346940ce957c0b401" title="Speed parameter.">speed</a> = 0;
 }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a3fbcc5d086c9dfb8c3ac6d80ccbb9625"></a><!-- doxytag: member="ConstSpeedMobility::initialize" ref="a3fbcc5d086c9dfb8c3ac6d80ccbb9625" args="(int)" -->
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a526493cba2a06a0c1df36bc1f190ac1c"></a><!-- doxytag: member="ConstSpeedMobility::initialize" ref="a526493cba2a06a0c1df36bc1f190ac1c" args="(int stage)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_const_speed_mobility.html#a3fbcc5d086c9dfb8c3ac6d80ccbb9625">ConstSpeedMobility::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_const_speed_mobility.html#a526493cba2a06a0c1df36bc1f190ac1c">ConstSpeedMobility::initialize</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>stage</em></td><td>)</td>
@@ -183,72 +159,15 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Initializes mobility model parameters. </p>
-<p>Reads the updateInterval and the velocity</p>
-<p>If the host is not stationary it calculates a random position and schedules a timer to trigger the first movement </p>
 
-<p>Reimplemented from <a class="el" href="class_basic_mobility.html#a6e424be0175ada88871a3b0ff0adeb0e">BasicMobility</a>.</p>
-
-<p>Definition at line <a class="el" href="_const_speed_mobility_8cc_source.html#l00035">35</a> of file <a class="el" href="_const_speed_mobility_8cc_source.html">ConstSpeedMobility.cc</a>.</p>
+<p>Reimplemented from <a class="el" href="class_line_segments_mobility_base.html#a93df492d182199a12256c150f61da90b">LineSegmentsMobilityBase</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_const_speed_mobility.html#a3fbcc5d086c9dfb8c3ac6d80ccbb9625" title="Initializes mobility model parameters.">BasicMobility::initialize</a>(stage);
-
+    <a class="code" href="class_const_speed_mobility.html#a526493cba2a06a0c1df36bc1f190ac1c" title="Initializes mobility model parameters.">LineSegmentsMobilityBase::initialize</a>(stage);
     <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;initializing ConstSpeedMobility stage &quot;</span> &lt;&lt; stage &lt;&lt; endl;
-
     <span class="keywordflow">if</span> (stage == 0)
     {
-        <a class="code" href="class_const_speed_mobility.html#ab5cfb1be4445cfc95ff47222221291bd" title="Time interval to update the hosts position.">updateInterval</a> = par(<span class="stringliteral">&quot;updateInterval&quot;</span>);
-        <a class="code" href="class_const_speed_mobility.html#aaf81c558c4b1774cc167b211052604ec" title="Velocity of the host.">vHost</a> = par(<span class="stringliteral">&quot;vHost&quot;</span>);
-
-        <span class="comment">// if the initial speed is lower than 0, the node is stationary</span>
-        <a class="code" href="class_const_speed_mobility.html#ab35182d4c6b7493c8c5032c7212c164c" title="If true, the host doesn&#39;t move.">stationary</a> = (<a class="code" href="class_const_speed_mobility.html#aaf81c558c4b1774cc167b211052604ec" title="Velocity of the host.">vHost</a> &lt;= 0);
-
-        <span class="comment">//calculate the target position of the host if the host moves</span>
-        <span class="keywordflow">if</span> (!<a class="code" href="class_const_speed_mobility.html#ab35182d4c6b7493c8c5032c7212c164c" title="If true, the host doesn&#39;t move.">stationary</a>)
-        {
-            <a class="code" href="class_const_speed_mobility.html#ae1e2838d4bae6d0821054a5e6c2abb4a" title="Calculate the target position to move to.">setTargetPosition</a>();
-            <span class="comment">//host moves the first time after some random delay to avoid synchronized movements</span>
-            scheduleAt(simTime() + uniform(0, <a class="code" href="class_const_speed_mobility.html#ab5cfb1be4445cfc95ff47222221291bd" title="Time interval to update the hosts position.">updateInterval</a>), <span class="keyword">new</span> cMessage(<span class="stringliteral">&quot;move&quot;</span>));
-        }
-    }
-}
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a9162fa1437cf6599ca371aef33edad0b"></a><!-- doxytag: member="ConstSpeedMobility::move" ref="a9162fa1437cf6599ca371aef33edad0b" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_const_speed_mobility.html#a9162fa1437cf6599ca371aef33edad0b">ConstSpeedMobility::move</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [protected, virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Move the host. </p>
-<p>Move the host if the destination is not reached yet. Otherwise calculate a new random position </p>
-
-<p>Definition at line <a class="el" href="_const_speed_mobility_8cc_source.html#l00096">96</a> of file <a class="el" href="_const_speed_mobility_8cc_source.html">ConstSpeedMobility.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_const_speed_mobility_8cc_source.html#l00064">handleSelfMsg()</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_const_speed_mobility.html#ae69b84a8287a321ebaed05d92b9811f9">step</a>++;
-
-    <span class="keywordflow">if</span> (<a class="code" href="class_const_speed_mobility.html#ae69b84a8287a321ebaed05d92b9811f9">step</a> &lt;= <a class="code" href="class_const_speed_mobility.html#acba4123279b0c3ee840dcc02b20ed785">numSteps</a>)
-    {
-        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;stepping forward. step #=&quot;</span> &lt;&lt; <a class="code" href="class_const_speed_mobility.html#ae69b84a8287a321ebaed05d92b9811f9">step</a> &lt;&lt; <span class="stringliteral">&quot; xpos= &quot;</span> &lt;&lt; <a class="code" href="class_basic_mobility.html#aaaa0e7080d07fb40a1e077c86b99f4ec" title="Stores the actual position of the host.">pos</a>.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a> &lt;&lt; <span class="stringliteral">&quot; ypos=&quot;</span> &lt;&lt; <a class="code" href="class_basic_mobility.html#aaaa0e7080d07fb40a1e077c86b99f4ec" title="Stores the actual position of the host.">pos</a>.
-            y &lt;&lt; endl;
-
-        <a class="code" href="class_basic_mobility.html#aaaa0e7080d07fb40a1e077c86b99f4ec" title="Stores the actual position of the host.">pos</a> += <a class="code" href="class_const_speed_mobility.html#ac5b6bb8b47caff5f6d946d6db14bbc0f">stepSize</a>;
-    }
-    <span class="keywordflow">else</span>
-    {
-        <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;destination reached.\n xpos= &quot;</span> &lt;&lt; <a class="code" href="class_basic_mobility.html#aaaa0e7080d07fb40a1e077c86b99f4ec" title="Stores the actual position of the host.">pos</a>.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a> &lt;&lt; <span class="stringliteral">&quot; ypos=&quot;</span> &lt;&lt; <a class="code" href="class_basic_mobility.html#aaaa0e7080d07fb40a1e077c86b99f4ec" title="Stores the actual position of the host.">pos</a>.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> &lt;&lt; endl;
-
-        <a class="code" href="class_const_speed_mobility.html#ae1e2838d4bae6d0821054a5e6c2abb4a" title="Calculate the target position to move to.">setTargetPosition</a>();
+        <a class="code" href="class_const_speed_mobility.html#ac5095e1248f9a11346940ce957c0b401" title="Speed parameter.">speed</a> = par(<span class="stringliteral">&quot;speed&quot;</span>);
+        <a class="code" href="class_moving_mobility_base.html#a6c780988c5edd64fc81a7a4d342b8118" title="A mobility model may decide to become stationary at any time.">stationary</a> = <a class="code" href="class_const_speed_mobility.html#ac5095e1248f9a11346940ce957c0b401" title="Speed parameter.">speed</a> == 0;
     }
 }
 </pre></div>
@@ -259,7 +178,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_const_speed_mobility.html#ae1e2838d4bae6d0821054a5e6c2abb4a">ConstSpeedMobility::setTargetPosition</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_const_speed_mobility.html#ae1e2838d4bae6d0821054a5e6c2abb4a">ConstSpeedMobility::setTargetPosition</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -268,159 +187,40 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Calculate the target position to move to. </p>
-<p>Calculate a new random position and the number of steps the host needs to reach this position </p>
+<p>Calculate a new target position to move to. </p>
 
-<p>Definition at line <a class="el" href="_const_speed_mobility_8cc_source.html#l00076">76</a> of file <a class="el" href="_const_speed_mobility_8cc_source.html">ConstSpeedMobility.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_const_speed_mobility_8cc_source.html#l00035">initialize()</a>, and <a class="el" href="_const_speed_mobility_8cc_source.html#l00096">move()</a>.</p>
+<p>Implements <a class="el" href="class_line_segments_mobility_base.html#ae9b65139861752e826e50eb23cd5a470">LineSegmentsMobilityBase</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_const_speed_mobility.html#af59b8e8b1693f2f8e81d015f96be790e" title="parameters to handle the movement of the host">targetPos</a> = <a class="code" href="class_basic_mobility.html#a6968aed9f3c0cf95df01f67fe1ca6118" title="Get a new random position for the host.">getRandomPosition</a>();
-    <span class="keywordtype">double</span> distance = <a class="code" href="class_basic_mobility.html#aaaa0e7080d07fb40a1e077c86b99f4ec" title="Stores the actual position of the host.">pos</a>.<a class="code" href="class_coord.html#ab6a7bfcc5c55e5d8edbc7c0cb5a11626">distance</a>(<a class="code" href="class_const_speed_mobility.html#af59b8e8b1693f2f8e81d015f96be790e" title="parameters to handle the movement of the host">targetPos</a>);
-    <span class="keywordtype">double</span> totalTime = distance / <a class="code" href="class_const_speed_mobility.html#aaf81c558c4b1774cc167b211052604ec" title="Velocity of the host.">vHost</a>;
-    <a class="code" href="class_const_speed_mobility.html#acba4123279b0c3ee840dcc02b20ed785">numSteps</a> = <a class="code" href="class_f_w_math.html#ad5b2d4a46bf7af77e9cc0070b6a82c18">FWMath::round</a>(totalTime / <a class="code" href="class_const_speed_mobility.html#ab5cfb1be4445cfc95ff47222221291bd" title="Time interval to update the hosts position.">updateInterval</a>);
-
-    <a class="code" href="class_const_speed_mobility.html#ac5b6bb8b47caff5f6d946d6db14bbc0f">stepSize</a> = (<a class="code" href="class_const_speed_mobility.html#af59b8e8b1693f2f8e81d015f96be790e" title="parameters to handle the movement of the host">targetPos</a> - <a class="code" href="class_basic_mobility.html#aaaa0e7080d07fb40a1e077c86b99f4ec" title="Stores the actual position of the host.">pos</a>) / <a class="code" href="class_const_speed_mobility.html#acba4123279b0c3ee840dcc02b20ed785">numSteps</a>;
-
-    <a class="code" href="class_const_speed_mobility.html#ae69b84a8287a321ebaed05d92b9811f9">step</a> = 0;
-
-    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;distance=&quot;</span> &lt;&lt; distance &lt;&lt; <span class="stringliteral">&quot; xpos= &quot;</span> &lt;&lt; <a class="code" href="class_const_speed_mobility.html#af59b8e8b1693f2f8e81d015f96be790e" title="parameters to handle the movement of the host">targetPos</a>.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a> &lt;&lt; <span class="stringliteral">&quot; ypos=&quot;</span> &lt;&lt; <a class="code" href="class_const_speed_mobility.html#af59b8e8b1693f2f8e81d015f96be790e" title="parameters to handle the movement of the host">targetPos</a>.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>
-        &lt;&lt; <span class="stringliteral">&quot;totalTime=&quot;</span> &lt;&lt; totalTime &lt;&lt; <span class="stringliteral">&quot; numSteps=&quot;</span> &lt;&lt; <a class="code" href="class_const_speed_mobility.html#acba4123279b0c3ee840dcc02b20ed785">numSteps</a> &lt;&lt; <span class="stringliteral">&quot; vHost=&quot;</span> &lt;&lt; <a class="code" href="class_const_speed_mobility.html#aaf81c558c4b1774cc167b211052604ec" title="Velocity of the host.">vHost</a> &lt;&lt; endl;
+    <a class="code" href="class_line_segments_mobility_base.html#acf4b064a5f64a5bc493e497c1cf134ac" title="End position of current linear movement.">targetPosition</a> = <a class="code" href="class_mobility_base.html#a07eac3b0d197edaa3e9509e80ae21af1" title="Returns a new random position satisfying the constraint area.">getRandomPosition</a>();
+    <a class="code" href="class_coord.html" title="Class for storing 3D coordinates.">Coord</a> positionDelta = <a class="code" href="class_line_segments_mobility_base.html#acf4b064a5f64a5bc493e497c1cf134ac" title="End position of current linear movement.">targetPosition</a> - <a class="code" href="class_mobility_base.html#a82ae637969433a492154b26039b84038" title="The last position that was reported.">lastPosition</a>;
+    <span class="keywordtype">double</span> distance = positionDelta.<a class="code" href="class_coord.html#acc536671c07e1af44e6ad9676a6c39ad" title="Returns the length of this Coords position vector.">length</a>();
+    <a class="code" href="class_moving_mobility_base.html#a5c6e51e3ac03c935482057ce7726eb3d" title="The next simulation time when the mobility module needs to update its internal state.">nextChange</a> = simTime() + distance / <a class="code" href="class_const_speed_mobility.html#ac5095e1248f9a11346940ce957c0b401" title="Speed parameter.">speed</a>;
+    <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;new target set. distance=&quot;</span> &lt;&lt; distance &lt;&lt; <span class="stringliteral">&quot; xpos= &quot;</span> &lt;&lt; <a class="code" href="class_line_segments_mobility_base.html#acf4b064a5f64a5bc493e497c1cf134ac" title="End position of current linear movement.">targetPosition</a>.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a> &lt;&lt; <span class="stringliteral">&quot; ypos=&quot;</span> &lt;&lt; <a class="code" href="class_line_segments_mobility_base.html#acf4b064a5f64a5bc493e497c1cf134ac" title="End position of current linear movement.">targetPosition</a>.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> &lt;&lt; <span class="stringliteral">&quot; nextChange=&quot;</span> &lt;&lt; <a class="code" href="class_moving_mobility_base.html#a5c6e51e3ac03c935482057ce7726eb3d" title="The next simulation time when the mobility module needs to update its internal state.">nextChange</a>;
 }
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="acba4123279b0c3ee840dcc02b20ed785"></a><!-- doxytag: member="ConstSpeedMobility::numSteps" ref="acba4123279b0c3ee840dcc02b20ed785" args="" -->
+<a class="anchor" id="ac5095e1248f9a11346940ce957c0b401"></a><!-- doxytag: member="ConstSpeedMobility::speed" ref="ac5095e1248f9a11346940ce957c0b401" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="class_const_speed_mobility.html#acba4123279b0c3ee840dcc02b20ed785">ConstSpeedMobility::numSteps</a><code> [protected]</code></td>
+          <td class="memname">double <a class="el" href="class_const_speed_mobility.html#ac5095e1248f9a11346940ce957c0b401">ConstSpeedMobility::speed</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_const_speed_mobility_8h_source.html#l00057">57</a> of file <a class="el" href="_const_speed_mobility_8h_source.html">ConstSpeedMobility.h</a>.</p>
+<p>Speed parameter. </p>
 
-<p>Referenced by <a class="el" href="_const_speed_mobility_8cc_source.html#l00096">move()</a>, and <a class="el" href="_const_speed_mobility_8cc_source.html#l00076">setTargetPosition()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab35182d4c6b7493c8c5032c7212c164c"></a><!-- doxytag: member="ConstSpeedMobility::stationary" ref="ab35182d4c6b7493c8c5032c7212c164c" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="class_const_speed_mobility.html#ab35182d4c6b7493c8c5032c7212c164c">ConstSpeedMobility::stationary</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>If true, the host doesn't move. </p>
-
-<p>Definition at line <a class="el" href="_const_speed_mobility_8h_source.html#l00051">51</a> of file <a class="el" href="_const_speed_mobility_8h_source.html">ConstSpeedMobility.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_const_speed_mobility_8cc_source.html#l00035">initialize()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae69b84a8287a321ebaed05d92b9811f9"></a><!-- doxytag: member="ConstSpeedMobility::step" ref="ae69b84a8287a321ebaed05d92b9811f9" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="class_const_speed_mobility.html#ae69b84a8287a321ebaed05d92b9811f9">ConstSpeedMobility::step</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_const_speed_mobility_8h_source.html#l00058">58</a> of file <a class="el" href="_const_speed_mobility_8h_source.html">ConstSpeedMobility.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_const_speed_mobility_8cc_source.html#l00096">move()</a>, and <a class="el" href="_const_speed_mobility_8cc_source.html#l00076">setTargetPosition()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ac5b6bb8b47caff5f6d946d6db14bbc0f"></a><!-- doxytag: member="ConstSpeedMobility::stepSize" ref="ac5b6bb8b47caff5f6d946d6db14bbc0f" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_coord.html">Coord</a> <a class="el" href="class_const_speed_mobility.html#ac5b6bb8b47caff5f6d946d6db14bbc0f">ConstSpeedMobility::stepSize</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_const_speed_mobility_8h_source.html#l00056">56</a> of file <a class="el" href="_const_speed_mobility_8h_source.html">ConstSpeedMobility.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_const_speed_mobility_8cc_source.html#l00096">move()</a>, and <a class="el" href="_const_speed_mobility_8cc_source.html#l00076">setTargetPosition()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="af59b8e8b1693f2f8e81d015f96be790e"></a><!-- doxytag: member="ConstSpeedMobility::targetPos" ref="af59b8e8b1693f2f8e81d015f96be790e" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_coord.html">Coord</a> <a class="el" href="class_const_speed_mobility.html#af59b8e8b1693f2f8e81d015f96be790e">ConstSpeedMobility::targetPos</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>parameters to handle the movement of the host </p>
-
-<p>Definition at line <a class="el" href="_const_speed_mobility_8h_source.html#l00055">55</a> of file <a class="el" href="_const_speed_mobility_8h_source.html">ConstSpeedMobility.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_const_speed_mobility_8cc_source.html#l00076">setTargetPosition()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ab5cfb1be4445cfc95ff47222221291bd"></a><!-- doxytag: member="ConstSpeedMobility::updateInterval" ref="ab5cfb1be4445cfc95ff47222221291bd" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double <a class="el" href="class_const_speed_mobility.html#ab5cfb1be4445cfc95ff47222221291bd">ConstSpeedMobility::updateInterval</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Time interval to update the hosts position. </p>
-
-<p>Definition at line <a class="el" href="_const_speed_mobility_8h_source.html#l00048">48</a> of file <a class="el" href="_const_speed_mobility_8h_source.html">ConstSpeedMobility.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_const_speed_mobility_8cc_source.html#l00064">handleSelfMsg()</a>, <a class="el" href="_const_speed_mobility_8cc_source.html#l00035">initialize()</a>, and <a class="el" href="_const_speed_mobility_8cc_source.html#l00076">setTargetPosition()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aaf81c558c4b1774cc167b211052604ec"></a><!-- doxytag: member="ConstSpeedMobility::vHost" ref="aaf81c558c4b1774cc167b211052604ec" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double <a class="el" href="class_const_speed_mobility.html#aaf81c558c4b1774cc167b211052604ec">ConstSpeedMobility::vHost</a><code> [protected]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Velocity of the host. </p>
-
-<p>Definition at line <a class="el" href="_const_speed_mobility_8h_source.html#l00045">45</a> of file <a class="el" href="_const_speed_mobility_8h_source.html">ConstSpeedMobility.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_const_speed_mobility_8cc_source.html#l00035">initialize()</a>, and <a class="el" href="_const_speed_mobility_8cc_source.html#l00076">setTargetPosition()</a>.</p>
+<p>Referenced by <a class="el" href="class_const_speed_mobility.html#ac32270e9651e6912ee68531f8775f6a4">ConstSpeedMobility()</a>, <a class="el" href="class_const_speed_mobility.html#a526493cba2a06a0c1df36bc1f190ac1c">initialize()</a>, and <a class="el" href="class_const_speed_mobility.html#ae1e2838d4bae6d0821054a5e6c2abb4a">setTargetPosition()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_const_speed_mobility_8h_source.html">ConstSpeedMobility.h</a></li>
-<li><a class="el" href="_const_speed_mobility_8cc_source.html">ConstSpeedMobility.cc</a></li>
+<li><a class="el" href="_const_speed_mobility_8h.html">ConstSpeedMobility.h</a></li>
+<li><a class="el" href="_const_speed_mobility_8cc.html">ConstSpeedMobility.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -428,7 +228,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_const_speed_mobility.html">ConstSpeedMobility</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:47 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:23 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -76,20 +76,26 @@
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pro-types">Protected Types</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">TCPSegment Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="TCPSegment" --><!-- doxytag: inherits="TCPSegment_Base" -->
-<p><code>#include &lt;<a class="el" href="_t_c_p_segment_8h_source.html">TCPSegment.h</a>&gt;</code></p>
+<p>Represents a <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> segment.  
+ <a href="class_t_c_p_segment.html#details">More...</a></p>
+
+<p><code>#include &lt;TCPSegment.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TCPSegment:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_t_c_p_segment.png" usemap="#TCPSegment_map" alt=""/>
   <map id="TCPSegment_map" name="TCPSegment_map">
-<area href="class_t_c_p_segment___base.html" alt="TCPSegment_Base" shape="rect" coords="0,0,119,24"/>
+<area href="class_t_c_p_segment___base.html" title="Class generated from transport/tcp_common/TCPSegment.msg by opp_msgc." alt="TCPSegment_Base" shape="rect" coords="0,0,119,24"/>
 </map>
  </div></div>
 
@@ -97,29 +103,63 @@ Inheritance diagram for TCPSegment:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#ae37506cc379857bee755a8d0b6498375">TCPSegment</a> (const char *name=NULL, int kind=0)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#ae37506cc379857bee755a8d0b6498375">TCPSegment</a> (const char *<a class="el" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>=<a class="el" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, int kind=0)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#ae30971feb1a37bfc8201ec99d86278ba">TCPSegment</a> (const <a class="el" href="class_t_c_p_segment.html">TCPSegment</a> &amp;other)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#aca1b2f1aa318071f92d02cc06d858b81">~TCPSegment</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#aca1b2f1aa318071f92d02cc06d858b81">~TCPSegment</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_c_p_segment.html">TCPSegment</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#a62c6971da862ba385600b2001fca56bd">operator=</a> (const <a class="el" href="class_t_c_p_segment.html">TCPSegment</a> &amp;other)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_t_c_p_segment.html">TCPSegment</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#ab88dc4f5628d2b6dfe04de2fa0b53c18">dup</a> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#a3714472c0a7c4ee55aec5f2ac08f8c56">parsimPack</a> (cCommBuffer *b)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#ae0ded3c168f1fa400bfe99a135a5dace">parsimUnpack</a> (cCommBuffer *b)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#aa2cd5d571393d842a897c0c86da40863">setPayloadArraySize</a> (unsigned int size)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#a636fef262ef122bdf3dd0e34f880b28a">setPayload</a> (unsigned int k, const <a class="el" href="struct_t_c_p_payload_message.html">TCPPayloadMessage</a> &amp;payload_var)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#a3714472c0a7c4ee55aec5f2ac08f8c56">parsimPack</a> (cCommBuffer *b)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#ae0ded3c168f1fa400bfe99a135a5dace">parsimUnpack</a> (cCommBuffer *b)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#aa2cd5d571393d842a897c0c86da40863">setPayloadArraySize</a> (unsigned int size)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generated but unused method, should not be called.  <a href="#aa2cd5d571393d842a897c0c86da40863"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#a636fef262ef122bdf3dd0e34f880b28a">setPayload</a> (unsigned int k, const <a class="el" href="struct_t_c_p_payload_message.html">TCPPayloadMessage</a> &amp;payload_var)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generated but unused method, should not be called.  <a href="#a636fef262ef122bdf3dd0e34f880b28a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#a6b6bdc4bf4819b125921f35269193100">getPayloadArraySize</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of payload messages in this <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> segment.  <a href="#a6b6bdc4bf4819b125921f35269193100"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="struct_t_c_p_payload_message.html">TCPPayloadMessage</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#a75ee5add0c7636da84dbeb6fdbde7dc2">getPayload</a> (unsigned int k)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#a7a0e84405cd795856fbb14b6c6264253">addPayloadMessage</a> (cPacket *msg, uint32 endSequenceNo)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the kth payload message in this <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> segment.  <a href="#a75ee5add0c7636da84dbeb6fdbde7dc2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#a7a0e84405cd795856fbb14b6c6264253">addPayloadMessage</a> (cPacket *msg, uint32 endSequenceNo)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a message object to the <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> segment.  <a href="#a7a0e84405cd795856fbb14b6c6264253"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual cPacket *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#ac973557518bcaa31f0a867b65cac06e4">removeFirstPayloadMessage</a> (uint32 &amp;outEndSequenceNo)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#a41b595a9daaa8132ef11aa10f24dbabd">truncateSegment</a> (uint32 firstSeqNo, uint32 endSeqNo)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes and returns the first message object in this <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> segment.  <a href="#ac973557518bcaa31f0a867b65cac06e4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#a41b595a9daaa8132ef11aa10f24dbabd">truncateSegment</a> (uint32 firstSeqNo, uint32 endSeqNo)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Truncate segment.  <a href="#a41b595a9daaa8132ef11aa10f24dbabd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#a35aa6cad53a7498e06db8b290801bef3">getOptionsArrayLength</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate Length of Options Array in bytes.  <a href="#a35aa6cad53a7498e06db8b290801bef3"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef std::list<br class="typebreak"/>
+&lt; <a class="el" href="struct_t_c_p_payload_message.html">TCPPayloadMessage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#a70cf81c201bc85e5d89f36c9058fa517">PayloadList</a></td></tr>
+<tr><td colspan="2"><h2><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#a2610c76cee4556f8271f05a6e5a3fa7a">truncateData</a> (unsigned int truncleft, unsigned int truncright)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Truncate segment data.  <a href="#a2610c76cee4556f8271f05a6e5a3fa7a"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">std::list&lt; <a class="el" href="struct_t_c_p_payload_message.html">TCPPayloadMessage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_c_p_segment.html#a70cf81c201bc85e5d89f36c9058fa517">PayloadList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#a52bc0fde605bae86ed2cf3451382a1c5">copy</a> (const <a class="el" href="class_t_c_p_segment.html">TCPSegment</a> &amp;other)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_segment.html#afb80e4c321681efd4b852c424db93fbd">clean</a> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Represents a <a class="el" href="class_t_c_p.html">TCP</a> segment. More info in the TCPSegment.msg file (and the documentation generated from it). </p>
+<div class="textblock"><p>Represents a <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> segment. </p>
+<p>More info in the TCPSegment.msg file (and the documentation generated from it). </p>
+</div><hr/><h2>Member Typedef Documentation</h2>
+<a class="anchor" id="a70cf81c201bc85e5d89f36c9058fa517"></a><!-- doxytag: member="TCPSegment::PayloadList" ref="a70cf81c201bc85e5d89f36c9058fa517" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::list&lt;<a class="el" href="struct_t_c_p_payload_message.html">TCPPayloadMessage</a>&gt; <a class="el" href="class_t_c_p_segment.html#a70cf81c201bc85e5d89f36c9058fa517">TCPSegment::PayloadList</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_segment_8h_source.html#l00040">40</a> of file <a class="el" href="_t_c_p_segment_8h_source.html">TCPSegment.h</a>.</p>
-</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+</div>
+</div>
+<hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ae37506cc379857bee755a8d0b6498375"></a><!-- doxytag: member="TCPSegment::TCPSegment" ref="ae37506cc379857bee755a8d0b6498375" args="(const char *name=NULL, int kind=0)" -->
 <div class="memitem">
 <div class="memproto">
@@ -128,7 +168,7 @@ Protected Attributes</h2></td></tr>
           <td class="memname"><a class="el" href="class_t_c_p_segment.html#ae37506cc379857bee755a8d0b6498375">TCPSegment::TCPSegment</a> </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>name</em> = <code>NULL</code>, </td>
+          <td class="paramname"><em>name</em> = <code><a class="el" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -144,9 +184,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_segment_8h_source.html#l00046">46</a> of file <a class="el" href="_t_c_p_segment_8h_source.html">TCPSegment.h</a>.</p>
-<div class="fragment"><pre class="fragment">: <a class="code" href="class_t_c_p_segment___base.html#aa6599ae3dbdd0fcd2b22aa3e0c8816e2">TCPSegment_Base</a>(name,kind) {}
+<div class="fragment"><pre class="fragment">: <a class="code" href="class_t_c_p_segment___base.html#aa6599ae3dbdd0fcd2b22aa3e0c8816e2">TCPSegment_Base</a>(<a class="code" href="dsr_8h.html#a8f8f80d37794cde9472343e4487ba3eb">name</a>, kind) {}
 </pre></div>
 </div>
 </div>
@@ -164,9 +202,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_segment_8h_source.html#l00047">47</a> of file <a class="el" href="_t_c_p_segment_8h_source.html">TCPSegment.h</a>.</p>
-<div class="fragment"><pre class="fragment">: <a class="code" href="class_t_c_p_segment___base.html#aa6599ae3dbdd0fcd2b22aa3e0c8816e2">TCPSegment_Base</a>(other.getName()) {<a class="code" href="class_t_c_p_segment.html#a62c6971da862ba385600b2001fca56bd">operator=</a>(other);}
+<div class="fragment"><pre class="fragment">: <a class="code" href="class_t_c_p_segment___base.html#aa6599ae3dbdd0fcd2b22aa3e0c8816e2">TCPSegment_Base</a>(other) { <a class="code" href="class_t_c_p_segment.html#a52bc0fde605bae86ed2cf3451382a1c5">copy</a>(other); }
 </pre></div>
 </div>
 </div>
@@ -178,20 +214,13 @@ Protected Attributes</h2></td></tr>
           <td class="memname"><a class="el" href="class_t_c_p_segment.html#aca1b2f1aa318071f92d02cc06d858b81">TCPSegment::~TCPSegment</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_segment_8cc_source.html#l00034">34</a> of file <a class="el" href="_t_c_p_segment_8cc_source.html">TCPSegment.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">while</span> (!<a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>.empty())
-    {
-        cPacket *msg = <a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>.front().msg;
-        <a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>.pop_front();
-        dropAndDelete(msg);
-    }
+    <a class="code" href="class_t_c_p_segment.html#afb80e4c321681efd4b852c424db93fbd">clean</a>();
 }
 </pre></div>
 </div>
@@ -202,7 +231,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_segment.html#a7a0e84405cd795856fbb14b6c6264253">TCPSegment::addPayloadMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_segment.html#a7a0e84405cd795856fbb14b6c6264253">TCPSegment::addPayloadMessage</a> </td>
           <td>(</td>
           <td class="paramtype">cPacket *&#160;</td>
           <td class="paramname"><em>msg</em>, </td>
@@ -221,18 +250,67 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Adds a message object to the <a class="el" href="class_t_c_p.html">TCP</a> segment. The sequence number+1 of the last byte of the message should be passed as 2nd argument </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_segment_8cc_source.html#l00118">118</a> of file <a class="el" href="_t_c_p_segment_8cc_source.html">TCPSegment.cc</a>.</p>
+<p>Adds a message object to the <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> segment. </p>
+<p>The sequence number + 1 of the last byte of the message should be passed as 2nd argument </p>
 
-<p>Referenced by <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00068">TCPMsgBasedSendQueue::createSegmentWithBytes()</a>, <a class="el" href="old_2queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00070">tcp_old::TCPMsgBasedSendQueue::createSegmentWithBytes()</a>, and <a class="el" href="_t_c_p_segment_8cc_source.html#l00024">operator=()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_segment.html#a52bc0fde605bae86ed2cf3451382a1c5">copy()</a>, <a class="el" href="class_t_c_p_msg_based_send_queue.html#a7a567c8b65da65321342021a83246aa1">TCPMsgBasedSendQueue::createSegmentWithBytes()</a>, and <a class="el" href="class_tcp_lwip_msg_based_send_queue.html#a37753c4cf2acf450d520aad9c0c40559">TcpLwipMsgBasedSendQueue::createSegmentWithBytes()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     take(msg);
 
-    <a class="code" href="struct_t_c_p_payload_message.html">TCPPayloadMessage</a> payload;
+    <a class="code" href="struct_t_c_p_payload_message.html" title="Struct generated from transport/tcp_common/TCPSegment.msg by opp_msgc.">TCPPayloadMessage</a> payload;
     payload.<a class="code" href="struct_t_c_p_payload_message.html#a9ac3e2bea98b141d2b548112081053f3">endSequenceNo</a> = endSequenceNo;
     payload.<a class="code" href="struct_t_c_p_payload_message.html#af5ae109b0e1d98bdfea0e74630196e7d">msg</a> = msg;
-    <a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>.push_back(payload);
+    <a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>.push_back(payload);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="afb80e4c321681efd4b852c424db93fbd"></a><!-- doxytag: member="TCPSegment::clean" ref="afb80e4c321681efd4b852c424db93fbd" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_segment.html#afb80e4c321681efd4b852c424db93fbd">TCPSegment::clean</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_t_c_p_segment.html#a62c6971da862ba385600b2001fca56bd">operator=()</a>, and <a class="el" href="class_t_c_p_segment.html#aca1b2f1aa318071f92d02cc06d858b81">~TCPSegment()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">while</span> (!<a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>.empty())
+    {
+        cPacket *msg = <a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>.front().msg;
+        <a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>.pop_front();
+        dropAndDelete(msg);
+    }
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a52bc0fde605bae86ed2cf3451382a1c5"></a><!-- doxytag: member="TCPSegment::copy" ref="a52bc0fde605bae86ed2cf3451382a1c5" args="(const TCPSegment &amp;other)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_segment.html#a52bc0fde605bae86ed2cf3451382a1c5">TCPSegment::copy</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_t_c_p_segment.html">TCPSegment</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_t_c_p_segment.html#a62c6971da862ba385600b2001fca56bd">operator=()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">for</span> (PayloadList::const_iterator i = other.<a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>.begin(); i != other.<a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>.end(); ++i)
+        <a class="code" href="class_t_c_p_segment.html#a7a0e84405cd795856fbb14b6c6264253" title="Adds a message object to the TCP segment.">addPayloadMessage</a>(i-&gt;msg-&gt;dup(), i-&gt;endSequenceNo);
 }
 </pre></div>
 </div>
@@ -252,9 +330,35 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_segment___base.html#af70c72ff78c361b6cef41ff7d76a17b1">TCPSegment_Base</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_segment_8h_source.html#l00050">50</a> of file <a class="el" href="_t_c_p_segment_8h_source.html">TCPSegment.h</a>.</p>
 <div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_t_c_p_segment.html#ae37506cc379857bee755a8d0b6498375">TCPSegment</a>(*<span class="keyword">this</span>);}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a35aa6cad53a7498e06db8b290801bef3"></a><!-- doxytag: member="TCPSegment::getOptionsArrayLength" ref="a35aa6cad53a7498e06db8b290801bef3" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short <a class="el" href="class_t_c_p_segment.html#a35aa6cad53a7498e06db8b290801bef3">TCPSegment::getOptionsArrayLength</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Calculate Length of Options Array in bytes. </p>
+
+<p>Referenced by <a class="el" href="class_t_c_p_connection.html#afada098bf955db81aa1786f33c813363">TCPConnection::addSacks()</a>, and <a class="el" href="class_t_c_p_connection.html#a617d790b0cf1905e60c226dff8174a23">TCPConnection::writeHeaderOptions()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> usedLength = 0;
+
+    <span class="keywordflow">for</span> (<a class="code" href="_i_n_e_t_defs_8h.html#a91ad9478d81a7aaf2593e8d9c3d06a14">uint</a> i = 0; i &lt; <a class="code" href="class_t_c_p_segment___base.html#a2db62f2752a3f6a99678227cc5fba74c">getOptionsArraySize</a>(); i++)
+        usedLength += <a class="code" href="class_t_c_p_segment___base.html#a2358acbf0a5fdc1b7b27fd972087dca0">getOptions</a>(i).<a class="code" href="class_t_c_p_option.html#aa74ae1e636ad1868f3b00b07c53aeb6e">getLength</a>();
+
+    <span class="keywordflow">return</span> usedLength;
+}
 </pre></div>
 </div>
 </div>
@@ -272,16 +376,15 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns the kth payload message in this <a class="el" href="class_t_c_p.html">TCP</a> segment </p>
+
+<p>Returns the kth payload message in this <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> segment. </p>
 
 <p>Implements <a class="el" href="class_t_c_p_segment___base.html#a19365e2a79e43e4775f29ca7368ccaab">TCPSegment_Base</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_segment_8cc_source.html#l00105">105</a> of file <a class="el" href="_t_c_p_segment_8cc_source.html">TCPSegment.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    std::list&lt;TCPPayloadMessage&gt;::iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a> = <a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>.begin();
-    <span class="keywordflow">while</span> (k&gt;0 &amp;&amp; i!=<a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>.end())
+    PayloadList::iterator i = <a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>.begin();
+    <span class="keywordflow">while</span> (k&gt;0 &amp;&amp; i!=<a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>.end())
         (++i, --k);
-    <span class="keywordflow">return</span> *<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>;
+    <span class="keywordflow">return</span> *i;
 }
 </pre></div>
 </div>
@@ -299,15 +402,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns the number of payload messages in this <a class="el" href="class_t_c_p.html">TCP</a> segment </p>
+
+<p>Returns the number of payload messages in this <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> segment. </p>
 
 <p>Implements <a class="el" href="class_t_c_p_segment___base.html#a6eed79ec982d5daf600e1f7de1b67590">TCPSegment_Base</a>.</p>
 
-<p>Definition at line <a class="el" href="_t_c_p_segment_8cc_source.html#l00100">100</a> of file <a class="el" href="_t_c_p_segment_8cc_source.html">TCPSegment.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00068">TCPMsgBasedSendQueue::createSegmentWithBytes()</a>, and <a class="el" href="old_2queues_2_t_c_p_msg_based_send_queue_8cc_source.html#l00070">tcp_old::TCPMsgBasedSendQueue::createSegmentWithBytes()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_msg_based_send_queue.html#a7a567c8b65da65321342021a83246aa1">TCPMsgBasedSendQueue::createSegmentWithBytes()</a>, and <a class="el" href="class_tcp_lwip_msg_based_send_queue.html#a37753c4cf2acf450d520aad9c0c40559">TcpLwipMsgBasedSendQueue::createSegmentWithBytes()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">return</span> <a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>.size();
+    <span class="keywordflow">return</span> <a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>.size();
 }
 </pre></div>
 </div>
@@ -326,14 +428,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_segment_8cc_source.html#l00024">24</a> of file <a class="el" href="_t_c_p_segment_8cc_source.html">TCPSegment.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> (<span class="keyword">this</span> == &amp;other) <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+    <a class="code" href="class_t_c_p_segment.html#afb80e4c321681efd4b852c424db93fbd">clean</a>();
     <a class="code" href="class_t_c_p_segment.html#a62c6971da862ba385600b2001fca56bd">TCPSegment_Base::operator=</a>(other);
-
-    <span class="keywordflow">for</span> (std::list&lt;TCPPayloadMessage&gt;::const_iterator <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>=other.<a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>.begin(); <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>!=other.<a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>.end(); ++<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>)
-        <a class="code" href="class_t_c_p_segment.html#a7a0e84405cd795856fbb14b6c6264253">addPayloadMessage</a>(<a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>-&gt;msg-&gt;dup(), <a class="code" href="namespacecesnet.html#a2d959620f0e772e579c21833995d082e">i</a>-&gt;endSequenceNo);
-
+    <a class="code" href="class_t_c_p_segment.html#a52bc0fde605bae86ed2cf3451382a1c5">copy</a>(other);
     <span class="keywordflow">return</span> *<span class="keyword">this</span>;
 }
 </pre></div>
@@ -344,7 +443,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_segment.html#a3714472c0a7c4ee55aec5f2ac08f8c56">TCPSegment::parsimPack</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_segment.html#a3714472c0a7c4ee55aec5f2ac08f8c56">TCPSegment::parsimPack</a> </td>
           <td>(</td>
           <td class="paramtype">cCommBuffer *&#160;</td>
           <td class="paramname"><em>b</em></td><td>)</td>
@@ -355,11 +454,9 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_segment___base.html#aee6c6d92f04b674ecddc0f9333f092b9">TCPSegment_Base</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_segment_8cc_source.html#l00083">83</a> of file <a class="el" href="_t_c_p_segment_8cc_source.html">TCPSegment.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="class_t_c_p_segment.html#a3714472c0a7c4ee55aec5f2ac08f8c56">TCPSegment_Base::parsimPack</a>(b);
-    <a class="code" href="_i_g_m_p_message__m_8h.html#a01eeec11a197f319a820a174e45785ee">doPacking</a>(b, <a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>);
+    <a class="code" href="_d_h_c_p__m_8h.html#a3e4d624e48209b98b317ce44c38cb441">doPacking</a>(b, <a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>);
 }
 </pre></div>
 </div>
@@ -369,7 +466,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_segment.html#ae0ded3c168f1fa400bfe99a135a5dace">TCPSegment::parsimUnpack</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_segment.html#ae0ded3c168f1fa400bfe99a135a5dace">TCPSegment::parsimUnpack</a> </td>
           <td>(</td>
           <td class="paramtype">cCommBuffer *&#160;</td>
           <td class="paramname"><em>b</em></td><td>)</td>
@@ -380,11 +477,9 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="class_t_c_p_segment___base.html#a2a95c5ae9a063ea225cf1b5ebbaae5d4">TCPSegment_Base</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_segment_8cc_source.html#l00089">89</a> of file <a class="el" href="_t_c_p_segment_8cc_source.html">TCPSegment.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="class_t_c_p_segment.html#ae0ded3c168f1fa400bfe99a135a5dace">TCPSegment_Base::parsimUnpack</a>(b);
-    <a class="code" href="_i_g_m_p_message__m_8h.html#a107daf06286e1564b5c28b80080c2999">doUnpacking</a>(b, <a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>);
+    <a class="code" href="_d_h_c_p__m_8h.html#a88b4c35d32a3fa3ad8dc65196eb6e48c">doUnpacking</a>(b, <a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>);
 }
 </pre></div>
 </div>
@@ -403,18 +498,18 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Removes and returns the first message object in this <a class="el" href="class_t_c_p.html">TCP</a> segment. It also returns the sequence number+1 of its last octet in outEndSequenceNo. </p>
 
-<p>Definition at line <a class="el" href="_t_c_p_segment_8cc_source.html#l00128">128</a> of file <a class="el" href="_t_c_p_segment_8cc_source.html">TCPSegment.cc</a>.</p>
+<p>Removes and returns the first message object in this <a class="el" href="class_t_c_p.html" title="Implements the TCP protocol.">TCP</a> segment. </p>
+<p>It also returns the sequence number + 1 of its last octet in outEndSequenceNo. </p>
 
-<p>Referenced by <a class="el" href="_dscp_ttl_corrector_8cc_source.html#l00042">DscpTtlCorrector::handleMessage()</a>, <a class="el" href="queues_2_t_c_p_msg_based_rcv_queue_8cc_source.html#l00053">TCPMsgBasedRcvQueue::insertBytesFromSegment()</a>, and <a class="el" href="old_2queues_2_t_c_p_msg_based_rcv_queue_8cc_source.html#l00055">tcp_old::TCPMsgBasedRcvQueue::insertBytesFromSegment()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_msg_based_rcv_queue.html#a1ef3021020a378ff3b1e7ec037600307">TCPMsgBasedRcvQueue::insertBytesFromSegment()</a>, and <a class="el" href="class_tcp_lwip_msg_based_receive_queue.html#a4a240df919174becd002aeb419732b55">TcpLwipMsgBasedReceiveQueue::notifyAboutIncomingSegmentProcessing()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>.empty())
-        <span class="keywordflow">return</span> NULL;
+    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>.empty())
+        <span class="keywordflow">return</span> <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
 
-    cPacket *msg = <a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>.front().msg;
-    endSequenceNo = <a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>.front().endSequenceNo;
-    <a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>.pop_front();
+    cPacket *msg = <a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>.front().msg;
+    endSequenceNo = <a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>.front().endSequenceNo;
+    <a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>.pop_front();
     drop(msg);
     <span class="keywordflow">return</span> msg;
 }
@@ -426,7 +521,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_segment.html#a636fef262ef122bdf3dd0e34f880b28a">TCPSegment::setPayload</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_segment.html#a636fef262ef122bdf3dd0e34f880b28a">TCPSegment::setPayload</a> </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>k</em>, </td>
@@ -445,11 +540,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Generated but unused method, should not be called. </p>
 
 <p>Implements <a class="el" href="class_t_c_p_segment___base.html#af1eaaf01f7c0be451c0a14f6f3bc73da">TCPSegment_Base</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_segment_8cc_source.html#l00113">113</a> of file <a class="el" href="_t_c_p_segment_8cc_source.html">TCPSegment.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">throw</span> cRuntimeError(<span class="keyword">this</span>, <span class="stringliteral">&quot;setPayload() not supported, use addPayloadMessage()&quot;</span>);
 }
@@ -461,7 +555,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_segment.html#aa2cd5d571393d842a897c0c86da40863">TCPSegment::setPayloadArraySize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_segment.html#aa2cd5d571393d842a897c0c86da40863">TCPSegment::setPayloadArraySize</a> </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>size</em></td><td>)</td>
@@ -470,13 +564,77 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Generated but unused method, should not be called. </p>
 
 <p>Implements <a class="el" href="class_t_c_p_segment___base.html#ae6cd572f9567475eb0eeae7f71707567">TCPSegment_Base</a>.</p>
-
-<p>Definition at line <a class="el" href="_t_c_p_segment_8cc_source.html#l00095">95</a> of file <a class="el" href="_t_c_p_segment_8cc_source.html">TCPSegment.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">throw</span> cRuntimeError(<span class="keyword">this</span>, <span class="stringliteral">&quot;setPayloadArraySize() not supported, use addPayloadMessage()&quot;</span>);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a2610c76cee4556f8271f05a6e5a3fa7a"></a><!-- doxytag: member="TCPSegment::truncateData" ref="a2610c76cee4556f8271f05a6e5a3fa7a" args="(unsigned int truncleft, unsigned int truncright)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_segment.html#a2610c76cee4556f8271f05a6e5a3fa7a">TCPSegment::truncateData</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>truncleft</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>truncright</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Truncate segment data. </p>
+<p>Called from <a class="el" href="class_t_c_p_segment.html#a41b595a9daaa8132ef11aa10f24dbabd" title="Truncate segment.">truncateSegment()</a>. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">truncleft,:</td><td>number of bytes for truncate from begin of data </td></tr>
+    <tr><td class="paramname">truncright,:</td><td>number of bytes for truncate from end of data </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Referenced by <a class="el" href="class_t_c_p_segment.html#a41b595a9daaa8132ef11aa10f24dbabd">truncateSegment()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    ASSERT(<a class="code" href="class_t_c_p_segment___base.html#a29e5ff7cd6d68e90e5ac9ef4b26f4a50">payloadLength_var</a> &gt;= truncleft + truncright);
+
+    <span class="keywordflow">if</span> (0 != <a class="code" href="class_t_c_p_segment___base.html#a6422dafe37b211438777d91cfa0fac06">byteArray_var</a>.<a class="code" href="class_byte_array___base.html#a668ac218ebe80f8aa3aa1cd7d5ce3178">getDataArraySize</a>())
+        <a class="code" href="class_t_c_p_segment___base.html#a6422dafe37b211438777d91cfa0fac06">byteArray_var</a>.<a class="code" href="class_byte_array.html#a7bcf25b8f3352add73d8cd641c4290c4" title="Truncate data content.">truncateData</a>(truncleft, truncright);
+
+    <span class="keywordflow">while</span> (!<a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>.empty() &amp;&amp; (<a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>.front().endSequenceNo - <a class="code" href="class_t_c_p_segment___base.html#ac87bf9e00eee17bf67c7066a835fa127">sequenceNo_var</a>) &lt;= truncleft)
+    {
+        cPacket *msg = <a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>.front().msg;
+        <a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>.pop_front();
+        dropAndDelete(msg);
+    }
+
+
+    <a class="code" href="class_t_c_p_segment___base.html#ac87bf9e00eee17bf67c7066a835fa127">sequenceNo_var</a> += truncleft;
+    <a class="code" href="class_t_c_p_segment___base.html#a29e5ff7cd6d68e90e5ac9ef4b26f4a50">payloadLength_var</a> -= truncleft + truncright;
+
+
+    <span class="comment">// truncate payload data correctly</span>
+    <span class="keywordflow">while</span> (!<a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>.empty() &amp;&amp; (<a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>.back().endSequenceNo - <a class="code" href="class_t_c_p_segment___base.html#ac87bf9e00eee17bf67c7066a835fa127">sequenceNo_var</a>) &gt; <a class="code" href="class_t_c_p_segment___base.html#a29e5ff7cd6d68e90e5ac9ef4b26f4a50">payloadLength_var</a>)
+    {
+        cPacket *msg = <a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>.back().msg;
+        <a class="code" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">payloadList</a>.pop_back();
+        dropAndDelete(msg);
+    }
 }
 </pre></div>
 </div>
@@ -486,7 +644,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_segment.html#a41b595a9daaa8132ef11aa10f24dbabd">TCPSegment::truncateSegment</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_segment.html#a41b595a9daaa8132ef11aa10f24dbabd">TCPSegment::truncateSegment</a> </td>
           <td>(</td>
           <td class="paramtype">uint32&#160;</td>
           <td class="paramname"><em>firstSeqNo</em>, </td>
@@ -505,79 +663,66 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Truncate segment. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">firstSeqNo,:</td><td>sequence no of new first byte </td></tr>
-    <tr><td class="paramname">endSeqNo,:</td><td>sequence no of new last byte+1 </td></tr>
+    <tr><td class="paramname">endSeqNo,:</td><td>sequence no of new last byte + 1 </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_t_c_p_segment_8cc_source.html#l00044">44</a> of file <a class="el" href="_t_c_p_segment_8cc_source.html">TCPSegment.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_connection_rcv_segment_8cc_source.html#l00114">TCPConnection::processSegment1stThru8th()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_connection.html#aa0758284e5bd6bd162b6ff267add2e2d">TCPConnection::processSegment1stThru8th()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span>(<a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(<a class="code" href="class_t_c_p_segment___base.html#ac87bf9e00eee17bf67c7066a835fa127">sequenceNo_var</a>, firstSeqNo))
+    ASSERT(<a class="code" href="class_t_c_p_segment___base.html#a29e5ff7cd6d68e90e5ac9ef4b26f4a50">payloadLength_var</a> &gt; 0);
+
+    <span class="comment">// must have common part:</span>
+<span class="preprocessor">#ifndef NDEBUG</span>
+<span class="preprocessor"></span>    <span class="keywordflow">if</span> (!(<a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(<a class="code" href="class_t_c_p_segment___base.html#ac87bf9e00eee17bf67c7066a835fa127">sequenceNo_var</a>, endSeqNo) &amp;&amp; <a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(firstSeqNo, <a class="code" href="class_t_c_p_segment___base.html#ac87bf9e00eee17bf67c7066a835fa127">sequenceNo_var</a> + <a class="code" href="class_t_c_p_segment___base.html#a29e5ff7cd6d68e90e5ac9ef4b26f4a50">payloadLength_var</a>)))
     {
-        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> truncleft = firstSeqNo - <a class="code" href="class_t_c_p_segment___base.html#ac87bf9e00eee17bf67c7066a835fa127">sequenceNo_var</a>;
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="keyword">this</span>, <span class="stringliteral">&quot;truncateSegment(%u,%u) called on [%u, %u) segment\n&quot;</span>,
+                firstSeqNo, endSeqNo, <a class="code" href="class_t_c_p_segment___base.html#ac87bf9e00eee17bf67c7066a835fa127">sequenceNo_var</a>, <a class="code" href="class_t_c_p_segment___base.html#ac87bf9e00eee17bf67c7066a835fa127">sequenceNo_var</a> + <a class="code" href="class_t_c_p_segment___base.html#a29e5ff7cd6d68e90e5ac9ef4b26f4a50">payloadLength_var</a>);
+    }
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>
+    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> truncleft = 0;
+    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> truncright = 0;
 
-        <span class="keywordflow">while</span> (!<a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>.empty())
-        {
-            <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#af4745b9cf95eb5b78d8ae6c3c8429cfc">seqGE</a>(<a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>.front().endSequenceNo, firstSeqNo))
-                <span class="keywordflow">break</span>;
-
-            cPacket *msg = <a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>.front().msg;
-            <a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>.pop_front();
-            dropAndDelete(msg);
-        }
-
-        <a class="code" href="class_t_c_p_segment___base.html#a29e5ff7cd6d68e90e5ac9ef4b26f4a50">payloadLength_var</a> -= truncleft;
-        sequenceNo_var = firstSeqNo;
-        <span class="comment">//TODO truncate data correctly if need</span>
+    <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#aa2e84a0093c6f222b12a4b443c7278eb">seqLess</a>(<a class="code" href="class_t_c_p_segment___base.html#ac87bf9e00eee17bf67c7066a835fa127">sequenceNo_var</a>, firstSeqNo))
+    {
+        truncleft = firstSeqNo - <a class="code" href="class_t_c_p_segment___base.html#ac87bf9e00eee17bf67c7066a835fa127">sequenceNo_var</a>;
     }
 
-    <span class="keywordflow">if</span>(<a class="code" href="_t_c_p_segment_8h.html#a459ac205bbda777389c12b7353227fbe">seqGreater</a>(sequenceNo_var+<a class="code" href="class_t_c_p_segment___base.html#a29e5ff7cd6d68e90e5ac9ef4b26f4a50">payloadLength_var</a>, endSeqNo))
+    <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#a459ac205bbda777389c12b7353227fbe">seqGreater</a>(<a class="code" href="class_t_c_p_segment___base.html#ac87bf9e00eee17bf67c7066a835fa127">sequenceNo_var</a> + <a class="code" href="class_t_c_p_segment___base.html#a29e5ff7cd6d68e90e5ac9ef4b26f4a50">payloadLength_var</a>, endSeqNo))
     {
-        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> truncright = sequenceNo_var + <a class="code" href="class_t_c_p_segment___base.html#a29e5ff7cd6d68e90e5ac9ef4b26f4a50">payloadLength_var</a> - endSeqNo;
-
-        <span class="keywordflow">while</span> (!<a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>.empty())
-        {
-            <span class="keywordflow">if</span> (<a class="code" href="_t_c_p_segment_8h.html#a55ef269e8ae44948c1d1f1cbe14bc92b">seqLE</a>(<a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>.back().endSequenceNo, endSeqNo))
-                <span class="keywordflow">break</span>;
-
-            cPacket *msg = <a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>.back().msg;
-            <a class="code" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">payloadList</a>.pop_back();
-            dropAndDelete(msg);
-        }
-        <a class="code" href="class_t_c_p_segment___base.html#a29e5ff7cd6d68e90e5ac9ef4b26f4a50">payloadLength_var</a> -= truncright;
-        <span class="comment">//TODO truncate data correctly if need</span>
+        truncright = <a class="code" href="class_t_c_p_segment___base.html#ac87bf9e00eee17bf67c7066a835fa127">sequenceNo_var</a> + <a class="code" href="class_t_c_p_segment___base.html#a29e5ff7cd6d68e90e5ac9ef4b26f4a50">payloadLength_var</a> - endSeqNo;
     }
+
+    <a class="code" href="class_t_c_p_segment.html#a2610c76cee4556f8271f05a6e5a3fa7a" title="Truncate segment data.">truncateData</a>(truncleft, truncright);
 }
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
-<a class="anchor" id="a72e130397e65fd14b59034d597246126"></a><!-- doxytag: member="TCPSegment::payloadList" ref="a72e130397e65fd14b59034d597246126" args="" -->
+<a class="anchor" id="a856a04ef2b1aac72151f0344092f0a2e"></a><!-- doxytag: member="TCPSegment::payloadList" ref="a856a04ef2b1aac72151f0344092f0a2e" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::list&lt;<a class="el" href="struct_t_c_p_payload_message.html">TCPPayloadMessage</a>&gt; <a class="el" href="class_t_c_p_segment.html#a72e130397e65fd14b59034d597246126">TCPSegment::payloadList</a><code> [protected]</code></td>
+          <td class="memname"><a class="el" href="class_t_c_p_segment.html#a70cf81c201bc85e5d89f36c9058fa517">PayloadList</a> <a class="el" href="class_t_c_p_segment.html#a856a04ef2b1aac72151f0344092f0a2e">TCPSegment::payloadList</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_segment_8h_source.html#l00043">43</a> of file <a class="el" href="_t_c_p_segment_8h_source.html">TCPSegment.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_segment_8cc_source.html#l00118">addPayloadMessage()</a>, <a class="el" href="_t_c_p_segment_8cc_source.html#l00105">getPayload()</a>, <a class="el" href="_t_c_p_segment_8cc_source.html#l00100">getPayloadArraySize()</a>, <a class="el" href="_t_c_p_segment_8cc_source.html#l00024">operator=()</a>, <a class="el" href="_t_c_p_segment_8cc_source.html#l00083">parsimPack()</a>, <a class="el" href="_t_c_p_segment_8cc_source.html#l00089">parsimUnpack()</a>, <a class="el" href="_t_c_p_segment_8cc_source.html#l00128">removeFirstPayloadMessage()</a>, <a class="el" href="_t_c_p_segment_8cc_source.html#l00044">truncateSegment()</a>, and <a class="el" href="_t_c_p_segment_8cc_source.html#l00034">~TCPSegment()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_segment.html#a7a0e84405cd795856fbb14b6c6264253">addPayloadMessage()</a>, <a class="el" href="class_t_c_p_segment.html#afb80e4c321681efd4b852c424db93fbd">clean()</a>, <a class="el" href="class_t_c_p_segment.html#a52bc0fde605bae86ed2cf3451382a1c5">copy()</a>, <a class="el" href="class_t_c_p_segment.html#a75ee5add0c7636da84dbeb6fdbde7dc2">getPayload()</a>, <a class="el" href="class_t_c_p_segment.html#a6b6bdc4bf4819b125921f35269193100">getPayloadArraySize()</a>, <a class="el" href="class_t_c_p_segment.html#a3714472c0a7c4ee55aec5f2ac08f8c56">parsimPack()</a>, <a class="el" href="class_t_c_p_segment.html#ae0ded3c168f1fa400bfe99a135a5dace">parsimUnpack()</a>, <a class="el" href="class_t_c_p_segment.html#ac973557518bcaa31f0a867b65cac06e4">removeFirstPayloadMessage()</a>, and <a class="el" href="class_t_c_p_segment.html#a2610c76cee4556f8271f05a6e5a3fa7a">truncateData()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_t_c_p_segment_8h_source.html">TCPSegment.h</a></li>
-<li><a class="el" href="_t_c_p_segment_8cc_source.html">TCPSegment.cc</a></li>
+<li><a class="el" href="_t_c_p_segment_8h.html">TCPSegment.h</a></li>
+<li><a class="el" href="_t_c_p_segment_8cc.html">TCPSegment.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -585,7 +730,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_t_c_p_segment.html">TCPSegment</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:53 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:31 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

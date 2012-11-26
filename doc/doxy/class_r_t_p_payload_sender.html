@@ -75,8 +75,8 @@
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-types">Protected Types</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a>  </div>
   <div class="headertitle">
@@ -84,73 +84,103 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="RTPPayloadSender" -->
-<p><code>#include &lt;<a class="el" href="_r_t_p_payload_sender_8h_source.html">RTPPayloadSender.h</a>&gt;</code></p>
+<p>The class <a class="el" href="class_r_t_p_payload_sender.html" title="The class RTPPayloadSender is the base class for all modules creating RTP data packets.">RTPPayloadSender</a> is the base class for all modules creating <a class="el" href="class_r_t_p.html" title="An RTP is the center of the RTP layer of an endsystem.">RTP</a> data packets.  
+ <a href="class_r_t_p_payload_sender.html#details">More...</a></p>
+
+<p><code>#include &lt;RTPPayloadSender.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for RTPPayloadSender:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_r_t_p_payload_sender.png" usemap="#RTPPayloadSender_map" alt=""/>
   <map id="RTPPayloadSender_map" name="RTPPayloadSender_map">
-<area href="class_r_t_p_a_v_profile_payload32_sender.html" alt="RTPAVProfilePayload32Sender" shape="rect" coords="0,56,191,80"/>
+<area href="class_r_t_p_a_v_profile_payload32_sender.html" title="An RTPAVProfilePayload32Sender is a module for sending data of payload type 32 in the rtp audio/video..." alt="RTPAVProfilePayload32Sender" shape="rect" coords="0,56,191,80"/>
 </map>
  </div></div>
 
 <p><a href="class_r_t_p_payload_sender-members.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933d">SenderStatus</a> { <a class="el" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933da270de7595d9590d548963a3ab8dbb8f3">STOPPED</a>, 
-<a class="el" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933dabc5a7b0a6d991ffde3d9c678d7d2b700">PLAYING</a>
- }</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a6990d34d13be7e9851d6341d251e6c22">RTPPayloadSender</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a6990d34d13be7e9851d6341d251e6c22"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a86725b3d955310caffe95170e482fffe">~RTPPayloadSender</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a3d89be915b854cf2655a68c68cec0ba1">initialize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a31653f5519ad70937f044eecba57ecac">activity</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a86725b3d955310caffe95170e482fffe"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933d">SenderStatus</a> { <a class="el" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933da270de7595d9590d548963a3ab8dbb8f3">STOPPED</a>, 
+<a class="el" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933dabc5a7b0a6d991ffde3d9c678d7d2b700">PLAYING</a>
+ }</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A sender module's transmission can be in different states.  <a href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933d">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a1f8653338d14096e4296243ab0821ff1">initializeSenderModule</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#acdd1e2f6a2e8a17cdb576aa86168292a">openSourceFile</a> (const char *fileName)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a578ae414c38747252b0cfc7d717deb2b">closeSourceFile</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a9538606bf2b0d873cd0a0cd7754f7ce9">play</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#aa5c19f1b88c1e88f0eeb42fc486471b3">playUntilTime</a> (simtime_t moment)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a4ce92002f68b9a5308df0a269ac95246">playUntilByte</a> (int position)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a1076c39c68c6583d224af968c840acc7">pause</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a1192ffd879c11dc9a881d6b28929df9e">seekTime</a> (simtime_t moment)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a11612dd7a6cda674f8d79a8cdf2d8b5c">seekByte</a> (int position)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#ad9cd79ff818c987d07c1f21b70678588">stop</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#aa8d3c549b50edb6e9c17db691d7e726e">endOfFile</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a3d89be915b854cf2655a68c68cec0ba1">initialize</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Chooses sequence number and time stamp base values and reads the omnet parameter "mtu".  <a href="#a3d89be915b854cf2655a68c68cec0ba1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a69f4c2c58dbd303020b26e895c185686">handleMessage</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a1f8653338d14096e4296243ab0821ff1">initializeSenderModule</a> (<a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called when a newly create sender module received its initialization message from profile module.  <a href="#a1f8653338d14096e4296243ab0821ff1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#acdd1e2f6a2e8a17cdb576aa86168292a">openSourceFile</a> (const char *fileName)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called by initializeSenderModule and opens the source data file as an inputFileStream stored in member variable _inputFileStream.  <a href="#acdd1e2f6a2e8a17cdb576aa86168292a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a578ae414c38747252b0cfc7d717deb2b">closeSourceFile</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called by the destructor and closes the data file.  <a href="#a578ae414c38747252b0cfc7d717deb2b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a9538606bf2b0d873cd0a0cd7754f7ce9">play</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts data transmission.  <a href="#a9538606bf2b0d873cd0a0cd7754f7ce9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#aa5c19f1b88c1e88f0eeb42fc486471b3">playUntilTime</a> (simtime_t moment)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts transmission from the current file position and plays until given time (relative to start of file) is reached.  <a href="#aa5c19f1b88c1e88f0eeb42fc486471b3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a4ce92002f68b9a5308df0a269ac95246">playUntilByte</a> (int position)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts transmission from the current file position and plays until given byte position (excluding file header) is reached.  <a href="#a4ce92002f68b9a5308df0a269ac95246"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a1076c39c68c6583d224af968c840acc7">pause</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">When data is being transmitted this methods suspends till a new PLAY command.  <a href="#a1076c39c68c6583d224af968c840acc7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a1192ffd879c11dc9a881d6b28929df9e">seekTime</a> (simtime_t moment)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">When the data transmission is paused the current position is changed to this time (relative to start of file).  <a href="#a1192ffd879c11dc9a881d6b28929df9e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a11612dd7a6cda674f8d79a8cdf2d8b5c">seekByte</a> (int position)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">When the data transmission is paused the current position is changed to this byte position (excluding file header).  <a href="#a11612dd7a6cda674f8d79a8cdf2d8b5c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#ad9cd79ff818c987d07c1f21b70678588">stop</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This method stop data transmission and resets the sender module so that a following PLAY command would start the transmission at the beginning again.  <a href="#ad9cd79ff818c987d07c1f21b70678588"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#aa8d3c549b50edb6e9c17db691d7e726e">endOfFile</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This method gets called when the sender module reaches the end of file.  <a href="#aa8d3c549b50edb6e9c17db691d7e726e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a3738b1a68ff9929c50fd798a74ee8b54">sendPacket</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This method gets called when one (or more) rtp data packets have to be sent.  <a href="#a3738b1a68ff9929c50fd798a74ee8b54"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::ifstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#aabee3f800e5e676d2b297ff6a571c259">_inputFileStream</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The input file stream for the data file.  <a href="#aabee3f800e5e676d2b297ff6a571c259"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a32ec374991c6a22751fac7db79a3f465">_mtu</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum size of an <a class="el" href="class_r_t_p_packet.html" title="This class represents an RTP data packet.">RTPPacket</a>.  <a href="#a32ec374991c6a22751fac7db79a3f465"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a98d0eb2439d2eab6606741445590b513">_ssrc</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The ssrc identifier of this sender module.  <a href="#a98d0eb2439d2eab6606741445590b513"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a39af1b84253a34a9903f9c718bd66b1c">_payloadType</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The payload type this sender creates.  <a href="#a39af1b84253a34a9903f9c718bd66b1c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a8674ccb970be216091f20e60c41c9e9f">_clockRate</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The clock rate in ticks per second this sender uses.  <a href="#a8674ccb970be216091f20e60c41c9e9f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#aaa174d6ff76832088142302de2e7deb4">_timeStampBase</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The first rtp time stamp used for created rtp data packets.  <a href="#aaa174d6ff76832088142302de2e7deb4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a0ac319d6695cad406c6ecda2a0b4c27c">_timeStamp</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The current rtp time stamp.  <a href="#a0ac319d6695cad406c6ecda2a0b4c27c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a8d2e99636e2bb7baee5e468b1e3c2a48">_sequenceNumberBase</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The first sequence number used for created rtp data packets.  <a href="#a8d2e99636e2bb7baee5e468b1e3c2a48"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#aa640a9b2867c042f2cc48f0f9489e870">_sequenceNumber</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The current sequence number.  <a href="#aa640a9b2867c042f2cc48f0f9489e870"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933d">SenderStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a881b74af0edb1793055bcd1a2912c4ed">_status</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The current state of data transmission.  <a href="#a881b74af0edb1793055bcd1a2912c4ed"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">cMessage *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_r_t_p_payload_sender.html#a7dfada70b7fab61bcf43dcf687e506d4">_reminderMessage</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A self message used as timer for the moment the next packet must be sent.  <a href="#a7dfada70b7fab61bcf43dcf687e506d4"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>The class <a class="el" href="class_r_t_p_payload_sender.html">RTPPayloadSender</a> is the base class for all modules creating rtp data packets. It provides functionality needed by every rtp data packet sender like opening and closing the data file and choosing sequence number and time stamp start values. </p>
-
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8h_source.html#l00037">37</a> of file <a class="el" href="_r_t_p_payload_sender_8h_source.html">RTPPayloadSender.h</a>.</p>
+<div class="textblock"><p>The class <a class="el" href="class_r_t_p_payload_sender.html" title="The class RTPPayloadSender is the base class for all modules creating RTP data packets.">RTPPayloadSender</a> is the base class for all modules creating <a class="el" href="class_r_t_p.html" title="An RTP is the center of the RTP layer of an endsystem.">RTP</a> data packets. </p>
+<p>It provides functionality needed by every <a class="el" href="class_r_t_p.html" title="An RTP is the center of the RTP layer of an endsystem.">RTP</a> data packet sender like opening and closing the data file and choosing sequence number and time stamp start values. </p>
 </div><hr/><h2>Member Enumeration Documentation</h2>
 <a class="anchor" id="ac59256e616e553048c7fadfae798933d"></a><!-- doxytag: member="RTPPayloadSender::SenderStatus" ref="ac59256e616e553048c7fadfae798933d" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933d">RTPPayloadSender::SenderStatus</a></td>
+          <td class="memname">enum <a class="el" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933d">RTPPayloadSender::SenderStatus</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>A sender module's transmission can be in different states. </p>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="ac59256e616e553048c7fadfae798933da270de7595d9590d548963a3ab8dbb8f3"></a><!-- doxytag: member="STOPPED" ref="ac59256e616e553048c7fadfae798933da270de7595d9590d548963a3ab8dbb8f3" args="" -->STOPPED</em>&nbsp;</td><td>
@@ -161,12 +191,10 @@ Protected Attributes</h2></td></tr>
 </table>
 </dd>
 </dl>
-
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8h_source.html#l00063">63</a> of file <a class="el" href="_r_t_p_payload_sender_8h_source.html">RTPPayloadSender.h</a>.</p>
-<div class="fragment"><pre class="fragment">                          {
-            <a class="code" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933da270de7595d9590d548963a3ab8dbb8f3">STOPPED</a>, <span class="comment">//&lt; No transmission.</span>
-            <a class="code" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933dabc5a7b0a6d991ffde3d9c678d7d2b700" title="Data is being sent.">PLAYING</a>  
-        };
+<div class="fragment"><pre class="fragment">                      {
+        <a class="code" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933da270de7595d9590d548963a3ab8dbb8f3">STOPPED</a>, <span class="comment">//&lt; No transmission.</span>
+        <a class="code" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933dabc5a7b0a6d991ffde3d9c678d7d2b700" title="Data is being sent.">PLAYING</a>  
+    };
 </pre></div>
 </div>
 </div>
@@ -179,15 +207,16 @@ Protected Attributes</h2></td></tr>
           <td class="memname"><a class="el" href="class_r_t_p_payload_sender.html#a6990d34d13be7e9851d6341d251e6c22">RTPPayloadSender::RTPPayloadSender</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [inline]</code></td>
+          <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Constructor, with <a class="el" href="class_r_t_p_payload_sender.html#a31653f5519ad70937f044eecba57ecac">activity()</a> stack size. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8h_source.html#l00045">45</a> of file <a class="el" href="_r_t_p_payload_sender_8h_source.html">RTPPayloadSender.h</a>.</p>
-<div class="fragment"><pre class="fragment">: cSimpleModule(32768) {}
+<p>Constructor. </p>
+<div class="fragment"><pre class="fragment">{
+    <a class="code" href="class_r_t_p_payload_sender.html#a7dfada70b7fab61bcf43dcf687e506d4" title="A self message used as timer for the moment the next packet must be sent.">_reminderMessage</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+}
 </pre></div>
 </div>
 </div>
@@ -204,88 +233,23 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Cleaning up. Calls closeSourceFile. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00029">29</a> of file <a class="el" href="_r_t_p_payload_sender_8cc_source.html">RTPPayloadSender.cc</a>.</p>
+<p>Destructor. </p>
+<p>Calls closeSourceFile. </p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_payload_sender.html#a578ae414c38747252b0cfc7d717deb2b">closeSourceFile</a>();
+    <a class="code" href="class_r_t_p_payload_sender.html#a578ae414c38747252b0cfc7d717deb2b" title="This method is called by the destructor and closes the data file.">closeSourceFile</a>();
+    cancelAndDelete(<a class="code" href="class_r_t_p_payload_sender.html#a7dfada70b7fab61bcf43dcf687e506d4" title="A self message used as timer for the moment the next packet must be sent.">_reminderMessage</a>);
 }
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a31653f5519ad70937f044eecba57ecac"></a><!-- doxytag: member="RTPPayloadSender::activity" ref="a31653f5519ad70937f044eecba57ecac" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_payload_sender.html#a31653f5519ad70937f044eecba57ecac">RTPPayloadSender::activity</a> </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00049">49</a> of file <a class="el" href="_r_t_p_payload_sender_8cc_source.html">RTPPayloadSender.cc</a>.</p>
-<div class="fragment"><pre class="fragment">{
-    <span class="keyword">const</span> <span class="keywordtype">char</span> *command;
-    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {
-        cMessage *msg = receive();
-        <span class="keywordflow">if</span> (msg-&gt;getArrivalGateId() == findGate(<span class="stringliteral">&quot;profileIn&quot;</span>)) {
-            <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinpIn = check_and_cast&lt;<a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *&gt;(msg);
-            <span class="keywordflow">if</span> (rinpIn-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a8de46bdf80e04331223d83af5f507d80">getType</a>() == <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888a43cb0a1732c130c1a459c6693d40a479">RTPInnerPacket::RTP_INP_INITIALIZE_SENDER_MODULE</a>) {
-                <a class="code" href="class_r_t_p_payload_sender.html#a1f8653338d14096e4296243ab0821ff1">initializeSenderModule</a>(rinpIn);
-            }
-            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (rinpIn-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a8de46bdf80e04331223d83af5f507d80">getType</a>() == <a class="code" href="class_r_t_p_inner_packet.html#abaed016d76395b99a11347dd05fd8888afef73ca182e050207a0384b9684dbe3d">RTPInnerPacket::RTP_INP_SENDER_MODULE_CONTROL</a>) {
-                <a class="code" href="class_r_t_p_sender_control_message.html">RTPSenderControlMessage</a> *rscm = (<a class="code" href="class_r_t_p_sender_control_message.html">RTPSenderControlMessage</a> *)(rinpIn-&gt;decapsulate());
-                <span class="keyword">delete</span> rinpIn;
-                command = rscm-&gt;<a class="code" href="class_r_t_p_sender_control_message.html#a3c1c39eadad529ddb8b5f18d9c0bf24b">getCommand</a>();
-                <span class="keywordflow">if</span> (!opp_strcmp(command, <span class="stringliteral">&quot;PLAY&quot;</span>)) {
-                    <a class="code" href="class_r_t_p_payload_sender.html#a9538606bf2b0d873cd0a0cd7754f7ce9">play</a>();
-                }
-                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!opp_strcmp(command, <span class="stringliteral">&quot;PLAY_UNTIL_TIME&quot;</span>)) {
-                    <a class="code" href="class_r_t_p_payload_sender.html#aa5c19f1b88c1e88f0eeb42fc486471b3">playUntilTime</a>(rscm-&gt;<a class="code" href="class_r_t_p_sender_control_message.html#a0fbb12b5d3b69b9c3c2e8d54e872616b">getCommandParameter1</a>());
-                }
-                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!opp_strcmp(command, <span class="stringliteral">&quot;PLAY_UNTIL_BYTE&quot;</span>)) {
-                    <a class="code" href="class_r_t_p_payload_sender.html#a4ce92002f68b9a5308df0a269ac95246">playUntilByte</a>(rscm-&gt;<a class="code" href="class_r_t_p_sender_control_message.html#a0fbb12b5d3b69b9c3c2e8d54e872616b">getCommandParameter1</a>());
-                }
-                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!opp_strcmp(command, <span class="stringliteral">&quot;PAUSE&quot;</span>)) {
-                    <a class="code" href="class_r_t_p_payload_sender.html#a1076c39c68c6583d224af968c840acc7">pause</a>();
-                }
-                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!opp_strcmp(command, <span class="stringliteral">&quot;STOP&quot;</span>)) {
-                    <a class="code" href="class_r_t_p_payload_sender.html#ad9cd79ff818c987d07c1f21b70678588">stop</a>();
-                }
-                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!opp_strcmp(command, <span class="stringliteral">&quot;SEEK_TIME&quot;</span>)) {
-                    <a class="code" href="class_r_t_p_payload_sender.html#a1192ffd879c11dc9a881d6b28929df9e">seekTime</a>(rscm-&gt;<a class="code" href="class_r_t_p_sender_control_message.html#a0fbb12b5d3b69b9c3c2e8d54e872616b">getCommandParameter1</a>());
-                }
-                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!opp_strcmp(command, <span class="stringliteral">&quot;SEEK_BYTE&quot;</span>)) {
-                    <a class="code" href="class_r_t_p_payload_sender.html#a11612dd7a6cda674f8d79a8cdf2d8b5c">seekByte</a>(rscm-&gt;<a class="code" href="class_r_t_p_sender_control_message.html#a0fbb12b5d3b69b9c3c2e8d54e872616b">getCommandParameter1</a>());
-                }
-                <span class="keywordflow">else</span> {
-                    error(<span class="stringliteral">&quot;unknown sender control message&quot;</span>);
-                }
-                <span class="keyword">delete</span> rscm;
-            }
-        }
-        <span class="keywordflow">else</span> {
-            <span class="keywordflow">if</span> (!<a class="code" href="class_r_t_p_payload_sender.html#a3738b1a68ff9929c50fd798a74ee8b54">sendPacket</a>()) {
-                <a class="code" href="class_r_t_p_payload_sender.html#aa8d3c549b50edb6e9c17db691d7e726e">endOfFile</a>();
-            }
-            <span class="keyword">delete</span> msg;
-        }
-    }
-}
-</pre></div>
-</div>
-</div>
 <a class="anchor" id="a578ae414c38747252b0cfc7d717deb2b"></a><!-- doxytag: member="RTPPayloadSender::closeSourceFile" ref="a578ae414c38747252b0cfc7d717deb2b" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_payload_sender.html#a578ae414c38747252b0cfc7d717deb2b">RTPPayloadSender::closeSourceFile</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_payload_sender.html#a578ae414c38747252b0cfc7d717deb2b">RTPPayloadSender::closeSourceFile</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -293,13 +257,12 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>This method is called by the destructor and closes the data file. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00125">125</a> of file <a class="el" href="_r_t_p_payload_sender_8cc_source.html">RTPPayloadSender.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00029">~RTPPayloadSender()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#a86725b3d955310caffe95170e482fffe">~RTPPayloadSender()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_payload_sender.html#aabee3f800e5e676d2b297ff6a571c259">_inputFileStream</a>.close();
+    <a class="code" href="class_r_t_p_payload_sender.html#aabee3f800e5e676d2b297ff6a571c259" title="The input file stream for the data file.">_inputFileStream</a>.close();
 }
 </pre></div>
 </div>
@@ -309,7 +272,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_payload_sender.html#aa8d3c549b50edb6e9c17db691d7e726e">RTPPayloadSender::endOfFile</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_payload_sender.html#aa8d3c549b50edb6e9c17db691d7e726e">RTPPayloadSender::endOfFile</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -317,18 +280,98 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This method gets called when the sender module reaches the end of file. For the transmission it has the same effect like <a class="el" href="class_r_t_p_payload_sender.html#ad9cd79ff818c987d07c1f21b70678588">stop()</a>. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00195">195</a> of file <a class="el" href="_r_t_p_payload_sender_8cc_source.html">RTPPayloadSender.cc</a>.</p>
+<p>This method gets called when the sender module reaches the end of file. </p>
+<p>For the transmission it has the same effect like <a class="el" href="class_r_t_p_payload_sender.html#ad9cd79ff818c987d07c1f21b70678588" title="This method stop data transmission and resets the sender module so that a following PLAY command woul...">stop()</a>. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00049">activity()</a>, and <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00131">play()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#a69f4c2c58dbd303020b26e895c185686">handleMessage()</a>, and <a class="el" href="class_r_t_p_payload_sender.html#a9538606bf2b0d873cd0a0cd7754f7ce9">play()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_payload_sender.html#a881b74af0edb1793055bcd1a2912c4ed">_status</a> = <a class="code" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933da270de7595d9590d548963a3ab8dbb8f3">STOPPED</a>;
-    <a class="code" href="class_r_t_p_sender_status_message.html">RTPSenderStatusMessage</a> *rssm = <span class="keyword">new</span> <a class="code" href="class_r_t_p_sender_status_message.html">RTPSenderStatusMessage</a>();
-    rssm-&gt;<a class="code" href="class_r_t_p_sender_status_message.html#afbfb4159cbeeb5b82b78e542fdde3f26">setStatus</a>(<span class="stringliteral">&quot;FINISHED&quot;</span>);
-    <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinpOut = <span class="keyword">new</span> <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>(<span class="stringliteral">&quot;senderModuleStatus(FINISHED)&quot;</span>);
-    rinpOut-&gt;<a class="code" href="class_r_t_p_inner_packet.html#ad96315d76da3e4068c6107b886884506">senderModuleStatus</a>(<a class="code" href="class_r_t_p_payload_sender.html#a98d0eb2439d2eab6606741445590b513">_ssrc</a>, rssm);
+    <a class="code" href="class_r_t_p_payload_sender.html#a881b74af0edb1793055bcd1a2912c4ed" title="The current state of data transmission.">_status</a> = <a class="code" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933da270de7595d9590d548963a3ab8dbb8f3">STOPPED</a>;
+    <a class="code" href="class_r_t_p_sender_status_message.html">RTPSenderStatusMessage</a> *rssm = <span class="keyword">new</span> <a class="code" href="class_r_t_p_sender_status_message.html">RTPSenderStatusMessage</a>(<span class="stringliteral">&quot;FINISHED&quot;</span>);
+    rssm-&gt;<a class="code" href="class_r_t_p_sender_status_message.html#a774eadbf2df1539ea682b9fecf1b1554">setStatus</a>(<a class="code" href="_r_t_p_sender_status_message__m_8h.html#ae729df361c4afc9c258b941040bc4780a01386e04070b57f05a73dc2b59cedbd8">RTP_SENDER_STATUS_FINISHED</a>);
+    <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> *rinpOut = <span class="keyword">new</span> <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a>(<span class="stringliteral">&quot;senderModuleStatus(FINISHED)&quot;</span>);
+    rinpOut-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a687773c746c5ba17e32300d878673006">setSenderModuleStatusPkt</a>(<a class="code" href="class_r_t_p_payload_sender.html#a98d0eb2439d2eab6606741445590b513" title="The ssrc identifier of this sender module.">_ssrc</a>, rssm);
     send(rinpOut, <span class="stringliteral">&quot;profileOut&quot;</span>);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a69f4c2c58dbd303020b26e895c185686"></a><!-- doxytag: member="RTPPayloadSender::handleMessage" ref="a69f4c2c58dbd303020b26e895c185686" args="(cMessage *msg)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_payload_sender.html#a69f4c2c58dbd303020b26e895c185686">RTPPayloadSender::handleMessage</a> </td>
+          <td>(</td>
+          <td class="paramtype">cMessage *&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> (msg == <a class="code" href="class_r_t_p_payload_sender.html#a7dfada70b7fab61bcf43dcf687e506d4" title="A self message used as timer for the moment the next packet must be sent.">_reminderMessage</a>)
+    {
+        <span class="keyword">delete</span> msg;
+        <a class="code" href="class_r_t_p_payload_sender.html#a7dfada70b7fab61bcf43dcf687e506d4" title="A self message used as timer for the moment the next packet must be sent.">_reminderMessage</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+        <span class="keywordflow">if</span> (!<a class="code" href="class_r_t_p_payload_sender.html#a3738b1a68ff9929c50fd798a74ee8b54" title="This method gets called when one (or more) rtp data packets have to be sent.">sendPacket</a>())
+        {
+            <a class="code" href="class_r_t_p_payload_sender.html#aa8d3c549b50edb6e9c17db691d7e726e" title="This method gets called when the sender module reaches the end of file.">endOfFile</a>();
+        }
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg-&gt;getArrivalGateId() == findGate(<span class="stringliteral">&quot;profileIn&quot;</span>))
+    {
+        <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> *rinpIn = check_and_cast&lt;<a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> *&gt;(msg);
+        <span class="keywordflow">if</span> (rinpIn-&gt;<a class="code" href="class_r_t_p_inner_packet___base.html#a0c366129da19a99eecf1acf4c2c69199">getType</a>() == <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606a068509c576812eda535c8ecdf476dc9f">RTP_INP_INITIALIZE_SENDER_MODULE</a>)
+        {
+            <a class="code" href="class_r_t_p_payload_sender.html#a1f8653338d14096e4296243ab0821ff1" title="This method is called when a newly create sender module received its initialization message from prof...">initializeSenderModule</a>(rinpIn);
+        }
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (rinpIn-&gt;<a class="code" href="class_r_t_p_inner_packet___base.html#a0c366129da19a99eecf1acf4c2c69199">getType</a>() == <a class="code" href="_r_t_p_inner_packet__m_8h.html#a1094315dcfb6208f1fb509fc42fb9606a8becb1a296ed84253ff0a772922d9f4d">RTP_INP_SENDER_MODULE_CONTROL</a>)
+        {
+            <a class="code" href="class_r_t_p_sender_control_message.html">RTPSenderControlMessage</a> *rscm = (<a class="code" href="class_r_t_p_sender_control_message.html">RTPSenderControlMessage</a> *)(rinpIn-&gt;decapsulate());
+            <span class="keyword">delete</span> rinpIn;
+            <span class="keywordflow">switch</span> (rscm-&gt;<a class="code" href="class_r_t_p_sender_control_message.html#adaa7a2e0db92e21d2c8342fa5ffb93ca">getCommand</a>())
+            {
+            <span class="keywordflow">case</span> <a class="code" href="_r_t_p_sender_control_message__m_8h.html#a002ba32e435c353ad778267fc49a396aaef9be412ac1aa0c579e16ab339bf9ab9">RTP_CONTROL_PLAY</a>:
+                <a class="code" href="class_r_t_p_payload_sender.html#a9538606bf2b0d873cd0a0cd7754f7ce9" title="Starts data transmission.">play</a>();
+                <span class="keywordflow">break</span>;
+
+            <span class="keywordflow">case</span> <a class="code" href="_r_t_p_sender_control_message__m_8h.html#a002ba32e435c353ad778267fc49a396aad057d95fb940bcbd6d4f2b901828def7">RTP_CONTROL_PLAY_UNTIL_TIME</a>:
+                <a class="code" href="class_r_t_p_payload_sender.html#aa5c19f1b88c1e88f0eeb42fc486471b3" title="Starts transmission from the current file position and plays until given time (relative to start of f...">playUntilTime</a>(rscm-&gt;<a class="code" href="class_r_t_p_sender_control_message.html#a0fbb12b5d3b69b9c3c2e8d54e872616b">getCommandParameter1</a>());
+                <span class="keywordflow">break</span>;
+
+            <span class="keywordflow">case</span> <a class="code" href="_r_t_p_sender_control_message__m_8h.html#a002ba32e435c353ad778267fc49a396aa09587bd577f7f3befecd311b930d7217">RTP_CONTROL_PLAY_UNTIL_BYTE</a>:
+                <a class="code" href="class_r_t_p_payload_sender.html#a4ce92002f68b9a5308df0a269ac95246" title="Starts transmission from the current file position and plays until given byte position (excluding fil...">playUntilByte</a>(rscm-&gt;<a class="code" href="class_r_t_p_sender_control_message.html#a0fbb12b5d3b69b9c3c2e8d54e872616b">getCommandParameter1</a>());
+                <span class="keywordflow">break</span>;
+
+            <span class="keywordflow">case</span> <a class="code" href="_r_t_p_sender_control_message__m_8h.html#a002ba32e435c353ad778267fc49a396aa70b2cc6cdb86a5f1249ec7a37095f872">RTP_CONTROL_PAUSE</a>:
+                <a class="code" href="class_r_t_p_payload_sender.html#a1076c39c68c6583d224af968c840acc7" title="When data is being transmitted this methods suspends till a new PLAY command.">pause</a>();
+                <span class="keywordflow">break</span>;
+
+            <span class="keywordflow">case</span> <a class="code" href="_r_t_p_sender_control_message__m_8h.html#a002ba32e435c353ad778267fc49a396aa4480021109a420252e0cf22efe49ba4d">RTP_CONTROL_STOP</a>:
+                <a class="code" href="class_r_t_p_payload_sender.html#ad9cd79ff818c987d07c1f21b70678588" title="This method stop data transmission and resets the sender module so that a following PLAY command woul...">stop</a>();
+                <span class="keywordflow">break</span>;
+
+            <span class="keywordflow">case</span> <a class="code" href="_r_t_p_sender_control_message__m_8h.html#a002ba32e435c353ad778267fc49a396aa320ff2e637b3af2a23be91b37c3a5240">RTP_CONTROL_SEEK_TIME</a>:
+                <a class="code" href="class_r_t_p_payload_sender.html#a1192ffd879c11dc9a881d6b28929df9e" title="When the data transmission is paused the current position is changed to this time (relative to start ...">seekTime</a>(rscm-&gt;<a class="code" href="class_r_t_p_sender_control_message.html#a0fbb12b5d3b69b9c3c2e8d54e872616b">getCommandParameter1</a>());
+                <span class="keywordflow">break</span>;
+
+            <span class="keywordflow">case</span> <a class="code" href="_r_t_p_sender_control_message__m_8h.html#a002ba32e435c353ad778267fc49a396aac035a8a2062301f1d54ac57864f788b7">RTP_CONTROL_SEEK_BYTE</a>:
+                <a class="code" href="class_r_t_p_payload_sender.html#a11612dd7a6cda674f8d79a8cdf2d8b5c" title="When the data transmission is paused the current position is changed to this byte position (excluding...">seekByte</a>(rscm-&gt;<a class="code" href="class_r_t_p_sender_control_message.html#a0fbb12b5d3b69b9c3c2e8d54e872616b">getCommandParameter1</a>());
+                <span class="keywordflow">break</span>;
+
+            <span class="keywordflow">default</span>:
+                error(<span class="stringliteral">&quot;unknown sender control message&quot;</span>);
+                <span class="keywordflow">break</span>;
+            }
+            <span class="keyword">delete</span> rscm;
+        }
+    }
+    <span class="keywordflow">else</span>
+    {
+        error(<span class="stringliteral">&quot;Unknown message!&quot;</span>);
+    }
 }
 </pre></div>
 </div>
@@ -338,31 +381,29 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_payload_sender.html#a3d89be915b854cf2655a68c68cec0ba1">RTPPayloadSender::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_payload_sender.html#a3d89be915b854cf2655a68c68cec0ba1">RTPPayloadSender::initialize</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td><code> [virtual]</code></td>
+          <td><code> [protected, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Chooses sequence number and time stamp base values and reads the omnet parameter "mtu". </p>
 
 <p>Reimplemented in <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#a659955ebcef6b036f57a503607e6472f">RTPAVProfilePayload32Sender</a>.</p>
-
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00035">35</a> of file <a class="el" href="_r_t_p_payload_sender_8cc_source.html">RTPPayloadSender.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_profile_8cc_source.html#l00147">RTPProfile::createSenderModule()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_payload_sender.html#a3d89be915b854cf2655a68c68cec0ba1">cSimpleModule::initialize</a>();
-    <a class="code" href="class_r_t_p_payload_sender.html#a32ec374991c6a22751fac7db79a3f465">_mtu</a> = 0;
-    <a class="code" href="class_r_t_p_payload_sender.html#a98d0eb2439d2eab6606741445590b513">_ssrc</a> = 0;
-    <a class="code" href="class_r_t_p_payload_sender.html#a39af1b84253a34a9903f9c718bd66b1c">_payloadType</a> = 0;
-    <a class="code" href="class_r_t_p_payload_sender.html#a8674ccb970be216091f20e60c41c9e9f">_clockRate</a> = 0;
-    <a class="code" href="class_r_t_p_payload_sender.html#aaa174d6ff76832088142302de2e7deb4">_timeStampBase</a> = intrand(65535);
-    <a class="code" href="class_r_t_p_payload_sender.html#a0ac319d6695cad406c6ecda2a0b4c27c">_timeStamp</a> = <a class="code" href="class_r_t_p_payload_sender.html#aaa174d6ff76832088142302de2e7deb4">_timeStampBase</a>;
-    <a class="code" href="class_r_t_p_payload_sender.html#a8d2e99636e2bb7baee5e468b1e3c2a48">_sequenceNumberBase</a> = intrand(0x7fffffff);
-    <a class="code" href="class_r_t_p_payload_sender.html#aa640a9b2867c042f2cc48f0f9489e870">_sequenceNumber</a> = <a class="code" href="class_r_t_p_payload_sender.html#a8d2e99636e2bb7baee5e468b1e3c2a48">_sequenceNumberBase</a>;
+    <a class="code" href="class_r_t_p_payload_sender.html#a3d89be915b854cf2655a68c68cec0ba1" title="Chooses sequence number and time stamp base values and reads the omnet parameter &quot;mtu&quot;.">cSimpleModule::initialize</a>();
+    <a class="code" href="class_r_t_p_payload_sender.html#a32ec374991c6a22751fac7db79a3f465" title="The maximum size of an RTPPacket.">_mtu</a> = 0;
+    <a class="code" href="class_r_t_p_payload_sender.html#a98d0eb2439d2eab6606741445590b513" title="The ssrc identifier of this sender module.">_ssrc</a> = 0;
+    <a class="code" href="class_r_t_p_payload_sender.html#a39af1b84253a34a9903f9c718bd66b1c" title="The payload type this sender creates.">_payloadType</a> = 0;
+    <a class="code" href="class_r_t_p_payload_sender.html#a8674ccb970be216091f20e60c41c9e9f" title="The clock rate in ticks per second this sender uses.">_clockRate</a> = 0;
+    <a class="code" href="class_r_t_p_payload_sender.html#aaa174d6ff76832088142302de2e7deb4" title="The first rtp time stamp used for created rtp data packets.">_timeStampBase</a> = intrand(65535);
+    <a class="code" href="class_r_t_p_payload_sender.html#a0ac319d6695cad406c6ecda2a0b4c27c" title="The current rtp time stamp.">_timeStamp</a> = <a class="code" href="class_r_t_p_payload_sender.html#aaa174d6ff76832088142302de2e7deb4" title="The first rtp time stamp used for created rtp data packets.">_timeStampBase</a>;
+    <a class="code" href="class_r_t_p_payload_sender.html#a8d2e99636e2bb7baee5e468b1e3c2a48" title="The first sequence number used for created rtp data packets.">_sequenceNumberBase</a> = intrand(0x7fffffff);
+    <a class="code" href="class_r_t_p_payload_sender.html#aa640a9b2867c042f2cc48f0f9489e870" title="The current sequence number.">_sequenceNumber</a> = <a class="code" href="class_r_t_p_payload_sender.html#a8d2e99636e2bb7baee5e468b1e3c2a48" title="The first sequence number used for created rtp data packets.">_sequenceNumberBase</a>;
+    <a class="code" href="class_r_t_p_payload_sender.html#a7dfada70b7fab61bcf43dcf687e506d4" title="A self message used as timer for the moment the next packet must be sent.">_reminderMessage</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
 }
 </pre></div>
 </div>
@@ -372,7 +413,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_payload_sender.html#a1f8653338d14096e4296243ab0821ff1">RTPPayloadSender::initializeSenderModule</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_payload_sender.html#a1f8653338d14096e4296243ab0821ff1">RTPPayloadSender::initializeSenderModule</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *&#160;</td>
           <td class="paramname"><em>rinpIn</em></td><td>)</td>
@@ -381,24 +422,24 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This method is called when a newly create sender module received its initialization message from profile module. It returns an RTP_INP_SENDER_MODULE_INITIALIZED message which </p>
+
+<p>This method is called when a newly create sender module received its initialization message from profile module. </p>
+<p>It returns an RTP_INP_SENDER_MODULE_INITIALIZED message which </p>
 
 <p>Reimplemented in <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#a8bbc7ffcabe829c7e29e183d422c50cb">RTPAVProfilePayload32Sender</a>.</p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00100">100</a> of file <a class="el" href="_r_t_p_payload_sender_8cc_source.html">RTPPayloadSender.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00049">activity()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#a69f4c2c58dbd303020b26e895c185686">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     ev &lt;&lt; <span class="stringliteral">&quot;initializeSenderModule Enter&quot;</span> &lt;&lt; endl;
-    <a class="code" href="class_r_t_p_payload_sender.html#a32ec374991c6a22751fac7db79a3f465">_mtu</a> = rinpIn-&gt;<a class="code" href="class_r_t_p_inner_packet.html#af622535a6cc9b941389bf20845b23290">getMTU</a>();
-    <a class="code" href="class_r_t_p_payload_sender.html#a98d0eb2439d2eab6606741445590b513">_ssrc</a> = rinpIn-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a0b2377650bf813c8e0a0bf8bd8711505">getSSRC</a>();
-    <span class="keyword">const</span> <span class="keywordtype">char</span> *fileName = rinpIn-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a04a6281b1735bf22e9a5dff46681c124">getFileName</a>();
-    <a class="code" href="class_r_t_p_payload_sender.html#acdd1e2f6a2e8a17cdb576aa86168292a">openSourceFile</a>(fileName);
+    <a class="code" href="class_r_t_p_payload_sender.html#a32ec374991c6a22751fac7db79a3f465" title="The maximum size of an RTPPacket.">_mtu</a> = rinpIn-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a28d94da5ec40d0498b8b25fde0d20067" title="Returns the maximum transmission unit stored in this RTPInnerPacket.">getMTU</a>();
+    <a class="code" href="class_r_t_p_payload_sender.html#a98d0eb2439d2eab6606741445590b513" title="The ssrc identifier of this sender module.">_ssrc</a> = rinpIn-&gt;<a class="code" href="class_r_t_p_inner_packet___base.html#a47f3455c44c7916843582f510f8ae02e">getSsrc</a>();
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *fileName = rinpIn-&gt;<a class="code" href="class_r_t_p_inner_packet___base.html#a61b275d8d12013bd28bd6a30e6b42180">getFileName</a>();
+    <a class="code" href="class_r_t_p_payload_sender.html#acdd1e2f6a2e8a17cdb576aa86168292a" title="This method is called by initializeSenderModule and opens the source data file as an inputFileStream ...">openSourceFile</a>(fileName);
     <span class="keyword">delete</span> rinpIn;
-    <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinpOut = <span class="keyword">new</span> <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>(<span class="stringliteral">&quot;senderModuleInitialized()&quot;</span>);
-    rinpOut-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a73c5f78d56cca62db49cc6ba54ad524f">senderModuleInitialized</a>(<a class="code" href="class_r_t_p_payload_sender.html#a98d0eb2439d2eab6606741445590b513">_ssrc</a>, <a class="code" href="class_r_t_p_payload_sender.html#a39af1b84253a34a9903f9c718bd66b1c">_payloadType</a>, <a class="code" href="class_r_t_p_payload_sender.html#a8674ccb970be216091f20e60c41c9e9f">_clockRate</a>, <a class="code" href="class_r_t_p_payload_sender.html#aaa174d6ff76832088142302de2e7deb4">_timeStampBase</a>, <a class="code" href="class_r_t_p_payload_sender.html#a8d2e99636e2bb7baee5e468b1e3c2a48">_sequenceNumberBase</a>);
+    <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> *rinpOut = <span class="keyword">new</span> <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a>(<span class="stringliteral">&quot;senderModuleInitialized()&quot;</span>);
+    rinpOut-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a2580359153c64a03527a5247ca42317d">setSenderModuleInitializedPkt</a>(<a class="code" href="class_r_t_p_payload_sender.html#a98d0eb2439d2eab6606741445590b513" title="The ssrc identifier of this sender module.">_ssrc</a>, <a class="code" href="class_r_t_p_payload_sender.html#a39af1b84253a34a9903f9c718bd66b1c" title="The payload type this sender creates.">_payloadType</a>, <a class="code" href="class_r_t_p_payload_sender.html#a8674ccb970be216091f20e60c41c9e9f" title="The clock rate in ticks per second this sender uses.">_clockRate</a>, <a class="code" href="class_r_t_p_payload_sender.html#aaa174d6ff76832088142302de2e7deb4" title="The first rtp time stamp used for created rtp data packets.">_timeStampBase</a>, <a class="code" href="class_r_t_p_payload_sender.html#a8d2e99636e2bb7baee5e468b1e3c2a48" title="The first sequence number used for created rtp data packets.">_sequenceNumberBase</a>);
     send(rinpOut, <span class="stringliteral">&quot;profileOut&quot;</span>);
-    <a class="code" href="class_r_t_p_payload_sender.html#a881b74af0edb1793055bcd1a2912c4ed">_status</a> = <a class="code" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933da270de7595d9590d548963a3ab8dbb8f3">STOPPED</a>;
+    <a class="code" href="class_r_t_p_payload_sender.html#a881b74af0edb1793055bcd1a2912c4ed" title="The current state of data transmission.">_status</a> = <a class="code" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933da270de7595d9590d548963a3ab8dbb8f3">STOPPED</a>;
     ev &lt;&lt; <span class="stringliteral">&quot;initializeSenderModule Exit&quot;</span> &lt;&lt; endl;
 }
 </pre></div>
@@ -409,7 +450,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_payload_sender.html#acdd1e2f6a2e8a17cdb576aa86168292a">RTPPayloadSender::openSourceFile</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_payload_sender.html#acdd1e2f6a2e8a17cdb576aa86168292a">RTPPayloadSender::openSourceFile</a> </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>fileName</em></td><td>)</td>
@@ -418,16 +459,15 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This method is called by initializeSenderModule and opens the source data file as an inputFileStream stored in member variable _inputFileStream. Most data formats can use this method directly, but when using a library for a certain data format which offers an own open routine this method must be overwritten. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00116">116</a> of file <a class="el" href="_r_t_p_payload_sender_8cc_source.html">RTPPayloadSender.cc</a>.</p>
+<p>This method is called by initializeSenderModule and opens the source data file as an inputFileStream stored in member variable _inputFileStream. </p>
+<p>Most data formats can use this method directly, but when using a library for a certain data format which offers an own open routine this method must be overwritten. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00100">initializeSenderModule()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#a1f8653338d14096e4296243ab0821ff1">initializeSenderModule()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_payload_sender.html#aabee3f800e5e676d2b297ff6a571c259">_inputFileStream</a>.open(fileName);
-    <span class="keywordflow">if</span> (!<a class="code" href="class_r_t_p_payload_sender.html#aabee3f800e5e676d2b297ff6a571c259">_inputFileStream</a>) {
-        opp_error(<span class="stringliteral">&quot;sender module: error open data file&quot;</span>);
-    }
+    <a class="code" href="class_r_t_p_payload_sender.html#aabee3f800e5e676d2b297ff6a571c259" title="The input file stream for the data file.">_inputFileStream</a>.open(fileName);
+    <span class="keywordflow">if</span> (!<a class="code" href="class_r_t_p_payload_sender.html#aabee3f800e5e676d2b297ff6a571c259" title="The input file stream for the data file.">_inputFileStream</a>)
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Error opening data file &#39;%s&#39;&quot;</span>, fileName);
 }
 </pre></div>
 </div>
@@ -437,7 +477,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_payload_sender.html#a1076c39c68c6583d224af968c840acc7">RTPPayloadSender::pause</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_payload_sender.html#a1076c39c68c6583d224af968c840acc7">RTPPayloadSender::pause</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -445,18 +485,19 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>When data is being transmitted this methods suspends till a new PLAY command. Implementation in sender modules is optional. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00159">159</a> of file <a class="el" href="_r_t_p_payload_sender_8cc_source.html">RTPPayloadSender.cc</a>.</p>
+<p>When data is being transmitted this methods suspends till a new PLAY command. </p>
+<p>Implementation in sender modules is optional. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00049">activity()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#a69f4c2c58dbd303020b26e895c185686">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    cancelEvent(<a class="code" href="class_r_t_p_payload_sender.html#a7dfada70b7fab61bcf43dcf687e506d4">_reminderMessage</a>);
-    <a class="code" href="class_r_t_p_payload_sender.html#a881b74af0edb1793055bcd1a2912c4ed">_status</a> = <a class="code" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933da270de7595d9590d548963a3ab8dbb8f3">STOPPED</a>;
-    <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinpOut = <span class="keyword">new</span> <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>(<span class="stringliteral">&quot;senderModuleStatus(PAUSED)&quot;</span>);
+    cancelAndDelete(<a class="code" href="class_r_t_p_payload_sender.html#a7dfada70b7fab61bcf43dcf687e506d4" title="A self message used as timer for the moment the next packet must be sent.">_reminderMessage</a>);
+    <a class="code" href="class_r_t_p_payload_sender.html#a7dfada70b7fab61bcf43dcf687e506d4" title="A self message used as timer for the moment the next packet must be sent.">_reminderMessage</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+    <a class="code" href="class_r_t_p_payload_sender.html#a881b74af0edb1793055bcd1a2912c4ed" title="The current state of data transmission.">_status</a> = <a class="code" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933da270de7595d9590d548963a3ab8dbb8f3">STOPPED</a>;
+    <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> *rinpOut = <span class="keyword">new</span> <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a>(<span class="stringliteral">&quot;senderModuleStatus(PAUSED)&quot;</span>);
     <a class="code" href="class_r_t_p_sender_status_message.html">RTPSenderStatusMessage</a> *rsim = <span class="keyword">new</span> <a class="code" href="class_r_t_p_sender_status_message.html">RTPSenderStatusMessage</a>();
-    rsim-&gt;<a class="code" href="class_r_t_p_sender_status_message.html#afbfb4159cbeeb5b82b78e542fdde3f26">setStatus</a>(<span class="stringliteral">&quot;PAUSED&quot;</span>);
-    rinpOut-&gt;<a class="code" href="class_r_t_p_inner_packet.html#ad96315d76da3e4068c6107b886884506">senderModuleStatus</a>(<a class="code" href="class_r_t_p_payload_sender.html#a98d0eb2439d2eab6606741445590b513">_ssrc</a>, rsim);
+    rsim-&gt;<a class="code" href="class_r_t_p_sender_status_message.html#a774eadbf2df1539ea682b9fecf1b1554">setStatus</a>(<a class="code" href="_r_t_p_sender_status_message__m_8h.html#ae729df361c4afc9c258b941040bc4780a140be06f2a8cbc8245c2fa084f2a55dc">RTP_SENDER_STATUS_PAUSED</a>);
+    rinpOut-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a687773c746c5ba17e32300d878673006">setSenderModuleStatusPkt</a>(<a class="code" href="class_r_t_p_payload_sender.html#a98d0eb2439d2eab6606741445590b513" title="The ssrc identifier of this sender module.">_ssrc</a>, rsim);
     send(rinpOut, <span class="stringliteral">&quot;profileOut&quot;</span>);
 }
 </pre></div>
@@ -467,7 +508,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_payload_sender.html#a9538606bf2b0d873cd0a0cd7754f7ce9">RTPPayloadSender::play</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_payload_sender.html#a9538606bf2b0d873cd0a0cd7754f7ce9">RTPPayloadSender::play</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -475,22 +516,23 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Starts data transmission. Every sender module must implement this method. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00131">131</a> of file <a class="el" href="_r_t_p_payload_sender_8cc_source.html">RTPPayloadSender.cc</a>.</p>
+<p>Starts data transmission. </p>
+<p>Every sender module must implement this method. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00049">activity()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#a69f4c2c58dbd303020b26e895c185686">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_r_t_p_payload_sender.html#a881b74af0edb1793055bcd1a2912c4ed">_status</a> = <a class="code" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933dabc5a7b0a6d991ffde3d9c678d7d2b700" title="Data is being sent.">PLAYING</a>;
+    <a class="code" href="class_r_t_p_payload_sender.html#a881b74af0edb1793055bcd1a2912c4ed" title="The current state of data transmission.">_status</a> = <a class="code" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933dabc5a7b0a6d991ffde3d9c678d7d2b700" title="Data is being sent.">PLAYING</a>;
     <a class="code" href="class_r_t_p_sender_status_message.html">RTPSenderStatusMessage</a> *rssm = <span class="keyword">new</span> <a class="code" href="class_r_t_p_sender_status_message.html">RTPSenderStatusMessage</a>(<span class="stringliteral">&quot;PLAYING&quot;</span>);
-    rssm-&gt;<a class="code" href="class_r_t_p_sender_status_message.html#afbfb4159cbeeb5b82b78e542fdde3f26">setStatus</a>(<span class="stringliteral">&quot;PLAYING&quot;</span>);
-    rssm-&gt;<a class="code" href="class_r_t_p_sender_status_message.html#aee1f71d02c435ecc0fad11bf4c4d6be0">setTimeStamp</a>(<a class="code" href="class_r_t_p_payload_sender.html#a0ac319d6695cad406c6ecda2a0b4c27c">_timeStamp</a>);
-    <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinpOut = <span class="keyword">new</span> <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>(<span class="stringliteral">&quot;senderModuleStatus(PLAYING)&quot;</span>);
-    rinpOut-&gt;<a class="code" href="class_r_t_p_inner_packet.html#ad96315d76da3e4068c6107b886884506">senderModuleStatus</a>(<a class="code" href="class_r_t_p_payload_sender.html#a98d0eb2439d2eab6606741445590b513">_ssrc</a>, rssm);
+    rssm-&gt;<a class="code" href="class_r_t_p_sender_status_message.html#a774eadbf2df1539ea682b9fecf1b1554">setStatus</a>(<a class="code" href="_r_t_p_sender_status_message__m_8h.html#ae729df361c4afc9c258b941040bc4780af8859fa2fc5abbb926fe2e6b0f232201">RTP_SENDER_STATUS_PLAYING</a>);
+    rssm-&gt;<a class="code" href="class_r_t_p_sender_status_message.html#aee1f71d02c435ecc0fad11bf4c4d6be0">setTimeStamp</a>(<a class="code" href="class_r_t_p_payload_sender.html#a0ac319d6695cad406c6ecda2a0b4c27c" title="The current rtp time stamp.">_timeStamp</a>);
+    <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> *rinpOut = <span class="keyword">new</span> <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a>(<span class="stringliteral">&quot;senderModuleStatus(PLAYING)&quot;</span>);
+    rinpOut-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a687773c746c5ba17e32300d878673006">setSenderModuleStatusPkt</a>(<a class="code" href="class_r_t_p_payload_sender.html#a98d0eb2439d2eab6606741445590b513" title="The ssrc identifier of this sender module.">_ssrc</a>, rssm);
     send(rinpOut, <span class="stringliteral">&quot;profileOut&quot;</span>);
 
-    <span class="keywordflow">if</span> (!<a class="code" href="class_r_t_p_payload_sender.html#a3738b1a68ff9929c50fd798a74ee8b54">sendPacket</a>()) {
-        <a class="code" href="class_r_t_p_payload_sender.html#aa8d3c549b50edb6e9c17db691d7e726e">endOfFile</a>();
+    <span class="keywordflow">if</span> (!<a class="code" href="class_r_t_p_payload_sender.html#a3738b1a68ff9929c50fd798a74ee8b54" title="This method gets called when one (or more) rtp data packets have to be sent.">sendPacket</a>())
+    {
+        <a class="code" href="class_r_t_p_payload_sender.html#aa8d3c549b50edb6e9c17db691d7e726e" title="This method gets called when the sender module reaches the end of file.">endOfFile</a>();
     }
 }
 </pre></div>
@@ -501,7 +543,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_payload_sender.html#a4ce92002f68b9a5308df0a269ac95246">RTPPayloadSender::playUntilByte</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_payload_sender.html#a4ce92002f68b9a5308df0a269ac95246">RTPPayloadSender::playUntilByte</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>position</em></td><td>)</td>
@@ -510,11 +552,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Starts transmission from the current file position and plays until given byte position (excluding file header) is reached. Implementation in sender modules is optional. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00153">153</a> of file <a class="el" href="_r_t_p_payload_sender_8cc_source.html">RTPPayloadSender.cc</a>.</p>
+<p>Starts transmission from the current file position and plays until given byte position (excluding file header) is reached. </p>
+<p>Implementation in sender modules is optional. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00049">activity()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#a69f4c2c58dbd303020b26e895c185686">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     error(<span class="stringliteral">&quot;playUntilByte() not implemented&quot;</span>);
 }
@@ -526,7 +568,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_payload_sender.html#aa5c19f1b88c1e88f0eeb42fc486471b3">RTPPayloadSender::playUntilTime</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_payload_sender.html#aa5c19f1b88c1e88f0eeb42fc486471b3">RTPPayloadSender::playUntilTime</a> </td>
           <td>(</td>
           <td class="paramtype">simtime_t&#160;</td>
           <td class="paramname"><em>moment</em></td><td>)</td>
@@ -535,11 +577,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Starts transmission from the current file position and plays until given time (relative to start of file) is reached. Implementation in sender modules is optional. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00147">147</a> of file <a class="el" href="_r_t_p_payload_sender_8cc_source.html">RTPPayloadSender.cc</a>.</p>
+<p>Starts transmission from the current file position and plays until given time (relative to start of file) is reached. </p>
+<p>Implementation in sender modules is optional. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00049">activity()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#a69f4c2c58dbd303020b26e895c185686">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     error(<span class="stringliteral">&quot;playUntilTime() not implemented&quot;</span>);
 }
@@ -551,7 +593,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_payload_sender.html#a11612dd7a6cda674f8d79a8cdf2d8b5c">RTPPayloadSender::seekByte</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_payload_sender.html#a11612dd7a6cda674f8d79a8cdf2d8b5c">RTPPayloadSender::seekByte</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>position</em></td><td>)</td>
@@ -560,11 +602,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>When the data transmission is paused the current position is changed to this byte position (excluding file header). Implementation in sender modules is optional. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00177">177</a> of file <a class="el" href="_r_t_p_payload_sender_8cc_source.html">RTPPayloadSender.cc</a>.</p>
+<p>When the data transmission is paused the current position is changed to this byte position (excluding file header). </p>
+<p>Implementation in sender modules is optional. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00049">activity()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#a69f4c2c58dbd303020b26e895c185686">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     error(<span class="stringliteral">&quot;seekByte() not implemented&quot;</span>);
 }
@@ -576,7 +618,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_payload_sender.html#a1192ffd879c11dc9a881d6b28929df9e">RTPPayloadSender::seekTime</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_payload_sender.html#a1192ffd879c11dc9a881d6b28929df9e">RTPPayloadSender::seekTime</a> </td>
           <td>(</td>
           <td class="paramtype">simtime_t&#160;</td>
           <td class="paramname"><em>moment</em></td><td>)</td>
@@ -585,11 +627,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>When the data transmission is paused the current position is changed to this time (relative to start of file). Implementation in sender modules is optional. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00171">171</a> of file <a class="el" href="_r_t_p_payload_sender_8cc_source.html">RTPPayloadSender.cc</a>.</p>
+<p>When the data transmission is paused the current position is changed to this time (relative to start of file). </p>
+<p>Implementation in sender modules is optional. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00049">activity()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#a69f4c2c58dbd303020b26e895c185686">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     error(<span class="stringliteral">&quot;seekTime() not implemented&quot;</span>);
 }
@@ -609,13 +651,13 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This method gets called when one (or more) rtp data packets have to be sent. Subclasses must overwrite this method to do something useful. This implementation doesn't send packets it just returns </p>
+
+<p>This method gets called when one (or more) rtp data packets have to be sent. </p>
+<p>Subclasses must overwrite this method to do something useful. This implementation doesn't send packets it just returns </p>
 
 <p>Reimplemented in <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#abcffc8019d25b3a660220c0759747629">RTPAVProfilePayload32Sender</a>.</p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00206">206</a> of file <a class="el" href="_r_t_p_payload_sender_8cc_source.html">RTPPayloadSender.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00049">activity()</a>, and <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00131">play()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#a69f4c2c58dbd303020b26e895c185686">handleMessage()</a>, and <a class="el" href="class_r_t_p_payload_sender.html#a9538606bf2b0d873cd0a0cd7754f7ce9">play()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     error(<span class="stringliteral">&quot;sendPacket() not implemented&quot;</span>);
     <span class="keywordflow">return</span> <span class="keyword">false</span>;
@@ -628,7 +670,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_r_t_p_payload_sender.html#ad9cd79ff818c987d07c1f21b70678588">RTPPayloadSender::stop</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_r_t_p_payload_sender.html#ad9cd79ff818c987d07c1f21b70678588">RTPPayloadSender::stop</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -636,18 +678,18 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>This method stop data transmission and resets the sender module so that a following PLAY command would start the transmission at the beginning again. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00183">183</a> of file <a class="el" href="_r_t_p_payload_sender_8cc_source.html">RTPPayloadSender.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00049">activity()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#a69f4c2c58dbd303020b26e895c185686">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    cancelEvent(<a class="code" href="class_r_t_p_payload_sender.html#a7dfada70b7fab61bcf43dcf687e506d4">_reminderMessage</a>);
-    <a class="code" href="class_r_t_p_payload_sender.html#a881b74af0edb1793055bcd1a2912c4ed">_status</a> = <a class="code" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933da270de7595d9590d548963a3ab8dbb8f3">STOPPED</a>;
+    cancelAndDelete(<a class="code" href="class_r_t_p_payload_sender.html#a7dfada70b7fab61bcf43dcf687e506d4" title="A self message used as timer for the moment the next packet must be sent.">_reminderMessage</a>);
+    <a class="code" href="class_r_t_p_payload_sender.html#a7dfada70b7fab61bcf43dcf687e506d4" title="A self message used as timer for the moment the next packet must be sent.">_reminderMessage</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
+    <a class="code" href="class_r_t_p_payload_sender.html#a881b74af0edb1793055bcd1a2912c4ed" title="The current state of data transmission.">_status</a> = <a class="code" href="class_r_t_p_payload_sender.html#ac59256e616e553048c7fadfae798933da270de7595d9590d548963a3ab8dbb8f3">STOPPED</a>;
     <a class="code" href="class_r_t_p_sender_status_message.html">RTPSenderStatusMessage</a> *rssm = <span class="keyword">new</span> <a class="code" href="class_r_t_p_sender_status_message.html">RTPSenderStatusMessage</a>(<span class="stringliteral">&quot;STOPPED&quot;</span>);
-    rssm-&gt;<a class="code" href="class_r_t_p_sender_status_message.html#afbfb4159cbeeb5b82b78e542fdde3f26">setStatus</a>(<span class="stringliteral">&quot;STOPPED&quot;</span>);
-    <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a> *rinp = <span class="keyword">new</span> <a class="code" href="class_r_t_p_inner_packet.html">RTPInnerPacket</a>(<span class="stringliteral">&quot;senderModuleStatus(STOPPED)&quot;</span>);
-    rinp-&gt;<a class="code" href="class_r_t_p_inner_packet.html#ad96315d76da3e4068c6107b886884506">senderModuleStatus</a>(<a class="code" href="class_r_t_p_payload_sender.html#a98d0eb2439d2eab6606741445590b513">_ssrc</a>, rssm);
+    rssm-&gt;<a class="code" href="class_r_t_p_sender_status_message.html#a774eadbf2df1539ea682b9fecf1b1554">setStatus</a>(<a class="code" href="_r_t_p_sender_status_message__m_8h.html#ae729df361c4afc9c258b941040bc4780a18854a0b38afd71de1cd9c75f063f7f2">RTP_SENDER_STATUS_STOPPED</a>);
+    <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a> *rinp = <span class="keyword">new</span> <a class="code" href="class_r_t_p_inner_packet.html" title="This class is used for communication between submodules of the RTP layer module.">RTPInnerPacket</a>(<span class="stringliteral">&quot;senderModuleStatus(STOPPED)&quot;</span>);
+    rinp-&gt;<a class="code" href="class_r_t_p_inner_packet.html#a687773c746c5ba17e32300d878673006">setSenderModuleStatusPkt</a>(<a class="code" href="class_r_t_p_payload_sender.html#a98d0eb2439d2eab6606741445590b513" title="The ssrc identifier of this sender module.">_ssrc</a>, rssm);
     send(rinp, <span class="stringliteral">&quot;profileOut&quot;</span>);
 }
 </pre></div>
@@ -664,11 +706,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The clock rate in ticks per second this sender uses. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8h_source.html#l00093">93</a> of file <a class="el" href="_r_t_p_payload_sender_8h_source.html">RTPPayloadSender.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html#l00034">RTPAVProfilePayload32Sender::initialize()</a>, <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00035">initialize()</a>, <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00100">initializeSenderModule()</a>, and <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html#l00153">RTPAVProfilePayload32Sender::sendPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#a659955ebcef6b036f57a503607e6472f">RTPAVProfilePayload32Sender::initialize()</a>, <a class="el" href="class_r_t_p_payload_sender.html#a3d89be915b854cf2655a68c68cec0ba1">initialize()</a>, <a class="el" href="class_r_t_p_payload_sender.html#a1f8653338d14096e4296243ab0821ff1">initializeSenderModule()</a>, and <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#abcffc8019d25b3a660220c0759747629">RTPAVProfilePayload32Sender::sendPacket()</a>.</p>
 
 </div>
 </div>
@@ -682,11 +723,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The input file stream for the data file. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8h_source.html#l00073">73</a> of file <a class="el" href="_r_t_p_payload_sender_8h_source.html">RTPPayloadSender.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00125">closeSourceFile()</a>, <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html#l00116">RTPAVProfilePayload32Sender::initializeSenderModule()</a>, <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00116">openSourceFile()</a>, and <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html#l00153">RTPAVProfilePayload32Sender::sendPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#a578ae414c38747252b0cfc7d717deb2b">closeSourceFile()</a>, <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#a8bbc7ffcabe829c7e29e183d422c50cb">RTPAVProfilePayload32Sender::initializeSenderModule()</a>, <a class="el" href="class_r_t_p_payload_sender.html#acdd1e2f6a2e8a17cdb576aa86168292a">openSourceFile()</a>, and <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#abcffc8019d25b3a660220c0759747629">RTPAVProfilePayload32Sender::sendPacket()</a>.</p>
 
 </div>
 </div>
@@ -700,11 +740,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The maximum size of an <a class="el" href="class_r_t_p_packet.html">RTPPacket</a>. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8h_source.html#l00078">78</a> of file <a class="el" href="_r_t_p_payload_sender_8h_source.html">RTPPayloadSender.h</a>.</p>
+<p>The maximum size of an <a class="el" href="class_r_t_p_packet.html" title="This class represents an RTP data packet.">RTPPacket</a>. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00035">initialize()</a>, <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00100">initializeSenderModule()</a>, and <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html#l00153">RTPAVProfilePayload32Sender::sendPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#a3d89be915b854cf2655a68c68cec0ba1">initialize()</a>, <a class="el" href="class_r_t_p_payload_sender.html#a1f8653338d14096e4296243ab0821ff1">initializeSenderModule()</a>, and <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#abcffc8019d25b3a660220c0759747629">RTPAVProfilePayload32Sender::sendPacket()</a>.</p>
 
 </div>
 </div>
@@ -718,11 +757,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The payload type this sender creates. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8h_source.html#l00088">88</a> of file <a class="el" href="_r_t_p_payload_sender_8h_source.html">RTPPayloadSender.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html#l00034">RTPAVProfilePayload32Sender::initialize()</a>, <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00035">initialize()</a>, <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00100">initializeSenderModule()</a>, and <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html#l00153">RTPAVProfilePayload32Sender::sendPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#a659955ebcef6b036f57a503607e6472f">RTPAVProfilePayload32Sender::initialize()</a>, <a class="el" href="class_r_t_p_payload_sender.html#a3d89be915b854cf2655a68c68cec0ba1">initialize()</a>, <a class="el" href="class_r_t_p_payload_sender.html#a1f8653338d14096e4296243ab0821ff1">initializeSenderModule()</a>, and <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#abcffc8019d25b3a660220c0759747629">RTPAVProfilePayload32Sender::sendPacket()</a>.</p>
 
 </div>
 </div>
@@ -736,11 +774,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>A self message used as timer for the moment the next packet must be sent. It's a member variable because when playing gets paused or stopped the timer must be cancelled. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8h_source.html#l00127">127</a> of file <a class="el" href="_r_t_p_payload_sender_8h_source.html">RTPPayloadSender.h</a>.</p>
+<p>A self message used as timer for the moment the next packet must be sent. </p>
+<p>It's a member variable because when playing gets paused or stopped the timer must be cancelled. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00159">pause()</a>, <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html#l00153">RTPAVProfilePayload32Sender::sendPacket()</a>, and <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00183">stop()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#a69f4c2c58dbd303020b26e895c185686">handleMessage()</a>, <a class="el" href="class_r_t_p_payload_sender.html#a3d89be915b854cf2655a68c68cec0ba1">initialize()</a>, <a class="el" href="class_r_t_p_payload_sender.html#a1076c39c68c6583d224af968c840acc7">pause()</a>, <a class="el" href="class_r_t_p_payload_sender.html#a6990d34d13be7e9851d6341d251e6c22">RTPPayloadSender()</a>, <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#abcffc8019d25b3a660220c0759747629">RTPAVProfilePayload32Sender::sendPacket()</a>, <a class="el" href="class_r_t_p_payload_sender.html#ad9cd79ff818c987d07c1f21b70678588">stop()</a>, and <a class="el" href="class_r_t_p_payload_sender.html#a86725b3d955310caffe95170e482fffe">~RTPPayloadSender()</a>.</p>
 
 </div>
 </div>
@@ -754,11 +792,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The current sequence number. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8h_source.html#l00115">115</a> of file <a class="el" href="_r_t_p_payload_sender_8h_source.html">RTPPayloadSender.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00035">initialize()</a>, and <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html#l00153">RTPAVProfilePayload32Sender::sendPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#a3d89be915b854cf2655a68c68cec0ba1">initialize()</a>, and <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#abcffc8019d25b3a660220c0759747629">RTPAVProfilePayload32Sender::sendPacket()</a>.</p>
 
 </div>
 </div>
@@ -772,11 +809,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The first sequence number used for created rtp data packets. The value is chosen randomly. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8h_source.html#l00110">110</a> of file <a class="el" href="_r_t_p_payload_sender_8h_source.html">RTPPayloadSender.h</a>.</p>
+<p>The first sequence number used for created rtp data packets. </p>
+<p>The value is chosen randomly. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00035">initialize()</a>, and <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00100">initializeSenderModule()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#a3d89be915b854cf2655a68c68cec0ba1">initialize()</a>, and <a class="el" href="class_r_t_p_payload_sender.html#a1f8653338d14096e4296243ab0821ff1">initializeSenderModule()</a>.</p>
 
 </div>
 </div>
@@ -790,11 +827,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The ssrc identifier of this sender module. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8h_source.html#l00083">83</a> of file <a class="el" href="_r_t_p_payload_sender_8h_source.html">RTPPayloadSender.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00195">endOfFile()</a>, <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00035">initialize()</a>, <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00100">initializeSenderModule()</a>, <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00159">pause()</a>, <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00131">play()</a>, <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html#l00153">RTPAVProfilePayload32Sender::sendPacket()</a>, and <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00183">stop()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#aa8d3c549b50edb6e9c17db691d7e726e">endOfFile()</a>, <a class="el" href="class_r_t_p_payload_sender.html#a3d89be915b854cf2655a68c68cec0ba1">initialize()</a>, <a class="el" href="class_r_t_p_payload_sender.html#a1f8653338d14096e4296243ab0821ff1">initializeSenderModule()</a>, <a class="el" href="class_r_t_p_payload_sender.html#a1076c39c68c6583d224af968c840acc7">pause()</a>, <a class="el" href="class_r_t_p_payload_sender.html#a9538606bf2b0d873cd0a0cd7754f7ce9">play()</a>, <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#abcffc8019d25b3a660220c0759747629">RTPAVProfilePayload32Sender::sendPacket()</a>, and <a class="el" href="class_r_t_p_payload_sender.html#ad9cd79ff818c987d07c1f21b70678588">stop()</a>.</p>
 
 </div>
 </div>
@@ -808,11 +844,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The current state of data transmission. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8h_source.html#l00120">120</a> of file <a class="el" href="_r_t_p_payload_sender_8h_source.html">RTPPayloadSender.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00195">endOfFile()</a>, <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00100">initializeSenderModule()</a>, <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00159">pause()</a>, <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00131">play()</a>, and <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00183">stop()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#aa8d3c549b50edb6e9c17db691d7e726e">endOfFile()</a>, <a class="el" href="class_r_t_p_payload_sender.html#a1f8653338d14096e4296243ab0821ff1">initializeSenderModule()</a>, <a class="el" href="class_r_t_p_payload_sender.html#a1076c39c68c6583d224af968c840acc7">pause()</a>, <a class="el" href="class_r_t_p_payload_sender.html#a9538606bf2b0d873cd0a0cd7754f7ce9">play()</a>, and <a class="el" href="class_r_t_p_payload_sender.html#ad9cd79ff818c987d07c1f21b70678588">stop()</a>.</p>
 
 </div>
 </div>
@@ -826,11 +861,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>The current rtp time stamp. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8h_source.html#l00104">104</a> of file <a class="el" href="_r_t_p_payload_sender_8h_source.html">RTPPayloadSender.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00035">initialize()</a>, and <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00131">play()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#a3d89be915b854cf2655a68c68cec0ba1">initialize()</a>, and <a class="el" href="class_r_t_p_payload_sender.html#a9538606bf2b0d873cd0a0cd7754f7ce9">play()</a>.</p>
 
 </div>
 </div>
@@ -844,17 +878,17 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The first rtp time stamp used for created rtp data packets. The value is chosen randomly. </p>
 
-<p>Definition at line <a class="el" href="_r_t_p_payload_sender_8h_source.html#l00099">99</a> of file <a class="el" href="_r_t_p_payload_sender_8h_source.html">RTPPayloadSender.h</a>.</p>
+<p>The first rtp time stamp used for created rtp data packets. </p>
+<p>The value is chosen randomly. </p>
 
-<p>Referenced by <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00035">initialize()</a>, <a class="el" href="_r_t_p_payload_sender_8cc_source.html#l00100">initializeSenderModule()</a>, and <a class="el" href="_r_t_p_a_v_profile_payload32_sender_8cc_source.html#l00153">RTPAVProfilePayload32Sender::sendPacket()</a>.</p>
+<p>Referenced by <a class="el" href="class_r_t_p_payload_sender.html#a3d89be915b854cf2655a68c68cec0ba1">initialize()</a>, <a class="el" href="class_r_t_p_payload_sender.html#a1f8653338d14096e4296243ab0821ff1">initializeSenderModule()</a>, and <a class="el" href="class_r_t_p_a_v_profile_payload32_sender.html#abcffc8019d25b3a660220c0759747629">RTPAVProfilePayload32Sender::sendPacket()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_r_t_p_payload_sender_8h_source.html">RTPPayloadSender.h</a></li>
-<li><a class="el" href="_r_t_p_payload_sender_8cc_source.html">RTPPayloadSender.cc</a></li>
+<li><a class="el" href="_r_t_p_payload_sender_8h.html">RTPPayloadSender.h</a></li>
+<li><a class="el" href="_r_t_p_payload_sender_8cc.html">RTPPayloadSender.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -862,7 +896,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_r_t_p_payload_sender.html">RTPPayloadSender</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:52 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:30 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

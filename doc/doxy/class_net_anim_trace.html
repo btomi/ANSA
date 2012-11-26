@@ -75,45 +75,455 @@
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#pro-methods">Protected Member Functions</a>  </div>
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">NetAnimTrace Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="NetAnimTrace" -->
-<p><code>#include &lt;<a class="el" href="_net_anim_trace_8h_source.html">NetAnimTrace.h</a>&gt;</code></p>
+<p>Records a NetAnim trace.  
+ <a href="class_net_anim_trace.html#details">More...</a></p>
+
+<p><code>#include &lt;NetAnimTrace.h&gt;</code></p>
 
 <p><a href="class_net_anim_trace-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_net_anim_trace.html#a4fac5a47247e829bc35581661596719e">initialize</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_net_anim_trace.html#a4aa9625bee8d7c48846ffab77c8f73fa">initialize</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_net_anim_trace.html#a47de58f64505ca54cf2d4491078447a0">handleMessage</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_net_anim_trace.html#a6fa00ba0ebec4961bab8102f7336e585">finish</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_net_anim_trace.html#ad39da99af4a423776199bd5b992671a0">dump</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_net_anim_trace.html#a0b0ed78cf36e1a19583375c93ab30043">receiveSignal</a> (cComponent *source, simsignal_t signalID, cObject *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_net_anim_trace.html#a462df094acb0782ce9b1d374ae8f53ea">isRelevantModule</a> (cModule *mod)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_net_anim_trace.html#a2bf10b6ac78fa6298d79245f82db5160">resolveNodeCoordinates</a> (cModule *mod, double &amp;x, double &amp;y)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_net_anim_trace.html#a0f709a5df27fd064c630a795edfc5123">addNode</a> (cModule *mod)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_net_anim_trace.html#a3273e8c43e020ba2aee133ee8f98a673">addLink</a> (cGate *gate)</td></tr>
+<tr><td colspan="2"><h2><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_net_anim_trace.html#aff47c2bac566705eb871d2bfc0b2b2a5">f</a></td></tr>
+<tr><td colspan="2"><h2><a name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_net_anim_trace.html#ac83cd965942984388b370d97f73c33af">messageSentSignal</a> = SIMSIGNAL_NULL</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_net_anim_trace.html#a3ee3d42e1b0ce4474266b0f938c50ae4">mobilityStateChangedSignal</a> = SIMSIGNAL_NULL</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_net_anim_trace_8h_source.html#l00026">26</a> of file <a class="el" href="_net_anim_trace_8h_source.html">NetAnimTrace.h</a>.</p>
+<div class="textblock"><p>Records a NetAnim trace. </p>
+<p>See NED file for more information.</p>
+<dl class="author"><dt><b>Author:</b></dt><dd>andras </dd></dl>
 </div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a4fac5a47247e829bc35581661596719e"></a><!-- doxytag: member="NetAnimTrace::initialize" ref="a4fac5a47247e829bc35581661596719e" args="()" -->
+<a class="anchor" id="a3273e8c43e020ba2aee133ee8f98a673"></a><!-- doxytag: member="NetAnimTrace::addLink" ref="a3273e8c43e020ba2aee133ee8f98a673" args="(cGate *gate)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_net_anim_trace.html#a4fac5a47247e829bc35581661596719e">NetAnimTrace::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_net_anim_trace.html#a3273e8c43e020ba2aee133ee8f98a673">NetAnimTrace::addLink</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td><code> [inline, protected, virtual]</code></td>
+          <td class="paramtype">cGate *&#160;</td>
+          <td class="paramname"><em>gate</em></td><td>)</td>
+          <td><code> [protected, virtual]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_net_anim_trace_8h_source.html#l00029">29</a> of file <a class="el" href="_net_anim_trace_8h_source.html">NetAnimTrace.h</a>.</p>
-<div class="fragment"><pre class="fragment">{error(<span class="stringliteral">&quot;This module requires at least OMNeT++ 4.1&quot;</span>);}
+<p>Referenced by <a class="el" href="class_net_anim_trace.html#ad39da99af4a423776199bd5b992671a0">dump()</a>, and <a class="el" href="class_net_anim_trace.html#a0b0ed78cf36e1a19583375c93ab30043">receiveSignal()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <a class="code" href="class_net_anim_trace.html#aff47c2bac566705eb871d2bfc0b2b2a5">f</a> &lt;&lt; simTime() &lt;&lt; <span class="stringliteral">&quot; L &quot;</span> &lt;&lt; gate-&gt;getOwnerModule()-&gt;getId() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; gate-&gt;getNextGate()-&gt;getOwnerModule()-&gt;getId() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+}
 </pre></div>
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="_net_anim_trace_8h_source.html">NetAnimTrace.h</a></li>
+<a class="anchor" id="a0f709a5df27fd064c630a795edfc5123"></a><!-- doxytag: member="NetAnimTrace::addNode" ref="a0f709a5df27fd064c630a795edfc5123" args="(cModule *mod)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_net_anim_trace.html#a0f709a5df27fd064c630a795edfc5123">NetAnimTrace::addNode</a> </td>
+          <td>(</td>
+          <td class="paramtype">cModule *&#160;</td>
+          <td class="paramname"><em>mod</em></td><td>)</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_net_anim_trace.html#ad39da99af4a423776199bd5b992671a0">dump()</a>, and <a class="el" href="class_net_anim_trace.html#a0b0ed78cf36e1a19583375c93ab30043">receiveSignal()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordtype">double</span> x, y;
+    <a class="code" href="class_net_anim_trace.html#a2bf10b6ac78fa6298d79245f82db5160">resolveNodeCoordinates</a>(mod, x, y);
+    <a class="code" href="class_net_anim_trace.html#aff47c2bac566705eb871d2bfc0b2b2a5">f</a> &lt;&lt; simTime() &lt;&lt; <span class="stringliteral">&quot; N &quot;</span> &lt;&lt; mod-&gt;getId() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; y &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ad39da99af4a423776199bd5b992671a0"></a><!-- doxytag: member="NetAnimTrace::dump" ref="ad39da99af4a423776199bd5b992671a0" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_net_anim_trace.html#ad39da99af4a423776199bd5b992671a0">NetAnimTrace::dump</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_net_anim_trace.html#a4aa9625bee8d7c48846ffab77c8f73fa">initialize()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    cModule *parent = simulation.getSystemModule();
+    <span class="keywordflow">for</span> (cModule::SubmoduleIterator it(parent); !it.end(); it++)
+        <span class="keywordflow">if</span> (it() != <span class="keyword">this</span>)
+            <a class="code" href="class_net_anim_trace.html#a0f709a5df27fd064c630a795edfc5123">addNode</a>(it());
+    <span class="keywordflow">for</span> (cModule::SubmoduleIterator it(parent); !it.end(); it++)
+        <span class="keywordflow">if</span> (it() != <span class="keyword">this</span>)
+            <span class="keywordflow">for</span> (cModule::GateIterator ig(it()); !ig.end(); ig++)
+                <span class="keywordflow">if</span> (ig()-&gt;getType()==cGate::OUTPUT &amp;&amp; ig()-&gt;getNextGate())
+                    <a class="code" href="class_net_anim_trace.html#a3273e8c43e020ba2aee133ee8f98a673">addLink</a>(ig());
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a6fa00ba0ebec4961bab8102f7336e585"></a><!-- doxytag: member="NetAnimTrace::finish" ref="a6fa00ba0ebec4961bab8102f7336e585" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_net_anim_trace.html#a6fa00ba0ebec4961bab8102f7336e585">NetAnimTrace::finish</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+    <a class="code" href="class_net_anim_trace.html#aff47c2bac566705eb871d2bfc0b2b2a5">f</a>.close();
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a47de58f64505ca54cf2d4491078447a0"></a><!-- doxytag: member="NetAnimTrace::handleMessage" ref="a47de58f64505ca54cf2d4491078447a0" args="(cMessage *msg)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_net_anim_trace.html#a47de58f64505ca54cf2d4491078447a0">NetAnimTrace::handleMessage</a> </td>
+          <td>(</td>
+          <td class="paramtype">cMessage *&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;This module does not handle messages&quot;</span>);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a4aa9625bee8d7c48846ffab77c8f73fa"></a><!-- doxytag: member="NetAnimTrace::initialize" ref="a4aa9625bee8d7c48846ffab77c8f73fa" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_net_anim_trace.html#a4aa9625bee8d7c48846ffab77c8f73fa">NetAnimTrace::initialize</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> (!par(<span class="stringliteral">&quot;enabled&quot;</span>).boolValue())
+        <span class="keywordflow">return</span>;
+
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *filename = par(<span class="stringliteral">&quot;filename&quot;</span>);
+    <a class="code" href="class_net_anim_trace.html#aff47c2bac566705eb871d2bfc0b2b2a5">f</a>.open(filename, std::ios::out | std::ios::trunc);
+    <span class="keywordflow">if</span> (<a class="code" href="class_net_anim_trace.html#aff47c2bac566705eb871d2bfc0b2b2a5">f</a>.fail())
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Cannot open file \&quot;%s\&quot; for writing&quot;</span>, filename);
+
+    <a class="code" href="class_net_anim_trace.html#ad39da99af4a423776199bd5b992671a0">dump</a>();
+
+    <a class="code" href="class_net_anim_trace.html#ac83cd965942984388b370d97f73c33af">messageSentSignal</a> = registerSignal(<span class="stringliteral">&quot;messageSent&quot;</span>);
+    <a class="code" href="class_net_anim_trace.html#a3ee3d42e1b0ce4474266b0f938c50ae4">mobilityStateChangedSignal</a> = registerSignal(<span class="stringliteral">&quot;mobilityStateChanged&quot;</span>);
+    simulation.getSystemModule()-&gt;subscribe(POST_MODEL_CHANGE, <span class="keyword">this</span>);
+    simulation.getSystemModule()-&gt;subscribe(<a class="code" href="class_net_anim_trace.html#ac83cd965942984388b370d97f73c33af">messageSentSignal</a>, <span class="keyword">this</span>);
+    simulation.getSystemModule()-&gt;subscribe(<a class="code" href="class_net_anim_trace.html#a3ee3d42e1b0ce4474266b0f938c50ae4">mobilityStateChangedSignal</a>, <span class="keyword">this</span>);
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a462df094acb0782ce9b1d374ae8f53ea"></a><!-- doxytag: member="NetAnimTrace::isRelevantModule" ref="a462df094acb0782ce9b1d374ae8f53ea" args="(cModule *mod)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_net_anim_trace.html#a462df094acb0782ce9b1d374ae8f53ea">NetAnimTrace::isRelevantModule</a> </td>
+          <td>(</td>
+          <td class="paramtype">cModule *&#160;</td>
+          <td class="paramname"><em>mod</em></td><td>)</td>
+          <td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_net_anim_trace.html#a0b0ed78cf36e1a19583375c93ab30043">receiveSignal()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">return</span> mod-&gt;getParentModule() == simulation.getSystemModule();
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a0b0ed78cf36e1a19583375c93ab30043"></a><!-- doxytag: member="NetAnimTrace::receiveSignal" ref="a0b0ed78cf36e1a19583375c93ab30043" args="(cComponent *source, simsignal_t signalID, cObject *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_net_anim_trace.html#a0b0ed78cf36e1a19583375c93ab30043">NetAnimTrace::receiveSignal</a> </td>
+          <td>(</td>
+          <td class="paramtype">cComponent *&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">simsignal_t&#160;</td>
+          <td class="paramname"><em>signalID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cObject *&#160;</td>
+          <td class="paramname"><em>obj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{
+    <span class="keywordflow">if</span> (signalID == <a class="code" href="class_net_anim_trace.html#ac83cd965942984388b370d97f73c33af">messageSentSignal</a> &amp;&amp; !source-&gt;isModule())
+    {
+        <span class="comment">// record a &quot;packet sent&quot; line</span>
+        cChannel *channel = (cChannel *)source;
+        cModule *srcModule = channel-&gt;getSourceGate()-&gt;getOwnerModule();
+        <span class="keywordflow">if</span> (<a class="code" href="class_net_anim_trace.html#a462df094acb0782ce9b1d374ae8f53ea">isRelevantModule</a>(srcModule))
+        {
+            cModule *destModule = channel-&gt;getSourceGate()-&gt;getNextGate()-&gt;getOwnerModule();
+            cITimestampedValue *v = check_and_cast&lt;cITimestampedValue *&gt;(obj);
+            <span class="keywordflow">if</span> (dynamic_cast&lt;cDatarateChannel *&gt;(channel))
+            {
+                cDatarateChannel *datarateChannel = (cDatarateChannel *)channel;
+                cMessage *msg = check_and_cast&lt;cMessage *&gt;(v-&gt;objectValue(signalID));
+                simtime_t duration = msg-&gt;isPacket() ? ((cPacket*)msg)-&gt;getBitLength() / datarateChannel-&gt;getDatarate() : 0.0;
+                simtime_t delay = datarateChannel-&gt;getDelay();
+                simtime_t fbTx = v-&gt;getTimestamp(signalID);
+                simtime_t lbTx = fbTx + duration;
+                simtime_t fbRx = fbTx + delay;
+                simtime_t lbRx = lbTx + delay;
+                <a class="code" href="class_net_anim_trace.html#aff47c2bac566705eb871d2bfc0b2b2a5">f</a> &lt;&lt; fbTx &lt;&lt; <span class="stringliteral">&quot; P &quot;</span> &lt;&lt; srcModule-&gt;getId() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; destModule-&gt;getId() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; lbTx &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; fbRx &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; lbRx &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+            }
+            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dynamic_cast&lt;cDelayChannel *&gt;(channel))
+            {
+                cDelayChannel *delayChannel = (cDelayChannel *)channel;
+                simtime_t fbTx = v-&gt;getTimestamp(signalID);
+                simtime_t fbRx = fbTx + delayChannel-&gt;getDelay();
+                <a class="code" href="class_net_anim_trace.html#aff47c2bac566705eb871d2bfc0b2b2a5">f</a> &lt;&lt; fbTx &lt;&lt; <span class="stringliteral">&quot; P &quot;</span> &lt;&lt; srcModule-&gt;getId() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; destModule-&gt;getId() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; fbTx &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; fbRx &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; fbRx &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+            }
+        }
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (signalID == <a class="code" href="class_net_anim_trace.html#a3ee3d42e1b0ce4474266b0f938c50ae4">mobilityStateChangedSignal</a>)
+    {
+        <a class="code" href="class_i_mobility.html" title="Abstract base class defining the public interface that must be provided by all mobility modules...">IMobility</a>* mobility = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_i_mobility.html" title="Abstract base class defining the public interface that must be provided by all mobility modules...">IMobility</a>*<span class="keyword">&gt;</span>(source);
+        <span class="keywordflow">if</span> (mobility)
+        {
+            <a class="code" href="class_coord.html" title="Class for storing 3D coordinates.">Coord</a> c = mobility-&gt;<a class="code" href="class_i_mobility.html#abbf2edff2f9570cada67952fc1eb886d" title="Returns the current position at the current simulation time.">getCurrentPosition</a>();
+            cModule *mod = <a class="code" href="_module_access_8cc.html#a05eb8740c0b600bfb259b3bc7806ac9c" title="Find the node containing the given module.">findContainingNode</a>(dynamic_cast&lt;cModule*&gt;(source));
+            <span class="keywordflow">if</span> (mod &amp;&amp; <a class="code" href="class_net_anim_trace.html#a462df094acb0782ce9b1d374ae8f53ea">isRelevantModule</a>(mod))
+                <a class="code" href="class_net_anim_trace.html#aff47c2bac566705eb871d2bfc0b2b2a5">f</a> &lt;&lt; simTime() &lt;&lt; <span class="stringliteral">&quot; N &quot;</span> &lt;&lt; mod-&gt;getId() &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; c.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; c.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;
+        }
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (signalID == POST_MODEL_CHANGE)
+    {
+        <span class="comment">// record dynamic &quot;node created&quot; and &quot;link created&quot; lines.</span>
+        <span class="comment">// note: at the time of writing, NetAnim did not support &quot;link removed&quot; and &quot;node removed&quot; lines</span>
+        <span class="keywordflow">if</span> (dynamic_cast&lt;cPostModuleAddNotification *&gt;(obj))
+        {
+            cPostModuleAddNotification *notification = (cPostModuleAddNotification *)obj;
+            <span class="keywordflow">if</span> (<a class="code" href="class_net_anim_trace.html#a462df094acb0782ce9b1d374ae8f53ea">isRelevantModule</a>(notification-&gt;module))
+                <a class="code" href="class_net_anim_trace.html#a0f709a5df27fd064c630a795edfc5123">addNode</a>(notification-&gt;module);
+        }
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dynamic_cast&lt;cPostGateConnectNotification *&gt;(obj))
+        {
+            cPostGateConnectNotification *notification = (cPostGateConnectNotification *)obj;
+            <span class="keywordflow">if</span> (<a class="code" href="class_net_anim_trace.html#a462df094acb0782ce9b1d374ae8f53ea">isRelevantModule</a>(notification-&gt;gate-&gt;getOwnerModule()))
+                <a class="code" href="class_net_anim_trace.html#a3273e8c43e020ba2aee133ee8f98a673">addLink</a>(notification-&gt;gate);
+        }
+    }
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a2bf10b6ac78fa6298d79245f82db5160"></a><!-- doxytag: member="NetAnimTrace::resolveNodeCoordinates" ref="a2bf10b6ac78fa6298d79245f82db5160" args="(cModule *mod, double &amp;x, double &amp;y)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_net_anim_trace.html#a2bf10b6ac78fa6298d79245f82db5160">NetAnimTrace::resolveNodeCoordinates</a> </td>
+          <td>(</td>
+          <td class="paramtype">cModule *&#160;</td>
+          <td class="paramname"><em>mod</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_net_anim_trace.html#a0f709a5df27fd064c630a795edfc5123">addNode()</a>.</p>
+<div class="fragment"><pre class="fragment">{
+    <span class="comment">// choose some defaults</span>
+    x = 600 * dblrand();
+    y = 400 * dblrand();
+
+    <span class="comment">// and be content with them if there is no &quot;p&quot; tag in the display string</span>
+    cDisplayString&amp; <a class="code" href="_t_c_p___n_s_c_8cc.html#a6fe20edd854a1a653ae71ccf541a6b8b">ds</a> = submod-&gt;getDisplayString();
+    <span class="keywordflow">if</span> (!ds.containsTag(<span class="stringliteral">&quot;p&quot;</span>))
+        <span class="keywordflow">return</span>;
+
+    <span class="comment">// the following code is based on Tkenv (modinsp.cc, getSubmoduleCoords())</span>
+
+    <span class="comment">// read x,y coordinates from &quot;p&quot; tag</span>
+    x = toDouble(ds.getTagArg(<span class="stringliteral">&quot;p&quot;</span>, 0), x);
+    y = toDouble(ds.getTagArg(<span class="stringliteral">&quot;p&quot;</span>, 1), y);
+
+    <span class="keywordtype">double</span> sx = 20;
+    <span class="keywordtype">double</span> sy = 20;
+
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *layout = ds.getTagArg(<span class="stringliteral">&quot;p&quot;</span>, 2); <span class="comment">// matrix, row, column, ring, exact etc.</span>
+
+    <span class="comment">// modify x,y using predefined layouts</span>
+    <span class="keywordflow">if</span> (!layout || !*layout)
+    {
+        <span class="comment">// we&#39;re happy</span>
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(layout, <span class="stringliteral">&quot;e&quot;</span>) || !strcmp(layout, <span class="stringliteral">&quot;x&quot;</span>) || !strcmp(layout, <span class="stringliteral">&quot;exact&quot;</span>))
+    {
+        <span class="keywordtype">int</span> dx = toDouble(ds.getTagArg(<span class="stringliteral">&quot;p&quot;</span>, 3), 0);
+        <span class="keywordtype">int</span> dy = toDouble(ds.getTagArg(<span class="stringliteral">&quot;p&quot;</span>, 4), 0);
+        x += dx;
+        y += dy;
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(layout, <span class="stringliteral">&quot;r&quot;</span>) || !strcmp(layout, <span class="stringliteral">&quot;row&quot;</span>))
+    {
+        <span class="keywordtype">int</span> dx = toDouble(ds.getTagArg(<span class="stringliteral">&quot;p&quot;</span>, 3), 2*sx);
+        x += submod-&gt;getIndex()*dx;
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(layout, <span class="stringliteral">&quot;c&quot;</span>) || !strcmp(layout, <span class="stringliteral">&quot;col&quot;</span>) || !strcmp(layout, <span class="stringliteral">&quot;column&quot;</span>))
+    {
+        <span class="keywordtype">int</span> dy = toDouble(ds.getTagArg(<span class="stringliteral">&quot;p&quot;</span>, 3), 2*sy);
+        y += submod-&gt;getIndex()*dy;
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(layout, <span class="stringliteral">&quot;m&quot;</span>) || !strcmp(layout, <span class="stringliteral">&quot;matrix&quot;</span>))
+    {
+        <span class="keywordtype">int</span> columns = toDouble(ds.getTagArg(<span class="stringliteral">&quot;p&quot;</span>, 3), 5);
+        <span class="keywordtype">int</span> dx = toDouble(ds.getTagArg(<span class="stringliteral">&quot;p&quot;</span>, 4), 2*sx);
+        <span class="keywordtype">int</span> dy = toDouble(ds.getTagArg(<span class="stringliteral">&quot;p&quot;</span>, 5), 2*sy);
+        x += (submod-&gt;getIndex() % columns)*dx;
+        y += (submod-&gt;getIndex() / columns)*dy;
+    }
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(layout, <span class="stringliteral">&quot;i&quot;</span>) || !strcmp(layout, <span class="stringliteral">&quot;ri&quot;</span>) || !strcmp(layout, <span class="stringliteral">&quot;ring&quot;</span>))
+    {
+        <span class="keywordtype">int</span> rx = toDouble(ds.getTagArg(<span class="stringliteral">&quot;p&quot;</span>, 3), (sx+sy)*submod-&gt;size()/4);
+        <span class="keywordtype">int</span> ry = toDouble(ds.getTagArg(<span class="stringliteral">&quot;p&quot;</span>, 4), rx);
+
+        x += (int) floor(rx - rx*sin(submod-&gt;getIndex()*2*PI/submod-&gt;size()));
+        y += (int) floor(ry - ry*cos(submod-&gt;getIndex()*2*PI/submod-&gt;size()));
+    }
+    <span class="keywordflow">else</span>
+    {
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="stringliteral">&quot;Invalid layout `%s&#39; in `p&#39; tag of display string&quot;</span>, layout);
+    }
+}
+</pre></div>
+</div>
+</div>
+<hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="aff47c2bac566705eb871d2bfc0b2b2a5"></a><!-- doxytag: member="NetAnimTrace::f" ref="aff47c2bac566705eb871d2bfc0b2b2a5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ofstream <a class="el" href="class_net_anim_trace.html#aff47c2bac566705eb871d2bfc0b2b2a5">NetAnimTrace::f</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_net_anim_trace.html#a3273e8c43e020ba2aee133ee8f98a673">addLink()</a>, <a class="el" href="class_net_anim_trace.html#a0f709a5df27fd064c630a795edfc5123">addNode()</a>, <a class="el" href="class_net_anim_trace.html#a6fa00ba0ebec4961bab8102f7336e585">finish()</a>, <a class="el" href="class_net_anim_trace.html#a4aa9625bee8d7c48846ffab77c8f73fa">initialize()</a>, and <a class="el" href="class_net_anim_trace.html#a0b0ed78cf36e1a19583375c93ab30043">receiveSignal()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac83cd965942984388b370d97f73c33af"></a><!-- doxytag: member="NetAnimTrace::messageSentSignal" ref="ac83cd965942984388b370d97f73c33af" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_net_anim_trace.html#ac83cd965942984388b370d97f73c33af">NetAnimTrace::messageSentSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_net_anim_trace.html#a4aa9625bee8d7c48846ffab77c8f73fa">initialize()</a>, and <a class="el" href="class_net_anim_trace.html#a0b0ed78cf36e1a19583375c93ab30043">receiveSignal()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3ee3d42e1b0ce4474266b0f938c50ae4"></a><!-- doxytag: member="NetAnimTrace::mobilityStateChangedSignal" ref="a3ee3d42e1b0ce4474266b0f938c50ae4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_net_anim_trace.html#a3ee3d42e1b0ce4474266b0f938c50ae4">NetAnimTrace::mobilityStateChangedSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_net_anim_trace.html#a4aa9625bee8d7c48846ffab77c8f73fa">initialize()</a>, and <a class="el" href="class_net_anim_trace.html#a0b0ed78cf36e1a19583375c93ab30043">receiveSignal()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li><a class="el" href="_net_anim_trace_8h.html">NetAnimTrace.h</a></li>
+<li><a class="el" href="_net_anim_trace_8cc.html">NetAnimTrace.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -121,7 +531,7 @@ Protected Member Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_net_anim_trace.html">NetAnimTrace</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:50 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:28 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

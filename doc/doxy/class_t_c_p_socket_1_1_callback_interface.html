@@ -81,19 +81,27 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="TCPSocket::CallbackInterface" -->
-<p><code>#include &lt;<a class="el" href="_t_c_p_socket_8h_source.html">TCPSocket.h</a>&gt;</code></p>
+<p>Abstract base class for your callback objects.  
+ <a href="class_t_c_p_socket_1_1_callback_interface.html#details">More...</a></p>
+
+<p><code>#include &lt;TCPSocket.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TCPSocket::CallbackInterface:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_t_c_p_socket_1_1_callback_interface.png" usemap="#TCPSocket::CallbackInterface_map" alt=""/>
   <map id="TCPSocket::CallbackInterface_map" name="TCPSocket::CallbackInterface_map">
-<area href="class_l_d_p.html" alt="LDP" shape="rect" coords="0,56,179,80"/>
-<area href="class_t_c_p_generic_cli_app_base.html" alt="TCPGenericCliAppBase" shape="rect" coords="189,56,368,80"/>
-<area href="class_t_c_p_server_thread_base.html" alt="TCPServerThreadBase" shape="rect" coords="472,56,651,80"/>
-<area href="class_t_c_p_basic_client_app.html" alt="TCPBasicClientApp" shape="rect" coords="94,112,273,136"/>
-<area href="class_telnet_app.html" alt="TelnetApp" shape="rect" coords="283,112,462,136"/>
-<area href="class_t_c_p_generic_srv_thread.html" alt="TCPGenericSrvThread" shape="rect" coords="472,112,651,136"/>
+<area href="class_b_g_p_routing.html" alt="BGPRouting" shape="rect" coords="0,56,179,80"/>
+<area href="class_http_browser.html" title="Browser module for OMNeT++ simulations." alt="HttpBrowser" shape="rect" coords="189,56,368,80"/>
+<area href="class_http_server.html" title="HttpServerDirect module." alt="HttpServer" shape="rect" coords="378,56,557,80"/>
+<area href="class_l_d_p.html" title="LDP (rfc 3036) protocol implementation." alt="LDP" shape="rect" coords="567,56,746,80"/>
+<area href="class_t_c_p_generic_cli_app_base.html" title="Base class for clients app for TCP-based request-reply protocols or apps." alt="TCPGenericCliAppBase" shape="rect" coords="756,56,935,80"/>
+<area href="class_t_c_p_server_thread_base.html" title="Abstract base class for server processes to be used with TCPSrvHostApp." alt="TCPServerThreadBase" shape="rect" coords="1039,56,1218,80"/>
+<area href="class_http_server_evil_a.html" title="An evil attacker server demonstration - type A." alt="HttpServerEvilA" shape="rect" coords="283,112,462,136"/>
+<area href="class_http_server_evil_b.html" title="An evil attacker server demonstration - type B." alt="HttpServerEvilB" shape="rect" coords="472,112,651,136"/>
+<area href="class_t_c_p_basic_client_app.html" title="An example request-reply based client application." alt="TCPBasicClientApp" shape="rect" coords="661,112,840,136"/>
+<area href="class_telnet_app.html" title="An example Telnet client application." alt="TelnetApp" shape="rect" coords="850,112,1029,136"/>
+<area href="class_t_c_p_generic_srv_thread.html" title="Example server thread, to be used with TCPSrvHostApp." alt="TCPGenericSrvThread" shape="rect" coords="1039,112,1218,136"/>
 </map>
  </div></div>
 
@@ -102,18 +110,17 @@ Inheritance diagram for TCPSocket::CallbackInterface:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#aa4a419d22decd91064162819e982bd1a">~CallbackInterface</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#ae4fe36908e06127f0fe32454e63287f9">socketDataArrived</a> (int <a class="el" href="class_t_c_p_socket.html#aeeb6754061d9d4bc1296723b363fbfe9">connId</a>, void *<a class="el" href="class_t_c_p_socket.html#aea9d0cc7ed3d5ea53b63cae0d2a4358e">yourPtr</a>, cPacket *msg, bool urgent)=0</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a9465870ddf580bea5b18c069d609fec2">socketEstablished</a> (int <a class="el" href="class_t_c_p_socket.html#aeeb6754061d9d4bc1296723b363fbfe9">connId</a>, void *<a class="el" href="class_t_c_p_socket.html#aea9d0cc7ed3d5ea53b63cae0d2a4358e">yourPtr</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a77899a66e256304949deb2bfd7d820c7">socketPeerClosed</a> (int <a class="el" href="class_t_c_p_socket.html#aeeb6754061d9d4bc1296723b363fbfe9">connId</a>, void *<a class="el" href="class_t_c_p_socket.html#aea9d0cc7ed3d5ea53b63cae0d2a4358e">yourPtr</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a9a4049a13ace6e455d62c744ec7bf35e">socketClosed</a> (int <a class="el" href="class_t_c_p_socket.html#aeeb6754061d9d4bc1296723b363fbfe9">connId</a>, void *<a class="el" href="class_t_c_p_socket.html#aea9d0cc7ed3d5ea53b63cae0d2a4358e">yourPtr</a>)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#af4fc128f905d181c511114849d0b8da1">socketFailure</a> (int <a class="el" href="class_t_c_p_socket.html#aeeb6754061d9d4bc1296723b363fbfe9">connId</a>, void *<a class="el" href="class_t_c_p_socket.html#aea9d0cc7ed3d5ea53b63cae0d2a4358e">yourPtr</a>, int code)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a8299015159dbe4f70075d1a2e4ed2407">socketStatusArrived</a> (int <a class="el" href="class_t_c_p_socket.html#aeeb6754061d9d4bc1296723b363fbfe9">connId</a>, void *<a class="el" href="class_t_c_p_socket.html#aea9d0cc7ed3d5ea53b63cae0d2a4358e">yourPtr</a>, <a class="el" href="class_t_c_p_status_info.html">TCPStatusInfo</a> *status)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#ae4fe36908e06127f0fe32454e63287f9">socketDataArrived</a> (int <a class="el" href="class_t_c_p_socket.html#aeeb6754061d9d4bc1296723b363fbfe9">connId</a>, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *<a class="el" href="class_t_c_p_socket.html#aea9d0cc7ed3d5ea53b63cae0d2a4358e">yourPtr</a>, cPacket *msg, bool urgent)=0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a9465870ddf580bea5b18c069d609fec2">socketEstablished</a> (int <a class="el" href="class_t_c_p_socket.html#aeeb6754061d9d4bc1296723b363fbfe9">connId</a>, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *<a class="el" href="class_t_c_p_socket.html#aea9d0cc7ed3d5ea53b63cae0d2a4358e">yourPtr</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a77899a66e256304949deb2bfd7d820c7">socketPeerClosed</a> (int <a class="el" href="class_t_c_p_socket.html#aeeb6754061d9d4bc1296723b363fbfe9">connId</a>, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *<a class="el" href="class_t_c_p_socket.html#aea9d0cc7ed3d5ea53b63cae0d2a4358e">yourPtr</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a9a4049a13ace6e455d62c744ec7bf35e">socketClosed</a> (int <a class="el" href="class_t_c_p_socket.html#aeeb6754061d9d4bc1296723b363fbfe9">connId</a>, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *<a class="el" href="class_t_c_p_socket.html#aea9d0cc7ed3d5ea53b63cae0d2a4358e">yourPtr</a>)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#af4fc128f905d181c511114849d0b8da1">socketFailure</a> (int <a class="el" href="class_t_c_p_socket.html#aeeb6754061d9d4bc1296723b363fbfe9">connId</a>, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *<a class="el" href="class_t_c_p_socket.html#aea9d0cc7ed3d5ea53b63cae0d2a4358e">yourPtr</a>, int code)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a8299015159dbe4f70075d1a2e4ed2407">socketStatusArrived</a> (int <a class="el" href="class_t_c_p_socket.html#aeeb6754061d9d4bc1296723b363fbfe9">connId</a>, <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *<a class="el" href="class_t_c_p_socket.html#aea9d0cc7ed3d5ea53b63cae0d2a4358e">yourPtr</a>, <a class="el" href="class_t_c_p_status_info.html">TCPStatusInfo</a> *status)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Abstract base class for your callback objects. See <a class="el" href="class_t_c_p_socket.html#a5aa6b7b21ebe1f98801eade44e0de8eb">setCallbackObject()</a> and <a class="el" href="class_t_c_p_socket.html#a5a4c2dd02c72e3cb0115a0490f408f07">processMessage()</a> for more info.</p>
-<p>Note: this class is not subclassed from cPolymorphic, because classes may have both this class and cSimpleModule as base class, and cSimpleModule is already a cPolymorphic. </p>
-
-<p>Definition at line <a class="el" href="_t_c_p_socket_8h_source.html#l00134">134</a> of file <a class="el" href="_t_c_p_socket_8h_source.html">TCPSocket.h</a>.</p>
+<div class="textblock"><p>Abstract base class for your callback objects. </p>
+<p>See <a class="el" href="class_t_c_p_socket.html#a5aa6b7b21ebe1f98801eade44e0de8eb" title="Sets a callback object, to be used with processMessage().">setCallbackObject()</a> and <a class="el" href="class_t_c_p_socket.html#a5a4c2dd02c72e3cb0115a0490f408f07" title="Examines the message (which should have arrived from TCP), updates socket state, and if there is a ca...">processMessage()</a> for more info.</p>
+<p>Note: this class is not subclassed from cObject, because classes may have both this class and cSimpleModule as base class, and cSimpleModule is already a cObject. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa4a419d22decd91064162819e982bd1a"></a><!-- doxytag: member="TCPSocket::CallbackInterface::~CallbackInterface" ref="aa4a419d22decd91064162819e982bd1a" args="()" -->
 <div class="memitem">
@@ -128,8 +135,6 @@ Public Member Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_socket_8h_source.html#l00137">137</a> of file <a class="el" href="_t_c_p_socket_8h_source.html">TCPSocket.h</a>.</p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
@@ -140,7 +145,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a9a4049a13ace6e455d62c744ec7bf35e">TCPSocket::CallbackInterface::socketClosed</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a9a4049a13ace6e455d62c744ec7bf35e">TCPSocket::CallbackInterface::socketClosed</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>connId</em>, </td>
@@ -148,7 +153,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>yourPtr</em>&#160;</td>
         </tr>
         <tr>
@@ -160,11 +165,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_l_d_p.html#a11b3f4de91cc4a962ec28a94c4c7c6cb">LDP</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#a39a1f1131c97aaf61e79cbe01fb5341b">TCPGenericCliAppBase</a>, <a class="el" href="class_t_c_p_server_thread_base.html#a21cf7cb430b6a1dc42be9f16acf98198">TCPServerThreadBase</a>, <a class="el" href="class_t_c_p_basic_client_app.html#a37368450e37da097e428fea9365cef1d">TCPBasicClientApp</a>, and <a class="el" href="class_telnet_app.html#a6118600399f307b07f13c4b7a35507ba">TelnetApp</a>.</p>
+<p>Reimplemented in <a class="el" href="class_l_d_p.html#a11b3f4de91cc4a962ec28a94c4c7c6cb">LDP</a>, <a class="el" href="class_http_browser.html#a6d6d9614384c69bed5e32e2e64ef49f1">HttpBrowser</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#a39a1f1131c97aaf61e79cbe01fb5341b">TCPGenericCliAppBase</a>, <a class="el" href="class_http_server.html#a6ec6a87d6ab2fa35d99a80dedd19eb0d">HttpServer</a>, <a class="el" href="class_t_c_p_server_thread_base.html#a21cf7cb430b6a1dc42be9f16acf98198">TCPServerThreadBase</a>, <a class="el" href="class_b_g_p_routing.html#a1ccedea531ce12976dc282ac1afaa44e">BGPRouting</a>, <a class="el" href="class_t_c_p_basic_client_app.html#a37368450e37da097e428fea9365cef1d">TCPBasicClientApp</a>, and <a class="el" href="class_telnet_app.html#a6118600399f307b07f13c4b7a35507ba">TelnetApp</a>.</p>
 
-<p>Definition at line <a class="el" href="_t_c_p_socket_8h_source.html#l00141">141</a> of file <a class="el" href="_t_c_p_socket_8h_source.html">TCPSocket.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_socket_8cc_source.html#l00239">TCPSocket::processMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_socket.html#a5a4c2dd02c72e3cb0115a0490f408f07">TCPSocket::processMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
@@ -174,7 +177,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#ae4fe36908e06127f0fe32454e63287f9">TCPSocket::CallbackInterface::socketDataArrived</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#ae4fe36908e06127f0fe32454e63287f9">TCPSocket::CallbackInterface::socketDataArrived</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>connId</em>, </td>
@@ -182,7 +185,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>yourPtr</em>, </td>
         </tr>
         <tr>
@@ -206,9 +209,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_l_d_p.html#a7a960a6e6fdddbf58e4978ed432e63de">LDP</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#a2609e0e2775c805d2c3a3beb06c096cd">TCPGenericCliAppBase</a>, <a class="el" href="class_t_c_p_server_thread_base.html#a68bff0c6da664d286433bf6ab78feae9">TCPServerThreadBase</a>, <a class="el" href="class_t_c_p_basic_client_app.html#a476dab358954ae599966f7b6d20e60b8">TCPBasicClientApp</a>, and <a class="el" href="class_telnet_app.html#aa8970c8031fce975f916df35f8db4ec3">TelnetApp</a>.</p>
+<p>Implemented in <a class="el" href="class_l_d_p.html#a7a960a6e6fdddbf58e4978ed432e63de">LDP</a>, <a class="el" href="class_http_browser.html#a7d6e7d73216663bb604ba070975a0e47">HttpBrowser</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#a2609e0e2775c805d2c3a3beb06c096cd">TCPGenericCliAppBase</a>, <a class="el" href="class_http_server.html#ab77cbec0186cf6018707a08db3ada4b9">HttpServer</a>, <a class="el" href="class_t_c_p_server_thread_base.html#a68bff0c6da664d286433bf6ab78feae9">TCPServerThreadBase</a>, <a class="el" href="class_b_g_p_routing.html#a1ae6215c9a786aa825a88d7f61630e18">BGPRouting</a>, <a class="el" href="class_t_c_p_basic_client_app.html#a476dab358954ae599966f7b6d20e60b8">TCPBasicClientApp</a>, and <a class="el" href="class_telnet_app.html#aa8970c8031fce975f916df35f8db4ec3">TelnetApp</a>.</p>
 
-<p>Referenced by <a class="el" href="_t_c_p_socket_8cc_source.html#l00239">TCPSocket::processMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_socket.html#a5a4c2dd02c72e3cb0115a0490f408f07">TCPSocket::processMessage()</a>.</p>
 
 </div>
 </div>
@@ -217,7 +220,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a9465870ddf580bea5b18c069d609fec2">TCPSocket::CallbackInterface::socketEstablished</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a9465870ddf580bea5b18c069d609fec2">TCPSocket::CallbackInterface::socketEstablished</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>connId</em>, </td>
@@ -225,7 +228,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>yourPtr</em>&#160;</td>
         </tr>
         <tr>
@@ -237,11 +240,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_l_d_p.html#a014504d9ed3ccbb4a0366e95870eea56">LDP</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#aa3e60c557a7af7cfc3b159e690be5a83">TCPGenericCliAppBase</a>, <a class="el" href="class_t_c_p_server_thread_base.html#af52975483ab29fbc7b2b81843f19ccd5">TCPServerThreadBase</a>, <a class="el" href="class_t_c_p_basic_client_app.html#aa374c69359d25b804c258195843fa533">TCPBasicClientApp</a>, and <a class="el" href="class_telnet_app.html#a1b320cd9262367d60f65bf8067f80076">TelnetApp</a>.</p>
+<p>Reimplemented in <a class="el" href="class_l_d_p.html#a014504d9ed3ccbb4a0366e95870eea56">LDP</a>, <a class="el" href="class_http_browser.html#a2f0d7765d77b937b124eff48962935bd">HttpBrowser</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#aa3e60c557a7af7cfc3b159e690be5a83">TCPGenericCliAppBase</a>, <a class="el" href="class_http_server.html#a905251e4812733a4343a6f24678c05da">HttpServer</a>, <a class="el" href="class_t_c_p_server_thread_base.html#af52975483ab29fbc7b2b81843f19ccd5">TCPServerThreadBase</a>, <a class="el" href="class_b_g_p_routing.html#a1ae29504f81ccb0a4798aa3c43f46981">BGPRouting</a>, <a class="el" href="class_t_c_p_basic_client_app.html#aa374c69359d25b804c258195843fa533">TCPBasicClientApp</a>, and <a class="el" href="class_telnet_app.html#a1b320cd9262367d60f65bf8067f80076">TelnetApp</a>.</p>
 
-<p>Definition at line <a class="el" href="_t_c_p_socket_8h_source.html#l00139">139</a> of file <a class="el" href="_t_c_p_socket_8h_source.html">TCPSocket.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_socket_8cc_source.html#l00239">TCPSocket::processMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_socket.html#a5a4c2dd02c72e3cb0115a0490f408f07">TCPSocket::processMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
@@ -251,7 +252,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#af4fc128f905d181c511114849d0b8da1">TCPSocket::CallbackInterface::socketFailure</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#af4fc128f905d181c511114849d0b8da1">TCPSocket::CallbackInterface::socketFailure</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>connId</em>, </td>
@@ -259,7 +260,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>yourPtr</em>, </td>
         </tr>
         <tr>
@@ -277,11 +278,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_l_d_p.html#a9e552b940ba57ad9e27d5cbeb31befa2">LDP</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#a321d7c13c4ebe9a63e2e013895a390d1">TCPGenericCliAppBase</a>, <a class="el" href="class_t_c_p_server_thread_base.html#a182641b5bb6c749453ee73bb909abd1d">TCPServerThreadBase</a>, <a class="el" href="class_t_c_p_basic_client_app.html#a31d6d5cc0924ddd764e8793a840d5b8b">TCPBasicClientApp</a>, and <a class="el" href="class_telnet_app.html#abc753928be72e7be027401bc74345f9e">TelnetApp</a>.</p>
+<p>Reimplemented in <a class="el" href="class_l_d_p.html#a9e552b940ba57ad9e27d5cbeb31befa2">LDP</a>, <a class="el" href="class_http_browser.html#a6d83892e89eca7440a253ad0ecfb4f8a">HttpBrowser</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#a321d7c13c4ebe9a63e2e013895a390d1">TCPGenericCliAppBase</a>, <a class="el" href="class_http_server.html#a867ec256512849c4226a846326852f16">HttpServer</a>, <a class="el" href="class_t_c_p_server_thread_base.html#a182641b5bb6c749453ee73bb909abd1d">TCPServerThreadBase</a>, <a class="el" href="class_t_c_p_basic_client_app.html#a31d6d5cc0924ddd764e8793a840d5b8b">TCPBasicClientApp</a>, <a class="el" href="class_b_g_p_routing.html#ae2a41f622c5c693ebc207eafb64291bc">BGPRouting</a>, and <a class="el" href="class_telnet_app.html#abc753928be72e7be027401bc74345f9e">TelnetApp</a>.</p>
 
-<p>Definition at line <a class="el" href="_t_c_p_socket_8h_source.html#l00142">142</a> of file <a class="el" href="_t_c_p_socket_8h_source.html">TCPSocket.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_socket_8cc_source.html#l00239">TCPSocket::processMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_socket.html#a5a4c2dd02c72e3cb0115a0490f408f07">TCPSocket::processMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
@@ -291,7 +290,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a77899a66e256304949deb2bfd7d820c7">TCPSocket::CallbackInterface::socketPeerClosed</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a77899a66e256304949deb2bfd7d820c7">TCPSocket::CallbackInterface::socketPeerClosed</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>connId</em>, </td>
@@ -299,7 +298,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>yourPtr</em>&#160;</td>
         </tr>
         <tr>
@@ -311,11 +310,9 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_l_d_p.html#a8b0190937343b4847d6cbc830f15b2ca">LDP</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#a9ec5b3744ba9da37e0c1acad20c3ae08">TCPGenericCliAppBase</a>, and <a class="el" href="class_t_c_p_server_thread_base.html#a026281fd182e3caec7c8d65b2ba0a573">TCPServerThreadBase</a>.</p>
+<p>Reimplemented in <a class="el" href="class_l_d_p.html#a8b0190937343b4847d6cbc830f15b2ca">LDP</a>, <a class="el" href="class_http_browser.html#aff2994902e2bcb6ee71dd28dd60b7ed8">HttpBrowser</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#a9ec5b3744ba9da37e0c1acad20c3ae08">TCPGenericCliAppBase</a>, <a class="el" href="class_http_server.html#a2e2bd5a439dec033b399cf255ecd52fb">HttpServer</a>, <a class="el" href="class_t_c_p_server_thread_base.html#a026281fd182e3caec7c8d65b2ba0a573">TCPServerThreadBase</a>, and <a class="el" href="class_b_g_p_routing.html#a4ac4b6a987e923235a6ee72a19f98a08">BGPRouting</a>.</p>
 
-<p>Definition at line <a class="el" href="_t_c_p_socket_8h_source.html#l00140">140</a> of file <a class="el" href="_t_c_p_socket_8h_source.html">TCPSocket.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_socket_8cc_source.html#l00239">TCPSocket::processMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_socket.html#a5a4c2dd02c72e3cb0115a0490f408f07">TCPSocket::processMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
@@ -325,7 +322,7 @@ Public Member Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a8299015159dbe4f70075d1a2e4ed2407">TCPSocket::CallbackInterface::socketStatusArrived</a> </td>
+          <td class="memname">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_socket_1_1_callback_interface.html#a8299015159dbe4f70075d1a2e4ed2407">TCPSocket::CallbackInterface::socketStatusArrived</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>connId</em>, </td>
@@ -333,7 +330,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">void *&#160;</td>
+          <td class="paramtype"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> *&#160;</td>
           <td class="paramname"><em>yourPtr</em>, </td>
         </tr>
         <tr>
@@ -351,17 +348,15 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_l_d_p.html#af37813ef12cecdb4c52ead27c251c23f">LDP</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#aacd013bdf693db9511c3cd9854330169">TCPGenericCliAppBase</a>, and <a class="el" href="class_t_c_p_server_thread_base.html#a03fe224e5fec85d7fec636016ec4d7f5">TCPServerThreadBase</a>.</p>
+<p>Reimplemented in <a class="el" href="class_l_d_p.html#af37813ef12cecdb4c52ead27c251c23f">LDP</a>, <a class="el" href="class_http_browser.html#a3056cfa9559695e057073fadf7bb2e06">HttpBrowser</a>, <a class="el" href="class_t_c_p_generic_cli_app_base.html#aacd013bdf693db9511c3cd9854330169">TCPGenericCliAppBase</a>, and <a class="el" href="class_t_c_p_server_thread_base.html#a03fe224e5fec85d7fec636016ec4d7f5">TCPServerThreadBase</a>.</p>
 
-<p>Definition at line <a class="el" href="_t_c_p_socket_8h_source.html#l00143">143</a> of file <a class="el" href="_t_c_p_socket_8h_source.html">TCPSocket.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_socket_8cc_source.html#l00239">TCPSocket::processMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_socket.html#a5a4c2dd02c72e3cb0115a0490f408f07">TCPSocket::processMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{<span class="keyword">delete</span> status;}
 </pre></div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="_t_c_p_socket_8h_source.html">TCPSocket.h</a></li>
+<li><a class="el" href="_t_c_p_socket_8h.html">TCPSocket.h</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -370,7 +365,7 @@ Public Member Functions</h2></td></tr>
       <li class="navelem"><a class="el" href="class_t_c_p_socket.html">TCPSocket</a>      </li>
       <li class="navelem"><a class="el" href="class_t_c_p_socket_1_1_callback_interface.html">CallbackInterface</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:54 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:31 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

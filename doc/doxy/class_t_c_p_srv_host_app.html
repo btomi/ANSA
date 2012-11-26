@@ -83,35 +83,37 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="TCPSrvHostApp" -->
-<p><code>#include &lt;<a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>&gt;</code></p>
+<p>Hosts a server application, to be subclassed from TCPServerProcess (which is a sSimpleModule).  
+ <a href="class_t_c_p_srv_host_app.html#details">More...</a></p>
+
+<p><code>#include &lt;TCPSrvHostApp.h&gt;</code></p>
 
 <p><a href="class_t_c_p_srv_host_app-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_srv_host_app.html#a41fcfed2e806e0cba1660fe6792e64a9">removeThread</a> (<a class="el" href="class_t_c_p_server_thread_base.html">TCPServerThreadBase</a> *thread)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_srv_host_app.html#a41fcfed2e806e0cba1660fe6792e64a9">removeThread</a> (<a class="el" href="class_t_c_p_server_thread_base.html">TCPServerThreadBase</a> *thread)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_srv_host_app.html#a7bc07bd453f43e46780b6628f280799a">initialize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_srv_host_app.html#a63785a7d60da44c89b2a97d36069b51e">handleMessage</a> (cMessage *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_srv_host_app.html#a552aa8f631f8157f21b52190107614be">finish</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_srv_host_app.html#a26210421b7fa06fa329ae86a550d1244">updateDisplay</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_srv_host_app.html#a7bc07bd453f43e46780b6628f280799a">initialize</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_srv_host_app.html#a63785a7d60da44c89b2a97d36069b51e">handleMessage</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_srv_host_app.html#a552aa8f631f8157f21b52190107614be">finish</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_srv_host_app.html#a26210421b7fa06fa329ae86a550d1244">updateDisplay</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_c_p_socket.html">TCPSocket</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_srv_host_app.html#ad793dc53afce3f48b59bbc0e97ca740e">serverSocket</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_c_p_socket_map.html">TCPSocketMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_srv_host_app.html#a08d58c9e05abe383547b5df56f756a0f">socketMap</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Hosts a server application, to be subclassed from TCPServerProcess (which is a sSimpleModule). Creates one instance (using dynamic module creation) for each incoming connection. More info in the corresponding NED file. </p>
-
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00030">30</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
+<div class="textblock"><p>Hosts a server application, to be subclassed from TCPServerProcess (which is a sSimpleModule). </p>
+<p>Creates one instance (using dynamic module creation) for each incoming connection. More info in the corresponding NED file. </p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a552aa8f631f8157f21b52190107614be"></a><!-- doxytag: member="TCPSrvHostApp::finish" ref="a552aa8f631f8157f21b52190107614be" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_srv_host_app.html#a552aa8f631f8157f21b52190107614be">TCPSrvHostApp::finish</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_srv_host_app.html#a552aa8f631f8157f21b52190107614be">TCPSrvHostApp::finish</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -119,8 +121,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8cc_source.html#l00070">70</a> of file <a class="el" href="_t_c_p_srv_host_app_8cc_source.html">TCPSrvHostApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
 }
 </pre></div>
@@ -131,7 +131,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_srv_host_app.html#a63785a7d60da44c89b2a97d36069b51e">TCPSrvHostApp::handleMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_srv_host_app.html#a63785a7d60da44c89b2a97d36069b51e">TCPSrvHostApp::handleMessage</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -140,34 +140,35 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8cc_source.html#l00040">40</a> of file <a class="el" href="_t_c_p_srv_host_app_8cc_source.html">TCPSrvHostApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span> (msg-&gt;isSelfMessage())
     {
-        <a class="code" href="class_t_c_p_server_thread_base.html">TCPServerThreadBase</a> *thread = (<a class="code" href="class_t_c_p_server_thread_base.html">TCPServerThreadBase</a> *)msg-&gt;getContextPointer();
-        thread-&gt;<a class="code" href="class_t_c_p_server_thread_base.html#a050633116c40e7a5750f365e7e0760c0">timerExpired</a>(msg);
+        <a class="code" href="class_t_c_p_server_thread_base.html" title="Abstract base class for server processes to be used with TCPSrvHostApp.">TCPServerThreadBase</a> *thread = (<a class="code" href="class_t_c_p_server_thread_base.html" title="Abstract base class for server processes to be used with TCPSrvHostApp.">TCPServerThreadBase</a> *)msg-&gt;getContextPointer();
+        thread-&gt;<a class="code" href="class_t_c_p_server_thread_base.html#a050633116c40e7a5750f365e7e0760c0" title="Called when a timer (scheduled via scheduleAt()) expires.">timerExpired</a>(msg);
     }
     <span class="keywordflow">else</span>
     {
-        <a class="code" href="class_t_c_p_socket.html">TCPSocket</a> *socket = <a class="code" href="class_t_c_p_srv_host_app.html#a08d58c9e05abe383547b5df56f756a0f">socketMap</a>.<a class="code" href="class_t_c_p_socket_map.html#ad96c686c0e0536b8b8e279728a53b17e">findSocketFor</a>(msg);
+        <a class="code" href="class_t_c_p_socket.html" title="TCPSocket is a convenience class, to make it easier to manage TCP connections from your application m...">TCPSocket</a> *socket = <a class="code" href="class_t_c_p_srv_host_app.html#a08d58c9e05abe383547b5df56f756a0f">socketMap</a>.<a class="code" href="class_t_c_p_socket_map.html#ad96c686c0e0536b8b8e279728a53b17e" title="Finds the socket (by connId) for the given message.">findSocketFor</a>(msg);
+
         <span class="keywordflow">if</span> (!socket)
         {
             <span class="comment">// new connection -- create new socket object and server process</span>
-            socket = <span class="keyword">new</span> <a class="code" href="class_t_c_p_socket.html">TCPSocket</a>(msg);
-            socket-&gt;<a class="code" href="class_t_c_p_socket.html#ab6563d5ef32687b2072e5c08317ba519">setOutputGate</a>(gate(<span class="stringliteral">&quot;tcpOut&quot;</span>));
+            socket = <span class="keyword">new</span> <a class="code" href="class_t_c_p_socket.html" title="TCPSocket is a convenience class, to make it easier to manage TCP connections from your application m...">TCPSocket</a>(msg);
+            socket-&gt;<a class="code" href="class_t_c_p_socket.html#ab6563d5ef32687b2072e5c08317ba519" title="Sets the gate on which to send to TCP.">setOutputGate</a>(gate(<span class="stringliteral">&quot;tcpOut&quot;</span>));
 
             <span class="keyword">const</span> <span class="keywordtype">char</span> *serverThreadClass = par(<span class="stringliteral">&quot;serverThreadClass&quot;</span>);
-            <a class="code" href="class_t_c_p_server_thread_base.html">TCPServerThreadBase</a> *proc = check_and_cast&lt;<a class="code" href="class_t_c_p_server_thread_base.html">TCPServerThreadBase</a> *&gt;(createOne(serverThreadClass));
+            <a class="code" href="class_t_c_p_server_thread_base.html" title="Abstract base class for server processes to be used with TCPSrvHostApp.">TCPServerThreadBase</a> *proc =
+                    check_and_cast&lt;<a class="code" href="class_t_c_p_server_thread_base.html" title="Abstract base class for server processes to be used with TCPSrvHostApp.">TCPServerThreadBase</a> *&gt;(createOne(serverThreadClass));
 
-            socket-&gt;<a class="code" href="class_t_c_p_socket.html#a5aa6b7b21ebe1f98801eade44e0de8eb">setCallbackObject</a>(proc);
+            socket-&gt;<a class="code" href="class_t_c_p_socket.html#a5aa6b7b21ebe1f98801eade44e0de8eb" title="Sets a callback object, to be used with processMessage().">setCallbackObject</a>(proc);
             proc-&gt;<a class="code" href="class_t_c_p_server_thread_base.html#a45612ccfb1de85082414a6b9dd91dd4e">init</a>(<span class="keyword">this</span>, socket);
 
-            <a class="code" href="class_t_c_p_srv_host_app.html#a08d58c9e05abe383547b5df56f756a0f">socketMap</a>.<a class="code" href="class_t_c_p_socket_map.html#ac19937a0e8bd2dfcda6e7f831b835fd8">addSocket</a>(socket);
+            <a class="code" href="class_t_c_p_srv_host_app.html#a08d58c9e05abe383547b5df56f756a0f">socketMap</a>.<a class="code" href="class_t_c_p_socket_map.html#ac19937a0e8bd2dfcda6e7f831b835fd8" title="Registers the given socket.">addSocket</a>(socket);
 
             <a class="code" href="class_t_c_p_srv_host_app.html#a26210421b7fa06fa329ae86a550d1244">updateDisplay</a>();
         }
-        socket-&gt;<a class="code" href="class_t_c_p_socket.html#a5a4c2dd02c72e3cb0115a0490f408f07">processMessage</a>(msg);
+
+        socket-&gt;<a class="code" href="class_t_c_p_socket.html#a5a4c2dd02c72e3cb0115a0490f408f07" title="Examines the message (which should have arrived from TCP), updates socket state, and if there is a ca...">processMessage</a>(msg);
     }
 }
 </pre></div>
@@ -178,7 +179,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_srv_host_app.html#a7bc07bd453f43e46780b6628f280799a">TCPSrvHostApp::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_srv_host_app.html#a7bc07bd453f43e46780b6628f280799a">TCPSrvHostApp::initialize</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -186,14 +187,15 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8cc_source.html#l00021">21</a> of file <a class="el" href="_t_c_p_srv_host_app_8cc_source.html">TCPSrvHostApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keyword">const</span> <span class="keywordtype">char</span> *address = par(<span class="stringliteral">&quot;address&quot;</span>);
-    <span class="keywordtype">int</span> port = par(<span class="stringliteral">&quot;port&quot;</span>);
+    <a class="code" href="class_t_c_p_srv_host_app.html#a7bc07bd453f43e46780b6628f280799a">cSimpleModule::initialize</a>();
 
-    <a class="code" href="class_t_c_p_srv_host_app.html#ad793dc53afce3f48b59bbc0e97ca740e">serverSocket</a>.<a class="code" href="class_t_c_p_socket.html#ab6563d5ef32687b2072e5c08317ba519">setOutputGate</a>(gate(<span class="stringliteral">&quot;tcpOut&quot;</span>));
-    <a class="code" href="class_t_c_p_srv_host_app.html#ad793dc53afce3f48b59bbc0e97ca740e">serverSocket</a>.<a class="code" href="class_t_c_p_socket.html#a2c4f6131103b0c9773728d706140aa0d">bind</a>(address[0] ? <a class="code" href="class_i_pv_x_address.html">IPvXAddress</a>(address) : <a class="code" href="class_i_pv_x_address.html">IPvXAddress</a>(), port);
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *localAddress = par(<span class="stringliteral">&quot;localAddress&quot;</span>);
+    <span class="keywordtype">int</span> localPort = par(<span class="stringliteral">&quot;localPort&quot;</span>);
+
+    <a class="code" href="class_t_c_p_srv_host_app.html#ad793dc53afce3f48b59bbc0e97ca740e">serverSocket</a>.<a class="code" href="class_t_c_p_socket.html#ab6563d5ef32687b2072e5c08317ba519" title="Sets the gate on which to send to TCP.">setOutputGate</a>(gate(<span class="stringliteral">&quot;tcpOut&quot;</span>));
+    <a class="code" href="class_t_c_p_srv_host_app.html#ad793dc53afce3f48b59bbc0e97ca740e">serverSocket</a>.<a class="code" href="class_t_c_p_socket.html#aaa0a60b46635abaf60045716a1e8b1ca" title="Read &quot;dataTransferMode&quot; parameter from ini/ned, and set dataTransferMode member value.">readDataTransferModePar</a>(*<span class="keyword">this</span>);
+    <a class="code" href="class_t_c_p_srv_host_app.html#ad793dc53afce3f48b59bbc0e97ca740e">serverSocket</a>.<a class="code" href="class_t_c_p_socket.html#a2c4f6131103b0c9773728d706140aa0d" title="Bind the socket to a local port number.">bind</a>(localAddress[0] ? <a class="code" href="class_i_pv_x_address.html" title="Stores an IPv4 or an IPv6 address.">IPvXAddress</a>(localAddress) : <a class="code" href="class_i_pv_x_address.html" title="Stores an IPv4 or an IPv6 address.">IPvXAddress</a>(), localPort);
     <a class="code" href="class_t_c_p_srv_host_app.html#ad793dc53afce3f48b59bbc0e97ca740e">serverSocket</a>.<a class="code" href="class_t_c_p_socket.html#abfd870650b679461fa75fbe473c89d30">listen</a>();
 }
 </pre></div>
@@ -204,7 +206,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_srv_host_app.html#a41fcfed2e806e0cba1660fe6792e64a9">TCPSrvHostApp::removeThread</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_srv_host_app.html#a41fcfed2e806e0cba1660fe6792e64a9">TCPSrvHostApp::removeThread</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_t_c_p_server_thread_base.html">TCPServerThreadBase</a> *&#160;</td>
           <td class="paramname"><em>thread</em></td><td>)</td>
@@ -213,11 +215,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8cc_source.html#l00074">74</a> of file <a class="el" href="_t_c_p_srv_host_app_8cc_source.html">TCPSrvHostApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// remove socket</span>
-    <a class="code" href="class_t_c_p_srv_host_app.html#a08d58c9e05abe383547b5df56f756a0f">socketMap</a>.<a class="code" href="class_t_c_p_socket_map.html#a0f564f7476d55d899fe236852e6baa49">removeSocket</a>(thread-&gt;<a class="code" href="class_t_c_p_server_thread_base.html#a4cf95e871fc5d3a9c085594dc46b16fa">getSocket</a>());
+    <a class="code" href="class_t_c_p_srv_host_app.html#a08d58c9e05abe383547b5df56f756a0f">socketMap</a>.<a class="code" href="class_t_c_p_socket_map.html#a0f564f7476d55d899fe236852e6baa49" title="Removes the given socket from the data structure.">removeSocket</a>(thread-&gt;<a class="code" href="class_t_c_p_server_thread_base.html#a4cf95e871fc5d3a9c085594dc46b16fa" title="Returns the socket object.">getSocket</a>());
 
     <span class="comment">// remove thread object</span>
     <span class="keyword">delete</span> thread;
@@ -232,7 +232,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_srv_host_app.html#a26210421b7fa06fa329ae86a550d1244">TCPSrvHostApp::updateDisplay</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_srv_host_app.html#a26210421b7fa06fa329ae86a550d1244">TCPSrvHostApp::updateDisplay</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -241,14 +241,13 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8cc_source.html#l00031">31</a> of file <a class="el" href="_t_c_p_srv_host_app_8cc_source.html">TCPSrvHostApp.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_srv_host_app_8cc_source.html#l00040">handleMessage()</a>, and <a class="el" href="_t_c_p_srv_host_app_8cc_source.html#l00074">removeThread()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_srv_host_app.html#a63785a7d60da44c89b2a97d36069b51e">handleMessage()</a>, and <a class="el" href="class_t_c_p_srv_host_app.html#a41fcfed2e806e0cba1660fe6792e64a9">removeThread()</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keywordflow">if</span> (!ev.isGUI()) <span class="keywordflow">return</span>;
+    <span class="keywordflow">if</span> (!ev.isGUI())
+        <span class="keywordflow">return</span>;
 
     <span class="keywordtype">char</span> buf[32];
-    sprintf(buf, <span class="stringliteral">&quot;%d threads&quot;</span>, <a class="code" href="class_t_c_p_srv_host_app.html#a08d58c9e05abe383547b5df56f756a0f">socketMap</a>.<a class="code" href="class_t_c_p_socket_map.html#aba507c7eed348ab84b8db8eff54feda7">size</a>());
+    sprintf(buf, <span class="stringliteral">&quot;%d threads&quot;</span>, <a class="code" href="class_t_c_p_srv_host_app.html#a08d58c9e05abe383547b5df56f756a0f">socketMap</a>.<a class="code" href="class_t_c_p_socket_map.html#aba507c7eed348ab84b8db8eff54feda7" title="Returns the number of sockets stored.">size</a>());
     getDisplayString().setTagArg(<span class="stringliteral">&quot;t&quot;</span>, 0, buf);
 }
 </pre></div>
@@ -266,9 +265,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00033">33</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_srv_host_app_8cc_source.html#l00021">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_srv_host_app.html#a7bc07bd453f43e46780b6628f280799a">initialize()</a>.</p>
 
 </div>
 </div>
@@ -283,15 +280,13 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_srv_host_app_8h_source.html#l00034">34</a> of file <a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_srv_host_app_8cc_source.html#l00040">handleMessage()</a>, <a class="el" href="_t_c_p_srv_host_app_8cc_source.html#l00074">removeThread()</a>, and <a class="el" href="_t_c_p_srv_host_app_8cc_source.html#l00031">updateDisplay()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_srv_host_app.html#a63785a7d60da44c89b2a97d36069b51e">handleMessage()</a>, <a class="el" href="class_t_c_p_srv_host_app.html#a41fcfed2e806e0cba1660fe6792e64a9">removeThread()</a>, and <a class="el" href="class_t_c_p_srv_host_app.html#a26210421b7fa06fa329ae86a550d1244">updateDisplay()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_t_c_p_srv_host_app_8h_source.html">TCPSrvHostApp.h</a></li>
-<li><a class="el" href="_t_c_p_srv_host_app_8cc_source.html">TCPSrvHostApp.cc</a></li>
+<li><a class="el" href="_t_c_p_srv_host_app_8h.html">TCPSrvHostApp.h</a></li>
+<li><a class="el" href="_t_c_p_srv_host_app_8cc.html">TCPSrvHostApp.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -299,7 +294,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_t_c_p_srv_host_app.html">TCPSrvHostApp</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:54 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:31 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

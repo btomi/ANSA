@@ -76,67 +76,130 @@
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#friends">Friends</a>  </div>
   <div class="headertitle">
 <div class="title">Coord Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="Coord" -->
-<p>Class for storing host positions.  
+<p>Class for storing 3D coordinates.  
  <a href="class_coord.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_coord_8h_source.html">Coord.h</a>&gt;</code></p>
+<p><code>#include &lt;Coord.h&gt;</code></p>
 
 <p><a href="class_coord-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#aae2e39161c063b969ab0a520fe5468dd">Coord</a> (double _x=0, double _y=0)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a641096179019c04796d941726d3bb890">Coord</a> (const <a class="el" href="class_coord.html">Coord</a> &amp;pos)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a0a27319979fe90f4c16d71d0ddc1f3b8">Coord</a> (const <a class="el" href="class_coord.html">Coord</a> *pos)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#add896c4f3fb15b4ad762b5270855345c">Coord</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#add896c4f3fb15b4ad762b5270855345c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a93d47461a77c401891842045ff712f15">Coord</a> (double <a class="el" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a>, double <a class="el" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>, double <a class="el" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a>=0.0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a coordinate.  <a href="#a93d47461a77c401891842045ff712f15"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#aaa9f1d0acf5250162e417b61eb12a006">Coord</a> (const <a class="el" href="class_coord.html">Coord</a> &amp;other)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes coordinate from other coordinate.  <a href="#aaa9f1d0acf5250162e417b61eb12a006"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a86994bfa7096155d951abb03dcf30bf1">info</a> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_coord.html">Coord</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a9cc5188e403a62bd1a923510eacc5222">operator+=</a> (const <a class="el" href="class_coord.html">Coord</a> &amp;a)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_coord.html">Coord</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#adc7447eb8214a1d14af868d226f47e55">operator=</a> (const <a class="el" href="class_coord.html">Coord</a> &amp;a)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_coord.html">Coord</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#ae0a8ce8906cc928ffccae52c9b5e8c6e">operator-=</a> (const <a class="el" href="class_coord.html">Coord</a> &amp;a)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string with the value of the coordinate.  <a href="#a86994bfa7096155d951abb03dcf30bf1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_coord.html">Coord</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a41a7f41a153a3fdbed9dea051f0ae559">operator*=</a> (double f)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies this coordinate vector by a real number.  <a href="#a41a7f41a153a3fdbed9dea051f0ae559"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_coord.html">Coord</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a378973a28985ee7cb441eaf2e70ed378">operator/=</a> (double f)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Divides this coordinate vector by a real number.  <a href="#a378973a28985ee7cb441eaf2e70ed378"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_coord.html">Coord</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a07c952bb96124ea08eeff7bba3de6072">operator+=</a> (const <a class="el" href="class_coord.html">Coord</a> &amp;a)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds coordinate vector 'a' to this.  <a href="#a07c952bb96124ea08eeff7bba3de6072"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_coord.html">Coord</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#adda0e91b0e155a08a50e733dbfdb8837">operator=</a> (const <a class="el" href="class_coord.html">Coord</a> &amp;other)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns coordinate vector 'other' to this.  <a href="#adda0e91b0e155a08a50e733dbfdb8837"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_coord.html">Coord</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a2cafece343439d415c4557167556ba69">operator-=</a> (const <a class="el" href="class_coord.html">Coord</a> &amp;a)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtracts coordinate vector 'a' from this.  <a href="#a2cafece343439d415c4557167556ba69"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#ab6a7bfcc5c55e5d8edbc7c0cb5a11626">distance</a> (const <a class="el" href="class_coord.html">Coord</a> &amp;a) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the distance to <a class="el" href="class_coord.html" title="Class for storing 3D coordinates.">Coord</a> 'a'.  <a href="#ab6a7bfcc5c55e5d8edbc7c0cb5a11626"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a9245e5acb794d95128e191e6faef99d4">sqrdist</a> (const <a class="el" href="class_coord.html">Coord</a> &amp;a) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns distance^2 to <a class="el" href="class_coord.html" title="Class for storing 3D coordinates.">Coord</a> 'a' (omits calling square root).  <a href="#a9245e5acb794d95128e191e6faef99d4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#aaf6119bf8bc9953d561729314de8ed5e">sqrTorusDist</a> (const <a class="el" href="class_coord.html">Coord</a> &amp;b, const <a class="el" href="class_coord.html">Coord</a> &amp;size) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the squared distance on a torus of this to <a class="el" href="class_coord.html" title="Class for storing 3D coordinates.">Coord</a> 'b' (omits calling square root).  <a href="#aaf6119bf8bc9953d561729314de8ed5e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a278c018d6de54a020c39b3b1afaec50e">squareLength</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the square of the length of this Coords position vector.  <a href="#a278c018d6de54a020c39b3b1afaec50e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#acc536671c07e1af44e6ad9676a6c39ad">length</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the length of this Coords position vector.  <a href="#acc536671c07e1af44e6ad9676a6c39ad"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a7a42e29d7a15ed0b53e47137549e00a6">isInBoundary</a> (const <a class="el" href="class_coord.html">Coord</a> &amp;lowerBound, const <a class="el" href="class_coord.html">Coord</a> &amp;upperBound) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if this coordinate is inside a specified rectangle.  <a href="#a7a42e29d7a15ed0b53e47137549e00a6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_coord.html">Coord</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a0b27150571dfb315bea3e650ea2956a0">min</a> (const <a class="el" href="class_coord.html">Coord</a> &amp;a)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the minimal coordinates.  <a href="#a0b27150571dfb315bea3e650ea2956a0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_coord.html">Coord</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#ac5a32e0e7a527085f63b7b3476ae47a0">max</a> (const <a class="el" href="class_coord.html">Coord</a> &amp;a)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximal coordinates.  <a href="#ac5a32e0e7a527085f63b7b3476ae47a0"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">x, y and z coordinate of the position.</div></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">x and y coordinates of the position  <a href="#a0172a22ee75843a96e3a84ebc25f3de7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a></td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="class_coord.html">Coord</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a2d291cbb8e58af4ce8c68e9c8671b5d6">ZERO</a> = <a class="el" href="class_coord.html">Coord</a>(0.0, 0.0, 0.0)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant with all values set to 0.  <a href="#a2d291cbb8e58af4ce8c68e9c8671b5d6"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a93c1d69ee1ef5c0be5f31e9b55fafa84">copy</a> (const <a class="el" href="class_coord.html">Coord</a> &amp;other)</td></tr>
 <tr><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_coord.html">Coord</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a4eb976e0a2def05ecb6464bd170b5fa9">operator+</a> (const <a class="el" href="class_coord.html">Coord</a> &amp;a, const <a class="el" href="class_coord.html">Coord</a> &amp;b)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds two coordinate vectors.  <a href="#a4eb976e0a2def05ecb6464bd170b5fa9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_coord.html">Coord</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a0a956e1210813652ce2caa7529b3e0be">operator-</a> (const <a class="el" href="class_coord.html">Coord</a> &amp;a, const <a class="el" href="class_coord.html">Coord</a> &amp;b)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtracts two coordinate vectors.  <a href="#a0a956e1210813652ce2caa7529b3e0be"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_coord.html">Coord</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a432afd497adcff7b20ca23af611ec919">operator*</a> (const <a class="el" href="class_coord.html">Coord</a> &amp;a, double f)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies a coordinate vector by a real number.  <a href="#a432afd497adcff7b20ca23af611ec919"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_coord.html">Coord</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a310db4e85a0b20ec14725f49aae08cc3">operator/</a> (const <a class="el" href="class_coord.html">Coord</a> &amp;a, double f)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Divides a coordinate vector by a real number.  <a href="#a310db4e85a0b20ec14725f49aae08cc3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a2dc488cbfa8e8256dfc22b4916b9ef9b">operator==</a> (const <a class="el" href="class_coord.html">Coord</a> &amp;a, const <a class="el" href="class_coord.html">Coord</a> &amp;b)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether two coordinate vectors are equal.  <a href="#a2dc488cbfa8e8256dfc22b4916b9ef9b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_coord.html#a321e8d56735047b9e49f869fd8f23d3e">operator!=</a> (const <a class="el" href="class_coord.html">Coord</a> &amp;a, const <a class="el" href="class_coord.html">Coord</a> &amp;b)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether two coordinate vectors are not equal.  <a href="#a321e8d56735047b9e49f869fd8f23d3e"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Class for storing host positions. </p>
-<p>Class for a double-tuple storing a position / two-dimensional vector. Some comparison and basic arithmetic operators on <a class="el" href="class_coord.html" title="Class for storing host positions.">Coord</a> structures are implemented.</p>
+<div class="textblock"><p>Class for storing 3D coordinates. </p>
+<p>Some comparison and basic arithmetic operators are implemented.</p>
 <dl class="author"><dt><b>Author:</b></dt><dd>Christian Frank </dd></dl>
-
-<p>Definition at line <a class="el" href="_coord_8h_source.html#l00038">38</a> of file <a class="el" href="_coord_8h_source.html">Coord.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="aae2e39161c063b969ab0a520fe5468dd"></a><!-- doxytag: member="Coord::Coord" ref="aae2e39161c063b969ab0a520fe5468dd" args="(double _x=0, double _y=0)" -->
+<a class="anchor" id="add896c4f3fb15b4ad762b5270855345c"></a><!-- doxytag: member="Coord::Coord" ref="add896c4f3fb15b4ad762b5270855345c" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_coord.html#aae2e39161c063b969ab0a520fe5468dd">Coord::Coord</a> </td>
+          <td class="memname"><a class="el" href="class_coord.html#add896c4f3fb15b4ad762b5270855345c">Coord::Coord</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default constructor. </p>
+<div class="fragment"><pre class="fragment">        : <a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a>(0.0), <a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>(0.0), <a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a>(0.0) {}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a93d47461a77c401891842045ff712f15"></a><!-- doxytag: member="Coord::Coord" ref="a93d47461a77c401891842045ff712f15" args="(double x, double y, double z=0.0)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_coord.html#add896c4f3fb15b4ad762b5270855345c">Coord::Coord</a> </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>_x</em> = <code>0</code>, </td>
+          <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>_y</em> = <code>0</code>&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>z</em> = <code>0.0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -146,62 +209,51 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initializes coordinates. </p>
 
-<p>Definition at line <a class="el" href="_coord_8h_source.html#l00045">45</a> of file <a class="el" href="_coord_8h_source.html">Coord.h</a>.</p>
-<div class="fragment"><pre class="fragment">: <a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a>(_x), <a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>(_y) {};
+<p>Initializes a coordinate. </p>
+<div class="fragment"><pre class="fragment">        : <a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a>(<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a>), <a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>(<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>), <a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a>(<a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a>) {}
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a641096179019c04796d941726d3bb890"></a><!-- doxytag: member="Coord::Coord" ref="a641096179019c04796d941726d3bb890" args="(const Coord &amp;pos)" -->
+<a class="anchor" id="aaa9f1d0acf5250162e417b61eb12a006"></a><!-- doxytag: member="Coord::Coord" ref="aaa9f1d0acf5250162e417b61eb12a006" args="(const Coord &amp;other)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_coord.html#aae2e39161c063b969ab0a520fe5468dd">Coord::Coord</a> </td>
+          <td class="memname"><a class="el" href="class_coord.html#add896c4f3fb15b4ad762b5270855345c">Coord::Coord</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_coord.html">Coord</a> &amp;&#160;</td>
-          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
           <td><code> [inline]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Initializes coordinates. </p>
 
-<p>Definition at line <a class="el" href="_coord_8h_source.html#l00049">49</a> of file <a class="el" href="_coord_8h_source.html">Coord.h</a>.</p>
-<div class="fragment"><pre class="fragment">                          {
-        <a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a>=pos.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a>;
-        <a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>=pos.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>;
-  }
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a0a27319979fe90f4c16d71d0ddc1f3b8"></a><!-- doxytag: member="Coord::Coord" ref="a0a27319979fe90f4c16d71d0ddc1f3b8" args="(const Coord *pos)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_coord.html#aae2e39161c063b969ab0a520fe5468dd">Coord::Coord</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_coord.html">Coord</a> *&#160;</td>
-          <td class="paramname"><em>pos</em></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Initializes coordinates. </p>
-
-<p>Definition at line <a class="el" href="_coord_8h_source.html#l00055">55</a> of file <a class="el" href="_coord_8h_source.html">Coord.h</a>.</p>
-<div class="fragment"><pre class="fragment">                          {
-        <a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a>=pos-&gt;<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a>;
-        <a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>=pos-&gt;<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>;
-  }
+<p>Initializes coordinate from other coordinate. </p>
+<div class="fragment"><pre class="fragment">        : cObject(other) { <a class="code" href="class_coord.html#a93c1d69ee1ef5c0be5f31e9b55fafa84">copy</a>(other); }
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a93c1d69ee1ef5c0be5f31e9b55fafa84"></a><!-- doxytag: member="Coord::copy" ref="a93c1d69ee1ef5c0be5f31e9b55fafa84" args="(const Coord &amp;other)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_coord.html#a93c1d69ee1ef5c0be5f31e9b55fafa84">Coord::copy</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_coord.html">Coord</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td><code> [inline, private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<div class="fragment"><pre class="fragment">{ <a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a> = other.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a>; <a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> = other.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>; <a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a> = other.<a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a>; }
+</pre></div>
+</div>
+</div>
 <a class="anchor" id="ab6a7bfcc5c55e5d8edbc7c0cb5a11626"></a><!-- doxytag: member="Coord::distance" ref="ab6a7bfcc5c55e5d8edbc7c0cb5a11626" args="(const Coord &amp;a) const " -->
 <div class="memitem">
 <div class="memproto">
@@ -216,14 +268,14 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns the distance to const <a class="el" href="class_coord.html" title="Class for storing host positions.">Coord</a>&amp; a </p>
 
-<p>Definition at line <a class="el" href="_coord_8h_source.html#l00127">127</a> of file <a class="el" href="_coord_8h_source.html">Coord.h</a>.</p>
+<p>Returns the distance to <a class="el" href="class_coord.html" title="Class for storing 3D coordinates.">Coord</a> 'a'. </p>
 
-<p>Referenced by <a class="el" href="_snr_eval_8cc_source.html#l00430">SnrEval::changeChannel()</a>, <a class="el" href="_abstract_radio_8cc_source.html#l00538">AbstractRadio::changeChannel()</a>, <a class="el" href="_turtle_mobility_8cc_source.html#l00092">TurtleMobility::executeStatement()</a>, <a class="el" href="_gilbert_elliot_snr_8cc_source.html#l00135">GilbertElliotSnr::handleLowerMsgStart()</a>, <a class="el" href="_abstract_radio_8cc_source.html#l00391">AbstractRadio::handleLowerMsgStart()</a>, <a class="el" href="_snr_eval_8cc_source.html#l00269">SnrEval::handleLowerMsgStart()</a>, <a class="el" href="_channel_control_8cc_source.html#l00290">ChannelControl::sendToChannel()</a>, <a class="el" href="_random_w_p_mobility_8cc_source.html#l00036">RandomWPMobility::setTargetPosition()</a>, and <a class="el" href="_const_speed_mobility_8cc_source.html#l00076">ConstSpeedMobility::setTargetPosition()</a>.</p>
-<div class="fragment"><pre class="fragment">                                        {
-        <span class="keywordflow">return</span> sqrt(<a class="code" href="class_coord.html#a9245e5acb794d95128e191e6faef99d4">sqrdist</a>(a));
-  }
+<p>Referenced by <a class="el" href="class_obstacle.html#aa26ac28a9b7ecb2b44d280a7c253e861">Obstacle::calculateReceivedPower()</a>, <a class="el" href="class_radio.html#af76144a54967847fb927be752e698f02">Radio::changeChannel()</a>, <a class="el" href="class_radio.html#a68ed01f9cb677f910a43d7174d982be9">Radio::connectReceiver()</a>, <a class="el" href="class_turtle_mobility.html#adf8a33f548f1f30804b8e8399b7f0dfd">TurtleMobility::executeStatement()</a>, <a class="el" href="class_radio.html#abca1bc386b44ad57cc1f7e9d8eaf7d4f">Radio::handleLowerMsgStart()</a>, <a class="el" href="class_channel_control.html#a1ef01b3014cc1d8534e6c7b3b635aa91">ChannelControl::sendToChannel()</a>, <a class="el" href="class_random_w_p_mobility.html#aec3111a2fa5e5bed3737d1067d2b01b2">RandomWPMobility::setTargetPosition()</a>, <a class="el" href="class_ns2_motion_mobility.html#aeacfe0bd2e3ecd3d056fc68bdcdc9ecf">Ns2MotionMobility::setTargetPosition()</a>, and <a class="el" href="class_mo_b_a_n_coordinator.html#a9f2559857f8062a663d8672187a18a1a">MoBANCoordinator::setTargetPosition()</a>.</p>
+<div class="fragment"><pre class="fragment">                                          {
+        <a class="code" href="class_coord.html" title="Class for storing 3D coordinates.">Coord</a> dist(*<span class="keyword">this</span> - a);
+        <span class="keywordflow">return</span> dist.length();
+    }
 </pre></div>
 </div>
 </div>
@@ -241,21 +293,89 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_coord_8h_source.html#l00060">60</a> of file <a class="el" href="_coord_8h_source.html">Coord.h</a>.</p>
-<div class="fragment"><pre class="fragment">                         {
+<p>Returns a string with the value of the coordinate. </p>
+
+<p>Referenced by <a class="el" href="class_posture_transition.html#a1f04b24b643026f15fbc95d175429c5f">PostureTransition::getMatrix()</a>, <a class="el" href="class_mo_b_a_n_coordinator.html#a138ebd67882d6cf1154126f47d35d49c">MoBANCoordinator::readConfigurationFile()</a>, and <a class="el" href="class_mo_b_a_n_coordinator.html#a9f2559857f8062a663d8672187a18a1a">MoBANCoordinator::setTargetPosition()</a>.</p>
+<div class="fragment"><pre class="fragment">                           {
         std::stringstream os;
-        os &lt;&lt; <span class="stringliteral">&quot;(&quot;</span> &lt;&lt; <a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; <a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;
+        os &lt;&lt; <span class="keyword">this</span>;
         <span class="keywordflow">return</span> os.str();
-  }
+    }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a9cc5188e403a62bd1a923510eacc5222"></a><!-- doxytag: member="Coord::operator+=" ref="a9cc5188e403a62bd1a923510eacc5222" args="(const Coord &amp;a)" -->
+<a class="anchor" id="a7a42e29d7a15ed0b53e47137549e00a6"></a><!-- doxytag: member="Coord::isInBoundary" ref="a7a42e29d7a15ed0b53e47137549e00a6" args="(const Coord &amp;lowerBound, const Coord &amp;upperBound) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="class_coord.html">Coord</a>&amp; Coord::operator+= </td>
+          <td class="memname">bool <a class="el" href="class_coord.html#a7a42e29d7a15ed0b53e47137549e00a6">Coord::isInBoundary</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_coord.html">Coord</a> &amp;&#160;</td>
+          <td class="paramname"><em>lowerBound</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_coord.html">Coord</a> &amp;&#160;</td>
+          <td class="paramname"><em>upperBound</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Checks if this coordinate is inside a specified rectangle. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lowerBound</td><td>The upper bound of the rectangle. </td></tr>
+    <tr><td class="paramname">upperBound</td><td>The lower bound of the rectangle. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Referenced by <a class="el" href="class_posture_transition.html#a299b33afdc27f467b3cdd472a397bb5a">PostureTransition::findAreaType()</a>, and <a class="el" href="class_mo_b_a_n_coordinator.html#aa9e9424cb4572715a8f5b042aa4155d0">MoBANCoordinator::isInsideWorld()</a>.</p>
+<div class="fragment"><pre class="fragment">                                                                              {
+        <span class="keywordflow">return</span>  lowerBound.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a> &lt;= <a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a> &amp;&amp; <a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a> &lt;= upperBound.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a> &amp;&amp;
+                lowerBound.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> &lt;= <a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> &amp;&amp; <a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> &lt;= upperBound.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> &amp;&amp;
+                lowerBound.<a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a> &lt;= <a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a> &amp;&amp; <a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a> &lt;= upperBound.<a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a>;
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="acc536671c07e1af44e6ad9676a6c39ad"></a><!-- doxytag: member="Coord::length" ref="acc536671c07e1af44e6ad9676a6c39ad" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="class_coord.html#acc536671c07e1af44e6ad9676a6c39ad">Coord::length</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the length of this Coords position vector. </p>
+
+<p>Referenced by <a class="el" href="class_coord.html#ab6a7bfcc5c55e5d8edbc7c0cb5a11626">distance()</a>, <a class="el" href="class_const_speed_mobility.html#ae1e2838d4bae6d0821054a5e6c2abb4a">ConstSpeedMobility::setTargetPosition()</a>, <a class="el" href="class_chiang_mobility.html#ae5117103fd3d0afe32e9e6267b2668a0">ChiangMobility::setTargetPosition()</a>, and <a class="el" href="class_mo_b_a_n_local.html#a7a181399edf633b6598fad60cf2fbce7">MoBANLocal::setTargetPosition()</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        <span class="keywordflow">return</span> sqrt(<a class="code" href="class_coord.html#a278c018d6de54a020c39b3b1afaec50e" title="Returns the square of the length of this Coords position vector.">squareLength</a>());
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ac5a32e0e7a527085f63b7b3476ae47a0"></a><!-- doxytag: member="Coord::max" ref="ac5a32e0e7a527085f63b7b3476ae47a0" args="(const Coord &amp;a)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_coord.html">Coord</a> <a class="el" href="class_coord.html#ac5a32e0e7a527085f63b7b3476ae47a0">Coord::max</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_coord.html">Coord</a> &amp;&#160;</td>
           <td class="paramname"><em>a</em></td><td>)</td>
@@ -264,23 +384,71 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Adds coordinate vector b to a. </p>
 
-<p>Definition at line <a class="el" href="_coord_8h_source.html#l00087">87</a> of file <a class="el" href="_coord_8h_source.html">Coord.h</a>.</p>
-<div class="fragment"><pre class="fragment">                                          {
-        <a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a>+=a.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a>;
-        <a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>+=a.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>;
+<p>Returns the maximal coordinates. </p>
+<div class="fragment"><pre class="fragment">                              {
+        <span class="keywordflow">return</span> <a class="code" href="class_coord.html#add896c4f3fb15b4ad762b5270855345c" title="Default constructor.">Coord</a>(this-&gt;<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a> &gt; a.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a> ? this-&gt;x : a.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a>,
+                     this-&gt;y &gt; a.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> ? this-&gt;y : a.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>,
+                     this-&gt;z &gt; a.<a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a> ? this-&gt;z : a.<a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a>);
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a0b27150571dfb315bea3e650ea2956a0"></a><!-- doxytag: member="Coord::min" ref="a0b27150571dfb315bea3e650ea2956a0" args="(const Coord &amp;a)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_coord.html">Coord</a> <a class="el" href="class_coord.html#a0b27150571dfb315bea3e650ea2956a0">Coord::min</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_coord.html">Coord</a> &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the minimal coordinates. </p>
+<div class="fragment"><pre class="fragment">                              {
+        <span class="keywordflow">return</span> <a class="code" href="class_coord.html#add896c4f3fb15b4ad762b5270855345c" title="Default constructor.">Coord</a>(this-&gt;x &lt; a.x ? this-&gt;<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a> : a.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a>,
+                     this-&gt;y &lt; a.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> ? this-&gt;y : a.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>,
+                     this-&gt;z &lt; a.<a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a> ? this-&gt;z : a.<a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a>);
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a41a7f41a153a3fdbed9dea051f0ae559"></a><!-- doxytag: member="Coord::operator*=" ref="a41a7f41a153a3fdbed9dea051f0ae559" args="(double f)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_coord.html">Coord</a>&amp; Coord::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Multiplies this coordinate vector by a real number. </p>
+<div class="fragment"><pre class="fragment">                                {
+        <a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a> *= f;
+        <a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> *= f;
+        <a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a> *= f;
         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
-  }
+    }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="ae0a8ce8906cc928ffccae52c9b5e8c6e"></a><!-- doxytag: member="Coord::operator&#45;=" ref="ae0a8ce8906cc928ffccae52c9b5e8c6e" args="(const Coord &amp;a)" -->
+<a class="anchor" id="a07c952bb96124ea08eeff7bba3de6072"></a><!-- doxytag: member="Coord::operator+=" ref="a07c952bb96124ea08eeff7bba3de6072" args="(const Coord &amp;a)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="class_coord.html">Coord</a>&amp; Coord::operator-= </td>
+          <td class="memname"><a class="el" href="class_coord.html">Coord</a>&amp; Coord::operator+= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_coord.html">Coord</a> &amp;&#160;</td>
           <td class="paramname"><em>a</em></td><td>)</td>
@@ -289,23 +457,23 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Subtracts coordinate vector b from a. </p>
 
-<p>Definition at line <a class="el" href="_coord_8h_source.html#l00101">101</a> of file <a class="el" href="_coord_8h_source.html">Coord.h</a>.</p>
-<div class="fragment"><pre class="fragment">                                          {
-        <a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a>-=a.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a>;
-        <a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>-=a.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>;
+<p>Adds coordinate vector 'a' to this. </p>
+<div class="fragment"><pre class="fragment">                                      {
+        <a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a> += a.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a>;
+        <a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> += a.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>;
+        <a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a> += a.<a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a>;
         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
-  }
+    }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="adc7447eb8214a1d14af868d226f47e55"></a><!-- doxytag: member="Coord::operator=" ref="adc7447eb8214a1d14af868d226f47e55" args="(const Coord &amp;a)" -->
+<a class="anchor" id="a2cafece343439d415c4557167556ba69"></a><!-- doxytag: member="Coord::operator&#45;=" ref="a2cafece343439d415c4557167556ba69" args="(const Coord &amp;a)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="class_coord.html">Coord</a>&amp; Coord::operator= </td>
+          <td class="memname"><a class="el" href="class_coord.html">Coord</a>&amp; Coord::operator-= </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_coord.html">Coord</a> &amp;&#160;</td>
           <td class="paramname"><em>a</em></td><td>)</td>
@@ -314,14 +482,65 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Assigns a this. </p>
 
-<p>Definition at line <a class="el" href="_coord_8h_source.html#l00094">94</a> of file <a class="el" href="_coord_8h_source.html">Coord.h</a>.</p>
+<p>Subtracts coordinate vector 'a' from this. </p>
+<div class="fragment"><pre class="fragment">                                      {
+        <a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a> -= a.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a>;
+        <a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> -= a.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>;
+        <a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a> -= a.<a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a>;
+        <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a378973a28985ee7cb441eaf2e70ed378"></a><!-- doxytag: member="Coord::operator/=" ref="a378973a28985ee7cb441eaf2e70ed378" args="(double f)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_coord.html">Coord</a>&amp; Coord::operator/= </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Divides this coordinate vector by a real number. </p>
+<div class="fragment"><pre class="fragment">                                {
+        <a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a> /= f;
+        <a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> /= f;
+        <a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a> /= f;
+        <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="adda0e91b0e155a08a50e733dbfdb8837"></a><!-- doxytag: member="Coord::operator=" ref="adda0e91b0e155a08a50e733dbfdb8837" args="(const Coord &amp;other)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_coord.html">Coord</a>&amp; Coord::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_coord.html">Coord</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Assigns coordinate vector 'other' to this. </p>
+<p>This operator can change the dimension of the coordinate. </p>
 <div class="fragment"><pre class="fragment">                                         {
-        <a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a>=a.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a>;
-        <a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>=a.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>;
+        <span class="keywordflow">if</span> (<span class="keyword">this</span> == &amp;other) <span class="keywordflow">return</span> *<span class="keyword">this</span>;
+        <a class="code" href="class_coord.html#adda0e91b0e155a08a50e733dbfdb8837" title="Assigns coordinate vector &#39;other&#39; to this.">cObject::operator=</a>(other);
+        <a class="code" href="class_coord.html#a93c1d69ee1ef5c0be5f31e9b55fafa84">copy</a>(other);
         <span class="keywordflow">return</span> *<span class="keyword">this</span>;
-  }
+    }
 </pre></div>
 </div>
 </div>
@@ -339,16 +558,72 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Returns distance^2 to <a class="el" href="class_coord.html" title="Class for storing host positions.">Coord</a> a (omits square root). </p>
 
-<p>Definition at line <a class="el" href="_coord_8h_source.html#l00134">134</a> of file <a class="el" href="_coord_8h_source.html">Coord.h</a>.</p>
+<p>Returns distance^2 to <a class="el" href="class_coord.html" title="Class for storing 3D coordinates.">Coord</a> 'a' (omits calling square root). </p>
 
-<p>Referenced by <a class="el" href="_channel_control_8cc_source.html#l00180">ChannelControl::updateConnections()</a>.</p>
-<div class="fragment"><pre class="fragment">                                       {
-        <span class="keywordtype">double</span> dx=<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a>-a.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a>;
-        <span class="keywordtype">double</span> dy=<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>-a.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>;
-        <span class="keywordflow">return</span> dx*dx + dy*dy;
-  }
+<p>Referenced by <a class="el" href="class_channel_control.html#a20eaa55acfcfff9cd065dd2ab4332177">ChannelControl::updateConnections()</a>.</p>
+<div class="fragment"><pre class="fragment">                                         {
+        <a class="code" href="class_coord.html" title="Class for storing 3D coordinates.">Coord</a> dist(*<span class="keyword">this</span> - a);
+        <span class="keywordflow">return</span> dist.squareLength();
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="aaf6119bf8bc9953d561729314de8ed5e"></a><!-- doxytag: member="Coord::sqrTorusDist" ref="aaf6119bf8bc9953d561729314de8ed5e" args="(const Coord &amp;b, const Coord &amp;size) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="class_coord.html#aaf6119bf8bc9953d561729314de8ed5e">Coord::sqrTorusDist</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_coord.html">Coord</a> &amp;&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_coord.html">Coord</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the squared distance on a torus of this to <a class="el" href="class_coord.html" title="Class for storing 3D coordinates.">Coord</a> 'b' (omits calling square root). </p>
+<div class="fragment"><pre class="fragment">                                                                  {
+    <span class="keywordtype">double</span> xDist = dist(<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a>, b.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a>, size.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a>);
+    <span class="keywordtype">double</span> yDist = dist(<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>, b.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>, size.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>);
+    <span class="keywordtype">double</span> zDist = dist(<a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a>, b.<a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a>, size.<a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a>);
+    <span class="keywordflow">return</span> xDist * xDist + yDist * yDist + zDist * zDist;
+}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a278c018d6de54a020c39b3b1afaec50e"></a><!-- doxytag: member="Coord::squareLength" ref="a278c018d6de54a020c39b3b1afaec50e" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="class_coord.html#a278c018d6de54a020c39b3b1afaec50e">Coord::squareLength</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the square of the length of this Coords position vector. </p>
+
+<p>Referenced by <a class="el" href="class_coord.html#a9245e5acb794d95128e191e6faef99d4">sqrdist()</a>.</p>
+<div class="fragment"><pre class="fragment">    {
+        <span class="keywordflow">return</span> <a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a> * <a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a> + <a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> * <a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a> + <a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a> * <a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a>;
+    }
 </pre></div>
 </div>
 </div>
@@ -377,12 +652,12 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Tests whether two coordinate vectors are not equal. Negation of the operator==. </p>
 
-<p>Definition at line <a class="el" href="_coord_8h_source.html#l00120">120</a> of file <a class="el" href="_coord_8h_source.html">Coord.h</a>.</p>
-<div class="fragment"><pre class="fragment">                                                         {
+<p>Tests whether two coordinate vectors are not equal. </p>
+<p>Negation of the operator==. </p>
+<div class="fragment"><pre class="fragment">                                                           {
         <span class="keywordflow">return</span> !(a==b);
-  }
+    }
 </pre></div>
 </div>
 </div>
@@ -410,12 +685,13 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Multiplies a coordinate vector by a real number. </p>
 
-<p>Definition at line <a class="el" href="_coord_8h_source.html#l00077">77</a> of file <a class="el" href="_coord_8h_source.html">Coord.h</a>.</p>
-<div class="fragment"><pre class="fragment">                                                   {
-        <span class="keywordflow">return</span> <a class="code" href="class_coord.html#aae2e39161c063b969ab0a520fe5468dd">Coord</a>(a.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a>*f, a.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>*f);
-  }
+<p>Multiplies a coordinate vector by a real number. </p>
+<div class="fragment"><pre class="fragment">                                                     {
+        <a class="code" href="class_coord.html" title="Class for storing 3D coordinates.">Coord</a> tmp(a);
+        tmp *= f;
+        <span class="keywordflow">return</span> tmp;
+    }
 </pre></div>
 </div>
 </div>
@@ -443,12 +719,13 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Adds two coordinate vectors. </p>
 
-<p>Definition at line <a class="el" href="_coord_8h_source.html#l00067">67</a> of file <a class="el" href="_coord_8h_source.html">Coord.h</a>.</p>
-<div class="fragment"><pre class="fragment">                                                         {
-        <span class="keywordflow">return</span> <a class="code" href="class_coord.html#aae2e39161c063b969ab0a520fe5468dd">Coord</a>(a.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a>+b.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a>, a.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>+b.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>);
-  }
+<p>Adds two coordinate vectors. </p>
+<div class="fragment"><pre class="fragment">                                                           {
+        <a class="code" href="class_coord.html" title="Class for storing 3D coordinates.">Coord</a> tmp(a);
+        tmp += b;
+        <span class="keywordflow">return</span> tmp;
+    }
 </pre></div>
 </div>
 </div>
@@ -476,12 +753,13 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Subtracts two coordinate vectors. </p>
 
-<p>Definition at line <a class="el" href="_coord_8h_source.html#l00072">72</a> of file <a class="el" href="_coord_8h_source.html">Coord.h</a>.</p>
-<div class="fragment"><pre class="fragment">                                                         {
-        <span class="keywordflow">return</span> <a class="code" href="class_coord.html#aae2e39161c063b969ab0a520fe5468dd">Coord</a>(a.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a>-b.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a>, a.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>-b.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>);
-  }
+<p>Subtracts two coordinate vectors. </p>
+<div class="fragment"><pre class="fragment">                                                           {
+        <a class="code" href="class_coord.html" title="Class for storing 3D coordinates.">Coord</a> tmp(a);
+        tmp -= b;
+        <span class="keywordflow">return</span> tmp;
+    }
 </pre></div>
 </div>
 </div>
@@ -509,12 +787,13 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Divides a coordinate vector by a real number. </p>
 
-<p>Definition at line <a class="el" href="_coord_8h_source.html#l00082">82</a> of file <a class="el" href="_coord_8h_source.html">Coord.h</a>.</p>
-<div class="fragment"><pre class="fragment">                                                   {
-        <span class="keywordflow">return</span> <a class="code" href="class_coord.html#aae2e39161c063b969ab0a520fe5468dd">Coord</a>(a.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a>/f, a.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>/f);
-  }
+<p>Divides a coordinate vector by a real number. </p>
+<div class="fragment"><pre class="fragment">                                                     {
+        <a class="code" href="class_coord.html" title="Class for storing 3D coordinates.">Coord</a> tmp(a);
+        tmp /= f;
+        <span class="keywordflow">return</span> tmp;
+    }
 </pre></div>
 </div>
 </div>
@@ -542,12 +821,13 @@ Friends</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Tests whether two coordinate vectors are equal. Because coordinates are of type double, this is done through the <a class="el" href="class_f_w_math.html#a38d2500887b49de2a2b5f8610f7ba6d1">FWMath::close</a> function. </p>
 
-<p>Definition at line <a class="el" href="_coord_8h_source.html#l00112">112</a> of file <a class="el" href="_coord_8h_source.html">Coord.h</a>.</p>
-<div class="fragment"><pre class="fragment">                                                         {
-        <span class="keywordflow">return</span> <a class="code" href="class_f_w_math.html#a38d2500887b49de2a2b5f8610f7ba6d1">FWMath::close</a>(a.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a>,b.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7" title="x and y coordinates of the position">x</a>) &amp;&amp; <a class="code" href="class_f_w_math.html#a38d2500887b49de2a2b5f8610f7ba6d1">FWMath::close</a>(a.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>,b.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>);
-  }
+<p>Tests whether two coordinate vectors are equal. </p>
+<p>Because coordinates are of type double, this is done through the <a class="el" href="class_f_w_math.html#a38d2500887b49de2a2b5f8610f7ba6d1" title="Tests whether two doubles are close enough to be declared equal.">FWMath::close</a> function. </p>
+<div class="fragment"><pre class="fragment">                                                           {
+        <span class="comment">// FIXME: this implementation is not transitive</span>
+        <span class="keywordflow">return</span> <a class="code" href="class_f_w_math.html#a38d2500887b49de2a2b5f8610f7ba6d1" title="Tests whether two doubles are close enough to be declared equal.">FWMath::close</a>(a.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a>, b.<a class="code" href="class_coord.html#a0172a22ee75843a96e3a84ebc25f3de7">x</a>) &amp;&amp; <a class="code" href="class_f_w_math.html#a38d2500887b49de2a2b5f8610f7ba6d1" title="Tests whether two doubles are close enough to be declared equal.">FWMath::close</a>(a.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>, b.<a class="code" href="class_coord.html#af6e543e0522076e717bae53102655b87">y</a>) &amp;&amp; <a class="code" href="class_f_w_math.html#a38d2500887b49de2a2b5f8610f7ba6d1" title="Tests whether two doubles are close enough to be declared equal.">FWMath::close</a>(a.<a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a>, b.<a class="code" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">z</a>);
+    }
 </pre></div>
 </div>
 </div>
@@ -563,11 +843,7 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>x and y coordinates of the position </p>
-
-<p>Definition at line <a class="el" href="_coord_8h_source.html#l00042">42</a> of file <a class="el" href="_coord_8h_source.html">Coord.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_line_segments_mobility_base_8cc_source.html#l00039">LineSegmentsMobilityBase::beginNextMove()</a>, <a class="el" href="_rectangle_mobility_8cc_source.html#l00099">RectangleMobility::calculateXY()</a>, <a class="el" href="_coord_8h_source.html#l00049">Coord()</a>, <a class="el" href="_turtle_mobility_8cc_source.html#l00092">TurtleMobility::executeStatement()</a>, <a class="el" href="_a_n_sim_mobility_8cc_source.html#l00090">ANSimMobility::extractDataFrom()</a>, <a class="el" href="_basic_mobility_8cc_source.html#l00115">BasicMobility::getRandomPosition()</a>, <a class="el" href="_mass_mobility_8cc_source.html#l00066">MassMobility::handleSelfMsg()</a>, <a class="el" href="_bonn_motion_mobility_8cc_source.html#l00026">BonnMotionMobility::initialize()</a>, <a class="el" href="_circle_mobility_8cc_source.html#l00025">CircleMobility::initialize()</a>, <a class="el" href="_mass_mobility_8cc_source.html#l00037">MassMobility::initialize()</a>, <a class="el" href="_basic_mobility_8cc_source.html#l00039">BasicMobility::initialize()</a>, <a class="el" href="_channel_control_8cc_source.html#l00069">ChannelControl::initialize()</a>, <a class="el" href="_linear_mobility_8cc_source.html#l00066">LinearMobility::move()</a>, <a class="el" href="_rectangle_mobility_8cc_source.html#l00089">RectangleMobility::move()</a>, <a class="el" href="_circle_mobility_8cc_source.html#l00065">CircleMobility::move()</a>, <a class="el" href="_mass_mobility_8cc_source.html#l00093">MassMobility::move()</a>, <a class="el" href="_const_speed_mobility_8cc_source.html#l00096">ConstSpeedMobility::move()</a>, <a class="el" href="_coord_8h_source.html#l00087">operator+=()</a>, <a class="el" href="_coord_8h_source.html#l00101">operator-=()</a>, <a class="el" href="_channel_control_8cc_source.html#l00028">operator&lt;&lt;()</a>, <a class="el" href="_coord_8h_source.html#l00094">operator=()</a>, <a class="el" href="_basic_mobility_8cc_source.html#l00179">BasicMobility::placeRandomlyIfOutside()</a>, <a class="el" href="_basic_mobility_8cc_source.html#l00189">BasicMobility::raiseErrorIfOutside()</a>, <a class="el" href="_basic_mobility_8cc_source.html#l00123">BasicMobility::reflectIfOutside()</a>, <a class="el" href="_bonn_motion_mobility_8cc_source.html#l00063">BonnMotionMobility::setTargetPosition()</a>, <a class="el" href="_const_speed_mobility_8cc_source.html#l00076">ConstSpeedMobility::setTargetPosition()</a>, <a class="el" href="_coord_8h_source.html#l00134">sqrdist()</a>, <a class="el" href="_channel_control_8cc_source.html#l00096">ChannelControl::updateDisplayString()</a>, <a class="el" href="_basic_mobility_8cc_source.html#l00096">BasicMobility::updatePosition()</a>, and <a class="el" href="_basic_mobility_8cc_source.html#l00155">BasicMobility::wrapIfOutside()</a>.</p>
+<p>Referenced by <a class="el" href="class_obstacle_control.html#a206a6e9155d1b201841d0718e65ed30f">ObstacleControl::add()</a>, <a class="el" href="class_obstacle_control.html#a4d7fa738ad26c6d2d4ef494b60fe8b1f">ObstacleControl::calculateReceivedPower()</a>, <a class="el" href="class_coord.html#a93c1d69ee1ef5c0be5f31e9b55fafa84">copy()</a>, <a class="el" href="class_annotation_manager.html#a9f62775132e28042c0e239c79131fa61">AnnotationManager::createDummyModuleLine()</a>, <a class="el" href="class_annotation_manager.html#a0b53a21c767d536a5a7ed72335cb9331">AnnotationManager::drawBubble()</a>, <a class="el" href="class_turtle_mobility.html#adf8a33f548f1f30804b8e8399b7f0dfd">TurtleMobility::executeStatement()</a>, <a class="el" href="class_a_n_sim_mobility.html#a39577e65116b0ec8f05c118710b5445b">ANSimMobility::extractDataFrom()</a>, <a class="el" href="class_static_grid_mobility.html#a2362da142369a45e91ca6ded1d61350b">StaticGridMobility::finish()</a>, <a class="el" href="class_linear_node_distribution_mobility.html#a56d4a8b917fc0b54d9ae6b3b3ea2fe13">LinearNodeDistributionMobility::finish()</a>, <a class="el" href="class_mobility_base.html#a07eac3b0d197edaa3e9509e80ae21af1">MobilityBase::getRandomPosition()</a>, <a class="el" href="class_turtle_mobility.html#a9139ae0504735451c6767415f1951992">TurtleMobility::getValue()</a>, <a class="el" href="class_rectangle_mobility.html#a7042d73fe8ec8419352e5e0e8d188e28">RectangleMobility::initialize()</a>, <a class="el" href="class_channel_access.html#af4c4d6652f6e3d4846cb3d2e826f4bed">ChannelAccess::initialize()</a>, <a class="el" href="class_mobility_base.html#a4c79fdde6758f5cb3b879d8a712911c9">MobilityBase::initialize()</a>, <a class="el" href="class_bonn_motion_mobility.html#a9cbf06aed21560e9bbc9c6b20572edbf">BonnMotionMobility::initializePosition()</a>, <a class="el" href="class_static_grid_mobility.html#a6b252c79696d6b5abb44bb2f17fb2329">StaticGridMobility::initializePosition()</a>, <a class="el" href="class_tractor_mobility.html#a7a37bcc22e09a5501aa177f8dc7cbb58">TractorMobility::initializePosition()</a>, <a class="el" href="class_linear_node_distribution_mobility.html#ae337e493a5e47702e04e97635cfe097e">LinearNodeDistributionMobility::initializePosition()</a>, <a class="el" href="class_ns2_motion_mobility.html#acc1eeda84f7a657ef2b2d69d493fdef1">Ns2MotionMobility::initializePosition()</a>, <a class="el" href="class_mobility_base.html#ae4fcd350112d303b0d58f39e56b07c6b">MobilityBase::initializePosition()</a>, <a class="el" href="class_coord.html#a7a42e29d7a15ed0b53e47137549e00a6">isInBoundary()</a>, <a class="el" href="class_mobility_base.html#a70e7b8c7610a007a4b40c769d7599f70">MobilityBase::isOutside()</a>, <a class="el" href="class_coord.html#ac5a32e0e7a527085f63b7b3476ae47a0">max()</a>, <a class="el" href="class_coord.html#a0b27150571dfb315bea3e650ea2956a0">min()</a>, <a class="el" href="class_linear_mobility.html#a144bed62ee46f5204c47fd84658e45d7">LinearMobility::move()</a>, <a class="el" href="class_line_segments_mobility_base.html#af16aa2d19ba0c40366542d48a0605dcc">LineSegmentsMobilityBase::move()</a>, <a class="el" href="class_rectangle_mobility.html#a32ecffdbc60f4af16a23acd84b8aab90">RectangleMobility::move()</a>, <a class="el" href="class_circle_mobility.html#aaf63e4200e8f9b401b527b8e73717b03">CircleMobility::move()</a>, <a class="el" href="class_tra_c_i_scenario_manager.html#a2388db533364f597be6ea19b28fc5349">TraCIScenarioManager::omnet2traci()</a>, <a class="el" href="class_coord.html#a07c952bb96124ea08eeff7bba3de6072">operator+=()</a>, <a class="el" href="class_coord.html#a2cafece343439d415c4557167556ba69">operator-=()</a>, <a class="el" href="struct_obstacle_control_1_1_cache_key.html#a5fe3d77772f1d0cbf4c92d14e843375b">ObstacleControl::CacheKey::operator&lt;()</a>, <a class="el" href="_channel_control_8cc.html#a5591265dd18356daed0c06fbd7781e7d">operator&lt;&lt;()</a>, <a class="el" href="class_gauss_markov_mobility.html#a8e5665e4586ec5bb00efb9529a02a9d2">GaussMarkovMobility::preventBorderHugging()</a>, <a class="el" href="class_tra_c_i_scenario_manager.html#a4b6aa1aa798b245ff323c5759a3b848e">TraCIScenarioManager::processVehicleSubscription()</a>, <a class="el" href="class_mobility_base.html#ae3fb0f9bd82fb86a59d34da6c8c42582">MobilityBase::raiseErrorIfOutside()</a>, <a class="el" href="class_mo_b_a_n_coordinator.html#a138ebd67882d6cf1154126f47d35d49c">MoBANCoordinator::readConfigurationFile()</a>, <a class="el" href="class_net_anim_trace.html#a0b0ed78cf36e1a19583375c93ab30043">NetAnimTrace::receiveSignal()</a>, <a class="el" href="class_mobility_base.html#ad987f8c910a37c23f29b1800044c9851">MobilityBase::reflectIfOutside()</a>, <a class="el" href="class_obstacle.html#a805aed4d3b239e0163f06aa70bfb0b73">Obstacle::setShape()</a>, <a class="el" href="class_const_speed_mobility.html#ae1e2838d4bae6d0821054a5e6c2abb4a">ConstSpeedMobility::setTargetPosition()</a>, <a class="el" href="class_bonn_motion_mobility.html#a329cf4ceedc6b5bebc1714889c4924e5">BonnMotionMobility::setTargetPosition()</a>, <a class="el" href="class_tractor_mobility.html#ab7c5cbcfc3f84b8b0ffa9b16e97c0c28">TractorMobility::setTargetPosition()</a>, <a class="el" href="class_gauss_markov_mobility.html#a9e8712b223c9cc98176582090f2ba968">GaussMarkovMobility::setTargetPosition()</a>, <a class="el" href="class_ns2_motion_mobility.html#aeacfe0bd2e3ecd3d056fc68bdcdc9ecf">Ns2MotionMobility::setTargetPosition()</a>, <a class="el" href="class_mo_b_a_n_coordinator.html#a9f2559857f8062a663d8672187a18a1a">MoBANCoordinator::setTargetPosition()</a>, <a class="el" href="class_coord.html#aaf6119bf8bc9953d561729314de8ed5e">sqrTorusDist()</a>, <a class="el" href="class_mo_b_a_n_local.html#abe9bd0c64b94704767ce8396f86383fa">MoBANLocal::updateVisualRepresentation()</a>, <a class="el" href="class_mobility_base.html#acf7fd78c52300a9e1738e91282df3f45">MobilityBase::updateVisualRepresentation()</a>, and <a class="el" href="class_mobility_base.html#a7d1173c29234a0c8fb120fd3c6471901">MobilityBase::wrapIfOutside()</a>.</p>
 
 </div>
 </div>
@@ -582,14 +858,45 @@ Friends</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_coord_8h_source.html#l00042">42</a> of file <a class="el" href="_coord_8h_source.html">Coord.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_line_segments_mobility_base_8cc_source.html#l00039">LineSegmentsMobilityBase::beginNextMove()</a>, <a class="el" href="_rectangle_mobility_8cc_source.html#l00099">RectangleMobility::calculateXY()</a>, <a class="el" href="_coord_8h_source.html#l00049">Coord()</a>, <a class="el" href="_turtle_mobility_8cc_source.html#l00092">TurtleMobility::executeStatement()</a>, <a class="el" href="_a_n_sim_mobility_8cc_source.html#l00090">ANSimMobility::extractDataFrom()</a>, <a class="el" href="_basic_mobility_8cc_source.html#l00115">BasicMobility::getRandomPosition()</a>, <a class="el" href="_mass_mobility_8cc_source.html#l00066">MassMobility::handleSelfMsg()</a>, <a class="el" href="_bonn_motion_mobility_8cc_source.html#l00026">BonnMotionMobility::initialize()</a>, <a class="el" href="_circle_mobility_8cc_source.html#l00025">CircleMobility::initialize()</a>, <a class="el" href="_mass_mobility_8cc_source.html#l00037">MassMobility::initialize()</a>, <a class="el" href="_basic_mobility_8cc_source.html#l00039">BasicMobility::initialize()</a>, <a class="el" href="_channel_control_8cc_source.html#l00069">ChannelControl::initialize()</a>, <a class="el" href="_linear_mobility_8cc_source.html#l00066">LinearMobility::move()</a>, <a class="el" href="_rectangle_mobility_8cc_source.html#l00089">RectangleMobility::move()</a>, <a class="el" href="_circle_mobility_8cc_source.html#l00065">CircleMobility::move()</a>, <a class="el" href="_mass_mobility_8cc_source.html#l00093">MassMobility::move()</a>, <a class="el" href="_const_speed_mobility_8cc_source.html#l00096">ConstSpeedMobility::move()</a>, <a class="el" href="_coord_8h_source.html#l00087">operator+=()</a>, <a class="el" href="_coord_8h_source.html#l00101">operator-=()</a>, <a class="el" href="_channel_control_8cc_source.html#l00028">operator&lt;&lt;()</a>, <a class="el" href="_coord_8h_source.html#l00094">operator=()</a>, <a class="el" href="_basic_mobility_8cc_source.html#l00179">BasicMobility::placeRandomlyIfOutside()</a>, <a class="el" href="_basic_mobility_8cc_source.html#l00189">BasicMobility::raiseErrorIfOutside()</a>, <a class="el" href="_basic_mobility_8cc_source.html#l00123">BasicMobility::reflectIfOutside()</a>, <a class="el" href="_bonn_motion_mobility_8cc_source.html#l00063">BonnMotionMobility::setTargetPosition()</a>, <a class="el" href="_const_speed_mobility_8cc_source.html#l00076">ConstSpeedMobility::setTargetPosition()</a>, <a class="el" href="_coord_8h_source.html#l00134">sqrdist()</a>, <a class="el" href="_channel_control_8cc_source.html#l00096">ChannelControl::updateDisplayString()</a>, <a class="el" href="_basic_mobility_8cc_source.html#l00096">BasicMobility::updatePosition()</a>, and <a class="el" href="_basic_mobility_8cc_source.html#l00155">BasicMobility::wrapIfOutside()</a>.</p>
+<p>Referenced by <a class="el" href="class_obstacle_control.html#a206a6e9155d1b201841d0718e65ed30f">ObstacleControl::add()</a>, <a class="el" href="class_obstacle_control.html#a4d7fa738ad26c6d2d4ef494b60fe8b1f">ObstacleControl::calculateReceivedPower()</a>, <a class="el" href="class_coord.html#a93c1d69ee1ef5c0be5f31e9b55fafa84">copy()</a>, <a class="el" href="class_annotation_manager.html#a9f62775132e28042c0e239c79131fa61">AnnotationManager::createDummyModuleLine()</a>, <a class="el" href="class_annotation_manager.html#a0b53a21c767d536a5a7ed72335cb9331">AnnotationManager::drawBubble()</a>, <a class="el" href="class_turtle_mobility.html#adf8a33f548f1f30804b8e8399b7f0dfd">TurtleMobility::executeStatement()</a>, <a class="el" href="class_a_n_sim_mobility.html#a39577e65116b0ec8f05c118710b5445b">ANSimMobility::extractDataFrom()</a>, <a class="el" href="class_static_grid_mobility.html#a2362da142369a45e91ca6ded1d61350b">StaticGridMobility::finish()</a>, <a class="el" href="class_linear_node_distribution_mobility.html#a56d4a8b917fc0b54d9ae6b3b3ea2fe13">LinearNodeDistributionMobility::finish()</a>, <a class="el" href="class_mobility_base.html#a07eac3b0d197edaa3e9509e80ae21af1">MobilityBase::getRandomPosition()</a>, <a class="el" href="class_turtle_mobility.html#a9139ae0504735451c6767415f1951992">TurtleMobility::getValue()</a>, <a class="el" href="class_rectangle_mobility.html#a7042d73fe8ec8419352e5e0e8d188e28">RectangleMobility::initialize()</a>, <a class="el" href="class_channel_access.html#af4c4d6652f6e3d4846cb3d2e826f4bed">ChannelAccess::initialize()</a>, <a class="el" href="class_mobility_base.html#a4c79fdde6758f5cb3b879d8a712911c9">MobilityBase::initialize()</a>, <a class="el" href="class_bonn_motion_mobility.html#a9cbf06aed21560e9bbc9c6b20572edbf">BonnMotionMobility::initializePosition()</a>, <a class="el" href="class_static_grid_mobility.html#a6b252c79696d6b5abb44bb2f17fb2329">StaticGridMobility::initializePosition()</a>, <a class="el" href="class_tractor_mobility.html#a7a37bcc22e09a5501aa177f8dc7cbb58">TractorMobility::initializePosition()</a>, <a class="el" href="class_linear_node_distribution_mobility.html#ae337e493a5e47702e04e97635cfe097e">LinearNodeDistributionMobility::initializePosition()</a>, <a class="el" href="class_ns2_motion_mobility.html#acc1eeda84f7a657ef2b2d69d493fdef1">Ns2MotionMobility::initializePosition()</a>, <a class="el" href="class_mobility_base.html#ae4fcd350112d303b0d58f39e56b07c6b">MobilityBase::initializePosition()</a>, <a class="el" href="class_coord.html#a7a42e29d7a15ed0b53e47137549e00a6">isInBoundary()</a>, <a class="el" href="class_mobility_base.html#a70e7b8c7610a007a4b40c769d7599f70">MobilityBase::isOutside()</a>, <a class="el" href="class_coord.html#ac5a32e0e7a527085f63b7b3476ae47a0">max()</a>, <a class="el" href="class_coord.html#a0b27150571dfb315bea3e650ea2956a0">min()</a>, <a class="el" href="class_linear_mobility.html#a144bed62ee46f5204c47fd84658e45d7">LinearMobility::move()</a>, <a class="el" href="class_line_segments_mobility_base.html#af16aa2d19ba0c40366542d48a0605dcc">LineSegmentsMobilityBase::move()</a>, <a class="el" href="class_rectangle_mobility.html#a32ecffdbc60f4af16a23acd84b8aab90">RectangleMobility::move()</a>, <a class="el" href="class_circle_mobility.html#aaf63e4200e8f9b401b527b8e73717b03">CircleMobility::move()</a>, <a class="el" href="class_tra_c_i_scenario_manager.html#a2388db533364f597be6ea19b28fc5349">TraCIScenarioManager::omnet2traci()</a>, <a class="el" href="class_coord.html#a07c952bb96124ea08eeff7bba3de6072">operator+=()</a>, <a class="el" href="class_coord.html#a2cafece343439d415c4557167556ba69">operator-=()</a>, <a class="el" href="struct_obstacle_control_1_1_cache_key.html#a5fe3d77772f1d0cbf4c92d14e843375b">ObstacleControl::CacheKey::operator&lt;()</a>, <a class="el" href="_channel_control_8cc.html#a5591265dd18356daed0c06fbd7781e7d">operator&lt;&lt;()</a>, <a class="el" href="class_gauss_markov_mobility.html#a8e5665e4586ec5bb00efb9529a02a9d2">GaussMarkovMobility::preventBorderHugging()</a>, <a class="el" href="class_tra_c_i_scenario_manager.html#a4b6aa1aa798b245ff323c5759a3b848e">TraCIScenarioManager::processVehicleSubscription()</a>, <a class="el" href="class_mobility_base.html#ae3fb0f9bd82fb86a59d34da6c8c42582">MobilityBase::raiseErrorIfOutside()</a>, <a class="el" href="class_mo_b_a_n_coordinator.html#a138ebd67882d6cf1154126f47d35d49c">MoBANCoordinator::readConfigurationFile()</a>, <a class="el" href="class_net_anim_trace.html#a0b0ed78cf36e1a19583375c93ab30043">NetAnimTrace::receiveSignal()</a>, <a class="el" href="class_mobility_base.html#ad987f8c910a37c23f29b1800044c9851">MobilityBase::reflectIfOutside()</a>, <a class="el" href="class_obstacle.html#a805aed4d3b239e0163f06aa70bfb0b73">Obstacle::setShape()</a>, <a class="el" href="class_const_speed_mobility.html#ae1e2838d4bae6d0821054a5e6c2abb4a">ConstSpeedMobility::setTargetPosition()</a>, <a class="el" href="class_bonn_motion_mobility.html#a329cf4ceedc6b5bebc1714889c4924e5">BonnMotionMobility::setTargetPosition()</a>, <a class="el" href="class_tractor_mobility.html#ab7c5cbcfc3f84b8b0ffa9b16e97c0c28">TractorMobility::setTargetPosition()</a>, <a class="el" href="class_gauss_markov_mobility.html#a9e8712b223c9cc98176582090f2ba968">GaussMarkovMobility::setTargetPosition()</a>, <a class="el" href="class_ns2_motion_mobility.html#aeacfe0bd2e3ecd3d056fc68bdcdc9ecf">Ns2MotionMobility::setTargetPosition()</a>, <a class="el" href="class_mo_b_a_n_coordinator.html#a9f2559857f8062a663d8672187a18a1a">MoBANCoordinator::setTargetPosition()</a>, <a class="el" href="class_coord.html#aaf6119bf8bc9953d561729314de8ed5e">sqrTorusDist()</a>, <a class="el" href="class_mo_b_a_n_local.html#abe9bd0c64b94704767ce8396f86383fa">MoBANLocal::updateVisualRepresentation()</a>, <a class="el" href="class_mobility_base.html#acf7fd78c52300a9e1738e91282df3f45">MobilityBase::updateVisualRepresentation()</a>, and <a class="el" href="class_mobility_base.html#a7d1173c29234a0c8fb120fd3c6471901">MobilityBase::wrapIfOutside()</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="_coord_8h_source.html">Coord.h</a></li>
+<a class="anchor" id="a2bf056108a79437171f18490afbdce2d"></a><!-- doxytag: member="Coord::z" ref="a2bf056108a79437171f18490afbdce2d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="class_coord.html#a2bf056108a79437171f18490afbdce2d">Coord::z</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_coord.html#a93c1d69ee1ef5c0be5f31e9b55fafa84">copy()</a>, <a class="el" href="class_mobility_base.html#a07eac3b0d197edaa3e9509e80ae21af1">MobilityBase::getRandomPosition()</a>, <a class="el" href="class_mobility_base.html#a4c79fdde6758f5cb3b879d8a712911c9">MobilityBase::initialize()</a>, <a class="el" href="class_static_grid_mobility.html#a6b252c79696d6b5abb44bb2f17fb2329">StaticGridMobility::initializePosition()</a>, <a class="el" href="class_linear_node_distribution_mobility.html#ae337e493a5e47702e04e97635cfe097e">LinearNodeDistributionMobility::initializePosition()</a>, <a class="el" href="class_mobility_base.html#ae4fcd350112d303b0d58f39e56b07c6b">MobilityBase::initializePosition()</a>, <a class="el" href="class_coord.html#a7a42e29d7a15ed0b53e47137549e00a6">isInBoundary()</a>, <a class="el" href="class_mobility_base.html#a70e7b8c7610a007a4b40c769d7599f70">MobilityBase::isOutside()</a>, <a class="el" href="class_coord.html#ac5a32e0e7a527085f63b7b3476ae47a0">max()</a>, <a class="el" href="class_coord.html#a0b27150571dfb315bea3e650ea2956a0">min()</a>, <a class="el" href="class_line_segments_mobility_base.html#af16aa2d19ba0c40366542d48a0605dcc">LineSegmentsMobilityBase::move()</a>, <a class="el" href="class_circle_mobility.html#aaf63e4200e8f9b401b527b8e73717b03">CircleMobility::move()</a>, <a class="el" href="class_coord.html#a07c952bb96124ea08eeff7bba3de6072">operator+=()</a>, <a class="el" href="class_coord.html#a2cafece343439d415c4557167556ba69">operator-=()</a>, <a class="el" href="_coord_8h.html#a8c1991dbbe58ef68597baf656b5d726e">operator&lt;&lt;()</a>, <a class="el" href="class_mobility_base.html#ae3fb0f9bd82fb86a59d34da6c8c42582">MobilityBase::raiseErrorIfOutside()</a>, <a class="el" href="class_mo_b_a_n_coordinator.html#a138ebd67882d6cf1154126f47d35d49c">MoBANCoordinator::readConfigurationFile()</a>, <a class="el" href="class_mobility_base.html#ad987f8c910a37c23f29b1800044c9851">MobilityBase::reflectIfOutside()</a>, <a class="el" href="class_mo_b_a_n_coordinator.html#adebee0a447b7e85d444054fa3a4ee013">MoBANCoordinator::selectDestination()</a>, <a class="el" href="class_bonn_motion_mobility.html#a329cf4ceedc6b5bebc1714889c4924e5">BonnMotionMobility::setTargetPosition()</a>, <a class="el" href="class_mo_b_a_n_coordinator.html#a9f2559857f8062a663d8672187a18a1a">MoBANCoordinator::setTargetPosition()</a>, <a class="el" href="class_coord.html#aaf6119bf8bc9953d561729314de8ed5e">sqrTorusDist()</a>, <a class="el" href="class_mobility_base.html#acf7fd78c52300a9e1738e91282df3f45">MobilityBase::updateVisualRepresentation()</a>, and <a class="el" href="class_mobility_base.html#a7d1173c29234a0c8fb120fd3c6471901">MobilityBase::wrapIfOutside()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2d291cbb8e58af4ce8c68e9c8671b5d6"></a><!-- doxytag: member="Coord::ZERO" ref="a2d291cbb8e58af4ce8c68e9c8671b5d6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_coord.html">Coord</a> <a class="el" href="class_coord.html#a2d291cbb8e58af4ce8c68e9c8671b5d6">Coord::ZERO</a> = <a class="el" href="class_coord.html">Coord</a>(0.0, 0.0, 0.0)<code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constant with all values set to 0. </p>
+
+<p>Referenced by <a class="el" href="class_stationary_mobility.html#a859a42c49b97bdb1861e93fef8f4ff58">StationaryMobility::getCurrentSpeed()</a>, <a class="el" href="class_line_segments_mobility_base.html#ab369bfc722b624a1e75dc25a6ce03098">LineSegmentsMobilityBase::LineSegmentsMobilityBase()</a>, <a class="el" href="class_mo_b_a_n_local.html#ac7ea739edd0a787c7e6c84bb194ca49b">MoBANLocal::MoBANLocal()</a>, <a class="el" href="class_mobility_base.html#a2698def62bf7dc691f426e4237b5aaa4">MobilityBase::MobilityBase()</a>, <a class="el" href="class_moving_mobility_base.html#aaf4fbcd01501bc7c7c76a609293cdbdf">MovingMobilityBase::MovingMobilityBase()</a>, <a class="el" href="class_chiang_mobility.html#ae5117103fd3d0afe32e9e6267b2668a0">ChiangMobility::setTargetPosition()</a>, and <a class="el" href="class_tractor_mobility.html#ab7c5cbcfc3f84b8b0ffa9b16e97c0c28">TractorMobility::setTargetPosition()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li><a class="el" href="_coord_8h.html">Coord.h</a></li>
+<li><a class="el" href="_coord_8cc.html">Coord.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -597,7 +904,7 @@ Friends</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_coord.html">Coord</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:47 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:23 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

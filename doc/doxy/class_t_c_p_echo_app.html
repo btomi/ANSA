@@ -76,40 +76,46 @@
 <div class="header">
   <div class="summary">
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">TCPEchoApp Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="TCPEchoApp" -->
-<p><code>#include &lt;<a class="el" href="_t_c_p_echo_app_8h_source.html">TCPEchoApp.h</a>&gt;</code></p>
+<p>Accepts any number of incoming connections, and sends back whatever arrives on them.  
+ <a href="class_t_c_p_echo_app.html#details">More...</a></p>
+
+<p><code>#include &lt;TCPEchoApp.h&gt;</code></p>
 
 <p><a href="class_t_c_p_echo_app-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_echo_app.html#ac887868f77a7c434c4801e75e559beb7">sendDown</a> (cMessage *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_echo_app.html#ada5e6fbfaaaf4cff54f48f9c2e9fb147">initialize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_echo_app.html#a5466177fd54c87de43c5f58ec2a74cd1">handleMessage</a> (cMessage *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_echo_app.html#a0f062c49a206ec6d887573a62be9f39d">finish</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_echo_app.html#ac887868f77a7c434c4801e75e559beb7">sendDown</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_echo_app.html#ada5e6fbfaaaf4cff54f48f9c2e9fb147">initialize</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_echo_app.html#a5466177fd54c87de43c5f58ec2a74cd1">handleMessage</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_echo_app.html#a0f062c49a206ec6d887573a62be9f39d">finish</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">simtime_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_echo_app.html#a282205b0aceb7fa518b03ca72b0d6a5e">delay</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_echo_app.html#ace62f4f6106ff891880218c05dc90967">echoFactor</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_echo_app.html#a9923d77e1018b0047b5e3dd162ac4a62">bytesRcvd</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_echo_app.html#a329a62dcc1a5e31e39f8a29a76b301e4">bytesSent</a></td></tr>
+<tr><td colspan="2"><h2><a name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_echo_app.html#aebbcec7ed819cedf3bd3569b48d3584e">rcvdPkSignal</a> = SIMSIGNAL_NULL</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static simsignal_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_echo_app.html#a5afbde985d0378d77e2136033df84171">sentPkSignal</a> = SIMSIGNAL_NULL</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Accepts any number of incoming connections, and sends back whatever arrives on them. </p>
-
-<p>Definition at line <a class="el" href="_t_c_p_echo_app_8h_source.html#l00026">26</a> of file <a class="el" href="_t_c_p_echo_app_8h_source.html">TCPEchoApp.h</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a0f062c49a206ec6d887573a62be9f39d"></a><!-- doxytag: member="TCPEchoApp::finish" ref="a0f062c49a206ec6d887573a62be9f39d" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_echo_app.html#a0f062c49a206ec6d887573a62be9f39d">TCPEchoApp::finish</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_echo_app.html#a0f062c49a206ec6d887573a62be9f39d">TCPEchoApp::finish</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -117,8 +123,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_echo_app_8cc_source.html#l00104">104</a> of file <a class="el" href="_t_c_p_echo_app_8cc_source.html">TCPEchoApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     recordScalar(<span class="stringliteral">&quot;bytesRcvd&quot;</span>, <a class="code" href="class_t_c_p_echo_app.html#a9923d77e1018b0047b5e3dd162ac4a62">bytesRcvd</a>);
     recordScalar(<span class="stringliteral">&quot;bytesSent&quot;</span>, <a class="code" href="class_t_c_p_echo_app.html#a329a62dcc1a5e31e39f8a29a76b301e4">bytesSent</a>);
@@ -131,7 +135,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_echo_app.html#a5466177fd54c87de43c5f58ec2a74cd1">TCPEchoApp::handleMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_echo_app.html#a5466177fd54c87de43c5f58ec2a74cd1">TCPEchoApp::handleMessage</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -140,28 +144,28 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_echo_app_8cc_source.html#l00046">46</a> of file <a class="el" href="_t_c_p_echo_app_8cc_source.html">TCPEchoApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span> (msg-&gt;isSelfMessage())
     {
         <a class="code" href="class_t_c_p_echo_app.html#ac887868f77a7c434c4801e75e559beb7">sendDown</a>(msg);
     }
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg-&gt;getKind()==<a class="code" href="_t_c_p_command__m_8h.html#a68611fc79dbc74e8744d74b746cd956ba98ff9f82c08b1d7ae58049835c47368a">TCP_I_PEER_CLOSED</a>)
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg-&gt;getKind() == <a class="code" href="_t_c_p_command__m_8h.html#a68611fc79dbc74e8744d74b746cd956ba98ff9f82c08b1d7ae58049835c47368a">TCP_I_PEER_CLOSED</a>)
     {
         <span class="comment">// we&#39;ll close too</span>
         msg-&gt;setKind(<a class="code" href="_t_c_p_command__m_8h.html#a3a8aac9b74215a1768eeaa375c3cc7d6aa18cb807579ad3b72293d3023883ba0a">TCP_C_CLOSE</a>);
-        <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_echo_app.html#a282205b0aceb7fa518b03ca72b0d6a5e">delay</a>==0)
+
+        <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_echo_app.html#a282205b0aceb7fa518b03ca72b0d6a5e">delay</a> == 0)
             <a class="code" href="class_t_c_p_echo_app.html#ac887868f77a7c434c4801e75e559beb7">sendDown</a>(msg);
         <span class="keywordflow">else</span>
-            scheduleAt(simTime()+<a class="code" href="class_t_c_p_echo_app.html#a282205b0aceb7fa518b03ca72b0d6a5e">delay</a>, msg); <span class="comment">// send after a delay</span>
+            scheduleAt(simTime() + <a class="code" href="class_t_c_p_echo_app.html#a282205b0aceb7fa518b03ca72b0d6a5e">delay</a>, msg); <span class="comment">// send after a delay</span>
     }
-    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg-&gt;getKind()==<a class="code" href="_t_c_p_command__m_8h.html#a68611fc79dbc74e8744d74b746cd956ba78bce3d41e158816c5212ed2fc959b06">TCP_I_DATA</a> || msg-&gt;getKind()==<a class="code" href="_t_c_p_command__m_8h.html#a68611fc79dbc74e8744d74b746cd956ba9b994384633a16021eef2cbb604d6ac7">TCP_I_URGENT_DATA</a>)
+    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (msg-&gt;getKind() == <a class="code" href="_t_c_p_command__m_8h.html#a68611fc79dbc74e8744d74b746cd956ba78bce3d41e158816c5212ed2fc959b06">TCP_I_DATA</a> || msg-&gt;getKind() == <a class="code" href="_t_c_p_command__m_8h.html#a68611fc79dbc74e8744d74b746cd956ba9b994384633a16021eef2cbb604d6ac7">TCP_I_URGENT_DATA</a>)
     {
         cPacket *pkt = check_and_cast&lt;cPacket *&gt;(msg);
+        emit(<a class="code" href="class_t_c_p_echo_app.html#aebbcec7ed819cedf3bd3569b48d3584e">rcvdPkSignal</a>, pkt);
         <a class="code" href="class_t_c_p_echo_app.html#a9923d77e1018b0047b5e3dd162ac4a62">bytesRcvd</a> += pkt-&gt;getByteLength();
 
-        <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_echo_app.html#ace62f4f6106ff891880218c05dc90967">echoFactor</a>==0)
+        <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_echo_app.html#ace62f4f6106ff891880218c05dc90967">echoFactor</a> == 0)
         {
             <span class="keyword">delete</span> pkt;
         }
@@ -169,20 +173,36 @@ Protected Attributes</h2></td></tr>
         {
             <span class="comment">// reverse direction, modify length, and send it back</span>
             pkt-&gt;setKind(<a class="code" href="_t_c_p_command__m_8h.html#a3a8aac9b74215a1768eeaa375c3cc7d6a5551d7ad54c2f8afd61355444ec620a6">TCP_C_SEND</a>);
-            <a class="code" href="class_t_c_p_command.html">TCPCommand</a> *ind = check_and_cast&lt;<a class="code" href="class_t_c_p_command.html">TCPCommand</a> *&gt;(pkt-&gt;removeControlInfo());
-            <a class="code" href="class_t_c_p_send_command.html">TCPSendCommand</a> *cmd = <span class="keyword">new</span> <a class="code" href="class_t_c_p_send_command.html">TCPSendCommand</a>();
+            <a class="code" href="class_t_c_p_command.html" title="Class generated from transport/contract/TCPCommand.msg by opp_msgc.">TCPCommand</a> *ind = check_and_cast&lt;<a class="code" href="class_t_c_p_command.html" title="Class generated from transport/contract/TCPCommand.msg by opp_msgc.">TCPCommand</a> *&gt;(pkt-&gt;removeControlInfo());
+            <a class="code" href="class_t_c_p_send_command.html" title="Class generated from transport/contract/TCPCommand.msg by opp_msgc.">TCPSendCommand</a> *cmd = <span class="keyword">new</span> <a class="code" href="class_t_c_p_send_command.html" title="Class generated from transport/contract/TCPCommand.msg by opp_msgc.">TCPSendCommand</a>();
             cmd-&gt;setConnId(ind-&gt;<a class="code" href="class_t_c_p_command.html#a8bd2f6a8d698df01266e6a598355287a">getConnId</a>());
             pkt-&gt;setControlInfo(cmd);
             <span class="keyword">delete</span> ind;
 
-            <span class="keywordtype">long</span> byteLen = pkt-&gt;getByteLength()*<a class="code" href="class_t_c_p_echo_app.html#ace62f4f6106ff891880218c05dc90967">echoFactor</a>;
-            <span class="keywordflow">if</span> (byteLen&lt;1) byteLen=1;
+            <span class="keywordtype">long</span> byteLen = pkt-&gt;getByteLength() * <a class="code" href="class_t_c_p_echo_app.html#ace62f4f6106ff891880218c05dc90967">echoFactor</a>;
+
+            <span class="keywordflow">if</span> (byteLen &lt; 1)
+                byteLen = 1;
+
             pkt-&gt;setByteLength(byteLen);
 
-            <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_echo_app.html#a282205b0aceb7fa518b03ca72b0d6a5e">delay</a>==0)
+            <a class="code" href="class_byte_array_message.html" title="Message that carries raw bytes.">ByteArrayMessage</a> *baMsg = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_byte_array_message.html" title="Message that carries raw bytes.">ByteArrayMessage</a> *<span class="keyword">&gt;</span>(pkt);
+
+            <span class="comment">// if (dataTransferMode == TCP_TRANSFER_BYTESTREAM)</span>
+            <span class="keywordflow">if</span> (baMsg)
+            {
+                <a class="code" href="class_byte_array.html" title="Class that carries raw bytes.">ByteArray</a>&amp; outdata = baMsg-&gt;<a class="code" href="class_byte_array_message___base.html#a564a43837399ce6c8162300d87df784a">getByteArray</a>();
+                <a class="code" href="class_byte_array.html" title="Class that carries raw bytes.">ByteArray</a> indata = outdata;
+                outdata.<a class="code" href="class_byte_array___base.html#aba7e269bc879a33336db5f4778a4ff86">setDataArraySize</a>(byteLen);
+
+                <span class="keywordflow">for</span> (<span class="keywordtype">long</span> i = 0; i &lt; byteLen; i++)
+                    outdata.<a class="code" href="class_byte_array___base.html#a36ba0320039c213076dc1e1a721112f7">setData</a>(i, indata.<a class="code" href="class_byte_array___base.html#a8eab86201489e96b030bc9f510b93e1b">getData</a>(i / <a class="code" href="class_t_c_p_echo_app.html#ace62f4f6106ff891880218c05dc90967">echoFactor</a>));
+            }
+
+            <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_echo_app.html#a282205b0aceb7fa518b03ca72b0d6a5e">delay</a> == 0)
                 <a class="code" href="class_t_c_p_echo_app.html#ac887868f77a7c434c4801e75e559beb7">sendDown</a>(pkt);
             <span class="keywordflow">else</span>
-                scheduleAt(simTime()+<a class="code" href="class_t_c_p_echo_app.html#a282205b0aceb7fa518b03ca72b0d6a5e">delay</a>, pkt); <span class="comment">// send after a delay</span>
+                scheduleAt(simTime() + <a class="code" href="class_t_c_p_echo_app.html#a282205b0aceb7fa518b03ca72b0d6a5e">delay</a>, pkt); <span class="comment">// send after a delay</span>
         }
     }
     <span class="keywordflow">else</span>
@@ -194,8 +214,8 @@ Protected Attributes</h2></td></tr>
     <span class="keywordflow">if</span> (ev.isGUI())
     {
         <span class="keywordtype">char</span> buf[80];
-        sprintf(buf, <span class="stringliteral">&quot;rcvd: %ld bytes\nsent: %ld bytes&quot;</span>, bytesRcvd, <a class="code" href="class_t_c_p_echo_app.html#a329a62dcc1a5e31e39f8a29a76b301e4">bytesSent</a>);
-        getDisplayString().setTagArg(<span class="stringliteral">&quot;t&quot;</span>,0,buf);
+        sprintf(buf, <span class="stringliteral">&quot;rcvd: %ld bytes\nsent: %ld bytes&quot;</span>, <a class="code" href="class_t_c_p_echo_app.html#a9923d77e1018b0047b5e3dd162ac4a62">bytesRcvd</a>, <a class="code" href="class_t_c_p_echo_app.html#a329a62dcc1a5e31e39f8a29a76b301e4">bytesSent</a>);
+        getDisplayString().setTagArg(<span class="stringliteral">&quot;t&quot;</span>, 0, buf);
     }
 }
 </pre></div>
@@ -206,7 +226,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_echo_app.html#ada5e6fbfaaaf4cff54f48f9c2e9fb147">TCPEchoApp::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_echo_app.html#ada5e6fbfaaaf4cff54f48f9c2e9fb147">TCPEchoApp::initialize</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -214,11 +234,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_echo_app_8cc_source.html#l00022">22</a> of file <a class="el" href="_t_c_p_echo_app_8cc_source.html">TCPEchoApp.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keyword">const</span> <span class="keywordtype">char</span> *address = par(<span class="stringliteral">&quot;address&quot;</span>);
-    <span class="keywordtype">int</span> port = par(<span class="stringliteral">&quot;port&quot;</span>);
+    <a class="code" href="class_t_c_p_echo_app.html#ada5e6fbfaaaf4cff54f48f9c2e9fb147">cSimpleModule::initialize</a>();
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *localAddress = par(<span class="stringliteral">&quot;localAddress&quot;</span>);
+    <span class="keywordtype">int</span> localPort = par(<span class="stringliteral">&quot;localPort&quot;</span>);
     <a class="code" href="class_t_c_p_echo_app.html#a282205b0aceb7fa518b03ca72b0d6a5e">delay</a> = par(<span class="stringliteral">&quot;echoDelay&quot;</span>);
     <a class="code" href="class_t_c_p_echo_app.html#ace62f4f6106ff891880218c05dc90967">echoFactor</a> = par(<span class="stringliteral">&quot;echoFactor&quot;</span>);
 
@@ -226,9 +245,13 @@ Protected Attributes</h2></td></tr>
     WATCH(<a class="code" href="class_t_c_p_echo_app.html#a9923d77e1018b0047b5e3dd162ac4a62">bytesRcvd</a>);
     WATCH(<a class="code" href="class_t_c_p_echo_app.html#a329a62dcc1a5e31e39f8a29a76b301e4">bytesSent</a>);
 
-    <a class="code" href="class_t_c_p_socket.html">TCPSocket</a> socket;
-    socket.<a class="code" href="class_t_c_p_socket.html#ab6563d5ef32687b2072e5c08317ba519">setOutputGate</a>(gate(<span class="stringliteral">&quot;tcpOut&quot;</span>));
-    socket.<a class="code" href="class_t_c_p_socket.html#a2c4f6131103b0c9773728d706140aa0d">bind</a>(address[0] ? <a class="code" href="class_i_pv_x_address.html">IPvXAddress</a>(address) : <a class="code" href="class_i_pv_x_address.html">IPvXAddress</a>(), port);
+    <a class="code" href="class_t_c_p_echo_app.html#aebbcec7ed819cedf3bd3569b48d3584e">rcvdPkSignal</a> = registerSignal(<span class="stringliteral">&quot;rcvdPk&quot;</span>);
+    <a class="code" href="class_t_c_p_echo_app.html#a5afbde985d0378d77e2136033df84171">sentPkSignal</a> = registerSignal(<span class="stringliteral">&quot;sentPk&quot;</span>);
+
+    <a class="code" href="class_t_c_p_socket.html" title="TCPSocket is a convenience class, to make it easier to manage TCP connections from your application m...">TCPSocket</a> socket;
+    socket.<a class="code" href="class_t_c_p_socket.html#ab6563d5ef32687b2072e5c08317ba519" title="Sets the gate on which to send to TCP.">setOutputGate</a>(gate(<span class="stringliteral">&quot;tcpOut&quot;</span>));
+    socket.<a class="code" href="class_t_c_p_socket.html#aaa0a60b46635abaf60045716a1e8b1ca" title="Read &quot;dataTransferMode&quot; parameter from ini/ned, and set dataTransferMode member value.">readDataTransferModePar</a>(*<span class="keyword">this</span>);
+    socket.<a class="code" href="class_t_c_p_socket.html#a2c4f6131103b0c9773728d706140aa0d" title="Bind the socket to a local port number.">bind</a>(localAddress[0] ? <a class="code" href="class_i_pv_x_address.html" title="Stores an IPv4 or an IPv6 address.">IPvXAddress</a>(localAddress) : <a class="code" href="class_i_pv_x_address.html" title="Stores an IPv4 or an IPv6 address.">IPvXAddress</a>(), localPort);
     socket.<a class="code" href="class_t_c_p_socket.html#abfd870650b679461fa75fbe473c89d30">listen</a>();
 }
 </pre></div>
@@ -239,7 +262,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_echo_app.html#ac887868f77a7c434c4801e75e559beb7">TCPEchoApp::sendDown</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_echo_app.html#ac887868f77a7c434c4801e75e559beb7">TCPEchoApp::sendDown</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -249,12 +272,14 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_echo_app_8cc_source.html#l00039">39</a> of file <a class="el" href="_t_c_p_echo_app_8cc_source.html">TCPEchoApp.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_echo_app_8cc_source.html#l00046">handleMessage()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_echo_app.html#a5466177fd54c87de43c5f58ec2a74cd1">handleMessage()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">if</span> (msg-&gt;isPacket())
+    {
         <a class="code" href="class_t_c_p_echo_app.html#a329a62dcc1a5e31e39f8a29a76b301e4">bytesSent</a> += ((cPacket *)msg)-&gt;getByteLength();
+        emit(<a class="code" href="class_t_c_p_echo_app.html#a5afbde985d0378d77e2136033df84171">sentPkSignal</a>, (cPacket *)msg);
+    }
+
     send(msg, <span class="stringliteral">&quot;tcpOut&quot;</span>);
 }
 </pre></div>
@@ -272,9 +297,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_echo_app_8h_source.html#l00032">32</a> of file <a class="el" href="_t_c_p_echo_app_8h_source.html">TCPEchoApp.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_echo_app_8cc_source.html#l00104">finish()</a>, <a class="el" href="_t_c_p_echo_app_8cc_source.html#l00046">handleMessage()</a>, and <a class="el" href="_t_c_p_echo_app_8cc_source.html#l00022">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_echo_app.html#a0f062c49a206ec6d887573a62be9f39d">finish()</a>, <a class="el" href="class_t_c_p_echo_app.html#a5466177fd54c87de43c5f58ec2a74cd1">handleMessage()</a>, and <a class="el" href="class_t_c_p_echo_app.html#ada5e6fbfaaaf4cff54f48f9c2e9fb147">initialize()</a>.</p>
 
 </div>
 </div>
@@ -289,9 +312,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_echo_app_8h_source.html#l00033">33</a> of file <a class="el" href="_t_c_p_echo_app_8h_source.html">TCPEchoApp.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_echo_app_8cc_source.html#l00104">finish()</a>, <a class="el" href="_t_c_p_echo_app_8cc_source.html#l00046">handleMessage()</a>, <a class="el" href="_t_c_p_echo_app_8cc_source.html#l00022">initialize()</a>, and <a class="el" href="_t_c_p_echo_app_8cc_source.html#l00039">sendDown()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_echo_app.html#a0f062c49a206ec6d887573a62be9f39d">finish()</a>, <a class="el" href="class_t_c_p_echo_app.html#a5466177fd54c87de43c5f58ec2a74cd1">handleMessage()</a>, <a class="el" href="class_t_c_p_echo_app.html#ada5e6fbfaaaf4cff54f48f9c2e9fb147">initialize()</a>, and <a class="el" href="class_t_c_p_echo_app.html#ac887868f77a7c434c4801e75e559beb7">sendDown()</a>.</p>
 
 </div>
 </div>
@@ -306,9 +327,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_echo_app_8h_source.html#l00029">29</a> of file <a class="el" href="_t_c_p_echo_app_8h_source.html">TCPEchoApp.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_echo_app_8cc_source.html#l00046">handleMessage()</a>, and <a class="el" href="_t_c_p_echo_app_8cc_source.html#l00022">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_echo_app.html#a5466177fd54c87de43c5f58ec2a74cd1">handleMessage()</a>, and <a class="el" href="class_t_c_p_echo_app.html#ada5e6fbfaaaf4cff54f48f9c2e9fb147">initialize()</a>.</p>
 
 </div>
 </div>
@@ -323,15 +342,43 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_echo_app_8h_source.html#l00030">30</a> of file <a class="el" href="_t_c_p_echo_app_8h_source.html">TCPEchoApp.h</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_echo_app.html#a5466177fd54c87de43c5f58ec2a74cd1">handleMessage()</a>, and <a class="el" href="class_t_c_p_echo_app.html#ada5e6fbfaaaf4cff54f48f9c2e9fb147">initialize()</a>.</p>
 
-<p>Referenced by <a class="el" href="_t_c_p_echo_app_8cc_source.html#l00046">handleMessage()</a>, and <a class="el" href="_t_c_p_echo_app_8cc_source.html#l00022">initialize()</a>.</p>
+</div>
+</div>
+<a class="anchor" id="aebbcec7ed819cedf3bd3569b48d3584e"></a><!-- doxytag: member="TCPEchoApp::rcvdPkSignal" ref="aebbcec7ed819cedf3bd3569b48d3584e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_t_c_p_echo_app.html#aebbcec7ed819cedf3bd3569b48d3584e">TCPEchoApp::rcvdPkSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_t_c_p_echo_app.html#a5466177fd54c87de43c5f58ec2a74cd1">handleMessage()</a>, and <a class="el" href="class_t_c_p_echo_app.html#ada5e6fbfaaaf4cff54f48f9c2e9fb147">initialize()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5afbde985d0378d77e2136033df84171"></a><!-- doxytag: member="TCPEchoApp::sentPkSignal" ref="a5afbde985d0378d77e2136033df84171" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">simsignal_t <a class="el" href="class_t_c_p_echo_app.html#a5afbde985d0378d77e2136033df84171">TCPEchoApp::sentPkSignal</a> = SIMSIGNAL_NULL<code> [static, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_t_c_p_echo_app.html#ada5e6fbfaaaf4cff54f48f9c2e9fb147">initialize()</a>, and <a class="el" href="class_t_c_p_echo_app.html#ac887868f77a7c434c4801e75e559beb7">sendDown()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_t_c_p_echo_app_8h_source.html">TCPEchoApp.h</a></li>
-<li><a class="el" href="_t_c_p_echo_app_8cc_source.html">TCPEchoApp.cc</a></li>
+<li><a class="el" href="_t_c_p_echo_app_8h.html">TCPEchoApp.h</a></li>
+<li><a class="el" href="_t_c_p_echo_app_8cc.html">TCPEchoApp.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -339,7 +386,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_t_c_p_echo_app.html">TCPEchoApp</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:53 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:31 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

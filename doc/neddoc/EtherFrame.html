@@ -12,11 +12,49 @@ containing their common header fields.</p>
 <p>This class should never be instantiated by the models, only specific
 subclasses: <a href="EthernetIIFrame.html">EthernetIIFrame</a>, <a href="EtherFrameWithLLC.html">EtherFrameWithLLC</a> and <a href="EtherFrameWithSNAP.html">EtherFrameWithSNAP</a>.</p>
 <p>Source and destination MAC address are stored in data members.
-Other fields include:</p>
-  <ul><li>preamble: not stored (only contributes length)</li>
-  <li>length: stored in cMessage length, not stored explicitly</li>
-  <li>payload: stored a encapsulated packet (cMessage::encapsulate())</li>
-  <li>crc: represented by cMessage::hasBitError()</li></ul>
+Other Ethernet header fields include:</p>
+  <ul><li>preamble: not stored (only contributes to length)</li>
+  <li>length: stored in cPacket byteLength; during tranmission, cPacket byteLength
+   includes pyhsical layer overhead and the frameByteLength field stores the
+   actual frame length</li>
+  <li>payload: stored a encapsulated packet (cPacket::encapsulate())</li>
+  <li>crc: represented by cPacket::hasBitError()</li></ul>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="EtherFrame-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="EtherFrame.html" title="Packet EtherFrame" alt="" coords="5,6,96,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="EtherFrame-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="EtherFrame.html" title="Packet EtherFrame" alt="" coords="183,83,273,111">
+<area shape="rect" id="node4" href="EtherFrameWithLLC.html" title="Packet EtherFrameWithLLC" alt="" coords="5,161,147,189">
+<area shape="rect" id="node6" href="EthernetIIFrame.html" title="Packet EthernetIIFrame" alt="" coords="171,161,285,189">
+<area shape="rect" id="node8" href="EtherPauseFrame.html" title="Packet EtherPauseFrame" alt="" coords="309,161,435,189">
+<area shape="rect" id="node2" href="EtherTraffic.html" title="Packet EtherTraffic" alt="" coords="183,6,273,34">
+</map>
+<h3 class="subtitle">Extends:</h3>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+<tr>
+   <td>
+<a href="EtherTraffic.html">EtherTraffic</a>
+   </td>
+   <td>
+<i>packet</i>
+   </td>
+   <td>
+
+<p>This class should never be instantiated by the models, only specific
+subclasses: EthernetJam, EtherIFG and submodules of <a href="EtherFrame.html">EtherFrame</a>.</p>
+
+   </td>
+</tr>
+</table>
 <h3 class="subtitle">Known subclasses:</h3>
 <table class="typestable">
    <tr>
@@ -34,19 +72,6 @@ Other fields include:</p>
    <td>
 
 <p>Ethernet frame with 802.3 LLC header.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="EtherFrameWithSNAP.html">EtherFrameWithSNAP</a>
-   </td>
-   <td>
-<i>packet</i>
-   </td>
-   <td>
-
-<p>Ethernet frame with 802.3 LLC and SNAP headers.</p>
 
    </td>
 </tr>
@@ -99,8 +124,16 @@ MACAddress</i>
       <i>
 MACAddress</i>
    </td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>frameByteLength</td>
    <td>
-<p>MessageId id; -- uncomment for tracing frames</p>
+      <i>
+int</i>
+   </td>
+   <td>
+<p>frame length without physical layer overhead (preamble, SFD, carrier extension); used by MAC layer</p>
 </td>
 </tr>
 </table>
@@ -110,24 +143,25 @@ MACAddress</i>
 // containing their common header fields.
 //
 // This class should never be instantiated by the models, only specific
-// subclasses: EthernetIIFrame, EtherFrameWithLLC and EtherFrameWithSNAP.
+// subclasses: ~EthernetIIFrame, ~EtherFrameWithLLC and ~EtherFrameWithSNAP.
 //
 // Source and destination MAC address are stored in data members.
-// Other fields include:
-//  - preamble: not stored (only contributes length)
-//  - length: stored in cMessage length, not stored explicitly
-//  - payload: stored a encapsulated packet (cMessage::encapsulate())
-//  - crc: represented by cMessage::hasBitError()
+// Other Ethernet header fields include:
+//  - preamble: not stored (only contributes to length)
+//  - length: stored in cPacket byteLength; during tranmission, cPacket byteLength
+//    includes pyhsical layer overhead and the frameByteLength field stores the
+//    actual frame length
+//  - payload: stored a encapsulated packet (cPacket::encapsulate())
+//  - crc: represented by cPacket::hasBitError()
 //
-</span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">EtherFrame</span><span style="color: #000000; ">
+</span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">EtherFrame</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">EtherTraffic</span><span style="color: #000000; ">
 {
     </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">dest</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">src</span><span style="color: #000000; ">;
-        </span><span style="color: #808080; font-style: italic; ">//MessageId id; -- uncomment for tracing frames
+    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">frameByteLength</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// frame length without physical layer overhead (preamble, SFD, carrier extension); used by MAC layer
 </span><span style="color: #000000; ">}
 
 
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

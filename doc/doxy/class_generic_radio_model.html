@@ -83,14 +83,17 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="GenericRadioModel" --><!-- doxytag: inherits="IRadioModel" -->
-<p><code>#include &lt;<a class="el" href="_generic_radio_model_8h_source.html">GenericRadioModel.h</a>&gt;</code></p>
+<p>Generic radio model.  
+ <a href="class_generic_radio_model.html#details">More...</a></p>
+
+<p><code>#include &lt;GenericRadioModel.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for GenericRadioModel:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_generic_radio_model.png" usemap="#GenericRadioModel_map" alt=""/>
   <map id="GenericRadioModel_map" name="GenericRadioModel_map">
-<area href="class_i_radio_model.html" alt="IRadioModel" shape="rect" coords="0,0,124,24"/>
+<area href="class_i_radio_model.html" title="Abstract class to encapsulate the calculation of received power of a radio transmission." alt="IRadioModel" shape="rect" coords="0,0,124,24"/>
 </map>
  </div></div>
 
@@ -100,9 +103,16 @@ Inheritance diagram for GenericRadioModel:</div>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_generic_radio_model.html#aee8268ebcc49b55d103199e38e6fa471">GenericRadioModel</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_generic_radio_model.html#aeaf0feff783e344445912c32bc6630e7">~GenericRadioModel</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_generic_radio_model.html#a25b0db4fae6bfa7d46ff38e1b7bd072e">initializeFrom</a> (cModule *radioModule)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_generic_radio_model.html#a25b0db4fae6bfa7d46ff38e1b7bd072e">initializeFrom</a> (cModule *radioModule)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows parameters to be read from the module parameters of a module that contains this object.  <a href="#a25b0db4fae6bfa7d46ff38e1b7bd072e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_generic_radio_model.html#af1154c80f6921db39470dc0b412aa204">calculateDuration</a> (<a class="el" href="class_air_frame.html">AirFrame</a> *airframe)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Should be defined to calculate the duration of the <a class="el" href="class_air_frame.html" title="Class generated from linklayer/radio/AirFrame.msg by opp_msgc.">AirFrame</a>.  <a href="#af1154c80f6921db39470dc0b412aa204"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_generic_radio_model.html#adb06639d7e365ddb00b0b42eccecb515">isReceivedCorrectly</a> (<a class="el" href="class_air_frame.html">AirFrame</a> *airframe, const <a class="el" href="_snr_list_8h.html#a241b5e7c9575e932988a55f7a5012a61">SnrList</a> &amp;receivedList)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Should be defined to calculate whether the frame has been received correctly.  <a href="#adb06639d7e365ddb00b0b42eccecb515"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_generic_radio_model.html#a16c66fde17905254a75052c482cbc382">haveTestFrame</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_generic_radio_model.html#a17ec3ef8df36866764e8da419215a9c9">calculateDurationTestFrame</a> (<a class="el" href="class_air_frame.html">AirFrame</a> *airframe)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_generic_radio_model.html#a5e2e69966b499ac9bda07f425eb9091c">getTestFrameError</a> (double snirMin, double bitrate)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_generic_radio_model.html#a57fe762365a53feb2d4e9a8ec3bef60b">getTestFrameSize</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_generic_radio_model.html#adedc6f8327e9a44235180416d23d462b">isPacketOK</a> (double snirMin, int length, double bitrate)</td></tr>
@@ -115,9 +125,8 @@ Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_modulation.html">IModulation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_generic_radio_model.html#a0fd8b22941bc4c99e3e2de65b20cbd74">modulation</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Generic radio model. Frame duration is calculated from the bitrate and the packet length plus a physical header length. Bit error rate is calculated from the modulation scheme, signal bandwidth, bitrate and the frame length. </p>
-
-<p>Definition at line <a class="el" href="_generic_radio_model_8h_source.html#l00031">31</a> of file <a class="el" href="_generic_radio_model_8h_source.html">GenericRadioModel.h</a>.</p>
+<div class="textblock"><p>Generic radio model. </p>
+<p>Frame duration is calculated from the bitrate and the packet length plus a physical header length. Bit error rate is calculated from the modulation scheme, signal bandwidth, bitrate and the frame length. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aee8268ebcc49b55d103199e38e6fa471"></a><!-- doxytag: member="GenericRadioModel::GenericRadioModel" ref="aee8268ebcc49b55d103199e38e6fa471" args="()" -->
 <div class="memitem">
@@ -132,10 +141,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_generic_radio_model_8cc_source.html#l00027">27</a> of file <a class="el" href="_generic_radio_model_8cc_source.html">GenericRadioModel.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_generic_radio_model.html#a0fd8b22941bc4c99e3e2de65b20cbd74">modulation</a> = NULL;
+    <a class="code" href="class_generic_radio_model.html#a0fd8b22941bc4c99e3e2de65b20cbd74">modulation</a> = <a class="code" href="def_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;
 }
 </pre></div>
 </div>
@@ -153,8 +160,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_generic_radio_model_8cc_source.html#l00032">32</a> of file <a class="el" href="_generic_radio_model_8cc_source.html">GenericRadioModel.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keyword">delete</span> <a class="code" href="class_generic_radio_model.html#a0fd8b22941bc4c99e3e2de65b20cbd74">modulation</a>;
 }
@@ -176,14 +181,34 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Should be defined to calculate the duration of the <a class="el" href="class_air_frame.html">AirFrame</a>. Usually the duration is just the frame length divided by the bitrate. However, in some cases, notably IEEE 802.11, the header has a different modulation (and thus a different bitrate) than the rest of the message. </p>
+
+<p>Should be defined to calculate the duration of the <a class="el" href="class_air_frame.html" title="Class generated from linklayer/radio/AirFrame.msg by opp_msgc.">AirFrame</a>. </p>
+<p>Usually the duration is just the frame length divided by the bitrate. However, in some cases, notably IEEE 802.11, the header has a different modulation (and thus a different bitrate) than the rest of the message. </p>
 
 <p>Implements <a class="el" href="class_i_radio_model.html#af8aff6a5a5c7b81321818141c7d97b95">IRadioModel</a>.</p>
-
-<p>Definition at line <a class="el" href="_generic_radio_model_8cc_source.html#l00057">57</a> of file <a class="el" href="_generic_radio_model_8cc_source.html">GenericRadioModel.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">return</span> (airframe-&gt;getBitLength()+<a class="code" href="class_generic_radio_model.html#a6786809e88cbdf4d953a890f29fe253c">headerLengthBits</a>) / airframe-&gt;getBitrate();
 }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a17ec3ef8df36866764e8da419215a9c9"></a><!-- doxytag: member="GenericRadioModel::calculateDurationTestFrame" ref="a17ec3ef8df36866764e8da419215a9c9" args="(AirFrame *airframe)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double <a class="el" href="class_generic_radio_model.html#a17ec3ef8df36866764e8da419215a9c9">GenericRadioModel::calculateDurationTestFrame</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_air_frame.html">AirFrame</a> *&#160;</td>
+          <td class="paramname"><em>airframe</em></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="class_i_radio_model.html#a09839ec150413ee074b009b971c881dd">IRadioModel</a>.</p>
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> 0;}
 </pre></div>
 </div>
 </div>
@@ -202,12 +227,78 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_generic_radio_model_8cc_source.html#l00105">105</a> of file <a class="el" href="_generic_radio_model_8cc_source.html">GenericRadioModel.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_generic_radio_model_8cc_source.html#l00037">initializeFrom()</a>.</p>
+<p>Referenced by <a class="el" href="class_generic_radio_model.html#a25b0db4fae6bfa7d46ff38e1b7bd072e">initializeFrom()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">return</span> pow(10.0, (dB / 10));
 }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a5e2e69966b499ac9bda07f425eb9091c"></a><!-- doxytag: member="GenericRadioModel::getTestFrameError" ref="a5e2e69966b499ac9bda07f425eb9091c" args="(double snirMin, double bitrate)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double <a class="el" href="class_generic_radio_model.html#a5e2e69966b499ac9bda07f425eb9091c">GenericRadioModel::getTestFrameError</a> </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>snirMin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>bitrate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="class_i_radio_model.html#a2b9d022e59b5040a263ac76c04db28aa">IRadioModel</a>.</p>
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> 0;}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a57fe762365a53feb2d4e9a8ec3bef60b"></a><!-- doxytag: member="GenericRadioModel::getTestFrameSize" ref="a57fe762365a53feb2d4e9a8ec3bef60b" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int <a class="el" href="class_generic_radio_model.html#a57fe762365a53feb2d4e9a8ec3bef60b">GenericRadioModel::getTestFrameSize</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="class_i_radio_model.html#aa96f4e38c90522742171fd2c1f1a2ee9">IRadioModel</a>.</p>
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> 0;}
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a16c66fde17905254a75052c482cbc382"></a><!-- doxytag: member="GenericRadioModel::haveTestFrame" ref="a16c66fde17905254a75052c482cbc382" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="class_generic_radio_model.html#a16c66fde17905254a75052c482cbc382">GenericRadioModel::haveTestFrame</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Implements <a class="el" href="class_i_radio_model.html#ac6822e571dc7ddff25561a6b3b1a56da">IRadioModel</a>.</p>
+<div class="fragment"><pre class="fragment">{<span class="keywordflow">return</span> <span class="keyword">false</span>;}
 </pre></div>
 </div>
 </div>
@@ -216,7 +307,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_generic_radio_model.html#a25b0db4fae6bfa7d46ff38e1b7bd072e">GenericRadioModel::initializeFrom</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_generic_radio_model.html#a25b0db4fae6bfa7d46ff38e1b7bd072e">GenericRadioModel::initializeFrom</a> </td>
           <td>(</td>
           <td class="paramtype">cModule *&#160;</td>
           <td class="paramname"><em>radioModule</em></td><td>)</td>
@@ -225,11 +316,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Allows parameters to be read from the module parameters of a module that contains this object. </p>
 
 <p>Implements <a class="el" href="class_i_radio_model.html#a77a41286d82a93c67d1b834e4236f0d3">IRadioModel</a>.</p>
-
-<p>Definition at line <a class="el" href="_generic_radio_model_8cc_source.html#l00037">37</a> of file <a class="el" href="_generic_radio_model_8cc_source.html">GenericRadioModel.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="class_generic_radio_model.html#a1c0fd5c7739c1a3b63a073b09ee72386">snirThreshold</a> = <a class="code" href="class_generic_radio_model.html#a8ecbbe2c623ce8b1eeda532ff03b83ef">dB2fraction</a>(radioModule-&gt;par(<span class="stringliteral">&quot;snirThreshold&quot;</span>));
     <a class="code" href="class_generic_radio_model.html#a6786809e88cbdf4d953a890f29fe253c">headerLengthBits</a> = radioModule-&gt;par(<span class="stringliteral">&quot;headerLengthBits&quot;</span>);
@@ -237,15 +327,15 @@ Protected Attributes</h2></td></tr>
 
     <span class="keyword">const</span> <span class="keywordtype">char</span> *modulationName = radioModule-&gt;par(<span class="stringliteral">&quot;modulation&quot;</span>);
     <span class="keywordflow">if</span> (strcmp(modulationName, <span class="stringliteral">&quot;null&quot;</span>)==0)
-        <a class="code" href="class_generic_radio_model.html#a0fd8b22941bc4c99e3e2de65b20cbd74">modulation</a> = <span class="keyword">new</span> <a class="code" href="class_null_modulation.html">NullModulation</a>();
+        <a class="code" href="class_generic_radio_model.html#a0fd8b22941bc4c99e3e2de65b20cbd74">modulation</a> = <span class="keyword">new</span> <a class="code" href="class_null_modulation.html" title="Ideal modulation which returns zero bit error rate, regardless of the parameters.">NullModulation</a>();
     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(modulationName, <span class="stringliteral">&quot;BPSK&quot;</span>)==0)
-        <a class="code" href="class_generic_radio_model.html#a0fd8b22941bc4c99e3e2de65b20cbd74">modulation</a> = <span class="keyword">new</span> <a class="code" href="class_b_p_s_k_modulation.html">BPSKModulation</a>();
+        <a class="code" href="class_generic_radio_model.html#a0fd8b22941bc4c99e3e2de65b20cbd74">modulation</a> = <span class="keyword">new</span> <a class="code" href="class_b_p_s_k_modulation.html" title="BPSK modulation.">BPSKModulation</a>();
     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(modulationName, <span class="stringliteral">&quot;16-QAM&quot;</span>)==0)
-        <a class="code" href="class_generic_radio_model.html#a0fd8b22941bc4c99e3e2de65b20cbd74">modulation</a> = <span class="keyword">new</span> <a class="code" href="class_q_a_m16_modulation.html">QAM16Modulation</a>();
+        <a class="code" href="class_generic_radio_model.html#a0fd8b22941bc4c99e3e2de65b20cbd74">modulation</a> = <span class="keyword">new</span> <a class="code" href="class_q_a_m16_modulation.html" title="16-QAM modulation.">QAM16Modulation</a>();
     <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(modulationName, <span class="stringliteral">&quot;256-QAM&quot;</span>)==0)
-        <a class="code" href="class_generic_radio_model.html#a0fd8b22941bc4c99e3e2de65b20cbd74">modulation</a> = <span class="keyword">new</span> <a class="code" href="class_q_a_m256_modulation.html">QAM256Modulation</a>();
+        <a class="code" href="class_generic_radio_model.html#a0fd8b22941bc4c99e3e2de65b20cbd74">modulation</a> = <span class="keyword">new</span> <a class="code" href="class_q_a_m256_modulation.html" title="256-QAM modulation.">QAM256Modulation</a>();
     <span class="keywordflow">else</span>
-        opp_error(<span class="stringliteral">&quot;unrecognized modulation &#39;%s&#39;&quot;</span>, modulationName);
+        <span class="keywordflow">throw</span> cRuntimeError(<span class="keyword">this</span>, <span class="stringliteral">&quot;unrecognized modulation &#39;%s&#39;&quot;</span>, modulationName);
 }
 </pre></div>
 </div>
@@ -281,9 +371,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_generic_radio_model_8cc_source.html#l00090">90</a> of file <a class="el" href="_generic_radio_model_8cc_source.html">GenericRadioModel.cc</a>.</p>
-
-<p>Referenced by <a class="el" href="_generic_radio_model_8cc_source.html#l00063">isReceivedCorrectly()</a>.</p>
+<p>Referenced by <a class="el" href="class_generic_radio_model.html#adb06639d7e365ddb00b0b42eccecb515">isReceivedCorrectly()</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordtype">double</span> ber = <a class="code" href="class_generic_radio_model.html#a0fd8b22941bc4c99e3e2de65b20cbd74">modulation</a>-&gt;<a class="code" href="class_i_modulation.html#acd0eccece6e135ca26523f932858e9b1">calculateBER</a>(snirMin, <a class="code" href="class_generic_radio_model.html#a81eba019e2d942c59d858bc16a174ecd">bandwidth</a>, bitrate);
 
@@ -324,11 +412,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Should be defined to calculate whether the frame has been received correctly. Input is the signal-noise ratio over the duration of the frame. The calculation may take into account the modulation scheme, possible error correction code, etc. </p>
+
+<p>Should be defined to calculate whether the frame has been received correctly. </p>
+<p>Input is the signal-noise ratio over the duration of the frame. The calculation may take into account the modulation scheme, possible error correction code, etc. </p>
 
 <p>Implements <a class="el" href="class_i_radio_model.html#a107eaa67a662f3dce05eb691dae90f84">IRadioModel</a>.</p>
-
-<p>Definition at line <a class="el" href="_generic_radio_model_8cc_source.html#l00063">63</a> of file <a class="el" href="_generic_radio_model_8cc_source.html">GenericRadioModel.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="comment">// calculate snirMin</span>
     <span class="keywordtype">double</span> snirMin = receivedList.begin()-&gt;snr;
@@ -368,9 +456,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_generic_radio_model_8h_source.html#l00036">36</a> of file <a class="el" href="_generic_radio_model_8h_source.html">GenericRadioModel.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_generic_radio_model_8cc_source.html#l00037">initializeFrom()</a>, and <a class="el" href="_generic_radio_model_8cc_source.html#l00090">isPacketOK()</a>.</p>
+<p>Referenced by <a class="el" href="class_generic_radio_model.html#a25b0db4fae6bfa7d46ff38e1b7bd072e">initializeFrom()</a>, and <a class="el" href="class_generic_radio_model.html#adedc6f8327e9a44235180416d23d462b">isPacketOK()</a>.</p>
 
 </div>
 </div>
@@ -385,9 +471,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_generic_radio_model_8h_source.html#l00035">35</a> of file <a class="el" href="_generic_radio_model_8h_source.html">GenericRadioModel.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_generic_radio_model_8cc_source.html#l00057">calculateDuration()</a>, <a class="el" href="_generic_radio_model_8cc_source.html#l00037">initializeFrom()</a>, and <a class="el" href="_generic_radio_model_8cc_source.html#l00063">isReceivedCorrectly()</a>.</p>
+<p>Referenced by <a class="el" href="class_generic_radio_model.html#af1154c80f6921db39470dc0b412aa204">calculateDuration()</a>, <a class="el" href="class_generic_radio_model.html#a25b0db4fae6bfa7d46ff38e1b7bd072e">initializeFrom()</a>, and <a class="el" href="class_generic_radio_model.html#adb06639d7e365ddb00b0b42eccecb515">isReceivedCorrectly()</a>.</p>
 
 </div>
 </div>
@@ -402,9 +486,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_generic_radio_model_8h_source.html#l00037">37</a> of file <a class="el" href="_generic_radio_model_8h_source.html">GenericRadioModel.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_generic_radio_model_8cc_source.html#l00027">GenericRadioModel()</a>, <a class="el" href="_generic_radio_model_8cc_source.html#l00037">initializeFrom()</a>, <a class="el" href="_generic_radio_model_8cc_source.html#l00090">isPacketOK()</a>, and <a class="el" href="_generic_radio_model_8cc_source.html#l00032">~GenericRadioModel()</a>.</p>
+<p>Referenced by <a class="el" href="class_generic_radio_model.html#aee8268ebcc49b55d103199e38e6fa471">GenericRadioModel()</a>, <a class="el" href="class_generic_radio_model.html#a25b0db4fae6bfa7d46ff38e1b7bd072e">initializeFrom()</a>, <a class="el" href="class_generic_radio_model.html#adedc6f8327e9a44235180416d23d462b">isPacketOK()</a>, and <a class="el" href="class_generic_radio_model.html#aeaf0feff783e344445912c32bc6630e7">~GenericRadioModel()</a>.</p>
 
 </div>
 </div>
@@ -419,15 +501,13 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_generic_radio_model_8h_source.html#l00034">34</a> of file <a class="el" href="_generic_radio_model_8h_source.html">GenericRadioModel.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_generic_radio_model_8cc_source.html#l00037">initializeFrom()</a>, and <a class="el" href="_generic_radio_model_8cc_source.html#l00063">isReceivedCorrectly()</a>.</p>
+<p>Referenced by <a class="el" href="class_generic_radio_model.html#a25b0db4fae6bfa7d46ff38e1b7bd072e">initializeFrom()</a>, and <a class="el" href="class_generic_radio_model.html#adb06639d7e365ddb00b0b42eccecb515">isReceivedCorrectly()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_generic_radio_model_8h_source.html">GenericRadioModel.h</a></li>
-<li><a class="el" href="_generic_radio_model_8cc_source.html">GenericRadioModel.cc</a></li>
+<li><a class="el" href="_generic_radio_model_8h.html">GenericRadioModel.h</a></li>
+<li><a class="el" href="_generic_radio_model_8cc.html">GenericRadioModel.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -435,7 +515,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_generic_radio_model.html">GenericRadioModel</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:47 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:24 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

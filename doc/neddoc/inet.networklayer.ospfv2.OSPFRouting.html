@@ -7,7 +7,22 @@
 <h2 class="comptitle">Simple Module <i>OSPFRouting</i></h2>
 <b>Package:</b> inet.networklayer.ospfv2<br/><b>File: <a href="src-networklayer-ospfv2-OSPFRouting.ned.html">src/networklayer/ospfv2/OSPFRouting.ned</a></b><br/><p><a href="../doxy/class_o_s_p_f_routing.html" target="mainframe"><b>C++ definition</b></a></p>
 
-<p>Implements OSPFRouting.</p>
+<p>Implements the OSPFv4 routing protocol.</p>
+<img src="inet.networklayer.ospfv2.OSPFRouting-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.networklayer.ospfv2.OSPFRouting.html" title="OSPFRouting" alt="OSPFRouting" coords="0,30,117,70">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.networklayer.ospfv2.OSPFRouting-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.networklayer.ospfv2.OSPFRouting.html" title="Simple Module OSPFRouting" alt="" coords="56,83,157,111">
+<area shape="rect" id="node2" href="inet.examples.bgpv4.BGPUpdate.BGPRouter.html" title="Compound Module BGPRouter" alt="" coords="5,6,93,34">
+<area shape="rect" id="node4" href="inet.nodes.ospfv2.OSPFRouter.html" title="Compound Module OSPFRouter" alt="" coords="117,6,213,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.networklayer.ospfv2.OSPFRouting-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.networklayer.ospfv2.OSPFRouting.html" title="Simple Module OSPFRouting" alt="" coords="5,6,107,34">
+</map>
 <h3 class="subtitle">Used in compound modules:</h3>
 <table class="typestable">
    <tr>
@@ -17,7 +32,20 @@
    </tr>
 <tr>
    <td>
-<a href="inet.nodes.inet.OSPFRouter.html">OSPFRouter</a>
+<a href="inet.examples.bgpv4.BGPUpdate.BGPRouter.html">BGPRouter</a>
+   </td>
+   <td>
+<i>compound&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Example IP router with BGPv4 and OSPFv4 support.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.nodes.ospfv2.OSPFRouter.html">OSPFRouter</a>
    </td>
    <td>
 <i>compound&nbsp;module</i>
@@ -38,13 +66,134 @@
       <th class="description">Description</th>
    </tr>
 <tr class="local">
-   <td>ospfConfigFile</td>
+   <td>ospfConfig</td>
    <td>
-      <i>string</i>
+      <i>xml</i>
    </td>
    <td></td>
    <td>
-<p>xml file containing the full OSPF AS configuration</p>
+<p>xml containing the full OSPF AS configuration</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>helloInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>10s</td>
+   <td>
+<p>default values for attributes of interface xml entries:</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>pollInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>120s</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>routerDeadInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>40s</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>retransmissionInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>5s</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>interfaceOutputCost</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>interfaceTransmissionDelay</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>routerPriority</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>authenticationType</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"NullType"</td>
+   <td>
+<p>SimplePasswordType|CrytographicType|NullType</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>authenticationKey</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"0x00"</td>
+   <td>
+<p>0xnn..nn</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>linkCost</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>RFC1583Compatible</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+   </td>
+</tr>
+<tr class="local">
+   <td>areaID</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>externalInterfaceOutputCost</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>1</td>
+   <td>   </td>
+</tr>
+<tr class="local">
+   <td>externalInterfaceOutputType</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>
+<p>Type1|Type2</p>
    </td>
 </tr>
 </table>
@@ -82,18 +231,35 @@
 </table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
-// Implements \OSPFRouting.
+// Implements the OSPFv4 routing protocol.
 //
 </span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">OSPFRouting</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">ospfConfigFile</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// xml file containing the full OSPF AS configuration
-</span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/network2&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">xml</span><span style="color: #000000; "> </span><span style="color: #000000; ">ospfConfig</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// xml containing the full OSPF AS configuration
+</span><span style="color: #000000; ">
+        </span><span style="color: #808080; font-style: italic; ">// default values for attributes of interface xml entries:
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">helloInterval</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">10</span><span style="color: #000000; ">s</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">pollInterval</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">120</span><span style="color: #000000; ">s</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">routerDeadInterval</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">40</span><span style="color: #000000; ">s</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">retransmissionInterval</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">5</span><span style="color: #000000; ">s</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">interfaceOutputCost</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">1</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">interfaceTransmissionDelay</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">1</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">routerPriority</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">1</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">authenticationType</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;NullType&quot;</span><span style="color: #000000; ">);    </span><span style="color: #808080; font-style: italic; ">// SimplePasswordType|CrytographicType|NullType
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">authenticationKey</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;0x00&quot;</span><span style="color: #000000; ">);         </span><span style="color: #808080; font-style: italic; ">// 0xnn..nn
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">linkCost</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">1</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">RFC1583Compatible</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">false</span><span style="color: #000000; ">);
+
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">areaID</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">externalInterfaceOutputCost</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">1</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">externalInterfaceOutputType</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">);  </span><span style="color: #808080; font-style: italic; ">// Type1|Type2
+</span><span style="color: #000000; ">
+        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/network2&quot;</span><span style="color: #000000; ">);
     </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
-        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">IPControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">IPControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">IPv4ControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">IPv4ControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">);
 }
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

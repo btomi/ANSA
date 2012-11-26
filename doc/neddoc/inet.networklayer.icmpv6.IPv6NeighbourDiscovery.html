@@ -11,6 +11,20 @@
 <p>An overview of the IPv6 implementation in the INET Framework is
 provided <a href="ipv6overview.html">here</a>.</p>
 <p><b>See also:</b> <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a>, <a href="inet.networklayer.ipv6.RoutingTable6.html">RoutingTable6</a>, <a href="inet.networklayer.icmpv6.ICMPv6.html">ICMPv6</a></p>
+<img src="inet.networklayer.icmpv6.IPv6NeighbourDiscovery-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html" title="IPv6NeighbourDiscovery" alt="IPv6NeighbourDiscovery" coords="0,30,179,70">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.networklayer.icmpv6.IPv6NeighbourDiscovery-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html" title="Simple Module IPv6NeighbourDiscovery" alt="" coords="5,83,171,111">
+<area shape="rect" id="node2" href="inet.nodes.ipv6.NetworkLayer6.html" title="Compound Module NetworkLayer6" alt="" coords="33,6,143,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.networklayer.icmpv6.IPv6NeighbourDiscovery-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.networklayer.icmpv6.IPv6NeighbourDiscovery.html" title="Simple Module IPv6NeighbourDiscovery" alt="" coords="5,6,171,34">
+</map>
 <h3 class="subtitle">Used in compound modules:</h3>
 <table class="typestable">
    <tr>
@@ -27,8 +41,37 @@ provided <a href="ipv6overview.html">here</a>.</p>
    </td>
    <td>
 
-<p>Represents an <a href="inet.networklayer.ipv6.IPv6.html">IPv6</a> network layer (L3).</p>
+<p>Represents an IPv6 network layer (L3).</p>
 
+   </td>
+</tr>
+</table>
+<h3 class="subtitle">Parameters:</h3>
+<table class="paramstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="defaultvalue">Default value</th>
+      <th class="description">Description</th>
+   </tr>
+<tr class="local">
+   <td>minIntervalBetweenRAs</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>30ms</td>
+   <td>
+<p>minRtrAdvInterval:  0.03 sec for MIPv6 , declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>maxIntervalBetweenRAs</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>70ms</td>
+   <td>
+<p>MaxrtrAdvInterval: 0.07 sec for MIPv6, declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)</p>
    </td>
 </tr>
 </table>
@@ -64,24 +107,60 @@ provided <a href="ipv6overview.html">here</a>.</p>
    <td></td>   <td></td>
 </tr>
 </table>
+<h3 class="subtitle">Signals:</h3>
+<table class="signalstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="unit">Unit</th>
+   </tr>
+<tr class="local">
+   <td>startDAD</td>
+   <td><i>
+long   </i></td>
+   <td></td>
+</tr>
+</table>
+<h3 class="subtitle">Statistics:</h3>
+<table class="statisticstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="title">Title</th>
+      <th class="source">Source</th>
+      <th class="record">Record</th>
+      <th class="unit">Unit</th>
+      <th class="interpolationmode">Interpolation Mode</th>
+   </tr>
+<tr class="local">
+   <td>startDAD</td>
+   <td>DAD started</td>
+   <td></td>
+   <td>count, vector</td>
+   <td></td>
+   <td></td>
+</tr>
+</table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
-// Implements \IPv6 Neighbour Discovery.
+// Implements IPv6 Neighbour Discovery.
 //
-// An overview of the \IPv6 implementation in the INET Framework is
+// An overview of the IPv6 implementation in the INET Framework is
 // provided </span><span style="color: #800000; ">&lt;a href=&quot;ipv6overview.html&quot;&gt;</span><span style="color: #808080; font-style: italic; ">here</span><span style="color: #800000; ">&lt;/a&gt;</span><span style="color: #808080; font-style: italic; ">.
 //
-// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> IPv6, RoutingTable6, ICMPv6
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~IPv6, ~RoutingTable6, ~ICMPv6
 //
 </span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">IPv6NeighbourDiscovery</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/network&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">minIntervalBetweenRAs</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">30</span><span style="color: #000000; ">ms</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">//minRtrAdvInterval:  0.03 sec for MIPv6 , declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">maxIntervalBetweenRAs</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">s</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">70</span><span style="color: #000000; ">ms</span><span style="color: #000000; ">);  </span><span style="color: #808080; font-style: italic; ">//MaxrtrAdvInterval: 0.07 sec for MIPv6, declared as parameter to facilitate testing without recompiling (Zarrar 15.07.07)
+</span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/network&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">startDAD</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">long</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// emits value=1
+</span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">startDAD</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;DAD started&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #000000; ">vector</span><span style="color: #000000; ">);
     </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipv6In</span><span style="color: #000000; ">;
         </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">ipv6Out</span><span style="color: #000000; ">;
 }
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

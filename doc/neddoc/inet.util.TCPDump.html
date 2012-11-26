@@ -7,80 +7,31 @@
 <h2 class="comptitle">Simple Module <i>TCPDump</i></h2>
 <b>Package:</b> inet.util<br/><b>File: <a href="src-util-TCPDump.ned.html">src/util/TCPDump.ned</a></b><br/><p><a href="../doxy/class_t_c_p_dump.html" target="mainframe"><b>C++ definition</b></a></p>
 
-<p>Provides tcpdump-like functionality</p>
-<h3 class="subtitle">Used in compound modules:</h3>
-<table class="typestable">
-   <tr>
-      <th class="name">Name</th>
-      <th class="type">Type</th>
-      <th class="description">Description</th>
-   </tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.StandardHost.html">StandardHost</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.sctp.SCTP.html">SCTP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.StandardHostWithDLDuplicatesGenerator.html">StandardHostWithDLDuplicatesGenerator</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.sctp.SCTP.html">SCTP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications AND <a href="inet.linklayer.ppp.PPPInterfaceWithDLDuplicatesGenerator.html">PPPInterfaceWithDLDuplicatesGenerator</a>.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.StandardHostWithDLThruputMeter.html">StandardHostWithDLThruputMeter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.sctp.SCTP.html">SCTP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications AND <a href="inet.linklayer.ppp.PPPInterfaceWithDLThruputMeter.html">PPPInterfaceWithDLThruputMeter</a>.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.StandardHostWithULDropsGenerator.html">StandardHostWithULDropsGenerator</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.sctp.SCTP.html">SCTP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications AND <a href="inet.linklayer.ppp.PPPInterfaceWithULDropsGenerator.html">PPPInterfaceWithULDropsGenerator</a>.</p>
-
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.nodes.inet.StandardHostWithULThruputMeter.html">StandardHostWithULThruputMeter</a>
-   </td>
-   <td>
-<i>compound&nbsp;module</i>
-   </td>
-   <td>
-
-<p>IP host with <a href="inet.transport.sctp.SCTP.html">SCTP</a>, <a href="inet.transport.tcp.TCP.html">TCP</a>, <a href="inet.transport.udp.UDP.html">UDP</a> layers and applications AND <a href="inet.linklayer.ppp.PPPInterfaceWithULThruputMeter.html">PPPInterfaceWithULThruputMeter</a>.</p>
-
-   </td>
-</tr>
-</table>
+<p>Provides tcpdump-like functionality: dumps packet contents on the
+module output, and optionally records them into a PCAP file.
+This module has to be placed into the packet's path, and connected
+both sides.</p>
+<p>This module is deprecated: consider using PcapRecorder, which
+can be inserted into compound modules non-intrusively (it receives
+packet data via signals, so existing modules don't need to be reconnected.)</p>
+<p><b>How to use it:</b> The module handles IPv4 packets (IPv4Datagram class),
+so it should be placed between the IP module and network interfaces (NICs);
+see description of gates in comments. Other packets are ignored and let
+through.</p>
+<img src="inet.util.TCPDump-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.util.TCPDump.html" title="TCPDump" alt="TCPDump" coords="0,30,100,70">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.util.TCPDump-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.util.TCPDump.html" title="Simple Module TCPDump" alt="" coords="27,83,109,111">
+<area shape="rect" id="node2" href="inet.examples.ipv6.demonetworketh.DemoNetworkEth.html" title="Network DemoNetworkEth" alt="" coords="5,6,131,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.util.TCPDump-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.util.TCPDump.html" title="Simple Module TCPDump" alt="" coords="5,6,88,34">
+</map>
 <h3 class="subtitle">Networks:</h3>
 <table class="typestable">
    <tr>
@@ -91,17 +42,6 @@
 <tr>
    <td>
 <a href="inet.examples.ipv6.demonetworketh.DemoNetworkEth.html">DemoNetworkEth</a>
-   </td>
-   <td>
-<i>network</i>
-   </td>
-   <td>
-<i>(no description)</i>
-   </td>
-</tr>
-<tr>
-   <td>
-<a href="inet.examples.inet.redtest.REDTestDebug.html">REDTestDebug</a>
    </td>
    <td>
 <i>network</i>
@@ -128,14 +68,6 @@
    <td>   </td>
 </tr>
 <tr class="local">
-   <td>threadEnable</td>
-   <td>
-      <i>bool</i>
-   </td>
-   <td>false</td>
-   <td>   </td>
-</tr>
-<tr class="local">
    <td>snaplen</td>
    <td>
       <i>int</i>
@@ -144,12 +76,32 @@
    <td>   </td>
 </tr>
 <tr class="local">
-   <td>verbosity</td>
+   <td>verbose</td>
    <td>
-      <i>int</i>
+      <i>bool</i>
    </td>
-   <td>0</td>
+   <td>false</td>
    <td>   </td>
+</tr>
+<tr class="local">
+   <td>dumpBadFrames</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>write bad frames to pcap file</p>
+   </td>
+</tr>
+<tr class="local">
+   <td>dropBadFrames</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>false</td>
+   <td>
+<p>drop frame when frame has bit error.</p>
+   </td>
 </tr>
 </table>
 <h3 class="subtitle">Gates:</h3>
@@ -163,42 +115,62 @@
 <tr class="local">
    <td>ifIn [ ]</xsl:if></td>
    <td><i>input</i></td>
-   <td></td>   <td></td>
+   <td></td>   <td>
+<p>input from lower layer</p>
+</td>
 </tr>
 <tr class="local">
-   <td>in2 [ ]</xsl:if></td>
+   <td>hlIn [ ]</xsl:if></td>
    <td><i>input</i></td>
-   <td></td>   <td></td>
+   <td></td>   <td>
+<p>input from higher layer</p>
+</td>
 </tr>
 <tr class="local">
    <td>ifOut [ ]</xsl:if></td>
    <td><i>output</i></td>
-   <td></td>   <td></td>
+   <td></td>   <td>
+<p>output to lower layer</p>
+</td>
 </tr>
 <tr class="local">
-   <td>out2 [ ]</xsl:if></td>
+   <td>hlOut [ ]</xsl:if></td>
    <td><i>output</i></td>
-   <td></td>   <td></td>
+   <td></td>   <td>
+<p>output to higher layer</p>
+</td>
 </tr>
 </table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
-// Provides tcpdump-like functionality
+// Provides tcpdump-like functionality: dumps packet contents on the
+// module output, and optionally records them into a PCAP file.
+// This module has to be placed into the packet's path, and connected
+// both sides.
+//
+// This module is deprecated: consider using PcapRecorder, which
+// can be inserted into compound modules non-intrusively (it receives
+// packet data via signals, so existing modules don't need to be reconnected.)
+//
+// </span><span style="color: #800000; ">&lt;b&gt;</span><span style="color: #808080; font-style: italic; ">How to use it:</span><span style="color: #800000; ">&lt;/b&gt;</span><span style="color: #808080; font-style: italic; "> The module handles IPv4 packets (IPv4Datagram class),
+// so it should be placed between the IP module and network interfaces (NICs);
+// see description of gates in comments. Other packets are ignored and let
+// through.
 //
 </span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">TCPDump</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">dumpFile</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;&quot;</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">threadEnable</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">false</span><span style="color: #000000; ">);
         </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">snaplen</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">65535</span><span style="color: #000000; ">);
-        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">verbosity</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">0</span><span style="color: #000000; ">);
-    </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
-        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">ifIn</span><span style="color: #000000; ">[];
-        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">in2</span><span style="color: #000000; ">[];
-        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">ifOut</span><span style="color: #000000; ">[];
-        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">out2</span><span style="color: #000000; ">[];
-}
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">verbose</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">false</span><span style="color: #000000; ">);
+        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">dumpBadFrames</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">true</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// write bad frames to pcap file
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">dropBadFrames</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">false</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// drop frame when frame has bit error.
+</span><span style="color: #000000; ">    </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
+        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">ifIn</span><span style="color: #000000; ">[];   </span><span style="color: #808080; font-style: italic; ">// input from lower layer
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">hlIn</span><span style="color: #000000; ">[];   </span><span style="color: #808080; font-style: italic; ">// input from higher layer
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">ifOut</span><span style="color: #000000; ">[];   </span><span style="color: #808080; font-style: italic; ">// output to lower layer
+</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">hlOut</span><span style="color: #000000; ">[];   </span><span style="color: #808080; font-style: italic; ">// output to higher layer
+</span><span style="color: #000000; ">}
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

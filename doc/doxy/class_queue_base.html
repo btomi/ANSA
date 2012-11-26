@@ -83,17 +83,19 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="QueueBase" --><!-- doxytag: inherits="AbstractQueue" -->
-<p><code>#include &lt;<a class="el" href="_queue_base_8h_source.html">QueueBase.h</a>&gt;</code></p>
+<p>Queue with constant processing time.  
+ <a href="class_queue_base.html#details">More...</a></p>
+
+<p><code>#include &lt;QueueBase.h&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for QueueBase:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_queue_base.png" usemap="#QueueBase_map" alt=""/>
   <map id="QueueBase_map" name="QueueBase_map">
-<area href="class_abstract_queue.html" alt="AbstractQueue" shape="rect" coords="53,0,150,24"/>
-<area href="class_i_p.html" alt="IP" shape="rect" coords="0,112,97,136"/>
-<area href="class_i_pv6.html" alt="IPv6" shape="rect" coords="107,112,204,136"/>
-<area href="class_ansa_i_p.html" alt="AnsaIP" shape="rect" coords="0,168,97,192"/>
+<area href="class_abstract_queue.html" title="Abstract base class for single-server queues." alt="AbstractQueue" shape="rect" coords="53,0,150,24"/>
+<area href="class_i_pv4.html" title="Implements the IPv4 protocol." alt="IPv4" shape="rect" coords="0,112,97,136"/>
+<area href="class_i_pv6.html" title="IPv6 implementation." alt="IPv6" shape="rect" coords="107,112,204,136"/>
 </map>
  </div></div>
 
@@ -104,18 +106,20 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_queue_base.html#a12a6ab452d0bf508916aed1fbf124520">QueueBase</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_queue_base.html#a438aa1bb4e9a14fc76bd478612b354ae">initialize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_queue_base.html#ac9bb719863ad55ee04754893dca34078">arrival</a> (cPacket *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_queue_base.html#a438aa1bb4e9a14fc76bd478612b354ae">initialize</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_queue_base.html#ac9bb719863ad55ee04754893dca34078">arrival</a> (cPacket *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Functions to (re)define behaviour.  <a href="#ac9bb719863ad55ee04754893dca34078"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual cPacket *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_queue_base.html#a0d2382ecff87de7e2b556016695fe080">arrivalWhenIdle</a> (cPacket *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when a message arrives at the module when the queue is empty.  <a href="#a0d2382ecff87de7e2b556016695fe080"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">virtual simtime_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_queue_base.html#ae57f6b8bffeb014637903b9944e58c66">startService</a> (cPacket *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when a message starts service, and should return the service time.  <a href="#ae57f6b8bffeb014637903b9944e58c66"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">simtime_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_queue_base.html#af73b42b0f04ac3d29d67ecd470d506e2">delay</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Queue with constant processing time. Leaves the endService(cMessage *msg) method of <a class="el" href="class_abstract_queue.html">AbstractQueue</a> undefined. </p>
-
-<p>Definition at line <a class="el" href="_queue_base_8h_source.html#l00029">29</a> of file <a class="el" href="_queue_base_8h_source.html">QueueBase.h</a>.</p>
+<div class="textblock"><p>Queue with constant processing time. </p>
+<p>Leaves the endService(cMessage *msg) method of <a class="el" href="class_abstract_queue.html" title="Abstract base class for single-server queues.">AbstractQueue</a> undefined. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a12a6ab452d0bf508916aed1fbf124520"></a><!-- doxytag: member="QueueBase::QueueBase" ref="a12a6ab452d0bf508916aed1fbf124520" args="()" -->
 <div class="memitem">
@@ -130,8 +134,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_queue_base_8h_source.html#l00035">35</a> of file <a class="el" href="_queue_base_8h_source.html">QueueBase.h</a>.</p>
 <div class="fragment"><pre class="fragment">{}
 </pre></div>
 </div>
@@ -142,7 +144,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_queue_base.html#ac9bb719863ad55ee04754893dca34078">QueueBase::arrival</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_queue_base.html#ac9bb719863ad55ee04754893dca34078">QueueBase::arrival</a> </td>
           <td>(</td>
           <td class="paramtype">cPacket *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -151,14 +153,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Functions to (re)define behaviour Called when a message arrives at the module. The method should either enqueue this message (usual behaviour), or discard it. It may also wrap the it into another message, and insert that one in the queue.</p>
+
+<p>Functions to (re)define behaviour. </p>
+<p>Called when a message arrives at the module. The method should either enqueue this message (usual behaviour), or discard it. It may also wrap the it into another message, and insert that one in the queue.</p>
 <p>Most straightforward implementation: <code>queue.insert(msg);</code> </p>
 
 <p>Implements <a class="el" href="class_abstract_queue.html#a88f00baa496f742cd32012d26bd27591">AbstractQueue</a>.</p>
-
-<p>Definition at line <a class="el" href="_queue_base_8cc_source.html#l00028">28</a> of file <a class="el" href="_queue_base_8cc_source.html">QueueBase.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <a class="code" href="class_abstract_queue.html#aec57a7fb0af43102a17433e2b7ddd339">queue</a>.insert(msg);
+    <a class="code" href="class_abstract_queue.html#aec57a7fb0af43102a17433e2b7ddd339" title="The queue.">queue</a>.insert(msg);
 }
 </pre></div>
 </div>
@@ -177,7 +179,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called when a message arrives at the module when the queue is empty. The message doesn't need to be enqueued in this case, it can start service immmediately. This method may:</p>
+
+<p>Called when a message arrives at the module when the queue is empty. </p>
+<p>The message doesn't need to be enqueued in this case, it can start service immmediately. This method may:</p>
 <ol type="1">
 <li>simply return the the same pointer (usual behaviour), or</li>
 <li>discard the message and return NULL pointer (the effect being this message being ignored)</li>
@@ -186,8 +190,6 @@ Protected Attributes</h2></td></tr>
 <p>Most straightforward implementation: <code>return msg;</code> </p>
 
 <p>Implements <a class="el" href="class_abstract_queue.html#af48e3dfda519333e9a5b3cd2ed71c073">AbstractQueue</a>.</p>
-
-<p>Definition at line <a class="el" href="_queue_base_8cc_source.html#l00033">33</a> of file <a class="el" href="_queue_base_8cc_source.html">QueueBase.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">return</span> msg;
 }
@@ -199,7 +201,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_queue_base.html#a438aa1bb4e9a14fc76bd478612b354ae">QueueBase::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_queue_base.html#a438aa1bb4e9a14fc76bd478612b354ae">QueueBase::initialize</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [protected, virtual]</code></td>
@@ -210,9 +212,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_abstract_queue.html#ab8c3f35bb3d85ca4c7706a79e6bcd384">AbstractQueue</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_i_p.html#aa669fbf50980f8d76a059acf195b34b6">IP</a>, <a class="el" href="class_i_pv6.html#a0efd6df6b67596cbf2fd0ed55cbe3b23">IPv6</a>, and <a class="el" href="class_ansa_i_p.html#a6fba16005f8ad47ad0495f66e9668495">AnsaIP</a>.</p>
-
-<p>Definition at line <a class="el" href="_queue_base_8cc_source.html#l00022">22</a> of file <a class="el" href="_queue_base_8cc_source.html">QueueBase.cc</a>.</p>
+<p>Reimplemented in <a class="el" href="class_i_pv4.html#a37f025d0822cb30f641619d1be8bf8ac">IPv4</a>, and <a class="el" href="class_i_pv6.html#a0efd6df6b67596cbf2fd0ed55cbe3b23">IPv6</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <a class="code" href="class_queue_base.html#a438aa1bb4e9a14fc76bd478612b354ae">AbstractQueue::initialize</a>();
     <a class="code" href="class_queue_base.html#af73b42b0f04ac3d29d67ecd470d506e2">delay</a> = par(<span class="stringliteral">&quot;procDelay&quot;</span>);
@@ -234,12 +234,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Called when a message starts service, and should return the service time.</p>
+
+<p>Called when a message starts service, and should return the service time. </p>
 <p>Example implementation: <code>return 1.0;</code> </p>
 
 <p>Implements <a class="el" href="class_abstract_queue.html#ad70e97c327a93a2c31fba8da0fb5c63d">AbstractQueue</a>.</p>
-
-<p>Definition at line <a class="el" href="_queue_base_8cc_source.html#l00038">38</a> of file <a class="el" href="_queue_base_8cc_source.html">QueueBase.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
     <span class="keywordflow">return</span> <a class="code" href="class_queue_base.html#af73b42b0f04ac3d29d67ecd470d506e2">delay</a>;
 }
@@ -258,15 +257,13 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_queue_base_8h_source.html#l00032">32</a> of file <a class="el" href="_queue_base_8h_source.html">QueueBase.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_queue_base_8cc_source.html#l00022">initialize()</a>, and <a class="el" href="_queue_base_8cc_source.html#l00038">startService()</a>.</p>
+<p>Referenced by <a class="el" href="class_queue_base.html#a438aa1bb4e9a14fc76bd478612b354ae">initialize()</a>, and <a class="el" href="class_queue_base.html#ae57f6b8bffeb014637903b9944e58c66">startService()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_queue_base_8h_source.html">QueueBase.h</a></li>
-<li><a class="el" href="_queue_base_8cc_source.html">QueueBase.cc</a></li>
+<li><a class="el" href="_queue_base_8h.html">QueueBase.h</a></li>
+<li><a class="el" href="_queue_base_8cc.html">QueueBase.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -274,7 +271,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_queue_base.html">QueueBase</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:51 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:28 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

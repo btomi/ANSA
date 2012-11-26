@@ -7,7 +7,25 @@
 <h2 class="comptitle">Simple Module <i>Sink</i></h2>
 <b>Package:</b> inet.base<br/><b>File: <a href="src-base-Sink.ned.html">src/base/Sink.ned</a></b><br/><p><a href="../doxy/class_sink.html" target="mainframe"><b>C++ definition</b></a></p>
 
-<p>Silently discards all input messages.</p>
+<p>Silently discards all received packets.</p>
+<img src="inet.base.Sink-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.base.Sink.html" title="Sink" alt="Sink" coords="0,30,66,70">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.base.Sink-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.base.Sink.html" title="Simple Module Sink" alt="" coords="259,83,331,111">
+<area shape="rect" id="node2" href="inet.networklayer.diffserv.DiffservQueue.html" title="Compound Module DiffservQueue" alt="" coords="5,6,112,34">
+<area shape="rect" id="node4" href="inet.examples.diffserv.onedomain.TC3.html" title="Compound Module TC3" alt="" coords="136,6,208,34">
+<area shape="rect" id="node6" href="inet.examples.wireless.hosttohost.ThroughputServer.html" title="Compound Module ThroughputServer" alt="" coords="232,6,357,34">
+<area shape="rect" id="node8" href="inet.examples.diffserv.simple_.TrafficConditioner.html" title="Compound Module TrafficConditioner" alt="" coords="381,6,507,34">
+<area shape="rect" id="node10" href="inet.examples.wireless.throughput.WirelessAPWithSink.html" title="Compound Module WirelessAPWithSink" alt="" coords="531,6,675,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.base.Sink-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.base.Sink.html" title="Simple Module Sink" alt="" coords="5,6,77,34">
+</map>
 <h3 class="subtitle">Used in compound modules:</h3>
 <table class="typestable">
    <tr>
@@ -15,6 +33,34 @@
       <th class="type">Type</th>
       <th class="description">Description</th>
    </tr>
+<tr>
+   <td>
+<a href="inet.networklayer.diffserv.DiffservQueue.html">DiffservQueue</a>
+   </td>
+   <td>
+<i>compound&nbsp;module</i>
+   </td>
+   <td>
+
+<p>This is an example queue, that can be used in
+interfaces of DS core and edge nodes to support
+the AFxy (RFC 2597) and EF (RFC 3246) PHBs.</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
+<a href="inet.examples.diffserv.onedomain.TC3.html">TC3</a>
+   </td>
+   <td>
+<i>compound&nbsp;module</i>
+   </td>
+   <td>
+
+<p>Traffic conditioner used in Experiment 3.2.</p>
+
+   </td>
+</tr>
 <tr>
    <td>
 <a href="inet.examples.wireless.hosttohost.ThroughputServer.html">ThroughputServer</a>
@@ -28,6 +74,19 @@
 </tr>
 <tr>
    <td>
+<a href="inet.examples.diffserv.simple_.TrafficConditioner.html">TrafficConditioner</a>
+   </td>
+   <td>
+<i>compound&nbsp;module</i>
+   </td>
+   <td>
+
+<p>TODO documentation</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
 <a href="inet.examples.wireless.throughput.WirelessAPWithSink.html">WirelessAPWithSink</a>
    </td>
    <td>
@@ -35,7 +94,7 @@
    </td>
    <td>
 
-<p>Well, it Models a 802.11 Access Point with a <a href="inet.base.Sink.html">Sink</a>.</p>
+<p>Well, this models a 802.11 Access Point with a Sink.</p>
 
    </td>
 </tr>
@@ -67,19 +126,52 @@
    <td></td>   <td></td>
 </tr>
 </table>
+<h3 class="subtitle">Signals:</h3>
+<table class="signalstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="unit">Unit</th>
+   </tr>
+<tr class="local">
+   <td>rcvdPk</td>
+   <td><i>
+cPacket   </i></td>
+   <td></td>
+</tr>
+</table>
+<h3 class="subtitle">Statistics:</h3>
+<table class="statisticstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="title">Title</th>
+      <th class="source">Source</th>
+      <th class="record">Record</th>
+      <th class="unit">Unit</th>
+      <th class="interpolationmode">Interpolation Mode</th>
+   </tr>
+<tr class="local">
+   <td>rcvdPk</td>
+   <td>packets received</td>
+   <td>rcvdPk</td>
+   <td>count, sum(packetBytes), vector(packetBytes)</td>
+   <td></td>
+   <td>none</td>
+</tr>
+</table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
-// Silently discards all input messages.
+// Silently discards all received packets.
 //
 </span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">Sink</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
         </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/sink&quot;</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@signal</span><span style="color: #000000; ">[</span><span style="color: #000000; ">rcvdPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">type</span><span style="color: #000000; ">=</span><span style="color: #000000; ">cPacket</span><span style="color: #000000; ">);
+        </span><span style="color: #000000; font-weight: bold; ">@statistic</span><span style="color: #000000; ">[</span><span style="color: #000000; ">rcvdPk</span><span style="color: #000000; ">](</span><span style="color: #000000; ">title</span><span style="color: #000000; ">=</span><span style="color: #008000; ">&quot;packets received&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">source</span><span style="color: #000000; ">=</span><span style="color: #000000; ">rcvdPk</span><span style="color: #000000; ">; </span><span style="color: #000000; ">record</span><span style="color: #000000; ">=</span><span style="color: #000000; ">count</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;sum(packetBytes)&quot;</span><span style="color: #000000; ">,</span><span style="color: #008000; ">&quot;vector(packetBytes)&quot;</span><span style="color: #000000; ">; </span><span style="color: #000000; ">interpolationmode</span><span style="color: #000000; ">=</span><span style="color: #000000; ">none</span><span style="color: #000000; ">);
     </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
         </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">in</span><span style="color: #000000; ">[];
 }
-
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

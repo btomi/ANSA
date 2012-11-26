@@ -5,12 +5,47 @@
    </head>
    <body onload="if (top.frames['componentsframe'] == undefined) { s = window.location.toString(); window.location = 'index.html?p=' + s.substring(s.lastIndexOf('/')+1); }">
 <h2 class="comptitle">Simple Module <i>GenericRadio</i></h2>
-<b>Package:</b> inet.linklayer.radio<br/><b>File: <a href="src-linklayer-radio-GenericRadio.ned.html">src/linklayer/radio/GenericRadio.ned</a></b><br/><p><a href="../doxy/class_generic_radio.html" target="mainframe"><b>C++ definition</b></a></p>
+<b>Package:</b> inet.linklayer.radio<br/><b>File: <a href="src-linklayer-radio-GenericRadio.ned.html">src/linklayer/radio/GenericRadio.ned</a></b><br/><p><a href="../doxy/class_radio.html" target="mainframe"><b>C++ definition</b></a></p>
 
 <p>Generic radio module. The implementation is largely based on the
-Mobility Framework's <a href="inet.linklayer.mf80211.phyLayer.snrEval.SnrEval.html">SnrEval</a> and Decider modules.</p>
-<p><b>See also:</b> <a href="inet.linklayer.radio.Radio.html">Radio</a></p>
+Mobility Framework's <span class="error" title="Unresolved link">SnrEval</span> and Decider modules.</p>
+<p><b>See also:</b> <a href="inet.linklayer.radio.IRadio.html">IRadio</a></p>
 <p><b>Author:</b> Andras Varga</p>
+<img src="inet.linklayer.radio.GenericRadio-type.png" ismap="yes" usemap="#type-diagram"/><map name="type-diagram">
+<area shape="rect" href="inet.linklayer.radio.GenericRadio.html" title="GenericRadio" alt="GenericRadio" coords="0,30,119,70">
+</map>
+<h3 class="subtitle">Usage diagram:</h3>
+<p>The following diagram shows usage relationships between types.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.linklayer.radio.GenericRadio-usage.png" ismap="yes" usemap="#usage-diagram"/><map name="usage-diagram"><area shape="rect" id="node1" href="inet.linklayer.radio.GenericRadio.html" title="Simple Module GenericRadio" alt="" coords="5,6,107,34">
+</map>
+<h3 class="subtitle">Inheritance diagram:</h3>
+<p>The following diagram shows inheritance relationships for this type.
+Unresolved types are missing from the diagram.</p>
+<img src="inet.linklayer.radio.GenericRadio-inheritance.png" ismap="yes" usemap="#inheritance-diagram"/><map name="inheritance-diagram"><area shape="rect" id="node1" href="inet.linklayer.radio.GenericRadio.html" title="Simple Module GenericRadio" alt="" coords="5,83,107,111">
+<area shape="rect" id="node2" href="inet.linklayer.radio.Radio.html" title="Simple Module Radio" alt="" coords="20,6,92,34">
+</map>
+<h3 class="subtitle">Extends:</h3>
+<table class="typestable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="description">Description</th>
+   </tr>
+<tr>
+   <td>
+<a href="inet.linklayer.radio.Radio.html">Radio</a>
+   </td>
+   <td>
+<i>simple&nbsp;module</i>
+   </td>
+   <td>
+
+<p>This is an abstract module that defines all parameters for radio modules</p>
+
+   </td>
+</tr>
+</table>
 <h3 class="subtitle">Parameters:</h3>
 <table class="paramstable">
    <tr>
@@ -19,17 +54,33 @@ Mobility Framework's <a href="inet.linklayer.mf80211.phyLayer.snrEval.SnrEval.ht
       <th class="defaultvalue">Default value</th>
       <th class="description">Description</th>
    </tr>
-<tr class="local">
+<tr class="inherited">
    <td>channelNumber</td>
    <td>
       <i>int</i>
    </td>
    <td>0</td>
    <td>
-<p>channel identifier</p>
+<p>channel identifier this radio listens. Works only with simlified management module. Otherwise it scans all the channels as specified in ieee 80211</p>
    </td>
 </tr>
-<tr class="local">
+<tr class="inherited">
+   <td>carrierFrequency</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>2.4GHz</td>
+   <td>   </td>
+</tr>
+<tr class="inherited">
+   <td>bitrate</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td></td>
+   <td>   </td>
+</tr>
+<tr class="inherited">
    <td>transmitterPower</td>
    <td>
       <i>double</i>
@@ -39,17 +90,7 @@ Mobility Framework's <a href="inet.linklayer.mf80211.phyLayer.snrEval.SnrEval.ht
 <p>power used for transmission of messages (in mW)</p>
    </td>
 </tr>
-<tr class="local">
-   <td>bitrate</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td></td>
-   <td>
-<p>(in bits/s)</p>
-   </td>
-</tr>
-<tr class="local">
+<tr class="inherited">
    <td>thermalNoise</td>
    <td>
       <i>double</i>
@@ -59,14 +100,191 @@ Mobility Framework's <a href="inet.linklayer.mf80211.phyLayer.snrEval.SnrEval.ht
 <p>base noise level (dBm)</p>
    </td>
 </tr>
-<tr class="local">
+<tr class="inherited">
+   <td>sensitivity</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-85dBm</td>
+   <td>
+<p>received signals with power below sensitivity are ignored</p>
+   </td>
+</tr>
+<tr class="inherited">
+   <td>radioModel</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>"GenericRadioModel"</td>
+   <td>
+<p>the radio model implementing the IRadioModel interface (C++). e.g. GenericRadioModel, Ieee80211RadioModel</p>
+   </td>
+</tr>
+<tr class="inherited">
+   <td>NoiseGenerator</td>
+   <td>
+      <i>string</i>
+   </td>
+   <td>""</td>
+   <td>   </td>
+</tr>
+<tr class="inherited">
    <td>pathLossAlpha</td>
    <td>
       <i>double</i>
    </td>
    <td>2</td>
    <td>
-<p>used by the path loss calculation</p>
+<p>generic FreeSpace model parameters</p>
+   </td>
+</tr>
+<tr class="inherited">
+   <td>TransmissionAntennaGainIndB</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0dB</td>
+   <td>
+<p>Transmission Antenna Gain</p>
+   </td>
+</tr>
+<tr class="inherited">
+   <td>ReceiveAntennaGainIndB</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0dB</td>
+   <td>
+<p>Receive Antenna Gain</p>
+   </td>
+</tr>
+<tr class="inherited">
+   <td>SystemLossFactor</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>0dB</td>
+   <td>
+<p>System Loss of Hardware</p>
+   </td>
+</tr>
+<tr class="inherited">
+   <td>TransmiterAntennaHigh</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1m</td>
+   <td>
+<p>two ray model paramaeters</p>
+   </td>
+</tr>
+<tr class="inherited">
+   <td>ReceiverAntennaHigh</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1m</td>
+   <td>
+<p>Receiver Antenna High</p>
+   </td>
+</tr>
+<tr class="inherited">
+   <td>sigma</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1</td>
+   <td>
+<p>LogNormalShadowingModel</p>
+   </td>
+</tr>
+<tr class="inherited">
+   <td>nak_m</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>1</td>
+   <td>
+<p>NakagamiModel</p>
+   </td>
+</tr>
+<tr class="inherited">
+   <td>K</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>8dB</td>
+   <td>
+<p>RiceModel</p>
+   </td>
+</tr>
+<tr class="inherited">
+   <td>usage_radio_idle</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1mA</td>
+   <td>
+<p>battery module parameters (if any of them is negative, the battery module is disabled)</p>
+   </td>
+</tr>
+<tr class="inherited">
+   <td>usage_radio_recv</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1mA</td>
+   <td>
+<p>disable battery registration</p>
+   </td>
+</tr>
+<tr class="inherited">
+   <td>usage_radio_sleep</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1mA</td>
+   <td>
+<p>disable battery registration</p>
+   </td>
+</tr>
+<tr class="inherited">
+   <td>usage_radio_send</td>
+   <td>
+      <i>double</i>
+   </td>
+   <td>-1mA</td>
+   <td>
+<p>disable battery registration</p>
+   </td>
+</tr>
+<tr class="inherited">
+   <td>drawCoverage</td>
+   <td>
+      <i>bool</i>
+   </td>
+   <td>true</td>
+   <td>
+<p>misc</p>
+   </td>
+</tr>
+<tr class="inherited">
+   <td>refreshCoverageInterval</td>
+   <td>
+      <i>int</i>
+   </td>
+   <td>0s</td>
+   <td>
+<p>update period in simulation time for coverage redraw</p>
+   </td>
+</tr>
+<tr class="inherited">
+   <td>SensitivityTable</td>
+   <td>
+      <i>xml</i>
+   </td>
+   <td>xml("<NoSensitivityTable> </NoSensitivityTable>")</td>
+   <td>
    </td>
 </tr>
 <tr class="local">
@@ -77,16 +295,6 @@ Mobility Framework's <a href="inet.linklayer.mf80211.phyLayer.snrEval.SnrEval.ht
    <td>4dB</td>
    <td>
 <p>if signal-noise ratio is below this threshold, frame is considered noise (in dB)</p>
-   </td>
-</tr>
-<tr class="local">
-   <td>sensitivity</td>
-   <td>
-      <i>double</i>
-   </td>
-   <td>-85mW</td>
-   <td>
-<p>received signals with power below sensitivity are ignored</p>
    </td>
 </tr>
 <tr class="local">
@@ -130,7 +338,8 @@ Mobility Framework's <a href="inet.linklayer.mf80211.phyLayer.snrEval.SnrEval.ht
 <tr>
    <td>display</td>
    <td><i>i=block/wrxtx</i></td>
-   <td></td>
+   <td>
+</td>
 </tr>
 </table>
 <h3 class="subtitle">Gates:</h3>
@@ -141,57 +350,122 @@ Mobility Framework's <a href="inet.linklayer.mf80211.phyLayer.snrEval.SnrEval.ht
       <th class="gatesize">Size</th>
       <th class="description">Description</th>
    </tr>
-<tr class="local">
-   <td>uppergateIn</xsl:if></td>
+<tr class="inherited">
+   <td>upperLayerIn</xsl:if></td>
    <td><i>input</i></td>
    <td></td>   <td>
 <p>from higher layer protocol (MAC)</p>
 </td>
 </tr>
-<tr class="local">
-   <td>uppergateOut</xsl:if></td>
+<tr class="inherited">
+   <td>upperLayerOut</xsl:if></td>
    <td><i>output</i></td>
    <td></td>   <td>
-<p>to decider (decider connects to higher layer protocol, i.e. the MAC)</p>
+<p>to higher layer protocol (MAC)</p>
 </td>
 </tr>
-<tr class="local">
+<tr class="inherited">
    <td>radioIn</xsl:if></td>
    <td><i>input</i></td>
    <td></td>   <td>
-<p>to receive frames (<a href="AirFrame.html">AirFrame</a>) on the radio channel</p>
+<p>to receive frames (AirFrame) on the radio channel</p>
 </td>
+</tr>
+</table>
+<h3 class="subtitle">Signals:</h3>
+<table class="signalstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="type">Type</th>
+      <th class="unit">Unit</th>
+   </tr>
+<tr class="local">
+   <td>radioState</td>
+   <td><i>
+long   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>lossRate</td>
+   <td><i>
+double   </i></td>
+   <td></td>
+</tr>
+<tr class="local">
+   <td>bitrate</td>
+   <td><i>
+double   </i></td>
+   <td>bps</td>
+</tr>
+<tr class="local">
+   <td>channelNo</td>
+   <td><i>
+long   </i></td>
+   <td></td>
+</tr>
+</table>
+<h3 class="subtitle">Statistics:</h3>
+<table class="statisticstable">
+   <tr>
+      <th class="name">Name</th>
+      <th class="title">Title</th>
+      <th class="source">Source</th>
+      <th class="record">Record</th>
+      <th class="unit">Unit</th>
+      <th class="interpolationmode">Interpolation Mode</th>
+   </tr>
+<tr class="local">
+   <td>radioState</td>
+   <td>radio state (enum)</td>
+   <td></td>
+   <td>count, vector</td>
+   <td></td>
+   <td>sample-hold</td>
+</tr>
+<tr class="local">
+   <td>lossRate</td>
+   <td>packet loss rate</td>
+   <td></td>
+   <td>min, max, timeavg, vector</td>
+   <td></td>
+   <td>backward-sample-hold</td>
+</tr>
+<tr class="local">
+   <td>bitrate</td>
+   <td>tx bitrate</td>
+   <td></td>
+   <td>min, max, timeavg, vector</td>
+   <td>bps</td>
+   <td>sample-hold</td>
+</tr>
+<tr class="local">
+   <td>channelNo</td>
+   <td>channel no</td>
+   <td></td>
+   <td>histogram, vector</td>
+   <td></td>
+   <td>sample-hold</td>
 </tr>
 </table>
 <h3 class="subtitle">Source code:</h3>
 <pre class="src"><span style="color: #808080; font-style: italic; ">//
 // Generic radio module. The implementation is largely based on the
-// Mobility Framework's SnrEval and Decider modules.
+// Mobility Framework's ~SnrEval and Decider modules.
 //
-// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> Radio
+// </span><span style="color: #000080; ">@see</span><span style="color: #808080; font-style: italic; "> ~IRadio
 // </span><span style="color: #000080; ">@author</span><span style="color: #808080; font-style: italic; "> Andras Varga
 //
-</span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">GenericRadio</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">like</span><span style="color: #000000; "> </span><span style="color: #000000; ">Radio</span><span style="color: #000000; ">
+</span><span style="color: #800000; font-weight: bold; ">simple</span><span style="color: #000000; "> </span><span style="color: #000000; ">GenericRadio</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">Radio</span><span style="color: #000000; ">
 {
     </span><span style="color: #800000; font-weight: bold; ">parameters</span><span style="color: #000000; ">:
-        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">channelNumber</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">0</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// channel identifier
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">transmitterPower</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;mW&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">20</span><span style="color: #000000; ">mW</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// power used for transmission of messages (in mW)
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">bitrate</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;bps&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// (in bits/s)
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">thermalNoise</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;dBm&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(-</span><span style="color: #008000; ">110</span><span style="color: #000000; ">dBm</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// base noise level (dBm)
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">pathLossAlpha</span><span style="color: #000000; "> = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">2</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// used by the path loss calculation
+        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/wrxtx&quot;</span><span style="color: #000000; ">);
+
+        </span><span style="color: #000000; ">radioModel</span><span style="color: #000000; "> = </span><span style="color: #008000; ">&quot;GenericRadioModel&quot;</span><span style="color: #000000; ">;  </span><span style="color: #808080; font-style: italic; ">// specify the radio model responsible for modulation, error correction and frame length calculation
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">snirThreshold</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;dB&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(</span><span style="color: #008000; ">4</span><span style="color: #000000; ">dB</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// if signal-noise ratio is below this threshold, frame is considered noise (in dB)
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">sensitivity</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;mW&quot;</span><span style="color: #000000; ">) = </span><span style="color: #800000; font-weight: bold; ">default</span><span style="color: #000000; ">(-</span><span style="color: #008000; ">85</span><span style="color: #000000; ">mW</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// received signals with power below sensitivity are ignored
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">headerLengthBits</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #000000; ">b</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// length of physical layer framing (preamble, etc)
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">double</span><span style="color: #000000; "> </span><span style="color: #000000; ">bandwidth</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@unit</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;Hz&quot;</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// signal bandwidth, used for bit error calculation
 </span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">string</span><span style="color: #000000; "> </span><span style="color: #000000; ">modulation</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// &quot;BPSK&quot;, &quot;16-QAM&quot;, &quot;256-QAM&quot; or &quot;null&quot;; selects bit error calculation method
-</span><span style="color: #000000; ">        </span><span style="color: #000000; font-weight: bold; ">@display</span><span style="color: #000000; ">(</span><span style="color: #008000; ">&quot;i=block/wrxtx&quot;</span><span style="color: #000000; ">);
-    </span><span style="color: #800000; font-weight: bold; ">gates</span><span style="color: #000000; ">:
-        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">uppergateIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">PhyControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">down</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// from higher layer protocol (MAC)
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">output</span><span style="color: #000000; "> </span><span style="color: #000000; ">uppergateOut</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">PhyControlInfo</span><span style="color: #000000; ">/</span><span style="color: #000000; ">up</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// to decider (decider connects to higher layer protocol, i.e. the MAC)
-</span><span style="color: #000000; ">        </span><span style="color: #000080; font-weight: bold; ">input</span><span style="color: #000000; "> </span><span style="color: #000000; ">radioIn</span><span style="color: #000000; "> </span><span style="color: #000000; font-weight: bold; ">@labels</span><span style="color: #000000; ">(</span><span style="color: #000000; ">AirFrame</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// to receive frames (AirFrame) on the radio channel
 </span><span style="color: #000000; ">}
-
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

@@ -131,6 +131,19 @@ Ieee80211FrameControl</p>
 </tr>
 <tr>
    <td>
+<a href="Ieee80211DataFrameWithSNAP.html">Ieee80211DataFrameWithSNAP</a>
+   </td>
+   <td>
+<i>packet</i>
+   </td>
+   <td>
+
+<p>802.11 data frame with the 8-byte SNAP header (AA AA 03, 00 00 00, &lt;2-byte <a href="EtherType.html">EtherType</a>&gt;)</p>
+
+   </td>
+</tr>
+<tr>
+   <td>
 <a href="Ieee80211ManagementFrame.html">Ieee80211ManagementFrame</a>
    </td>
    <td>
@@ -165,10 +178,12 @@ Ieee80211FrameControl</p>
 // Required for MACAddress declarations
 //
 </span><span style="color: #800000; font-weight: bold; ">cplusplus</span><span style="color: #000000; "> {{
-</span><span style="color: #808080; font-style: italic; ">//FIXME use consts for frame lengths!!! account for LLC(3)+SNAP(5) headers in data frames!!! +add SNAP orgcode, localcode into the msg?
-</span><span style="color: #000000; ">#</span><span style="color: #000000; ">include</span><span style="color: #000000; "> </span><span style="color: #008000; ">&quot;MACAddress.h&quot;</span><span style="color: #000000; ">
-}}
+#</span><span style="color: #000000; ">include</span><span style="color: #000000; "> </span><span style="color: #008000; ">&quot;Ieee80211Consts.h&quot;</span><span style="color: #000000; ">
+#</span><span style="color: #000000; ">include</span><span style="color: #000000; "> </span><span style="color: #008000; ">&quot;MACAddress.h&quot;</span><span style="color: #000000; ">
+#</span><span style="color: #000000; ">include</span><span style="color: #000000; "> </span><span style="color: #008000; ">&quot;Ieee802Ctrl_m.h&quot;</span><span style="color: #000000; "> </span><span style="color: #808080; font-style: italic; ">// for ~EtherType
+</span><span style="color: #000000; ">}}
 
+</span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; "> </span><span style="color: #000000; ">EtherType</span><span style="color: #000000; ">;
 </span><span style="color: #800000; font-weight: bold; ">class</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">noncobject</span><span style="color: #000000; "> </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; ">;
 
 </span><span style="color: #808080; font-style: italic; ">//
@@ -190,15 +205,22 @@ Ieee80211FrameControl</p>
     </span><span style="color: #000000; ">ST_DISASSOCIATION</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">x0a</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">ST_AUTHENTICATION</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">x0b</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">ST_DEAUTHENTICATION</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">x0c</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">ST_ACTION</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">x0d</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">ST_NOACKACTION</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">x0e</span><span style="color: #000000; ">;
 
     </span><span style="color: #808080; font-style: italic; ">// control (CFEND/CFEND_CFACK omitted):
 </span><span style="color: #000000; ">    </span><span style="color: #000000; ">ST_PSPOLL</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">x1a</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">ST_RTS</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">x1b</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">ST_CTS</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">x1c</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">ST_ACK</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">x1d</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">ST_BLOCKACK_REQ</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">x18</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">ST_BLOCKACK</span><span style="color: #000000; ">     = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">x19</span><span style="color: #000000; ">;
 
     </span><span style="color: #808080; font-style: italic; ">// data (CFPOLL/CFACK subtypes omitted):
 </span><span style="color: #000000; ">    </span><span style="color: #000000; ">ST_DATA</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">x20</span><span style="color: #000000; ">;
+    </span><span style="color: #808080; font-style: italic; ">//Feedback frame for multicast tramsmission
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">ST_LBMS_REQUEST</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">x30</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">ST_LBMS_REPORT</span><span style="color: #000000; "> = </span><span style="color: #008000; ">0</span><span style="color: #000000; ">x31</span><span style="color: #000000; ">;
 }
 
 </span><span style="color: #808080; font-style: italic; ">//
@@ -211,7 +233,7 @@ Ieee80211FrameControl</p>
 //
 </span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211Frame</span><span style="color: #000000; ">
 {
-    </span><span style="color: #000000; ">byteLength</span><span style="color: #000000; "> = </span><span style="color: #008000; ">14</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">byteLength</span><span style="color: #000000; "> = </span><span style="color: #000000; ">LENGTH_ACK</span><span style="color: #000000; "> / </span><span style="color: #008000; ">8</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">type</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; ">(</span><span style="color: #000000; ">Ieee80211FrameType</span><span style="color: #000000; ">); </span><span style="color: #808080; font-style: italic; ">// type and subtype
 </span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">toDS</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">bool</span><span style="color: #000000; "> </span><span style="color: #000000; ">fromDS</span><span style="color: #000000; ">;
@@ -220,7 +242,8 @@ Ieee80211FrameControl</p>
     </span><span style="color: #000000; ">simtime_t</span><span style="color: #000000; "> </span><span style="color: #000000; ">duration</span><span style="color: #000000; "> = -</span><span style="color: #008000; ">1</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// &quot;duration&quot; in the Duration/ID field (-1=no duration)
 </span><span style="color: #000000; ">    </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">AID</span><span style="color: #000000; "> = -</span><span style="color: #008000; ">1</span><span style="color: #000000; ">;          </span><span style="color: #808080; font-style: italic; ">// &quot;id&quot; (Association ID) in the Duration/ID field (-1=no ID)
 </span><span style="color: #000000; ">    </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">receiverAddress</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// aka address1
-</span><span style="color: #000000; ">}
+</span><span style="color: #000000; ">    </span><span style="color: #000000; ">simtime_t</span><span style="color: #000000; "> </span><span style="color: #000000; ">MACArrive</span><span style="color: #000000; ">;
+}
 
 </span><span style="color: #808080; font-style: italic; ">//
 // Format of a 802.11 frame with address1 present, like ACK and CTS
@@ -234,6 +257,7 @@ Ieee80211FrameControl</p>
 //
 </span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211ACKFrame</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211OneAddressFrame</span><span style="color: #000000; ">
 {
+    </span><span style="color: #000000; ">byteLength</span><span style="color: #000000; "> = </span><span style="color: #000000; ">LENGTH_ACK</span><span style="color: #000000; "> / </span><span style="color: #008000; ">8</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">type</span><span style="color: #000000; "> = </span><span style="color: #000000; ">ST_ACK</span><span style="color: #000000; ">;
 }
 
@@ -242,7 +266,7 @@ Ieee80211FrameControl</p>
 //
 </span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211TwoAddressFrame</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211OneAddressFrame</span><span style="color: #000000; ">
 {
-    </span><span style="color: #000000; ">byteLength</span><span style="color: #000000; "> = </span><span style="color: #008000; ">20</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">byteLength</span><span style="color: #000000; "> = </span><span style="color: #000000; ">LENGTH_RTS</span><span style="color: #000000; "> / </span><span style="color: #008000; ">8</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">transmitterAddress</span><span style="color: #000000; ">; </span><span style="color: #808080; font-style: italic; ">// aka address2
 </span><span style="color: #000000; ">}
 
@@ -251,6 +275,7 @@ Ieee80211FrameControl</p>
 //
 </span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211RTSFrame</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211TwoAddressFrame</span><span style="color: #000000; ">
 {
+    </span><span style="color: #000000; ">byteLength</span><span style="color: #000000; "> = </span><span style="color: #000000; ">LENGTH_RTS</span><span style="color: #000000; "> / </span><span style="color: #008000; ">8</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">type</span><span style="color: #000000; "> = </span><span style="color: #000000; ">ST_RTS</span><span style="color: #000000; ">;
 }
 
@@ -259,6 +284,7 @@ Ieee80211FrameControl</p>
 //
 </span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211CTSFrame</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211OneAddressFrame</span><span style="color: #000000; ">
 {
+    </span><span style="color: #000000; ">byteLength</span><span style="color: #000000; "> = </span><span style="color: #000000; ">LENGTH_CTS</span><span style="color: #000000; "> / </span><span style="color: #008000; ">8</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">type</span><span style="color: #000000; "> = </span><span style="color: #000000; ">ST_CTS</span><span style="color: #000000; ">;
 }
 
@@ -267,10 +293,10 @@ Ieee80211FrameControl</p>
 //
 </span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211DataOrMgmtFrame</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211TwoAddressFrame</span><span style="color: #000000; ">
 {
-    </span><span style="color: #000000; ">byteLength</span><span style="color: #000000; "> = </span><span style="color: #008000; ">28</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">byteLength</span><span style="color: #000000; "> = </span><span style="color: #000000; ">LENGTH_MGMT</span><span style="color: #000000; "> / </span><span style="color: #008000; ">8</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">address3</span><span style="color: #000000; ">;
     </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">fragmentNumber</span><span style="color: #000000; ">;
-    </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">sequenceNumber</span><span style="color: #000000; ">;
+    </span><span style="color: #000000; ">uint16</span><span style="color: #000000; "> </span><span style="color: #000000; ">sequenceNumber</span><span style="color: #000000; ">;
 }
 
 </span><span style="color: #808080; font-style: italic; ">//
@@ -278,9 +304,18 @@ Ieee80211FrameControl</p>
 //
 </span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211DataFrame</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211DataOrMgmtFrame</span><span style="color: #000000; ">
 {
+    </span><span style="color: #000000; ">byteLength</span><span style="color: #000000; "> = </span><span style="color: #000000; ">LENGTH_DATAHDR</span><span style="color: #000000; "> / </span><span style="color: #008000; ">8</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">type</span><span style="color: #000000; "> = </span><span style="color: #000000; ">ST_DATA</span><span style="color: #000000; ">;
-    </span><span style="color: #000000; ">byteLength</span><span style="color: #000000; "> = </span><span style="color: #008000; ">34</span><span style="color: #000000; ">;
     </span><span style="color: #000000; ">MACAddress</span><span style="color: #000000; "> </span><span style="color: #000000; ">address4</span><span style="color: #000000; ">;
+}
+
+</span><span style="color: #808080; font-style: italic; ">//
+// 802.11 data frame with the 8-byte SNAP header (AA AA 03, 00 00 00, &lt;2-byte ~EtherType&gt;)
+//
+</span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211DataFrameWithSNAP</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211DataFrame</span><span style="color: #000000; ">
+{
+    </span><span style="color: #000000; ">byteLength</span><span style="color: #000000; "> = </span><span style="color: #000000; ">LENGTH_DATAHDR</span><span style="color: #000000; "> / </span><span style="color: #008000; ">8</span><span style="color: #000000; "> + </span><span style="color: #000000; ">SNAP_HEADER_BYTES</span><span style="color: #000000; ">;
+    </span><span style="color: #000080; font-weight: bold; ">int</span><span style="color: #000000; "> </span><span style="color: #000000; ">etherType</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">enum</span><span style="color: #000000; "> (</span><span style="color: #000000; ">EtherType</span><span style="color: #000000; ">);
 }
 
 </span><span style="color: #808080; font-style: italic; ">//
@@ -288,9 +323,9 @@ Ieee80211FrameControl</p>
 //
 </span><span style="color: #800000; font-weight: bold; ">packet</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211ManagementFrame</span><span style="color: #000000; "> </span><span style="color: #800000; font-weight: bold; ">extends</span><span style="color: #000000; "> </span><span style="color: #000000; ">Ieee80211DataOrMgmtFrame</span><span style="color: #000000; ">
 {
-}
-
+    </span><span style="color: #000080; font-weight: bold; ">short</span><span style="color: #000000; "> </span><span style="color: #000000; ">Category</span><span style="color: #000000; ">;
+    </span><span style="color: #808080; font-style: italic; ">//short action enum(WirelessNetworkManagementAction); // action
+</span><span style="color: #000000; ">}
 </span></pre>
-   <hr><p class="footer"><a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top"><img src="by-sa.png"></a> This documentation is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0" target="_top">Creative Commons license</a></p>
    </body>
 </html>

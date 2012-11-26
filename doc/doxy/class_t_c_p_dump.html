@@ -82,7 +82,10 @@
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="TCPDump" -->
-<p><code>#include &lt;<a class="el" href="_t_c_p_dump_8h_source.html">TCPDump.h</a>&gt;</code></p>
+<p>Dumps every packet using the <a class="el" href="class_pcap_dump.html" title="Dumps packets into a PCAP file; see the &quot;pcap-savefile&quot; man page or http://www.tcpdump.org/ for details on the file format.">PcapDump</a> class and the <a class="el" href="class_packet_dump.html" title="Utility class that provides tcpdump-like functionality.">PacketDump</a> class.  
+ <a href="class_t_c_p_dump.html#details">More...</a></p>
+
+<p><code>#include &lt;TCPDump.h&gt;</code></p>
 
 <p><a href="class_t_c_p_dump-members.html">List of all members.</a></p>
 <table class="memberdecls">
@@ -90,22 +93,22 @@
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_dump.html#aa03158b5ccbae22899c8e618afadae6c">TCPDump</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_dump.html#a70be88fb95e4e9fae877b534509938ed">~TCPDump</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_dump.html#a6c6aae2b0258f57b57eef0ad10df6f5d">handleMessage</a> (cMessage *msg)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_dump.html#a99ea2e21ea0ef5af65258834540d73ef">initialize</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_dump.html#ad2c36cf696c676be6fd15b4eead2ecf4">finish</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_dump.html#a6c6aae2b0258f57b57eef0ad10df6f5d">handleMessage</a> (cMessage *msg)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_dump.html#a99ea2e21ea0ef5af65258834540d73ef">initialize</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_dump.html#ad2c36cf696c676be6fd15b4eead2ecf4">finish</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_dump.html#a0acab65042f441e382c191f1fd9a9f17">ringBuffer</a> [<a class="el" href="_t_c_p_dump_8h.html#a4668e81a1ed62f082533889edeb96e23">RBUFFER_SIZE</a>]</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_c_p_dumper.html">TCPDumper</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_dump.html#a9def2dc88fc02732ba372ed8404e740c">tcpdump</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_pcap_dump.html">PcapDump</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_dump.html#a8d1e16379ddf686bf77a282cfa094b65">pcapDump</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_packet_dump.html">PacketDump</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_dump.html#a4ed51884f5fc4414e89fdb73184a6bbc">tcpdump</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_dump.html#a159346206d6da0ca9e62d8a33d1cc6de">snaplen</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_dump.html#ac62eac878a1acfdf612b33b7cf50abee">first</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_dump.html#a9c9e824fb6c46410ed4edb518e238ec7">last</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_dump.html#a8cbcbb0591f1f46c89df984c27ed50ab">space</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_dump.html#a090d9c1f98f7cf83dbd4b0c4c3ee4285">dumpBadFrames</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_c_p_dump.html#a48a6bab4f7aae3a86d171dbdb2448421">dropBadFrames</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Dumps every packet using the <a class="el" href="class_t_c_p_dumper.html">TCPDumper</a> class </p>
-
-<p>Definition at line <a class="el" href="_t_c_p_dump_8h_source.html#l00099">99</a> of file <a class="el" href="_t_c_p_dump_8h_source.html">TCPDump.h</a>.</p>
+<div class="textblock"><p>Dumps every packet using the <a class="el" href="class_pcap_dump.html" title="Dumps packets into a PCAP file; see the &quot;pcap-savefile&quot; man page or http://www.tcpdump.org/ for details on the file format.">PcapDump</a> class and the <a class="el" href="class_packet_dump.html" title="Utility class that provides tcpdump-like functionality.">PacketDump</a> class. </p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aa03158b5ccbae22899c8e618afadae6c"></a><!-- doxytag: member="TCPDump::TCPDump" ref="aa03158b5ccbae22899c8e618afadae6c" args="()" -->
 <div class="memitem">
@@ -120,12 +123,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_dump_8cc_source.html#l00359">359</a> of file <a class="el" href="_t_c_p_dump_8cc_source.html">TCPDump.cc</a>.</p>
-<div class="fragment"><pre class="fragment">                 : cSimpleModule(), <a class="code" href="class_t_c_p_dump.html#a9def2dc88fc02732ba372ed8404e740c">tcpdump</a>(ev.getOStream())
+<div class="fragment"><pre class="fragment">                 : cSimpleModule(), <a class="code" href="class_t_c_p_dump.html#a4ed51884f5fc4414e89fdb73184a6bbc">tcpdump</a>()
 {
-
-
 }
 </pre></div>
 </div>
@@ -143,8 +142,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_dump_8cc_source.html#l00318">318</a> of file <a class="el" href="_t_c_p_dump_8cc_source.html">TCPDump.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
 }
 </pre></div>
@@ -156,7 +153,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_dump.html#ad2c36cf696c676be6fd15b4eead2ecf4">TCPDump::finish</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_dump.html#ad2c36cf696c676be6fd15b4eead2ecf4">TCPDump::finish</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [virtual]</code></td>
@@ -164,12 +161,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_dump_8cc_source.html#l00668">668</a> of file <a class="el" href="_t_c_p_dump_8cc_source.html">TCPDump.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-     <a class="code" href="class_t_c_p_dump.html#a9def2dc88fc02732ba372ed8404e740c">tcpdump</a>.<a class="code" href="class_t_c_p_dumper.html#a1d37f218e819252c027368ef08a2220d">dump</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;tcpdump finished&quot;</span>);
-     <span class="keywordflow">if</span> (strcmp(this-&gt;par(<span class="stringliteral">&quot;dumpFile&quot;</span>),<span class="stringliteral">&quot;&quot;</span>)!=0)
-          fclose(<a class="code" href="class_t_c_p_dump.html#a9def2dc88fc02732ba372ed8404e740c">tcpdump</a>.<a class="code" href="class_t_c_p_dumper.html#a419e96d410875d31fe2d7a1dec03b8fc">dumpfile</a>);
+    <a class="code" href="class_t_c_p_dump.html#a4ed51884f5fc4414e89fdb73184a6bbc">tcpdump</a>.<a class="code" href="class_packet_dump.html#a5d0bd41cfca38c55ca6d742faef81805" title="Writes the given text on the output stream.">dump</a>(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;tcpdump finished&quot;</span>);
+    <a class="code" href="class_t_c_p_dump.html#a8d1e16379ddf686bf77a282cfa094b65">pcapDump</a>.<a class="code" href="class_pcap_dump.html#a2d274aea1bd3149d9bf7ff6387dd3389" title="Closes the output file if it is open.">closePcap</a>();
 }
 </pre></div>
 </div>
@@ -179,7 +173,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_dump.html#a6c6aae2b0258f57b57eef0ad10df6f5d">TCPDump::handleMessage</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_dump.html#a6c6aae2b0258f57b57eef0ad10df6f5d">TCPDump::handleMessage</a> </td>
           <td>(</td>
           <td class="paramtype">cMessage *&#160;</td>
           <td class="paramname"><em>msg</em></td><td>)</td>
@@ -188,121 +182,37 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_dump_8cc_source.html#l00550">550</a> of file <a class="el" href="_t_c_p_dump_8cc_source.html">TCPDump.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-
-    <span class="keywordflow">if</span> (!ev.disable_tracing)
+    <span class="keywordflow">if</span> (!ev.isDisabled() &amp;&amp; msg-&gt;isPacket())
     {
-        <span class="keywordtype">bool</span> l2r;
-
-        <span class="keywordflow">if</span> (dynamic_cast&lt;IPDatagram *&gt;(msg))
-        {
-            <span class="keywordflow">if</span> (((<a class="code" href="class_i_p_datagram.html">IPDatagram</a> *)msg)-&gt;getTransportProtocol()==132)
-            {
-                <a class="code" href="class_t_c_p_dump.html#a9def2dc88fc02732ba372ed8404e740c">tcpdump</a>.<a class="code" href="class_t_c_p_dumper.html#a8fc2fe9f248124d89647f38a787e6c41">ipDump</a>(<span class="stringliteral">&quot;&quot;</span>, (<a class="code" href="class_i_p_datagram.html">IPDatagram</a> *)msg);
-            }
-            <span class="keywordflow">else</span>
-            {
-                <span class="keywordflow">if</span> (<a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(msg)-&gt;hasBitError())
-                {
-                    <span class="keyword">delete</span> msg;
-                    <span class="keywordflow">return</span>;
-                }
-                l2r = msg-&gt;arrivedOn(<span class="stringliteral">&quot;in1&quot;</span>);
-                <span class="keywordflow">if</span> (((<a class="code" href="class_i_p_datagram.html">IPDatagram</a> *)msg)-&gt;getTransportProtocol()==6)
-                {
-                    <a class="code" href="class_t_c_p_dump.html#a9def2dc88fc02732ba372ed8404e740c">tcpdump</a>.<a class="code" href="class_t_c_p_dumper.html#a03e9cc1b3d71ebe68154d989a8b19476">tcpDump</a>(l2r, <span class="stringliteral">&quot;&quot;</span>, (<a class="code" href="class_i_p_datagram.html">IPDatagram</a> *)msg, <span class="stringliteral">&quot;&quot;</span>);
-                }
-                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (((<a class="code" href="class_i_p_datagram.html">IPDatagram</a> *)msg)-&gt;getTransportProtocol()==17)
-                    <a class="code" href="class_t_c_p_dump.html#a9def2dc88fc02732ba372ed8404e740c">tcpdump</a>.<a class="code" href="class_t_c_p_dumper.html#a734f25e12b7e32b04b7895fca3f0bd85">udpDump</a>(l2r, <span class="stringliteral">&quot;&quot;</span>, (<a class="code" href="class_i_p_datagram.html">IPDatagram</a> *)msg, <span class="stringliteral">&quot;&quot;</span>);
-            }
-        }
-        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dynamic_cast&lt;SCTPMessage *&gt;(msg))
-        {
-            l2r = msg-&gt;arrivedOn(<span class="stringliteral">&quot;in1&quot;</span>);
-            <a class="code" href="class_t_c_p_dump.html#a9def2dc88fc02732ba372ed8404e740c">tcpdump</a>.<a class="code" href="class_t_c_p_dumper.html#a9b424b32c950eef380e172b7f23808f3">sctpDump</a>(<span class="stringliteral">&quot;&quot;</span>, (<a class="code" href="class_s_c_t_p_message.html">SCTPMessage</a> *)msg, std::string(l2r?<span class="stringliteral">&quot;A&quot;</span>:<span class="stringliteral">&quot;B&quot;</span>),std::string(l2r?<span class="stringliteral">&quot;B&quot;</span>:<span class="stringliteral">&quot;A&quot;</span>));
-        }
-        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dynamic_cast&lt;TCPSegment *&gt;(msg))
-        {
-            <span class="keywordflow">if</span> (<a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(msg)-&gt;hasBitError())
-            {
-                <span class="keyword">delete</span> msg;
-                <span class="keywordflow">return</span>;
-            }
-            l2r = msg-&gt;arrivedOn(<span class="stringliteral">&quot;in1&quot;</span>);
-            <a class="code" href="class_t_c_p_dump.html#a9def2dc88fc02732ba372ed8404e740c">tcpdump</a>.<a class="code" href="class_t_c_p_dumper.html#a03e9cc1b3d71ebe68154d989a8b19476">tcpDump</a>(l2r, <span class="stringliteral">&quot;&quot;</span>, (<a class="code" href="class_t_c_p_segment.html">TCPSegment</a> *)msg, std::string(l2r?<span class="stringliteral">&quot;A&quot;</span>:<span class="stringliteral">&quot;B&quot;</span>),std::string(l2r?<span class="stringliteral">&quot;B&quot;</span>:<span class="stringliteral">&quot;A&quot;</span>));
-        }
-        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dynamic_cast&lt;ICMPMessage *&gt;(msg))
-        {
-            <span class="keywordflow">if</span> (<a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(msg)-&gt;hasBitError())
-            {
-                <span class="keyword">delete</span> msg;
-                <span class="keywordflow">return</span>;
-            }
-            std::cout&lt;&lt;<span class="stringliteral">&quot;ICMPMessage\n&quot;</span>;
-        }
-        <span class="keywordflow">else</span>
-        {
-            <span class="comment">// search for encapsulated IP[v6]Datagram in it</span>
-            cPacket *encapmsg = <a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(msg);
-            <span class="keywordflow">while</span> (encapmsg &amp;&amp; dynamic_cast&lt;IPDatagram *&gt;(encapmsg)==NULL &amp;&amp; dynamic_cast&lt;IPv6Datagram_Base *&gt;(encapmsg)==NULL)
-                encapmsg = encapmsg-&gt;getEncapsulatedPacket();
-                l2r = msg-&gt;arrivedOn(<span class="stringliteral">&quot;in1&quot;</span>);
-            <span class="keywordflow">if</span> (!encapmsg)
-            {
-                <span class="comment">//We do not want this to end in an error if EtherAutoconf messages</span>
-                <span class="comment">//are passed, so just print a warning. -WEI</span>
-                <a class="code" href="_i_n_e_t_defs_8h.html#a650ef3eff8a2900bef69dae29c05d2dd">EV</a> &lt;&lt; <span class="stringliteral">&quot;CANNOT DECODE: packet &quot;</span> &lt;&lt; msg-&gt;getName() &lt;&lt; <span class="stringliteral">&quot; doesn&#39;t contain either IP or IPv6 Datagram\n&quot;</span>;
-            }
-            <span class="keywordflow">else</span>
-            {
-                <span class="keywordflow">if</span> (dynamic_cast&lt;IPDatagram *&gt;(encapmsg))
-                    <a class="code" href="class_t_c_p_dump.html#a9def2dc88fc02732ba372ed8404e740c">tcpdump</a>.<a class="code" href="class_t_c_p_dumper.html#a03e9cc1b3d71ebe68154d989a8b19476">tcpDump</a>(l2r, <span class="stringliteral">&quot;&quot;</span>, (<a class="code" href="class_i_p_datagram.html">IPDatagram</a> *)encapmsg);
-                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (dynamic_cast&lt;IPv6Datagram_Base *&gt;(encapmsg))
-                    <a class="code" href="class_t_c_p_dump.html#a9def2dc88fc02732ba372ed8404e740c">tcpdump</a>.<a class="code" href="class_t_c_p_dumper.html#a754be936c3dc1a76c2e2a64879833e90">dumpIPv6</a>(l2r, <span class="stringliteral">&quot;&quot;</span>, (<a class="code" href="class_i_pv6_datagram___base.html">IPv6Datagram_Base</a> *)encapmsg);
-                <span class="keywordflow">else</span>
-                ASSERT(0); <span class="comment">// cannot get here</span>
-            }
-        }
+        <span class="keywordtype">bool</span> l2r = msg-&gt;arrivedOn(<span class="stringliteral">&quot;hlIn&quot;</span>);
+        <a class="code" href="class_t_c_p_dump.html#a4ed51884f5fc4414e89fdb73184a6bbc">tcpdump</a>.<a class="code" href="class_packet_dump.html#a7d90cfbdf48d7e723bd07eac5001262e" title="Dumps info about the given packet.">dumpPacket</a>(l2r, <a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(msg));
     }
 
-
-    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_dump.html#a9def2dc88fc02732ba372ed8404e740c">tcpdump</a>.<a class="code" href="class_t_c_p_dumper.html#a419e96d410875d31fe2d7a1dec03b8fc">dumpfile</a>!=NULL &amp;&amp; dynamic_cast&lt;IPDatagram *&gt;(msg))
+<span class="preprocessor">#ifdef WITH_IPv4</span>
+<span class="preprocessor"></span>    <span class="keywordflow">if</span> (<a class="code" href="class_t_c_p_dump.html#a8d1e16379ddf686bf77a282cfa094b65">pcapDump</a>.<a class="code" href="class_pcap_dump.html#a71df5b87e16127f2abff82674c495d0f" title="Returns true if the pcap file is currently open.">isOpen</a>() &amp;&amp; <span class="keyword">dynamic_cast&lt;</span><a class="code" href="class_i_pv4_datagram.html" title="Represents an IPv4 datagram.">IPv4Datagram</a> *<span class="keyword">&gt;</span>(msg)
+            &amp;&amp; (<a class="code" href="class_t_c_p_dump.html#a090d9c1f98f7cf83dbd4b0c4c3ee4285">dumpBadFrames</a> || !<a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(msg)-&gt;hasBitError()))
     {
-        uint8 buf[<a class="code" href="_t_c_p_dump_8cc.html#af54882f751368189fddf445f6f2bd44f">MAXBUFLENGTH</a>];
-        memset((<span class="keywordtype">void</span>*)&amp;buf, 0, <span class="keyword">sizeof</span>(buf));
-
         <span class="keyword">const</span> simtime_t stime = simulation.getSimTime();
-        <span class="comment">// Write PCap header</span>
-
-        <span class="keyword">struct </span><a class="code" href="structpcaprec__hdr.html">pcaprec_hdr</a> ph;
-        ph.<a class="code" href="structpcaprec__hdr.html#a6a864e0cfab37d2ed276c7a737d348ae">ts_sec</a> = (int32)stime.dbl();
-        ph.ts_usec = (uint32)((stime.dbl() - ph.ts_sec)*1000000);
-         <span class="comment">// Write Ethernet header</span>
-        uint32 hdr = 2; <span class="comment">//AF_INET</span>
-                     <span class="comment">//We do not want this to end in an error if EtherAutoconf messages</span>
-        <a class="code" href="class_i_p_datagram.html">IPDatagram</a> *ipPacket = check_and_cast&lt;<a class="code" href="class_i_p_datagram.html">IPDatagram</a> *&gt;(msg);
-        <span class="comment">// IP header:</span>
-        <span class="comment">//struct sockaddr_in *to = (struct sockaddr_in*) malloc(sizeof(struct sockaddr_in));</span>
-        <span class="comment">//int32 tosize = sizeof(struct sockaddr_in);</span>
-        int32 serialized_ip = <a class="code" href="class_i_p_serializer.html">IPSerializer</a>().<a class="code" href="class_i_p_serializer.html#a92c164748ccd3346e0f6c156f56b0887">serialize</a>(ipPacket, buf, <span class="keyword">sizeof</span>(buf));
-        ph.incl_len = serialized_ip + <span class="keyword">sizeof</span>(uint32);
-
-        ph.orig_len = ph.incl_len;
-        fwrite(&amp;ph, <span class="keyword">sizeof</span>(ph), 1, <a class="code" href="class_t_c_p_dump.html#a9def2dc88fc02732ba372ed8404e740c">tcpdump</a>.<a class="code" href="class_t_c_p_dumper.html#a419e96d410875d31fe2d7a1dec03b8fc">dumpfile</a>);
-        fwrite(&amp;hdr, <span class="keyword">sizeof</span>(uint32), 1, <a class="code" href="class_t_c_p_dump.html#a9def2dc88fc02732ba372ed8404e740c">tcpdump</a>.<a class="code" href="class_t_c_p_dumper.html#a419e96d410875d31fe2d7a1dec03b8fc">dumpfile</a>);
-        fwrite(buf, serialized_ip, 1, <a class="code" href="class_t_c_p_dump.html#a9def2dc88fc02732ba372ed8404e740c">tcpdump</a>.<a class="code" href="class_t_c_p_dumper.html#a419e96d410875d31fe2d7a1dec03b8fc">dumpfile</a>);
+        <a class="code" href="class_i_pv4_datagram.html" title="Represents an IPv4 datagram.">IPv4Datagram</a> *ipPacket = check_and_cast&lt;<a class="code" href="class_i_pv4_datagram.html" title="Represents an IPv4 datagram.">IPv4Datagram</a> *&gt;(msg);
+        <a class="code" href="class_t_c_p_dump.html#a8d1e16379ddf686bf77a282cfa094b65">pcapDump</a>.<a class="code" href="class_pcap_dump.html#a969d925ddeb4b510ad529fdd3730434c" title="Records the given packet into the output file if it is open, and throws an exception otherwise...">writeFrame</a>(stime, ipPacket);
     }
-
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>
+    <span class="keywordflow">if</span> (<a class="code" href="_i_n_e_t_defs_8h.html#ae5b816f7de3c5248c812bdb6920f4e06">PK</a>(msg)-&gt;hasBitError() &amp;&amp; <a class="code" href="class_t_c_p_dump.html#a48a6bab4f7aae3a86d171dbdb2448421">dropBadFrames</a>)
+    {
+        <span class="keyword">delete</span> msg;
+        <span class="keywordflow">return</span>;
+    }
 
     <span class="comment">// forward</span>
-    int32 <a class="code" href="namespacecesnet.html#a7af5ca969f2a4fc726050202336e75e5">index</a> = msg-&gt;getArrivalGate()-&gt;getIndex();
-    int32 id;
+    int32 index = msg-&gt;getArrivalGate()-&gt;getIndex();
+    int32 <a class="code" href="_t_c_p___n_s_c_8cc.html#a4fc3a0c58dfbd1e68224521185cb9384">id</a>;
+
     <span class="keywordflow">if</span> (msg-&gt;getArrivalGate()-&gt;isName(<span class="stringliteral">&quot;ifIn&quot;</span>))
-        <span class="keywordtype">id</span> = findGate(<span class="stringliteral">&quot;out2&quot;</span>,index);
+        <span class="keywordtype">id</span> = findGate(<span class="stringliteral">&quot;hlOut&quot;</span>, index);
     <span class="keywordflow">else</span>
-        <span class="keywordtype">id</span> = findGate(<span class="stringliteral">&quot;ifOut&quot;</span>,index);
+        <span class="keywordtype">id</span> = findGate(<span class="stringliteral">&quot;ifOut&quot;</span>, index);
 
     send(msg, <span class="keywordtype">id</span>);
 }
@@ -314,7 +224,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_c_p_dump.html#a99ea2e21ea0ef5af65258834540d73ef">TCPDump::initialize</a> </td>
+          <td class="memname"><a class="el" href="timer__queue_8h.html#a07640d68b3fdfaa5c48a36265e8f10b8">void</a> <a class="el" href="class_t_c_p_dump.html#a99ea2e21ea0ef5af65258834540d73ef">TCPDump::initialize</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td><code> [virtual]</code></td>
@@ -322,40 +232,53 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_dump_8cc_source.html#l00520">520</a> of file <a class="el" href="_t_c_p_dump_8cc_source.html">TCPDump.cc</a>.</p>
 <div class="fragment"><pre class="fragment">{
-    <span class="keyword">struct </span><a class="code" href="structpcap__hdr.html">pcap_hdr</a> fh;
     <span class="keyword">const</span> <span class="keywordtype">char</span>* file = this-&gt;par(<span class="stringliteral">&quot;dumpFile&quot;</span>);
+
+    <a class="code" href="class_t_c_p_dump.html#a090d9c1f98f7cf83dbd4b0c4c3ee4285">dumpBadFrames</a> = par(<span class="stringliteral">&quot;dumpBadFrames&quot;</span>).boolValue();
+    <a class="code" href="class_t_c_p_dump.html#a48a6bab4f7aae3a86d171dbdb2448421">dropBadFrames</a> = par(<span class="stringliteral">&quot;dropBadFrames&quot;</span>).boolValue();
+
     <a class="code" href="class_t_c_p_dump.html#a159346206d6da0ca9e62d8a33d1cc6de">snaplen</a> = this-&gt;par(<span class="stringliteral">&quot;snaplen&quot;</span>);
-    <a class="code" href="class_t_c_p_dump.html#a9def2dc88fc02732ba372ed8404e740c">tcpdump</a>.<a class="code" href="class_t_c_p_dumper.html#a6fccb0507cbb7ba38d1eba9b7c2523bb">setVerbosity</a>(par(<span class="stringliteral">&quot;verbosity&quot;</span>));
+    <a class="code" href="class_t_c_p_dump.html#a4ed51884f5fc4414e89fdb73184a6bbc">tcpdump</a>.<a class="code" href="class_packet_dump.html#a4ea9544971ea5137a0e04b970cee9576" title="Enable/disable verbose output.">setVerbose</a>(par(<span class="stringliteral">&quot;verbose&quot;</span>).boolValue());
+    <a class="code" href="class_t_c_p_dump.html#a4ed51884f5fc4414e89fdb73184a6bbc">tcpdump</a>.<a class="code" href="class_packet_dump.html#ac7b77ae92a6e325471c1d78c085f5200" title="Sets the output stream.">setOutStream</a>(ev.getOStream());
 
-
-    <span class="keywordflow">if</span> (strcmp(file,<span class="stringliteral">&quot;&quot;</span>)!=0)
-    {
-        <a class="code" href="class_t_c_p_dump.html#a9def2dc88fc02732ba372ed8404e740c">tcpdump</a>.<a class="code" href="class_t_c_p_dumper.html#a419e96d410875d31fe2d7a1dec03b8fc">dumpfile</a> = fopen(file, <span class="stringliteral">&quot;wb&quot;</span>);
-        <span class="keywordflow">if</span> (!<a class="code" href="class_t_c_p_dump.html#a9def2dc88fc02732ba372ed8404e740c">tcpdump</a>.<a class="code" href="class_t_c_p_dumper.html#a419e96d410875d31fe2d7a1dec03b8fc">dumpfile</a>)
-        {
-            fprintf(stderr, <span class="stringliteral">&quot;Cannot open file [%s] for writing: %s\n&quot;</span>, file, strerror(errno));
-            exit(-1);
-        }
-
-        fh.magic = <a class="code" href="_t_c_p_dump_8h.html#a36af2678484f810a739596f617f9d8fc">PCAP_MAGIC</a>;
-        fh.version_major = 2;
-        fh.version_minor = 4;
-        fh.thiszone = 0;
-        fh.sigfigs = 0;
-        fh.snaplen = <a class="code" href="class_t_c_p_dump.html#a159346206d6da0ca9e62d8a33d1cc6de">snaplen</a>;
-        fh.network = 0;
-        fwrite(&amp;fh, <span class="keyword">sizeof</span>(fh), 1, <a class="code" href="class_t_c_p_dump.html#a9def2dc88fc02732ba372ed8404e740c">tcpdump</a>.<a class="code" href="class_t_c_p_dumper.html#a419e96d410875d31fe2d7a1dec03b8fc">dumpfile</a>);
-    }
-    <span class="keywordflow">else</span>
-        <a class="code" href="class_t_c_p_dump.html#a9def2dc88fc02732ba372ed8404e740c">tcpdump</a>.<a class="code" href="class_t_c_p_dumper.html#a419e96d410875d31fe2d7a1dec03b8fc">dumpfile</a> = NULL;
+    <span class="keywordflow">if</span> (*file)
+        <a class="code" href="class_t_c_p_dump.html#a8d1e16379ddf686bf77a282cfa094b65">pcapDump</a>.<a class="code" href="class_pcap_dump.html#a713063100bb8630e9c8f87bedfa7dc25" title="Opens a PCAP file with the given file name.">openPcap</a>(file, <a class="code" href="class_t_c_p_dump.html#a159346206d6da0ca9e62d8a33d1cc6de">snaplen</a>);
 }
 </pre></div>
 </div>
 </div>
 <hr/><h2>Member Data Documentation</h2>
+<a class="anchor" id="a48a6bab4f7aae3a86d171dbdb2448421"></a><!-- doxytag: member="TCPDump::dropBadFrames" ref="a48a6bab4f7aae3a86d171dbdb2448421" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_t_c_p_dump.html#a48a6bab4f7aae3a86d171dbdb2448421">TCPDump::dropBadFrames</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_t_c_p_dump.html#a6c6aae2b0258f57b57eef0ad10df6f5d">handleMessage()</a>, and <a class="el" href="class_t_c_p_dump.html#a99ea2e21ea0ef5af65258834540d73ef">initialize()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a090d9c1f98f7cf83dbd4b0c4c3ee4285"></a><!-- doxytag: member="TCPDump::dumpBadFrames" ref="a090d9c1f98f7cf83dbd4b0c4c3ee4285" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_t_c_p_dump.html#a090d9c1f98f7cf83dbd4b0c4c3ee4285">TCPDump::dumpBadFrames</a><code> [protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Referenced by <a class="el" href="class_t_c_p_dump.html#a6c6aae2b0258f57b57eef0ad10df6f5d">handleMessage()</a>, and <a class="el" href="class_t_c_p_dump.html#a99ea2e21ea0ef5af65258834540d73ef">initialize()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ac62eac878a1acfdf612b33b7cf50abee"></a><!-- doxytag: member="TCPDump::first" ref="ac62eac878a1acfdf612b33b7cf50abee" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -366,8 +289,6 @@ Protected Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Definition at line <a class="el" href="_t_c_p_dump_8h_source.html#l00105">105</a> of file <a class="el" href="_t_c_p_dump_8h_source.html">TCPDump.h</a>.</p>
 
 </div>
 </div>
@@ -382,22 +303,20 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_dump_8h_source.html#l00105">105</a> of file <a class="el" href="_t_c_p_dump_8h_source.html">TCPDump.h</a>.</p>
-
 </div>
 </div>
-<a class="anchor" id="a0acab65042f441e382c191f1fd9a9f17"></a><!-- doxytag: member="TCPDump::ringBuffer" ref="a0acab65042f441e382c191f1fd9a9f17" args="[RBUFFER_SIZE]" -->
+<a class="anchor" id="a8d1e16379ddf686bf77a282cfa094b65"></a><!-- doxytag: member="TCPDump::pcapDump" ref="a8d1e16379ddf686bf77a282cfa094b65" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned char* <a class="el" href="class_t_c_p_dump.html#a0acab65042f441e382c191f1fd9a9f17">TCPDump::ringBuffer</a>[<a class="el" href="_t_c_p_dump_8h.html#a4668e81a1ed62f082533889edeb96e23">RBUFFER_SIZE</a>]<code> [protected]</code></td>
+          <td class="memname"><a class="el" href="class_pcap_dump.html">PcapDump</a> <a class="el" href="class_t_c_p_dump.html#a8d1e16379ddf686bf77a282cfa094b65">TCPDump::pcapDump</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_dump_8h_source.html#l00102">102</a> of file <a class="el" href="_t_c_p_dump_8h_source.html">TCPDump.h</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_dump.html#ad2c36cf696c676be6fd15b4eead2ecf4">finish()</a>, <a class="el" href="class_t_c_p_dump.html#a6c6aae2b0258f57b57eef0ad10df6f5d">handleMessage()</a>, and <a class="el" href="class_t_c_p_dump.html#a99ea2e21ea0ef5af65258834540d73ef">initialize()</a>.</p>
 
 </div>
 </div>
@@ -412,9 +331,7 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_dump_8h_source.html#l00104">104</a> of file <a class="el" href="_t_c_p_dump_8h_source.html">TCPDump.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_dump_8cc_source.html#l00520">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_dump.html#a99ea2e21ea0ef5af65258834540d73ef">initialize()</a>.</p>
 
 </div>
 </div>
@@ -429,30 +346,26 @@ Protected Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_dump_8h_source.html#l00105">105</a> of file <a class="el" href="_t_c_p_dump_8h_source.html">TCPDump.h</a>.</p>
-
 </div>
 </div>
-<a class="anchor" id="a9def2dc88fc02732ba372ed8404e740c"></a><!-- doxytag: member="TCPDump::tcpdump" ref="a9def2dc88fc02732ba372ed8404e740c" args="" -->
+<a class="anchor" id="a4ed51884f5fc4414e89fdb73184a6bbc"></a><!-- doxytag: member="TCPDump::tcpdump" ref="a4ed51884f5fc4414e89fdb73184a6bbc" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_t_c_p_dumper.html">TCPDumper</a> <a class="el" href="class_t_c_p_dump.html#a9def2dc88fc02732ba372ed8404e740c">TCPDump::tcpdump</a><code> [protected]</code></td>
+          <td class="memname"><a class="el" href="class_packet_dump.html">PacketDump</a> <a class="el" href="class_t_c_p_dump.html#a4ed51884f5fc4414e89fdb73184a6bbc">TCPDump::tcpdump</a><code> [protected]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="_t_c_p_dump_8h_source.html#l00103">103</a> of file <a class="el" href="_t_c_p_dump_8h_source.html">TCPDump.h</a>.</p>
-
-<p>Referenced by <a class="el" href="_t_c_p_dump_8cc_source.html#l00668">finish()</a>, <a class="el" href="_t_c_p_dump_8cc_source.html#l00550">handleMessage()</a>, and <a class="el" href="_t_c_p_dump_8cc_source.html#l00520">initialize()</a>.</p>
+<p>Referenced by <a class="el" href="class_t_c_p_dump.html#ad2c36cf696c676be6fd15b4eead2ecf4">finish()</a>, <a class="el" href="class_t_c_p_dump.html#a6c6aae2b0258f57b57eef0ad10df6f5d">handleMessage()</a>, and <a class="el" href="class_t_c_p_dump.html#a99ea2e21ea0ef5af65258834540d73ef">initialize()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="_t_c_p_dump_8h_source.html">TCPDump.h</a></li>
-<li><a class="el" href="_t_c_p_dump_8cc_source.html">TCPDump.cc</a></li>
+<li><a class="el" href="_t_c_p_dump_8h.html">TCPDump.h</a></li>
+<li><a class="el" href="_t_c_p_dump_8cc.html">TCPDump.cc</a></li>
 </ul>
 </div><!-- contents -->
 </div>
@@ -460,7 +373,7 @@ Protected Attributes</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_t_c_p_dump.html">TCPDump</a>      </li>
 
-    <li class="footer">Generated on Thu Aug 30 2012 22:56:53 for INET Framework for OMNeT++/OMNEST by
+    <li class="footer">Generated on Tue Aug 7 2012 16:01:31 for INET Framework for OMNeT++/OMNEST by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
