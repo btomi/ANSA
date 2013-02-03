@@ -27,6 +27,8 @@
 #include <queue>
 #include <iomanip>
 
+#include "CLNSTable.h"
+#include "CLNSTableAccess.h"
 #include "ISISMessage_m.h"
 //#include "ISISLSPPacket.h"
 #include "Ieee802Ctrl_m.h"
@@ -52,12 +54,17 @@
 /**
  * Single class providing all functionality of whole module.
  */
-class ISIS : public cSimpleModule
+class ISIS : public cSimpleModule, protected INotifiable
 {
     private:
 
         IInterfaceTable *ift;               /*!< pointer to interface table */
         std::vector<ISISinterface> ISISIft; /*!< vector of available interfaces */
+        CLNSTable *clnsTable;               /*!< pointer to CLNS routing table */
+        NotificationBoard *nb;              /*!< Provides access to the notification board */
+
+
+
         const char *deviceType; /*!< device type specified in .ned when using this module */
         const char *deviceId; /*!< device ID */
         const char *configFile; /*!< config file specified in simulation */
@@ -339,6 +346,7 @@ class ISIS : public cSimpleModule
         bool compareArrays(unsigned char * first, unsigned char * second, unsigned int size); //method for comparison of two unsigned int arrays
         void copyArrayContent(unsigned char * src, unsigned char * dst, unsigned int size, unsigned int startSrc,
                 unsigned int startDst); //copy content from one array to another
+        virtual void receiveChangeNotification(int category, const cObject *details);
 
     public:
         ISIS();

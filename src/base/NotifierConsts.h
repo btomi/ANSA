@@ -90,6 +90,11 @@ enum
     NF_IPv6_HANDOVER_OCCURRED,
     NF_MIPv6_RO_COMPLETED,
 
+    // layer 3 - CLNS
+    NF_CLNS_ROUTE_ADDED,
+    NF_CLNS_ROUTE_DELETED,
+    NF_CLNS_ROUTE_CHANGED,
+
     // - layer 4 (transport)
     //...
 

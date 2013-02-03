@@ -18,6 +18,7 @@
 
 package inet.ansa.isis;
 
+import inet.ansa.isis.CLNSTable;
 //import inet.ansa.acl.acl;
 import inet.ansa.deviceConfigurator.DeviceConfigurator;
 //import inet.ansa.ethernet.AnsaEthernetInterface;
@@ -55,13 +56,19 @@ module AnsaISISRouter
         string configFile;
         xml routingTable = default(xml("<routingTable/>"));  // Routing table is filled by deviceConfigurator
         bool IPForward = default(true);
-             
+        xml table = default(xml("<clnsTable/>"));
+
 
         @display("i=srouter;bgb=437,396");
     gates:
         inout pppg[];
         inout ethg[];
     submodules:
+        clnsTable: CLNSTable {
+            parameters:
+                @display("p=395,115");
+                
+        }
         deviceConfigurator: DeviceConfigurator {
             parameters:
                 deviceId = deviceId;
@@ -77,36 +84,35 @@ module AnsaISISRouter
             parameters:
                 @display("p=154,42");
         }
-//        interfaceTable: AnsaInterfaceTable {
-            interfaceTable: InterfaceTable {
+        //        interfaceTable: AnsaInterfaceTable {
+        interfaceTable: InterfaceTable {
             parameters:
                 @display("p=250,42");
         }
-//        routingTable: RoutingTable {
-//            routingTable: RoutingTable {
-//            parameters:
-//                routerId = deviceId;
-//                IPForward = true;
-//                configFile = configFile;
-//                @display("p=323,42");
-//        }
-		routingTable: RoutingTable{
-		    parameters:
+        //        routingTable: RoutingTable {
+        //            routingTable: RoutingTable {
+        //            parameters:
+        //                routerId = deviceId;
+        //                IPForward = true;
+        //                configFile = configFile;
+        //                @display("p=323,42");
+        //        }
+        routingTable: RoutingTable {
+            parameters:
                 @display("p=323,42");
                 IPForward = true;
                 routerId = deviceId;
-                
-		}
-//        routingTable6: AnsaRoutingTable6 {
-//            parameters:
-//                isRouter = true;
-//                @display("p=395,42");
-//        }
+
+        }
+        //        routingTable6: AnsaRoutingTable6 {
+        //            parameters:
+        //                isRouter = true;
+        //                @display("p=395,42");
+        //        }
         routingTable6: RoutingTable6 {
             parameters:
                 @display("p=395,42");
                 isRouter = IPForward;
-//                routingTable = routingTable;
         }
         ipSplitter: IpSplitter {
             parameters:
@@ -125,8 +131,8 @@ module AnsaISISRouter
             parameters:
                 @display("p=143,342,row,110;q=l2queue");
         }
-//        eth[sizeof(ethg)]: AnsaEthernetInterface {
-            eth[sizeof(ethg)]: <default("EthernetInterface")> like IWiredNic {
+        //        eth[sizeof(ethg)]: AnsaEthernetInterface {
+        eth[sizeof(ethg)]: <default("EthernetInterface")> like IWiredNic {
             parameters:
                 @display("p=284,342,row,110;q=l2queue");
         }
@@ -146,9 +152,9 @@ module AnsaISISRouter
         for i=0..sizeof(pppg)-1 {
             pppg[i] <--> ppp[i].phys;
 
-//            ppp[i].netwOut --> ipSplitter.ifIn[i];
+            //            ppp[i].netwOut --> ipSplitter.ifIn[i];
             ppp[i].upperLayerOut --> ipSplitter.ifIn[i];
-//            ppp[i].netwIn <-- ipSplitter.ifOut[i];
+            //            ppp[i].netwIn <-- ipSplitter.ifOut[i];
             ppp[i].upperLayerIn <-- ipSplitter.ifOut[i];
 
             ipSplitter.isisOut[i] --> isis.ifIn[i];
@@ -158,9 +164,9 @@ module AnsaISISRouter
         for i=0..sizeof(ethg)-1 {
             ethg[i] <--> eth[i].phys;
 
-//            eth[i].netwOut --> ipSplitter.ifIn[sizeof(pppg)+i];
+            //            eth[i].netwOut --> ipSplitter.ifIn[sizeof(pppg)+i];
             eth[i].upperLayerOut --> ipSplitter.ifIn[sizeof(pppg)+i];
-//            eth[i].netwIn <-- ipSplitter.ifOut[sizeof(pppg)+i];
+            //            eth[i].netwIn <-- ipSplitter.ifOut[sizeof(pppg)+i];
             eth[i].upperLayerIn <-- ipSplitter.ifOut[sizeof(pppg)+i];
 
             ipSplitter.isisOut[i] --> isis.ifIn[i];

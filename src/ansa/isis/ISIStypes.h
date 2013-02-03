@@ -227,6 +227,7 @@ struct ISISNeighbour
         unsigned char *id;
         //uint32_t metric;
         bool type; //should represent whether it's a leaf node; true = leaf
+        InterfaceEntry *entry;
 
         ISISNeighbour(){
 

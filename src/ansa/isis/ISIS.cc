@@ -187,6 +187,18 @@ ISIS::~ISIS()
 }
 
 
+void ISIS::receiveChangeNotification(int category, const cObject *details)
+{
+   // TODO:
+   return;
+   // ignore notifications during initialization
+   if (simulation.getContextType() == CTX_INITIALIZE)
+       return;
+}
+
+
+
+
 /**
  * Initialization function called at the start of simulation. This method provides initial
  * parsing of XML config file and configuration of whole module including network interfaces.
@@ -210,6 +222,13 @@ void ISIS::initialize(int stage) {
         if (ift == NULL) {
             throw cRuntimeError("AnsaInterfaceTable not found");
         }
+
+        clnsTable = CLNSTableAccess().get();
+
+        nb = NotificationBoardAccess().get();
+        nb->subscribe(this, NF_INTERFACE_STATE_CHANGED);
+        nb->subscribe(this, NF_CLNS_ROUTE_DELETED);
+
 
         cXMLElement *device = xmlParser::GetDevice(deviceType, deviceId,
                 configFile);
@@ -744,6 +763,8 @@ void ISIS::insertIft(InterfaceEntry *entry, cXMLElement *intElement)
     newIftEntry.entry = entry;
     this->ISISIft.push_back(newIftEntry);
 }
+
+
 
 
 
@@ -8097,6 +8118,26 @@ void ISIS::fullSPF(ISISTimer *timer){
     if(!this->att){
         this->setClosestAtt();
     }
+//    this->clnsTable->dropTable();
+    //TODO rewrite this mess
+
+    for(ISISPaths_t::iterator it = ISISPaths->begin(); it != ISISPaths->end(); ++it){
+        //for every neighbour (nextHop)
+        for(ISISNeighbours_t::iterator nIt = (*it)->from.begin(); nIt != (*it)->from.end(); ++nIt){
+            //getAdjacency by systemID and circuitType, then find iface by gateIndex and finaly get the InterfaceEntry
+            ISISadj *tmpAdj = getAdjBySystemID((*nIt)->id, circuitType);
+            if(tmpAdj != NULL){
+                (*nIt)->entry = this->getIfaceByGateIndex(tmpAdj->gateIndex)->entry;
+            }else{
+                (*nIt)->entry = NULL;
+            }
+//            (*nIt)->entry = this->getIfaceByGateIndex((this->getAdjBySystemID((*nIt)->id, circuitType))->gateIndex)->entry;
+        }
+
+        this->clnsTable->addRecord(new CLNSRoute((*it)->to, ISIS_SYSTEM_ID + 1, (*it)->from, (*it)->metric));
+
+    }
+
 
     this->schedule(timer);
 }
@@ -8201,7 +8242,8 @@ void ISIS::setClosestAtt(void)
                     {
                         ISISNeighbour *att = new ISISNeighbour(lspID, false);
                         attIS->push_back(att);
-                        metric = (*pIt)->metric = metric;
+//                        metric = (*pIt)->metric = metric;
+                        metric = (*pIt)->metric;
                     }
                 }
 
@@ -8221,41 +8263,49 @@ void ISIS::setClosestAtt(void)
  * Print best paths informations to stdout
  * @param paths is set of best paths.
  */
-void ISIS::printPaths(ISISPaths_t *paths){
+void ISIS::printPaths(ISISPaths_t *paths)
+{
 
+    std::cout << "Best paths of IS: ";
+    //print area id
+    for (unsigned int i = 0; i < 3; i++)
+    {
+        std::cout << setfill('0') << setw(2) << dec << (unsigned int) this->areaId[i];
+        if (i % 2 == 0)
+            std::cout << ".";
 
-        std::cout << "Best paths of IS: ";
-        //print area id
-            for (unsigned int i = 0; i < 3; i++)
-            {
-                std::cout << setfill('0') << setw(2) << dec << (unsigned int) this->areaId[i];
-                if (i % 2 == 0)
-                    std::cout << ".";
-
-            }
-
-            //print system id
-            for (unsigned int i = 0; i < 6; i++)
-            {
-                std::cout << setfill('0') << setw(2) << dec << (unsigned int) this->sysId[i];
-                if (i % 2 == 1)
-                    std::cout << ".";
-            }
-
-            //print NSEL
-            std::cout
-                    << setfill('0') << setw(2) << dec << (unsigned int) this->NSEL[0] << "\tNo. of paths: "
-                            << paths->size() << endl;
-    for(ISISPaths_t::iterator it = paths->begin(); it != paths->end(); ++it){
-        this->printSysId((*it)->to);
-        std::cout << setfill('0') << setw(2) << dec <<(unsigned short)(*it)->to[6]<< endl;;
-        std::cout <<"\t\t metric: "<< (*it)->metric <<"\t via:"<<endl;;
-        for(ISISNeighbours_t::iterator nIt = (*it)->from.begin(); nIt != (*it)->from.end(); ++nIt){
-            std::cout<<"\t\t\t\t\t";
-            this->printSysId((*nIt)->id);
-            std::cout  << setfill('0') << setw(2) << dec <<(unsigned short)(*nIt)->id[6]<< endl;;
-        }
     }
+
+    //print system id
+    for (unsigned int i = 0; i < 6; i++)
+    {
+        std::cout << setfill('0') << setw(2) << dec << (unsigned int) this->sysId[i];
+        if (i % 2 == 1)
+            std::cout << ".";
+    }
+
+    //print NSEL
+    std::cout << setfill('0') << setw(2) << dec << (unsigned int) this->NSEL[0] << "\tNo. of paths: " << paths->size()
+            << endl;
+    for (ISISPaths_t::iterator it = paths->begin(); it != paths->end(); ++it)
+    {
+        std::cout<< "To: ";
+        this->printSysId((*it)->to);
+        std::cout << setfill('0') << setw(2) << dec << (unsigned short) (*it)->to[6];
+        std::cout << "\t\t metric: " << (*it)->metric << "\t via: " ;
+        if((*it)->from.empty()){
+            std::cout << "EMPTY";
+        }
+        for (ISISNeighbours_t::iterator nIt = (*it)->from.begin(); nIt != (*it)->from.end(); ++nIt)
+        {
+//            std::cout << "\t\t\t\t\t";
+            this->printSysId((*nIt)->id);
+            std::cout << setfill('0') << setw(2) << dec << (unsigned short) (*nIt)->id[6];
+            std::cout << " ";
+        }
+        std::cout<<endl;
+    }
+    std::cout<< endl;
 }
 
 /*
@@ -8296,6 +8346,7 @@ void ISIS::bestToPath(ISISCons_t *init, ISISPaths_t *ISISTent, ISISPaths_t *ISIS
             EV <<"ISIS: Error during SPF. I think we shouldn't have neither same metric."<<endl;
             //append
             tmpPath->metric = path->metric;
+            cout << "pathb metric: " << tmpPath->metric << endl;
             for(ISISNeighbours_t::iterator it = path->from.begin(); it != path->from.end(); ++it){
                 tmpPath->from.push_back((*it));
             }
@@ -8332,6 +8383,7 @@ void ISIS::moveToTent(ISISCons_t *initial, unsigned char *from, uint32_t metric,
                tmpPath->to = new unsigned char[ISIS_SYSTEM_ID + 2];
                this->copyArrayContent((*it)->to, tmpPath->to, ISIS_SYSTEM_ID + 2, 0, 0);
                tmpPath->metric = (*it)->metric + metric;
+               cout << "patha metric: " << tmpPath->metric << endl;
 
                ISISNeighbour *neighbour = new ISISNeighbour;
 
@@ -8342,6 +8394,7 @@ void ISIS::moveToTent(ISISCons_t *initial, unsigned char *from, uint32_t metric,
                    this->copyArrayContent((*it)->from, neighbour->id, ISIS_SYSTEM_ID + 2, 0, 0);
                }
                neighbour->type = false; //not a leaf
+//               tmpPath->from = neighbour;
                tmpPath->from.push_back(neighbour);
 
                ISISTent->push_back(tmpPath);
@@ -8355,6 +8408,7 @@ void ISIS::moveToTent(ISISCons_t *initial, unsigned char *from, uint32_t metric,
                    }
                    //append
                    tmpPath->metric = (*it)->metric + metric;
+                   cout << "path metric: " << tmpPath->metric << endl;
                    ISISNeighbour *neighbour = new ISISNeighbour;
                    neighbour->id = new unsigned char[ISIS_SYSTEM_ID + 2];
                    this->copyArrayContent((*it)->from, neighbour->id, ISIS_SYSTEM_ID + 2, 0, 0);
@@ -8445,7 +8499,10 @@ bool ISIS::extractISO(ISISCons_t *initial, short circuitType){
                     this->copyArrayContent(tmpTLV->value, connection->to, ISIS_SYSTEM_ID +1, i + 4, 0);
                     connection->to[ISIS_SYSTEM_ID + 1] = 0;
                     connection->metric = tmpTLV->value[i];//default metric
+                    cout << "connection metric : " << connection->metric << endl;
                     connection->type = false;//it's not a leaf
+
+
 
                     initial->push_back(connection);
                     //path->neighbours.push_back(neighbour);
