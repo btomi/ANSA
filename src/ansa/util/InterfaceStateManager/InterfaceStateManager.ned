@@ -17,7 +17,7 @@
 //
 
 
-package inet.ansa.InterfaceStateManager;
+package inet.ansa.util.InterfaceStateManager;
 
 
 simple InterfaceStateManager

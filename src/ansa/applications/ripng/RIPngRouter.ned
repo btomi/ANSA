@@ -15,9 +15,9 @@
 
 package inet.ansa.applications.ripng;
 
-import inet.ansa.InterfaceStateManager.InterfaceStateManager;
+import inet.ansa.util.InterfaceStateManager.InterfaceStateManager;
 import inet.ansa.applications.ripng.RIPngRouting;
-import inet.ansa.deviceConfigurator.DeviceConfigurator;
+import inet.ansa.util.deviceConfigurator.DeviceConfigurator;
 import inet.nodes.ipv6.NetworkLayer6;
 import inet.networklayer.common.InterfaceTable;
 import inet.ansa.networklayer.ipv6.ANSARoutingTable6;

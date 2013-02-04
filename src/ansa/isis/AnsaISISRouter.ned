@@ -20,14 +20,14 @@ package inet.ansa.isis;
 
 import inet.ansa.isis.CLNSTable;
 //import inet.ansa.acl.acl;
-import inet.ansa.deviceConfigurator.DeviceConfigurator;
+import inet.ansa.util.deviceConfigurator.DeviceConfigurator;
 //import inet.ansa.ethernet.AnsaEthernetInterface;
 import inet.linklayer.ethernet.EthernetInterface;
 import inet.linklayer.IWiredNic;
-import inet.ansa.InterfaceStateManager.InterfaceStateManager;
+import inet.ansa.util.InterfaceStateManager.InterfaceStateManager;
 //import inet.ansa.IPGen.AnsaIPTrafGen;
 //import inet.ansa.ipv6.AnsaRoutingTable6;
-import inet.ansa.ipSplitter.IpSplitter;
+import inet.ansa.networklayer.ipSplitter.IpSplitter;
 
 //import inet.ansa.ppp.PPPInterface;
 import inet.linklayer.ppp.PPPInterface;
