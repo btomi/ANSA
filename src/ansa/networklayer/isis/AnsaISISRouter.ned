@@ -16,9 +16,9 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 //
 
-package inet.ansa.isis;
+package inet.ansa.networklayer.isis;
 
-import inet.ansa.isis.CLNSTable;
+import inet.ansa.networklayer.clns.CLNSTable;
 //import inet.ansa.acl.acl;
 import inet.ansa.util.deviceConfigurator.DeviceConfigurator;
 //import inet.ansa.ethernet.AnsaEthernetInterface;
@@ -39,7 +39,7 @@ import inet.networklayer.ipv4.RoutingTable;
 //import inet.ansa.AnsaNetworkLayer;
 
 //import inet.ansa.pim.pim;
-import inet.ansa.isis.ISIS;
+import inet.ansa.networklayer.isis.ISIS;
 
 import inet.applications.pingapp.PingApp;
 import inet.base.NotificationBoard;

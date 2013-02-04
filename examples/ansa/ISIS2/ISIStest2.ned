@@ -18,7 +18,7 @@ package inet.examples.ansa.ISIS2;
 import inet.nodes.ethernet.Eth100M;
 //import inet.ansa.ANSASwitch;
 import inet.nodes.ethernet.EtherSwitch;
-import inet.ansa.isis.AnsaISISRouter;
+import inet.ansa.networklayer.isis.AnsaISISRouter;
 //import inet.ansa.ANSARouter;
 //import inet.networklayer.autorouting.FlatNetworkConfigurator;
 import inet.networklayer.autorouting.ipv4.FlatNetworkConfigurator;
