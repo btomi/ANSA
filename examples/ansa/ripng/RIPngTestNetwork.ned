@@ -17,7 +17,7 @@ package inet.examples.ansa.ripng;
 
 //import inet.networklayer.autorouting.ipv6.FlatNetworkConfigurator6;
 import inet.nodes.ethernet.Eth100M;
-import inet.ansa.ripng.RIPngRouter;
+import inet.ansa.applications.ripng.RIPngRouter;
 import inet.nodes.ipv6.StandardHost6;
 import inet.world.scenario.ScenarioManager;
 
@@ -46,9 +46,6 @@ network RIPngTestNetwork
             gates:
                 ethg[4];
         }
-        //flatNetworkConfigurator6: FlatNetworkConfigurator6 {
-        //    @display("p=275,120");
-        //}
         LAN2: StandardHost6 {
             @display("p=53,118;i=cloud_s");
         }
@@ -69,6 +66,7 @@ network RIPngTestNetwork
         }
         scenarioManager: ScenarioManager {
             @display("p=327,208");
+            script = xmldoc("scenario.xml");
         }
     connections:
         router1.ethg[0] <--> Eth100M <--> router2.ethg[0];

@@ -25,6 +25,8 @@
 #include "InterfaceTableAccess.h"
 #include "InterfaceTableAccess.h"
 
+#include "RIPngRouting.h"
+
 
 class DeviceConfigurator : public cSimpleModule {
 
@@ -41,6 +43,22 @@ class DeviceConfigurator : public cSimpleModule {
       virtual int numInitStages() const {return 4;}
       virtual void initialize(int stage);
       virtual void handleMessage(cMessage *msg);
+
+   public:
+      // configuration for RIPng
+      /**
+       * Loads configuration for RIPngModule
+       * @param RIPngModule [in]
+       */
+      void loadRIPngConfig(RIPngRouting *RIPngModule);
+
+      /**
+       * Adds unicast prefixes obtained from the interface configuration to the RIPngRouting table
+       * @param RIPngModule [in]
+       * @param interface [in] interface, from which should be added prefixes
+       * @see InterfaceTable
+       */
+      void loadPrefixesFromInterfaceToRIPngRT(RIPngRouting *RIPngModule, cXMLElement *interface);
 };
 
 #endif

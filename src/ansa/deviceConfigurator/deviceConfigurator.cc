@@ -317,3 +317,108 @@ void DeviceConfigurator::handleMessage(cMessage *msg){
    throw cRuntimeError("This module does not receive messages");
    delete msg;
 }
+
+//
+//
+//- configuration for RIPng
+//
+//
+void DeviceConfigurator::loadRIPngConfig(RIPngRouting *RIPngModule){
+
+    ASSERT(RIPngModule != NULL);
+
+    // get access to device node from XML
+    const char *deviceType = par("deviceType");
+    const char *deviceId = par("deviceId");
+    const char *configFile = par("configFile");
+    cXMLElement *device = xmlParser::GetDevice(deviceType, deviceId, configFile);
+
+    if (device == NULL){
+        ev << "No configuration found for this device (" << deviceType << " id=" << deviceId << ")" << endl;
+             return;
+     }
+
+    // interfaces config
+    cXMLElement *interface;
+    RIPng::Interface *ripngInterface;
+    std::string RIPngInterfaceStatus;
+    std::string RIPngInterfacePassiveStatus;
+    std::string RIPngInterfaceSplitHorizon;
+    std::string RIPngInterfacePoisonReverse;
+
+      //get first router's interface
+      interface = xmlParser::GetInterface(NULL, device);
+      while (interface != NULL)
+      {// process all interfaces in config file
+          const char *interfaceName = interface->getAttribute("name");
+          RIPngInterfaceStatus = xmlParser::getInterfaceRIPngStatus(interface);
+          if (RIPngInterfaceStatus == "enable")
+          {
+              ripngInterface = RIPngModule->enableRIPngOnInterface(interfaceName);
+              // add prefixes from int to the RIPng routing table
+              loadPrefixesFromInterfaceToRIPngRT(RIPngModule, interface);
+
+              RIPngInterfacePassiveStatus = xmlParser::getRIPngInterfacePassiveStatus(interface);
+              if (RIPngInterfacePassiveStatus == "enable")
+              {// set the interface as passive (interface is "active" by default)
+                  RIPngModule->setInterfacePassiveStatus(ripngInterface, true);
+              }
+
+              RIPngInterfaceSplitHorizon = xmlParser::getRIPngInterfaceSplitHorizon(interface);
+              if (RIPngInterfaceSplitHorizon == "disable")
+              {// disable Split Horizon on the interface (Split Horizon is enabled by default)
+                  RIPngModule->setInterfaceSplitHorizon(ripngInterface, false);
+              }
+
+              RIPngInterfacePoisonReverse = xmlParser::getRIPngInterfacePoisonReverse(interface);
+              if (RIPngInterfacePoisonReverse == "enable")
+              {// enable Poison Reverse on the interface (Poison Reverse is disabled by default)
+                  RIPngModule->setInterfacePoisonReverse(ripngInterface, true);
+              }
+          }
+
+          // process next interface
+          interface = xmlParser::GetInterface(interface, NULL);
+      }
+}
+
+void DeviceConfigurator::loadPrefixesFromInterfaceToRIPngRT(RIPngRouting *RIPngModule, cXMLElement *interface)
+{
+    const char *interfaceName = interface->getAttribute("name");
+    InterfaceEntry *interfaceEntry = ift->getInterfaceByName(interfaceName);
+    int interfaceId = interfaceEntry->getInterfaceId();
+
+    RIPng::RoutingTableEntry *route;
+
+    // process next interface
+    cXMLElement *eIpv6address;
+    std::string sIpv6address;
+    IPv6Address ipv6address;
+    int prefixLen;
+        // get first ipv6 address
+        eIpv6address = xmlParser::GetIPv6Address(NULL, interface);
+        while (eIpv6address != NULL)
+        {// process all ipv6 addresses on the interface
+            sIpv6address = eIpv6address->getNodeValue();
+
+            // check if it's a valid IPv6 address string with prefix and get prefix
+            if (!ipv6address.tryParseAddrWithPrefix(sIpv6address.c_str(), prefixLen))
+            {
+               throw cRuntimeError("Unable to set IPv6 network address %s for static route", sIpv6address.c_str());
+            }
+
+            if (!ipv6address.isLinkLocal() && !ipv6address.isMulticast())
+            {
+                // make directly connected route
+                route = new RIPng::RoutingTableEntry(ipv6address.getPrefix(prefixLen), prefixLen);
+                route->setInterfaceId(interfaceId);
+                route->setNextHop(IPv6Address::UNSPECIFIED_ADDRESS);  // means directly connected network
+                route->setMetric(RIPngModule->getConnNetworkMetric());
+                RIPngModule->addRoutingTableEntry(route, false);
+
+                // directly connected routes do not need a RIPng route timer
+            }
+
+            eIpv6address = xmlParser::GetIPv6Address(eIpv6address, NULL);
+        }
+}

@@ -19,8 +19,8 @@
 #include <omnetpp.h>
 #include "UDPSocket.h"
 #include "IPv6Address.h"
-#include "RoutingTable6.h"
-#include "RoutingTable6Access.h"
+#include "ANSARoutingTable6.h"
+#include "ANSARoutingTable6Access.h"
 #include "IInterfaceTable.h"
 #include "InterfaceTableAccess.h"
 #include "NotificationBoard.h"
@@ -55,6 +55,7 @@ class RIPngRouting : public cSimpleModule, protected INotifiable
     simtime_t   regularUpdateTimeout;
     IPv6Address RIPngAddress;
     int         RIPngPort;
+    int         adminDist;
 
     RIPngTimer *regularUpdateTimer;
     RIPngTimer *triggeredUpdateTimer;
@@ -67,53 +68,32 @@ class RIPngRouting : public cSimpleModule, protected INotifiable
     bool bBlockTriggeredUpdateMessage;
 
     IInterfaceTable*                                ift;                ///< Provides access to the interface table.
-    RoutingTable6*                                  rt;                 ///< Provides access to the IPv6 routing table.
+    ANSARoutingTable6*                              rt;                 ///< Provides access to the IPv6 routing table.
     NotificationBoard*                              nb;                 ///< Provides access to the notification board
-    std::map<IPv6Address,RIPng::RoutingTableEntry*> routingTable;       ///< The RIPng routing table - contains more information than the one in the IP layer.
     std::vector<RIPng::Interface*>                  enabledInterfaces;  ///< Interfaces which has allowed RIPng
     std::vector<UDPSocket*>                         sockets;            ///< UDP Socket for every RIPng interface
     UDPSocket                                       globalSocket;       ///< Socket for "send" messages with global unicast address as a source
 
-  protected:
-    typedef map<IPv6Address,RIPng::RoutingTableEntry*>::iterator RoutingTableIt;
-    unsigned long                   getRoutingTableEntryCount() const  { return routingTable.size(); }
-    RIPng::RoutingTableEntry*       getRoutingTableEntry(IPv6Address &prefix)
-    {
-        RoutingTableIt it = routingTable.find(prefix);
-        return it == routingTable.end() ? NULL : (*it).second;
-    }
-    void                            addRoutingTableEntry(RIPng::RoutingTableEntry* entry, bool timers = true)
-    {
-        if (timers == true)
-        {
-            RIPngTimer *timer = createAndStartTimer(ROUTE_TIMEOUT, routeTimeout);
-            timer->setIPv6Prefix(entry->getDestPrefix());
-            entry->setTimer(timer);
+    typedef std::vector<RIPng::RoutingTableEntry*> RoutingTable;
+    RoutingTable routingTable;                                          ///< The RIPng routing table.
 
-            RIPngTimer *GCTimer = createTimer(ROUTE_GARBAGE_COLECTION_TIMEOUT);
-            GCTimer->setIPv6Prefix(entry->getDestPrefix());
-            entry->setGCTimer(GCTimer);
-        }
+  public:
+    int getConnNetworkMetric() { return connNetworkMetric; }
+    int getInfinityMetric() { return infinityMetric; }
+    simtime_t getRouteTimeout() { return routeTimeout; }
+    simtime_t getRouteGarbageCollectionTimeout() { return routeGarbageCollectionTimeout; }
+    simtime_t getRegularUpdateTimeout() { return regularUpdateTimeout; }
+    IPv6Address getRIPngAddress() { return RIPngAddress; }
+    int getRIPngPort() { return RIPngPort; }
+    int getAdminDist() { return adminDist; }
 
-        routingTable[entry->getDestPrefix()] = entry;
-    }
-    void                            removeRoutingTableEntry(IPv6Address &prefix)
-    {
-        RoutingTableIt it = routingTable.find(prefix);
-        removeRoutingTableEntry(it);
-    }
-
-    void                            removeRoutingTableEntry(RoutingTableIt it)
-    {
-        ASSERT(it != routingTable.end());
-
-        // delete timers
-        deleteTimer((*it).second->getGCTimer());
-        deleteTimer((*it).second->getTimer());
-        // delete routing table entry
-        delete (*it).second;
-        routingTable.erase(it);
-    }
+    //-- RIPNG ROUTING TABLE METHODS
+    typedef RoutingTable::iterator RoutingTableIt;
+    unsigned long                   getRoutingTableEntryCount() const { return routingTable.size(); }
+    RIPng::RoutingTableEntry*       getRoutingTableEntry(const IPv6Address &prefix, int prefixLength);
+    void                            addRoutingTableEntry(RIPng::RoutingTableEntry* entry, bool createTimers = true);
+    void                            removeRoutingTableEntry(IPv6Address &prefix, int prefixLength);
+    void                            removeRoutingTableEntry(RoutingTableIt it);
 
     /**
      * Update routing table entry from rte.
@@ -123,44 +103,16 @@ class RIPngRouting : public cSimpleModule, protected INotifiable
      * @param sourceAddr [in] source of the received rte
      */
     void                            updateRoutingTableEntry(RIPng::RoutingTableEntry *routingTableEntry, RIPngRTE &rte, int sourceIntId, IPv6Address &sourceAddr);
-
     void                            removeAllRoutingTableEntries();
 
+    //-- RIPNG INTERFACES METHODS
     unsigned long            getEnabledInterfacesCount() const  { return enabledInterfaces.size(); }
     RIPng::Interface*        getEnabledInterface(unsigned long i)  { return enabledInterfaces[i]; }
     const RIPng::Interface*  getEnabledInterface(unsigned long i) const  { return enabledInterfaces[i]; }
-    int                      getEnabledInterfaceIndexById(int id)
-    {
-        int i = 0, size = getEnabledInterfacesCount();
-        while (i < size && getEnabledInterface(i)->getId() != id) i++;
-        return i == size ? -1 : i;
-    }
-    void                     addEnabledInterface(RIPng::Interface *interface)
-    {
-        enabledInterfaces.push_back(interface);
-        sockets.push_back(createAndSetSocketForInt(interface));
-        if (sockets.size() == 1)
-        // one socket has to receive RIPng multicast data
-            sockets[0]->joinMulticastGroup(RIPngAddress, -1);
-    }
-    void                    removeEnabledInterface(unsigned long i)
-    {
-        delete enabledInterfaces[i];
-        enabledInterfaces.erase(enabledInterfaces.begin() + i);
-        delete sockets[i];
-        sockets.erase(sockets.begin() + i);
-    }
-    void                    removeAllEnabledInterfaces()
-    {
-        unsigned long intCount = getEnabledInterfacesCount();
-        for (unsigned long i = 0; i < intCount; ++i)
-        {
-            delete enabledInterfaces[i];
-            delete sockets[i];
-        }
-        sockets.clear();
-        enabledInterfaces.clear();
-    }
+    int                      getEnabledInterfaceIndexById(int id);
+    void                     addEnabledInterface(RIPng::Interface *interface);
+    void                     removeEnabledInterface(unsigned long i);
+    void                     removeAllEnabledInterfaces();
 
   public:
     void showRoutingTable();
@@ -180,22 +132,7 @@ class RIPngRouting : public cSimpleModule, protected INotifiable
      */
     UDPSocket *createAndSetSocketForInt(RIPng::Interface* interface);
 
-    /**
-     * Loads the configuration of the RIPng process from the config XML.
-     * @param config [in] The path of the XML config file.
-     * @return True if the configuration was succesfully loaded.
-     */
-    bool loadConfigFromXML(const char *configFileName);
-
-    /**
-     * Get the RIPng status of the interface.
-     * @param interface [in].
-     * @return "enable" if RIPng is enabled on the interface, otherwise "disable".
-     */
-    const char *getInterfaceRIPngStatus(cXMLElement *interface);
-    const char *getRIPngInterfacePassiveStatus(cXMLElement *interface);
-    const char *getRIPngInterfaceSplitHorizon(cXMLElement *interface);
-
+  public:
     /**
      * Enables RIPng on the interface (creates new RIPng::Interface and adds it to the "RIPng interface table").
      * @param interfaceName [in] The interface name on which to enable RIPng.
@@ -204,13 +141,24 @@ class RIPngRouting : public cSimpleModule, protected INotifiable
     RIPng::Interface *enableRIPngOnInterface(const char *interfaceName);
     void setInterfacePassiveStatus(RIPng::Interface *RIPngInterface, bool status);
     void setInterfaceSplitHorizon(RIPng::Interface *RIPngInterface, bool status);
+    void setInterfacePoisonReverse(RIPng::Interface *RIPngInterface, bool status);
+
+  protected:
+    /**
+     *  Adds RIPng Routing Table Entry to the "global outing table", setting the new route.
+     *  The function also checks if the route exists and if so, the administrative
+     *  distances are compared.
+     *  @param entry [in] Routing Table Entry
+     */
+    void addRoutingTableEntryToGlobalRT(RIPng::RoutingTableEntry* entry);
 
     /**
-     * Adds unicast prefixes obtained from the interface configuration to the RIPng routing table
-     * @param interface [in] interface, from which should be added prefixes
-     * @see InterfaceTable
+     * Removes RIPng Routing Table Entry from the "global routing table".
+     * Before removing the function checks if the RIPng route exists in the "global routing table"
+     * (because another routing protocol could add the same route with lower AD).
+     * @param entry [in] Routing Table Entry
      */
-    void addPrefixesFromInterfaceToRT(cXMLElement *interface);
+    void removeRoutingTableEntryFromGlobalRT(RIPng::RoutingTableEntry* entry);
 
     //-- OUTPUT PROCESSING
     /**
@@ -264,21 +212,11 @@ class RIPngRouting : public cSimpleModule, protected INotifiable
      * Fills in the RIPngRTE vector with Routing Table Entries from the RIPng routing table
      * this method is used for creating RIPng (update) messages
      * @param rtes [out] vector to be filled in
-     * @param interfaceId [in] if this parameter is not -1, then SPLIT HORIZON is applied
-     *                         "with use of this interface"
+     * @param interfaceId [in] if this parameter is not NULL, then split horizon (with poison reverse) is used based on the interface parameters
+     *                         otherwise all RTEs are included
+     * @param onlyChanged [in] if this parameter is true, then only routes with routeChangeFlag are included
      */
-    void getRTEs(std::vector<RIPngRTE> &rtes, int interfaceId);
-
-    /**
-     * Fills in the RIPngRTE vector with Routing Table Entries which have changed
-     * (have changeFlag set) from the RIPng routing table.
-     * this method is used for creating RIPng triggered update messages
-     * @param rtes [out] vector to be filled in
-     * @param interfaceId [in] if this parameter is not -1, then SPLIT HORIZON is applied
-     *                         "with use of this interface"
-     * @see getRTEs()
-     */
-    void getChangedRTEs(std::vector<RIPngRTE> &rtes, int interfaceId);
+    void getRTEs(std::vector<RIPngRTE> &rtes, RIPng::Interface *interface, bool onlyChanged = false);
 
     /**
      *  Creates and returns new RTE base on the routingTableEntry
@@ -286,22 +224,6 @@ class RIPngRouting : public cSimpleModule, protected INotifiable
      *  @return created RIPngRTE object
      */
     RIPngRTE makeRTEFromRoutingTableEntry(RIPng::RoutingTableEntry *routingTableEntry);
-
-    /**
-     *  Adds RIPng Routing Table Entry to the "global outing table", setting the new route.
-     *  The function also checks if the route exists and if so, the administrative
-     *  distances are compared.
-     *  @param entry [in] Routing Table Entry
-     */
-    void addRoutingTableEntryToGlobalRT(RIPng::RoutingTableEntry* entry);
-
-    /**
-     * Removes RIPng Routing Table Entry from the "global routing table".
-     * Before removing the function checks if the RIPng route exists in the "global routing table"
-     * (because another routing protocol could add the same route with lower AD).
-     * @param entry [in] Routing Table Entry
-     */
-    void removeRoutingTableEntryFromGlobalRT(RIPng::RoutingTableEntry* entry);
 
     //-- INPUT PROCESSING
     /**
@@ -314,9 +236,11 @@ class RIPngRouting : public cSimpleModule, protected INotifiable
     /**
      * Handle a RIPng response message
      * @param response [in] a response to process
+     * @param srcInd [in] interface ID on which the response was received
+     * @param srcAddr [in] source address of the response
      * @see processMessage()
      */
-    void handleResponse(RIPngMessage *response);
+    void handleResponse(RIPngMessage *response, int srcInt, IPv6Address &srcAddr);
 
     /**
      *  Checks for response message validity as is described in RFC 2080
@@ -353,9 +277,13 @@ class RIPngRouting : public cSimpleModule, protected INotifiable
     /**
      * Handle a RIPng request message
      * @param response [in] a request to process
+     * @param srcPort [in] source port of the request
+     * @param srcAddr [in] source address of the request
+     * @param destAddr [in] destination address of the request
+     * @param ripngIntInd [in] ripng interface index of the interface on which the request was received
      * @see processMessage()
      */
-    void handleRequest(RIPngMessage *request);
+    void handleRequest(RIPngMessage *request, int srcPort, IPv6Address &srcAddr, IPv6Address &destAddr, unsigned long ripngIntInd);
 
     //-- TIMEOUTS
     /**
@@ -409,17 +337,17 @@ class RIPngRouting : public cSimpleModule, protected INotifiable
     void handleTriggeredUpdateTimer();
 
     /**
+     *  Starts Route Deletion Process for the route with the given timer (called when the RTE timer expires).
+     *  @param timer [in] Route Deletion Process will be started for the route with this timer
+     */
+    void startRouteDeletionProcess(RIPngTimer *timer);
+
+    /**
      *  Starts Route Deletion Process for the route.
      *  This method do not stop route timer!
      *  @param timer [in] Route Deletion Process will be started for this route.
      */
     void startRouteDeletionProcess(RIPng::RoutingTableEntry *routingTableEntry);
-
-    /**
-     *  Starts Route Deletion Process for the route with the given timer (called when the RTE timer expires).
-     *  @param timer [in] Route Deletion Process will be started for the route with this timer
-     */
-    void startRouteDeletionProcess(RIPngTimer *timer);
 
     /**
      *  Deletes route from RIPng routing table, called when the RTE GCTimer expires.

@@ -41,6 +41,14 @@ class xmlParser {
       static cXMLElement * GetIsisRouting(cXMLElement * device);
       static bool Str2Int(int *retValue, const char *str);
       static bool Str2Bool(bool *ret, const char *str);
+
+      static const char *getNodeParamConfig(cXMLElement *node, const char *paramName, const char *defaultValue);
+
+      // configuration for RIPng
+      static const char *getInterfaceRIPngStatus(cXMLElement *iface);
+      static const char *getRIPngInterfacePassiveStatus(cXMLElement *iface);
+      static const char *getRIPngInterfaceSplitHorizon(cXMLElement *iface);
+      static const char *getRIPngInterfacePoisonReverse(cXMLElement *iface);
 };
 
 #endif /* XMLPARSER_H_ */

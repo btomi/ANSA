@@ -225,3 +225,43 @@ cXMLElement * xmlParser::GetIsisRouting(cXMLElement * device)
     cXMLElement * isis = routing->getFirstChildWithTag("ISIS");
     return isis;
 }
+
+const char *xmlParser::getNodeParamConfig(cXMLElement *node, const char *paramName, const char *defaultValue)
+{
+    ASSERT(node != NULL);
+
+    cXMLElement* paramElem = node->getElementByPath(paramName);
+    if (paramElem == NULL)
+        return defaultValue;
+
+    const char *paramValue = paramElem->getNodeValue();
+    if (paramValue == NULL)
+        return defaultValue;
+
+    return paramValue;
+}
+
+//
+//
+//- configuration for RIPng
+//
+//
+const char *xmlParser::getInterfaceRIPngStatus(cXMLElement *iface)
+{
+    return getNodeParamConfig(iface, "RIPngInterfaceStatus", "disable");
+}
+
+const char *xmlParser::getRIPngInterfacePassiveStatus(cXMLElement *iface)
+{
+    return getNodeParamConfig(iface, "RIPngPassiveInterface", "disable");
+}
+
+const char *xmlParser::getRIPngInterfaceSplitHorizon(cXMLElement *iface)
+{
+    return getNodeParamConfig(iface, "RIPngSplitHorizon", "enable");
+}
+
+const char *xmlParser::getRIPngInterfacePoisonReverse(cXMLElement *iface)
+{
+    return getNodeParamConfig(iface, "RIPngPoisonReverse", "disable");
+}

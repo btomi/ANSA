@@ -13,14 +13,14 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 //
 
-package inet.ansa.ripng;
+package inet.ansa.applications.ripng;
 
 import inet.ansa.InterfaceStateManager.InterfaceStateManager;
-import inet.ansa.ripng.RIPngRouting;
+import inet.ansa.applications.ripng.RIPngRouting;
 import inet.ansa.deviceConfigurator.DeviceConfigurator;
 import inet.nodes.ipv6.NetworkLayer6;
 import inet.networklayer.common.InterfaceTable;
-import inet.networklayer.ipv6.RoutingTable6;
+import inet.ansa.networklayer.ipv6.ANSARoutingTable6;
 import inet.base.NotificationBoard;
 import inet.transport.udp.UDP;
 import inet.linklayer.ethernet.EthernetInterface;
@@ -47,6 +47,10 @@ module RIPngRouter
             deviceId = deviceId;
             deviceType = "Router";
             configFile = configFile;
+        }
+        
+        interfaceStateManager: InterfaceStateManager {
+            @display("p=53,188");
         }
 
         notificationBoard: NotificationBoard {
@@ -77,7 +81,7 @@ module RIPngRouter
                 @display("p=204,240;q=queue");
         }
 
-        routingTable6: RoutingTable6 {
+        routingTable6: ANSARoutingTable6 {
             parameters:
                 @display("p=290,38");
                 isRouter = IPForward;
@@ -100,9 +104,6 @@ module RIPngRouter
                 @display("p=290,317,row,90;q=txQueue");
         }
 
-        interfaceStateManager: InterfaceStateManager {
-            @display("p=53,240");
-        }
     connections allowunconnected:
         RIPng.udpOut --> udp.appIn[0];
         RIPng.udpIn <-- udp.appOut[0];

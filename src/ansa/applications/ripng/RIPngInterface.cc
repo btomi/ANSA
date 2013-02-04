@@ -23,6 +23,7 @@ Interface::Interface(int intId) :
 {
     disablePassive();
     enableSplitHorizon();
+    disablePoisonReverse();
 }
 
 Interface::~Interface()

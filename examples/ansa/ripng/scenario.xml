@@ -1,9 +1,19 @@
 <?xml version="1.0"?>
 <scenario>
-	<at t="0"> <!--  R1-R3 down  -->
-		<interfacedown module="router1.interfaceStateManager" int="eth3"/>
-	</at>
-	<at t="500"> <!--  R1-R3 up  -->
-		<interfaceup module="router1.interfaceStateManager" int="eth3"/>
-	</at>
+  <at t="20">
+    <disconnect src-module="router1" src-gate="ethg[3]"/>
+  </at>
+  <at t="370">
+    <connect src-module="router1" src-gate="ethg[3]" 
+             dest-module="router3" dest-gate="ethg[0]"
+             channel-type="inet.nodes.ethernet.Eth100M"/>
+  </at>
+  <!--
+  <at t="20">
+    <interfacedown module="router1.interfaceStateManager" int="eth3"/>
+  </at>
+  <at t="370">
+    <interfaceup module="router1.interfaceStateManager" int="eth3"/>
+  </at>
+  -->
 </scenario>

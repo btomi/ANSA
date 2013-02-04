@@ -21,24 +21,26 @@ namespace RIPng
 {
 
 RoutingTableEntry::RoutingTableEntry(IPv6Address destPrefix, int length) :
-    IPv6Route(destPrefix, length, IPv6Route::ROUTING_PROT),
-    changeFlag(false),
-    routeTag(0)
+    ANSAIPv6Route(destPrefix, length, IPv6Route::ROUTING_PROT),
+    _changeFlag(false),
+    _routeTag(0)
 {
     setTimer(NULL);
     setGCTimer(NULL);
+    setCopy(NULL);
 }
 
-RoutingTableEntry::RoutingTableEntry(const RoutingTableEntry& entry) :
-    IPv6Route(entry.getDestPrefix(), entry.getPrefixLength(), IPv6Route::ROUTING_PROT),
-    changeFlag(false),
-    routeTag(0)
+RoutingTableEntry::RoutingTableEntry(RoutingTableEntry& entry) :
+    ANSAIPv6Route(entry.getDestPrefix(), entry.getPrefixLength(), IPv6Route::ROUTING_PROT),
+    _changeFlag(false),
+    _routeTag(0)
 {
     setTimer(NULL);
     setGCTimer(NULL);
     setNextHop(entry.getNextHop());
     setInterfaceId(entry.getInterfaceId());
     setMetric(entry.getMetric());
+    setCopy(&entry);
 }
 
 RoutingTableEntry::~RoutingTableEntry()

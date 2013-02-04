@@ -13,7 +13,7 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package inet.ansa.ripng;
+package inet.ansa.applications.ripng;
 
 //
 // RIPng routing module
@@ -27,6 +27,8 @@ simple RIPngRouting
         int routeTimeout @unit(s) = default(180s);                   // The Route Timer len. in sec.
         int routeGarbageCollectionTimeout @unit(s) = default(120s);  // The Route Garbage-Collection Timer len. in sec.
         int regularUpdateInterval @unit(s) = default(30s);           // Regulal Update Timer len. in sec.
+        
+        int adminDist = default(120);  // Cisco-like administrative distance
         
         int connectedNetworkMetric = default(1);           // default metric (RIPng) for the connected network
         int infinityMetric = default(16);                  // RIPng metric for infinity (unavaible network) 

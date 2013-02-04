@@ -29,6 +29,7 @@ class Interface
     int id;                     ///< id of the interface as is in interfaceTable
     bool bPassive;              ///< if interface is passive
     bool bSplitHorizon;         ///< if split horizon is enabled on this interface
+    bool bPoisonReverse;        ///< if poison reverse is enabled on this interface
 
   public:
     void enablePassive()   { bPassive = true; }
@@ -38,6 +39,10 @@ class Interface
     void enableSplitHorizon()  { bSplitHorizon = true; }
     void disableSplitHorizon()  { bSplitHorizon = false; }
     bool isSplitHorizon()   { return bSplitHorizon; }
+
+    void enablePoisonReverse()  { bPoisonReverse = true; }
+    void disablePoisonReverse()  { bPoisonReverse = false; }
+    bool isPoisonReverse()   { return bPoisonReverse; }
 
     int getId() { return id; }
 };

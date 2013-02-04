@@ -16,7 +16,7 @@
 #ifndef ROUTINGTABLEENTRY_H_
 #define ROUTINGTABLEENTRY_H_
 
-#include "RoutingTable6.h"
+#include "ANSARoutingTable6.h"
 
 #include "RIPngTimer_m.h"
 
@@ -26,31 +26,34 @@ namespace RIPng
 /**
  *  Just extends IPv6 route for RIPng.
  */
-class RoutingTableEntry : public IPv6Route
+class RoutingTableEntry : public ANSAIPv6Route
 {
   public:
     RoutingTableEntry(IPv6Address destPrefix, int length);
-    RoutingTableEntry(const RoutingTableEntry& entry);
+    RoutingTableEntry(RoutingTableEntry& entry);
     virtual ~RoutingTableEntry();
 
   protected:
-    RIPngTimer *timeout;          ///< Pointer for the Route timeout timer
-    RIPngTimer *GCTimeout;        ///< Pointer for the Route Garbage-Collection Timer
-    bool changeFlag;              ///< The Route Changed Flag
-    unsigned short int routeTag;  ///< The Route routeTag
+    RIPngTimer *_timeout;          ///< Pointer for the Route timeout timer
+    RIPngTimer *_GCTimeout;        ///< Pointer for the Route Garbage-Collection Timer
+    bool _changeFlag;              ///< The Route Changed Flag
+    unsigned short int _routeTag;  ///< The Route routeTag
+    RoutingTableEntry *_copy;      ///< If this RTE is stored in the "RIPng routing table", this is reference to the RTE in the "global routing table" and vice versa
 
   public:
-    bool isChangeFlagSet() { return changeFlag; }
-    void setChangeFlag() { changeFlag = true; }
-    void clearChangeFlag() { changeFlag = false; }
+    bool isChangeFlagSet() { return _changeFlag; }
+    void setChangeFlag() { _changeFlag = true; }
+    void clearChangeFlag() { _changeFlag = false; }
 
-    RIPngTimer  *getTimer() { return timeout; }
-    RIPngTimer  *getGCTimer() { return GCTimeout; }
-    unsigned short int getRouteTag() { return routeTag; }
+    RIPngTimer *getTimer() { return _timeout; }
+    RIPngTimer *getGCTimer() { return _GCTimeout; }
+    unsigned short int getRouteTag() { return _routeTag; }
+    RoutingTableEntry *getCopy() { return _copy; }
 
-    void              setTimer(RIPngTimer *t) { timeout = t; }
-    void              setGCTimer(RIPngTimer *t) { GCTimeout = t; }
-    void              setRouteTag(unsigned short int tag) { routeTag = tag;}
+    void setTimer(RIPngTimer *t) { _timeout = t; }
+    void setGCTimer(RIPngTimer *t) { _GCTimeout = t; }
+    void setRouteTag(unsigned short int tag) { _routeTag = tag;}
+    void setCopy(RoutingTableEntry *copy) { _copy = copy; }
 };
 
 } /* namespace RIPng */
