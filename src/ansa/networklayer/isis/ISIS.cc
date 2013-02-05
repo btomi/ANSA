@@ -8383,7 +8383,7 @@ void ISIS::moveToTent(ISISCons_t *initial, unsigned char *from, uint32_t metric,
                tmpPath->to = new unsigned char[ISIS_SYSTEM_ID + 2];
                this->copyArrayContent((*it)->to, tmpPath->to, ISIS_SYSTEM_ID + 2, 0, 0);
                tmpPath->metric = (*it)->metric + metric;
-               cout << "patha metric: " << tmpPath->metric << endl;
+//               cout << "patha metric: " << tmpPath->metric << endl;
 
                ISISNeighbour *neighbour = new ISISNeighbour;
 
@@ -8499,7 +8499,7 @@ bool ISIS::extractISO(ISISCons_t *initial, short circuitType){
                     this->copyArrayContent(tmpTLV->value, connection->to, ISIS_SYSTEM_ID +1, i + 4, 0);
                     connection->to[ISIS_SYSTEM_ID + 1] = 0;
                     connection->metric = tmpTLV->value[i];//default metric
-                    cout << "connection metric : " << connection->metric << endl;
+//                    cout << "connection metric : " << connection->metric << endl;
                     connection->type = false;//it's not a leaf
 
 
