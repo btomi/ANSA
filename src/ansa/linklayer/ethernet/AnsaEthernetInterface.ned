@@ -38,8 +38,8 @@ module AnsaEthernetInterface like IWiredNic
         string queueType = default("DropTailQueue");
         @display("i=block/ifcard");
     gates:
-        input netwIn;
-        output netwOut;
+        input upperLayerIn;
+        output upperLayerOut;
         inout phys;
     submodules:
         queue: <queueType> like IOutputQueue {
@@ -57,9 +57,9 @@ module AnsaEthernetInterface like IWiredNic
                 @display("p=116,151");
         }
     connections:
-        netwIn --> queue.in;
+        upperLayerIn --> queue.in;
         queue.out --> encap.upperLayerIn;
-        netwOut <-- { @display("m=n"); } <-- encap.upperLayerOut;
+        upperLayerOut <-- { @display("m=n"); } <-- encap.upperLayerOut;
         encap.lowerLayerOut --> mac.upperLayerIn;
         encap.lowerLayerIn <-- mac.upperLayerOut;
         mac.phys <--> phys;
