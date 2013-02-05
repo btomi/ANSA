@@ -89,6 +89,44 @@ void DeviceConfigurator::initialize(int stage){
          loadDefaultRouter(gateway);
       }
    }
+   else if(stage == 3)
+     {
+         // get access to device node from XML
+         const char *deviceType = par("deviceType");
+         const char *deviceId = par("deviceId");
+         const char *configFile = par("configFile");
+         cXMLElement *device = NULL;
+
+         device = xmlParser::GetDevice(deviceType, deviceId, configFile);
+         if (device == NULL){
+            ev << "No configuration found for this device (" << deviceType << " id=" << deviceId << ")" << endl;
+            return;
+         }
+
+         if (isMulticastEnabled(device))
+         {
+             // get PIM interface table of this device
+             pimIft = PimInterfaceTableAccess().get();
+             if (pimIft == NULL){
+                 throw cRuntimeError("PimInterfaces not found");
+             }
+
+             // is multicast routing enabled on the device?
+             if (!isMulticastEnabled(device))
+             {
+                 EV<< "Multicast routing is not enable for this device (" << deviceType << " id=" << deviceId << ")" << endl;
+             }
+             else
+             {
+                 // fill pim interfaces table from config file
+                 cXMLElement *iface = xmlParser::GetInterface(NULL, device);
+                 if (iface != NULL)
+                     loadPimInterfaceConfig(iface);
+                 else
+                     EV<< "No PIM interface is configured for this device (" << deviceType << " id=" << deviceId << ")" << endl;
+             }
+         }
+     }
 }
 
 
@@ -421,4 +459,94 @@ void DeviceConfigurator::loadPrefixesFromInterfaceToRIPngRT(RIPngRouting *RIPngM
 
             eIpv6address = xmlParser::GetIPv6Address(eIpv6address, NULL);
         }
+}
+
+bool DeviceConfigurator::isMulticastEnabled(cXMLElement *device)
+{
+    // Routing element
+    cXMLElement* routingNode = device->getElementByPath("Routing");
+    if (routingNode == NULL)
+         return false;
+
+    // Multicast element
+    cXMLElement* multicastNode = routingNode->getElementByPath("Multicast");
+    if (multicastNode == NULL)
+       return false;
+
+
+    // Multicast has to be enabled
+    const char* enableAtt = multicastNode->getAttribute("enable");
+    if (strcmp(enableAtt, "1"))
+        return false;
+
+    return true;
+}
+
+void DeviceConfigurator::loadPimInterfaceConfig(cXMLElement *iface)
+{
+    // for each interface node
+    while (iface != NULL)
+    {
+        // get PIM node
+        cXMLElement* pimNode = iface->getElementByPath("Pim");
+        if (pimNode == NULL)
+          continue;
+
+        // create new PIM interface
+        PimInterface newentry;
+        InterfaceEntry *interface = ift->getInterfaceByName(iface->getAttribute("name"));
+        newentry.setInterfaceID(interface->getInterfaceId());
+        newentry.setInterfacePtr(interface);
+
+        // get PIM mode for interface
+        cXMLElement* pimMode = pimNode->getElementByPath("Mode");
+        if (pimMode == NULL)
+          continue;
+
+        const char *mode = pimMode->getNodeValue();
+        //EV << "PimSplitter::PIM interface mode = "<< mode << endl;
+        if (!strcmp(mode, "dense-mode"))
+          newentry.setMode(Dense);
+        else if (!strcmp(mode, "sparse-mode"))
+          newentry.setMode(Sparse);
+        else
+          continue;
+
+        // get PIM mode for interface
+        cXMLElement* stateRefreshMode = pimNode->getElementByPath("StateRefresh");
+        if (stateRefreshMode != NULL)
+        {
+            EV << "Nasel State Refresh" << endl;
+            // will router send state refresh msgs?
+            cXMLElement* origMode = stateRefreshMode->getElementByPath("OriginationInterval");
+            if (origMode != NULL)
+            {
+                EV << "Nasel Orig" << endl;
+                newentry.setSR(true);
+            }
+        }
+
+        // register pim multicast address 224.0.0.13 (all PIM routers) on Pim interface
+        std::vector<IPv4Address> intMulticastAddresses;
+
+        cXMLElement* IPaddress = iface->getElementByPath("IPAddress");                  //Register 226.1.1.1 to R2 router
+        std::string intfToRegister = IPaddress->getNodeValue();
+        if (intfToRegister == "192.168.12.2" || intfToRegister == "192.168.22.2")
+            interface->ipv4Data()->addMulticastListener(IPv4Address("226.1.1.1"));
+
+        interface->ipv4Data()->addMulticastListener(IPv4Address("224.0.0.13"));
+        intMulticastAddresses = interface->ipv4Data()->getReportedMulticastGroups();
+
+        for(int i = 0; i < (intMulticastAddresses.size()); i++)
+            EV << intMulticastAddresses[i] << ", ";
+        EV << endl;
+
+        newentry.setIntMulticastAddresses(newentry.deleteLocalIPs(intMulticastAddresses));
+
+        // add new entry to pim interfaces table
+        pimIft->addInterface(newentry);
+
+        // get next interface
+        iface = xmlParser::GetInterface(iface, NULL);
+    }
 }

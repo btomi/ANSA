@@ -24,6 +24,9 @@
 #include "RoutingTable6Access.h"
 #include "InterfaceTableAccess.h"
 #include "InterfaceTableAccess.h"
+#include "AnsaRoutingTableAccess.h"
+#include "PimInterfaceTable.h"
+#include "IPv4InterfaceData.h"
 
 #include "RIPngRouting.h"
 
@@ -33,6 +36,8 @@ class DeviceConfigurator : public cSimpleModule {
    protected:
       IInterfaceTable *ift;
       RoutingTable6 *rt6;
+      AnsaRoutingTable *rt;
+      PimInterfaceTable *pimIft;        /**< Link to table of PIM interfaces. */
 
    private:
       void loadDefaultRouter(cXMLElement *gateway);
@@ -43,6 +48,11 @@ class DeviceConfigurator : public cSimpleModule {
       virtual int numInitStages() const {return 4;}
       virtual void initialize(int stage);
       virtual void handleMessage(cMessage *msg);
+
+   protected:
+      //configuration for PIM
+      bool isMulticastEnabled(cXMLElement *device);
+      void loadPimInterfaceConfig(cXMLElement *iface);
 
    public:
       // configuration for RIPng
