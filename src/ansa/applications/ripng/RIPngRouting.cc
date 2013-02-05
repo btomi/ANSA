@@ -1,3 +1,4 @@
+// Copyright (C) 2013 Brno University of Technology (http://nes.fit.vutbr.cz/ansa)
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -12,6 +13,10 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
+// @file RIPngRouting.cc
+// @author Jiri Trhlik (mailto:), Vladimir Vesely (mailto:ivesely@fit.vutbr.cz)
+// @brief
+// @detail
 
 #include "RIPngRouting.h"
 
@@ -592,7 +597,7 @@ void RIPngRouting::handleResponse(RIPngMessage *response, int srcInt, IPv6Addres
 {
     if (!checkMessageValidity(response))
         return;
-
+    EV << "RIPng message: RIPng - Response" << endl;
     processRTEs(response, srcInt, srcAddr);
 }
 
@@ -634,6 +639,7 @@ void RIPngRouting::processRTEs(RIPngMessage *response, int sourceIntId, IPv6Addr
     {
         rte = response->getRtes(i);
         processRTE(rte, sourceIntId, sourceAddr);
+        EV << "RTE [" << i << "]: " << rte.getIPv6Prefix() << "/" << int(rte.getPrefixLen()) << endl;
     }
 
     if (bSendTriggeredUpdateMessage)
@@ -707,6 +713,7 @@ void RIPngRouting::handleRequest(RIPngMessage *request, int srcPort, IPv6Address
 
     if (rteNum == 1)
     {// could be a request for all routes
+        EV << "RIPng message: RIPng - General Request" << endl;
         RIPngRTE &rte = request->getRtes(0);
         if (rte.getIPv6Prefix() == IPv6Address::UNSPECIFIED_ADDRESS &&
             rte.getPrefixLen() == 0 &&
@@ -719,11 +726,12 @@ void RIPngRouting::handleRequest(RIPngMessage *request, int srcPort, IPv6Address
     else
     {
         RIPng::RoutingTableEntry *routingTableEntry;
+        EV << "RIPng message: RIPng - Request" << endl;
         for (unsigned int i = 0; i < rteNum; i++)
         {
             RIPngRTE rte = request->getRtes(i);
             routingTableEntry = getRoutingTableEntry(rte.getIPv6Prefix(), rte.getPrefixLen());
-
+            EV << "RTE [" << i << "]: " << rte.getIPv6Prefix() << "/" << int(rte.getPrefixLen()) << endl;
             if (routingTableEntry != NULL)
             {// match for the requested rte
                 responseRtes.push_back(makeRTEFromRoutingTableEntry(routingTableEntry));
