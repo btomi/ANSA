@@ -70,12 +70,12 @@ network RIPngTestNetwork
         }
     connections:
         router1.ethg[0] <--> Eth100M <--> router2.ethg[0];
-        router1.ethg[1] <--> Eth100M <--> LAN1.ethg++;
-        router1.ethg[2] <--> Eth100M <--> LAN2.ethg++;
-        router2.ethg[1] <--> Eth100M <--> LAN3.ethg++;
-        router2.ethg[2] <--> Eth100M <--> LAN4.ethg++;
-        router1.ethg[3] <--> Eth100M <--> router3.ethg[0];
-        router3.ethg[1] <--> Eth100M <--> router2.ethg[3];
+        router1.ethg[1] <--> Eth100M <--> router3.ethg[0];
+        router1.ethg[2] <--> Eth100M <--> LAN1.ethg++;
+        router1.ethg[3] <--> Eth100M <--> LAN2.ethg++;
+        router2.ethg[2] <--> Eth100M <--> LAN3.ethg++;
+        router2.ethg[3] <--> Eth100M <--> LAN4.ethg++;
+        router3.ethg[1] <--> Eth100M <--> router2.ethg[1];
         router3.ethg[2] <--> Eth100M <--> LAN5.ethg++;
         router3.ethg[3] <--> Eth100M <--> LAN6.ethg++;
 }
