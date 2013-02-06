@@ -67,8 +67,7 @@ class RIPngRouting : public cSimpleModule, protected INotifiable
     RIPngTimer *triggeredUpdateTimer;
 
     // statistics
-    int numSent;
-    int numReceived;
+    int numRoutes;
 
     bool bSendTriggeredUpdateMessage;
     bool bBlockTriggeredUpdateMessage;

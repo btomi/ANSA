@@ -80,6 +80,8 @@ void RIPngRouting::addRoutingTableEntry(RIPng::RoutingTableEntry* entry, bool cr
 
     routingTable.push_back(entry);
     addRoutingTableEntryToGlobalRT(entry);
+
+    ++numRoutes;
 }
 void RIPngRouting::removeRoutingTableEntry(IPv6Address &prefix, int prefixLength)
 {
@@ -104,6 +106,8 @@ void RIPngRouting::removeRoutingTableEntry(RoutingTableIt it)
     // delete routing table entry
     delete (*it);
     routingTable.erase(it);
+
+    --numRoutes;
 }
 
 void RIPngRouting::removeAllRoutingTableEntries()
@@ -402,7 +406,7 @@ void RIPngRouting::sendTriggeredUpdateMessage()
 void RIPngRouting::sendDelayedTriggeredUpdateMessage()
 {
     // we are using delayed triggered update message because if one route went down,
-    // more than one route (with the next hop using that unavailable route) timeout can expire in the same time -
+    // more than one route (with the next hop using that unavailable route) TIMEOUT can EXPIRE in the same time -
     // this way we prevent to send multiple triggered update messages containing just one route update
     // for this we can use triggered update timer
 
@@ -451,8 +455,6 @@ void RIPngRouting::sendMessage(RIPngMessage *msg, IPv6Address &addr, int port, u
     {
         sockets[enabledInterfaceIndex]->sendTo(msg, addr, port, outInterface);
     }
-
-    numSent++;
 }
 
 void RIPngRouting::sendAllRoutesRequest()
@@ -585,8 +587,6 @@ void RIPngRouting::handleMessage(RIPngMessage *msg)
     }
 
     delete msg;
-
-    numReceived++;
 }
 
 //
@@ -841,6 +841,7 @@ void RIPngRouting::handleRegularUpdateTimer()
      // send regular update message
     sendRegularUpdateMessage();
     // plan next regular update
+    // TODO: nemel by tady byt nejaky nahodny interval?
     resetTimer(regularUpdateTimer, regularUpdateTimeout);
 }
 
@@ -916,10 +917,8 @@ void RIPngRouting::initialize(int stage)
     nb->subscribe(this, NF_INTERFACE_STATE_CHANGED);
     nb->subscribe(this, NF_IPv6_ROUTE_DELETED);
 
-    numSent = 0;
-    numReceived = 0;
-    WATCH(numSent);
-    WATCH(numReceived);
+    numRoutes = 0;
+    WATCH(numRoutes);
 
     const char *RIPngAddressString = par("RIPngAddress");
     RIPngAddress = IPv6Address(RIPngAddressString);
@@ -975,7 +974,7 @@ void RIPngRouting::handleMessage(cMessage *msg)
     if (ev.isGUI())
     {
         char buf[40];
-        sprintf(buf, "rcvd: %d pks\nsent: %d pks", numReceived, numSent);
+        sprintf(buf, "%d routes", numRoutes);
         getDisplayString().setTagArg("t", 0, buf);
     }
 }
@@ -989,7 +988,7 @@ void RIPngRouting::receiveChangeNotification(int category, const cObject *detail
    Enter_Method_Silent();
    printNotificationBanner(category, details);
 
-   /*if (category == NF_INTERFACE_STATE_CHANGED)
+   if (category == NF_INTERFACE_STATE_CHANGED)
    {
        InterfaceEntry *interfaceEntry = check_and_cast<InterfaceEntry*>(details);
        int interfaceEntryId = interfaceEntry->getInterfaceId();
@@ -1011,20 +1010,41 @@ void RIPngRouting::receiveChangeNotification(int category, const cObject *detail
                }
            }
 
+           bBlockTriggeredUpdateMessage = true;
+
            // delete associated routes from ripng routing table
            RoutingTableIt it;
-           for (it = routingTable.begin(); it != routingTable.end(); )
+           for (it = routingTable.begin(); it != routingTable.end(); ++it)
            {
-               if ((*it).second->getInterfaceId() == interfaceEntryId)
-                   removeRoutingTableEntry(it++);
-               else
-                   ++it;
+               if ((*it)->getInterfaceId() == interfaceEntryId)
+               {
+                   if ((*it)->getNextHop() == IPv6Address::UNSPECIFIED_ADDRESS)
+                   {// directly connected
+                       (*it)->setMetric(infinityMetric);
+                       (*it)->setChangeFlag();
+                       // directly connected routes have to remain in the RIPng routing table
+                       // if the interface will go up again
+                   }
+                   else
+                   {//act as route timeout just expired
+                       cancelTimer((*it)->getTimer());
+                       startRouteDeletionProcess((*it));
+                   }
+               }
            }
+
+           if (bSendTriggeredUpdateMessage)
+           {
+               sendTriggeredUpdateMessage();
+           }
+
+           bBlockTriggeredUpdateMessage = false;
        }
        // TODO:
        // an interface went up
        // new network on an interface
-   }*/
+
+   }
 
 
    if (category == NF_IPv6_ROUTE_DELETED)
