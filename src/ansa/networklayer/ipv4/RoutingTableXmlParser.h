@@ -1,20 +1,24 @@
+// Copyright (C) 2013 Brno University of Technology (http://nes.fit.vutbr.cz/ansa)
 //
-// Copyright (C) 2000 Institut fuer Telematik, Universitaet Karlsruhe
-// Copyright (C) 2004 Andras Varga
-//
-// This program is free software; you can redistribute it and/or
-// modify it under the terms of the GNU General Public License
-// as published by the Free Software Foundation; either version 2
-// of the License, or (at your option) any later version.
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
 //
 // This program is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
+// GNU Lesser General Public License for more details.
 //
-// You should have received a copy of the GNU General Public License
-// along with this program; if not, write to the Free Software
-// Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program.  If not, see http://www.gnu.org/licenses/.
+/**
+ * @file RoutingTableXmlParser.h
+ * @date 21.10.2011
+ * @author Tomas Prochazka (mailto:xproch21@stud.fit.vutbr.cz), Vladimir Vesely (mailto:ivesely@fit.vutbr.cz)
+ * @brief Routing table parser
+ * @details File contain methods for parsing xml with configuration
+ */
 
 
 #ifndef __INET_ROUTINGTABLEXMLPARSER_H
@@ -36,7 +40,7 @@ class INET_API RoutingTableXmlParser
     /**
      * Constructor
      */
-    RoutingTableXmlParser(IInterfaceTable *ift, IRoutingTable *rt);
+    RoutingTableXmlParser(IInterfaceTable *ift, AnsaRoutingTable *rt);
 
     /**
      * Read Routing Table file; return 0 on success, -1 on error
