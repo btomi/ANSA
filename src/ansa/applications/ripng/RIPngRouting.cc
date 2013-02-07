@@ -214,6 +214,7 @@ void RIPngRouting::removeEnabledInterface(unsigned long i)
 {
     delete enabledInterfaces[i];
     enabledInterfaces.erase(enabledInterfaces.begin() + i);
+    sockets[i]->close();
     delete sockets[i];
     sockets.erase(sockets.begin() + i);
 
@@ -227,6 +228,7 @@ void RIPngRouting::removeAllEnabledInterfaces()
     for (unsigned long i = 0; i < intCount; ++i)
     {
         delete enabledInterfaces[i];
+        sockets[i]->close();
         delete sockets[i];
     }
     sockets.clear();
@@ -391,7 +393,6 @@ void RIPngRouting::sendTriggeredUpdateMessage()
 
         RIPngMessage *msg = makeUpdateMessageForInterface(interface, true);
         if (msg != NULL)
-        // no rtes to send
             sendMessage(msg, RIPngAddress, RIPngPort, i, false);
     }
 
@@ -988,6 +989,8 @@ void RIPngRouting::receiveChangeNotification(int category, const cObject *detail
    Enter_Method_Silent();
    printNotificationBanner(category, details);
 
+   //TODO: upozorneni na spadnute rozhrani prijde vice nez jednou -> tato funkce se vola vicekrat ->
+   //na stejnou routu se vola startRouteDeletionProcess((*it)); vicekrat -> nekolik stejnych trigered updatu
    if (category == NF_INTERFACE_STATE_CHANGED)
    {
        InterfaceEntry *interfaceEntry = check_and_cast<InterfaceEntry*>(details);
@@ -1040,10 +1043,57 @@ void RIPngRouting::receiveChangeNotification(int category, const cObject *detail
 
            bBlockTriggeredUpdateMessage = false;
        }
-       // TODO:
-       // an interface went up
-       // new network on an interface
+       else if (!interfaceEntry->isDown())
+       {
+           // delete interface from ripng interfaces
+           bool alreadyEnabled = false;
+           int size = getEnabledInterfacesCount();
+           RIPng::Interface* ripngInterface;
 
+           for (int i = 0; i < size; i++)
+           {
+               ripngInterface = getEnabledInterface(i);
+               if (ripngInterface->getId() == interfaceEntryId)
+               {
+                   alreadyEnabled = true;
+                   break;
+               }
+           }
+
+           // TODO: stejna chyba s vicenasobnym upozornenim, viz vyse
+           // chyba pri bindu (bind na danou adresu a port uz existuje)
+           if (!alreadyEnabled)
+           {
+               // add interface to ripng interfaces
+               enableRIPngOnInterface(interfaceEntry->getName());
+
+               bBlockTriggeredUpdateMessage = true;
+
+               // delete associated routes from ripng routing table
+               RoutingTableIt it;
+               for (it = routingTable.begin(); it != routingTable.end(); ++it)
+               {
+                   if ((*it)->getInterfaceId() == interfaceEntryId)
+                   {
+                       if ((*it)->getNextHop() == IPv6Address::UNSPECIFIED_ADDRESS)
+                       {// "renew" directly connected
+                           (*it)->setMetric(connNetworkMetric);
+                           (*it)->setChangeFlag();
+                       }
+                   }
+               }
+
+               if (bSendTriggeredUpdateMessage)
+               {
+                   sendTriggeredUpdateMessage();
+               }
+
+               bBlockTriggeredUpdateMessage = false;
+           }
+       }
+       // TODO:
+       // new network on an interface
+       // deleted network on an interface
    }
 
 
