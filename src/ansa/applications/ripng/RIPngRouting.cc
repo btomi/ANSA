@@ -39,8 +39,26 @@ RIPngRouting::~RIPngRouting()
     deleteTimer(regularUpdateTimer);
     deleteTimer(triggeredUpdateTimer);
 
-    removeAllRoutingTableEntries();
-    removeAllEnabledInterfaces();
+    //removeAllRoutingTableEntries();
+    RIPng::RoutingTableEntry *routingTableEntry;
+    for (RoutingTableIt it = routingTable.begin(); it != routingTable.end(); it++)
+    {
+        routingTableEntry = (*it);
+        deleteTimer(routingTableEntry->getGCTimer());
+        deleteTimer(routingTableEntry->getTimer());
+        delete routingTableEntry;
+    }
+    routingTable.clear();
+
+    //removeAllEnabledInterfaces();
+    unsigned long intCount = getEnabledInterfacesCount();
+    for (unsigned long i = 0; i < intCount; ++i)
+    {
+        delete enabledInterfaces[i];
+        delete sockets[i];
+    }
+    sockets.clear();
+    enabledInterfaces.clear();
 }
 
 //
@@ -119,7 +137,7 @@ void RIPngRouting::removeAllRoutingTableEntries()
         routingTableEntry = (*it);
         deleteTimer(routingTableEntry->getGCTimer());
         deleteTimer(routingTableEntry->getTimer());
-        //removeRoutingTableEntryFromGlobalRT((*it));  //TODO: funkce se vola v destruktoru, pri konci simulace -> GlobalRT je smazany -> chyba!
+        removeRoutingTableEntryFromGlobalRT((*it));
         delete routingTableEntry;
     }
 
@@ -842,7 +860,6 @@ void RIPngRouting::handleRegularUpdateTimer()
      // send regular update message
     sendRegularUpdateMessage();
     // plan next regular update
-    // TODO: nemel by tady byt nejaky nahodny interval?
     resetTimer(regularUpdateTimer, regularUpdateTimeout);
 }
 
@@ -940,7 +957,6 @@ void RIPngRouting::initialize(int stage)
     DeviceConfigurator *devConf = ModuleAccess<DeviceConfigurator>("deviceConfigurator").get();
     devConf->loadRIPngConfig(this);
 
-    //TODO: socket test
     globalSocket.setOutputGate(gate("udpOut"));
     globalSocket.bind(RIPngPort);
     globalSocket.joinMulticastGroup(RIPngAddress, -1);
@@ -989,8 +1005,6 @@ void RIPngRouting::receiveChangeNotification(int category, const cObject *detail
    Enter_Method_Silent();
    printNotificationBanner(category, details);
 
-   //TODO: upozorneni na spadnute rozhrani prijde vice nez jednou -> tato funkce se vola vicekrat ->
-   //na stejnou routu se vola startRouteDeletionProcess((*it)); vicekrat -> nekolik stejnych trigered updatu
    if (category == NF_INTERFACE_STATE_CHANGED)
    {
        InterfaceEntry *interfaceEntry = check_and_cast<InterfaceEntry*>(details);
@@ -1002,46 +1016,51 @@ void RIPngRouting::receiveChangeNotification(int category, const cObject *detail
            // delete interface from ripng interfaces
            int size = getEnabledInterfacesCount();
            RIPng::Interface* ripngInterface;
+           bool alreadyDisabled = true;
 
            for (int i = 0; i < size; i++)
            {
                ripngInterface = getEnabledInterface(i);
                if (ripngInterface->getId() == interfaceEntryId)
                {
+                   alreadyDisabled = false;
                    removeEnabledInterface(i);
                    break;
                }
            }
 
-           bBlockTriggeredUpdateMessage = true;
-
-           // delete associated routes from ripng routing table
-           RoutingTableIt it;
-           for (it = routingTable.begin(); it != routingTable.end(); ++it)
+           if (!alreadyDisabled)
            {
-               if ((*it)->getInterfaceId() == interfaceEntryId)
+               bBlockTriggeredUpdateMessage = true;
+
+               // delete associated routes from ripng routing table
+               RoutingTableIt it;
+               for (it = routingTable.begin(); it != routingTable.end(); ++it)
                {
-                   if ((*it)->getNextHop() == IPv6Address::UNSPECIFIED_ADDRESS)
-                   {// directly connected
-                       (*it)->setMetric(infinityMetric);
-                       (*it)->setChangeFlag();
-                       // directly connected routes have to remain in the RIPng routing table
-                       // if the interface will go up again
-                   }
-                   else
-                   {//act as route timeout just expired
-                       cancelTimer((*it)->getTimer());
-                       startRouteDeletionProcess((*it));
+                   if ((*it)->getInterfaceId() == interfaceEntryId)
+                   {
+                       if ((*it)->getNextHop() == IPv6Address::UNSPECIFIED_ADDRESS)
+                       {// directly connected
+                           (*it)->setMetric(infinityMetric);
+                           (*it)->setChangeFlag();
+                           // directly connected routes have to remain in the RIPng routing table
+                           // if the interface will go up again
+                       }
+                       else
+                       {//act as route timeout just expired
+                           cancelTimer((*it)->getTimer());
+                           startRouteDeletionProcess((*it));
+                       }
                    }
                }
-           }
 
-           if (bSendTriggeredUpdateMessage)
-           {
-               sendTriggeredUpdateMessage();
-           }
+               if (bSendTriggeredUpdateMessage)
+               {
+                   sendTriggeredUpdateMessage();
+               }
 
-           bBlockTriggeredUpdateMessage = false;
+               bBlockTriggeredUpdateMessage = false;
+           }
        }
        else if (!interfaceEntry->isDown())
        {
@@ -1060,8 +1079,6 @@ void RIPngRouting::receiveChangeNotification(int category, const cObject *detail
                }
            }
 
-           // TODO: stejna chyba s vicenasobnym upozornenim, viz vyse
-           // chyba pri bindu (bind na danou adresu a port uz existuje)
            if (!alreadyEnabled)
            {
                // add interface to ripng interfaces
