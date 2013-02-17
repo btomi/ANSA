@@ -31,6 +31,7 @@ using namespace std;
  * the calling module can focus on extracting actual aplication-specific data.
  */
 class xmlParser {
+
    public:
       static cXMLElement * GetDevice(const char *deviceType, const char *deviceId, const char *configFile);
       static cXMLElement * GetInterface(cXMLElement *iface, cXMLElement *device);

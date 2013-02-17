@@ -56,6 +56,10 @@ network PIMFinalTest
         Host3: AnsaHost {
             @display("p=376,216");
         }
+//        scenarioManager: ScenarioManager {
+//            @display("p=376,26");
+//            script = xmldoc("scenario.xml");
+//        }
     connections allowunconnected:
         R1.ethg++ <--> Eth100M <--> R2.ethg++;
         R1.ethg++ <--> Eth100M <--> R3.ethg++;

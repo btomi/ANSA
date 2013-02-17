@@ -28,7 +28,7 @@ import inet.ansa.util.deviceConfigurator.DeviceConfigurator;
 import inet.ansa.nodes.inet.ansaNetworkLayer;
 import inet.networklayer.common.InterfaceTable;
 import inet.ansa.networklayer.ipv4.AnsaRoutingTable;
-import inet.networklayer.ipv6.RoutingTable6;
+//import inet.networklayer.ipv6.RoutingTable6;
 import inet.base.NotificationBoard;
 import inet.linklayer.ethernet.EthernetInterface;
 import inet.linklayer.ppp.PPPInterface;
@@ -83,7 +83,6 @@ module PIMRouter
                 @display("p=305,38");
                 IPForward = true;
                 routerId = deviceId;
-                //routingTable = routingTable;
                 configFile = configFile;
         }
 
@@ -106,11 +105,11 @@ module PIMRouter
         interfaceStateManager: InterfaceStateManager {
             @display("p=80,210");
         }
-        routingTable6: RoutingTable6 {
-            @display("p=304,110");
-            isRouter = IPForward;
-           	routingTable = routingTable;
-        }
+//        routingTable6: RoutingTable6 {
+//            @display("p=304,110");
+//            isRouter = IPForward;
+//           	routingTable = routingTable;
+//        }
     connections allowunconnected:
         PIM.networkLayerOut --> networkLayer.pimIn;
         PIM.networkLayerIn <-- networkLayer.pimOut;

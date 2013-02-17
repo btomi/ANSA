@@ -116,32 +116,32 @@ void AnsaRoutingTable::initialize(int stage)
         WATCH(IPForward);
         WATCH(routerId);
     }
-    else if (stage==1)
-    {
-        // L2 modules register themselves in stage 0, so we can only configure
-        // the interfaces in stage 1.
-        const char *filename = par("configFile");
-
-        // At this point, all L2 modules have registered themselves (added their
-        // interface entries). Create the per-interface IPv4 data structures.
-        IInterfaceTable *interfaceTable = InterfaceTableAccess().get();
-        for (int i=0; i<interfaceTable->getNumInterfaces(); ++i)
-            configureInterfaceForIPv4(interfaceTable->getInterface(i));
-
-
-        const char *routerIdStr = par("routerId").stringValue();
-
-        // read routing table file (and interface configuration)
-        RoutingTableXmlParser parser(ift, this);
-        if (*filename && !parser.readRoutingTableFromXml(filename, routerIdStr))
-            error("Error reading routing table file %s", filename);
-
-        // set routerId if param is not "" (==no routerId) or "auto" (in which case we'll
-        // do it later in stage 3, after network configurators configured the interfaces)
-
-        if (strcmp(routerIdStr, "") && strcmp(routerIdStr, "auto"))
-            routerId = IPv4Address(routerIdStr);
-    }
+//    else if (stage==1)
+//    {
+//        // L2 modules register themselves in stage 0, so we can only configure
+//        // the interfaces in stage 1.
+//        const char *filename = par("configFile");
+//
+//        // At this point, all L2 modules have registered themselves (added their
+//        // interface entries). Create the per-interface IPv4 data structures.
+//        IInterfaceTable *interfaceTable = InterfaceTableAccess().get();
+//        for (int i=0; i<interfaceTable->getNumInterfaces(); ++i)
+//            configureInterfaceForIPv4(interfaceTable->getInterface(i));
+//
+//
+//        const char *routerIdStr = par("routerId").stringValue();
+//
+//        // read routing table file (and interface configuration)
+//        RoutingTableXmlParser parser(ift, this);
+//        if (*filename && !parser.readRoutingTableFromXml(filename, routerIdStr))
+//            error("Error reading routing table file %s", filename);
+//
+//        // set routerId if param is not "" (==no routerId) or "auto" (in which case we'll
+//        // do it later in stage 3, after network configurators configured the interfaces)
+//
+//        if (strcmp(routerIdStr, "") && strcmp(routerIdStr, "auto"))
+//            routerId = IPv4Address(routerIdStr);
+//    }
     else if (stage==3)
     {
         // routerID selection must be after stage==2 when network autoconfiguration

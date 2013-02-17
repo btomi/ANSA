@@ -895,6 +895,7 @@ void pimDM::initialize(int stage)
 		nb->subscribe(this, NF_IPv4_DATA_ON_RPF);
 		//nb->subscribe(this, NF_IPv4_RPF_CHANGE);
 		nb->subscribe(this, NF_IPv4_ROUTE_ADDED);
+		nb->subscribe(this, NF_INTERFACE_STATE_CHANGED);
 	}
 }
 
@@ -927,6 +928,11 @@ void pimDM::receiveChangeNotification(int category, const cPolymorphic *details)
 	// according to category of event...
 	switch (category)
 	{
+	    case NF_INTERFACE_STATE_CHANGED:
+	        EV <<  "pimDM::INTERFACE CHANGE" << endl;
+	        setUpInterface();
+	        break;
+
 		// new multicast data appears in router
 		case NF_IPv4_NEW_MULTICAST_DENSE:
 			EV <<  "pimDM::receiveChangeNotification - NEW MULTICAST DENSE" << endl;
@@ -979,6 +985,28 @@ void pimDM::receiveChangeNotification(int category, const cPolymorphic *details)
 	}
 }
 
+//FIXME delete  - only for testing purposes
+void pimDM::setUpInterface()
+{
+    PimInterface *newentry;
+    static int counter = 0;
+
+    if (counter % 3 == 0)
+    {
+        for (int i=0; i<pimIft->getNumInterface();i++)
+        {
+            newentry = pimIft->getInterface(i);
+            if (newentry->getInterfaceID() == 101 || newentry->getInterfaceID() == 103)
+            {
+                if (newentry->isLocalIntMulticastAddress(IPv4Address("226.1.1.1")))
+                    newentry->removeIntMulticastAddress(IPv4Address("226.1.1.1"));
+                else
+                    newentry->addIntMulticastAddress(IPv4Address("226.1.1.1"));
+            }
+        }
+    }
+    counter ++;
+}
 
 /**
  * RPF INTERFACE CHANGE

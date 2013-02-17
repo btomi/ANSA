@@ -50,7 +50,6 @@ class pimDM : public cSimpleModule, protected INotifiable
 {
 	private:
 		AnsaRoutingTable           	*rt;           	/**< Pointer to routing table. */
-		//MulticastRoutingTable 		*mrt;			/**< Pointer to multicast routing table. */
 	    IInterfaceTable         	*ift;          	/**< Pointer to interface table. */
 	    NotificationBoard 			*nb; 		   	/**< Pointer to notification table. */
 	    PimInterfaceTable			*pimIft;		/**< Pointer to table of PIM interfaces. */
@@ -92,6 +91,8 @@ class pimDM : public cSimpleModule, protected INotifiable
 	    void sendPimGraft(IPv4Address nextHop, IPv4Address src, IPv4Address grp, int intId);
 	    void sendPimGraftAck(PIMGraftAck *msg);
 	    void sendPimStateRefresh(IPv4Address originator, IPv4Address src, IPv4Address grp, int intId, bool P);
+
+	    void setUpInterface();
 
 
 
