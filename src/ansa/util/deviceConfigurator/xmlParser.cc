@@ -265,3 +265,44 @@ const char *xmlParser::getRIPngInterfacePoisonReverse(cXMLElement *iface)
 {
     return getNodeParamConfig(iface, "RIPngPoisonReverse", "disable");
 }
+
+bool xmlParser::isMulticastEnabled(cXMLElement *device)
+{
+    // Routing element
+    cXMLElement* routingNode = device->getElementByPath("Routing");
+    if (routingNode == NULL)
+         return false;
+
+    // Multicast element
+    cXMLElement* multicastNode = routingNode->getElementByPath("Multicast");
+    if (multicastNode == NULL)
+       return false;
+
+
+    // Multicast has to be enabled
+    const char* enableAtt = multicastNode->getAttribute("enable");
+    if (strcmp(enableAtt, "1"))
+        return false;
+
+    return true;
+}
+
+cXMLElement * xmlParser::GetPimGlobal(cXMLElement * device)
+{
+    if(device == NULL)
+        return NULL;
+
+    cXMLElement *routing = device->getFirstChildWithTag("Routing");
+    if(routing == NULL)
+        return  NULL;
+
+    cXMLElement * multicast = routing->getFirstChildWithTag("Multicast");
+    if(multicast == NULL)
+        return  NULL;
+
+    cXMLElement * pimGlobal = multicast->getFirstChildWithTag("Pim");
+
+    return  pimGlobal;
+}
+
+

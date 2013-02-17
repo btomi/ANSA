@@ -20,7 +20,6 @@
  */
 
 #include "AnsaRoutingTable.h"
-#include "RoutingTableXmlParser.h"
 
 Define_Module(AnsaRoutingTable);
 

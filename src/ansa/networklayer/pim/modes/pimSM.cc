@@ -21,6 +21,7 @@
  */
 
 #include "pimSM.h"
+#include "deviceConfigurator.h"
 
 
 Define_Module(pimSM);
@@ -47,6 +48,129 @@ void pimSM::handleMessage(cMessage *msg)
 
 void pimSM::initialize(int stage)
 {
-	;
+    if (stage == 4)
+    {
+        // Pointer to routing tables, interface tables, notification board
+        rt = AnsaRoutingTableAccess().get();
+        ift = InterfaceTableAccess().get();
+        nb = NotificationBoardAccess().get();
+        pimIft = PimInterfaceTableAccess().get();
+        pimNbt = PimNeighborTableAccess().get();
+
+        // is PIM enabled?
+        if (pimIft->getNumInterface() == 0)
+        {
+            EV << "PIM is NOT enabled on device " << endl;
+            return;
+        }
+
+        // subscribe for notifications
+        nb->subscribe(this, NF_IPv4_NEW_MULTICAST_DENSE);
+        nb->subscribe(this, NF_IPv4_NEW_IGMP_ADDED);
+        nb->subscribe(this, NF_IPv4_NEW_IGMP_REMOVED);
+        nb->subscribe(this, NF_IPv4_DATA_ON_PRUNED_INT);
+        nb->subscribe(this, NF_IPv4_DATA_ON_NONRPF);
+        nb->subscribe(this, NF_IPv4_DATA_ON_RPF);
+        //nb->subscribe(this, NF_IPv4_RPF_CHANGE);
+        nb->subscribe(this, NF_IPv4_ROUTE_ADDED);
+        nb->subscribe(this, NF_INTERFACE_STATE_CHANGED);
+
+        DeviceConfigurator *devConf = ModuleAccess<DeviceConfigurator>("deviceConfigurator").get();
+        devConf->loadPimGlobalConfig(this);
+
+    }
 }
 
+void pimSM::setRPAddress(std::string address)
+{
+    if (address != "")
+        RPAddress.append(address);
+    else
+        EV << "PIMSM::setRPAddress: empty RP address" << endl;
+}
+
+/**
+ * RECEIVE CHANGE NOTIFICATION
+ *
+ * The method from class Notification Board is used to catch its events.
+ *
+ * @param category Category of notification.
+ * @param details Additional information for notification.
+ * @see newMulticast()
+ * @see newMulticastAddr()
+ */
+void pimSM::receiveChangeNotification(int category, const cPolymorphic *details)
+{
+    // ignore notifications during initialize
+    if (simulation.getContextType()==CTX_INITIALIZE)
+        return;
+
+    // PIM needs addition info for each notification
+    if (details == NULL)
+        return;
+
+    Enter_Method_Silent();
+    printNotificationBanner(category, details);
+//    IPv4ControlInfo *ctrl;
+//    AnsaIPv4MulticastRoute *route;
+//    addRemoveAddr *members;
+//
+//    // according to category of event...
+//    switch (category)
+//    {
+//        case NF_INTERFACE_STATE_CHANGED:
+//            EV <<  "pimDM::INTERFACE CHANGE" << endl;
+//            setUpInterface();
+//            break;
+//
+//        // new multicast data appears in router
+//        case NF_IPv4_NEW_MULTICAST_DENSE:
+//            EV <<  "pimDM::receiveChangeNotification - NEW MULTICAST DENSE" << endl;
+//            route = (AnsaIPv4MulticastRoute *)(details);
+//            newMulticast(route);
+//            break;
+//
+//        // configuration of interface changed, it means some change from IGMP, address were added.
+//        case NF_IPv4_NEW_IGMP_ADDED:
+//            EV << "pimDM::receiveChangeNotification - IGMP change - address were added." << endl;
+//            members = (addRemoveAddr *) (details);
+//            newMulticastAddr(members);
+//            break;
+//
+//        // configuration of interface changed, it means some change from IGMP, address were removed.
+//        case NF_IPv4_NEW_IGMP_REMOVED:
+//            EV << "pimDM::receiveChangeNotification - IGMP change - address were removed." << endl;
+//            members = (addRemoveAddr *) (details);
+//            oldMulticastAddr(members);
+//            break;
+//
+//        case NF_IPv4_DATA_ON_PRUNED_INT:
+//            EV << "pimDM::receiveChangeNotification - Data appears on pruned interface." << endl;
+//            ctrl = (IPv4ControlInfo *)(details);
+//            dataOnPruned(ctrl->getDestAddr(), ctrl->getSrcAddr());
+//            break;
+//
+//        // data come to non-RPF interface
+//        case NF_IPv4_DATA_ON_NONRPF:
+//            EV << "pimDM::receiveChangeNotification - Data appears on non-RPF interface." << endl;
+//            ctrl = (IPv4ControlInfo *)(details);
+//            dataOnNonRpf(ctrl->getDestAddr(), ctrl->getSrcAddr(), ctrl->getInterfaceId());
+//            break;
+//
+//        // data come to RPF interface
+//        case NF_IPv4_DATA_ON_RPF:
+//            EV << "pimDM::receiveChangeNotification - Data appears on RPF interface." << endl;
+//            route = (AnsaIPv4MulticastRoute *)(details);
+//            dataOnRpf(route);
+//            break;
+//
+//        // RPF interface has changed
+//        case NF_IPv4_ROUTE_ADDED:
+//            EV << "pimDM::receiveChangeNotification - RPF interface has changed." << endl;
+//            IPv4Route *entry = (IPv4Route *) (details);
+//            vector<AnsaIPv4MulticastRoute*> routes = rt->getRoutesForSource(entry->getDestination());
+//            for (unsigned int i = 0; i < routes.size(); i++)
+//                rpfIntChange(routes[i]);
+//            break;
+//    }
+}

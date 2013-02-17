@@ -40,6 +40,8 @@ class xmlParser {
       static cXMLElement * GetIPv6Address(cXMLElement *addr, cXMLElement *iface);
       static cXMLElement * GetAdvPrefix(cXMLElement *prefix, cXMLElement *iface);
       static cXMLElement * GetIsisRouting(cXMLElement * device);
+      static cXMLElement * GetPimGlobal(cXMLElement * device);
+      static bool isMulticastEnabled(cXMLElement *device);
       static bool Str2Int(int *retValue, const char *str);
       static bool Str2Bool(bool *ret, const char *str);
 

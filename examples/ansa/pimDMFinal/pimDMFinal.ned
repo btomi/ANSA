@@ -18,14 +18,14 @@
 // @author: Tomas Prochazka (mailto:xproch21@stud.fit.vutbr.cz), Vladimir Vesely (mailto:ivesely@fit.vutbr.cz)
 // @brief Topology with PIM network
 
-package inet.examples.ansa.PIMFinalTest;
+package inet.examples.ansa.pimDMFinal;
 
 import inet.ansa.networklayer.pim.PIMRouter;
 import inet.ansa.nodes.inet.AnsaHost;
 import inet.nodes.ethernet.Eth100M;
 import inet.world.scenario.ScenarioManager;
 
-network PIMFinalTest
+network pimDMFinal
 {
     @display("bgb=448,352");
 

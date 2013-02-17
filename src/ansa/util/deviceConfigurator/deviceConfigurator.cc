@@ -105,7 +105,7 @@ void DeviceConfigurator::initialize(int stage){
             return;
          }
 
-         if (isMulticastEnabled(device))
+         if (xmlParser::isMulticastEnabled(device))
          {
              // get PIM interface table of this device
              pimIft = PimInterfaceTableAccess().get();
@@ -114,7 +114,7 @@ void DeviceConfigurator::initialize(int stage){
              }
 
              // is multicast routing enabled on the device?
-             if (!isMulticastEnabled(device))
+             if (!xmlParser::isMulticastEnabled(device))
              {
                  EV<< "Multicast routing is not enable for this device (" << deviceType << " id=" << deviceId << ")" << endl;
              }
@@ -130,7 +130,6 @@ void DeviceConfigurator::initialize(int stage){
          }
      }
 }
-
 
 void DeviceConfigurator::loadInterfaceConfig(cXMLElement *iface){
 
@@ -612,25 +611,41 @@ void DeviceConfigurator::loadPrefixesFromInterfaceToRIPngRT(RIPngRouting *RIPngM
         }
 }
 
-bool DeviceConfigurator::isMulticastEnabled(cXMLElement *device)
+void DeviceConfigurator::loadPimGlobalConfig(pimSM *pimSMModule)
 {
-    // Routing element
-    cXMLElement* routingNode = device->getElementByPath("Routing");
-    if (routingNode == NULL)
-         return false;
+    ASSERT(pimSMModule != NULL);
 
-    // Multicast element
-    cXMLElement* multicastNode = routingNode->getElementByPath("Multicast");
-    if (multicastNode == NULL)
-       return false;
+    // get access to device node from XML
+    const char *deviceType = par("deviceType");
+    const char *deviceId = par("deviceId");
+    const char *configFile = par("configFile");
+    cXMLElement *device = xmlParser::GetDevice(deviceType, deviceId, configFile);
 
+    // get global pim element
+    cXMLElement* pimGlobal = xmlParser::GetPimGlobal(device);
+    if (pimGlobal != NULL)
+    {
+        //RP address
+        cXMLElement* RP = pimGlobal->getElementByPath("RPAddress");
+        if (RP != NULL)
+        {
+            cXMLElement * IPaddress = RP->getElementByPath("IPAddress");
+            if (IPaddress != NULL)
+            {
+                std::string IPString = IPaddress->getNodeValue();
+                pimSMModule->setRPAddress(IPString);
+                EV << "IP address in config for RP found: " << IPString.c_str() << endl;
+            }
 
-    // Multicast has to be enabled
-    const char* enableAtt = multicastNode->getAttribute("enable");
-    if (strcmp(enableAtt, "1"))
-        return false;
-
-    return true;
+        }
+        //SPTthreshold
+        cXMLElement* SPTthreshold = pimGlobal->getElementByPath("SPTthreshold");
+        if (SPTthreshold != NULL)
+        {
+            std::string SPTthresholdString = SPTthreshold->getNodeValue();
+            EV << "SPTthreshold in config found: " << SPTthresholdString.c_str() << endl;
+        }
+    }
 }
 
 void DeviceConfigurator::loadPimInterfaceConfig(cXMLElement *iface)

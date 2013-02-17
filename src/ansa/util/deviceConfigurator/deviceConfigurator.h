@@ -27,10 +27,10 @@
 #include "PimInterfaceTable.h"
 #include "IPv4InterfaceData.h"
 
-//#include "RoutingTableXmlParser.h"
 #include "AnsaRoutingTable.h"
 
 #include "RIPngRouting.h"
+#include "pimSM.h"
 
 
 class DeviceConfigurator : public cSimpleModule {
@@ -57,10 +57,12 @@ class DeviceConfigurator : public cSimpleModule {
 
    protected:
       //configuration for PIM
-      bool isMulticastEnabled(cXMLElement *device);
       void loadPimInterfaceConfig(cXMLElement *iface);
 
    public:
+      // global configuration for PIM
+      void loadPimGlobalConfig(pimSM *pimSMModule);
+
       // configuration for RIPng
       /**
        * Loads configuration for RIPngModule
