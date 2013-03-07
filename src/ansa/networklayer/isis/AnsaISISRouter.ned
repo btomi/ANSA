@@ -59,35 +59,35 @@ module AnsaISISRouter
         xml table = default(xml("<clnsTable/>"));
 
 
-        @display("i=srouter;bgb=437,396");
+        @display("i=srouter;bgb=437,396,white");
     gates:
         inout pppg[];
         inout ethg[];
     submodules:
         clnsTable: CLNSTable {
             parameters:
-                @display("p=395,115");
-                
+                @display("p=356,115");
+
         }
         deviceConfigurator: DeviceConfigurator {
             parameters:
                 deviceId = deviceId;
                 deviceType = "Router";
                 configFile = configFile;
-                @display("p=395,342");
+                @display("p=362,42");
         }
         notificationBoard: NotificationBoard {
             parameters:
-                @display("p=45,42");
+                @display("p=66,42");
         }
         interfaceStateManager: InterfaceStateManager {
             parameters:
-                @display("p=154,42");
+                @display("p=211,42");
         }
         //        interfaceTable: AnsaInterfaceTable {
         interfaceTable: InterfaceTable {
             parameters:
-                @display("p=250,42");
+                @display("p=51,115");
         }
         //        routingTable: RoutingTable {
         //            routingTable: RoutingTable {
@@ -99,7 +99,7 @@ module AnsaISISRouter
         //        }
         routingTable: RoutingTable {
             parameters:
-                @display("p=323,42");
+                @display("p=154,115");
                 IPForward = true;
                 routerId = deviceId;
 
@@ -111,7 +111,7 @@ module AnsaISISRouter
         //        }
         routingTable6: RoutingTable6 {
             parameters:
-                @display("p=395,42");
+                @display("p=257,115");
                 isRouter = IPForward;
         }
         ipSplitter: IpSplitter {
@@ -142,10 +142,10 @@ module AnsaISISRouter
                 deviceId = deviceId;
                 deviceType = "Router";
                 configFile = configFile;
-                @display("p=333,286");
+                @display("p=98,196");
             gates:
-                ifIn[sizeof(pppg)+sizeof(ethg)];
-                ifOut[sizeof(pppg)+sizeof(ethg)];
+                lowerLayerIn[sizeof(pppg)+sizeof(ethg)];
+                lowerLayerOut[sizeof(pppg)+sizeof(ethg)];
         }
     connections allowunconnected:
         // connections to network outside
@@ -157,8 +157,8 @@ module AnsaISISRouter
             //            ppp[i].netwIn <-- ipSplitter.ifOut[i];
             ppp[i].upperLayerIn <-- ipSplitter.ifOut[i];
 
-            ipSplitter.isisOut[i] --> isis.ifIn[i];
-            ipSplitter.isisIn[i] <-- isis.ifOut[i];
+            ipSplitter.isisOut[i] --> isis.lowerLayerIn[i];
+            ipSplitter.isisIn[i] <-- isis.lowerLayerOut[i];
         }
 
         for i=0..sizeof(ethg)-1 {
@@ -169,8 +169,8 @@ module AnsaISISRouter
             //            eth[i].netwIn <-- ipSplitter.ifOut[sizeof(pppg)+i];
             eth[i].upperLayerIn <-- ipSplitter.ifOut[sizeof(pppg)+i];
 
-            ipSplitter.isisOut[i] --> isis.ifIn[i];
-            ipSplitter.isisIn[i] <-- isis.ifOut[i];
+            ipSplitter.isisOut[i] --> isis.lowerLayerIn[i];
+            ipSplitter.isisIn[i] <-- isis.lowerLayerOut[i];
         }
 }
 
