@@ -54,13 +54,14 @@ public:
 	  int port;
 	  tTagAction action;
   } tVIDPort;
-
+  /* Vector of port->action pairs */
   typedef std::vector<tVIDPort> tVIDPortList;
 
+  /* VLAN struct, defines VLAN ID, name and associated ports */
   typedef struct s_vid_record {
 	  int VID;
 	  std::string name;
-	  tVIDPortList portList;
+	  tVIDPortList portList; /* Vector of port->action pairs */
   } tVIDRecord;
 
   /* Port -> VLAN mapping */
@@ -71,6 +72,7 @@ public:
 
 
   typedef std::vector<tVIDRecord> VIDTable;
+  /* Port -> VLAN mapping */
   typedef std::vector<tPortVIDRecord> PortVIDTable;
 
   /* MGMT */
@@ -94,8 +96,8 @@ public:
 	void setPortVID(int _port, int _VID);
 
 	void delPort(int _port, int _VID);
-
-	void regVLAN(unsigned int);
+	/* Register specified VLAN */
+	void regVLAN(unsigned int vlanID);
 	std::vector<unsigned int> getVLANList();
 
 	void initDefault();
@@ -105,11 +107,13 @@ public:
 
 private:
 	VIDTable vidTable;
+	/* Table (vector) of port -> VID(VLAN-ID) pairs*/
 	PortVIDTable portVIDTable;
 	tVIDPortList empty;
 
 	tVIDRecord emptyVID;
 
+	/* Vector of registered VLAN-IDs */
 	std::vector<unsigned int> vlanList;
 
 	int portCount;

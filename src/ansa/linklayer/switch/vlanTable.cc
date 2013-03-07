@@ -166,7 +166,7 @@ void VLANTable::setPortVID(int _port, int _VID) {
 	portVIDTable.at(_port).port = _port;
 	portVIDTable.at(_port).VID = _VID;
 }
-
+/* Delete VLAN-ID from list of existing VLANs */
 void VLANTable::delPort(int _port, int _VID) {
 	tVIDPortList::iterator it;
 	for (it = vidTable.at(_VID).portList.begin(); it != vidTable.at(_VID).portList.end(); it++) {
@@ -216,7 +216,7 @@ void VLANTable::initialize(int stage) {
 void VLANTable::finish() {
 
 }
-
+/* Register specified VLAN. If such VLAN-ID is in the list, do nothing */
 void VLANTable::regVLAN(unsigned int _vlan) {
 	for (unsigned int i = 0; i < vlanList.size(); i++) {
 		if (vlanList.at(i) == _vlan) {
