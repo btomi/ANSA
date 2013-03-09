@@ -1,22 +1,24 @@
-//
-// Author: Tomas Prochazka
-// Contact: xproch21@stud.fit.vutbr.cz
-// Date: 25.1.2013
-// Institutuion: Brno University of Technology
+// Copyright (C) 2013 Brno University of Technology (http://nes.fit.vutbr.cz/ansa)
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
-// 
+//
 // This program is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU Lesser General Public License for more details.
-// 
+//
 // You should have received a copy of the GNU Lesser General Public License
 // along with this program.  If not, see http://www.gnu.org/licenses/.
-// 
+//
+// @file AnsaPIMRouter.ned
+// @date 25.1.2013
+// @author: Tomas Prochazka (mailto:xproch21@stud.fit.vutbr.cz), Vladimir Vesely (mailto:ivesely@fit.vutbr.cz)
+// @brief File implements compbound module AnsaPIMRouter
+// @details AnsaPIMRouter is router with PIM module, fow now only with PIM-DM implementation
+
 
 package inet.ansa.networklayer.pim;
 
@@ -26,7 +28,7 @@ import inet.ansa.util.deviceConfigurator.DeviceConfigurator;
 import inet.ansa.nodes.inet.ansaNetworkLayer;
 import inet.networklayer.common.InterfaceTable;
 import inet.ansa.networklayer.ipv4.AnsaRoutingTable;
-import inet.networklayer.ipv6.RoutingTable6;
+//import inet.networklayer.ipv6.RoutingTable6;
 import inet.base.NotificationBoard;
 import inet.linklayer.ethernet.EthernetInterface;
 import inet.linklayer.ppp.PPPInterface;
@@ -81,7 +83,6 @@ module PIMRouter
                 @display("p=305,38");
                 IPForward = true;
                 routerId = deviceId;
-                //routingTable = routingTable;
                 configFile = configFile;
         }
 
@@ -104,11 +105,11 @@ module PIMRouter
         interfaceStateManager: InterfaceStateManager {
             @display("p=80,210");
         }
-        routingTable6: RoutingTable6 {
-            @display("p=304,110");
-            isRouter = IPForward;
-           	routingTable = routingTable;
-        }
+//        routingTable6: RoutingTable6 {
+//            @display("p=304,110");
+//            isRouter = IPForward;
+//           	routingTable = routingTable;
+//        }
     connections allowunconnected:
         PIM.networkLayerOut --> networkLayer.pimIn;
         PIM.networkLayerIn <-- networkLayer.pimOut;

@@ -31,6 +31,7 @@ using namespace std;
  * the calling module can focus on extracting actual aplication-specific data.
  */
 class xmlParser {
+
    public:
       static cXMLElement * GetDevice(const char *deviceType, const char *deviceId, const char *configFile);
       static cXMLElement * GetInterface(cXMLElement *iface, cXMLElement *device);
@@ -39,6 +40,8 @@ class xmlParser {
       static cXMLElement * GetIPv6Address(cXMLElement *addr, cXMLElement *iface);
       static cXMLElement * GetAdvPrefix(cXMLElement *prefix, cXMLElement *iface);
       static cXMLElement * GetIsisRouting(cXMLElement * device);
+      static cXMLElement * GetPimGlobal(cXMLElement * device);
+      static bool isMulticastEnabled(cXMLElement *device);
       static bool Str2Int(int *retValue, const char *str);
       static bool Str2Bool(bool *ret, const char *str);
 

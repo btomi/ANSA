@@ -1,7 +1,21 @@
+// Copyright (C) 2013 Brno University of Technology (http://nes.fit.vutbr.cz/ansa)
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Lesser General Public License for more details.
+//
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program.  If not, see http://www.gnu.org/licenses/.
 /**
  * @file pimDM.cc
  * @date 29.10.2011
- * @author: Veronika Rybova
+ * @author: Veronika Rybova, Vladimir Vesely (mailto:ivesely@fit.vutbr.cz)
  * @brief File implements PIM dense mode.
  * @details Implementation according to RFC3973.
  */
@@ -881,6 +895,7 @@ void pimDM::initialize(int stage)
 		nb->subscribe(this, NF_IPv4_DATA_ON_RPF);
 		//nb->subscribe(this, NF_IPv4_RPF_CHANGE);
 		nb->subscribe(this, NF_IPv4_ROUTE_ADDED);
+		nb->subscribe(this, NF_INTERFACE_STATE_CHANGED);
 	}
 }
 
@@ -913,6 +928,11 @@ void pimDM::receiveChangeNotification(int category, const cPolymorphic *details)
 	// according to category of event...
 	switch (category)
 	{
+	    case NF_INTERFACE_STATE_CHANGED:
+	        EV <<  "pimDM::INTERFACE CHANGE" << endl;
+	        setUpInterface();
+	        break;
+
 		// new multicast data appears in router
 		case NF_IPv4_NEW_MULTICAST_DENSE:
 			EV <<  "pimDM::receiveChangeNotification - NEW MULTICAST DENSE" << endl;
@@ -965,6 +985,28 @@ void pimDM::receiveChangeNotification(int category, const cPolymorphic *details)
 	}
 }
 
+//FIXME delete  - only for testing purposes
+void pimDM::setUpInterface()
+{
+    PimInterface *newentry;
+    static int counter = 0;
+
+    if (counter % 3 == 0)
+    {
+        for (int i=0; i<pimIft->getNumInterface();i++)
+        {
+            newentry = pimIft->getInterface(i);
+            if (newentry->getInterfaceID() == 101 || newentry->getInterfaceID() == 103)
+            {
+                if (newentry->isLocalIntMulticastAddress(IPv4Address("226.1.1.1")))
+                    newentry->removeIntMulticastAddress(IPv4Address("226.1.1.1"));
+                else
+                    newentry->addIntMulticastAddress(IPv4Address("226.1.1.1"));
+            }
+        }
+    }
+    counter ++;
+}
 
 /**
  * RPF INTERFACE CHANGE

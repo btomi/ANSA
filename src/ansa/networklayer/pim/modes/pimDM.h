@@ -1,7 +1,21 @@
+// Copyright (C) 2013 Brno University of Technology (http://nes.fit.vutbr.cz/ansa)
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Lesser General Public License for more details.
+//
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program.  If not, see http://www.gnu.org/licenses/.
 /**
  * @file pimDM.h
  * @date 29.10.2011
- * @author: Veronika Rybova
+ * @author: Veronika Rybova, Vladimir Vesely (mailto:ivesely@fit.vutbr.cz)
  * @brief File implements PIM dense mode.
  * @details Implementation according to RFC3973.
  */
@@ -36,7 +50,6 @@ class pimDM : public cSimpleModule, protected INotifiable
 {
 	private:
 		AnsaRoutingTable           	*rt;           	/**< Pointer to routing table. */
-		//MulticastRoutingTable 		*mrt;			/**< Pointer to multicast routing table. */
 	    IInterfaceTable         	*ift;          	/**< Pointer to interface table. */
 	    NotificationBoard 			*nb; 		   	/**< Pointer to notification table. */
 	    PimInterfaceTable			*pimIft;		/**< Pointer to table of PIM interfaces. */
@@ -78,6 +91,8 @@ class pimDM : public cSimpleModule, protected INotifiable
 	    void sendPimGraft(IPv4Address nextHop, IPv4Address src, IPv4Address grp, int intId);
 	    void sendPimGraftAck(PIMGraftAck *msg);
 	    void sendPimStateRefresh(IPv4Address originator, IPv4Address src, IPv4Address grp, int intId, bool P);
+
+	    void setUpInterface();
 
 
 

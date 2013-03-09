@@ -1,11 +1,25 @@
+// Copyright (C) 2013 Brno University of Technology (http://nes.fit.vutbr.cz/ansa)
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Lesser General Public License for more details.
+//
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program.  If not, see http://www.gnu.org/licenses/.
 /**
  * @file AnsaRoutingTable.cc
  * @date 25.1.2013
- * @author: Veronika Rybova, Tomas Prochazka
+ * @author Tomas Prochazka (mailto:xproch21@stud.fit.vutbr.cz), Vladimir Vesely (mailto:ivesely@fit.vutbr.cz)
+ * @brief Extended RoutingTable with new features for PIM
  */
 
 #include "AnsaRoutingTable.h"
-#include "RoutingTableXmlParser.h"
 
 Define_Module(AnsaRoutingTable);
 
@@ -101,32 +115,32 @@ void AnsaRoutingTable::initialize(int stage)
         WATCH(IPForward);
         WATCH(routerId);
     }
-    else if (stage==1)
-    {
-        // L2 modules register themselves in stage 0, so we can only configure
-        // the interfaces in stage 1.
-        const char *filename = par("configFile");
-
-        // At this point, all L2 modules have registered themselves (added their
-        // interface entries). Create the per-interface IPv4 data structures.
-        IInterfaceTable *interfaceTable = InterfaceTableAccess().get();
-        for (int i=0; i<interfaceTable->getNumInterfaces(); ++i)
-            configureInterfaceForIPv4(interfaceTable->getInterface(i));
-
-
-        const char *routerIdStr = par("routerId").stringValue();
-
-        // read routing table file (and interface configuration)
-        RoutingTableXmlParser parser(ift, this);
-        if (*filename && !parser.readRoutingTableFromXml(filename, routerIdStr))
-            error("Error reading routing table file %s", filename);
-
-        // set routerId if param is not "" (==no routerId) or "auto" (in which case we'll
-        // do it later in stage 3, after network configurators configured the interfaces)
-
-        if (strcmp(routerIdStr, "") && strcmp(routerIdStr, "auto"))
-            routerId = IPv4Address(routerIdStr);
-    }
+//    else if (stage==1)
+//    {
+//        // L2 modules register themselves in stage 0, so we can only configure
+//        // the interfaces in stage 1.
+//        const char *filename = par("configFile");
+//
+//        // At this point, all L2 modules have registered themselves (added their
+//        // interface entries). Create the per-interface IPv4 data structures.
+//        IInterfaceTable *interfaceTable = InterfaceTableAccess().get();
+//        for (int i=0; i<interfaceTable->getNumInterfaces(); ++i)
+//            configureInterfaceForIPv4(interfaceTable->getInterface(i));
+//
+//
+//        const char *routerIdStr = par("routerId").stringValue();
+//
+//        // read routing table file (and interface configuration)
+//        RoutingTableXmlParser parser(ift, this);
+//        if (*filename && !parser.readRoutingTableFromXml(filename, routerIdStr))
+//            error("Error reading routing table file %s", filename);
+//
+//        // set routerId if param is not "" (==no routerId) or "auto" (in which case we'll
+//        // do it later in stage 3, after network configurators configured the interfaces)
+//
+//        if (strcmp(routerIdStr, "") && strcmp(routerIdStr, "auto"))
+//            routerId = IPv4Address(routerIdStr);
+//    }
     else if (stage==3)
     {
         // routerID selection must be after stage==2 when network autoconfiguration
