@@ -39,13 +39,14 @@ import inet.networklayer.ipv4.RoutingTable;
 //import inet.ansa.AnsaNetworkLayer;
 
 //import inet.ansa.pim.pim;
-import inet.ansa.networklayer.isis.ISIS;
+//import inet.ansa.networklayer.isis.ISIS;
 
 import inet.applications.pingapp.PingApp;
 import inet.base.NotificationBoard;
 import inet.networklayer.ipv6.RoutingTable6;
 import inet.nodes.inet.NetworkLayer;
 import inet.nodes.ipv6.NetworkLayer6;
+
 module AnsaISISRouter
 {
     parameters:
@@ -56,7 +57,7 @@ module AnsaISISRouter
         string configFile;
         xml routingTable = default(xml("<routingTable/>"));  // Routing table is filled by deviceConfigurator
         bool IPForward = default(true);
-        xml table = default(xml("<clnsTable/>"));
+//        xml table = default(xml("<clnsTable/>"));
 
 
         @display("i=srouter;bgb=437,396,white");
@@ -174,6 +175,4 @@ module AnsaISISRouter
         }
 }
 
-
-import inet.transport.udp.UDP;
 

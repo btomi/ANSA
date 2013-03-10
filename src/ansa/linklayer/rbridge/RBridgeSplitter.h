@@ -29,6 +29,7 @@
 
 #include <csimplemodule.h>
 #include <ISIS.h>
+#include "EtherFrame_m.h"
 
 class RBridgeSplitter : public cSimpleModule
 {

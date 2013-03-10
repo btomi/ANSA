@@ -1,3 +1,4 @@
+// Copyright (C) 2012 - 2013 Brno University of Technology (http://nes.fit.vutbr.cz/ansa)
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -14,8 +15,6 @@
 // 
 
 /**
- * Copyright (C) 2012 - 2013 Brno University of Technology (http://nes.fit.vutbr.cz/ansa)
- *
  * @file RBridgeSplitter.cc
  * @author Marcel Marek (mailto:xscrew02@gmail.com), Vladimir Vesely (mailto:ivesely@fit.vutbr.cz)
  * @date 10.2.2013
@@ -58,6 +57,15 @@ void RBridgeSplitter::handleMessage(cMessage *msg){
     }
     else
     {
+        if(dynamic_cast<EthernetIIFrame *>(msg)){
+            EthernetIIFrame * frame = (EthernetIIFrame *) msg;
+            //it's L2-IS-IS aka TRILL-IS-IS frame
+            if(frame->getEtherType() == 0x22F4){//todo use #define or enum
+                this->send(msg, "isisOut", gateIndex);
+
+            }
+
+        }
         if (dynamic_cast<ISISMessage *>(msg))
         {
             this->send(msg, "isisOut", gateIndex);
