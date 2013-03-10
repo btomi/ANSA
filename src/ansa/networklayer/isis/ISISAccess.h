@@ -1,4 +1,5 @@
-// Copyright (C) 2013 Brno University of Technology (http://nes.fit.vutbr.cz/ansa)
+// Copyright (C) 2012 - 2013 Brno University of Technology (http://nes.fit.vutbr.cz/ansa)
+//
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
@@ -15,28 +16,29 @@
 /**
  * Copyright (C) 2012 - 2013 Brno University of Technology (http://nes.fit.vutbr.cz/ansa)
  *
- * @file TRILLAccess.h
+ * @file ISISAccess.h
  * @author Marcel Marek (mailto:xscrew02@gmail.com), Vladimir Vesely (mailto:ivesely@fit.vutbr.cz)
  * @date Mar 9, 2013
- * @brief
+ * @brief 
  * @detail
  * @todo
  */
 
-#ifndef CLNSTABLEACCESS_H_
-#define CLNSTABLEACCESS_H_
-
-//#include "INETDefs.h"
+#ifndef ISISACCESS_H_
+#define ISISACCESS_H_
 
 #include "ModuleAccess.h"
-#include "CLNSTable.h"
+#include "ISIS.h"
 
-class CLNSTableAccess: public ModuleAccess<CLNSTable>
+class ISISAccess : public ModuleAccess<ISIS>
 {
     public:
-        CLNSTableAccess() :
-            ModuleAccess<CLNSTable>("clnsTable") {}
-
+        ISISAccess() :
+                ModuleAccess<ISIS>("isis")
+        {
+        }
 };
 
-#endif /* CLNSTABLEACCESS_H_ */
+
+
+#endif /* ISISACCESS_H_ */

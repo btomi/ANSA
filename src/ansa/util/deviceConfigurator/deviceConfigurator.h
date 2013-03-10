@@ -16,6 +16,31 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
+// Copyright (C) 2011 - 2013 Brno University of Technology (http://nes.fit.vutbr.cz/ansa)
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Lesser General Public License for more details.
+//
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program.  If not, see http://www.gnu.org/licenses/.
+//
+
+/**
+ * @file TRILL.cc
+ * @author Marek Cerny, Jiri Trhlik, Tomas Prochazka, .. DOPLNTE Marcel Marek (mailto:xscrew02@gmail.com), Vladimir Vesely (mailto:ivesely@fit.vutbr.cz)
+ * @date 2011
+ * @brief
+ * @detail
+ * @todo
+ */
+
 #ifndef __ANSAINET_CONFIGLOADER_H_
 #define __ANSAINET_CONFIGLOADER_H_
 
@@ -32,15 +57,24 @@
 #include "RIPngRouting.h"
 #include "pimSM.h"
 
+/* TRILL */
+#include "TRILLAccess.h"
+/* IS-IS */
+#include "ISISAccess.h"
+/* END IS-IS */
+/* END TRILL */
+
 
 class DeviceConfigurator : public cSimpleModule {
-   protected:
-      IInterfaceTable *ift;
-      RoutingTable6 *rt6;
-      AnsaRoutingTable *rt;
-      PimInterfaceTable *pimIft;        /**< Link to table of PIM interfaces. */
 
    private:
+      const char *deviceType;
+      const char *deviceId;
+      const char *configFile;
+      cXMLElement *device;
+
+
+
       void loadDefaultRouter(cXMLElement *gateway);
       void loadInterfaceConfig(cXMLElement *iface);
       void loadStaticRouting(cXMLElement *route);
@@ -50,12 +84,46 @@ class DeviceConfigurator : public cSimpleModule {
       void readInterfaceFromXml(cXMLElement* Node);
       void readStaticRouteFromXml(cXMLElement* Node);
 
+      /* ISIS related */
+      void loadISISInterfaceConfig(ISIS *isisModule, InterfaceEntry *entry, cXMLElement *intElement);
+      const char *getISISNETAddress(cXMLElement *isisRouting);
+      short int getISISISType(cXMLElement *isisRouting);
+      int getISISL1HelloInterval(cXMLElement *isisRouting);
+      int getISISL1HelloMultiplier(cXMLElement *isisRouting);
+      int getISISL2HelloInterval(cXMLElement *isisRouting);
+      int getISISL2HelloMultiplier(cXMLElement *isisRouting);
+      int getISISLSPInterval(cXMLElement *isisRouting);
+      int getISISLSPRefreshInterval(cXMLElement *isisRouting);
+      int getISISLSPMaxLifetime(cXMLElement *isisRouting);
+      int getISISL1LSPGenInterval(cXMLElement *isisRouting);
+      int getISISL2LSPGenInterval(cXMLElement *isisRouting);
+      int getISISL1LSPSendInterval(cXMLElement *isisRouting);
+      int getISISL2LSPSendInterval(cXMLElement *isisRouting);
+      int getISISL1LSPInitWait(cXMLElement *isisRouting);
+      int getISISL2LSPInitWait(cXMLElement *isisRouting);
+      int getISISL1CSNPInterval(cXMLElement *isisRouting);
+      int getISISL2CSNPInterval(cXMLElement *isisRouting);
+      int getISISL1PSNPInterval(cXMLElement *isisRouting);
+      int getISISL2PSNPInterval(cXMLElement *isisRouting);
+      int getISISL1SPFFullInterval(cXMLElement *isisRouting);
+      int getISISL2SPFFullInterval(cXMLElement *isisRouting);
+
+
+
+      /* END of ISIS related */
    protected:
+
+      IInterfaceTable *ift;
+      RoutingTable6 *rt6;
+      AnsaRoutingTable *rt;
+      PimInterfaceTable *pimIft;        /**< Link to table of PIM interfaces. */
+
+
       virtual int numInitStages() const {return 4;}
       virtual void initialize(int stage);
       virtual void handleMessage(cMessage *msg);
 
-   protected:
+
       //configuration for PIM
       void loadPimInterfaceConfig(cXMLElement *iface);
 
@@ -77,6 +145,14 @@ class DeviceConfigurator : public cSimpleModule {
        * @see InterfaceTable
        */
       void loadPrefixesFromInterfaceToRIPngRT(RIPngRouting *RIPngModule, cXMLElement *interface);
+
+      /*
+       * Loads configuraion for IS-IS module.
+       * @param isisModule [in]
+       * @param isisMode [in] L2_ISIS_MODE or L3_ISIS_MODE
+       */
+      void loadISISConfig(ISIS *isisModule, ISIS::ISIS_MODE isisMode);
+
 };
 
 #endif

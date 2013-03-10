@@ -1,0 +1,164 @@
+// Copyright (C) 2013 Brno University of Technology (http://nes.fit.vutbr.cz/ansa)
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Lesser General Public License for more details.
+// 
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program.  If not, see http://www.gnu.org/licenses/.
+// 
+
+///**
+// * @file RBridge.ned
+// * @author Marcel Marek (mailto:xscrew02@gmail.com), Vladimir Vesely (mailto:ivesely@fit.vutbr.cz)
+// * @date 1.3.2013
+// * @brief
+// * @detail
+// * @todo
+// */
+package inet.ansa;
+
+import inet.ansa.util.deviceConfigurator.DeviceConfigurator;
+import inet.ansa.linklayer.switch.stp.Stp;
+//import inet.nodes.inet.BurstHost;
+import inet.base.NotificationBoard;
+import inet.ansa.linklayer.ethernet.AnsaEtherMAC;
+//import inet.ansa.linklayer.switch.ANSASwitchCore;
+import inet.ansa.linklayer.switch.MACTable;
+
+import inet.ansa.linklayer.switch.sink;
+import inet.ansa.linklayer.switch.VLANTable;
+
+import inet.ansa.linklayer.rbridge.RBridgeSplitter;
+
+
+import inet.transport.rtp.RTPAVProfilePayload10Receiver;
+import inet.ansa.linklayer.switch.PortTable;
+import inet.ansa.acl.acl;
+import inet.nodes.inet.NetworkLayer;
+//import inet.ansa.TrafficGenerator.TrafGen;
+//import inet.ansa.rip.RIPRouting;
+import inet.transport.udp.UDP;
+import inet.networklayer.ospfv2.OSPFRouting;
+//import inet.ansa.InterfaceStateManager.InterfaceStateManager;
+import inet.networklayer.common.InterfaceTable;
+//import inet.ansa.routingTable.AnsaInterfaceTable;
+//import inet.ansa.routingTable.AnsaRoutingTable;
+
+import inet.ansa.networklayer.clns.CLNSTable;
+import inet.ansa.networklayer.isis.ISIS;
+
+import inet.ansa.linklayer.rbridge.TRILL;
+module RBridge
+{
+    parameters:
+        @node();
+        string configFile = default("");
+        string hostname = default("");
+        string deviceID = default("");
+        @display("i=abstract/switch;bgb=475,469,white");
+    gates:
+        inout ethg[];
+        //inout pppg[];
+
+    submodules:
+        deviceConfigurator: DeviceConfigurator {
+            parameters:
+                deviceId = deviceId;
+                deviceType = "RBridge";
+                configFile = configFile;
+                @display("p=403,118");
+        }
+        trill: TRILL {
+            parameters:
+                @display("p=234,167;is=l");
+            gates:
+                lowerLayerIn[sizeof(ethg)];
+                lowerLayerOut[sizeof(ethg)];
+                isisIn[sizeof(ethg)];
+                isisOut[sizeof(ethg)];
+        }
+        mac[sizeof(ethg)]: AnsaEtherMAC {
+            parameters:
+                @display("p=154,404,row,110;q=l2queue;is=l");
+                promiscuous = true;
+        }
+        MACTable: MACTable {
+            @display("p=53,44;is=l");
+        }
+        VLANTable: VLANTable {
+            parameters:
+                configFile = configFile;
+                switchID = switchID;
+                portCount = sizeof(ethg);
+                @display("p=165,44;is=l");
+        }
+        sink: sink {
+            @display("p=294,295");
+        }
+        notificationBoard: NotificationBoard {
+            @display("p=403,44");
+        }
+        stp: Stp {
+            parameters:
+                configFile = configFile;
+                switchID = switchID;
+                portCount = sizeof(ethg);
+                @display("p=336,167;is=l");
+            gates:
+                in[sizeof(ethg)];
+                out[sizeof(ethg)];
+        }
+        clnsTable: CLNSTable {
+            parameters:
+                @display("p=277,44;is=l");
+
+        }
+        isis: ISIS {
+            parameters:
+                deviceId = deviceId;
+                deviceType = "Router";
+                configFile = configFile;
+                @display("p=53,167;is=l");
+            gates:
+                lowerLayerIn[sizeof(pppg)+sizeof(ethg)];
+                lowerLayerOut[sizeof(pppg)+sizeof(ethg)];
+        }
+        rbridgeSplitter: RBridgeSplitter {
+            parameters:
+                @display("p=154,295;is=l");
+            gates:
+                lowerLayerIn[sizeof(ethg)];
+                lowerLayerOut[sizeof(ethg)];
+                isisIn[sizeof(ethg)];
+                isisOut[sizeof(ethg)];
+                trillIn[sizeof(ethg)];
+                trillOut[sizeof(ethg)];
+
+        }
+    connections:
+
+        for i=0..sizeof(ethg)-1 {
+            ethg[i] <--> mac[i].phys;
+            mac[i].upperLayerOut --> rbridgeSplitter.lowerLayerIn[i];
+            mac[i].upperLayerIn <-- rbridgeSplitter.lowerLayerOut[i];
+            rbridgeSplitter.isisOut[i] --> isis.lowerLayerIn[i];
+            rbridgeSplitter.isisIn[i] <-- isis.lowerLayerOut[i];
+
+            isis.trillOut[i] --> trill.isisIn[i];
+            isis.trillIn[i] <-- trill.isisOut[i];
+
+
+        }
+
+
+        trill.toSink --> sink.ifIn;
+        rbridgeSplitter.trillOut[0] --> trill.lowerLayerIn[0];
+        rbridgeSplitter.trillIn[0] <-- trill.lowerLayerOut[0];
+}
