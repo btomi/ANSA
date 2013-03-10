@@ -115,10 +115,6 @@ std::ostream& operator<<(std::ostream& os, const CLNSRoute& e)
 
 
 
-
-
-
-
 CLNSTable::CLNSTable() {
     // TODO Auto-generated constructor stub
 

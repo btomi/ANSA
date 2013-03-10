@@ -1,6 +1,4 @@
-// Author: Matej Hrncirik
-// FIT VUT 2012
-//
+// Copyright (C) 2012 - 2013 Brno University of Technology (http://nes.fit.vutbr.cz/ansa)
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -16,8 +14,20 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 //
 
+/**
+ * @file ISIS.cc
+ * @author Matej Hrncirik, Marcel Marek (mailto:xscrew02@gmail.com), Vladimir Vesely (mailto:ivesely@fit.vutbr.cz)
+ * @date 7.3.2012
+ * @brief
+ * @detail
+ * @todo
+ */
+
 
 #include "ISIS.h"
+#include "TRILL.h"
+
+#include "deviceConfigurator.h"
 
 Define_Module(ISIS);
 
@@ -211,12 +221,27 @@ void ISIS::receiveChangeNotification(int category, const cObject *details)
 
 void ISIS::initialize(int stage) {
     //interface init at stage 2
+
+
+    if(stage == 1){
+        deviceType = string((const char *)par("deviceType"));
+        deviceId = string((const char *)par("deviceId"));
+        configFile = string((const char *)par("configFile"));
+        if(deviceType == "Router"){
+            this->mode = L3_ISIS_MODE;
+        }else if(deviceType == "RBridge"){
+            this->mode = L2_ISIS_MODE;
+        }else{
+            throw cRuntimeError("Unknown device type for IS-IS module");
+        }
+
+    }
+
     if (stage == 3) {
+        DeviceConfigurator *devConf = ModuleAccess<DeviceConfigurator>("deviceConfigurator").get();
+        devConf->loadISISConfig(this, this->mode);
 
-        deviceType = par("deviceType");
-        deviceId = par("deviceId");
-        configFile = par("configFile");
-
+/*
 //        ift = AnsaInterfaceTableAccess().get();
         ift = InterfaceTableAccess().get();
         if (ift == NULL) {
@@ -225,16 +250,20 @@ void ISIS::initialize(int stage) {
 
         clnsTable = CLNSTableAccess().get();
 
+
         nb = NotificationBoardAccess().get();
         nb->subscribe(this, NF_INTERFACE_STATE_CHANGED);
         nb->subscribe(this, NF_CLNS_ROUTE_DELETED);
 
+        //TODO
+        this->mode = L2_ISIS_MODE;
 
-        cXMLElement *device = xmlParser::GetDevice(deviceType, deviceId,
-                configFile);
+
+        cXMLElement *device = xmlParser::GetDevice(deviceType.c_str(), deviceId.c_str(),
+                configFile.c_str());
         if (device == NULL) {
             EV << "deviceId " << deviceId
-                      << ": ISIS is not enabled on this device\n";
+                      << ": Can't find device in config file\n";
             return;
         }
 
@@ -253,8 +282,8 @@ void ISIS::initialize(int stage) {
             return;
         }
 
-        netAddr = net->getNodeValue();
-        if (netAddr == NULL || strcmp("", netAddr) == 0) {
+        netAddr =  net->getNodeValue();
+        if (netAddr == "") {
             EV << "deviceId " << deviceId
                       << ": Net address wasn't specified in IS-IS routing\n";
             return;
@@ -428,44 +457,44 @@ void ISIS::initialize(int stage) {
         cXMLElement *cxL1CsnpInt = isisRouting->getFirstChildWithTag("L1-CSNP-Interval");
         if (cxL1CsnpInt == NULL || cxL1CsnpInt->getNodeValue() == NULL)
         {
-            this->L1CsnpInterval = ISIS_CSNP_INTERVAL;
+            this->L1CSNPInterval = ISIS_CSNP_INTERVAL;
         }
         else
         {
-            this->L1CsnpInterval = atoi(cxL1CsnpInt->getNodeValue());
+            this->L1CSNPInterval = atoi(cxL1CsnpInt->getNodeValue());
         }
 
-        //set L2PsnpInterval
+        //set L2CsnpInterval
         cXMLElement *cxL2CsnpInt = isisRouting->getFirstChildWithTag("L2-CSNP-Interval");
         if (cxL2CsnpInt == NULL || cxL2CsnpInt->getNodeValue() == NULL)
         {
-            this->L2CsnpInterval = ISIS_CSNP_INTERVAL;
+            this->L2CSNPInterval = ISIS_CSNP_INTERVAL;
         }
         else
         {
-            this->L2CsnpInterval = atoi(cxL2CsnpInt->getNodeValue());
+            this->L2CSNPInterval = atoi(cxL2CsnpInt->getNodeValue());
         }
 
         //set L1PsnpInterval
         cXMLElement *cxL1PsnpInt = isisRouting->getFirstChildWithTag("L1-PSNP-Interval");
         if (cxL1PsnpInt == NULL || cxL1PsnpInt->getNodeValue() == NULL)
         {
-            this->L1PsnpInterval = ISIS_CSNP_INTERVAL;
+            this->L1PSNPInterval = ISIS_CSNP_INTERVAL;
         }
         else
         {
-            this->L1PsnpInterval = atoi(cxL1PsnpInt->getNodeValue());
+            this->L1PSNPInterval = atoi(cxL1PsnpInt->getNodeValue());
         }
 
         //set L2PsnpInterval
         cXMLElement *cxL2PsnpInt = isisRouting->getFirstChildWithTag("L2-PSNP-Interval");
         if (cxL2PsnpInt == NULL || cxL2PsnpInt->getNodeValue() == NULL)
         {
-            this->L2PsnpInterval = ISIS_CSNP_INTERVAL;
+            this->L2PSNPInterval = ISIS_CSNP_INTERVAL;
         }
         else
         {
-            this->L2PsnpInterval = atoi(cxL2PsnpInt->getNodeValue());
+            this->L2PSNPInterval = atoi(cxL2PsnpInt->getNodeValue());
         }
 
 
@@ -484,11 +513,11 @@ void ISIS::initialize(int stage) {
         for (int i = 0; i < ift->getNumInterfaces(); i++) {
             entryIFT = ift->getInterface(i);
             //EV << entryIFT->getNetworkLayerGateIndex() << " " << entryIFT->getName() << " " << entryIFT->getFullName() << "\n";
-            insertIft(
+            this->insertIft(
                     entryIFT,
                     interfaces->getFirstChildWithAttribute("Interface", "name",
                             entryIFT->getName()));
-        }
+        }*/
 
         //TODO passive-interface
 
@@ -536,9 +565,11 @@ void ISIS::initialize(int stage) {
 
 
     }else if(stage == 4){
-        this->initISIS();
-        //        ISISTimer *timerMsg = new ISISTimer("ISIS Start", ISIS_START);
-        //        this->schedule(timerMsg);
+//        this->initISIS();
+                ISISTimer *timerMsg = new ISISTimer("ISIS Start", ISIS_START);
+                timerMsg->setTimerKind(ISIS_START);
+                this->schedule(timerMsg);
+
     }
 
 }
@@ -1496,7 +1527,7 @@ void ISIS::sendBroadcastHelloMsg(int gateIndex, short circuitType){
         }
 
         hello->setPriority(iface->priority);
-        send(hello, "ifOut", iface->gateIndex);
+        send(hello, "lowerLayerOut", iface->gateIndex);
         EV << "'devideId :" << deviceId << " ISIS: L1 Hello packet was sent from " << iface->entry->getName() << "\n";
 
     }
@@ -1615,7 +1646,7 @@ void ISIS::sendPTPHelloMsg(int gateIndex, short circuitType){
     //TODO TLV #129 Protocols supported*/
 
 
-    this->send(ptpHello,"ifOut", iface->gateIndex);
+    this->send(ptpHello,"lowerLayerOut", iface->gateIndex);
 
 
 }
@@ -3001,6 +3032,51 @@ void ISIS::printAdjTable()
 
 
 
+void ISIS::setClnsTable(CLNSTable *clnsTable)
+{
+    this->clnsTable = clnsTable;
+}
+
+void ISIS::setNb(NotificationBoard *nb)
+{
+    this->nb = nb;
+}
+/* Sets and then parses NET address.
+ * @param netAddr specify NET address
+ */
+void ISIS::setNetAddr(string netAddr)
+{
+    this->netAddr = netAddr;
+
+    if(!this->parseNetAddr()){
+        throw cRuntimeError("Unable to parse NET address.");
+    }
+}
+
+void ISIS::setMode(ISIS_MODE mode)
+{
+    this->mode = mode;
+}
+
+void ISIS::subscribeNb(void){
+    nb->subscribe(this, NF_INTERFACE_STATE_CHANGED);
+    nb->subscribe(this, NF_CLNS_ROUTE_DELETED);
+
+}
+
+void ISIS::setIft(IInterfaceTable *ift)
+{
+    this->ift = ift;
+}
+
+void ISIS::setTrill(TRILL *trill)
+{
+    if(trill == NULL){
+        throw cRuntimeError("Got NULL pointer instead of TRILL reference");
+    }
+    this->trill = trill;
+}
+
 /**
  * Print content of L1 LSP database to EV.
  */
@@ -3748,7 +3824,7 @@ void ISIS::sendMyL1LSPs()
                     LSPcopy->setTLVArraySize(2);
                     LSPcopy->setTLV(1, myTLV);
 
-                    send(LSPcopy, "ifOut", ISISIft.at(a).gateIndex);
+                    send(LSPcopy, "lowerLayerOut", ISISIft.at(a).gateIndex);
                 }
             }
         }
@@ -4312,7 +4388,7 @@ void ISIS::sendCsnp(ISISTimer *timer)
         }
 
         //send only on interface specified in timer
-        send(packet, "ifOut", timer->getInterfaceIndex());
+        send(packet, "lowerLayerOut", timer->getInterfaceIndex());
 
         /*
          //send packet on ALL interfaces with adjacency UP
@@ -4325,7 +4401,7 @@ void ISIS::sendCsnp(ISISTimer *timer)
          packetDup->setControlInfo(ctrlDup);
          //set source LAN ID
          packetDup->setSourceID(ISIS_SYSTEM_ID, (*intIt).gateIndex);
-         send(packetDup, "ifOut", (*intIt).gateIndex);
+         send(packetDup, "lowerLayerOut", (*intIt).gateIndex);
          }
          }
          delete ctrl;
@@ -4482,7 +4558,7 @@ void ISIS::sendPsnp(ISISTimer *timer){
     }
 
     //send only on interface specified in timer
-    send(packet, "ifOut", timer->getInterfaceIndex());
+    send(packet, "lowerLayerOut", timer->getInterfaceIndex());
 
     this->schedule(timer);
 }
@@ -4908,7 +4984,7 @@ void ISIS::sendL1CSNP()
                 ISISCSNPL1Packet *packetCopy = packet->dup();
                 Ieee802Ctrl *ctrlCopy = ctrl->dup();
                 packetCopy->setControlInfo(ctrlCopy);
-                send(packetCopy, "ifOut", ISISIft.at(a).gateIndex);
+                send(packetCopy, "lowerLayerOut", ISISIft.at(a).gateIndex);
             }
         }
     }
@@ -5094,7 +5170,7 @@ void ISIS::sendL1PSNP(std::vector<unsigned char *> * LSPlist, int gateIndex)
 
     //send packet to same interface as CSNP packet came in
     //DIS should receive this packet and handle it
-    send(packet, "ifOut", gateIndex);
+    send(packet, "lowerLayerOut", gateIndex);
 }
 
 /**
@@ -5425,7 +5501,7 @@ void ISIS::sendLSP(LSPRecord *lspRec, int gateIndex){
 
     tmpLSP->setControlInfo(tmpCtrl);
 
-    send(tmpLSP, "ifOut", gateIndex);
+    send(tmpLSP, "lowerLayerOut", gateIndex);
 
 
 }
@@ -7038,7 +7114,7 @@ void ISIS::floodFurtherL1LSP(ISISLSPL1Packet *msg)
             Ieee802Ctrl *ctrlCopy = ctrl->dup();
             myMsg->setControlInfo(ctrlCopy);
 
-            send(myMsg, "ifOut", ISISIft.at(i).gateIndex);
+            send(myMsg, "lowerLayerOut", ISISIft.at(i).gateIndex);
         }
     }
 
@@ -7134,7 +7210,7 @@ void ISIS::sendSpecificL1LSP(unsigned char *LSPid)
                 ISISLSPL1Packet *LSPcopy = LSP->dup();
                 Ieee802Ctrl *ctrlCopy = ctrl->dup();
                 LSPcopy->setControlInfo(ctrlCopy);
-                send(LSPcopy, "ifOut", ISISIft.at(a).gateIndex);
+                send(LSPcopy, "lowerLayerOut", ISISIft.at(a).gateIndex);
             }
         }
     }
@@ -8584,5 +8660,250 @@ ISISPath * ISIS::getPath(ISISPaths_t *paths, unsigned char *id){
     }
 
     return NULL;
+}
+
+void ISIS::setHelloCounter(unsigned long  helloCounter)
+{
+    this->helloCounter = helloCounter;
+}
+
+void ISIS::setL1CSNPInterval(int l1CsnpInterval)
+{
+    L1CSNPInterval = l1CsnpInterval;
+}
+
+void ISIS::setL1HelloInterval(int l1HelloInterval)
+{
+    L1HelloInterval = l1HelloInterval;
+}
+
+void ISIS::setL1HelloMultiplier(short  l1HelloMultiplier)
+{
+    L1HelloMultiplier = l1HelloMultiplier;
+}
+
+void ISIS::setL1LspGenInterval(int l1LspGenInterval)
+{
+    L1LspGenInterval = l1LspGenInterval;
+}
+
+void ISIS::setL1LspInitWait(int l1LspInitWait)
+{
+    L1LspInitWait = l1LspInitWait;
+}
+
+void ISIS::setL1LspSendInterval(int l1LspSendInterval)
+{
+    L1LspSendInterval = l1LspSendInterval;
+}
+
+void ISIS::setL1PSNPInterval(int l1PsnpInterval)
+{
+    L1PSNPInterval = l1PsnpInterval;
+}
+
+void ISIS::setL1SpfFullInterval(int l1SpfFullInterval)
+{
+    L1SPFFullInterval = l1SpfFullInterval;
+}
+
+void ISIS::setL2CSNPInterval(int l2CsnpInterval)
+{
+    L2CSNPInterval = l2CsnpInterval;
+}
+
+void ISIS::setL2HelloInterval(int l2HelloInterval)
+{
+    L2HelloInterval = l2HelloInterval;
+}
+
+void ISIS::setL2HelloMultiplier(short  l2HelloMultiplier)
+{
+    L2HelloMultiplier = l2HelloMultiplier;
+}
+
+void ISIS::setL2LspGenInterval(int l2LspGenInterval)
+{
+    L2LspGenInterval = l2LspGenInterval;
+}
+
+void ISIS::setL2LspInitWait(int l2LspInitWait)
+{
+    L2LspInitWait = l2LspInitWait;
+}
+
+void ISIS::setL2LspSendInterval(int l2LspSendInterval)
+{
+    L2LspSendInterval = l2LspSendInterval;
+}
+
+void ISIS::setL2PSNPInterval(int l2PsnpInterval)
+{
+    L2PSNPInterval = l2PsnpInterval;
+}
+
+void ISIS::setL2SpfFullInterval(int l2SpfFullInterval)
+{
+    L2SPFFullInterval = l2SpfFullInterval;
+}
+
+void ISIS::setLspInterval(int lspInterval)
+{
+    this->lspInterval = lspInterval;
+}
+
+void ISIS::setLspMaxLifetime(int lspMaxLifetime)
+{
+    this->lspMaxLifetime = lspMaxLifetime;
+}
+
+void ISIS::appendISISInterface(ISISinterface iface)
+{
+    this->ISISIft.push_back(iface);
+}
+
+int ISIS::getL1HelloInterval() const
+{
+    return L1HelloInterval;
+}
+
+short ISIS::getL1HelloMultiplier() const
+{
+    return L1HelloMultiplier;
+}
+
+int ISIS::getL2HelloInterval() const
+{
+    return L2HelloInterval;
+}
+
+short ISIS::getL2HelloMultiplier() const
+{
+    return L2HelloMultiplier;
+}
+
+int ISIS::getL1CsnpInterval() const
+{
+    return L1CSNPInterval;
+}
+
+int ISIS::getL1PsnpInterval() const
+{
+    return L1PSNPInterval;
+}
+
+int ISIS::getL2CsnpInterval() const
+{
+    return L2CSNPInterval;
+}
+
+int ISIS::getL2PsnpInterval() const
+{
+    return L2PSNPInterval;
+}
+
+void ISIS::setL1CsnpInterval(int l1CsnpInterval)
+{
+    L1CSNPInterval = l1CsnpInterval;
+}
+
+void ISIS::setL1PsnpInterval(int l1PsnpInterval)
+{
+    L1PSNPInterval = l1PsnpInterval;
+}
+
+void ISIS::setL2CsnpInterval(int l2CsnpInterval)
+{
+    L2CSNPInterval = l2CsnpInterval;
+}
+
+void ISIS::setL2PsnpInterval(int l2PsnpInterval)
+{
+    L2PSNPInterval = l2PsnpInterval;
+}
+
+int ISIS::getLspInterval() const
+{
+    return lspInterval;
+}
+
+short ISIS::getIsType() const
+{
+    return isType;
+}
+
+const unsigned char *ISIS::getSysId() const
+{
+    return sysId;
+}
+
+void ISIS::setLspRefreshInterval(int lspRefreshInterval)
+{
+    this->lspRefreshInterval = lspRefreshInterval;
+}
+
+void ISIS::setIsType(short  isType)
+{
+    this->isType = isType;
+}
+
+/**
+ * Generate NET address based on first non-zero MAC address it could find in
+ * interface table. In case there's not any non-zero MAC address, one is generated.
+ * This method is for ISIS::L2_ISIS_MODE
+ */
+void ISIS::generateNetAddr(){
+    ift = InterfaceTableAccess().get();
+    unsigned char *a = new unsigned char[6];
+    char *tmp = new char[25];
+    MACAddress address;
+
+
+    for(int i = 0; i < ift->getNumInterfaces(); i++){
+        if((address = ift->getInterface(i)->getMacAddress()) != 0){
+            break;
+        }
+
+    }
+    /* If there's not any interface with non-zero MAC address then generate one.
+     * This is not likely to happen.*/
+    if(address == 0){
+        EV << "Warning: didn't get non-zero MAC address for NET generating"<<endl;
+        address.generateAutoAddress();
+    }
+
+
+    memcpy(tmp,"49.0000.",8);
+    /* This is really stupid way to do it, but right now  the thinking hurts */
+    tmp[8] = (a[0] >>2);
+    tmp[9] = a[0] && 0x0F;
+    tmp[10] = (a[1] >> 4);
+    tmp[11] = a[1] && 0x0F;
+    tmp[12] = '.';
+    tmp[13] = (a[2] >> 4);
+    tmp[14] = a[2] && 0x0F;
+    tmp[15] = (a[3] >> 4);
+    tmp[16] = a[3] && 0x0F;
+    tmp[17] = '.';
+    tmp[18] = (a[4] >> 4);
+    tmp[19] = a[4] && 0x0F;
+    tmp[20] = (a[5] >> 4);
+    tmp[21] = a[5] && 0x0F;
+    tmp[22] = '.';
+    tmp[23] = '0';
+    tmp[24] = '0';
+//    string ahoj;
+//    ahoj.append(string(std::hex << a[0]));
+    this->netAddr = std::string(tmp);
+    stringstream addressStream;
+    addressStream << hex << address;// << a[1] << "." << hex << a[2] << hex << a[3] << "." << hex << a[4] << hex << a[5] << ".00";
+    string aS = addressStream.str();
+    this->netAddr = "49.0000." + aS.substr(0,2) + aS.substr(3,2) + "." + aS.substr(6,2) + aS.substr(9,2) + "." + aS.substr(12,2) + aS.substr(15,2) + ".00";
+//    this->netAddr=ahoj.str();
+    if(!this->parseNetAddr()){
+        throw cRuntimeError("Unable to parse auto-generated NET address.");
+    }
+
+
 }
 

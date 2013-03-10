@@ -18,25 +18,25 @@
  * @file TRILLAccess.h
  * @author Marcel Marek (mailto:xscrew02@gmail.com), Vladimir Vesely (mailto:ivesely@fit.vutbr.cz)
  * @date Mar 9, 2013
- * @brief
+ * @brief 
  * @detail
  * @todo
  */
 
-#ifndef CLNSTABLEACCESS_H_
-#define CLNSTABLEACCESS_H_
-
-//#include "INETDefs.h"
+#ifndef TRILLACCESS_H_
+#define TRILLACCESS_H_
 
 #include "ModuleAccess.h"
-#include "CLNSTable.h"
+#include "TRILL.h"
 
-class CLNSTableAccess: public ModuleAccess<CLNSTable>
+class TRILLAccess : public ModuleAccess<TRILL>
 {
-    public:
-        CLNSTableAccess() :
-            ModuleAccess<CLNSTable>("clnsTable") {}
-
+    public :
+        TRILLAccess() :
+            ModuleAccess<TRILL>("trill"){}
 };
 
-#endif /* CLNSTABLEACCESS_H_ */
+
+
+
+#endif /* TRILLACCESS_H_ */

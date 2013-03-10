@@ -25,6 +25,7 @@
 
 #include "RBridgeSplitter.h"
 
+Define_Module(RBridgeSplitter);
 //RBridgeSplitter::RBridgeSplitter()
 //{
 //    // TODO Auto-generated constructor stub
