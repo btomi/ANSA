@@ -44,12 +44,14 @@
 #include "IPv4.h"
 #include "PimSplitter.h"
 #include "AnsaRoutingTableAccess.h"
+#include "PimInterfaceTable.h"
+#include "PIMPacket_m.h"
+#include "pimSM.h"
 
 
 class ARPPacket;
 class ICMPMessage;
 
-//FIXME it shouldn't be there, but somewhere more globally
 enum AnsaIPProtocolId
 {
     IP_PROT_PIM = 103
@@ -64,10 +66,15 @@ class INET_API AnsaIPv4 : public IPv4
     private:
         AnsaRoutingTable            *rt;
         NotificationBoard           *nb;
+        PimInterfaceTable           *pimIft;        /**< Pointer to table of PIM interfaces. */
 
     protected:
         virtual void handlePacketFromNetwork(IPv4Datagram *datagram, InterfaceEntry *fromIE);
         virtual void routeMulticastPacket(IPv4Datagram *datagram, InterfaceEntry *destIE, InterfaceEntry *fromIE);
+        virtual IPv4Datagram *encapsulate(cPacket *transportPacket, IPv4ControlInfo *controlInfo);
+        virtual void routeUnicastPacket(IPv4Datagram *datagram, InterfaceEntry *destIE, IPv4Address destNextHopAddr);
+        virtual void handleMessageFromHL(cPacket *msg);
+        virtual void reassembleAndDeliver(IPv4Datagram *datagram);
 
     public:
         AnsaIPv4() {}

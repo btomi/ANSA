@@ -47,6 +47,12 @@ enum PIMTimerType
    PruneLimitTimer = 9;
    SourceActiveTimer = 10;
    StateRefreshTimer = 11;
+   
+   //PIM-SM specific timers
+   KeepAliveTimer = 12;
+   RegisterStopTimer = 13;
+   ExpiryTimer = 14;
+   JoinTimer = 15;
 }
 
 
@@ -67,7 +73,7 @@ packet PIMnlt extends PIMTimer
 packet PIMpt extends PIMTimer
 {
     timerKind = PruneTimer;
-    IPv4Address 			source;          	// Source of multicast
+    IPv4Address 		source;          	// Source of multicast
     IPv4Address			group;				// Multicast group address
     int					intId;				// ID of interface
 }
@@ -76,7 +82,7 @@ packet PIMpt extends PIMTimer
 packet PIMgrt extends PIMTimer
 {
     timerKind = GraftRetryTimer;
-    IPv4Address 			source;          	// Source of multicast
+    IPv4Address 		source;          	// Source of multicast
     IPv4Address			group;				// Multicast group address
 }
 
@@ -84,7 +90,7 @@ packet PIMgrt extends PIMTimer
 packet PIMsat extends PIMTimer
 {
     timerKind = SourceActiveTimer;
-    IPv4Address 			source;          	// Source of multicast
+    IPv4Address 		source;          	// Source of multicast
     IPv4Address			group;				// Multicast group address
 }
 
@@ -92,6 +98,38 @@ packet PIMsat extends PIMTimer
 packet PIMsrt extends PIMTimer
 {
     timerKind = StateRefreshTimer;
-    IPv4Address 			source;          	// Source of multicast
+    IPv4Address 		source;          	// Source of multicast
     IPv4Address			group;				// Multicast group address
+}
+
+// represents PIM Source Active Timer
+packet PIMkat extends PIMTimer
+{
+    timerKind = KeepAliveTimer;
+    IPv4Address 		source;          	// Source of multicast
+    IPv4Address			group;				// Multicast group address
+}
+
+// represents PIM Register-stop timer
+packet PIMrst extends PIMTimer
+{
+    timerKind = RegisterStopTimer;
+    IPv4Address 		source;          	// Source of multicast
+    IPv4Address			group;				// Multicast group address
+}
+
+// represents PIM Expiry timer
+packet PIMet extends PIMTimer
+{
+    timerKind = ExpiryTimer;
+    IPv4Address			group;				// Multicast group address
+}
+
+// represents PIM Join timer
+packet PIMjt extends PIMTimer
+{
+    timerKind = JoinTimer;
+    IPv4Address			group;				// Multicast group address
+	IPv4Address			JoinPruneAddr;		// Joined or Pruned IP Address
+	IPv4Address			upstreamNbr;			// Address of upstream neigbor
 }

@@ -116,6 +116,20 @@ PimNeighbor *PimNeighborTable::getNeighborsByID(int id)
 	return NULL;
 }
 
+PimNeighbor *PimNeighborTable::getNeighborByIntID(int intId)
+{
+    for(int i = 0; i < getNumNeighbors(); i++)
+    {
+        int iddd = getNeighbor(i)->getInterfaceID();
+        if(intId == getNeighbor(i)->getInterfaceID())
+        {
+            return getNeighbor(i);
+            break;
+        }
+    }
+    return NULL;
+}
+
 /**
  * DELETE NEIGHBOR
  *

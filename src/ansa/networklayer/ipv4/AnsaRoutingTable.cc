@@ -115,32 +115,6 @@ void AnsaRoutingTable::initialize(int stage)
         WATCH(IPForward);
         WATCH(routerId);
     }
-//    else if (stage==1)
-//    {
-//        // L2 modules register themselves in stage 0, so we can only configure
-//        // the interfaces in stage 1.
-//        const char *filename = par("configFile");
-//
-//        // At this point, all L2 modules have registered themselves (added their
-//        // interface entries). Create the per-interface IPv4 data structures.
-//        IInterfaceTable *interfaceTable = InterfaceTableAccess().get();
-//        for (int i=0; i<interfaceTable->getNumInterfaces(); ++i)
-//            configureInterfaceForIPv4(interfaceTable->getInterface(i));
-//
-//
-//        const char *routerIdStr = par("routerId").stringValue();
-//
-//        // read routing table file (and interface configuration)
-//        RoutingTableXmlParser parser(ift, this);
-//        if (*filename && !parser.readRoutingTableFromXml(filename, routerIdStr))
-//            error("Error reading routing table file %s", filename);
-//
-//        // set routerId if param is not "" (==no routerId) or "auto" (in which case we'll
-//        // do it later in stage 3, after network configurators configured the interfaces)
-//
-//        if (strcmp(routerIdStr, "") && strcmp(routerIdStr, "auto"))
-//            routerId = IPv4Address(routerIdStr);
-//    }
     else if (stage==3)
     {
         // routerID selection must be after stage==2 when network autoconfiguration
@@ -183,8 +157,11 @@ void AnsaRoutingTable::addMulticastRoute(const AnsaIPv4MulticastRoute *entry)
         error("addMulticastRoute(): source or RP address has to be specified");
 
     // check that the incoming interface exists
-    if (!entry->getInIntPtr() || entry->getInIntNextHop().isUnspecified())
-        error("addMulticastRoute(): incoming interface has to be specified");
+    //FIXME for PIM-SM is needed unspecified next hop (0.0.0.0)
+    //if (!entry->getInIntPtr() || entry->getInIntNextHop().isUnspecified())
+        //error("addMulticastRoute(): incoming interface has to be specified");
+    //if (!entry->getInIntPtr())
+        //error("addMulticastRoute(): incoming interface has to be specified");
 
     // add to tables
     multicastRoutes.push_back(const_cast<AnsaIPv4MulticastRoute*>(entry));
@@ -236,6 +213,16 @@ bool AnsaRoutingTable::deleteMulticastRoute(const AnsaIPv4MulticastRoute *entry)
         {
             cancelEvent(entry->getSat());
             delete entry->getSat();
+        }
+        if (entry->getKat())
+        {
+            cancelEvent(entry->getKat());
+            delete entry->getKat();
+        }
+        if (entry->getEt())
+        {
+            cancelEvent(entry->getEt());
+            delete entry->getEt();
         }
 
         // delete timers from outgoing interfaces
@@ -362,26 +349,40 @@ void AnsaRoutingTable::generateShowIPMroute()
                 case A:
                     os << "A";
                     break;
+                case F:
+                    os << "F";
+                    break;
+                case T:
+                    os << "T";
+                    break;
+                //FIXME next flags for PIM-SM
             }
         }
         os << endl;
 
         os << "Incoming interface: ";
         if (ipr->getInIntPtr()) os << ipr->getInIntPtr()->getName() << ", ";
-        os << "RPF neighbor " << ipr->getInIntNextHop() << endl;
+        else os << "Null, ";
+        if (ipr->getInIntNextHop().isUnspecified()) os << "RPF neighbor 0.0.0.0" << endl;
+        else os << "RPF neighbor " << ipr->getInIntNextHop() << endl;
         os << "Outgoing interface list:" << endl;
 
         InterfaceVector all = ipr->getOutInt();
         if (all.size() == 0)
             os << "Null" << endl;
         else
-            for (unsigned int k = 0; k < all.size(); k++)
+            if (ipr->getOutShowIntStatus())                         // hack for PIM-SM output - problem with register state and outgoing interface
             {
-                os << all[k].intPtr->getName() << ", ";
-                if (all[k].forwarding == Forward) os << "Forward/"; else os << "Pruned/";
-                if (all[k].mode == Densemode) os << "Dense"; else os << "Sparse";
-                os << endl;
+                for (unsigned int k = 0; k < all.size(); k++)
+                {
+                    os << all[k].intPtr->getName() << ", ";
+                    if (all[k].forwarding == Forward) os << "Forward/"; else os << "Pruned/";
+                    if (all[k].mode == Densemode) os << "Dense"; else os << "Sparse";
+                    os << endl;
+                }
             }
+            else
+                os << "Null" << endl;
         showMRoute.push_back(os.str());
     }
     std::stringstream out;

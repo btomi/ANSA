@@ -30,6 +30,13 @@ AnsaIPv4MulticastRoute::AnsaIPv4MulticastRoute()
     grt = NULL;
     sat = NULL;
     srt = NULL;
+    rst = NULL;
+    kat = NULL;
+    et = NULL;
+    jt = NULL;
+
+    RP = IPv4Address::UNSPECIFIED_ADDRESS;
+    showOutInt = true;
 
     this->setRoutingTable(NULL);
     this->setParent(NULL);
@@ -91,6 +98,31 @@ void AnsaIPv4MulticastRoute::removeFlag(flag fl)
     }
 }
 
+void AnsaIPv4MulticastRoute::setRegStatus(int intId, RegisterState regState)
+{
+    unsigned int i;
+    for (i = 0; i < outInt.size(); i++)
+    {
+        if (outInt[i].intId == intId)
+        {
+            outInt[i].regState = regState;
+            break;
+        }
+
+    }
+}
+
+RegisterState AnsaIPv4MulticastRoute::getRegStatus(int intId)
+{
+    unsigned int i;
+    for (i = 0; i < outInt.size(); i++)
+    {
+        if (outInt[i].intId == intId)
+            break;
+    }
+    return outInt[i].regState;
+}
+
 int AnsaIPv4MulticastRoute::getOutIdByIntId(int intId)
 {
     unsigned int i;
@@ -100,6 +132,17 @@ int AnsaIPv4MulticastRoute::getOutIdByIntId(int intId)
             break;
     }
     return i;
+}
+
+outInterface AnsaIPv4MulticastRoute::getOutIntByIntId(int intId)
+{
+    unsigned int i;
+    for (i = 0; i < outInt.size(); i++)
+    {
+        if (outInt[i].intId == intId)
+            break;
+    }
+    return outInt[i];
 }
 
 bool AnsaIPv4MulticastRoute::isOilistNull()

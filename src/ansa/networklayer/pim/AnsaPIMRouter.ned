@@ -42,6 +42,7 @@ module PIMRouter
         @labels(node,ethernet-node);
         xml routingTable = default(xml("<routingTable/>"));  // Routing table is filled by deviceConfigurator
         bool IPForward = default(true);
+        bool multicastForward = default(true);
         string configFile = default("config.xml");           // file name of the XML file which contains configuration for router
         string deviceId;                                     // needed for proper load of device XML configuration
         string hostname = default("Router");

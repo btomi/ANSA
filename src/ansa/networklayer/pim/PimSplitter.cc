@@ -255,7 +255,9 @@ void PimSplitter::handleMessage(cMessage *msg)
 
    // PIM packet from PIM mode, send to network layer
    else if (dynamic_cast<PIMPacket *>(msg))
+   {
 	   send(msg, "transportOut");
+   }
 
    else
 	   EV << "PIM:ERROR - bad type of message" << endl;
@@ -463,23 +465,33 @@ void PimSplitter::newMulticast(IPv4Address destAddr, IPv4Address srcAddr)
 		newRoute->setMulticastGroup(destAddr);
 		newRoute->setOrigin(srcAddr);
 
-		// Directly connected routes to source does not have next hop
-		// RPF neighbor is source of packet
-		IPv4Address rpf;
-		const IPv4Route *routeToSrc = rt->findBestMatchingRoute(srcAddr);
-		if (routeToSrc->getSource() == IPv4Route::IFACENETMASK)
+		if (pimInt->getMode() == Dense)
 		{
-			newRoute->addFlag(A);
-			rpf = srcAddr;
-		}
-		// Not directly connected, next hop address is saved in routing table
-		else
-			rpf = rt->getGatewayForDestAddr(srcAddr);
+            // Directly connected routes to source does not have next hop
+            // RPF neighbor is source of packet
+            IPv4Address rpf;
+            const IPv4Route *routeToSrc = rt->findBestMatchingRoute(srcAddr);
+            if (routeToSrc->getSource() == IPv4Route::IFACENETMASK)
+            {
+                newRoute->addFlag(A);
+                rpf = srcAddr;
+            }
+            // Not directly connected, next hop address is saved in routing table
+            else
+                rpf = rt->getGatewayForDestAddr(srcAddr);
 
-		newRoute->setInInt(inInt, inInt->getInterfaceId(), rpf);
+            newRoute->setInInt(inInt, inInt->getInterfaceId(), rpf);
+		}
+		if (pimInt->getMode() == Sparse)
+		{
+		    newRoute->setInInt(inInt, inInt->getInterfaceId(), IPv4Address("0.0.0.0"));
+		}
+
 
 		// notification for PIM module about new multicast route
 		if (pimInt->getMode() == Dense)
 			nb->fireChangeNotification(NF_IPv4_NEW_MULTICAST_DENSE, newRoute);
+		if (pimInt->getMode() == Sparse)
+		    nb->fireChangeNotification(NF_IPv4_NEW_MULTICAST_SPARSE, newRoute);
 	}
 }
