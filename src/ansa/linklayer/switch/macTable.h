@@ -52,7 +52,7 @@ public:
   /* enahanced MAC table record */
   typedef struct s_record {
 	  MACAddress addr; // mac address
-	  simtime_t insert_time; // time of insertion od update for ageing process
+	  simtime_t insert_time; // time of insertion of update for ageing process
 	  tPortList portList; // list of destination ports (multiple ports for group adresses)
 	  tType type; // record type = {static, dynamic, group}
 	  tSpec spec; // address specialities

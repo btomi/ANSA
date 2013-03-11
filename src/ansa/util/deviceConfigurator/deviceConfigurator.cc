@@ -69,7 +69,7 @@ void DeviceConfigurator::initialize(int stage){
 
    // interfaces and routing table are not ready before stage 2
     if (stage == 2){
-
+//        this->loadISISConfig(ISISAccess().get(),ISIS::L2_ISIS_MODE);
         // get table of interfaces of this device
         ift = InterfaceTableAccess().get();
         if (ift == NULL){
@@ -806,8 +806,10 @@ void DeviceConfigurator::loadISISConfig(ISIS *isisModul, ISIS::ISIS_MODE isisMod
         }
     }
 
-    if(isisRouting != NULL){
-    //NET
+
+    if (isisRouting != NULL)
+    {
+        //NET
         //TODO: multiple NETs for migrating purposes (merging, splitting areas)
         const char *netAddr = this->getISISNETAddress(isisRouting);
         if (netAddr != NULL)
@@ -889,39 +891,43 @@ void DeviceConfigurator::loadISISConfig(ISIS *isisModul, ISIS::ISIS_MODE isisMod
 
         //L2 SPF Full interval
         isisModul->setL2SpfFullInterval(this->getISISL2SPFFullInterval(isisRouting));
-    }else{
-        this->loadISISDefaultConfig(isisModul);
-    }
-    /* End of core module properties */
 
-    /* Load configuration for interfaces */
-    cXMLElement *interfaces = device->getFirstChildWithTag("Interfaces");
-    if (interfaces == NULL) {
-        EV
-                  << "deviceId "
-                  << deviceId
-                  << ": <Interfaces></Interfaces> tag is missing in configuration file: \""
-                  << configFile << "\"\n";
-        return;
-    }
-    // add all interfaces to ISISIft vector containing additional information
-    InterfaceEntry *entryIFT = new InterfaceEntry(this); //TODO added "this" -> experimental
-    for (int i = 0; i < ift->getNumInterfaces(); i++) {
-        entryIFT = ift->getInterface(i);
-        //EV << entryIFT->getNetworkLayerGateIndex() << " " << entryIFT->getName() << " " << entryIFT->getFullName() << "\n";
-        this->loadISISInterfaceConfig(isisModul, entryIFT, interfaces->getFirstChildWithAttribute("Interface", "name",
-                        entryIFT->getName()));
+        /* End of core module properties */
+
+        /* Load configuration for interfaces */
+        cXMLElement *interfaces = device->getFirstChildWithTag("Interfaces");
+        if (interfaces == NULL)
+        {
+            EV
+                    << "deviceId " << deviceId << ": <Interfaces></Interfaces> tag is missing in configuration file: \""
+                            << configFile << "\"\n";
+            return;
+        }
+        // add all interfaces to ISISIft vector containing additional information
+        InterfaceEntry *entryIFT = new InterfaceEntry(this); //TODO added "this" -> experimental
+        for (int i = 0; i < ift->getNumInterfaces(); i++)
+        {
+            entryIFT = ift->getInterface(i);
+            //EV << entryIFT->getNetworkLayerGateIndex() << " " << entryIFT->getName() << " " << entryIFT->getFullName() << "\n";
+            this->loadISISInterfaceConfig(isisModul, entryIFT,
+                    interfaces->getFirstChildWithAttribute("Interface", "name", entryIFT->getName()));
 //        isisModul->insertIft(
 //                entryIFT,
 //                interfaces->getFirstChildWithAttribute("Interface", "name",
 //                        entryIFT->getName()));
+        }
+
+        /* End of load configuration for interfaces */
+    }
+    else
+    {
+        this->loadISISDefaultConfig(isisModul);
+
     }
 
 
-    /* End of load configuration for interfaces */
-
-
 }
+
 
 void DeviceConfigurator::loadISISDefaultConfig(ISIS *isisModule){
     //NET
@@ -991,6 +997,7 @@ void DeviceConfigurator::loadISISDefaultConfig(ISIS *isisModule){
       //L2 SPF Full interval
       isisModule->setL2SpfFullInterval(ISIS_SPF_FULL_INTERVAL);
 }
+
 
 
 void DeviceConfigurator::loadISISInterfaceConfig(ISIS *isisModule, InterfaceEntry *entry, cXMLElement *intElement){

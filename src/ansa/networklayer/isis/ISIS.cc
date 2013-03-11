@@ -8873,33 +8873,13 @@ void ISIS::generateNetAddr(){
     }
 
 
-    memcpy(tmp,"49.0000.",8);
-    /* This is really stupid way to do it, but right now  the thinking hurts */
-    tmp[8] = (a[0] >>2);
-    tmp[9] = a[0] && 0x0F;
-    tmp[10] = (a[1] >> 4);
-    tmp[11] = a[1] && 0x0F;
-    tmp[12] = '.';
-    tmp[13] = (a[2] >> 4);
-    tmp[14] = a[2] && 0x0F;
-    tmp[15] = (a[3] >> 4);
-    tmp[16] = a[3] && 0x0F;
-    tmp[17] = '.';
-    tmp[18] = (a[4] >> 4);
-    tmp[19] = a[4] && 0x0F;
-    tmp[20] = (a[5] >> 4);
-    tmp[21] = a[5] && 0x0F;
-    tmp[22] = '.';
-    tmp[23] = '0';
-    tmp[24] = '0';
-//    string ahoj;
-//    ahoj.append(string(std::hex << a[0]));
+
     this->netAddr = std::string(tmp);
     stringstream addressStream;
-    addressStream << hex << address;// << a[1] << "." << hex << a[2] << hex << a[3] << "." << hex << a[4] << hex << a[5] << ".00";
+    addressStream << hex << address;
     string aS = addressStream.str();
     this->netAddr = "49.0000." + aS.substr(0,2) + aS.substr(3,2) + "." + aS.substr(6,2) + aS.substr(9,2) + "." + aS.substr(12,2) + aS.substr(15,2) + ".00";
-//    this->netAddr=ahoj.str();
+
     if(!this->parseNetAddr()){
         throw cRuntimeError("Unable to parse auto-generated NET address.");
     }

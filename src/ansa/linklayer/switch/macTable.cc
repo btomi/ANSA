@@ -98,7 +98,7 @@ MACTable::tSpec MACTable::getSpec(MACAddress& addr) {
     return iter->second.spec;
 }
 
-
+/** Returns list of egress ports for specified address @param addr */
 MACTable::tPortList& MACTable::getPorts(MACAddress& addr) {
 
 	Enter_Method_Silent();
