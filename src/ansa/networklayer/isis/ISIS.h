@@ -20,7 +20,8 @@
  * @date 7.3.2012
  * @brief
  * @detail
- * @todo Incrementing sequence number should be done by using modulo and overflow should be properly handled
+ * @todo TODO Incrementing sequence number should be done by using modulo and overflow should be properly handled
+ *       TODO BUG-ID: 1; A known bug emerged with new version of INET. If gateIndex doesn't corresponds to interface's index in interface table, things go terribly wrong.
  */
 
 #ifndef ISIS_H_
@@ -82,9 +83,9 @@ private:
     string deviceId; /*!< device ID */
     string configFile; /*!< config file specified in simulation */
     string netAddr; /*!<  OSI network address in simplified NSAP format */
-    const unsigned char *areaId; /*!< first 3Bytes of netAddr as area ID */
-    const unsigned char *sysId; /*!< next 6Bytes of NetAddr as system ID */
-    const unsigned char *NSEL; /*!< last 1Byte of Netaddr as NSEL identifier */
+    unsigned char *areaId; /*!< first 3Bytes of netAddr as area ID */
+    unsigned char *sysId; /*!< next 6Bytes of NetAddr as system ID */
+    unsigned char *NSEL; /*!< last 1Byte of Netaddr as NSEL identifier */
     AdjTab_t adjL1Table; /*!< table of L1 adjacencies */
     AdjTab_t adjL2Table; /*!< table of L2 adjacencies */
     short isType; /*!< defines router IS-IS operational mode (L1,L2,L1L2) */
@@ -126,6 +127,7 @@ private:
     int L1SPFFullInterval;
     int L2SPFFullInterval;
     unsigned long helloCounter; /*!< my hax hello counter to sync DIS/non-DIS hellos. This variable is deprecated, but is kept for sentimental reasons. */
+
     /* Init */
     void initISIS(); // main init
     void initHello();
@@ -135,6 +137,7 @@ private:
     void initCsnp();
     void initPsnp();
     void initSPF();
+
     /* Hello */
     void handlePTPHelloMsg(ISISMessage *inMsg); //
     void sendBroadcastHelloMsg(int interfaceIndex, short  circuitType);
@@ -152,6 +155,7 @@ private:
     bool amIDIS(int interfaceIndex, short  circuitType);
     void electDIS(ISISLANHelloPacket *msg);
     std::vector<ISISadj> *getAdjTab(short  circuitType);
+
     /* LSP */
     unsigned char *getLanID(ISISLANHelloPacket *msg);
     void handleLsp(ISISLSPPacket *lsp);
@@ -186,6 +190,7 @@ private:
     LSPRecord *installLSP(ISISLSPPacket *lsp, short  circuitType); //install lsp into local LSP database
     void updateAtt(bool action); /*!< Action specify whether this method has been called to set (true - new adjacency) or clear (false - removing adjacency) Attached flag. */
     void setClosestAtt(void); /*!< Find and set the closest L1L2 attached IS */
+
     /* SPF */
     void fullSPF(ISISTimer *timer);
     bool extractISO(ISISCons_t *initial, short  circuitType); /*!< Extracts ISO informations from lspDb needed to perform SPF calculation. > */
@@ -200,6 +205,7 @@ private:
     void moveToPath(ISISPath *path);
     void extractAreas(ISISPaths_t *paths, ISISPaths_t *areas, short  circuitType);
     ISISPaths_t *getPathsISO(short  circuitType);
+
     /* Flags */
     FlagRecQQ_t *getSRMPTPQueue(short  circuitType);
     FlagRecQQ_t *getSRMBQueue(short  circuitType);
@@ -220,6 +226,7 @@ private:
     void clearSSNflags(LSPRecord *lspRec, short  circuitType);
     void clearSSNflagsBut(LSPRecord *lspRec, unsigned int index, short  circuitType);
     void addFlags(LSPRecord *lspRec, short  circuitType); //add and set SRM and SSN flags for lspRec
+
     /* Print */
     void printLSP(ISISLSPPacket *lsp, char *from);
     void printSysId(unsigned char *sysId);
@@ -232,6 +239,7 @@ private:
     /*    unsigned char* getSysID(ISISL1HelloPacket *msg);
          unsigned char* getSysID(ISISL2HelloPacket *msg);
          unsigned char* getSysID(ISISPTPHelloPacket *msg);*/
+
     /* TLV */
     void addTLV(ISISMessage *inMsg, enum TLVtypes tlvType, short  circuitType, int gateIndex = -1); //generate and add this tlvType LSP to message
     void addTLV(ISISMessage *inMsg, TLV_t *tlv); //add this TLV in message
@@ -246,6 +254,7 @@ private:
     bool isMessageOK(ISISMessage *inMsg);
     bool isAreaIDOK(TLV_t *areaAddressTLV, unsigned char *compare = NULL); //if compare is NULL then use this->areaId for comparison
     int getIfaceIndex(ISISinterface *interface); //returns index to ISISIft
+
     /* General */
     short getLevel(ISISMessage *msg); //returns level (circuitType) of the message
 
@@ -274,6 +283,7 @@ private:
     bool checkDuplicateSysID(ISISMessage *msg); //check sysId field from received hello packet for duplicated sysId
     void removeDeadLSP(ISISTimer *msg); //remove expired LSP
     void updateMyLSP(); //create or update my own LSPs
+
 protected:
     virtual void initialize(int stage); //init
     virtual void handleMessage(cMessage *msg); //basic message handling
@@ -285,6 +295,7 @@ protected:
     bool compareArrays(unsigned char *first, unsigned char *second, unsigned int size); //method for comparison of two unsigned int arrays
     void copyArrayContent(unsigned char *src, unsigned char *dst, unsigned int size, unsigned int startSrc, unsigned int startDst); //copy content from one array to another
     virtual void receiveChangeNotification(int category, const cObject *details);
+
 public:
     ISIS();
     virtual ~ISIS(); //destructor
@@ -337,6 +348,7 @@ public:
     void setL1PsnpInterval(int l1PsnpInterval);
     void setL2CsnpInterval(int l2CsnpInterval);
     void setL2PsnpInterval(int l2PsnpInterval);
+    ISIS_MODE getMode() const;
 };
 
 

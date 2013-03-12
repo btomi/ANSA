@@ -755,13 +755,13 @@ void DeviceConfigurator::loadPimInterfaceConfig(cXMLElement *iface)
 
 /* IS-IS related methods */
 
-void DeviceConfigurator::loadISISConfig(ISIS *isisModul, ISIS::ISIS_MODE isisMode){
+void DeviceConfigurator::loadISISConfig(ISIS *isisModule, ISIS::ISIS_MODE isisMode){
 
     /* init module pointers based on isisMode */
 
     if(isisMode == ISIS::L2_ISIS_MODE){
         //TRILL
-        isisModul->setTrill(TRILLAccess().get());
+        isisModule->setTrill(TRILLAccess().get());
 
 
         //RBridgeSplitter
@@ -779,14 +779,14 @@ void DeviceConfigurator::loadISISConfig(ISIS *isisModul, ISIS::ISIS_MODE isisMod
     }
 
     //CLNSTable must be present in both modes
-    isisModul->setClnsTable(CLNSTableAccess().get());
+    isisModule->setClnsTable(CLNSTableAccess().get());
 
     //InterfaceTable
-    isisModul->setIft(InterfaceTableAccess().get());
+    isisModule->setIft(InterfaceTableAccess().get());
 
     //NotificationBoard
-    isisModul->setNb(NotificationBoardAccess().get());
-    isisModul->subscribeNb();
+    isisModule->setNb(NotificationBoardAccess().get());
+    isisModule->subscribeNb();
 
     /* end of module's pointers init */
 
@@ -794,8 +794,15 @@ void DeviceConfigurator::loadISISConfig(ISIS *isisModul, ISIS::ISIS_MODE isisMod
 
     if(device == NULL){
         if(isisMode == ISIS::L3_ISIS_MODE){
+            /* In L3 mode we need configuration (at least NET) */
             throw cRuntimeError("No configuration found for this device");
+        }else{
+            /* For L2 mode we load defaults ...
+             * ... repeat after me zero-configuration. */
+            this->loadISISCoreDefaultConfig(isisModule);
+            this->loadISISInterfacesConfig(isisModule);
         }
+        return;
     }
 
     cXMLElement *isisRouting = xmlParser::GetIsisRouting(device);
@@ -814,11 +821,11 @@ void DeviceConfigurator::loadISISConfig(ISIS *isisModul, ISIS::ISIS_MODE isisMod
         const char *netAddr = this->getISISNETAddress(isisRouting);
         if (netAddr != NULL)
         {
-            isisModul->setNetAddr(netAddr);
+            isisModule->setNetAddr(netAddr);
         }
         else if (isisMode == ISIS::L2_ISIS_MODE)
         {
-            isisModul->generateNetAddr();
+            isisModule->generateNetAddr();
         }
         else
         {
@@ -828,108 +835,117 @@ void DeviceConfigurator::loadISISConfig(ISIS *isisModul, ISIS::ISIS_MODE isisMod
         //IS type {L1(L2_ISIS_MODE) | L2 | L1L2 default for L3_ISIS_MODE}
         if (isisMode == ISIS::L2_ISIS_MODE)
         {
-            isisModul->setIsType(L1_TYPE);
+            isisModule->setIsType(L1_TYPE);
         }
         else
         {
-            isisModul->setIsType(this->getISISISType(isisRouting));
+            isisModule->setIsType(this->getISISISType(isisRouting));
         }
 
         //L1 Hello interval
-        isisModul->setL1HelloInterval(this->getISISL1HelloInterval(isisRouting));
+        isisModule->setL1HelloInterval(this->getISISL1HelloInterval(isisRouting));
 
         //L1 Hello multiplier
-        isisModul->setL1HelloMultiplier(this->getISISL1HelloMultiplier(isisRouting));
+        isisModule->setL1HelloMultiplier(this->getISISL1HelloMultiplier(isisRouting));
 
         //L2 Hello interval
-        isisModul->setL2HelloInterval(this->getISISL2HelloInterval(isisRouting));
+        isisModule->setL2HelloInterval(this->getISISL2HelloInterval(isisRouting));
 
         //L2 Hello multiplier
-        isisModul->setL2HelloMultiplier(this->getISISL2HelloMultiplier(isisRouting));
+        isisModule->setL2HelloMultiplier(this->getISISL2HelloMultiplier(isisRouting));
 
         //LSP interval
-        isisModul->setLspInterval(this->getISISLSPInterval(isisRouting));
+        isisModule->setLspInterval(this->getISISLSPInterval(isisRouting));
 
         //LSP refresh interval
-        isisModul->setLspRefreshInterval(this->getISISLSPRefreshInterval(isisRouting));
+        isisModule->setLspRefreshInterval(this->getISISLSPRefreshInterval(isisRouting));
 
         //LSP max lifetime
-        isisModul->setLspMaxLifetime(this->getISISLSPMaxLifetime(isisRouting));
+        isisModule->setLspMaxLifetime(this->getISISLSPMaxLifetime(isisRouting));
 
         //L1 LSP generating interval
-        isisModul->setL1LspGenInterval(this->getISISL1LSPGenInterval(isisRouting));
+        isisModule->setL1LspGenInterval(this->getISISL1LSPGenInterval(isisRouting));
 
         //L2 LSP generating interval
-        isisModul->setL2LspGenInterval(this->getISISL2LSPGenInterval(isisRouting));
+        isisModule->setL2LspGenInterval(this->getISISL2LSPGenInterval(isisRouting));
 
         //L1 LSP send interval
-        isisModul->setL1LspSendInterval(this->getISISL1LSPSendInterval(isisRouting));
+        isisModule->setL1LspSendInterval(this->getISISL1LSPSendInterval(isisRouting));
 
         //L2 LSP send interval
-        isisModul->setL2LspSendInterval(this->getISISL2LSPSendInterval(isisRouting));
+        isisModule->setL2LspSendInterval(this->getISISL2LSPSendInterval(isisRouting));
 
         //L1 LSP initial waiting period
-        isisModul->setL1LspInitWait(this->getISISL1LSPInitWait(isisRouting));
+        isisModule->setL1LspInitWait(this->getISISL1LSPInitWait(isisRouting));
 
         //L2 LSP initial waiting period
-        isisModul->setL2LspInitWait(this->getISISL2LSPInitWait(isisRouting));
+        isisModule->setL2LspInitWait(this->getISISL2LSPInitWait(isisRouting));
 
         //L1 CSNP interval
-        isisModul->setL1CSNPInterval(this->getISISL1CSNPInterval(isisRouting));
+        isisModule->setL1CSNPInterval(this->getISISL1CSNPInterval(isisRouting));
 
         //L2 CSNP interval
-        isisModul->setL2CSNPInterval(this->getISISL2CSNPInterval(isisRouting));
+        isisModule->setL2CSNPInterval(this->getISISL2CSNPInterval(isisRouting));
 
         //L1 PSNP interval
-        isisModul->setL1PSNPInterval(this->getISISL1PSNPInterval(isisRouting));
+        isisModule->setL1PSNPInterval(this->getISISL1PSNPInterval(isisRouting));
 
         //L2 PSNP interval
-        isisModul->setL2PSNPInterval(this->getISISL2PSNPInterval(isisRouting));
+        isisModule->setL2PSNPInterval(this->getISISL2PSNPInterval(isisRouting));
 
         //L1 SPF Full interval
-        isisModul->setL1SpfFullInterval(this->getISISL1SPFFullInterval(isisRouting));
+        isisModule->setL1SpfFullInterval(this->getISISL1SPFFullInterval(isisRouting));
 
         //L2 SPF Full interval
-        isisModul->setL2SpfFullInterval(this->getISISL2SPFFullInterval(isisRouting));
+        isisModule->setL2SpfFullInterval(this->getISISL2SPFFullInterval(isisRouting));
 
         /* End of core module properties */
+    }
+    else
+    {
+        this->loadISISCoreDefaultConfig(isisModule);
 
-        /* Load configuration for interfaces */
-        cXMLElement *interfaces = device->getFirstChildWithTag("Interfaces");
+    }
+    /* Load configuration for interfaces */
+
+    this->loadISISInterfacesConfig(isisModule);
+    /* End of load configuration for interfaces */
+
+}
+void DeviceConfigurator::loadISISInterfacesConfig(ISIS *isisModule){
+
+    cXMLElement *interfaces = NULL;
+    if (device != NULL)
+    {
+        interfaces = device->getFirstChildWithTag("Interfaces");
         if (interfaces == NULL)
         {
             EV
                     << "deviceId " << deviceId << ": <Interfaces></Interfaces> tag is missing in configuration file: \""
                             << configFile << "\"\n";
-            return;
+//        return;
         }
-        // add all interfaces to ISISIft vector containing additional information
-        InterfaceEntry *entryIFT = new InterfaceEntry(this); //TODO added "this" -> experimental
-        for (int i = 0; i < ift->getNumInterfaces(); i++)
-        {
-            entryIFT = ift->getInterface(i);
-            //EV << entryIFT->getNetworkLayerGateIndex() << " " << entryIFT->getName() << " " << entryIFT->getFullName() << "\n";
-            this->loadISISInterfaceConfig(isisModul, entryIFT,
-                    interfaces->getFirstChildWithAttribute("Interface", "name", entryIFT->getName()));
-//        isisModul->insertIft(
-//                entryIFT,
-//                interfaces->getFirstChildWithAttribute("Interface", "name",
-//                        entryIFT->getName()));
-        }
-
-        /* End of load configuration for interfaces */
     }
-    else
+    // add all interfaces to ISISIft vector containing additional information
+//    InterfaceEntry *entryIFT = new InterfaceEntry(this); //TODO added "this" -> experimental
+    for (int i = 0; i < ift->getNumInterfaces(); i++)
     {
-        this->loadISISDefaultConfig(isisModul);
+        InterfaceEntry *entryIFT = ift->getInterface(i);
+        if (interfaces == NULL)
+        {
+            this->loadISISInterfaceDefaultConfig(isisModule, entryIFT);
+        }
+        else
+        {
+            this->loadISISInterfaceConfig(isisModule, entryIFT,
+                    interfaces->getFirstChildWithAttribute("Interface", "name", entryIFT->getName()));
 
+        }
     }
-
-
 }
 
 
-void DeviceConfigurator::loadISISDefaultConfig(ISIS *isisModule){
+void DeviceConfigurator::loadISISCoreDefaultConfig(ISIS *isisModule){
     //NET
 
           isisModule->generateNetAddr();
@@ -999,11 +1015,96 @@ void DeviceConfigurator::loadISISDefaultConfig(ISIS *isisModule){
 }
 
 
+void DeviceConfigurator::loadISISInterfaceDefaultConfig(ISIS *isisModule, InterfaceEntry *entry){
+
+        ISISinterface newIftEntry;
+        newIftEntry.intID = entry->getInterfaceId();
+
+        newIftEntry.gateIndex = entry->getNetworkLayerGateIndex();
+        EV <<"deviceId: " << this->deviceId << "ISIS: adding interface, gateIndex: " <<newIftEntry.gateIndex <<endl;
+
+        //set interface priority
+        newIftEntry.priority = ISIS_DIS_PRIORITY;  //default value
+
+        /* Interface is NOT enabled by default. If ANY IS-IS related property is configured on interface then it's enabled. */
+        newIftEntry.ISISenabled = false;
+        if(isisModule->getMode() == ISIS::L2_ISIS_MODE){
+            newIftEntry.ISISenabled = true;
+        }
+
+        //set network type (point-to-point vs. broadcast)
+
+        newIftEntry.network = true; //default value means broadcast TODO check with TRILL default values
+
+        //set interface metric
+
+        newIftEntry.metric = ISIS_METRIC;    //default value
+
+        //set interface type according to global router configuration
+        newIftEntry.circuitType = isisModule->getIsType();
+
+
+        //set L1 hello interval in seconds
+        newIftEntry.L1HelloInterval = isisModule->getL1HelloInterval();
+
+
+        //set L1 hello multiplier
+        newIftEntry.L1HelloMultiplier = isisModule->getL1HelloMultiplier();
+
+
+        //set L2 hello interval in seconds
+        newIftEntry.L2HelloInterval = isisModule->getL2HelloInterval();
+
+
+        //set L2 hello multiplier
+        newIftEntry.L2HelloMultiplier = isisModule->getL2HelloMultiplier();
+
+        //set lspInterval
+        newIftEntry.lspInterval = isisModule->getLspInterval();
+
+        //set L1CsnpInterval
+        newIftEntry.L1CsnpInterval = isisModule->getL1CsnpInterval();
+
+        //set L2CsnpInterval
+        newIftEntry.L2CsnpInterval = isisModule->getL2CsnpInterval();
+
+        //set L1PsnpInterval
+        newIftEntry.L1PsnpInterval = isisModule->getL1PsnpInterval();
+
+        //set L2PsnpInterval
+        newIftEntry.L2PsnpInterval = isisModule->getL2PsnpInterval();
+
+        // priority is not needed for point-to-point, but it won't hurt
+        // set priority of current DIS = me at start
+        newIftEntry.L1DISpriority = newIftEntry.priority;
+        newIftEntry.L2DISpriority = newIftEntry.priority;
+
+        //set initial designated IS as himself
+
+        memcpy(newIftEntry.L1DIS,isisModule->getSysId(), ISIS_SYSTEM_ID);
+        //set LAN identifier; -99 is because, OMNeT starts numbering interfaces from 100 -> interfaceID 100 means LAN ID 0; and we want to start numbering from 1
+        //newIftEntry.L1DIS[6] = entry->getInterfaceId() - 99;
+        newIftEntry.L1DIS[ISIS_SYSTEM_ID] = newIftEntry.gateIndex + 1;
+        //do the same for L2 DIS
+
+        memcpy(newIftEntry.L2DIS,isisModule->getSysId(), ISIS_SYSTEM_ID);
+        //newIftEntry.L2DIS[6] = entry->getInterfaceId() - 99;
+        newIftEntry.L2DIS[ISIS_SYSTEM_ID] = newIftEntry.gateIndex + 1;
+
+        newIftEntry.passive = false;
+        newIftEntry.entry = entry;
+
+    //    this->ISISIft.push_back(newIftEntry);
+        isisModule->appendISISInterface(newIftEntry);
+}
+
 
 void DeviceConfigurator::loadISISInterfaceConfig(ISIS *isisModule, InterfaceEntry *entry, cXMLElement *intElement){
 
 
     if(intElement == NULL){
+
+        this->loadISISInterfaceDefaultConfig(isisModule, entry);
         return;
     }
     ISISinterface newIftEntry;
@@ -1017,6 +1118,9 @@ void DeviceConfigurator::loadISISInterfaceConfig(ISIS *isisModule, InterfaceEntr
 
     /* Interface is NOT enabled by default. If ANY IS-IS related property is configured on interface then it's enabled. */
     newIftEntry.ISISenabled = false;
+    if(isisModule->getMode() == ISIS::L2_ISIS_MODE){
+        newIftEntry.ISISenabled = true;
+    }
 
     cXMLElement *priority = intElement->getFirstChildWithTag("ISIS-Priority");
     if (priority != NULL && priority->getNodeValue() != NULL)

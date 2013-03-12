@@ -60,6 +60,10 @@ void RBridgeSplitter::handleMessage(cMessage *msg){
     {
         if(dynamic_cast<EthernetIIFrame *>(msg)){
             EthernetIIFrame * frame = (EthernetIIFrame *) msg;
+            if(frame->getDest().compareTo(MACAddress("0180c2000015"))){
+                this->send(msg, "isisOut", gateIndex);
+                return;
+            }
             //it's L2-IS-IS aka TRILL-IS-IS frame
             if(frame->getEtherType() == 0x22F4){//todo use #define or enum
                 this->send(msg, "isisOut", gateIndex);

@@ -47,6 +47,7 @@ ISIS::ISIS(){
     this->L1SSNPTPQueue = new std::vector<std::vector<FlagRecord *> *>;
     this->L2SSNPTPQueue = new std::vector<std::vector<FlagRecord *> *>;
 
+    this->attIS = new ISISNeighbours_t;
 }
 
 /*
@@ -824,6 +825,10 @@ void ISIS::initHello(){
     EV << "ISIS: initHello()" << endl;
     for (unsigned int k = 0; k < this->ISISIft.size(); k++)
     {
+        //don't schedule Hello message on Loopback interfaces
+        if(this->ISISIft.at(k).entry->isLoopback()){
+            continue;
+        }
 
         //schedule Hello timer per level => check if L1L2 on broadcast => schedule two timers
         //on PTP is L1L2 Hello valid timer
@@ -947,6 +952,11 @@ void ISIS::initCsnp()
     for (unsigned int k = 0; k < this->ISISIft.size(); k++)
     {
         iface = &(this->ISISIft.at(k));
+        //don't schedule Hello message on Loopback interfaces
+        if (this->ISISIft.at(k).entry->isLoopback())
+        {
+            continue;
+        }
 
         //don't schedule sending CSNP PDU on passive or not ISIS-enabled interface
         if (!iface->ISISenabled || iface->passive)
@@ -992,6 +1002,12 @@ void ISIS::initPsnp()
     for (unsigned int k = 0; k < this->ISISIft.size(); k++)
     {
         iface = &(this->ISISIft.at(k));
+
+        //don't schedule Hello message on Loopback interfaces
+        if (this->ISISIft.at(k).entry->isLoopback())
+        {
+            continue;
+        }
 
         //don't schedule sending PSNP on passive or not ISIS-enabled interface
         if (!iface->ISISenabled || iface->passive)
@@ -1856,7 +1872,7 @@ bool ISIS::parseNetAddr()
             case 2:
                 dots++;
                 area[0] = (unsigned char)(atoi(net.substr(0,2).c_str()));
-                EV<<"BEZ ATOI" << net.substr(0,2).c_str() <<endl;
+                cout<<"BEZ ATOI" << net.substr(0,2).c_str() <<endl;
                 break;
             case 7:
                 dots++;
@@ -1865,18 +1881,18 @@ bool ISIS::parseNetAddr()
                 break;
             case 12:
                 dots++;
-                systemId[0] = (unsigned char)(atoi(net.substr(8,2).c_str()));
-                systemId[1] = (unsigned char)(atoi(net.substr(10,2).c_str()));
+                systemId[0] = (unsigned char)(strtol(net.substr(8,2).c_str(), NULL, 16));
+                systemId[1] = (unsigned char)(strtol(net.substr(10,2).c_str(), NULL, 16));
                 break;
             case 17:
                 dots++;
-                systemId[2] = (unsigned char)(atoi(net.substr(13,2).c_str()));
-                systemId[3] = (unsigned char)(atoi(net.substr(15,2).c_str()));
+                systemId[2] = (unsigned char)(strtol(net.substr(13,2).c_str(), NULL, 16));
+                systemId[3] = (unsigned char)(strtol(net.substr(15,2).c_str(), NULL, 16));
                 break;
             case 22:
                 dots++;
-                systemId[4] = (unsigned char)(atoi(net.substr(18,2).c_str()));
-                systemId[5] = (unsigned char)(atoi(net.substr(20,2).c_str()));
+                systemId[4] = (unsigned char)(strtol(net.substr(18,2).c_str(), NULL, 16));
+                systemId[5] = (unsigned char)(strtol(net.substr(20,2).c_str(), NULL, 16));
                 break;
             default:
                 return false;
@@ -1897,13 +1913,13 @@ bool ISIS::parseNetAddr()
     //49.0001.1921.6801.2003.00
 
     areaId = area;
-    EV <<"ISIS: AreaID: "<< areaId[0] <<endl;
-    EV <<"ISIS: AreaID: "<< areaId[1] <<endl;
-    EV <<"ISIS: AreaID: "<< areaId[2] <<endl;
+    cout <<"ISIS: AreaID: "<< areaId[0] <<endl;
+    cout <<"ISIS: AreaID: "<< areaId[1] <<endl;
+    cout <<"ISIS: AreaID: "<< areaId[2] <<endl;
     sysId = systemId;
-    EV <<"ISIS: SystemID: "<< sysId <<endl;
+    cout <<"ISIS: SystemID: "<< sysId <<endl;
     NSEL = nsel;
-    EV <<"ISIS: NSEL: "<< NSEL <<endl;
+    cout <<"ISIS: NSEL: "<< NSEL <<endl;
 
     return true;
 }
@@ -1971,12 +1987,12 @@ void ISIS::handleL1HelloMsg(ISISMessage *inMsg)
         if ((tmpTLV = this->getTLVByType(msg, IS_NEIGHBOURS_HELLO)) != NULL)
         {
             //TODO check length of IS_NEIGHBOURS_HELLO value
-            unsigned char *tmpRecord = new unsigned char[ISIS_SYSTEM_ID];
+            unsigned char *tmpRecord = new unsigned char[6]; //size of MAC address
             //walk through all neighbour identifiers contained in TLV
-            for (unsigned int r = 0; r < (tmpTLV->length / ISIS_SYSTEM_ID); r++)
+            for (unsigned int r = 0; r < (tmpTLV->length / 6); r++)
             {
                 //check if my system id is contained in neighbour's adjL1Table
-                this->copyArrayContent(tmpTLV->value, tmpRecord, ISIS_SYSTEM_ID, r * ISIS_SYSTEM_ID, 0);
+                this->copyArrayContent(tmpTLV->value, tmpRecord, 6, r * 6, 0);
 
                 ISISinterface *tmpIntf = this->getIfaceByGateIndex(gateIndex);
                 MACAddress tmpMAC = tmpIntf->entry->getMacAddress();
@@ -2927,7 +2943,7 @@ void ISIS::printAdjTable()
     //print system id
     for(unsigned int i=0; i<6; i++)
     {
-        EV << setfill('0') << setw(2) << dec << (unsigned int)sysId[i];
+        EV << setfill('0') << setw(2) << hex << (unsigned int)sysId[i];
         if(i % 2 == 1)
             EV << ".";
     }
@@ -2942,7 +2958,7 @@ void ISIS::printAdjTable()
         //print neighbour system id
         for(unsigned int i=0; i<6; i++)
         {
-            EV <<  setfill('0') << setw(2) << dec << (unsigned int)adjL1Table.at(j).sysID[i];
+            EV <<  setfill('0') << setw(2) << hex << (unsigned int)adjL1Table.at(j).sysID[i];
             if(i == 1 || i ==3)
                         EV << ".";
         }
@@ -2981,7 +2997,7 @@ void ISIS::printAdjTable()
         //print system id
         for(unsigned int i=0; i<6; i++)
         {
-            EV << setfill('0') << setw(2) << dec << (unsigned int)sysId[i];
+            EV << setfill('0') << setw(2) << hex << (unsigned int)sysId[i];
             if(i % 2 == 1)
                 EV << ".";
         }
@@ -3300,7 +3316,7 @@ void ISIS::printSysId(unsigned char *sysId){
     //print system id
         for (unsigned int i = 0; i < 6; i++)
         {
-            std::cout << setfill('0') << setw(2) << dec << (unsigned int) sysId[i];
+            std::cout << setfill('0') << setw(2) << hex << (unsigned int) sysId[i];
             if (i % 2 == 1)
                 std::cout << ".";
         }
@@ -7718,6 +7734,8 @@ TLV_t *ISIS::genTLV(enum TLVtypes tlvType, short circuitType, int gateIndex)
              *************************************
              */
             //TODO there could more neighbours than could fit in one TLV
+            //TODO SEVERE!! length is not adjTab->size()!!! count only those adjacencies that have matching gateIndex eg. they are on the spcecified link
+
             adjTab = this->getAdjTab(circuitType);
 
             myTLV = new TLV_t;
@@ -7726,10 +7744,10 @@ TLV_t *ISIS::genTLV(enum TLVtypes tlvType, short circuitType, int gateIndex)
             myTLV->value = new unsigned char [myTLV->length];
             for (unsigned int h = 0; h < adjTab->size(); h++)
             {
-                if(adjTab->at(h).gateIndex == gateIndex){
+//                if(adjTab->at(h).gateIndex == gateIndex){
 //                    this->copyArrayContent(adjTab->at(h).mac.getAddressBytes(), myTLV->value, 6, 0, h * 6);
                     adjTab->at(h).mac.getAddressBytes(&(myTLV->value[h*6]));
-                }
+//                }
             }
 
             break;
@@ -8168,7 +8186,8 @@ void ISIS::fullSPF(ISISTimer *timer){
     {
         if (this->L1ISISPathsISO != NULL)
         {
-            delete this->L1ISISPathsISO;
+            this->L1ISISPathsISO->clear();
+//            delete this->L1ISISPathsISO;
         }
         this->L1ISISPathsISO = ISISPaths;
     }
@@ -8328,7 +8347,7 @@ void ISIS::setClosestAtt(void)
         }
     }
 
-    if(this->attIS != NULL){
+    if(this->attIS != NULL && !this->attIS->empty()){
         this->attIS->clear();
     }
     this->attIS = attIS;
@@ -8817,6 +8836,11 @@ void ISIS::setL2CsnpInterval(int l2CsnpInterval)
     L2CSNPInterval = l2CsnpInterval;
 }
 
+ISIS::ISIS_MODE ISIS::getMode() const
+{
+    return mode;
+}
+
 void ISIS::setL2PsnpInterval(int l2PsnpInterval)
 {
     L2PSNPInterval = l2PsnpInterval;
@@ -8860,24 +8884,35 @@ void ISIS::generateNetAddr(){
 
 
     for(int i = 0; i < ift->getNumInterfaces(); i++){
-        if((address = ift->getInterface(i)->getMacAddress()) != 0){
+        if((address = ift->getInterface(i)->getMacAddress()).getInt() != 0){
             break;
         }
 
     }
     /* If there's not any interface with non-zero MAC address then generate one.
      * This is not likely to happen.*/
-    if(address == 0){
-        EV << "Warning: didn't get non-zero MAC address for NET generating"<<endl;
+    if(address.getInt() == 0){
+        cout << "Warning: didn't get non-zero MAC address for NET generating"<<endl;
         address.generateAutoAddress();
     }
-
-
+//
+//    this->areaId = new unsigned char[3];
+//    this->sysId = new unsigned char[6];
+//    this->NSEL = new unsigned char[1];
 
     this->netAddr = std::string(tmp);
     stringstream addressStream;
     addressStream << hex << address;
     string aS = addressStream.str();
+
+//    this->areaId[0] = (unsigned char)atoi("49");
+//    this->areaId[1] = (unsigned char)atoi("00");
+//    this->areaId[2] = (unsigned char)atoi("01");
+
+//    address.getAddressBytes(this->sysId);
+
+//    this->NSEL[0] = (unsigned char)atoi("00");
+//    this->sysId = string(aS.substr(0,2) + aS.substr(3,2) + aS.substr(0,2) + aS.substr(3,2)  ).c_str();
     this->netAddr = "49.0000." + aS.substr(0,2) + aS.substr(3,2) + "." + aS.substr(6,2) + aS.substr(9,2) + "." + aS.substr(12,2) + aS.substr(15,2) + ".00";
 
     if(!this->parseNetAddr()){

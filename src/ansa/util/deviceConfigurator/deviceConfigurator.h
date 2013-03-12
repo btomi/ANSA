@@ -85,7 +85,9 @@ class DeviceConfigurator : public cSimpleModule {
       void readStaticRouteFromXml(cXMLElement* Node);
 
       /* ISIS related */
-      void loadISISDefaultConfig(ISIS *isisModule);
+      void loadISISCoreDefaultConfig(ISIS *isisModule);
+      void loadISISInterfaceDefaultConfig(ISIS *isisModule, InterfaceEntry *entry);
+      void loadISISInterfacesConfig(ISIS *isisModule);
       void loadISISInterfaceConfig(ISIS *isisModule, InterfaceEntry *entry, cXMLElement *intElement);
       const char *getISISNETAddress(cXMLElement *isisRouting);
       short int getISISISType(cXMLElement *isisRouting);
