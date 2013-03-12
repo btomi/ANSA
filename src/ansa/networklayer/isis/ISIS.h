@@ -140,8 +140,8 @@ private:
 
     /* Hello */
     void handlePTPHelloMsg(ISISMessage *inMsg); //
-    void sendBroadcastHelloMsg(int interfaceIndex, short  circuitType);
-    void sendPTPHelloMsg(int interfaceIndex, short  circuitType);
+    void sendBroadcastHelloMsg(int interfaceIndex, int gateIndex, short  circuitType);
+    void sendPTPHelloMsg(int interfaceIndex, int gateIndex, short  circuitType);
     unsigned short getHoldTime(int interfaceIndex, short  circuitType = L1_TYPE);
     double getHelloInterval(int interfaceIndex, short  circuitType); //return hello interval for specified interface and circuitType. For DIS interface returns only 1/3 of actual value;
     ISISadj *getAdjByGateIndex(int gateIndex, short  circuitType, int offset = 0); // return something corresponding to adjacency on specified link
@@ -211,20 +211,20 @@ private:
     FlagRecQQ_t *getSRMBQueue(short  circuitType);
     FlagRecQQ_t *getSSNPTPQueue(short  circuitType);
     FlagRecQQ_t *getSSNBQueue(short  circuitType);
-    FlagRecQ_t *getSRMQ(bool network, int index, short  circuitType);
-    FlagRecQ_t *getSSNQ(bool network, int index, short  circuitType);
-    void setSRMflag(LSPRecord *lspRec, int index, short  circuitType);
+    FlagRecQ_t *getSRMQ(bool network, int interfaceIndex, short  circuitType);
+    FlagRecQ_t *getSSNQ(bool network, int interfaceIndex, short  circuitType);
+    void setSRMflag(LSPRecord *lspRec, int interfaceIndex, short  circuitType);
     void setSRMflags(LSPRecord *lspRec, short  circuitType);
-    void setSRMflagsBut(LSPRecord *lspRec, unsigned int index, short  circuitType);
-    void clearSRMflag(LSPRecord *lspRec, int index, short  circuitType);
+    void setSRMflagsBut(LSPRecord *lspRec, unsigned int interfaceIndex, short  circuitType);
+    void clearSRMflag(LSPRecord *lspRec, int interfaceIndex, short  circuitType);
     void clearSRMflags(LSPRecord *lspRec, short  circuitType);
-    void clearSRMflagsBut(LSPRecord *lspRec, unsigned int index, short  circuitType);
-    void setSSNflag(LSPRecord *lspRec, int index, short  circuitType);
+    void clearSRMflagsBut(LSPRecord *lspRec, unsigned int interfaceIndex, short  circuitType);
+    void setSSNflag(LSPRecord *lspRec, int interfaceIndex, short  circuitType);
     void setSSNflags(LSPRecord *lspRec, short  circuitType);
-    void setSSNflagsBut(LSPRecord *lspRec, unsigned int index, short  circuitType);
-    void clearSSNflag(LSPRecord *lspRec, int index, short  circuitType);
+    void setSSNflagsBut(LSPRecord *lspRec, unsigned int interfaceIndex, short  circuitType);
+    void clearSSNflag(LSPRecord *lspRec, int interfaceIndex, short  circuitType);
     void clearSSNflags(LSPRecord *lspRec, short  circuitType);
-    void clearSSNflagsBut(LSPRecord *lspRec, unsigned int index, short  circuitType);
+    void clearSSNflagsBut(LSPRecord *lspRec, unsigned int interfaceIndex, short  circuitType);
     void addFlags(LSPRecord *lspRec, short  circuitType); //add and set SRM and SSN flags for lspRec
 
     /* Print */
@@ -265,7 +265,7 @@ private:
     void removeDeadNeighbour(ISISTimer *msg); //remove dead neighbour when timer message arrives
     void electL1DesignatedIS(ISISL1HelloPacket *msg); //starts election of L1 designated intermediate system
     void electL2DesignatedIS(ISISL2HelloPacket *msg); //starts election of L2 designated intermediate system
-    void resetDIS(unsigned char *systemID, int gateIndex, short  circuitType); //resetDIS only if system specified in timer was DIS on interface specified in timer                 //resets DIS on al interfaces for L1/L2
+    void resetDIS(unsigned char *systemID, int interfaceIndex, short  circuitType); //resetDIS only if system specified in timer was DIS on interface specified in timer                 //resets DIS on al interfaces for L1/L2
     void sendMyL1LSPs(); //send content of my L1 link-state DB
     void sendMyL2LSPs(); //send content of my L2 link-state DB
     void floodFurtherL1LSP(ISISLSPL1Packet *msg); //send recived LSP packet further to all other neighbours
