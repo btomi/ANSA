@@ -36,6 +36,14 @@
 #include "IPv4ControlInfo.h"
 #include "IPv4InterfaceData.h"
 #include "AnsaIPv4Route.h"
+#include "AnsaIPv4.h"
+
+#define KAT 180.0                       /**< Cisco has 180s, RFC4601 KAT = 210s after that, route is flushed */
+#define RST 60.0                        /**< Register-stop Timer*/
+#define JT 60.0                         /**< Join Timer */
+#define REGISTER_PROBE_TIME 5.0
+#define HOLDTIME 210.0                  /**< Holdtime for Expiry Timer */
+
 
 /**
  * @brief Class implements PIM-SM (sparse mode).
@@ -49,17 +57,47 @@ class pimSM : public cSimpleModule, protected INotifiable
         PimInterfaceTable           *pimIft;        /**< Pointer to table of PIM interfaces. */
         PimNeighborTable            *pimNbt;        /**< Pointer to table of PIM neighbors. */
 
-        void receiveChangeNotification(int category, const cPolymorphic *details);
-
-
-    protected:
-        std::string RPAddress;
+        IPv4Address RPAddress;
         std::string SPTthreshold;
+
+    private:
+        void receiveChangeNotification(int category, const cPolymorphic *details);
+        void newMulticastRegisterDR(AnsaIPv4MulticastRoute *newRoute);
+        void newMulticastReciever(IPv4ControlInfo *igmpCtrl);
+
+        // process timers
+        void processPIMTimer(PIMTimer *timer);
+        void processKeepAliveTimer(PIMkat *timer);
+        void processRegisterStopTimer(PIMrst *timer);
+        void processExpiryTimer(PIMet *timer);
+        void processJoinTimer(PIMjt *timer);
+
+        // set timers
+        PIMkat* createKeepAliveTimer(IPv4Address source, IPv4Address group);
+        PIMrst* createRegisterStopTimer(IPv4Address source, IPv4Address group);
+        PIMet*  createExpiryTimer(int holdtime, IPv4Address group);
+        PIMjt*  createJoinTimer(IPv4Address group, IPv4Address JPaddr, IPv4Address upstreamNbr);
+
+        // pim messages
+        void sendPIMRegister(IPv4Datagram *datagram);
+        void sendPIMRegisterStop(IPv4Address source, IPv4Address dest, IPv4Address multGroup, IPv4Address multSource);
+        void sendPIMRegisterNull(IPv4Address multSource, IPv4Address multDest);
+        void sendPIMJoin(IPv4Address multGroup, IPv4Address joinIPaddr, IPv4Address upstreamNbr);
+
+        // process PIM messages
+        void processPIMPkt(PIMPacket *pkt);
+        void processRegisterPacket(PIMRegister *pkt);
+        void processRegisterStopPacket(PIMRegisterStop *pkt);
+        void processJoinPrunePacket(PIMJoinPrune *pkt);
 
     public:
         //PIM-SM clear implementation
         void setRPAddress(std::string address);
-        std::string getRPAddress () {return RPAddress;}
+        void setSPTthreshold(std::string address);
+        IPv4Address getRPAddress () {return RPAddress;}
+        std::string getSPTthreshold () {return SPTthreshold;}
+        bool IamRP ();
+        bool IamDR (IPv4Address sourceAddr);
 
 	protected:
 		virtual int numInitStages() const  {return 5;}

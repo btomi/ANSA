@@ -93,6 +93,7 @@ class INET_API PimNeighborTable: public cSimpleModule
 		virtual int getNumNeighbors() {return this->nt.size();}						/**< Get number of entries in the table */
 		virtual void printPimNeighborTable();
 		virtual std::vector<PimNeighbor> getNeighborsByIntID(int intID);
+		virtual PimNeighbor *getNeighborByIntID(int intId);
 		virtual PimNeighbor *getNeighborsByID(int id);
 		virtual int getIdCounter(){return this->id;}								/**< Get counter of entry IDs */
 		virtual bool isInTable(PimNeighbor entry);

@@ -18,56 +18,60 @@
 // @author: Tomas Prochazka (mailto:xproch21@stud.fit.vutbr.cz), Vladimir Vesely (mailto:ivesely@fit.vutbr.cz)
 // @brief Topology with PIM network
 
-package inet.examples.ansa.pimSMConfig;
+package inet.examples.ansa.pimSM;
 
 import inet.ansa.networklayer.pim.PIMRouter;
 import inet.ansa.nodes.inet.AnsaHost;
 import inet.nodes.ethernet.Eth100M;
 import inet.world.scenario.ScenarioManager;
 
-network pimSMConfig
+network pimSMTest
 {
-    @display("bgb=448,352");
+    @display("bgb=623,419");
 
     submodules:
-        R1: PIMRouter {
-            @display("p=208,125");
+        R0: PIMRouter {
+            parameters:
+                @display("p=86,336");
+            gates:
+                ethg[3];
         }
-        R2: PIMRouter {
-            @display("p=126,216");
+        R1: PIMRouter {
+            parameters:
+                @display("p=86,218");
+            gates:
+                ethg[3];
+        }
+        R2_RP: PIMRouter {
+            parameters:
+                @display("p=410,218");
+            gates:
+                ethg[3];
         }
         R3: PIMRouter {
-            @display("p=285,216");
+            parameters:
+                @display("p=246,113");
+            gates:
+                ethg[3];
         }
-
         Source1: AnsaHost {
-            @display("p=208,33");
+            parameters:
+                @display("p=533,113");
+            gates:
+                ethg[1];
         }
         Host1: AnsaHost {
-            @display("p=41,216");
-        }
-        Source2: AnsaHost {
-            @display("p=285,299");
+            parameters:
+                @display("p=410,336");
+            gates:
+                ethg[1];
         }
 
-        Host2: AnsaHost {
-            @display("p=126,299");
-        }
-        Host3: AnsaHost {
-            @display("p=376,216");
-        }
-//        scenarioManager: ScenarioManager {
-//            @display("p=376,26");
-//            script = xmldoc("scenario.xml");
-//        }
     connections allowunconnected:
-        R1.ethg++ <--> Eth100M <--> R2.ethg++;
-        R1.ethg++ <--> Eth100M <--> R3.ethg++;
-        R1.ethg++ <--> Eth100M <--> Source1.ethg++;
-
-        R2.ethg++ <--> Eth100M <--> Host1.ethg++;
-        R2.ethg++ <--> Eth100M <--> Host2.ethg++;
-
-        R3.ethg++ <--> Eth100M <--> Source2.ethg++;
-        R3.ethg++ <--> Eth100M <--> Host3.ethg++;
+        R1.ethg[2] <--> Eth100M <--> R2_RP.ethg[1];
+        R1.ethg[1] <--> Eth100M <--> R3.ethg[1];
+        R2_RP.ethg[0] <--> Eth100M <--> R3.ethg[2];
+        R3.ethg[0] <--> Eth100M <--> Source1.ethg[0];
+        Host1.ethg[0] <--> Eth100M <--> R0.ethg[0];
+        R0.ethg[1] <--> Eth100M <--> R1.ethg[0];
 }
