@@ -21,7 +21,7 @@
  * @brief
  * @detail
  * @todo TODO Incrementing sequence number should be done by using modulo and overflow should be properly handled
- *       TODO BUG-ID: 1; A known bug emerged with new version of INET. If gateIndex doesn't corresponds to interface's index in interface table, things go terribly wrong.
+ *       FIXED BUG-ID: 1; A known bug emerged with new version of INET. If gateIndex doesn't corresponds to interface's index in interface table, things go terribly wrong.
  */
 
 #ifndef ISIS_H_

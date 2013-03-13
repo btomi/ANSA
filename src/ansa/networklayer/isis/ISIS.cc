@@ -5442,7 +5442,7 @@ void ISIS::periodicSend(ISISTimer* timer, short circuitType)
            //std::cout<<"sendLsp to:" << (*itRec)->index <<" : ";
                //this->printLspId(this->getLspID((*itRec)->lspRec->LSP));
 
-               this->sendLSP((*itRec)->lspRec, (*itRec)->index);
+               this->sendLSP((*itRec)->lspRec, this->ISISIft.at((*itRec)->index).gateIndex);
 
            //DON'T clear SRMflag for PtP
 
@@ -5470,7 +5470,7 @@ void ISIS::periodicSend(ISISTimer* timer, short circuitType)
         //send random LSP from queue
         //TODO if queue.size() > 10 pick two LSPs (or something like it)
         //TODO maybe? better version would be with this->ISISIft.at((*it)->at(index)->index)
-        this->sendLSP((*it)->at(index)->lspRec, (*it)->at(index)->index);
+        this->sendLSP((*it)->at(index)->lspRec, this->ISISIft.at((*it)->at(index)->index).gateIndex);
 
         //clear SRMflag
         this->clearSRMflag((*it)->at(index)->lspRec, (*it)->at(index)->index, circuitType);
@@ -8213,8 +8213,8 @@ void ISIS::fullSPF(ISISTimer *timer){
     {
         if (this->L1ISISPathsISO != NULL)
         {
-            this->L1ISISPathsISO->clear();
-//            delete this->L1ISISPathsISO;
+//            this->L1ISISPathsISO->clear();
+            delete this->L1ISISPathsISO;
         }
         this->L1ISISPathsISO = ISISPaths;
     }
