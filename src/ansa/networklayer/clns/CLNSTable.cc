@@ -84,26 +84,31 @@ std::string CLNSRoute::info() const{
     for (ISISNeighbours_t::iterator nIt = neig.begin(); nIt != neig.end(); ++nIt)
     {
 
-        for (unsigned int i = 0; i < 6; i++)
-            {
-                out << std::setfill('0') << std::setw(2) << std::dec << (unsigned int) (*nIt)->id[i];
-                if (i % 2 == 1)
-                    out << ".";
-            }
-        out << std::setfill('0') << std::setw(2) << std::dec << (unsigned int) (*nIt)->id[6] << " ";
+        for (unsigned int i = 0; i < 7; i++)
+        {
+            out << std::setfill('0') << std::setw(2) << std::dec << (unsigned int) (*nIt)->id[i];
+            if (i % 2 == 1)
+                out << ".";
+        }
+        out << " if=";
+        if((*nIt)->entry != NULL){
+            out << (*nIt)->entry->getInterfaceId() << endl;
+        }else {
+            out << "-1" << endl;
+        }
     }
-    if (entry != NULL)
-    {
-        interfaceID = entry->getInterfaceId();
-    }
-    out << "if=" << interfaceID << " next hop:";// << (*neig.begin())->id; // FIXME try printing interface name
-    for (unsigned int i = 0; i < 6; i++)
-                {
-                    out << std::setfill('0') << std::setw(2) << std::dec << (unsigned int) (*neig.begin())->id[i];
-                    if (i % 2 == 1)
-                        out << ".";
-                }
-            out << std::setfill('0') << std::setw(2) << std::dec << (unsigned int) (*neig.begin())->id[6] << " ";
+//    if (entry != NULL)
+//    {
+//        interfaceID = entry->getInterfaceId();
+//    }
+//    out << "if=" << interfaceID << " next hop:";// << (*neig.begin())->id; // FIXME try printing interface name
+//    for (unsigned int i = 0; i < 7; i++)
+//                {
+//                    out << std::setfill('0') << std::setw(2) << std::dec << (unsigned int) (*neig.begin())->id[i];
+//                    if (i % 2 == 1)
+//                        out << ".";
+//                }
+
 //    out << " " << routeSrcName(getSrc());
 //    if (getExpiryTime()>0)
 //        out << " exp:" << getExpiryTime();

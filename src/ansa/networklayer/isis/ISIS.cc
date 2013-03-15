@@ -8251,6 +8251,11 @@ void ISIS::fullSPF(ISISTimer *timer){
     //TODO rewrite this mess
 
     for(ISISPaths_t::iterator it = ISISPaths->begin(); it != ISISPaths->end(); ++it){
+
+        if((*it)->to[ISIS_SYSTEM_ID] != 0){
+            //skip all pseudonodes, put only real nodes to routing table
+            continue;
+        }
         //for every neighbour (nextHop)
         for(ISISNeighbours_t::iterator nIt = (*it)->from.begin(); nIt != (*it)->from.end(); ++nIt){
             //getAdjacency by systemID and circuitType, then find iface by gateIndex and finaly get the InterfaceEntry
@@ -8533,33 +8538,41 @@ void ISIS::moveToTent(ISISCons_t *initial, ISISPath *path, unsigned char *from, 
 
 
 
-       for(ISISCons_t::iterator it = cons->begin(); it != cons->end(); ++it){
-           if ((tmpPath = this->getPath(ISISTent, (*it)->to)) == NULL)
+       for(ISISCons_t::iterator consIt = cons->begin(); consIt != cons->end(); ++consIt){
+           if ((tmpPath = this->getPath(ISISTent, (*consIt)->to)) == NULL)
            {
                //path to this destination doesn't exist, so create new
                tmpPath = new ISISPath;
                tmpPath->to = new unsigned char[ISIS_SYSTEM_ID + 2];
-               this->copyArrayContent((*it)->to, tmpPath->to, ISIS_SYSTEM_ID + 2, 0, 0);
-               tmpPath->metric = (*it)->metric + metric;
+               this->copyArrayContent((*consIt)->to, tmpPath->to, ISIS_SYSTEM_ID + 2, 0, 0);
+               tmpPath->metric = (*consIt)->metric + metric;
 //               cout << "patha metric: " << tmpPath->metric << endl;
 
                ISISNeighbour *neighbour = new ISISNeighbour;
 
                neighbour->id = new unsigned char[ISIS_SYSTEM_ID + 2];
                /* if @param from is THIS IS then next hop (neighbour->id) will be that next hop */
-               if(this->compareArrays((*it)->from,(unsigned char *) this->sysId, ISIS_SYSTEM_ID) && (*it)->from[ISIS_SYSTEM_ID] == 0){
-                   this->copyArrayContent((*it)->to, neighbour->id, ISIS_SYSTEM_ID + 2, 0, 0);
+               if(this->compareArrays((*consIt)->from,(unsigned char *) this->sysId, ISIS_SYSTEM_ID) && (*consIt)->from[ISIS_SYSTEM_ID] == 0){
+                   this->copyArrayContent((*consIt)->to, neighbour->id, ISIS_SYSTEM_ID + 2, 0, 0);
                    tmpPath->from.push_back(neighbour);
                }else{
                    //TODO neighbour must be THIS IS or next hop, therefore we need to check whether directly connected
 //                   this->copyArrayContent(path->from, neighbour->id, ISIS_SYSTEM_ID + 2, 0, 0);
                    for(ISISNeighbours_t::iterator nIt = path->from.begin(); nIt != path->from.end(); ++nIt){
+                       //if nextHop (from) should be pseudonode, set nextHop as the "to" identifier
+                       if((*nIt)->id[ISIS_SYSTEM_ID] != 0){
+
+                           ISISNeighbour *neigh = (*nIt)->copy();
+                           memcpy(neigh->id, (*consIt)->to, ISIS_SYSTEM_ID + 2);
+                           tmpPath->from.push_back(neigh);
+                       }else{
 //                       if(this->compareArrays((*nIt)->id, neighbour->id, ISIS_SYSTEM_ID + 2)){
                            //this neighbour is already there
 //                           delete neighbour;
                            tmpPath->from.push_back((*nIt)->copy());
 //                           return;
 //                       }
+                       }
                    }
                }
                neighbour->type = false; //not a leaf
@@ -8570,27 +8583,50 @@ void ISIS::moveToTent(ISISCons_t *initial, ISISPath *path, unsigned char *from, 
            }
            else
            {
-               if(tmpPath->metric >= (*it)->metric + metric){
-                   if(tmpPath->metric > (*it)->metric + metric){
+               if(tmpPath->metric >= (*consIt)->metric + metric){
+                   if(tmpPath->metric > (*consIt)->metric + metric){
                        //we got better metric so clear "from" neighbours
                        tmpPath->from.clear();
                    }
                    //append
-                   tmpPath->metric = (*it)->metric + metric;
+                   tmpPath->metric = (*consIt)->metric + metric;
                    cout << "path metric: " << tmpPath->metric << endl;
-                   ISISNeighbour *neighbour = new ISISNeighbour;
-                   neighbour->id = new unsigned char[ISIS_SYSTEM_ID + 2];
-                   this->copyArrayContent((*it)->from, neighbour->id, ISIS_SYSTEM_ID + 2, 0, 0);
-                   neighbour->type = false; //not a leaf
+//                   ISISNeighbour *neighbour = new ISISNeighbour;
+//                   neighbour->id = new unsigned char[ISIS_SYSTEM_ID + 2];
+//                   this->copyArrayContent((*consIt)->from, neighbour->id, ISIS_SYSTEM_ID + 2, 0, 0);
+//                   neighbour->type = false; //not a leaf
 
-                   for(ISISNeighbours_t::iterator nIt = tmpPath->from.begin(); nIt != tmpPath->from.end(); ++nIt){
-                       if(this->compareArrays((*nIt)->id, neighbour->id, ISIS_SYSTEM_ID + 2)){
-                           //this neighbour is already there
-                           delete neighbour;
-                           return;
+//                   for(ISISNeighbours_t::iterator nIt = tmpPath->from.begin(); nIt != tmpPath->from.end(); ++nIt){
+//                       if(this->compareArrays((*nIt)->id, neighbour->id, ISIS_SYSTEM_ID + 2)){
+//                           //this neighbour is already there
+//                           delete neighbour;
+//                           return;
+//                       }
+//                   }
+//                   tmpPath->from.push_back(neighbour);
+
+                   for(ISISNeighbours_t::iterator nIt = path->from.begin(); nIt != path->from.end(); ++nIt){
+                       bool found = false;
+                       for(ISISNeighbours_t::iterator neIt = tmpPath->from.begin(); neIt != tmpPath->from.end(); ++neIt){
+                           //is such nextHop with matching ID AND entry (we may have adjacency with same IS over multiple interfaces)
+                           if(this->compareArrays((*neIt)->id, (*nIt)->id, ISIS_SYSTEM_ID + 2) && (*neIt)->entry == (*nIt)->entry){
+                             //this neighbour is already there
+//                             delete neighbour;
+//                             continue;
+                             found = true;
+                             break;
+                           }
+
                        }
+                       if (!found){
+                           //if such nextHop from @param path is not already present (not found), add it to nextHops(from)
+                           tmpPath->from.push_back((*nIt)->copy());
+                       }
+
+
+
+//
                    }
-                   tmpPath->from.push_back(neighbour);
 
                }
 
