@@ -560,9 +560,9 @@ void ISIS::initialize(int stage) {
             this->L2SSNPTPQueue->push_back(new std::vector<FlagRecord *>);
         }
 
-        //TODO
-        this->L1SPFFullInterval = ISIS_SPF_FULL_INTERVAL;
-        this->L2SPFFullInterval = ISIS_SPF_FULL_INTERVAL;
+//        //TODO
+//        this->L1SPFFullInterval = ISIS_SPF_FULL_INTERVAL;
+//        this->L2SPFFullInterval = ISIS_SPF_FULL_INTERVAL;
 
 
     }else if(stage == 4){
@@ -5714,7 +5714,7 @@ std::vector<ISISLSPPacket *>* ISIS::genLSP(short circuitType)
     for(std::vector<ISISinterface>::iterator it = this->ISISIft.begin(); it != this->ISISIft.end(); ++it)
     {
         //if at least one adjacency is UP and network type is broadcast (there is no DIS on PTP) AND I am DIS on this interface
-        if(this->isUp((*it).gateIndex, circuitType) && (*it).network && this->amIL1DIS(this->getIfaceIndex(&(*it))))
+        if(this->isUp((*it).gateIndex, circuitType) && (*it).network && this->amIDIS(this->getIfaceIndex(&(*it)), circuitType))
         {
             tlvTable->clear();
             //tmpLSPDb->clear(); //Why? Why? Why, you fucked-up crazy-ass weirdo beaver?!?
@@ -6866,6 +6866,7 @@ unsigned char* ISIS::getLSPID()
 /**
  * Create or update my own LSP.
  * @see ISIS::sendMyL1LSPs()
+ * DEPRECATED
  */
 void ISIS::updateMyLSP()
 {
@@ -7929,17 +7930,20 @@ void ISIS::addTLV(std::vector<TLV_t *> *tlvTable, enum TLVtypes tlvType, short c
         else
         //pseudonode
         {
+            //let's assume that nsel is interfaceIndex +1
+            int interfaceIndex = nsel - 1;
+            ISISinterface *iface = &(this->ISISIft.at(interfaceIndex));
             std::vector<LSPneighbour> neighbours;
 
             ISISadj *tmpAdj;
-            for (std::vector<ISISinterface>::iterator it = this->ISISIft.begin(); it != this->ISISIft.end(); ++it)
-            {
+//            for (std::vector<ISISinterface>::iterator it = this->ISISIft.begin(); it != this->ISISIft.end(); ++it)
+//            {
 
-                for (int offset = 0; (tmpAdj = this->getAdjByGateIndex((*it).gateIndex, circuitType, offset)) != NULL;
+                for (int offset = 0; (tmpAdj = this->getAdjByGateIndex(iface->gateIndex, circuitType, offset)) != NULL;
                         offset++)
                 {
                     LSPneighbour neighbour;
-                    if (!tmpAdj->state || !(*it).network)
+                    if (!tmpAdj->state || !iface->network)
                     {
                         continue;
                     }
@@ -7954,7 +7958,7 @@ void ISIS::addTLV(std::vector<TLV_t *> *tlvTable, enum TLVtypes tlvType, short c
 
                     neighbours.push_back(neighbour);
                 }
-            }
+//            }
             //add also mine non-pseudonode interface as neighbour
             LSPneighbour neighbour;
             this->copyArrayContent((unsigned char*) this->sysId, neighbour.LANid, ISIS_SYSTEM_ID, 0, 0);
@@ -8197,7 +8201,7 @@ void ISIS::fullSPF(ISISTimer *timer){
         this->bestToPath(&initial, &ISISTent, ISISPaths);
 
     }
-
+    std::sort(ISISPaths->begin(), ISISPaths->end());
     this->printPaths(ISISPaths);
 
     //find shortest metric in TENT
@@ -8211,12 +8215,15 @@ void ISIS::fullSPF(ISISTimer *timer){
     */
     if (circuitType == L1_TYPE)
     {
-        if (this->L1ISISPathsISO != NULL)
-        {
+//        if (this->L1ISISPathsISO != NULL)
+//        {
 //            this->L1ISISPathsISO->clear();
-            delete this->L1ISISPathsISO;
-        }
-        this->L1ISISPathsISO = ISISPaths;
+//            delete this->L1ISISPathsISO;
+//            this->L1ISISPathsISO->swap(*ISISPaths);
+            //delete ISISPaths;
+//        }else{
+            this->L1ISISPathsISO = ISISPaths;
+//        }
     }
     else if (circuitType == L2_TYPE)
     {
@@ -8247,11 +8254,39 @@ void ISIS::fullSPF(ISISTimer *timer){
         //for every neighbour (nextHop)
         for(ISISNeighbours_t::iterator nIt = (*it)->from.begin(); nIt != (*it)->from.end(); ++nIt){
             //getAdjacency by systemID and circuitType, then find iface by gateIndex and finaly get the InterfaceEntry
-            ISISadj *tmpAdj = getAdjBySystemID((*nIt)->id, circuitType);
-            if(tmpAdj != NULL){
-                (*nIt)->entry = this->getIfaceByGateIndex(tmpAdj->gateIndex)->entry;
-            }else{
-                (*nIt)->entry = NULL;
+            //if it's a pseudonode then find interface based on matching DIS
+            if((*nIt)->id[ISIS_SYSTEM_ID] != 0){
+                for(ISISInterTab_t::iterator tabIt = this->ISISIft.begin(); tabIt != this->ISISIft.end(); ++tabIt){
+                    if (circuitType == L1_TYPE)
+                    {
+                        if (memcmp((*tabIt).L1DIS, (*nIt)->id, ISIS_SYSTEM_ID +1) == 0)
+                        {
+                            (*nIt)->entry = (*tabIt).entry;
+                        }
+                    }
+                    else
+                    {
+                        if (memcmp((*tabIt).L2DIS, (*nIt)->id, ISIS_SYSTEM_ID +1) == 0)
+                        {
+                            (*nIt)->entry = (*tabIt).entry;
+                        }
+                    }
+                }
+
+
+            }
+            else
+            {
+
+                ISISadj *tmpAdj = getAdjBySystemID((*nIt)->id, circuitType);
+                if (tmpAdj != NULL)
+                {
+                    (*nIt)->entry = this->getIfaceByGateIndex(tmpAdj->gateIndex)->entry;
+                }
+                else
+                {
+                    (*nIt)->entry = NULL;
+                }
             }
 //            (*nIt)->entry = this->getIfaceByGateIndex((this->getAdjBySystemID((*nIt)->id, circuitType))->gateIndex)->entry;
         }
@@ -8362,7 +8397,8 @@ void ISIS::setClosestAtt(void)
 
                     if ((*pIt)->metric <= metric)
                     {
-                        ISISNeighbour *att = new ISISNeighbour(lspID, false);
+                        //TODO replace NULL with interfaceEntry
+                        ISISNeighbour *att = new ISISNeighbour(lspID, false, NULL);
                         attIS->push_back(att);
 //                        metric = (*pIt)->metric = metric;
                         metric = (*pIt)->metric;
@@ -8445,7 +8481,7 @@ void ISIS::bestToPath(ISISCons_t *init, ISISPaths_t *ISISTent, ISISPaths_t *ISIS
     //save best in path
     path = ISISTent->front();
     //mov
-    this->moveToTent(init, path->to, path->metric, ISISTent);
+    this->moveToTent(init, path, path->to, path->metric, ISISTent);
 
     ISISTent->erase(ISISTent->begin());
 
@@ -8484,7 +8520,7 @@ void ISIS::bestToPath(ISISCons_t *init, ISISPaths_t *ISISTent, ISISPaths_t *ISIS
  * @param metric is metric to get to "from" node
  * @param ISISTent is set of tentative paths
  */
-void ISIS::moveToTent(ISISCons_t *initial, unsigned char *from, uint32_t metric, ISISPaths_t *ISISTent){
+void ISIS::moveToTent(ISISCons_t *initial, ISISPath *path, unsigned char *from, uint32_t metric, ISISPaths_t *ISISTent){
 
     ISISPath *tmpPath;
     ISISCons_t *cons = this->getCons(initial, from);
@@ -8510,14 +8546,25 @@ void ISIS::moveToTent(ISISCons_t *initial, unsigned char *from, uint32_t metric,
                ISISNeighbour *neighbour = new ISISNeighbour;
 
                neighbour->id = new unsigned char[ISIS_SYSTEM_ID + 2];
-               if(this->compareArrays((*it)->from,(unsigned char *) this->sysId, ISIS_SYSTEM_ID)){
+               /* if @param from is THIS IS then next hop (neighbour->id) will be that next hop */
+               if(this->compareArrays((*it)->from,(unsigned char *) this->sysId, ISIS_SYSTEM_ID) && (*it)->from[ISIS_SYSTEM_ID] == 0){
                    this->copyArrayContent((*it)->to, neighbour->id, ISIS_SYSTEM_ID + 2, 0, 0);
+                   tmpPath->from.push_back(neighbour);
                }else{
-                   this->copyArrayContent((*it)->from, neighbour->id, ISIS_SYSTEM_ID + 2, 0, 0);
+                   //TODO neighbour must be THIS IS or next hop, therefore we need to check whether directly connected
+//                   this->copyArrayContent(path->from, neighbour->id, ISIS_SYSTEM_ID + 2, 0, 0);
+                   for(ISISNeighbours_t::iterator nIt = path->from.begin(); nIt != path->from.end(); ++nIt){
+//                       if(this->compareArrays((*nIt)->id, neighbour->id, ISIS_SYSTEM_ID + 2)){
+                           //this neighbour is already there
+//                           delete neighbour;
+                           tmpPath->from.push_back((*nIt)->copy());
+//                           return;
+//                       }
+                   }
                }
                neighbour->type = false; //not a leaf
 //               tmpPath->from = neighbour;
-               tmpPath->from.push_back(neighbour);
+
 
                ISISTent->push_back(tmpPath);
            }
@@ -8594,7 +8641,7 @@ bool ISIS::extractISO(ISISCons_t *initial, short circuitType){
         lspId = this->getLspID((*it)->LSP);
 
 
-        //check if it's zero-th fragment. if not try to find it -> getLspFromDbByID
+        //check if it's a zero-th fragment. if not try to find it -> getLspFromDbByID
 
         if(lspId[ISIS_SYSTEM_ID + 1] != 0){
             unsigned char backup = lspId[ISIS_SYSTEM_ID + 1];
@@ -8896,6 +8943,10 @@ void ISIS::setLspRefreshInterval(int lspRefreshInterval)
 void ISIS::setIsType(short  isType)
 {
     this->isType = isType;
+}
+
+int ISIS::getISISIftSize(void){
+    return this->ISISIft.size();
 }
 
 /**

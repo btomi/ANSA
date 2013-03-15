@@ -201,7 +201,7 @@ private:
     void twoWayCheck(ISISCons_t *cons);
     bool isCon(ISISCons_t *cons, unsigned char *from, unsigned char *to);
     void bestToPath(ISISCons_t *cons, ISISPaths_t *ISISTent, ISISPaths_t *ISISPaths);
-    void moveToTent(ISISCons_t *initial, unsigned char *from, uint32_t metric, ISISPaths_t *ISISTent);
+    void moveToTent(ISISCons_t *initial, ISISPath *path, unsigned char *from, uint32_t metric, ISISPaths_t *ISISTent);
     void moveToPath(ISISPath *path);
     void extractAreas(ISISPaths_t *paths, ISISPaths_t *areas, short  circuitType);
     ISISPaths_t *getPathsISO(short  circuitType);
@@ -349,6 +349,7 @@ public:
     void setL2CsnpInterval(int l2CsnpInterval);
     void setL2PsnpInterval(int l2PsnpInterval);
     ISIS_MODE getMode() const;
+    int getISISIftSize();
 };
 
 

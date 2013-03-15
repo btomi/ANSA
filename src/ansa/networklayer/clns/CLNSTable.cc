@@ -69,16 +69,16 @@ std::string CLNSRoute::info() const{
     entry = (*neig.begin())->entry;
     //print system id
 
-    for (unsigned int i = 0; i < 6; i++)
+    for (unsigned int i = 0; i < 7; i++)
     {
-        out << std::setfill('0') << std::setw(2) << std::dec << (unsigned int) this->destPrefix[i];
+        out << std::setfill('0') << std::setw(2) << std::hex << (unsigned int) this->destPrefix[i];
         if (i % 2 == 1)
             out << ".";
     }
-    out << std::setfill('0') << std::setw(2) << std::dec << (unsigned short) this->destPrefix[6];
+//    out << std::setfill('0') << std::setw(2) << std::hex << (unsigned int) this->destPrefix[6];
 
     out << "/" << getLength() << " --> ";
-    out << " metric: " << (uint32_t) metric << " " << (unsigned int) metric << " via: ";
+    out << std::dec << " metric: " << (uint32_t) metric << " " << (unsigned int) metric << " via: ";
 //    std::cout << " metric: " << std::setfill('0') << std::setw(2) << std::dec << (unsigned int) metric << " " << (unsigned int) metric << " via: ";
 
     for (ISISNeighbours_t::iterator nIt = neig.begin(); nIt != neig.end(); ++nIt)
@@ -96,8 +96,14 @@ std::string CLNSRoute::info() const{
     {
         interfaceID = entry->getInterfaceId();
     }
-    out << "if=" << interfaceID << " next hop:" << (*neig.begin())->id; // FIXME try printing interface name
-
+    out << "if=" << interfaceID << " next hop:";// << (*neig.begin())->id; // FIXME try printing interface name
+    for (unsigned int i = 0; i < 6; i++)
+                {
+                    out << std::setfill('0') << std::setw(2) << std::dec << (unsigned int) (*neig.begin())->id[i];
+                    if (i % 2 == 1)
+                        out << ".";
+                }
+            out << std::setfill('0') << std::setw(2) << std::dec << (unsigned int) (*neig.begin())->id[6] << " ";
 //    out << " " << routeSrcName(getSrc());
 //    if (getExpiryTime()>0)
 //        out << " exp:" << getExpiryTime();
@@ -202,7 +208,7 @@ void CLNSTable::addRecord(CLNSRoute *route)
 {
     //TODO
 //    this->routeVector.push_back(route);
-
+//    return;
     for (std::vector<CLNSRoute*>::iterator it = this->routeVector.begin(); it != this->routeVector.end(); ++it)
     {
         //comparison is based on matching destPrefix and length

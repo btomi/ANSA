@@ -77,6 +77,7 @@ struct ISISinterface
 
     InterfaceEntry *entry;    /*!< other interface info*/
 };
+typedef std::vector<ISISinterface> ISISInterTab_t;
 
 /**
  * Structure for storing info about neighbours
@@ -233,10 +234,11 @@ struct ISISNeighbour
 
         }
 
-        ISISNeighbour(unsigned char * id, bool type){
+        ISISNeighbour(unsigned char * id, bool type, InterfaceEntry *entry){
             this->id = new unsigned char [ISIS_SYSTEM_ID + 2];
             memcpy(this->id, id, ISIS_SYSTEM_ID + 2);
-            type = false;
+            this->type = false;
+            this->entry = entry;
         }
 
         ~ISISNeighbour(){
@@ -244,9 +246,7 @@ struct ISISNeighbour
         }
 
         ISISNeighbour *copy(){
-            ISISNeighbour *neighbour = new ISISNeighbour(this->id, this->type);
-
-            return neighbour;
+            return new ISISNeighbour(this->id, this->type, this->entry);
         }
 
 };
@@ -257,7 +257,7 @@ struct ISISPath
 {
         unsigned char *to;
         uint32_t metric;
-        ISISNeighbours_t from;
+        ISISNeighbours_t from; // works as next hop
         //bool operator for sorting
          bool operator<(const ISISPath& path2) const {
 
@@ -273,6 +273,7 @@ struct ISISPath
              //if they're equal, return false
              return false;
          }
+
 };
 
 typedef std::vector<ISISPath*> ISISPaths_t;

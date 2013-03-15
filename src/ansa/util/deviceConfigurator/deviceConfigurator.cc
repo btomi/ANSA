@@ -1084,12 +1084,12 @@ void DeviceConfigurator::loadISISInterfaceDefaultConfig(ISIS *isisModule, Interf
         memcpy(newIftEntry.L1DIS,isisModule->getSysId(), ISIS_SYSTEM_ID);
         //set LAN identifier; -99 is because, OMNeT starts numbering interfaces from 100 -> interfaceID 100 means LAN ID 0; and we want to start numbering from 1
         //newIftEntry.L1DIS[6] = entry->getInterfaceId() - 99;
-        newIftEntry.L1DIS[ISIS_SYSTEM_ID] = newIftEntry.gateIndex + 1;
+        newIftEntry.L1DIS[ISIS_SYSTEM_ID] = isisModule->getISISIftSize() + 1;
         //do the same for L2 DIS
 
         memcpy(newIftEntry.L2DIS,isisModule->getSysId(), ISIS_SYSTEM_ID);
         //newIftEntry.L2DIS[6] = entry->getInterfaceId() - 99;
-        newIftEntry.L2DIS[ISIS_SYSTEM_ID] = newIftEntry.gateIndex + 1;
+        newIftEntry.L2DIS[ISIS_SYSTEM_ID] = isisModule->getISISIftSize() + 1;
 
         newIftEntry.passive = false;
         newIftEntry.entry = entry;

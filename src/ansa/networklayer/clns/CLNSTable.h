@@ -44,13 +44,13 @@ private:
 public:
     CLNSRoute(unsigned char *destPrefix, int length, ISISNeighbours_t nextHop, uint32_t metric){
         this->destPrefix = new unsigned char [ISIS_SYSTEM_ID];
-        memcpy(this->destPrefix, destPrefix, ISIS_SYSTEM_ID);
+        memcpy(this->destPrefix, destPrefix, ISIS_SYSTEM_ID + 1);
 
         this->length = length;
 //        this->nextHop = nextHop;
 
         for(ISISNeighbours_t::iterator it = nextHop.begin(); it != nextHop.end(); ++it){
-            this->nextHop.push_back((*it));
+            this->nextHop.push_back((*it)->copy());
 //            EV<< (*it)->id;
         }
 
