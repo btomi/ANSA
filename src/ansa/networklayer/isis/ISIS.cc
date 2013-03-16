@@ -8201,7 +8201,7 @@ void ISIS::fullSPF(ISISTimer *timer){
         this->bestToPath(&initial, &ISISTent, ISISPaths);
 
     }
-    std::sort(ISISPaths->begin(), ISISPaths->end());
+    std::sort(ISISPaths->begin(), ISISPaths->end(),ISISPath());
     this->printPaths(ISISPaths);
 
     //find shortest metric in TENT
@@ -8472,7 +8472,7 @@ void ISIS::printPaths(ISISPaths_t *paths)
 }
 
 /*
- * Moves best path from ISISTent to ISISPaths and initiate move of appropirate connections from init to ISISTent
+ * Moves best path from ISISTent to ISISPaths and initiate move of appropriate connections from init to ISISTent
  * @param initial is set of connections
  * @param ISISTent is set of tentative paths
  * @param ISISPaths is set of best paths from this IS
@@ -8482,7 +8482,7 @@ void ISIS::bestToPath(ISISCons_t *init, ISISPaths_t *ISISTent, ISISPaths_t *ISIS
     ISISPath *path;
     ISISPath *tmpPath;
     //sort it
-    std::sort(ISISTent->begin(), ISISTent->end());
+    std::sort(ISISTent->begin(), ISISTent->end(),ISISPath());
     //save best in path
     path = ISISTent->front();
     //mov
@@ -8554,6 +8554,8 @@ void ISIS::moveToTent(ISISCons_t *initial, ISISPath *path, unsigned char *from, 
                /* if @param from is THIS IS then next hop (neighbour->id) will be that next hop */
                if(this->compareArrays((*consIt)->from,(unsigned char *) this->sysId, ISIS_SYSTEM_ID) && (*consIt)->from[ISIS_SYSTEM_ID] == 0){
                    this->copyArrayContent((*consIt)->to, neighbour->id, ISIS_SYSTEM_ID + 2, 0, 0);
+                   neighbour->entry = (*consIt)->entry;
+                   ASSERT(neighbour->entry != NULL);
                    tmpPath->from.push_back(neighbour);
                }else{
                    //TODO neighbour must be THIS IS or next hop, therefore we need to check whether directly connected
@@ -8706,7 +8708,20 @@ bool ISIS::extractISO(ISISCons_t *initial, short circuitType){
                     connection->metric = tmpTLV->value[i];//default metric
 //                    cout << "connection metric : " << connection->metric << endl;
                     connection->type = false;//it's not a leaf
-
+                    if(memcmp(lspId, this->sysId, ISIS_SYSTEM_ID) == 0){
+                        //TODO FIX
+                        //this destroys everything i was trying to accomplish by ingoring multiple adjacencies between two ISs
+                        if(connection->to[ISIS_SYSTEM_ID] != 0){
+                            connection->entry = this->ISISIft.at(connection->to[ISIS_SYSTEM_ID] - 1).entry;
+                        }else if(lspId[ISIS_SYSTEM_ID] != 0){
+                            connection->entry = this->ISISIft.at(lspId[ISIS_SYSTEM_ID] - 1).entry;
+                        }else{
+                            ISISadj *tmpAdj = getAdjBySystemID(connection->to, circuitType);
+                            connection->entry = getIfaceByGateIndex(tmpAdj->gateIndex)->entry;
+                        }
+                    }else{
+                        connection->entry = NULL;
+                    }
 
 
                     initial->push_back(connection);

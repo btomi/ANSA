@@ -259,22 +259,28 @@ struct ISISPath
         uint32_t metric;
         ISISNeighbours_t from; // works as next hop
         //bool operator for sorting
-         bool operator<(const ISISPath& path2) const {
 
-             for (unsigned int i = 0; i < ISIS_SYSTEM_ID + 2; i++){
-                 if(this->metric < path2.metric){
-                     return true; //first is smaller, so return true
-                 }else{
-                     return false; //first is bigger, so return false
-                 }
-                 //if it's equal then continue to next one
-             }
+        bool operator()(const ISISPath *path1, const ISISPath *path2) {
 
-             //if they're equal, return false
-             return false;
-         }
+        //             for (unsigned int i = 0; i < ISIS_SYSTEM_ID + 2; i++){
+                if(path1->metric < path2->metric){
+                    return true; //first is smaller, so return true
+                }else if(path1->metric > path2->metric){
+                    return false; //first is bigger, so return false
+                }else{
+                    if(path1->to[ISIS_SYSTEM_ID] > path2->to[ISIS_SYSTEM_ID]){
+                        return true;
+                    }
+                }
+                //if it's equal then continue to next one
+        //             }
+
+            //if they're equal, return false
+            return false;
+        }
 
 };
+
 
 typedef std::vector<ISISPath*> ISISPaths_t;
 
@@ -287,6 +293,7 @@ struct ISISCon
         unsigned char *to;
         uint32_t metric;
         bool type;
+        InterfaceEntry *entry;
 };
 typedef std::vector<ISISCon*> ISISCons_t;
 
