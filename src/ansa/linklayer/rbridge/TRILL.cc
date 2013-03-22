@@ -53,11 +53,11 @@ void TRILL::initialize(int stage) {
         sprintf(msgname, "switchMsg %d", i);
         currentMsg = new cMessage(msgname, i);
 
-        cModule * tmp_macTable = getParentModule()->getSubmodule("MACTable");
-        addrTable = check_and_cast<MACTable *>(tmp_macTable);
+        cModule * tmp_rBMACTable = getParentModule()->getSubmodule("RBMACTable");
+        rbMACTable = check_and_cast<RBMACTable *>(tmp_rBMACTable);
 
-        cModule * tmp_vlanTable = getParentModule()->getSubmodule("VLANTable");
-        vlanTable = check_and_cast<VLANTable *>(tmp_vlanTable);
+        cModule * tmp_rBVLANTable = getParentModule()->getSubmodule("rBVLANTable");
+        vlanTable = check_and_cast<RBVLANTable *>(tmp_rBVLANTable);
 
 //        cModule * tmp_stp = getParentModule()->getSubmodule("stp");
 //        spanningTree = check_and_cast<Stp *>(tmp_stp);
@@ -146,10 +146,10 @@ void TRILL::relay(TRILL::tFrameDescriptor& frame) {
         }
 
     } else {
-        VLANTable::tVIDPort tmpPort;
-        tmpPort.action = VLANTable::REMOVE;
+        RBVLANTable::tVIDPort tmpPort;
+        tmpPort.action = RBVLANTable::REMOVE;
 
-        MACTable::tPortList tmpPortList = addrTable->getPorts(frame.dest);
+        RBMACTable::tPortList tmpPortList = rbMACTable->getPorts(frame.dest);
 
         if (tmpPortList.size() == 0) { // not known -> bcast
             frame.portList = vlanTable->getPorts(frame.VID);
@@ -218,7 +218,7 @@ void TRILL::egress(TRILL::tFrameDescriptor& frame) {
   // MINIMIZE OUT PORTS
   // SET TAG ACTIONS
 
-    VLANTable::tVIDPortList tmp = frame.portList;
+    RBVLANTable::tVIDPortList tmp = frame.portList;
     frame.portList.clear();
 
     for (unsigned int i = 0; i < tmp.size(); i++) {
@@ -256,7 +256,7 @@ void TRILL::dispatch(TRILL::tFrameDescriptor& frame) {
     if (untaggedFrame->getByteLength() < MIN_ETHERNET_FRAME_BYTES) {
         untaggedFrame->setByteLength(MIN_ETHERNET_FRAME_BYTES); // "padding"
     }
-    VLANTable::tVIDPortList::iterator it;
+    RBVLANTable::tVIDPortList::iterator it;
     for (it = frame.portList.begin(); it != frame.portList.end(); it++) {
         if (it->port >= portCount) {
             continue;
@@ -264,7 +264,7 @@ void TRILL::dispatch(TRILL::tFrameDescriptor& frame) {
 //        if (spanningTree->forwarding(it->port, frame.VID) == false) {
 //            continue;
 //        }
-        if (it->action == VLANTable::INCLUDE) {
+        if (it->action == RBVLANTable::INCLUDE) {
             send(taggedFrame->dup(), "lowerLayerOut", it->port);
         } else {
             send(untaggedFrame->dup(), "lowerLayerOut", it->port);
@@ -275,11 +275,36 @@ void TRILL::dispatch(TRILL::tFrameDescriptor& frame) {
     delete untaggedFrame;
     return;
 }
+/*
+ * ByGate means that the input interface is identified by gateId
+ */
 
+bool TRILL::isAllowedByGate(int vlanID, int gateIndex){
+
+    return vlanTable->isAllowed(vlanID, gateIndex);
+
+}
+
+void TRILL::learn(AnsaEtherFrame *frame){
+    //remember the last parameter is not interfaceIndex, but gateId
+    rbMACTable->update(frame->getSrc(), frame->getVlan(), frame->getArrivalGateId());
+
+}
+
+void TRILL::learn(EthernetIIFrame *frame){
+    //remember the last parameter is not interfaceIndex, but gateId
+    /*TODO instead of frame->getVlan() do something like:
+     * find out if tagAction ::REMOVE is set to this port
+     *  if yes -> use some default vlanId
+     *  if not -> drop frame?
+     */
+    rbMACTable->update(frame->getSrc(), 1, frame->getArrivalGateId());
+
+}
 
 void TRILL::learn(TRILL::tFrameDescriptor& frame) {
 //    if (spanningTree->learning(frame.rPort, frame.VID) == true) {
-      addrTable->update(frame.src, frame.rPort);
+      rbMACTable->update(frame.src, frame.rPort);
 //    }
 }
 
@@ -305,7 +330,7 @@ void TRILL::processFrame(cMessage *msg) {
 }
 
 void TRILL::handleAndDispatchFrame(EthernetIIFrame *frame, int inputport) {
-    this->addrTable->update(frame->getSrc(), inputport);
+    this->rbMACTable->update(frame->getSrc(), inputport);
 
 /*
      AnsaEtherFrame * tmp;
@@ -322,7 +347,7 @@ void TRILL::handleAndDispatchFrame(EthernetIIFrame *frame, int inputport) {
 
     // Finds output port of destination address and sends to output port
     // if not found then broadcasts to all other ports instead
-    MACTable::tPortList portList = addrTable->getPorts(frame->getDest());
+    MACTable::tPortList portList = rbMACTable->getPorts(frame->getDest());
 
     if (portList.size() == 0) {
         EV << "Dest address " << frame->getDest() << " unknown, broadcasting frame " << frame << endl;

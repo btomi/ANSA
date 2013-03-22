@@ -40,9 +40,10 @@
 #include "EtherFrame_m.h"
 #include "AnsaEtherFrame_m.h"
 
-#include "macTable.h"
-#include "vlanTable.h"
-#include "stp/stp.h"
+#include "RBMACTable.h"
+#include "RBVLANTable.h"
+
+//#include "stp/stp.h"
 //#include "ISIS.h"
 class ISIS;
 
@@ -53,12 +54,13 @@ class TRILL : public cSimpleModule
         virtual ~TRILL();
 
 
+
         /* switch core frame descriptor for internal representation unpacked frame */
         typedef struct s_frame_descriptor {
           cPacket * payload; // relaying message
           int VID; // frame's VLAN ID
           int rPort; // reception port
-          VLANTable::tVIDPortList portList; // suggested(then applied) list of destination ports
+          RBVLANTable::tVIDPortList portList; // suggested(then applied) list of destination ports
           MACAddress src; // source MAC address of the original frame
           MACAddress dest; // destination MAC address of the original frame
           int etherType; // EtherType from EthernetIIFrame
@@ -66,6 +68,10 @@ class TRILL : public cSimpleModule
         } tFrameDescriptor;
 
         MACAddress getBridgeAddress();
+
+        bool isAllowedByGate(int vlan, int gateId);//returns true if vlan is allowed on interface specified by gateId
+        void learn(AnsaEtherFrame * frame);
+        void learn(EthernetIIFrame * frame);
 
       private:
         //number of nicknames, default 1, may be 1 - 256
@@ -87,9 +93,9 @@ class TRILL : public cSimpleModule
       MACAddress bridgeGroupAddress;
       MACAddress bridgeAddress;
 
-      MACTable * addrTable;
-      VLANTable * vlanTable;
-      Stp * spanningTree;
+      RBMACTable * rbMACTable;
+      RBVLANTable * vlanTable;
+//      Stp * spanningTree;
       ISIS* isis;
 
       cMessage * currentMsg;

@@ -31,10 +31,12 @@ import inet.base.NotificationBoard;
 import inet.ansa.linklayer.ethernet.AnsaEtherMAC;
 import inet.linklayer.IWiredNic;
 //import inet.ansa.linklayer.switch.ANSASwitchCore;
-import inet.ansa.linklayer.switch.MACTable;
+import inet.ansa.linklayer.rbridge.RBMACTable;
+import inet.ansa.linklayer.rbridge.RBridgeSplitter;
 
 import inet.ansa.linklayer.switch.sink;
-import inet.ansa.linklayer.switch.VLANTable;
+import inet.ansa.linklayer.rbridge.RBVLANTable;
+import inet.ansa.linklayer.rbridge.RBPortTable;
 
 import inet.ansa.linklayer.rbridge.RBridgeSplitter;
 
@@ -99,15 +101,19 @@ module RBridge
             parameters:
                 @display("p=154,417,row,110;q=l2queue");
         }
-        MACTable: MACTable {
+        rBMACTable: RBMACTable {
             @display("p=53,44;is=l");
         }
-        VLANTable: VLANTable {
+        rBVLANTable: RBVLANTable {
             parameters:
                 configFile = configFile;
-                switchID = deviceId;
+                rBridgeId = deviceId;
                 portCount = sizeof(ethg);
                 @display("p=165,44;is=l");
+        }
+        rBPortTable: RBPortTable {
+            parameters:
+                @display("p=527,118");
         }
         sink: sink {
             @display("p=314,295");

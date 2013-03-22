@@ -16,6 +16,7 @@
 package inet.examples.ansa.rBridge.multidest;
 
 import inet.ansa.RBridge;
+import inet.ansa.nodes.inet.AnsaHost;
 import inet.nodes.ethernet.Eth100M;
 
 
@@ -27,34 +28,44 @@ network MultiDest
     @display("bgb=509,354");
     submodules:
         rBridge1: RBridge {
-            @display("p=87,68");
+            @display("p=113,90");
             gates:
-                ethg[2];
+                ethg[3];
         }
         rBridge2: RBridge {
-            @display("p=243,68");
+            @display("p=269,90");
             gates:
                 ethg[3];
         }
         rBridge3: RBridge {
-            @display("p=402,68");
+            @display("p=428,90");
             gates:
                 ethg[2];
         }
         rBridge4: RBridge {
-            @display("p=243,201");
+            @display("p=269,223");
             gates:
                 ethg[3];
         }
         rBridge5: RBridge {
-            @display("p=402,201");
+            @display("p=428,223");
+            gates:
+                ethg[3];
+        }
+        rBridge6: RBridge {
+            @display("p=113,223");
             gates:
                 ethg[2];
         }
-        rBridge6: RBridge {
-            @display("p=87,201");
+        ansaHost2: AnsaHost {
+            @display("p=428,306");
             gates:
-                ethg[2];
+                ethg[1];
+        }
+        ansaHost1: AnsaHost {
+            @display("p=39,90");
+            gates:
+            	ethg[1];
         }
     connections:
         rBridge1.ethg[0] <--> Eth100M <--> rBridge2.ethg[0];
@@ -64,4 +75,6 @@ network MultiDest
         rBridge4.ethg[2] <--> Eth100M <--> rBridge5.ethg[0];
         rBridge2.ethg[2] <--> Eth100M <--> rBridge3.ethg[0];
         rBridge5.ethg[1] <--> Eth100M <--> rBridge3.ethg[1];
+        ansaHost1.ethg[0] <--> Eth100M <--> rBridge1.ethg[2];
+        ansaHost2.ethg[0] <--> Eth100M <--> rBridge5.ethg[2];
 }

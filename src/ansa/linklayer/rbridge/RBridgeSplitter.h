@@ -28,16 +28,29 @@
 #define RBRIDGESPLITTER_H_
 
 #include <csimplemodule.h>
-#include <ISIS.h>
-#include "EtherFrame_m.h"
+#include "ISISAccess.h"
+#include "TRILLAccess.h"
+#include "RBVLANTable.h"
+#include "RBPortTable.h"
+#include "AnsaEtherFrame_m.h"
+
 
 class RBridgeSplitter : public cSimpleModule
 {
 //    public:
 //        RBridgeSplitter();
 //        virtual ~RBridgeSplitter();
+    private:
+        ISIS *isisModule;
+        TRILL *trillModule;
+        RBVLANTable *vlanTableModule;
+        RBPortTable *portTableModule;
     protected:
-      virtual void initialize();
+      virtual void initialize(int stage);
+      virtual int numInitStages() const
+      {
+          return 4;
+      }
       virtual void handleMessage(cMessage *msg);
 };
 

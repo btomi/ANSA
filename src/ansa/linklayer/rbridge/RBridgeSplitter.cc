@@ -37,8 +37,17 @@ Define_Module(RBridgeSplitter);
 //    // TODO Auto-generated destructor stub
 //}
 
-void RBridgeSplitter::initialize(){
+void RBridgeSplitter::initialize(int stage){
 
+    if(stage == 3){
+        trillModule = TRILLAccess().get();
+
+        isisModule = ISISAccess().get();
+
+        this->vlanTableModule = ModuleAccess<RBVLANTable>("rBVLANTable").get();
+
+        this->portTableModule = ModuleAccess<RBPortTable>("rBVPortTable").get();
+    }
 }
 
 void RBridgeSplitter::handleMessage(cMessage *msg){
@@ -48,33 +57,122 @@ void RBridgeSplitter::handleMessage(cMessage *msg){
     int gateIndex = gate->getIndex();
 
     // packet coming from network layer modules within the router
-    if (gateName == "upperLayerIn" || gateName == "trillIn" || gateName == "isisIn")
+    if (gateName == "isisIn")
     {
+        int vlanId = vlanTableModule->getVID(gateIndex);
 
-        // send packet to out interface
-        this->send(msg, "lowerLayerOut", gateIndex);
+        if (vlanTableModule->getTag(vlanId, gateIndex) == RBVLANTable::INCLUDE)
+        {
+            Ieee802Ctrl *ctrl = (Ieee802Ctrl *) msg->getControlInfo();
+            msg->removeControlInfo();
+            ctrl->setEtherType(ETHERTYPE_L2_ISIS);
+            ctrl->setDest(MACAddress("01-80-C2-00-00-41")); //ALL-IS-IS-RBridges
+
+            AnsaEtherFrame *frame = new AnsaEtherFrame(msg->getName());
+            frame->encapsulate((ISISMessage *) msg);
+            frame->setControlInfo(ctrl);
+            frame->setEtherType(ETHERTYPE_L2_ISIS);
+            frame->setDest(MACAddress("01-80-C2-00-00-41"));
+
+            int interfaceId = this->portTableModule->getPortByGateIndex(gateIndex)->getInterfaceId();
+
+
+
+            frame->setVlan(vlanId);
+
+            this->send(frame, "lowerLayerOut", gateIndex);
+        }
+        else
+        {
+
+            //set ethertype L2_ISIS
+
+            ((Ieee802Ctrl *)msg->getControlInfo())->setEtherType(ETHERTYPE_L2_ISIS);
+            // send packet to out interface
+
+
+
+        }
 
     // packet coming from in interfaces
+    }else if(gateName == "upperLayerIn" || gateName == "trillIn"){
+        this->send(msg, "lowerLayerOut", gateIndex);
     }
     else
     {
-        if(dynamic_cast<EthernetIIFrame *>(msg)){
-            EthernetIIFrame * frame = (EthernetIIFrame *) msg;
-            if(frame->getDest().compareTo(MACAddress("0180c2000015"))){
-                this->send(msg, "isisOut", gateIndex);
+        if(dynamic_cast<AnsaEtherFrame *>(msg)){
+//            EthernetIIFrame * frame = (EthernetIIFrame *) msg;
+            AnsaEtherFrame * frame = (AnsaEtherFrame *)msg;
+            //if src unicast
+              //trillModule->learn(msg);
+
+            //check integrity, ...
+
+            //if ethertype == L2_ISIS AND Outer.MacDA == ALL-IS-IS-RBridges
+            if(frame->getEtherType() == ETHERTYPE_L2_ISIS){
+                if(trillModule->isAllowedByGate(frame->getVlan(), frame->getArrivalGateId())){
+                                trillModule->learn(frame);
+                                this->send(msg, "isisOut", gateIndex);
+                }else{
+                    EV <<" Warning L2_ISIS frame with not-allowed vlan tag" << endl;
+                    delete msg;
+                }
                 return;
             }
-            //it's L2-IS-IS aka TRILL-IS-IS frame
-            if(frame->getEtherType() == 0x22F4){//todo use #define or enum
-                this->send(msg, "isisOut", gateIndex);
-
+            //
+            else{
+                this->send(msg,"trillOut", gateIndex);
             }
-
         }
-        if (dynamic_cast<ISISMessage *>(msg))
+        //
+        else if (dynamic_cast<EthernetIIFrame *>(msg))
         {
-            this->send(msg, "isisOut", gateIndex);
+            EthernetIIFrame * frame = (EthernetIIFrame *) msg;
+//                        AnsaEtherFrame * frame = (AnsaEtherFrame *)msg;
+            //if src unicast
+            //trillModule->learn(msg);
+
+            //check integrity, ...
+
+            //if ethertype == L2_ISIS AND Outer.MacDA == ALL-IS-IS-RBridges
+            if (frame->getEtherType() == ETHERTYPE_L2_ISIS)
+            {
+//                            if(trillModule->isAllowedByGate(frame->getVlan(), frame->getArrivalGateId())){
+                trillModule->learn(frame);
+                this->send(msg, "isisOut", gateIndex);
+//                            }else{
+//                                EV <<" Warning L2_ISIS frame with not-allowed vlan tag" << endl;
+//                                delete msg;
+//                            }
+                return;
+            }
+            //
+            else
+            {
+                this->send(msg, "trillOut", gateIndex);
+            }
         }
+        else
+        {
+            EV << "Warning: received unsupported frame type" << endl;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+//        if (dynamic_cast<ISISMessage *>(msg))
+//        {
+//            this->send(msg, "isisOut", gateIndex);
+//            return;
+//        }
 
 
         // IPv6 datagram, send it to networkLayer6 via ipv6Out

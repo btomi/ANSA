@@ -69,7 +69,7 @@ void DeviceConfigurator::initialize(int stage){
 
    // interfaces and routing table are not ready before stage 2
     if (stage == 2){
-//        this->loadISISConfig(ISISAccess().get(),ISIS::L2_ISIS_MODE);
+
         // get table of interfaces of this device
         ift = InterfaceTableAccess().get();
         if (ift == NULL){
