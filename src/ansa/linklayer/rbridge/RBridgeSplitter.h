@@ -33,6 +33,8 @@
 #include "RBVLANTable.h"
 #include "RBPortTable.h"
 #include "AnsaEtherFrame_m.h"
+#include "IInterfaceTable.h"
+#include "InterfaceTableAccess.h"
 
 
 class RBridgeSplitter : public cSimpleModule
@@ -45,6 +47,7 @@ class RBridgeSplitter : public cSimpleModule
         TRILL *trillModule;
         RBVLANTable *vlanTableModule;
         RBPortTable *portTableModule;
+        IInterfaceTable *ift;
     protected:
       virtual void initialize(int stage);
       virtual int numInitStages() const

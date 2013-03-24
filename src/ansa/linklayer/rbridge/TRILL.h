@@ -25,6 +25,9 @@
 
 #ifndef TRILL_H_
 #define TRILL_H_
+#define ALL_RBRIDGES "01-80-C2-00-00-40"
+#define ALL_IS_IS_RBRIDGES "01-80-C2-00-00-41"
+#define ALL_ESADI_RBRIGES "01-80-C2-00-00-42"
 
 
 #include <omnetpp.h>
@@ -42,6 +45,7 @@
 
 #include "RBMACTable.h"
 #include "RBVLANTable.h"
+#include "TRILLInterfaceData.h"
 
 //#include "stp/stp.h"
 //#include "ISIS.h"
@@ -65,13 +69,25 @@ class TRILL : public cSimpleModule
           MACAddress dest; // destination MAC address of the original frame
           int etherType; // EtherType from EthernetIIFrame
           std::string name; // for simulation frame name
+          RBMACTable::ESTRecord record;
         } tFrameDescriptor;
+
+
+        typedef enum e_frame_category {
+            TRILL_L2_CONTROL, //such as Bridge PDUs (BPDUs)
+            TRILL_NATIVE, //non-TRILL-encapsulated data frames
+            TRILL_DATA, //TRILL-encapsulated data fremes
+            TRILL_CONTROL,
+            TRILL_OTHER,
+            TRILL_NONE //for detecting misclassification
+        }FrameCategory;
 
         MACAddress getBridgeAddress();
 
         bool isAllowedByGate(int vlan, int gateId);//returns true if vlan is allowed on interface specified by gateId
         void learn(AnsaEtherFrame * frame);
         void learn(EthernetIIFrame * frame);
+
 
       private:
         //number of nicknames, default 1, may be 1 - 256
@@ -97,13 +113,14 @@ class TRILL : public cSimpleModule
       RBVLANTable * vlanTable;
 //      Stp * spanningTree;
       ISIS* isis;
+      IInterfaceTable *ift;
 
       cMessage * currentMsg;
 
       int portCount;
 
       virtual void initialize(int stage);
-      virtual int numInitStages() const {return 1;}
+      virtual int numInitStages() const {return 2;}
       virtual void handleMessage(cMessage * msg);
       virtual void finish();
 
@@ -134,7 +151,14 @@ class TRILL : public cSimpleModule
       //void untagMsg();
       EthernetIIFrame * untagMsg(AnsaEtherFrame * _frame);
 
+      /* NEW */
+      FrameCategory classify(tFrameDescriptor &frameDesc);
+      bool processNative(tFrameDescriptor &frameDesc);
+      bool isNativeAllowed(tFrameDescriptor &frameDesc);
+      bool dispatchNativeLocalPort(tFrameDescriptor &frameDesc);
 
+
+      /* end of NEW */
 
     };
 

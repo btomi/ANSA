@@ -54,6 +54,7 @@ public:
   typedef std::pair<MACAddress, int> ESTKey;
 
   typedef enum {
+      EST_EMPTY, //empty record
       EST_LOCAL_PROCESS, // local processing
       EST_LOCAL_PORT, // for unicast destination (unicast source during learning)
       EST_RBRIDGE, // send to RBRidge
@@ -68,7 +69,7 @@ public:
       ESR_GROUP, // inserted by Group MGMT process
   } ESTInputType;
 
-  struct ESTRecord {
+  typedef struct  {
           std::vector<int> portList; //vector is inteded for group addresses (multicast)
           unsigned char systemID[6]; //Egress RBridge System ID
           ESTRecordType type; //how to handle record type
@@ -77,7 +78,7 @@ public:
           //little bit of redundancy
           MACAddress address;
           int vlanId;
-  };
+  }ESTRecord;
 
   /* compare structure for std::map */
   struct ESRecordCompare{
@@ -145,6 +146,7 @@ public:
   void enableFasterAging(); // Aging ~ Ageing by Longman dictionary of contemporary english http://ldoceonline.com/
   void resetAging();
 
+  ESTRecord& getESTRecordByESTKey(ESTKey eSTKey);
 
   const AddressTable * getTable();
 
@@ -170,6 +172,7 @@ protected:
   ESTable eSTable; //end station table
     AddressTable table;
     tPortList empty;
+    ESTRecord emptyESRecord;
 
 
   int addressTableSize;       // Maximum size of the Address Table
@@ -194,6 +197,12 @@ protected:
 //    os << "]";
 //    return os;
 //}
+
+inline std::ostream& operator<<(std::ostream& os, const RBMACTable::ESTKey key){
+    os <<"MAC address: " << key.first << " and VLAN: " << key.second;
+    return os;
+}
+
 
 inline std::ostream& operator<<(std::ostream& os, const RBMACTable::tType t) {
     switch (t) {

@@ -30,7 +30,7 @@ network MultiDest
         rBridge1: RBridge {
             @display("p=113,90");
             gates:
-                ethg[3];
+                ethg[4];
         }
         rBridge2: RBridge {
             @display("p=269,90");
@@ -50,7 +50,7 @@ network MultiDest
         rBridge5: RBridge {
             @display("p=428,223");
             gates:
-                ethg[3];
+                ethg[2];
         }
         rBridge6: RBridge {
             @display("p=113,223");
@@ -58,14 +58,14 @@ network MultiDest
                 ethg[2];
         }
         ansaHost2: AnsaHost {
-            @display("p=428,306");
+            @display("p=113,26");
             gates:
                 ethg[1];
         }
         ansaHost1: AnsaHost {
             @display("p=39,90");
             gates:
-            	ethg[1];
+                ethg[1];
         }
     connections:
         rBridge1.ethg[0] <--> Eth100M <--> rBridge2.ethg[0];
@@ -76,5 +76,5 @@ network MultiDest
         rBridge2.ethg[2] <--> Eth100M <--> rBridge3.ethg[0];
         rBridge5.ethg[1] <--> Eth100M <--> rBridge3.ethg[1];
         ansaHost1.ethg[0] <--> Eth100M <--> rBridge1.ethg[2];
-        ansaHost2.ethg[0] <--> Eth100M <--> rBridge5.ethg[2];
+        ansaHost2.ethg[0] <--> Eth100M <--> rBridge1.ethg[3];
 }

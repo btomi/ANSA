@@ -46,7 +46,9 @@ void RBridgeSplitter::initialize(int stage){
 
         this->vlanTableModule = ModuleAccess<RBVLANTable>("rBVLANTable").get();
 
-        this->portTableModule = ModuleAccess<RBPortTable>("rBVPortTable").get();
+//        this->portTableModule = ModuleAccess<RBPortTable>("rBVPortTable").get();
+
+        this->ift = InterfaceTableAccess().get();
     }
 }
 
@@ -63,20 +65,20 @@ void RBridgeSplitter::handleMessage(cMessage *msg){
 
         if (vlanTableModule->getTag(vlanId, gateIndex) == RBVLANTable::INCLUDE)
         {
+            InterfaceEntry *ie = ift->getInterfaceByNetworkLayerGateIndex(gateIndex);
             Ieee802Ctrl *ctrl = (Ieee802Ctrl *) msg->getControlInfo();
-            msg->removeControlInfo();
+//            msg->removeControlInfo();
             ctrl->setEtherType(ETHERTYPE_L2_ISIS);
-            ctrl->setDest(MACAddress("01-80-C2-00-00-41")); //ALL-IS-IS-RBridges
-
+            ctrl->setDest(MACAddress(ALL_IS_IS_RBRIDGES)); //ALL-IS-IS-RBridges
+            ctrl->setSrc(ie->getMacAddress());
             AnsaEtherFrame *frame = new AnsaEtherFrame(msg->getName());
             frame->encapsulate((ISISMessage *) msg);
-            frame->setControlInfo(ctrl);
+            frame->setControlInfo(ctrl->dup());
             frame->setEtherType(ETHERTYPE_L2_ISIS);
-            frame->setDest(MACAddress("01-80-C2-00-00-41"));
-
-            int interfaceId = this->portTableModule->getPortByGateIndex(gateIndex)->getInterfaceId();
+            frame->setDest(MACAddress(ALL_IS_IS_RBRIDGES));
 
 
+            frame->setSrc(ie->getMacAddress());
 
             frame->setVlan(vlanId);
 
@@ -88,8 +90,9 @@ void RBridgeSplitter::handleMessage(cMessage *msg){
             //set ethertype L2_ISIS
 
             ((Ieee802Ctrl *)msg->getControlInfo())->setEtherType(ETHERTYPE_L2_ISIS);
+            ((Ieee802Ctrl *)msg->getControlInfo())->setDest(MACAddress(ALL_IS_IS_RBRIDGES));
             // send packet to out interface
-
+            this->send(msg, "lowerLayerOut", gateIndex);
 
 
         }
@@ -110,9 +113,9 @@ void RBridgeSplitter::handleMessage(cMessage *msg){
 
             //if ethertype == L2_ISIS AND Outer.MacDA == ALL-IS-IS-RBridges
             if(frame->getEtherType() == ETHERTYPE_L2_ISIS){
-                if(trillModule->isAllowedByGate(frame->getVlan(), frame->getArrivalGateId())){
+                if(trillModule->isAllowedByGate(frame->getVlan(), frame->getArrivalGate()->getIndex())){
                                 trillModule->learn(frame);
-                                this->send(msg, "isisOut", gateIndex);
+                                this->send(frame->decapsulate(), "isisOut", gateIndex);
                 }else{
                     EV <<" Warning L2_ISIS frame with not-allowed vlan tag" << endl;
                     delete msg;

@@ -73,7 +73,7 @@ void RBMACTable::update(MACAddress& addr, int vlanId, int port){
             }
         }
         // Add entry to table
-        EV << "Adding entry to Address Table: "<< addr << ": VLAN: " << vlanId << " --> port" << port << "\n";
+        EV << "Adding entry to Address Table: "<< addr << ": VLAN: " << vlanId << " --> port " << port << "\n";
 
         ESTRecord entry;
         entry.portList.push_back(port);
@@ -86,7 +86,7 @@ void RBMACTable::update(MACAddress& addr, int vlanId, int port){
         this->eSTable[std::make_pair(addr, vlanId)] = entry;
     }else{
         // update existing entry
-        EV << "Adding entry to Address Table: "<< addr << ": VLAN: " << vlanId << " --> port" << port << "\n";
+        EV << "Updating entry in Address Table: "<< addr << ": VLAN: " << vlanId << " --> port " << port << "\n";
         ESTRecord entry = iter->second;
 
         if(entry.inputType == ESR_DYNAMIC && entry.type == EST_LOCAL_PORT){
@@ -192,6 +192,28 @@ RBMACTable::tPortList& RBMACTable::getPorts(MACAddress& addr) {
     return iter->second.portList;
 }
 
+RBMACTable::ESTRecord& RBMACTable::getESTRecordByESTKey(ESTKey eSTKey){
+
+    Enter_Method_Silent();
+
+    ESTable::iterator iter = eSTable.find(eSTKey);
+    if(iter == eSTable.end()){
+        return emptyESRecord;
+    }
+
+    if((iter->second.inputType != STATIC) && (iter->second.insertTime + agingTime) <= simTime()){
+        EV << "Ignoring and deleting aged entry: "<< iter->first << "\n";
+
+               eSTable.erase(iter);
+
+               return emptyESRecord;
+    }
+
+    return iter->second;
+}
+
+
+
 void RBMACTable::flush() {
 
     Enter_Method_Silent();
@@ -233,6 +255,9 @@ void RBMACTable::initDefaults() {
   fasterAging = 5; // short value to age out ... (5s < 5xHelloTime = 10s)
   uAgingTime = 300; // recommended value by IEEE 802.1D-1998 (and later)...
   agingTime = uAgingTime; // renew of user defined value, is triggered by STP process and receiving bpdu
+
+
+  this->emptyESRecord.type == RBMACTable::EST_EMPTY;
   return;
 }
 

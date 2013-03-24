@@ -53,11 +53,14 @@ void TRILL::initialize(int stage) {
         sprintf(msgname, "switchMsg %d", i);
         currentMsg = new cMessage(msgname, i);
 
-        cModule * tmp_rBMACTable = getParentModule()->getSubmodule("RBMACTable");
+        cModule * tmp_rBMACTable = getParentModule()->getSubmodule("rBMACTable");
         rbMACTable = check_and_cast<RBMACTable *>(tmp_rBMACTable);
 
         cModule * tmp_rBVLANTable = getParentModule()->getSubmodule("rBVLANTable");
         vlanTable = check_and_cast<RBVLANTable *>(tmp_rBVLANTable);
+
+        ift = InterfaceTableAccess().get();
+
 
 //        cModule * tmp_stp = getParentModule()->getSubmodule("stp");
 //        spanningTree = check_and_cast<Stp *>(tmp_stp);
@@ -71,26 +74,83 @@ void TRILL::initialize(int stage) {
 
         WATCH(bridgeAddress);
     }
+    else if(stage == 1){
+        /* Only default init for now */
+        for(int i = 0; i < ift->getNumInterfaces(); i++){
+            InterfaceEntry *ie = ift->getInterface(i);
+            TRILLInterfaceData *d = new TRILLInterfaceData();
+            d->setDefaults();
+            ie->setTRILLInterfaceData(d);
+
+        }
+    }
 }
 
 void TRILL::handleMessage(cMessage *msg) {
 
     if (!msg->isSelfMessage()) {
-        tFrameDescriptor frame;
+        tFrameDescriptor frameDesc;
 
         if (strcmp(msg->getArrivalGate()->getName(), "stpIn") == 0) {
             /* Messages from STP process */
             dispatchBPDU(msg, msg->getArrivalGate()->getIndex());
             return;
 
-        } else if (strcmp(msg->getArrivalGate()->getName(), "ifIn") == 0) {
+        } else if (strcmp(msg->getArrivalGate()->getName(), "lowerLayerIn") == 0) {
             /* Messages from network */
-            if (reception(frame, msg) == true) {
-                //EV << frame;
-                //error("BLE BLE");
-                relay(frame);
+            bool processResult;
+            if(reception(frameDesc, msg)){
+                //frame received on port's allowed VLAN and successfully parsed
+                //now determine the proper type
+                //getTRILL_Type
+                TRILL::FrameCategory cat;
+                switch(cat = classify(frameDesc)){
+                    case TRILL::TRILL_L2_CONTROL:
+                        //process L2 control frame like register VLAN etc
+                        //TODO
+                        break;
+
+                    case TRILL::TRILL_NATIVE:
+                        //process non-TRILL-encapsulated
+                        //processNative(frameDesc);
+                        //TBD
+                        processResult = processNative(frameDesc);
+
+                        break;
+
+                    case TRILL::TRILL_DATA:
+                        //processTRILL encapsulated
+                        break;
+
+                    case TRILL::TRILL_CONTROL:
+                        EV <<"Error: L2_ISIS frame shoudn't get send to TRILL (for NOW)" <<endl;
+                        //send("toISIS", gateIndex);
+                        break;
+                    case TRILL::TRILL_OTHER:
+                        EV <<"Warning: TRILL: Received TRILL::OTHER frame so dicarding" <<endl;
+                        break;
+                    case TRILL::TRILL_NONE:
+                        EV <<"ERROR: TRILL: Misclassified frame" <<endl;
+                        break;
+                }
+
+                if(processResult){
+//                    eg
+
+                }else{
+                    delete msg;
+                    return;
+                }
+
+
             }
-            delete frame.payload;
+
+//            if (reception(frame, msg) == true) {
+//                //EV << frame;
+//                //error("BLE BLE");
+//                relay(frameDesc);
+//            }
+//            delete frame.payload;
         }
     } else {
         // Self message signal used to indicate a frame has finished processing
@@ -120,6 +180,9 @@ bool TRILL::reception(TRILL::tFrameDescriptor& frame, cMessage *msg) {
     } else if (dynamic_cast<EthernetIIFrame *>(tmp)) {
         EthernetIIFrame * untaggedFrame = (EthernetIIFrame *) tmp;
         ingress(frame, untaggedFrame, rPort); // discarding forbidden PortVID is in relay
+    }else{
+        return false;
+        EV << "Warning: dropping unsupported frame in TRILL::reception";
     }
 
     return true;
@@ -275,6 +338,57 @@ void TRILL::dispatch(TRILL::tFrameDescriptor& frame) {
     delete untaggedFrame;
     return;
 }
+
+/* NEW */
+bool TRILL::dispatchNativeLocalPort(TRILL::tFrameDescriptor& frame) {
+
+    EthernetIIFrame * untaggedFrame = new EthernetIIFrame(frame.name.c_str());
+    AnsaEtherFrame * taggedFrame = new AnsaEtherFrame(frame.name.c_str());
+
+    taggedFrame->setKind(frame.payload->getKind());
+    taggedFrame->setSrc(frame.src);
+    taggedFrame->setDest(frame.dest);
+    taggedFrame->setByteLength(ETHER_MAC_FRAME_BYTES);
+    taggedFrame->setVlan(frame.VID);
+    taggedFrame->setEtherType(frame.etherType);
+
+    taggedFrame->encapsulate(frame.payload->dup());
+    if (taggedFrame->getByteLength() < MIN_ETHERNET_FRAME_BYTES) {
+        taggedFrame->setByteLength(MIN_ETHERNET_FRAME_BYTES); // "padding"
+    }
+
+    untaggedFrame->setKind(frame.payload->getKind());
+    untaggedFrame->setSrc(frame.src);
+    untaggedFrame->setDest(frame.dest);
+    untaggedFrame->setByteLength(ETHER_MAC_FRAME_BYTES);
+    untaggedFrame->setEtherType(frame.etherType);
+
+    untaggedFrame->encapsulate(frame.payload->dup());
+    if (untaggedFrame->getByteLength() < MIN_ETHERNET_FRAME_BYTES) {
+        untaggedFrame->setByteLength(MIN_ETHERNET_FRAME_BYTES); // "padding"
+    }
+    RBVLANTable::tVIDPortList::iterator it;
+    for (it = frame.portList.begin(); it != frame.portList.end(); it++) {
+        if (it->port >= portCount) {
+            continue;
+        }
+//        if (spanningTree->forwarding(it->port, frame.VID) == false) {
+//            continue;
+//        }
+        if (it->action == RBVLANTable::INCLUDE) {
+            send(taggedFrame->dup(), "lowerLayerOut", it->port);
+        } else {
+            send(untaggedFrame->dup(), "lowerLayerOut", it->port);
+        }
+    }
+
+    delete taggedFrame;
+    delete untaggedFrame;
+    return true;
+}
+
+
+
 /*
  * ByGate means that the input interface is identified by gateId
  */
@@ -286,19 +400,19 @@ bool TRILL::isAllowedByGate(int vlanID, int gateIndex){
 }
 
 void TRILL::learn(AnsaEtherFrame *frame){
-    //remember the last parameter is not interfaceIndex, but gateId
-    rbMACTable->update(frame->getSrc(), frame->getVlan(), frame->getArrivalGateId());
+    //remember the last parameter is not interfaceIndex, but gateId WRONG
+    rbMACTable->update(frame->getSrc(), frame->getVlan(), frame->getArrivalGate()->getIndex());
 
 }
 
 void TRILL::learn(EthernetIIFrame *frame){
-    //remember the last parameter is not interfaceIndex, but gateId
+    //remember the last parameter is not interfaceIndex, but gateId WRONG!!
     /*TODO instead of frame->getVlan() do something like:
      * find out if tagAction ::REMOVE is set to this port
      *  if yes -> use some default vlanId
      *  if not -> drop frame?
      */
-    rbMACTable->update(frame->getSrc(), 1, frame->getArrivalGateId());
+    rbMACTable->update(frame->getSrc(), 1, frame->getArrivalGate()->getIndex());
 
 }
 
@@ -500,3 +614,90 @@ EthernetIIFrame * TRILL::untagMsg(AnsaEtherFrame * _frame) {
  }
 
 */
+/* NEW */
+TRILL::FrameCategory TRILL::classify(tFrameDescriptor &frameDesc){
+
+    if(frameDesc.dest.compareTo(MACAddress("01-80-C2-00-00-00")) >=0 && frameDesc.dest.compareTo(MACAddress("01-80-C2-00-00-21")) <=0){
+        return TRILL::TRILL_L2_CONTROL;
+    }else if (frameDesc.etherType != ETHERTYPE_L2_ISIS && frameDesc.etherType != ETHERTYPE_TRILL &&
+            (frameDesc.dest.compareTo(MACAddress("01-80-C2-00-00-40")) <= 0 && frameDesc.dest.compareTo(MACAddress("01-80-C2-00-00-4F")) >= 0)){
+        return TRILL::TRILL_NATIVE;
+    }else if(frameDesc.etherType == ETHERTYPE_TRILL){
+        return TRILL::TRILL_DATA;
+    }else if(frameDesc.etherType == ETHERTYPE_L2_ISIS){
+        return TRILL::TRILL_CONTROL;
+    }else if (frameDesc.dest.compareTo(MACAddress(ALL_IS_IS_RBRIDGES)) > 0 && frameDesc.dest.compareTo(MACAddress("01-80-C2-00-00-4F")) <= 0){
+        return TRILL::TRILL_OTHER; //these will get discarded
+    }else{
+        return TRILL::TRILL_NONE;
+    }
+
+}
+
+
+bool TRILL::processNative(tFrameDescriptor &frameDesc){
+
+    if(!isNativeAllowed(frameDesc)){
+        return false;
+    }
+
+    if(!frameDesc.dest.isBroadcast() && !frameDesc.dest.isMulticast()){
+        //unicast RFC 6325 4.6.1.1
+    }
+//    rbMACTable->get
+    RBMACTable::ESTRecord record = rbMACTable->getESTRecordByESTKey(std::make_pair(MACAddress(frameDesc.dest), frameDesc.VID));
+    frameDesc.record = record;
+
+    switch(record.type){
+        case RBMACTable::EST_LOCAL_PROCESS:
+            //process localy
+            //i guess send it back to rBridgeSplitter?
+            //TODO
+            break;
+
+        case RBMACTable::EST_LOCAL_PORT:
+            //TODO multiple ports? (guess not, that's what MULTICAST is for)
+            if(record.portList.at(0) == frameDesc.rPort){
+                //RFC 6325 4.6.1.1.2.
+                //frame received on the same link that it should get sent to so discard
+                return false;
+
+            }else{
+                //TODO move to egress()?
+                frameDesc.portList.clear();
+                RBVLANTable::s_vid_port vid_port = RBVLANTable::s_vid_port();
+                //TODO always remove tag for native frames?
+                vid_port.action = RBVLANTable::REMOVE;
+                vid_port.port = record.portList.at(0);
+                frameDesc.portList.push_back(vid_port);
+                return dispatchNativeLocalPort(frameDesc);
+//                return true;
+            }
+            break;
+
+        case RBMACTable::EST_RBRIDGE:
+            return true;
+            break;
+
+        case RBMACTable::EST_EMPTY:
+            //not found ->treat as
+            break;
+    }
+
+    return true;
+}
+
+bool TRILL::isNativeAllowed(tFrameDescriptor &frameDesc){
+
+    TRILLInterfaceData *d = (ift->getInterfaceByNetworkLayerGateIndex(frameDesc.rPort))->trillData();
+    //RFC 6325 4.6.1
+    if(d->isDisabled() || d->isTrunk() || d->isP2p()){
+        //frame should be discarded
+        return false;
+    }
+
+    if(!d->isAppointedForwarder(frameDesc.VID) || d->isInhibited()){
+        return false;
+    }
+    return true;
+}
