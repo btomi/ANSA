@@ -28,6 +28,7 @@ import inet.ansa.util.deviceConfigurator.DeviceConfigurator;
 import inet.ansa.linklayer.switch.stp.Stp;
 //import inet.nodes.inet.BurstHost;
 import inet.base.NotificationBoard;
+import inet.linklayer.ethernet.EtherMAC;
 import inet.ansa.linklayer.ethernet.AnsaEtherMAC;
 import inet.linklayer.IWiredNic;
 //import inet.ansa.linklayer.switch.ANSASwitchCore;
@@ -39,6 +40,7 @@ import inet.ansa.linklayer.rbridge.RBVLANTable;
 import inet.ansa.linklayer.rbridge.RBPortTable;
 
 import inet.ansa.linklayer.rbridge.RBridgeSplitter;
+import inet.ansa.linklayer.rbridge.RBEthernetInterface;
 
 
 import inet.transport.rtp.RTPAVProfilePayload10Receiver;
@@ -97,7 +99,8 @@ module RBridge
         //                @display("p=154,416,row,110;q=l2queue;is=l");
         //                promiscuous = true;
         //        }
-        eth[sizeof(ethg)]: <default("EthernetInterface")> like IWiredNic {
+//        eth[sizeof(ethg)]: <default("EthernetInterface")> like IWiredNic {
+        eth[sizeof(ethg)]: RBEthernetInterface {
             parameters:
                 @display("p=154,417,row,110;q=l2queue");
         }

@@ -131,6 +131,7 @@ private:
     /* Init */
     void initISIS(); // main init
     void initHello();
+    void initTRILLHello();
     void initGenerate();
     void initRefresh();
     void initPeriodicSend();
@@ -140,8 +141,12 @@ private:
 
     /* Hello */
     void handlePTPHelloMsg(ISISMessage *inMsg); //
+    void sendHelloMsg(ISISTimer *timer); // send hello messages
     void sendBroadcastHelloMsg(int interfaceIndex, int gateIndex, short  circuitType);
     void sendPTPHelloMsg(int interfaceIndex, int gateIndex, short  circuitType);
+    void sendTRILLHelloMsg(ISISTimer *timer); //mimic the sendHelloMsg functionality
+    void sendTRILLBroadcastHelloMsg(int interfaceIndex, int gateIndex, short circuitType);
+    void sendTRILLPTPHelloMsg(int interfaceIndex, int gateIndex, short circuitType);
     unsigned short getHoldTime(int interfaceIndex, short  circuitType = L1_TYPE);
     double getHelloInterval(int interfaceIndex, short  circuitType); //return hello interval for specified interface and circuitType. For DIS interface returns only 1/3 of actual value;
     ISISadj *getAdjByGateIndex(int gateIndex, short  circuitType, int offset = 0); // return something corresponding to adjacency on specified link
@@ -258,7 +263,7 @@ private:
     /* General */
     short getLevel(ISISMessage *msg); //returns level (circuitType) of the message
 
-    void sendHelloMsg(ISISTimer *timer); // send hello messages
+
     bool parseNetAddr(); // validate and parse net address format
     void handleL1HelloMsg(ISISMessage *inMsg); // handle L1 hello messages
     void handleL2HelloMsg(ISISMessage *inMsg); // handle L2 hello messages

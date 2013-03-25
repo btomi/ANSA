@@ -620,7 +620,7 @@ TRILL::FrameCategory TRILL::classify(tFrameDescriptor &frameDesc){
     if(frameDesc.dest.compareTo(MACAddress("01-80-C2-00-00-00")) >=0 && frameDesc.dest.compareTo(MACAddress("01-80-C2-00-00-21")) <=0){
         return TRILL::TRILL_L2_CONTROL;
     }else if (frameDesc.etherType != ETHERTYPE_L2_ISIS && frameDesc.etherType != ETHERTYPE_TRILL &&
-            (frameDesc.dest.compareTo(MACAddress("01-80-C2-00-00-40")) <= 0 && frameDesc.dest.compareTo(MACAddress("01-80-C2-00-00-4F")) >= 0)){
+            (frameDesc.dest.compareTo(MACAddress("01-80-C2-00-00-40")) < 0 || frameDesc.dest.compareTo(MACAddress("01-80-C2-00-00-4F")) > 0)){
         return TRILL::TRILL_NATIVE;
     }else if(frameDesc.etherType == ETHERTYPE_TRILL){
         return TRILL::TRILL_DATA;

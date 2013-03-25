@@ -47,6 +47,7 @@ class noncobject NSAP_t;
 
 enum PDU_Type
 {
+    TRILL_HELLO = 14; //TODO FIX can't find the real value
 	LAN_L1_HELLO = 15;
 	LAN_L2_HELLO = 16;
 	PTP_HELLO = 17;
@@ -94,6 +95,10 @@ enum TLVtypes
 	IP_ADDRESS = 132;			// IP address of the outgoing interface  
 	AUTH_INFO_RFC = 133;  		//IS-IS packet authentication (similar to Type 10, but doesn't define authentication Type 255)  
 	// -------------------------------------------------------
+	
+	//RFC 6326
+	TLV_TRILL_NEIGHBOR = 145;
+	
 	
 	PTP_HELLO_STATE = 240; // RFC5303 Adjacency state for 3-way handshake on point-to-point link
 }
@@ -145,6 +150,13 @@ packet ISISL2HelloPacket extends ISISLANHelloPacket
 	type = LAN_L2_HELLO;							//set PDU type
 }
 
+//TRILL Hello
+packet TRILLHelloPacket extends ISISLANHelloPacket
+{
+    type = TRILL_HELLO;
+    circuitType = L1_TYPE;
+    
+}
 
 //IS-IS PTP Hello Message
 packet ISISPTPHelloPacket extends ISISMessage

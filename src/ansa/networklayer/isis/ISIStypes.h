@@ -79,6 +79,7 @@ struct ISISinterface
 };
 typedef std::vector<ISISinterface> ISISInterTab_t;
 
+
 /**
  * Structure for storing info about neighbours
  */
@@ -91,6 +92,10 @@ struct ISISadj
     ISISTimer *timer;                   /*!<timer set to hold time and reseted every time hello from neighbour is received*/
     int gateIndex;                      /*!<index of gate, which is neighbour connected to*/
     bool network;                       /*!<network type, true = broadcast, false = point-to-point*/
+    ISISTimer *desVLANTimer;
+    ISISTimer *nonDesVLANTimer;
+    int priority; //priority of the neighbour to be the DRB
+    int desiredDesVLAN; // neighbour's desired VLAN to the designated VLAN
 
     //bool operator for sorting
     bool operator<(const ISISadj& adj2) const {
