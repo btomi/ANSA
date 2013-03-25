@@ -841,7 +841,7 @@ void ISIS::insertIft(InterfaceEntry *entry, cXMLElement *intElement)
  */
 void ISIS::initISIS()
 {
-    if (this->mode == ISIS::ISIS_MODE::L3_ISIS_MODE)
+    if (this->mode == ISIS::L3_ISIS_MODE)
     {
         this->initHello();
     }
@@ -1761,18 +1761,18 @@ void ISIS::sendPTPHelloMsg(int interfaceIndex, int gateIndex, short circuitType)
  * LAN hello and PTP hello packets. Destination MAC address is broadcast (ff:ff:ff:ff:ff:ff).
  * @param timer is timer that triggered this action
  */
-void ISIS::sendHelloMsg(ISISTimer* timer)
+void ISIS::sendTRILLHelloMsg(ISISTimer* timer)
 {
     if (this->ISISIft.at(timer->getInterfaceIndex()).network)
     {
         EV << "ISIS: sendingBroadcastHello: " << endl;
-        this->sendBroadcastHelloMsg(timer->getInterfaceIndex(), timer->getGateIndex(), timer->getIsType());
+        this->sendTRILLBroadcastHelloMsg(timer->getInterfaceIndex(), timer->getGateIndex(), timer->getIsType());
 
     }
     else
     {
         EV << "ISIS: sendingPTPHello: " << endl;
-        this->sendPTPHelloMsg(timer->getInterfaceIndex(), timer->getGateIndex(), timer->getIsType());
+        this->sendTRILLPTPHelloMsg(timer->getInterfaceIndex(), timer->getGateIndex(), timer->getIsType());
     }
     //re-schedule timer
     this->schedule(timer);
@@ -8173,7 +8173,7 @@ TLV_t *ISIS::genTLV(enum TLVtypes tlvType, short circuitType, int gateIndex)
              *************************************
              */
             /* RFC 6326 4.2. */
-            if(this->mode == ISIS::ISIS_MODE::L2_ISIS_MODE){
+            if(this->mode == ISIS::L2_ISIS_MODE){
                 myTLV = new TLV_t;
                 myTLV->type = AREA_ADDRESS;
                 myTLV->length = 2;
