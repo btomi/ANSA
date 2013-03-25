@@ -33,6 +33,7 @@ enum ISISTimerType
    GENERATE_LSP_TIMER = 11;
    ISIS_START = 12;
    SPF_FULL = 13; //fortunately it's not friday
+   TRILL_HELLO_TIMER = 14;
    
    
 };
