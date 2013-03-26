@@ -1,5 +1,5 @@
 <Devices>
-	  <Router id="2001:12::1">
+	<Router id="2001:12::1">
         <Interfaces>
             <Interface name="eth0">
                 <IPAddress>12.12.12.1</IPAddress>
@@ -101,4 +101,22 @@
         <Routing6>    
         </Routing6>
     </Router>
+    
+    <Host id="2001:3:3:3::10">
+		<Interfaces>
+			<Interface name="eth0">
+				<IPv6Address>2001:3:3:3::10/64</IPv6Address>
+			</Interface>
+		</Interfaces>
+		<DefaultRouter>2001:3:3:3::3</DefaultRouter>
+	</Host>
+	
+	<Host id="2001:6:6:6::10">
+		<Interfaces>
+			<Interface name="eth0">
+				<IPv6Address>2001:6:6:6::10/64</IPv6Address>
+			</Interface>
+		</Interfaces>
+		<DefaultRouter>2001:6:6:6::6</DefaultRouter>
+	</Host>
 </Devices>
