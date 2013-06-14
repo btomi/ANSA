@@ -357,7 +357,6 @@ void AnsaIPv4::routePimDM (AnsaIPv4MulticastRoute *route, IPv4Datagram *datagram
             if (!route->isFlagSet(AnsaIPv4MulticastRoute::A))
                 nb->fireChangeNotification(NF_IPv4_DATA_ON_PRUNED_INT, ctrl);
         }
-        delete datagram;
         return;
     }
 
