@@ -345,6 +345,7 @@ UDPSocket *RIPRouting::createAndSetSocketForInt(RIP::Interface* interface)
 {
     UDPSocket *socket = new UDPSocket();
     socket->setOutputGate(gate("udpOut"));
+    socket->setReuseAddress(true);
     //so every RIP message sent from RIP interface uses correct source address
     socket->bind(ift->getInterfaceById(interface->getId())->ipv4Data()->getIPAddress(), RIPPort);
 
@@ -1074,6 +1075,7 @@ void RIPRouting::initialize(int stage)
         ift->getInterface(i)->setMulticast(true);
 
     globalSocket.setOutputGate(gate("udpOut"));
+    globalSocket.setReuseAddress(true);
     globalSocket.bind(RIPPort);
     globalSocket.joinMulticastGroup(RIPAddress, -1);
 
