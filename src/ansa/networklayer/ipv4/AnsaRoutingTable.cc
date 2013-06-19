@@ -67,23 +67,12 @@ IPv4Route *AnsaRoutingTable::findRoute(const IPv4Address& network, const IPv4Add
 
 bool AnsaRoutingTable::prepareForAddRoute(IPv4Route *route)
 {
-    //TODO: assume only ANSAIPv4Route in the routing table?
-
     IPv4Route *routeInTable = findRoute(route->getDestination(), route->getNetmask());
 
     if (routeInTable)
     {
-        ANSAIPv4Route *ANSARoute = dynamic_cast<ANSAIPv4Route *>(route);
-        ANSAIPv4Route *ANSARouteInTable = dynamic_cast<ANSAIPv4Route *>(routeInTable);
-
-        //Assume that inet routes have AD 255
-        int newAdminDist = ANSAIPv4Route::dUnknown;
-        int oldAdminDist = ANSAIPv4Route::dUnknown;
-
-        if (ANSARoute)
-            newAdminDist = ANSARoute->getAdminDist();
-        if (ANSARouteInTable)
-            oldAdminDist = ANSARouteInTable->getAdminDist();
+        int newAdminDist = route->getAdminDist();
+        int oldAdminDist = routeInTable->getAdminDist();
 
         if (oldAdminDist > newAdminDist)
         {
@@ -151,7 +140,7 @@ void AnsaRoutingTable::updateNetmaskRoutes()
             route->setNetmask(ie->ipv4Data()->getNetmask());
             route->setGateway(IPv4Address());
             route->setMetric(ie->ipv4Data()->getMetric());
-            route->setAdminDist(ANSAIPv4Route::dDirectlyConnected);
+            route->setAdminDist(IPv4Route::dDirectlyConnected);
             route->setInterface(ie);
             route->setRoutingTable(this);
             RouteVector::iterator pos = upper_bound(routes.begin(), routes.end(), route, routeLessThan);
