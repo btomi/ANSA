@@ -37,17 +37,6 @@ std::ostream& operator<<(std::ostream& os, const AnsaIPv4MulticastRoute& e)
     return os;
 };
 
-/**
- * MULTICAST ROUTING TABLE DESTRUCTOR
- *
- * The method deletes Ansa Routing Table. Delete all entries in table.
- */
-AnsaRoutingTable::~AnsaRoutingTable()
-{
-    for (unsigned int i=0; i<multicastRoutes.size(); i++)
-        delete multicastRoutes[i];
-}
-
 IPv4Route *AnsaRoutingTable::findRoute(const IPv4Address& network, const IPv4Address& netmask)
 {
     //TODO: assume only ANSAIPv4Route in the routing table?
@@ -154,31 +143,6 @@ void AnsaRoutingTable::updateNetmaskRoutes()
 }
 
 /**
- * GET NUMBER OF ROUTES
- *
- * Returns number of entries in multicast routing table.
- */
-int AnsaRoutingTable::getNumRoutes() const
-{
-    return multicastRoutes.size();
-}
-
-/**
- * GET ROUTE
- *
- * Returns the k-th route. The returned route cannot be modified;
- * you must delete and re-add it instead. This rule is emphasized
- * by returning a const pointer.
- */
-AnsaIPv4MulticastRoute *AnsaRoutingTable::getMulticastRoute(int k) const
-{
-    if (k < (int)multicastRoutes.size())
-        return multicastRoutes[k];
-
-    return NULL;
-}
-
-/**
  * UPDATE DISPLAY STRING
  *
  * Update string under multicast table icon - number of multicast routes.
@@ -207,26 +171,10 @@ void AnsaRoutingTable::initialize(int stage)
 {
     if (stage==0)
     {
-        // get a pointer to IInterfaceTable
-        ift = InterfaceTableAccess().get();
-
-        nb = NotificationBoardAccess().get();
-
-        IPForward = par("IPForward").boolValue();
-        multicastForward = par("forwardMulticast").boolValue();
-
-        nb->subscribe(this, NF_INTERFACE_CREATED);
-        nb->subscribe(this, NF_INTERFACE_DELETED);
-        nb->subscribe(this, NF_INTERFACE_STATE_CHANGED);
-        nb->subscribe(this, NF_INTERFACE_CONFIG_CHANGED);
-        nb->subscribe(this, NF_INTERFACE_IPv4CONFIG_CHANGED);
+        RoutingTable::initialize(stage);
 
         // watch multicast table
         WATCH_VECTOR(showMRoute);
-        WATCH_PTRVECTOR(routes);
-        WATCH_PTRVECTOR(multicastRoutes);
-        WATCH(IPForward);
-        WATCH(routerId);
     }
     else if (stage==3)
     {
@@ -302,7 +250,7 @@ bool AnsaRoutingTable::deleteMulticastRoute(const AnsaIPv4MulticastRoute *entry)
     Enter_Method("deleteMulticastRoute(...)");
 
     // find entry in routing table
-    std::vector<AnsaIPv4MulticastRoute*>::iterator i;
+    std::vector<IPv4MulticastRoute*>::iterator i;
     for (i=multicastRoutes.begin(); i!=multicastRoutes.end(); ++i)
     {
         if ((*i) == entry)
@@ -392,8 +340,8 @@ AnsaIPv4MulticastRoute *AnsaRoutingTable::getRouteFor(IPv4Address group, IPv4Add
     // go through all multicast routes
     for (i = 0; i < n; i++)
     {
-        route = getMulticastRoute(i);
-        if (route->getMulticastGroup().getInt() == group.getInt() && route->getOrigin().getInt() == source.getInt())
+        route = dynamic_cast<AnsaIPv4MulticastRoute*>(getMulticastRoute(i));
+        if (route && route->getMulticastGroup() == group && route->getOrigin() == source)
             break;
     }
 
@@ -421,8 +369,8 @@ std::vector<AnsaIPv4MulticastRoute*> AnsaRoutingTable::getRouteFor(IPv4Address g
     int n = multicastRoutes.size();
     for (int i = 0; i < n; i++)
     {
-        AnsaIPv4MulticastRoute *route = getMulticastRoute(i);
-        if (route->getMulticastGroup().getInt() == group.getInt())
+        AnsaIPv4MulticastRoute *route = dynamic_cast<AnsaIPv4MulticastRoute*>(getMulticastRoute(i));
+        if (route && route->getMulticastGroup() == group)
             routes.push_back(route);
     }
 
@@ -440,12 +388,14 @@ void AnsaRoutingTable::generateShowIPMroute()
     EV << "MulticastRoutingTable::generateShowIPRoute()" << endl;
     showMRoute.clear();
 
-    int n = getNumRoutes();
+    int n = getNumMulticastRoutes();
     const AnsaIPv4MulticastRoute* ipr;
 
     for (int i=0; i<n; i++)
     {
-        ipr = getMulticastRoute(i);
+        ipr = dynamic_cast<AnsaIPv4MulticastRoute*>(getMulticastRoute(i));
+        if (!ipr)
+            continue;
         std::stringstream os;
         os << "(";
         if (ipr->getOrigin().isUnspecified()) os << "*, "; else os << ipr->getOrigin() << ",  ";
@@ -535,8 +485,8 @@ std::vector<AnsaIPv4MulticastRoute*> AnsaRoutingTable::getRoutesForSource(IPv4Ad
     for (i = 0; i < n; i++)
     {
         //FIXME works only for classfull adresses (function getNetwork) !!!!
-        AnsaIPv4MulticastRoute *route = getMulticastRoute(i);
-        if (route->getOrigin().getNetwork().getInt() == source.getInt())
+        AnsaIPv4MulticastRoute *route = dynamic_cast<AnsaIPv4MulticastRoute*>(getMulticastRoute(i));
+        if (route && route->getOrigin().getNetwork().getInt() == source.getInt())
             routes.push_back(route);
     }
     return routes;
