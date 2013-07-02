@@ -191,26 +191,38 @@ class INET_API IPv4Route : public cObject
 class INET_API IPv4MulticastRoute : public cObject
 {
   public:
-    class ChildInterface
+    class InInterface
+    {
+      protected:
+        InterfaceEntry *ie;
+      public:
+        InInterface(InterfaceEntry *ie) : ie(ie) { ASSERT(ie); }
+        virtual ~InInterface() {}
+
+        InterfaceEntry *getInterface() const { return ie; }
+    };
+
+    class OutInterface
     {
       protected:
         InterfaceEntry *ie;
         bool _isLeaf;        // for TRPB support
       public:
-        ChildInterface(InterfaceEntry *ie, bool isLeaf = false) : ie(ie), _isLeaf(isLeaf) {}
-        virtual ~ChildInterface() {}
+        OutInterface(InterfaceEntry *ie, bool isLeaf = false) : ie(ie), _isLeaf(isLeaf) { ASSERT(ie); }
+        virtual ~OutInterface() {}
 
         InterfaceEntry *getInterface() { return ie; }
         bool isLeaf() { return _isLeaf; }
     };
 
-    typedef std::vector<ChildInterface*> ChildInterfaceVector;
+    typedef std::vector<OutInterface*> OutInterfaceVector;
 
     /** Specifies where the route comes from */
     enum RouteSource
     {
         MANUAL,       ///< manually added static route
         DVMRP,        ///< managed by DVMRP router
+        PIM_DM,       ///< managed by PIM-DM router
         PIM_SM,       ///< managed by PIM-SM router
     };
 
@@ -219,14 +231,14 @@ class INET_API IPv4MulticastRoute : public cObject
     IPv4Address origin;            ///< Source network
     IPv4Address originNetmask;     ///< Source network mask
     IPv4Address group;             ///< Multicast group, if unspecified then matches any
-    InterfaceEntry *parent;        ///< Parent interface
-    ChildInterfaceVector children; ///< Child interfaces
+    InInterface *inInterface;      ///< In interface (upstream)
+    OutInterfaceVector outInterfaces; ///< Out interfaces (downstream)
     RouteSource source;            ///< manual, routing prot, etc.
     int metric;                    ///< Metric ("cost" to reach the source)
 
   public:
     // field codes for changed()
-    enum {F_ORIGIN, F_ORIGINMASK, F_MULTICASTGROUP, F_PARENT, F_CHILDREN, F_SOURCE, F_METRIC, F_LAST};
+    enum {F_ORIGIN, F_ORIGINMASK, F_MULTICASTGROUP, F_IN, F_OUT, F_SOURCE, F_METRIC, F_LAST};
 
   protected:
     void changed(int fieldCode);
@@ -237,7 +249,7 @@ class INET_API IPv4MulticastRoute : public cObject
     IPv4MulticastRoute& operator=(const IPv4MulticastRoute& obj);
 
   public:
-    IPv4MulticastRoute() : rt(NULL), parent(NULL), source(MANUAL), metric(0) {}
+    IPv4MulticastRoute() : rt(NULL), inInterface(NULL), source(MANUAL), metric(0) {}
     virtual ~IPv4MulticastRoute();
     virtual std::string info() const;
     virtual std::string detailedInfo() const;
@@ -258,9 +270,9 @@ class INET_API IPv4MulticastRoute : public cObject
     virtual void setOrigin(IPv4Address _origin)  { if (origin != _origin) {origin = _origin; changed(F_ORIGIN);} }
     virtual void setOriginNetmask(IPv4Address _netmask)  { if (originNetmask != _netmask) {originNetmask = _netmask; changed(F_ORIGINMASK);} }
     virtual void setMulticastGroup(IPv4Address _group)  { if (group != _group) {group = _group; changed(F_MULTICASTGROUP);} }
-    virtual void setParent(InterfaceEntry *_parent)  { if (parent != _parent) {parent = _parent; changed(F_PARENT);} }
-    virtual bool addChild(InterfaceEntry *ie, bool isLeaf);
-    virtual bool removeChild(InterfaceEntry *ie);
+    virtual void setInInterface(InInterface *_inInterface)  { if (inInterface != _inInterface) {inInterface = _inInterface; changed(F_IN);} }
+    virtual bool addOutInterface(OutInterface *outInterface);
+    virtual bool removeOutInterface(InterfaceEntry *ie);
     virtual void setSource(RouteSource _source)  { if (source != _source) {source = _source; changed(F_SOURCE);} }
     virtual void setMetric(int _metric)  { if (metric != _metric) {metric = _metric; changed(F_METRIC);} }
 
@@ -273,11 +285,11 @@ class INET_API IPv4MulticastRoute : public cObject
     /** Multicast group address */
     IPv4Address getMulticastGroup() const {return group;}
 
-    /** Parent interface */
-    InterfaceEntry *getParent() const {return parent;}
+    /** In interface */
+    InInterface *getInInterface() const {return inInterface;}
 
-    /** Child interfaces */
-    const ChildInterfaceVector &getChildren() const {return children;}
+    /** Out interfaces */
+    const OutInterfaceVector &getOutInterfaces() const {return outInterfaces;}
 
     /** Source of route. MANUAL (read from file), from routing protocol, etc */
     RouteSource getSource() const {return source;}

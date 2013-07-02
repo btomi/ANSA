@@ -83,6 +83,7 @@ void RoutingTable::initialize(int stage)
         WATCH_PTRVECTOR(routes);
         WATCH_PTRVECTOR(multicastRoutes);
         WATCH(IPForward);
+        WATCH(multicastForward);
         WATCH(routerId);
         //WATCH(IGMPVersion);
     }
@@ -232,12 +233,12 @@ void RoutingTable::deleteInterfaceRoutes(InterfaceEntry *entry)
     }
 
     // delete or update multicast routes:
-    //   1. delete routes has entry as parent
-    //   2. remove entry from children list
+    //   1. delete routes has entry as input interface
+    //   2. remove entry from output interface list
     for (MulticastRouteVector::iterator it = multicastRoutes.begin(); it != multicastRoutes.end(); )
     {
         IPv4MulticastRoute *route = *it;
-        if (route->getParent() == entry)
+        if (route->getInInterface() && route->getInInterface()->getInterface() == entry)
         {
             it = multicastRoutes.erase(it);
             ASSERT(route->getRoutingTable() == this); // still filled in, for the listeners' benefit
@@ -247,7 +248,7 @@ void RoutingTable::deleteInterfaceRoutes(InterfaceEntry *entry)
         }
         else
         {
-            bool removed = route->removeChild(entry);
+            bool removed = route->removeOutInterface(entry);
             if (removed)
             {
                 nb->fireChangeNotification(NF_IPv4_MROUTE_CHANGED, route);
@@ -304,11 +305,11 @@ void RoutingTable::printMulticastRoutingTable() const
                   route->getOriginNetmask().isUnspecified() ? "*" : route->getOriginNetmask().str().c_str(),
                   route->getMulticastGroup().isUnspecified() ? "*" : route->getMulticastGroup().str().c_str(),
                   route->getMetric(),
-                  !route->getParent() ? "*" : route->getParent()->getName());
-        const ChildInterfaceVector &children = route->getChildren();
-        for (ChildInterfaceVector::const_iterator it = children.begin(); it != children.end(); ++it)
+                  !route->getInInterface() ? "*" : route->getInInterface()->getInterface()->getName());
+        const OutInterfaceVector &outInterfaces = route->getOutInterfaces();
+        for (OutInterfaceVector::const_iterator it = outInterfaces.begin(); it != outInterfaces.end(); ++it)
         {
-            if (it != children.begin())
+            if (it != outInterfaces.begin())
                 EV << ",";
             EV << (*it)->getInterface()->getName();
         }
@@ -713,18 +714,18 @@ void RoutingTable::internalAddMulticastRoute(IPv4MulticastRoute *entry)
                 entry->getMulticastGroup().str().c_str());
 
     // check that the interface exists
-    if (entry->getParent() && !entry->getParent()->isMulticast())
-        error("addMulticastRoute(): parent interface must be multicast capable");
+    if (entry->getInInterface() && !entry->getInInterface()->getInterface()->isMulticast())
+        error("addMulticastRoute(): input interface must be multicast capable");
 
-    const ChildInterfaceVector &children = entry->getChildren();
-    for (ChildInterfaceVector::const_iterator it = children.begin(); it != children.end(); ++it)
+    const OutInterfaceVector &outInterfaces = entry->getOutInterfaces();
+    for (OutInterfaceVector::const_iterator it = outInterfaces.begin(); it != outInterfaces.end(); ++it)
     {
         if (!(*it))
-            error("addMulticastRoute(): child interface cannot be NULL");
+            error("addMulticastRoute(): output interface cannot be NULL");
         else if (!(*it)->getInterface()->isMulticast())
-            error("addMulticastRoute(): child interface must be multicast capable");
-        else if ((*it)->getInterface() == entry->getParent())
-            error("addMulticastRoute(): child interface cannot be the same as the parent");
+            error("addMulticastRoute(): output interface must be multicast capable");
+        else if (entry->getInInterface() && (*it)->getInterface() == entry->getInInterface()->getInterface())
+            error("addMulticastRoute(): output interface cannot be the same as the input interface");
     }
 
 

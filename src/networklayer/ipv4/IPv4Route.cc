@@ -77,9 +77,9 @@ void IPv4Route::changed(int fieldCode)
 
 IPv4MulticastRoute::~IPv4MulticastRoute()
 {
-    for (ChildInterfaceVector::iterator it = children.begin(); it != children.end(); ++it)
+    for (OutInterfaceVector::iterator it = outInterfaces.begin(); it != outInterfaces.end(); ++it)
         delete *it;
-    children.clear();
+    outInterfaces.clear();
 }
 
 std::string IPv4MulticastRoute::info() const
@@ -90,13 +90,13 @@ std::string IPv4MulticastRoute::info() const
     out << "mask:"; if (originNetmask.isUnspecified()) out << "*  "; else out << originNetmask << "  ";
     out << "group:"; if (group.isUnspecified()) out << "*  "; else out << group << "  ";
     out << "metric:" << metric << " ";
-    out << "parent:"; if (!parent) out << "*  "; else out << parent->getName() << "  ";
-    out << "children:";
-    for (unsigned int i = 0; i < children.size(); ++i)
+    out << "in:"; if (!inInterface) out << "*  "; else out << inInterface->getInterface()->getName() << "  ";
+    out << "out:";
+    for (unsigned int i = 0; i < outInterfaces.size(); ++i)
     {
         if (i > 0)
             out << ",";
-        out << children[i]->getInterface()->getName();
+        out << outInterfaces[i]->getInterface()->getName();
     }
 
     switch (source)
@@ -117,22 +117,24 @@ std::string IPv4MulticastRoute::detailedInfo() const
 
 
 
-bool IPv4MulticastRoute::addChild(InterfaceEntry *ie, bool isLeaf)
+bool IPv4MulticastRoute::addOutInterface(OutInterface *outInterface)
 {
-    ChildInterfaceVector::iterator it;
-    for (it = children.begin(); it != children.end(); ++it)
+    ASSERT(outInterface);
+
+    OutInterfaceVector::iterator it;
+    for (it = outInterfaces.begin(); it != outInterfaces.end(); ++it)
     {
-        if ((*it)->getInterface() == ie)
+        if ((*it)->getInterface() == outInterface->getInterface())
             break;
     }
 
-    if (it != children.end())
+    if (it != outInterfaces.end())
     {
-        if ((*it)->isLeaf() != isLeaf)
+        if ((*it)->isLeaf() != outInterface->isLeaf())
         {
             delete *it;
-            *it = new ChildInterface(ie, isLeaf);
-            changed(F_CHILDREN);
+            *it = outInterface;
+            changed(F_OUT);
             return true;
         }
         else
@@ -140,21 +142,21 @@ bool IPv4MulticastRoute::addChild(InterfaceEntry *ie, bool isLeaf)
     }
     else
     {
-        children.push_back(new ChildInterface(ie, isLeaf));
-        changed(F_CHILDREN);
+        outInterfaces.push_back(outInterface);
+        changed(F_OUT);
         return true;
     }
 }
 
-bool IPv4MulticastRoute::removeChild(InterfaceEntry *ie)
+bool IPv4MulticastRoute::removeOutInterface(InterfaceEntry *ie)
 {
-    for (ChildInterfaceVector::iterator it = children.begin(); it != children.end(); ++it)
+    for (OutInterfaceVector::iterator it = outInterfaces.begin(); it != outInterfaces.end(); ++it)
     {
         if ((*it)->getInterface() == ie)
         {
             delete *it;
-            children.erase(it);
-            changed(F_CHILDREN);
+            outInterfaces.erase(it);
+            changed(F_OUT);
             return true;
         }
     }

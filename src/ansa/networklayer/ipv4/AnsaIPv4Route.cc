@@ -110,7 +110,7 @@ AnsaIPv4MulticastRoute::AnsaIPv4MulticastRoute()
     sequencenumber = 0;
 
     this->setRoutingTable(NULL);
-    this->setParent(NULL);
+    this->setInInterface(NULL);
     this->setSource(MANUAL);
     this->setMetric(0);
 }
