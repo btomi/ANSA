@@ -370,9 +370,6 @@ void AnsaIPv4::routePimDM (AnsaIPv4MulticastRoute *route, IPv4Datagram *datagram
         InterfaceEntry *destIE = outInt[i].intPtr;
         IPv4Datagram *datagramCopy = (IPv4Datagram *) datagram->dup();
 
-        // set datagram source address if not yet set
-        if (datagramCopy->getSrcAddress().isUnspecified())
-            datagramCopy->setSrcAddress(destIE->ipv4Data()->getIPAddress());
         IPv4::fragmentAndSend(datagramCopy, destIE, destAddr);    // send
     }
 }
@@ -413,9 +410,6 @@ void AnsaIPv4::routePimSM (AnsaIPv4MulticastRoute *route, AnsaIPv4MulticastRoute
         InterfaceEntry *destIE = outInt[i].intPtr;
         IPv4Datagram *datagramCopy = (IPv4Datagram *) datagram->dup();
 
-        // set datagram source address if not yet set
-        if (datagramCopy->getSrcAddress().isUnspecified())
-            datagramCopy->setSrcAddress(destIE->ipv4Data()->getIPAddress());
         IPv4::fragmentAndSend(datagramCopy, destIE, destAddr);
     }
 
@@ -467,12 +461,6 @@ void AnsaIPv4::reassembleAndDeliver(IPv4Datagram *datagram)
     {
         // tunnelled IP packets are handled separately
         send(decapsulate(datagram), "preRoutingOut");  //FIXME There is no "preRoutingOut" gate in the IPv4 module.
-    }
-    else if (protocol==IP_PROT_PIM)
-    {
-        cPacket *packet = decapsulate(datagram);
-        send(packet, "transportOut", mapping.getOutputGateForProtocol(IP_PROT_PIM));
-        return;
     }
     else if (protocol==IP_PROT_DSR)
     {
