@@ -137,7 +137,7 @@ void AnsaIPv4::handlePacketFromNetwork(IPv4Datagram *datagram, InterfaceEntry *f
             delete datagram;
         }
         else
-            routeMulticastPacket(datagram, NULL, getSourceInterfaceFrom(datagram));
+            routeMulticastPacket(datagram, getSourceInterfaceFrom(datagram));
     }
     else
     {
@@ -191,7 +191,7 @@ void AnsaIPv4::handlePacketFromNetwork(IPv4Datagram *datagram, InterfaceEntry *f
  * @param fromIE Pointer to incoming interface.
  * @see routeMulticastPacket()
  */
-void AnsaIPv4::routeMulticastPacket(IPv4Datagram *datagram, InterfaceEntry *destIE, InterfaceEntry *fromIE)
+void AnsaIPv4::routeMulticastPacket(IPv4Datagram *datagram, InterfaceEntry *fromIE)
 {
     IPv4Address destAddr = datagram->getDestAddress();
     IPv4Address srcAddr = datagram->getSrcAddress();
@@ -229,17 +229,6 @@ void AnsaIPv4::routeMulticastPacket(IPv4Datagram *datagram, InterfaceEntry *dest
             delete datagram;
             return;
         }
-    }
-
-    //MYWORK for local traffic to given destination (PIM messages)
-    if (fromIE == NULL && destIE != NULL)
-    {
-        IPv4Datagram *datagramCopy = (IPv4Datagram *) datagram->dup();
-        datagramCopy->setSrcAddress(destIE->ipv4Data()->getIPAddress());
-        IPv4::fragmentAndSend(datagramCopy, destIE, destAddr);
-
-        delete datagram;
-        return;
     }
 
     // if received from the network...
