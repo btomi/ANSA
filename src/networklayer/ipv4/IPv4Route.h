@@ -290,9 +290,6 @@ class INET_API IPv4MulticastRoute : public cObject
     /** In interface */
     InInterface *getInInterface() const {return inInterface;}
 
-    /** Out interfaces */
-    const OutInterfaceVector &getOutInterfaces() const {return outInterfaces;}
-
     /** Number of out interfaces */
     unsigned int getNumOutInterfaces() const {return outInterfaces.size();}
 

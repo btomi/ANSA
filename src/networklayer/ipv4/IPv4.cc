@@ -520,16 +520,16 @@ void IPv4::forwardMulticastPacket(IPv4Datagram *datagram, InterfaceEntry *fromIE
     {
         numForwarded++;
         // copy original datagram for multiple destinations
-        const IPv4MulticastRoute::OutInterfaceVector &outInterfaces = route->getOutInterfaces();
-        for (unsigned int i=0; i<outInterfaces.size(); i++)
+        for (unsigned int i=0; i<route->getNumOutInterfaces(); i++)
         {
-            InterfaceEntry *destIE = outInterfaces[i]->getInterface();
+            IPv4MulticastRoute::OutInterface *outInterface = route->getOutInterface(i);
+            InterfaceEntry *destIE = outInterface->getInterface();
             if (destIE != fromIE)
             {
                 int ttlThreshold = destIE->ipv4Data()->getMulticastTtlThreshold();
                 if (datagram->getTimeToLive() <= ttlThreshold)
                     EV << "Not forwarding to " << destIE->getName() << " (ttl treshold reached)\n";
-                else if (outInterfaces[i]->isLeaf() && !destIE->ipv4Data()->hasMulticastListener(destAddr))
+                else if (outInterface->isLeaf() && !destIE->ipv4Data()->hasMulticastListener(destAddr))
                     EV << "Not forwarding to " << destIE->getName() << " (no listeners)\n";
                 else
                 {

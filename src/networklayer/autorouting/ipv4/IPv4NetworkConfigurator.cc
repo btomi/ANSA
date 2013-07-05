@@ -1125,10 +1125,10 @@ void IPv4NetworkConfigurator::dumpConfig(IPv4Topology& topology)
                 stream << "\" groups=\""; if (route->getMulticastGroup().isUnspecified()) stream << "*"; else stream << route->getMulticastGroup();
                 if (route->getInInterface()) stream << "\" parent=\"" << route->getInInterface()->getInterface()->getName();
                 stream << "\" children=\"";
-                for (int k = 0; k < (int)route->getOutInterfaces().size(); k++)
+                for (unsigned int k = 0; k < route->getNumOutInterfaces(); k++)
                 {
                     if (k) stream << " ";
-                    stream << route->getOutInterfaces()[k]->getInterface()->getName();
+                    stream << route->getOutInterface(k)->getInterface()->getName();
                 }
                 stream << "\" metric=\"" << route->getMetric() << "\"/>" << endl;
                 fprintf(f, "%s", stream.str().c_str());

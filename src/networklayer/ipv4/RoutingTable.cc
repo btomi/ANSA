@@ -306,12 +306,11 @@ void RoutingTable::printMulticastRoutingTable() const
                   route->getMulticastGroup().isUnspecified() ? "*" : route->getMulticastGroup().str().c_str(),
                   route->getMetric(),
                   !route->getInInterface() ? "*" : route->getInInterface()->getInterface()->getName());
-        const OutInterfaceVector &outInterfaces = route->getOutInterfaces();
-        for (OutInterfaceVector::const_iterator it = outInterfaces.begin(); it != outInterfaces.end(); ++it)
+        for (unsigned int i = 0; i < route->getNumOutInterfaces(); i++)
         {
-            if (it != outInterfaces.begin())
+            if (i != 0)
                 EV << ",";
-            EV << (*it)->getInterface()->getName();
+            EV << route->getOutInterface(i)->getInterface()->getName();
         }
         EV << "\n";
     }
@@ -717,14 +716,14 @@ void RoutingTable::internalAddMulticastRoute(IPv4MulticastRoute *entry)
     if (entry->getInInterface() && !entry->getInInterface()->getInterface()->isMulticast())
         error("addMulticastRoute(): input interface must be multicast capable");
 
-    const OutInterfaceVector &outInterfaces = entry->getOutInterfaces();
-    for (OutInterfaceVector::const_iterator it = outInterfaces.begin(); it != outInterfaces.end(); ++it)
+    for (unsigned int i = 0; i < entry->getNumOutInterfaces(); i++)
     {
-        if (!(*it))
+        IPv4MulticastRoute::OutInterface *outInterface = entry->getOutInterface(i);
+        if (!outInterface)
             error("addMulticastRoute(): output interface cannot be NULL");
-        else if (!(*it)->getInterface()->isMulticast())
+        else if (!outInterface->getInterface()->isMulticast())
             error("addMulticastRoute(): output interface must be multicast capable");
-        else if (entry->getInInterface() && (*it)->getInterface() == entry->getInInterface()->getInterface())
+        else if (entry->getInInterface() && outInterface->getInterface() == entry->getInInterface()->getInterface())
             error("addMulticastRoute(): output interface cannot be the same as the input interface");
     }
 
