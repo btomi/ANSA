@@ -93,20 +93,20 @@ class INET_API AnsaIPv4MulticastRoute : public IPv4MulticastRoute
          * @brief Structure of incoming interface.
          * @details E.g.: GigabitEthernet1/4, RPF nbr 10.10.51.145
          */
-        struct inInterface
+        struct AnsaInInterface : public InInterface
         {
-            InterfaceEntry          *intPtr;            /**< Pointer to interface */
-            int                     intId;              /**< Interface ID */
-            IPv4Address               nextHop;            /**< RF neighbor */
+            int         intId;              /**< Interface ID */
+            IPv4Address nextHop;            /**< RF neighbor */
+            AnsaInInterface(InterfaceEntry *intPtr, int intId, IPv4Address nextHop)
+                : InInterface(intPtr), intId(intId), nextHop(nextHop) {}
         };
 
         /**
          * @brief Structure of outgoing interface.
          * @details E.g.: Ethernet0, Forward/Sparse, 5:29:15/0:02:57
          */
-        struct outInterface
+        struct AnsaOutInterface : public OutInterface
         {
-            InterfaceEntry          *intPtr;            /**< Pointer to interface */
             int                     intId;              /**< Interface ID */
             intState                forwarding;         /**< Forward or Pruned */
             intState                mode;               /**< Dense, Sparse, ... */
@@ -115,11 +115,9 @@ class INET_API AnsaIPv4MulticastRoute : public IPv4MulticastRoute
             AssertState             assert;             /**< Assert state. */
             RegisterState           regState;           /**< Register state. */
             bool                    shRegTun;           /**< Show interface which is also register tunnel interface*/
+            AnsaOutInterface(InterfaceEntry *intPtr)
+                : OutInterface(intPtr, false) {}
         };
-
-        /** Vector of outgoing interfaces. */
-        typedef std::vector<outInterface> InterfaceVector;
-
 
     private:
         IPv4Address                 RP;                     /**< Randevous point */
@@ -133,9 +131,6 @@ class INET_API AnsaIPv4MulticastRoute : public IPv4MulticastRoute
         PIMet                       *et;                    /**< Pointer to Expiry timer for PIM-SM*/
         PIMjt                       *jt;                    /**< Pointer to Join timer*/
         PIMppt                      *ppt;                   /**< Pointer to Prune Pending Timer*/
-        // interfaces
-        inInterface                 inInt;                  /**< Incoming interface */
-        InterfaceVector             outInt;                 /**< Outgoing interface */
 
         //Originated from destination.Ensures loop freeness.
         unsigned int sequencenumber;
@@ -164,11 +159,10 @@ class INET_API AnsaIPv4MulticastRoute : public IPv4MulticastRoute
         void addFlags(flag fl1, flag fl2, flag fl3,flag fl4);               /**< Add flags to ineterface */
         void removeFlag(flag fl);                                           /**< Remove flag from ineterface */
 
-        void setInInt(InterfaceEntry *interfacePtr, int intId, IPv4Address nextHop) {this->inInt.intPtr = interfacePtr; this->inInt.intId = intId; this->inInt.nextHop = nextHop;}    /**< Set information about incoming interface*/
-        void setInInt(inInterface inInt) {this->inInt = inInt;}                                                         /**< Set incoming interface*/
-
-        void setOutInt(InterfaceVector outInt) {EV << "MulticastIPRoute: New OutInt" << endl; this->outInt = outInt;}   /**< Set list of outgoing interfaces*/
-        void addOutInt(outInterface outInt) {this->outInt.push_back(outInt);}                                           /**< Add interface to list of outgoing interfaces*/
+        void setInInt(InterfaceEntry *interfacePtr, int intId, IPv4Address nextHop)     /**< Set information about incoming interface*/
+        {
+            setInInterface(new AnsaInInterface(interfacePtr, intId, nextHop));
+        }
         void addOutIntFull(InterfaceEntry *intPtr, int intId, intState forwading, intState mode,
                             PIMpt *pruneTimer, PIMet *expiryTimer, AssertState assert, RegisterState regState, bool show);
 
@@ -177,7 +171,7 @@ class INET_API AnsaIPv4MulticastRoute : public IPv4MulticastRoute
         void setRegStatus(int intId, RegisterState regState);                                                           /**< set register status to given interface*/
         RegisterState getRegStatus(int intId);
 
-        bool isRpf(int intId){if (intId == inInt.intId) return true; else return false;}                                /**< Returns if given interface is RPF or not*/
+        bool isRpf(int intId){ return getInInterface() && intId == getAnsaInInterface()->intId; }                    /**< Returns if given interface is RPF or not*/
         bool isOilistNull();                                                                                            /**< Returns true if list of outgoing interfaces is empty, otherwise false*/
 
         IPv4Address   getRP() const {return RP;}                            /**< Get RP IP address */
@@ -192,13 +186,13 @@ class INET_API AnsaIPv4MulticastRoute : public IPv4MulticastRoute
         std::vector<flag> getFlags() const {return flags;}                  /**< Get list of route flags */
 
         // get incoming interface
-        inInterface     getInInt() const {return inInt;}                    /**< Get incoming interface*/
-        InterfaceEntry* getInIntPtr() const {return inInt.intPtr;}          /**< Get pointer to incoming interface*/
-        int             getInIntId() const {return inInt.intId;}            /**< Get ID of incoming interface*/
-        IPv4Address       getInIntNextHop() const {return inInt.nextHop;}     /**< Get IP address of next hop for incoming interface*/
+        AnsaInInterface *getAnsaInInterface() const { AnsaInInterface *p = dynamic_cast<AnsaInInterface*>(getInInterface()); ASSERT(p); return p; }
+        InterfaceEntry* getInIntPtr() const {return getInInterface() ? getAnsaInInterface()->getInterface() : NULL;}          /**< Get pointer to incoming interface*/
+        int             getInIntId() const {return getInInterface() ? getAnsaInInterface()->intId : 0;}            /**< Get ID of incoming interface*/
+        IPv4Address       getInIntNextHop() const {return getInInterface() ? getAnsaInInterface()->nextHop : IPv4Address();}     /**< Get IP address of next hop for incoming interface*/
 
         // get outgoing interface
-        InterfaceVector getOutInt() const {return outInt;}                  /**< Get list of outgoing interfaces*/
+        AnsaOutInterface *getAnsaOutInterface(unsigned int k) const { AnsaOutInterface *outIf = dynamic_cast<AnsaOutInterface*>(getOutInterface(k)); ASSERT(outIf); return outIf; }
         int             getOutIdByIntId(int intId);                         /**< Get sequence number of outgoing interface with given interface ID*/
         bool            outIntExist(int intId);                             /**< Return true if interface intId exist, otherwise return false*/
 

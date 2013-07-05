@@ -297,13 +297,13 @@ bool AnsaRoutingTable::deleteMulticastRoute(const AnsaIPv4MulticastRoute *entry)
             delete entry->getPpt();
         }
         // delete timers from outgoing interfaces
-        AnsaIPv4MulticastRoute::InterfaceVector outInt = entry->getOutInt();
-        for (unsigned int j = 0;j < outInt.size(); j++)
+        for (unsigned int j = 0;j < entry->getNumOutInterfaces(); j++)
         {
-            if (outInt[j].pruneTimer != NULL)
+            AnsaIPv4MulticastRoute::AnsaOutInterface *outInterface = entry->getAnsaOutInterface(j);
+            if (outInterface->pruneTimer != NULL)
             {
-                cancelEvent(outInt[j].pruneTimer);
-                delete outInt[j].pruneTimer;
+                cancelEvent(outInterface->pruneTimer);
+                delete outInterface->pruneTimer;
             }
         }
 
@@ -442,18 +442,18 @@ void AnsaRoutingTable::generateShowIPMroute()
         else os << "RPF neighbor " << ipr->getInIntNextHop() << endl;
         os << "Outgoing interface list:" << endl;
 
-        AnsaIPv4MulticastRoute::InterfaceVector all = ipr->getOutInt();
-        if (all.size() == 0)
+        if (ipr->getNumOutInterfaces() == 0)
             os << "Null" << endl;
         else
-            for (unsigned int k = 0; k < all.size(); k++)
+            for (unsigned int k = 0; k < ipr->getNumOutInterfaces(); k++)
             {
-                if ((all[k].mode == AnsaIPv4MulticastRoute::Sparsemode && all[k].shRegTun == true)
-                        || all[k].mode ==AnsaIPv4MulticastRoute:: Densemode)
+                AnsaIPv4MulticastRoute::AnsaOutInterface *outInterface = ipr->getAnsaOutInterface(k);
+                if ((outInterface->mode == AnsaIPv4MulticastRoute::Sparsemode && outInterface->shRegTun == true)
+                        || outInterface->mode ==AnsaIPv4MulticastRoute:: Densemode)
                 {
-                    os << all[k].intPtr->getName() << ", ";
-                    if (all[k].forwarding == AnsaIPv4MulticastRoute::Forward) os << "Forward/"; else os << "Pruned/";
-                    if (all[k].mode == AnsaIPv4MulticastRoute::Densemode) os << "Dense"; else os << "Sparse";
+                    os << outInterface->getInterface()->getName() << ", ";
+                    if (outInterface->forwarding == AnsaIPv4MulticastRoute::Forward) os << "Forward/"; else os << "Pruned/";
+                    if (outInterface->mode == AnsaIPv4MulticastRoute::Densemode) os << "Dense"; else os << "Sparse";
                     os << endl;
                 }
                 else

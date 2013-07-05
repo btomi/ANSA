@@ -77,6 +77,7 @@ void IPv4Route::changed(int fieldCode)
 
 IPv4MulticastRoute::~IPv4MulticastRoute()
 {
+    delete inInterface;
     for (OutInterfaceVector::iterator it = outInterfaces.begin(); it != outInterfaces.end(); ++it)
         delete *it;
     outInterfaces.clear();
@@ -115,9 +116,27 @@ std::string IPv4MulticastRoute::detailedInfo() const
     return info();
 }
 
+void IPv4MulticastRoute::setInInterface(InInterface *_inInterface)
+{
+    if (inInterface != _inInterface) {
+        delete inInterface;
+        inInterface = _inInterface;
+        changed(F_IN);
+    }
+}
 
+void IPv4MulticastRoute::clearOutInterfaces()
+{
+    if (!outInterfaces.empty())
+    {
+        for (OutInterfaceVector::iterator it = outInterfaces.begin(); it != outInterfaces.end(); ++it)
+            delete *it;
+        outInterfaces.clear();
+        changed(F_OUT);
+    }
+}
 
-bool IPv4MulticastRoute::addOutInterface(OutInterface *outInterface)
+void IPv4MulticastRoute::addOutInterface(OutInterface *outInterface)
 {
     ASSERT(outInterface);
 
@@ -130,21 +149,14 @@ bool IPv4MulticastRoute::addOutInterface(OutInterface *outInterface)
 
     if (it != outInterfaces.end())
     {
-        if ((*it)->isLeaf() != outInterface->isLeaf())
-        {
-            delete *it;
-            *it = outInterface;
-            changed(F_OUT);
-            return true;
-        }
-        else
-            return false;
+        delete *it;
+        *it = outInterface;
+        changed(F_OUT);
     }
     else
     {
         outInterfaces.push_back(outInterface);
         changed(F_OUT);
-        return true;
     }
 }
 
@@ -161,6 +173,14 @@ bool IPv4MulticastRoute::removeOutInterface(InterfaceEntry *ie)
         }
     }
     return false;
+}
+
+void IPv4MulticastRoute::removeOutInterface(unsigned int i)
+{
+    OutInterface *outInterface = outInterfaces.at(i);
+    delete outInterface;
+    outInterfaces.erase(outInterfaces.begin()+i);
+    changed(F_OUT);
 }
 
 void IPv4MulticastRoute::changed(int fieldCode)

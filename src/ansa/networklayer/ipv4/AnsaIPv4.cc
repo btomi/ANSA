@@ -348,8 +348,7 @@ void AnsaIPv4::routePimDM (AnsaIPv4MulticastRoute *route, IPv4Datagram *datagram
     nb->fireChangeNotification(NF_IPv4_DATA_ON_RPF, route);
 
     // data won't be sent because there is no outgoing interface and/or route is pruned
-    AnsaIPv4MulticastRoute::InterfaceVector outInt = route->getOutInt();
-    if (outInt.size() == 0 || route->isFlagSet(AnsaIPv4MulticastRoute::P))
+    if (route->getNumOutInterfaces() == 0 || route->isFlagSet(AnsaIPv4MulticastRoute::P))
     {
         EV << "Route does not have any outgoing interface or it is pruned." << endl;
         if(ctrl != NULL)
@@ -361,13 +360,14 @@ void AnsaIPv4::routePimDM (AnsaIPv4MulticastRoute *route, IPv4Datagram *datagram
     }
 
     // send packet to all outgoing interfaces of route (oilist)
-    for (unsigned int i=0; i<outInt.size(); i++)
+    for (unsigned int i=0; i<route->getNumOutInterfaces(); i++)
     {
         // do not send to pruned interface
-        if (outInt[i].forwarding == AnsaIPv4MulticastRoute::Pruned)
+        AnsaIPv4MulticastRoute::AnsaOutInterface *outInterface = route->getAnsaOutInterface(i);
+        if (outInterface && outInterface->forwarding == AnsaIPv4MulticastRoute::Pruned)
             continue;
 
-        InterfaceEntry *destIE = outInt[i].intPtr;
+        InterfaceEntry *destIE = route->getOutInterface(i)->getInterface();
         IPv4Datagram *datagramCopy = (IPv4Datagram *) datagram->dup();
 
         IPv4::fragmentAndSend(datagramCopy, destIE, destAddr);    // send
@@ -397,17 +397,17 @@ void AnsaIPv4::routePimSM (AnsaIPv4MulticastRoute *route, AnsaIPv4MulticastRoute
         nb->fireChangeNotification(NF_IPv4_DATA_ON_RPF_PIMSM, route);
     }
 
-    AnsaIPv4MulticastRoute::InterfaceVector outInt = routePtr->getOutInt();
     // send packet to all outgoing interfaces of route (oilist)
-    for (unsigned int i=0; i<outInt.size(); i++)
+    for (unsigned int i=0; i<routePtr->getNumOutInterfaces(); i++)
     {
+        AnsaIPv4MulticastRoute::AnsaOutInterface *outInterface = routePtr->getAnsaOutInterface(i);
         // do not send to pruned interface
-        if (outInt[i].forwarding == AnsaIPv4MulticastRoute::Pruned)
+        if (outInterface && outInterface->forwarding == AnsaIPv4MulticastRoute::Pruned)
             continue;
         // RPF check before datagram sending
-        if (outInt[i].intId == rpfInt->getInterfaceId())
+        if (outInterface->intId == rpfInt->getInterfaceId())
             continue;
-        InterfaceEntry *destIE = outInt[i].intPtr;
+        InterfaceEntry *destIE = routePtr->getOutInterface(i)->getInterface();
         IPv4Datagram *datagramCopy = (IPv4Datagram *) datagram->dup();
 
         IPv4::fragmentAndSend(datagramCopy, destIE, destAddr);

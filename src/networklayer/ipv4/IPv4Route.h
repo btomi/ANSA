@@ -211,8 +211,8 @@ class INET_API IPv4MulticastRoute : public cObject
         OutInterface(InterfaceEntry *ie, bool isLeaf = false) : ie(ie), _isLeaf(isLeaf) { ASSERT(ie); }
         virtual ~OutInterface() {}
 
-        InterfaceEntry *getInterface() { return ie; }
-        bool isLeaf() { return _isLeaf; }
+        InterfaceEntry *getInterface() const { return ie; }
+        bool isLeaf() const { return _isLeaf; }
     };
 
     typedef std::vector<OutInterface*> OutInterfaceVector;
@@ -270,9 +270,11 @@ class INET_API IPv4MulticastRoute : public cObject
     virtual void setOrigin(IPv4Address _origin)  { if (origin != _origin) {origin = _origin; changed(F_ORIGIN);} }
     virtual void setOriginNetmask(IPv4Address _netmask)  { if (originNetmask != _netmask) {originNetmask = _netmask; changed(F_ORIGINMASK);} }
     virtual void setMulticastGroup(IPv4Address _group)  { if (group != _group) {group = _group; changed(F_MULTICASTGROUP);} }
-    virtual void setInInterface(InInterface *_inInterface)  { if (inInterface != _inInterface) {inInterface = _inInterface; changed(F_IN);} }
-    virtual bool addOutInterface(OutInterface *outInterface);
+    virtual void setInInterface(InInterface *_inInterface);
+    virtual void clearOutInterfaces();
+    virtual void addOutInterface(OutInterface *outInterface);
     virtual bool removeOutInterface(InterfaceEntry *ie);
+    virtual void removeOutInterface(unsigned int i);
     virtual void setSource(RouteSource _source)  { if (source != _source) {source = _source; changed(F_SOURCE);} }
     virtual void setMetric(int _metric)  { if (metric != _metric) {metric = _metric; changed(F_METRIC);} }
 
@@ -290,6 +292,12 @@ class INET_API IPv4MulticastRoute : public cObject
 
     /** Out interfaces */
     const OutInterfaceVector &getOutInterfaces() const {return outInterfaces;}
+
+    /** Number of out interfaces */
+    unsigned int getNumOutInterfaces() const {return outInterfaces.size();}
+
+    /** The kth out interface */
+    OutInterface *getOutInterface(unsigned int k) const {return outInterfaces.at(k); }
 
     /** Source of route. MANUAL (read from file), from routing protocol, etc */
     RouteSource getSource() const {return source;}
