@@ -37,40 +37,13 @@ Define_Module(AnsaIPv4);
  *
  * @param stage Stage of initialization.
  */
-void AnsaIPv4::initialize(int stage)
+void AnsaIPv4::initialize()
 {
-    QueueBase::initialize();
+    IPv4::initialize();
 
-    ift = InterfaceTableAccess().get();
-    rt = AnsaRoutingTableAccess().get();
     nb = NotificationBoardAccess().get();
     pimIft = PimInterfaceTableAccess().getIfExists();               // For recognizing PIM mode
-
-    queueOutGate = gate("queueOut");
-
-    defaultTimeToLive = par("timeToLive");
-    defaultMCTimeToLive = par("multicastTimeToLive");
-    fragmentTimeoutTime = par("fragmentTimeout");
-    forceBroadcast = par("forceBroadcast");
-    mapping.parseProtocolMapping(par("protocolMapping"));
-
-    curFragmentId = 0;
-    lastCheckTime = 0;
-    fragbuf.init(icmpAccess.get());
-
-    numMulticast = numLocalDeliver = numDropped = numUnroutable = numForwarded = 0;
-
-    WATCH(numMulticast);
-    WATCH(numLocalDeliver);
-    WATCH(numDropped);
-    WATCH(numUnroutable);
-    WATCH(numForwarded);
-
-    // by default no MANET routing
-    manetRouting = false;
-
 }
-
 
 void AnsaIPv4::handlePacketFromNetwork(IPv4Datagram *datagram, InterfaceEntry *fromIE)
 {
@@ -224,6 +197,7 @@ void AnsaIPv4::routeMulticastPacket(IPv4Datagram *datagram, InterfaceEntry *dest
     IPv4Address srcAddr = datagram->getSrcAddress();
     IPv4ControlInfo *ctrl = (IPv4ControlInfo *) datagram->getControlInfo();
     EV << "Routing multicast datagram `" << datagram->getName() << "' with dest=" << destAddr << "\n";
+    AnsaRoutingTable *rt = check_and_cast<AnsaRoutingTable*>(dynamic_cast<cObject*>(this->rt));
     AnsaIPv4MulticastRoute *route = rt->getRouteFor(destAddr, srcAddr);
     AnsaIPv4MulticastRoute *routeG = rt->getRouteFor(destAddr, IPv4Address::UNSPECIFIED_ADDRESS);
 
@@ -419,78 +393,6 @@ void AnsaIPv4::routePimSM (AnsaIPv4MulticastRoute *route, AnsaIPv4MulticastRoute
         nb->fireChangeNotification(NF_IPv4_MDATA_REGISTER, ctrl);
 }
 
-void AnsaIPv4::reassembleAndDeliver(IPv4Datagram *datagram)
-{
-    EV << "Local delivery\n";
-
-    if (datagram->getSrcAddress().isUnspecified())
-        EV << "Received datagram '%s' without source address filled in" << datagram->getName() << "\n";
-
-    // reassemble the packet (if fragmented)
-    if (datagram->getFragmentOffset()!=0 || datagram->getMoreFragments())
-    {
-        EV << "Datagram fragment: offset=" << datagram->getFragmentOffset()
-           << ", MORE=" << (datagram->getMoreFragments() ? "true" : "false") << ".\n";
-
-        // erase timed out fragments in fragmentation buffer; check every 10 seconds max
-        if (simTime() >= lastCheckTime + 10)
-        {
-            lastCheckTime = simTime();
-            fragbuf.purgeStaleFragments(simTime()-fragmentTimeoutTime);
-        }
-
-        datagram = fragbuf.addFragment(datagram, simTime());
-        if (!datagram)
-        {
-            EV << "No complete datagram yet.\n";
-            return;
-        }
-        EV << "This fragment completes the datagram.\n";
-    }
-
-    // decapsulate and send on appropriate output gate
-    int protocol = datagram->getTransportProtocol();
-
-    if (protocol==IP_PROT_ICMP)
-    {
-        // incoming ICMP packets are handled specially
-        handleReceivedICMP(check_and_cast<ICMPMessage *>(decapsulate(datagram)));
-        numLocalDeliver++;
-    }
-    else if (protocol==IP_PROT_IP)
-    {
-        // tunnelled IP packets are handled separately
-        send(decapsulate(datagram), "preRoutingOut");  //FIXME There is no "preRoutingOut" gate in the IPv4 module.
-    }
-    else if (protocol==IP_PROT_DSR)
-    {
-#ifdef WITH_MANET
-        // If the protocol is Dsr Send directely the datagram to manet routing
-        if (manetRouting)
-            sendToManet(datagram);
-#else
-        throw cRuntimeError("DSR protocol packet received, but MANET routing support is not available.");
-#endif
-    }
-    else
-    {
-        // JcM Fix: check if the transportOut port are connected, otherwise
-        // discard the packet
-        int gateindex = mapping.getOutputGateForProtocol(protocol);
-
-        if (gate("transportOut", gateindex)->isPathOK())
-        {
-            send(decapsulate(datagram), "transportOut", gateindex);
-            numLocalDeliver++;
-        }
-        else
-        {
-            EV << "L3 Protocol not connected. discarding packet" << endl;
-            icmpAccess.get()->sendErrorMessage(datagram, ICMP_DESTINATION_UNREACHABLE, ICMP_DU_PROTOCOL_UNREACHABLE);
-        }
-    }
-}
-
 
 void AnsaIPv4::handleMessageFromHL(cPacket *msg)
 {
@@ -661,93 +563,6 @@ void AnsaIPv4::routeUnicastPacket(IPv4Datagram *datagram, InterfaceEntry *destIE
         numForwarded++;
         fragmentAndSend(datagram, destIE, nextHopAddr, vforwarder);
     }
-}
-
-
-IPv4Datagram *AnsaIPv4::encapsulate(cPacket *transportPacket, IPv4ControlInfo *controlInfo)
-{
-    IPv4Datagram *datagram = createIPv4Datagram(transportPacket->getName());
-    datagram->setByteLength(IP_HEADER_BYTES);
-    datagram->encapsulate(transportPacket);
-
-    // set source and destination address
-    IPv4Address dest = controlInfo->getDestAddr();
-    datagram->setDestAddress(dest);
-
-    IPv4Address src = controlInfo->getSrcAddr();
-
-    // when source address was given, use it; otherwise it'll get the address
-    // of the outgoing interface after routing
-    if (!src.isUnspecified())
-    {
-        // if interface parameter does not match existing interface, do not send datagram
-        if (rt->getInterfaceByAddress(src)==NULL)
-            throw cRuntimeError("Wrong source address %s in (%s)%s: no interface with such address",
-                      src.str().c_str(), transportPacket->getClassName(), transportPacket->getFullName());
-
-        datagram->setSrcAddress(src);
-    }
-
-    // set other fields
-    datagram->setTypeOfService(controlInfo->getTypeOfService());
-
-    datagram->setIdentification(curFragmentId++);
-    datagram->setMoreFragments(false);
-    datagram->setDontFragment(controlInfo->getDontFragment());
-    datagram->setFragmentOffset(0);
-
-    short ttl;
-    if (controlInfo->getTimeToLive() > 0)
-        ttl = controlInfo->getTimeToLive();
-    else if (datagram->getDestAddress().isLinkLocalMulticast())
-        ttl = 1;
-    else if (datagram->getDestAddress().isMulticast())
-        ttl = defaultMCTimeToLive;
-    else
-        ttl = defaultTimeToLive;
-    datagram->setTimeToLive(ttl);
-    datagram->setTransportProtocol(controlInfo->getProtocol());
-
-    // setting IPv4 options is currently not supported
-
-    return datagram;
-}
-
-/* Choose the outgoing interface for the muticast datagram:
- *   1. use the interface specified by MULTICAST_IF socket option (received in the control info)
- *   2. lookup the destination address in the routing table
- *   3. if no route, choose the interface according to the source address
- *   4. or if the source address is unspecified, choose the first MULTICAST interface
- */
-InterfaceEntry *AnsaIPv4::determineOutgoingInterfaceForMulticastDatagram(IPv4Datagram *datagram, InterfaceEntry *multicastIFOption)
-{
-    InterfaceEntry *ie = NULL;
-    if (multicastIFOption)
-    {
-        ie = multicastIFOption;
-        EV << "multicast packet routed by socket option via output interface " << ie->getName() << "\n";
-    }
-    if (!ie)
-    {
-        IPv4Route *route = rt->findBestMatchingRoute(datagram->getDestAddress());
-        if (route)
-            ie = route->getInterface();
-        if (ie)
-            EV << "multicast packet routed by routing table via output interface " << ie->getName() << "\n";
-    }
-    if (!ie)
-    {
-        ie = rt->getInterfaceByAddress(datagram->getSrcAddress());
-        if (ie)
-            EV << "multicast packet routed by source address via output interface " << ie->getName() << "\n";
-    }
-    if (!ie)
-    {
-        ie = ift->getFirstMulticastInterface();
-        if (ie)
-            EV << "multicast packet routed via the first multicast interface " << ie->getName() << "\n";
-    }
-    return ie;
 }
 
 void AnsaIPv4::sendDatagramToOutput(IPv4Datagram *datagram, InterfaceEntry *ie, IPv4Address nextHopAddr, int vforwarderId)

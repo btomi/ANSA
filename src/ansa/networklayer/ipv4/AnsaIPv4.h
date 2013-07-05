@@ -65,7 +65,6 @@ enum AnsaIPProtocolId
 class INET_API AnsaIPv4 : public IPv4
 {
     private:
-        AnsaRoutingTable            *rt;
         NotificationBoard           *nb;
         PimInterfaceTable           *pimIft;        /**< Pointer to table of PIM interfaces. */
 
@@ -74,21 +73,18 @@ class INET_API AnsaIPv4 : public IPv4
         virtual void routeMulticastPacket(IPv4Datagram *datagram, InterfaceEntry *destIE, InterfaceEntry *fromIE);
         virtual void routePimSM (AnsaIPv4MulticastRoute *route, AnsaIPv4MulticastRoute *routeG, IPv4Datagram *datagram, IPv4ControlInfo *ctrl);
         virtual void routePimDM (AnsaIPv4MulticastRoute *route, IPv4Datagram *datagram, IPv4ControlInfo *ctrl);
-        virtual IPv4Datagram *encapsulate(cPacket *transportPacket, IPv4ControlInfo *controlInfo);
         virtual void routeUnicastPacket(IPv4Datagram *datagram, InterfaceEntry *destIE, IPv4Address destNextHopAddr);
         virtual void handleMessageFromHL(cPacket *msg);
-        virtual void reassembleAndDeliver(IPv4Datagram *datagram);
-        virtual InterfaceEntry *determineOutgoingInterfaceForMulticastDatagram(IPv4Datagram *datagram, InterfaceEntry *multicastIFOption);
 
         virtual void fragmentAndSend(IPv4Datagram *datagram, InterfaceEntry *ie, IPv4Address nextHopAddr, int vforwarder);
         virtual void sendDatagramToOutput(IPv4Datagram *datagram, InterfaceEntry *ie, IPv4Address nextHopAddr, int vforwarderId);
         int getVirtualForwarderId(InterfaceEntry *ie, MACAddress addr);
+
     public:
         AnsaIPv4() {}
 
     protected:
-      virtual int numInitStages() const  {return 5;}
-      virtual void initialize(int stage);
+      virtual void initialize();
 };
 
 
