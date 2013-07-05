@@ -1401,17 +1401,17 @@ void pimSM::sendPIMRegisterNull(IPv4Address multOrigin, IPv4Address multGroup)
  *
  * The method is used for creating and sending of PIM Register message.
  *
- * @param multGroup Pointer to control info.
+ * @param datagram Pointer to IPv4 datagram.
  * @see setCtrlForMessage()
  * @see setKat()
  * @see getRouteFor()
  */
-void pimSM::sendPIMRegister(IPv4ControlInfo *ctrl)
+void pimSM::sendPIMRegister(IPv4Datagram *datagram)
 {
     EV << "pimSM::sendPIMRegister - encapsulating data packet into Register packet and sending to RP" << endl;
 
-    IPv4Address multGroup = ctrl->getDestAddr();
-    IPv4Address multOrigin = ctrl->getSrcAddr();
+    IPv4Address multGroup = datagram->getDestAddress();
+    IPv4Address multOrigin = datagram->getSrcAddress();
     AnsaIPv4MulticastRoute *routeSG = new AnsaIPv4MulticastRoute();
     AnsaIPv4MulticastRoute *routeG = new AnsaIPv4MulticastRoute();
     InterfaceEntry *intToRP = rt->getInterfaceForDestAddr(this->getRPAddress());
@@ -1857,7 +1857,7 @@ void pimSM::receiveChangeNotification(int category, const cPolymorphic *details)
     Enter_Method_Silent();
     printNotificationBanner(category, details);
     AnsaIPv4MulticastRoute *route;
-    IPv4ControlInfo *myCtrl;
+    IPv4Datagram *datagram;
     addRemoveAddr *members;
 
     // according to category of event...
@@ -1885,8 +1885,8 @@ void pimSM::receiveChangeNotification(int category, const cPolymorphic *details)
         // create PIM register packet
         case NF_IPv4_MDATA_REGISTER:
             EV <<  "pimSM::receiveChangeNotification - REGISTER DATA" << endl;
-            myCtrl = (IPv4ControlInfo *)(details);
-            sendPIMRegister(myCtrl);
+            datagram = check_and_cast<IPv4Datagram*>(details);
+            sendPIMRegister(datagram);
             break;
 
         case NF_IPv4_DATA_ON_RPF_PIMSM:

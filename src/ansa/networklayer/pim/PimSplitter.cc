@@ -22,6 +22,7 @@
  *  it send Hello messages and it manages table of PIM interfaces.
  */
 
+#include "IPv4Datagram.h"
 #include "PimSplitter.h"
 
 using namespace std;
@@ -335,9 +336,9 @@ void PimSplitter::receiveChangeNotification(int category, const cPolymorphic *de
 		// new multicast data appears in router
 		case NF_IPv4_NEW_MULTICAST:
 			EV <<  "PimSplitter::receiveChangeNotification - NEW MULTICAST" << endl;
-			IPv4ControlInfo *ctrl;
-			ctrl = (IPv4ControlInfo *)(details);
-			newMulticast(ctrl->getDestAddr(), ctrl->getSrcAddr());
+			IPv4Datagram *datagram;
+			datagram = check_and_cast<IPv4Datagram*>(details);
+			newMulticast(datagram->getDestAddress(), datagram->getSrcAddress());
 			break;
 
 		// configuration of interface changed, it means some change from IGMP

@@ -20,6 +20,7 @@
  * @details Implementation according to RFC3973.
  */
 
+#include "IPv4Datagram.h"
 #include "pimDM.h"
 
 
@@ -926,7 +927,9 @@ void pimDM::receiveChangeNotification(int category, const cPolymorphic *details)
 
 	Enter_Method_Silent();
 	printNotificationBanner(category, details);
-	IPv4ControlInfo *ctrl;
+	IPv4Datagram *datagram;
+	cGate *g;
+	InterfaceEntry *ie;
 	AnsaIPv4MulticastRoute *route;
 	addRemoveAddr *members;
 
@@ -961,15 +964,17 @@ void pimDM::receiveChangeNotification(int category, const cPolymorphic *details)
 
 		case NF_IPv4_DATA_ON_PRUNED_INT:
 			EV << "pimDM::receiveChangeNotification - Data appears on pruned interface." << endl;
-			ctrl = (IPv4ControlInfo *)(details);
-			dataOnPruned(ctrl->getDestAddr(), ctrl->getSrcAddr());
+			datagram = check_and_cast<IPv4Datagram*>(details);
+			dataOnPruned(datagram->getDestAddress(), datagram->getSrcAddress());
 			break;
 
 		// data come to non-RPF interface
 		case NF_IPv4_DATA_ON_NONRPF:
 			EV << "pimDM::receiveChangeNotification - Data appears on non-RPF interface." << endl;
-			ctrl = (IPv4ControlInfo *)(details);
-			dataOnNonRpf(ctrl->getDestAddr(), ctrl->getSrcAddr(), ctrl->getInterfaceId());
+			datagram = check_and_cast<IPv4Datagram*>(details);
+		    g = datagram->getArrivalGate();
+		    ie = g ? ift->getInterfaceByNetworkLayerGateIndex(g->getIndex()) : NULL;
+			dataOnNonRpf(datagram->getDestAddress(), datagram->getSrcAddress(), ie?ie->getInterfaceId():-1);
 			break;
 
 		// data come to RPF interface

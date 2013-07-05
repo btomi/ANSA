@@ -70,24 +70,11 @@ void AnsaIPv4::handlePacketFromNetwork(IPv4Datagram *datagram, InterfaceEntry *f
 
 
     // remove control info, but keep the one on the last fragment of DSR and MANET datagrams
-    if (datagram->getTransportProtocol()!=IP_PROT_DSR && datagram->getTransportProtocol()!=IP_PROT_MANET
-            && !datagram->getDestAddress().isMulticast() && datagram->getTransportProtocol()!=IP_PROT_PIM)
-    {
+    int protocol = datagram->getTransportProtocol();
+    bool isManetDatagram = protocol == IP_PROT_MANET || protocol == IP_PROT_DSR;
+    if (!isManetDatagram || datagram->getMoreFragments())
         delete datagram->removeControlInfo();
-    }
-    else if (datagram->getMoreFragments())
-        delete datagram->removeControlInfo(); // delete all control message except the last
 
-
-    //MYWORK Add all neccessery info to the IP Control Info for future use.
-    if (datagram->getDestAddress().isMulticast() || datagram->getTransportProtocol() == IP_PROT_PIM)
-    {
-        IPv4ControlInfo *ctrl = (IPv4ControlInfo*)(datagram->removeControlInfo());
-        ctrl->setSrcAddr(datagram->getSrcAddress());
-        ctrl->setDestAddr(datagram->getDestAddress());
-        ctrl->setInterfaceId(getSourceInterfaceFrom(datagram)->getInterfaceId());
-        datagram->setControlInfo(ctrl);
-    }
 
     // route packet
     IPv4Address &destAddr = datagram->getDestAddress();
@@ -195,7 +182,6 @@ void AnsaIPv4::routeMulticastPacket(IPv4Datagram *datagram, InterfaceEntry *from
 {
     IPv4Address destAddr = datagram->getDestAddress();
     IPv4Address srcAddr = datagram->getSrcAddress();
-    IPv4ControlInfo *ctrl = (IPv4ControlInfo *) datagram->getControlInfo();
     EV << "Routing multicast datagram `" << datagram->getName() << "' with dest=" << destAddr << "\n";
     AnsaRoutingTable *rt = check_and_cast<AnsaRoutingTable*>(dynamic_cast<cObject*>(this->rt));
     AnsaIPv4MulticastRoute *route = rt->getRouteFor(destAddr, srcAddr);
@@ -219,7 +205,8 @@ void AnsaIPv4::routeMulticastPacket(IPv4Datagram *datagram, InterfaceEntry *from
         if (!rt->isLocalMulticastAddress(destAddr) && !destAddr.isLinkLocalMulticast())
         {
             EV << "Data on non-RPF interface" << endl;
-            nb->fireChangeNotification(NF_IPv4_DATA_ON_NONRPF, ctrl);
+            nb->fireChangeNotification(NF_IPv4_DATA_ON_NONRPF, datagram);
+            delete datagram;
             return;
         }
         else
@@ -272,14 +259,14 @@ void AnsaIPv4::routeMulticastPacket(IPv4Datagram *datagram, InterfaceEntry *from
     PIMmode intfMode = pimIft->getInterfaceByIntID(fromIE->getInterfaceId())->getMode();
 
     // multicast group is not in multicast routing table and has to be added
+    bool notifyIfPruned = true;
     if (route == NULL && routeG == NULL)
     {
         EV << "AnsaIP::routeMulticastPacket - Multicast route does not exist, try to add." << endl;
-        nb->fireChangeNotification(NF_IPv4_NEW_MULTICAST, ctrl);
+        nb->fireChangeNotification(NF_IPv4_NEW_MULTICAST, datagram);
         if (intfMode == Dense)
         {
-            delete datagram->removeControlInfo();
-            ctrl = NULL;
+            notifyIfPruned = false;
         }
         // read new record
         route = rt->getRouteFor(destAddr, srcAddr);
@@ -294,9 +281,9 @@ void AnsaIPv4::routeMulticastPacket(IPv4Datagram *datagram, InterfaceEntry *from
 
     //routing for selected mode
     if (intfMode == Dense)
-        routePimDM(route, datagram, ctrl);
+        routePimDM(route, datagram, notifyIfPruned);
     if (intfMode == Sparse)
-        routePimSM(route, routeG, datagram, ctrl);
+        routePimSM(route, routeG, datagram);
 
     // refresh output in MRT
     rt->generateShowIPMroute();
@@ -304,7 +291,7 @@ void AnsaIPv4::routeMulticastPacket(IPv4Datagram *datagram, InterfaceEntry *from
     delete datagram;
 }
 
-void AnsaIPv4::routePimDM (AnsaIPv4MulticastRoute *route, IPv4Datagram *datagram, IPv4ControlInfo *ctrl)
+void AnsaIPv4::routePimDM (AnsaIPv4MulticastRoute *route, IPv4Datagram *datagram, bool notifyIfPruned)
 {
     IPv4Address destAddr = datagram->getDestAddress();
 
@@ -314,10 +301,10 @@ void AnsaIPv4::routePimDM (AnsaIPv4MulticastRoute *route, IPv4Datagram *datagram
     if (route->getNumOutInterfaces() == 0 || route->isFlagSet(AnsaIPv4MulticastRoute::P))
     {
         EV << "Route does not have any outgoing interface or it is pruned." << endl;
-        if(ctrl != NULL)
+        if(notifyIfPruned)
         {
             if (!route->isFlagSet(AnsaIPv4MulticastRoute::A))
-                nb->fireChangeNotification(NF_IPv4_DATA_ON_PRUNED_INT, ctrl);
+                nb->fireChangeNotification(NF_IPv4_DATA_ON_PRUNED_INT, datagram);
         }
         return;
     }
@@ -337,7 +324,7 @@ void AnsaIPv4::routePimDM (AnsaIPv4MulticastRoute *route, IPv4Datagram *datagram
     }
 }
 
-void AnsaIPv4::routePimSM (AnsaIPv4MulticastRoute *route, AnsaIPv4MulticastRoute *routeG, IPv4Datagram *datagram, IPv4ControlInfo *ctrl)
+void AnsaIPv4::routePimSM (AnsaIPv4MulticastRoute *route, AnsaIPv4MulticastRoute *routeG, IPv4Datagram *datagram)
 {
 
     IPv4Address destAddr = datagram->getDestAddress();
@@ -379,7 +366,7 @@ void AnsaIPv4::routePimSM (AnsaIPv4MulticastRoute *route, AnsaIPv4MulticastRoute
     if (route && route->isFlagSet(AnsaIPv4MulticastRoute::F)
             && route->isFlagSet(AnsaIPv4MulticastRoute::P)
             && (route->getRegStatus(intToRP->getInterfaceId()) == AnsaIPv4MulticastRoute::Join))
-        nb->fireChangeNotification(NF_IPv4_MDATA_REGISTER, ctrl);
+        nb->fireChangeNotification(NF_IPv4_MDATA_REGISTER, datagram);
 }
 
 
