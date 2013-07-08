@@ -70,7 +70,7 @@ class INET_API AnsaIPv4 : public IPv4
 
     protected:
         virtual void handlePacketFromNetwork(IPv4Datagram *datagram, InterfaceEntry *fromIE);
-        virtual void routeMulticastPacket(IPv4Datagram *datagram, InterfaceEntry *fromIE);
+        virtual void forwardMulticastPacket(IPv4Datagram *datagram, InterfaceEntry *fromIE);
         virtual void routePimSM (AnsaIPv4MulticastRoute *route, AnsaIPv4MulticastRoute *routeG, IPv4Datagram *datagram);
         virtual void routePimDM (AnsaIPv4MulticastRoute *route, IPv4Datagram *datagram, bool notifyIfPruned);
         virtual void routeUnicastPacket(IPv4Datagram *datagram, InterfaceEntry *destIE, IPv4Address destNextHopAddr);

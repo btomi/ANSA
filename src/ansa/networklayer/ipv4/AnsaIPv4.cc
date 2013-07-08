@@ -124,7 +124,7 @@ void AnsaIPv4::handlePacketFromNetwork(IPv4Datagram *datagram, InterfaceEntry *f
             delete datagram;
         }
         else
-            routeMulticastPacket(datagram, getSourceInterfaceFrom(datagram));
+            forwardMulticastPacket(datagram, fromIE);
     }
     else
     {
@@ -165,7 +165,7 @@ void AnsaIPv4::handlePacketFromNetwork(IPv4Datagram *datagram, InterfaceEntry *f
 /**
  * ROUTE MULTICAST PACKET
  *
- * Extension of method routeMulticastPacket() from class IP. The method checks if data come
+ * Extension of method forwardMulticastPacket() from class IP. The method checks if data come
  * to RPF interface, if not it sends notification. Multicast data which are sent by this router
  * and has given outgoing interface are sent directly (PIM messages). The method finds route for
  * group. If there is no route, it will be added. Then packet is copied and sent to all outgoing
@@ -178,11 +178,12 @@ void AnsaIPv4::handlePacketFromNetwork(IPv4Datagram *datagram, InterfaceEntry *f
  * @param fromIE Pointer to incoming interface.
  * @see routeMulticastPacket()
  */
-void AnsaIPv4::routeMulticastPacket(IPv4Datagram *datagram, InterfaceEntry *fromIE)
+void AnsaIPv4::forwardMulticastPacket(IPv4Datagram *datagram, InterfaceEntry *fromIE)
 {
+    ASSERT(fromIE);
     IPv4Address destAddr = datagram->getDestAddress();
     IPv4Address srcAddr = datagram->getSrcAddress();
-    EV << "Routing multicast datagram `" << datagram->getName() << "' with dest=" << destAddr << "\n";
+    EV << "Forwarding multicast datagram `" << datagram->getName() << "' with dest=" << destAddr << "\n";
     AnsaRoutingTable *rt = check_and_cast<AnsaRoutingTable*>(dynamic_cast<cObject*>(this->rt));
     AnsaIPv4MulticastRoute *route = rt->getRouteFor(destAddr, srcAddr);
     AnsaIPv4MulticastRoute *routeG = rt->getRouteFor(destAddr, IPv4Address::UNSPECIFIED_ADDRESS);
@@ -192,7 +193,7 @@ void AnsaIPv4::routeMulticastPacket(IPv4Datagram *datagram, InterfaceEntry *from
     // Process datagram only if sent locally or arrived on the shortest
     // route (provided routing table already contains srcAddr) = RPF interface;
     // otherwise discard and continue.
-    InterfaceEntry *rpfInt = rt->getInterfaceForDestAddr(datagram->getSrcAddress());
+    InterfaceEntry *rpfInt = getShortestPathInterfaceToSource(datagram);
     if (fromIE!=NULL && rpfInt!=NULL && fromIE!=rpfInt)
     {
         //MYWORK RPF interface has changed
@@ -211,41 +212,8 @@ void AnsaIPv4::routeMulticastPacket(IPv4Datagram *datagram, InterfaceEntry *from
         }
         else
         {
-            // FIXME count dropped
             EV << "Packet dropped." << endl;
-            delete datagram;
-            return;
-        }
-    }
-
-    // if received from the network...
-    if (fromIE!=NULL)
-    {
-        EV << "Packet was received from the network..." << endl;
-        // check for local delivery (multicast assigned to any interface)
-        if (rt->isLocalMulticastAddress(destAddr))
-        {
-            EV << "isLocalMulticastAddress." << endl;
-            IPv4Datagram *datagramCopy = (IPv4Datagram *) datagram->dup();
-
-            // FIXME code from the MPLS model: set packet dest address to routerId
-            datagramCopy->setDestAddress(rt->getRouterId());
-            reassembleAndDeliver(datagramCopy);
-        }
-
-        // don't forward if IP forwarding is off
-        if (!rt->isIPForwardingEnabled())
-        {
-            EV << "IP forwarding is off." << endl;
-            delete datagram;
-            return;
-        }
-
-        // don't forward if dest address is link-scope
-        // address is in the range 224.0.0.0 to 224.0.0.255
-        if (destAddr.isLinkLocalMulticast())
-        {
-            EV << "isLinkLocalMulticast." << endl;
+            numDropped++;
             delete datagram;
             return;
         }
@@ -275,6 +243,7 @@ void AnsaIPv4::routeMulticastPacket(IPv4Datagram *datagram, InterfaceEntry *from
     if (route == NULL && routeG == NULL)
     {
         EV << "Still do not exist." << endl;
+        numUnroutable++;
         delete datagram;
         return;
     }
