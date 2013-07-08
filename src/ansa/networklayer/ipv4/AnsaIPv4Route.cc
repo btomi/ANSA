@@ -270,4 +270,5 @@ void AnsaIPv4MulticastRoute::setAddresses(IPv4Address multOrigin, IPv4Address mu
     this->RP = RP;
     this->setMulticastGroup(multGroup);
     this->setOrigin(multOrigin);
+    this->setOriginNetmask(multOrigin.isUnspecified() ? IPv4Address::UNSPECIFIED_ADDRESS : IPv4Address::ALLONES_ADDRESS);
 }

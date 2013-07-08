@@ -24,55 +24,23 @@
 #define __INET_ANSAIPV4_H
 
 #include "INETDefs.h"
-
-#include "QueueBase.h"
-#include "InterfaceTableAccess.h"
-#include "AnsaRoutingTable.h"
-#include "ICMPAccess.h"
-#include "IPv4ControlInfo.h"
 #include "IPv4Datagram.h"
-#include "IPv4FragBuf.h"
-#include "ProtocolMap.h"
-
-#ifdef WITH_MANET
-#include "ControlManetRouting_m.h"
-#endif
-
-#include "ICMPMessage_m.h"
-#include "IPv4InterfaceData.h"
-#include "ARPPacket_m.h"
 #include "IPv4.h"
-#include "PimSplitter.h"
-#include "AnsaInterfaceEntry.h"
-#include "AnsaRoutingTableAccess.h"
-#include "PimInterfaceTable.h"
-#include "PIMPacket_m.h"
-#include "pimSM.h"
-
-
-class ARPPacket;
-class ICMPMessage;
-
-enum AnsaIPProtocolId
-{
-    IP_PROT_PIM = 103
-};
 
 /**
- * @brief Class is extension of the IP protocol implementation for multicast.
- * @details It extends class IP mainly by methods processing multicast stream.
+ * @brief Class is extension of the IP protocol implementation for vrrpv2.
+ * @details It extends IPv4 routing decision with vforwarderId.
+ *
+ * It also contains some kludges for multicast routing:
+ *   - to add/remove multicast listeners when fake IGMP messages are received
+ *   - to send PIM messages to PIM modules even if they did not join to the destination address
+ *   - to refresh the string representation of the multicast routing table
  */
 class INET_API AnsaIPv4 : public IPv4
 {
-    private:
-        NotificationBoard           *nb;
-        PimInterfaceTable           *pimIft;        /**< Pointer to table of PIM interfaces. */
-
     protected:
         virtual void handlePacketFromNetwork(IPv4Datagram *datagram, InterfaceEntry *fromIE);
         virtual void forwardMulticastPacket(IPv4Datagram *datagram, InterfaceEntry *fromIE);
-        virtual void routePimSM (AnsaIPv4MulticastRoute *route, AnsaIPv4MulticastRoute *routeG, IPv4Datagram *datagram);
-        virtual void routePimDM (AnsaIPv4MulticastRoute *route, IPv4Datagram *datagram, bool notifyIfPruned);
         virtual void routeUnicastPacket(IPv4Datagram *datagram, InterfaceEntry *destIE, IPv4Address destNextHopAddr);
         virtual void handleMessageFromHL(cPacket *msg);
 
@@ -82,9 +50,6 @@ class INET_API AnsaIPv4 : public IPv4
 
     public:
         AnsaIPv4() {}
-
-    protected:
-      virtual void initialize();
 };
 
 

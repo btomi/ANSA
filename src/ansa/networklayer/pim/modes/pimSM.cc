@@ -98,7 +98,7 @@ void pimSM::initialize(int stage)
         nb->subscribe(this, NF_IPv4_MDATA_REGISTER);
         nb->subscribe(this, NF_IPv4_NEW_IGMP_ADDED_PISM);
         nb->subscribe(this, NF_IPv4_NEW_IGMP_REMOVED_PIMSM);
-        nb->subscribe(this, NF_IPv4_DATA_ON_RPF_PIMSM);
+        nb->subscribe(this, NF_IPv4_DATA_ON_RPF);
 
         DeviceConfigurator *devConf = ModuleAccess<DeviceConfigurator>("deviceConfigurator").get();
         devConf->loadPimGlobalConfig(this);
@@ -1886,12 +1886,42 @@ void pimSM::receiveChangeNotification(int category, const cPolymorphic *details)
         case NF_IPv4_MDATA_REGISTER:
             EV <<  "pimSM::receiveChangeNotification - REGISTER DATA" << endl;
             datagram = check_and_cast<IPv4Datagram*>(details);
-            sendPIMRegister(datagram);
+            route = rt->getRouteFor(datagram->getDestAddress(), datagram->getSrcAddress());
+            if (route)
+            {
+                InterfaceEntry *intToRP = rt->getInterfaceForDestAddr(route->getRP());
+                if (route->isFlagSet(AnsaIPv4MulticastRoute::F)
+                        && route->isFlagSet(AnsaIPv4MulticastRoute::P)
+                        && (route->getRegStatus(intToRP->getInterfaceId()) == AnsaIPv4MulticastRoute::Join))
+                    sendPIMRegister(datagram);
+            }
             break;
 
-        case NF_IPv4_DATA_ON_RPF_PIMSM:
+        case NF_IPv4_DATA_ON_RPF:
             EV <<  "pimSM::receiveChangeNotification - DATA ON RPF" << endl;
-            route = (AnsaIPv4MulticastRoute *)(details);
-            dataOnRpf(route);
+            datagram = check_and_cast<IPv4Datagram*>(details);
+            PimInterface *incomingInterface = getIncomingInterface(datagram);
+            if (incomingInterface && incomingInterface->getMode() == Sparse)
+            {
+                route = rt->getRouteFor(datagram->getDestAddress(), IPv4Address::UNSPECIFIED_ADDRESS);
+                if (route)
+                    dataOnRpf(route);
+                route = rt->getRouteFor(datagram->getDestAddress(), datagram->getSrcAddress());
+                if (route)
+                    dataOnRpf(route);
+            }
     }
 }
+
+PimInterface *pimSM::getIncomingInterface(IPv4Datagram *datagram)
+{
+    cGate *g = datagram->getArrivalGate();
+    if (g)
+    {
+        InterfaceEntry *ie = g ? ift->getInterfaceByNetworkLayerGateIndex(g->getIndex()) : NULL;
+        if (ie)
+            return pimIft->getInterfaceByIntID(ie->getInterfaceId());
+    }
+    return NULL;
+}
+

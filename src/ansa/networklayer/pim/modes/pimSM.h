@@ -133,6 +133,8 @@ class pimSM : public cSimpleModule, protected INotifiable
         void processSGJoin(PIMJoinPrune *pkt,IPv4Address multOrigin, IPv4Address multGroup);
         void processJoinRouteGexistOnRP(IPv4Address multGroup, IPv4Address packetOrigin, int msgHoldtime);
 
+        PimInterface *getIncomingInterface(IPv4Datagram *datagram);
+
     public:
         //PIM-SM clear implementation
         void setRPAddress(std::string address);

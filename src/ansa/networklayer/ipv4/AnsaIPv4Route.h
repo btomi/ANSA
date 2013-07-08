@@ -117,6 +117,8 @@ class INET_API AnsaIPv4MulticastRoute : public IPv4MulticastRoute
             bool                    shRegTun;           /**< Show interface which is also register tunnel interface*/
             AnsaOutInterface(InterfaceEntry *intPtr)
                 : OutInterface(intPtr, false) {}
+
+            virtual bool isEnabled() { return forwarding != Pruned; }
         };
 
     private:

@@ -473,6 +473,7 @@ void PimSplitter::newMulticast(IPv4Address destAddr, IPv4Address srcAddr)
 	    AnsaIPv4MulticastRoute *newRoute = new AnsaIPv4MulticastRoute();
 		newRoute->setMulticastGroup(destAddr);
 		newRoute->setOrigin(srcAddr);
+		newRoute->setOriginNetmask(IPv4Address::ALLONES_ADDRESS);
 
 		if (pimInt->getMode() == Dense)
 		{
