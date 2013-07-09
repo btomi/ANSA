@@ -75,8 +75,8 @@ class INET_API AnsaRoutingTable : public RoutingTable {
       virtual std::vector<AnsaIPv4MulticastRoute*> getRoutesForSource(IPv4Address source);
       void generateShowIPMroute();
 
-      virtual void addMulticastRoute(const AnsaIPv4MulticastRoute *entry);
-      virtual bool deleteMulticastRoute(const AnsaIPv4MulticastRoute *entry);
+      virtual void addMulticastRoute(AnsaIPv4MulticastRoute *entry);
+      virtual bool deleteMulticastRoute(AnsaIPv4MulticastRoute *entry);
 
       virtual bool isLocalAddress(const IPv4Address& dest) const;
       virtual InterfaceEntry *getInterfaceByAddress(const IPv4Address& addr) const;
