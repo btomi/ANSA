@@ -33,7 +33,6 @@
  *
  * It also contains some kludges for multicast routing:
  *   - to add/remove multicast listeners when fake IGMP messages are received
- *   - to send PIM messages to PIM modules even if they did not join to the destination address
  *   - to refresh the string representation of the multicast routing table
  */
 class INET_API AnsaIPv4 : public IPv4

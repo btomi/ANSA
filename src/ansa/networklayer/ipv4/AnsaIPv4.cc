@@ -98,13 +98,6 @@ void AnsaIPv4::handlePacketFromNetwork(IPv4Datagram *datagram, InterfaceEntry *f
             return;
         }
 
-        //PIM send PIM packet to PIM module
-        if (datagram->getTransportProtocol() == IP_PROT_PIM)
-        {
-            cPacket *packet = decapsulate(datagram);
-            send(packet, "transportOut", mapping.getOutputGateForProtocol(IP_PROT_PIM));
-            return;
-        }
 
         // don't forward if IP forwarding is off, or if dest address is link-scope
         if (!rt->isIPForwardingEnabled() || destAddr.isLinkLocalMulticast())

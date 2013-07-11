@@ -299,6 +299,13 @@ void PimSplitter::initialize(int stage)
 		else
 			EV << "PIM is enabled on device " << hostname << endl;
 
+		// to receive PIM messages, join to ALL_PIM_ROUTERS multicast group
+		for (int i = 0; i < pimIft->getNumInterface(); i++)
+		{
+		    PimInterface *pimInterface = pimIft->getInterface(i);
+		    pimInterface->getInterfacePtr()->ipv4Data()->joinMulticastGroup(IPv4Address("224.0.0.13")); // TODO use constant
+		}
+
 		// send Hello packets to PIM neighbors (224.0.0.13)
 		PIMTimer *timer = new PIMTimer("Hello");
 		timer->setTimerKind(HelloTimer);
