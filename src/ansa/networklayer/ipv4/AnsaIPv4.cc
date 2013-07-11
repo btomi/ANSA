@@ -41,109 +41,23 @@ void AnsaIPv4::handlePacketFromNetwork(IPv4Datagram *datagram, InterfaceEntry *f
     ASSERT(datagram);
     ASSERT(fromIE);
 
-    //
-    // "Prerouting"
-    //
+    IPv4Address destAddr = datagram->getDestAddress();
 
-    // check for header biterror
-    if (datagram->hasBitError())
+    if (!datagram->hasBitError() && !fromIE->isLoopback() && destAddr.isMulticast())
     {
-        // probability of bit error in header = size of header / size of total message
-        // (ignore bit error if in payload)
-        double relativeHeaderLength = datagram->getHeaderLength() / (double)datagram->getByteLength();
-        if (dblrand() <= relativeHeaderLength)
-        {
-            EV << "bit error found, sending ICMP_PARAMETER_PROBLEM\n";
-            icmpAccess.get()->sendErrorMessage(datagram, ICMP_PARAMETER_PROBLEM, 0);
-            return;
-        }
-    }
-
-
-    // remove control info, but keep the one on the last fragment of DSR and MANET datagrams
-    int protocol = datagram->getTransportProtocol();
-    bool isManetDatagram = protocol == IP_PROT_MANET || protocol == IP_PROT_DSR;
-    if (!isManetDatagram || datagram->getMoreFragments())
-        delete datagram->removeControlInfo();
-
-
-    // route packet
-    IPv4Address &destAddr = datagram->getDestAddress();
-
-    EV << "Received datagram `" << datagram->getName() << "' with dest=" << destAddr << "\n";
-
-    if (fromIE->isLoopback())
-    {
-        reassembleAndDeliver(datagram);
-    }
-    else if (destAddr.isMulticast())
-    {
-        // check for local delivery
-        // Note: multicast routers will receive IGMP datagrams even if their interface is not joined to the group
-        if (fromIE->ipv4Data()->isMemberOfMulticastGroup(destAddr) ||
-                (rt->isMulticastForwardingEnabled() && datagram->getTransportProtocol() == IP_PROT_IGMP))
-            reassembleAndDeliver(datagram->dup());
-
         //FIXME temporary hack to catch "IGMP" for initialization PIM Join/Prune (*,G) PIM-SM
         if (datagram->getTransportProtocol() == IP_PROT_IGMP)
         {
             EV << "AnsaIPv4::handlePacketFromNetwork - IGMP packet received" << endl;
 
-            if (fromIE->ipv4Data()->hasMulticastListener(datagram->getDestAddress()))
-                fromIE->ipv4Data()->removeMulticastListener(datagram->getDestAddress());
+            if (fromIE->ipv4Data()->hasMulticastListener(destAddr))
+                fromIE->ipv4Data()->removeMulticastListener(destAddr);
             else
-                fromIE->ipv4Data()->addMulticastListener(datagram->getDestAddress());
-
-            delete datagram;
-            return;
-        }
-
-
-        // don't forward if IP forwarding is off, or if dest address is link-scope
-        if (!rt->isIPForwardingEnabled() || destAddr.isLinkLocalMulticast())
-            delete datagram;
-        else if (datagram->getTimeToLive() == 0)
-        {
-            EV << "TTL reached 0, dropping datagram.\n";
-            delete datagram;
-        }
-        else
-            forwardMulticastPacket(datagram, fromIE);
-    }
-    else
-    {
-#ifdef WITH_MANET
-        if (manetRouting)
-            sendRouteUpdateMessageToManet(datagram);
-#endif
-        InterfaceEntry *broadcastIE = NULL;
-
-        // check for local delivery; we must accept also packets coming from the interfaces that
-        // do not yet have an IP address assigned. This happens during DHCP requests.
-        if (rt->isLocalAddress(destAddr) || fromIE->ipv4Data()->getIPAddress().isUnspecified())
-        {
-            reassembleAndDeliver(datagram);
-        }
-        else if (destAddr.isLimitedBroadcastAddress() || (broadcastIE=rt->findInterfaceByLocalBroadcastAddress(destAddr)))
-        {
-            // broadcast datagram on the target subnet if we are a router
-            if (broadcastIE && fromIE != broadcastIE && rt->isIPForwardingEnabled())
-                IPv4::fragmentAndSend(datagram->dup(), broadcastIE, IPv4Address::ALLONES_ADDRESS);
-
-            EV << "Broadcast received\n";
-            reassembleAndDeliver(datagram);
-        }
-        else if (!rt->isIPForwardingEnabled())
-        {
-            EV << "forwarding off, dropping packet\n";
-            numDropped++;
-            delete datagram;
-        }
-        else
-        {
-            routeUnicastPacket(datagram, NULL/*destIE*/, IPv4Address::UNSPECIFIED_ADDRESS);
+                fromIE->ipv4Data()->addMulticastListener(destAddr);
         }
     }
+
+    IPv4::handlePacketFromNetwork(datagram, fromIE);
 }
 
 // FIXME: generateShowIPMRoute() shold only be called when there is a change in the multicast routes.
