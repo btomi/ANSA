@@ -37,65 +37,6 @@ std::ostream& operator<<(std::ostream& os, const AnsaIPv4MulticastRoute& e)
     return os;
 };
 
-IPv4Route *AnsaRoutingTable::findRoute(const IPv4Address& network, const IPv4Address& netmask)
-{
-    //TODO: assume only ANSAIPv4Route in the routing table?
-
-    for (int i = 0; i < getNumRoutes(); i++)
-    {
-        IPv4Route *route = getRoute(i);
-        if (route->getDestination()==network && route->getNetmask()==netmask) // match
-            return route;
-    }
-
-    return NULL;
-}
-
-bool AnsaRoutingTable::prepareForAddRoute(IPv4Route *route)
-{
-    IPv4Route *routeInTable = findRoute(route->getDestination(), route->getNetmask());
-
-    if (routeInTable)
-    {
-        int newAdminDist = route->getAdminDist();
-        int oldAdminDist = routeInTable->getAdminDist();
-
-        if (oldAdminDist > newAdminDist)
-        {
-            deleteRouteSilent(routeInTable);
-        }
-        else if(oldAdminDist == newAdminDist)
-        {
-            if (routeInTable->getMetric() > route->getMetric())
-                deleteRouteSilent(routeInTable);
-            else
-                return false;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    return true;
-}
-
-bool AnsaRoutingTable::deleteRouteSilent(IPv4Route *entry)
-{
-    Enter_Method("deleteRouteSilent(...)");
-
-    entry = internalRemoveRoute(entry);
-
-    if (entry != NULL)
-    {
-        invalidateCache();
-        updateDisplayString();
-        ASSERT(entry->getRoutingTable() == this); // still filled in, for the listeners' benefit
-        delete entry;
-    }
-    return entry != NULL;
-}
-
 void AnsaRoutingTable::updateNetmaskRoutes()
 {
     // first, delete all routes with src=IFACENETMASK

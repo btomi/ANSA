@@ -416,15 +416,8 @@ void RIPRouting::setInterfacePoisonReverse(RIP::Interface *RIPInterface, bool st
 void RIPRouting::addRoutingTableEntryToGlobalRT(RIP::RoutingTableEntry* entry)
 {
     RIP::RoutingTableEntry *newEntry = new RIP::RoutingTableEntry(*entry);
-    if (rt->prepareForAddRoute(newEntry))
-    {
-        rt->addRoute(newEntry);
-        entry->setCopy(newEntry);
-    }
-    else
-    {// route exists with lower administrative distance
-        delete newEntry;
-    }
+    rt->addRoute(newEntry);
+    entry->setCopy(newEntry);
 }
 
 void RIPRouting::removeRoutingTableEntryFromGlobalRT(RIP::RoutingTableEntry* entry)
@@ -1038,7 +1031,7 @@ void RIPRouting::initialize(int stage)
     bBlockTriggeredUpdateMessage = false;
 
     // access to the routing and interface table
-    rt = AnsaRoutingTableAccess().get();
+    rt = RoutingTableAccess().get();
     ift = InterfaceTableAccess().get();
     // subscribe for changes in the device
     nb = NotificationBoardAccess().get();

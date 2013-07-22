@@ -49,26 +49,6 @@ class INET_API AnsaRoutingTable : public RoutingTable {
        */
       virtual void updateNetmaskRoutes();
 
-      /**
-       * Finds route to the given network.
-       * @return NULL, if route does not exist
-       */
-      virtual IPv4Route *findRoute(const IPv4Address& network, const IPv4Address& netmask);
-
-      /**
-       * Prepares routing table for adding new route.
-       * e.g. removes route with the same prefix, prefix length and lower administrative distance
-       * and purge destination cache
-       * @return true, if it is safe to add route,
-       *         false otherwise
-       */
-      virtual bool prepareForAddRoute(IPv4Route *route);
-
-      /**
-       * @see removeRouteSilent and prepareForAddRoute in @class ANSARoutingTable6
-       */
-      bool deleteRouteSilent(IPv4Route *entry);
-
       //rozsireni routing table
       virtual AnsaIPv4MulticastRoute *getRouteFor(IPv4Address group, IPv4Address source);
       virtual std::vector<AnsaIPv4MulticastRoute*> getRouteFor(IPv4Address group);

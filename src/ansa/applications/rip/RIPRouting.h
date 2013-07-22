@@ -25,8 +25,7 @@
 #include <omnetpp.h>
 #include "UDPSocket.h"
 #include "IPv4Address.h"
-#include "AnsaRoutingTable.h"
-#include "AnsaRoutingTableAccess.h"
+#include "IRoutingTable.h"
 #include "IInterfaceTable.h"
 #include "InterfaceTableAccess.h"
 #include "NotificationBoard.h"
@@ -73,7 +72,7 @@ class RIPRouting : public cSimpleModule, protected INotifiable
     bool bBlockTriggeredUpdateMessage;
 
     IInterfaceTable*                                ift;                ///< Provides access to the interface table.
-    AnsaRoutingTable*                               rt;                 ///< Provides access to the IPv4 routing table.
+    IRoutingTable*                                  rt;                 ///< Provides access to the IPv4 routing table.
     NotificationBoard*                              nb;                 ///< Provides access to the notification board
     std::vector<RIP::Interface*>                    enabledInterfaces;  ///< Interfaces which has allowed RIP
     std::vector<RIP::Interface*>                    downInterfaces;     ///< Interfaces which has allowed RIP and are down - for keeping configuration
