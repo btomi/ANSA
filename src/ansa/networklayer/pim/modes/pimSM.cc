@@ -514,7 +514,6 @@ void pimSM::processExpiryTimer(PIMet *timer)
         else
             rt->deleteMulticastRoute(route);
     }
-    rt->generateShowIPMroute();
 }
 
 /**
@@ -837,7 +836,6 @@ void pimSM::processPrunePacket(PIMJoinPrune *pkt, IPv4Address multGroup, Encoded
             }
         }
     }
-    rt->generateShowIPMroute();
 }
 
 /**
@@ -941,8 +939,6 @@ void pimSM::processSGJoin(PIMJoinPrune *pkt, IPv4Address multOrigin, IPv4Address
 
     // restart ET for given interface - for (*,G) and also (S,G)
     restartExpiryTimer(newRouteSG,rt->getInterfaceForDestAddr(pktSource), holdTime);
-
-    rt->generateShowIPMroute();
 }
 
 /**
@@ -1126,7 +1122,6 @@ void pimSM::processJoinPacket(PIMJoinPrune *pkt, IPv4Address multGroup, EncodedA
             }
         }
     }
-    rt->generateShowIPMroute();
 }
 
 /**
@@ -1238,7 +1233,6 @@ void pimSM::processRegisterPacket(PIMRegister *pkt)
             sendPIMRegisterStop(PIMctrl->getDestAddr(),PIMctrl->getSrcAddr(),multGroup,multOrigin);
         }
     }
-    rt->generateShowIPMroute();
 }
 
 /**
@@ -1680,7 +1674,6 @@ void pimSM::removeMulticastReciever(addRemoveAddr *members)
             }
         }
     }
-    rt->generateShowIPMroute();
 }
 
 void pimSM::newMulticastReciever(addRemoveAddr *members)
@@ -1749,7 +1742,6 @@ void pimSM::newMulticastReciever(addRemoveAddr *members)
             newRouteG->addFlag(AnsaIPv4MulticastRoute::C);
         }
     }
-    rt->generateShowIPMroute();
 }
 
 /**

@@ -113,9 +113,6 @@ void AnsaRoutingTable::initialize(int stage)
     if (stage==0)
     {
         RoutingTable::initialize(stage);
-
-        // watch multicast table
-        WATCH_VECTOR(showMRoute);
     }
     else if (stage==3)
     {
@@ -141,7 +138,6 @@ void AnsaRoutingTable::initialize(int stage)
  * @param entry New entry about new multicast group.
  * @see MulticastIPRoute
  * @see updateDisplayString()
- * @see generateShowIPMroute()
  */
 void AnsaRoutingTable::addMulticastRoute(AnsaIPv4MulticastRoute *entry)
 {
@@ -170,7 +166,6 @@ void AnsaRoutingTable::addMulticastRoute(AnsaIPv4MulticastRoute *entry)
     internalAddMulticastRoute(entry);
 
     updateDisplayString();
-    generateShowIPMroute();
 }
 
 
@@ -184,7 +179,6 @@ void AnsaRoutingTable::addMulticastRoute(AnsaIPv4MulticastRoute *entry)
  * @return False if entry was not found in table. True if entry was deleted.
  * @see MulticastIPRoute
  * @see updateDisplayString()
- * @see generateShowIPMroute()
  */
 bool AnsaRoutingTable::deleteMulticastRoute(AnsaIPv4MulticastRoute *entry)
 {
@@ -243,7 +237,6 @@ bool AnsaRoutingTable::deleteMulticastRoute(AnsaIPv4MulticastRoute *entry)
         // delete route
         delete entry;
         updateDisplayString();
-        generateShowIPMroute();
         return true;
     }
     return false;
@@ -307,93 +300,6 @@ std::vector<AnsaIPv4MulticastRoute*> AnsaRoutingTable::getRouteFor(IPv4Address g
     }
 
     return routes;
-}
-
-/**
- * GENERATE SHOW IP MROUTE
- *
- * This method should be called after each change of multicast routing table. It is output which
- * represents state of the table. Format is same as format on Cisco routers.
- */
-void AnsaRoutingTable::generateShowIPMroute()
-{
-    EV << "MulticastRoutingTable::generateShowIPRoute()" << endl;
-    showMRoute.clear();
-
-    int n = getNumMulticastRoutes();
-    const AnsaIPv4MulticastRoute* ipr;
-
-    for (int i=0; i<n; i++)
-    {
-        ipr = dynamic_cast<AnsaIPv4MulticastRoute*>(getMulticastRoute(i));
-        if (!ipr)
-            continue;
-        std::stringstream os;
-        os << "(";
-        if (ipr->getOrigin().isUnspecified()) os << "*, "; else os << ipr->getOrigin() << ",  ";
-        os << ipr->getMulticastGroup() << "), ";
-        if (ipr->getOrigin() == IPv4Address::UNSPECIFIED_ADDRESS)
-            if (!ipr->getRP().isUnspecified()) os << "RP is " << ipr->getRP()<< ", ";
-        os << "flags: ";
-        std::vector<AnsaIPv4MulticastRoute::flag> flags = ipr->getFlags();
-        for (unsigned int j = 0; j < flags.size(); j++)
-        {
-            switch(flags[j])
-            {
-                case AnsaIPv4MulticastRoute::D:
-                    os << "D";
-                    break;
-                case AnsaIPv4MulticastRoute::S:
-                    os << "S";
-                    break;
-                case AnsaIPv4MulticastRoute::C:
-                    os << "C";
-                    break;
-                case AnsaIPv4MulticastRoute::P:
-                    os << "P";
-                    break;
-                case AnsaIPv4MulticastRoute::A:
-                    os << "A";
-                    break;
-                case AnsaIPv4MulticastRoute::F:
-                    os << "F";
-                    break;
-                case AnsaIPv4MulticastRoute::T:
-                    os << "T";
-                    break;
-                case AnsaIPv4MulticastRoute::NO_FLAG:
-                    break;
-            }
-        }
-        os << endl;
-
-        os << "Incoming interface: ";
-        if (ipr->getInIntPtr()) os << ipr->getInIntPtr()->getName() << ", ";
-        else os << "Null, ";
-        if (ipr->getInIntNextHop().isUnspecified()) os << "RPF neighbor 0.0.0.0" << endl;
-        else os << "RPF neighbor " << ipr->getInIntNextHop() << endl;
-        os << "Outgoing interface list:" << endl;
-
-        if (ipr->getNumOutInterfaces() == 0)
-            os << "Null" << endl;
-        else
-            for (unsigned int k = 0; k < ipr->getNumOutInterfaces(); k++)
-            {
-                AnsaIPv4MulticastRoute::AnsaOutInterface *outInterface = ipr->getAnsaOutInterface(k);
-                if ((outInterface->mode == AnsaIPv4MulticastRoute::Sparsemode && outInterface->shRegTun == true)
-                        || outInterface->mode ==AnsaIPv4MulticastRoute:: Densemode)
-                {
-                    os << outInterface->getInterface()->getName() << ", ";
-                    if (outInterface->forwarding == AnsaIPv4MulticastRoute::Forward) os << "Forward/"; else os << "Pruned/";
-                    if (outInterface->mode == AnsaIPv4MulticastRoute::Densemode) os << "Dense"; else os << "Sparse";
-                    os << endl;
-                }
-                else
-                    os << "Null" << endl;
-            }
-        showMRoute.push_back(os.str());
-    }
-    std::stringstream out;
 }
 
 /**

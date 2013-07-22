@@ -39,7 +39,6 @@ class INET_API AnsaIPv4 : public IPv4
 {
     protected:
         virtual void handlePacketFromNetwork(IPv4Datagram *datagram, InterfaceEntry *fromIE);
-        virtual void forwardMulticastPacket(IPv4Datagram *datagram, InterfaceEntry *fromIE);
         virtual void routeUnicastPacket(IPv4Datagram *datagram, InterfaceEntry *destIE, IPv4Address destNextHopAddr);
         virtual void handleMessageFromHL(cPacket *msg);
 

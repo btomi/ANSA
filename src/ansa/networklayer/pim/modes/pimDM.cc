@@ -523,7 +523,6 @@ void pimDM::processJoinPruneGraftPacket(PIMJoinPrune *pkt, PIMPacketType type)
 	// Send GraftAck for this Graft message
 	if (type == Graft)
 		sendPimGraftAck((PIMGraftAck *) (pkt));
-	rt->generateShowIPMroute();
 }
 
 /**
@@ -652,7 +651,6 @@ void pimDM::processPruneTimer(PIMpt *timer)
 			else
 				route->removeFlag(P);
 		}*/
-		rt->generateShowIPMroute();
 	}
 }
 
@@ -1077,8 +1075,6 @@ void pimDM::rpfIntChange(AnsaIPv4MulticastRoute *route)
 		newOutInt->mode = AnsaIPv4MulticastRoute::Densemode;
 		route->addOutInterface(newOutInt);
 	}
-
-	rt->generateShowIPMroute();
 }
 
 
@@ -1153,7 +1149,6 @@ void pimDM::dataOnNonRpf(IPv4Address group, IPv4Address source, int intId)
 				if (!route->isFlagSet(AnsaIPv4MulticastRoute::A))
 					sendPimJoinPrune(route->getInIntNextHop(), route->getOrigin(), route->getMulticastGroup(), route->getInIntId());
 			}
-			rt->generateShowIPMroute();
 		}
 	}
 
@@ -1267,7 +1262,6 @@ void pimDM::oldMulticastAddr(addRemoveAddr *members)
 			}
 		}
 	}
-	rt->generateShowIPMroute();
 }
 
 /**
@@ -1356,7 +1350,6 @@ void pimDM::newMulticastAddr(addRemoveAddr *members)
 			}
 		}
 	}
-	rt->generateShowIPMroute();
 }
 
 /**

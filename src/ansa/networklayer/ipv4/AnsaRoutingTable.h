@@ -31,9 +31,6 @@
 class INET_API AnsaRoutingTable : public RoutingTable {
 
     protected:
-        std::vector<std::string> showMRoute;                /**< Output of multicast routing table, same as Cisco mroute. */
-
-    protected:
         // displays summary above the icon
         virtual void updateDisplayString();
         virtual void initialize(int stage);
@@ -53,7 +50,6 @@ class INET_API AnsaRoutingTable : public RoutingTable {
       virtual AnsaIPv4MulticastRoute *getRouteFor(IPv4Address group, IPv4Address source);
       virtual std::vector<AnsaIPv4MulticastRoute*> getRouteFor(IPv4Address group);
       virtual std::vector<AnsaIPv4MulticastRoute*> getRoutesForSource(IPv4Address source);
-      void generateShowIPMroute();
 
       virtual void addMulticastRoute(AnsaIPv4MulticastRoute *entry);
       virtual bool deleteMulticastRoute(AnsaIPv4MulticastRoute *entry);

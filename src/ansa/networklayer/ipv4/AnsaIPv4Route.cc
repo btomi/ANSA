@@ -114,29 +114,52 @@ AnsaIPv4MulticastRoute::AnsaIPv4MulticastRoute()
     this->setMetric(0);
 }
 
+// Format is same as format on Cisco routers.
 std::string AnsaIPv4MulticastRoute::info() const
 {
     std::stringstream out;
-    out << "(";
-    if (this->getOrigin().isUnspecified()) out << "*  "; else out << this->getOrigin() << ",  ";
-    if (this->getMulticastGroup().isUnspecified()) out << "*  "; else out << this->getMulticastGroup() << "),  ";
-    if (RP.isUnspecified()) out << "0.0.0.0"<< endl; else out << "RP is " << RP << endl;
-    out << "Incoming interface: ";
-    if(getInInterface() != NULL)
+    out << "(" << (getOrigin().isUnspecified() ? "*" : getOrigin().str()) << ", " << getMulticastGroup()
+        << "), ";
+    if (getOrigin().isUnspecified() && !getRP().isUnspecified())
+        out << "RP is " << getRP() << ", ";
+    out << "flags: ";
+    for (unsigned int j = 0; j < flags.size(); j++)
     {
-        if (getInInterface()->getInterface()) out << getInInterface()->getInterface()->getName() << ", ";
-        out << "RPF neighbor " << getAnsaInInterface()->nextHop << endl;
-        out << "Outgoing interface list:" << endl;
+        switch(flags[j])
+        {
+            case AnsaIPv4MulticastRoute::D: out << "D"; break;
+            case AnsaIPv4MulticastRoute::S: out << "S"; break;
+            case AnsaIPv4MulticastRoute::C: out << "C"; break;
+            case AnsaIPv4MulticastRoute::P: out << "P"; break;
+            case AnsaIPv4MulticastRoute::A: out << "A"; break;
+            case AnsaIPv4MulticastRoute::F: out << "F"; break;
+            case AnsaIPv4MulticastRoute::T: out << "T"; break;
+            case AnsaIPv4MulticastRoute::NO_FLAG: break;
+        }
+    }
+    out << endl;
+
+    out << "Incoming interface: " << (getInIntPtr() ? getInIntPtr()->getName() : "Null") << ", "
+        << "RPF neighbor " << (getInIntNextHop().isUnspecified() ? "0.0.0.0" : getInIntNextHop().str()) << endl;
+
+    out << "Outgoing interface list:" << endl;
+    for (unsigned int k = 0; k < getNumOutInterfaces(); k++)
+    {
+        AnsaIPv4MulticastRoute::AnsaOutInterface *outInterface = getAnsaOutInterface(k);
+        if ((outInterface->mode == AnsaIPv4MulticastRoute::Sparsemode && outInterface->shRegTun)
+                || outInterface->mode ==AnsaIPv4MulticastRoute:: Densemode)
+        {
+            out << outInterface->getInterface()->getName() << ", "
+                << (outInterface->forwarding == Forward ? "Forward/" : "Pruned/")
+                << (outInterface->mode == Densemode ? "Dense" : "Sparse")
+                << endl;
+        }
+        else
+            out << "Null" << endl;
     }
 
-    for (unsigned int i = 0; i < getNumOutInterfaces(); i++)
-    {
-        AnsaOutInterface *outInterface = getAnsaOutInterface(i);
-        if (outInterface->getInterface()) out << outInterface->getInterface()->getName() << ", ";
-        if (outInterface->forwarding == Forward) out << "Forward/"; else out << "Pruned/";
-        if (outInterface->mode == Densemode) out << "Dense"; else out << "Sparse";
-        out << endl;
-    }
+    if (getNumOutInterfaces() == 0)
+        out << "Null" << endl;
 
     return out.str();
 }

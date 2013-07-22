@@ -29,8 +29,8 @@
 #include "IPv4ControlInfo.h"
 #include "IPv4InterfaceData.h"
 #include "IRoutingTable.h"
+#include "IInterfaceTable.h"
 #include "NotificationBoard.h"
-#include "AnsaRoutingTable.h"
 #include "AnsaInterfaceEntry.h"
 #include "AnsaIPv4RoutingDecision_m.h"
 
@@ -58,16 +58,6 @@ void AnsaIPv4::handlePacketFromNetwork(IPv4Datagram *datagram, InterfaceEntry *f
     }
 
     IPv4::handlePacketFromNetwork(datagram, fromIE);
-}
-
-// FIXME: generateShowIPMRoute() shold only be called when there is a change in the multicast routes.
-//        I don't know why it is not an internal method in AnsaRoutingTable.
-void AnsaIPv4::forwardMulticastPacket(IPv4Datagram *datagram, InterfaceEntry *fromIE)
-{
-    IPv4::forwardMulticastPacket(datagram, fromIE);
-
-    // refresh output in MRT
-    check_and_cast<AnsaRoutingTable*>(dynamic_cast<cObject*>(rt))->generateShowIPMroute();
 }
 
 void AnsaIPv4::handleMessageFromHL(cPacket *msg)
