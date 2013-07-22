@@ -867,6 +867,7 @@ void RoutingTable::updateNetmaskRoutes()
             route->setDestination(ie->ipv4Data()->getIPAddress().doAnd(ie->ipv4Data()->getNetmask()));
             route->setNetmask(ie->ipv4Data()->getNetmask());
             route->setGateway(IPv4Address());
+            route->setAdminDist(IPv4Route::dDirectlyConnected);
             route->setMetric(ie->ipv4Data()->getMetric());
             route->setInterface(ie);
             route->setRoutingTable(this);
