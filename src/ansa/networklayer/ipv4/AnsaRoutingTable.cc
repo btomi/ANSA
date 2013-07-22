@@ -37,50 +37,10 @@ std::ostream& operator<<(std::ostream& os, const AnsaIPv4MulticastRoute& e)
     return os;
 };
 
-void AnsaRoutingTable::updateNetmaskRoutes()
+// to create ANSAIPv4Routes in updateNetmaskRoutes()
+IPv4Route *AnsaRoutingTable::createNewRoute()
 {
-    // first, delete all routes with src=IFACENETMASK
-    int k = 0;
-    while (k < getNumRoutes())
-    {
-        // delete first IFACENETMASK route
-        for (k = 0; k < getNumRoutes(); k++)
-        {
-            IPv4Route *route = getRoute(k);
-            if (route->getSource() == IPv4Route::IFACENETMASK)
-            {
-                internalRemoveRoute(route);
-                ASSERT(route->getRoutingTable() == this); // still filled in, for the listeners' benefit
-                nb->fireChangeNotification(NF_IPv4_ROUTE_DELETED, route);
-                delete route;
-                break;
-            }
-        }
-    }
-
-    // then re-add them, according to actual interface configuration
-    // TODO: say there's a node somewhere in the network that belongs to the interface's subnet
-    // TODO: and it is not on the same link, and the gateway does not use proxy ARP, how will packets reach that node?
-    for (int i=0; i<ift->getNumInterfaces(); i++)
-    {
-        InterfaceEntry *ie = ift->getInterface(i);
-        if (ie->ipv4Data()->getNetmask()!=IPv4Address::ALLONES_ADDRESS)
-        {
-            ANSAIPv4Route *route = new ANSAIPv4Route();
-            route->setSource(IPv4Route::IFACENETMASK);
-            route->setDestination(ie->ipv4Data()->getIPAddress().doAnd(ie->ipv4Data()->getNetmask()));
-            route->setNetmask(ie->ipv4Data()->getNetmask());
-            route->setGateway(IPv4Address());
-            route->setMetric(ie->ipv4Data()->getMetric());
-            route->setAdminDist(IPv4Route::dDirectlyConnected);
-            route->setInterface(ie);
-            internalAddRoute(route);
-            nb->fireChangeNotification(NF_IPv4_ROUTE_ADDED, route);
-        }
-    }
-
-    invalidateCache();
-    updateDisplayString();
+    return new ANSAIPv4Route();
 }
 
 /**

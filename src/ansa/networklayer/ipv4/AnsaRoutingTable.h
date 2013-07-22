@@ -41,10 +41,9 @@ class INET_API AnsaRoutingTable : public RoutingTable {
 
     public:
 
-      /**
-       * reimplemented - adds ANSAIPv4Routes instead of IPv4Route
-       */
-      virtual void updateNetmaskRoutes();
+
+      // creates an ANSAIPv4Route instead of an IPv4Route
+      virtual IPv4Route *createNewRoute();
 
       //rozsireni routing table
       virtual AnsaIPv4MulticastRoute *getRouteFor(IPv4Address group, IPv4Address source);
