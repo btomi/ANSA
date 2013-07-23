@@ -40,7 +40,6 @@ ANSAIPv6Route::ANSAIPv6Route(IPv6Address destPrefix, int length, RouteSrc src)
     _routingProtocolSource = pUnknown;
 
     ift = InterfaceTableAccess().get();
-    rt = NULL;
 }
 
 std::string ANSAIPv6Route::info() const
@@ -119,16 +118,21 @@ const char *ANSAIPv6Route::getInterfaceName() const
     return interface ? interface->getName() : "";
 }
 
+ANSARoutingTable6 *ANSAIPv6Route::getANSARoutingTable6()
+{
+    return dynamic_cast<ANSARoutingTable6*>(_rt);
+}
+
 void ANSAIPv6Route::changed(int fieldCode)
 {
-    if (rt)
-        rt->routeChanged(this, fieldCode);
+    if (getANSARoutingTable6())
+        getANSARoutingTable6()->routeChanged(this, fieldCode);
 }
 
 void ANSAIPv6Route::changedSilent(int fieldCode)
 {
-    if (rt)
-        rt->routeChangedSilent(this, fieldCode);
+    if (getANSARoutingTable6())
+        getANSARoutingTable6()->routeChangedSilent(this, fieldCode);
 }
 
 ANSARoutingTable6::ANSARoutingTable6()

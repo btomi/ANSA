@@ -27,6 +27,7 @@
 
 class IInterfaceTable;
 class InterfaceEntry;
+class RoutingTable6;
 
 /**
  * Represents a route in the route table. Routes with src=FROM_RA represent
@@ -45,6 +46,7 @@ class INET_API IPv6Route : public cObject
     };
 
   protected:
+    RoutingTable6 *_rt;     ///< the routing table in which this route is inserted, or NULL
     IPv6Address _destPrefix;
     short _length;
     RouteSrc _src;
@@ -59,6 +61,7 @@ class INET_API IPv6Route : public cObject
      * to the constructor and cannot be changed afterwards.
      */
     IPv6Route(IPv6Address destPrefix, int length, RouteSrc src) {
+        _rt = NULL;
         _destPrefix = destPrefix;
         _length = length;
         _src = src;
@@ -66,6 +69,10 @@ class INET_API IPv6Route : public cObject
         _expiryTime = 0;
         _metric = 0;
     }
+
+    /** To be called by the routing table when this route is added or removed from it */
+    virtual void setRoutingTable(RoutingTable6 *rt) { _rt = rt; }
+    RoutingTable6 *getRoutingTable() const {return _rt;}
 
     virtual std::string info() const;
     virtual std::string detailedInfo() const;

@@ -716,6 +716,7 @@ bool RoutingTable6::routeLessThan(const IPv6Route *a, const IPv6Route *b)
 
 void RoutingTable6::addRoute(IPv6Route *route)
 {
+    route->setRoutingTable(this);
     routeList.push_back(route);
 
     // we keep entries sorted by prefix length in routeList, so that we can
@@ -727,6 +728,7 @@ void RoutingTable6::addRoute(IPv6Route *route)
     nb->fireChangeNotification(NF_IPv6_ROUTE_ADDED, route);
 }
 
+// TODO rename to deleteRoute(...)
 void RoutingTable6::removeRoute(IPv6Route *route)
 {
     RouteList::iterator it = std::find(routeList.begin(), routeList.end(), route);

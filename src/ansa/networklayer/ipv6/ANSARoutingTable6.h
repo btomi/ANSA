@@ -89,7 +89,6 @@ class ANSAIPv6Route : public IPv6Route
 
   protected:
     IInterfaceTable *ift;     ///< cached pointer
-    ANSARoutingTable6 *rt;    ///< the routing table in which this route is inserted, or NULL
     unsigned int  _adminDist;
     /** Should be set if route source is a "routing protocol" **/
     RoutingProtocolSource _routingProtocolSource;
@@ -100,9 +99,7 @@ class ANSAIPv6Route : public IPv6Route
   public:
     ANSAIPv6Route(IPv6Address destPrefix, int length, RouteSrc src);
 
-    /** To be called by the routing table when this route is added or removed from it */
-    virtual void setRoutingTable(ANSARoutingTable6 *rt) {this->rt = rt;}
-    ANSARoutingTable6 *getRoutingTable() const {return rt;}
+    ANSARoutingTable6 *getANSARoutingTable6();
 
     virtual std::string info() const;
     virtual std::string detailedInfo() const;
