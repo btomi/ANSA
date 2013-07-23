@@ -36,9 +36,6 @@ Define_Module(ANSARoutingTable6);
 ANSAIPv6Route::ANSAIPv6Route(IPv6Address destPrefix, int length, RouteSrc src)
     : IPv6Route(destPrefix, length, src)
 {
-    _adminDist = dUnknown;
-    _routingProtocolSource = pUnknown;
-
     ift = InterfaceTableAccess().get();
 }
 
@@ -121,12 +118,6 @@ const char *ANSAIPv6Route::getInterfaceName() const
 ANSARoutingTable6 *ANSAIPv6Route::getANSARoutingTable6()
 {
     return dynamic_cast<ANSARoutingTable6*>(_rt);
-}
-
-void ANSAIPv6Route::changed(int fieldCode)
-{
-    if (getANSARoutingTable6())
-        getANSARoutingTable6()->routeChanged(this, fieldCode);
 }
 
 void ANSAIPv6Route::changedSilent(int fieldCode)
@@ -340,15 +331,6 @@ void ANSARoutingTable6::removeRouteSilent(IPv6Route *route)
     delete route;
 
     updateDisplayString();
-}
-
-void ANSARoutingTable6::routeChanged(ANSAIPv6Route *entry, int fieldCode)
-{
-    ASSERT(entry != NULL);
-
-    routeChangedSilent(entry, fieldCode);
-
-    nb->fireChangeNotification(NF_IPv6_ROUTE_CHANGED, entry); // TODO include fieldCode in the notification
 }
 
 void ANSARoutingTable6::routeChangedSilent(ANSAIPv6Route *entry, int fieldCode)

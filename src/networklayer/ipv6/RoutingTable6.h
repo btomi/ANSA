@@ -45,6 +45,57 @@ class INET_API IPv6Route : public cObject
         ROUTING_PROT,   ///< route is managed by a routing protocol (OSPF,BGP,etc)
     };
 
+    /** Should be set if route source is a "routing protocol" **/
+    enum RoutingProtocolSource
+    {
+        pUnknown = 0,
+        pRIP,            //RIPng
+        pBGP,            //BGP
+        pISIS1,          //ISIS L1
+        pISIS2,          //ISIS L2
+        pISISinterarea,  //ISIS interarea
+        pISISsum,        //ISIS summary
+        pOSPFintra,      //OSPF intra
+        pOSPFinter,      //OSPF inter
+        pOSPFext1,       //OSPF ext 1
+        pOSPFext2,       //OSPF ext 2
+        pOSPFNSSAext1,   //OSPF NSSA ext 1
+        pOSPFNSSAext2,   //OSPF NSSA ext 2
+        pEIGRP,          //EIGRP
+        pEIGRPext        //EIGRP external
+    };
+
+
+    /** Cisco like administrative distances (includes IPv4 protocols)*/
+    enum RouteAdminDist
+    {
+        dDirectlyConnected = 0,
+        dStatic = 1,
+        dEIGRPSummary = 5,
+        dBGPExternal = 20,
+        dEIGRPInternal = 90,
+        dIGRP = 100,
+        dOSPF = 110,
+        dISIS = 115,
+        dRIP = 120,
+        dEGP = 140,
+        dODR = 160,
+        dEIGRPExternal = 170,
+        dBGPInternal = 200,
+        dDHCPlearned = 254,
+        dUnknown = 255
+    };
+
+    enum ChangeCodes // field codes for changed()
+    {
+        F_NEXTHOP,
+        F_IFACE,
+        F_METRIC,
+        F_EXPIRYTIME,
+        F_ADMINDIST,
+        F_ROUTINGPROTSOURCE
+    };
+
   protected:
     RoutingTable6 *_rt;     ///< the routing table in which this route is inserted, or NULL
     IPv6Address _destPrefix;
@@ -54,6 +105,11 @@ class INET_API IPv6Route : public cObject
     IPv6Address _nextHop;  // unspecified means "direct"
     simtime_t _expiryTime; // if route is an advertised prefix: prefix lifetime
     int _metric;
+    unsigned int  _adminDist;
+    /** Should be set if route source is a "routing protocol" **/
+    RoutingProtocolSource _routingProtocolSource;
+
+    void changed(int fieldCode);
 
   public:
     /**
@@ -68,6 +124,8 @@ class INET_API IPv6Route : public cObject
         _interfaceID = -1;
         _expiryTime = 0;
         _metric = 0;
+        _adminDist = dUnknown;
+        _routingProtocolSource = pUnknown;
     }
 
     /** To be called by the routing table when this route is added or removed from it */
@@ -78,10 +136,12 @@ class INET_API IPv6Route : public cObject
     virtual std::string detailedInfo() const;
     static const char *routeSrcName(RouteSrc src);
 
-    void setInterfaceId(int interfaceId)  {_interfaceID = interfaceId;}
-    void setNextHop(const IPv6Address& nextHop)  {_nextHop = nextHop;}
-    void setExpiryTime(simtime_t expiryTime)  {_expiryTime = expiryTime;}
-    void setMetric(int metric)  {_metric = metric;}
+    void setInterfaceId(int interfaceId)  { if (interfaceId != _interfaceID) { _interfaceID = interfaceId; changed(F_IFACE);} }
+    void setNextHop(const IPv6Address& nextHop)  {if (nextHop != _nextHop) { _nextHop = nextHop; changed(F_NEXTHOP);} }
+    void setExpiryTime(simtime_t expiryTime)  { if (expiryTime != _expiryTime) { _expiryTime = expiryTime; changed(F_EXPIRYTIME);} }
+    void setMetric(int metric)  { if (metric != _metric) { _metric = metric; changed(F_METRIC);} }
+    void setAdminDist(unsigned int adminDist)  { if (adminDist != _adminDist) { _adminDist = adminDist; changed(F_ADMINDIST);} }
+    void setRoutingProtocolSource(RoutingProtocolSource routingProtocolSource) {  if (routingProtocolSource != _routingProtocolSource) { _routingProtocolSource = routingProtocolSource; changed(F_ROUTINGPROTSOURCE);} }
 
     const IPv6Address& getDestPrefix() const {return _destPrefix;}
     int getPrefixLength() const  {return _length;}
@@ -90,6 +150,8 @@ class INET_API IPv6Route : public cObject
     const IPv6Address& getNextHop() const  {return _nextHop;}
     simtime_t getExpiryTime() const  {return _expiryTime;}
     int getMetric() const  {return _metric;}
+    unsigned int getAdminDist() const  { return _adminDist; }
+    RoutingProtocolSource getRoutingProtocolSource() const { return _routingProtocolSource; }
 };
 
 /**
@@ -198,6 +260,13 @@ class INET_API RoutingTable6 : public cSimpleModule, protected INotifiable
     virtual bool isRouter() const {return isrouter;}
 
     virtual bool isMulticastForwardingEnabled() { return multicastForward; }
+
+    /**
+     * To be called from route objects whenever a field changes. Used for
+     * maintaining internal data structures and firing "routing table changed"
+     * notifications.
+     */
+    virtual void routeChanged(IPv6Route *entry, int fieldCode);
 
 #ifdef WITH_xMIPv6
     /**

@@ -30,70 +30,15 @@ class InterfaceEntry;
 class ANSARoutingTable6;
 
 /**
- * Extends IPv6Route by administrative distance.
- * TODO: watch this class and changes in INET! - especially IPv6Route class
+ * Changed info() format of base IPvRoute.
+ * Also added method to change the route without sending notifications.
  * @see IPv6Route
  */
 class ANSAIPv6Route : public IPv6Route
 {
-  public:
-
-    /** Should be set if route source is a "routing protocol" **/
-    enum RoutingProtocolSource
-    {
-        pUnknown = 0,
-        pRIP,            //RIPng
-        pBGP,            //BGP
-        pISIS1,          //ISIS L1
-        pISIS2,          //ISIS L2
-        pISISinterarea,  //ISIS interarea
-        pISISsum,        //ISIS summary
-        pOSPFintra,      //OSPF intra
-        pOSPFinter,      //OSPF inter
-        pOSPFext1,       //OSPF ext 1
-        pOSPFext2,       //OSPF ext 2
-        pOSPFNSSAext1,   //OSPF NSSA ext 1
-        pOSPFNSSAext2,   //OSPF NSSA ext 2
-        pEIGRP,          //EIGRP
-        pEIGRPext        //EIGRP external
-    };
-
-    /** Cisco like administrative distances (includes IPv4 protocols)*/
-    enum RouteAdminDist
-    {
-        dDirectlyConnected = 0,
-        dStatic = 1,
-        dEIGRPSummary = 5,
-        dBGPExternal = 20,
-        dEIGRPInternal = 90,
-        dIGRP = 100,
-        dOSPF = 110,
-        dISIS = 115,
-        dRIP = 120,
-        dEGP = 140,
-        dODR = 160,
-        dEIGRPExternal = 170,
-        dBGPInternal = 200,
-        dDHCPlearned = 254,
-        dUnknown = 255
-    };
-
-    enum ChangeCodes // field codes for changed() - IPv4Route-like
-    {
-        F_NEXTHOP,
-        F_IFACE,
-        F_METRIC,
-        F_ADMINDIST,
-        F_ROUTINGPROTSOURCE
-    };
-
   protected:
     IInterfaceTable *ift;     ///< cached pointer
-    unsigned int  _adminDist;
-    /** Should be set if route source is a "routing protocol" **/
-    RoutingProtocolSource _routingProtocolSource;
 
-    void changed(int fieldCode);
     void changedSilent(int fieldCode);
 
   public:
@@ -105,15 +50,7 @@ class ANSAIPv6Route : public IPv6Route
     virtual std::string detailedInfo() const;
     virtual const char *getRouteSrcName() const;
 
-    unsigned int getAdminDist() const  { return _adminDist; }
-    RoutingProtocolSource getRoutingProtocolSource() const { return _routingProtocolSource; }
     const char *getInterfaceName() const;
-
-    virtual void setAdminDist(unsigned int adminDist)  { if (adminDist != _adminDist) { _adminDist = adminDist; changed(F_ADMINDIST);} }
-    virtual void setRoutingProtocolSource(RoutingProtocolSource routingProtocolSource) {  if (routingProtocolSource != _routingProtocolSource) { _routingProtocolSource = routingProtocolSource; changed(F_ROUTINGPROTSOURCE);} }
-    virtual void setInterfaceId(int interfaceId)  { if (interfaceId != _interfaceID) { _interfaceID = interfaceId; changed(F_IFACE);} }
-    virtual void setNextHop(const IPv6Address& nextHop)  {if (nextHop != _nextHop) { _nextHop = nextHop; changed(F_NEXTHOP);} }
-    virtual void setMetric(int metric)  { if (metric != _metric) { _metric = metric; changed(F_METRIC);} }
 
     /**
      * Silent versions of the setters. Used if more than one route information is changed.
@@ -190,13 +127,6 @@ class ANSARoutingTable6 : public RoutingTable6
      * @see prapareForAddRoute
      */
     virtual void removeRouteSilent(IPv6Route *route);
-
-    /**
-     * To be called from route objects whenever a field changes. Used for
-     * maintaining internal data structures and firing "routing table changed"
-     * notifications.
-     */
-    virtual void routeChanged(ANSAIPv6Route *entry, int fieldCode);
 
     /**
      * Same as routeChanged, except route changed notification is not fired.
