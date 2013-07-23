@@ -74,20 +74,8 @@ class ANSARoutingTable6 : public RoutingTable6
     ANSARoutingTable6();
     virtual ~ANSARoutingTable6();
 
-    virtual void addOrUpdateOnLinkPrefix(const IPv6Address& destPrefix, int prefixLength,
-                                 int interfaceId, simtime_t expiryTime);
-
-    virtual void addOrUpdateOwnAdvPrefix(const IPv6Address& destPrefix, int prefixLength,
-                                 int interfaceId, simtime_t expiryTime);
-
-    virtual void addStaticRoute(const IPv6Address& destPrefix, int prefixLength,
-                        unsigned int interfaceId, const IPv6Address& nextHop,
-                        int metric = 0);
-
-    virtual void addDefaultRoute(const IPv6Address& raSrcAddr, unsigned int ifID,
-        simtime_t routerLifetime);
-
-    virtual void addRoutingProtocolRoute(ANSAIPv6Route *route);
+    // to create an ANSAIPv6Route instead of IPv6Route
+    virtual IPv6Route *createNewRoute(IPv6Address destPrefix, int prefixLength, IPv6Route::RouteSrc src);
 
     /**
      * Same as routeChanged, except route changed notification is not fired.
