@@ -63,7 +63,7 @@ RIPngProcess::RIPngProcess(const char *name, RIPngRouting *RIPngModule) :
     bBlockTriggeredUpdateMessage = false;
 
     // access to the routing and interface table
-    rt = ANSARoutingTable6Access().get();
+    rt = RoutingTable6Access().get();
     ift = InterfaceTableAccess().get();
 
     numRoutes = 0;

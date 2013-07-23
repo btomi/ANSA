@@ -115,15 +115,11 @@ const char *ANSAIPv6Route::getInterfaceName() const
     return interface ? interface->getName() : "";
 }
 
-ANSARoutingTable6 *ANSAIPv6Route::getANSARoutingTable6()
-{
-    return dynamic_cast<ANSARoutingTable6*>(_rt);
-}
-
 void ANSAIPv6Route::changedSilent(int fieldCode)
 {
-    if (getANSARoutingTable6())
-        getANSARoutingTable6()->routeChangedSilent(this, fieldCode);
+    ANSARoutingTable6* rt = dynamic_cast<ANSARoutingTable6*>(_rt);
+    if (rt)
+        rt->routeChangedSilent(this, fieldCode);
 }
 
 ANSARoutingTable6::ANSARoutingTable6()

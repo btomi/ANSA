@@ -44,8 +44,6 @@ class ANSAIPv6Route : public IPv6Route
   public:
     ANSAIPv6Route(IPv6Address destPrefix, int length, RouteSrc src);
 
-    ANSARoutingTable6 *getANSARoutingTable6();
-
     virtual std::string info() const;
     virtual std::string detailedInfo() const;
     virtual const char *getRouteSrcName() const;
@@ -64,8 +62,7 @@ class ANSAIPv6Route : public IPv6Route
 };
 
 /**
- * Extends RoutingTable6 by administrative distance.
- * TODO: watch this class and changes in INET! - especially RoutingTable6 class
+ * Routing table that stores ANSAIPv6Routes.
  * @see RoutingTable6
  */
 class ANSARoutingTable6 : public RoutingTable6

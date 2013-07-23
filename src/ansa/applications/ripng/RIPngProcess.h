@@ -24,8 +24,8 @@
 
 #include <omnetpp.h>
 #include "IPv6Address.h"
-#include "ANSARoutingTable6.h"
-#include "ANSARoutingTable6Access.h"
+#include "RoutingTable6.h"
+#include "RoutingTable6Access.h"
 #include "IInterfaceTable.h"
 #include "InterfaceTableAccess.h"
 
@@ -92,7 +92,7 @@ class RIPngProcess
     bool bBlockTriggeredUpdateMessage;
 
     IInterfaceTable*                                ift;                ///< Provides access to the interface table.
-    ANSARoutingTable6*                              rt;                 ///< Provides access to the IPv6 routing table.
+    RoutingTable6*                                  rt;                 ///< Provides access to the IPv6 routing table.
     std::vector<RIPng::Interface*>                  enabledInterfaces;  ///< Interfaces which has allowed RIPng
     std::vector<RIPng::Interface*>                  downInterfaces;     ///< Interfaces which has allowed RIPng and are down - for keeping configuration, on every down interface must be called RIPng->setOutputPortOnInterface(interface, -1);
 

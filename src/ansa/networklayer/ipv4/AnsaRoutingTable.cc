@@ -107,10 +107,6 @@ void AnsaRoutingTable::addMulticastRoute(AnsaIPv4MulticastRoute *entry)
     if (entry->getMulticastGroup().isUnspecified())
         error("addMulticastRoute(): multicast group address cannot be NULL");
 
-    // check that group address is multicast address
-    if (!entry->getMulticastGroup().isMulticast())
-        error("addMulticastRoute(): group address is not multicast address");
-
     // check for source or RP address
     if (entry->getOrigin().isUnspecified() && entry->getRP().isUnspecified())
         error("addMulticastRoute(): source or RP address has to be specified");
@@ -133,7 +129,7 @@ void AnsaRoutingTable::addMulticastRoute(AnsaIPv4MulticastRoute *entry)
 /**
  * DELETE ROUTE
  *
- * Function check new multicast table entry and then add new entry to multicast table.
+ * Function deletes a multicast route if it is found in the multicast routing table.
  *
  * @param entry Multicast entry which should be deleted from multicast table.
  * @return False if entry was not found in table. True if entry was deleted.
@@ -148,51 +144,16 @@ bool AnsaRoutingTable::deleteMulticastRoute(AnsaIPv4MulticastRoute *entry)
     if (internalRemoveMulticastRoute(entry))
     {
         // first delete all timers assigned to route
-        if (entry->getSrt() != NULL)
-        {
-            cancelEvent(entry->getSrt());
-            delete entry->getSrt();
-        }
-        if (entry->getGrt() != NULL)
-        {
-            cancelEvent(entry->getGrt());
-            delete entry->getGrt();
-        }
-        if (entry->getSat())
-        {
-            cancelEvent(entry->getSat());
-            delete entry->getSat();
-        }
-        if (entry->getKat())
-        {
-            cancelEvent(entry->getKat());
-            delete entry->getKat();
-        }
-        if (entry->getEt())
-        {
-            cancelEvent(entry->getEt());
-            delete entry->getEt();
-        }
-        if (entry->getJt())
-        {
-            cancelEvent(entry->getJt());
-            delete entry->getJt();
-        }
-        if (entry->getPpt())
-        {
-            cancelEvent(entry->getPpt());
-            delete entry->getPpt();
-        }
+        cancelAndDelete(entry->getSrt());
+        cancelAndDelete(entry->getGrt());
+        cancelAndDelete(entry->getSat());
+        cancelAndDelete(entry->getKat());
+        cancelAndDelete(entry->getEt());
+        cancelAndDelete(entry->getJt());
+        cancelAndDelete(entry->getPpt());
         // delete timers from outgoing interfaces
         for (unsigned int j = 0;j < entry->getNumOutInterfaces(); j++)
-        {
-            AnsaIPv4MulticastRoute::AnsaOutInterface *outInterface = entry->getAnsaOutInterface(j);
-            if (outInterface->pruneTimer != NULL)
-            {
-                cancelEvent(outInterface->pruneTimer);
-                delete outInterface->pruneTimer;
-            }
-        }
+            cancelAndDelete(entry->getAnsaOutInterface(j)->pruneTimer);
 
         // delete route
         delete entry;
