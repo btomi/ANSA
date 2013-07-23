@@ -619,6 +619,7 @@ void RoutingTable6::addOrUpdateOnLinkPrefix(const IPv6Address& destPrefix, int p
         route->setInterfaceId(interfaceId);
         route->setExpiryTime(expiryTime);
         route->setMetric(0);
+        route->setAdminDist(IPv6Route::dDirectlyConnected);
 
         // then add it
         addRoute(route);
@@ -658,6 +659,7 @@ void RoutingTable6::addOrUpdateOwnAdvPrefix(const IPv6Address& destPrefix, int p
         route->setInterfaceId(interfaceId);
         route->setExpiryTime(expiryTime);
         route->setMetric(0);
+        route->setAdminDist(IPv6Route::dDirectlyConnected);
 
         // then add it
         addRoute(route);
@@ -700,6 +702,7 @@ void RoutingTable6::addStaticRoute(const IPv6Address& destPrefix, int prefixLeng
     if (metric==0)
         metric = 10; // TBD should be filled from interface metric
     route->setMetric(metric);
+    route->setAdminDist(IPv6Route::dStatic);
 
     // then add it
     addRoute(route);
@@ -713,6 +716,7 @@ void RoutingTable6::addDefaultRoute(const IPv6Address& nextHop, unsigned int ifI
     route->setInterfaceId(ifID);
     route->setNextHop(nextHop);
     route->setMetric(10); //FIXME:should be filled from interface metric
+    route->setAdminDist(IPv6Route::dStatic);
 
 #ifdef WITH_xMIPv6
     route->setExpiryTime(routerLifetime); // lifetime useful after transitioning to new AR // 27.07.08 - CB
