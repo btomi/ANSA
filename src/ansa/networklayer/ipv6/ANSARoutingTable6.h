@@ -74,59 +74,20 @@ class ANSARoutingTable6 : public RoutingTable6
     ANSARoutingTable6();
     virtual ~ANSARoutingTable6();
 
-    /**
-     * Finds route with the given prefix and prefix length.
-     * @return NULL, if route does not exist
-     */
-    virtual IPv6Route *findRoute(const IPv6Address& prefix, int prefixLength);
-
-    /**
-     * Prepares routing table for adding new route.
-     * e.g. removes route with the same prefix, prefix length and lower administrative distance
-     * and purge destination cache
-     *
-     * Method uses removeRouteSilent() for removing routes - NF_IPv6_ROUTE_DELETED notification cannot be fired,
-     * because other routing protocol listening to this notification could add his route (route is already deleted
-     * so this route would be added without any problem with administrative distance), than this method
-     * return true and the protocol calling this method adds his route also.
-     *
-     * One could create another notification, like NF_IPv6_ROUTE_DELETED_INTERNAL, in the future.
-     * Adding a route would not be allowed on receipt this notification.
-     *
-     * @return true, if it is safe to add route,
-     *         false otherwise
-     */
-    virtual bool prepareForAddRoute(IPv6Route *route);
-
     virtual void addOrUpdateOnLinkPrefix(const IPv6Address& destPrefix, int prefixLength,
                                  int interfaceId, simtime_t expiryTime);
 
     virtual void addOrUpdateOwnAdvPrefix(const IPv6Address& destPrefix, int prefixLength,
                                  int interfaceId, simtime_t expiryTime);
 
-    /**
-     * @see prepareForAddRoute
-     */
     virtual void addStaticRoute(const IPv6Address& destPrefix, int prefixLength,
                         unsigned int interfaceId, const IPv6Address& nextHop,
                         int metric = 0);
 
-    /**
-     * @see prepareForAddRoute
-     */
     virtual void addDefaultRoute(const IPv6Address& raSrcAddr, unsigned int ifID,
         simtime_t routerLifetime);
 
-    /**
-     * @see prepareForAddRoute
-     */
     virtual void addRoutingProtocolRoute(ANSAIPv6Route *route);
-
-    /**
-     * Same as removeRoute, except route deleted notification is not fired.
-     * @see prapareForAddRoute
-     */
-    virtual void removeRouteSilent(IPv6Route *route);
 
     /**
      * Same as routeChanged, except route changed notification is not fired.

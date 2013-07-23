@@ -597,15 +597,8 @@ void RIPngProcess::setInterfacePoisonReverse(RIPng::Interface *RIPngInterface, b
 void RIPngProcess::addRoutingTableEntryToGlobalRT(RIPng::RoutingTableEntry* entry)
 {
     RIPng::RoutingTableEntry *newEntry = new RIPng::RoutingTableEntry(*entry);
-    if (rt->prepareForAddRoute(newEntry))
-    {
-        rt->addRoutingProtocolRoute(newEntry);
-        entry->setCopy(newEntry);
-    }
-    else
-    {// route exists with lower administrative distance
-        delete newEntry;
-    }
+    rt->addRoutingProtocolRoute(newEntry);
+    entry->setCopy(newEntry);
 }
 
 void RIPngProcess::removeRoutingTableEntryFromGlobalRT(RIPng::RoutingTableEntry* entry)
