@@ -82,11 +82,6 @@ class ANSARoutingTable6 : public RoutingTable6
      * @see routeChanged
      */
     virtual void routeChangedSilent(ANSAIPv6Route *entry, int fieldCode);
-
-    /**
-     * Must be reimplemented because of cache handling.
-     */
-    virtual void receiveChangeNotification(int category, const cObject *details);
 };
 
 #endif

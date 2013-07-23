@@ -230,10 +230,20 @@ void RoutingTable6::receiveChangeNotification(int category, const cObject *detai
     else if (category==NF_INTERFACE_DELETED)
     {
         //TODO remove all routes that point to that interface (?)
+        InterfaceEntry *interfaceEntry = check_and_cast<InterfaceEntry*>(details);
+        int interfaceEntryId = interfaceEntry->getInterfaceId();
+        purgeDestCacheForInterfaceID(interfaceEntryId);
     }
     else if (category==NF_INTERFACE_STATE_CHANGED)
     {
-        //TODO invalidate routing cache (?)
+        InterfaceEntry *interfaceEntry = check_and_cast<InterfaceEntry*>(details);
+        int interfaceEntryId = interfaceEntry->getInterfaceId();
+
+        // an interface went down
+        if (interfaceEntry->isDown())
+        {
+            purgeDestCacheForInterfaceID(interfaceEntryId);
+        }
     }
     else if (category==NF_INTERFACE_CONFIG_CHANGED)
     {
