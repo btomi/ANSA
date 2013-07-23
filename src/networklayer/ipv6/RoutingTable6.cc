@@ -736,6 +736,11 @@ bool RoutingTable6::routeLessThan(const IPv6Route *a, const IPv6Route *b)
     if (a->getPrefixLength()!=b->getPrefixLength())
         return a->getPrefixLength() > b->getPrefixLength();
 
+    // smaller administrative distance is better
+    if (a->getAdminDist() != b->getAdminDist())
+        return a->getAdminDist() < b->getAdminDist();
+
+    // smaller metric is better
     return a->getMetric() < b->getMetric();
 }
 
