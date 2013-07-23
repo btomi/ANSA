@@ -723,6 +723,9 @@ void RoutingTable6::addRoute(IPv6Route *route)
     // stop at the first match when doing the longest prefix matching
     std::sort(routeList.begin(), routeList.end(), routeLessThan);
 
+    /*XXX: this deletes some cache entries we want to keep, but the node MUST update
+     the Destination Cache in such a way that the latest route information are used.*/
+    purgeDestCache();
     updateDisplayString();
 
     nb->fireChangeNotification(NF_IPv6_ROUTE_ADDED, route);
@@ -739,6 +742,11 @@ void RoutingTable6::removeRoute(IPv6Route *route)
     routeList.erase(it);
     delete route;
 
+    /*XXX: this deletes some cache entries we want to keep, but the node MUST update
+     the Destination Cache in such a way that all entries using the next-hop from
+     the deleted route perform next-hop determination again rather than continue
+     sending traffic using that deleted route next-hop.*/
+    purgeDestCache();
     updateDisplayString();
 }
 

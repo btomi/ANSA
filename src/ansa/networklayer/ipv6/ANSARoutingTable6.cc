@@ -324,44 +324,6 @@ void ANSARoutingTable6::addRoutingProtocolRoute(ANSAIPv6Route *route)
     addRoute(route);
 }
 
-void ANSARoutingTable6::addRoute(ANSAIPv6Route *route)
-{
-    /*XXX: this deletes some cache entries we want to keep, but the node MUST update
-     the Destination Cache in such a way that the latest route information are used.*/
-    purgeDestCache();
-
-    route->setRoutingTable(this);
-    routeList.push_back(route);
-
-    // we keep entries sorted by prefix length in routeList, so that we can
-    // stop at the first match when doing the longest prefix matching
-    std::sort(routeList.begin(), routeList.end(), routeLessThan);
-
-    updateDisplayString();
-
-    nb->fireChangeNotification(NF_IPv6_ROUTE_ADDED, route);
-}
-
-void ANSARoutingTable6::removeRoute(IPv6Route *route)
-{
-    RouteList::iterator it = std::find(routeList.begin(), routeList.end(), route);
-    ASSERT(it!=routeList.end());
-
-    nb->fireChangeNotification(NF_IPv6_ROUTE_DELETED, route); // rather: going to be deleted
-
-    routeList.erase(it);
-
-    /*XXX: this deletes some cache entries we want to keep, but the node MUST update
-     the Destination Cache in such a way that all entries using the next-hop from
-     the deleted route perform next-hop determination again rather than continue
-     sending traffic using that deleted route next-hop.*/
-    purgeDestCache();
-
-    delete route;
-
-    updateDisplayString();
-}
-
 void ANSARoutingTable6::removeRouteSilent(IPv6Route *route)
 {
     RouteList::iterator it = std::find(routeList.begin(), routeList.end(), route);

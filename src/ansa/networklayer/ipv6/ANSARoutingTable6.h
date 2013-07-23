@@ -133,9 +133,6 @@ class ANSAIPv6Route : public IPv6Route
  */
 class ANSARoutingTable6 : public RoutingTable6
 {
-  protected:
-    virtual void addRoute(ANSAIPv6Route *route);
-
   public:
     ANSARoutingTable6();
     virtual ~ANSARoutingTable6();
@@ -187,11 +184,6 @@ class ANSARoutingTable6 : public RoutingTable6
      * @see prepareForAddRoute
      */
     virtual void addRoutingProtocolRoute(ANSAIPv6Route *route);
-
-    /**
-     * Must be reimplemented because of cache handling.
-     */
-    virtual void removeRoute(IPv6Route *route);
 
     /**
      * Same as removeRoute, except route deleted notification is not fired.
