@@ -94,7 +94,7 @@ class INET_API IPv4Route : public cObject
     IPv4Address gateway;  ///< Next hop
     InterfaceEntry *interfacePtr; ///< interface
     RouteSource source;   ///< manual, routing prot, etc.
-    RouteAdminDist adminDist; ///< Cisco like administrative distance
+    unsigned int adminDist; ///< Cisco like administrative distance
     int metric;           ///< Metric ("cost" to reach the destination)
     /** Should be set if route source is a "routing protocol" **/
     RoutingProtocolSource routingProtocolSource;
@@ -135,7 +135,7 @@ class INET_API IPv4Route : public cObject
     virtual void setGateway(IPv4Address _gateway)  { if (gateway != _gateway) {gateway = _gateway; changed(F_GATEWAY);} }
     virtual void setInterface(InterfaceEntry *_interfacePtr)  { if (interfacePtr != _interfacePtr) {interfacePtr = _interfacePtr; changed(F_IFACE);} }
     virtual void setSource(RouteSource _source)  { if (source != _source) {source = _source; changed(F_SOURCE);} }
-    virtual void setAdminDist(RouteAdminDist _adminDist)  { if (adminDist != _adminDist) { adminDist = _adminDist; changed(F_ADMINDIST);} }
+    virtual void setAdminDist(unsigned int _adminDist)  { if (adminDist != _adminDist) { adminDist = _adminDist; changed(F_ADMINDIST);} }
     virtual void setMetric(int _metric)  { if (metric != _metric) {metric = _metric; changed(F_METRIC);} }
     virtual void setRoutingProtocolSource(RoutingProtocolSource _routingProtocolSource) { if (routingProtocolSource != _routingProtocolSource) { routingProtocolSource = _routingProtocolSource; changed(F_ROUTINGPROTSOURCE);} }
 
@@ -158,7 +158,7 @@ class INET_API IPv4Route : public cObject
     RouteSource getSource() const {return source;}
 
     /** Route source specific preference value */
-    RouteAdminDist getAdminDist() const  { return adminDist; }
+    unsigned int getAdminDist() const  { return adminDist; }
 
     RoutingProtocolSource getRoutingProtocolSource() const { return routingProtocolSource; }
 
