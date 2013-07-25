@@ -1367,7 +1367,7 @@ void IPv4NetworkConfigurator::addManualMulticastRoutes(cXMLElement *root, IPv4To
                             route->setOrigin(source);
                             route->setOriginNetmask(netmask);
                             route->setMulticastGroup(groups[j]);
-                            route->setInInterface(new IPv4MulticastRoute::InInterface(parent));
+                            route->setInInterface(parent ? new IPv4MulticastRoute::InInterface(parent) : NULL);
                             if (isNotEmpty(metricAttr))
                                 route->setMetric(atoi(metricAttr));
                             for (int k = 0; k < (int)children.size(); ++k)
