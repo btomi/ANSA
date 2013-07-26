@@ -35,9 +35,6 @@
 #include "IPv6InterfaceData.h"
 #endif
 
-#include "TRILLInterfaceData.h"
-#include "ISISInterfaceData.h"
-
 
 void InterfaceProtocolData::changed(int category)
 {
@@ -67,8 +64,8 @@ InterfaceEntry::InterfaceEntry(cModule* ifmod)
 
     ipv4data = NULL;
     ipv6data = NULL;
-    protocol3data = NULL;
-    protocol4data = NULL;
+    isisdata = NULL;
+    trilldata = NULL;
     estimateCostProcessArray.clear();
 }
 
@@ -96,10 +93,10 @@ std::string InterfaceEntry::info() const
         out << " " << ((cObject*)ipv4data)->info(); // Khmm...
     if (ipv6data)
         out << " " << ((cObject*)ipv6data)->info(); // Khmm...
-    if (protocol3data)
-        out << " " << protocol3data->info();
-    if (protocol4data)
-        out << " " << protocol4data->info();
+    if (isisdata)
+        out << " " << ((cObject*)isisdata)->info(); // Khmm...
+    if (trilldata)
+        out << " " << ((cObject*)trilldata)->info(); // Khmm...
     return out.str();
 }
 
@@ -128,10 +125,10 @@ std::string InterfaceEntry::detailedInfo() const
         out << " " << ((cObject*)ipv4data)->info() << "\n"; // Khmm...
     if (ipv6data)
         out << " " << ((cObject*)ipv6data)->info() << "\n"; // Khmm...
-    if (protocol3data)
-        out << " " << protocol3data->info() << "\n";
-    if (protocol4data)
-        out << " " << protocol4data->info() << "\n";
+    if (isisdata)
+        out << " " << ((cObject*)isisdata)->info() << "\n"; // Khmm...
+    if (trilldata)
+        out << " " << ((cObject*)trilldata)->info() << "\n"; // Khmm...
 
     return out.str();
 }
@@ -172,7 +169,7 @@ void InterfaceEntry::setTRILLInterfaceData(TRILLInterfaceData *p)
 {
 
     trilldata = p;
-    p->ownerp = this;
+    ((InterfaceProtocolData*)p)->ownerp = this; // Khmm...
     configChanged();
 
 }
@@ -181,7 +178,7 @@ void InterfaceEntry::setISISInterfaceData(ISISInterfaceData *p)
 {
 
     isisdata = p;
-    p->ownerp = this;
+    ((InterfaceProtocolData*)p)->ownerp = this; // Khmm...
     configChanged();
 
 }
