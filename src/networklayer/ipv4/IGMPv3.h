@@ -232,7 +232,7 @@ class INET_API IGMPv3 : public cSimpleModule, protected INotifiable
         int numReportsRecv;
 
     protected:
-        virtual int numInitStages() const {return 2;}
+        virtual int numInitStages() const {return 3;}
         virtual void initialize(int stage);
         virtual void handleMessage(cMessage *msg);
         virtual void receiveChangeNotification(int category, const cPolymorphic *details);

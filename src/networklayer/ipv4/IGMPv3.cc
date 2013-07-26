@@ -342,6 +342,19 @@ void IGMPv3::initialize(int stage)
         }
         nb->subscribe(this, NF_INTERFACE_CREATED);
     }
+    else if (stage == 2) // ipv4Data() created in stage 1
+    {
+        // in multicast routers: join to ALL_IGMPv3_ROUTERS_MCAST address on all interfaces
+        if (enabled && rt->isMulticastForwardingEnabled())
+        {
+            for (int i = 0; i < (int)ift->getNumInterfaces(); ++i)
+            {
+                InterfaceEntry *ie = ift->getInterface(i);
+                if (ie->isMulticast())
+                        ie->ipv4Data()->joinMulticastGroup(IPv4Address::ALL_IGMPV3_ROUTERS_MCAST);
+            }
+        }
+    }
 }
 
 IGMPv3::~IGMPv3()
