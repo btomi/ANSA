@@ -35,10 +35,40 @@
 class ANSAIPv4Route : public IPv4Route
 {
     public:
-        ANSAIPv4Route() : IPv4Route() {}
+        /** Should be set if route source is a "routing protocol" **/
+        enum RoutingProtocolSource
+        {
+            pUnknown = 0,
+            pIGRP,           //IGRP derived  - I
+            pRIP,            //RIP           - R
+            pEGP,            //EGP derived   - E
+            pBGP,            //BGP derived   - B
+            pISISderived,    //IS-IS derived - i
+            pISIS,           //IS-IS         - ia
+            pOSPF,           //OSPF derived                    - O
+            pOSPFinter,      //OSPF inter area route           - IA
+            pOSPFext1,       //OSPF external type 1 route      - E1
+            pOSPFext2,       //OSPF external type 2 route      - E2
+            pOSPFNSSAext1,   //OSPF NSSA external type 1 route - N1
+            pOSPFNSSAext2,   //OSPF NSSA external type 2 route - N2
+            pEIGRP,          //EIGRP          - D
+            pEIGRPext        //EIGRP external - EX
+        };
+
+        enum {F_ROUTINGPROTSOURCE = F_LAST + 1};
+
+    private:
+        /** Should be set if route source is a "routing protocol" **/
+        RoutingProtocolSource routingProtocolSource;
+
+    public:
+        ANSAIPv4Route() : IPv4Route(), routingProtocolSource(pUnknown) {}
         virtual ~ANSAIPv4Route() {}
         virtual std::string info() const;
         virtual std::string detailedInfo() const;
+
+        virtual void setRoutingProtocolSource(RoutingProtocolSource _routingProtocolSource) { if (routingProtocolSource != _routingProtocolSource) { routingProtocolSource = _routingProtocolSource; changed(F_ROUTINGPROTSOURCE);} }
+        RoutingProtocolSource getRoutingProtocolSource() const { return routingProtocolSource; }
 
         virtual const char *getRouteSrcName() const;
 };

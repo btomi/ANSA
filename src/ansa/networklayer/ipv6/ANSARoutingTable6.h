@@ -36,8 +36,36 @@ class ANSARoutingTable6;
  */
 class ANSAIPv6Route : public IPv6Route
 {
+  public:
+      /** Should be set if route source is a "routing protocol" **/
+      enum RoutingProtocolSource
+      {
+          pUnknown = 0,
+          pRIP,            //RIPng
+          pBGP,            //BGP
+          pISIS1,          //ISIS L1
+          pISIS2,          //ISIS L2
+          pISISinterarea,  //ISIS interarea
+          pISISsum,        //ISIS summary
+          pOSPFintra,      //OSPF intra
+          pOSPFinter,      //OSPF inter
+          pOSPFext1,       //OSPF ext 1
+          pOSPFext2,       //OSPF ext 2
+          pOSPFNSSAext1,   //OSPF NSSA ext 1
+          pOSPFNSSAext2,   //OSPF NSSA ext 2
+          pEIGRP,          //EIGRP
+          pEIGRPext        //EIGRP external
+      };
+
+      enum ChangeCodes // field codes for changed()
+      {
+          F_ROUTINGPROTSOURCE = F_LAST + 1
+      };
+
   protected:
     IInterfaceTable *ift;     ///< cached pointer
+    /** Should be set if route source is a "routing protocol" **/
+    RoutingProtocolSource _routingProtocolSource;
 
     void changedSilent(int fieldCode);
 
@@ -49,6 +77,9 @@ class ANSAIPv6Route : public IPv6Route
     virtual const char *getRouteSrcName() const;
 
     const char *getInterfaceName() const;
+
+    void setRoutingProtocolSource(RoutingProtocolSource routingProtocolSource) {  if (routingProtocolSource != _routingProtocolSource) { _routingProtocolSource = routingProtocolSource; changed(F_ROUTINGPROTSOURCE);} }
+    RoutingProtocolSource getRoutingProtocolSource() const { return _routingProtocolSource; }
 
     /**
      * Silent versions of the setters. Used if more than one route information is changed.

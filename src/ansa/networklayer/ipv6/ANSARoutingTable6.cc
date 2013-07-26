@@ -37,6 +37,7 @@ ANSAIPv6Route::ANSAIPv6Route(IPv6Address destPrefix, int length, RouteSrc src)
     : IPv6Route(destPrefix, length, src)
 {
     ift = InterfaceTableAccess().get();
+    _routingProtocolSource = pUnknown;
 }
 
 std::string ANSAIPv6Route::info() const

@@ -45,27 +45,6 @@ class INET_API IPv6Route : public cObject
         ROUTING_PROT,   ///< route is managed by a routing protocol (OSPF,BGP,etc)
     };
 
-    /** Should be set if route source is a "routing protocol" **/
-    enum RoutingProtocolSource
-    {
-        pUnknown = 0,
-        pRIP,            //RIPng
-        pBGP,            //BGP
-        pISIS1,          //ISIS L1
-        pISIS2,          //ISIS L2
-        pISISinterarea,  //ISIS interarea
-        pISISsum,        //ISIS summary
-        pOSPFintra,      //OSPF intra
-        pOSPFinter,      //OSPF inter
-        pOSPFext1,       //OSPF ext 1
-        pOSPFext2,       //OSPF ext 2
-        pOSPFNSSAext1,   //OSPF NSSA ext 1
-        pOSPFNSSAext2,   //OSPF NSSA ext 2
-        pEIGRP,          //EIGRP
-        pEIGRPext        //EIGRP external
-    };
-
-
     /** Cisco like administrative distances (includes IPv4 protocols)*/
     enum RouteAdminDist
     {
@@ -93,7 +72,7 @@ class INET_API IPv6Route : public cObject
         F_METRIC,
         F_EXPIRYTIME,
         F_ADMINDIST,
-        F_ROUTINGPROTSOURCE
+        F_LAST,
     };
 
   protected:
@@ -106,8 +85,6 @@ class INET_API IPv6Route : public cObject
     simtime_t _expiryTime; // if route is an advertised prefix: prefix lifetime
     int _metric;
     unsigned int  _adminDist;
-    /** Should be set if route source is a "routing protocol" **/
-    RoutingProtocolSource _routingProtocolSource;
 
     void changed(int fieldCode);
 
@@ -125,7 +102,6 @@ class INET_API IPv6Route : public cObject
         _expiryTime = 0;
         _metric = 0;
         _adminDist = dUnknown;
-        _routingProtocolSource = pUnknown;
     }
 
     /** To be called by the routing table when this route is added or removed from it */
@@ -141,7 +117,6 @@ class INET_API IPv6Route : public cObject
     void setExpiryTime(simtime_t expiryTime)  { if (expiryTime != _expiryTime) { _expiryTime = expiryTime; changed(F_EXPIRYTIME);} }
     void setMetric(int metric)  { if (metric != _metric) { _metric = metric; changed(F_METRIC);} }
     void setAdminDist(unsigned int adminDist)  { if (adminDist != _adminDist) { _adminDist = adminDist; changed(F_ADMINDIST);} }
-    void setRoutingProtocolSource(RoutingProtocolSource routingProtocolSource) {  if (routingProtocolSource != _routingProtocolSource) { _routingProtocolSource = routingProtocolSource; changed(F_ROUTINGPROTSOURCE);} }
 
     const IPv6Address& getDestPrefix() const {return _destPrefix;}
     int getPrefixLength() const  {return _length;}
@@ -151,7 +126,6 @@ class INET_API IPv6Route : public cObject
     simtime_t getExpiryTime() const  {return _expiryTime;}
     int getMetric() const  {return _metric;}
     unsigned int getAdminDist() const  { return _adminDist; }
-    RoutingProtocolSource getRoutingProtocolSource() const { return _routingProtocolSource; }
 };
 
 /**
