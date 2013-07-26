@@ -334,6 +334,9 @@ void MLD::configureInterface(InterfaceEntry *ie)
 {
     if (enabled && rt->isMulticastForwardingEnabled())
     {
+        // join to this group in MLDv2 routers
+        //ie->ipv6Data()->joinMulticastGroup(IPv6Address("ff02::16"));
+
         // start querier on this interface
         cMessage *timer = new cMessage("MLD query timer", MLD_QUERY_TIMER);
         timer->setContextPointer(ie);

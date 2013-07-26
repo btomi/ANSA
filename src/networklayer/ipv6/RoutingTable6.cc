@@ -296,16 +296,12 @@ void RoutingTable6::configureInterfaceForIPv6(InterfaceEntry *ie)
         addStaticRoute(IPv6Address::LINKLOCAL_PREFIX, 10, ie->getInterfaceId(), IPv6Address::UNSPECIFIED_ADDRESS);
 
     if (ie->isMulticast())
-        {
-            ipv6IfData->joinMulticastGroup(IPv6Address::ALL_NODES_2);
-            if (isrouter)
-            {
-                ipv6IfData->joinMulticastGroup(IPv6Address::ALL_ROUTERS_2);
-                ipv6IfData->joinMulticastGroup(IPv6Address("ff02::16"));
-            }
-                //if (IPForward && IGMPVersion == 3)
-            //    d->joinMulticastGroup(IPv4Address::ALL_IGMPV3_ROUTERS_MCAST);
-        }
+    {
+        // XXX join other ALL_NODES_x and ALL_ROUTERS_x addresses too?
+        ipv6IfData->joinMulticastGroup(IPv6Address::ALL_NODES_2);
+        if (isrouter)
+            ipv6IfData->joinMulticastGroup(IPv6Address::ALL_ROUTERS_2);
+    }
 }
 
 void RoutingTable6::assignRequiredNodeAddresses(InterfaceEntry *ie)
