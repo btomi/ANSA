@@ -29,14 +29,6 @@
 #include "IPv6Address.h"
 #include "InterfaceEntry.h"
 
-struct INET_API IPv6MulticastGroupInfo : public cObject
-{
-    IPv6MulticastGroupInfo(InterfaceEntry * const ie, const IPv6Address &groupAddress)
-        : ie(ie), groupAddress(groupAddress) {}
-    InterfaceEntry* ie;
-    IPv6Address groupAddress;
-};
-
 //Forward declarations:
 #ifdef WITH_xMIPv6
 class RoutingTable6;
@@ -96,6 +88,17 @@ class RoutingTable6;
 /***************END of RFC 3775 Protocol Constants*****************************/
 #endif /* WITH_xMIPv6 */
 
+/*
+ * Info for NF_IPv6_MCAST_JOIN and NF_IPv6_MCAST_LEAVE notifications
+ */
+struct INET_API IPv6MulticastGroupInfo : public cObject
+{
+    IPv6MulticastGroupInfo(InterfaceEntry * const ie, const IPv6Address &groupAddress)
+        : ie(ie), groupAddress(groupAddress) {}
+    InterfaceEntry* ie;
+    IPv6Address groupAddress;
+};
+
 /**
  * IPv6-specific data for InterfaceEntry. Most of this comes from
  * section 6.2.1 of RFC 2461 (IPv6 Neighbor Discovery, Router Configuration
@@ -120,28 +123,15 @@ public:
     struct RouterMulticastData
         {
             IPv6AddressVector reportedMulticastGroups; ///< multicast groups that have listeners on the link connected to this interface
-            int multicastTtlThreshold;          ///< multicast ttl threshold, used by multicast routers to limit multicast scope
 
-            RouterMulticastData() : multicastTtlThreshold(0) {}
             std::string info();
             std::string detailedInfo();
         };
 
-    HostMulticastData *hostMData;
-    RouterMulticastData *routerData;
+    HostMulticastData *hostMcastData;
+    RouterMulticastData *routerMcastData;
 
-    NotificationBoard *nbo;
-
-
-
-  public:
-
-    const IPv6AddressVector& getJoinedMulticastGroups() const { return getHostData()->joinedMulticastGroups;}
-    const IPv6AddressVector& getReportedMulticastGroups() const { return getRouterData()->reportedMulticastGroups;}
-    bool isMemberOfMulticastGroup(const IPv6Address &multicastAddress) const;
-
-    virtual void joinMulticastGroup(const IPv6Address& multicastAddress);
-    virtual void leaveMulticastGroup(const IPv6Address& multicastAddress);
+    NotificationBoard *nb;
 
   public:
     /**
@@ -447,6 +437,10 @@ public:
     int findAddress(const IPv6Address& addr) const;
     void choosePreferredAddress();
     void changed1() {changed(NF_INTERFACE_IPv6CONFIG_CHANGED);}
+    HostMulticastData *getHostData() { if (!hostMcastData) hostMcastData = new HostMulticastData(); return hostMcastData; }
+    const HostMulticastData *getHostData() const { return const_cast<IPv6InterfaceData*>(this)->getHostData(); }
+    RouterMulticastData *getRouterData() { if (!routerMcastData) routerMcastData = new RouterMulticastData(); return routerMcastData; }
+    const RouterMulticastData *getRouterData() const { return const_cast<IPv6InterfaceData*>(this)->getRouterData(); }
 
     static bool addrLess(const AddressData& a, const AddressData& b);
 
@@ -538,6 +532,17 @@ public:
      * Clears the "tentative" flag of an existing interface address.
      */
     virtual void permanentlyAssign(const IPv6Address& addr);
+
+    const IPv6AddressVector& getJoinedMulticastGroups() const { return getHostData()->joinedMulticastGroups;}
+    const IPv6AddressVector& getReportedMulticastGroups() const { return getRouterData()->reportedMulticastGroups;}
+
+    bool isMemberOfMulticastGroup(const IPv6Address &multicastAddress) const;
+    virtual void joinMulticastGroup(const IPv6Address& multicastAddress);
+    virtual void leaveMulticastGroup(const IPv6Address& multicastAddress);
+
+    bool hasMulticastListener(const IPv6Address &multicastAddress) const;
+    virtual void addMulticastListener(const IPv6Address &multicastAddress);
+    virtual void removeMulticastListener(const IPv6Address &multicastAddress);
 
 #ifdef WITH_xMIPv6
     /**
@@ -778,14 +783,6 @@ public:
      * Removes a CoA address from the interface if one exists.
      */
     IPv6Address removeAddress(IPv6InterfaceData::AddressType type); // update 06.08.08 - CB
-
-    virtual void removeMulticastListener(const IPv6Address &multicastAddress);
-    virtual void addMulticastListener(const IPv6Address &multicastAddress);
-    bool hasMulticastListener(const IPv6Address &multicastAddress) const;
-    HostMulticastData *getHostData() { if (!hostMData) hostMData = new HostMulticastData(); return hostMData; }
-    const HostMulticastData *getHostData() const { return const_cast<IPv6InterfaceData*>(this)->getHostData(); }
-    RouterMulticastData *getRouterData() { if (!routerData) routerData = new RouterMulticastData(); return routerData; }
-    const RouterMulticastData *getRouterData() const { return const_cast<IPv6InterfaceData*>(this)->getRouterData(); }
 
   protected:
     RoutingTable6* rt6; // A pointer variable, specifically used to access the type of node (MN, HA, Router, CN). Used in info(). (Zarrar Yousaf 20.07.07)
