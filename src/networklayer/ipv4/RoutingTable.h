@@ -96,9 +96,10 @@ class INET_API RoutingTable: public cSimpleModule, public IRoutingTable, protect
     mutable AddressSet localBroadcastAddresses;
 
   private:
-    //
-    // Routes:
-    //
+    // The vectors storing routes are ordered by prefix length, administrative distance, and metric.
+    // Subclasses should use internalAdd[Multicast]Route() and internalRemove[Multicast]Route() methods
+    // to modify them, but they can not access them directly.
+
     typedef std::vector<IPv4Route *> RouteVector;
     RouteVector routes;          // Unicast route array, sorted by netmask desc, dest asc, metric asc
 

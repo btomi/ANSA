@@ -31,9 +31,8 @@
  * @brief Class is extension of the IP protocol implementation for vrrpv2.
  * @details It extends IPv4 routing decision with vforwarderId.
  *
- * It also contains some kludges for multicast routing:
+ * It also contains a kludge for multicast routing:
  *   - to add/remove multicast listeners when fake IGMP messages are received
- *   - to refresh the string representation of the multicast routing table
  */
 class INET_API AnsaIPv4 : public IPv4
 {
